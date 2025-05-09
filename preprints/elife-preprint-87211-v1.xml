@@ -1,0 +1,463 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">87211</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.87211</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.87211.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Genetics and Genomics</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Analysis of RNA processing directly from spatial transcriptomics data reveals previously unknown regulation</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0850-5498</contrib-id>
+<name>
+<surname>Olivieri</surname>
+<given-names>Julia</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7397-4354</contrib-id>
+<name>
+<surname>Salzman</surname>
+<given-names>Julia</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Computer Science, University of the Pacific</institution></aff>
+<aff id="a2"><label>2</label><institution>Department of Biological Data Science, Stanford University</institution></aff>
+<aff id="a3"><label>3</label><institution>Department of Biochemistry, Stanford University</institution></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Eyras</surname>
+<given-names>Eduardo</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Australian National University</institution>
+</institution-wrap>
+<city>Canberra</city>
+<country>Australia</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Struhl</surname>
+<given-names>Kevin</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Harvard Medical School</institution>
+</institution-wrap>
+<city>Boston</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Shared corresponding authorship: Julia Olivieri, email: <email>jolivieri@pacific.edu</email>, Julia Salzman, email: <email>horence@stanford.edu</email></corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-07-12">
+<day>12</day>
+<month>07</month>
+<year>2023</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP87211</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-03-24">
+<day>24</day>
+<month>03</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-03-14">
+<day>14</day>
+<month>03</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.03.13.532412"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Olivieri &amp; Salzman</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Olivieri &amp; Salzman</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-87211-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Technical advances have led to an explosion in the amount of biological data available in recent years, especially in the field of RNA sequencing. Specifically, spatial transcriptomics (ST) datasets, which allow each RNA molecule to be mapped to the 2D location it originated from within a tissue, have become readily available. Due to computational challenges, ST data has rarely been used to study RNA processing such as splicing or differential UTR usage. We apply the ReadZS and the SpliZ, methods developed to analyze RNA process in scRNA-seq data, to analyze spatial localization of RNA processing directly from ST data for the first time. Using Moran’s I metric for spatial autocorrelation, we identify genes with spatially regulated RNA processing in the mouse brain and kidney, re-discovering known spatial regulation in <italic>Myl6</italic> and identifying previously-unknown spatial regulation in genes such as <italic>Rps24, Gng13, Slc8a1, Gpm6a, Gpx3, ActB, Rps8</italic>, and <italic>S100A9</italic>. The rich set of discoveries made here from commonly used reference datasets provides a small taste of what can be learned by applying this technique more broadly to the large quantity of Visium data currently being created.</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis">https://github.com/juliaolivieri/visium_analysis</ext-link>
+</p></fn>
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://doi.org/10.6084/m9.figshare.22144055.v1">https://doi.org/10.6084/m9.figshare.22144055.v1</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>One of the most fundamental questions of RNA biology is “where can I find this RNA in an organism?” On a large scale, this question can be answered by sequencing different tissues of an organism and characterizing their RNA compositions. However, a more fine-grained answer was out of reach until the introduction of single-cell RNA sequencing (scRNA-seq) (<xref ref-type="bibr" rid="c28">Tang et al., 2009</xref>) and spatial transcriptomics (ST) (<xref ref-type="bibr" rid="c25">Ståhl et al., 2016</xref>), each of which provide complementary but distinct answers. In scRNA-seq, individual RNAs are labeled with their cell of origin, but the relative spatial locations of these cells are unknown. In ST, RNAs are labeled with cartesian coordinates describing their spatial locations, but the resolution is not yet able to distinguish individual cells. While scRNA-seq requires time-intensive cell type annotation before most analysis, ST data allows annotation-free analysis immediately. The promise of ST methods led to spatially resolved transcriptomics being named the “Method of the Year” by Nature in 2020 (<xref ref-type="bibr" rid="c15">Marx, 2021</xref>).</p>
+<p>Differential RNA processing, including alternative splicing and differential UTR usage, is ubiquitous (<xref ref-type="bibr" rid="c30">Wang et al., 2008</xref>), highly regulated (<xref ref-type="bibr" rid="c21">Olivieri et al., 2021</xref>), and implicated in human disease (<xref ref-type="bibr" rid="c1">Anczuków &amp; Krainer, 2016</xref>) and treatment (<xref ref-type="bibr" rid="c16">Mendell et al., 2017</xref>). Understanding the spatial localization of RNA isoforms would help disentangle effects resulting from RNA processing from those resulting in gene expression difference (<xref rid="fig1" ref-type="fig">Figure 1A</xref>). Despite its importance, the function of the vast majority of alternative RNA processing is not understood (<xref ref-type="bibr" rid="c29">Wan &amp; Larson, 2018</xref>). Despite rising interest in ST, analysis of RNA processing in ST data is almost completely unexplored. ST data suffers from challenges related to sparsity and the 3’ bias of the reads that impeded RNA processing analysis in droplet-based scRNA-seq data (<xref ref-type="bibr" rid="c3">Arzalluz-Luque &amp; Conesa, 2018</xref>). When RNA splicing has been studied in ST data, results have relied on integration with separate long-read or full-length-coverage data that is then mapped to spatial locations algorithmically (<xref ref-type="bibr" rid="c6">Booeshaghi et al., 2021</xref>; <xref ref-type="bibr" rid="c11">Joglekar et al., 2021</xref>; <xref ref-type="bibr" rid="c12">Lebrigand et al., 2020</xref>). These methods each require a matched dataset for RNA processing analysis in ST data, which makes them inapplicable to most of the ST datasets publicly available. There has been some analysis of 3’ UTR localization in subcellular spatial data (<xref ref-type="bibr" rid="c5">Bierman &amp; Salzman, 2022</xref>), but most relies on seqFISH experiments rather than ST data (<xref ref-type="bibr" rid="c7">Cassella &amp; Ephrussi, 2022</xref>). Up to this point, analysis of RNA processing directly from ST data has been out of reach.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>A) Analysis of ST data has almost exclusively focused on finding spatial regulation of gene expression, missing potential spatial regulation of RNA processing and splicing. B) An example calculation using Moran’s i for all neighbors (outlined in blue) of the spot outlined in red. The red spot’s score is multiplied with each blue spot’s score individually, and the results are summed and normalized by the number of pairs. The pattern on the left results in a score close to zero, while the pattern on the right results in a score close to one. This indicates that the pattern on the right is more likely to have spots with similar scores grouped together. For the full metric, this calculation is performed over all neighboring pairs (rather than only for the neighbors of one spot). C) To calculate p values, permutations are performed by sampling the scores of each neighboring pair from the scores of that pair in a random gene.</p></caption>
+<graphic xlink:href="532412v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In this work we apply the SpliZ (<xref ref-type="bibr" rid="c20">Olivieri et al., 2022</xref>) and ReadZS (<xref ref-type="bibr" rid="c17">Meyer et al., 2022</xref>) methods, developed to analyze alternative splicing and 3’ UTR usage, in scRNA-seq data, to study spatial regulation of RNA processing directly from ST data for the first time. Because both droplet-based scRNA-seq and ST technologies suffer from similar challenges due to sparsity and 3’ bias, these methods are directly applicable to ST data. We use Moran’s I measure of spatial autocorrelation with a carefully constructed null to identify genes with spatially regulated RNA processing in the mouse brain and kidney.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>We applied the SpliZ and ReadZS, recently-developed methods to identify splicing differences and UTR length differences in single-cell data respectively (<xref ref-type="bibr" rid="c17">Meyer et al., 2022</xref>; <xref ref-type="bibr" rid="c20">Olivieri et al., 2022</xref>), to identify spatially-regulated RNA processing changes in the mouse brain and kidney. Intuitively, the ReadZS quantifies the average location of read build-up in discrete genomic windows (5000 bp-length continuous regions of the genome) in each spatial cell, while the SpliZ quantifies the deviation of the ranked length of introns in a given cell from the population average for that gene (lower values indicate shorter introns, higher values indicate longer introns). ST data has similar formatting and biases compared to droplet-based scRNA-seq data, meaning that we can apply the ReadZS and SpliZ to ST data without modification, though neither has been applied to spatial data to this point.</p>
+<p>We applied the SpliZ and ReadZS to Visium data from the sagittal-posterior mouse brain (2 biological replicates), the sagittal-anterior mouse brain (2 biological replicates), and the mouse kidney (1 biological replicate) (Methods). The number of spots covered by the tissue in these datasets ranges from 1,436 to 3,355, and sequencing depth is generally lower than for 10x data, leading to fewer genes and genomic windows with ReadZS and SpliZ scores per spot (Table 1) (<xref ref-type="bibr" rid="c21">Olivieri et al., 2021</xref>).</p>
+<p>Significantly spatially regulated RNA processing can be quantified using Moran’s I measure of spatial autocorrelation (<xref ref-type="bibr" rid="c9">Getis, 2007</xref>) on SpliZ and ReadZS scores. Applying the SpliZ and ReadZS to ST data results in a single ReadZS score per genomic window per spot, and a single SpliZ score per gene per spot (Methods). For each gene, Moran’s I quantifies the average similarity between the value of each neighboring pair of spots (Methods). A negative value implies neighboring pairs are more likely to have different scores and a positive value implies neighboring pairs are more likely to have similar scores. This paper focuses on genes with high Moran’s I values (<xref rid="fig1" ref-type="fig">Figure 1B</xref>). Significance values were calculated through permutation testing, with modifications to avoid high type I error rates (<xref rid="fig1" ref-type="fig">Figure 1C</xref>, Methods, <xref ref-type="bibr" rid="c8">Chung &amp; Romano, 2013</xref>). Genes with significant Moran’s I scores (p value &lt; 0.05 by permutation testing, Methods) in both biological replicates have highly correlated Moran’s I scores for the SpliZ (Spearman correlation 0.936-0.943) and the ReadZS (Spearman correlation 0.765-0.885), indicating that this metric is robust and replicable (<xref ref-type="fig" rid="figS1">Supp. Figure 1</xref>, Methods).</p>
+<p>Despite the 3’ bias and sparsity of ST data, applying Moran’s I to sections of the mouse brain revealed that splicing in 0.8-2.2% of detected genes (8-17 genes) and RNA processing in 1.1-5.5% of detected genomic windows (57-161 windows) are significantly spatially regulated (Table 2). Although this is lower than the 13-22% of detected genes for which the gene expression was spatially regulated, it still shows that spatial regulation of RNA processing can be analyzed in ST data. In each tissue section the SpliZ and ReadZS identified genes for which RNA processing was significantly spatially regulated, but gene expression was not (<xref rid="fig2" ref-type="fig">Figure 2</xref>). Note that fewer reads are used to compute the SpliZ and ReadZS compared to gene expression, which could account for some of this difference.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p>A) For each mouse dataset, Moran’s I for the SpliZ is included on the x axis and Moran’s I for gene expression is included on the y axis. Points with Moran’s I for the SpliZ &gt; 0.2 are labeled. In several genes (marked in blue), Moran’s I for the SpliZ is larger than for gene expression, indicating that the spatial regulation of splicing is more pronounced than the spatial regulation of gene expression. B) Same as A, except Moran’s I for the ReadZS is included on the x axis. C) These plots show only the points from B) corresponding to genomic windows that are significant by the ReadZS but not gene expression. Points for which Moran’s I for ReadZS &gt; 0.15 are labeled.</p></caption>
+<graphic xlink:href="532412v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The genes <italic>Myl6, Rps24</italic>, and <italic>Gng13</italic> consistently had the highest Moran’s I scores for the SpliZ in both the sagittal-anterior and sagittal-posterior mouse brain (<xref rid="fig2" ref-type="fig">Figure 2A</xref>, Table 3). <italic>Myl6</italic> was the only gene that consistently had a higher splicing Moran’s I than gene expression Moran’s I. <italic>Myl6</italic> is a myosin light chain gene that has a known exon skipping event which is cell-type-specifically regulated in human, mouse, and mouse lemur (<xref ref-type="bibr" rid="c21">Olivieri et al., 2021</xref>), and was previously reported to be spatially localized in the mouse brain (<xref ref-type="bibr" rid="c12">Lebrigand et al., 2020</xref>). The exon-included isoform is most highly expressed in the brainstem and cerebellum, while the exon-excluded isoform is most highly expressed in the cerebrum. Gene expression is more uniform across the brain (<xref rid="fig3" ref-type="fig">Figure 3A</xref>).</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Splicing spatial regulation plots.</title>
+<p>The “histology” column contains histology images of the mouse sections, with anatomy annotated. In the “gene expression” column, each spot is colored according to its quartiled gene expression value. Dark blue corresponds to low gene expression, and yellow corresponds to high gene expression. In the “SpliZ” column each spot is colored by its quartiled SpliZ value. Box plots showing the splicing across each quartile are in the right-most column. For a single splice site (marked with a blue vertical line in the gene annotation), each Visium spot has some fractional usage of the corresponding splice sites (marked by red vertical lines in the gene annotation). Each box plot is created based on these fractions for the Visium spots in the given quartile. The whiskers on the box plots extend to the furthest point 1.5 times the interquartile range in either direction. All other points are marked as outliers. A) Splicing of <italic>Myl6</italic> is spatially regulated in the sagittal-posterior mouse brain and the mouse kidney. B) Splicing of <italic>Rps24</italic> is spatially regulated in the sagittal-posterior mouse brain and the mouse kidney. C) Splicing of <italic>Gng13</italic> is spatially regulated in the sagittal-anterior and sagittal-posterior mouse brain.</p></caption>
+<graphic xlink:href="532412v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The ribosomal protein gene <italic>Rps24</italic> was in the top three genes most significantly spatially regulated by Moran’s I for the SpliZ in all tissue sections (<xref rid="fig2" ref-type="fig">Figure 2A</xref>). Cell-type-specific splicing of <italic>Rps24</italic> is known to be ubiquitous in human, mouse and mouse lemur, including in the brain (<xref ref-type="bibr" rid="c21">Olivieri et al., 2021</xref>; <xref ref-type="bibr" rid="c24">Song et al., 2017</xref>). However, the spatial localization of <italic>Rps24</italic> splicing has not yet been shown. We observe higher levels of exon inclusion in the cerebrum of the mouse brain and the cortex of the kidney, compared to the rest of the tissues (<xref rid="fig3" ref-type="fig">Figure 3B</xref>).</p>
+<p>The olfactory gene <italic>Gng13</italic> had one of the top-three highest Moran’s I for the SpliZ in both the sagittal-anterior and sagittal-posterior mouse brain (<xref rid="fig2" ref-type="fig">Figure 2A</xref>). <italic>Gng13</italic> is known to be highly expressed in the mouse cerebellum and outer layer of the olfactory bulb (<xref ref-type="bibr" rid="c22">Sanfilippo et al., 2021</xref>), but differential isoform expression has not previously been reported. We find that two different isoforms that differ by their 5’ end are expressed in the mouse brain, with the longer 5’ end mostly expressed in the tip of the cerebrum and the cerebellum, while the shorter 5’ end is mostly expressed in the rest of the brain (<xref rid="fig3" ref-type="fig">Figure 3C</xref>). In this case, lower levels of <italic>Gng13</italic> expression correlate with expression of the shorter isoform.</p>
+<p>Two of the top three genomic windows with significant Moran’s I values for the ReadZS in the mouse brain were calcium-related genes with unannotated 3’ UTRs (Tables 3-4). The genomic window corresponding to the 3’ UTR of <italic>Slc8a1</italic> was within the top 3 most significant in the anterior brain, and had a larger Moran’s I value for ReadZS than gene expression in the sagittal-posterior mouse brain (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). <italic>Slc8a1</italic> is a transmembrane protein that mediates the exchange of calcium and sodium ions. The mouse cerebrum contains mostly transcripts with an unannotated shorter 3’ UTR, while the cerebellum and brainstem mainly contain the annotated UTR (<xref rid="fig4" ref-type="fig">Figure 4A</xref>). Of interest, in some of these areas we see a third unannotated UTR that stretches beyond the annotated UTR (again spatially regulated, <xref rid="fig4" ref-type="fig">Figure 4A</xref>). Additionally, the calcium-channel-enabling gene <italic>Gpm6a</italic> was one of the top-two highest Moran’s I for the ReadZS in the mouse brain (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). Gpm6a is a transmembrane protein present on neurons. It has been observed that overexpression of <italic>Gpm6a</italic> results in a Ca<sup>2+</sup> influx, while <italic>Gpm6a</italic> inhibition leads to a suppression of Ca<sup>2+</sup> influx and neuron differentiation (<xref ref-type="bibr" rid="c18">Michibata et al., 2008</xref>). In human hepatocellular carcinoma <italic>GPM6A</italic> has been shown to be regulated through binding of the miR-96-5p microRNA to the 3’ UTR of the gene, with production levels significantly decreasing with binding (<xref ref-type="bibr" rid="c13">Li et al., 2022</xref>). This indicates that differential UTR expression could result in fewer binding sites and thus affect <italic>Gpm6a</italic> production levels. The unannotated 3’ UTR is expressed more highly in the cerebrum of the mouse brain, while the annotated 3’ UTR is prevalent in the cerebellum (<xref rid="fig4" ref-type="fig">Figure 4B</xref>). Notably, high expression levels of <italic>Gpm6a</italic> are highly correlated with areas that include the shorter UTR, supporting the hypothesis that the shorter UTR doesn’t include the miR-96-5p binding site.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>3’ UTR usage spatial regulation plots.</title>
+<p>The “histology” column contains histology images of the tissue sections, with anatomy annotated where possible. In the “gene expression” column, each spot is colored according to its quartiled gene expression value. Dark blue corresponds to low gene expression, and yellow corresponds to high gene expression. In the “ReadZS” column each spot is colored by its quartiled ReadZS value. Density plots to the right show the read density for the given genomic range, separated by ReadZS quantile. Color bars next to each peak plot indicate which quartile the distribution corresponds to. A) Unannotated 3’ UTRs of <italic>Slc8a1</italic> are spatially regulated in the sagittal-anterior and sagittal-posterior mouse brain. Several reads extend past the annotated 3’ end of the transcript. B) Unannotated 3’ UTRs of <italic>Gpm61</italic> are spatially regulated in the sagittal-anterior and sagittal-posterior mouse brain. C) Subtle differentiations in the 3’ UTR location of <italic>Gpx3</italic> are spatially regulated in the mouse kidney. D) Intron retention of <italic>S100A9</italic> is spatially regulated in human tumor brain metastases.</p></caption>
+<graphic xlink:href="532412v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p><italic>Gpx3</italic> has the second-highest Moran’s I value in the mouse kidney for ReadZS (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). Gpx3 is a selenoprotein secreted primarily by kidney proximal convoluted tubule cells. Transcripts at the interface of the cortex and the medulla have shorter UTRs compared to those in the cortex or the medulla. Only one 3’ UTR is annotated for <italic>Gpx3</italic>, but the 3’ UTR has been implicated in the rate of translation of <italic>Gpx3</italic> when selenium levels are low (<xref ref-type="bibr" rid="c4">BERMANO et al., 1996</xref>), and its 3’ UTR has been shown to confer stability (<xref ref-type="bibr" rid="c31">Wingler et al., 2001</xref>).</p>
+<p>The RNA processing of housekeeping genes <italic>Rps8</italic> and <italic>Actb</italic> is also spatially regulated in the mouse brain. The ribosomal protein <italic>Rps8</italic> had the 6th-most-significant ReadZS spatial score in the sagittal posterior mouse brain. Although <italic>Rps8</italic> is not known to be differentially spliced, it has been shown that a diversity of ribosomal proteins helps create heterogenous selectivity of ribosomes (<xref ref-type="bibr" rid="c23">Shi et al., 2017</xref>). The distribution of reads among the exons of <italic>Rps8</italic> varies with spatial location (<xref ref-type="fig" rid="figS3">Supp. Figure 3</xref>), which could indicate different <italic>Rps8</italic> isoforms present. The actin gene <italic>Actb</italic> had the 8th-most-significant ReadZS Moran’s I score for the sagittal posterior mouse brain. Although Actin is considered a housekeeping gene, it is known to have an isoform with a longer UTR that confers higher translational efficiency of the transcript (<xref ref-type="bibr" rid="c2">Andreassi &amp; Riccio, 2009</xref>; <xref ref-type="bibr" rid="c10">Ghosh et al., 2008</xref>). Our spatial analysis specifies the regions of the mouse brain and kidney that preferentially express the longer 3’ UTR, allowing functional understanding of which subtissues prioritize this transcript variant of <italic>Actb</italic> (<xref ref-type="fig" rid="figS4">Supp. Figure 4</xref>).</p>
+<p>To show that we could identify spatial patterns in tissues without <italic>a priori</italic> anatomy annotations, we used this same methodology to identify spatial patterns in human tumor data (<xref ref-type="bibr" rid="c26">Sudmeier et al., 2021</xref>). We identified the calcium-binding protein <italic>S100A9</italic> as the 14th-most-significant ReadZS spatial pattern by Moran’s I in a brain metastasis from breast cancer carcinoma. The relative abundance of transcripts with a retained intron in <italic>S100A9</italic> varies spatially in both human lung adenocarcinoma and human breast carcinoma metastases (<xref rid="fig4" ref-type="fig">Figure 4D</xref>). <italic>S100A9</italic> is another calcium binding protein that is involved in the development of metastatic disease, though intron retention in this gene has not been previously described (<xref ref-type="bibr" rid="c14">Markowitz &amp; Carson III, 2013</xref>). In this case the ReadZS identified an increase in intronic expression in some sections of the tumor sample. This serves as a taste of the rich discoveries that could be made by applying this methodology to unannotated tissue samples.</p>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In addition to revealing previously unknown biology, this work serves as a proof-of-concept for analysis beyond differential gene expression localization from ST data. Future work exploring alternative methods of identifying spatially significant RNA processing patterns could likely identify more intricate spatial organization (for example, a method that would give a higher score to the SpliZ vs gene expression for <italic>Gpx3</italic>). Spatial analysis may be particularly revealing for the study of alternative splicing and alternate 3’ UTR usage due to the incomplete characterization of RNA isoforms: understanding where an isoform is expressed could inform hypotheses of isoform function. Because the 3’ UTR is known to contain motifs used to localize transcripts intracellularly, these methods will become all the more impactful when subcellular spatial sequencing data is available. Spatial analysis may be particularly fruitful when applied to tissue slices such as those from understudied organisms or cancerous tumors, because these datasets do not have previously-known anatomy. Models incorporating gene expression, splicing, and RNA processing information from multiple genes could help characterize these tissues in an annotation-free manner. Overall, this work represents a first step into the field of RNA processing analysis directly from ST data.</p>
+</sec>
+</body>
+<back>
+<sec id="s4">
+<title>Figure captions</title>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Supplemental Figure 1.</label>
+<caption><p>Moran’s I of biological replicates are highly correlated for gene expression, SpliZ, and ReadZS for those genes/genomic windows for which Moran’s I is significant in both replicates.</p></caption>
+<graphic xlink:href="532412v1_figS1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS2" position="float" fig-type="figure">
+<label>Supplemental Figure 2.</label>
+<caption><title>Biological replicates of <xref rid="fig2" ref-type="fig">Figure 2</xref>.</title>
+<p>A) Plots of SpliZ vs gene expression for sagittal-anterior mouse brain section 2 and sagittal-posterior mouse brain section 2. B) Plots of ReadZS vs gene expression for sagittal-anterior mouse brain section 2 and sagittal-posterior mouse brain section 2. See <xref rid="fig2" ref-type="fig">Figure 2</xref> for a full description.</p></caption>
+<graphic xlink:href="532412v1_figS2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS3" position="float" fig-type="figure">
+<label>Supplemental Figure 3.</label>
+<caption><p>Exon expression of <italic>Rps8</italic> is spatially regulated in all four mouse brain sections and the mouse kidney. See <xref rid="fig4" ref-type="fig">Figure 4</xref> for a full description.</p></caption>
+<graphic xlink:href="532412v1_figS3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS4" position="float" fig-type="figure">
+<label>Supplemental Figure 4.</label>
+<caption><p>The 3’ UTR expression of <italic>Actb</italic> is spatially regulated in all four mouse brain sections and the mouse kidney. See <xref rid="fig4" ref-type="fig">Figure 4</xref> for a full description.</p></caption>
+<graphic xlink:href="532412v1_figS4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s5">
+<title>Table captions</title>
+<p>All tables available here: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.6084/m9.figshare.22144055.v1">https://doi.org/10.6084/m9.figshare.22144055.v1</ext-link>.</p>
+<p><italic>Table 1: Dataset summary</italic>. Columns are: <monospace>dataname</monospace> (name of dataset), <monospace>num_spots</monospace> (the number of Visium spots with tissue information), <monospace>med_reads_per_spot</monospace> (median number of reads per spot), <monospace>SpliZ_med_per_spot</monospace> (median number of genes with SpliZ values per spot), <monospace>ReadZS_med_per_spot</monospace> (median number of 5000-bp windows with ReadZS values per spot), <monospace>ge_med_per_spot</monospace> (median number of genes with nonnegative gene expression per spot), and <monospace>ReadZS_ge_med_per_spot</monospace> (median number of 5000-bp windows with nonnegative gene expression per spot)</p>
+<p><italic>Table 2: Summary of discoveries</italic>. Columns are: <monospace>dataname</monospace> (name of dataset), <monospace>score</monospace> (either <monospace>ReadZS_norm</monospace>, <monospace>SpliZ_norm</monospace>, <monospace>ge_norm</monospace>, which is gene expression, or <monospace>ReadZS_ge_norm</monospace>, which is 5000-bp-window expression), <monospace>num_genes</monospace> (the number of genes tested, or windows in the case of ReadZS_norm or ReadZS_ge_norm), <monospace>num_sig</monospace> (the number with significant spatial patterns by Moran’s I), <monospace>top</monospace> (the top 10 genes/windows found to be significant in the dataset for the given score), and <monospace>frac_sig</monospace> (the fraction of significant genes or windows).</p>
+<p><italic>Table 3: Spatial score (Moran’s I) for each gene/window in each dataset</italic>. A) Scores for the SpliZ. B) Scores for the ReadZS. C) Scores for gene expression. D) Scores for gene expression by genomic window. Columns are: <monospace>gene</monospace> (gene name), <monospace>window</monospace> (genomic window identifier; use Table 4 to decode), <monospace>score_cont</monospace> (Moran’s I score), <monospace>num_pairs</monospace> (number of neighboring pairs with non-NA values for this gene/window in this dataset), <monospace>perm_pvals_emp_adj</monospace> (empirical permutation p value, adjusted by Benjamini Hochberg correction), <monospace>dataname</monospace> (name of the dataset).</p>
+<p><italic>Table 4: Mapping of genomic windows to gene names</italic>. A) Mapping for mouse data. B) Mapping for human data. Columns are: <monospace>chr</monospace> (chromosome), <monospace>start</monospace> (beginning coordinate of the window), <monospace>end</monospace> (ending coordinate of the window), <monospace>window</monospace> (the name assigned to the genomic window), <monospace>strand</monospace> (the genomic strand), <monospace>gene</monospace> (the gene name(s) assigned to this window and strand).</p>
+</sec>
+<sec id="s6">
+<title>Methods</title>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>We thank the Salzman Lab for useful discussion. We thank Serena Y. Tan and Inma Cobos for helpful discussions surrounding the annotations of mouse and kidney histology images. JO is supported by the National Science Foundation Graduate Research Fellowship under Grant No. DGE-1656518 and a Stanford Graduate Fellowship. JS is supported by the Stanford University Discovery Innovation Award, National Institute of General Medical Sciences Grant R01 GM116847, and NSF Faculty Early Career Development Program Award MCB1552196. None of these funding sources were involved in study design, data collection and interpretation, or the decision to submit the work for publication.</p>
+</ack>
+<sec id="s7">
+<title>Data availability</title>
+<p>BAM, gene expression, and spatial data was downloaded from the 10x genomics website for each dataset. This includes two sections of the sagittal anterior mouse brain (V1_Mouse_Brain_Sagittal_Anterior (sagittal-anterior mouse brain) and V1_Mouse_Brain_Sagittal_Anterior_Section_2 (sagittal-anterior mouse brain (Section 2))), two sections of the sagittal posterior mouse brain (V1_Mouse_Brain_Sagittal_Posterior (sagittal-posterior mouse brain) and V1_Mouse_Brain_Sagittal_Posterior_Section_2 (sagittal-posterior mouse brain (Section 2))), and one section of the mouse kidney (V1_Mouse_Kidney (mouse kidney)). A bash script to download all of the mouse data is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/bash_scripts/download_mouse_data.sh">https://github.com/juliaolivieri/visium_analysis/blob/main/bash_scripts/download_mouse_data.sh</ext-link> Human tumor data was downloaded from (<xref ref-type="bibr" rid="c26">Sudmeier et al., 2021</xref>) from GEO accession GSE179373. Data from p20218-s002_L2 (patient 27, lung adenocarcinoma) and p20218-s001_L1 (patient 26, breast carcinoma) was used in this study.</p>
+</sec>
+<sec id="s8">
+<title>Code availability</title>
+<p>All custom code written for this paper is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis">https://github.com/juliaolivieri/visium_analysis</ext-link>.</p>
+<sec id="s8a">
+<title>Running Spaceranger</title>
+<p>BAMs were not included for the human tumor data, so Space Ranger v. 1.3.1 was used to create the BAMs. The human reference was downloaded using this command <monospace>curl -O</monospace> <ext-link ext-link-type="uri" xlink:href="https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-GRCh38-2020-A.tar.gz">https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-GRCh38-2020-A.tar.gz</ext-link>. Space Ranger was run with default parameters. An example command is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/scripts/submission_scripts/run_spaceranger.sh">https://github.com/juliaolivieri/visium_analysis/blob/main/scripts/submission_scripts/run_spaceranger.sh</ext-link>.</p>
+</sec>
+<sec id="s8b">
+<title>Running the SpliZ</title>
+<p>The SpliZ pipeline (<ext-link ext-link-type="uri" xlink:href="https://github.com/salzman-lab/SpliZ">https://github.com/salzman-lab/SpliZ</ext-link>) was run separately on each Visium slide with <monospace>bounds = 0</monospace> (requiring at least one read per gene per spot for the SpliZ score to be calculated), <monospace>grouping_level_1 = “dummy”</monospace>, and <monospace>grouping_level_2 = “pixquant</monospace>” (so differential splicing is determined based on quantiled pixel value of the image, though these differential splicing calls are not used), and otherwise default arguments (<xref ref-type="bibr" rid="c20">Olivieri et al., 2022</xref>). This treats each Visium spot as a “separate cell” and otherwise follows the logic of the original SpliZ paper (<xref ref-type="bibr" rid="c20">Olivieri et al., 2022</xref>). An example config file is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/visium_spliz.config">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/visium_spliz.config</ext-link>, an example sample sheet is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/samplesheet_spliz.csv">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/samplesheet_spliz.csv</ext-link>, and an example bash script is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/run_spliz.sh">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/run_spliz.sh</ext-link>.</p>
+</sec>
+<sec id="s8c">
+<title>Running the ReadZS</title>
+<p>The ReadZS pipeline (<ext-link ext-link-type="uri" xlink:href="https://github.com/salzman-lab/ReadZS">https://github.com/salzman-lab/ReadZS</ext-link>) was run separately on each dataset with <monospace>ontologyCols = “pixquant”</monospace> (so differential RNA processing is determined based on quantiled pixel value of the image, though these differential RNA processing calls are not used), and otherwise default arguments (<xref ref-type="bibr" rid="c17">Meyer et al., 2022</xref>). This treats each Visium spot as a “separate cell” and otherwise follows the logic of the original ReadZS paper (<xref ref-type="bibr" rid="c17">Meyer et al., 2022</xref>). An example config file is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/visium_readzs.config">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/visium_readzs.config</ext-link>, an example sample sheet is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/samplesheet_readzs.csv">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/samplesheet_readzs.csv</ext-link>, and an example bash script is available here: <ext-link ext-link-type="uri" xlink:href="https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/run_readzs.sh">https://github.com/juliaolivieri/visium_analysis/blob/main/nextflow_inputs/run_readzs.sh</ext-link>.</p>
+</sec>
+<sec id="s8d">
+<title>Normalization of scores</title>
+<p>We can create this “normalized” version of the SpliZ, ReadZS, or gene expression scores by doing the following for each gene/window:</p>
+<list list-type="order">
+<list-item><p>Rank all values from smallest to largest (ties are broken randomly, so the same value can get multiple ranks)</p></list-item>
+<list-item><p>Assign each rank to a uniform value between 0 and 1 (the value will be r/(R + 1) where <italic>r</italic> is the rank in question and <italic>R</italic> is the max rank of the dataset)</p></list-item>
+<list-item><p>Use the reverse normal cdf to map each of these values to values from the normal distribution.</p></list-item>
+</list>
+<p>These “normalized” scores are used for analysis throughout the paper.</p>
+</sec>
+<sec id="s8e">
+<title>Moran’s I value implementation</title>
+<p>Moran’s I was calculated independently for each gene and each score as follows. Define a graph <italic>G</italic> for a given gene and score as follows: the vertices are spots with non-NA values for this gene/genomic window and score. There is an edge between two vertices if the corresponding pair of spots are next to each other (each internal spot is surrounded by six other spots). Let <italic>si</italic> be the score (either SpliZ or ReadZS) of spot <italic>i</italic>. Then Moran’s I is defined by:
+<disp-formula id="ueqn1">
+<alternatives><graphic xlink:href="532412v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+</disp-formula>
+</p>
+<p>Because the SpliZ and ReadZS are zero-centered, under the null hypothesis that the score is not influenced by spatial location, the expected value of Moran’s I is 0. This value can also be calculated for gene expression values by performing the normalization procedure on the values first. The larger <italic>M</italic> is, the more spatial auto-correlation. Note that in this version we are not including influences of non-neighboring spots in the calculation.</p>
+</sec>
+<sec id="s8f">
+<title>Permutations for Moran’s I</title>
+<p>Permutation testing was used to assign p values to individual genes and scores. Note that “naive” permutation testing (permuting a single gene’s values and calculating <italic>M</italic> separately each time) is inappropriate, and causes the identification of many false positives. This is because we expect there to be some similarity between neighboring spots based on the experimental design, even under the null hypothesis: transcripts from the same cell can potentially be sequenced from two neighboring spots. We were instead interested in situations when this correlation between neighbors was unusually large.</p>
+<p>We instead used the null where, for one permutation for a given gene, for each neighboring pair of spots with non-NA values for that gene, we randomly chose a gene for which both of those spots were non-null, and multiplied their scores.</p>
+<p>We performed 1000 permutations with Benjamini Hochberg correction for each experiment. For analysis of the SpliZ, only genes with at least 100 non-NA values were used. For analysis of the ReadZS, only genomic windows with at least 1000 non-NA values were used. We used a threshold of 0.05 on the corrected p values to determine significance.</p>
+</sec>
+<sec id="s8g">
+<title>Correlation between biological replicates</title>
+<p>Correlation between biological replicates was assessed by comparing MBA1 to MBA2, and MBP1 to PMB2. For each pair, both discoveries were subset to those with adjusted p values less than 0.05. A spearman correlation was performed between the Moran’s I scores of the resulting genes/genomic windows.</p>
+</sec>
+<sec id="s8h">
+<title>Analyzing gene expression to compare to the SpliZ</title>
+<p>Gene expression values to compare with the SpliZ were extracted from the filtered gene expression matrices provided by Space Ranger. Gene expression scores were normalized in the same way as SpliZ and ReadZS scores, and spatial regulation was determined using the same method as well.</p>
+</sec>
+<sec id="s8i">
+<title>Analyzing gene expression to compare to the ReadZS</title>
+<p>Gene expression of genomic windows for comparison with the ReadZS was analyzed from the “counts” output of the ReadZS pipeline. Gene expression scores were normalized in the same way as SpliZ and ReadZS scores, and spatial regulation was determined using the same method as well.</p>
+</sec>
+<sec id="s8j">
+<title>Correlation between gene expression and SpliZ/ReadZS on an individual gene/window level</title>
+<p>For each given gene/window, a Spearman correlation was performed on the normalized SpliZ/ReadZS scores and the normalized gene expression scores for each spot.</p>
+</sec>
+<sec id="s8k">
+<title>Annotation of mouse brain sections</title>
+<p>Mouse brain sections were annotated through reference to the Allen Mouse Brain reference atlas (<xref ref-type="bibr" rid="c27">Sunkin et al., 2012</xref>, <ext-link ext-link-type="uri" xlink:href="http://atlas.brain-map.org/atlas?atlas=2&amp;plate=100883867#atlas=2&amp;plate=100884125&amp;resolution=14.44&amp;x=7768.016736260776&amp;y=4023.9998653017246&amp;zoom=-3&amp;structure=688&amp;z=6">http://atlas.brain-map.org/atlas?atlas=2&amp;plate=100883867#atlas=2&amp;plate=100884125&amp;resolution=14.44&amp;x=7768.016736260776&amp;y=4023.9998653017246&amp;zoom=-3&amp;structure=688&amp;z=6</ext-link>). The mouse kidney was annotated with reference to the 3D virtual histology of murine kidneys (<xref ref-type="bibr" rid="c19">Missbach-Guentner et al., 2018</xref>).</p>
+</sec>
+</sec>
+<ref-list>
+<ref id="c1"><mixed-citation publication-type="journal"><string-name><surname>Anczuków</surname>, <given-names>O.</given-names></string-name>, &amp; <string-name><surname>Krainer</surname>, <given-names>A. R.</given-names></string-name> (<year>2016</year>). <article-title>Splicing-factor alterations in cancers</article-title>. <source>Rna</source>, <volume>22</volume>(<issue>9</issue>), <fpage>1285</fpage>–<lpage>1301</lpage>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><string-name><surname>Andreassi</surname>, <given-names>C.</given-names></string-name>, &amp; <string-name><surname>Riccio</surname>, <given-names>A.</given-names></string-name> (<year>2009</year>). <article-title>To localize or not to localize: MRNA fate is in 3′ UTR ends</article-title>. <source>Trends in Cell Biology</source>, <volume>19</volume>(<issue>9</issue>), <fpage>465</fpage>–<lpage>474</lpage>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><string-name><surname>Arzalluz-Luque</surname>, <given-names>Á.</given-names></string-name>, &amp; <string-name><surname>Conesa</surname>, <given-names>A.</given-names></string-name> (<year>2018</year>). <article-title>Single-cell RNAseq for the study of isoforms—How is that possible?</article-title> <source>Genome Biology</source>, <volume>19</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>19</lpage>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><string-name><surname>Bermano</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Arthur</surname>, <given-names>J. R.</given-names></string-name>, &amp; <string-name><surname>Hesketh</surname>, <given-names>J. E.</given-names></string-name> (<year>1996</year>). <article-title>Role of the 3′ untranslated region in the regulation of cytosolic glutathione peroxidase and phospholipid-hydroperoxide glutathione peroxidase gene expression by selenium supply</article-title>. <source>Biochemical Journal</source>, <volume>320</volume>(<issue>3</issue>), <fpage>891</fpage>–<lpage>895</lpage>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="other"><string-name><surname>Bierman</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Salzman</surname>, <given-names>J.</given-names></string-name> (<year>2022</year>). <article-title>Statistical analysis supports pervasive RNA subcellular localization and alternative 3’UTR regulation</article-title>. <source>BioRxiv</source>, <fpage>2022</fpage>–<lpage>10</lpage>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><string-name><surname>Booeshaghi</surname>, <given-names>A. S.</given-names></string-name>, <string-name><surname>Yao</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>van Velthoven</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Smith</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Tasic</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Zeng</surname>, <given-names>H.</given-names></string-name>, &amp; <string-name><surname>Pachter</surname>, <given-names>L.</given-names></string-name> (<year>2021</year>). <article-title>Isoform cell-type specificity in the mouse primary motor cortex</article-title>. <source>Nature</source>, <volume>598</volume>(<issue>7879</issue>), <fpage>195</fpage>–<lpage>199</lpage>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><string-name><surname>Cassella</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><surname>Ephrussi</surname>, <given-names>A.</given-names></string-name> (<year>2022</year>). <article-title>Subcellular spatial transcriptomics identifies three mechanistically different classes of localizing RNAs</article-title>. <source>Nature Communications</source>, <volume>13</volume>(<issue>1</issue>), <fpage>6355</fpage>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="other"><string-name><surname>Chung</surname>, <given-names>E.</given-names></string-name>, &amp; <string-name><surname>Romano</surname>, <given-names>J. P.</given-names></string-name> (<year>2013</year>). <source>Exact and asymptotically robust permutation tests</source>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><string-name><surname>Getis</surname>, <given-names>A.</given-names></string-name> (<year>2007</year>). <article-title>Reflections on spatial autocorrelation</article-title>. <source>Regional Science and Urban Economics</source>, <volume>37</volume>(<issue>4</issue>), <fpage>491</fpage>–<lpage>496</lpage>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><string-name><surname>Ghosh</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Soni</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Scaria</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Halimani</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Bhattacharjee</surname>, <given-names>C.</given-names></string-name>, &amp; <string-name><surname>Pillai</surname>, <given-names>B.</given-names></string-name> (<year>2008</year>). <article-title>MicroRNA-mediated up-regulation of an alternatively polyadenylated variant of the mouse cytoplasmic β-actin gene</article-title>. <source>Nucleic Acids Research</source>, <volume>36</volume>(<issue>19</issue>), <fpage>6318</fpage>–<lpage>6332</lpage>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><string-name><surname>Joglekar</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Prjibelski</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Mahfouz</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Collier</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Lin</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Schlusche</surname>, <given-names>A. K.</given-names></string-name>, <string-name><surname>Marrocco</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Williams</surname>, <given-names>S. R.</given-names></string-name>, <string-name><surname>Haase</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Hayes</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Chew</surname>, <given-names>J. G.</given-names></string-name>, <string-name><surname>Weisenfeld</surname>, <given-names>N. I.</given-names></string-name>, <string-name><surname>Wong</surname>, <given-names>M. Y.</given-names></string-name>, <string-name><surname>Stein</surname>, <given-names>A. N.</given-names></string-name>, <string-name><surname>Hardwick</surname>, <given-names>S. A.</given-names></string-name>, <string-name><surname>Hunt</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Dieterich</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Bent</surname>, <given-names>Z.</given-names></string-name>, … <string-name><surname>Tilgner</surname>, <given-names>H. U.</given-names></string-name> (<year>2021</year>). <article-title>A spatially resolved brain region- and cell type-specific isoform atlas of the postnatal mouse brain</article-title>. <source>Nature Communications</source>, <volume>12</volume>(<issue>1</issue>), <fpage>463</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-020-20343-5</pub-id></mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="web"><string-name><surname>Lebrigand</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Bergenstråhle</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Thrane</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Mollbrink</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Meletis</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Barbry</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Waldmann</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Lundeberg</surname>, <given-names>J.</given-names></string-name> (<year>2020</year>). <article-title>The spatial landscape of gene expression isoforms in tissue sections [Preprint]</article-title>. <source>Genomics</source>. <pub-id pub-id-type="doi">10.1101/2020.08.24.252296</pub-id></mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><string-name><surname>Li</surname>, <given-names>Z.-R.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Zhu</surname>, <given-names>L.-Y.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Zhu</surname>, <given-names>J.-M.</given-names></string-name>, &amp; <string-name><surname>Wu</surname>, <given-names>J.</given-names></string-name> (<year>2022</year>). <article-title>GPM6A expression is suppressed in hepatocellular carcinoma through miRNA-96 production</article-title>. <source>Laboratory Investigation</source>, <volume>102</volume>(<issue>11</issue>), <fpage>1280</fpage>–<lpage>1291</lpage>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><string-name><surname>Markowitz</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Carson III</surname>, <given-names>W.</given-names></string-name> E. (<year>2013</year>). <article-title>Review of S100A9 biology and its role in cancer</article-title>. <source>Biochimica et Biophysica Acta (BBA)-Reviews on Cancer</source>, <volume>1835</volume>(<issue>1</issue>), <fpage>100</fpage>–<lpage>109</lpage>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><string-name><surname>Marx</surname>, <given-names>V.</given-names></string-name> (<year>2021</year>). <article-title>Method of the Year: Spatially resolved transcriptomics</article-title>. <source>Nature Methods</source>, <volume>18</volume>(<issue>1</issue>), <fpage>9</fpage>–<lpage>14</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><string-name><surname>Mendell</surname>, <given-names>J. R.</given-names></string-name>, <string-name><surname>Al-Zaidy</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Shell</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Arnold</surname>, <given-names>W. D.</given-names></string-name>, <string-name><surname>Rodino-Klapac</surname>, <given-names>L. R.</given-names></string-name>, <string-name><surname>Prior</surname>, <given-names>T. W.</given-names></string-name>, <string-name><surname>Lowes</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Alfano</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Berry</surname>, <given-names>K.</given-names></string-name>, &amp; <string-name><surname>Church</surname>, <given-names>K.</given-names></string-name> (<year>2017</year>). <article-title>Single-dose gene-replacement therapy for spinal muscular atrophy</article-title>. <source>New England Journal of Medicine</source>, <volume>377</volume>(<issue>18</issue>), <fpage>1713</fpage>–<lpage>1722</lpage>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><string-name><surname>Meyer</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Chaung</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Dehghannasiri</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Salzman</surname>, <given-names>J.</given-names></string-name> (<year>2022</year>). <article-title>ReadZS detects cell type-specific and developmentally regulated RNA processing programs in single-cell RNA-seq</article-title>. <source>Genome Biology</source>, <volume>23</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>28</lpage>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><string-name><surname>Michibata</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Okuno</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Konishi</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Wakimoto</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Kyono</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Aoki</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Kondo</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Takata</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Kitamura</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Taniguchi</surname>, <given-names>T.</given-names></string-name> (<year>2008</year>). <article-title>Inhibition of mouse GPM6A expression leads to decreased differentiation of neurons derived from mouse embryonic stem cells</article-title>. <source>Stem Cells and Development</source>, <volume>17</volume>(<issue>4</issue>), <fpage>641</fpage>–<lpage>652</lpage>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="journal"><string-name><surname>Missbach-Guentner</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Pinkert-Leetsch</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Dullin</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Ufartes</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Hornung</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Tampe</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Zeisberg</surname>, <given-names>M.</given-names></string-name>, &amp; <string-name><surname>Alves</surname>, <given-names>F.</given-names></string-name> (<year>2018</year>). <article-title>3D virtual histology of murine kidneys–high resolution visualization of pathological alterations by micro computed tomography</article-title>. <source>Scientific Reports</source>, <volume>8</volume>(<issue>1</issue>), <fpage>1407</fpage>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><string-name><surname>Olivieri</surname>, <given-names>J. E.</given-names></string-name>, <string-name><surname>Dehghannasiri</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Salzman</surname>, <given-names>J.</given-names></string-name> (<year>2022</year>). <article-title>The SpliZ generalizes ‘percent spliced in’to reveal regulated splicing at single-cell resolution</article-title>. <source>Nature Methods</source>, <volume>19</volume>(<issue>3</issue>), <fpage>307</fpage>–<lpage>310</lpage>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><string-name><surname>Olivieri</surname>, <given-names>J. E.</given-names></string-name>, <string-name><surname>Dehghannasiri</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>P. L.</given-names></string-name>, <string-name><surname>Jang</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>De Morree</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Tan</surname>, <given-names>S. Y.</given-names></string-name>, <string-name><surname>Ming</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Wu</surname>, <given-names>A. R.</given-names></string-name>, <string-name><surname>Quake</surname>, <given-names>S. R.</given-names></string-name>, &amp; <string-name><surname>Krasnow</surname>, <given-names>M. A.</given-names></string-name> (<year>2021</year>). <article-title>RNA splicing programs define tissue compartments and cell types at single-cell resolution</article-title>. <source>Elife</source>, <volume>10</volume>, <fpage>e70692</fpage>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><string-name><surname>Sanfilippo</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Musumeci</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Kazakova</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Mazzone</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Castrogiovanni</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Imbesi</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Di Rosa</surname>, <given-names>M.</given-names></string-name> (<year>2021</year>). <article-title>GNG13 is a potential marker of the state of health of Alzheimer’s disease patients’ cerebellum</article-title>. <source>Journal of Molecular Neuroscience</source>, <volume>71</volume>, <fpage>1046</fpage>–<lpage>1060</lpage>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><string-name><surname>Shi</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Fujii</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Kovary</surname>, <given-names>K. M.</given-names></string-name>, <string-name><surname>Genuth</surname>, <given-names>N. R.</given-names></string-name>, <string-name><surname>Röst</surname>, <given-names>H. L.</given-names></string-name>, <string-name><surname>Teruel</surname>, <given-names>M. N.</given-names></string-name>, &amp; <string-name><surname>Barna</surname>, <given-names>M.</given-names></string-name> (<year>2017</year>). <article-title>Heterogeneous ribosomes preferentially translate distinct subpools of mRNAs genome-wide</article-title>. <source>Molecular Cell</source>, <volume>67</volume>(<issue>1</issue>), <fpage>71</fpage>–<lpage>83</lpage>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><string-name><surname>Song</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Botvinnik</surname>, <given-names>O. B.</given-names></string-name>, <string-name><surname>Lovci</surname>, <given-names>M. T.</given-names></string-name>, <string-name><surname>Kakaradov</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>J. L.</given-names></string-name>, &amp; <string-name><surname>Yeo</surname>, <given-names>G. W.</given-names></string-name> (<year>2017</year>). <article-title>Single-cell alternative splicing analysis with expedition reveals splicing dynamics during neuron differentiation</article-title>. <source>Molecular Cell</source>, <volume>67</volume>(<issue>1</issue>), <fpage>148</fpage>–<lpage>161</lpage>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><string-name><surname>Ståhl</surname>, <given-names>P. L.</given-names></string-name>, <string-name><surname>Salmén</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Vickovic</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Lundmark</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Navarro</surname>, <given-names>J. F.</given-names></string-name>, <string-name><surname>Magnusson</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Giacomello</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Asp</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Westholm</surname>, <given-names>J. O.</given-names></string-name>, &amp; <string-name><surname>Huss</surname>, <given-names>M.</given-names></string-name> (<year>2016</year>). <article-title>Visualization and analysis of gene expression in tissue sections by spatial transcriptomics</article-title>. <source>Science</source>, <volume>353</volume>(<issue>6294</issue>), <fpage>78</fpage>–<lpage>82</lpage>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="other"><string-name><surname>Sudmeier</surname>, <given-names>L. J.</given-names></string-name>, <string-name><surname>Hoang</surname>, <given-names>K. B.</given-names></string-name>, <string-name><surname>Nduom</surname>, <given-names>E. K.</given-names></string-name>, <string-name><surname>Wieland</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Neill</surname>, <given-names>S. G.</given-names></string-name>, <string-name><surname>Schniederjan</surname>, <given-names>M. J.</given-names></string-name>, <string-name><surname>Ramalingam</surname>, <given-names>S. S.</given-names></string-name>, <string-name><surname>Olson</surname>, <given-names>J. J.</given-names></string-name>, <string-name><surname>Ahmed</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Hudson</surname>, <given-names>W. H.</given-names></string-name> (<year>2021</year>). <article-title>The CD8+ T cell landscape of human brain metastases</article-title>. <source>BioRxiv</source>, <fpage>x2021</fpage>–<lpage>08</lpage>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><string-name><surname>Sunkin</surname>, <given-names>S. M.</given-names></string-name>, <string-name><surname>Ng</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Lau</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Dolbeare</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Gilbert</surname>, <given-names>T. L.</given-names></string-name>, <string-name><surname>Thompson</surname>, <given-names>C. L.</given-names></string-name>, <string-name><surname>Hawrylycz</surname>, <given-names>M.</given-names></string-name>, &amp; <string-name><surname>Dang</surname>, <given-names>C.</given-names></string-name> (<year>2012</year>). <article-title>Allen Brain Atlas: An integrated spatio-temporal portal for exploring the central nervous system</article-title>. <source>Nucleic Acids Research</source>, <volume>41</volume>(<issue>D1</issue>), <fpage>D996</fpage>–<lpage>D1008</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><string-name><surname>Tang</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Barbacioru</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Nordman</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Lee</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Bodeau</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Tuch</surname>, <given-names>B. B.</given-names></string-name>, <string-name><surname>Siddiqui</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Lao</surname>, <given-names>K.</given-names></string-name>, &amp; <string-name><surname>Surani</surname>, <given-names>M. A.</given-names></string-name> (<year>2009</year>). <article-title>MRNA-Seq whole-transcriptome analysis of a single cell</article-title>. <source>Nature Methods</source>, <volume>6</volume>(<issue>5</issue>), Article 5. <pub-id pub-id-type="doi">10.1038/nmeth.1315</pub-id></mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><string-name><surname>Wan</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Larson</surname>, <given-names>D. R.</given-names></string-name> (<year>2018</year>). <article-title>Splicing heterogeneity: Separating signal from noise</article-title>. <source>Genome Biology</source>, <volume>19</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>10</lpage>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><string-name><surname>Wang</surname>, <given-names>E. T.</given-names></string-name>, <string-name><surname>Sandberg</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Luo</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Khrebtukova</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Mayr</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Kingsmore</surname>, <given-names>S. F.</given-names></string-name>, <string-name><surname>Schroth</surname>, <given-names>G. P.</given-names></string-name>, &amp; <string-name><surname>Burge</surname>, <given-names>C. B.</given-names></string-name> (<year>2008</year>). <article-title>Alternative isoform regulation in human tissue transcriptomes</article-title>. <source>Nature</source>, <volume>456</volume>(<issue>7221</issue>), <fpage>470</fpage>–<lpage>476</lpage>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><string-name><surname>Wingler</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Müller</surname>, <given-names>C.</given-names></string-name>, &amp; <string-name><surname>Brigelius-Flohé</surname>, <given-names>R.</given-names></string-name> (<year>2001</year>). <article-title>Stability of gastrointestinal glutathione peroxidase mRNA in selenium deficiency depends on its 3’UTR</article-title>. <source>Biofactors</source>, <volume>14</volume>(<issue>1–4</issue>), <fpage>43</fpage>–<lpage>50</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.87211.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Eyras</surname>
+<given-names>Eduardo</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Australian National University</institution>
+</institution-wrap>
+<city>Canberra</city>
+<country>Australia</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study describes spatial RNA processing events by combining methods for single-cell transcriptomics data with spatial transcriptomics data. The evidence supporting the claims of the authors is <bold>solid</bold>, although the analysis could be further strengthened by including a broader range of samples as well as orthogonal validation either by experimental methods or simulated data. The work will be of general interest to researchers in the spatial transcriptomics field as well as researchers investigating alternative pre-mRNA processing across diverse tissues.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.87211.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>In this study, the authors set out to investigate spatial RNA processing events, specifically alternative splicing and 3' UTR usage, in mouse brain and kidney tissues using ReadZS and SpliZ methodologies on spatial transcriptomics data. The research contributes to understanding tissue-specific gene expression regulation from a spatial perspective. The study introduces a novel approach for analyzing spatial transcriptomics data, allowing for the identification of RNA processing and regulation patterns directly from 10X Visium data. The authors present convincing evidence supporting the identification of novel RNA processing patterns using their methodology, which holds significant implications for researchers in the field of spatial transcriptomics and the study of alternative splicing and 3' UTR usage</p>
+<p>The conclusions of the study are mostly well-supported by the data; however, certain aspects could be improved to strengthen the findings.</p>
+<p>1. The conclusions of this study would be strengthened by conducting a more extensive tissue sample analysis and including biological replicates. Additionally, appropriate batch effect corrections should be applied when dealing with biological replicates.</p>
+<p>2. The 3' UTR usage and alternative splicing should be compared among clearly labeled clusters for a more comprehensive analysis.</p>
+<p>3. The authors should clarify their rationale for choosing ReadZS and SpliZ approaches and provide comparisons with other methods to demonstrate the advantages and potential limitations of their chosen methodologies.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.87211.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The authors applied existing ReadZS and the SpliZ methods, previously developed to analyze RNA process in scRNA-seq data, to Visium data to study spatial splicing and RNA processing events in tissues by Moran's I. The authors showed several example genes in mouse brain and kidney, whose processing are spatially regulated, such as Rps24, Myl6, Gng13.</p>
+<p>The paper touches on an important question in RNA biology about how RNA processing is regulated spatially. Both experimental and computational challenges remain to address it. Despite some potentially interesting findings, most claims remain to be validated by orthogonal methods such as RNA FISH and simulations. In addition, the percentage of spatial processing events (splicing in 0.8-2.2% of detected genes, i.e. 8-17 genes and RNA processing in 1.1-5.5% of detected genomic windows, i.e. 57-161 windows) discovered is low. Does it suggest that most of RNA processing events were not spatially regulated across the tissue? Or does it question the assumption of treating spatial transcriptomics data similar to scRNA-seq data? The unique features for ST data, such as mixture of neighboring cells, different capture biases and much smaller number of spots (pseudo cells here), may have significant effects on the power of scRNA-seq based methods, but it is not discussed in the manuscript. The lack of careful evaluation and low discovery rates could limit application of the approach to other tissues and subcellular data.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.87211.1.sa3</article-id>
+<title-group>
+<article-title>Author Response</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Olivieri</surname>
+<given-names>Julia</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0850-5498</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Salzman</surname>
+<given-names>Julia</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7397-4354</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>In this study, the authors set out to investigate spatial RNA processing events, specifically alternative splicing and 3' UTR usage, in mouse brain and kidney tissues using ReadZS and SpliZ methodologies on spatial transcriptomics data. The research contributes to understanding tissue-specific gene expression regulation from a spatial perspective. The study introduces a novel approach for analyzing spatial transcriptomics data, allowing for the identification of RNA processing and regulation patterns directly from 10X Visium data. The authors present convincing evidence supporting the identification of novel RNA processing patterns using their methodology, which holds significant implications for researchers in the field of spatial transcriptomics and the study of alternative splicing and 3' UTR usage.</p>
+</disp-quote>
+<p>Thank you for this thorough overview of our work.</p>
+<disp-quote content-type="editor-comment">
+<p>The conclusions of the study are mostly well-supported by the data; however, certain aspects could be improved to strengthen the findings.</p>
+<p>1. The conclusions of this study would be strengthened by conducting a more extensive tissue sample analysis and including biological replicates. Additionally, appropriate batch effect corrections should be applied when dealing with biological replicates.</p>
+</disp-quote>
+<p>We agree that including biological replicates would strengthen our findings. We will include biological replicates of the mouse brain tissues in the revision.</p>
+<disp-quote content-type="editor-comment">
+<p>1. The 3' UTR usage and alternative splicing should be compared among clearly labeled clusters for a more comprehensive analysis.</p>
+</disp-quote>
+<p>We understand that it can be difficult to see how the SpliZ quantiles map spatially onto the tissue images. For the splicing of Gng13, Myl6, and Rps24, we will include box plots broken down by spatial quadrant in the revision. However, this does result in an oversimplification of the spatial patterns found in the tissue slices, which make the plots less informative than the quantile plots to our view.</p>
+<disp-quote content-type="editor-comment">
+<p>1. The authors should clarify their rationale for choosing ReadZS and SpliZ approaches and provide comparisons with other methods to demonstrate the advantages and potential limitations of their chosen methodologies.</p>
+</disp-quote>
+<p>Thank you for pointing out the lack of sufficient discussion of ReadZS and SpliZ in the manuscript. The ReadZS and SpliZ were chosen for this analysis because both of these methods provide an individual score for each cell-gene pair, which is easily adapted to providing a score for each spot-gene pair. Due to the sparsity and 3’ bias of Visium data, approaches designed to analyze RNA processing in full-length sequencing analysis are not applicable. The SpliZ and ReadZS are two of the limited number of tools available that are designed for the analysis of RNA processing in droplet-based data. Other available tools tend to rely on aggregating data across multiple cells using a method called pseudo-bulking (Li et al., 2021; Patrick et al., 2020). It is not clear how this could be used for spatial transcriptomics data without potentially obscuring subtle spatial patterns in the data. Others are based on PSI measurements, which are vulnerable to artifacts due to sparsity (Buen Abad Najar et al., 2020; Olivieri et al., 2022; Wen et al., 2022). The tradeoff between pseudo-bulking and a single score per spot-gene pair means that the ReadZS and SpliZ do not have the power to detect changes for genes with very low read counts. We will add text in the revision to clarify this point.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>The authors applied existing ReadZS and the SpliZ methods, previously developed to analyze RNA process in scRNA-seq data, to Visium data to study spatial splicing and RNA processing events in tissues by Moran's I. The authors showed several example genes in mouse brain and kidney, whose processing are spatially regulated, such as Rps24, Myl6, Gng13.</p>
+</disp-quote>
+<p>Thank you for this thorough overview of our work.</p>
+<disp-quote content-type="editor-comment">
+<p>The paper touches on an important question in RNA biology about how RNA processing is regulated spatially. Both experimental and computational challenges remain to address it. Despite some potentially interesting findings, most claims remain to be validated by orthogonal methods such as RNA FISH and simulations.</p>
+</disp-quote>
+<p>We appreciate that the reviewer finds the question important, and that the findings are potentially interesting. In the revision we will include biological replicates for our findings in the mouse brain. Unfortunately, experimental validation is outside of our budget for this project. It is unclear what further simulations could validate the biological discoveries in this manuscript: permutations were used to calculate the p value of each discovery, and the false positive and negative rates of the SpliZ have been assessed through simulation (Olivieri et al., 2022).</p>
+<disp-quote content-type="editor-comment">
+<p>In addition, the percentage of spatial processing events (splicing in 0.8-2.2% of detected genes,
+i.e. 8-17 genes and RNA processing in 1.1-5.5% of detected genomic windows, i.e. 57-161 windows) discovered is low. Does it suggest that most of RNA processing events were not spatially regulated across the tissue? Or does it question the assumption of treating spatial transcriptomics data similar to scRNA-seq data?</p>
+</disp-quote>
+<p>We agree that the question of the prevalence of spatial RNA processing regulation is critical. Rather than the two options proposed here, we believe that the sparsity of the data limits our ability to call more of these events. In the revision, we will provide a supplemental figure showing the relationship between read depth and p value for each gene to quantify how the fraction of observed regulation changes with sequencing depth. It is worth noting that as these technologies improve, we expect the sequencing depth of spatial technologies to increase which would likely result in more discoveries.</p>
+<disp-quote content-type="editor-comment">
+<p>The unique features for ST data, such as mixture of neighboring cells, different capture biases and much smaller number of spots (pseudo cells here), may have significant effects on the power of scRNA-seq based methods, but it is not discussed in the manuscript. The lack of careful evaluation and low discovery rates could limit application of the approach to other tissues and subcellular data.</p>
+</disp-quote>
+<p>We appreciate the concern that technical differences between scRNA-seq data and spatial transcriptomics data could affect our results. We agree that this point could be addressed more thoroughly in the text. None of the specificities of spatial transcriptomics data invalidate the assumptions of the SpliZ or ReadZS. The method we use to identify genes with significant spatial regulation of RNA processing was specifically created to be used for Visium data. It takes into account mixture of RNAs in neighboring cells by randomly sampling scores of neighboring cells, rather than randomization of the location of the spots themselves, which does indeed result in a high false positive rate (see “Permutations for Moran’s I” in the Methods). We do note that there is a limit to the power of this kind of analysis based on the number of spots and the read depth, which we will quantify in a plot in the revision.</p>
+</body>
+</sub-article>
+</article>
