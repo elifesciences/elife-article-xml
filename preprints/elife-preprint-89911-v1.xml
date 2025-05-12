@@ -1,0 +1,700 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">89911</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.89911</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.89911.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Determinantal Point Process Attention Over Grid Codes Supports Out of Distribution Generalization</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Mondal</surname>
+<given-names>Shanka Subhra</given-names>
+</name>
+<xref ref-type="aff" rid="a1"/>
+<email>smondal@princeton.edu</email>
+</contrib>
+    <contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Frankland</surname>
+<given-names>Steven</given-names>
+</name>
+<xref ref-type="aff" rid="a2"/>
+<email>s.m.frankland@gmail.com</email>
+</contrib>
+    <contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Webb</surname>
+<given-names>Taylor W.</given-names>
+</name>
+<xref ref-type="aff" rid="a3"/>
+<email>taylor.w.webb@gmail.com</email>
+</contrib>
+    <contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Cohen</surname>
+<given-names>Jonathan D.</given-names>
+</name>
+<xref ref-type="aff" rid="a2"/>
+<email>jdc@princeton.edu</email>
+</contrib>
+<aff id="a1"><institution>Department of Electrical and Computer Engineering, Princeton University</institution></aff>
+<aff id="a2"><institution>Princeton Neuroscience Institute, Princeton University</institution></aff>
+<aff id="a3"><institution>Department of Psychology, University of California</institution>, <addr-line>Los Angeles</addr-line></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Schapiro</surname>
+<given-names>Anna C</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Pennsylvania</institution>
+</institution-wrap>
+<city>Philadelphia</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Behrens</surname>
+<given-names>Timothy E</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<pub-date pub-type="epub">
+<day>28</day>
+<month>05</month>
+<year>2023</year>
+</pub-date>
+<pub-date date-type="original-publication" iso-8601-date="2023-08-23">
+<day>23</day>
+<month>08</month>
+<year>2023</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP89911</elocation-id>
+<history><date date-type="sent-for-review" iso-8601-date="2023-06-17">
+<day>17</day>
+<month>06</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-05-28">
+<day>28</day>
+<month>05</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.48550/arXiv.2305.18417"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Mondal et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Mondal et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-89911-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Deep neural networks have made tremendous gains in emulating human-like intelligence, and have been used increasingly as ways of understanding how the brain may solve the complex computational problems on which this relies. However, these still fall short of, and therefore fail to provide insight into how the brain supports strong forms of generalization of which humans are capable. One such case is out-of-distribution (OOD) generalization— successful performance on test examples that lie outside the distribution of the training set. Here, we identify properties of processing in the brain that may contribute to this ability. We describe a two-part algorithm that draws on specific features of neural computation to achieve OOD generalization, and provide a proof of concept by evaluating performance on two challenging cognitive tasks. First we draw on the fact that the mammalian brain represents metric spaces using grid-like representations (e.g., in entorhinal cortex): abstract representations of relational structure, organized in recurring motifs that cover the representational space. Second, we propose an attentional mechanism that operates over these grid representations using determinantal point process (DPP-A) - a transformation that ensures maximum sparseness in the coverage of that space. We show that a loss function that combines standard task-optimized error with DPP-A can exploit the recurring motifs in grid codes, and can be integrated with common architectures to achieve strong OOD generalization performance on analogy and arithmetic tasks. This provides both an interpretation of how grid codes in the mammalian brain may contribute to generalization performance, and at the same time a potential means for improving such capabilities in artificial neural networks.</p>
+</abstract>
+
+</article-meta>
+</front>
+<body>
+<sec id="s1" sec-type="intro">
+<label>1</label>
+<title>Introduction</title>
+<p>Deep neural networks now meet, or even exceed, human competency in many challenging task domains (<xref ref-type="bibr" rid="c18">He et al., 2016</xref>; <xref ref-type="bibr" rid="c39">Silver et al., 2017</xref>; <xref ref-type="bibr" rid="c48">Wu et al., 2016</xref>; <xref ref-type="bibr" rid="c19">He et al., 2017</xref>). Their success on these tasks, however, is generally limited to the narrow set of conditions under which they were trained, falling short of the capacity for strong forms of generalization that is central to human intelligence (<xref ref-type="bibr" rid="c5">Barrett et al., 2018</xref>; <xref ref-type="bibr" rid="c28">Lake &amp; Baroni, 2018</xref>; <xref ref-type="bibr" rid="c20">Hill et al., 2019</xref>; <xref ref-type="bibr" rid="c45">Webb et al., 2020</xref>), and hence fail to provide insights into how our brain supports them. One such case is out-of-distribution (OOD) generalization where the test data lies outside the distribution of the training data. Here, we consider two challenging cognitive problems that often require a capacity for OOD generalization: a) analogy and b) arithmetic. What enables the human brain to successfully generalize on these tasks, and how might we better realize that ability in deep learning systems?</p>
+<p>To address the problem, we focus on two properties of processing in the brain that we hypothesize are useful for OOD generalization: a) the <italic>abstract representations</italic> of relational structure, in which relations are preserved across transformations like translation and scaling (such as observed for grid cells in mammalian medial entorhinal cortex (<xref ref-type="bibr" rid="c17">Hafting et al., 2005</xref>)); and b) an <italic>attentional objective</italic> to attend to abstract representations that have maximum variance and minimum correlation among them, over the training data. The net effect of these two properties is to normalize the representations of training and testing data in a way that preserves their relational structure, and allows the network to learn that structure in a form that can be applied well beyond the domain over which it was trained.</p>
+<p>In previous work, it has been shown that such OOD generalization can be accomplished in a neural network by providing it with a mechanism for temporal context normalization (<xref ref-type="bibr" rid="c45">Webb et al., 2020</xref>), a technique that allows neural networks to preserve the relational structure between the inputs in a local temporal context, while abstracting over the differences between contexts. Here, we test whether the same capabilities can be achieved using a well-established, biologically plausible embedding scheme - grid codes - and an adaptive form of normalization that is based strictly on the statistics of the training data in the embedding space. We show that when deep neural networks are presented with data that exhibits such relational structure, grid code embeddings coupled with an error-minimizing/attentional objective promotes strong OOD generalization. We unpack each of these theoretical components in turn before describing the tasks, modeling architectures, and results.</p>
+<sec id="s1a1a">
+<title>Abstract Representations of Relational Structure</title>
+<p>The first component of the proposed framework relies on the idea that a key element underlying human-like OOD generalization is the use of low-dimensional representations that emphasize the relational structure between data points. Empirical evidence suggests that, for spatial information, this is accomplished in the brain by encoding the organism’s spatial position using a periodic code consisting of different frequencies and phases (akin to a Fourier transform of the space). Although grid cells were discovered for representations of space (<xref ref-type="bibr" rid="c17">Hafting et al., 2005</xref>), they have since been identified in non-spatial domains, such as auditory tones (<xref ref-type="bibr" rid="c1">Aronov et al., 2017</xref>), odor (<xref ref-type="bibr" rid="c4">Bao et al., 2019</xref>), and conceptual dimensions (<xref ref-type="bibr" rid="c8">Constantinescu et al., 2016</xref>). These findings suggest that the coding scheme used by grid cells may serve as a general representation of metric structure that may be exploited for reasoning about the abstract conceptual dimensions required for higher level reasoning tasks, such as analogy and mathematics (<xref ref-type="bibr" rid="c33">McNamee et al., 2022</xref>). Of interest here, the periodic response function displayed by grid cells belonging to a particular frequency is invariant to translation by its period, and increasing the scale of a higher frequency response gives a lower frequency response and vice versa, making it invariant to scale across frequencies. This is particularly promising for prospects of OOD generalization: downstream systems that acquire parameters over a narrow training region may be able to successfully apply those parameters across transformations of translation or scale, given the shared structure (which can also be learned (<xref ref-type="bibr" rid="c9">Cueva &amp; Wei, 2018</xref>; <xref ref-type="bibr" rid="c3">Banino et al., 2018</xref>; <xref ref-type="bibr" rid="c47">Whittington et al., 2020</xref>)).</p>
+</sec>
+<sec id="s1a1b">
+<title>DPP attention (DPP-A)</title>
+<p>The second component of our proposed framework is a novel attentional objective that uses the statistics of the training data to sculpt the influence of grid cells on downstream computation. Despite the use of a relational encoding metric (i.e., grid code), generalization may also require identifying which aspects of this encoding that could potentially be shared across training and test distributions. Here, we implement this by identifying, and restricting further processing to those grid embeddings that exhibit the greatest variance, but are least redundant (that is, pairwise uncorrelated) over the training data. Formally, this is captured by maximizing the determinant of the covariance matrix of the grid embeddings computed over the training data (<xref ref-type="bibr" rid="c27">Kulesza &amp; Taskar, 2012</xref>). To avoid overfitting the training data, we attend to a subset of grid embeddings that maximize the volume in the representational space, diminishing the influence of low-variance codes (irrelevant), or codes with high-similarity to other codes (redundant), which decrease the determinant of the covariance matrix. We refer to this as DPP attention, or DPP-A.</p>
+<p>DPP-A is inspired by mathematical work in statistical physics using Determinantal Point Processes (DPPs) that originated for modeling the distribution of fermions at thermal equilibrium (<xref ref-type="bibr" rid="c29">Macchi, 1975</xref>). DPPs have since been adopted in machine learning for applications in which diversity in a subset of selected items is desirable, such as recommender systems (<xref ref-type="bibr" rid="c27">Kulesza &amp; Taskar, 2012</xref>). Recent work in computational cognitive science has shown DPPs naturally capture inductive biases in human inference, such as some word-learning and reasoning tasks (e.g., one noun should only refer to one object) while also serving as an efficient memory code (<xref ref-type="bibr" rid="c12">Frankland &amp; Cohen, 2020</xref>). In that context, the learner is biased to find a set of possible wordmeaning pairs whose representations exhibit the greatest variance and lowest covariance on a task-relevant dataset. DPPs also provide a formal objective for the type of orthogonal coding that has been proposed to be characteristic of representations in mammalian hippocampus, and integral for episodic memory (<xref ref-type="bibr" rid="c32">McClelland et al., 1995</xref>). Thus, using the DPP objective to govern attention over grid code representations, known to be implemented in the entorhinal cortex (one synapse upstream of the hippocampus), aligns with the function and organization of cognitive and neural systems underlying the capability for abstraction.</p>
+<p>Taken together, the representational and attention mechanisms outlined above define a two-component framework of neural computation for OOD generalization, by minimizing task-specific error subject to: i) embeddings that encode relational structure among the data (grid cells), and ii) attention to those embeddings that maximize the “volume” of the representational space that is covered, while minimizing redundancy (DPP-A). Below, we demonstrate proof of concept by showing that these mechanisms allow artificial neural networks to learn representations that support OOD generalization on two challenging cognitive tasks and therefore serve as a reasonable starting point for examining the properties of interest in these networks.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1:</label>
+<caption><p>Schematic of the overall framework. Given a task (e.g., an analogy to solve), inputs (denoted as {<italic>A, B, C, D</italic>}) are represented by grid codes, consisting of units (“grid cells”) representing different combinations of frequencies and phases. Grid embeddings (<italic><bold>x<sub>A</sub></bold>, <bold>x<sub>B</sub></bold>, <bold>x<sub>C</sub></bold>, <bold>x<sub>D</sub></bold></italic>) are multiplied elementwise by a set of learned attention weights <italic><bold>w</bold></italic>, then passed to a inference module <italic><bold>R</bold></italic>. The attention weights <italic><bold>w</bold></italic> are optimized using <italic>L<sub>DPP</sub></italic>, which encourages attention to grid embeddings that maximize the volume of the representational space. The inference module outputs a score for each candidate analogy (consisting of <italic>A, B, C</italic> and a candidate answer choice <italic>D</italic>). The scores for all answer choices are passed through a softmax to generate an answer <italic>ŷ</italic>, which is compared against the target <italic>y</italic> to generate the task loss <italic>L<sub>task</sub></italic>.</p></caption>
+<graphic xlink:href="2305.18417v1_fig1.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2:</label>
+<caption><p>Generation of test analogies from training analogies (region marked in blue) by: a) translating both dimension values of <italic>A, B, C, D</italic> by the same amount; and b) scaling both dimension values of <italic>A, B, C, D</italic> by the same amount. Since both dimension values are transformed by the same amount, each input gets transformed along the diagonal.</p></caption>
+<graphic xlink:href="2305.18417v1_fig2.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+
+
+</sec>
+<sec id="s2">
+<label>2</label>
+<title>Approach</title>
+<p><xref ref-type="fig" rid="fig1">Figure 1</xref> illustrates the general framework. Task inputs, corresponding to points in a metric space, are represented as a set of grid code embeddings <italic><bold>x</bold></italic><sub><italic>t</italic>=1..<italic>T</italic></sub>, that are then passed to a inference module <italic><bold>R</bold></italic>. The embedding of each input is represented by the pattern of activity of grid cells that respond selectively to different combinations of phases and frequencies. Attention over these is a learned weighting <italic><bold>w</bold></italic> of the grid cells, the weighted activations of which (<italic><bold>x</bold></italic>⊙<italic><bold>w</bold></italic>) are passed to the inference module (<italic><bold>R</bold></italic>). The parameterization of <italic><bold>w</bold></italic> and <italic><bold>R</bold></italic> are determined by backpropagation of the error signal obtained by two loss functions over the training set. The first, <italic>L<sub>DPP</sub></italic> favors attentional weightings over the grid cells that maximize the DPP-A objective; that is, the “volume” of the representational space (grid code) covered by the attended grid cells. The second, <italic>L<sub>task</sub></italic> is a standard task error term (e.g., the cross entropy of targets <italic>y</italic> and task outputs <italic>ŷ</italic> over the training set). We describe each of these components in the following sections.</p>
+<sec id="s2a">
+<label>2.1</label>
+<title>Task setup</title>
+<sec id="s2a1">
+<label>2.1.1</label>
+<title>Analogy task</title>
+<p>We constructed proportional analogy problems with four terms, of the form <italic>A</italic> : <italic>B</italic> :: <italic>C</italic> : <italic>D</italic>, where the relation between <italic>A</italic> and <italic>B</italic> was the same as between <italic>C</italic> and <italic>D</italic>. Each of <italic>A, B , C, D</italic> was a point in the integer space ℤ<sup>2</sup>, with each dimension sampled from the range [0, <italic>M</italic> - 1], where <italic>M</italic> denotes the size of the training region. To form an analogy, two pairs of points (<italic>A, B</italic>) and (<italic>C, D</italic>) were chosen such that the vectors <italic>AB</italic> and <italic>CD</italic> were equal. Each analogy problem also contained a set of 6 foil items sampled in the range [0, <italic>M</italic> - 1]<sup>2</sup> excluding <italic>D</italic>, such that they didn’t form an analogy with <italic>A, B, C</italic>. The task was, given <italic>A</italic>, <italic>B</italic> and <italic>C</italic>, to select <italic>D</italic> from a set of multiple choices consisting of <italic>D</italic> and the 6 foil items. During training, the networks were exposed to sets of points sampled uniformly over locations in the training range, and with pairs of points forming vectors of varying length. The network was trained on 80% of all such sets of points in the training range, with 20% held out as the validation set.</p>
+<p>To study OOD generalization, we created two cases of test data, that tested for OOD generalization in translation and scale. For the <italic>translation invariance</italic> case (<xref ref-type="fig" rid="fig2">Figure 2</xref>(a)), the constituents of the training analogies were translated along both dimensions by the same amount <sup><xref ref-type="fn" rid="fn1">1</xref></sup> <italic>KM</italic> such that the test analogies were in the range [<italic>KM,</italic> (<italic>K</italic> + 1)<italic>M</italic> - 1]<sup>2</sup> after translation. Non-overlapping test regions were generated for <italic>K</italic> ∈ [1, 9]. Similar to the translation OOD generalization regime of <xref ref-type="bibr" rid="c45">Webb et al. (2020)</xref>, this allowed the graded evaluation of OOD generalization to a series of increasingly remote test domains as the distance from the training region increased. For example a training analogy <italic>A</italic> : <italic>B</italic> :: <italic>C</italic> : <italic>D</italic> after translation by <italic>KM</italic>, would be <italic>A</italic> + <italic>KM</italic> : <italic>B</italic> + <italic>KM</italic> :: <italic>C</italic> + <italic>KM</italic> : <italic>D</italic> + <italic>KM</italic>. For the <italic>scale invariance</italic> case (<xref ref-type="fig" rid="fig2">Figure 2</xref>(b)), we scaled each constituent of the training analogies by <italic>K</italic> so that the test analogies after scaling were in the range [0, <italic>KM</italic> - 1]<sup>2</sup>. Thus, an analogy <italic>A</italic> : <italic>B</italic> :: <italic>C</italic> : <italic>D</italic> after scaling by <italic>K</italic>, would be <italic>KA</italic> : <italic>KB</italic> :: <italic>KC</italic> : <italic>KD</italic>. By varying the value of <italic>K</italic> from 1 to 9, we scaled the training analogies to occupy increasingly distant and larger regions of the test space.</p>
+</sec>
+<sec id="s2a2">
+<label>2.1.2</label>
+<title>Arithmetic task</title>
+<p>We tested two types of arithmetic operations, corresponding to the translation and scaling transformations used in the analogy tasks: elementwise addition and multiplication of two inputs <italic>A</italic> and <italic>B</italic>, each a point in ℤ<sup>2</sup> , for which <italic>C</italic> was the point corresponding to the answer (i.e., <italic>C = A + B</italic> or <italic>C = A</italic> * <italic>B</italic>). As with the analogy task, each arithmetic problem also contained a set of 6 foil items sampled in the range [0, <italic>M</italic> -1]<sup>2</sup>, excluding <italic>C</italic>. The task was to select <italic>C</italic> from a set of choices consisting of <italic>C</italic> and the 6 foil items. Similar to the analogy task, training data was constructed from a uniform distribution of points and vector lengths in the training range, with 20% held out as the validation set. To study OOD generalization, we created testing data corresponding to <italic>K</italic> = 9 non-overlapping regions, such that <italic>C</italic> ∈ [<italic>M</italic>, 2<italic>M</italic> - 1]<sup>2</sup>, [2<italic>M</italic>, 3<italic>M</italic> - 1]<sup>2</sup>,…[<italic>KM</italic>, (<italic>K</italic> + 1)<italic>M</italic> - 1]<sup>2</sup>.</p>
+</sec>
+</sec>
+<sec id="s2b">
+<label>2.2</label>
+<title>Architecture</title>
+<sec id="s2b1">
+<label>2.2.1</label>
+<title>Grid codes</title>
+<p>As discussed above, grid codes are found in the mammalian neocortex, that support structured, lowdimensional representations of task-relevant information. For example, an organism’s location in 2D allocentric space (<xref ref-type="bibr" rid="c17">Hafting et al., 2005</xref>), the frequency of 1D auditory stimuli (<xref ref-type="bibr" rid="c1">Aronov et al., 2017</xref>), and conceptual knowledge in two continuous dimensions (<xref ref-type="bibr" rid="c8">Constantinescu et al., 2016</xref>) have all been shown to be represented as unique, similarity-preserving combinations of frequencies and phases. Here, these codes are of interest because the relational structure in the input is preserved in the code across translation and scale. This offers a promising metric that can be used to learn structure relevant to the processing of analogies (<xref ref-type="bibr" rid="c13">Frankland et al., 2019</xref>) and arithmetic over a restricted range of stimulus values, and then used to generalize such processing to stimuli outside of the domain of task training.</p>
+<p>To derive grid codes for stimuli, we follow the analytic approach described by <xref ref-type="bibr" rid="c6">Bicanski &amp; Burgess (2019)</xref> <sup><xref ref-type="fn" rid="fn2">2</xref></sup>. Specifically, the grid code (<italic><bold>x</bold></italic>) for a particular stimulus location <italic>A</italic> is given by:
+<disp-formula id="FD1">
+<alternatives><mml:math display="block" id="M1"><mml:msub><mml:mi>x</mml:mi><mml:mi>A</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>x</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<graphic xlink:href="2305.18417v1_eqn1.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(1)</label>
+</disp-formula>
+where,
+<disp-formula id="FD2">
+<alternatives><mml:math display="block" id="M2"><mml:msub><mml:mi>z</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>*</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mi>A</mml:mi><mml:mo>+</mml:mo><mml:msub><mml:mi>A</mml:mi><mml:mrow><mml:mi>o</mml:mi><mml:mi>f</mml:mi><mml:mi>f</mml:mi><mml:mi>s</mml:mi><mml:mi>e</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<graphic xlink:href="2305.18417v1_eqn2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(2)</label>
+</disp-formula>
+<disp-formula id="FD3">
+<alternatives><mml:math display="block" id="M3"><mml:msub><mml:mi>b</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mn>0</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mn>0</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mi>π</mml:mi><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mi>π</mml:mi><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<graphic xlink:href="2305.18417v1_eqn3.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(3)</label>
+</disp-formula>
+The spatial frequencies of grids (<italic>F</italic>) begin at a value of 0.0028 * 2<italic>π</italic>. <xref ref-type="bibr" rid="c46">Wei et al. (2015)</xref> have shown that, to minimize the number of variables needed to represent an integer domain of size <italic>S</italic>, the firing rate widths and frequencies should scale geometrically in a range (<inline-formula id="ID1">
+<alternatives>
+<mml:math display="inline" id="I1"><mml:msqrt><mml:mn>2</mml:mn></mml:msqrt><mml:mo>,</mml:mo><mml:msqrt><mml:mi>e</mml:mi></mml:msqrt></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq1.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>), closely matching empirically observed scaling in entorhinal cortex (<xref ref-type="bibr" rid="c43">Stensola et al., 2012</xref>). We choose a scaling factor of <inline-formula id="ID2">
+<alternatives>
+<mml:math display="inline" id="I2"><mml:msqrt><mml:mn>2</mml:mn></mml:msqrt></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> to efficiently tile the space. One consequence of this efficiency is that the total number of discrete frequencies in entorhinal cortex is expected to be small. Empirically, it has been estimated to be between 8–12 (<xref ref-type="bibr" rid="c34">Moser et al., 2015</xref>) <sup><xref ref-type="fn" rid="fn3">3</xref></sup>. Here, we choose <italic>N<sub>f</sub></italic> = 9 (dimension of <italic>F</italic>) as the number of frequencies. <italic>A</italic> refers to a particular location in a two dimensional space, and 100 offsets (<italic>A<sub>offset</sub></italic>) are used for each frequency to evenly cover a space of 1000 × 1000 locations using 900 grid cells. These offsets represent different phases within each frequency and since there are 100 of them, <italic>N<sub>p</sub></italic> = 100. Each point from the set of 2D points for the stimuli in a task (described in <xref ref-type="sec" rid="s2a">Section 2.1</xref>), was represented using the firing rate of 900 grid cells which constituted the grid embedding for that point to form the inputs to our model.</p>
+</sec>
+<sec id="s2b2">
+<label>2.2.2</label>
+<title>DPP-A</title>
+<p>We hypothesize that the use of a relational encoding metric (i.e., grid code) is extremely useful, but not sufficient for a system to achieve strong generalization, which requires attending to particular aspects of the encoding that can capture the same relational structure across the training and test distributions. Toward this end, we propose an attentional objective that uses the statistics of the training data to attend to grid embeddings that can induce the inference module to achieve strong generalization. Our objective, which we describe in detail below, seeks to identify those grid embeddings that exhibit the greatest variance but are least redundant (pairwise uncorrelated over the training data). Formally, this is captured by maximizing the determinant of the covariance matrix of the grid embeddings computed over the training data (<xref ref-type="bibr" rid="c27">Kulesza &amp; Taskar, 2012</xref>). Although in machine learning, DPPs have been particularly influential in work on recommender systems (<xref ref-type="bibr" rid="c7">Chen et al., 2018</xref>), summarization (<xref ref-type="bibr" rid="c16">Gong et al., 2014</xref>; <xref ref-type="bibr" rid="c36">Perez-Beltrachini &amp; Lapata, 2021</xref>), neural network pruning (<xref ref-type="bibr" rid="c30">Mariet &amp; Sra, 2015</xref>), here, we propose to use maximization of the determinant of the covariance matrix as an attentional mechanism to limit the influence of grid embeddings with low-variance (which are less relevant) or with high-similarity to other grid embeddings (which are redundant).</p>
+<p>For the specific tasks that we study here, we have assumed the grid embeddings to be pre-learned to represent the entire space of possible test data points, and we are simply focused on the problem of how to determine which of these are most useful in enabling generalization for a task-optimized network trained on a small fraction of that space (<xref ref-type="fig" rid="fig2">Figure 2</xref>). That is, we look for a way to attend to a subset of gridcells frequencies whose embeddings capture recurring task-relevant relational structure. We find that grid embeddings corresponding to the higher spatial frequency grid cells exhibit more variance on the training data than the low frequency embeddings. In any training set, low spatial frequency embeddings may carry information about the stimuli that can be used to help minimize task-error, but, critically, the higher frequency embeddings due to their higher variance tend to preferentially capture the same relational structure across different regions which is necessary for OOD generalization. Accordingly, we find that the determinant maximizing grid cell embeddings are those that encode higher frequencies.</p>
+<p>Formally, we treat obtaining <italic>L<sub>DPP</sub></italic> as an approximation of a determinantal point process (DPP). A DPP P defines a probability measure on all subsets of a set of items χ = {1, 2,…<italic>N</italic>}. For every <italic><bold>x</bold></italic> ⊆ χ, <italic>P</italic>(<italic><bold>x</bold></italic>) ∝ det(<italic><bold>V<sub>x</sub></bold></italic>). Here <italic><bold>V</bold></italic> is a positive semidefinite covariance matrix and <italic><bold>V<sub>x</sub></bold></italic> = [<italic>V<sub>ij</sub></italic>]<sub><italic>i,j</italic> ∈ <italic>x</italic></sub> denotes the matrix <italic><bold>V</bold></italic> restricted to the entries indexed by elements of <italic><bold>x</bold></italic>. The maximum a posteriori (MAP) problem <italic>argmax<sub><bold>x</bold></sub></italic> det(<italic><bold>V<sub>x</sub></bold></italic>) is NP-hard (<xref ref-type="bibr" rid="c25">Ko et al., 1995</xref>). However <italic>f</italic>(<italic><bold>x</bold></italic>) = log(det(<italic><bold>V<sub>x</sub></bold></italic>)) satisfies the property of a submodular function, and various algorithms exist for approximately maximizing them. One common way is to approximate this discrete optimization problem by replacing the discrete variables with continuous variables and extend the objective function to the continuous domain. <xref ref-type="bibr" rid="c15">Gillenwater et al. (2012)</xref> proposed a continuous extension that is efficiently computable and differentiable:
+<disp-formula id="FD4">
+<alternatives><mml:math display="block" id="M4"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>log</mml:mi><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mi>x</mml:mi></mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∈</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∉</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>exp</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mi>w</mml:mi><mml:mo>∈</mml:mo><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo> <mml:mrow><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn></mml:mrow> <mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mi>N</mml:mi></mml:msup></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle><mml:mo>.</mml:mo></mml:math>
+<graphic xlink:href="2305.18417v1_eqn4.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(4)</label>
+</disp-formula>
+</p>
+<p>We use the following theorem from <xref ref-type="bibr" rid="c15">Gillenwater et al. (2012)</xref> to construct <italic>L<sub>DPP</sub></italic>:</p>
+<sec id="s1a1c">
+<title>Theorem 2.1</title>
+<p><italic>For a positive semidefinite matrix <bold>V</bold> and <bold>w</bold></italic> ∈ [0, 1]<sup><italic>N</italic></sup>:
+<disp-formula id="FD5">
+<alternatives><mml:math display="block" id="M5"><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mi>x</mml:mi></mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∈</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∉</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtext>diag</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>V</mml:mi><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle></mml:math>
+<graphic xlink:href="2305.18417v1_eqn5.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(5)</label>
+</disp-formula>
+We propose an attention mechanism that uses <italic>L<sub>DPP</sub></italic> to attend to subsets of grid embeddings for further processing. <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> describes the training procedure with DPP-A which consists of two steps, using <italic>L<sub>DPP</sub></italic> as the first step. This step maximizes the objective function:
+<disp-formula id="FD6">
+<alternatives><mml:math display="block" id="M6"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow></mml:munderover><mml:mrow><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtext>diag</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+<graphic xlink:href="2305.18417v1_eqn6.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<label>(6)</label>
+</disp-formula>
+using stochastic gradient ascent for <inline-formula id="ID3">
+<alternatives>
+<mml:math display="inline" id="I3"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq3.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> epochs, which is equivalent to minimizing <italic>L<sub>DPP</sub></italic>, as <inline-formula id="ID4">
+<alternatives>
+<mml:math display="inline" id="I4"><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq4.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. It involves attending to grid embeddings that exhibit the greatest within frequency variance but are least redundant (that is, that are least also pairwise uncorrelated) over the training data. This is achieved by maximizing the determinant of the covariance matrix over the within frequency grid embeddings of the training data, which is obtained by applying log on both sides of the Theorem 2.1, and in our case <italic><bold>x</bold></italic> refers to grid cells within a particular frequency. Here <italic><bold>w</bold></italic> are the attention weights corresponding to each grid cell, and <italic>N<sub>f</sub></italic> is the number of distinct frequencies. The matrix <italic><bold>V</bold></italic> captured a measure of the covariance of the grid embeddings over the training region. We used the <italic>synth</italic>_<italic>kernel</italic> function <sup><xref ref-type="fn" rid="fn4">4</xref></sup> to construct <italic><bold>V</bold></italic>, where in our case <italic><bold>m</bold></italic> are the variances of the grid cell representations <italic><bold>S</bold></italic> computed over the training region <italic>M</italic>, <italic>N</italic> is the number of grid cells and <italic>w<sub>m</sub>, b</italic> are hyperparameters with values of 1 and 0.1 respectively. The dimensionality of <italic><bold>V</bold></italic> was <italic>N<sub>f</sub>N<sub>p</sub></italic> × <italic>N<sub>f</sub>N<sub>p</sub></italic>(900 × 900). <italic><bold>W<sub>f</sub></bold></italic> were the attention weights of the grid cells belonging to the <italic>f</italic>th frequency, so <italic><bold>w<sub>f</sub></bold></italic> = <italic><bold>w</bold></italic>[<italic>fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub></italic>], where <italic>N<sub>p</sub></italic> was the number of phases for each frequency. <italic><bold>V<sub>f</sub></bold></italic> = <italic><bold>V</bold></italic>[<italic>fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub>, fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub></italic>] was the restriction of <italic><bold>V</bold></italic> to the grid embeddings for <italic>f</italic>th frequency, so it captured the covariance of the grid embeddings belonging to the <italic>f</italic>th frequency. <xref ref-type="disp-formula" rid="FD6">Equation 6</xref> which involved summation of the logarithm of the determinant of the weighted covariance matrix of grid cells within each frequency, over <italic>N<sub>f</sub></italic> frequencies was used to compute the negative of <italic>L<sub>DPP</sub></italic>. Maximizing <inline-formula id="ID5">
+<alternatives>
+<mml:math display="inline" id="I5"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq5.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> gave the approximate maximum within frequency log determinant for each frequency <italic>f</italic> ∈ [1, <italic>N<sub>f</sub></italic>], which we denote for the <italic>f</italic>th frequency as <inline-formula id="ID6">
+<alternatives>
+<mml:math display="inline" id="I6"><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq6.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. In the second step of the training procedure, we used the <inline-formula id="ID7">
+<alternatives>
+<mml:math display="inline" id="I7"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq7.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> grid cell frequency, where <inline-formula id="ID8">
+<alternatives>
+<mml:math display="inline" id="I8"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi>arg</mml:mi><mml:msub><mml:mi>max</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>[</mml:mo> <mml:mrow><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow> <mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:msub><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq8.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. In other words, we used the grid embeddings for grid cells belonging to the frequency which had the maximum within-frequency log determinant at the end of the first step, which we find are best at capturing the relational structure across the training and testing data, thereby promoting out-of-distribution generalization. In this step, we trained the inference module minimizing <italic>L<sub>task</sub></italic> over <inline-formula id="ID9">
+<alternatives>
+<mml:math display="inline" id="I9"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq9.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> epochs.</p>
+</sec>
+</sec>
+<sec id="s2b3">
+<label>2.2.3</label>
+<title>Inference module</title>
+<p>We implemented the inference module <italic><bold>R</bold></italic> in two forms, one using an LSTM (<xref ref-type="bibr" rid="c21">Hochreiter &amp; Schmidhuber, 1997</xref>) and the other using a transformer (<xref ref-type="bibr" rid="c44">Vaswani et al., 2017</xref>) architecture. Separate networks were trained for the analogy and arithmetic tasks using each form of inference module. For each task, the attended grid embeddings of each stimuli obtained from the DPP-A process, were provided to <italic><bold>R</bold></italic> as its inputs. For the arithmetic task, we also concatenated a one-hot tensor, before feeding to <italic><bold>R</bold></italic> that specified which computation to perform (addition or multiplication). As proposed by <xref ref-type="bibr" rid="c20">Hill et al. (2019)</xref>, we treated both the analogy and arithmetic tasks as scoring (i.e., multiple choice) problems. For each analogy, the inference module was presented with multiple problems, each consisting of three stimuli, <italic>A, B, C</italic>, and a set containing <italic>D</italic> (the correct completion) and six foil completions. For each instance of the arithmetic task, it was presented with two stimuli, <italic>A, B</italic>, and a set containing <italic>C</italic> (the correct completion) and six foil completions. A linear output layer was used to generate a score for the candidate completions for each problem. Stimuli were presented sequentially for <italic><bold>R</bold></italic> constructed using an LSTM, and positionally coded (<xref ref-type="bibr" rid="c23">Kazemnejad, 2019</xref>) if it used a transformer. The seven scores (one for the correct completion and for six foil completions) were normalized using a softmax function, such that higher score would correspond to higher probablity and vice versa and the probabilities sum to 1. The inference module was trained using the task specific cross entropy loss (<italic>L<sub>task</sub></italic> = cross-entropy) between the softmax-normalized scores and the index for the correct completion (target).</p>
+<fig id="box1">
+<label>Algorithm 1</label>
+<caption><title>Training with DPP-A</title></caption>
+<graphic xlink:href="2305.18417v1_algo1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+
+<p>The network that used an LSTM in the inference module had a single layer of 512 hidden units. The hidden and cell state of the LSTM was reinitialized at the start of each sequence for each candidate completion. The network that used a transformer in the inference module had 6 layers, each of which had 8 heads and a dimensionaltiy of 512. We projected the data into 128 dimensions to be more easily divisible by the number of heads, followed by layer normalization (<xref ref-type="bibr" rid="c2">Ba et al., 2016</xref>). We added a learnable positional encoding to the projected input sequence of attended grid code embeddings, concatenated a learned CLS (short for “classification”) token (analogous to the CLS token in <xref ref-type="bibr" rid="c10">Devlin et al. (2018)</xref>), followed by a transformer encoder. We took the transformed value of the CLS token, and passed it to a linear layer with 1 output unit to generate a score for each candidate completion. This procedure was repeated for each candidate completion.</p>
+</sec>
+</sec>
+</sec>
+<sec id="s3">
+<label>3</label>
+<title>Related work</title>
+<p>A body of recent computational work has shown that representations similar to grid cells can be derived using standard analytical techniques for dimensionality reduction (<xref ref-type="bibr" rid="c11">Dordek et al., 2016</xref>; <xref ref-type="bibr" rid="c42">Stachenfeld et al., 2017</xref>), as well as from error-driven learning paradigms (<xref ref-type="bibr" rid="c9">Cueva &amp; Wei, 2018</xref>; <xref ref-type="bibr" rid="c3">Banino et al., 2018</xref>; <xref ref-type="bibr" rid="c47">Whittington et al., 2020</xref>; <xref ref-type="bibr" rid="c40">Sorscher et al., 2022</xref>). Previous work has also shown that grid cells emerge in networks trained to generalize to novel location/object combinations, and support transitive inference (<xref ref-type="bibr" rid="c47">Whittington et al., 2020</xref>). Here, we show that grid cells enable strong OOD generalization when coupled with the appropriate attentional mechanism. Our proposed method is thus complementary to these previous approaches for obtaining grid cell representations from raw data.</p>
+<p>In the field of machine learning, DPPs have been used for supervised video summarization (<xref ref-type="bibr" rid="c16">Gong et al., 2014</xref>), diverse recommendations (<xref ref-type="bibr" rid="c7">Chen et al., 2018</xref>), selecting a subset of diverse neurons to prune a neural network without hurting performance (<xref ref-type="bibr" rid="c30">Mariet &amp; Sra, 2015</xref>), and diverse minibatch attention for stochastic gradient descent (<xref ref-type="bibr" rid="c49">Zhang et al., 2017</xref>). Recently, <xref ref-type="bibr" rid="c31">Mariet et al. (2019)</xref> generated approximate DPP samples by proposing an inhibitive attention mechanism based on transformer networks as a proxy for capturing the dissimilarity between feature vectors, and <xref ref-type="bibr" rid="c36">Perez-Beltrachini &amp; Lapata (2021)</xref> used DPP-based attention with seq-to-seq architectures for diverse and relevant multi-document summarization. To our knowledge, however, DPPs have not previously been combined with the grid codes that we employ here, and have not been used to enable OOD generalization.</p>
+<p>Various approaches have been proposed to prevent deep learning systems from overfitting, and enable them to egeneralize. A commonly employed technique is weight decay (<xref ref-type="bibr" rid="c26">Krogh &amp; Hertz, 1992</xref>). <xref ref-type="bibr" rid="c41">Srivastava et al. (2014)</xref> proposed dropout, a regularization technique which reduces overfitting by randomly zeroing units from the neural network during training. Recently, <xref ref-type="bibr" rid="c45">Webb et al. (2020)</xref> proposed temporal context normalization (TCN) in which a normalization similar to batch normalization (<xref ref-type="bibr" rid="c22">Ioffe &amp; Szegedy, 2015</xref>) was applied over the temporal dimension instead of the batch dimension. However, unlike these previous approaches, the method reported here achieves nearly perfect OOD generalization when operating over the appropriate representation, as we show in the results. Our proposed method also has the virtue of being based on a well understood, and biologically plausible, encoding scheme (grid cells).</p>
+</sec>
+<sec id="s4">
+<label>4</label>
+<title>Experiments</title>
+<sec id="s4a">
+<label>4.1</label>
+<title>Experimental details</title>
+<p>For each task, the sequence of stimuli for a given problem was encoded as grid codes (see <xref ref-type="sec" rid="s2b1">Section 2.2.1</xref>), that were then modulated by DPP-A (see <xref ref-type="sec" rid="s2b2">Section 2.2.2</xref>), and passed to the inference module <italic><bold>R</bold></italic> (see <xref ref-type="sec" rid="s2b3">Section 2.2.3</xref>). We trained 3 networks using each type of inference module. For networks using an LSTM in the inference module, we trained each network for number of epochs for optimizing DPP attention <inline-formula id="ID19">
+<alternatives>
+<mml:math display="inline" id="I19"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>50</mml:mn></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq19.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>, number of epochs for optimizing task loss <inline-formula id="ID20">
+<alternatives>
+<mml:math display="inline" id="I20"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>50</mml:mn></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq20.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>, on analogy problems, and for <inline-formula id="ID21">
+<alternatives>
+<mml:math display="inline" id="I21"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>500</mml:mn><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq21.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>, on arithmetic problems with a batch size of 256, using the ADAM optimizer (<xref ref-type="bibr" rid="c24">Kingma &amp; Ba, 2014</xref>), and a learning rate of 1<italic>e</italic><sup>-3</sup>. For networks using a transformer in the inference module, we trained with a batch size of 128 on analogy with a learning rate of 5<italic>e</italic><sup>-4</sup>, and on arithmetic problems with a learning rate of 5<italic>e</italic><sup>-5</sup>. More details can be found in <xref ref-type="sec" rid="s7a">Appendix 7.1</xref>.</p>
+</sec>
+<sec id="s4b">
+<label>4.2</label>
+<title>Comparison models</title>
+<p>To evaluate how grid code embeddings coupled with DPP-A compares with other architectures and approaches to generalization, and the extent to which each of these components contributed to performance of the model, we compared it with several alternative models for performing the analogy and arithmetic tasks. First we compared it with the temporal context normalization (TCN) model (<xref ref-type="bibr" rid="c45">Webb et al., 2020</xref>) (see <xref ref-type="sec" rid="s3">Section 3</xref>), but modified so as to use grid code embeddings as input. We passed the grid embedding for each input through a shared feedforward encoder which consisted of two fully connected layers with 256 units per layer. ReLU nonlinearities were used in both the layers. The final embedding was generated with a linear layer of 256 units. TCN was applied to these embeddings and then passed as a sequence for each candidate completion to the inference module. This implementation of TCN involved a learned encoder on top of the grid code embeddings, so it is closely analogous to the original TCN.</p>
+<p>Next, we compared our model to one that used variational dropout (<xref ref-type="bibr" rid="c14">Gal &amp; Ghahramani, 2016</xref>), which is shown to be more effective in generalization compared to naive dropout (<xref ref-type="bibr" rid="c41">Srivastava et al., 2014</xref>). We randomly sampled a dropout mask (50% dropout), zeroing out the contribution of some of the grid codes in the input to the inference module. We then use that locked dropout mask for every time step in the sequence. We also compared DPP-A to a model that had an additional penalty (L1 regularization) proportional to the absolute sum of the attention weights <italic>w</italic> along with the task-specific loss. We experimented with different values of <italic>λ</italic>, which controlled the strength of the penalty relative to the cross entropy loss. We report accuracy values for <italic>λ</italic> that achieved the best performance on the validation set. Accuracy values for various <italic>λ</italic>s are provided in the <xref ref-type="sec" rid="s7g">Appendix 7.7</xref>. Dropout and L1 regularization were chosen as a proxy for DPP-A and hence we used the same input data for fair comparison. Finally, we compared to a model that used the complete grid codes, i.e. no DPP-A.</p>
+</sec>
+</sec>
+<sec id="s5" sec-type="results">
+<label>5</label>
+<title>Results</title>
+<sec id="s5a">
+<label>5.1</label>
+<title>Analogy</title>
+<p>We first present results on analogy task for two types of testing data, translation and scaling using two types of inference module, LSTM and transformer. We trained 3 networks for each method and report mean accuracy alongwith standard error of the mean. <xref ref-type="fig" rid="fig3">Figure 3</xref> shows the results for the analogy task using an LSTM in the inference module. The left panel shows results for the translation regime, and the right panel shows results for the scaling regime. Both plots show accuracy on the training and validation sets, and on a series of 9 (increasingly distant) OOD generalization test regions. DPP-A (shown in blue) achieves nearly perfect accuracy on all of the test regions, considerably outperforming the other models.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3:</label>
+<caption><p>Results on analogy on each region for translation and scaling using LSTM in the inference module.</p></caption>
+<graphic xlink:href="2305.18417v1_fig3.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<p>For the case of translation, using all the grid codes with no DPP-A (shown in purple) led to the worst OOD generalization performance, overfitting on the training set. Locked dropout (denoted by green) and L1 regularization (denoted by red) reduced overfitting and demonstrated better OOD generalization performance than no DPP-A but still performed considerably worse than DPP-A. For the case of scaling, locked dropout and L1 regularization performed slightly better than TCN, achieving marginally higher test accuracy, but DPP-A still substantially outperformed all other models, with a nearly 70% improvement in average test accuracy.</p>
+<p>To test the generality of grid embedding and DPP-A across network architectures, we also tested a transformer (<xref ref-type="bibr" rid="c44">Vaswani et al., 2017</xref>) in place of the LSTM in the inference module. Previous work has suggested that transformers are particularly useful for extracting structure in sequential data and has been used for OOD generalization (<xref ref-type="bibr" rid="c38">Saxton et al., 2019</xref>). <xref ref-type="fig" rid="fig4">Figure 4</xref> shows the results for the analogy task using a transformer in the inference module. With no explicit attention (no DPP-A) over the grid codes (show in orange), the transformer did poorly on the analogies on the test regions. This suggests that simply using a more sophisticated architecture with standard forms of attention is not sufficient to enable OOD generalization based on grid codes. With DPP-A (shown in blue), the OOD generalization performance of the transformer is nearly perfect for both translation and scaling. These results also demonstrate that grid code embedding coupled with DPP-A can be exploited for OOD generalization effectively by different architectures.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4:</label>
+<caption><p>Results on analogy on each region for translation and scaling using transformer in the inference module.</p></caption>
+<graphic xlink:href="2305.18417v1_fig4.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s5b">
+<label>5.2</label>
+<title>Arithmetic</title>
+<p>We next present results on arithmetic task for two types of operations, addition and multiplication using two types of inference module, LSTM and transformer. We trained 3 networks for each method and report mean accuracy alongwith standard error of the mean.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5:</label>
+<caption><p>Results on arithmetic on each region using LSTM in the inference module.</p></caption>
+<graphic xlink:href="2305.18417v1_fig5.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<p><xref ref-type="fig" rid="fig5">Figure 5</xref> shows the results for arithmetic problems using an LSTM in the inference module. The left panel shows results for addition problems, and the right panel shows results for multiplication problems. DPP-A achieves higher accuracy for addition than multiplication on the test regions. However, in both cases DPP-A significantly outperforms the other models, achieving nearly perfect OOD generalization for addition, and 65% accuracy for multiplication, compared with under 20% accuracy for all the other models. We found that grid embeddings obtained after the first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> aren’t able to fully preserve the relational structure for multiplication problems on the test regions (more details in <xref ref-type="sec" rid="s7b">Appendix 7.2</xref>), but still it affords superior capacity for OOD generalization than any of the other models. Thus, while it does not match the generalizability of a genuine algorithmic (i.e., symbolic) arithmetic function, it may be sufficient for some tasks (e.g., approximate multiplication ability in young children (<xref ref-type="bibr" rid="c37">Qu et al., 2021</xref>)).</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6:</label>
+<caption><p>Results on arithmetic on each region using transformer in the inference module.</p></caption>
+<graphic xlink:href="2305.18417v1_fig6.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<p><xref ref-type="fig" rid="fig6">Figure 6</xref> shows the results for arithmetic problems using a transformer in the inference module. With no DPP-A over the grid codes the transformer did poorly on addition and multiplication on the test regions, achieving around 20–30% accuracy. With DPP-A, the OOD generalization performance of transformer show a pattern similar to that for analogy: it is nearly perfect for addition and, though not as good on multiplication, nevertheless show approximately 40% better performance than the transformer multiplication.</p>
+</sec>
+<sec id="s5c">
+<label>5.3</label>
+<title>Ablation study</title>
+<p>To determine the individual importance of the grid code embeddings and the DPP-A attention objective, we carried out several ablation studies. First, to evaluate the importance of grid code embeddings, we analyzed the effect of DPP-A with non-grid code embeddings, using either one-hot or smoothed one-hot embeddings with standard deviations of 1, 10, and 100, each passed through a learned feedforward encoder, which consisted of two fully connected layers with 1024 units per layer, and ReLU nonlinearities. The final embedding was generated with a fully connected layer with 1024 units and sigmoid nonlinearity. Since these embeddings don’t have a frequency component, the training procedure with DPP-A consisted of only one step: minimizing the loss function <inline-formula id="ID22">
+<alternatives>
+<mml:math display="inline" id="I22"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq22.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. We tried different values of <italic>λ</italic> (0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000). For each type of embedding (one-hots and smoothed one-hots with each value of <italic>λ</italic>), we trained 3 networks and report for the model that achieved best performance on the validation set. Note that, given the much higher dimensionality and therefore memory demands of embeddings based on one-hots and smoothed one-hots, we had to limit the evaluation to a subset of the total space, resulting in evaluation on only two test regions (i.e., <italic>K</italic> ∈ [1, 3]).</p>
+<p><xref ref-type="fig" rid="fig7">Figure 7</xref> shows the results for the analogy task using an LSTM in the inference module. The average accuracy on the test regions for translation and scaling using smoothed one-hots passed through an encoder (shown in green) is nearly 30% better than simple one-hot embeddings passed through an encoder (shown in orange), but both still achieve significantly lower test accuracy than grid code embeddings which support perfect OOD generalization.</p>
+<p>With respect to the importance of the DPP-A, we note that the simulations reported earlier show that replacing the DPP-A mechanism with either other forms of regularization (dropout and L1 regularization; see <xref ref-type="sec" rid="s4b">Section 4.2</xref>) or a transformer (<xref ref-type="sec" rid="s5a">Section 5.1</xref> for analogy and <xref ref-type="sec" rid="s5b">Section 5.2</xref> for arithmetic tasks) failed to achieve the same level of OOD generalization as the network that used DPP-A. The results using a transformer are particularly instructive, as that incorporates a powerful mechanism for learned attention, but, even when provided with grid code embeddings, failed to produce results comparable to DPP-A, suggesting that the latter provides a simple but powerful form of attention objective, at least when used in conjunction with grid code embeddings.</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7:</label>
+<caption><p>Results on analogy on each region using DPP-A, an LSTM in the inference module, and different embeddings (grid codes, one-hots, and smoothed one-hots passed through a learned encoder) for translation (left) and scaling (right). Each point is mean accuracy over three networks, and bars show standard error of the mean.</p></caption>
+<graphic xlink:href="2305.18417v1_fig7.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig8" position="float" fig-type="figure">
+<label>Figure 8:</label>
+<caption><p>Results on analogy on each region using different embeddings (grid codes, and one-hots or smoothed one-hots with and without an encoder) and an LSTM in the inference module, but without DPP-A, TCN, L1 Regularization, or Dropout for translation (left) and scaling (right).</p></caption>
+<graphic xlink:href="2305.18417v1_fig8.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<p>Finally, for completeness, we also carried out a set of simulations that examined the performance of networks with various embeddings (grid codes, and one-hots or smoothed one-hots with or without a learned feedforward encoder), but no attention or regularization (i.e., neither DPP-A, transformer, nor TCN, L1 Regularization, or Dropout). <xref ref-type="fig" rid="fig8">Figure 8</xref> shows the results for the different embeddings. For translation (left), the average accuracy over the test regions using grid codes (shown in blue) is nearly 25% more compared to other embeddings, which all yield performance near chance (~ 15%). For scaling (right), although other embeddings achieve higher performance than chance (except smoothed one-hots), they still achieve lower test accuracy than grid codes.</p>
+</sec>
+</sec>
+<sec id="s6" sec-type="discussion">
+<label>6</label>
+<title>Discussion and future directions</title>
+<p>We have identified how particular properties of processing observed in the brain can be used to achieve strong OOD generalization, and introduced a two-component algorithm to promote OOD generalization in deep neural networks. The first component is a structured representation of the training data, modeled closely on known properties of grid cells - a population of cells that collectively represent abstract position using a periodic code. However, despite their intrinsic structure, we find that grid code and standard errordriven learning alone are insufficient to promote OOD generalization, and standard approaches for preventing overfitting offer only modest gains. This is addressed by the second component, using DPP-A to implement attentional regularization over the grid code. DPP-A allows only a relevant and diverse subset of cells to influence downstream computation in the inference module using the statistics of the training data. For proof of concept, we started with two challenging cognitive tasks (analogy and arithmetic), and showed that the combination of grid code and DPP-A promotes OOD generalization across both translation and scale when incorporated into common architectures (LSTM and transformer).</p>
+<p>The current approach may be seen to be limited by the fact that we derive the grid codes from known properties of neural systems, rather than obtaining these codes directly from real-world data. Here, we are encouraged by the body of work providing evidence for grid-like codes in the hidden layers of neural networks in a variety of task contexts and architectures (<xref ref-type="bibr" rid="c46">Wei et al., 2015</xref>; <xref ref-type="bibr" rid="c9">Cueva &amp; Wei, 2018</xref>; <xref ref-type="bibr" rid="c3">Banino et al., 2018</xref>; <xref ref-type="bibr" rid="c47">Whittington et al., 2020</xref>). This suggests reason for optimism that DPP-A may promote strong generalization in cases where grid-like codes naturally emerge: for example, navigation tasks (<xref ref-type="bibr" rid="c3">Banino et al., 2018</xref>) and reasoning by transitive inference (<xref ref-type="bibr" rid="c47">Whittington et al., 2020</xref>). Integrating our approach with structured representations acquired from high-dimensional, naturalistic datasets remains a critical next step which would have significant potential for broader future practical applications. So too does application to more complex transformations beyond translation and scale, such as rotation.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Dmitriy</given-names> <surname>Aronov</surname></string-name>, <string-name><given-names>Rhino</given-names> <surname>Nevers</surname></string-name>, and <string-name><given-names>David W</given-names> <surname>Tank</surname></string-name></person-group>. <article-title>Mapping of a non-spatial dimension by the hippocampal-entorhinal circuit</article-title>. <source>Nature</source>, <volume>543</volume>(<issue>7647</issue>):<fpage>719</fpage>-<lpage>722</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Jimmy Lei</given-names> <surname>Ba</surname></string-name>, <string-name><given-names>Jamie Ryan</given-names> <surname>Kiros</surname></string-name>, and <string-name><given-names>Geoffrey E</given-names> <surname>Hinton</surname></string-name></person-group>. <article-title>Layer normalization</article-title>. <comment><italic>arXiv preprint arXiv:1607.06450</italic></comment>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Andrea</given-names> <surname>Banino</surname></string-name>, <string-name><given-names>Caswell</given-names> <surname>Barry</surname></string-name>, <string-name><given-names>Benigno</given-names> <surname>Uria</surname></string-name>, <string-name><given-names>Charles</given-names> <surname>Blundell</surname></string-name>, <string-name><given-names>Timothy</given-names> <surname>Lillicrap</surname></string-name>, <string-name><given-names>Piotr</given-names> <surname>Mirowski</surname></string-name>, <string-name><given-names>Alexander</given-names> <surname>Pritzel</surname></string-name>, <string-name><given-names>Martin J</given-names> <surname>Chadwick</surname></string-name>, <string-name><given-names>Thomas</given-names> <surname>Degris</surname></string-name>, <string-name><given-names>Joseph</given-names> <surname>Modayil</surname></string-name></person-group>, <etal>et al.</etal> <article-title>Vector-based navigation using grid-like representations in artificial agents</article-title>. <source>Nature</source>, <volume>557</volume>(<issue>7705</issue>):<fpage>429</fpage>-<lpage>433</lpage>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Xiaojun</given-names> <surname>Bao</surname></string-name>, <string-name><given-names>Eva</given-names> <surname>Gjorgieva</surname></string-name>, <string-name><given-names>Laura K</given-names> <surname>Shanahan</surname></string-name>, <string-name><given-names>James D</given-names> <surname>Howard</surname></string-name>, <string-name><given-names>Thorsten</given-names> <surname>Kahnt</surname></string-name>, and <string-name><given-names>Jay A</given-names> <surname>Gottfried</surname></string-name></person-group>. <article-title>Grid-like neural representations support olfactory navigation of a two-dimensional odor space</article-title>. <source>Neuron</source>, <volume>102</volume>(<issue>5</issue>):<fpage>1066</fpage>-<lpage>1075</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>David</given-names> <surname>Barrett</surname></string-name>, <string-name><given-names>Felix</given-names> <surname>Hill</surname></string-name>, <string-name><given-names>Adam</given-names> <surname>Santoro</surname></string-name>, <string-name><given-names>Ari</given-names> <surname>Morcos</surname></string-name>, and <string-name><given-names>Timothy</given-names> <surname>Lillicrap</surname></string-name></person-group>. <article-title>Measuring abstract reasoning in neural networks</article-title>. In <source>International conference on machine learning</source>, pp. <fpage>511</fpage>-<lpage>520</lpage>. <comment>PMLR</comment>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Andrej</given-names> <surname>Bicanski</surname></string-name> and <string-name><given-names>Neil</given-names> <surname>Burgess</surname></string-name></person-group>. <article-title>A computational model of visual recognition memory via grid cells</article-title>. <source>Current Biology</source>, <volume>29</volume>(<issue>6</issue>):<fpage>979</fpage>-<lpage>990</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Laming</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Guoxin</given-names> <surname>Zhang</surname></string-name>, and <string-name><given-names>Hanning</given-names> <surname>Zhou</surname></string-name></person-group>. <article-title>Fast greedy map inference for determinantal point process to improve recommendation diversity</article-title>. In <source>Proceedings of the 32nd International Conference on Neural Information Processing Systems</source>, pp. <fpage>5627</fpage>-<lpage>5638</lpage>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Alexandra O</given-names> <surname>Constantinescu</surname></string-name>, <string-name><given-names>Jill X</given-names> <surname>O’Reilly</surname></string-name>, and <string-name><given-names>Timothy EJ</given-names> <surname>Behrens</surname></string-name></person-group>. <article-title>Organizing conceptual knowledge in humans with a gridlike code</article-title>. <source>Science</source>, <volume>352</volume>(<issue>6292</issue>):<fpage>1464</fpage>-<lpage>1468</lpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Christopher J</given-names> <surname>Cueva</surname></string-name> and <string-name><given-names>Xue-Xin</given-names> <surname>Wei</surname></string-name></person-group>. <article-title>Emergence of grid-like representations by training recurrent neural networks to perform spatial localization</article-title>. <comment><italic>arXiv preprint arXiv:1803.07770</italic></comment>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Jacob</given-names> <surname>Devlin</surname></string-name>, <string-name><given-names>Ming-Wei</given-names> <surname>Chang</surname></string-name>, <string-name><given-names>Kenton</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Kristina</given-names> <surname>Toutanova</surname></string-name></person-group>. <article-title>Bert: Pre-training of deep bidirectional transformers for language understanding</article-title>. <comment><italic>arXiv preprint arXiv:1810.04805</italic></comment>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Yedidyah</given-names> <surname>Dordek</surname></string-name>, <string-name><given-names>Daniel</given-names> <surname>Soudry</surname></string-name>, <string-name><given-names>Ron</given-names> <surname>Meir</surname></string-name>, and <string-name><given-names>Dori</given-names> <surname>Derdikman</surname></string-name></person-group>. <article-title>Extracting grid cell characteristics from place cell inputs using non-negative principal component analysis</article-title>. <source>Elife</source>, <volume>5</volume>:<fpage>e10094</fpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Steven</given-names> <surname>Frankland</surname></string-name> and <string-name><given-names>Jonathan</given-names> <surname>Cohen</surname></string-name></person-group>. <article-title>Determinantal point processes for memory and structured inference</article-title>. In <source>CogSci</source>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Steven</given-names> <surname>Frankland</surname></string-name>, <string-name><given-names>Taylor W</given-names> <surname>Webb</surname></string-name>, <string-name><given-names>Alexander A</given-names> <surname>Petrov</surname></string-name>, <string-name><given-names>Randall C</given-names> <surname>O’Reilly</surname></string-name>, and <string-name><given-names>Jonathan</given-names> <surname>Cohen</surname></string-name></person-group>. <article-title>Extracting and utilizing abstract, structured representations for analogy</article-title>. In <source>CogSci</source>, pp. <fpage>1766</fpage>-<lpage>1772</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Yarin</given-names> <surname>Gal</surname></string-name> and <string-name><given-names>Zoubin</given-names> <surname>Ghahramani</surname></string-name></person-group>. <article-title>A theoretically grounded application of dropout in recurrent neural networks</article-title>. <source>Advances in neural information processing systems</source>, <volume>29</volume>:<fpage>1019</fpage>-<lpage>1027</lpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Jennifer</given-names> <surname>Gillenwater</surname></string-name>, <string-name><given-names>Alex</given-names> <surname>Kulesza</surname></string-name>, and <string-name><given-names>Ben</given-names> <surname>Taskar</surname></string-name></person-group>. <article-title>Near-optimal map inference for determinantal point processes</article-title>. In <source>Advances in Neural Information Processing Systems</source>, pp. <fpage>2744</fpage>-<lpage>2752</lpage>. <comment>Citeseer</comment>, <year>2012</year>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Boqing</given-names> <surname>Gong</surname></string-name>, <string-name><given-names>Wei-Lun</given-names> <surname>Chao</surname></string-name>, <string-name><given-names>Kristen</given-names> <surname>Grauman</surname></string-name>, and <string-name><given-names>Fei</given-names> <surname>Sha</surname></string-name></person-group>. <article-title>Diverse sequential subset selection for supervised video summarization</article-title>. <source>Advances in neural information processing systems</source>, <volume>27</volume>:<fpage>2069</fpage>-<lpage>2077</lpage>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Torkel</given-names> <surname>Hafting</surname></string-name>, <string-name><given-names>Marianne</given-names> <surname>Fyhn</surname></string-name>, <string-name><given-names>Sturla</given-names> <surname>Molden</surname></string-name>, <string-name><given-names>May-Britt</given-names> <surname>Moser</surname></string-name>, and <string-name><given-names>Edvard I</given-names> <surname>Moser</surname></string-name></person-group>. <article-title>Microstructure of a spatial map in the entorhinal cortex</article-title>. <source>Nature</source>, <volume>436</volume>(<issue>7052</issue>):<fpage>801</fpage>-<lpage>806</lpage>, <year>2005</year>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Kaiming</given-names> <surname>He</surname></string-name>, <string-name><given-names>Xiangyu</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Shaoqing</given-names> <surname>Ren</surname></string-name>, and <string-name><given-names>Jian</given-names> <surname>Sun</surname></string-name></person-group>. <article-title>Deep residual learning for image recognition</article-title>. In <source>Proceedings of the IEEE conference on computer vision and pattern recognition</source>, pp. <fpage>770</fpage>-<lpage>778</lpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Kaiming</given-names> <surname>He</surname></string-name>, <string-name><given-names>Georgia</given-names> <surname>Gkioxari</surname></string-name>, <string-name><given-names>Piotr</given-names> <surname>Dollár</surname></string-name>, and <string-name><given-names>Ross</given-names> <surname>Girshick</surname></string-name></person-group>. <article-title>Mask r-cnn</article-title>. In <source>Proceedings of the IEEE international conference on computer vision</source>, pp. <fpage>2961</fpage>-<lpage>2969</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Felix</given-names> <surname>Hill</surname></string-name>, <string-name><given-names>Adam</given-names> <surname>Santoro</surname></string-name>, <string-name><given-names>David GT</given-names> <surname>Barrett</surname></string-name>, <string-name><given-names>Ari S</given-names> <surname>Morcos</surname></string-name>, and <string-name><given-names>Timothy</given-names> <surname>Lillicrap</surname></string-name></person-group>. <article-title>Learning to make analogies by contrasting abstract relational structure</article-title>. <comment><italic>arXiv preprint arXiv:1902.00120</italic></comment>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Sepp</given-names> <surname>Hochreiter</surname></string-name> and <string-name><given-names>Jürgen</given-names> <surname>Schmidhuber</surname></string-name></person-group>. <article-title>Lstm can solve hard long time lag problems</article-title>. <source>Advances in neural information processing systems</source>, pp. <fpage>473</fpage>-<lpage>479</lpage>, <year>1997</year>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Sergey</given-names> <surname>Ioffe</surname></string-name> and <string-name><given-names>Christian</given-names> <surname>Szegedy</surname></string-name></person-group>. <article-title>Batch normalization: Accelerating deep network training by reducing internal covariate shift</article-title>. In <source>International conference on machine learning</source>, pp. <fpage>448</fpage>-<lpage>456</lpage>. <comment>PMLR</comment>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Amirhossein</given-names> <surname>Kazemnejad</surname></string-name></person-group>. <article-title>Transformer architecture: The positional encoding</article-title>. <source>Kazemnejad’s blog</source>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Diederik P</given-names> <surname>Kingma</surname></string-name> and <string-name><given-names>Jimmy</given-names> <surname>Ba</surname></string-name></person-group>. <article-title>Adam: A method for stochastic optimization</article-title>. <comment><italic>arXiv preprint arXiv:1412.6980</italic></comment>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Chun-Wa</given-names> <surname>Ko</surname></string-name>, <string-name><given-names>Jon</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Maurice</given-names> <surname>Queyranne</surname></string-name></person-group>. <article-title>An exact algorithm for maximum entropy sampling</article-title>. <source>Operations Research</source>, <volume>43</volume>(<issue>4</issue>):<fpage>684</fpage>-<lpage>691</lpage>, <year>1995</year>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Anders</given-names> <surname>Krogh</surname></string-name> and <string-name><given-names>John A</given-names> <surname>Hertz</surname></string-name></person-group>. <article-title>A simple weight decay can improve generalization</article-title>. In <source>Advances in neural information processing systems</source>, pp. <fpage>950</fpage>-<lpage>957</lpage>, <year>1992</year>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Alex</given-names> <surname>Kulesza</surname></string-name> and <string-name><given-names>Ben</given-names> <surname>Taskar</surname></string-name></person-group>. <article-title>Determinantal point processes for machine learning</article-title>. <comment><italic>arXiv preprint arXiv:1207.6083</italic></comment>, <year>2012</year>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Brenden</given-names> <surname>Lake</surname></string-name> and <string-name><given-names>Marco</given-names> <surname>Baroni</surname></string-name></person-group>. <article-title>Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks</article-title>. In <source>International conference on machine learning</source>, pp. <fpage>2873</fpage>-<lpage>2882</lpage>. <comment>PMLR</comment>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Odile</given-names> <surname>Macchi</surname></string-name></person-group>. <article-title>The coincidence approach to stochastic point processes</article-title>. <source>Advances in Applied Probability</source>, <volume>7</volume> (<issue>1</issue>):<fpage>83</fpage>-<lpage>122</lpage>, <year>1975</year>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Zelda</given-names> <surname>Mariet</surname></string-name> and <string-name><given-names>Suvrit</given-names> <surname>Sra</surname></string-name></person-group>. <article-title>Diversity networks: Neural network compression using determinantal point processes</article-title>. <comment><italic>arXiv preprint arXiv:1511.05077</italic></comment>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Zelda</given-names> <surname>Mariet</surname></string-name>, <string-name><given-names>Yaniv</given-names> <surname>Ovadia</surname></string-name>, and <string-name><given-names>Jasper</given-names> <surname>Snoek</surname></string-name></person-group>. <article-title>Dppnet: Approximating determinantal point processes with deep networks</article-title>. <comment><italic>arXiv preprint arXiv:1901.02051</italic></comment>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>James L</given-names> <surname>McClelland</surname></string-name>, <string-name><given-names>Bruce L</given-names> <surname>McNaughton</surname></string-name>, and <string-name><given-names>Randall C</given-names> <surname>O’Reilly</surname></string-name></person-group>. <article-title>Why there are complementary learning systems in the hippocampus and neocortex: insights from the successes and failures of connectionist models of learning and memory</article-title>. <source>Psychological review</source>, <volume>102</volume>(<issue>3</issue>):<fpage>419</fpage>, <year>1995</year>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Daniel C</given-names> <surname>McNamee</surname></string-name>, <string-name><given-names>Kimberly L</given-names> <surname>Stachenfeld</surname></string-name>, <string-name><given-names>Matthew M</given-names> <surname>Botvinick</surname></string-name>, and <string-name><given-names>Samuel J</given-names> <surname>Gershman</surname></string-name></person-group>. <article-title>Compositional sequence generation in the entorhinal-hippocampal system</article-title>. <source>Entropy</source>, <volume>24</volume>(<issue>12</issue>):<fpage>1791</fpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>May-Britt</given-names> <surname>Moser</surname></string-name>, <string-name><given-names>David C</given-names> <surname>Rowland</surname></string-name>, and <string-name><given-names>Edvard I</given-names> <surname>Moser</surname></string-name></person-group>. <article-title>Place cells, grid cells, and memory</article-title>. <source>Cold Spring Harbor perspectives in biology</source>, <volume>7</volume>(<issue>2</issue>):<fpage>a021808</fpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Adam</given-names> <surname>Paszke</surname></string-name>, <string-name><given-names>Sam</given-names> <surname>Gross</surname></string-name>, <string-name><given-names>Soumith</given-names> <surname>Chintala</surname></string-name>, <string-name><given-names>Gregory</given-names> <surname>Chanan</surname></string-name>, <string-name><given-names>Edward</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Zachary</given-names> <surname>DeVito</surname></string-name>, <string-name><given-names>Zeming</given-names> <surname>Lin</surname></string-name>, <string-name><given-names>Alban</given-names> <surname>Desmaison</surname></string-name>, <string-name><given-names>Luca</given-names> <surname>Antiga</surname></string-name>, and <string-name><given-names>Adam</given-names> <surname>Lerer</surname></string-name></person-group>. <article-title>Automatic differentiation in pytorch</article-title>. <year>2017</year>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Laura</given-names> <surname>Perez-Beltrachini</surname></string-name> and <string-name><given-names>Mirella</given-names> <surname>Lapata</surname></string-name></person-group>. <article-title>Multi-document summarization with determinantal point process attention</article-title>. <source>Journal of Artificial Intelligence Research</source>, <volume>71</volume>:<fpage>371</fpage>-<lpage>399</lpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Chuyan</given-names> <surname>Qu</surname></string-name>, <string-name><given-names>Emily</given-names> <surname>Szkudlarek</surname></string-name>, and <string-name><given-names>Elizabeth M</given-names> <surname>Brannon</surname></string-name></person-group>. <article-title>Approximate multiplication in young children prior to multiplication instruction</article-title>. <source>Journal of experimental child psychology</source>, <volume>207</volume>:<fpage>105116</fpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>David</given-names> <surname>Saxton</surname></string-name>, <string-name><given-names>Edward</given-names> <surname>Grefenstette</surname></string-name>, <string-name><given-names>Felix</given-names> <surname>Hill</surname></string-name>, and <string-name><given-names>Pushmeet</given-names> <surname>Kohli</surname></string-name></person-group>. <article-title>Analysing mathematical reasoning abilities of neural models</article-title>. <comment><italic>arXiv preprint arXiv:1904.01557</italic></comment>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>David</given-names> <surname>Silver</surname></string-name>, <string-name><given-names>Julian</given-names> <surname>Schrittwieser</surname></string-name>, <string-name><given-names>Karen</given-names> <surname>Simonyan</surname></string-name>, <string-name><given-names>Ioannis</given-names> <surname>Antonoglou</surname></string-name>, <string-name><given-names>Aja</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Arthur</given-names> <surname>Guez</surname></string-name>, <string-name><given-names>Thomas</given-names> <surname>Hubert</surname></string-name>, <string-name><given-names>Lucas</given-names> <surname>Baker</surname></string-name>, <string-name><given-names>Matthew</given-names> <surname>Lai</surname></string-name>, <string-name><given-names>Adrian</given-names> <surname>Bolton</surname></string-name></person-group>, <etal>et al.</etal> <article-title>Mastering the game of go without human knowledge</article-title>. <source>nature</source>, <volume>550</volume>(<issue>7676</issue>):<fpage>354</fpage>-<lpage>359</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Ben</given-names> <surname>Sorscher</surname></string-name>, <string-name><given-names>Gabriel C</given-names> <surname>Mel</surname></string-name>, <string-name><given-names>Samuel A</given-names> <surname>Ocko</surname></string-name>, <string-name><given-names>Lisa M</given-names> <surname>Giocomo</surname></string-name>, and <string-name><given-names>Surya</given-names> <surname>Ganguli</surname></string-name></person-group>. <article-title>A unified theory for the computational and mechanistic origins of grid cells</article-title>. <source>Neuron</source>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Nitish</given-names> <surname>Srivastava</surname></string-name>, <string-name><given-names>Geoffrey</given-names> <surname>Hinton</surname></string-name>, <string-name><given-names>Alex</given-names> <surname>Krizhevsky</surname></string-name>, <string-name><given-names>Ilya</given-names> <surname>Sutskever</surname></string-name>, and <string-name><given-names>Ruslan</given-names> <surname>Salakhutdinov</surname></string-name></person-group>. <article-title>Dropout: a simple way to prevent neural networks from overfitting</article-title>. <source>The journal of machine learning research</source>, <volume>15</volume>(<issue>1</issue>): <fpage>1929</fpage>-<lpage>1958</lpage>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kimberly L</given-names> <surname>Stachenfeld</surname></string-name>, <string-name><given-names>Matthew M</given-names> <surname>Botvinick</surname></string-name>, and <string-name><given-names>Samuel J</given-names> <surname>Gershman</surname></string-name></person-group>. <article-title>The hippocampus as a predictive map</article-title>. <source>Nature neuroscience</source>, <volume>20</volume>(<issue>11</issue>):<fpage>1643</fpage>-<lpage>1653</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Hanne</given-names> <surname>Stensola</surname></string-name>, <string-name><given-names>Tor</given-names> <surname>Stensola</surname></string-name>, <string-name><given-names>Trygve</given-names> <surname>Solstad</surname></string-name>, <string-name><given-names>Kristian</given-names> <surname>Frøland</surname></string-name>, <string-name><given-names>May-Britt</given-names> <surname>Moser</surname></string-name>, and <string-name><given-names>Edvard I</given-names> <surname>Moser</surname></string-name></person-group>. <article-title>The entorhinal grid map is discretized</article-title>. <source>Nature</source>, <volume>492</volume>(<issue>7427</issue>):<fpage>72</fpage>-<lpage>78</lpage>, <year>2012</year>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Ashish</given-names> <surname>Vaswani</surname></string-name>, <string-name><given-names>Noam</given-names> <surname>Shazeer</surname></string-name>, <string-name><given-names>Niki</given-names> <surname>Parmar</surname></string-name>, <string-name><given-names>Jakob</given-names> <surname>Uszkoreit</surname></string-name>, <string-name><given-names>Llion</given-names> <surname>Jones</surname></string-name>, <string-name><given-names>Aidan N</given-names> <surname>Gomez</surname></string-name>, <string-name><given-names>Lukasz</given-names> <surname>Kaiser</surname></string-name>, and <string-name><given-names>Illia</given-names> <surname>Polosukhin</surname></string-name></person-group>. <article-title>Attention is all you need</article-title>. In <source>Advances in neural information processing systems</source>, pp. <fpage>5998</fpage>-<lpage>6008</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Taylor</given-names> <surname>Webb</surname></string-name>, <string-name><given-names>Zachary</given-names> <surname>Dulberg</surname></string-name>, <string-name><given-names>Steven</given-names> <surname>Frankland</surname></string-name>, <string-name><given-names>Alexander</given-names> <surname>Petrov</surname></string-name>, <string-name><given-names>Randall</given-names> <surname>O’Reilly</surname></string-name>, and <string-name><given-names>Jonathan</given-names> <surname>Cohen</surname></string-name></person-group>. <article-title>Learning representations that support extrapolation</article-title>. In <source>International Conference on Machine Learning</source>, pp. <fpage>10136</fpage>-<lpage>10146</lpage>. <comment>PMLR</comment>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c46"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Xue-Xin</given-names> <surname>Wei</surname></string-name>, <string-name><given-names>Jason</given-names> <surname>Prentice</surname></string-name>, and <string-name><given-names>Vijay</given-names> <surname>Balasubramanian</surname></string-name></person-group>. <article-title>A principle of economy predicts the functional architecture of grid cells</article-title>. <source>Elife</source>, <volume>4</volume>:<fpage>e08362</fpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c47"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>James CR</given-names> <surname>Whittington</surname></string-name>, <string-name><given-names>Timothy H</given-names> <surname>Muller</surname></string-name>, <string-name><given-names>Shirley</given-names> <surname>Mark</surname></string-name>, <string-name><given-names>Guifen</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Caswell</given-names> <surname>Barry</surname></string-name>, <string-name><given-names>Neil</given-names> <surname>Burgess</surname></string-name>, and <string-name><given-names>Timothy EJ</given-names> <surname>Behrens</surname></string-name></person-group>. <article-title>The tolman-eichenbaum machine: Unifying space and relational memory through generalization in the hippocampal formation</article-title>. <source>Cell</source>, <volume>183</volume>(<issue>5</issue>):<fpage>1249</fpage>-<lpage>1263</lpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c48"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Yonghui</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>Mike</given-names> <surname>Schuster</surname></string-name>, <string-name><given-names>Zhifeng</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Quoc V</given-names> <surname>Le</surname></string-name>, <string-name><given-names>Mohammad</given-names> <surname>Norouzi</surname></string-name>, <string-name><given-names>Wolfgang</given-names> <surname>Macherey</surname></string-name>, <string-name><given-names>Maxim</given-names> <surname>Krikun</surname></string-name>, <string-name><given-names>Yuan</given-names> <surname>Cao</surname></string-name>, <string-name><given-names>Qin</given-names> <surname>Gao</surname></string-name>, <string-name><given-names>Klaus</given-names> <surname>Macherey</surname></string-name></person-group>, <etal>et al.</etal> <article-title>Google’s neural machine translation system: Bridging the gap between human and machine translation</article-title>. <comment><italic>arXiv preprint arXiv:1609.08144</italic></comment>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c49"><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>Cheng</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Hedvig</given-names> <surname>Kjellstrom</surname></string-name>, and <string-name><given-names>Stephan</given-names> <surname>Mandt</surname></string-name></person-group>. <article-title>Determinantal point processes for mini-batch diversification</article-title>. <comment><italic>arXiv preprint arXiv:1705.00607</italic></comment>, <year>2017</year>.</mixed-citation></ref>
+</ref-list>
+<app-group>
+<app id="app1">
+<label>7</label>
+<title>Appendix</title>
+<sec id="s7a">
+<label>7.1</label>
+<title>More experimental details</title>
+<p>The size of the training region, <italic>M</italic> was 100. For analogy task, we used 653216 training samples, 163304 validation samples, and 20000 testing samples for each of the nine regions. For arithmetic task, we used 80000 training samples, 20000 validation samples, and 20000 testing samples for each of the nine regions with equal number of addition and multiplication problems. We used the PyTorch library (<xref ref-type="bibr" rid="c35">Paszke et al., 2017</xref>) for all experiments. For each network, the training epoch that achieved the best validation accuracy was used to report performance accuracy for the training stimulus sets, validation sets (held out stimuli from the training range), and OOD generalization test sets (from regions beyond the range of the training data).</p>
+</sec>
+<sec id="s7b">
+<label>7.2</label>
+<title>Why is OOD generalization performance worse for the multiplication task?</title>
+<p>In an effort to understand why DPP-A achieved around 65% average test accuracy on multiplication compared to nearly perfect accuracy for addition and analogy task, we analyzed the distribution of the grid embeddings for the grid cells belonging to the frequency which had the maximum within-frequency determinant at the end of the first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>. More specifically for <italic>A</italic>, <italic>B</italic> and the correct answer <italic>C</italic>, we analyzed the distribution of each grid cell for the training and the nine test regions. Note that since the total number of grid cells was 900 and there were nine frequencies, the dimension of the grid embeddings corresponding to <inline-formula id="ID23">
+<alternatives>
+<mml:math display="inline" id="I23"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq23.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> grid cell frequency was 100. To quantify the similarity between training and the test distributions, we computed cosine distance (1 - cosine similarity), and averaged it over the 100 dimensions and nine test regions. We found that the average cosine distance is 5x greater for multiplication than addition problem (0.0002 for addition: 0.001 for multiplication). In this respect, grid coding does not perfectly preserve relational structure of the multiplication problem, which we would expect to limit DPP-A’s OOD generalization ability in that task-domain.</p>
+</sec>
+<sec id="s7c">
+<label>7.3</label>
+<title>Ablation study on choice of frequency</title>
+<fig id="fig9" position="float" fig-type="figure">
+<label>Figure 9:</label>
+<caption><p>Results on analogy on each region using LSTM in the inference module for choosing top <italic>K</italic> frequencies with <inline-formula id="ID24">
+<alternatives>
+<mml:math display="inline" id="I24"><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq24.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig9.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s7d">
+<label>7.4</label>
+<title>Baseline using dynamic attention across frequencies</title>
+<fig id="fig10" position="float" fig-type="figure">
+<label>Figure 10:</label>
+<caption><p>Results on analogy on each region for translation and scaling using transformer in the inference module.</p></caption>
+<graphic xlink:href="2305.18417v1_fig10.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s7e">
+<label>7.5</label>
+<title>Ablation study on arithmetic task</title>
+<fig id="fig11" position="float" fig-type="figure">
+<label>Figure 11:</label>
+<caption><p>Results on arithmetic with different embeddings (with DPP-A) using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig11.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig12" position="float" fig-type="figure">
+<label>Figure 12:</label>
+<caption><p>Results on arithmetic with different embeddings (without DPP-A, TCN, L1 Regularization, or Dropout) using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig12.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig13" position="float" fig-type="figure">
+<label>Figure 13:</label>
+<caption><p>Results on arithmetic for increasing number of grid cell frequencies <italic>N<sub>f</sub></italic> on each region using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig13.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s7f">
+<label>7.6</label>
+<title>Regression formulation</title>
+<p>We also tried formulating the analogy and arithmetic tasks as regression instead of classification via a scoring mechanism. For DPP-A, the inference module was trained to generate the grid embeddings for grid cells belonging to the <inline-formula id="ID25">
+<alternatives>
+<mml:math display="inline" id="I25"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq25.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> frequency, which had the maximum within-frequency determinant at the end of first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> for the correct completion, given as input the <inline-formula id="ID26">
+<alternatives>
+<mml:math display="inline" id="I26"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq26.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> frequency grid embeddings for <italic>A, B, C</italic> for the analogy task and <italic>A, B</italic> for the arithmetic task. A linear layer with 100 units and sigmoid activation was used to generate the output of the inference module and was trained to minimize the mean squared error with the <inline-formula id="ID27">
+<alternatives>
+<mml:math display="inline" id="I27"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq27.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> frequency grid embeddings of the correct completion. We compared DPP-A with a version that didn’t use the attentional objective (no DPP-A), where the inference module was trained to generate the grid embeddings for all the frequencies, but was evaluated on only the <inline-formula id="ID28">
+<alternatives>
+<mml:math display="inline" id="I28"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq28.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> frequency grid embeddings for fair comparison with the DPP-A version. <xref ref-type="fig" rid="fig14">Figure 14</xref> shows the results for the analogy task using an LSTM in the inference module. For both the translation (left) and scaling (right) regimes, DPP-A achieves nearly zero mean squared error on all the test regions, considerably outperforming the no DPP-A which achieves much higher error. <xref ref-type="fig" rid="fig15">Figure 15</xref> shows the results for arithmetic problems using an LSTM in the inference module. For addition problems, shown on the left, DPP-A achieves nearly zero mean squared error on the test regions. For multiplication problems, shown on the right, DPP-A achieves lower mean squared error on the test regions, 0.11, compared to no DPP-A which achieves around 0.17.</p>
+<fig id="fig14" position="float" fig-type="figure">
+<label>Figure 14:</label>
+<caption><p>Results for regression on analogy using LSTM in the inference module. Results show mean squared error on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig14.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig15" position="float" fig-type="figure">
+<label>Figure 15:</label>
+<caption><p>Results for regression on arithmetic on each region using LSTM in the inference module. Results show mean squared error on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig15.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s7g">
+<label>7.7</label>
+<title>Effect of L1 Regularization strength (λ)</title>
+<fig id="fig16" position="float" fig-type="figure">
+<label>Figure 16:</label>
+<caption><p>Results on analogy for L1 regularization for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig16.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig17" position="float" fig-type="figure">
+<label>Figure 17:</label>
+<caption><p>Results on arithmetic for L1 regularization for various <italic>λ</italic>s using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig17.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+</sec>
+<sec id="s7h">
+<label>7.8</label>
+<title>Ablation on DPP-A</title>
+<fig id="fig18" position="float" fig-type="figure">
+<label>Figure 18:</label>
+<caption><p>Results on analogy for one step DPP-A over the complete grid codes for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig18.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<fig id="fig19" position="float" fig-type="figure">
+<label>Figure 19:</label>
+<caption><p>Results on analogy for one step DPP-A within frequencies for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
+<graphic xlink:href="2305.18417v1_fig19.jpg" mimetype="image" mime-subtype="jpeg"/>
+</fig>
+<p>The proposed DPP-A method (<xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>) consists of two steps with <italic>L<sub>DPP</sub></italic> in the first step and <italic>L<sub>task</sub></italic> in the second step. We considered two ablation experiments which consists of a single step. In one case we maximized the objective function, <inline-formula id="ID29">
+<alternatives>
+<mml:math display="inline" id="I29"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>a</mml:mi><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>V</mml:mi><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq29.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>, over the complete grid codes (instead of summing <inline-formula id="ID30">
+<alternatives>
+<mml:math display="inline" id="I30"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq30.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> corresponding to grid codes from each frequency independently as done in the first step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>), using stochastic gradient ascent, along with minimizing <italic>L<sub>task</sub></italic>, which would use all the attended grid codes (instead of using <inline-formula id="ID31">
+<alternatives>
+<mml:math display="inline" id="I31"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq31.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula> frequency grid codes as done in the second step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>). So total loss, <inline-formula id="ID32">
+<alternatives>
+<mml:math display="inline" id="I32"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq32.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. We refer to this ablation experiment as one step DPP-A over the complete grid codes. The results on analogy for this ablation experiment is shown in <xref ref-type="fig" rid="fig18">Figure 18</xref>. We see that the accuracy on test analogies for translation for various <italic>λ</italic>s are around 30–60%, and for scaling around 2040%, which is much lower than the nearly perfect accuracy achieved by the proposed DPP-A method. In the other case we maximized the objective function <inline-formula id="ID33">
+<alternatives>
+<mml:math display="inline" id="I33"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow></mml:munderover><mml:mrow><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>a</mml:mi><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq33.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>, using stochastic gradient ascent, which is same as <italic>L<sub>DPP</sub></italic> in the first step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>, along with minimizing <italic>L<sub>task</sub></italic>, which would use all the attended grid codes. So total loss, <inline-formula id="ID34">
+<alternatives>
+<mml:math display="inline" id="I34"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2305.18417v1_ieq34.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+</inline-formula>. We refer to this ablation experiment as one step DPP-A within frequencies. As shown in <xref ref-type="fig" rid="fig19">Figure 19</xref>, the accuracy on test analogies for both translation and scaling for various <italic>λ</italic>s are in a similar range to one step DPP-A over the complete grid codes, and is much lower than the nearly perfect accuracy achieved by the proposed DPP-A method.</p>
+</sec>
+</app>
+</app-group>
+<fn-group>
+<fn id="fn1"><label>1</label><p>We transformed by the same amount along both dimensions so that the OOD generalization regimes are similar to <xref ref-type="bibr" rid="c45">Webb et al. (2020)</xref>.</p></fn>
+<fn id="fn2"><label>2</label><p><ext-link ext-link-type="uri" xlink:href="https://github.com/bicanski/VisualGridsRecognitionMem">https://github.com/bicanski/VisualGridsRecognitionMem</ext-link></p></fn>
+<fn id="fn3"><label>3</label><p>It seems likely that the use of grid codes for abstraction in human cognition requires a considerably greater number of states <italic>S</italic> than that used by the rodent for sensory encoding. However, given exponential scaling, the total number of frequencies is expected to remain low, increasing as a logarithm of <italic>S</italic>.</p></fn>
+<fn id="fn4"><label>4</label><p><ext-link ext-link-type="uri" xlink:href="https://github.com/insuhan/fastdppmap/blob/db7a28c38ce654bdbfd5ab1128d3d5910b68df6b/test_greedy.m#L123">https://github.com/insuhan/fastdppmap/blob/db7a28c38ce654bdbfd5ab1128d3d5910b68df6b/test_greedy.m#L123</ext-link>. <italic>S</italic> need not be a square matrix in our case, whose second dimension <italic>M</italic> was the size of the training region. <italic>L</italic>_<italic>kernel</italic> is same as <italic><bold>V</bold></italic>.</p></fn>
+</fn-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89911.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Schapiro</surname>
+<given-names>Anna C</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Pennsylvania</institution>
+</institution-wrap>
+<city>Philadelphia</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> modeling work demonstrates out-of-distribution generalization using a grid cell coding scheme combined with Determinantal Point Process Attention. The simulations provide <bold>convincing</bold> evidence that the model improves generalization performance across several tasks. The generality of the approach is unclear, however, and there is limited comparison to relevant prior work.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89911.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>
+This paper presents a cognitive model of out-of-distribution generalisation, where the representational basis is grid-cell codes. In particular, the authors consider the tasks of analogies, addition, and multiplication, and the out-of-distribution tests are shifting or scaling the input domain. The authors utilise grid cell codes, which are multi-scale as well as translationally invariant due to their periodicity. To allow for domain adaptation, the authors use DPP-A which is, in this context, a mechanism of adapting to input scale changes. The authors present simulation results demonstrating that this model can perform out-of-distribution generalisation to input translations and re-scaling, whereas other models fail.</p>
+<p>Strengths:</p>
+<p>
+This paper makes the point it sets out to - that there are some underlying representational bases, like grid cells, that when combined with a domain adaptation mechanism, like DPP-A, can facilitate out-of-generalisation. I don't have any issues with the technical details.</p>
+<p>Weaknesses:</p>
+<p>
+The paper does leave open the bigger questions of 1) how one learns a suitable representation basis in the first place, 2) how to have a domain adaptation mechanism that works in more general settings other than adapting to scale. Overall, I'm left wondering whether this model is really quite bespoke or whether there is something really general here. My comments below are trying to understand how general this approach is.</p>
+<p>COMMENTS</p>
+<p>
+This work relies on being able to map inputs into an appropriate representational space. The inputs were integers so it's easy enough to map them to grid locations. But how does this transfer to making analogies in other spaces? Do the inputs need to be mapped (potentially non-linearly) into a space where everything is linear? In general, what are the properties of the embedding space that allows the grid code to be suitable? It would be helpful to know just how much leg work an embedding model would have to do.</p>
+<p>It's natural that grid cells are great for domain shifts of translation, rescaling, and rotation, because they themselves are multi-scaled and are invariant to translations and rotations. But grid codes aren't going to be great for other types of domain shifts. Are the authors saying that to make analogies grid cells are all you need? If not then what else? And how does this representation get learned? Are there lots of these invariant codes hanging around? And if so how does the appropriate one get chosen for each situation? Some discussion of the points is necessary as otherwise, the model seems somewhat narrow in scope.</p>
+<p>For effective adaptation of scale, the authors needed to use DPP-A. Being that they are relating to brains using grid codes, what processes are implementing DPP-A? Presumably, a computational module that serves the role of DPP-A could be meta-learned? I.e. if they change their task set-up so it gets to see domain shifts in its training data an LSTM or transformer could learn to do this. The presented model comparisons feel a bit of a straw man.</p>
+<p>I couldn't see it explained exactly how R works.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89911.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>
+This paper presents a model of out-of-distribution (OOD) generalization that focuses on modeling an analogy task, in which translation or scaling is tested with training in one part of the space and testing in other areas of the space progressively more distant from the training location. Similar tests were performed on arithmetic including addition and multiplication, and similarly impressive results appear for addition but not multiplication. The authors show that a grid cell coding scheme helps performance on these analogy and arithmetic tasks, but the most dramatic increase in performance is provided by a complex algorithm for distributional point-process attention (DPP-A) based on maximizing the determinant of the covariance matrix of the grid embeddings.</p>
+<p>Strengths:</p>
+<p>
+The results appear quite impressive. The results for generalization appear quite dramatic when compared to other coding schemes (i.e. one-hot) or when compared to the performance when ablating the DPP-A component but retaining the same inference modules using LSTM or transformers. This appears to be an important result in terms of generalization of results in an analogy space.</p>
+<p>Weaknesses:</p>
+<p>
+There are a number of ways that its impact and connection to grid cells could be enhanced. From the neuroscience perspective, the major comments concern making a clearer and stronger connection to the actual literature on grid cells and grid cell modeling, and discussing the relationship of the complex DPP-A algorithm to biological circuits.</p>
+<p>Major comments:</p>
+<p>
+1. They should provide more citations to other groups that have explored analogy using this type of task. Currently, they only cite one paper (Webb et al., 2020) by their own group in their footnote 1 which used the same representation of behavioral tasks for generalization of analogy. It would be useful if they could cite other papers using this simplified representation of analogy and also show the best performance of other algorithms from other groups in their figures, so that there is a sense of how their results compare to the best previous algorithm by other groups in the field (or they can identify which of their comparison algorithms corresponds to the best of previously published work).</p>
+<p>2. While the grid code they use is very standard and based on grid cell researchers (Bicanski and Burgess, 2019), the rest of the algorithm doesn't have a clear claim on biological plausibility. It has become somewhat standard in the field to ignore the problem of how the brain could biologically implement the latest complex algorithm, but it would be useful if they at least mention the problem (or difficulty) of implementing DPP-A in a biological network. In particular, does maximizing the determinant of the covariance matrix of the grid code correspond to something that could be tested experimentally?</p>
+<p>3. Related to major comment 2., it would be very exciting if they could show what the grid code looks like after the attentional modulation inner product xT w has been implemented. This could be highly useful for experimental researchers trying to connect these theoretical simulation results to data. This would be most intuitive to grid cell researchers if it is plotted in the same format as actual biological experimental data - specifically which grid cell codes get strengthened the most (beyond just the highest frequencies).</p>
+<p>4. To enhance the connection to biological systems, they should cite more of the experimental and modeling work on grid cell coding (for example on page 2 where they mention relational coding by grid cells). Currently, they tend to cite studies of grid cell relational representations that are very indirect in their relationship to grid cell recordings (i.e. indirect fMRI measures by Constaninescu et al., 2016 or the very abstract models by Whittington et al., 2020). They should cite more papers on actual neurophysiological recordings of grid cells that suggest relational/metric representations, and they should cite more of the previous modeling papers that have addressed relational representations. This could include work on using grid cell relational coding to guide spatial behavior (e.g. Erdem and Hasselmo, 2014; Bush, Barry, Manson, Burges, 2015). This could also include other papers on the grid cell code beyond the paper by Wei et al., 2015 - they could also cite work on the efficiency of coding by Sreenivasan and Fiete and by Mathis, Herz, and Stemmler.</p>
+</body>
+</sub-article>
+</article>
