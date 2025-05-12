@@ -1,0 +1,770 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">90606</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.90606</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.90606.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Structural Biology and Molecular Biophysics</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Uncovering Protein Ensembles: Automated Multiconformer Model Building for X-ray Crystallography and Cryo-EM</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4225-7459</contrib-id>
+<name>
+<surname>Wankowicz</surname>
+<given-names>Stephanie A.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4902-4025</contrib-id>
+<name>
+<surname>Ravikumar</surname>
+<given-names>Ashraya</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1128-4331</contrib-id>
+<name>
+<surname>Sharma</surname>
+<given-names>Shivani</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2176-0503</contrib-id>
+<name>
+<surname>Riley</surname>
+<given-names>Blake T.</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6192-3613</contrib-id>
+<name>
+<surname>Raju</surname>
+<given-names>Akshay</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3375-408X</contrib-id>
+<name>
+<surname>Hogan</surname>
+<given-names>Daniel W.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2358-841X</contrib-id>
+<name>
+<surname>van den Bedem</surname>
+<given-names>Henry</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-9184-7586</contrib-id>
+<name>
+<surname>Keedy</surname>
+<given-names>Daniel A.</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5080-2859</contrib-id>
+<name>
+<surname>Fraser</surname>
+<given-names>James S.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Bioengineering and Therapeutic Sciences, University of California San Francisco</institution>, San Francisco, CA, <country>USA</country></aff>
+<aff id="a2"><label>2</label><institution>Structural Biology Initiative, CUNY Advanced Science Research Center</institution>, New York, NY 10031</aff>
+<aff id="a3"><label>3</label>Ph.D. <institution>Program in Biology, The Graduate Center – City University of New York</institution>, New York, NY 10016</aff>
+<aff id="a4"><label>4</label><institution>Atomwise, Inc.</institution>, San Francisco, CA, United States</aff>
+<aff id="a5"><label>5</label><institution>Department of Chemistry and Biochemistry, City College of New York</institution>, New York, NY 10031</aff>
+<aff id="a6"><label>6</label>Ph.D. <institution>Programs in Biochemistry, Biology, and Chemistry, The Graduate Center – City University of New York</institution>, New York, NY 10016</aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Stockbridge</surname>
+<given-names>Randy B</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Michigan</institution>
+</institution-wrap>
+<city>Ann Arbor</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Cui</surname>
+<given-names>Qiang</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Boston University</institution>
+</institution-wrap>
+<city>Boston</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Correspondence: <email>mullane.stephanie@gmail.com</email></corresp>
+<fn id="n1" fn-type="present-address"><label>†</label><p>Replay, 5555 Oberlin Drive, Ste. 120, San Diego, CA 92121</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-09-05">
+<day>05</day>
+<month>09</month>
+<year>2023</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP90606</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-07-05">
+<day>05</day>
+<month>07</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-06-29">
+<day>29</day>
+<month>06</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.06.28.546963"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Wankowicz et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Wankowicz et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-90606-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>With the advent of AlphaFold, protein structure prediction has attained remarkable accuracy. These achievements resulted from a focus on single static structures. The next frontier in this field involves enhancing our ability to model conformational ensembles, not just the ground states of proteins. Notably, deposited structures result from interpretation of density maps, which are derived from either X-ray crystallography or cryogenic electron microscopy (cryo-EM). These maps represent ensemble averages, reflecting molecules in multiple conformations. Here, we present the latest developments in qFit, an automated computational approach to model protein conformational heterogeneity into density maps. We present algorithmic advancements to qFit, validated by improved R<sub>free</sub> and geometry metrics across a broad and diverse set of proteins. Automated multiconformer modeling holds significant promise for interpreting experimental structural biology data and for generating novel hypotheses linking macromolecular conformational dynamics to function.</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>We added grant acknowledgments and changed the units on a graph in figure 4 and supplementary figure 7.</p></fn>
+</fn-group>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://github.com/ExcitedStates/qfit-3.0/tree/main/src/qfit">https://github.com/ExcitedStates/qfit-3.0/tree/main/src/qfit</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Macromolecular X-ray crystallography and single-particle electron microscopy (cryo-EM) can provide valuable information on macromolecular conformational ensembles. These experiments cannot capture all conformations present in solution, as many would disrupt the ability to obtain crystals or align classifiable particles<sup><xref ref-type="bibr" rid="c1">1</xref></sup>. However, careful modeling of high-resolution X-ray crystallography and cryo-EM experiments can reveal widespread conformational heterogeneity, particularly for protein side chains and local backbone regions<sup><xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c3">3</xref></sup>. Discrete conformational heterogeneity of such small magnitude is significant for many biological functions, including macromolecular binding, catalysis, and allostery<sup><xref ref-type="bibr" rid="c4">4</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup>.</p>
+<p>While the underlying data from X-ray diffraction or cryo-EM experiments contain information on temporal and spatial averages of tens of thousands to billions of protein copies, conventional structural modeling and refinement procedures fail to capture much of this valuable information. Most depositions in the Protein Data Bank reflect only an averaged, single ground state set of atomic coordinates<sup><xref ref-type="bibr" rid="c7">7</xref></sup>, ignoring weak but potentially biologically rich signals encoding alternative conformations sampled by distinct copies of the protein in the experiment.</p>
+<p>Ideally, we would accurately model the complete ensemble of protein conformations reflected in experimental data<sup><xref ref-type="bibr" rid="c8">8</xref></sup>. The two ways to model the conformational heterogeneity present in the sample are to create ensembles or to use alternative conformations (multiconformers)<sup><xref ref-type="bibr" rid="c9">9</xref></sup>. The PDB “ensemble” format encodes multiple complete copies of the entire system in different models within a single file. Ensemble refinement approaches are implemented in phenix.ensemble_refinement and Vagabond<sup><xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c11">11</xref></sup>. In contrast, multiconformers extend the conventional single structure model by encoding each individual conformation using a distinct “alternative location indicator (altloc)” within a single model. Altlocs are assigned distinct letters and can range from single atoms to a large number of connected or non-connected residues. Refinement and validation programs treat atoms sharing the same altloc as having the ability to interact with each other and with atoms lacking an altloc. In contrast, atoms with different altlocs cannot interact. By representing the underlying heterogeneity through discrete conformations with labeled altlocs, multiconformer models encode the distribution of states that contribute to the density map. Further, when compared to ensemble methods that yield multiple complete copies of a protein<sup><xref ref-type="bibr" rid="c11">11</xref>–<xref ref-type="bibr" rid="c13">13</xref></sup>, multiconformer models are more interpretable and easier to modify in interactive modeling software such as Coot<sup><xref ref-type="bibr" rid="c14">14</xref></sup>.</p>
+<p>However, many factors make manually creating multiconformer models difficult and time-consuming. Interpreting weak density is complicated by noise arising from many sources, including crystal imperfections, radiation damage, and poor modeling<sup><xref ref-type="bibr" rid="c15">15</xref>–<xref ref-type="bibr" rid="c17">17</xref></sup> in X-ray crystallography, and errors in particle alignment and classification, poor modeling of beam induced motion, and imperfect detector Detector Quantum Efficiency (DQE) in cryo-EM<sup><xref ref-type="bibr" rid="c18">18</xref></sup>. These factors make visually distinguishing signals in Coot<sup><xref ref-type="bibr" rid="c14">14</xref></sup> or other visualization software very difficult, especially when genuine low-occupancy signals overlap. Additionally, in X-ray crystallography, this process is iterative. Each time a new alternative conformation is placed, it can impact the entire electron density map, often requiring adjustments to previously modeled regions. The difficulty of this process can lead to burnout and human bias, where parts of the protein are carefully modeled as multiconformers, whereas other regions remain modeled as single conformers. Despite these complications multiconformer modeling can be implemented manually or using software such as FLEXR<sup><xref ref-type="bibr" rid="c19">19</xref></sup> or qFit, as described below.</p>
+<p>To enable more routine and impartial multiconformer modeling, we have previously developed qFit<sup><xref ref-type="bibr" rid="c20">20</xref>–<xref ref-type="bibr" rid="c22">22</xref></sup>. This program leverages the ensemble-rich experimental data from density maps that are better than 2.0 angstroms (Å) resolution to automatically generate parsimonious multiconformer models<sup><xref ref-type="bibr" rid="c20">20</xref>, <xref ref-type="bibr" rid="c21">21</xref></sup>. As input, qFit takes a refined single-conformer structure and either a high-resolution X-ray or cryo-EM map as input, and then leverages powerful optimization algorithms to identify alternative protein<sup><xref ref-type="bibr" rid="c20">20</xref>, <xref ref-type="bibr" rid="c21">21</xref></sup> or ligand<sup><xref ref-type="bibr" rid="c23">23</xref></sup> conformations.</p>
+<p>Here, we present updates to qFit including algorithmic improvements to protein conformation selection based on Bayesian information criteria (BIC), B-factor sampling, and updated cryo-EM scoring. Collectively, these advances enable the unsupervised generation of multiconformer models that routinely improve R<sub>free</sub> over single-conformer X-ray structures derived from high-resolution (better than 2.0 Å) data and improve model geometry metrics across a diverse test set. We further demonstrate that qFit can identify alternative side-chain conformations in high-resolution cryo-EM datasets. With the improvements in model quality outlined here, qFit can now be increasingly used for finalizing high-resolution models, in both individual cases and large structural bioinformatics projects<sup><xref ref-type="bibr" rid="c5">5</xref></sup>, to derive ensemble-function insights.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Overview of qFit protein algorithm</title>
+<p>qFit protein is a tool that automatically identifies alternative conformations based on a high-resolution map (generally better than ∼2 Å) and a well-refined single-conformer structure (generally R<sub>free</sub> below 20%). For X-ray maps, we recommend using a composite omit map as input to minimize model bias<sup><xref ref-type="bibr" rid="c24">24</xref></sup>. For cryo-EM modeling applications, equivalent metrics of map and model quality are still developing, rendering the use of qFit for cryo-EM more experimental.</p>
+<p>Since our previous paper, we have made substantial improvement to the code both algorithmically (e.g. scoring is improved by BIC, sampling of B-factors is now included) and computationally (improving the efficiency and reliability of the code).</p>
+<p>All code and associated documentation can be found in the qFit GitHub repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/ExcitedStates/qfit-3.0">https://github.com/ExcitedStates/qfit-3.0</ext-link>). The version of qFit associated with this paper is 2023.1.</p>
+<sec id="s2a1">
+<title>A – qFit residue</title>
+<p>For each residue, qFit samples backbone conformations, dihedral angles, and B-factors. Using mixed quadratic programming optimization (MIQP) and Bayesian information criterion (BIC), we select a parsimonious multiconformer for each residue (<bold><xref rid="fig1" ref-type="fig">Figure 1A</xref></bold>). The details of each component of this procedure are outlined below. The sampling and scoring of residues can be run in parallel using Python multiprocessing.</p>
+<sec id="s2a1a">
+<title>A.1 – Backbone sampling</title>
+<p>The qFit process begins with sampling backbone conformations (<bold><xref rid="fig1" ref-type="fig">Figure 1A</xref>.1</bold>). For each residue, we perform a collective translation of backbone atom (N, C, Cα, O) coordinates. If the model has anisotropic B-factors, this translation is guided by the anisotropic B-factors of the Cβ. Alternatively, if anisotropic B-factors are absent, the translation of coordinates occurs in the X, Y, and Z directions. Each translation takes place in steps of 0.1 along each coordinate, extending to 0.3 Å, resulting in 9 to 81 distinct backbone conformations for further analysis. For Gly and Ala, this is the only sampling that occurs.</p>
+</sec>
+<sec id="s2a1b">
+<title>A.2 – Aromatic angle sampling</title>
+<p>For aromatic residues (His, Tyr, Phe, Trp), qFit takes the conformations from the backbone step (above) and builds part of the side chain out to Cγ (prior to the aromatic ring) based on the input model coordinates (<bold><xref rid="fig1" ref-type="fig">Figure 1A</xref>.2</bold>). Then, we alter the Cα-Cβ-Cγ angle (“the aromatic angle”) in steps of +/-3.75°, extending to +/-7.5°, creating 5 partial side-chain conformations per backbone conformation. For non-aromatic residues, there is no sampling of this angle. These conformers provide variability in the placement of the aromatic ring prior to dihedral angle sampling.</p>
+</sec>
+<sec id="s2a1c">
+<title>A.3 – Dihedral angle sampling</title>
+<p>The following steps occur for each <italic>χ</italic> dihedral angle for every residue (<bold><xref rid="fig1" ref-type="fig">Figure 1A</xref>.3</bold>). For the first dihedral angle (<italic>χ</italic><sup>1</sup>), the input is the backbone conformations (or for aromatic residues the backbone and “aromatic angle” conformers described above). We exhaustively sample around the <italic>χ</italic><sup>1</sup> dihedral angle by enumerating a conformation every 10° between rotamers. For proline, we sample the exo and endo conformations of the pyrrolidine ring, by +/-60° in steps of 10°. We then eliminate conformations that clash with other parts of the same sampled conformation (based on hard spheres) or are redundant (using an all-atom RMSD threshold of 0.01 Å).</p>
+<p>These sampled conformations are then subjected to a quadratic programming (QP) optimization, which identifies the set of conformations whose weighted calculated density best fits the experimental electron density. The output of QP typically yields 5 to 15 conformations that best explain the density.</p>
+<p>Next, qFit samples the B-factors of the conformers. The input atomic B-factors are multiplied by a factor ranging from 0.5 to 1.5 in increments of 0.2. The resulting 50 to 150 conformation/B-factor combinations are subjected to a mixed-integer quadratic programming (MIQP) optimization. The MIQP algorithm incorporates two additional constraints relative to QP: a cardinality term, which limits the maximum number of conformations to five, and a threshold term, which stipulates that no individual conformation can have an occupancy weight below 0.2. In qFit, MIQP then outputs up to 5 conformations.</p>
+<p>For residues with subsequent dihedral angles, the conformations selected by the MIQP procedure at <italic>χ</italic>(n-1) serve as the starting conformers for the sampling <italic>χ</italic>(n) angle. For residues with only one dihedral angle (Ser, Cys, Thr, Val, Pro), we proceed directly to scoring <italic>χ</italic>1.</p>
+</sec>
+<sec id="s2a1d">
+<title>A.4 – Final qFit residue Scoring</title>
+<p>Upon reaching the terminal dihedral angle, we perform the optimization steps outlined above (QP/MIQP), but instead of relying only on the optimization algorithm to decide on the number of conformations to output, we also consider the model complexity (<bold><xref rid="fig1" ref-type="fig">Figure 1A</xref>.4</bold>). qFit runs the MIQP step 5 times with a cardinality term ranging from 1 to 5.</p>
+<p>Taking each output, we calculate the Bayesian information criterion (BIC). The BIC provides a numerical value of the tradeoff between the difference between the calculated and experimental density (residual sum of squares) and the number of parameters (k). The number of parameters (k) is defined by the following: number of conformers * number of atoms * 4 (representing the x, y, z coordinates and B-factor). A heuristic scaling factor of 0.95 accounts for the fact that the coordinate parameters are not independent due to chemical constraints between atoms during sampling.</p>
+<fig id="ufig1" position="float" fig-type="figure">
+<graphic xlink:href="546963v2_ufig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>qFit then outputs the set of conformations with the lowest BIC value, concluding the qFit residue routine.</p>
+</sec>
+</sec>
+<sec id="s2a2">
+<title>B. Connecting residues together into a multiconformer model</title>
+<p>After the sampling and scoring of each individual residue, qFit considers the entire protein together. First, we use MIQP and BIC to select the best fitting conformations among connected residues, ensuring that neighboring backbone conformations have the same occupancy. Second, we label the alternative conformers while being aware of clashes. This labeling step is not parallelized.</p>
+<sec id="s2a2a">
+<title>B.1 – qFit segment</title>
+<p>After identifying the optimal conformations for each residue in parallel, qFit reconnects the backbone atoms (<bold><xref rid="fig1" ref-type="fig">Figure 1B</xref>.1</bold>). Moving linearly along the protein, we identify ‘segments’ of residues with multiple backbone conformations, delimited on each end by a residue with a single backbone conformation. The main reason for this step is to find a harmonious set of occupancies for adjacent residues in a segment. Within each segment, qFit creates fragments of three residues, enumerating all possible combinations of conformations in those residues, and selects the final combination of conformations and their relative occupancies using the optimization algorithms outlined above. The BIC is modified for qFit segment such that k equals the number of conformations. qFit then moves along the segment, enumerating and selecting optimal combinations of fragment conformations until reaching the end of the segment.</p>
+</sec>
+<sec id="s2a2b">
+<title>B.2 – qFit relabel</title>
+<p>Next, qFit determines the correct altloc labeling (A, B, C, D, E) of coupled alternative conformers using Monte Carlo optimization with a simple steric model to prevent spatially adjacent conformers from sterically clashing (<bold><xref rid="fig1" ref-type="fig">Figure 1B</xref>.2</bold>). There is also an option (‘qFit segment only’) to input a multiconformer model and run only the qFit segment and relabel procedures. This procedure can be especially helpful after manually adding or deleting conformations in Coot<sup><xref ref-type="bibr" rid="c14">14</xref></sup>. Running ‘qFit segment only’ will adjust the occupancy of the remaining conformations and correct the labeling of alternative conformations.</p>
+</sec>
+<sec id="s2a2c">
+<title>B.3 – qFit refinement</title>
+<p>The raw output of qFit (a multiconfomer model) should then be refined. We provide scripts for a refinement procedure with Phenix<sup><xref ref-type="bibr" rid="c25">25</xref></sup>, where we iteratively refine the occupancy, coordinates, and B-factors, removing conformations with occupancies under 10%. Once the model is stable (has no conformations with occupancies less than 10%), we perform a final round of refinement which optimizes the placements of ordered water molecules (<bold>Methods</bold>). This refinement protocol outputs a final ‘qFit model’. This model can then be examined and edited in Coot<sup><xref ref-type="bibr" rid="c14">14</xref></sup> or other visualization software.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Programmatic flow of qFit protein algorithm.</title>
+<p><bold>A.</bold> qFit residue algorithm, demonstrated by Tyr118 in the E46Q mutant structure of the photoactive yellow protein from <italic>Halorhodospira halophila</italic> (PDB: 1OTA). The 2mFo-DFc composite omit density map contoured at 1 σ is shown as a blue mesh.</p>
+<p>A.1. <italic>Backbone sampling:</italic> For each residue, qFit performs a collective translation of backbone atom (N, C, Cα, O) coordinates.</p>
+<p>A.2. <italic>Aromatic angle sampling:</italic> For aromatic residues (His, Tyr, Phe, Trp), qFit takes the conformations from the backbone step and samples the Cα-Cβ-Cγ angle.</p>
+<p>A.3. <italic>Dihedral angle sampling:</italic> Since Tyr has two χ angles, qFit starts by taking the output conformers from the aromatic angle sampling step and exhaustively samples the χ1 angle, scoring the best conformations based on QP/B-factor/MIQP scoring. qFit then uses these best conformations as input to sample the remaining χ angles in the Tyr residue. Since the only angle left to be sampled is the χ2 angle, qFit rotates about the terminal ring of the Tyr and then scores the conformations that best fit the density.</p>
+<p>A.4. <italic>Final qFit Residue Scoring:</italic> Once we reach the terminal ring (all sampling steps have occurred), we perform QP and B-factor sampling, followed by MIQP with BIC selection. MIQP with BIC selection removes a redundant overlapping conformation, resulting in two distinct conformations of this Tyr residue. This model is then output as the residue multiconformer.</p>
+<p><bold>B.</bold> qFit segment algorithm, demonstrated by Tyr118 in PDB: 1OTA. After identifying all optimal conformations for each individual residue, qFit works to connect the protein back together.</p>
+<p><italic>B.1 qFit segment:</italic> Moving linearly along the protein, qFit identifies ‘segments’ of residues with multiple backbone conformations. Here, Ser117 (i) and Tyr118 (i+1) have multiple backbone conformations. qFit segment enumerates each possible combination of alternate conformations between these two residues, creating four possible combinations. The optimal combination of conformations is then determined by the QP/MIQP scoring, leading to one combination being culled.</p>
+<p><italic>B.2 qFit relabel:</italic> qFit utilizes Monte Carlo optimization with a steric model to assign altloc labels to spatially coupled alternative conformers. In this example, Ser117 and neighboring Gln32 initially have clashing altloc B conformers. However, relabeling swaps the A and B labels of the Gln32 to relieve this clash.</p>
+<p><italic>B.3 qFit refinement:</italic> We then refine the occupancy, coordinates, and B-factors of the raw qFit output file to produce a final qFit model.</p></caption>
+<graphic xlink:href="546963v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+</sec>
+<sec id="s2b">
+<title>qFit improves overall fit to data relative to deposited structures</title>
+<p>To evaluate the impact of qFit algorithmic and code improvements, we collated a dataset of single-chain, unliganded, high-resolution (1.2-1.5 Å) protein X-ray crystallography structures from the PDB<sup><xref ref-type="bibr" rid="c26">26</xref></sup>. We clustered these structures at a sequence identity threshold of 30% and selected the highest-resolution structure. Finally, we ensured that the datasets ran without error through the qFit pipeline, including refinement with Phenix, resulting in 144 diverse structures (<bold><xref rid="figs1" ref-type="fig">Supplementary Figure 1</xref></bold>).</p>
+<p>Each deposited structure was initially re-refined using <italic>phenix.refine</italic> (<bold>Methods</bold>) to eliminate differences from the original refinement protocols. The resulting re-refined model, which we refer to as the ‘<italic>deposited model’</italic>, was used as the input for qFit. Next, we ran qFit protein using the default parameters and refinement protocol to produce the ‘qFit model’.</p>
+<p>To evaluate the crystallographic modeling differences between the <italic>deposited</italic> and <italic>qFit</italic> models, we compared the R<sub>free</sub> values as an indicator of overall model/data agreement. The qFit model has a lower (improved) R<sub>free</sub> value for 73% (105/144) of structures (<bold><xref rid="fig2" ref-type="fig">Figure 2A</xref>; <xref rid="figs2" ref-type="fig">Supplementary Figure 2A</xref>; Supplementary Table 1</bold>). On average, there is an absolute decrease of R<sub>free</sub> value by 0.6% (median deposited models R<sub>free</sub>: 18.1%, median qFit models R<sub>free</sub>: 17.5%), which is in line with theoretical expectations for the increase in model complexity created by qFit<sup><xref ref-type="bibr" rid="c27">27</xref>, <xref ref-type="bibr" rid="c28">28</xref></sup>. R<sub>free</sub> is an valuable metric for monitoring overfitting, which is an important concern when increasing model parameters as is done in multiconformer modeling. An additional check on overfitting comes from monitoring R-gap, calculated as the difference between R<sub>work</sub> and R<sub>free</sub>. qFit models have similar R-gap values compared to deposited models (mean: 3.0% for both models). Collectively, these results indicate that qFit improves the quality of most models without overfitting (<bold><xref rid="figs2" ref-type="fig">Supplementary Figure 2B</xref></bold>).</p>
+<p>Despite this general trend of improved models, 25% of the qFit models have worse R<sub>free</sub> than the deposited models (n=36). The majority of these structures had a deposited model R<sub>free</sub> of over 20%. These high R<sub>free</sub> values are notable because our re-refinement procedure generally improved R<sub>free</sub> relative to the originally deposited model (<bold><xref rid="figs2" ref-type="fig">Supplementary Figure 2C</xref></bold>). Since qFit builds off of the input structure and the map quality relies on model phases, accurately detecting alternative conformers depends heavily on the agreement between input model and data. This trend reinforced the idea that poor modeling in a deposited model, which serves as input to qFit, will result in poor performance of qFit. It further suggests that qFit is best employed at a late stage of modeling, after the single-structure model is of sufficient quality that it would be deposited in the PDB.</p>
+<p>As an example of how qFit can uncover previously unnoticed conformational heterogeneity, we examined differences in conformations in the deposited versus qFit models of the <italic>Pyrococcus horikoshii</italic> fibrillarin pre-rRNA processing protein (PDB: 1G8A)<sup><xref ref-type="bibr" rid="c29">29</xref></sup>. We focused on the residues adjacent to the RNA binding motif. Among these residues, qFit identified well-justified alternative conformations for residues Leu58, Phe69, and Met175, including new rotamers for Leu58 and Met175, that were not present in the deposited model (<bold><xref rid="fig2" ref-type="fig">Figure 2B</xref></bold>). Beyond detecting alternative conformers in each of these residues, the qFit labeling process identified potential coupled motions between the alternative conformers. For example, when Leu58 is in the ‘up’ position (altloc B), Phe69 is also in the ‘up’ position (altloc B). It is possible that this coupled motion plays a role in RNA binding, a hypothesis that may merit further investigation.</p>
+</sec>
+<sec id="s2c">
+<title>qFit recovers alternative conformations of deposited models and discovers new ones</title>
+<p>As qFit mainly alters structures by adding alternative conformations, we examined the differences in the number of alternative conformations between the deposited models and qFit models. Only 2.9% of residues in the deposited models were multiconformers (two or more alternative conformations, n=970). In contrast, 40.7% (n=11,049) of residues in the qFit models were multiconformers (<bold><xref rid="fig2" ref-type="fig">Figure 2C</xref></bold>). The vast majority (92.5%) of multiconformer residues in the qFit models have only two alternative conformations; only 2.4% of residues have more than two alternative conformations.</p>
+<p>Alternative conformations created by qFit come in a few main varieties. First and most obvious are alternative conformations that represent drastic changes in coordinates, most commonly in the form of rotameric changes. Most alternative conformations found in deposited models fall into this category. Second are more subtle changes in side-chain and backbone coordinates to represent heterogeneity within a rotameric state. This behavior is exemplified by the Tyr residue in <bold><xref rid="fig1" ref-type="fig">Figure 1A</xref></bold>. Third, is even more subtle changes in coordinates to avoid strain because of the alternative conformations of neighboring residues<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. This category is essentially imperceptible to visual inspection, as the atom centers are nearly superimposable, but is important to avoid outlier bond geometry because of adjacent residues having larger displacements.</p>
+<p>To quantify how often qFit models new rotameric states, we analyzed the qFit models with <italic>phenix.rotalyze</italic>, which outputs the rotamer state for each conformer as a string (<bold>Methods</bold>)<sup><xref ref-type="bibr" rid="c31">31</xref>, <xref ref-type="bibr" rid="c32">32</xref></sup>. We classified the agreement between the deposited and qFit models into 5 categories (<bold><xref rid="fig2" ref-type="fig">Figure 2D</xref>, <xref rid="figs3" ref-type="fig">Supplementary Figure 3</xref></bold>). The first category contains residues that have the same rotameric states in both models. This category entails most single-conformer and multiconformer residues with agreement between the two models. Moreover, residues that have multiple conformations in the same rotamer in the qFit model (for the reasons described above) generally populated the same rotamer as found in single-conformer residues in the deposited models. Overall this category, “Consistent”, represents 93.7% of residues (n=42,626) in the dataset.</p>
+<p>The second and third categories deal with imbalance in alternative conformations that populate distinct rotamers. Since the original premise of qFit was to discover unmodeled alternative conformations, it is unsurprising that many residues in qFit models populate additional rotameric states that are absent in the deposited model. This category, “Additional Rotamer(s) in qFit model”, represents 2.38% of residues (n=1,082). In contrast, only two residues (0.06% of the dataset) are classified in the converse category, “Additional Rotamer(s) in deposited model”.</p>
+<p>The final two categories cover disagreements in rotamer assignments. There are many cases where we observe only partial agreement between alternative conformers modeled in both the deposited and qFit models. These multiconformer residues share at least one common rotamer, but also populate alternative rotamers that are distinct between the two models. This behavior generally occurs in longer residues where subtle differences at higher <italic>χ</italic> angles leads to distinct rotameric assignments. This category, “Consistent &amp; Different Rotamers”, represents 0.82% of residues (n=373). The final category, “Different”, covers both multiconformer and single-conformer residues where there are no shared rotamer states between the two models. One reason this category occurs is for similar reasons as the “Consistent &amp; Different” category: differences in terminal <italic>χ</italic> angles in weak density lead to distinct rotamer assignments. Another contributor to this category is single conformers, generally in the deposited model, modeled into density that qFit interprets as multiconformer. Often the rotamer modeled by the single conformer fits an “average” rather than the two distinct minima fit by the multiconformer model. “Different” rotamer assignments represent 3.04% of residues (n=1,384). While the analyses above include all residues, focusing on residues that were modeled in as multiconformers in the deposited models (n=970) reveals a large increase in the “Different” and “Consistent &amp; Different Rotamers” categories, to 14.88% (n=144) and 27.68% (n=268) of residues, respectively. This increase highlights the sensitivity of the rotamer assignments and motivates benchmarking qFit on “true positive” synthetic data in addition to deposited multiconformers.</p>
+<p>Collectively, these analyses revealed that qFit identifies the majority of deposited alternative conformations and discovers new ones. Discrepancies between manually modeled and qFit alternative conformations predominantly result from weak density at terminal <italic>χ</italic> angles. When considered with the improvements in R<sub>free</sub>, these results indicate that qFit is detecting more of the true underlying conformational heterogeneity that exists in crystallographic data.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Multiconformer models created by qFit are better models than deposited single-conformer models.</title>
+<p><bold>A.</bold> The distribution of Rfree value in deposited models versus qFit models. The qFit Rfree values improve in 73% of structures.</p>
+<p><bold>B.</bold> qFit identifies new alternative conformations adjacent to the RNA binding motif in the <italic>Pyrococcus horikoshii</italic> fibrillarin pre-rRNA processing protein (PDB: 1G8A). <bold>(Left)</bold> qFit multiconformer model with the region in the right panel highlighted in green and the adjacent RNA binding motif highlighted in red. Key domains in the fibrillarin protein are also annotated in blue. <bold>(Right)</bold> Comparison of the deposited versus qFit model in a region with several conformationally heterogeneous residues. qFit identified new rotamers for Leu58 (tp) and Met175 (ttp and mtp)<sup><xref ref-type="bibr" rid="c32">32</xref></sup> and significantly different alternative conformations within the original rotameric well for Phe69.</p>
+<p><bold>C.</bold> The differences in the number of alternative conformations per residue in deposited models versus qFit models. qFit adds at least one additional alternative conformation in 31.7% of residues (n=9,998).</p>
+<p><bold>D.</bold> The distribution of rotamer assignment agreement between the deposited and qFit models for different (sub)sets of residues. <bold>(Left)</bold> All residues (n=42,626). <bold>(Right)</bold> Only residues with alternative conformations in the deposited model (n=970).</p></caption>
+<graphic xlink:href="546963v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d">
+<title>qFit improves multiple side-chain model geometry metrics</title>
+<p>Although qFit improves the agreement of model to data by the addition of alternative conformations, we questioned whether this improvement comes at the cost of degrading model geometry. On one hand, the absence of geometric constraints in qFit backbone residue sampling and the connections made during qFit segment may result in worse geometry. On the other hand, placing additional alternative conformers may alleviate strain in the model that can result from fitting a single conformer into density that should be supported by multiple conformers<sup><xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c33">33</xref></sup>.</p>
+<p>To validate geometry, we used MolProbity to evaluate the deposited and qFit models. MolProbity compares input models with idealized values and then provides component scores for various geometric and steric features that are summarized in an overall “MolProbity score”<sup><xref ref-type="bibr" rid="c34">34</xref></sup>. Component scores that examine all atoms (bond angle/length, clashscore) or side-chain atoms (rotamers) account for all alternative conformers. In contrast, scores that evaluate the backbone (Ramachandran, Cβ deviations) are reported for single-conformer residues or using only altloc A for multiconformer residues. Therefore, the overall MolProbity score includes some of the contributions of alternative conformations, but also misses the potential impact on some other aspects. In the future, we aim to explore updated metrics that consider all alternative conformations.</p>
+<p>Compared to deposited models, qFit models had equivalent MolProbity scores (1.27 median deposited versus 1.31 median qFit, p=0.66 from two-sided t-test; <bold><xref rid="fig3" ref-type="fig">Figure 3A</xref></bold>), which indicated that qFit does not worsen geometry for better density fitting. To further understand which parts of the model geometry were different (if any) between the deposited and qFit models, we explored the individual component scores, and observed multiple component scores that improved in the qFit models. This included considerable improvements in bond lengths and angles in the qFit models (RMSD between idealized values for bonds: 0.010 Å median deposited versus 0.007 Å median qFit, p=0.0038 from two-sided t-test; RMSD between idealized values for angles: 1.30° median deposited v. 0.93° median qFit, p=8.8e-20 from two-sided t-test; <bold><xref rid="fig3" ref-type="fig">Figure 3B,C</xref></bold>). We suspect that the primary factor behind this improvement was the incorporation of multiconformers, rather than straining a single conformer, to explain the density. To visualize these differences, we examined Met189 from PDB: 1V8F. In the deposited model this residue has Sδ-Cε bond lengths of 1.596 Å, which are significantly shorter than the idealized lengths of 1.791 +/-0.025 Å<sup><xref ref-type="bibr" rid="c34">34</xref></sup>. qFit adds an additional conformation, both explaining previously unmodeled density and bringing the SD-CE bond lengths to 1.790 Å (altconf A) and 1.794 Å (altconf B) for the two conformations much closer to the expected values (<bold><xref rid="fig3" ref-type="fig">Figure 3E</xref></bold>). This multiconformer residue with improved geometry is consistent with the hypothesis that qFit is alleviating strained geometry by modeling multiple conformations.</p>
+<p>Additionally, qFit models have improved clashscores (2.50 median deposited, 2.27 median qFit, p=0.0028 from two-sided t-test; <bold><xref rid="fig3" ref-type="fig">Figure 3D</xref></bold>). We hypothesized that this was due to a mixture of modeling of alternative conformers and improved fit of single-conformer residues which are re-sampled and refined during the qFit procedure. We looked at the qFit modeling differences in a cluster of Met and Leu residues in PDB: 6HEQ, which had one of the largest changes in clashscores between the deposited and qFit models. We observed that qFit fixes the positioning of Met83, preventing the clash with both conformers of Leu81 (<bold><xref rid="fig3" ref-type="fig">Figure 3F</xref></bold>).</p>
+<p>However, qFit models tended to have worse rotamer scores, likely due to our extensive sampling. Further, we observed a slight, but not significant, decrease in favored Ramachandran values which may indicate the need to improve qFit segment procedures. It is difficult to evaluate if this is worse than deposited models in residues with backbone alternative conformers as this score only accounts for alternative conformer A (<bold><xref rid="figs4" ref-type="fig">Supplementary Figure 4</xref></bold>). However, both rotamer and backbone and rotamer sampling represent areas of potential qFit improvements. Overall, while there is a mix of geometry metrics that improve or deteriorate in qFit models, the negligible difference in overall MolProbity scores suggests that qFit does not deteriorate the model geometry in pursuit of model/data agreement.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>qFit improves some geometry metrics compared to deposited structures.</title>
+<p><bold>A.</bold> Model MolProbity score (deposited model: 1.27 (median) [0.94-0.16] (interquartile range), qFit model: 1.31 (median) [1.06-1.58] (interquartile range)), p-value=0.66 from two-sided t-test.</p>
+<p><bold>B.</bold> Model averaged RMSD (<sup>0</sup>)of idealized versus versus model angles (deposited model: 1.30 [1.14-1.57], qFit model: 0.93 [0.81-1.11]), p-value=8.8e-20 from two-sided t-test.</p>
+<p><bold>C.</bold> Model averaged RMSD (Å) of idealized versus model bonds (deposited model: 0.010 [0.0070-0.015], qFit model: 0.0070 [0.0050-0.010]), p-value=0.0038 from two-sided t-test.</p>
+<p><bold>D.</bold> Count of number of high Clashscore per model (deposited model: 2.50 [1.30-5.92], qFit model: 2.27 [1.31-3.73]), p-value=0.0028 from two-sided t-test.</p>
+<p><bold>E.</bold> Example of qFit (right, blue and magenta) fixing bond length by appropriately modeling in a second conformation. Meshes represent density at 1 σ. Met189 from deposited structure (PDB: 1VF8; left, green) has a Sδ-Cε bond length of 1.596 Å (7.8Σ from idealized length of 1.791 Å)<sup><xref ref-type="bibr" rid="c34">34</xref></sup>. qFit models in two alternative conformations, filling in unmodeled density, and fixing the Sδ-Cε bond length (bond length: 1.790 Å for alternative conformation A and 1.794 Å for alternative conformation B).</p>
+<p><bold>F.</bold> Example of qFit (right, blue and magenta) fixing a clash between Met83 and Leu81 from deposited structure (PDB: 6HEQ). Meshes represent density at 1 σ. In the deposited model (left, green), Met83 is not correctly fitted into density and is clashing with Leu81 (closest contact: 3.0 Å). qFit corrects this by improving the fit of Met83, leading to the closest contact being 3.8 Å.</p></caption>
+<graphic xlink:href="546963v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2e">
+<title>Simulated data demonstrate indicate qFit is appropriate for high-resolution data</title>
+<p>In the previous sections, we established that qFit has the potential to improve R<sub>free</sub> and some geometry metrics relative to deposited structures. However, the vast majority of the residues in these deposited structures are modeled exclusively as single conformers. This homogeneity in single-conformation models limited our ability to assess how well qFit can recapitulate existing alternative conformers across a wide resolution range. To address this question, we generated artificial structure factors using an ultra-high-resolution structure (0.77 Å) of the SARS-CoV-2 Nsp3 macrodomain (PDB: 7KR0)<sup><xref ref-type="bibr" rid="c35">35</xref></sup>. This model had a high proportion of residues (47%) manually modeled as alternative conformations and did not employ qFit, making it an ideal comparison structure. We refer to this structure as the “ground truth 7KR0 model”, and evaluated how well its alternative conformations were recapitulated by qFit as resolution was artificially worsened across synthetic datasets.</p>
+<p>To create the dataset for resolution dependence, we used the ground truth 7KR0 model, including all alternative conformations, and generated artificial structure factors from 0.8 to 3.0 Å resolution (in increments of 0.1 Å). We then added random noise to the structure factors that increased as resolution worsened (<bold>Methods; <xref rid="figs5" ref-type="fig">Supplementary Figure 5A</xref> and <xref rid="figs5" ref-type="fig">5B</xref></bold>). To create a single-conformer model appropriate for input to qFit, we removed all alternative conformations from the ground truth model, maintaining all single conformations and altloc A. Next, we refined this single-conformer model against the synthetic datasets. Finally, we used the refined single-conformer model as input for qFit.</p>
+<p>To evaluate the fidelity of qFit in recapitulating the ground truth 7KR0 model, we categorized each residue across two axes: positive/negative and true/false. First, we define the positive/negative axis, with positive being modeled as multiconformer and negative being modeled as single-conformer in the outputted qFit model. Next, we define the true/false axis as agreement of the outputted qFit model with the ground truth 7KR0 model in terms of multiconformer/single-conformer status . Due to many residues in both the ground truth and qFit models having alternative conformations that nearly overlap each other, we categorize residues as multiconformer only if they possess at least two alternative conformers with a side-chain heavy-atom root-mean-square deviation (RMSD) greater than 0.5 Å. From this cutoff, 50 out of the 169 residues (30%) in the ground truth model are classified as multiconformers.</p>
+<p>We used a similar 0.5 Å cutoff for defining agreement between multiconformer residues in categorizing a residue as a true positive, false positive, false negative, or true negative (<bold>Methods and <xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>). A “true positive” has agreement between multiconformers across ground truth and qFit models; a “true negative” has agreement between single conformers across ground truth and qFit models. Generally, a “false positive” has extra or distinct conformations in the qFit model; a “false negative” has at least one alternative conformation in the ground truth model that is not present in the qFit model, or discordant single-conformer conformations.</p>
+<p>We observed that qFit is consistently strong at capturing single-conformer residues (true negatives) across resolutions; however, the power to detect alternative conformations (true positives) is limited beyond resolutions of ∼1.8-2.0 Å (<bold><xref rid="fig4" ref-type="fig">Figure 4B</xref>; <xref rid="figs5" ref-type="fig">Supplementary Figure 5C</xref></bold>). This behavior is exemplified by Glu114, which is multiconformer in the ground truth model (<bold><xref rid="fig4" ref-type="fig">Figure 4C</xref></bold>). At high resolution (1.0 Å), qFit correctly models the alternative conformation and this residue is categorized as a true positive. However, as resolution gets worse, qFit begins to mismodel this residue. At 1.8 Å resolution, qFit still models two alternative conformations and has a good fit to density; however, the secondary conformer has an RMSD greater than 0.5 Å away from the ground truth model; consequently this residue is now categorized as a false positive. Finally, at 2.8 Å resolution, qFit only models a single conformer, moving the residue to the false negative category.</p>
+<p>Next, we tested the ability of qFit to detect alternative conformations over a larger, more diverse dataset. We generated artificial structure factors for the qFit models with improved R<sub>free</sub> values over the deposited values from the previous sections (n=110). Although this dataset is more diverse, it has a notable weakness relative to the 7KR0 dataset test: the 7KR0 alternative conformations were modeled manually, whereas the larger dataset has alternative conformations modeled by qFit. Therefore, this second synthetic dataset assesses convergence of the qFit models across resolution.</p>
+<p>Using these qFit models as ground truth models, we generated structure factors, performed refinement of single-conformer models, and ran qFit over the resolution range of 1.0 to 3.0 Å (<bold><xref rid="figs5" ref-type="fig">Supplementary Figure 5A</xref></bold>). We observed a similar fall-off of true positive detection around 2.0 Å (<bold><xref rid="figs5" ref-type="fig">Supplementary Figure 5D</xref></bold>). Importantly, this dataset indicates that qFit still models single conformers well at lower resolutions. We also observe a trend of increased false positive/negative rates for longer residues that are just outside the 0.5 Å cutoff (<bold><xref rid="figs6" ref-type="fig">Supplementary Figure 6</xref></bold>). We did not observe a relationship between input model R<sub>free</sub> and the number of correctly modeled conformers, but it is difficult to tell whether our synthetic noise procedures properly capture the dependence of qFit performance on input model/data agreement (<bold><xref rid="figs7" ref-type="fig">Supplementary Figure 7A</xref>/B</bold>).</p>
+<p>We then assessed the agreement between individual conformers and the map. To do this, we used the Q-score<sup><xref ref-type="bibr" rid="c36">36</xref></sup>, which compares the map profile of an atom with an ideal Gaussian distribution that would be observed if the atom perfectly fits into the density. Across the test dataset, residues that qFit models as single conformers have an almost equivalent Q-score to the ground truth model even at lower resolutions (<bold><xref rid="fig4" ref-type="fig">Figure 4D</xref></bold>). The primary alternative conformations in qFit models (occupancy between 0.5 and 1.0) and lower-occupancy alternative conformations (occupancy &lt;0.5) display Q-scores that are very close to the equivalent “ground truth model” alternative conformations until a resolution of about 1.8 Å. At lower resolutions there is a dramatic fall-off in model/map agreement for these alternative conformers. These trends were also observed with the 7KR0 dataset (<bold><xref rid="figs7" ref-type="fig">Supplementary Figure 7C</xref></bold>). Overall, these analyses on both the 7KR0 and larger synthetic datasets confirm that qFit will best detect alternative conformations with high-resolution (1.8-2.0 Å or better) data.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4:</label>
+<caption><title>qFit performs best at high resolution of input dataset</title>
+<p><bold>A.</bold> Ground truth model residues are shown as green and yellow sticks; qFit model residues are shown as magenta, cyan, and gray. Meshes represent density at 1 σ.
+<list list-type="simple">
+<list-item><p><bold>True positive</bold> – Residue is multiconformer in qFit model with RMSD &lt; 0.5 Å from ground truth residue. qFit models two distinct alternate conformations which recapitulate the ground truth residue’s alternate conformations. Hence this is a true positive.</p></list-item>
+<list-item><p><bold>False positive</bold> – Residue is multiconformer in qFit model with RMSD &gt; 0.5 Å from ground truth residue. The example on the left has two alternate conformations in the ground truth. qFit models only one of them correctly. The example on the right is a single-conformation residue in ground truth but qFit models three alternate conformations. Hence these two are false positives.</p></list-item>
+<list-item><p><bold>True negative</bold> – Residue is single-conformer in qFit model with RMSD &lt; 0.5 Å from ground truth residue. Both ground truth model and qFit model have one distinct conformation and they align well. Hence this is a true negative.</p></list-item>
+<list-item><p><bold>False negative</bold> – Residue is single-conformer in qFit model with RMSD &gt; 0.5 Å from ground truth residue. The example on the left has two alternative conformations in the ground truth residue but only one conformation in the qFit residue. In the example on the right, the single conformer modeled by qFit does not align with the ground truth single conformer. Hence these two are false negatives.</p></list-item>
+</list></p>
+<p><bold>B.</bold> Proportion of all residues in the qFit models of 7KR0 that are modeled as true positives (blue), true negatives (orange), false positives (green), and false negatives (red) as a function of resolution of input synthetic data from the 7KR0 dataset.</p>
+<p><bold>C.</bold> Glu114 in the 7KR0 dataset modeled by qFit (cyan and magenta) compared to the ground truth structure (green and yellow) at different synthetic resolutions. Meshes represent density at 1 σ.</p>
+<p><bold>D.</bold> The fraction of residues in the qFit models of the qFit test dataset with a Q-score within 0.01 to that of the ground truth model as a function of resolution. In multiconformer residues, Q-score for every alternative conformation is calculated separately. Q-scores of residues (or) conformers which have matching occupancy (range) are compared. Occupancies of conformers were binned into three classes – occupancy equal to 1 (blue), 1 &lt; occupancy &lt;= 0.5 (orange) and occupancy &lt; 0.5 (green).</p></caption>
+<graphic xlink:href="546963v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2f">
+<title>qFit models alternative conformers in cryo-EM density maps</title>
+<p>As single-particle cryo-EM is increasingly producing high-resolution (better than 2 Å) reconstructions where alternative conformers can be detected<sup><xref ref-type="bibr" rid="c37">37</xref>, <xref ref-type="bibr" rid="c38">38</xref></sup>, we wanted to improve and test the ability of qFit to model alternative conformations guided by cyro-EM maps. While a previous version of qFit introduced EM<sup><xref ref-type="bibr" rid="c21">21</xref></sup>, we had not optimized the approach to work with EM maps and models. qFit can now be run in ‘EM mode’ which uses electron structure factors, improves the treatment of solvent background levels, and reduces the default maximum number of alternative conformations (cardinality) (<bold>Methods</bold>).</p>
+<p>To benchmark our ability to model alternative conformations in high-resolution cryo-EM structures, we initially gathered a dataset of 22 structures with a depositor-provided resolution better than 2 Å (Fourier Shell Correlation (FSC) at 0.143). However, only 8 of these structures have a resolution better than 2 Å (FSC at 0.143) when calculated by the Electron Microscopy Data Bank (EMDB)<sup><xref ref-type="bibr" rid="c39">39</xref></sup>. Some of the original 22 structures did not have FSC curves in EMDB (n=6) due a lack of data, and others had an EMDB calculated resolution worse than 2 Å (n=8) (<bold>Supplementary Table 2</bold>). The absence of standardized maps for determining cryo-EM structure resolution complicated our selection of structures for qFit analysis.</p>
+<p>We downloaded the eight models with resolution better than 2 Å from the PDB and their corresponding maps from EMDB. Using the default parameters of <italic>phenix.autosharpen</italic>, we sharpened all maps and re-refined each structure (<italic>phenix.real_space_refine</italic>) against its sharpened map. qFit was run with the ‘EM’ flag and the output model was refined using the qFit real space refinement script (<bold>Methods</bold>).</p>
+<p>Across the first asymmetric unit of the 8 models, 6.97% (n=61) of residues in the deposited model had at least two alternative conformers in the deposited structure, compared with 39.6% (n=266) in the qFit model. To determine if qFit could recapitulate the modeling of alternative conformers from deposited structures, we compared the high-resolution apoferritin deposited model (PDB: 7A4M, resolution: 1.22 Å) with the qFit model using the same criteria outlined in the resolution dependence section above (RMSD within 0.5 Å). qFit correctly models 78% of residues in the first asymmetric unit. This includes Arg22, which has two alternative conformations in the deposited model. qFit was able to recapitulate both alternative conformations (<bold><xref rid="fig5" ref-type="fig">Figure 5A</xref></bold>), highlighting that qFit can detect manually modeled alternative conformations in cryo-EM maps. In addition, qFit detected several unmodeled alternative conformers that were visually confirmed (<bold><xref rid="fig5" ref-type="fig">Figure 5B-D</xref></bold>).</p>
+<p>As with the X-ray models, we wanted to determine how qFit changes the model geometry. Similar to the X-ray models, we observed that qFit improves bond lengths and angles and Cβ deviations. qFit does increase (worsen) the MolProbity clashscore of most structures, primarily due to increased clashes with waters, likely because their positions are not reset in <italic>phenix.real_space_refine</italic> (<bold><xref rid="figs8" ref-type="fig">Supplementary Figure 8</xref></bold>).</p>
+<p>While we have made significant progress in modeling alternative conformations in cryo-EM data, the lack of consistent map handling, validation, and metrics with cryo-EM structures and maps is a major impediment to further development. Even among this select group of structures, there were varying levels of experimental and computational map details on EMDB and in manuscripts<sup><xref ref-type="bibr" rid="c37">37</xref>, <xref ref-type="bibr" rid="c38">38</xref>, <xref ref-type="bibr" rid="c40">40</xref></sup>, including information on masking, handling of bulk solvent, and local resolution. Our approach depends on sampling and scoring based on resolution. While there is an accepted formula for calculating resolution (FSC at 0.143), the maps to calculate these can vary, leading to differences in resolution as we observed between the deposited versus EMDB calculated resolution. Further, resolution can vary across a single model, and metrics for such local resolutions are not always widely available. Additionally, the handling of background bulk solvent values vary widely, from masking to flattening these values. The EM community will be able to benefit from improved ensemble modeling as efforts to standardize the storage of raw, meta, and processed data continue to improve.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5.</label>
+<caption><title>qFit identifies alternative conformations in high-resolution cryo-EM models.</title>
+<p>Meshes represent density at 1 σ, with blue volumes representing density at 0.5 σ. Green and yellow sticks represent deposited conformation(s). Cyan and magenta sticks represent qFit conformations. Occupancy is labeled based on each conformer.</p>
+<p><bold>A.</bold> qFit recapitulated the deposited alternative conformations of Arg22 (chain A) in apoferritin (PDB: 7A4M, resolution: 1.22 Å).</p>
+<p><bold>B.</bold> qFit identified a previously unmodeled alternative conformation of Glu14 (chain A) in apoferritin (PDB: 7A4M, resolution: 1.22 Å).</p>
+<p><bold>C.</bold> qFit identified a previously unmodeled alternative conformation of Lys49 (chain A) in a different structure of apoferritin (PDB: 6Z9E, resolution: 1.55 Å). .</p>
+<p><bold>D.</bold> qFit identified a previously unmodeled alternative conformation of Gln403 (chain A) in adeno-associated virus (PDB: 7KFR, resolution: 1.56 Å).</p></caption>
+<graphic xlink:href="546963v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>Structural biology plays a vital role in understanding the complex connection between protein structure and function. However, since proteins exist as ensembles, structural biology modeling approaches need to adapt accordingly. X-ray crystallography and cryo-EM data hold significant information on these ensembles that are often ignored. qFit offers a solution by leveraging powerful optimization algorithms to transform well-modeled single or static models into multiconformer models. Here we demonstrate that qFit can uncover widespread conformational heterogeneity that better represents the true underlying conformational ensemble data as demonstrated by lower R<sub>free</sub> values. Further, we determine that qFit can reliably pick up on alternative conformers that were modeled manually, highlighting that qFit could be used as a tool to significantly speed up modeling of high-resolution structures.</p>
+<p>This automation in modeling is needed especially in light of advances in data collection automation and fast detectors. These tools have revolutionized the field of X-ray crystallography, enabling high-temperature datasets, time-resolved experiments, and high-throughput data collection<sup><xref ref-type="bibr" rid="c41">41</xref>, <xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c43">43</xref>, <xref ref-type="bibr" rid="c44">44</xref>, <xref ref-type="bibr" rid="c45">45</xref></sup>. With the ability to capture different conformations, there is a growing demand for methods that can detect protein alternative conformers to extract as much biological information as possible. This is highlighted in massive ligand-soaking campaigns<sup><xref ref-type="bibr" rid="c35">35</xref>, <xref ref-type="bibr" rid="c46">46</xref>–<xref ref-type="bibr" rid="c48">48</xref></sup>, where there are often hundreds of structures with different ligands to parse. qFit provides a key tool to help extract the most out of these structures by improving the models and providing a better jumping-off point to determine how ligand binding impacts the protein. However, our data here shows that not only does qFit need a high-resolution map to be able to detect signal from noise, it also requires a very well-modeled structure as input.</p>
+<p>While both throughput and resolution are currently lower for cryo-EM, recent high-resolution maps have observable conformational heterogeneity<sup><xref ref-type="bibr" rid="c37">37</xref>, <xref ref-type="bibr" rid="c40">40</xref></sup>. Current classification approaches do not allow sorting based on signals as small as alternative side-chain conformations, necessitating approaches like qFit for modeling<sup><xref ref-type="bibr" rid="c49">49</xref>–<xref ref-type="bibr" rid="c51">51</xref></sup>. We see great potential in combining qFit with classification approaches to understand conformational heterogeneity at different scales. In the future, qFit can likely be applied more widely to EM maps in regions with high local resolution<sup><xref ref-type="bibr" rid="c52">52</xref></sup>. In addition, we will also incorporate modeling of nucleic acids, with an emphasis on automating refinement of alternative base positions in high-resolution ribosome structures in future work<sup><xref ref-type="bibr" rid="c53">53</xref>, <xref ref-type="bibr" rid="c54">54</xref></sup>.</p>
+<p>However, we encountered many difficulties in applying qFit to EM data relative to the more established X-ray data. In particular, there are still disparities in how maps are sharpened and how masks are used to exclude noise or lower experimental signals, such as solvent<sup><xref ref-type="bibr" rid="c55">55</xref>, <xref ref-type="bibr" rid="c56">56</xref></sup>, making it very challenging to evaluate whether models, especially multiconformer or ensemble models, have improved fit to the data. We suggest strengthening guidelines for reporting computational processing, and improving validation tools to gauge agreement between models and cryo-EM maps<sup><xref ref-type="bibr" rid="c55">55</xref>–<xref ref-type="bibr" rid="c57">57</xref></sup>.</p>
+<p>We envision many other future improvements that will further enhance the quality and accuracy of multiconformer models for both X-ray crystallography and cryo-EM. Simulations have demonstrated that subpar modeling of the macromolecule(s) and surrounding solvent is a major potential avenue to further reduce R-factors<sup><xref ref-type="bibr" rid="c27">27</xref>, <xref ref-type="bibr" rid="c28">28</xref></sup>. To accurately account for water molecules in multiconformer models, partially occupied water molecules must be identified and labeled in connection with protein atoms. Automated detection and refinement of partial-occupancy waters should help further reduce R<sub>free</sub><sup><xref ref-type="bibr" rid="c15">15</xref></sup> and provide additional insights into hydrogen-bond patterns and the influence of solvent on alternative conformations.</p>
+<p>Additionally, while qFit models have improved geometry in some respects relative to single-conformer models, we still have room for improvement for fixing rotamer outliers and backbone metrics (Ramachandran and Cβ deviations). The geometry improvements are likely mostly due to single-conformer models having strained conformations that fit the “mean” conformation rather than multiple partially overlapping conformations. Further gains in both accuracy and geometry quality will emerge with better sampling of backbone conformations<sup><xref ref-type="bibr" rid="c20">20</xref></sup>. Such improvements are important because splitting the backbone, where appropriate, can result in detection of biologically important alternative conformations<sup><xref ref-type="bibr" rid="c58">58</xref>–<xref ref-type="bibr" rid="c63">63</xref></sup>. Notably, the recently described FLEXR approach, which leverages Ringer to detect density peaks contributed alternative conformations and Coot to model alternative side chains into density peaks, illustrates that many gains can be made with side chain focused modeling alone<sup><xref ref-type="bibr" rid="c19">19</xref></sup>. However, further improvements to backbone modeling, including larger-scale motions such as alternative loop conformations<sup><xref ref-type="bibr" rid="c64">64</xref></sup> or coordinated larger-scale shifts of secondary-structural elements<sup><xref ref-type="bibr" rid="c65">65</xref>, <xref ref-type="bibr" rid="c66">66</xref></sup> will likely yield even higher quality multiconformer models.</p>
+<p>Lastly, the experimental and computational advancements in structural biology have increased the focus on ensemble-based models<sup><xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c13">13</xref>, <xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c50">50</xref>, <xref ref-type="bibr" rid="c51">51</xref></sup>. But the current data format for structural models (PDB, mmCIF) does not allow for more complex representation of ensembles. To appropriately capture the many aspects of ensembles, we would ideally like to have multiple nested ensembles representing both larger and local conformational changes, or to be able to show how two different backbone conformations can each be “parents” to different side-chain conformations. Currently, neither the PDB nor CIF format allows for this type of representation<sup><xref ref-type="bibr" rid="c67">67</xref>–<xref ref-type="bibr" rid="c69">69</xref></sup>.</p>
+<p>In summary, qFit drastically reduces the time and effort required to create multiconformer models from X-ray and cryo-EM data, thereby lowering the barrier to generating new hypotheses about the relationship between conformational ensembles and biological function<sup><xref ref-type="bibr" rid="c4">4</xref>, <xref ref-type="bibr" rid="c5">5</xref>, <xref ref-type="bibr" rid="c70">70</xref>, <xref ref-type="bibr" rid="c71">71</xref></sup>. Additionally, qFit can provide key data to bridge to the next frontier of structure prediction. While AlphaFold has achieved stunning success in predicting protein structure by training against single-conformation models<sup><xref ref-type="bibr" rid="c72">72</xref></sup>, future improvements to structure prediction might be gained by more accurately modeling the extent of conformational heterogeneity<sup><xref ref-type="bibr" rid="c72">72</xref></sup>.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Generating the qFit test set</title>
+<p>To test the impact of algorithmic changes in qFit, we created a dataset of 144 high-resolution (1.2-1.5 Å) X-ray crystallography structures deposited in the PDB (<bold>Supplementary Table 1</bold>). These were single-chain protein structures (in the asymmetric unit and at the level of biological assembly) and contained no ligands or mutations. The maximum sequence identity between any two structures was set as 30%. Based on CATH classification<sup><xref ref-type="bibr" rid="c31">31</xref></sup>, the resultant entries represented 24 space groups and 72 folds (<bold>Supplementary Table 1</bold>). All these structures were re-refined as described in “Initial refinement protocol”. These re-refined models are referred to as deposited models. To create multiconformer models, we input the re-refined structures in qFit protein, followed by the post qFit refinement protocol. These multiconformer models are referred to as qFit models.</p>
+</sec>
+<sec id="s4b">
+<title>Initial refinement protocol</title>
+<p>All structures from the PDB were re-refined using <italic>phenix.refine</italic> with the following parameters.</p>
+<fig id="ufig2" position="float" fig-type="figure">
+<graphic xlink:href="546963v2_ufig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The re-refined models were used as the input for subsequent qFit models.</p>
+</sec>
+<sec id="s4c">
+<title>Running qFit</title>
+<p>For this analysis qFit was run using the following command from qFit version 2023.1.</p>
+<p>X-ray:</p>
+<p><italic>qfit_protein composite_omit_map.mtz -l 2FOFCWT,PH2FOFCWT rerefine_pdb.pdb</italic></p>
+<p>Cryo-EM:</p>
+<p><italic>qfit_protein sharpened_map.ccp4 rerefine_cryo-EM.pdb -r &lt;resolution&gt; -em -n 10 -s 5</italic></p>
+</sec>
+<sec id="s4d">
+<title>qFit Improved Features</title>
+<sec id="s4d1">
+<title>Bayesian information criterion (BIC)</title>
+<p>BIC was implemented in the final selection of residue and segment conformations. BIC is defined as the real space residual correlation coefficient penalized by the number of parameters (k):</p>
+<fig id="ufig3" position="float" fig-type="figure">
+<graphic xlink:href="546963v2_ufig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="546963v2_ufig3a.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In qFit residue, k is defined as:</p>
+<fig id="ufig4" position="float" fig-type="figure">
+<graphic xlink:href="546963v2_ufig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In qFit segment, k is defined as:</p>
+<fig id="ufig5" position="float" fig-type="figure">
+<graphic xlink:href="546963v2_ufig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>BIC is calculated for each candidate cardinality (1-5). We then choose the set of conformations with the lowest BIC as the final conformations for the residue or segment under consideration.</p>
+</sec>
+<sec id="s4d2">
+<title>B-factor sampling</title>
+<p>To sample B-factors along with atomic coordinates at each step of qFit residue, we first perform one round of quadratic programming to reduce the number of conformations. For all remaining conformations, the input B-factor of each atom in the residue is multiplied by 0.5-1.5 in increments of 0.2. All conformations with sampled B-factors and coordinates are inputs for mixed integer quadratic programming.</p>
+</sec>
+<sec id="s4d3">
+<title>Iterative optimization algorithm with non-convex solutions</title>
+<p>Due to our exhaustive sampling, there are times when the MIQP optimization algorithm fails to find a non-convex solution. To address this limitation, we have implemented a procedure that iteratively removes solutions one-by-one based on the two solutions with the closest root-mean-square deviation (RMSD) until MIQP identifies a solution.</p>
+</sec>
+<sec id="s4d4">
+<title>Parallelization of large maps</title>
+<p>Often, cryo-EM maps are very large and reach memory limits using Python multiprocessing. Multiprocessing is used to model multiple residues independently in parallel. We have now implemented a new scheme to divide the density map into portions centered around each residue of interest and feed those portions of the map into our parallelization.</p>
+</sec>
+<sec id="s4d5">
+<title>Occupancy constraints</title>
+<p>To help refine segments (i.e. sets of residues with alternative conformations flanked by residues with only a single conformation) during X-ray refinement, we now output a restraint file at the end of the qFit protein run for X-ray refinement. This restraint file will enables “group occupancy refinement” for residues in a segment with the same alternative conformation. In group occupancy refinement all residues within the group are refined to the same occupancy, reducing the free parameters to fit.</p>
+</sec>
+<sec id="s4d6">
+<title>Finalizing qFit models with iterative refinement</title>
+<p>We iteratively run 5 macrocycles of refinement followed by a script that removes any conformations with occupancy less than 0.1. This script also renormalizes the occupancies of any remaining conformations in that segment, ensuring that the occupancy sums to 1. This procedure ends when no conformations have a refined occupancy of less than 0.1 or after 50 total rounds of refinement (whichever comes first). After, we do one final refinement where we release the occupancy constraints on the segments, turn on automated solvent picking, and optimize B-factors (specified as ADP parameters in Phenix) and coordinate weights.</p>
+</sec>
+<sec id="s4d7">
+<title>Cryo-EM</title>
+<p>To improve the detection of alternative conformations in cryo-EM structures, we made some key updates to part of the qFit algorithm. All of these updates to the algorithm will turn on with the -em flag. First, we now use electron scattering factors when calculating the modeled electron density. Second, we have removed bulk solvent electron density values (set at 0.3 in X-ray qFit protein). We also restricted the cardinality to be 0.3 (compared to 0.2 in X-ray qFit protein) to reduce misplaced conformations.</p>
+</sec>
+<sec id="s4d8">
+<title>Q-score</title>
+<p>We implemented the option for users to use Q-scores to determine if qFit should be run on a residue or not. This option is off by default. To use this option, generate Q-scores (mapq.py) available as part of the Q-score command-line interface (<ext-link ext-link-type="uri" xlink:href="https://github.com/gregdp/mapq">https://github.com/gregdp/mapq</ext-link>). qFit takes in a text file of Q-scores by using the <italic>– qscore</italic> option in <italic>qFit_protein</italic>. By default, all residues with a Q-score of less than 0.7 are not modeled as multiconformers, but are considered in qFit segment. Users can also adjust this level by using the <italic>–qscore_cutoff</italic> option in qFit protein.</p>
+</sec>
+<sec id="s4d9">
+<title>qFit-segment-only runs</title>
+<p>qFit can be used as a tool along with iterative model building and refinement. If a user manually removes or adds additional conformations using Coot<sup><xref ref-type="bibr" rid="c14">14</xref></sup> or similar software, this can disrupt the occupancy sum of the residue and the connectivity of the backbone. To alleviate such problems, we developed an option (<italic>qfit_protein –only-segment</italic>) to facilitate manual model adjustment after running qFit. This procedure generates connected backbones with consistent occupancies for coupled neighboring conformers.</p>
+<p>For example, suppose residue N has four alternative backbone conformations (A, B, C, D) and residue N+1 has two alternative conformations (A, B). In that case, this procedure will create C and D conformers for residue N+1 by duplicating its A and B conformers. This duplication continues until we reach the end of a segment so that all backbones have the same number of alternative conformations (A, B, C, D) and are, therefore, properly connected. Subsequent crystallographic refinement of this model (see “Post-qFit refinement script” above) will cause the duplicated conformations to diverge slightly, and will behave as expected without introducing geometry errors.</p>
+</sec>
+<sec id="s4d10">
+<title>Metrics</title>
+<p>Scripts for all metrics can be found in the scripts folder in the qFit GitHub repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/ExcitedStates/qfit-3.0">https://github.com/ExcitedStates/qfit-3.0</ext-link>). Our scripts for running qFit protein on an SGE-based server and all scripts for figures can be found here: <ext-link ext-link-type="uri" xlink:href="https://github.com/fraser-lab/qFit_biological_testset/tree/main">https://github.com/fraser-lab/qFit_biological_testset/tree/main</ext-link>.</p>
+</sec>
+<sec id="s4d11">
+<title>R values</title>
+<p>R-values were obtained after the final round of refinement for the re-refined deposited models (<italic>deposited_rerefine.sh</italic>) and for the qFit models after the iterative refinement script (<italic>qfit_final_xray_refine.sh</italic>).</p>
+</sec>
+<sec id="s4d12">
+<title>RMSF</title>
+<p>RMSF was measured for each residue based on all side-chain heavy atoms. First, the center of all conformations is identified. We then calculate the square root of the mean of the squared distances between the center of each individual conformations to the center of all conformations. Each distance is then weighted by occupancy (<italic>RMSF.py</italic>).</p>
+</sec>
+<sec id="s4d13">
+<title>B-Factors</title>
+<p>For each residue, we calculated an occupancy weighted B-factors for each residue (each heavy atom B-factor is weighted by it’s occupancy). We obtain the average heavy atom B-factor for every conformation and multiply it by the occupancy.</p>
+</sec>
+<sec id="s4d14">
+<title>Rotamers</title>
+<p>The rotamer name for each alternative conformation was determined by <italic>phenix.rotalyze</italic><sup><xref ref-type="bibr" rid="c34">34</xref></sup> while manually relaxing the outlier criteria to 0.1%. Each alternative conformation is given its rotamer. Rotamers were compared on a residue-by-residue basis. To compare rotamers, we only consider the first two <italic>χ</italic> dihedral angles. Each residue was classified into four categories: same, additional rotamer in qFit model, additional rotamer in the deposited model, or different.</p>
+</sec>
+<sec id="s4d15">
+<title>Generating synthetic data for resolution dependence</title>
+<p>To generate artificial electron density data at increasingly poorer resolutions, we first increased the B-factors of all atoms of the ground truth model by 1 Å<sup><xref ref-type="bibr" rid="c2">2</xref></sup> for every 0.1 Å reduction in resolution and placed the models in a P1 box. We randomly shook the coordinates using the <italic>shake</italic> argument in <italic>phenix.pdbtools</italic> with root-mean-square error of shaking given as 0.2 * desired resolution of synthetic data. We generated structure factors (F<sub>shake</sub>) for each of these shaken models from 0.8 Å to 3.0 Å in increments of 0.1 Å using the <italic>phenix.fmodel</italic> command-line function (with bulk solvent parameters k_sol=0.4, b_sol=45, and 5% R-free flags). We then added noise to the structure factors as follows:</p>
+<p>F<sub>noisy</sub> = F<sub>shake</sub> + (sqrt(F<sub>shake</sub>) * random number from normal distribution * resolution of model * 0.5).</p>
+<p>The scaling factors of 0.2 and 0.5 for shake RMSD and noise addition was determined by trying out different values and finalizing on the values which gave the most reasonable R-factors over the resolution range after refining the model against the generated structure factors. The addition of noise to F<sub>shake</sub> was done using the <italic>sftools</italic> command in CCP4. Then, the ground truth model with adjusted B-factors was stripped of alternative conformations (if any) at every residue position. The resulting single-conformer model was refined with the F<sub>noisy</sub> structure factors (<bold><xref rid="figs5" ref-type="fig">Supplementary Figure 5A</xref></bold>).</p>
+<p>The final refined model was given as input to qFit and the composite omit map was obtained for the F<sub>noisy</sub> structure factors. The multiconformer model given by qFit was refined with <italic>phenix.refine</italic> as explained in the post-qFit refinement script section. Since there is some randomness involved in simulating noise in the synthetic datasets, we repeated the synthetic data generation ten times at each resolution and all the steps following that including qFit modeling and post-qFit refinement for each of these noisy synthetic maps. The same steps of data synthesis were followed for the larger qFit test dataset containing 110 models, except that one set of structure factors was generated for each model at each resolution instead of ten as in the 7KR0 dataset.</p>
+</sec>
+<sec id="s4d16">
+<title>True/False Positive/Negative matrix for synthetic data</title>
+<p>True positive residues were those with at least two alternative conformations and an RMSD of less than 0.5 Å between the ground truth and qFit model conformations (for example, qFit model altloc A has an RMSD of less than 0.5 Å to ground truth model altloc A or B, and qFit model altloc B has an RMSD of less than 0.5 Å to the other ground truth model altloc A or B) (<bold><xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>). A false positive residue has at least two alternative conformations in the qFit model, but fewer conformations in the ground truth model (<bold><xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>). Alternatively, for a false positive residue, if the ground truth model residue is also multiconformer, then the RMSD between at least one of the conformations of qFit residue and ground truth residue is more than 0.5 Å (<bold><xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>). A true negative residue is when both the ground truth and qFit model have a single conformer and they have an RMSD of less than 0.5 Å (<bold><xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>). A false negative residue is when the qFit model has a single conformer but the ground truth model has more than one alternative conformer or both models have a single conformer but they have an RMSD greater than 0.5 Å (<bold><xref rid="fig4" ref-type="fig">Figure 4A</xref></bold>).</p>
+</sec>
+</sec>
+</sec>
+<sec id="d1e1714" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="d1e1814">
+<label>Supplemental Table 1</label>
+<media xlink:href="supplements/546963_file02.xlsx"/>
+</supplementary-material>
+<supplementary-material id="d1e1821">
+<label>Supplemental Table 2</label>
+<media xlink:href="supplements/546963_file03.xlsx"/>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgments</title>
+<p>This work was supported by: a National Institutes of Health (NIH) grant GM145238 and Chan Zuckerberg Initiative Open Software grant to JSF and NIH R35 GM133769 to DAK. We thank Christopher Williams and Vincent Chen for help with interpretations of MolProbity score ideal side-chain geometry.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><string-name><surname>Cheng</surname>, <given-names>Y</given-names></string-name>. <article-title>Single-Particle Cryo-EM at Crystallographic Resolution</article-title>. <source>Cell</source> <volume>161</volume>, <fpage>450</fpage>– <lpage>457</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><string-name><surname>Smith</surname>, <given-names>J. L.</given-names></string-name>, <string-name><surname>Hendrickson</surname>, <given-names>W. A.</given-names></string-name>, <string-name><surname>Honzatko</surname>, <given-names>R. B.</given-names></string-name> &amp; <string-name><surname>Sheriff</surname>, <given-names>S</given-names></string-name>. <article-title>Structural heterogeneity in protein crystals</article-title>. <source>Biochemistry</source> <volume>25</volume>, <fpage>5018</fpage>–<lpage>5027</lpage> (<year>1986</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><string-name><surname>Herzik</surname>, <given-names>M. A.</given-names>, <suffix>Jr</suffix></string-name>, <string-name><surname>Wu</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Lander</surname>, <given-names>G. C</given-names></string-name>. <article-title>Achieving better-than-3-Å resolution by single-particle cryo-EM at 200 keV</article-title>. <source>Nat. Methods</source> <volume>14</volume>, <fpage>1075</fpage>–<lpage>1078</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><string-name><surname>Keedy</surname>, <given-names>D. A.</given-names></string-name> <etal>et al.</etal> <article-title>An expanded allosteric network in PTP1B by multitemperature crystallography, fragment screening, and covalent tethering</article-title>. <source>Elife</source> <volume>7</volume>, (<year>2018</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><string-name><surname>Wankowicz</surname>, <given-names>S. A.</given-names></string-name>, <string-name><surname>de Oliveira</surname>, <given-names>S. H.</given-names></string-name>, <string-name><surname>Hogan</surname>, <given-names>D. W.</given-names></string-name>, <string-name><surname>van den Bedem</surname>, <given-names>H.</given-names></string-name> &amp; <string-name><surname>Fraser</surname>, <given-names>J. S.</given-names></string-name> <article-title>Ligand binding remodels protein side-chain conformational heterogeneity</article-title>. <source>Elife</source> <volume>11</volume>, (<year>2022</year>).</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><string-name><surname>Yabukarski</surname>, <given-names>F.</given-names></string-name> <etal>et al.</etal> <article-title>Ensemble-function relationships to dissect mechanisms of enzyme catalysis</article-title>. <source>Sci Adv</source> <volume>8</volume>, <fpage>eabn7738</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><string-name><surname>Furnham</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Blundell</surname>, <given-names>T. L.</given-names></string-name>, <string-name><surname>DePristo</surname>, <given-names>M. A.</given-names></string-name> &amp; <string-name><surname>Terwilliger</surname>, <given-names>T. C</given-names></string-name>. <article-title>Is one solution good enough?</article-title> <source>Nat. Struct. Mol. Biol</source>. <volume>13</volume>, <fpage>184</fpage>–<lpage>5</lpage>; discussion 185 (<year>2006</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><string-name><surname>Fraser</surname>, <given-names>J. S.</given-names></string-name>, <string-name><surname>Lindorff-Larsen</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Bonomi</surname>, <given-names>M</given-names></string-name>. <article-title>What Will Computational Modeling Approaches Have to Say in the Era of Atomistic Cryo-EM Data?</article-title> <source>J. Chem. Inf. Model</source>. <volume>60</volume>, <fpage>2410</fpage>–<lpage>2412</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><string-name><surname>Woldeyes</surname>, <given-names>R. A.</given-names></string-name>, <string-name><surname>Sivak</surname>, <given-names>D. A.</given-names></string-name> &amp; <string-name><surname>Fraser</surname>, <given-names>J. S.</given-names></string-name> <article-title>E pluribus unum, no more: from one crystal, many conformations</article-title>. <source>Curr. Opin. Struct. Biol</source>. <volume>28</volume>, <fpage>56</fpage>–<lpage>62</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><string-name><surname>Ginn</surname>, <given-names>H. M</given-names></string-name>. <article-title>Vagabond: bond-based parametrization reduces overfitting for refinement of proteins</article-title>. <source>Acta Crystallogr D Struct Biol</source> <volume>77</volume>, <fpage>424</fpage>–<lpage>437</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><string-name><surname>Ploscariu</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Burnley</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Gros</surname>, <given-names>P.</given-names></string-name> &amp; <string-name><surname>Pearce</surname>, <given-names>N. M</given-names></string-name>. <article-title>Improving sampling of crystallographic disorder in ensemble refinement</article-title>. <source>Acta Crystallogr D Struct Biol</source> <volume>77</volume>, <fpage>1357</fpage>–<lpage>1364</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><string-name><surname>Burnley</surname>, <given-names>B. T.</given-names></string-name>, <string-name><surname>Afonine</surname>, <given-names>P. V.</given-names></string-name>, <string-name><surname>Adams</surname>, <given-names>P. D.</given-names></string-name> &amp; <string-name><surname>Gros</surname>, <given-names>P</given-names></string-name>. <article-title>Modelling dynamics in protein crystal structures by ensemble refinement</article-title>. <source>Elife</source> <volume>1</volume>, <issue>e00311</issue> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><string-name><surname>Pearce</surname>, <given-names>N. M.</given-names></string-name> &amp; <string-name><surname>Gros</surname>, <given-names>P</given-names></string-name>. <article-title>A method for intuitively extracting macromolecular dynamics from structural disorder</article-title>. <source>Nat. Commun</source>. <volume>12</volume>, <fpage>5493</fpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><string-name><surname>Emsley</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Lohkamp</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Scott</surname>, <given-names>W. G.</given-names></string-name> &amp; <string-name><surname>Cowtan</surname>, <given-names>K.</given-names></string-name> <article-title>Features and development of Coot</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>66</volume>, <fpage>486</fpage>–<lpage>501</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><string-name><surname>Weichenberger</surname>, <given-names>C. X.</given-names></string-name>, <string-name><surname>Afonine</surname>, <given-names>P. V.</given-names></string-name>, <string-name><surname>Kantardjieff</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Rupp</surname>, <given-names>B</given-names></string-name>. <article-title>The solvent component of macromolecular crystals</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>71</volume>, <fpage>1023</fpage>–<lpage>1038</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><string-name><surname>Kabsch</surname>, <given-names>W</given-names></string-name>. <article-title>XDS</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>66</volume>, <fpage>125</fpage>–<lpage>132</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><string-name><surname>Karplus</surname>, <given-names>P. A.</given-names></string-name> &amp; <string-name><surname>Diederichs</surname>, <given-names>K</given-names></string-name>. <article-title>Linking crystallographic model and data quality</article-title>. <source>Science</source> <volume>336</volume>, <fpage>1030</fpage>–<lpage>1033</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><string-name><surname>Glaeser</surname>, <given-names>R. M</given-names></string-name>. <article-title>How Good Can Single-Particle Cryo-EM Become? What Remains Before It Approaches Its Physical Limits?</article-title> <source>Annu. Rev. Biophys</source>. <volume>48</volume>, <fpage>45</fpage>–<lpage>61</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><string-name><surname>Stachowski</surname>, <given-names>T. R.</given-names></string-name> &amp; <string-name><surname>Fischer</surname>, <given-names>M</given-names></string-name>. <article-title>FLEXR: automated multi-conformer model building using electron-density map sampling</article-title>. <source>Acta Crystallogr D Struct Biol</source> <volume>79</volume>, <fpage>354</fpage>–<lpage>367</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><string-name><surname>Keedy</surname>, <given-names>D. A.</given-names></string-name>, <string-name><surname>Fraser</surname>, <given-names>J. S.</given-names></string-name> &amp; <string-name><surname>van den Bedem</surname>, <given-names>H.</given-names></string-name> <article-title>Exposing Hidden Alternative Backbone Conformations in X-ray Crystallography Using qFit</article-title>. <source>PLoS Comput. Biol</source>. <volume>11</volume>, <issue>e1004507</issue> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><string-name><surname>Riley</surname>, <given-names>B. T.</given-names></string-name> <etal>et al.</etal> <article-title>qFit 3: Protein and ligand multiconformer modeling for X-ray crystallographic and single-particle cryo-EM density maps</article-title>. <source>Protein Sci</source>. <volume>30</volume>, <fpage>270</fpage>– <lpage>285</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><string-name><surname>van den Bedem</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Dhanik</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Latombe</surname>, <given-names>J. C.</given-names></string-name> &amp; <string-name><surname>Deacon</surname>, <given-names>A. M</given-names></string-name>. <article-title>Modeling discrete heterogeneity in X-ray diffraction data by fitting multi-conformers</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>65</volume>, <fpage>1107</fpage>–<lpage>1117</lpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><string-name><surname>van Zundert</surname>, <given-names>G. C. P.</given-names></string-name> <etal>et al.</etal> <article-title>qFit-ligand Reveals Widespread Conformational Heterogeneity of Drug-Like Molecules in X-Ray Electron Density Maps</article-title>. <source>J. Med. Chem</source>. <volume>61</volume>, <fpage>11183</fpage>–<lpage>11198</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><string-name><surname>Terwilliger</surname>, <given-names>T. C.</given-names></string-name> <etal>et al.</etal> <article-title>Iterative-build OMIT maps: map improvement by iterative model building and refinement without model bias</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>64</volume>, <fpage>515</fpage>–<lpage>524</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><string-name><surname>Afonine</surname>, <given-names>P. V.</given-names></string-name> <etal>et al.</etal> <article-title>Towards automated crystallographic structure refinement with phenix.refine</article-title>. <source>Acta Crystallogr. D Biol. Crystallogr</source>. <volume>68</volume>, <fpage>352</fpage>–<lpage>367</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><string-name><surname>Berman</surname>, <given-names>H. M.</given-names></string-name> <etal>et al.</etal> <article-title>The Protein Data Bank</article-title>. <source>Nucleic Acids Res</source>. <volume>28</volume>, <fpage>235</fpage>–<lpage>242</lpage> (<year>2000</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><string-name><surname>Holton</surname>, <given-names>J. M.</given-names></string-name>, <string-name><surname>Classen</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Frankel</surname>, <given-names>K. A.</given-names></string-name> &amp; <string-name><surname>Tainer</surname>, <given-names>J. A</given-names></string-name>. <article-title>The R-factor gap in macromolecular crystallography: an untapped potential for insights on accurate structures</article-title>. <source>FEBS J</source>. <volume>281</volume>, <fpage>4046</fpage>–<lpage>4060</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><string-name><surname>Vitkup</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Ringe</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Karplus</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Petsko</surname>, <given-names>G. A</given-names></string-name>. <article-title>Why protein R-factors are so large: a self-consistent analysis</article-title>. <source>Proteins</source> <volume>46</volume>, <fpage>345</fpage>–<lpage>354</lpage> (<year>2002</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><string-name><surname>Rodriguez-Corona</surname>, <given-names>U.</given-names></string-name>, <string-name><surname>Sobol</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Rodriguez-Zapata</surname>, <given-names>L. C.</given-names></string-name>, <string-name><surname>Hozak</surname>, <given-names>P.</given-names></string-name> &amp; <string-name><surname>Castano</surname>, <given-names>E</given-names></string-name>. <article-title>Fibrillarin from Archaea to human</article-title>. <source>Biol. Cell</source> <volume>107</volume>, <fpage>159</fpage>–<lpage>174</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="web">[No title]. <ext-link ext-link-type="uri" xlink:href="https://phenix-online.org/phenixwebsite_static/mainsite/files/newsletter/CCN_2023_01.pdf#page=2">https://phenix-online.org/phenixwebsite_static/mainsite/files/newsletter/CCN_2023_01.pdf#page=2</ext-link>.</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><string-name><surname>Orengo</surname>, <given-names>C. A.</given-names></string-name> <etal>et al.</etal> <article-title>CATH--a hierarchic classification of protein domain structures</article-title>. <source>Structure</source> <volume>5</volume>, <fpage>1093</fpage>–<lpage>1108</lpage> (<year>1997</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><string-name><surname>Lovell</surname>, <given-names>S. C.</given-names></string-name>, <string-name><surname>Word</surname>, <given-names>J. M.</given-names></string-name>, <string-name><surname>Richardson</surname>, <given-names>J. S.</given-names></string-name> &amp; <string-name><surname>Richardson</surname>, <given-names>D. C</given-names></string-name>. <article-title>The penultimate rotamer library</article-title>. <source>Proteins</source> <volume>40</volume>, <fpage>389</fpage>–<lpage>408</lpage> (<year>2000</year>).</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="web"><article-title>Alternate conformations always want to spread</article-title>. <source>Computational Crystallography Newsletter</source>. <year>2023</year>. <ext-link ext-link-type="uri" xlink:href="https://phenix-online.org/phenixwebsite_static/mainsite/files/newsletter/CCN_2023_01.pdf#page=2">https://phenix-online.org/phenixwebsite_static/mainsite/files/newsletter/CCN_2023_01.pdf#page=2</ext-link>.</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><string-name><surname>Williams</surname>, <given-names>C. J.</given-names></string-name> <etal>et al.</etal> <article-title>MolProbity: More and better reference data for improved all-atom structure validation</article-title>. <source>Protein Sci</source>. <volume>27</volume>, <fpage>293</fpage>–<lpage>315</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><string-name><surname>Schuller</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>Fragment binding to the Nsp3 macrodomain of SARS-CoV-2 identified through crystallographic screening and computational docking</article-title>. <source>Sci Adv</source> <volume>7</volume>, (<year>2021</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><string-name><surname>Pintilie</surname>, <given-names>G.</given-names></string-name> <etal>et al.</etal> <article-title>Measurement of atom resolvability in cryo-EM maps with Q-scores</article-title>. <source>Nat. Methods</source> <volume>17</volume>, <fpage>328</fpage>–<lpage>334</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><string-name><surname>Nakane</surname>, <given-names>T.</given-names></string-name> <etal>et al.</etal> <article-title>Single-particle cryo-EM at atomic resolution</article-title>. <source>Nature</source> <volume>587</volume>, <fpage>152</fpage>–<lpage>156</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><string-name><surname>Xie</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Yoshioka</surname>, <given-names>C. K.</given-names></string-name> &amp; <string-name><surname>Chapman</surname>, <given-names>M. S</given-names></string-name>. <article-title>Adeno-Associated Virus (AAV-DJ)-Cryo-EM Structure at 1.56 Å Resolution</article-title>. <source>Viruses</source> <volume>12</volume>, (<year>2020</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><string-name><surname>Chiu</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Schmid</surname>, <given-names>M. F.</given-names></string-name>, <string-name><surname>Pintilie</surname>, <given-names>G. D.</given-names></string-name> &amp; <string-name><surname>Lawson</surname>, <given-names>C. L</given-names></string-name>. <article-title>Evolution of standardization and dissemination of cryo-EM structures and data jointly by the community, PDB, and EMDB</article-title>. <source>J. Biol. Chem</source>. <volume>296</volume>, <issue>100560</issue> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><string-name><surname>Yip</surname>, <given-names>K. M.</given-names></string-name>, <string-name><surname>Fischer</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Paknia</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Chari</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Stark</surname>, <given-names>H</given-names></string-name>. <article-title>Atomic-resolution protein structure determination by cryo-EM</article-title>. <source>Nature</source> <volume>587</volume>, <fpage>157</fpage>–<lpage>161</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="other"><string-name><surname>Mehlman</surname>, <given-names>T</given-names></string-name>. (skaist) <etal>et al.</etal> <article-title>Room-temperature crystallography reveals altered binding of small-molecule fragments to PTP1B</article-title>. Preprint at <pub-id pub-id-type="doi">10.1101/2022.11.02.514751</pub-id>.</mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="other"><string-name><surname>Ebrahim</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>The temperature-dependent conformational ensemble of SARS-CoV-2 main protease (M<sup>pro</sup>)</article-title>. Preprint at <pub-id pub-id-type="doi">10.1101/2021.05.03.437411</pub-id>.</mixed-citation></ref>
+<ref id="c43"><label>43.</label><mixed-citation publication-type="other"><string-name><surname>Wolff</surname>, <given-names>A. M.</given-names></string-name> <etal>et al.</etal> <article-title>Mapping Protein Dynamics at High-Resolution with Temperature-Jump X-ray Crystallography</article-title>. Preprint at <pub-id pub-id-type="doi">10.1101/2022.06.10.495662</pub-id>.</mixed-citation></ref>
+<ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><string-name><surname>Dasgupta</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>Mix-and-inject XFEL crystallography reveals gated conformational dynamics during enzyme catalysis</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>116</volume>, <fpage>25634</fpage>–<lpage>25640</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c45"><label>45.</label><mixed-citation publication-type="journal"><string-name><surname>Correy</surname>, <given-names>G. J.</given-names></string-name> <etal>et al.</etal> <article-title>The mechanisms of catalysis and ligand binding for the SARS-CoV-2 NSP3 macrodomain from neutron and x-ray diffraction at room temperature</article-title>. <source>Sci Adv</source> <volume>8</volume>, <fpage>eabo5083</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c46"><label>46.</label><mixed-citation publication-type="journal"><string-name><surname>Gahbauer</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>Iterative computational design and crystallographic screening identifies potent inhibitors targeting the Nsp3 macrodomain of SARS-CoV-2</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>120</volume>, <fpage>e2212931120</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c47"><label>47.</label><mixed-citation publication-type="journal"><string-name><surname>Douangamath</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>Crystallographic and electrophilic fragment screening of the SARS-CoV-2 main protease</article-title>. <source>Nat. Commun</source>. <volume>11</volume>, <fpage>5047</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c48"><label>48.</label><mixed-citation publication-type="journal"><string-name><surname>Günther</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>X-ray screening identifies active site and allosteric inhibitors of SARS-CoV-2 main protease</article-title>. <source>Science</source> <volume>372</volume>, <fpage>642</fpage>–<lpage>646</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c49"><label>49.</label><mixed-citation publication-type="journal"><string-name><surname>Zhong</surname>, <given-names>E. D.</given-names></string-name>, <string-name><surname>Bepler</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Berger</surname>, <given-names>B.</given-names></string-name> &amp; <string-name><surname>Davis</surname>, <given-names>J. H</given-names></string-name>. <article-title>CryoDRGN: reconstruction of heterogeneous cryo-EM structures using neural networks</article-title>. <source>Nat. Methods</source> <volume>18</volume>, <fpage>176</fpage>– <lpage>185</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c50"><label>50.</label><mixed-citation publication-type="journal"><string-name><surname>Chen</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Ludtke</surname>, <given-names>S. J</given-names></string-name>. <article-title>Deep learning-based mixed-dimensional Gaussian mixture model for characterizing variability in cryo-EM</article-title>. <source>Nat. Methods</source> <volume>18</volume>, <fpage>930</fpage>–<lpage>936</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c51"><label>51.</label><mixed-citation publication-type="journal"><string-name><surname>Kinman</surname>, <given-names>L. F.</given-names></string-name>, <string-name><surname>Powell</surname>, <given-names>B. M.</given-names></string-name>, <string-name><surname>Zhong</surname>, <given-names>E. D.</given-names></string-name>, <string-name><surname>Berger</surname>, <given-names>B.</given-names></string-name> &amp; <string-name><surname>Davis</surname>, <given-names>J. H</given-names></string-name>. <article-title>Uncovering structural ensembles from single-particle cryo-EM data using cryoDRGN</article-title>. <source>Nat. Protoc</source>. <volume>18</volume>, <fpage>319</fpage>–<lpage>339</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c52"><label>52.</label><mixed-citation publication-type="journal"><string-name><surname>Terashi</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Maddhuri Venkata Subramaniya</surname>, <given-names>S. R.</given-names></string-name>, <string-name><surname>Tesmer</surname>, <given-names>J. J. G.</given-names></string-name> &amp; <string-name><surname>Kihara</surname>, <given-names>D.</given-names></string-name> <article-title>Residue-wise local quality estimation for protein models from cryo-EM maps</article-title>. <source>Nat. Methods</source> <volume>19</volume>, <fpage>1116</fpage>–<lpage>1125</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c53"><label>53.</label><mixed-citation publication-type="journal"><string-name><surname>Li</surname>, <given-names>Q.</given-names></string-name> <etal>et al.</etal> <article-title>Synthetic group A streptogramin antibiotics that overcome Vat resistance</article-title>. <source>Nature</source> <volume>586</volume>, <fpage>145</fpage>–<lpage>150</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c54"><label>54.</label><mixed-citation publication-type="journal"><string-name><surname>Fromm</surname>, <given-names>S. A.</given-names></string-name> <etal>et al.</etal> <article-title>The translating bacterial ribosome at 1.55 Å resolution generated by cryo-EM imaging services</article-title>. <source>Nat. Commun</source>. <volume>14</volume>, <fpage>1095</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c55"><label>55.</label><mixed-citation publication-type="journal"><string-name><surname>Wang</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Patwardhan</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Kleywegt</surname>, <given-names>G. J</given-names></string-name>. <article-title>Validation analysis of EMDB entries</article-title>. <source>Acta Crystallogr D Struct Biol</source> <volume>78</volume>, <fpage>542</fpage>–<lpage>552</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c56"><label>56.</label><mixed-citation publication-type="journal"><string-name><surname>Lawson</surname>, <given-names>C. L.</given-names></string-name> <etal>et al.</etal> <article-title>Cryo-EM model validation recommendations based on outcomes of the 2019 EMDataResource challenge</article-title>. <source>Nat. Methods</source> <volume>18</volume>, <fpage>156</fpage>–<lpage>164</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c57"><label>57.</label><mixed-citation publication-type="journal"><string-name><surname>Burley</surname>, <given-names>S. K.</given-names></string-name> <etal>et al.</etal> <article-title>Electron microscopy holdings of the Protein Data Bank: the impact of the resolution revolution, new validation tools, and implications for the future</article-title>. <source>Biophys. Rev</source>. <volume>14</volume>, <fpage>1281</fpage>–<lpage>1301</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c58"><label>58.</label><mixed-citation publication-type="journal"><string-name><surname>Davis</surname>, <given-names>I. W.</given-names></string-name>, <string-name><surname>Arendall</surname>, <given-names>W. B</given-names></string-name>., <article-title>3rd, Richardson, D. C. &amp; Richardson</article-title>, <source>J. S. The backrub motion: how protein backbone shrugs when a sidechain dances. Structure</source> <volume>14</volume>, <fpage>265</fpage>–<lpage>274</lpage> (<year>2006</year>).</mixed-citation></ref>
+<ref id="c59"><label>59.</label><mixed-citation publication-type="journal"><string-name><surname>Friedland</surname>, <given-names>G. D.</given-names></string-name>, <string-name><surname>Linares</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Smith</surname>, <given-names>C. A.</given-names></string-name> &amp; <string-name><surname>Kortemme</surname>, <given-names>T</given-names></string-name>. <article-title>A simple model of backbone flexibility improves modeling of side-chain conformational variability</article-title>. <source>J. Mol. Biol</source>. <volume>380</volume>, <fpage>757</fpage>–<lpage>774</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c60"><label>60.</label><mixed-citation publication-type="journal"><string-name><surname>Smith</surname>, <given-names>C. A.</given-names></string-name> &amp; <string-name><surname>Kortemme</surname>, <given-names>T</given-names></string-name>. <article-title>Backrub-like backbone simulation recapitulates natural protein conformational variability and improves mutant side-chain prediction</article-title>. <source>J. Mol. Biol</source>. <volume>380</volume>, <fpage>742</fpage>–<lpage>756</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c61"><label>61.</label><mixed-citation publication-type="journal"><string-name><surname>Keedy</surname>, <given-names>D. A.</given-names></string-name> <etal>et al.</etal> <article-title>The role of local backrub motions in evolved and designed mutations</article-title>. <source>PLoS Comput. Biol</source>. <volume>8</volume>, <issue>e1002629</issue> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c62"><label>62.</label><mixed-citation publication-type="journal"><string-name><surname>Georgiev</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Keedy</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Richardson</surname>, <given-names>J. S.</given-names></string-name>, <string-name><surname>Richardson</surname>, <given-names>D. C.</given-names></string-name> &amp; <string-name><surname>Donald</surname>, <given-names>B. R</given-names></string-name>. <article-title>Algorithm for backrub motions in protein design</article-title>. <source>Bioinformatics</source> <volume>24</volume>, <fpage>i196</fpage>–<lpage>204</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c63"><label>63.</label><mixed-citation publication-type="journal"><string-name><surname>Lovell</surname>, <given-names>S. C.</given-names></string-name> <etal>et al.</etal> <article-title>Structure validation by Calpha geometry: phi,psi and Cbeta deviation</article-title>. <source>Proteins</source> <volume>50</volume>, <fpage>437</fpage>–<lpage>450</lpage> (<year>2003</year>).</mixed-citation></ref>
+<ref id="c64"><label>64.</label><mixed-citation publication-type="journal"><string-name><surname>Biel</surname>, <given-names>J. T.</given-names></string-name>, <string-name><surname>Thompson</surname>, <given-names>M. C.</given-names></string-name>, <string-name><surname>Cunningham</surname>, <given-names>C. N.</given-names></string-name>, <string-name><surname>Corn</surname>, <given-names>J. E.</given-names></string-name> &amp; <string-name><surname>Fraser</surname>, <given-names>J. S</given-names></string-name>. <article-title>Flexibility and Design: Conformational Heterogeneity along the Evolutionary Trajectory of a Redesigned Ubiquitin</article-title>. <source>Structure</source> <volume>25</volume>, <fpage>739</fpage>–<lpage>749</lpage>.e3 (<year>2017</year>).</mixed-citation></ref>
+<ref id="c65"><label>65.</label><mixed-citation publication-type="journal"><string-name><surname>Deis</surname>, <given-names>L. N.</given-names></string-name> <etal>et al.</etal> <article-title>Multiscale conformational heterogeneity in staphylococcal protein a: possible determinant of functional plasticity</article-title>. <source>Structure</source> <volume>22</volume>, <fpage>1467</fpage>–<lpage>1477</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c66"><label>66.</label><mixed-citation publication-type="journal"><string-name><surname>Fraser</surname>, <given-names>J. S.</given-names></string-name> <etal>et al.</etal> <article-title>Accessing protein conformational ensembles using room-temperature X-ray crystallography</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>108</volume>, <fpage>16247</fpage>– <lpage>16252</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c67"><label>67.</label><mixed-citation publication-type="journal"><string-name><surname>Hancock</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>Integration of software tools for integrative modeling of biomolecular systems</article-title>. <source>J. Struct. Biol</source>. <volume>214</volume>, <issue>107841</issue> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c68"><label>68.</label><mixed-citation publication-type="journal"><string-name><surname>Pearce</surname>, <given-names>N. M.</given-names></string-name>, <string-name><surname>Krojer</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>von Delft</surname>, <given-names>F</given-names></string-name>. <article-title>Proper modelling of ligand binding requires an ensemble of bound and unbound states</article-title>. <source>Acta Crystallogr D Struct Biol</source> <volume>73</volume>, <fpage>256</fpage>– <lpage>266</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c69"><label>69.</label><mixed-citation publication-type="journal"><string-name><surname>Vallat</surname>, <given-names>B.</given-names></string-name> <etal>et al.</etal> <article-title>ModelCIF: An Extension of PDBx/mmCIF Data Representation for Computed Structure Models</article-title>. <source>J. Mol. Biol</source>. <volume>168021</volume> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c70"><label>70.</label><mixed-citation publication-type="journal"><string-name><surname>Otten</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal> <article-title>Rescue of conformational dynamics in enzyme catalysis by directed evolution</article-title>. <source>Nat. Commun</source>. <volume>9</volume>, <fpage>1314</fpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c71"><label>71.</label><mixed-citation publication-type="journal"><string-name><surname>Zaragoza</surname>, <given-names>J. P. T.</given-names></string-name> <etal>et al.</etal> <article-title>Temporal and spatial resolution of distal protein motions that activate hydrogen tunneling in soybean lipoxygenase</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>120</volume>, <issue>e2211630120</issue> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c72"><label>72.</label><mixed-citation publication-type="journal"><string-name><surname>Lane</surname>, <given-names>T. J</given-names></string-name>. <article-title>Protein structure prediction has reached the single-structure frontier</article-title>. <source>Nat. Methods</source> <volume>20</volume>, <fpage>170</fpage>–<lpage>173</lpage> (<year>2023</year>).</mixed-citation></ref>
+</ref-list>
+<sec id="d1e3752">
+<title>Supplementary Figures</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 1.</label>
+<caption><title>Flow Diagram of the selection of the test set PDBs.</title></caption>
+<graphic xlink:href="546963v2_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 2.</label>
+<caption><title>Rfree and R-gap distributions.</title>
+<p><bold>A.</bold> Distribution of difference of Rfree between deposited and qFit models. The median difference in Rfree is 0.6%. Median deposited models Rfree: 18.1%, median qFit models Rfree: 17.5%.</p>
+<p><bold>B.</bold> Distribution of R-gap values between deposited and qFit models (median deposited model: 3.0%, median qFit model: 3.0%).</p>
+<p><bold>C.</bold> Distribution of Rfree value in PDB deposited models versus re-refined deposited models. In the manuscript, deposited models refer to the re-refined deposited models.</p></caption>
+<graphic xlink:href="546963v2_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 3.</label>
+<caption><title>Examples of rotamer state categories.</title>
+<p>Meshes represent density at 1 σ. Green and yellow sticks represent deposited conformer(s). Blue and magenta sticks represent qFit conformers.</p>
+<p><bold>A. Same:</bold> The entire set of rotamers identified in the deposited and qFit models are the same (PDB: 1BN6, His199).</p>
+<p><bold>B. Additional rotamer(s) in the qFit model</bold>: Deposited and qFit models share at least one rotamer, and at least one additional rotamer was identified in the qFit model (PDB: 3CX2, Glu165).</p>
+<p><bold>C. Additional rotamer(s) in the deposited model:</bold> Deposited and qFit models share at least one rotamer, and at least one additional rotamer was identified in the deposited model (PDB: 4P48, Ser6).</p>
+<p><bold>D. Consistent and Different:</bold> Deposited and qFit models share at least one rotamer, and at least one unique additional rotamer was identified in both the deposited model and the qFit model (PDB: 3HP4, Arg81).</p>
+<p><bold>E. Different:</bold> The rotamers in the deposited and qFit models are all different (PDB: 1BN6, Glu110).</p></caption>
+<graphic xlink:href="546963v2_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 4.</label>
+<caption><title>Deposited versus qFit model geometry.</title>
+<p><bold>A.</bold> Count of number of Cβ deviation (&gt;0.25Å) per model: deposited model: 0.0 median [interquartile range: 0.0-0.0], qFit model: 0.0 median [interquartile range: 0.0-0.0], p-value=0.32 two-sided t-test.</p>
+<p><bold>B.</bold> Count of number of rotamer outliers per model: deposited model: 0.94 [0.00-2.12], qFit model: 1.79 [0.980-2.81], p-value=0.00074 two-sided t-test.</p>
+<p><bold>C.</bold> Percent of Ramachandran favored per model: deposited model: 97.70 [96.90-98.93], qFit model: 97.74 [96.81-98.68]p-value=0.15 two-sided t-test.</p>
+<p><bold>D.</bold> Percent of Ramachandran outliers per model: deposited model: 0.0 [0.0-0.0], qFit model: 0.0 [0.00-0.25], p-value=0.14 two-sided t-test.</p></caption>
+<graphic xlink:href="546963v2_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs5" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 5.</label>
+<caption><p><bold>A.</bold> Protocol for generating synthetic structure factors at various resolutions starting from the ground truth model. For the 7KR0 dataset, all the steps starting from random shaking of coordinates were done 10 times for each resolution. For the larger test dataset, all steps were only done once.</p>
+<p><bold>B.</bold> A visualization of synthetic maps generated for the models at varying resolution. The loss in detail of density is clearly visible with worsening resolution.</p>
+<p><bold>C.</bold> Proportion of all residues in qFit models which have been modeled as multiconformers in the 7KR0 dataset, as a function of resolution. The shaded region around the line indicates the spread across 10 runs at every resolution step.</p>
+<p><bold>D.</bold> Proportion of all residues in the qFit models of qFit test dataset which are modeled as true positives (blue), true negatives (orange), false positives (green) and false negatives (red) as a function of resolution of input data. The shaded region around the lines indicates the spread across the qFit test dataset which consists of 110 proteins.</p></caption>
+<graphic xlink:href="546963v2_figs5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs6" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 6.</label>
+<caption>
+<p><bold>A.</bold> The distribution of RMSD between qFit residues and corresponding ground truth residues (qFit test set) whenever the RMSD is higher than the 0.5 Å cutoff resulting in the qFit residues being classified as false positives.</p>
+<p><bold>B.</bold> The propensity of each residue type to be modeled with high RMSD from the ground truth (qFit test set), resulting in being classified as false positive. This propensity of a residue type x is calculated as the ratio between (i) proportion of residue type x among all the residues with a high RMSD and (ii) proportion of residue type x in the entire dataset.</p>
+<p><bold>C.</bold> The distribution of RMSD between qFit residues and corresponding ground truth residues (qFit test set) whenever the RMSD is higher than the 0.5 Å cutoff, resulting in the qFit residues being classified as false negatives.</p>
+<p><bold>D.</bold> The propensity of each residue type to be modeled with high RMSD from the ground truth (qFit test set), resulting in being classified as false negative.</p></caption>
+<graphic xlink:href="546963v2_figs6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs7" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 7.</label>
+<caption>
+<p><bold>A.</bold> Rwork (blue) and Rfree (orange) distribution of the input model from the qFit test dataset. These correspond to the models obtained after refining against Fnoisy structure factors (see <bold>Supplementary</bold> Figure 5A). The shaded region around the lines indicates the spread across the qFit test dataset.</p>
+<p><bold>B.</bold> Fraction of correctly modeled qFit residues (true positives + true negatives) as a function of input model Rfree for all structures in the qFit test dataset at 1.6 Å resolution (input Rfree range: 0.17 to 0.25, n=110).</p>
+<p><bold>C.</bold> The fraction of residues in the qFit models of the 7KR0 dataset with a Q-score within 0.01 of that of the ground truth model as a function of resolution. In multiconformer residues, Q-score for every alternate conformer is calculated separately. Q-scores of residues (or) conformations which have matching occupancy (range) are compared. Occupancy of conformations were binned into three classes – occupancy equal to 1 (blue), 1 &lt; occupancy &lt;= 0.5 (orange) and occupancy &lt; 0.5 (green).</p></caption>
+<graphic xlink:href="546963v2_figs7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs8" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 8.</label>
+<caption><title>MolProbity of deposited versus qFit models.</title>
+<p><bold>A. MolProbity score:</bold> deposited model: 1.49 (median) [1.40-1.61] (interquartile range), qFit model: 1.59 (median) [1.39-1.92] (interquartile range)</p>
+<p><bold>B. Model average of RMSD of model bond length from idealized bond length(</bold>Å<bold>):</bold> deposited model: 0.00 [0.00-0.01], qFit model: 0.00 [0.00-0.00]</p>
+<p><bold>C. Model average of RMSD of model bond angle from idealized bond angle(</bold><sup>0</sup><bold>):</bold> deposited model: 0.00 [0.00-0.11], qFit model: 0.00 [0.00-0.01]</p>
+<p><bold>D. Structure Clashscore</bold>: deposited model: 3.15 [2.74-4.39], qFit model: 8.45 [3.22-10.17]</p>
+<p><bold>E. Number of Cβ deviation (&gt;0.25</bold> Å) <bold>per model:</bold> deposited model: 0.02 [0.00-0.02], qFit model: 0.00 [0.00-0.00]</p>
+<p><bold>F. Number of rotamer outliers per model:</bold> deposited model: 2.0 [2.0-2.0], qFit model: 2.0 [1.0-3.0]</p>
+<p><bold>G. Percent of Ramachandran favored per model:</bold> deposited model: 97.6 [96.9-98.9], qFit model: 98.3 [96.7-98.7]</p>
+<p><bold>H. Percent of Ramachandran outliers per model:</bold> deposited model: 0.0 [0.0-0.0], qFit model: 0.0 [0.0-0.0]</p></caption>
+<graphic xlink:href="546963v2_figs8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.90606.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Stockbridge</surname>
+<given-names>Randy B</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Michigan</institution>
+</institution-wrap>
+<city>Ann Arbor</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>The current manuscript offers <bold>important</bold> updates to qFit , the state-of-the art tool for modeling alternative conformations of protein molecules based on high resolution X-ray diffraction or Cryo-EM data. While the authors provide <bold>convincing</bold> examples of qFit's performance, these are restricted to selected test cases. This manuscript will be of interest to structural biologists and protein biochemists more generally.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.90606.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Protein conformational changes are often critical to protein function, but obtaining structural information about conformational ensembles is a challenge. Over a number of years, the authors of the current manuscript have developed and improved an algorithm, qFit protein, that models multiple conformations into high resolution electron density maps in an automated way. The current manuscript describes the latest improvements to the program, and analyzes the performance of qFit protein in a number of test cases, including classical statistical metrics of data fit like Rfree and the gap between Rwork and Rfree, model geometry, and global and case-by-case assessment of qFit performance at different data resolution cutoffs. The authors have also updated qFit to handle cryo-EM datasets, although the analysis of its performance is more limited due to a limited number of high-resolution test cases and less standardization of deposited/processed data.</p>
+<p>Strengths:</p>
+<p>The strengths of the manuscript are the careful and extensive analysis of qFit's performance over a variety of metrics and a diversity of test cases, as well as the careful discussion of the limitations of qFit. This manuscript also serves as a very useful guide for users in evaluating if and when qFit should be applied during structural refinement.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.90606.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The manuscript by Wankowicz et al. describes updates to qFit, an algorithm for the characterization of conformational heterogeneity of protein molecules based on X-ray diffraction of Cryo-EM data. The work provides a clear description of the algorithm used by qFit. The authors then proceed to validate the performance of qFit by comparing it to deposited X-ray entries in the PDB in the 1.2-1.5 Å resolution range as quantified by Rfree, Rwork-Rfree, detailed examination of the conformations introduced by qFit, and performance on stereochemical measures (MolProbity scores). To examine the effect of experimental resolution of X-ray diffraction data, they start from an ultra high-resolution structure (SARS-CoV2 Nsp3 macrodomain) to determine how the loss of resolution (introduced artificially) degrades the ability of qFit to correctly infer the nature and presence of alternate conformations. The authors observe a gradual loss of ability to correctly infer alternate conformations as resolution degrades past 2 Å. The authors repeat this analysis for a larger set of entries in a more automated fashion and again observe that qFit works well for structures with resolutions better than 2 Å, with a rapid loss of accuracy at lower resolution. Finally, the authors examine the performance of qFit on cryo-EM data. Despite a few prominent examples, the authors find only a handful (8) of datasets for which they can confirm a resolution better than 2.0 Å. The performance of qFit on these maps is encouraging and will be of much interest because cryo-EM maps will, presumably, continue to improve and because of the rapid increase in the availability of such data for many supramolecular biological assemblies. As the authors note, practices in cryo-EM analysis are far from uniform, hampering the development and assessment of tools like qFit.</p>
+<p>Strengths:</p>
+<p>qFit improves the quality of refined structures at resolutions better than 2.0 A, in terms of reflecting true conformational heterogeneity and geometry. The algorithm is well designed and does not introduce spurious or unnecessary conformational heterogeneity. I was able to install and run the program without a problem within a computing cluster environment. The paper is well written and the validation thorough.</p>
+<p>
+I found the section on cryo-EM particularly enlightening, both because it demonstrates the potential for discovery of conformational heterogeneity from such data by qFit, and because it clearly explains the hurdles towards this becoming common practice, including lack of uniformity in reporting resolution, and differences in map and solvent treatment.</p>
+<p>Weaknesses:</p>
+<p>The authors begin the results section by claiming that they made &quot;substantial improvement&quot; relative to the previous iteration of qFit, &quot;both algorithmically (e.g., scoring is improved by BIC, sampling of B factors is now included) and computationally (improving the efficiency and reliability of the code)&quot; (bottom of page 3). However, the paper does not provide a comparison to previous iterations of the software or quantitation of the effects of these specific improvements, such as whether scoring is improved by the BIC, how the application of BIC has changed since the previous paper, whether sampling of B factors helps, and whether the code faster. It would help the reader to understand what, if any, the significance of each of these improvements was.</p>
+<p>The exclusion of structures containing ligands and multichain protein models in the validation of qFit was puzzling since both are very common in the PDB. This may convey the impression that qFit cannot handle such use cases. (Although it seems that qFit has an algorithm dedicated to modeling ligand heterogeneity and seems to be able to handle multiple chains). The paper would be more effective if it explained how a user of the software would handle scenarios with ligands and multiple chains, and why these would be excluded from analysis here.</p>
+<p>It would be helpful to add some guidance on how/whether qFit models can be further refined afterwards in Coot, Phenix, ..., or whether these models are strictly intended as the terminal step in refinement.</p>
+<p>Appraisal &amp; Discussion:</p>
+<p>Overall, the authors convincingly demonstrate that qFit provides a reliable means to detect and model conformational heterogeneity within high-resolution X-ray diffraction datasets and (based on a smaller sample) in cryo-EM density maps. This represents the state of the art in the field and will be of interest to any structural biologist or biochemist seeking to attain an understanding of the structural basis of the function of their system of interest, including potential allosteric mechanisms-an area where there are still few good solutions. That is, I expect qFit to find widespread use.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.90606.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors address a very important issue of going beyond a single-copy model obtained by the two principal experimental methods of structural biology, macromolecular crystallography and cryo electron microscopy (cryo-EM). Such multiconformer model is based on the fact that experimental data from both these methods represent a space- and time-average of a huge number of the molecules in a sample, or even in several samples, and that the respective distributions can be multimodal. Different from structure prediction methods, this approach is strongly based on high-resolution experimental information and requires validated single-copy high-quality models as input. Overall, the results support the authors' conclusions.</p>
+<p>In fact, the method addresses two problems which could be considered separately:</p>
+<p>- An automation of construction of multiple conformations when they can be identified visually;</p>
+<p>
+- A determination of multiple conformations when their visual identification is difficult or impossible.</p>
+<p>The first one is a known problem, when missing alternative conformations may cost a few percent in R-factors. While these conformations are relatively easy to detect and build manually, the current procedure may save significant time being quite efficient, as the test results show.</p>
+<p>The second problem is important from the physical point of view and has been addressed first by Burling &amp; Brunger (1994; <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1002/ijch.199400022">https://doi.org/10.1002/ijch.199400022</ext-link>). The new procedure deals with a second-order variation in the R-factors, of about 1% or less, like placing riding hydrogen atoms, modeling density deformation or variation of the bulk solvent. In such situations, it is hard to justify model improvement. Keeping Rfree values or their marginal decreasing can be considered as a sign that the model is not overfitted data but hardly as a strong argument in favor of the model.</p>
+<p>In general, overall targets are less appropriate for this kind of problem and local characteristics may be better indicators. Improvement of the model geometry is a good choice. Indeed, yet Cruickshank (1956; <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1107/S0365110X56002059">https://doi.org/10.1107/S0365110X56002059</ext-link>) showed that averaged density images may lead to a shortening of covalent bonds when interpreting such maps by a single model. However, a total absence of geometric outliers is not necessarily required for the structures solved at a high resolution where diffraction data should have more freedom to place the atoms where the experiments &quot;see&quot; them.</p>
+<p>The key local characteristic for multi conformer models is a closeness of the model map to the experimental one. Actually, the procedure uses a kind of such measure, the Bayesian information criteria (BIC). Unfortunately, there is no information about how sharply it identifies the best model, how much it changes between the initial and final models; in overall there is not any feeling about its values. The Q-score (page 17) can be a tool for the first problem where the multiple conformations are clearly separated and not for the second problem where the contributions from neighboring conformations are merged. In addition to BIC or to even more conventional target functions such as LS or local map correlation, the extreme and mean values of the local difference maps may help to validate the models.</p>
+<p>This method with its results is a strong argument for a need in experimental data and information they contain, differently from a pure structure prediction. At the same time, absence of strong density-based proofs may limit its impact.</p>
+<p>Strengths:</p>
+<p>Addressing an important problem and automatization of model construction for alternative conformations using high-resolution experimental data.</p>
+<p>Weaknesses:</p>
+<p>An insufficient validation of the models when no discrete alternative conformations are visible and essentially missing local real-space validation indicators.</p>
+</body>
+</sub-article>
+</article>
