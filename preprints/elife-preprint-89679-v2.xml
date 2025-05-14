@@ -1,0 +1,803 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">89679</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.89679</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.89679.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.3</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Biochemistry and Chemical Biology</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Deep Batch Active Learning for Drug Discovery</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-8425-993X</contrib-id>
+<name>
+<surname>Bailey</surname>
+<given-names>Michael</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Moayedpour</surname>
+<given-names>Saeed</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Ruijiang</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Corrochano-Navarro</surname>
+<given-names>Alejandro</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kötter</surname>
+<given-names>Alexander</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kogler-Anele</surname>
+<given-names>Lorenzo</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Riahi</surname>
+<given-names>Saleh</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Grebner</surname>
+<given-names>Christoph</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hessler</surname>
+<given-names>Gerhard</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Matter</surname>
+<given-names>Hans</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bianciotto</surname>
+<given-names>Marc</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mas</surname>
+<given-names>Pablo</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3430-6051</contrib-id>
+<name>
+<surname>Bar-Joseph</surname>
+<given-names>Ziv</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1410-9114</contrib-id>
+<name>
+<surname>Jager</surname>
+<given-names>Sven</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>R&amp;D Data &amp; Computational Science</institution>, Sanofi,, Cambridge, MA, <country>United States</country></aff>
+<aff id="a2"><label>2</label><institution>Digital Data &amp; Technology</institution>, Industriepark Höchst 65926 Frankfurt <country>Germany</country></aff>
+<aff id="a3"><label>3</label><institution>Synthetic Molecular Design, Integrated Drug Discovery, Sanofi-Aventis Deutschland GmbH, Industriepark Höchst</institution>, Building G838, 65926 Frankfurt am Main, <country>Germany</country></aff>
+<aff id="a4"><label>4</label><institution>Molecular Design Sciences, Integrated Drug Discovery</institution>, Sanofi, Vitry-sur-Seine, 94403, <country>France</country></aff>
+<aff id="a5"><label>5</label><institution>Digital Data</institution>, Sanofi, Shanghai, <country>China</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Talevi</surname>
+<given-names>Alan</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of La Plata</institution>
+</institution-wrap>
+<city>La Plata</city>
+<country>Argentina</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Dötsch</surname>
+<given-names>Volker</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Goethe University Frankfurt</institution>
+</institution-wrap>
+<city>Frankfurt am Main</city>
+<country>Germany</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label><bold>For correspondence:</bold> <email>Ziv.Bar-Joseph@sanofi.com</email>; <email>sven.jager@sanofi.com</email></corresp>
+<fn fn-type="others"><label>†</label><p>M.B.,R.L.,H.M., G.H.,C.G., Z.B. and S.J. designed research; M.B., S.M., R.L., A.C.N.,S.J., H.M., P.M., L.K.A., and S.R. performed research; M.B., S.M., A.C.N.,S.R., C. G., G.H., H.M., P.M., and A.K. analyzed data; M.B., S.M., A.C.N., S.J., and Z.B. wrote the paper</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-09-13">
+<day>13</day>
+<month>09</month>
+<year>2023</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2024-01-19">
+<day>19</day>
+<month>01</month>
+<year>2024</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP89679</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-06-16">
+<day>16</day>
+<month>06</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-07-29">
+<day>29</day>
+<month>07</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.07.26.550653"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2023-09-13">
+<day>13</day>
+<month>09</month>
+<year>2023</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.89679.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.89679.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89679.1.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89679.1.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.89679.1.sa3">Author Response:</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Bailey et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Bailey et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-89679-v2.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>A key challenge in drug discovery is to optimize, in silico, various absorption and affinity properties of small molecules. One strategy that was proposed for such optimization process is active learning. In active learning molecules are selected for testing based on their likelihood of improving model performance. To enable the use of active learning with advanced neural network models we developed two novel active learning batch selection methods. These methods were tested on several public datasets for different optimization goals and with different sizes. We have also curated new affinity datasets that provide chronological information on state-of-the-art experimental strategy. As we show, for all datasets the new active learning methods greatly improved on existing and current batch selection methods leading to significant potential saving in the number of experiments needed to reach the same model performance. Our methods are general and can be used with any package including the popular <monospace>DeepChem</monospace> library.</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Added link to Code and Data; minor stylistic revisions.</p></fn>
+</fn-group>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://github.com/Sanofi-Public/Alien">https://github.com/Sanofi-Public/Alien</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>The process that leads from a small molecule that shows some activity against the target of interest to a candidate for clinical development involves complex multi-parameter optimization. In this process, in addition to the activity against the target itself, the ADMET profile of the molecule, i.e. its Absorption, Distribution, Metabolism, Excretion, and Toxicity properties are optimized. Accurate <italic>in silico</italic> models for the desired properties are required to speed up and improve decision making and reduce the number of necessary experiments<bold><italic><xref ref-type="bibr" rid="c18">Hessler and Baringhaus (2018)</xref>; <xref ref-type="bibr" rid="c16">Grebner et al. 2022</xref>); <xref ref-type="bibr" rid="c51">Wu et al. (2020)</xref></italic></bold>. Amongst other machine learning (ML) techniques, deep learning models, and more specifically (graph) neural neural networks, have been used successfully in this field<bold><italic><xref ref-type="bibr" rid="c53">Xiong et al. (2021)</xref></italic></bold>.</p>
+<p>Scale-effective ADMET and affinity prediction methods require an abundance of labeled training data due to their complexity and the need to cover the enormous molecular design space. This can be a bottleneck in cost, time, and experimental resources<bold><italic><xref ref-type="bibr" rid="c5">Chuang et al. (2020)</xref></italic></bold>. Various approaches have been proposed for improving data acquisition and the models, including transfer learning <bold><italic><xref ref-type="bibr" rid="c49">Weiss et al. (2016)</xref></italic></bold>, data augmentation <bold><italic><xref ref-type="bibr" rid="c4">Cai et al. (2020)</xref></italic></bold> and <italic>active learning</italic> <bold><italic>Cohn et al. (1996a)</italic></bold>.</p>
+<p>Current optimization approaches often work in cycles. In each cycle a set of molecules are tested, the model is revised and, based on the revised model, a new set is selected for testing, and so on until the model reaches the desired performance.</p>
+<p>Active learning <bold><italic>Cohn et al. (1996b)</italic></bold> is an approach for selecting molecules for each of the cycles. Unlike traditional approaches that test the most promising candidates in each round <bold><italic><xref ref-type="bibr" rid="c6">Cohn et al. (1994)</xref></italic></bold> in active learning samples are selected to optimize the <italic>model</italic> rather than the cycle result. In such approach optimization samples are prioritized by their ability to improve model performance when labeled. Active learning has been studied in sequential mode, where samples are labelled one-at-a-time,and batch mode, where samples are selected for labelling in batches <bold><italic><xref ref-type="bibr" rid="c43">Settles (2012)</xref></italic></bold>. Batch mode is both more realistic for small molecule optimization and more challenging computationally. The main problem is that samples are not independent (sharing chemical properties that will influence model parameters) and so selecting a set based on marginal improvement does not reflect well the improvement provided by the entire batch <bold><italic><xref ref-type="bibr" rid="c2">Ash et al. (2021)</xref></italic></bold>.</p>
+<p>Active learning methods have been utilized to predict and optimize the physiochemical and biological properties of molecular systems. For instance, batch active learning (BMDAL) was used to enhance the model accuracy in predicting the conformations, energetics, and interatomic forces of small organic compounds where the diversity of the training data is a limiting factor.<bold><italic><xref ref-type="bibr" rid="c54">Zaverkin et al. (2022)</xref></italic></bold>. Active learning was also combined with pairwise difference regression (PADRE)<bold><italic><xref ref-type="bibr" rid="c46">Tynes et al. (2021)</xref></italic></bold> to predict molecular properties including redox free energy. Reker et al developed an active learning based tool to screen and select top candidates for ligand-target binding prediction <bold><italic><xref ref-type="bibr" rid="c39">Reker et al. (2017)</xref></italic></bold>. Thompson <italic>et al</italic>.<bold><italic><xref ref-type="bibr" rid="c45">Thompson et al. (2022)</xref></italic></bold> employed Active learning framework to build a package for the binding free energy of to TYK2 Kinase. In another study model uncertainty for unlabeled pharmacokinetics was used to set an active learning pipeline for plasma exposure prediction <bold><italic><xref ref-type="bibr" rid="c12">Ding et al. (2021)</xref></italic></bold>. Pertusi et al <bold><italic><xref ref-type="bibr" rid="c38">Pertusi et al. (2017)</xref></italic></bold>, used an active learning data selection method for characterizing enzyme promiscuity. Naik et al <bold><italic><xref ref-type="bibr" rid="c32">Naik et al. (2016)</xref></italic></bold> used active learning to build models to predict molecule effects on subcellular protein localization. However, while some of these methods worked well, they were not applied to the more advanced deep learning methods that have become the tool of choice for small molecule modeling.</p>
+<p>On the theoretical side, a number of Batch Active learning methods have recently been developed though these have not been used in the drug design space. For example, BAIT<bold><italic><xref ref-type="bibr" rid="c2">Ash et al. (2021)</xref></italic></bold> uses a probabilistic approach for the learning procedure that optimally selects (using greedy approximation) a set of samples that maximizes the likelihood of the model parameters (last layer) as defined by Fisher information<bold><italic><xref ref-type="bibr" rid="c2">Ash et al. (2021)</xref></italic></bold>. Others have proposed using the local approximation to estimate the maximum of the posterior distribution over the batch. This is achieved through computation of the inverse Hessian of the negative log posterior <bold><italic><xref ref-type="bibr" rid="c11">Daxberger et al. (2021)</xref></italic></bold>. Recently, GeneDisco<bold><italic><xref ref-type="bibr" rid="c31">Mehrjou et al. (2021)</xref></italic></bold> was published as an open source library of benchmarking data pertaining to transcriptomics active learning work. However, these methods have not been extensively tested for small molecules optimization. Specifically, to date, popular <italic>in silico</italic> design suits, including ChemML <bold><italic><xref ref-type="bibr" rid="c17">Haghighatlari et al. (2019)</xref></italic></bold> and DeepChem <bold><italic>dee (2016)</italic></bold>, do not support active leaning strategies.</p>
+<p>To address these shortcoming, we developed a new innovative and generalizable strategy that can be used with any deep learning ADMET methods. Our methods are inspired by the Bayesian deep regression paradigm, where estimating the model uncertainty is tantamount to obtaining the posterior distribution of the model parameters<bold><italic><xref ref-type="bibr" rid="c22">Kendall and Gal (2017)</xref></italic></bold>. Model uncertainty is determined using innovative sampling strategies, with no extra model training required.We next select batches that maximize the joint entropy, i.e., the log-determinant of the epistemic covariance of the batch predictions. This enforces batch diversity by rejecting highly correlated batches.</p>
+<p>To evaluate our methods and compare them to state of the art approaches we have assembled a large collection of datasets. As we show, our active learning algorithm consistently leads to the best performance when compared to prior methods suggested for this task.</p>
+<p>We also generated new data for internal candidates and show that our methods can significantly save cost and time compared to current industry optimization approaches for these datasets.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>We developed and tested several batch active learning selection approaches which quantify the uncertainty over multiple samples. Given these uncertainties our method aims to select the subset of samples with maximal joint entropy (i.e., information content) (<xref rid="fig1" ref-type="fig">Figure 1</xref>). Specifically, we use multiple methods to compute a covariance matrix, <italic>C</italic>, between predictions on unlabeled samples, 𝒱. Then, using an iterative and greedy approach, the method selects a submatrix <italic>C</italic><sub><italic>B</italic></sub> of size <italic>B</italic> × <italic>B</italic> from <italic>C</italic> with maximal determinant. Such approach takes into account both the “uncertainty” (which is manifested in the variance of each sample) and the “diversity” (which is reflected in the covariance). See Methods for details.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>Method overview. a) The active learning loop. We consider the entire dataset as the pool, and the oracle as the entity that holds the corresponding labels. During each iteration of the active learning loop, we select a batch of points from the pool and obtain their corresponding labels from the oracle. We then update our model using the selected batch and evaluate its performance on a holdout set. This process is repeated until the desired level of performance is achieved. b) Prediction of binding affinity is the target function for the ChEMBL and Sanofi-Aventis datasets c) Active learning batch selection. At the last layer of our model, we use either Laplace approximation or Monte Carlo dropout to compute covariances (COVLAP and COVDROP), from which an ensemble of predictions is generated. With the derived covariance matrix, we optimize batches iteratively based on their information content.</p></caption>
+<graphic xlink:href="550653v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2a">
+<title>Evaluating active learning method on ADMET and affinity related data</title>
+<p>We used several public drug design datasets to test and compare the performance of our methods. For comparison, in addition to the two methods we developed (MC dropout and Laplace Approximation, COVDROP and COVLAP, respectively) we also compared to methods that have been previously suggested (<italic>k</italic>-means<bold><italic><xref ref-type="bibr" rid="c36">Nguyen and Smeulders (2004)</xref></italic></bold> and BAIT<bold><italic><xref ref-type="bibr" rid="c2">Ash et al. (2021)</xref></italic></bold> and to a random ordering of the experiments (i.e. no active learning). Batch size was set to 30 for all methods. During each iteration of the loop, each model (e.g., <italic>k</italic>-Means, BAIT, Random, COVDROP, or COV-LAP) selects a batch consisting of a fixed number of samples from the unlabeled pool. This iterative process is repeated until all labels in the Oracle are exhausted. In the retrospective setting, the pool includes all samples from the relevant dataset, while the oracle retains the corresponding labels.</p>
+<p>Our evaluation datasets included a cell permeability dataset with 906 drugs <bold><italic><xref ref-type="bibr" rid="c47">Wang et al. (2016)</xref></italic></bold>, aqueous solubility dataset, which comprises 9,982 small molecules <bold><italic><xref ref-type="bibr" rid="c44">Sorkun et al. (2019</xref>); <xref ref-type="bibr" rid="c20">Huang et al. (2022)</xref></italic></bold>, and the lipophilicity data for 1200 small molecules <bold><italic><xref ref-type="bibr" rid="c50">Wenlock and Tomkinson (2015)</xref>; <xref ref-type="bibr" rid="c52">Wu et al. (2018)</xref></italic></bold>. We also included 10 large affinity datasets, 6 from ChEMBL and 4 new internal datasets. Details for all datasets are provided in Methods and in <xref rid="tbl1" ref-type="table">Table 1</xref>.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><p>Number or required experiments for reaching model error with 10% higher than the minimum calculated RMSE for the whole training set across different methods. NC - Number of compounds in this dataset. Chron - analysis performed with batch selection using the actual order in which the data was profiled (only available for internal data). % gain estimates the improvement over the Random selection computed from (1 − N<sub>COVDROP</sub>/N<sub>Random</sub>) × 100. Where N<sub>COVDROP</sub> as well as N<sub>Random</sub> represents the average number of experiments out of 25 active learning cycles executed and a batch size of 32.</p></caption>
+<graphic xlink:href="550653v3_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2b">
+<title>Comparison of active learning methods for solubility datasets</title>
+<p>Results for a selected subset of the benchmarked datasets are presented in <xref rid="fig2" ref-type="fig">Figure 2</xref>. In these figures we present the accuracy of models when using the different active learning methods as a function of the iteration. As can be seen, in most cases the COVDROP method very quickly leads to better performance when compared to other methods.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p>Performance of different methods for optimizing models for ADMET and affinity related datasets and batch selection strategies: a) the cell effective permeability b) lipophilicity. Panels c–f are affinity measurements to various targets proteins: c) GSK3β (ChEMBL) d) MMP3 (ChEMBL) e) Renin (Sanofi-Aventis) f) FXa (Sanofi-Aventis)</p></caption>
+<graphic xlink:href="550653v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The overall shape of the RMSE profiles is impacted by the statistics of the target values in each dataset. For instance, for the plasma protein binding rate (PPBR) dataset, one can observe that all methods are suffering from large RMSE values early on. Specific to this case, there is an extreme imbalanced distribution for the target value of the source, as illustrated in Figure 8. Using a small number of compounds, the model gets a good insight of the most representative range, with a small peak following within the 300-400 samples, indicating a lack of training in underrepresented regions in early stages. In contrast to PPBR, hydration free energy (HFE) and effective cell permeability (Caco-2) the target distributions suffer less from skewness and spreadiness, as shown in Figure 8. For HFE and Caco-2 datasets COVDROP is the clear winner reaching RMSE within 10% of the final RMSE after testing only 36 and 450 compounds, respectively.</p>
+<p>We also tested much larger datasets. For example, the aqueous solubility dataset (AS) (<xref rid="fig1" ref-type="fig">Figure 1</xref> a) is significantly larger than those presented in <xref rid="fig2" ref-type="fig">Figure 2</xref>. There we see much slower convergence of RMSE values which we attribute to the normal distribution of the target values (Figure 8) and larger size of the training data. This RMSE profile indicates that for the Solubility dataset, the BAIT method exhibits inferior performance compared to the other methods, while COVDROP demonstrates the smallest root mean square error (RMSE) on the full dataset compared to all other methods. Additionally, COVDROP outperforms all other methods starting at 400 compounds.</p>
+</sec>
+<sec id="s2c">
+<title>Performance on affinity data</title>
+<p>We next evaluated the methods on several affinity datasets from ChEMBL and Sanofi-Aventis with different protein targets. For each of these, a diverse set of ligands is screened for their affinity to a target protein, e.g. MMP-8. <xref rid="fig2" ref-type="fig">Figure 2c</xref> depicts the retrospective experiment for modeling the affinity to Glycogen synthase kinase-3β(GSK3β), and we observe a similar trend to the solubility experiments. COVDROP outperforms very early the other methods.</p>
+<p><xref rid="fig2" ref-type="fig">Figure 2d</xref> presents to the retrospective experiment predicting the activity of small molecules against Matrix-metalloprotease(ChEMBL) with COVDROP gain the best option.</p>
+<p>The internal datasets provide the opportunity to compare batch selection methods with the actual order used to experimentally test the compounds. We observe that all batch selection methods (though not random) outperform the current human based ordering (<xref rid="fig2" ref-type="fig">Figure 2 e-f</xref> and <xref rid="fig1" ref-type="fig">1 h-i</xref>). For instance, for Renin and MMP-8, COVDROP significantly outperforms the chronological batch selection by requiring 62 and 58 % less training data points.</p>
+<p>Similar to the ChEMBL data, we observed that for most of the molecules tested within the Sanofi-Aventis datasets COVDROP significantly outperforms other methods. However, for this dataset we also observed very good performance of COVLAP on the FXa dataset (<xref rid="fig2" ref-type="fig">Figure 2f</xref>). Furthermore, the number of experiments to achieve the 10% higher than minimum RMSE threshold is 750, while other selection methods require at least 12% more experiments to obtain the same metric (Tabel 1). <xref rid="fig2" ref-type="fig">Figure 2e</xref> showcases the retrospective experiment on the Renin dataset. Similar to our previous observations, we observed that COVDROP significantly outperformed the other methods. Notably, the method exhibited a small root-mean-square error (RMSE) after the initial batch selection in comparison to the final RMSE attained, which was achieved by the other methods after over 200 experiments and multiple iterations.</p>
+<p>To further quantify the improvement we present in <xref rid="tbl1" ref-type="table">Table 1</xref> the number of experiments required by each method for reaching model with an error at most 10% higher than the minimum RMSE obtained using all the data across all selection methods. As the table shows, both of our methods outperform all other methods for most datasets, in some cases significantly so. For example, we observed that for smaller datasets COVDROP can improve the results very quickly leading to much better performance. For most of the datasets performance improvements are greater than 10% vs. Random selection. As mentioned before for PPBR dataset due to the imbalance nature of the data COVDROP underperforms and BAIT selection produces the beset result. Even when compared to the chronological order in which the internal compounds were tested (i.e. to the actual experimental cycle) we observe improvements of up to 62%. This holds true if we change the stopping criteria to 20% or 5% difference (Table 4 &amp; 5).</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Methods</title>
+<sec id="s3a">
+<title>Datasets</title>
+<p>To benchmark the various batch selection methods, we have collected both private (Sanofi-owned) and public datasets that represent a diverse range of some of the most important molecular properties that scientists need to address when developing small-molecule drugs. We list below the benchmark datasets used in this work covering the properties related to the absorption and distribution pharmacokinetic processes. In addition to the ADMET related properties, the benchmark datasets include four Sanofi and six public datasets recording the affinity of small drug molecules to ten target proteins, such as kinase and GCPRs. <xref rid="tbl1" ref-type="table">Table 1</xref> provides detailed information on all of these datasets.</p>
+</sec>
+<sec id="s3b">
+<title>Affinity datasets</title>
+<p>Affinity measures the strength of binding between the ligands and biological targets, such as proteins. It is a critical molecular property that determines the drug efficacy. Therefore, to validate our active learning strategy for building statistical models, several datasets from the public database ChEMBL <bold><italic><xref ref-type="bibr" rid="c15">Gaulton et al. (2012)</xref></italic></bold> and internal sources were used.</p>
+</sec>
+<sec id="s3c">
+<title>ChEMBL datasets</title>
+<p>To retrieve suitable datasets from ChEMBL (version 31, <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/chembl/">https://www.ebi.ac.uk/chembl/</ext-link>), a collection of six proteins representing multiple target families (<xref rid="tbl1" ref-type="table">Table 1</xref>, column: Class) was identified using Uniprot IDs and ChEMBL target IDs. These targets include the alpha-1a adrenergic and dopamine D2 receptors as members of the GPCR family, glycogen synthase kinase-3 beta (GSK3β) from the kinase family, Matrix-metalloprotease 3, also known as MMP3 or stromelysin as metalloprotease, the sodium channel Nav1.7 as ion channel and the peroxisome proliferator-activated receptor delta (PPARδ) as member of the nuclear hormone receptor (NHR) family. See Supporting Methods for details on how these datasets were derived.</p>
+</sec>
+<sec id="s3d">
+<title>Sanofi datasets</title>
+<p>Four internal sets with structure-activity relationship (SAR) data were used. These allow us to overcome limitations of public SAR datasets which may merge assay data from different sources and which do not provide specific information on the order in which experiments were carried out. Such information allows direct comparison of the active learning solution and current best practices. The first dataset comprises compounds for inhibiting serine protease factor Xa (FXa)<bold><italic><xref ref-type="bibr" rid="c33">Nazaré et al. (2004</xref>); <xref ref-type="bibr" rid="c34">Nazare et al. (2012</xref>); <xref ref-type="bibr" rid="c28">Matter et al. (2002</xref>); <xref ref-type="bibr" rid="c35">Nazaré et al. (2005</xref>); <xref ref-type="bibr" rid="c30">Matter et al. (2005)</xref></italic></bold>. The second dataset is for inhibiting the aspartyl protease Renin<bold><italic><xref ref-type="bibr" rid="c41">Scheiper et al. (2010</xref>); <xref ref-type="bibr" rid="c29">Matter et al. (2011</xref>); <xref ref-type="bibr" rid="c40">Scheiper et al. (2011)</xref></italic></bold> The third dataset is for the Matrix-metalloprotease 8, MMP-8, (human neutrophil collagenase) and the final dataset provides is for agonists for the nuclear hormone receptor PPARδ (peroxisome proliferator-activated receptor δ).</p>
+<p>Each data point in the datasets comprises the chemical structure of the molecule, represented as a Simplified Molecular Input Line Entry System (SMILES) <bold><italic><xref ref-type="bibr" rid="c48">Weininger (1988)</xref></italic></bold>, and the target value, which denotes the molecular property as a scalar. <xref rid="tbl1" ref-type="table">Table 1</xref> provides details on the target and size of the each of these datasets.</p>
+</sec>
+<sec id="s3e">
+<title>Active learning for small molecule optimization</title>
+<p>We use active learning to optimize experiment selection. We assume a setup whereby a user can select from among a pool of unlabelled samples to query for their labels, i.e., to test experimentally. Furthermore, batches of experiments are performed in rounds.</p>
+<p>In a given round, we denote the set of possible samples to select for labelling as 𝒱, and the batch size as <italic>B</italic>. The <italic>ideal</italic> active learner will select a subset, ℬ ⊂ 𝒱, |ℬ | = <italic>B</italic>, of these experiments such that, after the experiments are performed and the labelled samples are added to the training data, upon averaging it is expected that the overall loss of the <italic>resulting</italic> models is minimized.</p>
+<p>In the original active learning frameworks, only one sample is queried at a time <bold><italic><xref ref-type="bibr" rid="c27">Lewis and Gale (1994)</xref> <xref ref-type="bibr" rid="c10">Dagan and Engelson (1995)</xref></italic></bold>. In this case, a straightforward and effective strategy is to query the sample on which the current model’s prediction has the highest epistemic uncertainty. While this works well for single queries, it is hard to use the same approach for batch active learning. In many cases, the most uncertain queries will be similar to each other, and so their uncertainties are not independent, and so choosing as a batch the <italic>B</italic> most uncertain samples will be redundant, and not the most effective use of the queries <bold><italic><xref ref-type="bibr" rid="c3">Azimi et al. (2012)</xref></italic></bold>.</p>
+<p>In this paper we tested several different methods for selecting batches, including two new methods we developed. These two new methods are similar to “select the least certain samples” in spirit, selecting batches which maximize the total covariance of their uncertainty (estimated in different ways).</p>
+</sec>
+<sec id="s3f">
+<title>Problem Formulation: Batch Active Learning for Deep Learning Regression Models</title>
+<p>We consider a batch active learning scenario with multiple rounds of selection, {1, 2, …, <italic>T</italic> }. At the <italic>t</italic>-th round, let ℒ<sup>(t)</sup> be the labeled dataset and 𝒱 <sup>(t)</sup> be the unlabeled dataset. To be clear, 𝒱 <sup>(t)</sup> and ℒ<sup>(t)</sup> are determined only after the selection method has had a chance to examine 𝒱 <sup>(<italic>t</italic>−1)</sup> and ℒ <sup>(<italic>t</italic>−1)</sup> .</p>
+<p>Since in our analysis we usually consider the selection problem in a <italic>single round</italic>, we omit superscripts <sup>(<italic>t</italic>)</sup>where it won’t cause confusion.</p>
+<p>Let <italic>f</italic><sub><italic>θ</italic></sub> <italic>∶</italic> 𝒳 → ℝ be the trained model, determined by its parameter <italic>θ</italic> ∈ Θ. As usual for regression problems, <italic>θ</italic> is chosen to approximately solve the following optimization problem,
+<disp-formula id="eqn1">
+<graphic xlink:href="550653v3_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <inline-formula><inline-graphic xlink:href="550653v3_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the <italic>L</italic><sup>2</sup>-regularization term for the weights <italic>θ</italic>. The optimization problem is (approximately) solved with a variation of SGD (in our case the popular ADAM<bold><italic><xref ref-type="bibr" rid="c23">Kingma and Ba (2014)</xref></italic></bold>), by iterating over multiple mini batches from the training set ℒ.</p>
+<p>In Active Learning, a <italic>selection method S</italic> is a function
+<disp-formula id="eqn2">
+<graphic xlink:href="550653v3_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+That is, <italic>B</italic> samples are selected from the unlabeled dataset 𝒱 by the active learning algorithm, and the selection may use the information of the given sets 𝒱 and ℒ, as well as the current supervised model <italic>f</italic><sub><italic>θ</italic></sub>, which is trained using the labeled dataset ℒ.</p>
+<p>Typically, selection is done by (approximately) solving an optimization problem,
+<disp-formula id="ueqn1">
+<graphic xlink:href="550653v3_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the <italic>acquisition function, a</italic>, depends on the selection method. In a single selection round, ℒ, 𝒱 and <italic>θ</italic> are given to the selector, and from the selector’s point of view are fixed; therefore, in this case <italic>a</italic> depends only on the choice ℬ.</p>
+</sec>
+<sec id="s3g">
+<title>Predictive uncertainty</title>
+<p>Estimating predictive uncertainty is essential to our batch selection methods. Predictive uncertainty can be broadly divided into: <italic>epistemic</italic> uncertainty and <italic>aleatoric</italic> uncertainty, which may be roughly understood as <italic>model uncertainty</italic> and <italic>noise</italic>, respectively.</p>
+<p>Aleatoric uncertainty is predictive uncertainty due to the inability of the model to give a precise prediction, even when the model parameters are uniquely specified. If <italic>θ</italic> are the model parameters, then we denote this distribution <italic>p</italic><sub><italic>Al</italic></sub> (<italic>y</italic>|<italic>x, θ</italic>).</p>
+<p>Epistemic uncertainty is predictive uncertainty due to uncertainty in the model’s parameters. This is precisely the uncertainty which could be reduced by more labelled data, and therefore is the relevant quantity for active learning. In the strict Bayesian setting, if <italic>f</italic><sub><italic>θ</italic></sub> <italic>∶</italic> 𝒳 → ℝ is the model corresponding to parameters <italic>θ</italic>, and <italic>p</italic>(<italic>θ</italic>) is the posterior distribution given the training data 𝒟, this distribution is
+<disp-formula id="eqn3">
+<graphic xlink:href="550653v3_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn4">
+<graphic xlink:href="550653v3_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Calculating this distribution exactly is intractable, and so we use approximations, described in Section 16.</p>
+</sec>
+<sec id="s3h">
+<title>Batch selection via determinant maximization</title>
+<p>In the batch setting, selecting only those points with the epistemic uncertainty may lead to a batch in which uncertainties are highly correlated, and thus wasted experiments. I.e., if a sample <italic>x</italic> has the highest estimated variance, then small perturbations of <italic>x</italic> will have similarly high variance, and a variance-only selection method will give a high score to this batch of similar (and thus correlated) samples.</p>
+<p>We thus seek to select the batch with the highest total independent uncertainty. This can be computed by selecting the batch with the highest joint entropy, which, under the assumption of a normal distribution, is the highest log-determinant of the (epistemic) covariance.
+<disp-formula id="eqn5">
+<graphic xlink:href="550653v3_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Even if we already know the epistemic covariance for any batch (a problem we address in the next section), finding the strict maximum of our acquisition function is NP-hard <bold><italic><xref ref-type="bibr" rid="c37">Ohsaka (2022)</xref></italic></bold>. Therefore we use an approximate maximization technique: We randomly generate a collection of batches as starting points, each containing <italic>N</italic> distinct samples independently chosen from a distribution proportional to the quantile of the variances. Then we select the best <italic>M</italic> &lt; <italic>N</italic> of these batches as starting points for optimization. Then, for each starting point, we optimize the batch element-wise, i.e., changing the first element to optimize the covariance, then changing the second, and so on, doing several passes until the process reaches equilibrium. Then, we select the highestscoring final batch.</p>
+<p>The log-determinant is computed using the Cholesky decomposition, which is a bit better than 𝒪(<italic>N</italic><sup>3</sup>). However, the optimization step (substituting a new point into a batch one at a time) is just a rank-1 update to the batch’s covariance, and there are <italic>O</italic>(<italic>N</italic><sup>2</sup>) rank-1 updates to the Cholesky decomposition, which we use.</p>
+<statement id="alg1">
+<label>Algorithm</label>
+<p>Batch optimization</p>
+<p><fig id="alg1a" position="float" fig-type="figure">
+<graphic xlink:href="550653v3_alg1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig></p>
+</statement>
+<p>This leaves open the question of how to approximate predictive posterior of the model, and hence its covariance matrix over the sample pool. We address this in the following sections.</p>
+</sec>
+<sec id="s3i">
+<title>Approximation of the posterior distribution</title>
+<p>A straightforward way to get a distribution of predictions is to train an ensemble of models <bold><italic><xref ref-type="bibr" rid="c25">Lakshminarayanan et al. (2017)</xref></italic></bold>, and to use the outputs of these models to give an ensemble of predictions. However, this approach involves multiple rounds of retraining, which is resource intensive. Furthermore, this ensemble of models will not sample from the Bayesian posterior, and there is no guarantee that it will be diverse.</p>
+<p>Instead, we take a more economical approach by leveraging only one trained model. The idea behind this method is that the optimal parameters of a trained deep regression model, i.e. <italic>θ</italic><sup>∗</sup>, are the <italic>maximum a posteriori</italic> (MAP) estimation of an equivalent Bayesian deep regression problem.</p>
+<p>Thus, the Bayesian inference of the posterior of <italic>θ</italic> is approximated by leveraging the computed MAP estimation of <italic>θ</italic><sup>∗</sup>. As it is shown in <xref ref-type="disp-formula" rid="eqn1">Eq. (1)</xref>, the optimal <italic>θ</italic><sup>∗</sup> could be treated as the MAP estimation of the probabilistic model of {<italic>Y, θ</italic>} where <italic>Y</italic> = {<italic>y</italic>}<sub><italic>y</italic>∈</sub>ℒ.
+<disp-formula id="eqn6">
+<graphic xlink:href="550653v3_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Two approximations for computing the epistemic covariance</p>
+<p>We adapted two different methods to approximate the epistemic covariance:</p>
+<list list-type="bullet">
+<list-item><p>Monte Carlo Dropout</p></list-item>
+</list>
+<p>Monte Carlo dropout is a well-known technique for training neural nets. The usual approach is to turn off dropout during inference. However, if random dropout is applied during inference, then the model predictions will follow a probability distribution. It has been observed <bold><italic><xref ref-type="bibr" rid="c14">Gal and Ghahramani (2016)</xref></italic></bold> that this distribution is an approximation to the true Bayesian posterior. Therefore, we may sample an ensemble of predictions for a single sample, and use this distribution as a measure of the uncertainty of the prediction.</p>
+<p>Dropout <bold><italic><xref ref-type="bibr" rid="c19">Hinton et al. (2012)</xref></italic></bold> is a well-known technique for better training of neural networks. With dropout, in the training stage, each of the neural network’s weights are randomly set to 0 with a certain probability (as defined by the drop out ratio, <italic>r</italic>). Previous work has demonstrated that models built with dropout are less prone to overfitting and that training with dropout is quite similar to variational inference of the probabilistic models <bold><italic><xref ref-type="bibr" rid="c14">Gal and Ghahramani (2016)</xref>; <xref ref-type="bibr" rid="c26">Lawrence (2001)</xref></italic></bold> when assuming the following form of the posterior approximation <italic>q</italic>(<italic>θ</italic>),
+<disp-formula id="eqn7">
+<graphic xlink:href="550653v3_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn8">
+<graphic xlink:href="550653v3_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>r</italic> is the dropout ratio, <italic>M</italic>, the masks, are the {0, 1} variables of same shape as <italic>θ</italic>, and <italic>θ</italic><sup>∗</sup> are the weights obtained after training with dropout. We thus use dropout to obtain <italic>S</italic> predictions by sampling <italic>S</italic> masks {<italic>M</italic><sub><italic>s</italic></sub>}<sub><italic>s</italic>∈1,2,⋯,<italic>S</italic></sub> according to <xref ref-type="disp-formula" rid="eqn8">Eq. (8)</xref>. We then use the new network to predict sample labels and construct the covariance matrix based on these predictions. Monte Carlo dropout can be defined as follows:
+<disp-formula id="eqn9">
+<graphic xlink:href="550653v3_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where ŷ is the predicted output of the model, <italic>S</italic> is the number of forward passes with dropout, <italic>f</italic><sub><italic>θ</italic></sub> is the model with parameters <italic>θ, x</italic> is the input to the model, and <bold>m</bold><sub><italic>s</italic></sub> is a binary mask that determines which units are dropped out during the <italic>s</italic>-th forward pass. In this equation, the model is run with dropout <italic>S</italic> times, and the predicted output is computed as the average of the outputs of each of these forward passes. This average is used as an estimate of the model’s predicted output and can be used to approximate the model’s uncertainty. Monte Carlo Dropout approach aligns with the principles of Bayesian Neural Networks but without the associated computational burden. Although this requires multiple forward passes during inference, the trade-off is beneficial, especially when understanding the uncertainty is paramount.</p>
+<list list-type="bullet">
+<list-item><p>Laplace Approximation</p></list-item>
+</list>
+<p>In addition to dropout, we also employed the <italic>Laplace approximation</italic> for estimating the posterior. This method assumes that the posterior of the model parameters is a multi-variate normal distribution centered at the MAP value, and with variance equal to the Fisher information, which can be found through a straightforward calculation. This simplifying assumption makes the approximation fast to use, as the computation relies only on MAP estimation and differentiation of the loss function.</p>
+<p>We assume the following for the posterior probability distribution, <italic>q</italic>(<italic>θ</italic>):
+<disp-formula id="eqn10">
+<graphic xlink:href="550653v3_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+By matching 0<sup>th</sup> and 2<sup>nd</sup> derivatives, we find Λ, and thus our covariance matrix Λ<sup>∗−1</sup>. The covariance matrix Λ<sup>∗−1</sup> does not have to be represented as a full matrix of shape <italic>Q</italic> × <italic>Q</italic>, which is usually very large for neural networks. For example, Laplace Redux <bold><italic><xref ref-type="bibr" rid="c11">Daxberger et al. (2021)</xref></italic></bold> further approximate the multi-variate normal distribution in <xref ref-type="disp-formula" rid="eqn10">Eq. (10)</xref> significantly reducing the computation cost. See Supporting Methods for additional details.</p>
+</sec>
+<sec id="s3j">
+<title>Comparisons to other methods</title>
+<p>To compare our proposed approach with prior approaches, for batch active learning we looked at three previous methods suggested for this task: Random selection <bold><italic><xref ref-type="bibr" rid="c42">Settles (2009)</xref></italic></bold>, optimizing uncertainty and diversity based on information theory (the <italic>BAIT</italic> method), and an unsupervised method that is optimizing only for diversity <bold><italic><xref ref-type="bibr" rid="c36">Nguyen and Smeulders (2004)</xref></italic></bold> (a method we term <italic>k-means sampling</italic>). See Supporting Methods for details on these prior methods and how we used them here.</p>
+</sec>
+<sec id="s3k">
+<title>Evaluation Experiments</title>
+<p>For the retrospective experiment an existing labelled data set is selected to simulate an active learning experiment.</p>
+<p>Thus we indirectly validated our posterior approximation by measuring the error with the respective method. The results from these retrospective experiments provided evidence for the accuracy and reliability of our approximation in representing the true posterior distribution.</p>
+<p>We start by selecting a random subset (which is used as the initial set for all comparisons as well).</p>
+<p>For our data the chemical structures in <italic>X</italic> are represented as molecular graphs using the <monospace>MolGraphConvFeaturizer</monospace> from the <monospace>DeepChem</monospace> library <bold><italic><xref ref-type="bibr" rid="c21">Kearnes et al. (2016)</xref></italic></bold>. For each active learning cycle, models are trained using <monospace>DeepChem</monospace> <bold><italic>dee (2016)</italic></bold>, a library which provides the implementation of the Graph Convolutional Neural Networks (GCNN) for molecular systems <bold><italic><xref ref-type="bibr" rid="c24">Kipf and Welling (2016)</xref></italic></bold>.</p>
+<p>For accuracy as well as model performance we use the root mean squared error (RMSE). See Supporting Methods for details on how the RMSE is computed.</p>
+</sec>
+<sec id="s3l">
+<title>Neural network architecture</title>
+<p>For all our datasets we use the “neural fingerprints” class of models described in <bold><italic><xref ref-type="bibr" rid="c13">Duvenaud et al. (2015)</xref></italic></bold>, as implemented in the DeepChem library GraphConvModel <bold><italic>contributors (2022)</italic></bold>. See Supporting Methods for complete details. Although our method is compatible with, PyTorch, TensorFlow, and Keras frameworks, the benchmarks presented here are performed using the Keras framework within Deepchem suite. In order to enforce deterministic behaviour of the models for each selection methods and active learning rounds, during the training the model weights were manually loaded at the beginning of each active learning loop. We perform multiple runs of the retrospective experiments for each methods.</p>
+</sec>
+</sec>
+<sec id="d1e1315" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="d1e1462">
+<label>Supplement</label>
+<media xlink:href="supplements/550653_file03.pdf"/>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<sec id="s4">
+<title>Code and Data availability</title>
+<p>Code and all data sets used in this study are available as a python package at Sanofi-Public GitHub page. The package is called <monospace>ALIEN</monospace> (<monospace>Active Learning in data Exploration</monospace>) and can be downloaded: <ext-link ext-link-type="uri" xlink:href="https://github.com/Sanofi-Public/Alien">https://github.com/Sanofi-Public/Alien</ext-link></p>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="web"><source>Democratizing Deep-Learning for Drug Discovery, Quantum Chemistry, Materials Science and Biology. GitHub</source>; <year>2016</year>. <ext-link ext-link-type="uri" xlink:href="https://github.com/deepchem/deepchem">https://github.com/deepchem/deepchem</ext-link>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="book"><string-name><surname>Ash</surname> <given-names>J</given-names></string-name>, <string-name><surname>Goel</surname> <given-names>S</given-names></string-name>, <string-name><surname>Krishnamurthy</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kakade</surname> <given-names>S.</given-names></string-name> <chapter-title>Gone Fishing: Neural Active Learning with Fisher Embeddings</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Ranzato</surname> <given-names>M</given-names></string-name>, <string-name><surname>Beygelzimer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Dauphin</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Liang</surname> <given-names>PS</given-names></string-name>, <string-name><surname>Vaughan</surname> <given-names>JW</given-names></string-name></person-group>, editors. <source>Advances in Neural Information Processing Systems</source>, vol. <volume>34</volume> <publisher-name>Curran Associates, Inc</publisher-name>.; <year>2021</year>. p. 8927–8939. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper/2021/file/4afe044911ed2c247005912512ace23b-Paper.pdf">https://proceedings.neurips.cc/paper/2021/file/4afe044911ed2c247005912512ace23b-Paper.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="other"><string-name><surname>Azimi</surname> <given-names>J</given-names></string-name>, <string-name><surname>Fern</surname> <given-names>A</given-names></string-name>, <string-name><surname>Zhang-Fern</surname> <given-names>X</given-names></string-name>, <string-name><surname>Borradaile</surname> <given-names>G</given-names></string-name>, <string-name><surname>Heeringa</surname> <given-names>B.</given-names></string-name> <article-title>Batch active learning via coordinated matching</article-title>. <source>arXiv preprint arXiv:12066458</source>. <year>2012</year>; .</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><string-name><surname>Cai</surname> <given-names>C</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>S</given-names></string-name>, <string-name><surname>Xu</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>W</given-names></string-name>, <string-name><surname>Tang</surname> <given-names>K</given-names></string-name>, <string-name><surname>Ouyang</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Lai</surname> <given-names>L</given-names></string-name>, <string-name><surname>Pei</surname> <given-names>J.</given-names></string-name> <article-title>Transfer Learning for Drug Discovery</article-title>. <source>Journal of Medicinal Chemistry</source>. <year>2020</year> <month>Aug</month>; <volume>63</volume>(<issue>16</issue>):<fpage>8683</fpage>–<lpage>8694</lpage>. https://doi.org/10.1021/acs.jmedchem.9b02147, doi: <pub-id pub-id-type="doi">10.1021/acs.jmedchem.9b02147</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><string-name><surname>Chuang</surname> <given-names>KV</given-names></string-name>, <string-name><surname>Gunsalus</surname> <given-names>LM</given-names></string-name>, <string-name><surname>Keiser</surname> <given-names>MJ</given-names></string-name>. <article-title>Learning Molecular Representations for Medicinal Chemistry</article-title>. <source>Journal of Medicinal Chemistry</source>. <year>2020</year> <month>Aug</month>; <volume>63</volume>(<issue>16</issue>):<fpage>8705</fpage>–<lpage>8722</lpage>. https://doi.org/10.1021/acs.jmedchem.0c00385, doi: <pub-id pub-id-type="doi">10.1021/acs.jmedchem.0c00385</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><string-name><surname>Cohn</surname> <given-names>D</given-names></string-name>, <string-name><surname>Atlas</surname> <given-names>L</given-names></string-name>, <string-name><surname>Ladner</surname> <given-names>R.</given-names></string-name> <article-title>Improving generalization with active learning</article-title>. <source>Machine learning</source>. <year>1994</year>; <volume>15</volume>:<fpage>201</fpage>–<lpage>221</lpage>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><string-name><surname>Cohn</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Ghahramani</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Jordan</surname> <given-names>MI</given-names></string-name>. <article-title>Active learning with statistical models</article-title>. <source>Journal of artificial intelligence research</source>. <year>1996</year>; <volume>4</volume>:<fpage>129</fpage>–<lpage>145</lpage>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><string-name><surname>Cohn</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Ghahramani</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Jordan</surname> <given-names>MI</given-names></string-name>. <article-title>Active learning with statistical models</article-title>. <source>Journal of artificial intelligence research</source>. <year>1996</year>; <volume>4</volume>:<fpage>129</fpage>–<lpage>145</lpage>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="web"><collab>contributors D, DeepChem Documentation - Keras Models - GraphConvModel</collab>; <year>2022</year>. <ext-link ext-link-type="uri" xlink:href="https://deepchem.readthedocs.io/en/latest/api_reference/models.html#graphconvmodel">https://deepchem.readthedocs.io/en/latest/api_reference/models.html#graphconvmodel</ext-link>, [Online; accessed <date-in-citation content-type="access-date">27-February-2023</date-in-citation>].</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="book"><string-name><surname>Dagan</surname> <given-names>I</given-names></string-name>, <string-name><surname>Engelson</surname> <given-names>SP</given-names></string-name>. <chapter-title>Committee-Based Sampling For Training Probabilistic Classifiers</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Prieditis</surname> <given-names>A</given-names></string-name>, <string-name><surname>Russell</surname> <given-names>S</given-names></string-name></person-group>, editors. <source>Machine Learning Proceedings 1995</source> <publisher-loc>San Francisco (CA</publisher-loc>): <publisher-name>Morgan Kaufmann</publisher-name>; <year>1995</year>.p. <fpage>150</fpage>–<lpage>157</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/B978155860377650027X">https://www.sciencedirect.com/science/article/pii/B978155860377650027X</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/B978-1-55860-377-6.50027-X</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="other"><string-name><surname>Daxberger</surname> <given-names>E</given-names></string-name>, <string-name><surname>Kristiadi</surname> <given-names>A</given-names></string-name>, <string-name><surname>Immer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Eschenhagen</surname> <given-names>R</given-names></string-name>, <string-name><surname>Bauer</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hennig</surname> <given-names>P.</given-names></string-name> <article-title>Laplace Redux–Effortless Bayesian Deep Learning</article-title>. <source>In: NeurIPS</source>; <year>2021</year>. .</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><string-name><surname>Ding</surname> <given-names>X</given-names></string-name>, <string-name><surname>Cui</surname> <given-names>R</given-names></string-name>, <string-name><surname>Yu</surname> <given-names>J</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>T</given-names></string-name>, <string-name><surname>Zhu</surname> <given-names>T</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>D</given-names></string-name>, <string-name><surname>Chang</surname> <given-names>J</given-names></string-name>, <string-name><surname>Fan</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>K</given-names></string-name>, <string-name><surname>Jiang</surname> <given-names>H</given-names></string-name>, <string-name><surname>Li</surname> <given-names>X</given-names></string-name>, <string-name><surname>Luo</surname> <given-names>X</given-names></string-name>, <string-name><surname>Zheng</surname> <given-names>M.</given-names></string-name> <article-title>Active Learning for Drug Design: A Case Study on the Plasma Exposure of Orally Administered Drugs</article-title>. <source>Journal of Medicinal Chemistry</source>. <year>2021</year> <month>Nov</month>; <volume>64</volume>(<issue>22</issue>):<fpage>16838</fpage>–<lpage>16853</lpage>. https://doi.org/10.1021/acs.jmedchem.1c01683, doi: <pub-id pub-id-type="doi">10.1021/acs.jmedchem.1c01683</pub-id>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="book"><string-name><surname>Duvenaud</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Maclaurin</surname> <given-names>D</given-names></string-name>, <string-name><surname>Iparraguirre</surname> <given-names>J</given-names></string-name>, <string-name><surname>Bombarell</surname> <given-names>R</given-names></string-name>, <string-name><surname>Hirzel</surname> <given-names>T</given-names></string-name>, <string-name><surname>Aspuru-Guzik</surname> <given-names>A</given-names></string-name>, <string-name><surname>Adams</surname> <given-names>RP</given-names></string-name>. <chapter-title>Convolutional Networks on Graphs for Learning Molecular Fingerprints</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Cortes</surname> <given-names>C</given-names></string-name>, <string-name><surname>Lawrence</surname> <given-names>N</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>D</given-names></string-name>, <string-name><surname>Sugiyama</surname> <given-names>M</given-names></string-name>, <string-name><surname>Garnett</surname> <given-names>R</given-names></string-name></person-group>, editors. <source>Advances in Neural Information Processing Systems</source>, vol. <volume>28</volume> <publisher-name>Curran Associates, Inc</publisher-name>.; <year>2015</year>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper/2015/file/f9be311e65d81a9ad8150a60844bb94c-Paper.pdf">https://proceedings.neurips.cc/paper/2015/file/f9be311e65d81a9ad8150a60844bb94c-Paper.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="book"><string-name><surname>Gal</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Ghahramani</surname> <given-names>Z.</given-names></string-name> <chapter-title>Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Balcan</surname> <given-names>MF</given-names></string-name>, <string-name><surname>Weinberger</surname> <given-names>KQ</given-names></string-name></person-group>, editors. <source>Proceedings of The 33rd International Conference on Machine Learning</source>, vol. <volume>48</volume> <collab>of Proceedings of Machine Learning Research New York</collab>, <publisher-loc>New York, USA</publisher-loc>: <publisher-name>PMLR</publisher-name>; <year>2016</year>. p. <fpage>1050</fpage>–<lpage>1059</lpage>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.mlr.press/v48/gal16.html">https://proceedings.mlr.press/v48/gal16.html</ext-link>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><string-name><surname>Gaulton</surname> <given-names>A</given-names></string-name>, <string-name><surname>Bellis</surname> <given-names>LJ</given-names></string-name>, <string-name><surname>Bento</surname> <given-names>AP</given-names></string-name>, <string-name><surname>Chambers</surname> <given-names>J</given-names></string-name>, <string-name><surname>Davies</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hersey</surname> <given-names>A</given-names></string-name>, <string-name><surname>Light</surname> <given-names>Y</given-names></string-name>, <string-name><surname>McGlinchey</surname> <given-names>S</given-names></string-name>, <string-name><surname>Michalovich</surname> <given-names>D</given-names></string-name>, <string-name><surname>Al-Lazikani</surname> <given-names>B</given-names></string-name>, <etal>et al.</etal> <article-title>ChEMBL: a large-scale bioactivity database for drug discovery</article-title>. <source>Nucleic acids research</source>. <year>2012</year>; <volume>40</volume>(<issue>D1</issue>):<fpage>D1100</fpage>–<lpage>D1107</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="book"><string-name><surname>Grebner</surname> <given-names>C</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Hessler</surname> <given-names>G.</given-names></string-name> In: <person-group person-group-type="editor"><string-name><surname>Heifetz</surname> <given-names>A</given-names></string-name></person-group>, editor. <source>Artificial Intelligence in Compound Design</source> <publisher-loc>New York, NY</publisher-loc>: <publisher-name>Springer US</publisher-name>; <year>2022</year>. p. <fpage>349</fpage>–<lpage>382</lpage>. https://doi.org/10.1007/978-1-0716-1787-8_15, doi: <pub-id pub-id-type="doi">10.1007/978-1-0716-1787-8_15</pub-id>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="other"><string-name><surname>Haghighatlari</surname> <given-names>M</given-names></string-name>, <string-name><surname>Vishwakarma</surname> <given-names>G</given-names></string-name>, <string-name><surname>Altarawy</surname> <given-names>D</given-names></string-name>, <string-name><surname>Subramanian</surname> <given-names>R</given-names></string-name>, <string-name><surname>Kota</surname> <given-names>BU</given-names></string-name>, <string-name><surname>Sonpal</surname> <given-names>A</given-names></string-name>, <string-name><surname>Setlur</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hachmann</surname> <given-names>J.</given-names></string-name> <article-title>ChemML: A Machine Learning and Informatics Program Package for the Analysis, Mining, and Modeling of Chemical and Materials Data</article-title>. <source>ChemRxiv</source>. <year>2019</year>; p. <fpage>8323271</fpage>. doi: <pub-id pub-id-type="doi">10.26434/chemrxiv.8323271.v1</pub-id>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><string-name><surname>Hessler</surname> <given-names>G</given-names></string-name>, <string-name><surname>Baringhaus</surname> <given-names>KH</given-names></string-name>. <article-title>Artificial Intelligence in Drug Design</article-title>. <source>Molecules</source>. <year>2018</year>; <volume>23</volume>(<issue>10</issue>). <ext-link ext-link-type="uri" xlink:href="https://www.mdpi.com/1420-3049/23/10/2520">https://www.mdpi.com/1420-3049/23/10/2520</ext-link>, doi: <pub-id pub-id-type="doi">10.3390/molecules23102520</pub-id>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="other"><string-name><surname>Hinton</surname> <given-names>GE</given-names></string-name>, <string-name><surname>Srivastava</surname> <given-names>N</given-names></string-name>, <string-name><surname>Krizhevsky</surname> <given-names>A</given-names></string-name>, <string-name><surname>Sutskever</surname> <given-names>I</given-names></string-name>, <string-name><surname>Salakhutdinov</surname> <given-names>RR</given-names></string-name>. <article-title>Improving neural networks by preventing co-adaptation of feature detectors</article-title>. <source>arXiv preprint</source> arXiv:12070580. <year>2012</year>; .</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><string-name><surname>Huang</surname> <given-names>K</given-names></string-name>, <string-name><surname>Fu</surname> <given-names>T</given-names></string-name>, <string-name><surname>Gao</surname> <given-names>W</given-names></string-name>, <string-name><surname>Zhao</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Roohani</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Leskovec</surname> <given-names>J</given-names></string-name>, <string-name><surname>Coley</surname> <given-names>CW</given-names></string-name>, <string-name><surname>Xiao</surname> <given-names>C</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>J</given-names></string-name>, <string-name><surname>Zitnik</surname> <given-names>M.</given-names></string-name> <article-title>Artificial intelligence foundation for therapeutic science</article-title>. <source>Nature Chemical Biology</source>. <year>2022</year> <month>Oct</month>; <volume>18</volume>(<issue>10</issue>):<fpage>1033</fpage>–<lpage>1036</lpage>. https://doi.org/10.1038/s41589-022-01131-2, doi: <pub-id pub-id-type="doi">10.1038/s41589-022-01131-2</pub-id>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><string-name><surname>Kearnes</surname> <given-names>S</given-names></string-name>, <string-name><surname>McCloskey</surname> <given-names>K</given-names></string-name>, <string-name><surname>Berndl</surname> <given-names>M</given-names></string-name>, <string-name><surname>Pande</surname> <given-names>V</given-names></string-name>, <string-name><surname>Riley</surname> <given-names>P.</given-names></string-name> <article-title>Molecular graph convolutions: moving beyond finger-prints</article-title>. <source>Journal of Computer-Aided Molecular Design</source>. <year>2016</year> <month>aug</month>; <volume>30</volume>(<issue>8</issue>):<fpage>595</fpage>–<lpage>608</lpage>. https://doi.org/10.1007%2Fs10822-016-9938-8, doi: <pub-id pub-id-type="doi">10.1007/s10822-016-9938-8</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><string-name><surname>Kendall</surname> <given-names>A</given-names></string-name>, <string-name><surname>Gal</surname> <given-names>Y.</given-names></string-name> <article-title>What uncertainties do we need in bayesian deep learning for computer vision?</article-title> <source>Advances in neural information processing systems</source>. <year>2017</year>; <volume>30</volume>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="other"><string-name><surname>Kingma</surname> <given-names>DP</given-names></string-name>, <string-name><surname>Ba</surname> <given-names>J.</given-names></string-name> <article-title>Adam: A method for stochastic optimization</article-title>. <source>arXiv preprint</source> arXiv:14126980. <year>2014</year>; .</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="web"><string-name><surname>Kipf</surname> <given-names>TN</given-names></string-name>, <string-name><surname>Welling</surname> <given-names>M.</given-names></string-name> <article-title>Semi-Supervised Classification with Graph Convolutional Networks</article-title>. <source>CoRR</source>. <year>2016</year>; abs/1609.02907. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1609.02907">http://arxiv.org/abs/1609.02907</ext-link>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><string-name><surname>Lakshminarayanan</surname> <given-names>B</given-names></string-name>, <string-name><surname>Pritzel</surname> <given-names>A</given-names></string-name>, <string-name><surname>Blundell</surname> <given-names>C.</given-names></string-name> <article-title>Simple and scalable predictive uncertainty estimation using deep ensembles</article-title>. <source>Advances in neural information processing systems</source>. <year>2017</year>; <volume>30</volume>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="book"><string-name><surname>Lawrence</surname> <given-names>ND</given-names></string-name>. <source>Variational Inference in Probabilistic Models</source>. <publisher-name>University of Cambridge</publisher-name>; <year>2001</year>. <ext-link ext-link-type="uri" xlink:href="https://books.google.de/books?id=mbi5rQEACAAJ">https://books.google.de/books?id=mbi5rQEACAAJ</ext-link>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="book"><string-name><surname>Lewis</surname> <given-names>DD</given-names></string-name>, <string-name><surname>Gale</surname> <given-names>WA</given-names></string-name>. <chapter-title>A Sequential Algorithm for Training Text Classifiers</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Croft</surname> <given-names>BW</given-names></string-name>, <string-name><surname>van Rijsbergen</surname> <given-names>CJ</given-names></string-name></person-group>, editors. <source>SIGIR ‘94</source> <publisher-loc>London</publisher-loc>: <publisher-name>Springer London</publisher-name>; <year>1994</year>. p. <fpage>3</fpage>–<lpage>12</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Defossa</surname> <given-names>E</given-names></string-name>, <string-name><surname>Heinelt</surname> <given-names>U</given-names></string-name>, <string-name><surname>Blohm</surname> <given-names>PM</given-names></string-name>, <string-name><surname>Schneider</surname> <given-names>D</given-names></string-name>, <string-name><surname>Müller</surname> <given-names>A</given-names></string-name>, <string-name><surname>Herok</surname> <given-names>S</given-names></string-name>, <string-name><surname>Schreuder</surname> <given-names>H</given-names></string-name>, <string-name><surname>Liesum</surname> <given-names>A</given-names></string-name>, <string-name><surname>Brachvogel</surname> <given-names>V</given-names></string-name>, <string-name><surname>Lönze</surname> <given-names>P</given-names></string-name>, <string-name><surname>Walser</surname> <given-names>A</given-names></string-name>, <string-name><surname>Al-Obeidi</surname> <given-names>F</given-names></string-name>, <string-name><surname>Wildgoose</surname> <given-names>P.</given-names></string-name> <article-title>Design and Quantitative Structure-Activity Relationship of 3-Amidinobenzyl-1H-indole-2-carboxamides as Potent, Nonchiral, and Selective Inhibitors of Blood Coagulation Factor Xa</article-title>. <source>J Med Chem</source>. <year>2002</year> <month>Jun</month>; <volume>45</volume>(<issue>13</issue>):<fpage>2749</fpage>–<lpage>2769</lpage>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Scheiper</surname> <given-names>B</given-names></string-name>, <string-name><surname>Steinhagen</surname> <given-names>H</given-names></string-name>, <string-name><surname>Böcskei</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Fleury</surname> <given-names>V</given-names></string-name>, <string-name><surname>McCort</surname> <given-names>G.</given-names></string-name> <article-title>Structure-based design and optimization of potent renin inhibitors on 5-or 7-azaindole-scaffolds</article-title>. <source>Bioorganic &amp; Medicinal Chemistry Letters</source>. <year>2011</year>; <volume>21</volume>(<issue>18</issue>):<fpage>5487</fpage>–<lpage>5492</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S0960894X11009036">https://www.sciencedirect.com/science/article/pii/S0960894X11009036</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.bmcl.2011.06.112</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Will</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Nazaré</surname> <given-names>M</given-names></string-name>, <string-name><surname>Schreuder</surname> <given-names>H</given-names></string-name>, <string-name><surname>Laux</surname> <given-names>V</given-names></string-name>, <string-name><surname>Wehner</surname> <given-names>V.</given-names></string-name> <article-title>Structural Requirements for Factor Xa Inhibition by 3-Oxybenzamides with Neutral P1 Substituents: Combining X-ray Crystallography, 3D-QSAR, and Tailored Scoring Functions</article-title>. <source>Journal of Medicinal Chemistry</source>. <year>2005</year> <month>May</month>; <volume>48</volume>(<issue>9</issue>):<fpage>3290</fpage>–<lpage>3312</lpage>. https://doi.org/10.1021/jm049187l, doi: <pub-id pub-id-type="doi">10.1021/jm049187l</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="web"><string-name><surname>Mehrjou</surname> <given-names>A</given-names></string-name>, <string-name><surname>Soleymani</surname> <given-names>A</given-names></string-name>, <string-name><surname>Jesson</surname> <given-names>A</given-names></string-name>, <string-name><surname>Notin</surname> <given-names>P</given-names></string-name>, <string-name><surname>Gal</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Bauer</surname> <given-names>S</given-names></string-name>, <string-name><surname>Schwab</surname> <given-names>P.</given-names></string-name> <article-title>GeneDisco: A Benchmark for Experimental Design in Drug Discovery</article-title>. <source>CoRR</source>. <year>2021</year>; abs/2110.11875. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2110.11875">https://arxiv.org/abs/2110.11875</ext-link>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><string-name><surname>Naik</surname> <given-names>AW</given-names></string-name>, <string-name><surname>Kangas</surname> <given-names>JD</given-names></string-name>, <string-name><surname>Sullivan</surname> <given-names>DP</given-names></string-name>, <string-name><surname>Murphy</surname> <given-names>RF</given-names></string-name>. <article-title>Active machine learning-driven experimentation to determine compound effects on protein patterns</article-title>. <source>eLife</source>. <year>2016</year> <month>feb</month>; <volume>5</volume>:<fpage>e10047</fpage>. https://doi.org/10.7554/eLife.10047, doi: <pub-id pub-id-type="doi">10.7554/eLife.10047</pub-id>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><string-name><surname>Nazaré</surname> <given-names>M</given-names></string-name>, <string-name><surname>Essrich</surname> <given-names>M</given-names></string-name>, <string-name><surname>Will</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Ritter</surname> <given-names>K</given-names></string-name>, <string-name><surname>Urmann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bauer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schreuder</surname> <given-names>H</given-names></string-name>, <string-name><surname>Dudda</surname> <given-names>A</given-names></string-name>, <string-name><surname>Czech</surname> <given-names>J</given-names></string-name>, <etal>et al.</etal> <article-title>Factor Xa inhibitors based on a 2-carboxyindole scaffold: SAR of neutral P1 substituents</article-title>. <source>Bioorganic &amp; medicinal chemistry letters</source>. <year>2004</year>; <volume>14</volume>(<issue>16</issue>):<fpage>4191</fpage>–<lpage>4195</lpage>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><string-name><surname>Nazare</surname> <given-names>M</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Will</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Wagner</surname> <given-names>M</given-names></string-name>, <string-name><surname>Urmann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Czech</surname> <given-names>J</given-names></string-name>, <string-name><surname>Schreuder</surname> <given-names>H</given-names></string-name>, <string-name><surname>Bauer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Ritter</surname> <given-names>K</given-names></string-name>, <string-name><surname>Wehner</surname> <given-names>V.</given-names></string-name> <article-title>Fragment Deconstruction of Small, Potent Factor Xa Inhibitors: Exploring the Superadditivity Energetics of Fragment Linking in Protein-Ligand Complexes</article-title>. <source>Angewandte Chemie International Edition</source>. <year>2012</year>; <volume>51</volume>(<issue>4</issue>):<fpage>905</fpage>–<lpage>911</lpage>. <ext-link ext-link-type="uri" xlink:href="https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201107091">https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201107091</ext-link>, doi: <pub-id pub-id-type="doi">10.1002/anie.201107091</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><string-name><surname>Nazaré</surname> <given-names>M</given-names></string-name>, <string-name><surname>Will</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Schreuder</surname> <given-names>H</given-names></string-name>, <string-name><surname>Ritter</surname> <given-names>K</given-names></string-name>, <string-name><surname>Urmann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Essrich</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bauer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Wagner</surname> <given-names>M</given-names></string-name>, <string-name><surname>Czech</surname> <given-names>J</given-names></string-name>, <string-name><surname>Lorenz</surname> <given-names>M</given-names></string-name>, <string-name><surname>Laux</surname> <given-names>V</given-names></string-name>, <string-name><surname>Wehner</surname> <given-names>V.</given-names></string-name> <article-title>Probing the Subpockets of Factor Xa Reveals Two Binding Modes for Inhibitors Based on a 2-Carboxyindole Scaffold: A Study Combining Structure-Activity Relationship and X-ray Crystallography</article-title>. <source>Journal of Medicinal Chemistry</source>. <year>2005</year> <month>Jul</month>; <volume>48</volume>(<issue>14</issue>):<fpage>4511</fpage>–<lpage>4525</lpage>. https://doi.org/10.1021/jm0490540, doi: <pub-id pub-id-type="doi">10.1021/jm0490540</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="book"><string-name><surname>Nguyen</surname> <given-names>HT</given-names></string-name>, <string-name><surname>Smeulders</surname> <given-names>A.</given-names></string-name> <chapter-title>Active Learning Using Pre-Clustering</chapter-title>. <source>In: NeurIPS ICML ༴</source>, <publisher-loc>New York, NY, USA</publisher-loc>: <publisher-name>Association for Computing Machinery</publisher-name>; <year>2004</year>. p. <fpage>79</fpage>. https://doi.org/10.1145/1015330.1015349, doi: <pub-id pub-id-type="doi">10.1145/1015330.1015349</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="web"><string-name><surname>Ohsaka</surname> <given-names>N</given-names></string-name>, <article-title>On the Parameterized Intractability of Determinant Maximization</article-title>. <source>arXiv</source>; <year>2022</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2209.12519">https://arxiv.org/abs/2209.12519</ext-link>, doi: <pub-id pub-id-type="doi">10.48550/ARXIV.2209.12519</pub-id>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><string-name><surname>Pertusi</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Moura</surname> <given-names>ME</given-names></string-name>, <string-name><surname>Jeffryes</surname> <given-names>JG</given-names></string-name>, <string-name><surname>Prabhu</surname> <given-names>S</given-names></string-name>, <string-name><surname>Walters Biggs</surname> <given-names>B</given-names></string-name>, <string-name><surname>Tyo</surname> <given-names>KEJ</given-names></string-name>. <article-title>Predicting novel substrates for enzymes with minimal experimental effort with active learning</article-title>. <source>Metabolic Engineering</source>. <year>2017</year>; <volume>44</volume>:<fpage>171</fpage>–<lpage>181</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S1096717617300708">https://www.sciencedirect.com/science/article/pii/S1096717617300708</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.ymben.2017.09.016</pub-id>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><string-name><surname>Reker</surname> <given-names>D</given-names></string-name>, <string-name><surname>Schneider</surname> <given-names>P</given-names></string-name>, <string-name><surname>Schneider</surname> <given-names>G</given-names></string-name>, <string-name><surname>Brown</surname> <given-names>J.</given-names></string-name> <article-title>Active learning for computational chemogenomics</article-title>. <source>Future Medicinal Chemistry</source>. <year>2017</year>; <volume>9</volume>(<issue>4</issue>):<fpage>381</fpage>–<lpage>402</lpage>. https://doi.org/10.4155/fmc-2016-0197, doi: <pub-id pub-id-type="doi">10.4155/fmc-2016-0197</pub-id>, pMID: <pub-id pub-id-type="pmid">28263088</pub-id>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><string-name><surname>Scheiper</surname> <given-names>B</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Steinhagen</surname> <given-names>H</given-names></string-name>, <string-name><surname>Böcskei</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Fleury</surname> <given-names>V</given-names></string-name>, <string-name><surname>McCort</surname> <given-names>G.</given-names></string-name> <article-title>Structure-based optimization of potent 4- and 6-azaindole-3-carboxamides as renin inhibitors</article-title>. <source>Bioorganic &amp; Medicinal Chemistry Letters</source>. <year>2011</year>; <volume>21</volume>(<issue>18</issue>):<fpage>5480</fpage>–<lpage>5486</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S0960894X1100905X">https://www.sciencedirect.com/science/article/pii/S0960894X1100905X</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.bmcl.2011.06.114</pub-id>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><string-name><surname>Scheiper</surname> <given-names>B</given-names></string-name>, <string-name><surname>Matter</surname> <given-names>H</given-names></string-name>, <string-name><surname>Steinhagen</surname> <given-names>H</given-names></string-name>, <string-name><surname>Stilz</surname> <given-names>U</given-names></string-name>, <string-name><surname>Böcskei</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Fleury</surname> <given-names>V</given-names></string-name>, <string-name><surname>McCort</surname> <given-names>G.</given-names></string-name> <article-title>Discovery and optimization of a new class of potent and non-chiral indole-3-carboxamide-based renin inhibitors</article-title>. <source>Bioorganic &amp; Medicinal Chemistry Letters</source>. <year>2010</year>; <volume>20</volume>(<issue>21</issue>):<fpage>6268</fpage>–<lpage>6272</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S0960894X1001228X">https://www.sciencedirect.com/science/article/pii/S0960894X1001228X</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.bmcl.2010.08.092</pub-id>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="book"><string-name><surname>Settles</surname> <given-names>B.</given-names></string-name> <source>Active Learning Literature Survey</source>. <publisher-name>University of Wisconsin–Madison</publisher-name>; <year>2009</year>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="book"><string-name><surname>Settles</surname> <given-names>B.</given-names></string-name> <source>Active Learning. Synthesis Lectures on Artificial Intelligence and Machine Learning</source>, <publisher-name>Morgan &amp; Claypool Publishers</publisher-name>; <year>2012</year>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="journal"><string-name><surname>Sorkun</surname> <given-names>MC</given-names></string-name>, <string-name><surname>Khetan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Er</surname> <given-names>S.</given-names></string-name> <article-title>AqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds</article-title>. <source>Scientific Data</source>. <year>2019</year> <month>Aug</month>; <volume>6</volume>(<issue>1</issue>):<fpage>143</fpage>. https://doi.org/10.1038/s41597-019-0151-1, doi: <pub-id pub-id-type="doi">10.1038/s41597-019-0151-1</pub-id>.</mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="journal"><string-name><surname>Thompson</surname> <given-names>J</given-names></string-name>, <string-name><surname>Walters</surname> <given-names>WP</given-names></string-name>, <string-name><surname>Feng</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Pabon</surname> <given-names>NA</given-names></string-name>, <string-name><surname>Xu</surname> <given-names>H</given-names></string-name>, <string-name><surname>Goldman</surname> <given-names>BB</given-names></string-name>, <string-name><surname>Moustakas</surname> <given-names>D</given-names></string-name>, <string-name><surname>Schmidt</surname> <given-names>M</given-names></string-name>, <string-name><surname>York</surname> <given-names>F.</given-names></string-name> <article-title>Optimizing active learning for free energy calculations</article-title>. <source>Artificial Intelligence in the Life Sciences</source>. <year>2022</year>; <volume>2</volume>:<fpage>100050</fpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S2667318522000204">https://www.sciencedirect.com/science/article/pii/S2667318522000204</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.ailsci.2022.100050</pub-id>.</mixed-citation></ref>
+<ref id="c46"><mixed-citation publication-type="journal"><string-name><surname>Tynes</surname> <given-names>M</given-names></string-name>, <string-name><surname>Gao</surname> <given-names>W</given-names></string-name>, <string-name><surname>Burrill</surname> <given-names>DJ</given-names></string-name>, <string-name><surname>Batista</surname> <given-names>ER</given-names></string-name>, <string-name><surname>Perez</surname> <given-names>D</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>P</given-names></string-name>, <string-name><surname>Lubbers</surname> <given-names>N.</given-names></string-name> <article-title>Pairwise Difference Regression: A Machine Learning Meta-algorithm for Improved Prediction and Uncertainty Quantification in Chemical Search</article-title>. <source>Journal of Chemical Information and Modeling</source>. <year>2021</year> <month>Aug</month>; <volume>61</volume>(<issue>8</issue>):<fpage>3846</fpage>–<lpage>3857</lpage>. https://doi.org/10.1021/acs.jcim.1c00670, doi: <pub-id pub-id-type="doi">10.1021/acs.jcim.1c00670</pub-id>.</mixed-citation></ref>
+<ref id="c47"><mixed-citation publication-type="journal"><string-name><surname>Wang</surname> <given-names>NN</given-names></string-name>, <string-name><surname>Dong</surname> <given-names>J</given-names></string-name>, <string-name><surname>Deng</surname> <given-names>YH</given-names></string-name>, <string-name><surname>Zhu</surname> <given-names>MF</given-names></string-name>, <string-name><surname>Wen</surname> <given-names>M</given-names></string-name>, <string-name><surname>Yao</surname> <given-names>ZJ</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>AP</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>JB</given-names></string-name>, <string-name><surname>Cao</surname> <given-names>DS</given-names></string-name>. <article-title>ADME Properties Evaluation in Drug Discovery: Prediction of Caco-2 Cell Permeability Using a Combination of NSGA-II and Boosting</article-title>. <source>Journal of Chemical Information and Modeling</source>. <year>2016</year>; <volume>56</volume>(<issue>4</issue>):<fpage>763</fpage>–<lpage>773</lpage>. https://doi.org/10.1021/acs.jcim.5b00642, doi: <pub-id pub-id-type="doi">10.1021/acs.jcim.5b00642</pub-id>, pMID: <pub-id pub-id-type="pmid">27018227</pub-id>.</mixed-citation></ref>
+<ref id="c48"><mixed-citation publication-type="journal"><string-name><surname>Weininger</surname> <given-names>D.</given-names></string-name> <article-title>SMILES, a chemical language and information system. 1. Introduction to methodology and encoding rules</article-title>. <source>Journal of Chemical Information and Computer Sciences</source>. <year>1988</year>; <volume>28</volume>(<issue>1</issue>):<fpage>31</fpage>–<lpage>36</lpage>. https://doi.org/10.1021/ci00057a005, doi: <pub-id pub-id-type="doi">10.1021/ci00057a005</pub-id>.</mixed-citation></ref>
+<ref id="c49"><mixed-citation publication-type="journal"><string-name><surname>Weiss</surname> <given-names>K</given-names></string-name>, <string-name><surname>Khoshgoftaar</surname> <given-names>TM</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>D.</given-names></string-name> <article-title>A survey of transfer learning</article-title>. <source>Journal of Big Data</source>. <year>2016</year> <month>May</month>; <volume>3</volume>(<issue>1</issue>):<fpage>9</fpage>. https://doi.org/10.1186/s40537-016-0043-6, doi: <pub-id pub-id-type="doi">10.1186/s40537-016-0043-6</pub-id>.</mixed-citation></ref>
+<ref id="c50"><mixed-citation publication-type="other"><string-name><surname>Wenlock</surname> <given-names>M</given-names></string-name>, <string-name><surname>Tomkinson</surname> <given-names>N</given-names></string-name>, <source>Experimental in vitro DMPK and physicochemical data on a set of publicly disclosed compounds</source>; <year>2015</year>.</mixed-citation></ref>
+<ref id="c51"><mixed-citation publication-type="journal"><string-name><surname>Wu</surname> <given-names>F</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Li</surname> <given-names>L</given-names></string-name>, <string-name><surname>Shen</surname> <given-names>X</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>G</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>X</given-names></string-name>, <string-name><surname>Liang</surname> <given-names>X</given-names></string-name>, <string-name><surname>Tan</surname> <given-names>M</given-names></string-name>, <string-name><surname>Huang</surname> <given-names>Z.</given-names></string-name> <article-title>Computational Approaches in Preclinical Studies on Drug Discovery and Development</article-title>. <source>Frontiers in Chemistry</source>. <year>2020</year>; <volume>8</volume>. <ext-link ext-link-type="uri" xlink:href="https://www.frontiersin.org/articles/10.3389/fchem.2020.00726">https://www.frontiersin.org/articles/10.3389/fchem.2020.00726</ext-link>, doi: <pub-id pub-id-type="doi">10.3389/fchem.2020.00726</pub-id>.</mixed-citation></ref>
+<ref id="c52"><mixed-citation publication-type="journal"><string-name><surname>Wu</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Ramsundar</surname> <given-names>B</given-names></string-name>, <string-name><surname>Feinberg</surname> <given-names>EN</given-names></string-name>, <string-name><surname>Gomes</surname> <given-names>J</given-names></string-name>, <string-name><surname>Geniesse</surname> <given-names>C</given-names></string-name>, <string-name><surname>Pappu</surname> <given-names>AS</given-names></string-name>, <string-name><surname>Leswing</surname> <given-names>K</given-names></string-name>, <string-name><surname>Pande</surname> <given-names>V.</given-names></string-name> <article-title>MoleculeNet: a benchmark for molecular machine learning</article-title>. <source>Chemical science</source>. <year>2018</year>; <volume>9</volume>(<issue>2</issue>):<fpage>513</fpage>–<lpage>530</lpage>.</mixed-citation></ref>
+<ref id="c53"><mixed-citation publication-type="journal"><string-name><surname>Xiong</surname> <given-names>G</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Yi</surname> <given-names>J</given-names></string-name>, <string-name><surname>Fu</surname> <given-names>L</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Hsieh</surname> <given-names>C</given-names></string-name>, <string-name><surname>Yin</surname> <given-names>M</given-names></string-name>, <string-name><surname>Zeng</surname> <given-names>X</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>A</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>X</given-names></string-name>, <string-name><surname>Hou</surname> <given-names>T</given-names></string-name>, <string-name><surname>Cao</surname> <given-names>D.</given-names></string-name> <article-title>ADMETlab 2.0: an integrated online platform for accurate and comprehensive predictions of ADMET properties</article-title>. <source>Nucleic Acids Research</source>. <year>2021</year> 04; <volume>49</volume>(<issue>W1</issue>):<fpage>W5</fpage>–<lpage>W14</lpage>. https://doi.org/10.1093/nar/gkab255, doi: <pub-id pub-id-type="doi">10.1093/nar/gkab255</pub-id>.</mixed-citation></ref>
+<ref id="c54"><mixed-citation publication-type="journal"><string-name><surname>Zaverkin</surname> <given-names>V</given-names></string-name>, <string-name><surname>Holzmüller</surname> <given-names>D</given-names></string-name>, <string-name><surname>Steinwart</surname> <given-names>I</given-names></string-name>, <string-name><surname>Kästner</surname> <given-names>J.</given-names></string-name> <article-title>Exploring chemical and conformational spaces by batch mode deep active learning</article-title>. <source>Digital Discovery</source>. <year>2022</year>; <volume>1</volume>:<fpage>605</fpage>–<lpage>620</lpage>. <pub-id pub-id-type="doi">10.1039/D2DD00034B</pub-id>, doi: <pub-id pub-id-type="doi">10.1039/D2DD00034B</pub-id>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89679.2.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Talevi</surname>
+<given-names>Alan</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of La Plata</institution>
+</institution-wrap>
+<city>La Plata</city>
+<country>Argentina</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study reports novel active learning batch selection methods that have been applied to optimization tasks related to ADMET and affinity properties relevant within the drug discovery field. While the evidence is <bold>solid</bold>, the paper could have benefited from a clearer and deeper description of methods as well as interpretation of the obtained models, and a wider comparison to existing methods. The article will be of general interest to scientist working in the field of drug discovery and, in general, to researchers within the fields of machine learning and data analysis.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89679.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The authors present a study focused on addressing the key challenge in drug discovery, which is the optimization of absorption and affinity properties of small molecules through in silico methods. They propose active learning as a strategy for optimizing these properties and describe the development of two novel active learning batch selection methods. The methods are tested on various public datasets with different optimization goals and sizes, and new affinity datasets are curated to provide up-to-date experimental information. The authors claim that their active learning methods outperform existing batch selection methods, potentially reducing the number of experiments required to achieve the same model performance. They also emphasize the general applicability of their methods, including compatibility with popular packages like DeepChem.</p>
+<p>Strengths:</p>
+<p>Relevance and Importance: The study addresses a significant challenge in the field of drug discovery, highlighting the importance of optimizing absorption and affinity properties of small molecules through in silico methods. This topic is of great interest to researchers and pharmaceutical industries.</p>
+<p>Novelty: The development of two novel active learning batch selection methods is a commendable contribution. The study also adds value by curating new affinity datasets that provide chronological information on state-of-the-art experimental strategies.</p>
+<p>
+Comprehensive Evaluation: Testing the proposed methods on multiple public datasets with varying optimization goals and sizes enhances the credibility and generalizability of the findings. The focus on comparing the performance of the new methods against existing batch selection methods further strengthens the evaluation.</p>
+<p>Weaknesses:</p>
+<p>Lack of Technical Details: The feedback lacks specific technical details regarding the developed active learning batch selection methods. Information such as the underlying algorithms, implementation specifics, and key design choices should be provided to enable readers to understand and evaluate the methods thoroughly.</p>
+<p>Evaluation Metrics: The feedback does not mention the specific evaluation metrics used to assess the performance of the proposed methods. The authors should clarify the criteria employed to compare their methods against existing batch selection methods and demonstrate the statistical significance of the observed improvements.</p>
+<p>Reproducibility: While the authors claim that their methods can be used with any package, including DeepChem, no mention is made of providing the necessary code or resources to reproduce the experiments. Including code repositories or detailed instructions would enhance the reproducibility and practical utility of the study.</p>
+<p>Suggestions for Improvement:</p>
+<p>Elaborate on the Methodology: Provide an in-depth explanation of the two active learning batch selection methods, including algorithmic details, implementation considerations, and any specific assumptions made. This will enable readers to better comprehend and evaluate the proposed techniques.</p>
+<p>Clarify Evaluation Metrics: Clearly specify the evaluation metrics employed in the study to measure the performance of the active learning methods. Additionally, conduct statistical tests to establish the significance of the improvements observed over existing batch selection methods.</p>
+<p>Enhance Reproducibility: To facilitate the reproducibility of the study, consider sharing the code, data, and resources necessary for readers to replicate the experiments. This will allow researchers in the field to validate and build upon your work more effectively.</p>
+<p>Conclusion:</p>
+<p>
+The authors' study on active learning methods for optimizing drug discovery presents an important and relevant contribution to the field. The proposed batch selection methods and curated affinity datasets hold promise for improving the efficiency of drug discovery processes. However, to strengthen the study, it is crucial to provide more technical details, clarify evaluation metrics, and enhance reproducibility by sharing code and resources. Addressing these limitations will further enhance the value and impact of the research.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89679.2.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The authors presented a well-written manuscript describing the comparison of active-learning methods with state-of-art methods for several datasets of pharmaceutical interest. This is a very important topic since active learning is similar to a cyclic drug design campaign such as testing compounds followed by designing new ones which could be used to further tests and a new design cycle and so on. The experimental design is comprehensive and adequate for proposed comparisons.</p>
+<p>1. Text in figures still very small and difficult to read. Please redraw the figures increasing the font size: 10-12pt is ideal in comparison with the main text. In my opinion, it seems like the authors drew the Figure properly but there is an automatic resizing by inserting it in the document. Please consider ensuring that the font size will remain legible in the final document.</p>
+<p>2. I think this work will benefit from a comparison of obtained models to other models reported in the literature and the interpretability of models (e.g. contribution of molecule groups to the modeled activity) as it is required by OECD guide for QSAR purposes.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89679.2.sa3</article-id>
+<title-group>
+<article-title>Author Response</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Bailey</surname>
+<given-names>Michael</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-8425-993X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Moayedpour</surname>
+<given-names>Saeed</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Ruijiang</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Corrochano-Navarro</surname>
+<given-names>Alejandro</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kötter</surname>
+<given-names>Alexander</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kogler-Anele</surname>
+<given-names>Lorenzo</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Riahi</surname>
+<given-names>Saleh</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Grebner</surname>
+<given-names>Christoph</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hessler</surname>
+<given-names>Gerhard</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Matter</surname>
+<given-names>Hans</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bianciotto</surname>
+<given-names>Marc</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mas</surname>
+<given-names>Pablo</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bar-Joseph</surname>
+<given-names>Ziv</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3430-6051</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Jager</surname>
+<given-names>Sven</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1410-9114</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the original reviews.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer No.1 (public)</bold></p>
+<p>The authors present a study focused on addressing the key challenge in drug discovery, which is the optimization of absorption and affinity properties of small molecules through in silico methods. They propose active learning as a strategy for optimizing these properties and describe the development of two novel active learning batch selection methods. The methods are tested on various public datasets with different optimization goals and sizes, and new affinity datasets are curated to provide up-todate experimental information. The authors claim that their active learning methods outperform existing batch selection methods, potentially reducing the number of experiments required to achieve the same model performance. They also emphasize the general applicability of their methods, including compatibility with popular packages like DeepChem.</p>
+<p>Strengths:</p>
+<p>Relevance and Importance: The study addresses a significant challenge in the field of drug discovery, highlighting the importance of optimizing the absorption and affinity properties of small molecules through in silico methods. This topic is of great interest to researchers and pharmaceutical industries.</p>
+<p>Novelty: The development of two novel active learning batch selection methods is a commendable contribution. The study also adds value by curating new affinity datasets that provide chronological information on state-of-the-art experimental strategies.</p>
+<p>Comprehensive Evaluation: Testing the proposed methods on multiple public datasets with varying optimization goals and sizes enhances the credibility and generalizability of the findings. The focus on comparing the performance of the new methods against existing batch selection methods further strengthens the evaluation.</p>
+<p>Weaknesses:</p>
+<p>Lack of Technical Details: The feedback lacks specific technical details regarding the developed active learning batch selection methods. Information such as the underlying algorithms, implementation specifics, and key design choices should be provided to enable readers to understand and evaluate the methods thoroughly.</p>
+<p>Evaluation Metrics: The feedback does not mention the specific evaluation metrics used to assess the performance of the proposed methods. The authors should clarify the criteria employed to compare their methods against existing batch selection methods and demonstrate the statistical significance of the observed improvements.</p>
+<p>Reproducibility: While the authors claim that their methods can be used with any package, including DeepChem, no mention is made of providing the necessary code or resources to reproduce the experiments. Including code repositories or detailed instructions would enhance the reproducibility and practical utility of the study.</p>
+<p>Suggestion 1:</p>
+<p>Elaborate on the Methodology: Provide an in-depth explanation of the two active learning batch selection methods, including algorithmic details, implementation considerations, and any specific assumptions made. This will enable readers to better comprehend and evaluate the proposed techniques.</p>
+</disp-quote>
+<p>Answer: We thank the reviewer for this suggestion. Following this comments we have extended the text in Methods (in Section: Batch selection via determinant maximization and Section: Approximation of the posterior distribution) and in Supporting Methods (Section: Toy example). We have also included the pseudo code for the Batch optimization method.</p>
+<disp-quote content-type="editor-comment">
+<p>Suggestion 2:</p>
+<p>Clarify Evaluation Metrics: Clearly specify the evaluation metrics employed in the study to measure the performance of the active learning methods. Additionally, conduct statistical tests to establish the significance of the improvements observed over existing batch selection methods.</p>
+</disp-quote>
+<p>Answer: Following this comment we added to Table 1 details about the way we computed the cutoff times for the different methods. We also provide more details on the statistics we performed to determine the significance of these differences.</p>
+<disp-quote content-type="editor-comment">
+<p>Suggestion 3:</p>
+<p>Enhance Reproducibility: To facilitate the reproducibility of the study, consider sharing the code, data, and resources necessary for readers to replicate the experiments. This will allow researchers in the field to validate and build upon your work more effectively.</p>
+</disp-quote>
+<p>Answer: This is something we already included with the original submission. The code is publicly available. In fact, we provide a phyton library, ALIEN (Active Learning in data Exploration) which is published on the Sanofi Github(<ext-link ext-link-type="uri" xlink:href="https://github.com/">https://github.com/</ext-link> Sanofi-Public/Alien). We also provide details on the public data used and expect to provide the internal data as well. We included a small paragraph on code and data availability.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer No.2 (public)</bold></p>
+<p>Suggestion 1:</p>
+<p>The authors presented a well-written manuscript describing the comparison of activelearning methods with state-of-art methods for several datasets of pharmaceutical interest. This is a very important topic since active learning is similar to a cyclic drug design campaign such as testing compounds followed by designing new ones which could be used to further tests and a new design cycle and so on. The experimental design is comprehensive and adequate for proposed comparisons. However, I would expect to see a comparison regarding other regression metrics and considering the applicability domain of models which are two essential topics for the drug design modelers community.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer for these comments. We provide a detailed response to the specific comments below.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer No.1 (Recommendations For The Authors)</bold></p>
+<p>Recommendation 1:</p>
+<p>The description provided regarding the data collection process and the benchmark datasets used in the study raises some concerns. The comment specifically addresses the use of both private (Sanofi-owned) and public datasets to benchmark the various batch selection methods.
+Lack of Transparency: The comment lacks transparency regarding the specific sources and origins of the private datasets. It would be crucial to disclose whether these datasets were obtained from external sources or if they were generated internally within Sanofi. Without this information, it becomes difficult to assess the potential biases or conflicts of interest associated with the data.</p>
+</disp-quote>
+<p>Answer: We would like to thank the reviewer for this comment. As mentioned in the paper, the public github page contains links to all the public data and we expect also to the internal Sanofi data. We also now provide more information on the specific experiments that were internally done by Sanofi to collect that data.</p>
+<disp-quote content-type="editor-comment">
+<p>Potential Data Accessibility Issues: The utilization of private datasets, particularly those owned by Sanofi, may raise concerns about data accessibility. The lack of availability of these datasets to the wider scientific community may limit the ability of other researchers to replicate and validate the study’s findings. It is essential to ensure that the data used in research is openly accessible to foster transparency and encourage collaboration.</p>
+</disp-quote>
+<p>Answer: Again, as stated above we expect to release the data collected internally on the github page.</p>
+<disp-quote content-type="editor-comment">
+<p>Limited Information on Dataset Properties: The comment briefly mentions that the benchmark datasets cover properties related to absorption, distribution, pharmacokinetic processes, and affinity of small drug molecules to target proteins. However, it does not provide any specific details about the properties included in the datasets or how they were curated. Providing more comprehensive information about the properties covered and the methods used for curation would enhance the transparency and reliability of the study.</p>
+<p>To address these concerns, it is crucial for the authors to provide more detailed information about the data sources, dataset composition, representativeness, and curation methods employed. Transparency and accessibility of data are fundamental principles in scientific research, and addressing these issues will strengthen the credibility and impact of the study.</p>
+</disp-quote>
+<p>Answer: We agree with this comment and believe that it is important to be explicit about each of the datasets and to provide information on the new data. We note that we already discuss the details of each of the experiments in Methods and, of course, provide links to the original papers for the public data. We have now added text to Supporting Methods that describes the experiments in more details as well as providing literature references for the experimental protocols used. As noted above, we expect to provide our new internal data on the public git page.</p>
+<disp-quote content-type="editor-comment">
+<p>Recommendation 2:</p>
+<p>Some comments on the modeling example Approximation of the posterior distribution.
+Lack of Methodological Transparency: The comment fails to provide any information regarding the specific method or approach used for approximating the posterior distribution. Without understanding the methodology employed, it is impossible to evaluate the quality or rigor of the approximation. This lack of transparency undermines the credibility of the study.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer for pointing this out. Based on this comment we added more information to Section: Approximation of the posterior distribution. Moreover, we now provide details on the posterior approximation in Section: Two approximations for computing the epistemic covariance.</p>
+<disp-quote content-type="editor-comment">
+<p>Questionable Assumptions: The comment does not mention any of the assumptions made during the approximation process. The validity of any approximation heavily depends on the underlying assumptions, and their omission suggests a lack of thorough analysis. Failing to acknowledge these assumptions leaves room for doubt regarding the accuracy and relevance of the approximation.</p>
+</disp-quote>
+<p>Answer: We are not entirely sure which assumptions the reviewer is referring to here. The main assumption we can think of that we have used is the fact that getting within X% of the optimal model is a good enough approximation. We have specifically discussed this assumption and tested multiple values of X. While it would have been great to have X = 0 this is unrealistic for retrospective studies. For Active Learning the main question is how many experiments can be saved to obtain similar results and the assumptions we used are basically ’what is the definition of similar’. We now added this to Discussion.</p>
+<disp-quote content-type="editor-comment">
+<p>Inadequate Validation: There is no mention of any validation measures or techniques used to assess the accuracy and reliability of the approximated posterior distribution. Without proper validation, it is impossible to determine whether the approximation provides a reasonable representation of the true posterior. The absence of validation raises concerns about the potential biases or errors introduced by the approximation process.</p>
+</disp-quote>
+<p>Answer: We sincerely appreciate your concern regarding the validation of the approximated posterior distribution. We acknowledge that our initial submission might not have clearly highlighted our validation strategy. It is, of course, very hard to determine the accuracy of the distribution our model learns since such distribution cannot be directly inferred using experiments (no ’ground truth’). Instead, we use an indirect method to determine the accuracy. Specifically, we conducted retrospective experiment using the learned distribution. In these experiments, we indirectly validated our approximation by measuring the error with the respective method. The results from these retrospective experiments provided evidence for the accuracy and reliability of our approximation in representing the true posterior distribution. We now emphasize this in Methods.</p>
+<disp-quote content-type="editor-comment">
+<p>Uncertainty Quantification: The comment does not discuss the quantification of uncertainty associated with the approximated posterior distribution. Properly characterizing the uncertainty is crucial in statistical inference and decision-making. Neglecting this aspect undermines the usefulness and applicability of the approximation results.</p>
+</disp-quote>
+<p>Answer: Thank you for pointing out the importance of characterizing uncertainty in statistical inference and decision-making, a sentiment with which we wholeheartedly agree. In our work, we have indeed addressed the quantification of uncertainty associated with the approximated posterior distribution. Specifically, we utilized Monte Carlo Dropout (MC Dropout) as our method of choice. MC Dropout is a widely recognized and employed technique in the neural networks domain to approximate the posterior distribution, and it offers an efficient way to estimate model uncertainty without requiring any changes to the existing network architecture [1, 2]. In the revised version, we provide a more detailed discussion on the use of Monte Carlo Dropout in our methodology and its implications for characterizing uncertainty.</p>
+<disp-quote content-type="editor-comment">
+<p>Comparison with Gold Standard: There is no mention of comparing the approximated posterior distribution with a gold standard or benchmark. Failing to provide such a comparison leaves doubts about the performance and accuracy of the approximation method. A lack of benchmarking makes it difficult to ascertain the superiority or inferiority of the approximation technique employed.</p>
+</disp-quote>
+<p>Answer: As noted above, it is impossible to find gold standard information for the uncertainly distribution. It is not even clear to us how such gold standard can be experimentally determined since its a function of a specific model and data. If the reviewer is aware of such gold standard we would be happy to test it. Instead, in our study, we opted to benchmark our results against state-of-the-art batch active learning methods, which also rely on uncertainty prediction (such uncertainty prediction is the heart of any active learning method as we discuss). Results clearly indicate that our method outperforms prior methods though we agree that this is only an indirect way to validate the uncertainty approximation.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer No.2 (Recommendations For The Authors)</bold></p>
+<p>Recommendation 1:</p>
+<p>The text is kind of messy: there are two results sections, for example. It seems that part of the text was duplicated. Please correct it.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer pointing this out. These were typos and we fixed them accordingly.</p>
+<disp-quote content-type="editor-comment">
+<p>Recommendation 2:</p>
+<p>Text in figures is very small and difficult to read. Please redraw the figures, increasing the font size: 10-12pt is ideal in comparison with the main text.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer for this comment and we have made the graphics larger.</p>
+<disp-quote content-type="editor-comment">
+<p>Recommendation 3:
+Please, include specific links to data availability instead of just stating it is available at the Sanofi-Public repository.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer for this comment and added the links and data to the Sanofi Github page listed in the paper.</p>
+<disp-quote content-type="editor-comment">
+<p>Recommendation 4:</p>
+<p>What are the descriptors used to train the models?</p>
+</disp-quote>
+<p>Answer: We represented the molecules as molecular graphs using the MolGraphConvFeaturizer from the DeepChem library. We now explicitly mention this in Methods.</p>
+<disp-quote content-type="editor-comment">
+<p>Recommendation 5:</p>
+<p>Regarding the quality of the models, I strongly suggest two approaches instead of using only RMSE as metrics of models’ performance. I recommend using the most metrics as possible as reported by Gramatica (<ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1021/acs.jcim.6b00088">https://doi.org/10.1021/acs.jcim.6b00088</ext-link>). I also recommend somehow comparing the increment on the dataset diversity according to the employed descriptors (applicability domain) as a measurement to further applications on the unseen molecules.</p>
+</disp-quote>
+<p>Answer: We want to thank the reviewer for this great suggestions. As suggested we added new comparison metrics to the Supplement.</p>
+<p>•   Distribution plot for the range of the Y values Figure 8 • Clustering of the data sets represented as fingerprints Supplementary material Figure 5,6</p>
+<p>•   Retrospective experiments with Spearman correlation coefficient. Supplementary material Figure: 2,3,4</p>
+<disp-quote content-type="editor-comment">
+<p>I suggest also a better characterization of datasets including the nature and range of the Y variable, the source of data in terms of experimentation, and chemical (structural and physicochemical) comparison of samples within each dataset.</p>
+</disp-quote>
+<p>Answer: As noted above in response to a similar comment by Reviewer 1, we have added more detailed information about the different experiments we tested to Supporting Methods.</p>
+<p>References</p>
+<p>[1] Yarin Gal and Zoubin Ghahramani. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In Maria Florina Balcan and Kilian Q. Weinberger, editors, Proceedings of The 33rd International Conference on Machine Learning, volume 48 of Proceedings of Machine Learning Research, pages 1050–1059, New York, New York, USA, 20–22 Jun 2016. PMLR.</p>
+<p>[2] N.D. Lawrence. Variational Inference in Probabilistic Models. University of Cambridge, 2001.</p>
+</body>
+</sub-article>
+</article>
