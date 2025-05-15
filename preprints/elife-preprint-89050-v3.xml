@@ -1,0 +1,613 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">89050</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.89050</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.89050.3</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.3</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Automated cell annotation in multi-cell images using an improved CRF_ID algorithm</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9662-2063</contrib-id>
+<name>
+<surname>Lee</surname>
+<given-names>Hyun Jee</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liang</surname>
+<given-names>Jingting</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1928-0933</contrib-id>
+<name>
+<surname>Chaudhary</surname>
+<given-names>Shivesh</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Moon</surname>
+<given-names>Sihoon</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Yu</surname>
+<given-names>Zikai</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wu</surname>
+<given-names>Taihong</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liu</surname>
+<given-names>He</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Choi</surname>
+<given-names>Myung-Kyu</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Zhang</surname>
+<given-names>Yun</given-names>
+</name>
+<email>yzhang@oeb.harvard.edu</email>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6881-660X</contrib-id>
+<name>
+<surname>Lu</surname>
+<given-names>Hang</given-names>
+</name>
+<email>hang.lu@gatech.edu</email>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>School of Chemical &amp; Biomolecular Engineering, Georgia Institute of Technology</institution>, United States</aff>
+<aff id="a2"><label>2</label>Interdisciplinary BioEngineering Program, <institution>Georgia Institute of Technology, United States</institution></aff>
+<aff id="a3"><label>3</label><institution>Department of Organismic and Evolutionary Biology, Harvard University</institution>, United States</aff>
+<aff id="a4"><label>4</label><institution>Advanced Institute of Natural Sciences</institution>, Beijing Normal University, Zhuhai 519087, China</aff>
+<aff id="a5"><label>5</label><institution>Center for Brain Science, Harvard University</institution>, United States</aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Kratsios</surname>
+<given-names>Paschalis</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Chicago</institution>
+</institution-wrap>
+<city>Chicago</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Behrens</surname>
+<given-names>Timothy E</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1"><label>†</label><p>: co-first authors</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-07-12">
+<day>12</day>
+<month>07</month>
+<year>2023</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2024-03-21">
+<day>21</day>
+<month>03</month>
+<year>2024</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP89050</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-05-23">
+<day>23</day>
+<month>05</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-06-08">
+<day>08</day>
+<month>06</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.06.07.543949"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2023-07-12">
+<day>12</day>
+<month>07</month>
+<year>2023</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.89050.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.89050.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89050.1.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89050.1.sa0">Reviewer #2 (Public Review):</self-uri>
+</event>
+<event>
+<event-desc>Reviewed preprint v2</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2024-01-10">
+<day>10</day>
+<month>01</month>
+<year>2024</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.89050.2"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.89050.2.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89050.2.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89050.2.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.89050.2.sa3">Author Response</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Lee et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Lee et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-89050-v3.pdf"/>
+<abstract>
+<title>Abstract</title><p>Cell identification is an important yet difficult process in data analysis of biological images. Previously, we developed an automated cell identification method called CRF_ID and demonstrated its high performance in <italic>C. elegans</italic> whole-brain images (<xref ref-type="bibr" rid="c5">Chaudhary et al, 2021</xref>). However, because the method was optimized for whole-brain imaging, comparable performance could not be guaranteed for application in commonly used <italic>C. elegans</italic> multi-cell images that display a subpopulation of cells. Here, we present an advance CRF_ID 2.0 that expands the generalizability of the method to multi-cell imaging beyond whole-brain imaging. To illustrate the application of the advance, we show the characterization of CRF_ID 2.0 in multi-cell imaging and cell-specific gene expression analysis in <italic>C. elegans</italic>. This work demonstrates that high accuracy automated cell annotation in multi-cell imaging can expedite cell identification and reduce its subjectivity in <italic>C. elegans</italic> and potentially other biological images of various origins.</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Figure 3- figure supplement 2 added; Figure 3- figure supplement 2 revised;</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>One of the bottlenecks in biological research is the inefficiency and inaccuracy of analyzing bioimages, which have become essential research materials owing to the emergence of advanced microscopy and imaging modalities (<xref ref-type="bibr" rid="c28">Xu and Jackson, 2019</xref>). For studies with the popular model organism <italic>Caenorhabditis elegans</italic> (<italic>C. elegans</italic>), one of the most challenging image analysis processes is cell identification, annotating the cell types in the image based on their anatomical or other biological features. Accurate cell identification is important in applications, such as gene expression analysis and calcium imaging, in order to obtain cell-specific information from multiple animals sampled in the experiment and associate this information with existing knowledge about the cell. Previously, we developed an automated cell identification method called CRF_ID based on graphical optimization using the Conditional Random Fields (CRF) model (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). We demonstrated that for whole-brain images, CRF_ID shows higher annotation accuracy and more robustness against various sources of noises compared to conventional registration-based methods.</p>
+<p>However, because CRF_ID was optimized for whole-brain images, it is not ideal for multi-cell imaging, which focuses on a subpopulation of cells. In fact, there are no automated methods currently designed for processing multi-cell images; only ad hoc and heuristic tracking and annotation are available. This represents an unmet demand because multi-cell imaging is still much more frequently used than whole-brain imaging despite the recent popularization of brain-wide imaging. For instance, multi-cell imaging is necessary for transcriptional or translational reporter-based gene expression analysis because the number of cells imaged is governed by the gene expression itself, with the average being around 40 neurons (<xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>). Another reason for the continued prominence of multi-cell imaging is that many biological questions can be effectively answered with a subset of the nervous system with specific structures and functions. For example, studies focusing on chemosensory neurons of the olfactory circuit in <italic>C. elegans</italic> characterized how the identity and intensity of olfactory stimuli were represented by the activity of the sensory neurons, which provided input signals for computation and integration of the downstream circuits (<xref ref-type="bibr" rid="c17">Lin et al., 2022</xref>). Furthermore, multi-cell imaging is more accessible than whole-brain imaging because it does not require fast-speed and multi-color volumetric microscopy techniques.</p>
+<p>In this work, we present CRF_ID 2.0, an update of our original CRF_ID algorithm for multi-cell images. Compared with other automated whole-brain annotation methods (<xref ref-type="bibr" rid="c27">Toyoshima et al., 2020</xref>; <xref ref-type="bibr" rid="c30">Yu et al., 2021</xref>), CRF_ID is an ideal method to adapt for multi-cell images because of its demonstrated high accuracy, modularity, and efficiency for atlas-building; CRF_ID builds structured models, rather than deep-learning models, which makes it readily interpretable. In principle, the original CRF_ID algorithm should be applicable to multi-cell images; however, in practice, multi-cell specific modifications were necessary to achieve the highest accuracy. In addition to optimizing the method, we characterized its performance by comparing the accuracy of different types of atlases against each other and against manual annotations. Such characterizations, which were not addressed in our previous work, provide a necessary reference for future users. Furthermore, we demonstrate the application of multi-cell neuron annotation in a cell-specific gene expression analysis. Thus, this follow-up work enhances the generalizability and usefulness of the CRF_ID method by enabling high performance operation regardless of the number of cells in the images.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>CRF_ID 2.0 for automatic cell annotation in multi-cell images</title>
+<p>The multicell identification pipeline is a multi-step optimization algorithm (<xref rid="fig1" ref-type="fig">Figure 1a</xref>), built upon CRF_ID (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). First, the user acquires a volumetric image set of a sample that contains multiple cells labeled with markers, such as fluorescent proteins or dyes (<xref rid="fig1" ref-type="fig">Figure 1a-1</xref>). Image processing begins with cell segmentation. Here we use a simple automatic method that finds the local maxima of fluorescence intensity and fits the 3D Gaussian mixture model on them (<xref rid="fig1" ref-type="fig">Figure 1a</xref>-<xref rid="fig2" ref-type="fig">2</xref>). Then, the coordinate axes of <italic>C. elegans</italic> body orientation are either assigned by the user or automatically predicted on the point cloud using an improved algorithm included in CRF_ID 2.0 (<xref rid="fig1" ref-type="fig">Fig. 1a</xref>-<xref rid="fig3" ref-type="fig">3</xref>). Next, based on the cell coordinates relative to the axes, the algorithm extracts the positional features of the cells, such as the pair-wise 3D positional relationships and angular relationships with other cells (<xref rid="fig1" ref-type="fig">Figure 1a</xref>-<xref rid="fig4" ref-type="fig">4</xref>). Lastly, the Conditional Random Fields (CRF) model (<xref ref-type="bibr" rid="c15">Lafferty et al., 2001</xref>) compares the extracted features from the dataset against a reference atlas, which could be derived from the literature or new data (<xref rid="fig1" ref-type="fig">Figure 1a</xref>-<xref rid="fig5" ref-type="fig">5</xref>). The model computes a conditional joint probability distribution over all feasible cell identification (cell ID) assignments, and the neuronal cell ID assignments are ranked for each cell based on the computed probabilities (<xref rid="fig1" ref-type="fig">Figure 1a</xref>-6). Note that a truncated candidate list can be used for subset-specific cell ID if the neuronal expression is known. Additionally, to maximize the accuracy of neuron identification, the reference atlas may be constructed by the user with use-specific datasets (<xref rid="fig1" ref-type="fig">Figure 1b</xref>). The atlas-building process is computationally simple and fast upon the availability of ground-truth datasets, which can be manually annotated by the user.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1</label>
+<caption><p>CRF_ID for multi-cell images. a) Computational workflow starting from image acquisition to final cell identity predictions. a-1,2,3) Image preprocessing steps include automatic cell segmentation and coordinate axes prediction. a-4) Feature variables that represent positional relationships of the cells are extracted (PA, posterior and anterior; LR, left and right; DV, dorsal and ventral). a-5) The CRF algorithm maximizes the similarities between the extracted features from the images and those from an atlas. a-6) The final results are represented as a list of most likely neuron candidates for each cell with predicted probabilities. b) The atlas can be customized to meet the specifications of the images, and this is easily done by compiling and averaging annotated data. The images are showing half volume (left or right side) of the specimen for illustration.</p></caption>
+<graphic xlink:href="543949v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To demonstrate the utility of the automatic cell annotation algorithm for multi-cell images, we chose as an example a <italic>C. elegans</italic> strain carrying a red fluorescent protein mCherry expressed by a <italic>glr-1</italic> promoter (see the schematic and fluorescence images in <xref rid="fig1" ref-type="fig">Figure 1</xref>). The fluorescent protein has been tagged with nuclear localization sequences (NLS) to confine the signal to the cell nucleus and aid the separation of the labeled neurons. <italic>glr-1</italic> is expressed in about 28 neuronal cell types with the majority localized in the head (<xref ref-type="bibr" rid="c4">Brockie et al., 2001</xref>; <xref ref-type="bibr" rid="c11">Hart et al., 1995</xref>; <xref ref-type="bibr" rid="c19">Maricq et al., 1995</xref>; <xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>). The set of neurons include interneurons and motor neurons implicated in various behaviors and neuronal functions, including locomotion, chemotaxis, learning and memory (<xref ref-type="bibr" rid="c10">Gray et al., 2005</xref>; <xref ref-type="bibr" rid="c11">Hart et al., 1995</xref>; <xref ref-type="bibr" rid="c18">Liu and Zhang, 2020</xref> and the references therein; <xref ref-type="bibr" rid="c19">Maricq et al., 1995</xref>). This scale of expression is typical of many neuronal genes for most of which robust and easy cell identification methods do not currently exist. For this work, we collected images from transgenic worms expressing <italic>glr-1p::NLS-mCherry-NLS</italic> transgene and manually annotated 26 volumes to assess the performance of our method.</p>
+</sec>
+<sec id="s2b">
+<title>New features improve prediction accuracy of body axes</title>
+<p>While CRF_ID performs very well with whole-brain image datasets and has a great potential for generalization, multi-cell imaging poses challenges that require the algorithm to consider additional features in the data to accurately predict neuron identities. One such challenge is in the prediction of body axes from the volumetric images. It is important to correctly assign the three-dimensional coordinate axes (anterior-posterior, left-right, dorsal-ventral) for each worm because it is a method to standardize neuronal positions of worms imaged in various orientations. However, the axes assignment is not a trivial task because the worms, especially those in microfluidic devices, can deviate from its naturalistic orientation and be at an angle as large as 20 degrees from the plane (<xref rid="figs1" ref-type="fig">Figure 2-figure supplement</xref>).</p>
+<p>In our previous work, principal components analysis (PCA) was employed on point clouds of head neurons segmented from fluorescence volumes (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). Since PCA finds orthogonal dimensions that explain the most variance in the point cloud, the first three principal components would correspond to the coordinate axes of the worm, assuming the point cloud adequately represents the worm head shape and radial asymmetry of the nervous system. However, using PCA on cell point clouds to predict the coordinate axes is not suitable for multi-cell images. In whole-brain images, nearly all head neurons are fluorescent, which means the point cloud of the neurons is a fair representation of the worm’s overall head shape. In contrast, multi-cell images have a smaller number of fluorescent cells, whose locations may not properly sample the space of the whole brain. For instance, if the fluorescent cells are concentrated near the ventral side of the head, the resulting anterior-posterior axis would gravitate towards the ventral side, deviating from the ground truth.</p>
+<p>To address the axes prediction challenge in multi-cell images, we have amended the method to be less dependent on the point cloud of cell centroids, which varies depending on which neurons are expressing the fluorophore. The new coordinate assignment method takes advantage of two common features in almost all samples - that the worm is auto-fluorescent, and that many neuronal pairs are bilaterally symmetric in their anatomical positions. It involves two correction steps (<xref rid="fig2" ref-type="fig">Figure 2</xref>). The first step corrects the AP axis by incorporating auto-fluorescence signals as natural landmarks to enlarge the point cloud (<xref rid="fig2" ref-type="fig">Figure 2a</xref>). This is easily implemented by imaging a volume in the green channel, where the auto-fluorescence is discernible and segmenting the fluorescent signals as points using the same cell segmentation method. The new point cloud then reflects the overall shape of the head, and the resulting AP axis from PCA aligns correctly along the head of the animal. The second step corrects the LR axis, for which we have implemented an algorithm that searches for the best plane of bilateral symmetry (<xref rid="fig2" ref-type="fig">Figure 2a</xref>). Using the initial LR axis as the starting point and the orthogonality to the AP axis as a constraint, the algorithm iteratively finds planes within a range and computes a symmetry score of the point cloud with respect to each plane. The plane that results in the highest symmetry score is assigned as the final LR axis. The DV axis is automatically determined by orthogonality to the first two axes.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2</label>
+<caption><p>Improved method of assigning coordinate axes. a) coordinate axes for multi-cell images generated by PCA alone are not accurate. A two-step correction process is implemented: correction of the AP axis by using natural landmarks and correction of LR, DV axes by searching for the best plane of symmetry. b) The corrected axes are more accurate than the previous axes generated by PCA alone as they show decreased angle deviations from the ground truth axes for all three coordinate axes. c) Corrected axes result in a higher and comparable neuron ID accuracy (correspondence to manual cell annotations) when compared with PCA predicted axes and ground truth axes, respectively. Best single prediction results are reported. Two sample t-tests were performed for statistical analysis. The asterisk symbol denotes a significance level of p&lt;0.05.</p></caption>
+<graphic xlink:href="543949v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2- figure supplement.</label>
+<caption><p>Neuron ID accuracy no longer depends on the axes inaccuracy after axes correction. a) High negative correlation between axes inaccuracy and neuron ID accuracy before axes correction. b) No correlation between axes inaccuracy and neuron ID accuracy after axes correction. c). No correlation between worm orientation and neuron ID accuracy.</p></caption>
+<graphic xlink:href="543949v3_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In order to quantitatively evaluate the axes prediction performance, we manually defined “ground truth” axes for each volume and calculated the angle deviations of the predicted axes (<xref rid="fig2" ref-type="fig">Figure 2a</xref>). Compared to the axes predicted by PCA on cell point clouds, the new axes that have been corrected by the two-step method all showed decreased deviations from the manually defined axes. More than 90% of the corrected axes were within 10 degrees from the ground truth, which was comparable to the standard deviation of manual annotations in defining the ground truth. More importantly, the axes correction led to a significant improvement in the accuracy of the neuron ID prediction, measured using correspondence to human annotations (<xref rid="fig2" ref-type="fig">Figure 2c</xref>). Also, there was no significant difference between the corrected axes and the manually defined axes in terms of the resulting neuron ID correspondence; this again indicates that the automatically predicted axes are comparable to those defined by human. The details of the quantification of neuron ID accuracy are discussed in methods under the section title CRF_ID 2.0: Evaluation of accuracy.</p>
+</sec>
+<sec id="s2c">
+<title>The atlas’s data-specificity is important for high neuron-identification accuracy</title>
+<p>One of the most important requirements for accurate neuron labeling using CRF_ID 2.0 is the availability of an accurate atlas, which serves as a reference map of the stereotypical and probable positions of the neurons in the animal. To characterize the extent to which atlases influence the accuracy of neuron identification and to provide practical guidance on which atlas to use, we evaluated the performance of CRF_ID 2.0 for several possible atlases. In our previous work, we demonstrated that for whole-brain images, a data-driven atlas results in higher prediction accuracy (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). We tested whether the same holds true for multi-cell applications. We characterized several different atlases for predicting neuron identities in worms expressing <italic>glr-1p::NLS-mCherry-NLS</italic> transgene (<xref rid="fig3" ref-type="fig">Figure 3a-b</xref>). The first atlas is derived from electron microscopy data in the OpenWorm project, which provides the three-dimensional coordinates of neurons in a model adult hermaphrodite <italic>C. elegans</italic> (<xref ref-type="bibr" rid="c25">Szigeti et al., 2014</xref>). The second atlas is the NeuroPAL atlas, which is the OpenWorm atlas updated with 9 imaging data of the NeuroPAL strain (<xref ref-type="bibr" rid="c29">Yemini et al., 2021</xref>), and this atlas was reported in our previous work (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). Several other NeuroPAL atlases from different data sources (<xref ref-type="bibr" rid="c23">Skuhersky et al., 2022</xref>; <xref ref-type="bibr" rid="c29">Yemini et al., 2021</xref>) were considered, and the atlas that resulted in the highest neuron ID correspondence was selected (<xref rid="figs3" ref-type="fig">Figure 3-figure supplement 2</xref>). The other atlases were derived from fluorescence imaging data of <italic>glr-1p::NLS-mCherry-NLS</italic> strain, the same strain of neuron ID interest. Several different versions of the <italic>glr-1</italic> atlas containing different numbers of data sets were created to characterize the effect of the number of datasets in the atlas.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3</label>
+<caption><p>Characterizing the importance of data-specific atlases. a,b) Several example atlases (b) are compared on their performance in neuron ID prediction on the <italic>glr-1p::NLS-mCherry-NLS</italic> multi-cell images (a). c) The neuron ID accuracy (correspondence to manual cell annotations) depends greatly on the atlas used. Each data point represents the cell cluster from one animal (n=26). Best single prediction results are reported. Two sample t-tests were performed for statistical analysis. The asterisk symbol denotes a significance level of p&lt;0.05. d, e) Difference of each atlas from the most accurate available atlas (<italic>glr-1</italic> 25 datasets) in terms of pairwise angle relationships (d) and PA/ LR/ DV positional relationships (e). All distributions in panel d and e had a p-value of less than 0.0001 for one sample t-test against zero.</p></caption>
+<graphic xlink:href="543949v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3- figure supplement 1.</label>
+<caption><p>A more detailed visual representation of the difference of each atlas from the best available atlas (<italic>glr-1</italic> from 25 datasets (D.S.)). a) differences in angular relationships. The red color intensity indicates the angle differences of neuron pair vectors in the particular atlas and those in the best available atlas. b) differences in PA/LR/DV relationships. The blue color intensity (ranging from 0 to 3) indicates the summed absolute differences in the three pairwise relationships between the atlas and the best available atlas.</p></caption>
+<graphic xlink:href="543949v3_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3- figure supplement 2.</label>
+<caption><p>Comparison of neuron ID correspondences resulting from additional atlases-atlases driven from NeuroPAL neuron positional data from multiple sources (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>; <xref ref-type="bibr" rid="c23">Skuhersky et al., 2022</xref>; <xref ref-type="bibr" rid="c29">Yemini et al., 2021</xref>) in red compared to other atlases in <xref rid="fig3" ref-type="fig">Figure 3</xref>. Two sample t-tests were performed for statistical analysis. The asterisk symbol denotes a significance level of p&lt;0.05, and n.s. denotes no significance. OW: atlas driven by data from OpenWorm project, NP-source: NeuroPAL atlas driven by data from the source. NP-Chaudhary atlas corresponds to NeuroPAL atlas in <xref rid="fig3" ref-type="fig">Figure 3</xref>.</p></caption>
+<graphic xlink:href="543949v3_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3- figure supplement 3.</label>
+<caption><title>No correlation between the degree of mosaicism (fraction of cells expressed in the worm) and neuron ID correspondence</title></caption>
+<graphic xlink:href="543949v3_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We examined the effect of data source in atlas performance. Three factors were observed to be most important in determining an atlas’s accuracy: strain specificity, mode of data acquisition or imaging conditions, and the number of datasets in the atlas. The neuron annotation accuracy was lowest with the OpenWorm atlas, which scores the poorest in all three factors (<xref rid="fig3" ref-type="fig">Figure 3c</xref>). This is likely due to the fact that the OpenWorm data are derived from a strain of different genotypical background from the <italic>glr-1p::NLS-mCherry-NLS</italic> strain, and more importantly, data acquisition from electron microscopy and the fluorescence volumetric imaging distort the anatomy differently. In addition, the OpenWorm atlas is based on a single dataset, which does not capture the variability of neuronal positions. A slightly higher accuracy was achieved by using the atlas built on NeuroPAL data (<xref rid="fig3" ref-type="fig">Figure 3c</xref>). Note that the genotypes of the model training data (the NeuroPAL set) and that of the test set (<italic>glr-1p::NLS-mCherry-NLS</italic>) are still different. The difference between the <italic>glr-1p::NLS-mCherry-NLS</italic> and NeuroPAL strains is significant because, in addition to possible anatomical differences from the genetic make-up, there are neuron pairs in the <italic>glr-1p::NLS-mCherry-NLS</italic> strain that were not updated in the NeuroPAL atlas due to variable expressions of the transgenes used in the NeuroPAL strain and the difficulty of manually annotating all the neurons in the whole-brain images. In fact, 8 (AVBL/R, RIAR, RIGL, RIS, SMDDL/R, SMDVL) out of 37 candidate neurons are missing in the NeuroPAL atlas, which means 40% of the pairwise relationships of neurons expressing the <italic>glr-1p::NLS-mCherry-NLS</italic> transgene were not augmented with the NeuroPAL data but were assigned the default values from the OpenWorm atlas. Further, the imaging conditions for the training and test sets are not entirely comparable because the NeuroPAL images were acquired with a lower z resolution. Such a difference in the imaging condition can lead to differences in segmentation of cell centroids and affect the angular relationships between cells, and thus lowering the accuracy of using the atlas for cell ID prediction. Unlike the OpenWorm atlas, however, the NeuroPAL atlas contains a statistical distribution of neuronal positions from 9 datasets, which provides a more accurate representation of the neuronal positions than that from a single dataset (Corsi et al., 2015). Therefore, while in the absence of any data-driven reference atlas, standard atlas(es) can be used as a starting point, the more strain-specific datasets used to correct and augment the reference atlas, the more accurate the neuron identification prediction would be.</p>
+<p>The highest neuron identification correspondence was found with the data-driven atlas, derived from the <italic>glr-1p::NLS-mCherry-NLS</italic> strain, the same strain that is of interest (<xref rid="fig3" ref-type="fig">Figure 3c</xref>). The high accuracy can be attributed to the fact that both the strain (thus presumably the anatomy) and the imaging conditions are matching the test dataset. It is notable that even the <italic>glr-1</italic> atlas that is derived from a single dataset performed better than the NeuroPAL atlas containing 9 datasets (<xref rid="fig3" ref-type="fig">Figure 3c</xref>). This implies that the matching strain type and the imaging conditions play a more important role than the sheer number of datasets in the quality of the atlas measured by the cell ID correspondence. Note that we observed no correlation between the degree of mosaicism and neuron ID correspondence (<xref rid="figs4" ref-type="fig">Figure 3- figure supplement 3</xref>).</p>
+<p>We also examined the effect of sample size in atlas building, in addition to the matching strain type and imaging conditions. Atlases should be derived from a sufficiently large sample size to capture the variability within the dataset. Because the neuronal positions are highly variable, an accurate atlas should contain data from a sufficient number of training samples to account for the positional variability of the neurons. As seen with the OpenWorm atlas, an atlas based on only one sample does not contain any statistical information on positional variability, so it performs poorly against testing samples whose neuronal positions do not match those in the atlas well. <xref rid="fig3" ref-type="fig">Figure 3C</xref> demonstrates that the average correspondence increased with the number of “ground-truth” datasets used to construct the atlas. We referred to the manually annotated cell ID in the training samples as ground-truth. While the <italic>glr-1</italic> atlas constructed using 25 datasets had the highest overall accuracy, the <italic>glr-1</italic> atlases containing 5-10 datasets are statistically indistinguishable in their performance. We observe that the saturation of information is achieved at 5-10 datasets for the <italic>glr-1</italic> case, given that the select datasets exhibit reliable gene expressions to provide statistically good sample sizes for all neuron candidates. This indicates that an atlas derived from 10 well-curated datasets may be sufficient for CRF_ID 2.0. In general, the performance of atlas models would depend on the natural variabilities of the neuronal anatomy and experimental noises, best determined empirically for each strain.</p>
+<p>We also compared the differences of the atlases against the best performing atlas (the <italic>glr-1</italic> atlas derived from 25 datasets) as a benchmark. We found that the results correlate well with the trend observed for neuron correspondence (<xref rid="fig3" ref-type="fig">Figure 3c-e</xref>). The neuron ID correspondence increased with similarity to the <italic>glr-1</italic> atlas with 25 datasets, as defined by the smaller differences in the angular and PA, LR, DV relationships (<xref rid="fig3" ref-type="fig">Figure 3</xref> d,e; <xref rid="figs2" ref-type="fig">Figure 3- figure supplement 1</xref>). Interestingly NeuroPAL atlas displayed the highest difference in angular relationship; this is likely due to the difference in the imaging condition for NeuroPAL, in which the fluorescent images were down-sampled in the z direction (Yemini et al., Cell 2021). This would result in the neuronal locations to be more discretized along the z axis, which can distort the angular relationships more than the binary relationships. Overall, the results demonstrate that for optimal CRF_ID 2.0 accuracy, it is important to use the atlas derived from data specific to the subject of interest for neuron identification.</p>
+</sec>
+<sec id="s2d">
+<title>The automated cell annotation accuracy is comparable to manual cell annotation accuracy</title>
+<p>In evaluating the performance of CRF_ID 2.0 as an automated cell annotation method, the most important criterion is the accuracy of prediction. It should be noted that we defined accuracy as the correspondence to human annotations (which is how cell ID has been traditionally done), while being cognizant that human annotators do not always provide the absolute ground truth. For this study, the “ground truth” was established as the cell labels from the consensus of three annotators, which means that the ground truth label of a cell is one that has been agreed by at least two annotators. Although there were slight inconsistencies in labels among the three annotators, they had high degrees of correspondence with each other with an average of at least 80% (<xref rid="figs5" ref-type="fig">Figure 4- figure supplement</xref>). The annotations from all three annotators were used as training data, but the accuracy did not decrease to a statistically significant level even when one individual annotator’s data were used as the training data (<xref rid="fig4" ref-type="fig">Figure 4b</xref>). It should be noted that all accuracies reported in this work represent leave-one-out cross validation, in which the test sample is excluded from the training set.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4.</label>
+<caption><p>Characterization of neuron identification accuracy using CRF_ID 2.0. a) Side by side comparison of automated neuron ID accuracy and manual neuron ID accuracy. Each datapoint represents the cell cluster from an animal. For automated neuron ID, top 1, 2, 3 results are from an iterative operation of the CRF_ID algorithm, and the best single prediction (BSP) results are from a single run. The atlas is a compiled data from three different annotators. The ground truth labels are defined by the consensus of the three annotators. Two sample t-tests were performed for statistical analysis. b) No significant differences in best single prediction accuracies are found when using atlases derived from data annotated by different annotators. One-way ANOVA was performed for statistical analysis. c) There is a positive correlation between the automatic and manual neuron ID accuracy of each neuron.</p></caption>
+<graphic xlink:href="543949v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4- figure supplement.</label>
+<caption><title>a) correspondence between any two among the three annotators. b) Slight correlation between the fraction of cells unanimously labeled by 3 annotators and neuron ID correspondence</title></caption>
+<graphic xlink:href="543949v3_figs5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Because the absolute ground truth labels are often unknown and unattainable even for human annotators, our algorithm provides ranked multiple alternative labels in addition to the best single prediction. These top ranked labels are generated by iteratively running the annotation algorithm with a randomized set of a specific number of neurons in the candidate list removed, similar to our prior approach with building the whole-brain atlas (<xref ref-type="bibr" rid="c5">Chaudhary et al., 2021</xref>). “Top 3 accuracy” characterizes the fraction of cells with top three predictions that include the ground truth label. Note that the top 1 prediction may be different from the best single prediction, which is the result of running the annotation algorithm once with the full set of candidate neurons. The accuracy for the best single prediction mode was around 85%, and those for top 1, 2, 3 predictions were around 85%, 94%, and 96% respectively (<xref rid="fig4" ref-type="fig">Figure 4a</xref>). This indicates that in cases where there is appreciable uncertainty of the candidate neuron set, the algorithm can assist the users to decide the final label of a cell by narrowing the candidates and knowing the correct label is almost certainly among the three predictions.</p>
+<p>To assess whether the accuracy is acceptable, we compared the aforementioned CRF_ID 2.0 accuracies against the accuracies of human annotators (<xref rid="fig4" ref-type="fig">Figure 4a</xref>). Annotator 1 had the lowest accuracy that is statically comparable to the best single prediction and top-1 prediction results from CRF_ID 2.0. Annotators 2 and 3 had higher accuracies, resembling the distributions for top-2 and top-3 prediction results, respectively. Thus, the automated neuron identification using CRF_ID does not come at a loss in accuracy. Moreover, we observed that the incorrect neuron identifications are not entirely unreasonable. When the accuracies are examined per neuron basis, there was a good correlation between the automated and manual neuron ID accuracies. The neurons that were more often incorrectly predicted by the CRF_ID 2.0 algorithm were more likely the ones on which human annotators disagreed with each other (<xref rid="fig4" ref-type="fig">Figure 4c</xref>). On the other hand, “easy” neurons for the annotators were also more likely to be easy for the CRF_ID 2.0 algorithm to predict them correctly.</p>
+</sec>
+<sec id="s2e">
+<title>The multi-cell neuron ID is useful for in-vivo gene expression analysis</title>
+<p>To further characterize our multi-cell neuron identification method, we applied it to a problem of biological interest. Although the method has potential uses in any application that requires cells to be identified in a cell population, including calcium imaging (<xref ref-type="bibr" rid="c13">Ji et al., 2021</xref>) (Nguyen et al., 2016) and cell lineage tracing (<xref ref-type="bibr" rid="c2">Bao et al., 2006</xref>), we demonstrate its application in gene expression analysis as an example. Knowing the expression of a particular gene is important for understanding the genetic basis of neuronal function, and it can be studied by examining the expression of its mRNA (<xref ref-type="bibr" rid="c24">Spencer et al., 2011</xref>; <xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>), transcriptional or translational reporters (<xref ref-type="bibr" rid="c7">Choi et al., 2020</xref>; <xref ref-type="bibr" rid="c14">Kuroyanagi et al., 2010</xref>). While CeNGEN’s mRNA expression data may be an accurate reference for gene expression (<xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>), fluorescent reporters allow one to monitor gene expression <italic>in vivo</italic>, and on individual cell basis. This will facilitate studies on changes in gene expression due to perturbations or experimental conditions.</p>
+<p>In this type of applications, the need for neuron identification emerges when the gene of interest is expressed in multiple neurons. For such cases, manually annotating the neurons is difficult and time-consuming, and researchers often resorted to measuring the collective expression of all fluorescence (<xref ref-type="bibr" rid="c21">Richman et al., 2018</xref>; <xref ref-type="bibr" rid="c22">Sánchez-Blanco and Kim, 2011</xref>). However, neuron-specific gene expression is more informative and facilitates the elucidation of neuronal functions by connecting the ongoing studies with existing knowledge on specific neurons. For this reason, we applied CRF_ID 2.0 to aid the neuron identification in multi-cell gene expression analysis.</p>
+<p>We studied the neuron-specific expression of the <italic>glr-1</italic> gene. <italic>glr-1</italic> encodes a homolog of the mammalian AMPA type glutamate-gated ionotropic receptor subunits GluA1 and GluA2 (<xref ref-type="bibr" rid="c4">Brockie et al., 2001</xref>) which play important roles in neural plasticity, learning and memory (<xref ref-type="bibr" rid="c12">Henley and Wilkinson, 2016</xref>). <italic>glr-1</italic> is known to be expressed in AVA, AVE, AVD, RMDD/V, RMD, RIM, and SMDD/V among other neurons (<xref ref-type="bibr" rid="c4">Brockie et al., 2001</xref>; <xref ref-type="bibr" rid="c11">Hart et al., 1995</xref>; <xref ref-type="bibr" rid="c19">Maricq et al., 1995</xref>; <xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>). We imaged a <italic>C. elegans</italic> strain that has two types of reporters, an integrated transgene (<italic>glr-1::gfp</italic>) and an extrachromosomal transgene with nuclear-localized sequences (<italic>glr-1p::NLS-mCherry-NLS</italic>) (<xref rid="fig5" ref-type="fig">Figure 5a</xref>). In general, the expression of an integrated transgene is more robust and more reflective of the physiological expression because, unlike the expression of an extrachromosomal transgene, it is more resistant to genetic mosaicism, in which a transgene is not inherited to some neurons during differentiation due to mitotic instability of the extrachromosomal DNA (<xref ref-type="bibr" rid="c9">Frøkjær-Jensen et al., 2008</xref>).</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5.</label>
+<caption><p>Multi-cell neuron identification in <italic>in-vivo</italic> gene expression analysis. a) CRF_ID 2.0 facilitates multi-cell annotation by providing top 3 most likely neuron labels for each cell, from which the user makes the final decision. b,c) The example strain contained extrachromosomal (b) and integrated reporter transgenes for <italic>glr-1</italic> (c). Plotted are the neuron-specific gene expression levels displayed as the normalized fluorescence intensities of selected neurons. The neurons labels on the x axis are listed in the descending order of single-cell RNA sequencing expression levels reported by CeNGEN <italic>(<xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>)</italic>. Box plots indicate median, quartiles and whiskers indicate 1.5 IQR. Data points indicate signals from individual worms. The images are showing half volume (right side) of the specimen for illustration. a.u.: arbitrary unit.</p></caption>
+<graphic xlink:href="543949v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs6" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5- figure supplement 1.</label>
+<caption><p>Neuron-specific expressions of the <italic>glr-1</italic> gene for neurons on the “dim” side of the specimen. These left/right paired neurons are on the side of the <italic>C. elegans</italic> farther away from the objective. a) Extrachromosomal transgene expression. b) Integrated transgene expression.</p></caption>
+<graphic xlink:href="543949v3_figs6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs7" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5- figure supplement 2.</label>
+<caption><title>High correlation between extrachromosomal (mCherry) and integrated (GFP) transgene expressions. Each data point indicates the GFP and mCherry (RFP) intensities of a single neuron</title></caption>
+<graphic xlink:href="543949v3_figs7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To quantify expression, we next segmented the neurons from the mCherry image stacks. Because of nuclear localization, the fluorophore signals are more resolved between cells. We then applied CRF_ID 2.0 to the multi-cell point cloud to assign cell identities (<xref rid="fig5" ref-type="fig">Figure 5a</xref>). The neuron identification results were provided as top three candidate labels for each cell for the user to decide on the final labels. There were about 20-35 fluorescent cells in each volume. The fluorescence intensities of paired neurons were pooled together and then re-grouped into two: one on the brighter side closer to the objective and one on the dimmer side farther from the objective. <xref rid="fig5" ref-type="fig">Figure 5b</xref> and <xref rid="fig5" ref-type="fig">5c</xref> only report the fluorescent intensities of neurons on the brighter side (the side closer to the imaging objective), but the dimmer side showed a very similar profile (<xref rid="figs6" ref-type="fig">Figure 5- figure supplement</xref>).</p>
+<p>The gene expression analysis revealed several insights. First, we did not observe a significant difference in relative expression trends between extrachromosomal (<xref rid="fig5" ref-type="fig">Figure 5b</xref>) and integrated transgenes (<xref rid="fig5" ref-type="fig">Figure 5c</xref>). For example, the neurons that had high expression levels for the integrated transgene, such as AVA, RMDV, RMD, SMDV, SMDD, and ζ, also exhibited high expression levels for the extrachromosomal transgene. More specifically, there was a linear correlation between GFP and mCherry intensities (<xref rid="figs7" ref-type="fig">Figure 5- figure supplement 2</xref>). Second, the extrachromosomal transgene expression did not have particularly more variable expression levels. This suggests that gene expression studies with extrachromosomal transcriptional reporters, which do not require the time-consuming process of gene integration, may still be able to provide a robust and meaningful picture of the gene expression. Third, gene expressions in neurons were found to be highly variable among individual samples, which was generally expected considering the dynamic nature of gene expressions. The neurons with high average expression appeared to have a wider range.</p>
+<p>Interestingly, the mRNA profiling data generated by CeNGEN do not correlate well with the results from transgene expressions. In the plots in <xref rid="fig5" ref-type="fig">Figure 5</xref>, The neuron labels on the x axis are listed in the order of decreasing expression level according to CeNGEN (<xref ref-type="bibr" rid="c26">Taylor et al., 2021</xref>). The low correlation is probably due to several reasons. First, there is an innate difference between mRNA expression and transcriptional reporter signals, with the reporters more indicative of the expression of the fusion proteins. Second, the promoter sequence in the transgene, while carefully chosen, could still be different from the native <italic>cis-</italic>regulatory sequence that could include sequences residing in the intron regions or downstream regions all of which may regulate mRNA expression measured by sequencing. Lastly, the cell dissociation process needed for profiling mRNAs of individual neurons may impact gene expression.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this work, we have upgraded and characterized the original CRF_ID method to accommodate common needs to analyze more diverse types of biological images. While the original method demonstrated high annotation accuracy in <italic>C. elegans</italic> whole-brain images, its performance in multi-cell images, which include all images of neuronal groups that are not whole-brain, was not fully warranted. The modified axes assignment method accurately predicts the coordinate axes of <italic>C. elegans</italic> volumetric images regardless of the number of cells expressed and thereby greatly enhances cell identification success. Our characterization of the CRF_ID 2.0 performance in comparison with the atlas and human annotators offers an important benchmark for users interested in using CRF_ID 2.0 to annotate multi-cell images. In addition, we demonstrate its application in transgenic reporter-based gene expression analysis, which is multi-cell expression by nature. This work represents a practical advance, with updated features better suited for multi-cell applications, and still applicable to whole-brain images.</p>
+<p>One of the distinguishing advantages of CRF_ID 2.0 is its flexibility, which stems from its modular architecture. The fundamental framework has not been changed from CRF_ID 1.0, and therefore the advantages of CRF_ID outlined in the original work apply for CRF_ID 2.0 as well. Compared with registration or deep learning-based methods, in which it is difficult or impossible to adjust the optimization process, the graphical-model approach of CRF_ID allows heuristic-based deliberate selection and tuning of the features. This aspect opens the door for many other use cases. For example, for images with distinctive cellular characteristics, the user may add new unary features for characteristics, such as the cell shape and signal intensity, to be optimized. For imaging conditions for which certain features become less reliable, the user may choose to reduce or remove the weights for those features. Further, the simplicity of building the atlas is another important aspect that enables the incorporation of new images of different strains and imaging conditions into these data-driven custom atlases. If one determines that the anatomy of a particular strain is substantially different from existing atlases (e.g. due to genetic background or rearing conditions), new atlases can be easily constructed using existing atlases as starting points and updating differences from the data. Whereas the deep learning method would require high-performance computing and hours of training time, our atlases can be built or updated from existing atlases within seconds with basic arithmetical operations. As such, CRF_ID can be easily applied to biological images of various origins, not restricted to <italic>C. elegans</italic> that display stereotypical cellular characteristics.</p>
+</sec>
+<sec id="s4">
+<title>Materials and Methods</title>
+<sec id="s4a">
+<title>Strains</title>
+<p>In this study, adult <italic>C. elegans</italic> hermaphrodites were used and were cultured using standard procedures (<xref ref-type="bibr" rid="c3">Brenner, 1974</xref>). Two <italic>C. elegans</italic> transgenic strains were used. All data reported in <xref rid="fig1" ref-type="fig">Figures 1</xref>-<xref rid="fig4" ref-type="fig">4</xref>, including the training data for the <italic>glr-1</italic> atlases, are from images of ZC3292 <italic>yxEx1701</italic>[<italic>glr-1p::GCaMP6s, glr-1p::NLS-mCherry-NLS</italic>]. The gene expression data in <xref rid="fig5" ref-type="fig">Figure 5</xref> are from images of ZC3612 <italic>lin-15B&amp;lin-15A(n765) kyIs30[glr-1::GFP, lin-15(+)] X; yxEx1933[glr-1p::NLS-mCherry-NLS]</italic>.</p>
+</sec>
+<sec id="s4b">
+<title>Construction of transgenes and transgenic strains</title>
+<p>The <italic>glr-1p::GCaMP6s</italic> plasmid was made by LR recombination (NEB) of a destination vector containing the DNA sequences for GCaMP6s (<xref ref-type="bibr" rid="c6">Chen et al., 2013</xref>) and for <italic>unc-54</italic> 3’UTR (from a gift plasmid from Andrew Fire) with an entry vector containing a 5.3kb DNA sequence for the <italic>glr-1</italic> promoter (<xref ref-type="bibr" rid="c4">Brockie et al., 2001</xref>). The <italic>glr-1p::NLS-mCherry-NLS</italic> plasmid was made by LR recombination of the entry vector containing the <italic>glr-1</italic> promoter with a destination vector (generated using a gift plasmid from Joshua Kaplan) containing a mCherry sequence flanked by two NLSs (nuclear localization sequences) followed by the sequence for <italic>unc-54</italic> 3’UTR constructed using Gibson assembly (Thermo Fisher). Each plasmid was injected at 10ng/μL to generate ZC3292, and the <italic>glr-1p::NLS-mCherry-NLS</italic> plasmid was injected at 40ng/μL to generate ZC3612 by following the standard methods of microinjection (<xref ref-type="bibr" rid="c20">Mello et al., 1991</xref>).</p>
+</sec>
+<sec id="s4c">
+<title>Imaging data collection</title>
+<p>Imaging of the ZC3292 strain was performed using an Andor Spinning Disk confocal system connected with a Nikon Eclipse Ti-E inverted microscope. A 40× oil-immersion objective (N.A.=1.3) was used and images were recorded using an ANDOR iXon Ultra EMCCD camera. Hermaphrodites at day 1 adult stage were immobilized with sodium azide in the chamber of a microfluidic device (<xref ref-type="bibr" rid="c8">Chronis et al., 2007</xref>) that used an AutoMate Scientific ValveBank perfusion system (Berkeley, CA) as the controller (<xref ref-type="bibr" rid="c8">Chronis et al., 2007</xref>). Volumetric images of the head region were recorded in two channels (green channel using a laser at 488nm and a filter at 525nm/50nm and red channel using a laser at 561nm and a filter at 617nm/73nm). The Z step size is 0.3μm and the XY resolution is 0.4μm. The exposure time is 20ms for both channels.</p>
+<p>Imaging of the strain ZC3612 was performed using a Nikon W1 spinning disk confocal system on Nikon Ti2-E microscope with Hamamatsu ORCA-Fusion Gen-III sCMOS camera. A 60x objective lens with N.A. 1.4 was used. The animals were age-synchronized to day 1 adult stage and chemically immobilized in 20mM tetramisole. In order to efficiently image straight-headed animals, we loaded the animals into an array type microfluidic device (<xref ref-type="bibr" rid="c16">Lee et al., 2014</xref>). 3D stacks of the animal’s head region in red (laser: 561nm; filter: T605/52m) and green (laser: 488nm; filter: ET525/36m) channels were acquired with a Z step size of 0.3µm. The exposure times were 10ms and 50ms for red and green channels respectively. The XY resolution of the images was 0.12µm.</p>
+</sec>
+<sec id="s4d">
+<title>Manual annotation and atlas construction</title>
+<p>Building an atlas requires manually annotated datasets. Three participants separately segmented and annotated cells on raw 3D stacks of 26 worm data. Most of the annotations were done by visually comparing the cell point cloud against reference images. The references include the anatomical features of head neurons, including the positions of the cell bodies and the shape of the neuronal processes, on the WormAtlas website (Altun et al., n.d.) as well as 3D representation of the neuron coordinates on OpenWorm (<xref ref-type="bibr" rid="c25">Szigeti et al., 2014</xref>). 3D reconstruction of fluorescent neuronal images was also used to determine cell identity. The list of candidate neurons expressing <italic>glr-1</italic> was carefully curated based on known expression patterns [(<xref ref-type="bibr" rid="c4">Brockie et al., 2001</xref>; <xref ref-type="bibr" rid="c11">Hart et al., 1995</xref>; <xref ref-type="bibr" rid="c19">Maricq et al., 1995</xref>) and Taylor et al., Cell 2021] and by analyzing the expression patterns in our own data. The list of annotated neurons is as follows: AIBL/R, AVAL/R, ζ -L/R, AVDL/R, AVEL/R, AVG, α-L/R, β, RIAL/R, RIGL/R, RIML/R, RMDL/R, RMDDL/R, RMEL/R, γ, RMDVL/R, SMDDL/R, SMDVL/R, δ-L/R, ε-L/R. Neuronal expressions with low confidence have been indicated in Greek symbols; we cautiously mention α, β, γ, δ, ε, ζ may correspond to AVJ, M1, RIS, URYD, URYV, and AVB respectively. The annotation of left versus right neurons of a pair follows Individual Neurons List on Wormatlas (<ext-link ext-link-type="uri" xlink:href="https://www.wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html">https://www.wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html</ext-link>). The annotation of RIGL versus RIGR follows the annotation shown on Wormatlas at <ext-link ext-link-type="uri" xlink:href="https://www.wormatlas.org/neurons/Individual%20Neurons/RIGframeset.html">https://www.wormatlas.org/neurons/Individual%20Neurons/RIGframeset.html</ext-link>. The data-driven atlas was constructed using the atlas generation codes included in the original CRF_ID. While the human annotators applied the same methods, their annotations of neuron IDs are not identical, which reflected variations commonly observed for manual cell ID annotations. Instead of building an atlas from the consensus labels of three annotators, the labels from different annotators were considered as separate annotations, effectively capturing the statistics of the information from the data set instead of using majority-vote single label. For multi-cell neuron predictions on the <italic>glr-1</italic> strains, a truncated atlas containing only the above 37 neurons was used to exclude neuron candidates that are irrelevant for prediction.</p>
+</sec>
+<sec id="s4e">
+<title>CRF_ID 2.0: Improved axes prediction</title>
+<p>The new axes prediction method consists of two parts: AP axis correction and LR/DV axes correction. For AP axis correction, the point cloud was artificially enlarged by including naturally fluorescent landmarks in the animal’s body. The autofluorescence signals were segmented by thresholding local maxima from the image after Gaussian filtering. The threshold value of 99.85 was determined experimentally and can be tuned for different imaging conditions. Then, PCA was applied to the point cloud to find the AP axis and the initial LR and DV axes.</p>
+<p>The algorithm for LR/DV axes correction takes the initial LR and DV axes and cell point cloud as inputs and outputs the corrected LR and DV axes. It searches for the plane/axes pair that divides the point cloud into two sides with the highest symmetry across the plane. First, it finds a range of planes that satisfy the following constraints: orthogonality to the AP axis, within the angle of 20 degrees from the initial axis, and an increment of 1 degree. The initial axis is the LR axis that was generated by PCA in the previous step. By iteratively testing each plane, the one that results in highest symmetry was found. Symmetry was quantified as the inverse of the deviation from perfect symmetry. The deviation was calculated by reflecting each point with respect to the plane and calculating the distance of the reflected point to the closest neighboring point. The distance was calculated for all points in the point cloud and the average of the lowest 7 distances was used for the given plane. The threshold value of 7 was derived from the expectation of at least 7 left/right pairs of neurons in the <italic>glr-1</italic> strain, but this threshold can be tuned depending on the characteristics of the strain or the images. Higher symmetry with respect to a plane would result in a lower distance value. The plane that resulted in the lowest distance was assigned the final LR axis, and the DV axis is automatically determined by orthogonality to the first two axes. The average run time for each point cloud was under 1 min.</p>
+</sec>
+<sec id="s4f">
+<title>CRF_ID 2.0: Evaluation of accuracy</title>
+<p>Because the absolute ground truth neuron labels for the cells are not available, we defined the annotation accuracy as correspondence to the consensus labels of three human annotations. The consensus was established as the label that has been agreed by at least two annotators. Cells whose identities were differently annotated by all three annotators, which account for around 6% of all cells, were omitted from the accuracy calculation. Also, all reported correspondence values are results of leave-one-out cross validations, meaning the atlas used to test the accuracy on a specific worm did not include that specific data set. Thus, there are 26 different versions of the <italic>glr-1</italic> 25 dataset-atlas, one for each dataset exclusion. For example, in <xref rid="fig3" ref-type="fig">Figure 3c</xref>, a correspondence value of 0.8 indicates that 80% of the cells in the dataset were assigned the neuron label that matches the consensus label, and the atlas used is driven from manual annotations of 25 other worm datasets. The correspondences reported in <xref rid="fig2" ref-type="fig">Figures 2</xref> and <xref rid="fig3" ref-type="fig">3</xref> are from results of running the prediction algorithm once in the best single prediction mode. <xref rid="fig4" ref-type="fig">Figure 4</xref> additionally reports top 1, 2, 3 results from 100 iterations while randomly removing neuron labels from the candidate list.</p>
+</sec>
+<sec id="s4g">
+<title>Gene expression analysis</title>
+<p>To extract the cell-specific fluorescent signals, we first used the automatic segmentation tool to segment the cells in a total of 27 image stacks of ZC3612. The segmentation was done on the nuclear-localized mCherry signals, and GFP intensities were extracted from the same region. The quality of the segmentation was visually inspected to eliminate false positives. Then, iterative neuron ID predictions were performed on the segmented red channel images. The resulting top 3 candidates were reviewed for each cell, and the final neuron label was selected based on human judgment. Then, a series of data processing steps were necessary to best represent the cell-specific gene expression data from different animals. First, we extracted the mCherry and GFP signal intensities by averaging the intensities of the brightest 100 pixels in the segmented masks, which had around 500 pixels on average. Because mCherry and GFP expressions are driven by separate transgenes, mCherry expression does not guarantee GFP expression. Thus, GFP expressions that were deemed absent were eliminated during data curation. Second, because the expression levels are variable among animals, the fluorescence intensities were normalized for each animal by dividing by the average intensity of all neurons in the animal. Lastly, we compared the intensities of cells only on the same side of the animal because the side of the animal closer to the objective lens was generally brighter due to light scattering through the biological tissues. The reported values in <xref rid="fig5" ref-type="fig">Figure 5</xref> are the intensities on the brighter side of the animal.</p>
+</sec>
+<sec id="s4h">
+<title>Statistical analysis</title>
+<p>Statistical analyses of the data were performed using Paired Comparisons App in OriginPro 2020. The asterisk symbol denotes a significance level of p&lt;0.05. Not significantly different comparisons are denoted non-significant (n.s.).</p>
+</sec>
+</sec>
+<sec id="s5">
+<title>Code and data availability</title>
+<p>CRF_ID 2.0 can be accessed at <ext-link ext-link-type="uri" xlink:href="https://github.com/lu-lab/CRF-Cell-ID-2.0">https://github.com/lu-lab/CRF-Cell-ID-2.0</ext-link>. This repository contains all components of the framework and the atlases produced and compared in this work.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgments</title>
+<p>The authors acknowledge the funding support of the U.S. NIH (R01MH130064, R01NS115484) to HL and YZ and the U.S. NSF (1764406) to HL. Some nematode strains used in this work were provided by the Caenorhabditis Genetics Center (CGC), which is funded by the NIH Office of Research Infrastructure Programs (P40 OD010440) National Center for Research Resources.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="web"><string-name><surname>Altun</surname> <given-names>ZF</given-names></string-name>, <string-name><surname>Herndon</surname> <given-names>LA</given-names></string-name>, <string-name><surname>Crocker</surname> <given-names>C</given-names></string-name>, <string-name><surname>Lints</surname> <given-names>R</given-names></string-name>, <string-name><surname>Hall</surname> <given-names>DH.</given-names></string-name> n.d. <source>WormAtlas</source>. <ext-link ext-link-type="uri" xlink:href="http://www.wormatlas.org">http://www.wormatlas.org</ext-link></mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><string-name><surname>Bao</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Murray</surname> <given-names>JI</given-names></string-name>, <string-name><surname>Boyle</surname> <given-names>T</given-names></string-name>, <string-name><surname>Ooi</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Sandel</surname> <given-names>MJ</given-names></string-name>, <string-name><surname>Waterston</surname> <given-names>RH</given-names></string-name>. <year>2006</year>. <article-title>Automated cell lineage tracing in Caenorhabditis elegans</article-title>. <source>Proc National Acad Sci</source> <volume>103</volume>:<fpage>2707</fpage>–<lpage>2712</lpage>. doi:<pub-id pub-id-type="doi">10.1073/pnas.0511111103</pub-id></mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><string-name><surname>Brenner</surname> <given-names>S</given-names></string-name>. <year>1974</year>. <article-title>THE GENETICS OF CAENORHABDITIS ELEGANS</article-title>. <source>Genetics</source> <volume>77</volume>:<fpage>71</fpage>–<lpage>94</lpage>. doi:<pub-id pub-id-type="doi">10.1093/genetics/77.1.71</pub-id></mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><string-name><surname>Brockie</surname> <given-names>PJ</given-names></string-name>, <string-name><surname>Madsen</surname> <given-names>DM</given-names></string-name>, <string-name><surname>Zheng</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Mellem</surname> <given-names>J</given-names></string-name>, <string-name><surname>Maricq</surname> <given-names>AV</given-names></string-name>. <year>2001</year>. <article-title>Differential expression of glutamate receptor subunits in the nervous system of Caenorhabditis elegans and their regulation by the homeodomain protein UNC-42</article-title>. <source>J Neurosci</source> <volume>21</volume>:<fpage>1510</fpage>–<lpage>22</lpage>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><string-name><surname>Chaudhary</surname> <given-names>S</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>SA</given-names></string-name>, <string-name><surname>Li</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Patel</surname> <given-names>DS</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>H</given-names></string-name>. <year>2021</year>. <article-title>Graphical-model framework for automated annotation of cell identities in dense cellular images</article-title>. <source>Elife</source> <volume>10</volume>:<fpage>e60321</fpage>. doi:<pub-id pub-id-type="doi">10.7554/elife.60321</pub-id></mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><string-name><surname>Chen</surname> <given-names>T-W</given-names></string-name>, <string-name><surname>Wardill</surname> <given-names>TJ</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Pulver</surname> <given-names>SR</given-names></string-name>, <string-name><surname>Renninger</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Baohan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schreiter</surname> <given-names>ER</given-names></string-name>, <string-name><surname>Kerr</surname> <given-names>RA</given-names></string-name>, <string-name><surname>Orger</surname> <given-names>MB</given-names></string-name>, <string-name><surname>Jayaraman</surname> <given-names>V</given-names></string-name>, <string-name><surname>Looger</surname> <given-names>LL</given-names></string-name>, <string-name><surname>Svoboda</surname> <given-names>K</given-names></string-name>, <string-name><surname>Kim</surname> <given-names>DS</given-names></string-name>. <year>2013</year>. <article-title>Ultrasensitive fluorescent proteins for imaging neuronal activity</article-title>. <source>Nature</source> <volume>499</volume>:<issue>295</issue> <fpage>300</fpage>. doi:<pub-id pub-id-type="doi">10.1038/nature12354</pub-id></mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><string-name><surname>Choi</surname> <given-names>M-K</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>H</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>T</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>W</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>Y</given-names></string-name>. <year>2020</year>. <article-title>NMDAR-mediated modulation of gap junction circuit regulates olfactory learning in C. elegans</article-title>. <source>Nat Commun</source> <volume>11</volume>:<fpage>3467</fpage>. doi:<pub-id pub-id-type="doi">10.1038/s41467-020-17218-0</pub-id></mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><string-name><surname>Chronis</surname> <given-names>N</given-names></string-name>, <string-name><surname>Zimmer</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bargmann</surname> <given-names>CI</given-names></string-name>. <year>2007</year>. <article-title>Microfluidics for in vivo imaging of neuronal and behavioral activity in Caenorhabditis elegans</article-title>. <source>Nat Methods</source> <volume>4</volume>:<fpage>727</fpage>–<lpage>731</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nmeth1075</pub-id></mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><string-name><surname>Frøkjær-Jensen</surname> <given-names>C</given-names></string-name>, <string-name><surname>Davis</surname> <given-names>MW</given-names></string-name>, <string-name><surname>Hopkins</surname> <given-names>CE</given-names></string-name>, <string-name><surname>Newman</surname> <given-names>BJ</given-names></string-name>, <string-name><surname>Thummel</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Olesen</surname> <given-names>S-P</given-names></string-name>, <string-name><surname>Grunnet</surname> <given-names>M</given-names></string-name>, <string-name><surname>Jorgensen</surname> <given-names>EM</given-names></string-name>. <year>2008</year>. <article-title>Single-copy insertion of transgenes in Caenorhabditis elegans</article-title>. <source>Nat Genet</source> <volume>40</volume>:<fpage>1375</fpage>–<lpage>1383</lpage>. doi:<pub-id pub-id-type="doi">10.1038/ng.248</pub-id></mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><string-name><surname>Gray</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Hill</surname> <given-names>JJ</given-names></string-name>, <string-name><surname>Bargmann</surname> <given-names>CI</given-names></string-name>. <year>2005</year>. <article-title>A circuit for navigation in Caenorhabditis elegans</article-title>. <source>P Natl Acad Sci Usa</source> <volume>102</volume>:<fpage>3184</fpage>–<lpage>3191</lpage>. doi:<pub-id pub-id-type="doi">10.1073/pnas.0409009101</pub-id></mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><string-name><surname>Hart</surname> <given-names>AC</given-names></string-name>, <string-name><surname>Sims</surname> <given-names>S</given-names></string-name>, <string-name><surname>Kaplan</surname> <given-names>JM</given-names></string-name>. <year>1995</year>. <article-title>Synaptic code for sensory modalities revealed by C. elegans GLR-1 glutamate receptor</article-title>. <source>Nature</source> <volume>378</volume>:<fpage>82</fpage>–<lpage>85</lpage>. doi:<pub-id pub-id-type="doi">10.1038/378082a0</pub-id></mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><string-name><surname>Henley</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Wilkinson</surname> <given-names>KA</given-names></string-name>. <year>2016</year>. <article-title>Synaptic AMPA receptor composition in development, plasticity and disease</article-title>. <source>Nat Rev Neurosci</source> <volume>17</volume>:<fpage>337</fpage>–<lpage>350</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nrn.2016.37</pub-id></mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><string-name><surname>Ji</surname> <given-names>N</given-names></string-name>, <string-name><surname>Madan</surname> <given-names>GK</given-names></string-name>, <string-name><surname>Fabre</surname> <given-names>GI</given-names></string-name>, <string-name><surname>Dayan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Baker</surname> <given-names>CM</given-names></string-name>, <string-name><surname>Kramer</surname> <given-names>TS</given-names></string-name>, <string-name><surname>Nwabudike</surname> <given-names>I</given-names></string-name>, <string-name><surname>Flavell</surname> <given-names>SW</given-names></string-name>. <year>2021</year>. <article-title>A neural circuit for flexible control of persistent behavioral states</article-title>. <source>Elife</source> <volume>10</volume>. doi:<pub-id pub-id-type="doi">10.7554/elife.62889</pub-id></mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><string-name><surname>Kuroyanagi</surname> <given-names>H</given-names></string-name>, <string-name><surname>Ohno</surname> <given-names>G</given-names></string-name>, <string-name><surname>Sakane</surname> <given-names>H</given-names></string-name>, <string-name><surname>Maruoka</surname> <given-names>H</given-names></string-name>, <string-name><surname>Hagiwara</surname> <given-names>M</given-names></string-name>. <year>2010</year>. <article-title>Visualization and genetic analysis of alternative splicing regulation in vivo using fluorescence reporters in transgenic Caenorhabditis elegans</article-title>. <source>Nat Protoc</source> <volume>5</volume>:<fpage>1495</fpage>–<lpage>1517</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nprot.2010.107</pub-id></mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><string-name><surname>Lafferty</surname> <given-names>J</given-names></string-name>, <string-name><surname>McCallum</surname> <given-names>A</given-names></string-name>, <string-name><surname>Pereira</surname> <given-names>FCN</given-names></string-name>. <year>2001</year>. <article-title>Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</article-title>. <source>ICML ‘01 Proc Eighteenth Int Conf Mach Learn, Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</source> <fpage>282</fpage>–<lpage>289</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><string-name><surname>Lee</surname> <given-names>H</given-names></string-name>, <string-name><surname>Kim</surname> <given-names>SA</given-names></string-name>, <string-name><surname>Coakley</surname> <given-names>S</given-names></string-name>, <string-name><surname>Mugno</surname> <given-names>P</given-names></string-name>, <string-name><surname>Hammarlund</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hilliard</surname> <given-names>MA</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>H</given-names></string-name>. <year>2014</year>. <article-title>A multi-channel device for high-density target-selective stimulation and long-term monitoring of cells and subcellular features in C. elegans</article-title>. <source>Lab Chip</source> <volume>14</volume>:<fpage>4513</fpage>–<lpage>4522</lpage>. doi:<pub-id pub-id-type="doi">10.1039/c4lc00789a</pub-id></mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="other"><string-name><surname>Lin</surname> <given-names>A</given-names></string-name>, <string-name><surname>Qin</surname> <given-names>S</given-names></string-name>, <string-name><surname>Casademunt</surname> <given-names>H</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hung</surname> <given-names>W</given-names></string-name>, <string-name><surname>Cain</surname> <given-names>G</given-names></string-name>, <string-name><surname>Tan</surname> <given-names>NZ</given-names></string-name>, <string-name><surname>Valenzuela</surname> <given-names>R</given-names></string-name>, <string-name><surname>Lesanpezeshki</surname> <given-names>L</given-names></string-name>, <string-name><surname>Pehlevan</surname> <given-names>C</given-names></string-name>, <string-name><surname>Venkatachalam</surname> <given-names>V</given-names></string-name>, <string-name><surname>Zhen</surname> <given-names>M</given-names></string-name>, <string-name><surname>Samuel</surname> <given-names>ADT</given-names></string-name>. <year>2022</year>. <article-title>Functional imaging and quantification of multi-neuronal olfactory responses in C. elegans</article-title>. <source>Biorxiv</source> 2022.05.27.493772. doi:<pub-id pub-id-type="doi">10.1101/2022.05.27.493772</pub-id></mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><string-name><surname>Liu</surname> <given-names>H</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>Y</given-names></string-name>. <year>2020</year>. <article-title>What can a worm learn in a bacteria-rich habitat?</article-title> <source>J Neurogenet</source> <volume>34</volume>:<fpage>1</fpage>–<lpage>9</lpage>. doi:<pub-id pub-id-type="doi">10.1080/01677063.2020.1829614</pub-id></mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="journal"><string-name><surname>Maricq</surname> <given-names>AV</given-names></string-name>, <string-name><surname>Peckol</surname> <given-names>E</given-names></string-name>, <string-name><surname>Driscoll</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bargmann</surname> <given-names>CI</given-names></string-name>. <year>1995</year>. <article-title>Mechanosensory signalling in C. elegans mediated by the GLR-1 glutamate receptor</article-title>. <source>Nature</source> <volume>378</volume>:<issue>78</issue> <fpage>81</fpage>. doi:<pub-id pub-id-type="doi">10.1038/378078a0</pub-id></mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><string-name><surname>Mello</surname> <given-names>CC</given-names></string-name>, <string-name><surname>Kramer</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Stinchcomb</surname> <given-names>D</given-names></string-name>, <string-name><surname>Ambros</surname> <given-names>V</given-names></string-name>. <year>1991</year>. <article-title>Efficient gene transfer in C.elegans: extrachromosomal maintenance and integration of transforming sequences</article-title>. <source>Embo J</source> <volume>10</volume>:<fpage>3959</fpage>– <lpage>3970</lpage>. doi:<pub-id pub-id-type="doi">10.1002/j.1460-2075.1991.tb04966.x</pub-id></mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><string-name><surname>Richman</surname> <given-names>C</given-names></string-name>, <string-name><surname>Rashid</surname> <given-names>S</given-names></string-name>, <string-name><surname>Prashar</surname> <given-names>S</given-names></string-name>, <string-name><surname>Mishra</surname> <given-names>R</given-names></string-name>, <string-name><surname>Selvaganapathy</surname> <given-names>PR</given-names></string-name>, <string-name><surname>Gupta</surname> <given-names>BP</given-names></string-name>. <year>2018</year>. <article-title>C. elegans MANF Homolog Is Necessary for the Protection of Dopaminergic Neurons and ER Unfolded Protein Response</article-title>. <source>Front Neurosci-switz</source> <volume>12</volume>:<fpage>544</fpage>. doi:<pub-id pub-id-type="doi">10.3389/fnins.2018.00544</pub-id></mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><string-name><surname>Sánchez-Blanco</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kim</surname> <given-names>SK</given-names></string-name>. <year>2011</year>. <article-title>Variable Pathogenicity Determines Individual Lifespan in Caenorhabditis elegans</article-title>. <source>Plos Genet</source> <volume>7</volume>:<fpage>e1002047</fpage>. doi:<pub-id pub-id-type="doi">10.1371/journal.pgen.1002047</pub-id></mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><string-name><surname>Skuhersky</surname> <given-names>M</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>T</given-names></string-name>, <string-name><surname>Yemini</surname> <given-names>E</given-names></string-name>, <string-name><surname>Nejatbakhsh</surname> <given-names>A</given-names></string-name>, <string-name><surname>Boyden</surname> <given-names>E</given-names></string-name>, <string-name><surname>Tegmark</surname> <given-names>M</given-names></string-name>. <year>2022</year>. <article-title>Toward a more accurate 3D atlas of C. elegans neurons</article-title>. <source>BMC Bioinform</source> <volume>23</volume>:<fpage>195</fpage>. doi:<pub-id pub-id-type="doi">10.1186/s12859-022-04738-3</pub-id></mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><string-name><surname>Spencer</surname> <given-names>WC</given-names></string-name>, <string-name><surname>Zeller</surname> <given-names>G</given-names></string-name>, <string-name><surname>Watson</surname> <given-names>JD</given-names></string-name>, <string-name><surname>Henz</surname> <given-names>SR</given-names></string-name>, <string-name><surname>Watkins</surname> <given-names>KL</given-names></string-name>, <string-name><surname>McWhirter</surname> <given-names>RD</given-names></string-name>, <string-name><surname>Petersen</surname> <given-names>S</given-names></string-name>, <string-name><surname>Sreedharan</surname> <given-names>VT</given-names></string-name>, <string-name><surname>Widmer</surname> <given-names>C</given-names></string-name>, <string-name><surname>Jo</surname> <given-names>J</given-names></string-name>, <string-name><surname>Reinke</surname> <given-names>V</given-names></string-name>, <string-name><surname>Petrella</surname> <given-names>L</given-names></string-name>, <string-name><surname>Strome</surname> <given-names>S</given-names></string-name>, <string-name><surname>Stetina</surname> <given-names>SEV</given-names></string-name>, <string-name><surname>Katz</surname> <given-names>M</given-names></string-name>, <string-name><surname>Shaham</surname> <given-names>S</given-names></string-name>, <string-name><surname>Rätsch</surname> <given-names>G</given-names></string-name>, <string-name><surname>Miller</surname> <given-names>DM</given-names></string-name>. <year>2011</year>. <article-title>A spatial and temporal map of C. elegans gene expression</article-title>. <source>Genome Res</source> <volume>21</volume>:<fpage>325</fpage>–<lpage>341</lpage>. doi:<pub-id pub-id-type="doi">10.1101/gr.114595.110</pub-id></mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><string-name><surname>Szigeti</surname> <given-names>B</given-names></string-name>, <string-name><surname>Gleeson</surname> <given-names>P</given-names></string-name>, <string-name><surname>Vella</surname> <given-names>M</given-names></string-name>, <string-name><surname>Khayrulin</surname> <given-names>S</given-names></string-name>, <string-name><surname>Palyanov</surname> <given-names>A</given-names></string-name>, <string-name><surname>Hokanson</surname> <given-names>J</given-names></string-name>, <string-name><surname>Currie</surname> <given-names>M</given-names></string-name>, <string-name><surname>Cantarelli</surname> <given-names>M</given-names></string-name>, <string-name><surname>Idili</surname> <given-names>G</given-names></string-name>, <string-name><surname>Larson</surname> <given-names>S</given-names></string-name>. <year>2014</year>. <article-title>OpenWorm: an open-science approach to modeling Caenorhabditis elegans</article-title>. <source>Front Comput Neurosc</source> <volume>8</volume>:<fpage>137</fpage>. doi:<pub-id pub-id-type="doi">10.3389/fncom.2014.00137</pub-id></mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><string-name><surname>Taylor</surname> <given-names>SR</given-names></string-name>, <string-name><surname>Santpere</surname> <given-names>G</given-names></string-name>, <string-name><surname>Weinreb</surname> <given-names>A</given-names></string-name>, <string-name><surname>Barrett</surname> <given-names>A</given-names></string-name>, <string-name><surname>Reilly</surname> <given-names>MB</given-names></string-name>, <string-name><surname>Xu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Varol</surname> <given-names>E</given-names></string-name>, <string-name><surname>Oikonomou</surname> <given-names>P</given-names></string-name>, <string-name><surname>Glenwinkel</surname> <given-names>L</given-names></string-name>, <string-name><surname>McWhirter</surname> <given-names>R</given-names></string-name>, <string-name><surname>Poff</surname> <given-names>A</given-names></string-name>, <string-name><surname>Basavaraju</surname> <given-names>M</given-names></string-name>, <string-name><surname>Rafi</surname> <given-names>I</given-names></string-name>, <string-name><surname>Yemini</surname> <given-names>E</given-names></string-name>, <string-name><surname>Cook</surname> <given-names>SJ</given-names></string-name>, <string-name><surname>Abrams</surname> <given-names>A</given-names></string-name>, <string-name><surname>Vidal</surname> <given-names>B</given-names></string-name>, <string-name><surname>Cros</surname> <given-names>C</given-names></string-name>, <string-name><surname>Tavazoie</surname> <given-names>S</given-names></string-name>, <string-name><surname>Sestan</surname> <given-names>N</given-names></string-name>, <string-name><surname>Hammarlund</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hobert</surname> <given-names>O</given-names></string-name>, <string-name><surname>Miller</surname> <given-names>DM</given-names></string-name>. <year>2021</year>. <article-title>Molecular topography of an entire nervous system</article-title>. <source>Cell</source> <volume>184</volume>:<fpage>4329</fpage>–<lpage>4347</lpage>.e23. doi:<pub-id pub-id-type="doi">10.1016/j.cell.2021.06.023</pub-id></mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><string-name><surname>Toyoshima</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>S</given-names></string-name>, <string-name><surname>Kanamori</surname> <given-names>M</given-names></string-name>, <string-name><surname>Sato</surname> <given-names>H</given-names></string-name>, <string-name><surname>Jang</surname> <given-names>MS</given-names></string-name>, <string-name><surname>Oe</surname> <given-names>S</given-names></string-name>, <string-name><surname>Murakami</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Teramoto</surname> <given-names>T</given-names></string-name>, <string-name><surname>Park</surname> <given-names>C</given-names></string-name>, <string-name><surname>Iwasaki</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Ishihara</surname> <given-names>T</given-names></string-name>, <string-name><surname>Yoshida</surname> <given-names>R</given-names></string-name>, <string-name><surname>Iino</surname> <given-names>Y.</given-names></string-name> <year>2020</year>. <article-title>Neuron ID dataset facilitates neuronal annotation for whole-brain activity imaging of C. elegans</article-title>. <source>Bmc Biol</source> <volume>18</volume>:<fpage>30</fpage>. doi:<pub-id pub-id-type="doi">10.1186/s12915-020-0745-2</pub-id></mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><string-name><surname>Xu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Jackson</surname> <given-names>SA</given-names></string-name>. <year>2019</year>. <article-title>Machine learning and complex biological data</article-title>. <source>Genome Biol</source> <volume>20</volume>:<fpage>76</fpage>. doi:<pub-id pub-id-type="doi">10.1186/s13059-019-1689-0</pub-id></mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><string-name><surname>Yemini</surname> <given-names>E</given-names></string-name>, <string-name><surname>Lin</surname> <given-names>A</given-names></string-name>, <string-name><surname>Nejatbakhsh</surname> <given-names>A</given-names></string-name>, <string-name><surname>Varol</surname> <given-names>E</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>R</given-names></string-name>, <string-name><surname>Mena</surname> <given-names>GE</given-names></string-name>, <string-name><surname>Samuel</surname> <given-names>ADT</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L</given-names></string-name>, <string-name><surname>Venkatachalam</surname> <given-names>V</given-names></string-name>, <string-name><surname>Hobert</surname> <given-names>O</given-names></string-name>. <year>2021</year>. <article-title>NeuroPAL: A Multicolor Atlas for Whole-Brain Neuronal Identification in C. elegans</article-title>. <source>Cell</source> <volume>184</volume>:<fpage>272</fpage>–<lpage>288</lpage> e11. doi:<pub-id pub-id-type="doi">10.1016/j.cell.2020.12.012</pub-id></mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><string-name><surname>Yu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Creamer</surname> <given-names>MS</given-names></string-name>, <string-name><surname>Randi</surname> <given-names>F</given-names></string-name>, <string-name><surname>Sharma</surname> <given-names>AK</given-names></string-name>, <string-name><surname>Linderman</surname> <given-names>SW</given-names></string-name>, <string-name><surname>Leifer</surname> <given-names>AM</given-names></string-name>. <year>2021</year>. <article-title>Fast deep neural correspondence for tracking and identifying neurons in C. elegans using semi-synthetic training</article-title>. <source>Elife</source> <volume>10</volume>:<fpage>e66410</fpage>. doi:<pub-id pub-id-type="doi">10.7554/elife.66410</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89050.3.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Kratsios</surname>
+<given-names>Paschalis</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Chicago</institution>
+</institution-wrap>
+<city>Chicago</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This Research Advance describes a <bold>valuable</bold> image analysis method to identify individual neurons within a ‎population of fluorescently labeled cells in the nematode <italic>C. elegans</italic>. The findings are <bold>solid</bold> and the method succeeds to identify cells with high precision. The method will be be of interest to the <italic>C. elegans</italic> research community.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89050.3.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>In this paper, the authors developed an image analysis pipeline to automatically identify individual ‎‎neurons within a population of fluorescently tagged neurons. This application is optimized to deal with ‎‎multi-cell analysis and builds on a previous software version, developed by the same team, to resolve ‎‎individual neurons from whole-brain imaging stacks. Using advanced statistical approaches and ‎‎several heuristics tailored for C. elegans anatomy, the method successfully identifies individual ‎‎neurons with a fairly high accuracy. Thus, while specific to C. elegans, this method can ‎become ‎instrumental for a variety of research directions such as in-vivo single-cell gene expression ‎analysis ‎and calcium-based neural activity studies.‎</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89050.3.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The authors succeed in generalizing the pre-alignment procedure for their cell identification method to allow it to work effectively on data with only small subsets of cells labeled. They convincingly show that their extension accurately identifies head angle, based on finding auto florescent tissue and looking for a symmetric l/r axis. Their demonstrated method works to allow the identification of a particular subset of neurons. Their approach should be a useful one for researchers wishing to identify subsets of head neurons in C. elegans, and the ideas might be useful elsewhere.</p>
+<p>The authors also assess the relative usefulness of several atlases for making identity predictions. They attempt to give some additional general insights on what makes a good atlas, and clearly demonstrate the value of more data. Some insights seem less clear as available data do not allow for experiments that cleanly decouple: 1) the number of examples in the atlas; 2) the completeness of the atlas; and 3) the match in strain and imaging modality discussed. In the presented experiments the custom atlas, besides the strain and imaging modality congruence discussed is also the only complete atlas with more than one example. The main neuroPAL atlas is an imperfect stand-in since a significant fraction of cells could not be identified in these data sets, making it a 60/40 mix of Openworm and a hypothetical perfect neuroPAL comparison. The alternate neuroPal atlases shown in supplemental figure 4 are complete but provide only one point cloud.</p>
+<p>It is striking that in the best available apples to apples match the single data set glr-1 atlas produces qualitatively better results than the single (complete) neuroPAL atlas. This is a clear performance advantage given the ground truth. This is as good an evaluation as is possible given current data however given the inexact nature of assigning ground truth identities I think it is difficult from results to tease out if this is due to strain, imaging conditions or systematically different identifications of cells from different sources.</p>
+<p>The experiments do usefully explore the volume of data needed. Though generalization to other arbitrary cell subsets remains to be shown the insight is useful for future atlas building that for the specific (small) set of cells labeled in the experiments 5-10 examples is sufficient to build an accurate atlas.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89050.3.sa3</article-id>
+<title-group>
+<article-title>Author Response</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Lee</surname>
+<given-names>Hyun Jee</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9662-2063</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liang</surname>
+<given-names>Jingting</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Chaudhary</surname>
+<given-names>Shivesh</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1928-0933</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Moon</surname>
+<given-names>Sihoon</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Yu</surname>
+<given-names>Zikai</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wu</surname>
+<given-names>Taihong</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liu</surname>
+<given-names>He</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Choi</surname>
+<given-names>Myung-Kyu</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Yun</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lu</surname>
+<given-names>Hang</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6881-660X</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the previous reviews.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>In this paper, the authors developed an image analysis pipeline to automacally idenfy individual neurons within a populaon of fluorescently tagged neurons. This applicaon is opmized to deal with mul-cell analysis and builds on a previous soware version, developed by the same team, to resolve individual neurons from whole-brain imaging stacks. Using advanced stascal approaches and several heuriscs tailored for C. elegans anatomy, the method successfully idenfies individual neurons with a fairly high accuracy. Thus, while specific to C. elegans, this method can become instrumental for a variety of research direcons such as in-vivo single-cell gene expression analysis and calcium-based neural acvity studies.</p>
+</disp-quote>
+<p>Thank you.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>The authors succeed in generalizing the pre-alignment procedure for their cell idenficaon method to allow it to work effecvely on data with only small subsets of cells labeled. They convincingly show that their extension accurately idenfies head angle, based on finding auto florescent ssue and looking for a symmetric l/r axis. They demonstrate method works to allow the idenficaon of a parcular subset of neurons. Their approach should be a useful one for researchers wishing to idenfy subsets of head neurons in C. elegans, and the ideas might be useful elsewhere.</p>
+<p>The authors also assess the relave usefulness of several atlases for making identy predicons. They atempt to give some addional general insights on what makes a good atlas, but here insights seem less clear as available data does not allow for experiments that cleanly decouple: 1. the number of examples in the atlas 2. the completeness of the atlas. and 3. the match in strain and imaging modality discussed. In the presented experiments the custom atlas, besides the strain and imaging modality mismatches discussed is also the only complete atlas with more than one example. The neuroPAL atlas, is an imperfect stand in, since a significant fracon of cells could not be idenfied in these data sets, making it a 60/40 mix of Openworm and a hypothecal perfect neuroPAL comparison. This waters down general insights since it is unclear if the performance is driven by strain/imaging modality or these difficules creang a complete neuroPal atlas. The experiments do usefully explore the volume of data needed. Though generalizaon remains to be shown the insight is useful for future atlas building that for the specific (small) set of cells labeled in the experiments 5-10 examples is sufficient to build a
+accurate atlas.</p>
+</disp-quote>
+<p>The reviewer brings up an interesting point. As the reviewer noted, given the imperfection of the datasets (ours and others’), it is possible that artifacts from incomplete atlases can interfere with the assessment of the performances of different atlases. To address this, as the reviewer suggested, we have searched the literature and found two sets of data that give specific coordinates of identified neurons (both using NeuroPAL). We compared the performance of the atlases derived from these datasets to the strain-specific atlases, and the original conclusion stands. Details are now included in the revised manuscript (Figure 3- figure supplement 2).</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Recommendaons for the authors:</bold></p>
+<p><bold>Reviewer #1 (Recommendaons For The Authors):</bold></p>
+<p>I appreciate the new mosaic analysis (Fig. 3 -figure suppl 2). Please fix the y-axis ck label that I believe should be 0.8 (instead of 0.9).</p>
+</disp-quote>
+<p>We thank the reviewer for spotting the typo. We have fixed the error.</p>
+<disp-quote content-type="editor-comment">
+<p>**Reviewer #2 (Recommendaons For The Authors):</p>
+<p>Though I'm not familiar with the exact quality of GT labels in available neuroPAL data I know increasing volumes of published data is available. Comparison with a complete neuroPAL atlas, and a similar assessment on atlas size as made with the custom atlas would to my mind qualitavely increase the general insights on atlas construcon.</p>
+</disp-quote>
+<p>We thank the reviewer for the insightful suggestion. We have newly constructed several other NeuroPAL atlases by incorporating neuron positional data from two other published data: [Yemini E. et al. NeuroPAL: A Multicolor Atlas for Whole-Brain Neuronal Identification in C. elegans. Cell. 2021 Jan 7;184(1):272-288.e11] and [Skuhersky, M. et al. Toward a more accurate 3D atlas of C. elegans neurons. BMC Bioinformatics 23, 195 (2022)].</p>
+<p>Interestingly, we found that the two new  atlases (NP-Yemini and NP-Skuhersky) have significantly different values of PA, LR, DV, and angle relationships for certain cells compared to the OpenWorm and glr-1 atlases. For example, in both the NP atlases, SMDD is labeled as being anterior to AIB, which is the opposite of the SMDD-AIB relationship in the glr-1 atlas.</p>
+<p>Because this relationship (and other similar cases) were missing in our original NeuroPAL atlas (NP-Chaudhary), the addition of these two NeuroPAL datasets to our NeuroPAL atlas dramatically changed the atlas. As a result, incorporating the published data sets into the NeuroPAL atlas (NP-all) actually decreased the average prediction accuracy to 44%, while the average accuracy of original NeuroPAL atlas (NP-Chaudhary) was 57%. The atlas based on the Yemini et al. data alone (NP-Yemini) had 43% accuracy, and the atlas based on the Skuhersky et al. data alone (NP-Skuhersky) had 38% accuracy.</p>
+<p>For the rest of our analysis, we focused on comparing the NeuroPAL atlas that resulted in the highest accuracy against other atlases in figure 3 (NP-Chaudhary). Therefore, we have added Figure 3- figure supplement 2 and the following sentence in the discussion. “Several other NeuroPAL atlases from different data sources were considered, and the atlas that resulted in the highest neuron ID correspondence was selected (Figure 3- figure supplement 2).”</p>
+<fig id="sa3fig1">
+<label>Author response image 1.</label>
+<caption>
+<title>Figure3- figure supplement 2.</title>
+<p>Comparison of neuron ID correspondences resulng from addional atlases- atlases driven from NeuroPAL neuron posional data from mulple sources (Chaudhary et al., Yemini et al., and Skuhersky et al.) in red compared to other atlases in Figure 3. Two sample t-tests were performed for stascal analysis. The asterisk symbol denotes a significance level of p&lt;0.05, and n.s. denotes no significance. OW: atlas driven by data from OpenWorm project, NP-source: NeuroPAL atlas driven by data from the source. NP-Chaudhary atlas corresponds to NeuroPAL atlas in Figure 3.</p>
+</caption>
+<graphic mime-subtype="jpg" xlink:href="elife-89050-sa3-fig1.jpg" mimetype="image"/>
+</fig>
+<disp-quote content-type="editor-comment">
+<p>80% agreement among manual idenficaons seems low to me for a relavely small, (mostly) known set of cells, which seems to cast into doubt ground truth idenes based on a best 2 out of 3 vote. The authors menon 3% of cell idenes had total disagreement and were excluded, what were the fracon unanimous and 2/3? Are there any further insights about what limited human performance in the context of this parcular idenficaon task?</p>
+</disp-quote>
+<p>We closely looked into the manual annotation data. The fraction of cells in unanimous, two thirds, and no agreement are approximately 74%, 20%, and 6%, respectively. We made the corresponding change in the manuscript from 3% to 6%. Indeed, we identified certain patterns in labels that were more likely to be disagreed upon. First, cells in close proximity to each other, such as AVE and RMD, were often switched from annotator to annotator. Second, cells in the posterior part of the cluster, such as RIM, AVD, AVB, were more variable in positions, so their identities were not clear at times. Third, annotators were more likely to disagree on cells whose expressions are rare and low, and these include AIB, AVJ, and M1. These observations agree with our results in figure 4c.</p>
+</body>
+</sub-article>
+</article>
