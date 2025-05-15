@@ -1,0 +1,887 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">91398</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.91398</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.91398.3</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.4</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Machine learning of dissection photographs and surface scanning for quantitative 3D neuropathology</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Gazula</surname>
+<given-names>Harshvardhan</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3509-8154</contrib-id>
+<name>
+<surname>Tregidgo</surname>
+<given-names>Henry F. J.</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Billot</surname>
+<given-names>Benjamin</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Balbastre</surname>
+<given-names>Yael</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>William-Ramirez</surname>
+<given-names>Jonathan</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Herisse</surname>
+<given-names>Rogeny</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Deden-Binder</surname>
+<given-names>Lucas J</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Casamitjana</surname>
+<given-names>Adrià</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Melief</surname>
+<given-names>Erica J.</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Latimer</surname>
+<given-names>Caitlin S.</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kilgore</surname>
+<given-names>Mitchell D.</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Montine</surname>
+<given-names>Mark</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Robinson</surname>
+<given-names>Eleanor</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Blackburn</surname>
+<given-names>Emily</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Marshall</surname>
+<given-names>Michael S.</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Connors</surname>
+<given-names>Theresa R.</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6998-9510</contrib-id>
+<name>
+<surname>Oakley</surname>
+<given-names>Derek H.</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Frosch</surname>
+<given-names>Matthew P.</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Young</surname>
+<given-names>Sean I.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Van Leemput</surname>
+<given-names>Koen</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Dalca</surname>
+<given-names>Adrian V.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>FIschl</surname>
+<given-names>Bruce</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mac Donald</surname>
+<given-names>Christine L.</given-names>
+</name>
+<xref ref-type="aff" rid="a8">8</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Keene</surname>
+<given-names>C. Dirk</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7959-9401</contrib-id>
+<name>
+<surname>Hyman</surname>
+<given-names>Bradley T.</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Iglesias</surname>
+<given-names>Juan Eugenio</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Martinos Center for Biomedical Imaging, MGH and Harvard Medical School</institution>, Charlestown, MA, <country>USA</country></aff>
+<aff id="a2"><label>2</label><institution>Centre for Medical Image Computing, University College London</institution>, London, <country>UK</country></aff>
+<aff id="a3"><label>3</label><institution>Computer Science and Artificial Intelligence Laboratory</institution>, MIT, MA, <country>USA</country></aff>
+<aff id="a4"><label>4</label><institution>Biomedical Imaging Group, Universitat Politècnica de Catalunya</institution>, <country>Spain</country></aff>
+<aff id="a5"><label>5</label><institution>BioRepository and Integrated Neuropathology (BRaIN) laboratory and Precision Neuropathology Core, UW School of Medicine</institution>, WA, <country>USA</country></aff>
+<aff id="a6"><label>6</label><institution>Massachusetts Alzheimer Disease Research Center, MGH and Harvard Medical School</institution>, Charlestown, MA, <country>USA</country></aff>
+<aff id="a7"><label>7</label><institution>Neuroscience and Biomedical Engineering, Aalto University</institution>, Espoo, <country>Finland</country></aff>
+<aff id="a8"><label>8</label><institution>Department of Neurological Surgery, UW School of Medicine</institution>, WA, <country>USA</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Zhou</surname>
+<given-names>Juan Helen</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of Singapore</institution>
+</institution-wrap>
+<city>Singapore</city>
+<country>Singapore</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Makin</surname>
+<given-names>Tamar R</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Cambridge</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label><bold>For correspondence:</bold> <email>jiglesiasgonzalez@mgh.harvard.edu</email> (JEI)</corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-12-12">
+<day>12</day>
+<month>12</month>
+<year>2023</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2024-03-21">
+<day>21</day>
+<month>03</month>
+<year>2024</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP91398</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-08-16">
+<day>16</day>
+<month>08</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-07-24">
+<day>24</day>
+<month>07</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.06.08.544050"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2023-12-12">
+<day>12</day>
+<month>12</month>
+<year>2023</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.91398.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.91398.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.91398.1.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.91398.1.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.91398.1.sa3">Author Response</self-uri>
+</event>
+<event>
+<event-desc>Reviewed preprint v2</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2024-02-13">
+<day>13</day>
+<month>02</month>
+<year>2024</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.91398.2"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.91398.2.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.91398.2.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.91398.2.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.91398.2.sa3">Author Response</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Gazula et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Gazula et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-91398-v3.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>We present open-source tools for 3D analysis of photographs of dissected slices of human brains, which are routinely acquired in brain banks but seldom used for quantitative analysis. Our tools can: <italic>(i)</italic> 3D reconstruct a volume from the photographs and, optionally, a surface scan; and <italic>(ii)</italic> produce a high-resolution 3D segmentation into 11 brain regions per hemisphere (22 in total), independently of the slice thickness. Our tools can be used as a substitute for <italic>ex vivo</italic> magnetic resonance imaging (MRI), which requires access to an MRI scanner, <italic>ex vivo</italic> scanning expertise, and considerable financial resources. We tested our tools on synthetic and real data from two NIH Alzheimer’s Disease Research Centers. The results show that our methodology yields accurate 3D reconstructions, segmentations, and volumetric measurements that are highly correlated to those from MRI. Our method also detects expected differences between <italic>post mortem</italic> confirmed Alzheimer’s disease cases and controls. The tools are available in our widespread neuroimaging suite “FreeSurfer” (<ext-link ext-link-type="uri" xlink:href="https://surfer.nmr.mgh.harvard.edu/fswiki/PhotoTools">https://surfer.nmr.mgh.harvard.edu/fswiki/PhotoTools</ext-link>).</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>Bruce Fischl has a financial interest in CorticoMetrics, a company developing brain MRI measurement technology. His interests are reviewed and managed by Massachusetts General Hospital.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>We added:
+- A clarification of why SIFT is not used in the 3D reconstruction of the photo stacks.
+- An example of manually labeled slices, along with the corresponding automated segmentations (Figure 3 of Appendix 2).</p></fn>
+</fn-group>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://youtu.be/wo5meYRaGUY">https://youtu.be/wo5meYRaGUY</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Morphometric measurements such as cortical thickness and subcortical volumetry can be used as surrogate biomarkers of aging (<bold><italic><xref ref-type="bibr" rid="c38">Salat et al., 2004</xref>; <xref ref-type="bibr" rid="c47">Walhovd et al., 2005</xref>; <xref ref-type="bibr" rid="c10">Coupé et al., 2017</xref></italic></bold>) and disease (<bold><italic><xref ref-type="bibr" rid="c25">Lerch et al., 2005</xref>; <xref ref-type="bibr" rid="c11">Desikan et al., 2009</xref>; <xref ref-type="bibr" rid="c15">Dickerson et al., 2009</xref>; <xref ref-type="bibr" rid="c6">Blanken et al., 2017</xref></italic></bold>) via confirmed histopathological changes. Integrating neuroimaging tools with neuropathological assessments can enable neuropathological-neuroimaging correlations for studying neurodegenerative diseases, i.e., connecting macroscopic imaging with histological ground truth derived from microscopic imaging (<bold><italic><xref ref-type="bibr" rid="c48">Webster et al., 2021</xref></italic></bold>). While <italic>ante mortem</italic> MRI studies provide accurate and reliable morphometric data, they are often unavailable or occur too long before death, impeding reliable histopathological correlation. Cadaveric MRI can circumvent these challenges, but logistic and legal issues often complicate this procedure.</p>
+<p>An alternative to cadaveric imaging is <italic>ex vivo</italic> MRI, which enables high-resolution image acquisition free of subject motion and other physiological noise (<bold><italic><xref ref-type="bibr" rid="c16">Edlow et al., 2019</xref></italic></bold>). However, <italic>ex vivo</italic> MRI also has disadvantages, including: tissue degradation due to bacteria and autolysis from death to initiation of tissue fixation; cross-linking of proteins due to fixation that dramatically changes MR properties of the tissue; and image artifacts caused by magnetic susceptibility interfaces that do not occur <italic>in vivo</italic> (<bold><italic><xref ref-type="bibr" rid="c40">Shatil et al., 2016</xref></italic></bold>).</p>
+<p>While <italic>ex vivo</italic> MRI is relatively uncommon in brain banks that seek to establish neuropathological-neuroimaging correlations (<bold><italic><xref ref-type="bibr" rid="c36">Ravid, 2009</xref>; <xref ref-type="bibr" rid="c26">Love, 2005</xref></italic></bold>), dissection photography is routine in nearly every brain bank. Collected specimens are typically dissected into coronal slices and photographed before further blocking and histological analysis. These photographs, often underutilized, are an invaluable information resource that, if leveraged appropriately, can play a vital role in advancing our understanding of various brain functions and disorders — mainly when <italic>ex vivo</italic> MRI is unavailable. To this end, we propose a novel software suite that, for the first time, enables 3D reconstruction and quantitative 3D morphometry of dissection photographs, powered by modern machine learning techniques (<bold><italic><xref ref-type="bibr" rid="c20">Goodfellow et al., 2016</xref></italic></bold>) and 3D surface scanning (<bold><italic><xref ref-type="bibr" rid="c39">Salvi et al., 2004</xref></italic></bold>). Provided that the photographs satisfy some basic requirements (presence of a ruler or fiducial markers to estimate pixel sizes), our tools enable volumetric analysis of brain structures from the photographs, computationally guided dissection via automated segmentation, and accurate spatial mapping for neuropathological-neuroimaging correlation.</p>
+<p>Our suite is freely available and includes three modules. The first module is a set of preprocessing routines for the photographs that enables the correction of perspective and calibration of pixel sizes. The second module is a joint image registration algorithm that allows 3D reconstruction of the photographs using a 3D surface scan of the brain as a reference. This module can also use a probabilistic atlas as a reference for the reconstruction, thus circumventing the need for a surface scanner. This scan-free mode enables retrospective analysis of photographs without corresponding 3D scans, albeit with lower accuracy than if surface scanning was available. The third and final module uses machine learning to provide a high-resolution 3D image segmentation of the reconstructed stack. This module combines a state-of-the-art deep segmentation neural network (a U-Net, <bold><italic><xref ref-type="bibr" rid="c37">Ronneberger et al. 2015</xref></italic></bold>) with a domain randomization approach (<bold><italic>Billot et al., 2023a</italic></bold>), thus enabling analysis of photographs with different intensity profiles, e.g., acquired under various illumination conditions, with different cameras or camera settings, or from fixed or fresh tissue. Moreover, the machine learning method enables the estimation of “smooth&quot;, isotropic segmentations that accurately interpolate across the gaps between the coronal planes captured in the photographs.</p>
+<p>We note that this article extends our previous conference paper (<bold><italic><xref ref-type="bibr" rid="c45">Tregidgo et al., 2020</xref></italic></bold>) by <italic>(i)</italic> improving upon the 3D reconstruction methods; <italic>(ii)</italic> using machine learning (rather than Bayesian methods) to produce segmentations that are more accurate and also isotropic (i.e., provide labels in between slices); and <italic>(iii)</italic> providing extensive experiments on different synthetic and real datasets. The rest of this article is organized as follows. First, we present results on three different datasets, both synthetic (which enable fine-grained analysis with known ground truth) and real (which enables evaluation in real-world scenarios). Next, we discuss these results and their impact on quantitative <italic>post mortem</italic> neuroimaging without MRI. Finally, the Methods section elaborates on the technicalities of the preprocessing steps, the reconstruction algorithm, and the deep learning segmentation method.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Volumetric group study of <italic>post mortem</italic> confirmed Alzheimer’s disease</title>
+<p>One of the main use cases of our tools is the volumetric analysis of different cerebral regions of interest (ROIs) from dissection photographs, without requiring cadaveric or <italic>ex vivo</italic> MRI. We used our tools to analyze 21 <italic>post mortem</italic> confirmed Alzheimer’s disease (AD) cases from the Massachusetts Alzheimer’s Disease Research Center (MADRC), as well as 12 age-matched controls (N=33 in total). We note that these cases comprise thick (∼10 mm) slabs, sliced by hand, without cutting guides - as cutting on anatomic landmarks was prioritized over consistent slice thickness. Therefore, this dataset is representative of a challenging, real-world scenario.</p>
+<p>Examples of the inputs and outputs of the pipeline can be found in <xref rid="fig1" ref-type="fig">Figure 1</xref> and in Video 1 in the supplementary material (also available at <ext-link ext-link-type="uri" xlink:href="https://youtu.be/wo5meYRaGUY">https://youtu.be/wo5meYRaGUY</ext-link>). The 3D surface scan (<xref rid="fig1" ref-type="fig">Figure 1a</xref>) reveals the coarse shape of the specimen, in this case a left hemisphere. Our preprocessing tools correct for the perspective and pixel size of routine dissection photographs (b). Then, the 3D reconstruction tool uses information from the surface scan to produce a 3D reconstruction of the photographs into an imaging volume (c). This volume consists of highly anisotropic voxels, since the slice thickness is much larger than the pixel size of the photograph. The 3D reconstruction is fed to our machine learning segmentation method (“Photo-SynthSeg”), which produces a high-resolution, isotropic segmentation (d,e), independently of the slice thickness. The segmentations are then used to compare the volumes of brain ROIs between the two groups (e.g., the hippocampus, as in <xref rid="fig1" ref-type="fig">Figure 1f</xref>).</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>Examples of inputs and outputs from the MADRC dataset. <bold>(a)</bold> 3D surface scan of left human hemisphere, acquired prior to dissection. <bold>(b)</bold> Routine dissection photography of coronal slabs, after pixel calibration, with digital rulers overlaid. <bold>(c)</bold> 3D reconstruction of the photographs into an imaging volume. <bold>(d)</bold> Sagittal cross-section of the volume in (c) with the machine learning segmentation overlaid. The color code follows the FreeSurfer convention. Also, note that the input has low, anisotropic resolution due to the large thickness of the slices (i.e., rectangular pixels in sagittal view), whereas the 3D segmentation has high, isotropic resolution (squared pixels in any view). <bold>(e)</bold> 3D rendering of the 3D segmentation into the different brain regions, including hippocampus (yellow), amygdala (light blue), thalamus (green), putamen (pink), caudate (darker blue), lateral ventricle (purple), white matter (white, transparent), and cortex (red, transparent). <bold>(f)</bold> Distribution of hippocampal volumes in <italic>post mortem</italic> confirmed Alzheimer’s disease vs controls in the MADRC dataset, corrected for age and gender.</p></caption>
+<graphic xlink:href="544050v4_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p><xref rid="tbl1" ref-type="table">Table 1</xref> shows the area under the receiver operating characteristic curve (AUROC) and the p-value for non-parametric Wilcoxon rank sum tests (<bold><italic><xref rid="c30" ref-type="bibr">Mann and Whitney, 1947</xref></italic></bold>) comparing the ROI volumes of AD vs controls; we leave the accumbens area and ventral diencephalon out of the analysis as their segmentations are not reliable due to poor contrast (<bold><italic><xref ref-type="bibr" rid="c18">Fischl et al., 2002</xref></italic></bold>). We note that the AUROC is the non-parametric equivalent of the effect size; a value of 0.5 represents chance, while 1.0 represents perfect separation. Age and gender were corrected with a general linear model, whereas volumes of contralateral ROIs were averaged when full brains (rather than hemispheres) were available. Our method successfully captures well-known atrophy patterns of AD, such as hippocampal atrophy and ventricle enlargement.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><p>Area under the receiver operating characteristic curve (AUROC) and p-value of a non-parametric Wilcoxon rank sum test comparing the volumes of brain regions for Alzheimer’s cases vs controls. The volumes were corrected by age and sex using a general linear model. We note that the AUROC is bounded between 0 and 1 (0.5 is chance) and is the non-parametric equivalent of the effect size (higher AUROC corresponds to larger differences). The sample size is <italic>N</italic> = 33.</p></caption>
+<graphic xlink:href="544050v4_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2b">
+<title>Quantitative evaluation of segmentation with Photo-SynthSeg</title>
+<p>While the AD experiment illustrates the ability of our method to detect differences in real-world data, it is crucial to specifically assess the accuracy of our segmentation and 3D reconstruction methods. To evaluate Photo-SynthSeg, we 3D reconstructed the brain volumes from the photographs of 24 cases from the AD Research Center at the University of Washington (UW-ADRC), which were cut into uniform 4 mm thick slices. Crucially, isotropic FLAIR MRI scans were acquired for these specimens <italic>ex vivo</italic> prior to dissection, which enables the use of MRI as gold standard.</p>
+<p>We compare Photo-SynthSeg against “SAMSEG&quot;, which is (to the best of our knowledge) the only available competing method. SAMSEG is a segmentation algorithm which we originally conceived for brain MRI (<bold><italic><xref ref-type="bibr" rid="c35">Puonti et al., 2016</xref></italic></bold>), and which employs Bayesian techniques to segment MRI scans irrespective of their contrast and pulse sequence. As we showed in <bold><italic><xref rid="c45" ref-type="bibr">Tregidgo et al. (2020</xref></italic></bold>), this technique can be adapted to 3D reconstructed photographs. <xref rid="fig2" ref-type="fig">Figure 2</xref> shows the segmentation of an UW-ADRC case using both methods. As opposed to SAMSEG, Photo-SynthSeg effectively “interpolates” the segmentation in between slices, independently of their thickness, and is more robust against uneven intensities than the Bayesian method. Photo-SynthSeg also includes a volumetric parcellation of the cortex based on the original SynthSeg pipeline (<bold><italic>Billot et al., 2023b</italic></bold>), which relies on the Desikan-Killiany atlas (<bold><italic><xref ref-type="bibr" rid="c12">Desikan et al., 2006</xref></italic></bold>).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p>Qualitative comparison of SAMSEG vs Photo-SynthSeg: Coronal (top) and sagittal (bottom) views of the reconstruction and automated segmentation of a sample whole brain from the UW-ADRC dataset. Note that Photo-SynthSeg supports subdivision of the cortex with tools of the SynthSeg pipeline.</p></caption>
+<graphic xlink:href="544050v4_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To evaluate Photo-SynthSeg and SAMSEG quantitatively, we computed Dice scores against manual segmentations made on a single selected slice per subject. This slice is visually chosen to be close to the mid-coronal plane, while maximizing visibility of subcortical structures; an example of such slice, along with the manual and automated segmentations, is shown in <xref rid="fig3" ref-type="fig">Figure 3</xref> of Appendix 2. The Dice scores are displayed in <xref rid="fig3" ref-type="fig">Figure 3</xref>; as in the previous analysis, the accumbens area and ventral diencephalon are left out of the analysis. The figure also shows two ablations: using a probabilistic atlas instead of the case-specific reference; and using a version of Photo-SynthSeg dedicated to 4 mm slice thickness (i.e., the thickness of the UW-ADRC dataset, rather than using the general, thickness-agnostic model). The former assesses the impact of having to rely on a generic atlas when surface scans are not available, whereas the latter evaluates the ability of our neural network to adapt to thicknesses that are not known a priori (thanks to our domain randomization approach). The results show that Photo-SynthSeg generally outperforms SAMSEG, producing Dice scores over 0.8 for all structures except the amygdala - even though SAMSEG is better at segmenting the ventricles, thanks to their large size and strong contrast. The plots also show that using the probabilistic atlas produces realistic enough reconstructions, such that the 2D Dice scores remain high. Finally, the results also show the superiority of the thickness randomization strategy over the fixed spacing strategy, even if the latter had access to the ground truth spacing of the photographs. Even though the reader may initially find this result counterintuitive, it is consistent with our previous findings in MRI segmentation, where domain randomization strategies also outperformed targeted simulations (<bold><italic><xref ref-type="bibr" rid="c3">Billot et al., 2020</xref></italic></bold>).</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><p>Dice scores of automated vs manual segmentations on select slices. Box plots are shown for SAMSEG, Photo-SynthSeg, and two ablations: use of probabilistic atlas, and targeted simulation with 4 mm slice spacing. Dice is computed in 2D, using manual segmentations on select slices. We also note that the absence of extracerebral tissue in the images contributes to high Dice for the cortex.</p></caption>
+<graphic xlink:href="544050v4_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>This evaluation with Dice scores above is direct, but: <italic>(i)</italic> is based on a relatively small number of slices, and <italic>(ii)</italic> disregards the ultimate purpose of segmentation, which is downstream analysis in 3D (e.g., volumetry). For this purpose, we also indirectly evaluated the methods by analyzing the volumes of brain ROIs derived from the segmentations of the whole stack. Specifically, we correlated these volumes with silver standard values derived from the isotropic FLAIR MRI scans using our “standard” SynthSeg for MRI (<bold><italic>Billot et al., 2023a</italic></bold>). <xref rid="tbl2" ref-type="table">Table 2</xref> shows the correlations and p-values for Steiger tests comparing the correlation coefficients achieved by SAMSEG and Photo-SynthSeg - while considering their dependency due to the common ground truth sample. The results show once more that Photo-SynthSeg outperforms SAMSEG for nearly every structure - and in the few cases in which it does not, the Steiger test does not yield statistically significant differences. We note that the correlations are above 0.8 for most brain structures, indicating that the 3D reconstructed photographs yield usable volumes in volumetric analysis. We also note that the correlations are slightly but consistently lower for the reconstructions with the probabilistic atlas, yielding correlations close to 0.8 for most brain regions.</p>
+<table-wrap id="tbl2" orientation="portrait" position="float">
+<label>Table 2.</label>
+<caption><p>Correlations of volumes of brains regions estimated by SAMSEG and Photo-SynthSeg from the photographs against the ground truth values derived from the MRI. The p-values are for Steiger tests comparing the correlations achieved by the two methods (accounting for the common sample).</p></caption>
+<graphic xlink:href="544050v4_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2c">
+<title>Quantitative evaluation of reconstruction with digitally sliced MRI data</title>
+<p>In addition to the segmentation, it is also desirable to evaluate the 3D reconstruction algorithm with the registration error (in mm). Measuring such error with real data would require manual annotation of pairs of matching landmarks, which is labor-intensive, error-prone, and not reproducible. Instead, we use simulated (digitally sliced) data created from MRI scans. While errors estimated this way may be optimistic compared with real sliced tissue, this approach enables us to analyze the error as a continuous function of slice thickness without manual annotation effort. For this purpose, we used 500 subjects from the Human Connectome Project (HCP) dataset, which includes T1-and T2-weighted MRI scans acquired at 0.7 mm isotropic resolution. After skull stripping with FreeSurfer (<bold><italic><xref rid="c17" ref-type="bibr">Fischl, 2012</xref></italic></bold>), we simulated dissection photographs and matching surface scans by: <italic>(i)</italic>digitally slicing the T2 scans; and <italic>(ii)</italic> using the surface of the T1 as a 3D reference to reconstruct the T2 slices. Specifically, we simulated slices with <italic>S</italic> × 0.7 mm thickness (<italic>S</italic> = 2, 4, 8, 16), including random affine transforms and illumination fields for every simulated slice (see example in <xref rid="fig1" ref-type="fig">Figure 1</xref> of Appendix 2). While we could use a nonlinear model, the results would depend heavily on the strength of the simulated deformation. Instead, we keep the warps linear as we believe that the value of this experiment lies in the trends that the errors refiect, i.e., their relative rather than absolute value.</p>
+<p>After digitally distorting the images, we used our method to 3D reconstruct the slices into their original shape. The registration error was calculated as the mean voxel displacement in mm between the reconstructed and ground truth T2 slices. Additionally, to test the robustness of the reconstruction algorithm to uneven slice spacing during dissection, we also analyze the error when a random variation of the nominal thickness (“thickness jitter”) is introduced for every slice.</p>
+<p><xref rid="fig4" ref-type="fig">Figure 4</xref> shows the box plot for the mean reconstruction error as a function of the slice spacing and thickness jitter. The results show that the reconstruction error is reasonably robust to increased slice spacing. On the other hand, thickness jitter yields greater increases in reconstruction error, particularly at larger slice spacings. This result highlights the importance of keeping the slice thickness as constant as possible during acquisition.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><p>Reconstruction error (in mm) in synthetically sliced HCP data. The figure shows box plots for the mean reconstruction error as a function of spacing and thickness jitter. A jitter of <italic>j</italic> means that the <italic>n</italic><sup><italic>th</italic></sup> slice is randomly extracted from the interval [<italic>n − j, n</italic> + <italic>j</italic>] (rather than exactly <italic>n</italic>). The center of each box represents the median; the edges of the box represent the first and third quartile; and the whiskers extend to the most extreme data points not considered outliers (not shown, in order not to clutter the plot).</p></caption>
+<graphic xlink:href="544050v4_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>Neuroimaging to neuropathology correlation studies explore the relationship between gold-standard pathological diagnoses and imaging phenotypes by transferring the microscopic signatures of pathology to <italic>in vivo</italic> MRI. A significant impediment to this effort is the lack of quantitative tools for <italic>post mortem</italic> tissue analysis. For example, quantitative measurements such as cortical thickness and specific regional atrophy are often estimated qualitatively from 2D coronal slices during gross examination. A solution to this problem is leveraging dissection photography of these coronal slices routinely acquired before histology. By designing algorithms to reconstruct 3D volumes from 2D photographs and subsequently segment them, we have enabled a cost-effective and time-saving link between morphometric phenotypes and neuropathological diagnosis.</p>
+<p>Our new tools are publicly available and utilize modern deep learning techniques and surface scanning. Being available as part of Freesurfer makes the tools easy to use by anyone with little or no training. Furthermore, the absence of tunable parameters in Photo-SynthSeg makes the results produced by our methods highly reproducible, and the robustness of the tools enables widespread application to heterogeneous datasets. This robustness has been demonstrated by applying the tools to images from two different biobanks, with different slice thickness, tissue processing, and photographic setup. On the UW-ADRC dataset, for which MRI scans were available, we achieved correlations above 0.8 between the volumes derived from the photographs and the ground truth obtained from the MRI.</p>
+<p>Retrospective reconstruction of datasets with no accompanying surface scan available can be achieved with a probabilistic atlas. However, such a reconstruction is laden with ambiguities because the probabilistic atlas does not have access to the true shape of the tissue - which the surface scan directly measures. Whether the increased reconstruction error is tolerable depends on the downstream task, e.g., shape analysis vs volumetry.</p>
+<p>While deep learning segmentation tools are increasingly common in medical imaging research, their practical applicability in modalities with highly varying appearance (like dissection photography) has been hindered by their limited generalization ability. Photo-SynthSeg circumvents this problem by building on our recent work on domain randomization (<bold><italic>Billot et al., 2023a</italic></bold>), and can segment 3D reconstructed stacks of photographs irrespective of the thickness of the slices and of the contrast properties of the tissue. Compared with SAMSEG, Photo-Synthseg also has the advantage of estimating the segmentation in between slices (<xref rid="fig2" ref-type="fig">Figure 2</xref>). Moreover, Photo-Synthseg inherits the computational efficiency of neural networks, and can segment a whole case in a few seconds (or tens of seconds if no GPU is available) without any special requirements on machine learning expertise - thus enabling broad applicability.</p>
+<p>While registration and volumetric segmentation enable morphometry and neuropathology-neuroimaging correlation, precise white matter and pial surface placement on 3D reconstructed photographs are crucial for accurate cortical analyses - e.g., producing topologically correct segmentations, as opposed to volumetric segmentations that can, for example, leak across gyri. In the future, we will extend Photo-SynthSeg to enable surface analysis for cortical placement and parcellation. While the convoluted nature of cortical surfaces makes this task difficult for photographic volumes, integrating the triangular mesh provided by the surface scanner could enable accurate surface placement.</p>
+<p>Another direction of future work will be extending the tools to axial and sagittal slices of the cerebellum and brainstem. While adapting the 3D reconstruction (<xref ref-type="disp-formula" rid="eqn1">Equation 1</xref>) is straightforward, the U-net will need additional image synthesis and manual labeling efforts - particularly if one wishes to include new regions, such as brainstem nuclei. Additional future analyses will include: correlating the segmentation-derived volumes with clinical scores, disease subtypes, and disease duration; using techniques like SynthSR (<bold><italic><xref ref-type="bibr" rid="c21">Iglesias et al., 2023</xref></italic></bold>) to improve the resolution of the reconstructed volumes; exploring nonlinear deformation models for the 3D reconstruction; fully automatizing tissue segmentation from the background using neural networks; and extending the tools to 3D analysis of histological sections.</p>
+<p>Leveraging the vast amounts of dissection photographs available at brain banks worldwide to perform morphometry is a promising avenue for enhancing our understanding of various neurode-generative diseases. Our new tools will allow extraction of quantitative phenotypical information from these photographs - and thus augmentation of histopathological analysis. We expect this new methodology to play a crucial role in the discovery of new imaging markers to study neurode-generative diseases.</p>
+</sec>
+<sec id="s4">
+<title>Materials and Methods</title>
+<sec id="s4a">
+<title>Datasets</title>
+<sec id="s4a1">
+<title>MADR</title>
+<p>Dissection photography of fixed tissue and companion surface scans for 76 cases from the Massachusetts Alzheimer’s Research Center (18 whole cerebrums and 58 hemispheres). Ruling out cases with frontotemporal dementia and other comorbidities, as well as subjects that did not pass manual quality control (by JWR, RH, and LJD), led to a final sample size of <italic>N</italic> = 33 (21 <italic>post mortem</italic> confirmed Alzheimer’s and 12 controls). The surface scans were acquired using a turntable with an Einscan Pro HD scanner (Shining 3D, Hangzhou, China, 0.05 mm point accuracy). Slices with variable thickness were cut with a dissecting knife on a predefined set of landmarks and photographed with a 15.1 MP Canon EOS 50D Digital SLR camera. Further details on the dissection and processing of the specimens can be found in Appendix 1.</p>
+</sec>
+<sec id="s4a2">
+<title>UW-ADRC</title>
+<p>Dissection photography of fixed tissue and companion <italic>ex vivo</italic> MRI scans for 24 cases (all of them with both hemispheres) from the Alzheimer’s Disease Research Center at the University of Washington. The MRI scans were acquired at 0.8 mm isotropic resolution using a FLAIR sequence. Coronal slices were cut with 4 mm thickness using a modified deli slicer and photographed with a 35 Megapixel (MP) camera. While no 3D surface scanning was available for this dataset, we obtained surfaces by skull stripping the MRI scans and meshing the brain surface. This dataset enables us to compute volumetric measurements from the 3D reconstructed photographs and compare them with reference values obtained from the corresponding MRI scans. Furthermore, two experienced labelers manually traced the contour of 9 brain regions (white matter, cortex, lateral ventricle, thalamus, caudate, putamen, pallidum, hippocampus, and amygdala) in one slice per case, which enables computation of 2D Dice scores. Further details on the dissection and processing of the specimens can be found in Appendix 1 and <bold><italic>Latimer et al</italic></bold>. (<bold><italic>2023</italic></bold>).</p>
+</sec>
+<sec id="s4a3">
+<title>HCP</title>
+<p>T1- and T2-weighted MRI scans of 500 subjects from the Human Connectome Project, acquired at 0.7 mm isotropic resolution. The scans were skull stripped using Freesurfer (<bold><italic><xref ref-type="bibr" rid="c17">Fischl, 2012</xref></italic></bold>). We use these scans to simulate dissection photographs and matching surface scans by digitally slicing the T2 scans and using the T1 as a 3D reference to reconstruct the T2 slices. Further details on the MRI acquisition can be found in <bold><italic><xref rid="c46" ref-type="bibr">Van Essen et al. (2012</xref></italic></bold>).</p>
+</sec>
+<sec id="s4a4">
+<title>T1-39</title>
+<p>39 T1-weighted MRI scans at 1 mm isotropic resolution, with manual volumetric segmentations for 36 brain structures, which we used to train Photo-SynthSeg. We note that this is the labeled dataset that was used to build the probabilistic atlas in FreeSurfer (<bold><italic><xref ref-type="bibr" rid="c18">Fischl et al., 2002</xref></italic></bold>). The 36 structures include 22 that are segmented by Photo-Synthseg: left and right white matter, cortex, ventricle, thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens area, and ventral diencephalon. The remaining 14 labels include: four labels for the cerebellum (left and right cortex and white matter); the brainstem; five labels for cerebrospinal fluid regions that we do not consider; the left and right choroid plexus; and two labels for white matter hypointensities in the left and right hemisphere.</p>
+</sec>
+</sec>
+<sec id="s4b">
+<title>Surface scanning</title>
+<p>Surface scanning (also known as “profilometry”) is a technology that is becoming increasingly inexpensive (a few thousand dollars), mainly via structured light technology (<bold><italic><xref ref-type="bibr" rid="c39">Salvi et al., 2004</xref></italic></bold>). The preferred version of our proposed pipeline relies on a surface scan of the specimen (<xref rid="fig1" ref-type="fig">Figure 1a</xref>) acquired before slicing. This surface scan, represented by a triangular mesh, is used as an external reference to guide the 3D reconstruction of the photographs (details below). While there are no specific technical requirements for the surface scan (e.g., minimum resolution), minimizing geometric distortion (i.e., deformation) between scanning and subsequent slicing is crucial. The surface scan may be acquired with a handheld scanner with the specimen placed on a table, or with the scanner on a tripod and the sample on a turntable. As mentioned earlier, our pipeline does not strictly require the surface scan, as it can be replaced with a probabilistic atlas with a slight loss of accuracy (as shown in the Results section above).</p>
+</sec>
+<sec id="s4c">
+<title>Tissue slicing and photography</title>
+<p>In preparation for the downstream 3D reconstruction, some requirements exist for the dissection and photography of the brain slabs. Specifically, our pipeline assumes that approximately parallel slices are cut in coronal direction - which is the standard practice in most brain banks. We further assume that the thickness of these slices is approximately constant, as “thickness jitter” has a detrimental effect on the results (<xref rid="fig4" ref-type="fig">Figure 4</xref>).</p>
+<p>Moreover, we require the presence of fiducials to enable pixel size calibration and perspective correction. Ideally, four fiducials are placed on the corners of a rectangle of known dimensions (<xref rid="fig5" ref-type="fig">Figure 5a</xref>). In the absence of such fiducials, we require the presence of at least a ruler or two orthogonal rulers; the former enables pixel size calibration via image scaling, whereas the latter enables approximate perspective correction by fitting an affine transform.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5.</label>
+<caption><p><bold>(a)</bold> Dissection photograph with brain slices on black board with fiducials. <bold>(b)</bold> SIFT features for fiducial detection. <bold>(c)</bold> Photograph from (a) corrected for pixel size and perspective, with digital ruler overlaid. Segmentation against the background, grouping pieces of tissue from the same slice. <bold>(e)</bold> Sagittal slice of the initialization of a 3D reconstruction. <bold>(f)</bold> Corresponding slice of the final 3D reconstruction, obtained with a surface as reference (overlaid in yellow). <bold>(g)</bold> Corresponding slice of the 3D reconstruction provided by a probabilistic atlas (overlaid as a heat map); the real surface is overlaid in light blue for comparison.</p></caption>
+<graphic xlink:href="544050v4_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Our pipeline allows for multiple slices to be present in one photograph but requires that all photographs are of the same side of the slices (either anterior or posterior) and that the inferior-superior direction of the anatomy is approximately aligned with the vertical axis of the image (as in <xref rid="fig5" ref-type="fig">Figure 5a</xref>). Ideally, the slices should be photographed on a flat board with a solid background color that stands out from the brain tissue, as stronger contrast between tissue and background greatly facilitates image segmentation when preprocessing the photographs (further details below).</p>
+</sec>
+<sec id="s4d">
+<title>Preprocessing of photographs</title>
+<p>Image preprocessing starts with geometric correction, i.e., pixel size calibration and perspective correction. In the ideal scenario with four fiducials, the widespread widespread scale-invariant feature transform (SIFT, <bold><italic><xref ref-type="bibr" rid="c27">Lowe 1999</xref></italic></bold>) is used to detect such fiducials (<xref rid="fig5" ref-type="fig">Figure 5b</xref>) and compute a spatial transform that corrects for perspective distortion and calibrates the pixel size - see <xref rid="fig5" ref-type="fig">Figure 5c</xref>, where the pixel size calibration enables superimposition of a digital ruler.</p>
+<p>Our software also supports a manual mode where the user clicks on two, three, or four land-marks: two points with a known distance in between (enables approximate pixel size calibration); three points at the ends of two rulers plus their intersection (enables approximate perspective correction with an affine transform); or four points on the corners of a rectangle of known dimensions (enables full perspective correction). This manual mode is useful when no fiducials are present, but the user can still identify features with known dimensions in the photograph, e.g., on an imprinted grid pattern, or along rulers.</p>
+<p>After geometric correction, our methods require a binary segmentation of the brain tissue, separating it from the background. While our tools do not have any specific requisites in terms of background, using a solid background with a distinct color (e.g., a “green screen”) can greatly facilitate segmentation; otherwise, more extensive manual intervention may be needed. In our experiments, using a flat black background enabled us to automatically segment the tissue with a combination of thresholding and morphological operations, keeping manual edits to a minimum (a couple of minutes per photograph, mostly to erase bits of cortical surface that are sometimes visible around the edge of the face of the slice).</p>
+<p>Given this binary mask, the final preprocessing step requires the user to specify the order of the slices within the photograph - which may be anterior to posterior or vice versa, but must be consistent within and across photographs of the same case. Moreover, the user also needs to specify whether two connected components belong to the same slice, which often happens around the temporal pole. This can be quickly accomplished with a dedicated graphical user interface that we distribute with our tools (<xref rid="fig5" ref-type="fig">Figure 5d</xref>).</p>
+</sec>
+<sec id="s4e">
+<title>3D volumetric reconstruction from photographs</title>
+<p>Recovering a 3D volume from a stack of 2D images entails a consistent 3D reconstruction of the stack via joint image alignment - known as “registration” (<bold><italic><xref rid="c28" ref-type="bibr">Maintz and Viergever, 1998</xref>; <xref ref-type="bibr" rid="c34">Pluim et al., 2003</xref>; <xref rid="c49" ref-type="bibr">Zitova and Flusser, 2003</xref>; <xref ref-type="bibr" rid="c43">Sotiras et al., 2013</xref></italic></bold>). We pose 3D reconstruction as a joint optimization problem (<bold><italic><xref ref-type="bibr" rid="c33">Pichat et al., 2018</xref>; <xref ref-type="bibr" rid="c29">Mancini et al., 2019</xref></italic></bold>) and use a 3D reference volume for the registration. This volume is ideally a binary 3D mask obtained by rasterizing (“filling”) the triangular mesh from the surface scan. If a surface scan is not available, one can instead use a probabilistic atlas (<bold><italic><xref ref-type="bibr" rid="c41">Shattuck et al., 2008</xref></italic></bold>) of brain shape, which provides a rough reference for the reconstruction. However, this reference cannot drive the reconstruction toward the actual shape of the specimen nor correct deviations from the user-provided slice thickness.</p>
+<p>Given <italic>N</italic> photographed slices and their corresponding masks, the goal of this optimization framework is to simultaneously identify: <italic>(i)</italic> a set of <italic>N</italic> 2D affine geometric transforms {<italic>ϕ</italic><sub><italic>n</italic></sub>}<sub><italic>n</italic>=1,…,<italic>N</italic></sub> (rotation, translation, shear, and scaling for each slice); <italic>(ii)</italic> a scaling factor s in the anterior-posterior direction shared by all slices; and <italic>(iii)</italic> a rigid 3D transform Ψ for the reference (rotation and translation). These transforms seek to align the slices with each other and with the reference volume. We note that affine transforms (rather than rigid) are required for the photographs due to imperfections in the image preprocessing of the previous section; nevertheless, we expect the shear and scaling of these transforms to be small. Furthermore, we use affine rather than nonlinear transforms because the latter compromise the robustness of the registration, as they introduce huge ambiguity in the space of solutions (e.g., one could add an identical small nonlinear deformation to every slice almost without changing the feature of the 3D reconstruction). This affine model makes it particularly important to place connected components of the same slice in a correct relative position when there is more than one, e.g., in the temporal pole. We further note that the scaling s in the anterior-posterior direction is required to correct deviations from the slice thickness specified by the user, which in practice is never completely exact.</p>
+<p>The optimal set of transforms is obtained by maximizing the objective function ℱ in <xref ref-type="disp-formula" rid="eqn1">Equation 1</xref>.</p>
+<p>This objective encodes four desired attributes of the reconstructed data:</p>
+<list list-type="order">
+<list-item><p>A high overlap between the stack of <italic>N</italic> 3D reconstructed slice masks <italic>M</italic> [<bold><italic>x</italic></bold>; {Φ<sub><italic>n</italic></sub>}, <italic>s</italic>] and the aligned reference volume <italic>R</italic> [<bold><italic>x</italic></bold>; Ψ]; we note that images are a function of spatial location <bold><italic>x</italic></bold>.</p></list-item>
+<list-item><p>A high similarity between the image intensities of successive (reconstructed) slices <italic>S</italic><sub><italic>n</italic></sub> [<bold><italic>x</italic></bold>;Φ<sub><italic>n</italic></sub>, <italic>s</italic>] and <italic>S</italic><sub><italic>n</italic>+1</sub> [<bold><italic>x</italic></bold>;Φ<sub><italic>n</italic>+1</sub>, <italic>s</italic>], for <italic>n</italic> = 1,…,<italic>N</italic> − 1.</p></list-item>
+<list-item><p>A high overlap between successive (reconstructed) slice masks<italic>M</italic><sub><italic>n</italic></sub> [<bold><italic>x</italic></bold>;Φ<sub><italic>n</italic>+1</sub>, <italic>s</italic>] and <italic>M</italic><sub><italic>n</italic>+1</sub> [<bold><italic>x</italic></bold>;Φ<italic>n</italic>+1, <italic>s</italic>], for <italic>n</italic> = 1,…,<italic>N</italic> − 1.</p></list-item>
+<list-item><p>Minimal scaling and shear in the 2D affine transforms; the function <italic>f</italic> is a regularizer that prevents excessive deformation of the slices - particularly those showing little tissue, e.g., the first and last slices of the stack.
+<disp-formula id="eqn1">
+<graphic xlink:href="544050v4_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p></list-item>
+</list>
+<p>Mathematically, overlap in <xref ref-type="disp-formula" rid="eqn1">Equation 1</xref> is measured with the soft Dice coefficient 𝒟 (<bold><italic><xref ref-type="bibr" rid="c14">Dice, 1945</xref>; <xref ref-type="bibr" rid="c42">Sorensen, 1948</xref>; <xref ref-type="bibr" rid="c31">Milletari et al., 2016</xref></italic></bold>); image similarity is measured with the normalized cross-correlation <italic>𝒸</italic>; and the scaling and shearing are measured with the absolute value of the logarithmof the determinant of the affine matrices, i.e., <italic>f</italic> (Φ<sub><italic>n</italic></sub>) is the absolute log-determinant of the 3×3 matrix encoding Φ<sub><italic>n</italic></sub>. The constants α, β, γ, <italic>ν</italic> are relative weights, which we set via visual inspection of the output on a small pilot dataset. For the surface reference, we used: α = .95, β = γ = .025, <italic>ν</italic> =γ<italic>⁄</italic>100. For the probabilistic atlas, we trust the reference less and also use more regularization to prevent excessive deformation of slices: α = .8, β = γ = <italic>ν</italic> = .1. Either way, the 3D reconstruction is in practice not very sensitive to the exact value of these parameters. We also note that, as opposed to the preprocessing described in the previous section, SIFT is not a good candidate for matching consecutive slices: while it is resilient against changes in pose (e.g., object rotation), perspective, and lightning, it is not robust against changes in the object itself - such as changes between one slice to the next.</p>
+<p>The objective function ℱ is minimized with standard numerical methods - specifically the LBFGS algorithm (<bold><italic><xref rid="c19" ref-type="bibr">Fletcher, 1987</xref></italic></bold>). The LBFGS optimizer is initialized by stacking the photographs with their centers of gravity on coordinate (0, 0), and then matching the center of gravity of the whole stack with the center of gravity of the 3D reference (as illustrated in Video 1 in the supplement, see also <ext-link ext-link-type="uri" xlink:href="https://youtu.be/wo5meYRaGUY">https://youtu.be/wo5meYRaGUY</ext-link>).</p>
+<p>If a probabilistic atlas is used instead of the surface scan, the same objective function is used but with a slightly different search space. Since we can no longer trust the external reference to correct for fine shape correction: <italic>(i)</italic> we keep the scaling factor of the anterior-posterior direction fixed to <italic>s</italic> = 1 (i.e., we trust the slice thickness specified by the user); <italic>(ii)</italic> we use rigid rather than affine transforms {<italic>ϕ</italic><sub><italic>n</italic></sub>} for the slices (which also has the effect of making the regularizer equal to zero); and <italic>(iii)</italic> we use a full 3D affine transform Ψ for the reference. Sample reconstructions of a case with a 3D surface and a probabilistic atlas are shown in <xref rid="fig5" ref-type="fig">Figure 5e-g</xref>. The probabilistic atlas produces a plausible reconstruction, which is however far from the real shape of the specimen given by the surface (<xref rid="fig5" ref-type="fig">Figure 5g</xref>). An additional example from the MADRC dataset is shown in <xref rid="fig2" ref-type="fig">Figure 2</xref> of Appendix 2. We note that 3D reconstruction is implemented in PyTorch, and runs efficiently on a graphics processing unit (GPU) - less then five minutes on a Nvidia Quadro RTX 6000.</p>
+</sec>
+<sec id="s4f">
+<title>Segmentation</title>
+<p>The 3D reconstructed photographs have various applications (e.g., volumetry, computationally guided dissection) that require image segmentation, i.e., assigning neuroanatomical labels to every spatial location (<bold><italic><xref ref-type="bibr" rid="c32">Pham et al., 2000</xref>; <xref ref-type="bibr" rid="c13">Despotović et al., 2015</xref>; <xref ref-type="bibr" rid="c2">Akkus et al., 2017</xref></italic></bold>). There are two main challenges when segmenting the 3D reconstructed photographs. First, the appearance of the images varies widely across cases due to differences in camera hardware (sensor, lens), camera settings, illumination conditions, and tissue preparation (e.g., fixed versus fresh). And second, accurate volumetry requires estimating the segmentation not only on the planes of the photographs but also in between slices.</p>
+<p>In our previous work (<bold><italic><xref ref-type="bibr" rid="c45">Tregidgo et al., 2020</xref></italic></bold>), we adopted a Bayesian segmentation strategy that handled the first issue but not the second. Here, we extend a machine learning approach based on domain randomization (<bold><italic><xref ref-type="bibr" rid="c44">Tobin et al., 2017</xref></italic></bold>) that we have successfully applied to segment clinical brain MRI scans with large slice spacing (<bold><italic>Billot et al., 2023a</italic></bold>,b). Specifically, our newly proposed approach “Photo-SynthSeg” trains a convolutional neural network for image segmentation (a 3D U-Net, <bold><italic><xref ref-type="bibr" rid="c37">Ronneberger et al. 2015</xref>; <xref ref-type="bibr" rid="c8">Çiçek et al. 2016</xref></italic></bold>) with synthetic data as follows.</p>
+<p>“Photo-SynthSeg” starts from a training dataset (the T1-39 dataset) that comprises a pool of 3D segmentations of brain images at isotropic 3D resolution (<xref rid="fig6" ref-type="fig">Figure 6a</xref>). At every iteration during training, one of these 3D segmentations is randomly selected and geometrically deformed with a random nonlinear transform, which simulates imperfect 3D reconstruction by including a “deformation jitter” in the coronal direction, i.e., small but abrupt deformations from one coronal slice to the next (<xref rid="fig6" ref-type="fig">Figure 6b</xref>). This deformed isotropic segmentation is used to generate a synthetic 3D image (also at isotropic resolution) using a Gaussian mixture model conditioned on the segmentation (<xref rid="fig6" ref-type="fig">Figure 6c</xref>). Crucially, we randomize the Gaussian parameters (means and variances) to make the neural network robust against variations in image appearance. This synthetic isotropic image is then “digitally sliced” into a 3D stack of synthetic coronal photographs, each of which is independently corrupted by a random 2D smooth illumination field that simulates inhomogeneities in the illumination of the photographs (<xref rid="fig6" ref-type="fig">Figure 6d</xref>). Importantly, we also randomize the thickness of the simulated slices in every iteration and introduce small stochastic variations in thickness around the central value within each simulation. This strategy makes the network agnostic to the slice thickness of the reconstructed 3D stack at test time. Finally, the simulated stack, which has anisotropic resolution (e.g., 1mm in-plane and several mm in slice thickness), is resampled to the original isotropic resolution of the (deformed) 3D segmentation (<xref rid="fig6" ref-type="fig">Figure 6e</xref>) - typically 1 mm isotropic.</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6.</label>
+<caption><p>Intermediate steps in the generative process: <bold>(a)</bold> Randomly sampled input label map from the training set. <bold>(b)</bold> Spatially augmented input label map; imperfect 3D reconstruction is simulated with a deformation jitter across the coronal plane. <bold>(c)</bold> Synthetic image obtained by sampling from a Gaussian Mixture Model conditioned on the segmentation, with randomized means and variances. <bold>(d)</bold> Slice spacing is simulated by downsampling to low resolution. This imaging volume is further augmented with a bias field and intensity transforms (brightness, contrast, gamma). <bold>(e)</bold> The final training image is obtained by resampling (d) to high resolution. The neural network is trained with pairs of images like (e) (input) and (b) (target).</p></caption>
+<graphic xlink:href="544050v4_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>This generative process mimics the image formation process in the real world and has two crucial aspects. First, the super-resolution component: Photo-SynthSeg is a U-Net that will produce a high-resolution (1 mm) isotropic 3D segmentation for every input at test time, independently of the slice spacing of the 3D reconstructed stack of photographs (<xref rid="fig2" ref-type="fig">Figure 2</xref>). And second, domain randomization: sampling different Gaussian parameters, illumination fields, and slice thicknesses at every iteration beyond realistic limits (as in <xref rid="fig6" ref-type="fig">Figure 6</xref>, where even contralateral regions have different appearance) forces the U-Net to learn features that are independent of the intensity profiles of the photographs, as well as of the spacing between slices. This process makes the U-Net robust against changes in the acquisition. We note that the Gaussian distributions are univariate rather than trivariate, i.e., they model grayscale rather than red-green-blue triplets; we tried training a U-Net with the latter, but the performance on color images was worse than when converting them to grayscale and using the U-Net trained with univariate Gaussians.</p>
+<p>During training, resampled stacks and corresponding segmentations (<xref rid="fig6" ref-type="fig">Figure 6b-e</xref>) are fed to a U-Net. The U-Net architecture is the same as in our previous works with synthetic scans (<bold><italic><xref ref-type="bibr" rid="c3">Billot et al., 2020</xref>, 2023a</italic></bold>,a): it consists of five levels, each separated by a batch normalization layer (<bold><italic><xref ref-type="bibr" rid="c22">Ioffe and Szegedy, 2015</xref></italic></bold>) along with a max-pooling (contracting path) or an upsampling operation (expanding path). All levels comprise two convolution layers with 3 × 3 × 3 kernels. Every convolutional layer is associated with an Exponential Linear Unit activation (<bold><italic><xref ref-type="bibr" rid="c9">Clevert et al., 2016</xref></italic></bold>), except for the last one, which uses a softmax. While the first layer comprises 24 feature maps, this number is doubled after each max-pooling, and halved after each upsampling. Following the original U-Net architecture, skip connections are used across the contracting and expanding paths. The network is trained with a soft Dice loss (<bold><italic><xref ref-type="bibr" rid="c31">Milletari et al., 2016</xref></italic></bold>) and the Adam optimizer (<bold><italic><xref ref-type="bibr" rid="c23">Kingma and Ba, 2014</xref></italic></bold>). The deep learning model is implemented in Keras (<bold><italic><xref ref-type="bibr" rid="c7">Chollet, 2015</xref></italic></bold>) with a Tensorflow backend (<bold><italic><xref ref-type="bibr" rid="c1">Abadi et al., 2016</xref></italic></bold>) and runs on a few seconds on a Nvidia Quadro RTX 6000 GPU. Training takes around seven days on the same GPU.</p>
+<p>Finally, we note that there are two different versions of Photo-SynthSeg: one for full cerebra and one for single hemispheres. The later is trained with left hemispheres and flipped right hemi-spheres, and can thus be used as is for left hemispheres. To process a right hemisphere, we simply left-right flip it, segment it, and flip the results back. While the default Photo-SynthSeg pipeline segments the cerebral cortex as a whole (i.e., as in <xref rid="fig6" ref-type="fig">Figure 6a</xref>), our tool also offers the option of subdividing it into parcels as defined by the Desikan-Killiany atlas (<bold><italic><xref ref-type="bibr" rid="c11">Desikan et al., 2009</xref></italic></bold>), like in <xref rid="fig2" ref-type="fig">Figure 2</xref>. This is achieved with the cortical parcellation module (“Segmenter S3”) of our tool “SynthSeg” (<bold><italic>Billot et al., 2023b</italic></bold>), which is also distributed with FreeSurfer.</p>
+</sec>
+</sec>
+<sec id="d1e1462" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="d1e1674">
+<label>Supplemental Video 1</label>
+<media xlink:href="supplements/544050_file02.mp4"/>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgments</title>
+<p>First and foremost, we thank the research participants who donated their brains to science and their families, without whom this work would be impossible.</p>
+<p>This research was supported by primarily supported by the National Institute of Aging (R01AG070988 and P30AG062421). Other support was provided by NIH grants RF1MH123195, R01EB031114, UM1MH130981, P30AG066509 (UW ADRC), U19AG066567, U19AG060909, K08AG065426, R01NS112161; the European Union (ERC Starting Grant 677697); Alzheimer’s Research UK (ARUK-IRG2019A-003); and the Massachusetts Life Sciences Center. AC was further funded by the European Union, the Ministry of Universities and Recovery, and the Transformation and Resilience Plan, through a call from Universitat Politècnica de Catalunya (Grant Ref. 2021UPC-MS-67573). Additional support was provided by NIH grants U01MH117023, 1R01EB023281, R01EB006758, R21EB018907, R01EB019956, P41EB030006, 1R56AG064027, 1R01AG064027, 5R01AG008122, R01AG016495, 1R01AG070988, UM1MH13 R01 MH123195, R01 MH121885, 1RF1MH123195, R01NS0525851, R21NS072652, R01NS070963, R01NS083534, 5U01NS086625,5U24NS10059103, R01NS105820, 1S10RR023401, 1S10RR019307, 1S10RR023043, 5U01MH093765, and by the Buster Alvord Endowment.</p>
+<p>BF has a financial interest in CorticoMetrics, a company developing brain MRI measurement technology. His interests are reviewed and managed by Massachusetts General Hospital.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="other"><string-name><surname>Abadi</surname> <given-names>M</given-names></string-name>, <string-name><surname>Barham</surname> <given-names>P</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>J</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Davis</surname> <given-names>A.</given-names></string-name> <article-title>Tensorflow: A system for large-scale machine learning</article-title>. In: <source>Symposium on Operating Systems Design and Implementation</source>; <year>2016</year>. p. <fpage>265</fpage>–<lpage>283</lpage>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><string-name><surname>Akkus</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Galimzianova</surname> <given-names>A</given-names></string-name>, <string-name><surname>Hoogi</surname> <given-names>A</given-names></string-name>, <string-name><surname>Rubin</surname> <given-names>DL</given-names></string-name>, <string-name><surname>Erickson</surname> <given-names>BJ</given-names></string-name>. <article-title>Deep learning for brain MRI segmentation: state of the art and future directions</article-title>. <source>Journal of digital imaging</source>. <year>2017</year>; <volume>30</volume>:<fpage>449</fpage>–<lpage>459</lpage>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="other"><string-name><surname>Billot</surname> <given-names>B</given-names></string-name>, <string-name><surname>Greve</surname> <given-names>D</given-names></string-name>, <string-name><surname>Van Leemput</surname> <given-names>K</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>, <string-name><surname>Dalca</surname> <given-names>A.</given-names></string-name> <article-title>A Learning Strategy for Contrast-agnostic MRI Segmentation</article-title>. In: <source>Medical Imaging with Deep Learning</source>; <year>2020</year>. p. <fpage>75</fpage>–<lpage>93</lpage>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="other"><string-name><surname>Billot</surname> <given-names>B</given-names></string-name>, <string-name><surname>Greve</surname> <given-names>DN</given-names></string-name>, <string-name><surname>Puonti</surname> <given-names>O</given-names></string-name>, <string-name><surname>Thielscher</surname> <given-names>A</given-names></string-name>, <string-name><surname>Van Leemput</surname> <given-names>K</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Dalca</surname> <given-names>AV</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>, <etal>et al.</etal> <article-title>SynthSeg: Segmentation of brain MRI scans of any contrast and resolution without retraining</article-title>. <source>Medical Image Analysis</source>. <year>2023</year>; p. <fpage>102789</fpage>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><string-name><surname>Billot</surname> <given-names>B</given-names></string-name>, <string-name><surname>Magdamo</surname> <given-names>C</given-names></string-name>, <string-name><surname>Cheng</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Arnold</surname> <given-names>SE</given-names></string-name>, <string-name><surname>Das</surname> <given-names>S</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>. <article-title>Robust machine learning segmentation for largescale analysis of heterogeneous clinical brain MRI datasets</article-title>. <source>Proceedings of the National Academy of Sciences</source>. <year>2023</year>; <volume>120</volume>(<issue>9</issue>):<fpage>e2216399120</fpage>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><string-name><surname>Blanken</surname> <given-names>AE</given-names></string-name>, <string-name><surname>Hurtz</surname> <given-names>S</given-names></string-name>, <string-name><surname>Zarow</surname> <given-names>C</given-names></string-name>, <string-name><surname>Biado</surname> <given-names>K</given-names></string-name>, <string-name><surname>Honarpisheh</surname> <given-names>H</given-names></string-name>, <string-name><surname>Somme</surname> <given-names>J</given-names></string-name>, <string-name><surname>Brook</surname> <given-names>J</given-names></string-name>, <string-name><surname>Tung</surname> <given-names>S</given-names></string-name>, <string-name><surname>Kraft</surname> <given-names>E</given-names></string-name>, <string-name><surname>Lo</surname> <given-names>D</given-names></string-name>, <etal>et al.</etal> <article-title>Associations between hippocampal morphometry and neuropathologic markers of Alzheimer’s disease using 7T MRI</article-title>. <source>NeuroImage: Clinical</source>. <year>2017</year>; <volume>15</volume>:<fpage>56</fpage>–<lpage>61</lpage>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="web"><string-name><surname>Chollet</surname> <given-names>F</given-names></string-name>, <source>Keras</source>; <year>2015</year>. <ext-link ext-link-type="uri" xlink:href="https://keras.io">Https://keras.io</ext-link>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="book"><string-name><surname>Çiçek</surname> <given-names>Ö</given-names></string-name>, <string-name><surname>Abdulkadir</surname> <given-names>A</given-names></string-name>, <string-name><surname>Lienkamp</surname> <given-names>SS</given-names></string-name>, <string-name><surname>Brox</surname> <given-names>T</given-names></string-name>, <string-name><surname>Ronneberger</surname> <given-names>O.</given-names></string-name> <chapter-title>3D U-Net: learning dense volumetric segmentation from sparse annotation</chapter-title>. In: <source>Medical Image Computing and Computer-Assisted Intervention–MICCAI 2016: 19th International Conference</source>, <publisher-loc>Athens, Greece</publisher-loc>, <month>October</month> 17-21, 2016, Proceedings, Part II 19 <publisher-name>Springer</publisher-name>; <year>2016</year>. p. <fpage>424</fpage>–<lpage>432</lpage>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="other"><string-name><surname>Clevert</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Unterthiner</surname> <given-names>T</given-names></string-name>, <string-name><surname>Hochreiter</surname> <given-names>S.</given-names></string-name> <source>Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)</source>. arXiv:151107289 [cs]. <year>2016</year>;.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><string-name><surname>Coupé</surname> <given-names>P</given-names></string-name>, <string-name><surname>Catheline</surname> <given-names>G</given-names></string-name>, <string-name><surname>Lanuza</surname> <given-names>E</given-names></string-name>, <string-name><surname>Manjón</surname> <given-names>JV</given-names></string-name>, <string-name><surname>Initiative</surname> <given-names>ADN</given-names></string-name>. <article-title>Towards a unified analysis of brain maturation and aging across the entire lifespan: A MRI analysis</article-title>. <source>Human brain mapping</source>. <year>2017</year>; <volume>38</volume>(<issue>11</issue>):<fpage>5501</fpage>–<lpage>5518</lpage>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><string-name><surname>Desikan</surname> <given-names>RS</given-names></string-name>, <string-name><surname>Cabral</surname> <given-names>HJ</given-names></string-name>, <string-name><surname>Hess</surname> <given-names>CP</given-names></string-name>, <string-name><surname>Dillon</surname> <given-names>WP</given-names></string-name>, <string-name><surname>Glastonbury</surname> <given-names>CM</given-names></string-name>, <string-name><surname>Weiner</surname> <given-names>MW</given-names></string-name>, <string-name><surname>Schmansky</surname> <given-names>NJ</given-names></string-name>, <string-name><surname>Greve</surname> <given-names>DN</given-names></string-name>, <string-name><surname>Salat</surname> <given-names>DH</given-names></string-name>, <string-name><surname>Buckner</surname> <given-names>RL</given-names></string-name>, <etal>et al.</etal> <article-title>Automated MRI measures identify individuals with mild cognitive impairment and Alzheimer’s disease</article-title>. <source>Brain</source>. <year>2009</year>; <volume>132</volume>(<issue>8</issue>):<fpage>2048</fpage>–<lpage>2057</lpage>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><string-name><surname>Desikan</surname> <given-names>RS</given-names></string-name>, <string-name><surname>Ségonne</surname> <given-names>F</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Quinn</surname> <given-names>BT</given-names></string-name>, <string-name><surname>Dickerson</surname> <given-names>BC</given-names></string-name>, <string-name><surname>Blacker</surname> <given-names>D</given-names></string-name>, <string-name><surname>Buckner</surname> <given-names>RL</given-names></string-name>, <string-name><surname>Dale</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Maguire</surname> <given-names>RP</given-names></string-name>, <string-name><surname>Hyman</surname> <given-names>BT</given-names></string-name>, <etal>et al.</etal> <article-title>An automated labeling system for subdividing the human cerebral cortex on MRI scans into gyral based regions of interest</article-title>. <source>Neuroimage</source>. <year>2006</year>; <volume>31</volume>(<issue>3</issue>):<fpage>968</fpage>–<lpage>980</lpage>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="other"><string-name><surname>Despotović</surname> <given-names>I</given-names></string-name>, <string-name><surname>Goossens</surname> <given-names>B</given-names></string-name>, <string-name><surname>Philips</surname> <given-names>W.</given-names></string-name> <article-title>MRI segmentation of the human brain: challenges, methods, and applications</article-title>. <source>Computational and mathematical methods in medicine</source>. <year>2015</year>; 2015.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><string-name><surname>Dice</surname> <given-names>LR</given-names></string-name>.<article-title>Measures of the amount of ecologic association between species</article-title>. <source>Ecology</source>. <year>1945</year>; <volume>26</volume>(<issue>3</issue>):<fpage>297</fpage>–<lpage>302</lpage>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><string-name><surname>Dickerson</surname> <given-names>BC</given-names></string-name>, <string-name><surname>Feczko</surname> <given-names>E</given-names></string-name>, <string-name><surname>Augustinack</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Pacheco</surname> <given-names>J</given-names></string-name>, <string-name><surname>Morris</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Buckner</surname> <given-names>RL</given-names></string-name>. <article-title>Differential effects of aging and Alzheimer’s disease on medial temporal lobe cortical thickness and surface area</article-title>. <source>Neurobiology of aging</source>. <year>2009</year>; <volume>30</volume>(<issue>3</issue>):<fpage>432</fpage>–<lpage>440</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><string-name><surname>Edlow</surname> <given-names>BL</given-names></string-name>, <string-name><surname>Mareyam</surname> <given-names>A</given-names></string-name>, <string-name><surname>Horn</surname> <given-names>A</given-names></string-name>, <string-name><surname>Polimeni</surname> <given-names>JR</given-names></string-name>, <string-name><surname>Witzel</surname> <given-names>T</given-names></string-name>, <string-name><surname>Tisdall</surname> <given-names>MD</given-names></string-name>, <string-name><surname>Augustinack</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Stockmann</surname> <given-names>JP</given-names></string-name>, <string-name><surname>Diamond</surname> <given-names>BR</given-names></string-name>, <string-name><surname>Stevens</surname> <given-names>A</given-names></string-name>, <etal>et al.</etal> <article-title>7 Tesla MRI of the ex vivo human brain at 100 micron resolution</article-title>. <source>Scientific data</source>. <year>2019</year>; <volume>6</volume>(<issue>1</issue>):<fpage>1</fpage>–<lpage>10</lpage>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><string-name><surname>Fischl</surname> <given-names>B.</given-names></string-name> <article-title>FreeSurfer</article-title>. <source>Neuroimage</source>. <year>2012</year>; <volume>62</volume>(<issue>2</issue>):<fpage>774</fpage>–<lpage>781</lpage>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Salat</surname> <given-names>DH</given-names></string-name>, <string-name><surname>Busa</surname> <given-names>E</given-names></string-name>, <string-name><surname>Albert</surname> <given-names>M</given-names></string-name>, <string-name><surname>Dieterich</surname> <given-names>M</given-names></string-name>, <string-name><surname>Haselgrove</surname> <given-names>C</given-names></string-name>, <string-name><surname>Van Der Kouwe</surname> <given-names>A</given-names></string-name>, <string-name><surname>Killiany</surname> <given-names>R</given-names></string-name>, <string-name><surname>Kennedy</surname> <given-names>D</given-names></string-name>, <string-name><surname>Klaveness</surname> <given-names>S</given-names></string-name>, <etal>et al.</etal> <article-title>Whole brain segmentation: automated labeling of neuroanatomical structures in the human brain</article-title>. <source>Neuron</source>. <year>2002</year>; <volume>33</volume>(<issue>3</issue>):<fpage>341</fpage>–<lpage>355</lpage>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="book"><string-name><surname>Fletcher</surname> <given-names>R.</given-names></string-name> <source>Practical methods of optimization</source> <publisher-name>john wiley &amp; sons</publisher-name>. <publisher-loc>New York</publisher-loc>. <year>1987</year>; <volume>80</volume>(<issue>4</issue>).</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="book"><string-name><surname>Goodfellow</surname> <given-names>I</given-names></string-name>, <string-name><surname>Bengio</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Courville</surname> <given-names>A.</given-names></string-name> <source>Deep learning</source>. <publisher-name>MIT press</publisher-name>; <year>2016</year>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>, <string-name><surname>Billot</surname> <given-names>B</given-names></string-name>, <string-name><surname>Balbastre</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Magdamo</surname> <given-names>C</given-names></string-name>, <string-name><surname>Arnold</surname> <given-names>SE</given-names></string-name>, <string-name><surname>Das</surname> <given-names>S</given-names></string-name>, <string-name><surname>Edlow</surname> <given-names>BL</given-names></string-name>, <string-name><surname>Alexander</surname> <given-names>DC</given-names></string-name>, <string-name><surname>Golland</surname> <given-names>P</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B.</given-names></string-name> <article-title>SynthSR: A public AI tool to turn heterogeneous clinical brain scans into high-resolution T1-weighted images for 3D morphometry</article-title>. <source>Science advances</source>. <year>2023</year>; <volume>9</volume>(<issue>5</issue>):<fpage>eadd3607</fpage>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="other"><string-name><surname>Ioffe</surname> <given-names>S</given-names></string-name>, <string-name><surname>Szegedy</surname> <given-names>C.</given-names></string-name> <article-title>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</article-title>. In: <source>International Conference on Machine Learning</source>; <year>2015</year>. p. <fpage>448</fpage>–<lpage>456</lpage>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="other"><string-name><surname>Kingma</surname> <given-names>DP</given-names></string-name>, <string-name><surname>Ba</surname> <given-names>J.</given-names></string-name> <article-title>Adam: A method for stochastic optimization</article-title>. <source>arXiv preprint</source> arXiv:14126980. <year>2014</year>;.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="book"><string-name><surname>Latimer</surname> <given-names>CS</given-names></string-name>, <string-name><surname>Melief</surname> <given-names>EJ</given-names></string-name>, <string-name><surname>Ariza-Torres</surname> <given-names>J</given-names></string-name>, <string-name><surname>Howard</surname> <given-names>K</given-names></string-name>, <string-name><surname>Keen</surname> <given-names>AR</given-names></string-name>, <string-name><surname>Keene</surname> <given-names>LM</given-names></string-name>, <string-name><surname>Schantz</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Sytsma</surname> <given-names>TM</given-names></string-name>, <string-name><surname>Wilson</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Grabowski</surname> <given-names>TJ</given-names></string-name>, <etal>et al.</etal> <chapter-title>Protocol for the Systematic Fixation, Circuit-Based Sampling, and Qualitative and Quantitative Neuropathological Analysis of Human Brain Tissue</chapter-title>. In: <source>Alzheimer’s Disease</source> <publisher-name>Springer</publisher-name>; <year>2023</year>.p. <fpage>3</fpage>–<lpage>30</lpage>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><string-name><surname>Lerch</surname> <given-names>JP</given-names></string-name>, <string-name><surname>Pruessner</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Zijdenbos</surname> <given-names>A</given-names></string-name>, <string-name><surname>Hampel</surname> <given-names>H</given-names></string-name>, <string-name><surname>Teipel</surname> <given-names>SJ</given-names></string-name>, <string-name><surname>Evans</surname> <given-names>AC</given-names></string-name>. <article-title>Focal decline of cortical thickness in Alzheimer’s disease identified by computational neuroanatomy</article-title>. <source>Cerebral cortex</source>. <year>2005</year>; <volume>15</volume>(<issue>7</issue>):<fpage>995</fpage>–<lpage>1001</lpage>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><string-name><surname>Love</surname> <given-names>S.</given-names></string-name> <article-title>Neuropathological investigation of dementia: a guide for neurologists</article-title>. <source>Journal of Neurology, Neurosurgery &amp; Psychiatry</source>. <year>2005</year>; <volume>76</volume>(<issue>suppl 5</issue>):<fpage>v8</fpage>–<lpage>v14</lpage>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="book"><string-name><surname>Lowe</surname> <given-names>DG</given-names></string-name>. <chapter-title>Object recognition from local scale-invariant features</chapter-title>. In: <source>Proceedings of the seventh IEEE international conference on computer vision</source>, vol. <volume>2</volume> <publisher-name>Ieee</publisher-name>; <year>1999</year>. p. <fpage>1150</fpage>–<lpage>1157</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><string-name><surname>Maintz</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Viergever</surname> <given-names>MA</given-names></string-name>. <article-title>A survey of medical image registration</article-title>. <source>Medical image analysis</source>. <year>1998</year>; <volume>2</volume>(<issue>1</issue>):<fpage>1</fpage>–<lpage>36</lpage>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="book"><string-name><surname>Mancini</surname> <given-names>M</given-names></string-name>, <string-name><surname>Crampsie</surname> <given-names>S</given-names></string-name>, <string-name><surname>Thomas</surname> <given-names>DL</given-names></string-name>, <string-name><surname>Jaunmuktane</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Holton</surname> <given-names>JL</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>. <chapter-title>Hierarchical joint registration of tissue blocks with soft shape constraints for large-scale histology of the human brain</chapter-title>. In: <source>2019 IEEE 16th International Symposium on Biomedical Imaging (ISBI 2019)</source> <publisher-name>IEEE</publisher-name>; <year>2019</year>. p. <fpage>666</fpage>–<lpage>669</lpage>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="other"><string-name><surname>Mann</surname> <given-names>HB</given-names></string-name>, <string-name><surname>Whitney</surname> <given-names>DR</given-names></string-name>. <article-title>On a test of whether one of two random variables is stochastically larger than the other</article-title>. <source>The annals of mathematical statistics</source>. <year>1947</year>; p. <fpage>50</fpage>–<lpage>60</lpage>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="book"><string-name><surname>Milletari</surname> <given-names>F</given-names></string-name>, <string-name><surname>Navab</surname> <given-names>N</given-names></string-name>, <string-name><surname>Ahmadi</surname> <given-names>SA</given-names></string-name>. <chapter-title>V-net: Fully convolutional neural networks for volumetric medical image segmentation</chapter-title>. In: <source>2016 fourth international conference on 3D vision (3DV)</source> <publisher-name>Ieee</publisher-name>; <year>2016</year>. p. <fpage>565</fpage>–<lpage>571</lpage>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><string-name><surname>Pham</surname> <given-names>DL</given-names></string-name>, <string-name><surname>Xu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Prince</surname> <given-names>JL</given-names></string-name>. <article-title>Current methods in medical image segmentation</article-title>. <source>Annual review of biomedical engineering</source>. <year>2000</year>; <volume>2</volume>(<issue>1</issue>):<fpage>315</fpage>–<lpage>337</lpage>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><string-name><surname>Pichat</surname> <given-names>J</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>, <string-name><surname>Yousry</surname> <given-names>T</given-names></string-name>, <string-name><surname>Ourselin</surname> <given-names>S</given-names></string-name>, <string-name><surname>Modat</surname> <given-names>M.</given-names></string-name> <article-title>A survey of methods for 3D histology reconstruction</article-title>. <source>Medical image analysis</source>. <year>2018</year>; <volume>46</volume>:<fpage>73</fpage>–<lpage>105</lpage>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><string-name><surname>Pluim</surname> <given-names>JP</given-names></string-name>, <string-name><surname>Maintz</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Viergever</surname> <given-names>MA</given-names></string-name>. <article-title>Mutual-information-based registration of medical images: a survey</article-title>. <source>IEEE transactions on medical imaging</source>. <year>2003</year>; <volume>22</volume>(<issue>8</issue>):<fpage>986</fpage>–<lpage>1004</lpage>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><string-name><surname>Puonti</surname> <given-names>O</given-names></string-name>, <string-name><surname>Iglesias</surname> <given-names>JE</given-names></string-name>, <string-name><surname>Van Leemput</surname> <given-names>K.</given-names></string-name> <article-title>Fast and sequence-adaptive whole-brain segmentation using parametric Bayesian modeling</article-title>. <source>NeuroImage</source>. <year>2016</year>; <volume>143</volume>:<fpage>235</fpage>–<lpage>249</lpage>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><string-name><surname>Ravid</surname> <given-names>R.</given-names></string-name> <article-title>Biobanks for biomarkers in neurological disorders: the Da Vinci bridge for optimal clinicopathological connection</article-title>. <source>Journal of the Neurological Sciences</source>. <year>2009</year> <month>Aug</month>; <volume>283</volume>(<issue>1-2</issue>):<fpage>119</fpage>–<lpage>126</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.jns.2009.02.364</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="other"><string-name><surname>Ronneberger</surname> <given-names>O</given-names></string-name>, <string-name><surname>Fischer</surname> <given-names>P</given-names></string-name>, <string-name><surname>Brox</surname> <given-names>T.</given-names></string-name> <article-title>U-Net: Convolutional Networks for Biomedical Image Segmentation</article-title>. In: <person-group person-group-type="editor"><string-name><surname>Navab</surname> <given-names>N</given-names></string-name>, <string-name><surname>Hornegger</surname> <given-names>J</given-names></string-name>, <string-name><surname>Wells</surname> <given-names>WM</given-names></string-name>, <string-name><surname>Frangi</surname> <given-names>AF</given-names></string-name></person-group>, editors. <source>Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015 Lecture Notes in Computer Science, Cham: Springer International Publishing</source>; <year>2015</year>. p. <fpage>234</fpage>–<lpage>241</lpage>. doi: <pub-id pub-id-type="doi">10.1007/978-3-319-24574-4_28</pub-id>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><string-name><surname>Salat</surname> <given-names>DH</given-names></string-name>, <string-name><surname>Buckner</surname> <given-names>RL</given-names></string-name>, <string-name><surname>Snyder</surname> <given-names>AZ</given-names></string-name>, <string-name><surname>Greve</surname> <given-names>DN</given-names></string-name>, <string-name><surname>Desikan</surname> <given-names>RS</given-names></string-name>, <string-name><surname>Busa</surname> <given-names>E</given-names></string-name>, <string-name><surname>Morris</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Dale</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B.</given-names></string-name> <article-title>Thinning of the cerebral cortex in aging</article-title>. <source>Cerebral cortex</source>. <year>2004</year>; <volume>14</volume>(<issue>7</issue>):<fpage>721</fpage>–<lpage>730</lpage>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><string-name><surname>Salvi</surname> <given-names>J</given-names></string-name>, <string-name><surname>Pages</surname> <given-names>J</given-names></string-name>, <string-name><surname>Batlle</surname> <given-names>J.</given-names></string-name> <article-title>Pattern codification strategies in structured light systems</article-title>. <source>Pattern recognition</source>. <year>2004</year>; <volume>37</volume>(<issue>4</issue>):<fpage>827</fpage>–<lpage>849</lpage>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><string-name><surname>Shatil</surname> <given-names>AS</given-names></string-name>, <string-name><surname>Matsuda</surname> <given-names>KM</given-names></string-name>, <string-name><surname>Figley</surname> <given-names>CR</given-names></string-name>. <article-title>A method for whole brain ex vivo magnetic resonance imaging with minimal susceptibility artifacts</article-title>. <source>Frontiers in neurology</source>. <year>2016</year>; <volume>7</volume>:<fpage>208</fpage>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><string-name><surname>Shattuck</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Mirza</surname> <given-names>M</given-names></string-name>, <string-name><surname>Adisetiyo</surname> <given-names>V</given-names></string-name>, <string-name><surname>Hojatkashani</surname> <given-names>C</given-names></string-name>, <string-name><surname>Salamon</surname> <given-names>G</given-names></string-name>, <string-name><surname>Narr</surname> <given-names>KL</given-names></string-name>, <string-name><surname>Poldrack</surname> <given-names>RA</given-names></string-name>, <string-name><surname>Bilder</surname> <given-names>RM</given-names></string-name>, <string-name><surname>Toga</surname> <given-names>AW</given-names></string-name>. <article-title>Construction of a 3D probabilistic atlas of human cortical structures</article-title>. <source>Neuroimage</source>. <year>2008</year>; <volume>39</volume>(<issue>3</issue>):<fpage>1064</fpage>–<lpage>1080</lpage>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><string-name><surname>Sorensen</surname> <given-names>TA</given-names></string-name>. <article-title>A method of establishing groups of equal amplitude in plant sociology based on similarity of species content and its application to analyses of the vegetation on Danish commons</article-title>. <source>Biol Skar</source>. <year>1948</year>; <volume>5</volume>:<fpage>1</fpage>–<lpage>34</lpage>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><string-name><surname>Sotiras</surname> <given-names>A</given-names></string-name>, <string-name><surname>Davatzikos</surname> <given-names>C</given-names></string-name>, <string-name><surname>Paragios</surname> <given-names>N.</given-names></string-name> <article-title>Deformable medical image registration: A survey</article-title>. <source>IEEE transactions on medical imaging</source>. <year>2013</year>; <volume>32</volume>(<issue>7</issue>):<fpage>1153</fpage>–<lpage>1190</lpage>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="book"><string-name><surname>Tobin</surname> <given-names>J</given-names></string-name>, <string-name><surname>Fong</surname> <given-names>R</given-names></string-name>, <string-name><surname>Ray</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schneider</surname> <given-names>J</given-names></string-name>, <string-name><surname>Zaremba</surname> <given-names>W</given-names></string-name>, <string-name><surname>Abbeel</surname> <given-names>P.</given-names></string-name> <chapter-title>Domain randomization for transferring deep neural networks from simulation to the real world</chapter-title>. In: <source>2017 IEEE/RSJ international conference on intelligent robots and systems (IROS)</source> <publisher-name>IEEE</publisher-name>; <year>2017</year>. p. <fpage>23</fpage>–<lpage>30</lpage>.</mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="book"><string-name><surname>Tregidgo</surname> <given-names>HF</given-names></string-name>, <string-name><surname>Casamitjana</surname> <given-names>A</given-names></string-name>, <string-name><surname>Latimer</surname> <given-names>CS</given-names></string-name>, <string-name><surname>Kilgore</surname> <given-names>MD</given-names></string-name>, <string-name><surname>Robinson</surname> <given-names>E</given-names></string-name>, <string-name><surname>Blackburn</surname> <given-names>E</given-names></string-name>, <string-name><surname>Van Leemput</surname> <given-names>K</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B</given-names></string-name>, <string-name><surname>Dalca</surname> <given-names>AV</given-names></string-name>, <string-name><surname>Donald</surname> <given-names>CLM</given-names></string-name>, <etal>et al.</etal> <chapter-title>3D reconstruction and segmentation of dissection photographs for MRI-free neu-ropathology</chapter-title>. In: <source>Medical Image Computing and Computer Assisted Intervention–MICCAI 2020: 23rd International Conference</source>, <publisher-loc>Lima, Peru</publisher-loc>, <month>October</month> 4–8, 2020, Proceedings, Part V 23 <publisher-name>Springer</publisher-name>; <year>2020</year>. p. <fpage>204</fpage>–<lpage>214</lpage>.</mixed-citation></ref>
+<ref id="c46"><mixed-citation publication-type="journal"><string-name><surname>Van Essen</surname> <given-names>DC</given-names></string-name>, <string-name><surname>Ugurbil</surname> <given-names>K</given-names></string-name>, <string-name><surname>Auerbach</surname> <given-names>E</given-names></string-name>, <string-name><surname>Barch</surname> <given-names>D</given-names></string-name>, <string-name><surname>Behrens</surname> <given-names>TE</given-names></string-name>, <string-name><surname>Bucholz</surname> <given-names>R</given-names></string-name>, <string-name><surname>Chang</surname> <given-names>A</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>L</given-names></string-name>, <string-name><surname>Corbetta</surname> <given-names>M</given-names></string-name>, <string-name><surname>Curtiss</surname> <given-names>SW</given-names></string-name>, <etal>et al.</etal> <article-title>The Human Connectome Project: a data acquisition perspective</article-title>. <source>Neuroimage</source>. <year>2012</year>; <volume>62</volume>(<issue>4</issue>):<fpage>2222</fpage>–<lpage>2231</lpage>.</mixed-citation></ref>
+<ref id="c47"><mixed-citation publication-type="journal"><string-name><surname>Walhovd</surname> <given-names>KB</given-names></string-name>, <string-name><surname>Fjell</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Reinvang</surname> <given-names>I</given-names></string-name>, <string-name><surname>Lundervold</surname> <given-names>A</given-names></string-name>, <string-name><surname>Dale</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Eilertsen</surname> <given-names>DE</given-names></string-name>, <string-name><surname>Quinn</surname> <given-names>BT</given-names></string-name>, <string-name><surname>Salat</surname> <given-names>D</given-names></string-name>, <string-name><surname>Makris</surname> <given-names>N</given-names></string-name>, <string-name><surname>Fischl</surname> <given-names>B.</given-names></string-name> <article-title>Effects of age on volumes of cortex, white matter and subcortical structures</article-title>. <source>Neurobiology of aging</source>. <year>2005</year>; <volume>26</volume>(<issue>9</issue>):<fpage>1261</fpage>–<lpage>1270</lpage>.</mixed-citation></ref>
+<ref id="c48"><mixed-citation publication-type="journal"><string-name><surname>Webster</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Grabowski</surname> <given-names>TJ</given-names></string-name>, <string-name><surname>Madhyastha</surname> <given-names>TM</given-names></string-name>, <string-name><surname>Gibbons</surname> <given-names>LE</given-names></string-name>, <string-name><surname>Keene</surname> <given-names>CD</given-names></string-name>, <string-name><surname>Latimer</surname> <given-names>CS</given-names></string-name>. <article-title>Leveraging Neuroimaging Tools to Assess Precision and Accuracy in an Alzheimer’s Disease Neuropathologic Sampling Protocol</article-title>. <source>Frontiers in Neuroscience</source>. <year>2021</year>; <volume>15</volume>. <ext-link ext-link-type="uri" xlink:href="https://www.frontiersin.org/article/10.3389/fnins.2021.693242">https://www.frontiersin.org/article/10.3389/fnins.2021.693242</ext-link>.</mixed-citation></ref>
+<ref id="c49"><mixed-citation publication-type="journal"><string-name><surname>Zitova</surname> <given-names>B</given-names></string-name>, <string-name><surname>Flusser</surname> <given-names>J.</given-names></string-name> <article-title>Image registration methods: a survey</article-title>. <source>Image and vision computing</source>. <year>2003</year>; <volume>21</volume>(<issue>11</issue>):<fpage>977</fpage>–<lpage>1000</lpage>.</mixed-citation></ref>
+</ref-list>
+<app-group>
+<app id="app1">
+<label>Appendix 1</label>
+<title>Data acquisition at the Massachusetts Alzheimer’s Disease Research Center (MADRC)</title>
+<p>The whole brain is removed using standard autopsy procedures. After removal of the dura matter, the brain is weighed, photo-documented, and then fixed in 10% neutral-buffered formalin (NBF). Some specimens are cut along the midline sagittal plane with one hemibrain frozen for future biochemical studies. After at least one week of fixation, the specimens are photo-documented again. The posterior fossa is then dissected off the fixed full or hemibrain through the midbrain at the level of cranial nerve III, and the supratentorial portion of the brain is 3D surface scanned.</p>
+<p>After scanning, the brain or hemibrain is sectioned at defined anatomical landmarks (anterior temporal tips, optic chiasm, infundibulum, mamillary bodies, cerebral peduncles, red nuclei, and colliculi) with the frontal and occipital lobes additionally sectioned at approximately 10 mm intervals. The front and back of all sections are then photographed with a metric ruler included for size reference. The photographs are then deidentified for further analysis.</p>
+<sec id="s5">
+<title>Data acquisition at the Alzheimer’s Disease Research Center of the University of Washington (UW-ADRC)</title>
+<p>The whole brain is removed using standard autopsy procedures. The brain is weighed and photo-documented, and then the meninges are removed. For donors with a postmortem interval (PMI: the time interval between death and procurement) longer than 12 hours, the whole brain is fixed in 10% NBF with no tissue frozen. A rapid slicing protocol is performed for donors with a post-mortem interval of fewer than 12 hours. For a rapid protocol, the brain is bisected along the midline, and one hemibrain is placed in a bucket with 10% NBF for two weeks. The other hemibrain is 3D surface scanned, then placed in a scaffolding box with the vermis of the cerebellum flush against the posterior wall. The hemibrain is embedded in freshly mixed dental alginate (540g powder blended in 4L of water) and submerged until the alginate is set. The alginate block containing the hemibrain is placed in a slicing sled with the frontal pole toward the front. The hemibrain is sliced anterior to posterior in 4mm slices. All slices are set on Teflon-coated aluminum plates and photographed. Alternating slices are set to be flash-frozen, with the remaining slices fixed in 10% NBF. The hemibrain (rapid) or whole (non-rapid) brain is fixed in 10% NBF for two weeks, embedded in agarose, and scanned in a 3T MRI scanner.</p>
+<p>Following the MRI, the agarose-embedded brain is sliced on a modified deli slicer for precise 4 mm tissue slabs aligned with the ex vivo MRI images for image-guided tissue sampling to standard tissue sampling following the current National Institute of Aging-Alzheimer’s Association (NIA-AA) consensus guidelines. After sampling, all blocks are processed and embedded in paraffin according to standard techniques. Following current NIA-AA guidelines, the resulting Fast-Frozen Paraffin-Embedded blocks are cut and stained for diagnostic analysis. Histologically stained slides are scanned into the HALO (<ext-link ext-link-type="uri" xlink:href="https://indicalab.com/halo/">https://indicalab.com/halo/</ext-link>) imaging workstation using an Aperio AT2 slide scanner and are analyzed by a trained neuropathologist.</p>
+</sec>
+</app>
+<app id="app2">
+<label>Appendix 2</label>
+<title>Supplementary figures</title>
+<fig id="figA2_1" position="float" fig-type="figure">
+<label>Appendix 2—figure 1.</label>
+<caption><p>Simulation and reconstruction of synthetic data. Top row: skull stripped T1 scan and (randomly translated and rotated) binary mask of the cerebrum, in yellow. Second row: original T2 scan. Third row: randomly sliced and linearly deformed T2 images. Bottom row: output of the 3D reconstruction algorithm, i.e., reconstructed T2 slices and registered reference mask overlaid in yellow.</p></caption>
+<graphic xlink:href="544050v4_figA2_1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figA2_2" position="float" fig-type="figure">
+<label>Appendix 2—figure 2.</label>
+<caption><p>Reconstruction with surface scan vs probabilistic atlas. <bold>(a)</bold> Initialization, with contour of 3D surface scan superimposed. <bold>(b)</bold> Reconstruction with 3D surface scan. <bold>(c)</bold> Reconstruction with probabilistic atlas (overlaid as heat map with transparency); the contour of the surface scan is overlaid in light blue, for comparison. Even though the shape of the reconstruction in (c) is plausible, it is clearly inaccurate in light of the surface scan.</p></caption>
+<graphic xlink:href="544050v4_figA2_2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figA2_3" position="float" fig-type="figure">
+<label>Appendix 2—figure 3.</label>
+<caption><p>Example of mid-coronal slice selected for manual segmentation and computation of Dice scores. Compared with the FreeSurFer protocol, we merge the ventral diencephalon (which has almost no visible contrast in the photographs) with the cerebral white matter in our manual delineations. We also merged this structures in the automated segmentations from SAMSEG and Photo-SynthSeg in this figure, for a more consistent comparison.</p></caption>
+<graphic xlink:href="544050v4_figA2_3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</app>
+</app-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.91398.3.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Zhou</surname>
+<given-names>Juan Helen</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of Singapore</institution>
+</institution-wrap>
+<city>Singapore</city>
+<country>Singapore</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Compelling</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>The authors of this study implemented an <bold>important</bold> toolset for 3D reconstruction and segmentation of dissection photographs, which could serve as an alternative for cadaveric and ex vivo MRIs. The tools were tested on synthetic and real data with <bold>compelling</bold> performance. This toolset could further contribute to the study of neuroimaging-neuropathological correlations.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.91398.3.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Gazula and co-workers presented in this paper a software tool for 3D structural analysis of human brains, using slabs of fixed or fresh brains. This tool will be included in Freesurfer, a well-known neuroimaging processing software. It is possible to reconstruct a 3D surface from photographs of coronal sliced brains, optionally using a surface scan as model. A high-resolution segmentation of 11 brain regions is produced, independent of the thickness of the slices, interpolating information when needed. Using this method, the researcher can use the sliced brain to segment all regions, without the need of ex vivo MRI scanning.</p>
+<p>The software suite is freely available and includes 3 modules. The first accomplishes preprocessing steps, for correction of pixel sizes and perspective. The second module is a registration algorithm that registers a 3D surface scan obtained prior to sectioning (reference) to the multiple 2D slices. It is not mandatory to scan the surface, -a probabilistic atlas can also be used as reference- however the accuracy is lower. The third module uses machine learning to perform the segmentation of 11 brain structures in the 3D reconstructed volume. This module is robust, dealing with different illumination conditions, cameras, lens and camera settings. This algorithm (&quot;Photo-SynthSeg&quot;) produces isotropic smooth reconstructions, even in high anisotropic datasets (when the in-plane resolution of the photograph is much higher than the thickness), interpolating the information between slices.</p>
+<p>To verify the accuracy and reliability of the toolbox, the authors reconstructed 3 datasets, using real and synthetic data. Real data of 21 postmortem confirmed Alzheimer's disease cases from the Massachusetts Alzheimer's Disease Research Center (MADRC)and 24 cases from the AD Research at the University of Washington(who were MRI scanned prior to processing)were employed for testing. These cases represent a challenging real-world scenario. Additionally, 500 subjects of the Human Connectome project were used for testing error as a continuous function of slice thickness. The segmentations were performed with the proposed deep-learning new algorithm (&quot;Photo-SynthSeg&quot;) and compared against MRI segmentations performed to &quot;SAMSEG&quot; (an MRI segmentation algorithm, computing Dice scores for the segmentations. The methods are sound and statistically showed correlations above 0.8, which is good enough to allow volumetric analysis. The main strengths of the methods are the datasets used (real-world challenging and synthetic) and the statistical treatment, which showed that the pipeline is robust and can facilitate volumetric analysis derived from brain sections and conclude which factors can influence in the accuracy of the method (such as using or not 3D scan and using constant thickness).</p>
+<p>Although very robust and capable of handling several situations, the researcher has to keep in mind that processing has to follow some basic rules in order for this pipeline to work properly. For instance, fiducials and scales need to be included in the photograph, and the slabs should be photographed against a contrasting background. Also, only coronal slices can be used, which can be limiting for certain situations.</p>
+<p>The authors achieved their aims, and the statistical analysis confirms that the machine learning algorithm performs segmentations comparable to the state-of-the-art of automated MRI segmentations.</p>
+<p>
+Those methods will be particularly interesting to researchers who deal with post-mortem tissue analysis and do not have access to ex vivo MRI. Quantitative measurements of specific brain areas can be performed in different pathologies and even in the normal aging process. The method is highly reproducible, and cost-effective since allows the pipeline to be applied by any researcher with small pre-processing steps.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.91398.3.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary</p>
+<p>The authors proposed a toolset Photo-SynthSeg to the software FreeSurfer which performs 3D reconstruction and high-resolution 3D segmentation on a stack of coronal dissection photographs of brain tissues. To prove the performance of the toolset, three experiments were conducted, including volumetric comparison of brain tissues on AD and HC groups from MADRC, quantitative evaluation of segmentation on UW-ADRC and quantitative evaluation of 3D reconstruction on HCP digitally sliced MRI data.</p>
+<p>Strengths</p>
+<p>To guarantee the successful workflow of the toolset, the authors clearly mentioned the prerequisites of dissection photograph acquisition, such as fiducials or rulers in the photos and tissue placement of brain slices with more than one connected component. The quantitative evaluation of segmentation and reconstruction on synthetic and real data demonstrates the accuracy of the methodology. Also, the successful application of this toolset on two brain banks with different slice thicknesses, tissue processing and photograph settings demonstrates its robustness. By working with tools of the SynthSeg pipeline, Photo-SynthSeg could further support volumetric cortex parcellation. The toolset also benefits from its adaptability of different 3D references, such as surface scan, ex vivo MRI and even probabilistic atlas, suiting the needs for different brain banks.</p>
+<p>Weaknesses</p>
+<p>Certain weaknesses are already covered in the manuscript. Cortical tissue segmentation could be further improved. The quantitative evaluation of 3D reconstruction is quite optimistic due to random affine transformations. Manual edits of slice segmentation task are still required and take a couple of minutes per photograph. Finally, the current toolset only accepts coronal brain slices and should adapt to axial or sagittal slices in future work.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.91398.3.sa3</article-id>
+<title-group>
+<article-title>Author Response</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Gazula</surname>
+<given-names>Harshvardhan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Tregidgo</surname>
+<given-names>Henry F. J.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3509-8154</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Billot</surname>
+<given-names>Benjamin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Balbastre</surname>
+<given-names>Yael</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>William-Ramirez</surname>
+<given-names>Jonathan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Herisse</surname>
+<given-names>Rogeny</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Deden-Binder</surname>
+<given-names>Lucas J</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Casamitjana</surname>
+<given-names>Adrià</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Melief</surname>
+<given-names>Erica J.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Latimer</surname>
+<given-names>Caitlin S.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kilgore</surname>
+<given-names>Mitchell D.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Montine</surname>
+<given-names>Mark</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Robinson</surname>
+<given-names>Eleanor</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Blackburn</surname>
+<given-names>Emily</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Marshall</surname>
+<given-names>Michael S.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Connors</surname>
+<given-names>Theresa R.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Oakley</surname>
+<given-names>Derek H.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6998-9510</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Frosch</surname>
+<given-names>Matthew P.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Young</surname>
+<given-names>Sean I.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Van Leemput</surname>
+<given-names>Koen</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Dalca</surname>
+<given-names>Adrian V.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>FIschl</surname>
+<given-names>Bruce</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mac Donald</surname>
+<given-names>Christine L.</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Keene</surname>
+<given-names>C. Dirk</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hyman</surname>
+<given-names>Bradley T.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7959-9401</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Iglesias</surname>
+<given-names>Juan Eugenio</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the previous reviews.</p>
+<disp-quote content-type="editor-comment">
+<list list-type="bullet">
+<list-item><p>Is the coronal slice in Figure 2 the corresponding mid-coronal plane to compute Dice scores? If so, the authors could mention it so that readers have an idea where the selected slice is.</p>
+</list-item></list>
+</disp-quote>
+<p>This is indeed a good point. The coronal slice in Figure 2 is not part of the set of slices that we used to compute Dice scores. Showing such a slice is important, so we have added a small figure to the appendix with one of these slices, along with the corresponding automated segmentations.</p>
+<disp-quote content-type="editor-comment">
+<list list-type="bullet">
+<list-item><p>SIFT descriptors were adopted to detect fiducials only. Maybe it could also be applied to align stacked photographs of brain slices.</p>
+</list-item></list>
+</disp-quote>
+<p>While SIFT is robust against changes in pose (e.g., object rotation), perspective, and lightning, it is not robust against changes in the object itself – such as changes between one slice to the next, as is the case in our work. We have added a sentence to the methods section clarifying this issue.</p>
+</body>
+</sub-article>
+</article>
