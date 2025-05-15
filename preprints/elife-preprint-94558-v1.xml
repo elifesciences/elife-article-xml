@@ -1,0 +1,688 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">94558</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.94558</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.94558.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Microbiology and Infectious Disease</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>A metabolic modeling-based framework for predicting trophic dependencies in native rhizobiomes of crop plants</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-7817-354X</contrib-id>
+<name>
+<surname>Ginatt</surname>
+<given-names>Alon Avraham</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Berihu</surname>
+<given-names>Maria</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Castel</surname>
+<given-names>Einam</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Medina</surname>
+<given-names>Shlomit</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Carmi</surname>
+<given-names>Gon</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Faigenboim-Doron</surname>
+<given-names>Adi</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0705-2316</contrib-id>
+<name>
+<surname>Sharon</surname>
+<given-names>Itai</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Tal</surname>
+<given-names>Ofir</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Droby</surname>
+<given-names>Samir</given-names>
+</name>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Somera</surname>
+<given-names>Tracey</given-names>
+</name>
+<xref ref-type="aff" rid="a8">8</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mazzola</surname>
+<given-names>Mark</given-names>
+</name>
+<xref ref-type="aff" rid="a9">9</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Eizenberg</surname>
+<given-names>Hanan</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Freilich</surname>
+<given-names>Shiri</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Natural Resources, Newe Ya’ar Research Center, Agricultural Research Organization (Volcani institute)</institution>, Ramat Yishay, <country>Israel</country></aff>
+<aff id="a2"><label>2</label><institution>Department of Plant Pathology and Microbiology, The Robert H. Smith Faculty of Agriculture</institution>, Food and Environment, <institution>The Hebrew University of Jerusalem</institution>, Rehovot, <country>Israel</country></aff>
+<aff id="a3"><label>3</label><institution>Institute of Plant Sciences, Agricultural Research Organization (ARO), The Volcani Center</institution>, P. O Box 6, 5025001, Beit Dagan, <country>Israel</country></aff>
+<aff id="a4"><label>4</label><institution>Migal-Galilee Research Institute</institution>, P.O. Box 831, Kiryat Shmona 11016, <country>Israel</country></aff>
+<aff id="a5"><label>5</label><institution>Faculty of Sciences and Technology, Tel-Hai Academic College</institution>, Upper Galilee 1220800, <country>Israel</country></aff>
+<aff id="a6"><label>6</label><institution>Kinneret Limnological Laboratory, Israel Oceanographic and Limnological Research PO Box 447</institution>, Migdal 14950, <country>Israel</country></aff>
+<aff id="a7"><label>7</label><institution>Department of Postharvest Sciences, Agricultural Research Organization (ARO), the Volcani Center</institution>, 68 Ha Maccabim Road, Rishon LeZion 7505101, <country>Israel</country></aff>
+<aff id="a8"><label>8</label><institution>United States Department of Agriculture-Agricultural Research Service Tree Fruit Research Lab</institution>, 1104 N. Western Ave, Wenatchee, WA, 98801, <country>USA</country></aff>
+<aff id="a9"><label>9</label><institution>Department of Plant Pathology, Stellenbosch University</institution>, Private Bag X1, Matieland 7600, <country>South Africa</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Mitri</surname>
+<given-names>Sara</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Lausanne</institution>
+</institution-wrap>
+<city>Lausanne</city>
+<country>Switzerland</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Schuman</surname>
+<given-names>Meredith C</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Zurich</institution>
+</institution-wrap>
+<city>Zürich</city>
+<country>Switzerland</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author; email: <email>alon.ginatt@protonmail.com</email></corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-04-03">
+<day>03</day>
+<month>04</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP94558</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-12-11">
+<day>11</day>
+<month>12</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-12-11">
+<day>11</day>
+<month>12</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.12.11.571117"/>
+</event>
+</pub-history>
+<permissions>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/publicdomain/zero/1.0/">
+<ali:license_ref>https://creativecommons.org/publicdomain/zero/1.0/</ali:license_ref>
+<license-p>This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 public domain dedication</ext-link>.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-94558-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>The exchange of metabolites (i.e., metabolic interactions) between bacteria in the rhizosphere determines various plant-associated functions. Systematically understanding the metabolic interactions in the rhizosphere, as well as in other types of microbial communities, would open the door to the optimization of specific pre-defined functions of interest, and therefore to the harnessing of the functionality of various types of microbiomes. However, mechanistic knowledge regarding the gathering and interpretation of these interactions is limited. Here, we present a framework utilizing genomics and constraint based modeling approaches, aiming to interpret the hierarchical trophic interactions in the soil environment. 243 genome-scale metabolic models of bacteria associated with a specific disease suppressive vs disease conductive apple rhizospheres were drafted based on genome resolved metagenomes, comprising an <italic>in-silico</italic> native microbial community. Iteratively simulating microbial community members' growth in a metabolomics-based apple root-like environment produced novel data on potential trophic successions, used to form a network of communal trophic dependencies. Network-based analyses have characterized interactions associated with beneficial vs non-beneficial microbiome functioning, pinpointing specific compounds and microbial species as potential disease supporting and suppressing agents. This framework provides a means for capturing trophic interactions and formulating a range of testable hypotheses regarding the metabolic capabilities of microbial communities within their natural environment. Essentially, it can be applied to different environments and biological landscapes, elucidating the conditions for the targeted manipulation of various microbiomes, and the execution of countless predefined functions.</p>
+</abstract>
+
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>The rhizosphere serves as a hotspot for a diversity of interactions spanning from the secretion of organic compounds by plant roots to their uptake by the adjacent soil microbial community<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c2">2</xref></sup>. These interactions form a complex network of metabolic exchanges whose structure and function has considerable impact on plant health<sup><xref ref-type="bibr" rid="c3">3</xref></sup>. Targeted secretion of exudates from plant roots’ into the environment is fundamental to the recruitment of specific microbes and the assembly of a plant-selected community (i.e., the rhizobiome)<sup><xref ref-type="bibr" rid="c4">4</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup>. Each plant has a unique profile of exudates guiding the formation of a specialized rhizobiome that is adapted to support its mineral absorption<sup><xref ref-type="bibr" rid="c7">7</xref>–<xref ref-type="bibr" rid="c9">9</xref></sup>, secret plant growth supporting compounds<sup><xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c12">12</xref></sup>, and provide protection against soil-borne microorganisms that are detrimental to its health<sup><xref ref-type="bibr" rid="c13">13</xref>–<xref ref-type="bibr" rid="c15">15</xref></sup>. A comprehensive understanding of the dynamics within the rhizosphere, considering both plant-microbe and microbe-microbe interactions can hence guide the support in specific advantageous exchanges within the rhizobiome and consequently the targeted assembly and maintenance of plant-beneficial soil microbial systems<sup><xref ref-type="bibr" rid="c16">16</xref>–<xref ref-type="bibr" rid="c19">19</xref></sup>. The development of such microbiome-based plant- beneficial strategies present ecologically sound alternatives to conventional, chemical-based solutions and help to balance the trade-off between the demand for high yield and the resulting environmental costs<sup><xref ref-type="bibr" rid="c20">20</xref>,<xref ref-type="bibr" rid="c21">21</xref></sup>.</p>
+<p>Omics data in general and metagenomics data analyses specifically can potentially provide keys for unraveling the black box of plant-microbe and microbe-microbe interactions in complex ecosystems such as the soil<sup><xref ref-type="bibr" rid="c22">22</xref>–<xref ref-type="bibr" rid="c25">25</xref></sup>. Yet, sequence-based analyses are typically limited in terms of functional interpretation of community dynamics<sup><xref ref-type="bibr" rid="c26">26</xref></sup>. Constraint based modeling (CBM) is an approach that allows to simulate bacterial-metabolic activity in a given environment based on the constraints imposed by the annotated microbial genomes<sup><xref ref-type="bibr" rid="c22">22</xref>,<xref ref-type="bibr" rid="c27">27</xref></sup>. This approach has long been used for studying the physiology and growth of single cells, represented as Genome Scale Metabolic Models (GSMM), under varying conditions<sup><xref ref-type="bibr" rid="c28">28</xref>,<xref ref-type="bibr" rid="c29">29</xref></sup>. Applying CBM over a GSMM allows for the assessment of a metabolite’s uptake and secretion<sup><xref ref-type="bibr" rid="c27">27</xref></sup>. Accordingly, when CBM is applied over multiple GSMMs, the exchange profiles (secretion and consumption of metabolites to and from the environment, respectively) become interconnected. This sheds light on conditions supporting the growth of different bacterial groups within the community as well as their functional potential in the trophic network formed<sup><xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c30">30</xref></sup>.</p>
+<p>Advancement of sequencing technologies alongside the development of automatic pipelines for GSMM construction<sup><xref ref-type="bibr" rid="c31">31</xref>,<xref ref-type="bibr" rid="c32">32</xref></sup> has promoted an increased use of CBM for the modeling of communities with growing complexity<sup><xref ref-type="bibr" rid="c22">22</xref>–<xref ref-type="bibr" rid="c24">24</xref></sup>. The relevance of CBM to the study of microbiomes in a number of different ecosystems has been demonstrated in recent works and has shown that CBM- based predictions can guide the development of strategies for microbiome management<sup><xref ref-type="bibr" rid="c33">33</xref>–<xref ref-type="bibr" rid="c36">36</xref></sup>. An accurate representation of microbial metabolic networks depends on the origin of the genomes analyzed. To date, most studies attempting to model the microbiome of specific ecosystems by GSMM represent native species using corresponding genome sequences from public depositories, a process which is usually referred to as 16S-based genome imputation<sup><xref ref-type="bibr" rid="c26">26</xref>,<xref ref-type="bibr" rid="c35">35</xref>,<xref ref-type="bibr" rid="c37">37</xref></sup>. Genome recovery, or genome-resolved metagenomes, often referred to as Metagenomes Assembled Genomes (MAGs) allows one to obtain full genomes directly from metagenomes<sup><xref ref-type="bibr" rid="c38">38</xref>,<xref ref-type="bibr" rid="c39">39</xref></sup>. Constructing GSMMs based on MAGs is fundamentally superior to using 16S based genome imputation, since MAGs derived directly from the sample enable a genuine view of the metabolic activities carried out in authentic native communities. In the rhizosphere, such an <italic>in silico</italic> representation of a native community, with respect to its environment, can be used to decrypt the opaque system of myriad interconnected uptake and secretion exchange fluxes transpiring in the root microbiota, into a network of trophic interactions spanning from root exudates to altered organic forms.</p>
+<p>The current study describes the recovery of 395 unique MAGs from metagenomes constructed for the native rhizosphere community of apple rootstocks cultivated in orchard soil infected with apple replant disease (ARD)<sup><xref ref-type="bibr" rid="c40">40</xref>,<xref ref-type="bibr" rid="c41">41</xref></sup>. Soils were amended or not amended with <italic>Brassicaceae</italic> seed meal, supporting the emergence of plant-beneficial vs non-beneficial root microbiomes, respectively<sup><xref ref-type="bibr" rid="c40">40</xref>,<xref ref-type="bibr" rid="c41">41</xref></sup>. GSMMs constructed for these MAGs provide an <italic>in-silico</italic> representation of highly abundant species in the native rhizosphere community. CBM simulations were then conducted in a rhizosphere-like environment, where microbial uptake-secretion fluxes were connected to form a directional trophic network. The aims of this study were twofold: first, to provide a general framework for delineating inter-species interactions occurring in the rhizosphere environment (<xref rid="fig1" ref-type="fig">Fig. 1</xref>) and second to characterize the metabolic roles specific groups of bacteria fulfill in seed meal-amended (beneficial) vs non- amended (non-beneficial) apple rhizobiome communities.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 1</label>
+<caption><p>A framework for interpreting and characterizing the network of metabolic interactions of root associated bacteria. Going from obscure rhizosphere (upper circle) to the elucidated rhizosphere (lower circle): Microbial genomic DNA extracted from rhizosphere soil serves the construction of a rhizosphere-derived metagenome and the recovery of rhizosphere community Metagenome Assembled Genomes (MAGs). For each MAG, a Genome Scale Metabolic Model (GSMM) is built, representing a specific species in the microbial community. Apple-root exudate profiles based on metabolomics data are used for the construction of a simulation environment. Via Constraint Based Modelling (CBM), applied on GSMMs, interactions are characterized in the simulated root environment, yielding predictive information regarding potential trophic exchanges within the native rhizosphere microbial community.</p></caption>
+<graphic xlink:href="571117v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2">
+<title>Results &amp; Discussion</title>
+<sec id="s2a">
+<label>1.</label><title>Assembly of a collection of MAGs representing a native microbial community from a soil agroecosystem</title>
+<p>Metagenomic sequencing obtained from apple rootstocks grown in orchard soil with a documented history of replant disease resulted in a total of approximately 2 billion quality reads (after filtration) at a length of 150 bp, as described in Berihu et al<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. Independent metagenomics assemblies of six different treatments yielded 1.4–2 million contigs longer than 2 kbp<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. Here, assemblies were binned using MetaWRAP<sup><xref ref-type="bibr" rid="c39">39</xref></sup> into 296-433 high quality MAGs for each of the six treatments (Supp. Data 1; completion and contamination thresholds were set to 90/5, respectively<sup><xref ref-type="bibr" rid="c42">42</xref></sup>). De-replication (the process of combining highly similar genomes into a single representative genome) requiring 99% average nucleotide identity (ANI) of the overall 2233 MAGs yielded a collection of 395 unique MAGs (<xref rid="fig2" ref-type="fig">Fig. 2</xref>). Across samples, 30-36% of the raw reads were mapped to the MAG collection (<xref rid="tbls1" ref-type="table">Supp. Table 1</xref>), in comparison to 61–71% mapped to the non-binned contigs<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. Using GTDB-Tk<sup><xref ref-type="bibr" rid="c43">43</xref></sup>, taxonomic annotations were assigned at the phylum, order, genus and species level for 395, 394, 237 and three of the de-replicated MAGs, respectively, reflecting the genuine diversity of the rhizosphere community, which include many uncharacterized species<sup><xref ref-type="bibr" rid="c44">44</xref></sup>. Estimates of completion and contamination, total bin length and taxonomic affiliation for the MAG collections derived from each of the six assemblies, as well as the de-replicated MAGs, are provided in Supp. Data 1.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 2</label>
+<caption><p>Phylogenomic surveys of the genomic collection assembled from sequence data derived from apple rhizosphere samples. A. A phylogenomic tree constructed from 395 de-replicated<sup><xref ref-type="bibr" rid="c46">46</xref></sup> MAGs extracted from the metagenomes. The tree is based on concatenated marker proteins according to GTDB-Tk<sup><xref ref-type="bibr" rid="c43">43</xref></sup>. B. Relative abundance of bacterial taxa at the phylum level as inferred from different phylogenomic classification approaches applied for the same samples: Binned-SG (MAGs derived from shotgun metagenomics); Non-binned SG (contigs derived from shotgun metagenomics); 16S rRNA amplicon derived from the same samples. Taxonomic classifications of rRNA amplicon data and non- binned-SG sequences are taken from Somera et al<sup><xref ref-type="bibr" rid="c40">40</xref></sup> and Berihu et. al<sup><xref ref-type="bibr" rid="c41">41</xref></sup>, respectively. Shotgun metagenomics data from Berihu et. al was used here for construction of MAGs catalogue. “Treatments 1 – 6” relate to six specific combinations of rootstock and soil amendment as detailed in <xref rid="tbls1" ref-type="table">Supp. Table 1</xref>. Relative abundance was calculated as the average value in five replicates conducted for each treatment</p></caption>
+<graphic xlink:href="571117v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>As in previous reports<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c45">45</xref></sup>, Proteobacteria, Acidobacteria, Actinobacteria and Bacteroidetes were identified as the dominant phyla in the apple rhizosphere (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). Overall, the taxonomic distribution of the MAG collection corresponded with the profile reported for the same samples using alternative taxonomic classification approaches such as 16S rRNA amplicon sequencing and gene-based taxonomic annotations of the non-binned shotgun contigs (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>). At the genus level, MAGs were classified into 143 genera in comparison to approximately 3000 genera that were identified for the same data based on gene-centric approaches<sup><xref ref-type="bibr" rid="c41">41</xref></sup> and approximately 1000 genera based on amplicon sequencing<sup><xref ref-type="bibr" rid="c40">40</xref></sup> of the same data.</p>
+<p>The functional capabilities of the bacterial genomes in the apple rhizosphere were initially assessed based on KEGG functional annotations of their gene catalogue (Supp. Data 2, <xref rid="figs1" ref-type="fig">Supp. Fig. 1</xref>). The ten most frequent functional categories across the MAG collection were involved in primary metabolism, e.g., carbohydrate metabolism and the biosynthesis of essential cellular building blocks such as amino acids and vitamins. Specialized functional categories included those associated with autotrophic nutrition such as carbon fixation and metabolism of nitrogen, sulfur and methane. Functional diversity was found to exist also when considering ubiquitous functions. For instance, though all bacteria are in need of the full set of amino acids, most genomes lack the full set of relevant biosynthesis pathways. The prevalence of biosynthetic pathways across MAGs (requiring at least a single relevant enzyme) ranges from 99.5% (e.g. glycine; missing in only two genomes) to 21% (e.g. tyrosine; detected in only 83 MAGs). Notably, the diversity of metabolic pathway completeness regarding amino acids and other essential cellular components suggests that the majority of bacterial soil species rely on an external supply of at least some of their obligatory nutritional demands.</p>
+</sec>
+<sec id="s2b">
+<label>2.</label><title>Construction of a simulation system for exploring environment- dependent metabolic performances and growth of rhizosphere bacteria</title>
+<p>Categorical classifications of discrete gene-entities, such as pathway completeness analyses, have several inherent limitations as an approach for the contextualization and functional interpretation of genomic information. First, categorical classifications may underestimate the completeness of robust pathways with multiple redundant routes resulting in low pathway completeness. Second, pathway completeness analyses do not take into consideration the directionality and continuity of a biosynthetic process whose full conductance requires the availability of a specific environmental resource together with the required successive series of genes/reactions. Although functional potential can be inferred based on the static set of genes and enzymes present, actual metabolic performances of bacterial species in soil are dynamic and reflect multiple factors, including the availability of different nutritional sources. Such sources can be environmental inputs like root exudates or downstream exchange metabolites secreted by cohabiting bacteria.</p>
+<p>To better understand environment-dependent metabolic activity occurring in a native rhizosphere, a set of 395 GSMMs was constructed for the entire collection of the rhizosphere-bacterial community MAGs. All models were systematically subjected to validity and quality tests using MEMOTE<sup><xref ref-type="bibr" rid="c47">47</xref></sup>, leaving a total of 243 GSMMs whose stoichiometric consistency was confirmed (Supp. Data 3). On average, GSMMs included 1924 reactions, from which 203 were exchange reactions (specific reactions carrying out extracellular import and secretion of metabolites) and 1312 metabolites (Supp. Data 4). Altogether, the GSMM set held 5152 unique metabolic reactions, 597 exchange reactions, and 2671 different compounds. The distribution of key model attributes (reactions, metabolites and exchanges) across phyla is shown in <xref rid="figs2" ref-type="fig">Supp. Fig. 2</xref>. Model features were scalable with those reported by Basile et al<sup><xref ref-type="bibr" rid="c26">26</xref></sup> and Heinken et al<sup><xref ref-type="bibr" rid="c33">33</xref></sup>. Comparison of GSMM scales indicated that the metabolic coverage (i.e., the number of reactions, which denote the potential of executing a metabolic function) of our data is within the same order of magnitude as described in recent large-scale automatic reconstructions<sup><xref ref-type="bibr" rid="c26">26</xref>,<xref ref-type="bibr" rid="c33">33</xref></sup>.</p>
+<p>Next, species-specific rich (optimal) and poor (suboptimal) media were defined for each model in order to broadly assess GSMM growth capacity. A rich environment was defined as a medium containing all metabolites for which the model encodes an exchange reaction. A poor environment was defined as the minimal set of compounds enabling growth (see Methods). Essentially, poor environments contained a species-specific carbon, nitrogen and phosphorous sources together with other trace elements. In addition to the two automatic media, we aimed to design a realistic simulating environment allowing to explore the impact of the root exudates on the native community. To this end, metabolomics data from a set of studies which characterized root exudates secreted from the roots of Geneva 935 (G935) or Malling 26 (M26) rootstock cultivars<sup><xref ref-type="bibr" rid="c48">48</xref>,<xref ref-type="bibr" rid="c49">49</xref></sup> - related to the G210 and M26 rootstocks whose rhizobiome was characterized here, were used to specify an array of apple root-derived compounds (<xref rid="tbl1" ref-type="table">Table 1</xref>). The list of secreted compounds was consistent with other reported profiles of plant root-exudates<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c50">50</xref></sup>.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table. 1</label><caption><title>Apple root exudates adopted from the works of Leisso et al.<sup><xref ref-type="bibr" rid="c48">48</xref>,<xref ref-type="bibr" rid="c49">49</xref></sup>, included in the rhizosphere environment</title></caption>
+<graphic xlink:href="571117v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>The growth of each of the 243 GSMMs was simulated in each of the three species-specific environments (rich, poor, poor + exudates; exudates were added to corresponding poor media to ensure the exudates have a feasible effect). As expected, growth performances were higher on the poor medium supplemented with exudates in comparison to growth on the poor medium alone but lower than the growth in rich medium (<xref rid="figs3" ref-type="fig">Supp. Fig. 3</xref>). Notably, GSMM growth patterns were not phylogenetically conserved and were inconsistent between related taxa. Moreover, ranking of models’ growth rate were inconsistent in the three different media (i.e., some models’ growth rates were markedly affected by the simulated media whereas others did not; <xref rid="figs3" ref-type="fig">Supp. Fig. 3</xref>). This inconsistency indicates that the effect of exudates on community members is selective and differs between species (i.e., exudates increase the growth rates of some species more than others), as was previously reported<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c51">51</xref></sup>. Overall, Simulations confirmed the feasiblity of all the 243 models and their capacity to grow in the respective environemnt (Supp. Data 5).</p>
+<p>As a next step towards conducting simulations in a genuine natural-like environment, we aimed to define a single rhizosphere environment in which growth simulations for all models would take place. Unlike the species-specific root media (poor medium + exudates) which support growth of all models by artificially including multiple carbon sources that are derived from the automatic specifications of the poor medium, including such that are not provided by the root, this simulation environment is based on the root exudates (Table. 1) as the sole carbon sources. By avoiding the inclusion of non-exudate organic metabolites, the true-to-source rhizosphere environment reveals the hierarchical directionality of the trophic exchanges in soil<sup><xref ref-type="bibr" rid="c52">52</xref></sup>. Additionally, the rhizosphere environment also included an array of inorganic compounds used by the 243 GSMMs, which includes trace metals, ferric, phosphoric, and sulfuric compounds. Overall, the rhizosphere environment was composed of 60 inorganic compounds together with the 33 root exudates (<xref rid="tbls2" ref-type="table">Supp. Table 2</xref>). The rhizosphere environment supported the growth of only a subset of the GSMMs that were capable of using plant exudates (<xref rid="figs3" ref-type="fig">Supp. Fig. 3</xref>).</p>
+</sec>
+<sec id="s2c">
+<label>3.</label><title>Simulating growth succession and hierarchical trophic exchanges in the rhizosphere community</title>
+<p>To reflect the non-direct effect of the root on the native community, (i.e., to capture the effect of root-supported bacteria on the growth of further community members), we constructed the Microbial Community Succession Module (MCSM), a CBM-based algorithm aimed at predicting community-level trophic successions. The module iteratively grows the GSMMs in a defined environment, sums up their individual secretion profiles, and updates the initial simulation environment with those secreted compounds (<xref rid="fig3" ref-type="fig">Fig. 3A</xref>). Applying this algorithm to the rhizobiome in its community-specific rhizosphere environment allows delineating the potential metabolic dependencies and interactions between bacterial species in a native community.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 3</label>
+<caption><p>Microbial Community Succession Module (MCSM), and characterization of trophic dynamics in the community along iterations. A. An illustration of the iterative microbial community growth module, representing the growth of community members along iterations starting in the “Rhizosphere environment” and updated with microbial secretion outputs. B. Growth rate characterization of GSMMs in the community along iterations. Each column in the heat-map represents a different GSMM (only models which have grown in the rhizosphere environment are presented); growth rate is indicated by the color bar. Iterations are represented by rows. Blank spaces indicate models not growing at that specific iteration. N is the total number of species that grew after each iteration. C. Distribution of GSMMs growing along iterations at the phylum level. D. Distribution of organic compounds secreted along iterations, classified into biochemical groups. Root exudates bar (far left) represents the classification of organic compounds in the initial “Rhizosphere environment”. Numbers on top of bars in both C, and D (designated by N) denotes the number of new entries in a specific iteration, with respect to the previous iteration.</p></caption>
+<graphic xlink:href="571117v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The “rhizosphere environment” (i.e., 1<sup>st</sup> iteration, Root exudates and “inorganic compounds”, <xref rid="tbls2" ref-type="table">Supp. Table 2</xref>) supported the growth of 27 GSMMs (Supp. Fig 3). Applying MCSM, the initial environment was then updated with 145 additional compounds predicted to be secreted by the growing community members. The 2<sup>nd</sup> iteration supported the growth of 33 additional species whose growth was supported by compounds predicted to be secreted by bacteria that grew in the 1<sup>st</sup> iteration. Following the 2<sup>nd</sup> iteration, 25 new secreted compounds were added to the rhizosphere environment. The 3<sup>rd</sup> iteration supported the growth of 11 additional GSMMs, with one additional compound secreted. After the 3<sup>rd</sup> iteration, the updated environment did not support the growth of any new species. Overall, iterative growth simulations resulted in the successive growth of 71 species (<xref rid="fig3" ref-type="fig">Figure 3B</xref>, iterations 1-3).</p>
+<p>To enlarge the array of growing species, we tested the effect of the addition of organic phosphorous sources. Organic phosphorous is typically a limiting factor in soil<sup><xref ref-type="bibr" rid="c53">53</xref></sup> and its utilization varies greatly between microbial species (i.e., different P sources were shown to have a selective effect on different microbial groups<sup><xref ref-type="bibr" rid="c54">54</xref></sup>). The initial rhizosphere environment contained only inorganic phosphorous. During 1<sup>st</sup> -3<sup>rd</sup> MCSM simulations, nine organic P compounds were secreted to the simulation medium, which was updated accordingly. At the beginning of the 4<sup>th</sup> iteration, 31 additional organic P compounds were identified by screening the species-specific poor medium and were added to the medium (<xref rid="tbls2" ref-type="table">Supp. Table 2</xref>; organic Phosphorous compounds). The additional organic P compounds supported the growth of nine additional GSMMs (<xref rid="fig3" ref-type="fig">Fig. 3B</xref>) and led to the secretion of 13 new compounds, which were added to the environment. The 5<sup>th</sup> iteration supported the growth of four additional GSMMs and two new compounds were secreted. Final simulations in the cumulative rhizosphere environment were composed of all secreted compounds and led to the same secretion and growth profile as the previous iteration. Therefore, no further growth iterations were conducted.</p>
+<p>Overall, the successive iterations connected 84 out of 243 native members of the apple rhizosphere GSMM community via trophic exchanges. The inability of the remaining bacteria to grow, despite being part of the native root microbiome, possibly reflects the selectiveness of the root environment, which fully supports the nutritional demands of only part of the soil species, whereas specific compounds that might be essential to other species are less abundant<sup><xref ref-type="bibr" rid="c44">44</xref></sup>. It is important to note that the specific exudate profile used here represent a snapshot of the root metabolome as root secretion-profiles are highly dynamic, reflecting both environmental and plant developmental conditions. A possible complementary explanation to the observed selective growth might be the partiality of our simulation platform, which examined only plant-bacteria and bacteria-bacteria interactions while ignoring other critical components of the rhizosphere system such as fungi, archaea, protists and mesofauna, as well as less abundant bacterial species, components all known to metabolically interact<sup><xref ref-type="bibr" rid="c55">55</xref></sup>. Finally, the MAG collection, while relatively substantial, represents only part of the microbial community. Accordingly, the iterative growth simulations represent a subset of the overall hierarchical-trophic exchanges in the root environment, necessarily reflecting the partiality the dataset.</p>
+<p>In terms of the phylogenetic distribution of the models, 27 bacterial species grew on the 1<sup>st</sup> iteration (in which root exudates served as the sole organic sources). These bacteria represented 14 of the 17 phyla included in the initial model collection (consisting of 243 GSMMs) and maintained a distribution frequency similar to the original community. As in the full GSMM data set (Community bar, <xref rid="fig3" ref-type="fig">Fig. 3C</xref>), most of the species which grew in the 1<sup>st</sup> iteration belonged to the phyla <italic>Acidobacteriota</italic>, <italic>Proteobacteria,</italic> and <italic>Bacteroidota</italic>. This result concurred with findings from the work of Zhalnina et al, which reported that bacteria assigned to these phyla are the primary beneficiaries of root exudates<sup><xref ref-type="bibr" rid="c1">1</xref></sup>. Species from three out of the 17 phyla that did not grow in the first iteration - <italic>Elusimicrobiota, Chlamydiota</italic>, and <italic>Fibrobacterota,</italic> did grow on the 2<sup>nd</sup> iteration (<xref rid="fig3" ref-type="fig">Fig. 3C</xref>). Members of these phyla are known for their specialized metabolic dependencies. Such is the case for example with members of the <italic>Elusimicrobiota</italic> phylum, which include mostly uncultured species whose nutritional preferences are likely to be selective<sup><xref ref-type="bibr" rid="c56">56</xref></sup>.</p>
+<p>At the order level, bacteria classified as <italic>Sphingomonadales</italic> (class <italic>Alphaproteobacteria</italic>), a group known to include typical inhabitants of the root environment<sup><xref ref-type="bibr" rid="c57">57</xref></sup>, grew in the initial Root environment. In comparison, other root- inhabiting groups including the orders <italic>Rhizobiales</italic> and <italic>Burkholderiales</italic><sup><xref ref-type="bibr" rid="c57">57</xref></sup>, did not grow in the first iteration. <italic>Rhizobiales</italic> and <italic>Burkholderiales</italic> did, however, grow in the second and third iterations, respectively, indicating that in the simulations, the growth of these groups was dependent on exchange metabolites secreted by other community members (<xref rid="figs4" ref-type="fig">Supp. Fig. 4</xref>).</p>
+<p>Overall, 158 organic compounds were secreted throughout the MCSM simulation (from which 12 compounds overlapped with the original exudate medium). These compounds varied in their distribution and were mapped into 12 biochemical categories (<xref rid="fig3" ref-type="fig">Fig. 3D</xref>). Whereas plant secretions are a source of various organic compounds, microbial secretions provide a source of multiple vitamins and co-factors not secreted by the plant. Microbial-secreted compounds included siderophores (staphyloferrin, salmochelin, pyoverdine, and enterochelin), vitamins (pyridoxine, pantothenate, and thiamin), and coenzymes (coenzyme A, flavin adenine dinucleotide, and flavin mononucleotide) – all known to be exchange compounds in microbial communities<sup><xref ref-type="bibr" rid="c58">58</xref>,<xref ref-type="bibr" rid="c59">59</xref></sup>. In addition, microbial secretions included 11 amino acids (arginine, lysine, threonine, alanine, serine, phenylalanine, tyrosine, leucine, glutamate, isoleucine, and methionine), also known as a common exchange currency in microbial communities<sup><xref ref-type="bibr" rid="c60">60</xref></sup>. Some microbial-secreted compounds, such as phenols and alkaloids, were reported to be produced by plants as secondary metabolites<sup><xref ref-type="bibr" rid="c61">61</xref>,<xref ref-type="bibr" rid="c62">62</xref></sup>. Additional information regarding mean uptake and secretion degrees of compounds classified to biochemical groups is found in <xref rid="figs5" ref-type="fig">Supp. Fig. 5</xref>.</p>
+<p>Conceptually, the rhizosphere microbiota can be classified into two trophic groups: primary exudate consumers, comprising microbial species that are direct beneficiaries from the root exudates, and secondary consumers, comprising microbial species whose growth may be provided directly via the uptake of metabolites secreted by other members of the soil microbial community. In the iterative MCSM simulations, compounds secreted by some of the primary consumers largely sustained the growth of secondary consumers, which were not able to grow otherwise. The full information on the secretion profiles and models’ growths is provided in Supp. Data 6.</p>
+</sec>
+<sec id="s2d">
+<label>4.</label><title>Associating trophic exchanges with soil health</title>
+<p>The MAG collection analyzed in this study was constructed from shotgun libraries associated with apple rootstocks cultivated in orchard soil with a documented history of apple replant disease (ARD) and recovered (seed meal- amended) soils, providing a model system for disease conductive vs disease suppressive rhizosphere communities<sup><xref ref-type="bibr" rid="c40">40</xref></sup>. Briefly, rhizobiome communities obtained from apple rootstocks grown in replant orchard soil leading to symptomatic growth (no-treatment/control samples) were termed ‘sick’, whereas samples in which disease symptoms were ameliorated following an established soil amendment treatment<sup><xref ref-type="bibr" rid="c63">63</xref></sup>, were termed ‘healthy’. Both sick and healthy plants were characterized by distinct differences in the structure and function of their rhizosphere microbial communities in the respective soil samples<sup><xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c40">40</xref>,<xref ref-type="bibr" rid="c41">41</xref>,<xref ref-type="bibr" rid="c63">63</xref></sup>. In order to correlate microbial metabolic interactions with soil performance, GSMMs were classified into one of three functional categories based on differential abundance (DA) patterns of their respective MAGs: predominantly associated with “healthy” soil (H), predominantly associated with “sick” soil (S) and none-associated (NA) (Supp. Data 7).</p>
+<p>The functionally classified GSMMs (H, S, NA) were consolidated into a community network of metabolic interactions by linking their potential uptake and secretion exchange profiles (as predicted along growth iterations in <xref rid="fig3" ref-type="fig">Fig. 3</xref>). The network was built as a directed bipartite graph, in which the 84 feasible GSMM nodes and the 203 metabolite nodes (27 root exudates, 146 microbial- secreted compounds, and 30 additional organic-P compounds) were connected by 9773 directed edges, representing the metabolic exchanges and organic compounds in the native apple rhizosphere community (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>). Further information regarding node degrees is found in Supp. Data 8.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 4</label>
+<caption><p>Trophic interactions based on community exchange fluxes predicted along iterations in the simulated rhizosphere environment. A. Network representation of potential metabolite exchanges between rhizosphere community members. Edges in the network are directional; arrowhead from a grey node (metabolite) pointing towards a colorful node (GSMM) indicates uptake; arrowhead from a colorful node (GSMM) pointing towards a grey node (metabolite) indicates secretion. Metabolites found in the center of the network are of a higher connectivity degree (i.e., are involved in more exchanges). Only organic compounds are included in the network. Different colors indicate DA classification of GSMM nodes. B. Pie chart distribution of GSMMs classified according to differential abundance of reads mapped to the respective MAGs; N is the total number of GSMMs in the network. C, D. Examples of specific sub- network motifs derived from the community network; PM (a three component sub-network motif, upper); PMM (a five component sub-network motif, lower), respectively.</p></caption>
+<graphic xlink:href="571117v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The directionality of the network enabled its untangling into sub-network motifs stemming from a root exudate to exchange interactions, and ending with an unconsumed end-metabolite. Two types of sub-networks were detected (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>): 3-component (PM; Plant-Microbe) plant exudate – microbe – microbial secreted metabolite; and 5-component (PMM; Plant-Microbe-Microbe) plant exudate – microbe – intermediate microbial secreted metabolite – microbe – microbial secreted metabolite. Overall, the network included 45,972 unique PM paths and 571,605 unique PMM paths. Participation of GSMMs in PM paths ranged from 272 to 896 occurrences (<xref rid="figs6" ref-type="fig">Supp. Fig. 6A</xref>). GSSM participation in PMM paths ranged from 398 to 50,628 in the first position and 1,388 to 19,738 occurrences in the second position. Frequency of GSMMs in the first position in PMM sub-network motifs (being primary exudate consumer) was negatively correlated with the frequency of presence in second positions (secondary consumer), possibly indicating species-specific preferences for a specific position/trophic level in the defined environment (Pearson = -0.279; p- value=0.009, <xref rid="figs6" ref-type="fig">Supp. Fig. 6B</xref>).</p>
+<p>In order to explore the trophic preferences of bacteria associated with the different rhizosphere soil systems, the frequency of healthy (H), sick (S) or non- associated (NA) GSMMs in the PM and PMM sub-networks was compared (Supp. Data 9). GSMMs classified as S initiated a significantly higher number of PMM sub-networks (located in the first position) than GSMMs classified as NA and H (<xref rid="fig5" ref-type="fig">Fig. 5A</xref>). H classified PMM paths (first position) initiated a significantly higher number of sub-networks with GSMMs classified as NA comparing to S- classified GSMMs, but no more than H-classified GSMMs (second position). Other PMM types did not show a significant effect at the second position. The higher number of trophic interactions formed by the S-classified primary exudate consumers in the PMM sub-network motifs suggests that non-beneficial bacteria may have a broader spectrum in terms of their utilization potential of root-secreted carbon sources compared to plant-beneficial bacteria. This might shed light on the dynamics of ARD, in which S-classified bacteria are becoming increasingly dominant following long-term utilization of apple-root exudates, which result in diminished capacity of the rhizosphere microbiome to suppress soil-borne pathogens<sup><xref ref-type="bibr" rid="c63">63</xref>,<xref ref-type="bibr" rid="c64">64</xref></sup>.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 5</label>
+<caption><p>Characterization of PM and PMM sub-network motifs’ features associated with differentially abundant (DA) GSMMs. A. Box plots showing the count of PMM sub-networks generated by GSMMs in the first microbial position classified as either healthy (H), sick (S), or non-associated (NA). Boxes extend from first quantile to the third quantile, middle line represents the median; dots outside whiskers indicate outliers. Distinction of groups was determined using ANOVA followed by the Tukey post-hoc test. Asterisks indicate significance of test (*** &lt;= 0.005 ** &lt;= 0.01 * &lt;= 0.05) B. Bar plot showing the prevalence of exudates significantly associated with H or S-classified PM sub-networks (Hypergeometric test; FDR &lt;= 0.05; green: healthy-H, red: sick-S). C. Bar plots showing the prevalence of secreted compounds in PM sub-networks, which are significantly associated with H-classified (upper, colored green), or S-classified (lower, colored red) (Hypergeometric test; FDR &lt;= 0.05). Compound name identifiers were taken from the BIGG database (X-axes). Venn diagram on the right represents the intersection of secreted compounds derived from both S and H classified PM sub-networks.</p></caption>
+<graphic xlink:href="571117v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In order to predict exchanges with potential to support/suppress dysbiosis, the frequency of DA GSMM types (i.e., H or S) associated with metabolites (either consumed or secreted) in the PM paths was assessed (Supp. Data 10). Considering consumed metabolites (root exudates), three and six compounds were found to be significantly more prevalent in H and S-classified PM paths, respectively (<xref rid="fig5" ref-type="fig">Fig. 5B</xref>). Notably, the S-classified root exudates included compounds reported to support dysbiosis and ARD progression. For example, the S-classified compounds gallic acid and caffeic acid (3,4-dihidroxy-trans- cinnamate) are phenylpropanoids – phenylalanine intermediate phenolic compounds secreted from plant roots following exposure to replant pathogens<sup><xref ref-type="bibr" rid="c65">65</xref></sup>. Though secretion of these compounds is considered a defense response, it is hypothesized that high levels of phenolic compounds can have autotoxic effects, potentially exacerbating ARD. Additionally, it was shown that genes associated with the production of caffeic acid were upregulated in ARD- infected apple roots, relative to those grown in γ-irradiated ARD soil<sup><xref ref-type="bibr" rid="c66">66</xref>,<xref ref-type="bibr" rid="c67">67</xref></sup>, and that root and soil extracts from replant-diseased trees inhibited apple seedling growth and resulted in increased seedling root production of caffeic acid<sup><xref ref-type="bibr" rid="c68">68</xref></sup>.</p>
+<p>As to the microbial-secreted compounds, a total of 79 unique compounds were found to be significantly overrepresented in either S (42 compounds) or H (41 compounds) classified PM paths (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>). Several secreted compounds classified as healthy exchanges (H) were reported to be potentially associated with beneficial functions. For instance, the compounds L-Sorbose (EX_srb L_e) and Phenylacetaladehyde (EX_pacald_e), both over-represented in H paths (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>), have been shown to inhibit the growth of fungal pathogens associated with replant disease<sup><xref ref-type="bibr" rid="c69">69</xref>,<xref ref-type="bibr" rid="c70">70</xref></sup>. Phenylacetaladehyde has also been reported to have nematicidal qualities<sup><xref ref-type="bibr" rid="c71">71</xref></sup>.</p>
+<p>Combining both exudates uptake data and metabolites secretion data, the full H-classified PM path 4-Hydroxybenzoate; GSMM_091; catechol (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>; the consumed exudate, the GSMM, and the secreted compound, respectively) provides an exemplary model for how the proposed framework can be used to guide the design of strategies which support specific, advantageous exchanges within the rhizobiome. The root exudate 4-Hydroxybenzoate is metabolized by GSMM_091 (class <italic>Verrucomicrobiae</italic>, order <italic>Pedosphaerales</italic>) to catechol. Catechol is a precursor of a number of catecholamines, a group of compounds which was recently shown to increase apple tolerance to ARD symptoms when added to orchard<sup><xref ref-type="bibr" rid="c41">41</xref>,<xref ref-type="bibr" rid="c72">72</xref></sup>. This analysis (PM; <xref rid="fig4" ref-type="fig">Fig 4C</xref>), leads to formulating the testable prediction that 4-Hydroxybenzoate can serve as a selective enhancer of catecholamine synthesizing bacteria associated with reduced ARD symptoms, and therefore serve as a potential source for indigenously produced beneficial compounds.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Conclusions</title>
+<p>In this study, we present a framework combining metagenomics analyses with CBM, which can be used to gain a deeper understanding of the functionality, dynamics and division of labor among rhizosphere bacteria, and link their environment-dependent metabolism to biological significance. This exploratory framework aims to illuminate the black box of interactions occurring in the rhizospheres of crop plants and is based on the work of Berihu et al. 2022, in which a gene-centric analysis of metagenomics data from apple rhizoshpheres was conducted<sup><xref ref-type="bibr" rid="c41">41</xref></sup>.</p>
+<p>We recovered high-quality sets of environment-specific MAGs, constructed the corresponding GSMMs, and simulated community-level metabolic interactions. By including authentic apple root exudates in the models, we were able to begin untangling the highly complex plant-bacterial and bacterial-bacterial interactions occurring in the rhizosphere environment. More specifically, we used the framework to investigate a microbial community via examining its hierarchical secretion-uptake exchanges along multiple iterations (<xref rid="fig3" ref-type="fig">Fig. 3</xref>). These analyses, which linked community-derived secretion profiles with the growth of other community members, demonstrated the successive, trophic- dependent nature of microbial communities. These interactions were elucidated via construction of a community-exchange network (<xref rid="fig4" ref-type="fig">Fig. 4</xref>). Possible connections between root exudates, differentially abundant bacteria, their secreted end- products, and soil health were explored using the data derived from this network. From these analyses, we were able to associate different metabolic functionalities with diseased or healthy systems, and formulate new hypotheses regarding the general function of differentially abundant bacteria in the community.</p>
+<p>The framework we present is currently conceptual. Dealing with a highly complex system such as the rhizobiome inevitably comes with limitations. These limitations include the inherent caveats of CBM and the use of single-species GSMMs, the lack of transcriptomic and spatial-chemo-physical data, and the exclusion of competition over all its forms. Furthermore, a portion of the metabolomics data used in this framework was taken from a different source (different rootstock genotype), possibly introducing further bias to the analyses. This potential factor is due to the inherent discrepancy between the conditions from which genomics and metabolomics data were collected<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c4">4</xref></sup>. Also, not considered in this framework is the role of eukaryotes in the microbial-metabolic interplay. Finally, the use of an automatic GSMM reconstruction tool (CarveMe<sup><xref ref-type="bibr" rid="c31">31</xref></sup>), though increasingly used for depicting phenotypic landscapes, is typically less accurate than manual curation of metabolic models<sup><xref ref-type="bibr" rid="c32">32</xref></sup>. This approach typically neglects specialized functions involving secondary metabolism<sup><xref ref-type="bibr" rid="c16">16</xref></sup>.</p>
+<p>For these reasons, among others, the framework presented here is not intended to be used as a stand-alone tool for determining microbial function. The framework presented is designed to be used as a platform to generate educated hypotheses regarding bacterial function in a specific environment in conjunction with actual carbon substrates available in the particular ecosystem under study. The hypotheses generated provide a point of reference for the experimental testing required to gain actual, targeted and feasibly applicable insights<sup><xref ref-type="bibr" rid="c37">37</xref>,<xref ref-type="bibr" rid="c41">41</xref></sup>. While recognizing the limitations, this framework is in fact highly versatile and can be used for the characterization of a variety of microbial communities and environments. Given a set of MAGs derived from a specific environment, environmental metabolomics data, and a set of known functions to be further characterized, this computational framework provides a generic simulation platform for a wide and diverse range of future applications.</p>
+<p>To summarize, we have constructed a framework enabling the analysis of interactions between microbes and between microbes and their hosts in their natural environment. To the best of our knowledge, this is the first attempt to generate GSMMs en masse based on high-quality MAGs derived from a specific ecosystem, incorporating the use of CBM for the inspection of their complex network of interactions. The application of this framework to the apple rhizobiome yielded a wealth of preliminary knowledge about the metabolic interactions occurring within it, including novel information on putative functions performed by bacteria in healthy vs. replant-diseased soil systems, and potential metabolic routes to control these functions. Overall, this framework aims to contribute to efforts seeking to unravel the intricate world of microbial interactions in complex environments including the plant rhizosphere. The framework is provided as a three stage-detailed pipeline in <ext-link ext-link-type="uri" xlink:href="https://github.com/FreilichLab/Trophic_interactions_predicting_framework">https://github.com/FreilichLab/Trophic_interactions_predicting_framework</ext-link>.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Recovery of Metagenomics Assembled Genomes MAGs from metagenomics data constructed for apple rhizosphere microbiomes</title>
+<p>High coverage shotgun metagenomics sequence data were obtained from microbial DNA extracted from the rhizosphere of apple rootstocks cultivated in soil from a replant diseased orchard<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. The experimental design included sampling of six different soil/apple rootstock treatments with five biological replicates each, as described in Somera et al. 2021<sup><xref ref-type="bibr" rid="c40">40</xref></sup>. Two different apple rootstocks (M26, ARD susceptible; G210, ARD tolerant) were grown in three different treatments: 1) orchard soil amended with <italic>Brassica napus</italic> seed meal, 2) orchard soil amended with <italic>Brassica juncea</italic> /<italic>Sinapis alba</italic> seed meal (BjSa) and 3) no-treatment control soil (NTC) (see <xref rid="tbls1" ref-type="table">Supp. Table 1</xref>). Microbial DNA was extracted from rhizosphere soil and metagenomics data were assembled as described in<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. In each assembly contigs were binned to recover MAGs using MetaWRAP pipeline (v1.3.1), which utilizes several independent binners<sup><xref ref-type="bibr" rid="c39">39</xref></sup>. The MAGs recovered by the different binners were collectively processed with the Bin_refinement module of metaWRAP, producing an output of a refined bin collection. A count table was constructed by mapping raw reads data of each assembly (e.g., BjSa; G210) to the bins, using BWA-MEM mapping software (version 0.7.17) with default parameters. Differential abundance (DA) of the reads associated with the respective bins in each assembly across the respective replicates was determined using the edgeR function implemented in R, requiring FDR adapted <italic>p</italic> value&lt; 0.05. Reads mapping information is shown in <xref rid="tbls1" ref-type="table">Supp. Table 1</xref>. Based on DA, MAGs were classified either as associated with healthy soil (H; BjSa differentially abundant), symptomized soil (S; NTC differentially abundant), or not-associated with either soil type (NA; not differentially abundant at any treatment site).</p>
+<p>Gene calling and annotation was performed with the Annotate_bins module of MetaWRAP. Pathway completeness was determined with KEGG Decoder v 1.0.8.2<sup><xref ref-type="bibr" rid="c73">73</xref></sup> based on the KO annotations extracted from Annotate_bins assignments. The quality of the genomes was determined with CheckM<sup><xref ref-type="bibr" rid="c74">74</xref></sup>. For phylogenomic analyses and taxonomic classification of each bacterial and archaeal genome, we searched for and aligned 120 bacterial marker genes of the MAGs using the identity and align commands of GTDB-Tk v1.5.0<sup><xref ref-type="bibr" rid="c43">43</xref></sup>. MAGs were dereplicated using dRep v2.3.2<sup><xref ref-type="bibr" rid="c46">46</xref></sup> using the default settings and MAGs from the six assemblies were clustered into a single non-redundant set. Phylogenomic trees were rooted by randomly selecting a genome from the sister lineage to the genus as determined from the topology of the bacterial and archaeal GTDB R06-RS202 reference trees. We filtered closely related GTDB taxa identified with the “classify_wf” workflow with the taxa-filter option during the alignment step. Overall, a set of 395 high-quality genomes (≥90% completeness, &lt;5% contamination) was used for downstream analyses.</p>
+</sec>
+<sec id="s4b">
+<title>Genome Scale Metabolic Model (GSMM) reconstruction, analysis and characterization of the MAG collection</title>
+<p>GSMMs were constructed for the 395 MAGs using CarveMe v 1.5.1 <sup><xref ref-type="bibr" rid="c31">31</xref></sup>, a python- based tool for GSMM reconstruction. Installation and usage of CarveMe was done as suggested in the original CarveMe webpage (<ext-link ext-link-type="uri" xlink:href="https://carveme.readthedocs.io/en/latest/">https://carveme.readthedocs.io/en/latest/</ext-link>). The solver used for GSMM reconstruction is Cplex (v. 12.8.0.0). All GSMMs were drafted without gap filling as it might mask metabolic co-dependencies<sup><xref ref-type="bibr" rid="c52">52</xref></sup>. Stoichiometric consistency of all GSMMs was systematically assessed via the standardized MEMOTE test suite, a tool for GSMM quality and completion assessment<sup><xref ref-type="bibr" rid="c47">47</xref></sup>. GSMMs not stoichiometrically balanced were filtered out, as they might produce infeasible simulation results.</p>
+<p>Analyses and simulations of GSMMs, as well as retrieval of model attributes (reactions, metabolites and exchanges, etc.), were conducted via the vast array of methods found in COBRApy<sup><xref ref-type="bibr" rid="c75">75</xref></sup>, a python coding language package for analyzing constraint-based reconstructions. For each GSMM, initial growth simulations took place in three different model-specific environments: rich medium, poor medium and poor medium + exudates. The rich medium was composed of all the exchange reactions a model holds, gathered by the “exchanges” attribute found in each model. The poor medium was composed of the minimal set of compounds required for a specific GSMM/species to grow at a fixed rate. This set of compounds was identified using the minimal_medium module from COBRApy (minimize components=True, growth rate of 0.1 biomass increase hour<sup>-<xref ref-type="bibr" rid="c1">1</xref></sup>). Poor medium + exudates was defined as the poor medium with the addition of an array of apple root exudates. These compounds were retrieved from two metabolomics studies characterizing the exudates of apple rootstocks. Rootstocks were obtained from Willow Drive Nursery, Ephrata, WA, and grown in Lane Mountain Sand (Valley, WA)<sup><xref ref-type="bibr" rid="c48">48</xref>,<xref ref-type="bibr" rid="c49">49</xref></sup>. Exudate compounds were aligned with the BIGG database<sup><xref ref-type="bibr" rid="c76">76</xref></sup> in order to format them for use in COBRApy. For each media type, GSMM growth rates were calculated by solving each model using the summary method in COBRApy, which utilizes Flux Balance Analysis (FBA) for maximizing biomass.</p>
+</sec>
+<sec id="s4c">
+<title>Construction of a common root environment medium and application of the Microbial Community Succession Module (MCSM)</title>
+<p>In order to simulate the dynamics of the rhizosphere community in the root environment, a fourth growth medium representing a natural-like environment was defined and termed the “rhizosphere environment”. The rhizosphere environment was composed of two arrays of compounds: 1) the exudates (as described above) and 2) inorganic compounds essential for sustaining bacterial growth. This array was determined according to the minimal set of compounds identified for each GSMM (also described above). Rhizosphere environment components are provided in <xref rid="tbls2" ref-type="table">Supp. Table 2</xref>. Both sets of compounds were then consolidated into one array in which further simulations were conducted.</p>
+<p>The MCSM (which is the first module out of three comprising this computational framework) simulates the growth of a microbial community by iteratively growing the GSMMs in the community and adding compounds “secreted” by the growing species to the simulation-environment (i.e. the medium), thus enriching the medium/environment and supporting further growth. Unlike Flux Balance Analysis (FBA), which is used for gathering an arbitrary solution regarding non-optimized fluxes, the MCSM uses Flux Variability Analysis (FVA) to determine exchange fluxes<sup><xref ref-type="bibr" rid="c77">77</xref></sup>. FVA gathers the full range of exchange fluxes (including both secretion and uptake) that satisfy the objective function of a GSMM (i.e., biomass increase). The FVA fraction of optimum was set to 0.9 (sustaining the objective function at 90% optimality, allowing a less restricted secretion profile). Secretion compounds added to the updated medium in each iteration were set to be given in optimal fluxes in next iteration, to ensure a metabolic effect based on the presence of specific metabolites in the environment, rather than their quantity. Flux boundaries of updated medium components were set to 1000 mmol/ gDW hour (for a specific exchange compound; gDW gram Dry Weight).</p>
+<p>MCSM was initially simulated in the rhizosphere environment medium. After each growth iteration, GSMM growth-values and the compounds secreted by the species growing were collected, where the latter were added to the medium for the next iteration as described above. Growth iterations continued until no new compounds were secreted and no additional GSMMs had grown. After the 3<sup>rd</sup> iteration, a set of organic phosphorous compounds (containing both carbon and phosphorous) was added to the environment. These compounds were gathered from the pool of model-specific minimal compounds selected for use in the poor medium. Information regarding the chemical formula of these compounds was gathered with the formula attribute of each compound object in COBRApy. Along MCSM iterations, secreted metabolites were classified into biochemical categories based on BRITE annotations<sup><xref ref-type="bibr" rid="c78">78</xref></sup> or, in the absence of classification, manually. Tutorial for the MCSM stage of the framework workflow is found at the GitHub page, along with the GSMMs and media files. Instructions for conducting the analysis are in the README.md file <ext-link ext-link-type="uri" xlink:href="https://github.com/FreilichLab/Trophic_interactions_predicting_framework">https://github.com/FreilichLab/Trophic_interactions_predicting_framework</ext-link>.</p>
+</sec>
+<sec id="s4d">
+<title>Construction of the exchange network and its untangling for screening sub-network motifs</title>
+<p>A directed bipartite network representing all potential metabolic exchanges occurring within the rhizosphere community was constructed based on uptake and secretion data derived from MCSM iterations for each GSMM. Edges in the network were connected between GSMM nodes and metabolite nodes, with edge directionality indicating either secretion or uptake of a metabolite by a specific GSMM. The network was constructed with the networkx package, a python language package for the exploration and analysis of networks and network algorithms. Network-specific topography was obtained using the Kamada-kawai layout<sup><xref ref-type="bibr" rid="c79">79</xref></sup>. Information regarding the degree and connectivity of the different node types was acquired from the graph object (G). Code for the network construction module in the framework is found at the project’s GitHub page under the name NETWORK.py.</p>
+<p>Untangling the exchanges network into individual paths (i.e. sub-network motifs) was done using the all_shortest_paths function in networkx<sup><xref ref-type="bibr" rid="c79">79</xref></sup>, applied over the exchanges network. Briefly, the algorithm screens for all possible shortest paths within the network, specifically screening for paths starting with an exudate node and ending secreted metabolite nodes (secreted by bacterial species but not consumed). This algorithm yielded two types of paths: 1) plant- microbe paths (PM) in which node positions one, two, and three represented exudate, microbe and secreted metabolite, respectively, and 2) plant-microbe-microbe paths (PMM). PMM paths (length of five nodes) were constructed based on PM paths (length of three nodes), in which positions four and five displayed unique (i.e. not found in PM paths) microbe and metabolite nodes, respectively. Code for the network untangling module in the framework is found at the project’s GitHub page under the name PATHS.py.</p>
+</sec>
+<sec id="s4e">
+<title>Associating PM and PMM sub-network motifs features with soil health</title>
+<p>Sub-network motifs (PM and PMM) were functionally classified as associated with healthy soil (H), symptomized soil (S), or not-associated with either soil type (NA) based on differential abundance of the corresponding MAGs (PM) or MAGs combination (PMM) in the sub-network. Next, functional classifications of GSMMs in both PM and PMM sub-networks were characterized. For PMMs, distribution at the different positions was compared with the ANOVA test, followed by a Tukey test to significantly distinguish the groups.</p>
+<p>GSMM classifications were further projected on uptake and secreted metabolites in the pathway motifs. For simplification, the analysis focused only on PM paths because PMM paths incorporate PM paths, and exchanges within a PMM path do not directly reflect the effect of an exudate on the secreted end- product (but over the intermediate compound). On that account, start/end metabolites in PM paths were associated with H/S/NA paths based on one-sided hypergeometric test, comparing the frequency of each compound in a functionally characterized path type (either H or S) vs. its frequency in NA classified paths and the reciprocal data set.</p>
+</sec>
+</sec>
+<sec id="s5">
+<title>Data availability</title>
+<p>A reproducible workflow for central computational analyses was deposited in <ext-link ext-link-type="uri" xlink:href="https://github.com/FreilichLab/Trophic_interactions_predicting_framework">https://github.com/FreilichLab/Trophic_interactions_predicting_framework</ext-link>, also providing all GSMMs. Raw metagenome sequences used in this study are deposited in NCBI under BioProject accession number PRJNA779554 (<ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA779554">https://www.ncbi.nlm.nih.gov/bioproject/PRJNA779554</ext-link>). MAGs FASTA sequences generated and used in this work are deposited in <ext-link ext-link-type="uri" xlink:href="https://github.com/FreilichLab/Ginatt_MAGs">https://github.com/FreilichLab/Ginatt_MAGs</ext-link>.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><string-name><surname>Zhalnina</surname>, <given-names>K.</given-names></string-name> <etal>et al.</etal> <article-title>Dynamic root exudate chemistry and microbial substrate preferences drive patterns in rhizosphere microbial community assembly</article-title>. <source>Nat. Microbiol</source>. <volume>3</volume>, <fpage>470</fpage>–<lpage>480</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><string-name><surname>Gomariz</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>From community approaches to single-cell genomics: The discovery of ubiquitous hyperhalophilic Bacteroidetes generalists</article-title>. <source>ISME J</source>. <volume>9</volume>, <fpage>16</fpage>–<lpage>31</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><string-name><surname>Singh</surname>, <given-names>B. K.</given-names></string-name>, <string-name><surname>Millard</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Whiteley</surname>, <given-names>A. S.</given-names></string-name> &amp; <string-name><surname>Murrell</surname>, <given-names>J. C</given-names></string-name>. <article-title>Unravelling rhizosphere-microbial interactions: Opportunities and limitations</article-title>. <source>Trends Microbiol</source>. <volume>12</volume>, <fpage>386</fpage>–<lpage>393</lpage> (<year>2004</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><string-name><surname>Korenblum</surname>, <given-names>E.</given-names></string-name> <etal>et al.</etal> <source>Rhizosphere microbiome mediates systemic root metabolite exudation by root-to-root signaling</source>. <volume>117</volume>, (<year>2020</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><string-name><surname>Sasse</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Martinoia</surname>, <given-names>E.</given-names></string-name> &amp; <string-name><surname>Northen</surname>, <given-names>T</given-names></string-name>. <article-title>Feed Your Friends: Do Plant Exudates Shape the Root Microbiome?</article-title> <source>Trends Plant Sci</source>. <volume>23</volume>, <fpage>25</fpage>–<lpage>41</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><string-name><surname>Venturi</surname>, <given-names>V.</given-names></string-name> &amp; <string-name><surname>Keel</surname>, <given-names>C</given-names></string-name>. <article-title>Signaling in the Rhizosphere</article-title>. <source>Trends Plant Sci</source>. <volume>21</volume>, <fpage>187</fpage>–<lpage>198</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><string-name><surname>Olanrewaju</surname>, <given-names>O. S.</given-names></string-name>, <string-name><surname>Glick</surname>, <given-names>B. R.</given-names></string-name> &amp; <string-name><surname>Babalola</surname>, <given-names>O. O</given-names></string-name>. <article-title>Mechanisms of action of plant growth promoting bacteria</article-title>. <source>World J. Microbiol. Biotechnol</source>. <volume>33</volume>, <fpage>1</fpage>–<lpage>16</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><string-name><surname>Rawat</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Das</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Shankhdhar</surname>, <given-names>D.</given-names></string-name> &amp; <string-name><surname>Shankhdhar</surname>, <given-names>S. C</given-names></string-name>. <article-title>Phosphate- Solubilizing Microorganisms: Mechanism and Their Role in Phosphate Solubilization and Uptake. <italic>J</italic></article-title>. <source>Soil Sci. Plant Nutr</source>. <volume>21</volume>, <fpage>49</fpage>–<lpage>68</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><string-name><surname>Compant</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Clément</surname>, <given-names>C.</given-names></string-name> &amp; <string-name><surname>Sessitsch</surname>, <given-names>A</given-names></string-name>. <article-title>Plant growth-promoting bacteria in the rhizo- and endosphere of plants: Their role, colonization, mechanisms involved and prospects for utilization</article-title>. <source>Soil Biol. Biochem</source>. <volume>42</volume>, <fpage>669</fpage>–<lpage>678</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><string-name><surname>Finkel</surname>, <given-names>O. M.</given-names></string-name> <etal>et al.</etal> <article-title>A single bacterial genus maintains root growth in a complex microbiome</article-title>. <source>Nature</source> <volume>587</volume>, <fpage>103</fpage>–<lpage>108</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><string-name><surname>Ghosh</surname>, <given-names>S. K.</given-names></string-name>, <string-name><surname>Bera</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>Chakrabarty</surname>, <given-names>A. M</given-names></string-name>. <article-title>Microbial siderophore – A boon to agricultural sciences</article-title>. <source>Biol. Control</source> <volume>144</volume>, <issue>104214</issue> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><string-name><surname>Kudoyarova</surname>, <given-names>G.</given-names></string-name> <etal>et al.</etal> <article-title>Phytohormone Mediation of Interactions Between Plants and Non-Symbiotic Growth Promoting Bacteria Under Edaphic Stresses</article-title>. <source>Front. Plant Sci</source>. <volume>10</volume>, <fpage>1</fpage>–<lpage>11</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><string-name><surname>Berendsen</surname>, <given-names>R. L.</given-names></string-name>, <string-name><surname>Pieterse</surname>, <given-names>C. M. J.</given-names></string-name> &amp; <string-name><surname>Bakker</surname>, <given-names>P. A. H. M</given-names></string-name>. <article-title>The rhizosphere microbiome and plant health</article-title>. <source>Trends Plant Sci</source>. <volume>17</volume>, <fpage>478</fpage>–<lpage>486</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><string-name><surname>Ngalimat</surname>, <given-names>M. S.</given-names></string-name> <etal>et al.</etal> <article-title>Plant Growth-Promoting Bacteria as an Emerging Tool to Manage Bacterial Rice Pathogens</article-title>. <source>Microorg</source>. 2021, Vol. <volume>9</volume>, <italic>Page 682</italic> 9, 682 (<year>2021</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><string-name><surname>Mazzola</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Freilich</surname>, <given-names>S</given-names></string-name>. <article-title>Prospects for biological soilborne disease control: Application of indigenous versus synthetic microbiomes</article-title>. <source>Phytopathology</source> <volume>107</volume>, <fpage>256</fpage>–<lpage>263</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><string-name><surname>Freilich</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>Competitive and cooperative metabolic interactions in bacterial communities</article-title>. <source>Nat. Commun</source>. <volume>2</volume>, (<year>2011</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><string-name><surname>Embree</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>J. K.</given-names></string-name>, <string-name><surname>Al-Bassam</surname>, <given-names>M. M.</given-names></string-name> &amp; <string-name><surname>Zengler</surname>, <given-names>K</given-names></string-name>. <article-title>Networks of energetic and metabolic interactions define dynamics in microbial communities</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>112</volume>, <fpage>15450</fpage>–<lpage>15455</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><string-name><surname>Tsoi</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal> <article-title>Metabolic division of labor in microbial systems</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A</source>. <volume>115</volume>, <fpage>2526</fpage>–<lpage>2531</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><string-name><surname>Zengler</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Zaramela</surname>, <given-names>L. S</given-names></string-name>. <article-title>The social network of microorganisms - How auxotrophies shape complex communities</article-title>. <source>Nat. Rev. Microbiol</source>. <volume>16</volume>, <fpage>383</fpage>–<lpage>390</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><string-name><surname>Vessey</surname>, <given-names>J. K</given-names></string-name>. <article-title>Plant growth promoting rhizobacteria as biofertilizers</article-title>. <source>Plant Soil</source> <volume>255</volume>, <fpage>571</fpage>–<lpage>586</lpage> (<year>2003</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><string-name><surname>Toju</surname>, <given-names>H.</given-names></string-name> <etal>et al.</etal> <article-title>Core microbiomes for sustainable agroecosystems</article-title>. <source>Nat. Plants</source> <volume>4</volume>, <fpage>247</fpage>–<lpage>257</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><string-name><surname>Faust</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Raes</surname>, <given-names>J</given-names></string-name>. <source>Microbial interactions : from networks to models</source>. <volume>10</volume>, (<year>2012</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><string-name><surname>Widder</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>MINI REVIEW Challenges in microbial ecology: building predictive understanding of community function and dynamics</article-title>. <source>ISME J</source>. <volume>10</volume>, <fpage>2557</fpage>–<lpage>2568</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><string-name><surname>Magnúsdóttir</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>Generation of genome-scale metabolic reconstructions for 773 members of the human gut microbiota</article-title>. <source>Nat. Biotechnol</source>. <volume>35</volume>, <fpage>81</fpage>–<lpage>89</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><string-name><given-names>San</given-names> <surname>León</surname></string-name>, <string-name><given-names>D.</given-names> &amp; <surname>Nogales</surname></string-name>, J. <article-title>Toward merging bottom–up and top–down model-based designing of synthetic microbial communities</article-title>. <source>Curr. Opin. Microbiol</source>. <volume>69</volume>, <issue>102169</issue> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><string-name><surname>Basile</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>Revealing metabolic mechanisms of interaction in the anaerobic digestion microbiome by flux balance analysis</article-title>. <source>Metab. Eng</source>. <volume>62</volume>, <fpage>138</fpage>–<lpage>149</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><string-name><surname>Orth</surname>, <given-names>J. D.</given-names></string-name>, <string-name><surname>Thiele</surname>, <given-names>I.</given-names></string-name> &amp; <string-name><surname>Palsson</surname>, <given-names>B. O</given-names></string-name>. <article-title>What is flux balance analysis?</article-title> <source>Nat. Biotechnol</source>. <volume>28</volume>, <fpage>245</fpage>–<lpage>248</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><string-name><surname>Cuevas</surname>, <given-names>D. A.</given-names></string-name> <etal>et al.</etal> <article-title>From DNA to FBA: How to build your own genome- scale metabolic model</article-title>. <source>Front. Microbiol</source>. <volume>7</volume>, <fpage>1</fpage>–<lpage>12</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><string-name><surname>Price</surname>, <given-names>N. D.</given-names></string-name>, <string-name><surname>Reed</surname>, <given-names>J. L.</given-names></string-name> &amp; <string-name><surname>Palsson</surname>, <given-names>B</given-names></string-name>. <article-title>Genome-scale models of microbial cells: Evaluating the consequences of constraints</article-title>. <source>Nat. Rev. Microbiol</source>. <volume>2</volume>, <fpage>886</fpage>–<lpage>897</lpage> (<year>2004</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><string-name><surname>Stolyar</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>Metabolic modeling of a mutualistic microbial community</article-title>. <source>Mol. Syst. Biol</source>. <volume>3</volume>, <fpage>1</fpage>–<lpage>14</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><string-name><surname>Machado</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Andrejev</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Tramontano</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Patil</surname>, <given-names>K. R</given-names></string-name>. <article-title>Fast automated reconstruction of genome-scale metabolic models for microbial species and communities</article-title>. <source>Nucleic Acids Res</source>. <volume>46</volume>, <fpage>7542</fpage>–<lpage>7553</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><string-name><surname>Henry</surname>, <given-names>C. S.</given-names></string-name> <etal>et al.</etal> <article-title>High-throughput generation, optimization and analysis of genome-scale metabolic models</article-title>. <source>Nat. Biotechnol</source>. <volume>28</volume>, <fpage>977</fpage>–<lpage>982</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><string-name><surname>Heinken</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>Genome-scale metabolic reconstruction of 7,302 human microorganisms for personalized medicine</article-title>. <source>Nat. Biotechnol</source>. (<year>2023</year>) doi:<pub-id pub-id-type="doi">10.1038/s41587-022-01628-0</pub-id>.</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><string-name><surname>Faust</surname>, <given-names>K</given-names></string-name>. <article-title>Microbial Consortium Design Benefits from Metabolic Modeling</article-title>. <source>Trends Biotechnol</source>. <volume>37</volume>, <fpage>123</fpage>–<lpage>125</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><string-name><surname>Xu</surname>, <given-names>X.</given-names></string-name> <etal>et al.</etal> <article-title>Modeling microbial communities from atrazine contaminated soils promotes the development of biostimulation solutions</article-title>. <source>ISME J</source>. <volume>13</volume>, <fpage>494</fpage>–<lpage>508</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><string-name><surname>Ruan</surname>, <given-names>Z.</given-names></string-name> <etal>et al.</etal> <article-title>Interspecies Metabolic Interactions in a Synergistic Consortium Drive Efficient Degradation of the Herbicide Bromoxynil Octanoate</article-title>. <source>J. Agric. Food Chem</source>. <volume>70</volume>, <fpage>11613</fpage>–<lpage>11622</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="other"><string-name><surname>Dhakar</surname>, <given-names>K.</given-names></string-name>, <etal>et al.</etal> <collab>Modeling-Guided Amendments Lead to Enhanced Biodegradation in Soil. <italic>mSystems</italic> 7,</collab> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><string-name><surname>Taş</surname>, <given-names>N.</given-names></string-name> <etal>et al.</etal> <article-title>Metagenomic tools in microbial ecology research</article-title>. <source>Curr. Opin. Biotechnol</source>. <volume>67</volume>, <fpage>184</fpage>–<lpage>191</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><string-name><surname>Uritskiy</surname>, <given-names>G. V</given-names></string-name>, <string-name><surname>Diruggiero</surname>, <given-names>J.</given-names></string-name> &amp; <string-name><surname>Taylor</surname>, <given-names>J.</given-names></string-name> <article-title>MetaWRAP - A flexible pipeline for genome-resolved metagenomic data analysis 08 Information and Computing Sciences 0803 Computer Software 08 Information and Computing Sciences 0806 Information Systems</article-title>. <source>Microbiome</source> <volume>6</volume>, (<year>2018</year>).</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><string-name><surname>Somera</surname>, <given-names>T. S.</given-names></string-name>, <string-name><surname>Freilich</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Mazzola</surname>, <given-names>M</given-names></string-name>. <article-title>Comprehensive analysis of the apple rhizobiome as influenced by different Brassica seed meals and rootstocks in the same soil/plant system</article-title>. <source>Appl. Soil Ecol</source>. <volume>157</volume>, <issue>103766</issue> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><collab>Maria Berihu, T. S. S. A. M. S. M. E. P. O. T. M. C. A. G. M. O.-L. A. D.-F. M. M. &amp; S. F.</collab> <article-title>A framework for the targeted recruitment of crop-beneficial soil taxa based on network analysis of metagenomics data</article-title>. <source>Microbiome; Accept</source>. (<year>2022</year>).</mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="journal"><string-name><surname>Bowers</surname>, <given-names>R. M.</given-names></string-name> <etal>et al.</etal> <article-title>Minimum information about a single amplified genome (MISAG) and a metagenome-assembled genome (MIMAG) of bacteria and archaea</article-title>. <source>Nat. Biotechnol</source>. <volume>35</volume>, <fpage>725</fpage>–<lpage>731</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c43"><label>43.</label><mixed-citation publication-type="journal"><string-name><surname>Chaumeil</surname>, <given-names>P. A.</given-names></string-name>, <string-name><surname>Mussig</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Hugenholtz</surname>, <given-names>P.</given-names></string-name> &amp; <string-name><surname>Parks</surname>, <given-names>D. H</given-names></string-name>. <article-title>GTDB-Tk: A toolkit to classify genomes with the genome taxonomy database</article-title>. <source>Bioinformatics</source> <volume>36</volume>, <fpage>1925</fpage>–<lpage>1927</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><string-name><surname>Buée</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>de Boer</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Martin</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>van Overbeek</surname>, <given-names>L.</given-names></string-name> &amp; <string-name><surname>Jurkevitch</surname>, <given-names>E</given-names></string-name>. <article-title>The rhizosphere zoo: An overview of plant-associated communities of microorganisms, including phages, bacteria, archaea, and fungi, and of some of their structuring factors</article-title>. <source>Plant Soil</source> <volume>321</volume>, <fpage>189</fpage>–<lpage>212</lpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="c45"><label>45.</label><mixed-citation publication-type="journal"><string-name><surname>Xu</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal> <article-title>The structure and function of the global citrus rhizosphere microbiome</article-title>. <source>Nat. Commun</source>. <volume>9</volume>, (<year>2018</year>).</mixed-citation></ref>
+<ref id="c46"><label>46.</label><mixed-citation publication-type="journal"><string-name><surname>Olm</surname>, <given-names>M. R.</given-names></string-name>, <string-name><surname>Brown</surname>, <given-names>C. T.</given-names></string-name>, <string-name><surname>Brooks</surname>, <given-names>B.</given-names></string-name> &amp; <string-name><surname>Banfield</surname>, <given-names>J. F</given-names></string-name>. <article-title>DRep: A tool for fast and accurate genomic comparisons that enables improved genome recovery from metagenomes through de-replication</article-title>. <source>ISME J</source>. <volume>11</volume>, <fpage>2864</fpage>– <lpage>2868</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c47"><label>47.</label><mixed-citation publication-type="journal"><string-name><surname>Lieven</surname>, <given-names>C.</given-names></string-name> <etal>et al.</etal> <article-title>MEMOTE for standardized genome-scale metabolic model testing</article-title>. <source>Nat. Biotechnol</source>. <volume>38</volume>, <fpage>272</fpage>–<lpage>276</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c48"><label>48.</label><mixed-citation publication-type="journal"><string-name><surname>Leisso</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Rudell</surname>, <given-names>D.</given-names></string-name> &amp; Mazzola, M. Soil Biology &amp; <article-title>Biochemistry Metabolic composition of apple rootstock rhizodeposits differs in a genotype-speci fi c manner and affects growth of subsequent plantings</article-title>. <source>Soil Biol. Biochem</source>. <volume>113</volume>, <fpage>201</fpage>–<lpage>214</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c49"><label>49.</label><mixed-citation publication-type="journal"><string-name><surname>Leisso</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Rudell</surname>, <given-names>D.</given-names></string-name> &amp; <string-name><surname>Mazzola</surname>, <given-names>M</given-names></string-name>. <source>Targeted Metabolic Profiling Indicates Apple Rootstock Genotype-Specific Differences in Primary and Secondary Metabolite Production and Validate Quantitative Contribution From Vegetative Growth</source>. <volume>9</volume>, (<year>2018</year>).</mixed-citation></ref>
+<ref id="c50"><label>50.</label><mixed-citation publication-type="journal"><string-name><surname>Naveed</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>Plant exudates may stabilize or weaken soil depending on species, origin and time</article-title>. <source>Eur. J. Soil Sci</source>. <volume>68</volume>, <fpage>806</fpage>–<lpage>816</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c51"><label>51.</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Stringlis</surname></string-name>, I. A., <etal>et al.</etal> <article-title>MYB72-dependent coumarin exudation shapes root microbiome assembly to promote plant health</article-title>. <source>Proc. Natl. Acad. Sci. U. S.A</source> <volume>115</volume>, <fpage>E5213</fpage>–<lpage>E5222</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c52"><label>52.</label><mixed-citation publication-type="journal"><string-name><surname>Opatovsky</surname>, <given-names>I.</given-names></string-name> <etal>et al.</etal> <article-title>Modeling trophic dependencies and exchanges among insects’ bacterial symbionts in a host-simulated environment</article-title>. <source>BMC Genomics</source> <volume>19</volume>, <fpage>1</fpage>–<lpage>14</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c53"><label>53.</label><mixed-citation publication-type="journal"><string-name><surname>Huang</surname>, <given-names>L. M.</given-names></string-name>, <string-name><surname>Jia</surname>, <given-names>X. X.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>G. L.</given-names></string-name> &amp; <string-name><surname>Shao</surname>, <given-names>M. A</given-names></string-name>. <article-title>Soil organic phosphorus transformation during ecosystem development: A review</article-title>. <source>Plant Soil</source> <volume>417</volume>, <fpage>17</fpage>–<lpage>42</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c54"><label>54.</label><mixed-citation publication-type="journal"><string-name><surname>Zheng</surname>, <given-names>L.</given-names></string-name> <etal>et al.</etal> <article-title>Roles of phosphorus sources in microbial community assembly for the removal of organic matters and ammonia in activated sludge</article-title>. <source>Front. Microbiol</source>. <volume>10</volume>, <fpage>1</fpage>–<lpage>13</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c55"><label>55.</label><mixed-citation publication-type="journal"><string-name><surname>Bardgett</surname>, <given-names>R. D.</given-names></string-name> &amp; <string-name><surname>Van Der Putten</surname>, <given-names>W. H.</given-names></string-name> <article-title>Belowground biodiversity and ecosystem functioning</article-title>. <source>Nature</source> <volume>515</volume>, <fpage>505</fpage>–<lpage>511</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c56"><label>56.</label><mixed-citation publication-type="journal"><string-name><surname>Uzun</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>Recovery and genome reconstruction of novel magnetotactic Elusimicrobiota from bog soil</article-title>. <source>ISME J</source>. <fpage>1</fpage>–<lpage>11</lpage> (<year>2022</year>) doi:<pub-id pub-id-type="doi">10.1038/s41396-022-01339-z</pub-id>.</mixed-citation></ref>
+<ref id="c57"><label>57.</label><mixed-citation publication-type="journal"><string-name><surname>Lei</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> <article-title>Analysis of the community composition and bacterial diversity of the rhizosphere microbiome across different plant taxa</article-title>. <source>Microbiologyopen</source> <volume>8</volume>, <fpage>1</fpage>–<lpage>10</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c58"><label>58.</label><mixed-citation publication-type="journal"><string-name><surname>Ghosh</surname>, <given-names>S. K.</given-names></string-name>, <string-name><surname>Banerjee</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Sengupta</surname>, <given-names>C</given-names></string-name>. <article-title>Bioassay, characterization and estimation of siderophores from some important antagonistic fungi</article-title>. <source>J. Biopestic</source>. <volume>10</volume>, <fpage>105</fpage>–<lpage>112</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c59"><label>59.</label><mixed-citation publication-type="journal"><string-name><surname>Lu</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Heal</surname>, <given-names>K. R.</given-names></string-name>, <string-name><surname>Ingalls</surname>, <given-names>A. E.</given-names></string-name>, <string-name><surname>Doxey</surname>, <given-names>A. C.</given-names></string-name> &amp; <string-name><surname>Neufeld</surname>, <given-names>J. D</given-names></string-name>. <article-title>Metagenomic and chemical characterization of soil cobalamin production</article-title>. <source>ISME J</source>. <volume>14</volume>, <fpage>53</fpage>–<lpage>66</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c60"><label>60.</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Mee</surname></string-name>, <string-name><given-names>M. T.</given-names>, <surname>Collins</surname></string-name>, <string-name><given-names>J. J.</given-names>, <surname>Church</surname></string-name>, <string-name><given-names>G. M.</given-names> &amp; <surname>Wang</surname></string-name>, H.H. <article-title>Syntrophic exchange in synthetic microbial communities</article-title>. <source>Proc. Natl. Acad. Sci. U. S.A</source> <volume>111</volume>, (<year>2014</year>).</mixed-citation></ref>
+<ref id="c61"><label>61.</label><mixed-citation publication-type="journal"><string-name><surname>Justin</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Edmond</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Ally</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Xin</surname>, <given-names>H</given-names></string-name>. <article-title>Plant Secondary Metabolites: Biosynthesis, Classification, Function and Pharmacological Properties</article-title>. <source>J. Pharm. Pharmacol</source>. <volume>2</volume>, <fpage>377</fpage>–<lpage>392</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c62"><label>62.</label><mixed-citation publication-type="journal"><string-name><surname>Yang</surname>, <given-names>W.</given-names></string-name> <etal>et al.</etal> <article-title>A Genomic Analysis of Bacillus megaterium HT517 Reveals the Genetic Basis of Its Abilities to Promote Growth and Control Disease in Greenhouse Tomato</article-title>. <source>Genet. Res. (Camb</source><italic>).</italic> 2022, (<year>2022</year>).</mixed-citation></ref>
+<ref id="c63"><label>63.</label><mixed-citation publication-type="journal"><string-name><surname>Mazzola</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Hewavitharana</surname>, <given-names>S. S.</given-names></string-name> &amp; <string-name><surname>Strauss</surname>, <given-names>S. L</given-names></string-name>. <article-title>Brassica seed meal soil amendments transform the rhizosphere microbiome and improve apple production through resistance to pathogen reinfestation</article-title>. <source>Phytopathology</source> <volume>105</volume>, <fpage>460</fpage>–<lpage>469</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c64"><label>64.</label><mixed-citation publication-type="journal"><string-name><surname>Mazzola</surname>, <given-names>M</given-names></string-name>. <article-title>Transformation of soil microbial community structure and Rhizoctonia-suppressive potential in response to apple roots</article-title>. <source>Phytopathology</source> <volume>89</volume>, <fpage>920</fpage>–<lpage>927</lpage> (<year>1999</year>).</mixed-citation></ref>
+<ref id="c65"><label>65.</label><mixed-citation publication-type="journal"><string-name><surname>Balbín-Suárez</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>Root exposure to apple replant disease soil triggers local defense response and rhizoplane microbiome dysbiosis</article-title>. <source>FEMS Microbiol. Ecol</source>. <volume>97</volume>, <fpage>1</fpage>–<lpage>14</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c66"><label>66.</label><mixed-citation publication-type="journal"><string-name><surname>Weiß</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Reckwell</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Beerhues</surname>, <given-names>L.</given-names></string-name> &amp; <string-name><surname>Winkelmann</surname>, <given-names>T</given-names></string-name>. <article-title>Impaired defense reactions in apple replant disease-Affected roots of Malus domestica ‘M26’</article-title>. <source>Tree Physiol</source>. <volume>37</volume>, <fpage>1672</fpage>–<lpage>1685</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c67"><label>67.</label><mixed-citation publication-type="journal"><string-name><surname>Weiß</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Bartsch</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Winkelmann</surname>, <given-names>T</given-names></string-name>. <article-title>Transcriptomic analysis of molecular responses in Malus domestica ‘M26’ roots affected by apple replant disease</article-title>. <source>Plant Mol. Biol</source>. <volume>94</volume>, <fpage>303</fpage>–<lpage>318</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c68"><label>68.</label><mixed-citation publication-type="journal"><string-name><surname>Sun</surname>, <given-names>N.</given-names></string-name> <etal>et al.</etal> <article-title>Effects of Organic Acid Root Exudates of Malus hupehensis Rehd. Derived from Soil and Root Leaching Liquor from Orchards with Apple Replant Disease</article-title>. <source>Plants</source> <volume>11</volume>, (<year>2022</year>).</mixed-citation></ref>
+<ref id="c69"><label>69.</label><mixed-citation publication-type="journal"><string-name><surname>Howell</surname>, <given-names>C. R</given-names></string-name>. <article-title>Seed Treatment with L-Sorbose to Control Damping-Off or Cotton Seedlings by Rhizoctonia solani</article-title>. <source>Phytopathology</source> <volume>68</volume>, <fpage>1096</fpage> (<year>1978</year>).</mixed-citation></ref>
+<ref id="c70"><label>70.</label><mixed-citation publication-type="journal"><string-name><surname>Zou</surname>, <given-names>C. S.</given-names></string-name>, <string-name><surname>Mo</surname>, <given-names>M. H.</given-names></string-name>, <string-name><surname>Gu</surname>, <given-names>Y. Q.</given-names></string-name>, <string-name><surname>Zhou</surname>, <given-names>J. P.</given-names></string-name> &amp; <string-name><surname>Zhang</surname>, <given-names>K. Q</given-names></string-name>. <article-title>Possible contributions of volatile-producing bacteria to soil fungistasis</article-title>. <source>Soil Biol. Biochem</source>. <volume>39</volume>, <fpage>2371</fpage>–<lpage>2379</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c71"><label>71.</label><mixed-citation publication-type="journal"><string-name><surname>Gomes</surname>, <given-names>V. A.</given-names></string-name> <etal>et al.</etal> <article-title>Activity of papaya seeds (Carica papaya) against Meloidogyne incognita as a soil biofumigant</article-title>. <source>J. Pest Sci</source>. (2004). <volume>93</volume>, <fpage>783</fpage>– <lpage>792</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c72"><label>72.</label><mixed-citation publication-type="journal"><string-name><surname>Gao</surname>, <given-names>T.</given-names></string-name> <etal>et al.</etal> <article-title>Exogenous dopamine and overexpression of the dopamine synthase gene MdTYDC alleviated apple replant disease</article-title>. <source>Tree Physiol</source>. <volume>41</volume>, <fpage>1524</fpage>–<lpage>1541</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c73"><label>73.</label><mixed-citation publication-type="journal"><string-name><surname>Graham</surname>, <given-names>E. D</given-names></string-name>. <article-title>Potential for primary productivity in a globally-distributed bacterial phototroph</article-title>. <source>ISME J</source>. <fpage>1861</fpage>–<lpage>1866</lpage> (<year>2018</year>) doi:<pub-id pub-id-type="doi">10.1038/s41396-018-0091-3</pub-id>.</mixed-citation></ref>
+<ref id="c74"><label>74.</label><mixed-citation publication-type="journal"><string-name><surname>Parks</surname>, <given-names>D. H.</given-names></string-name>, <string-name><surname>Imelfort</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Skennerton</surname>, <given-names>C. T.</given-names></string-name>, <string-name><surname>Hugenholtz</surname>, <given-names>P.</given-names></string-name> &amp; <string-name><surname>Tyson</surname>, <given-names>G. W</given-names></string-name>. <article-title>CheckM: Assessing the quality of microbial genomes recovered from isolates, single cells, and metagenomes</article-title>. <source>Genome Res</source>. <volume>25</volume>, <fpage>1043</fpage>–<lpage>1055</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c75"><label>75.</label><mixed-citation publication-type="journal"><string-name><surname>Ebrahim</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Lerman</surname>, <given-names>J. A.</given-names></string-name>, <string-name><surname>Palsson</surname>, <given-names>B. O.</given-names></string-name> &amp; <string-name><surname>Hyduke</surname>, <given-names>D. R.</given-names></string-name> <article-title>COBRApy: COnstraints-Based Reconstruction and Analysis for Python</article-title>. <source>BMC Syst. Biol.</source> <volume>7</volume>, (<year>2013</year>).</mixed-citation></ref>
+<ref id="c76"><label>76.</label><mixed-citation publication-type="journal"><string-name><surname>King</surname>, <given-names>Z. A.</given-names></string-name> <etal>et al.</etal> <article-title>BiGG Models: A platform for integrating, standardizing and sharing genome-scale models</article-title>. <source>Nucleic Acids Res</source>. <volume>44</volume>, <fpage>D515</fpage>–<lpage>D522</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c77"><label>77.</label><mixed-citation publication-type="journal"><string-name><surname>Mahadevan</surname>, <given-names>R. Ã.</given-names></string-name> &amp; <string-name><surname>Schilling</surname>, <given-names>C. H</given-names></string-name>. <source>The effects of alternate optimal solutions in constraint-based genome-scale metabolic models $</source>. <volume>5</volume>, <fpage>264</fpage>– <lpage>276</lpage> (<year>2003</year>).</mixed-citation></ref>
+<ref id="c78"><label>78.</label><mixed-citation publication-type="journal"><string-name><surname>Aoki-Kinoshita</surname>, <given-names>K. F.</given-names></string-name> &amp; <string-name><surname>Kanehisa</surname>, <given-names>M</given-names></string-name>. <article-title>Gene annotation and pathway mapping in KEGG</article-title>. <source>Methods Mol. Biol</source>. <volume>396</volume>, <fpage>71</fpage>–<lpage>91</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c79"><label>79.</label><mixed-citation publication-type="journal"><string-name><surname>Hagberg</surname>, <given-names>A. A.</given-names></string-name>, <string-name><surname>Schult</surname>, <given-names>D. A.</given-names></string-name> &amp; <string-name><surname>Swart</surname>, <given-names>P. J</given-names></string-name>. <article-title>Exploring network structure, dynamics, and function using NetworkX</article-title>. <source>7th Python Sci. Conf. (SciPy 2008)</source> <fpage>11</fpage>–<lpage>15</lpage> (<year>2008</year>).</mixed-citation></ref>
+</ref-list>
+<ack>
+<title>Acknowledgements</title>
+<p>We would like to express our gratitude to Asaf Sadeh and Roni Gafni for their advice as part of the Neve Yaar Stats and R support forum, and to Ariana Basile for her advice regarding the conductance of quality control tests over the genome scale metabolic models. We would also like to thank Maya Bar Yehuda for graphical design.</p>
+</ack>
+<sec id="s6">
+<title>Supplementary information</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 1.</label>
+<caption><title>Metabolic pathway completion analysis of community de-replicated MAGs.</title>
+<p>The presented cluster map links the MAGs with different metabolic pathways based on completion values of a specific metabolic pathway. Values are concluded based on the ratio between the count of EC numbers present in a MAG, which correspond to a specific pathway (derived from annotated genes), and the total EC numbers in that specific KEGG pathway. Left axis represent the KEGG KO of a set of specific functions, which are indicated on the right axis. Top and bottom color bars on the upper axis represent the taxonomic annotation of the MAGs (phylum and class, respectively), which are indicated on the bottom axis</p></caption>
+<graphic xlink:href="571117v1_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 2.</label>
+<caption><title>Distribution of GSMM attributes at the phylum level.</title>
+<p>Subplots of reactions, metabolites and exchanges presenting the distribution of the respective attributes for each .group of bacteria, affiliated with a specific phylum</p></caption>
+<graphic xlink:href="571117v1_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 3.</label>
+<caption><title>Bacterial growth rates in different environments.</title>
+<p>Each row represents the growth rate (biomass increase hour-1) of species in a specialized medium; from top to bottom: poor medium, poor medium supplemented with root exudates, root environment medium and rich medium. Each column represents a GSMM. Models are sorted by their growth score in the root environment medium. Poor, Rich, and Poor + exudates media are model specific, thus sustain growth of all models. The horizontal color bar on top of the plot represents the phyla of the corresponding GSMM. Actual growth values are provided in Supp. Data 5</p></caption>
+<graphic xlink:href="571117v1_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 4.</label>
+<caption><title>Phylogenetic distribution of models growing along iterations at the order level.</title>
+<p>Bars represent the taxonomic distribution of the community (i.e., overall models that grew along iteration, with respect to the corresponding iteration). Colors are indicative of different orders. Orders with insufficient nomenclature were classified as “Others”.</p></caption>
+<graphic xlink:href="571117v1_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs5" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 5.</label>
+<caption><title>Uptake and secretion degrees of biochemically-classified metabolite nodes, as inferred from the communal interaction network.</title>
+<p>Values indicate mean amount of links between community GSMMs and nodes classified to the corresponding category. .Biochemical classification was conducted both based on BRITE database and manually.</p></caption>
+<graphic xlink:href="571117v1_figs5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs6" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 6.</label>
+<caption><p><bold>Community GSMM-centric characterization of plant-microbe PM) and plant- microbe-microbe (PMM) motifs. A, B, C</bold>. Frequency of community GSMMs in<bold>)</bold> PM, PMM (first/second position) in subnetwork motifs, respectively. <bold>D.</bold> correlation of GSMMs .position frequency in PMM subnetworks; Pearson, P value=0.009.</p></caption>
+<graphic xlink:href="571117v1_figs6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s7">
+<title>Supplementary Tables</title>
+<table-wrap id="tbls1" orientation="portrait" position="float">
+<label>Supplementary Table 1.</label><caption><title>Summary table of the mapping of reads to MAGs across treatments. Treatment types are fully descriebd in .Berihu <italic>et al</italic></title></caption>
+<graphic xlink:href="571117v1_tbls1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls2" orientation="portrait" position="float">
+<label>Supplementray Table 2.</label><caption><title>Table of compounds used throughout iterations in the MCSM</title></caption>
+<graphic xlink:href="571117v1_tbls2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94558.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Mitri</surname>
+<given-names>Sara</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Lausanne</institution>
+</institution-wrap>
+<city>Lausanne</city>
+<country>Switzerland</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Compelling</kwd>
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study presents a framework for combining metagenomic and metabolomic data with genome-scale metabolic models to identify trophic interactions in a root microbiome. Its new approach to integrating these sources of data and model-specific trophic exchanges is <bold>compelling</bold>, but the benchmarking of the model generation process is <bold>incomplete</bold> and would benefit from a sensitivity and specificity analysis. With a stronger characterization of their method, this paper could be broadly applicable to other microbiomes and used to understand the composition and functioning of a given community, generate hypotheses, and design interventions.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94558.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The work by Ginatt et al. uses genome-scale metabolic modeling to identify and characterize trophic interactions between rhizosphere-associated bacteria. Beyond identifying microbial species associated with specific host and soil traits (e.g., disease tolerance), a detailed understanding of the interactions underlying these associations is necessary for developing targeted microbiome-centered interventions for plant health. It has nonetheless remained challenging to define the roles of specific organisms and metabolic species in natural rhizobiomes. Here, the authors combine microbial compositional data obtained through metagenomic sequencing with a new collection of genome-scale models to predict interactions in the native rhizosphere communities of apple rootstocks. To do this, they have established processes to integrate these sources of data and model specific trophic exchanges, which they use to obtain testable hypotheses for targeted modulation of microbiota members in situ.</p>
+<p>The authors carry out a careful model curation process based on metagenomic sequencing data and existing model generation tools, which, together with basing the in silico medium composition on known root exudates, strengthens their predictions of interaction network features. Moreover, its reliance on genome-scale models provides a broader basis for linking sequence-based information to predictions of function on a multispecies level beyond rhizosphere microbiomes.</p>
+<p>Having generated a set of predicted trophic interactions, the authors carried out a detailed analysis linking features of these interactions to organism taxonomy and broader ecosystem properties. Intriguingly, the organisms predicted to grow in the first iteration of their framework (i.e., on only root exudates) broadly correspond to taxonomic groups experimentally shown to benefit from these compounds. Additionally, the simulations predicted some patterns of vitamin and amino acid secretion that are known to form the basis for interactions in the rhizosphere. Together, these outcomes underscore the applicability of this method to help disentangle trophic interaction networks in complex microbiomes.</p>
+<p>The methodology described in this paper represents a useful and promising framework to better understand the complexity of microbial interaction networks in situ. However, the degree to which the predictions can vary according to environmental composition remains difficult to quantify, and the work does not address the sensitivity of the modeling predictions beyond a simulated medium containing 33 root exudates. I find this especially important given that relatively few (84 of 243) species were predicted to grow even after cross-feeding, suggesting that a richer medium could lead to different interaction network structures. While the authors do state the importance of environmental composition and have carefully designed an in silico medium, I believe that simulating a broader set of resource pools would add necessary insight into both the predictive power of the models themselves and trophic interactions in the rhizosphere more generally.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94558.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors present a framework for exploiting shotgun metagenomics and metabolomics data along with constraint-based analysis (CBA) to study, in their case, the dynamics and interactions between the apple rootstock and rhizosphere's microbial community. This study should be considered as a follow-up of Berihu et al. (2022) where the shotgun data were first introduced. A set of 395 Metagenome-Assembled Genomes (MAGs) was derived from those reads and from the latter, using an automatic Genome-scale Metabolic Model (GSMM) reconstruction tool (CarveMe), 243 GSMMs. Metabolomics data from a set of studies were gathered to describe/represent root exudates. Flux Variability Analysis (FVA), a type of constraint-based analysis, was conducted iteratively. Three distinct in silico media were used (optimal, poor, and realistic, with the latter informed by metabolomics data) to examine the potential impact of root exudates on bacterial growth. Additionally, the study investigated the extent to which compounds secreted by bacteria could support the growth of other community members. Further, an exchange network representing all potential metabolic exchanges within the rhizosphere community was built and motifs on it were classified with healthy and/or symptomized soil.</p>
+<p>Strengths:</p>
+<p>The study provides a great starting point for how one can bring together shotgun metagenomics and other omics technologies such as metabolomics with metabolic modelling approaches. MAGs and the automatic reconstruction of corresponding GSMMs become more and more a common practice and frameworks for their analysis and interpretation are more than needed. The usage of FVA instead of the Flux Balance Analysis allows the authors to get all the range of potentially produced metabolites. The iterative approach can highlight what species are supported by the plant and which need the first to join the community while correlating microbial metabolic interactions with soil performance through differential abundance can bring up valid hypotheses to examine further. On top of that, avoiding modelling approaches that require community objective functions and optimization of that makes the simulation more realistic.</p>
+<p>Weaknesses:</p>
+<p>There are two main drawback approaches like the one described here, both related only partially to the authors' work yet with great impact in the presented framework. First, the usage of automatic GSMM reconstruction requires great caution. It is indicative of how the semi-curated AGORA models are still considered reconstructions and expect the user to parameterize those in a model. In this study, CarveMe was used. CarveMe is a well-known tool with several pros [1]. Yet, several challenges need to be considered when using it [2]. For example, the biomass function used might lead to an overestimation of auxotrophies. Also, as its authors admit in their reply paper, CarveMe does gap fill in a way [3]; models are constructed to ensure no gaps and also secure a minimum growth. However, curation of such a high number of GSMMs is probably not an option. Further, even if FVA is way more useful than FBA for the authors' aim, it does not yet ensure that when a species secretes one compound (let's say metabolite A), the same flux vector, i.e. the same metabolic functioning profile, secretes another compound (metabolite B) at the same time, even if the FVA solution suggests that metabolite B could be secreted in general.</p>
+<p>Besides those challenges, the suggested framework is promising and such approaches can work as the starting point for the next step in microbial ecology studies in general; from soil to marine and host ecosystems. The authors highlight perfectly this angle stating that this framework is currently conceptual and that it can be only used to formulate new hypotheses. Unbiased constraint-based approaches that focus on metabolite exchanges would benefit such approaches.</p>
+<p>[1] Mendoza, Sebastián N., et al. &quot;A systematic assessment of current genome-scale metabolic reconstruction tools.&quot; Genome biology 20.1 (2019): 1-20.</p>
+<p>
+[2] Price, Morgan. &quot;Erroneous predictions of auxotrophies by CarveMe.&quot; Nature Ecology &amp; Evolution 7.2 (2023): 194-195.</p>
+<p>
+[3] Machado, Daniel, and Kiran R. Patil. &quot;Reply to: Erroneous predictions of auxotrophies by CarveMe.&quot; Nature Ecology &amp; Evolution 7.2 (2023): 196-197.</p>
+<p>
+[4] Ylva Katarina Wedmark, Jon Olav Vik, Ove Øyås bioRxiv 2023.09.05.556413; doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1101/2023.09.05.556413">https://doi.org/10.1101/2023.09.05.556413</ext-link></p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94558.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This study presents a solid framework for the metabolic modeling of microbial species and resources in the rhizosphere environment. It is an ambitious effort to tackle the huge complexity of the rhizosphere and reveal the plant-microbiota interactions therein. Considering previously published data by Berihu et al., going through a series of steps, the framework then finds associations between an apple tree disease state and both microbes and metabolites. The framework is well explained and motivated. I think that further work should be done to validate the method, both using synthetic data, with a known ground truth and following up on key findings experimentally.</p>
+<p>Strengths:</p>
+<p>- The manuscript is well written with a good balance between detail and readability. The framework steps are well-motivated and explained.</p>
+<p>- The authors faithfully acknowledge the limitations of their approach and do not try to &quot;over-sell&quot; their conclusions.</p>
+<p>- The presented framework has the potential for significant discovery if the hypotheses generated are followed up with experimental validation.</p>
+<p>Weaknesses:</p>
+<p>- When presenting a computational framework, best practices include running it on artificial (synthetic) data where the ground truth is known and therefore the precision and accuracy of the method may be assessed. This is not an optional step, the same way that positive/negative controls in lab experiments are not optional. Without this validation step, the manuscript is severely limited. The authors should ask themselves: what have we done to convince the reader that the framework actually works, at least on our minimal synthetic data?</p>
+<p>Justification of claims and conclusions:</p>
+<p>The claims and conclusions are sufficiently well justified since the limitations of this approach are acknowledged by the authors.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94558.1.sa4</article-id>
+<title-group>
+<article-title>Author Response</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ginatt</surname>
+<given-names>Alon Avraham</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-7817-354X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Berihu</surname>
+<given-names>Maria</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Castel</surname>
+<given-names>Einam</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Medina</surname>
+<given-names>Shlomit</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Carmi</surname>
+<given-names>Gon</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Faigenboim-Doron</surname>
+<given-names>Adi</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sharon</surname>
+<given-names>Itai</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0705-2316</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Tal</surname>
+<given-names>Ofir</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Droby</surname>
+<given-names>Samir</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Somera</surname>
+<given-names>Tracey</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mazzola</surname>
+<given-names>Mark</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Eizenberg</surname>
+<given-names>Hanan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Freilich</surname>
+<given-names>Shiri</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We are writing this response letter with regards to the insightful feedback you provided on our manuscript titled: &quot;A metabolic modeling-based framework for predicting trophic dependencies in native rhizobiomes of crop plants&quot; submitted for consideration in eLife.</p>
+<p>We sincerely appreciate the thorough and constructive reviews, seeing and fitting the intentions behind our work. We intend to fully address all points raised by the reviewers in our revised manuscript. Specifically, we plan to incorporate targeted revisions to address concerns raised during the review process, with focus on process benchmarking and validation of our framework to enhance its reliability and accuracy.</p>
+<p>We believe that the current revision would improve the consistency and quality of the framework, making it a suitable tool for the characterization of microbial trophic interactions in diverse biological landscapes.</p>
+<p>Thank you once again for both your time and dedication in reviewing our manuscript, as well as the constructive review.</p>
+</body>
+</sub-article>
+</article>
