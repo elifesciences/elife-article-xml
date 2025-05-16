@@ -1,0 +1,784 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">94689</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.94689</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.94689.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Cell Biology</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Cancer Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Automated workflow for the cell cycle analysis of non-adherent and adherent cells using a machine learning approach</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" equal-contrib="yes">
+<name>
+<surname>Hayatigolkhatmi</surname>
+<given-names>Kourosh</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<name>
+<surname>Soriani</surname>
+<given-names>Chiara</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<name>
+<surname>Soda</surname>
+<given-names>Emanuel</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ceccacci</surname>
+<given-names>Elena</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>El Menna</surname>
+<given-names>Oualid</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Peri</surname>
+<given-names>Sebastiano</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Negrelli</surname>
+<given-names>Ivan</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bertolini</surname>
+<given-names>Giacomo</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Franchi</surname>
+<given-names>Gian Martino</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Carbone</surname>
+<given-names>Roberta</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Minucci</surname>
+<given-names>Saverio</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="corresp" rid="cor2">$</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4236-7823</contrib-id>
+<name>
+<surname>Rodighiero</surname>
+<given-names>Simona</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">$</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Experimental Oncology, European Institute of Oncology-IRCCS</institution>, Via Adamello 16, 20139, Milano, <country>Italy</country></aff>
+<aff id="a2"><label>2</label><institution>Tethis S.p.A.</institution>, Milan, <country>Italy</country></aff>
+<aff id="a3"><label>3</label><institution>Department of Oncology and Hemato-Oncology, University of Milan</institution>, Milan, <country>Italy</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Barber</surname>
+<given-names>Paul R</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>King's College London</institution>
+</institution-wrap>
+<city>London</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Ng</surname>
+<given-names>Tony</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>King's College London</institution>
+</institution-wrap>
+<city>London</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>$</label>Corresponding authors: <email>simona.rodighiero@ieo.it</email></corresp>
+<corresp id="cor2"><label>$</label>Corresponding authors: <email>saverio.minucci@ieo.it</email></corresp>
+<fn fn-type="equal" id="n1"><label>*</label><p>Contributed equally</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-04-15">
+<day>15</day>
+<month>04</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP94689</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-12-21">
+<day>21</day>
+<month>12</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-12-21">
+<day>21</day>
+<month>12</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.12.21.572803"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Hayatigolkhatmi et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Hayatigolkhatmi et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-94689-v1.pdf"/>
+<abstract>
+<title>Summary</title>
+<p>Understanding the details of the cell cycle at the level of individual cells is critical for both cellular biology and cancer research. While existing methods using specific fluorescent markers have advanced our ability to study the cell cycle in cells that adhere to surfaces, there is a clear gap when it comes to non-adherent cells. In this study, we combine a specialized surface to improve cell attachment, the genetically-encoded FUCCI(CA)2 sensor, an automated image processing and analysis pipeline, and a custom machine-learning algorithm. This combined approach allowed us to precisely measure the duration of different cell cycle phases in non-adherent, as well as adherent cells.</p>
+<p>Our method provided detailed information from hundreds of cells under different experimental conditions in a fully automated manner. We validated this approach in two different acute myeloid leukemia cell lines, NB4 and Kasumi-1, which have unique and distinct cell cycle characteristics. We also measured how drugs that influence cell cycle properties affect the duration of each phase in the cell cycles of these cell lines. Importantly, our cell cycle analysis system is freely available and has also been validated for use with adherent cells.</p>
+<p>In summary, this article introduces a comprehensive, automated method for studying the cell cycle in both non-adherent and adherent cells, offering a valuable tool for cellular biology, cancer research and drug development.</p>
+</abstract>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Cell cycle dynamics coordinate cellular division and proliferation through regulating the different cell cycle phases. Dysregulation in these processes is a hallmark of malignancies such as human cancer, where aberrant activities in cyclin-dependent kinases (CDKs), cyclins, and CDK inhibitors often drive uncontrolled proliferation. Consequently, targeting cell cycle components has emerged as a pivotal therapeutic strategy, especially crucial in pre-clinical drug evaluation (<xref ref-type="bibr" rid="c21">Malumbres and Barbacid, 2009</xref>; <xref ref-type="bibr" rid="c14">Khan and Wang, 2022</xref>).</p>
+<p>Traditional methods for assessing cell cycle dynamics have been largely dependent on the quantification of DNA content through flow or image cytometry, providing a static snapshot of cell populations in various cycle phases (<xref ref-type="bibr" rid="c9">Furia, Pelicci and Faretta, 2013</xref>; <xref ref-type="bibr" rid="c20">Ligasová, Frydrych and Koberna, 2023</xref>). Although valuable, these techniques fall short in capturing intra-population variability and require additional protein markers for precise phase determination (<xref ref-type="bibr" rid="c20">Ligasová, Frydrych and Koberna, 2023</xref>; <xref ref-type="bibr" rid="c26">Rieger, 2022</xref>).</p>
+<p>Methods utilizing cells expressing fluorescently labelled reporters and time-lapse microscopy can discriminate cell cycle phases at the level of individual cells, thereby offering valuable insights into the variability of cell cycle and cell cycle phase durations within the overall cell population (<xref ref-type="bibr" rid="c3">Chao <italic>et al</italic>., 2019</xref>; <xref ref-type="bibr" rid="c11">Hiratsuka and Komatsu, 2019</xref>).</p>
+<p>Advanced imaging methods, such as time-lapse microscopy coupled with fluorescently tagged reporters, have shown promise in detailing cell cycle dynamics at the single-cell level. Technologies like the Fluorescent Ubiquitination-based Cell Cycle Indicator (FUCCI) have been employed for this, effectively demarcating cell cycle phases through color-coding (<xref ref-type="bibr" rid="c30">Sakaue-Sawano <italic>et al</italic>., 2017</xref>). FUCCI(CA)2 express the hCdt1(1/100) fused to mCherry fluorescent protein and hGem(1/110) fused to mVenus, generating a clear and distinct tricolor demarcation, separating G1 (red), S (green), and G2/M phases (yellow) (<xref ref-type="bibr" rid="c30">Sakaue-Sawano <italic>et al</italic>., 2017</xref>).</p>
+<p>This dynamic insight is particularly crucial in the context of acute myeloid leukemia (AML), where chromosomal translocations generate fusion genes that disrupt cellular differentiation programs and drive proliferation (<xref ref-type="bibr" rid="c1">Alcalay <italic>et al</italic>., 2001</xref>).</p>
+<p>The described experimental setup utilizes nanostructured titanium oxide-coated multiwell plates relying on the technology used in the commercially available Smart BioSurface (SBS) slides (<xref ref-type="bibr" rid="c17">Krol <italic>et al</italic>., 2021</xref>). Such technology should hypothetically enable us to immobilize non-adherent cells for extended imaging durations. To overcome the limitations of manual data analysis, we introduce an automated image analysis pipeline for time-lapse movies of AML cell lines, exploiting a FUCCI-based probe for visualization. Our data analysis approach combines custom image processing, TrackMate-based cell tracking, and machine learning-based track filtering. Thereby automating the entire data analysis workflow.</p>
+<p>In summary, we present a comprehensive, experimental protocol for cell cycle analysis in adherent and non-adherent cells (summarized in <bold>BOX1</bold>). The approach leverages routine imaging technologies and advanced data analyses, enhancing the precision and efficiency of drug screening protocols in oncological research.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Modified conditions enable AML cells to adhere to the substrate feasible for live cell imaging</title>
+<p>Live imaging and tracking of non-adherent cells, when multiple positions should be acquired, is challenging due to their high propensity to mechanical perturbations.</p>
+<p>To conduct long time imaging of AML cells, we exploit the combined action of the SBS and the partial immobilization effect of methylcellulose (MC). We were able to image and track AML cells up to 72h when 20% complete medium was added to 80% MC and applied on AML cells previously adhered to the SBS (movie S1).</p>
+<p>Two different AML cell lines, NB4 and Kasumi-1, were equipped with the FUCCI(CA)2 technology and chosen as the study models. NB4 cells have relatively faster doubling time in comparison to Kasumi-1 cells (<xref ref-type="bibr" rid="c34">Skopek <italic>et al</italic>., 2023</xref>). Hence, NB4 cells were treated with vehicle or CDK inhibitors, being compared to the naturally slow-cycling counterparts, Kasumi-1 cells, by time-lapse imaging (<xref rid="fig1" ref-type="fig">Fig. 1A</xref> and <xref rid="figs1" ref-type="fig">Fig. S1</xref>). As a result, we were able to follow single cells and the manual assessment of cell cycle phases confirmed the impact of CDK inhibitors. Furthermore, the expected difference in cell cycle progression of NB4 vs Kasumi-1 cells was evident.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1:</label>
+<caption><title>Cell Tracking.</title>
+<p>A) Examples from Kasumi-1 cell and NB4 cell lines (upon the different conditions: DMSO, Palbociclib 50 nM, PF-0606873600 50 nM, Ribociclib 50 nM, Untreated), showing a tracked cell that explores the different cell-cycle phases (Scale bar is 5 µm). B) Fluorescence images with R and G channels were processed in Fiji to create a HSB stack, from which the Brightness and Hue channel were extracted to be used respectively as tracking channel and cell phase identification channel (Scale bar is 50 µm). C) Plot curves generated using the data extracted from the TrackMate script execution. The variations over time of mCherry (red curve) and mVenus (green curve) fluorescence intensities (left plot) and of the Hue scale (right plot) of a single NB4 cell in DMSO condition are shown.</p></caption>
+<graphic xlink:href="572803v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2b">
+<title>Image processing facilitates the cell tracking and profiling of cell cycle phases</title>
+<p>The original time-lapse images were composed by Red and Green channels, detecting respectively the mCherry and mVenus markers of the FUCCI(CA)2 indicator. During the experiment each cell alternatively switches between the expression of these two markers as it goes through the different cell cycle phases, causing the lack of a single fluorescence channel suitable for tracking. Furthermore, the automatic profiling of cell cycle phases becomes cumbersome when dealing with two distinct channels that in the end give rise to two independent fluorescence time-series. We set up an image processing pipeline utilizing the open-source software Fiji (<xref ref-type="bibr" rid="c31">Schindelin <italic>et al</italic>., 2012</xref>) (NIH, version 2.14.0/1.54f) to transform the original images into a dataset optimized for the subsequent steps of tracking and cell cycle phase assignment. We represented the color changes that occur during the cell cycle with the Hue scale, as described in (<xref ref-type="bibr" rid="c8">Fujimoto <italic>et al</italic>., 2020</xref>). To achieve this, as represented in <xref rid="fig1" ref-type="fig">Fig. 1B</xref>, stacks of Red and Green channels were overlaid and converted into an RGB stack and then transformed into an HSB stack (Hue, Saturation and Brightness channels). The Hue channel was retained for the assignment of cell cycle phases, while the Brightness channel was used as tracking reference. These two were merged to the Red and Green fluorescence channels to form the final stack used for the tracking process.</p>
+<p>In the tracking analysis, the Fiji plugin TrackMate (<xref ref-type="bibr" rid="c37">Tinevez <italic>et al</italic>., 2017</xref>) was employed, adapting the example script available on the dedicated TrackMate website (<ext-link ext-link-type="uri" xlink:href="https://imagej.net/plugins/trackmate/scripting/scripting">https://imagej.net/plugins/trackmate/scripting/scripting</ext-link>), to ensure the automation of the tracking step. The related parameters were selected and tuned according to each experiment, as well as the proper filters to discard uninformative tracks. The output consisted of a table with cells associated to selected tracks and their corresponding numerical features in each timeframe. Key features included the mean fluorescence intensity in the Red and Green channels, as well as the mean intensity of the Hue value.</p>
+<p>The whole image analysis pipeline successfully recovered a unique tracking channel and effectively mapped the alternating Red and Green curves (<xref rid="fig1" ref-type="fig">Fig. 1C</xref>, left panel) into a single time series, as depicted in <xref rid="fig1" ref-type="fig">Figure 1C</xref>, right panel.</p>
+</sec>
+<sec id="s2c">
+<title>Incorrect track filtering by the machine learning model efficiently automates data cleaning and cell cycle phase assignment steps</title>
+<p>The files generated by the Trackmate pipeline were imported into R (<xref ref-type="bibr" rid="c25">R Core Team, 2021</xref>) for the demultiplexing, filtering and data analysis. To address missing frames, a data imputation process was implemented, aimed at recovering instances with up to 5 consecutive missing values. This data imputation was executed using an Exponential Weighted Moving Average (EWMA) technique, employing a window size of 3, thereby encompassing 6 observations (3 preceding, 3 succeeding).</p>
+<p>A smoothing spline approach was individually applied to the green, red, and hue channels, utilizing a regularization parameter (lambda) of 0.0001. A min-max scaling to transform value into the range [0, 1] was applied to make the fluorescence intensity and hue scale comparable among channels and samples. For the creation of the random forest model, a training pipeline was set up, as described in <xref rid="fig2" ref-type="fig">Fig 2A</xref>. In accordance with <xref rid="fig2" ref-type="fig">Fig 2B</xref>, feature extraction was carried out on the green and red channels to derive temporal descriptors of the data.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2:</label>
+<caption><title>Training and inference pipelines.</title>
+<p>A) The Machine Learning pipeline followed to create the quality model. Using timetk time-series associated features are extracted from the list of manually annotated tracks. A random forest model is then trained to predict whether a track is cycling or not. B) An unannotated track can be fed to the model to predict whether it is cycling or not.</p></caption>
+<graphic xlink:href="572803v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Employing these extracted features, the trained random forest model was applied to discriminate between trackable and untraceable cells. Subsequently, only the cells predicted as traceable by the model were retained for subsequent analyses. Here are reported the obtained number of cells for each condition, merging all the experiments performed:
+<list list-type="bullet">
+<list-item><p>NB4 DMSO: 410 cells (3 experiments) out of 1862 tracked cells</p></list-item>
+<list-item><p>NB4 Palbociclib 50 nM: 328 cells (3 experiments) out of 2881 tracked cells</p></list-item>
+<list-item><p>NB4 PF-0606873600 50 nM: 206 cells (1 experiment) out of 1102 tracked cells</p></list-item>
+<list-item><p>NB4 Ribociclib 50nM: 119 cells (1 experiment) out of 784 tracked cells</p></list-item>
+<list-item><p>Kasumi-1 Untreated: 119 cells (1 experiment) out of 1604 tracked cells</p></list-item>
+<list-item><p>MDA-MB-231 Untreated: 1116 (1 experiment) out of 3204 tracked cells</p></list-item>
+</list>
+By using the hue channel each track was partitioned into its cell cycle component using the following thresholds:
+<list list-type="bullet">
+<list-item><p><bold>G1</bold>: hue &gt;= 0 &amp; hue &lt; 0.65</p></list-item>
+<list-item><p><bold>S</bold>: hue &gt;= 0.85</p></list-item>
+<list-item><p><bold>G2/M</bold>: hue &gt;= 0.65 &amp; hue &lt;= 0.85</p></list-item>
+</list>
+Additionally, a refinement step involving cell reassignment was conducted to identify instances where the G1 to S phase transition was labelled as G2/M in frames preceding the S phase. The outcome of the analysis is visually depicted in <xref rid="fig3" ref-type="fig">Fig. 3A</xref> and <xref rid="fig3" ref-type="fig">B</xref>.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3:</label>
+<caption><title>Cell Cycle Phase Assignment.</title>
+<p>A) Waterfall plot of the “sorted” and “splitted” cells. Each row corresponds to a cell. B) Boxplot of the cell phase duration of the first cell cycle. The asterisks are the adjusted significance level given by Wilcox test of the sample for each over the NB4 DMSO for each phase according to the color (ns: p &gt; 0.05, *: p &lt;= 0.05, **: p &lt;= 0.01, ***: p &lt;= 0.001, ****: p &lt;= 0.0001).</p></caption>
+<graphic xlink:href="572803v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d">
+<title>Evaluation of tracks’ selection performances confirms the efficiency of the machine learning model</title>
+<p>We carried out a validation of the performances of the whole pipeline in selecting “traceable” tracks. Specifically, we extracted from one experiment the ID of the tracks that belonged to the vehicle (DMSO) treated condition identified as “traceable” by the ML algorithm. We then validated these tracks by visual inspection of the corresponding images, checking for eventual tracker errors. We created a scoring metric defined as follows:
+<disp-formula>
+<graphic xlink:href="572803v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+We checked up to 102 tracks that underwent to whole cell cycle profiling by the analysis pipeline and we found that, among these, 63 were also consistent with images (Score = 0.62). We then decided to select tracks identified as traceable with a probability greater than 0.70, gaining a final Score of 0.74 (57 tracks consistent with images over 77 tracks).</p>
+</sec>
+<sec id="s2e">
+<title>The method can quantify the cell cycle progression and does not impact the transcriptome over long time periods</title>
+<p>We were able to accurately quantify the cell cycle progression of NB4 and Kasumi-1 cell lines over 72 hours at single-cell resolution (<xref rid="fig3" ref-type="fig">figure 3A</xref>). The empirical observation of the superimposition of red and green fluorescence signals during the transition between G1 and S makes the classification of the cell in one of the two dual states challenging. Thus, we decided to quantify the G1 to S phase transition in the cell cycle profiling, as a separate cell cycle stage.</p>
+<p>As represented in <xref rid="fig3" ref-type="fig">figure 3A-B</xref>, cell cycle differences of NB4 and Kasumi-1 cells were quantified. Moreover, the method was able to discriminate cell cycle differences of leukemic cells in presence of various sub-optimal doses of different CDK inhibitors. These CDK inhibitors are potent inhibitors of CDKs2/4/6, which mainly regulate the G1 to S transition (<xref ref-type="bibr" rid="c5">Fassl, Geng and Sicinski, 2022</xref>). Hence, we expected the administration of nanomolar concentrations of these agents to lengthen mainly the G1 phase with less impact on the other phases. Our live cell imaging of the relatively fast-cycling NB4 cells in presence of these drugs at such spectrum of concentrations affirmed the significant G1-prolongation in these cells (<xref rid="fig3" ref-type="fig">Fig. 3B</xref> and movies S2-4). The total average duration of one full cell cycle was quantified as 21.5 h ± 6.5 h (mean ± standard deviation) for NB4 cells and 24.0 h ± 7.8 h for Kasumi-1 cells. For instance, administration of 50nM Palbociclib extended mainly the G1 phase of the NB4 cells by about 5 hours (from 9.1 h ± 5.1 h to 14.2 h ± 5.7 h in vehicle treated and Palbociclib treated NB4 cells, respectively).</p>
+<p>It was demonstrated that the nanostructured surfaces can promote changes in the cellular protein expression profile (<xref ref-type="bibr" rid="c32">Schulte <italic>et al</italic>., 2016</xref>). We thus questioned the possible impact of the SBS on gene expression profile of the AML cells. We made a comparison of transcriptome of the cells pre- and post-imaging by performing RNA-seq investigations. As represented in the <xref rid="figs2" ref-type="fig">supplementary Fig. S2</xref>, we did not observe any meaningful transcriptomic alterations throughout the process. Hence, we conclude that the protocol is feasible for biological investigations without a significant effect on the transcriptomic profile of the cells.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In the last few years, efforts have been made to simplify the cell cycle assessment relying on FUCCI technology, resulting in the development and public availability of software tools and ImageJ plug-ins (<xref ref-type="bibr" rid="c28">Roccio <italic>et al</italic>., 2013</xref>; <xref ref-type="bibr" rid="c16">Koh <italic>et al</italic>., 2017</xref>; <xref ref-type="bibr" rid="c10">Ghannoum <italic>et al</italic>., 2021</xref>; <xref ref-type="bibr" rid="c36">Taïeb <italic>et al</italic>., 2022</xref>). However, all these methods require human intervention at different points in the analysis workflow, such as the initial selection of cells for analysis (<xref ref-type="bibr" rid="c36">Taïeb <italic>et al</italic>., 2022</xref>) or the manual correction of inaccurate tracks during the analysis (<xref ref-type="bibr" rid="c28">Roccio <italic>et al</italic>., 2013</xref>; <xref ref-type="bibr" rid="c16">Koh <italic>et al</italic>., 2017</xref>; <xref ref-type="bibr" rid="c10">Ghannoum <italic>et al</italic>., 2021</xref>; <xref ref-type="bibr" rid="c36">Taïeb <italic>et al</italic>., 2022</xref>). In this report we describe a complete protocol for the cell cycle analysis of adherent and non-adherent cells expressing the FUCCI(CA)2 technology in a fully automated manner. The complete experimental workflow is explained in BOX1 and illustrated in <xref rid="fig4" ref-type="fig">Fig.4</xref>. It was applied to the analysis of the cell cycle phases of two different AML cell lines, NB4 and Kasumi-1, which have different durations. Hence, detecting this difference was a reliable initial verification strategy for the protocol’s efficiency. As a second quality check step, we decided to treat the fast-cycling NB4 cells with suboptimal concentrations of three different CDK inhibitors (Palbociclib, PF-06873600 and Ribociclib). These CDK inhibitors have different inhibitory impact on various CDKs (<xref ref-type="bibr" rid="c7">Freeman-Cook <italic>et al</italic>., 2021</xref>; <xref ref-type="bibr" rid="c5">Fassl, Geng and Sicinski, 2022</xref>). The effect of the three CDK inhibitors on the cell cycle duration of NB4 cells was evaluated. Up to about 400 cells in one single experimental condition were quantified, for up to 12 different conditions in a single experiment. This entire analysis process took approximately 2 hours of human involvement, for a total execution time that ranges from 12 to 48 hours, depending on dataset size, that is commissioned to a machine (<xref rid="fig4" ref-type="fig">Fig. 4</xref>). It should be taken into consideration that the manual correction of incorrect tracks takes approximately 2h per field of view (FOV). Hence, in the reported experiments of this study, the analysis of a single well would take about 40 to 50 hours of manual work. This amount of time would make such analysis unfeasible. Not only the suggested protocol makes these experiments doable, but also the experimental set-up can be scaled up according to the experimental needs. We successfully emphasized alterations of few hours in the duration of cell cycle phases when NB4 cells were subjected to exceedingly low concentrations of inhibitors. Moreover, the set-up pipeline makes accessible the quantification of potentially thousands of cells in an automated fashion relying on the crucial contribution of a machine learning algorithm.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4:</label>
+<caption><title>Experimental and analysis workflow.</title>
+<p>Summary of the entire experimental workflow, from cell seeding to the calculation of cell cycle phases. Asterisks in the Live Cell Imaging section mean optional settings. Image created on Biorender.com.</p></caption>
+<graphic xlink:href="572803v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<permissions>
+<copyright-statement>© 2024, BioRender Inc</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>BioRender Inc</copyright-holder>
+<license><license-p>Any parts of this image created with <ext-link ext-link-type="uri" xlink:href="https://www.biorender.com/">BioRender</ext-link> are not made available under the same license as the Reviewed Preprint, and are © 2024, BioRender Inc.</license-p></license>
+</permissions></fig>
+<p>Various approaches have been documented for imaging non-adherent cells. These range from creating custom supports to confine cell movement within a restricted region enabling extended imaging periods of up to 40 hours (<xref ref-type="bibr" rid="c4">Day <italic>et al</italic>., 2009</xref>), to partially immobilizing cells using substances like gelatine (<xref ref-type="bibr" rid="c27">Ritter <italic>et al</italic>., 2020</xref>) or low-melting-point agarose (<xref ref-type="bibr" rid="c35">Strong and Daniels, 2017</xref>).</p>
+<p>The capability to track non-adherent cells for up to 72 hours (almost equivalent to three complete cell cycles in rapidly dividing NB4 cells) was achieved by employing SBS-coated glass in combination with the addition of MC to the culture medium. MC was necessary to limit the movement of single cells or cell clusters after more than 24h of observation (movies S1 and S5). We deduce that this seeding protocol has the potential to be effectively employed with various non-adherent cell types. This is based on the principle that cell adhesion on SBS is facilitated by the nanostructure’s ability to engage with integrins (<xref ref-type="bibr" rid="c32">Schulte <italic>et al</italic>., 2016</xref>), which are widely expressed in diverse cell types (<xref ref-type="bibr" rid="c13">Johansen <italic>et al</italic>., 2018</xref>; <xref ref-type="bibr" rid="c6">Floren <italic>et al</italic>., 2020</xref>; <xref ref-type="bibr" rid="c15">Kim <italic>et al</italic>., 2020</xref>; <xref ref-type="bibr" rid="c22">Ogana <italic>et al</italic>., 2023</xref>). The seeding protocol could also certainly be extended to other types of live cell imaging experiments, especially when the fluorescence intensity can be monitored for shorter durations, thereby circumventing the need for the addition of MC. Moreover, the image and data analysis pipelines can be easily applied to adherent cells, as we showed in <xref rid="figs4" ref-type="fig">Fig S4</xref>.</p>
+<p>The presented image and data analysis workflows rely on 2 different software, Fiji and R, widely used by the imaging and data analysis community. The scripts were made publicly available, enabling customization to tailor the workflow according to specific requirements. This not only streamlines the cell cycle analysis of cells expressing the FUCCI probe, but also makes it accessible to researchers with basic programming knowledge.</p>
+<p>In conclusion we confirm the efficiency of the optimized conditions in immobilizing the non-adherent cells for long time periods, without affecting their predicted response upon different environmental circumstances. The described work allows researchers in the field to analyse thousands of (non-)adherent cells per each experimental condition, by using the image and data analysis pipelines to automatically perform image processing, cell tracking, filtering of incorrect tracks and cell cycle phases identification and characterization.</p>
+<sec id="s3a">
+<title>BOX 1 – experimental and analysis workflow</title>
+<p>Sample Preparation (in-suspension cells):</p>
+<p>The cells of interest should be at optimum viability and physiological conditions prior to the mounting process on the SBS-multiwell plates. This step requires 1-2 hours of manual handling and is divided into seven steps as follows:
+<list list-type="roman-upper">
+<list-item><p>Consider 250 thousand cells for one well of a standard 12-well SBS-multiwell. Wash the cells 3 times in sterile phosphate-buffered saline (PBS). Note 1: PBS should be at room temperature (RT). Note 2: The media and PBS should not be vacuumed during the process. It is crucial to make sure the cells won’t get dried at any point of the process. Note 3: The mentioned number of cells are for cells with an average size of 10 to 20 micrometers in diameter and a doubling time of 20-30 hours. The number of cells with different properties, should be optimized accordingly.</p></list-item>
+<list-item><p>Resuspend the cells in 1000 µl PBS and gently mix, achieving a homogenous cell suspension.</p></list-item>
+<list-item><p>Load the suspension slowly from one side of each well, covering all the surface.</p></list-item>
+<list-item><p>Let the cells mount for 20-30 mins at RT, followed by 20-30 mins at 37°C. Note 4: Avoid moving or shaking the plate or the surface underneath.</p></list-item>
+<list-item><p>Remove the PBS with pipette (we suggest not to use the vacuum and not to tilt the well).</p></list-item>
+<list-item><p>Wash the wells 2 times with enough volume of media without fetal bovine serum (FBS) (we suggest not to use the vacuum and not to tilt the well). Note 5: Any protein contamination, including FBS can easily perturb adhesion of the cells on the titanium-oxide particles. Note 6: Load and aspirate slowly from the side of the wells, keeping the pipette at 45° angle.</p></list-item>
+<list-item><p>Load enough methylcellulose gently from one side of the well and proceed to the next step. Note 7: In case any treatments are needed during the time-lapse experiment, the desired agents to can be added to the methylcellulose compartment prior to loading on the wells.</p></list-item>
+</list>
+Sample Preparation (adherent and semi-adherent cells):</p>
+<p>In case the cells of interest are (semi-)adherent cells, plate the cells at optimum confluency (based on the planned time-lapse duration and cell properties) on glass-bottom dishes and proceed to the next step.</p>
+<sec id="s3a1">
+<title>Live-Cell Imaging</title>
+<list list-type="roman-upper">
+<list-item><p>Pre-heat the microscope incubator at 37 °C and 5 % of CO<sub>2</sub> for standard cell culture. Otherwise tune the temperature and humidity controller according to the ideal cell viability conditions.</p></list-item>
+<list-item><p>Mount the sample on the microscope stage and choose the imaging parameters depending on the cell type.</p>
+<p>Note 8: we suggest setting the objective and image binning to represent each cell with at least 15 pixels in diameter.</p>
+<p>Note 9: we suggest adjusting the excitation intensity and exposure time for the detection of mCherry and mVenus signal to have a difference between maximum and minimum gray value of at least 1000 units (for 16-bit camera).</p></list-item>
+<list-item><p>Select the desired total duration of the experiment and the time-frame parameter, considering the cell type viability upon illumination and the speed of cells movement.</p>
+<p>Note 10: for tracking purposes it is convenient to start with a minimum time interval of 30 min and evaluate the outcome of the time-lapse, adjusting eventually the described parameter in the following experiments</p></list-item>
+</list>
+</sec>
+<sec id="s3a2">
+<title>Image processing</title>
+<list list-type="roman-upper">
+<list-item><p>Open the pre-processing macro (Image_processing_HSB_v1.ijm) in your Fiji</p>
+<p>Note 11: the execution of the macro requires the prior installation of the Basic plugin (<ext-link ext-link-type="uri" xlink:href="https://github.com/marrlab/BaSiC">https://github.com/marrlab/BaSiC</ext-link>) for flat-field correction</p></list-item>
+<list-item><p>Set the proper image filters and background subtraction processing for red and green channels at lines 58-78 and 85-94</p></list-item>
+<list-item><p>Choose the maximum values of the Brightness and Contrast for both red and green channels and set the found values at lines 116 (red) and 118 (green)</p></list-item>
+<list-item><p>Set the proper value of the Top Hat filter on the Brightness channel (HSB stack) at line 127</p></list-item>
+<list-item><p>Set the correct position of red and green channels, depending on the experiment, at lines 173-174.</p></list-item>
+<list-item><p>Run the macro from the Fiji script editor</p></list-item>
+<list-item><p>Set in the dialog window the input directory (where original data are stored), the output directory (where you want to store processed images) and the original file format</p></list-item>
+</list>
+</sec>
+<sec id="s3a3">
+<title>Tracking Analysis</title>
+<list list-type="roman-upper">
+<list-item><p>Open the TrackMate script in the Fiji macro editor</p></list-item>
+<list-item><p>Adjust the parameters settings (from line 39 to 58) according to the experiment</p></list-item>
+<list-item><p>Run the script from the Fiji script editor</p></list-item>
+<list-item><p>Set in the dialog window the input directory (where the images processed with the previous pipeline are stored) and the output directory (where you want to store the results table)</p></list-item>
+</list>
+</sec>
+<sec id="s3a4">
+<title>Data Analysis</title>
+<p>Sample/condition demultiplexing
+<list list-type="roman-upper">
+<list-item><p>Read the list of files containing tracking information for each cell. This can be done by looping through the files and reading into R using the function read.delim().</p></list-item>
+<list-item><p>Merge all the tables into a single table using the filename to create a column for the demultiplexing of the condition.</p></list-item>
+</list>
+Missing frame imputation
+<list list-type="roman-upper">
+<list-item><p>Use the na_ma() function to perform imputation. This function let the user choose among different weighting strategies, we suggest trying the “exponential” or the “simple”, as well as trying different values for k (dimension of the moving average window) and maxgap (maximum number of successive NA values).</p></list-item>
+</list>
+</p>
+</sec>
+<sec id="s3a5">
+<title>Data smoothing</title>
+<list list-type="roman-upper">
+<list-item><p>Use the function smooth.spline() to remove noise from the timeseries and enhance the trend. We suggest trying different values for lambda value starting with a very low one such as [1e-05, 1e-04, 1e-03].</p></list-item>
+</list>
+</sec>
+<sec id="s3a6">
+<title>Data normalization</title>
+<list list-type="roman-upper">
+<list-item><p>Use the function normalize_vector() to make the curves comparable to each other.</p></list-item>
+</list>
+</sec>
+<sec id="s3a7">
+<title>Feature extraction</title>
+<list list-type="roman-upper">
+<list-item><p>Use the function tk_tsfeatures () to extract features from the channel intensity, different features can be specified to be extracted such as:
+<list list-type="alpha-lower">
+<list-item><p>The number of times the time series crosses its median.</p></list-item>
+<list-item><p>Autocorrelation of the time series.</p></list-item>
+<list-item><p>Autocorrelation of the first/second-differentiated time series.</p></list-item>
+<list-item><p>Spectral entropy.</p></list-item>
+<list-item><p>Stability and lumpiness on a tilled version of the timeseries.</p></list-item>
+</list>
+</p></list-item>
+</list>
+</sec>
+<sec id="s3a8">
+<title>Traceability assessment</title>
+<list list-type="roman-upper">
+<list-item><p>Use the function predict() passing the table and the pre-trained model to predict whether a track is traceable or not. The output is a table containing the predicted class as well as the predicted probability of being part of a specific class.</p></list-item>
+<list-item><p>The predicted probability can be used to further filter the predicted traceable cells.</p></list-item>
+</list>
+</sec>
+<sec id="s3a9">
+<title>Cell phase assignment</title>
+<list list-type="roman-upper">
+<list-item><p>The cell cycle phase quantification is performed on the cells predicted as traceable; this is done by setting two thresholds on the Hue intensities. We suggest trying different values according to the original Hue intensity reached by the fluorescence observed.</p></list-item>
+<list-item><p>The first round of phase assignment divides the tracks into:
+<list list-type="alpha-lower">
+<list-item><p>G1</p></list-item>
+<list-item><p>S</p></list-item>
+<list-item><p>G2/M</p></list-item>
+</list>
+</p></list-item>
+<list-item><p>By looping through each track, a second round of phase assignment is performed to re-assign frames classified as G2/M that occur before S. Three different strategies can be followed:
+<list list-type="alpha-lower">
+<list-item><p>Re-assign the G2/M frames to G1</p></list-item>
+<list-item><p>Re-assign the G2/M frames to S</p></list-item>
+<list-item><p>Re-assign the G2/M frames to a new G1/S phase</p></list-item>
+</list>
+</p></list-item>
+</list>
+</sec>
+<sec id="s3a10">
+<title>Cell phase quantification</title>
+<list list-type="roman-upper">
+<list-item><p>Group your data using the group_by() function using the Track_ID and Condition columns as grouping variables then use the function add_count() to count the number of frames in each condition for each track.</p></list-item>
+<list-item><p>Divide the number obtained by the number of frames acquired in an hour to obtain the time spent in each phase (in hours units).</p></list-item>
+<list-item><p>Sum the time spent in each phase to obtain the total cell cycle duration.</p></list-item>
+</list>
+</sec>
+</sec>
+</sec>
+<sec id="s4">
+<title>Materials and Methods</title>
+<sec id="s4a">
+<title>Key resource table</title>
+<table-wrap id="utbl1" orientation="portrait" position="float">
+<graphic xlink:href="572803v1_utbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="572803v1_utbl1a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="572803v1_utbl1b.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s4b">
+<title>Cell lines and growing conditions</title>
+<p>NB4 and Kasumi-1 cells were grown in 3ml of a mix of 80ml MethoCult™ H4230 RPMI-1640 plus 20ml Roswell Park Memorial Institute (RPMI) 1640 medium with final concentrations of 10% fetal bovine serum (FBS), 2mM glutamine and 1% Penicillin/Streptomycin. MDA-MB-231 cells were grown in Dulbecco’s Modified Eagle Medium (DMEM) with 10% FBS+2mM L-Glutamine and 1% Penicillin/Streptomycin. All cells were grown according to ATCC recommendations in a humidified tissue culture incubator at 37 °C with 5% CO<sub>2</sub> environment.</p>
+</sec>
+<sec id="s4c">
+<title>Generation of FUCCI(CA)2-equipped cell lines</title>
+<p>Cells were put in 24 well-plates and plated at a density of 500,000 cells in 500 μl of medium per well. The Lentiviral vector carrying the tFUCCI(CA)2/pCSII-EF (<xref ref-type="bibr" rid="c30">Sakaue-Sawano <italic>et al</italic>., 2017</xref>) plasmid was diluted in RPMI 10% serum pen/strep in order to add 500 μl to the cells. Three rounds of infection were carried out in the presence of 5ug/mL of polybrene (Sigma). Cells were infected simply by adding the 100X concentrated virus supernatant (20-35μL/well) onto the cells; the plate was centrifuged for 1 hour at RT at 2500rpm. The medium is added 2 hours post-infection up to 1ml final. Then incubated at 37°C overnight. Infected cells expressed FUCCI(CA)2 probes, emitting mCherry and mVenus. Therefore, the selection of the cells expressing the FUCCI(CA)2 was done by sorting the fluorescence markers, mCherry and mVenus on fluorescence-activated cell sorting (FACS) instrument (FACSAria cell sorter,BD Biosciences, Oxford, UK).</p>
+</sec>
+<sec id="s4d">
+<title>SBS coated bottom-glass multiwell plates production</title>
+<p>Glass bottom multiwell plates are coated by Tethis using the Supersonic Cluster Beam Deposition (SCBD) technology (a detailed description of SCBD and its principle of operation can be found in Refs.(<xref ref-type="bibr" rid="c24">Piseri, Tafreshi and Milani, 2004</xref>; <xref ref-type="bibr" rid="c39">Wegner <italic>et al</italic>., 2006</xref>). A supersonic seeded beam of titania nano-clusters is produced, under high vacuum, by a pulsed microplasma cluster source (PMCS) (<xref ref-type="bibr" rid="c24">Piseri, Tafreshi and Milani, 2004</xref>; <xref ref-type="bibr" rid="c39">Wegner <italic>et al</italic>., 2006</xref>) and deposited on glass bottom multiwell plates. The process is tuned to produce nanostructured TiO2 films (thickness from 50 to 200 nm) with a controlled nanoscale morphology. The titania nanostructured coating of the plates is transparent and biocompatible and has a surface topography that promotes the spontaneous adhesion and immobilization of living cells (<xref ref-type="bibr" rid="c2">Carbone <italic>et al</italic>., 2006</xref>).</p>
+</sec>
+<sec id="s4e">
+<title>Sample preparation</title>
+<p>Approximately 250,000 of Kasumi-1 and NB4 cells and 100,000 of MDA-MB-231 cells were plated either in each well of the Tethis SBS 12-well multi-wells or 8-well ibidi plates, in triplicates in the presence of the aforementioned compounds at day 0 (T0). Cells were treated with final 2nM, 10nM, 50nM, 250nM, and 1250nM of Palbociclib, 50nM, 75nM, 100nM, 125nM and 150nM of Ribociclib, and 25nM, 50 nM, 75nM, 100nM and 125nM of PF-06873600, diluted in advance and directly in the relevant culture medium for each cell line. Only the 50nM treatments are shown for Ribociclib and PF-06873600.</p>
+<p>Three cell suspension samples were prepared for triplicate independent counting and the average of three readings used as the cell count. Cell suspension was diluted with Trypan Blue dye (Sigma) at 1:1 ratio to identify cell viability using Biorad TC20<sup>TM</sup> automated cell counter.</p>
+</sec>
+<sec id="s4f">
+<title>RNA extraction and RNA-seq protocol</title>
+<p>Total RNA was extracted from dry pallets of cells collected prior- and post-acquisitions and purified using the Zymo Research Quick-RNA Miniprep (W/O directzol). Reverse transcription was performed with the SuperScript II Kit (Invitrogen), according to the manufacturer’s protocol. RNA-seq was performed according to the True-seq Low sample protocol selecting only polyadenylated transcripts. In brief, before starting mRNA isolation and library preparations the integrity of the total RNA was evaluated by running samples on a Bioanalyzer instrument by picoRNA Chip (Agilent), then converted into libraries of double stranded cDNA appropriate for next generation sequencing on the Illumina platform. The Illumina TruSeq v.2 RNA Sample Preparation Kit was used following manufacturer’s recommendations. Briefly, 0.1-1 μg of total RNA were subjected to two rounds of mRNA purification by denaturing and letting the RNA bind to Poly-T oligo-attached magnetic beads. Then fragmentation was performed exploiting divalent cations contained in the Illumina fragmentation buffer and high temperature. First and second strand cDNA is reverse transcribed from fragmented RNA using random hexamers. First strand cDNA was synthesized by SuperScript II (Invitrogen) reverse transcriptase transcriptase and random primers and second strand cDNA synthesized by DNA polymerase I and Rnase H. The subsequent isolation of the cDNA was achieved by using AMPure XP beads (depending on the concentration used, these beads can efficiently recover PCR products of different sizes). The product recovered contained overhanging strands of various lengths due to the fragmentation procedure. The 5’ and 3’ ends of cDNA are repaired by the 3’-5’ exonuclease activity and the polymerase activity and adenylated at 3’ extremities before ligating specific Illumina oligonucleotides adapters followed by 15 cycles of PCR reaction using proprietary Illumina primers mix to enrich the DNA fragments. Prepared libraries were quality checked and quantified using Agilent high sensitivity DNA assay on a Bioanalizer 2100 instrument (Agilent Technologies).</p>
+</sec>
+<sec id="s4g">
+<title>RNA sequencing data analysis</title>
+<p>Raw reads 51bp PE for NB4 and Kasumi cells were quality-filtered and aligned to the hg18 reference genome using nf-core/rnaseq v3.9 pipeline using STAR as aligner and Salmon for quantification with default parameters. Gene counts for each sample were log1p transformed, mean value among the two replicates was taken to compute Pearson correlation among gene expression pre- and post-time-lapse acquisition.</p>
+</sec>
+<sec id="s4h">
+<title>Image Acquisition</title>
+<p>Images were acquired with a Leica Thunder Imager (Leica Microsystems, Wetzlar, Germany), equipped with a Lumencor Spectra X Light Engine (Lumencor, Beaverton, USA) for fluorescence excitation, a motorized stage and a Leica DFC9000 GTC camera. For non-adherent cells, images were acquired with LAS X software (Leica Microsystems, Wetzlar, Germany, version 3.7.5.24914) using a 20X/0.75NA air objective and a binning 2×2 was applied to increase the SNR. The mCherry and mVenus signal were detected respectively with 540-580 nm and 460-500 nm excitation filters, 585 and 505 nm dichroic mirrors and 592-668 nm and 512-542 nm emission filters. The brightfield channel was also acquired for representation purposes. We imaged 20 to 25 fields of views per well and focal points were manually set in each position before starting the acquisition and kept constant during the whole time-lapse thanks to the Adaptive Focus Control (AFC, Leica Microsystems). The total duration of the time-lapse on non-adherent cells was 72 hours, and the time interval was set to 1 hour to prevent cell phototoxicity.</p>
+<p>Regarding the experiment on adherent cells, a 10X/0.32 NA PH1 dry objective was used and the time-lapse duration was set to 120 hours, with 30 min as timestep. In this case 10 fields of view per well were acquired.</p>
+</sec>
+<sec id="s4i">
+<title>Image Analysis</title>
+<p>The image pre-processing step was performed using a custom-made Fiji macro. Briefly, the pipeline executed a flat-field correction on the fluorescence channels with the plugin Basic (<xref ref-type="bibr" rid="c23">Peng <italic>et al</italic>., 2017</xref>), then applied a gaussian blur (sigma=1 px), a top hat filter (radius=20 px) and a background subtraction to enhance the cells’ signal; duplicated images of Red and Green channels were merged in a multichannel stack and brightness and contrast values were adjusted, according to each experiment, within the range of 0 to the maximum gray value of the stack’s histogram; the multichannel images were then converted into RGBs for each frame, and finally into a HSB stack from which the Brightness channel and the Hue channel were kept respectively for tracking and cell-phase profiling purposes; the final processed image was saved for further analysis and was composed of 4 channels: the Red and Green channels, the Brightness channel and the Hue channel.</p>
+<p>The tracking analysis was realized through TrackMate (version 7.10.2). We automatized the execution of TrackMate over all the fields of view acquired in the experiment by adapting a Jython script, freely available on the website (<ext-link ext-link-type="uri" xlink:href="https://imagej.net/plugins/trackmate/scripting/scripting">https://imagej.net/plugins/trackmate/scripting/scripting</ext-link>). As the shape of our cells was approximately round, the Laplacian of Gaussian (LoG) detector was selected as the cell identifier on the Brightness channel, and the Linear Assignment Problem (LAP) Tracker algorithm was utilized for linking phase, adjusting the Max Linking distance parameter for each experiment. Gap closing was enabled for up to 3 frames, considering the significant decrease in fluorescence intensity during mitosis and the transition between G1 and S phase, that can eventually affect the detection of a cell, due to the rapid decrease of the Red signal and the relatively slow increase of the Green one (<xref ref-type="bibr" rid="c30">Sakaue-Sawano <italic>et al</italic>., 2017</xref>). Identified tracks were filtered for total duration, track displacement, and starting frame of the track. Specifically, the duration filter maximized the chances to follow at least one cell cycle (Track Duration &gt; 25 hours), while the cutoff on total displacement assures the deletion of dead cells that are usually motionless (Track displacement &gt; 10 px). Tracks that start after the first 10 hours were discarded to avoid tracker errors that may give rise to unreliable cell cycle quantification as the cells tend to form clusters above 24-30 hours of experiment (movie S1). The specific values of parameters of the LoG cells’ detector (i.e., spot radius, quality threshold) were preliminarily checked on images via the TrackMate GUI, as well as the linking and gap closing max distances and the final filters on tracks’ duration, displacement and starting frame. The parameters selected manually were then inserted in the script for the batch execution. As an output, we automatically saved a table of spots for each field of view, corresponding to cells in identified tracks, with the selected TrackMate features (See Suppl. Table I).</p>
+</sec>
+<sec id="s4j">
+<title>Model Creation</title>
+<p>To assess the traceability of each track in a fast, efficient and scalable manner, we employed a machine-learning approach. A dataset consisting of 2319 manually annotated tracks, with 1,939 tracks classified as untraceable and 380 tracks marked as traceable (∼1/5) was used. The dataset was divided into training and test sets, with 1855 tracks (∼ 80%) allocated for training and 464 tracks (∼20%) reserved for testing while also stratifying for the outcome variable. To address the problem of the unbalanced outcome a downsampling procedure is employed in the training set.</p>
+<p>Time-series-like features associated with each track are extracted (<xref ref-type="bibr" rid="c38">Wang, Smith and Hyndman, 2006</xref>; <xref ref-type="bibr" rid="c12">Hyndman <italic>et al</italic>., 2023</xref>), as illustrated in <xref rid="figs3" ref-type="fig">Figure S3A</xref>, displaying the distribution of the 70 features utilized for distinguishing between traceable and untraceable cells.</p>
+<p>To optimize model performance and address potential biases of the random forest model employed, we applied stratified 10-fold cross-validation on the training set, creating resampling folds. Leveraging these folds, we conducted hyperparameter tuning. Specifically, we explored different values for Randomly Selected Predictors (mtry), number of trees (trees), and Minimal Node Size (min_n) to identify the combination that maximized the Area under the receiver operator curve (AUC) (<xref ref-type="bibr" rid="c29">Sacks <italic>et al</italic>., 1989</xref>). Subsequently, an additional round of training was conducted using the selected hyperparameters, this time employing the entire training set. The trained model was then evaluated on an independent test set to assess its performance. The results, as depicted in <xref rid="figs3" ref-type="fig">Figure S3B</xref>, revealed an AUC value of 0.971 as well as a sensitivity of 0.897, a specificity of 0.974 and an accuracy of 0.905 confirming the validity of the training procedure. These values were comparable to those obtained from the resampling folds, indicating the absence of overfitting.</p>
+<p>Given the relatively small size of the manually annotated training set, we performed an additional and final round of training using the pseudo-labelling framework (<xref ref-type="bibr" rid="c19">Lee, 2013</xref>). The original model was used to predict unlabelled data, any predicted probability exceeding 0.5 was considered indicative of confidence in the prediction. A new semi-supervised random forest model was trained on this augmented dataset, employing the same hyperparameters as determined previously. This final model achieved an improved AUC of 0.975 on the test set, indicating enhanced track trackability assessment. The schematics of the pipeline, implemented in R (v. 4.3.0) (<xref ref-type="bibr" rid="c25">R Core Team, 2021</xref>) using Tidymodels (v. 1.1.0) (<xref ref-type="bibr" rid="c18">Kuhn and Wickham, 2020</xref>), and Tidyverse (v.2.0.0) (<xref ref-type="bibr" rid="c40">Wickham <italic>et al</italic>., 2019</xref>) can be seen in <xref rid="fig3" ref-type="fig">Figure 3</xref> (panels A).</p>
+</sec>
+<sec id="s4k">
+<title>Time series analysis</title>
+<p>To generate time-series-like information, we utilized the above-mentioned Fiji pipeline, which provided a table containing intensity values for the red, green, and hue channels. To address missing frames resulting from tracking gaps, an Exponential Weighted Moving Average (EWMA) was fitted to impute these frames.</p>
+<p>To further refine the track curves, we applied a two-step smoothing process. Initially, a Simple Moving Average (SMA) was applied, followed by fitting a fixed lambda Smoothing Spline with λ= 0.0001. Finally, min-max scaling is used to normalize the tracks within the range of [0, 1] to make the red and green intensity comparable.</p>
+<p>To tackle tracking errors introduced by the Fiji pipeline, we applied the aforementioned random forest model to assess the traceability of each cell (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>).</p>
+<p>On the tracks classified as trackable, a manual threshold on the hue intensity is employed to determine the cell cycle phases (G1, S, and G2/M). Furthermore, to quantify the cell cycle at the single-cell level, track splitting to isolate individual cell components and perform phase reassignment into G1, G1/S, S, and G2/M is performed using a custom R function.</p>
+<p>The resulting single-cell tracks enabled the quantification of individual phase durations for each cell. As an example, the cell phase quantification for five different conditions can be observed in <xref rid="fig3" ref-type="fig">Figure 3</xref>.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec id="s5">
+<title>Model Deployment</title>
+<p>The resulting model was saved as a .rds file to facilitate practical implementation. Moreover, we encapsulated the model as an API in a Docker container using Vetiver (v. 0.2.1) (<xref ref-type="bibr" rid="c33">Silge, 2023</xref>), enabling easy deployment and usage.</p>
+</sec>
+<sec id="s6">
+<title>Code availability</title>
+<p>The source code and user manual for the Fiji pipeline is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/ieoresearch/cellcycle-image-analysis">https://github.com/ieoresearch/cellcycle-image-analysis</ext-link>.</p>
+<p>The source code and user manual for the R pipeline is available at GitHub repository.</p>
+</sec>
+<sec id="s7">
+<title>Funding and Acknowledgements</title>
+<p>This work was partially supported by the Italian Ministry of Health with Ricerca Corrente and 5×1000 funds and by the Grant AIRC IG20 to SM. KH received a fellowship from AIRC.</p>
+<p>CS is grateful to Giulia Tini for the helpful discussions.</p>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><string-name><surname>Alcalay</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> (<year>2001</year>) ‘<article-title>Common themes in the pathogenesis of acute myeloid leukemia</article-title>’, <source>Oncogene</source>, <volume>20</volume>(<issue>40</issue>), pp. <fpage>5680</fpage>–<lpage>5694</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/sj.onc.1204642</pub-id>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><string-name><surname>Carbone</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal> (<year>2006</year>) ‘<article-title>Biocompatibility of cluster-assembled nanostructured TiO2 with primary and cancer cells</article-title>’, <source>Biomaterials</source>, <volume>27</volume>(<issue>17</issue>), pp. <fpage>3221</fpage>–<lpage>3229</lpage>. Available at: <pub-id pub-id-type="doi">10.1016/j.biomaterials.2006.01.056</pub-id>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><string-name><surname>Chao</surname>, <given-names>H.X.</given-names></string-name> <etal>et al.</etal> (<year>2019</year>) ‘<article-title>Evidence that the human cell cycle is a series of uncoupled, memoryless phases</article-title>’, <source>Molecular Systems Biology</source>, <volume>15</volume>(<issue>3</issue>), p. <fpage>e8604</fpage>. Available at: <pub-id pub-id-type="doi">10.15252/msb.20188604</pub-id>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><string-name><surname>Day</surname>, <given-names>D.</given-names></string-name> <etal>et al.</etal> (<year>2009</year>) ‘<article-title>A method for prolonged imaging of motile lymphocytes</article-title>’, <source>Immunology &amp; Cell Biology</source>, <volume>87</volume>(<issue>2</issue>), pp. <fpage>154</fpage>–<lpage>158</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/icb.2008.79</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><string-name><surname>Fassl</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Geng</surname>, <given-names>Y.</given-names></string-name> and <string-name><surname>Sicinski</surname>, <given-names>P.</given-names></string-name> (<year>2022</year>) ‘<article-title>CDK4 and CDK6 kinases: From basic science to cancer therapy</article-title>’, <source>Science</source>, <volume>375</volume>(<issue>6577</issue>), p. <fpage>eabc1495</fpage>. Available at: <pub-id pub-id-type="doi">10.1126/science.abc1495</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><string-name><surname>Floren</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> (<year>2020</year>) ‘<article-title>Tetraspanin CD82 drives acute myeloid leukemia chemoresistance by modulating protein kinase C alpha and β1 integrin activation</article-title>’, <source>Oncogene</source>, <volume>39</volume>(<issue>19</issue>), pp. <fpage>3910</fpage>–<lpage>3925</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/s41388-020-1261-0</pub-id>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><string-name><surname>Freeman-Cook</surname>, <given-names>K.D.</given-names></string-name> <etal>et al.</etal> (<year>2021</year>) ‘<article-title>Discovery of PF-06873600, a CDK2/4/6 Inhibitor for the Treatment of Cancer</article-title>’, <source>Journal of Medicinal Chemistry</source>, <volume>64</volume>(<issue>13</issue>), pp. <fpage>9056</fpage>–<lpage>9077</lpage>. Available at: <pub-id pub-id-type="doi">10.1021/acs.jmedchem.1c00159</pub-id>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><string-name><surname>Fujimoto</surname>, <given-names>K.</given-names></string-name> <etal>et al.</etal> (<year>2020</year>) <article-title>‘Tracking and Analysis of FUCCI-Labeled Cells Based on Particle Filters and Time-to-Event Analysis</article-title>’, <source>International Journal of Bioscience, Biochemistry and Bioinformatics</source>, <volume>10</volume>(<issue>2</issue>), pp. <fpage>94</fpage>–<lpage>109</lpage>. Available at: <pub-id pub-id-type="doi">10.17706/ijbbb.2020.10.2.94-109</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><string-name><surname>Furia</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Pelicci</surname>, <given-names>P.G.</given-names></string-name> and <string-name><surname>Faretta</surname>, <given-names>M.</given-names></string-name> (<year>2013</year>) ‘<article-title>A computational platform for robotized fluorescence microscopy (I): High-content image-based cell-cycle analysis</article-title>’, <source>Cytometry Part A</source>, <volume>83A</volume>(<issue>4</issue>), pp. <fpage>333</fpage>–<lpage>343</lpage>. Available at: <pub-id pub-id-type="doi">10.1002/cyto.a.22266</pub-id>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><string-name><surname>Ghannoum</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> (<year>2021</year>) ‘<article-title>CellMAPtracer: A User-Friendly Tracking Tool for Long-Term Migratory and Proliferating Cells Associated with FUCCI Systems</article-title>’, <source>Cells</source>, <volume>10</volume>(<issue>2</issue>), p. <fpage>469</fpage>. Available at: <pub-id pub-id-type="doi">10.3390/cells10020469</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="book"><string-name><surname>Hiratsuka</surname>, <given-names>T.</given-names></string-name> and <string-name><surname>Komatsu</surname>, <given-names>N.</given-names></string-name> (<year>2019</year>) <chapter-title>‘Single-Cell Live Imaging’</chapter-title>, in <person-group person-group-type="editor"><string-name><given-names>V.</given-names> <surname>Proserpio</surname></string-name></person-group> (ed.) <source>Single Cell Methods</source>. <publisher-loc>New York, NY</publisher-loc>: <publisher-name>Springer New York</publisher-name> (Methods in Molecular Biology), pp. <fpage>409</fpage>–<lpage>421</lpage>. Available at: <pub-id pub-id-type="doi">10.1007/978-1-4939-9240-9_24</pub-id>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="web"><string-name><surname>Hyndman</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal> (<year>2023</year>) <source>tsfeatures: Time Series Feature Extraction</source>. Available at: <ext-link ext-link-type="uri" xlink:href="https://pkg.robjhyndman.com/tsfeatures/">https://pkg.robjhyndman.com/tsfeatures/</ext-link>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><string-name><surname>Johansen</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal> (<year>2018</year>) ‘<article-title>The Possible Importance of β3 Integrins for Leukemogenesis and Chemoresistance in Acute Myeloid Leukemia</article-title>’, <source>International Journal of Molecular Sciences</source>, <volume>19</volume>(<issue>1</issue>), p. <fpage>251</fpage>. Available at: <pub-id pub-id-type="doi">10.3390/ijms19010251</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="book"><string-name><surname>Khan</surname>, <given-names>M.G.M.</given-names></string-name> and <string-name><surname>Wang</surname>, <given-names>Y.</given-names></string-name> (<year>2022</year>) ‘<chapter-title>Cell Cycle-Related Clinical Applications</chapter-title>’, in <person-group person-group-type="editor"><string-name><given-names>Z.</given-names> <surname>Wang</surname></string-name></person-group> (ed.) <source>Cell-Cycle Synchronization: Methods and Protocols</source>. <publisher-loc>New York, NY</publisher-loc>: <publisher-name>Springer US</publisher-name>, pp. <fpage>35</fpage>–<lpage>46</lpage>. Available at: <pub-id pub-id-type="doi">10.1007/978-1-0716-2736-5_3</pub-id>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><string-name><surname>Kim</surname>, <given-names>H.N.</given-names></string-name> <etal>et al.</etal> (<year>2020</year>) ‘<article-title>Cadherins, Selectins, and Integrins in CAM-DR in Leukemia</article-title>’, <source>Frontiers in Oncology</source>, <volume>10</volume>. Available at: <pub-id pub-id-type="doi">10.3389/fonc.2020.592733</pub-id>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><string-name><surname>Koh</surname>, <given-names>S.-B.</given-names></string-name> <etal>et al.</etal> (<year>2017</year>) ‘<article-title>A quantitative FastFUCCI assay defines cell cycle dynamics at a single-cell level</article-title>’, <source>Journal of Cell Science</source>, <volume>130</volume>(<issue>2</issue>), pp. <fpage>512</fpage>–<lpage>520</lpage>. Available at: <pub-id pub-id-type="doi">10.1242/jcs.195164</pub-id>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><string-name><surname>Krol</surname>, <given-names>I.</given-names></string-name> <etal>et al.</etal> (<year>2021</year>) ‘<article-title>Detection of clustered circulating tumour cells in early breast cancer</article-title>’, <source>British Journal of Cancer</source>, <volume>125</volume>(<issue>1</issue>), pp. <fpage>23</fpage>–<lpage>27</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/s41416-021-01327-8</pub-id>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="web"><string-name><surname>Kuhn</surname>, <given-names>M.</given-names></string-name> and <string-name><surname>Wickham</surname>, <given-names>H.</given-names></string-name> (<year>2020</year>) <source>Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles</source>. Available at: <ext-link ext-link-type="uri" xlink:href="https://www.tidymodels.org">https://www.tidymodels.org</ext-link>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="web"><string-name><surname>Lee</surname>, <given-names>D.-H.</given-names></string-name> (<year>2013</year>) ‘<source>Pseudo-Label : The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks</source>’, in. Available at: <ext-link ext-link-type="uri" xlink:href="https://api.semanticscholar.org/CorpusID:18507866">https://api.semanticscholar.org/CorpusID:18507866</ext-link>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><string-name><surname>Ligasová</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Frydrych</surname>, <given-names>I.</given-names></string-name> and <string-name><surname>Koberna</surname>, <given-names>K.</given-names></string-name> (<year>2023</year>) ‘<article-title>Basic Methods of Cell Cycle Analysis</article-title>’, <source>International Journal of Molecular Sciences</source>, <volume>24</volume>(<issue>4</issue>). Available at: <pub-id pub-id-type="doi">10.3390/ijms24043674</pub-id>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><string-name><surname>Malumbres</surname>, <given-names>M.</given-names></string-name> and <string-name><surname>Barbacid</surname>, <given-names>M.</given-names></string-name> (<year>2009</year>) ‘<article-title>Cell cycle, CDKs and cancer: a changing paradigm</article-title>’, <source>Nature Reviews Cancer</source>, <volume>9</volume>(<issue>3</issue>), pp. <fpage>153</fpage>–<lpage>166</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/nrc2602</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><string-name><surname>Ogana</surname>, <given-names>H.A.</given-names></string-name> <etal>et al.</etal> (<year>2023</year>) ‘<article-title>Targeting integrins in drug-resistant acute myeloid leukaemia</article-title>’, <source>British Journal of Pharmacology</source>: <pub-id pub-id-type="doi">10.1111/bph.16149</pub-id>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><string-name><surname>Peng</surname>, <given-names>T.</given-names></string-name> <etal>et al.</etal> (<year>2017</year>) ‘<article-title>A BaSiC tool for background and shading correction of optical microscopy images</article-title>’, <source>Nature Communications</source>, <volume>8</volume>(<issue>1</issue>), p. <fpage>14836</fpage>. Available at: <pub-id pub-id-type="doi">10.1038/ncomms14836</pub-id>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><string-name><surname>Piseri</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Tafreshi</surname>, <given-names>H.V.</given-names></string-name> and <string-name><surname>Milani</surname>, <given-names>P.</given-names></string-name> (<year>2004</year>) ‘<article-title>Manipulation of nanoparticles in supersonic beams for the production of nanostructured materials</article-title>’, <source>Current Opinion in Solid State and Materials Science</source>, <volume>8</volume>(<issue>3–4</issue>), pp. <fpage>195</fpage>–<lpage>202</lpage>. Available at: <pub-id pub-id-type="doi">10.1016/j.cossms.2004.08.002</pub-id>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="book"><collab>R Core Team</collab> (<year>2021</year>) <source>R: A Language and Environment for Statistical Computing</source>. <publisher-loc>Vienna, Austria</publisher-loc>: <publisher-name>R Foundation for Statistical Computing</publisher-name>. Available at: <ext-link ext-link-type="uri" xlink:href="https://www.R-project.org/">https://www.R-project.org/</ext-link>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="book"><string-name><surname>Rieger</surname>, <given-names>A.M.</given-names></string-name> (<year>2022</year>) <chapter-title>‘Flow Cytometry and Cell Cycle Analysis: An Overview’</chapter-title>, in <person-group person-group-type="editor"><string-name><given-names>Z.</given-names> <surname>Wang</surname></string-name></person-group> (ed.) <source>Cell-Cycle Synchronization</source>. <publisher-loc>New York, NY</publisher-loc>: <publisher-name>Springer US</publisher-name> (Methods in Molecular Biology), pp. <fpage>47</fpage>–<lpage>57</lpage>. Available at: <pub-id pub-id-type="doi">10.1007/978-1-0716-2736-5_4</pub-id>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><string-name><surname>Ritter</surname>, <given-names>P.</given-names></string-name> <etal>et al.</etal> (<year>2020</year>) ‘<article-title>A method for high-content functional imaging of intracellular calcium responses in gelatin-immobilized non-adherent cells</article-title>’, <source>Experimental Cell Research</source>, <volume>395</volume>(<issue>2</issue>), p. <fpage>112210</fpage>. Available at: <pub-id pub-id-type="doi">10.1016/j.yexcr.2020.112210</pub-id>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><string-name><surname>Roccio</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> (<year>2013</year>) ‘<article-title>Predicting stem cell fate changes by differential cell cycle progression patterns</article-title>’, <source>Development</source>, <volume>140</volume>(<issue>2</issue>), pp. <fpage>459</fpage>–<lpage>470</lpage>. Available at: <pub-id pub-id-type="doi">10.1242/dev.086215</pub-id>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><string-name><surname>Sacks</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal> (<year>1989</year>) ‘<article-title>Design and Analysis of Computer Experiments</article-title>’, <source>Statistical Science</source>, <volume>4</volume>(<issue>4</issue>), pp. <fpage>409</fpage>–<lpage>423</lpage>. Available at: <pub-id pub-id-type="doi">10.1214/ss/1177012413</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><string-name><surname>Sakaue-Sawano</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> (<year>2017</year>) ‘<article-title>Genetically Encoded Tools for Optical Dissection of the Mammalian Cell Cycle</article-title>’, <source>Molecular Cell</source>, <volume>68</volume>(<issue>3</issue>), pp. <fpage>626</fpage>–<lpage>640</lpage>.e5. Available at: <pub-id pub-id-type="doi">10.1016/j.molcel.2017.10.001</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><string-name><surname>Schindelin</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal> (<year>2012</year>) ‘<article-title>Fiji: an open-source platform for biological-image analysis</article-title>’, <source>Nature Methods</source>, <volume>9</volume>(<issue>7</issue>), pp. <fpage>676</fpage>–<lpage>682</lpage>. Available at: <pub-id pub-id-type="doi">10.1038/nmeth.2019</pub-id>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><string-name><surname>Schulte</surname>, <given-names>C.</given-names></string-name> <etal>et al.</etal> (<year>2016</year>) ‘<article-title>Conversion of nanoscale topographical information of cluster-assembled zirconia surfaces into mechanotransductive events promotes neuronal differentiation</article-title>’, <source>Journal of Nanobiotechnology</source>, <volume>14</volume>(<issue>1</issue>), p. <fpage>18</fpage>. Available at: <pub-id pub-id-type="doi">10.1186/s12951-016-0171-3</pub-id>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="other"><string-name><surname>Silge</surname>, <given-names>J.</given-names></string-name> (<year>2023</year>) <source>vetiver: Version, Share, Deploy, and Monitor Models</source>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><string-name><surname>Skopek</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal> (<year>2023</year>) ‘<article-title>Choosing the Right Cell Line for Acute Myeloid Leukemia (AML) Research</article-title>’, <source>International Journal of Molecular Sciences</source>, <volume>24</volume>(<issue>6</issue>), p. <fpage>5377</fpage>. Available at: <pub-id pub-id-type="doi">10.3390/ijms24065377</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><string-name><surname>Strong</surname>, <given-names>A.D.</given-names></string-name> and <string-name><surname>Daniels</surname>, <given-names>R.L.</given-names></string-name> (<year>2017</year>) ‘<article-title>Live-cell calcium imaging of adherent and non-adherent GL261 cells reveals phenotype-dependent differences in drug responses</article-title>’, <source>BMC Cancer</source>, <volume>17</volume>(<issue>1</issue>), p. <fpage>516</fpage>. Available at: <pub-id pub-id-type="doi">10.1186/s12885-017-3507-y</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><string-name><surname>Taïeb</surname>, <given-names>H.M.</given-names></string-name> <etal>et al.</etal> (<year>2022</year>) ‘<article-title>FUCCItrack: An all-in-one software for single cell tracking and cell cycle analysis</article-title>’, <source>PLOS ONE</source>, <volume>17</volume>(<issue>7</issue>), pp. <fpage>1</fpage>–<lpage>14</lpage>. Available at: <pub-id pub-id-type="doi">10.1371/journal.pone.0268297</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><string-name><surname>Tinevez</surname>, <given-names>J.-Y.</given-names></string-name> <etal>et al.</etal> (<year>2017</year>) ‘<article-title>TrackMate: An open and extensible platform for single-particle tracking</article-title>’, <source>Methods</source>, <volume>115</volume>, pp. <fpage>80</fpage>–<lpage>90</lpage>. Available at: <pub-id pub-id-type="doi">10.1016/j.ymeth.2016.09.016</pub-id>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><string-name><surname>Wang</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Smith</surname>, <given-names>K.</given-names></string-name> and <string-name><surname>Hyndman</surname>, <given-names>R.</given-names></string-name> (<year>2006</year>) ‘<article-title>Characteristic-Based Clustering for Time Series Data</article-title>’, <source>Data Mining and Knowledge Discovery</source>, <volume>13</volume>(<issue>3</issue>), pp. <fpage>335</fpage>–<lpage>364</lpage>. Available at: <pub-id pub-id-type="doi">10.1007/s10618-005-0039-x</pub-id>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><string-name><surname>Wegner</surname>, <given-names>K.</given-names></string-name> <etal>et al.</etal> (<year>2006</year>) ‘<article-title>Cluster beam deposition: a tool for nanoscale science and technology</article-title>’, <source>Journal of Physics D: Applied Physics</source>, <volume>39</volume>(<issue>22</issue>), pp. <fpage>R439</fpage>–<lpage>R459</lpage>. Available at: <pub-id pub-id-type="doi">10.1088/0022-3727/39/22/R02</pub-id>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><string-name><surname>Wickham</surname>, <given-names>H.</given-names></string-name> <etal>et al.</etal> (<year>2019</year>) ‘<article-title>Welcome to the tidyverse</article-title>’, <source>Journal of Open Source Software</source>, <volume>4</volume>(<issue>43</issue>), p. <fpage>1686</fpage>. Available at: <pub-id pub-id-type="doi">10.21105/joss.01686</pub-id>.</mixed-citation></ref>
+</ref-list>
+<sec id="s8">
+<title>Supplementary Figure legends</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure S1:</label>
+<caption><title>Cell Cycle Phase Assignment.</title>
+<p><bold>A)</bold> Examples from NB4 cell line upon different Palbociclib treatment concentrations showing a cell that explores the cell cycle phases (Scale bar is 5 µm). For Palbociclib 250 nM and Palbociclib 1250 nM conditions, the cell was manually tracked for presentation purposes.</p></caption>
+<graphic xlink:href="572803v1_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p><bold>Movie S1:</bold> Representative movie of NB4 cells seeded on SBS + MC.</p>
+<p><bold>Movies S2-S4:</bold> Representative movies of 3 cells tracked with TrackMate expressing the FUCCI(CA)2 probe, showing the sequence of color changes (1 frame/hour).</p>
+<p><bold>Movie S5:</bold> Representative movie of NB4 cells seeded on SBS without MC.</p>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure S2:</label>
+<caption><p>A) Pearson correlation among pre and post time-lapse acquisition of Kasumi-1 (left) and NB4 (right) cell lines. In the x axis is reported the log1p counts mean between the two replicates before the acquisition, while on the y axis the log1p counts mean between the two replicates after the acquisition.</p></caption>
+<graphic xlink:href="572803v1_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure S3:</label>
+<caption><p>A) Boxplot showing the distribution of the feature extracted from the training set using timetk. B) ROC curve of the random forest model computed in the test set.</p></caption>
+<graphic xlink:href="572803v1_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure S4:</label>
+<caption><p>A) Waterfall plot of the “sorted” and “splitted” cells. Each row corresponds to a cell. B) Boxplot of the cell phase duration of the first cell cycle. A total of 1116 cells were analysed, obtaining a mean (± SD) cell cycle duration of 24.5 ± 8.5 h. <bold>C)</bold> Example of an adherent cell in control condition tracked with the described pipeline (Scale bar is 5 µm).</p></caption>
+<graphic xlink:href="572803v1_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94689.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Barber</surname>
+<given-names>Paul R</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>King's College London</institution>
+</institution-wrap>
+<city>London</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This paper presents a <bold>valuable</bold> automated method to track individual mammalian cells as they progress through the cell cycle using the FUCCI system. The authors have developed a technique for analyzing cells that grow in suspension and used their method to look at different tumor cell lines that grow in suspension and determine the effect of drugs that directly affect the cell cycle. They show <bold>solid</bold> evidence that the method can be applied to both adherent and non-adherent cell lines. This paper will be of interest to cell biologists investigating cell cycle effects.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94689.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The manuscript proposes a series of steps using the FIJI environment, the authors have created a plugin for the initial steps of the process, merging images into an RGB stack, conversion to HSV, and then using brightness for reference and hue to distinguish the phases of the cycle. Then, the well-known Trackmate plugin was used to identify single cells and extract intensities. The data was further post-processed in R, where a series of steps, smoothing, scaling, and addressing missing frames were used to train a random forest. Hard-coded values of hue were used to distinguish G1, S, and G2/M. The process was validated with a score comparing the quality of the tracks and the authors reported the successful measure of the cell cycles.</p>
+<p>Strengths:</p>
+<p>The implementation of the pipeline seems easy, although it requires two separate platforms: Fiji and R. A similar approach could be implemented in a single programming environment like Python or Matlab and there would not be any need to export from one to the other. However, many labs have similar setups and that is not necessarily a problem.</p>
+<p>Weaknesses:</p>
+<p>I found two important weaknesses in the proposal:</p>
+<p>(1) The pipeline relies on a large number of hard-coded conditions: size of Gaussian blur (Gaussian should be written in uppercase), values of contrast, size of filters, levels of intensity, etc. Presumably, the authors followed a heuristic approach and tried values of these and concluded that the ones proposed were optimal. A proper sensitivity analysis should be performed. That is, select a range of values of the variables and measure the effect on the output.</p>
+<p>(2) Linked to the previous comments. Other researchers that want to follow the pipeline would have either to have exactly the same acquisition conditions as the manuscript or start playing with values and try to compensate for any difference in their data (cell diameter, fluorescent intensity, etc.) to see if they can match the results of the manuscript.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94689.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper presents an automated method to track individual mammalian cells as they progress through the cell cycle using the FUCCI system and applies the method to look at different tumor cell lines that grow in suspension and determine their cell cycle profile and the effect of drugs that directly affect the cell cycles, on progression through the cell cycle for a 72 hour period.</p>
+<p>Strengths:</p>
+<p>This is a METHODS paper. The one potentially novel finding is that they can identify cells that are at the G1-S transition by the change in color as one protein starts to go up and the other one goes down, similar to the change seen as cells enter G2/M.</p>
+<p>Weaknesses:</p>
+<p>They did not clearly indicate whether the G1/S cells are identified automatically or need to be identified by the person reviewing the data. In Figures 1 and S1, the movie shows cells with no color at a time corresponding to what is about the G1/S transition. Their assigned cell cycle phase is shown in Figure 1 but not in Figure S1. None of these pictures show the G1/S cells that they talk about being able to detect with a different color.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94689.1.sa3</article-id>
+<title-group>
+<article-title>Author Response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Hayatigolkhatmi</surname>
+<given-names>Kourosh</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Soriani</surname>
+<given-names>Chiara</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Soda</surname>
+<given-names>Emanuel</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ceccacci</surname>
+<given-names>Elena</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>El Menna</surname>
+<given-names>Oualid</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Peri</surname>
+<given-names>Sebastiano</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Negrelli</surname>
+<given-names>Ivan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bertolini</surname>
+<given-names>Giacomo</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Franchi</surname>
+<given-names>Gian Martino</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Carbone</surname>
+<given-names>Roberta</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Minucci</surname>
+<given-names>Saverio</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Rodighiero</surname>
+<given-names>Simona</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4236-7823</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We greatly appreciate the insightful feedback provided by the reviewers and the editor on our manuscript titled &quot;Automated workflow for the cell cycle analysis of non-adherent and adherent cells using a machine learning approach&quot;.  We will provide a revised version of the manuscript aiming to address the comments and recommendations provided by the reviewers to enhance the quality and clarity of our work. In detail:</p>
+<disp-quote content-type="editor-comment">
+<p>Reviewer #1 (Public Review):</p>
+<p>Summary:</p>
+<p>The manuscript proposes a series of steps using the FIJI environment, the authors have created a plugin for the initial steps of the process, merging images into an RGB stack, conversion to HSV, and then using brightness for reference and hue to distinguish the phases of the cycle. Then, the well-known Trackmate plugin was used to identify single cells and extract intensities. The data was further post-processed in R, where a series of steps, smoothing, scaling, and addressing missing frames were used to train a random forest. Hard-coded values of hue were used to distinguish G1, S, and G2/M. The process was validated with a score comparing the quality of the tracks and the authors reported the successful measure of the cell cycles.</p>
+<p>Strengths:</p>
+<p>The implementation of the pipeline seems easy, although it requires two separate platforms: Fiji and R. A similar approach could be implemented in a single programming environment like Python or Matlab and there would not be any need to export from one to the other. However, many labs have similar setups and that is not necessarily a problem.</p>
+<p>Weaknesses:</p>
+<p>I found two important weaknesses in the proposal:</p>
+<p>(1) The pipeline relies on a large number of hard-coded conditions: size of Gaussian blur (Gaussian should be written in uppercase), values of contrast, size of filters, levels of intensity, etc. Presumably, the authors followed a heuristic approach and tried values of these and concluded that the ones proposed were optimal. A proper sensitivity analysis should be performed. That is, select a range of values of the variables and measure the effect on the output.</p>
+<p>(2) Linked to the previous comments. Other researchers that want to follow the pipeline would have either to have exactly the same acquisition conditions as the manuscript or start playing with values and try to compensate for any difference in their data (cell diameter, fluorescent intensity, etc.) to see if they can match the results of the manuscript.</p>
+</disp-quote>
+<p>We thank Reviewer #1 for the insightful comments. We acknowledge the importance of ensuring the reproducibility and robustness of our pipeline among different sample types, acquisition conditions and, consequently, image S/N ratio and resolution. To address the concerns regarding the reliance on hard-coded conditions and the impact of varying parameter values on the output, we will complete the Methods section of the manuscript and the “Usage” section of the README file in the Github repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/ieoresearch/cellcycle-image-analysis">https://github.com/ieoresearch/cellcycle-image-analysis</ext-link>)  providing a summary of best practices that should be applied in the pre-processing part of the analysis. As an example, the usable image filters types and their settings related to cells with different size, fluorescence intensities and acquisition conditions will be analysed in detail and general guidelines will be provided.</p>
+<p>Moreover, we will provide detailed documentation on the acquisition conditions required for reproducibility in the README file and Methods section.</p>
+<p>For the Tracking Analysis part, we will refer to the well documented TrackMate tutorial to adapt the tracking analysis to different cell types, image resolution and intensities.</p>
+<disp-quote content-type="editor-comment">
+<p>Reviewer #2 (Public Review):</p>
+<p>Summary:</p>
+<p>This paper presents an automated method to track individual mammalian cells as they progress through the cell cycle using the FUCCI system and applies the method to look at different tumor cell lines that grow in suspension and determine their cell cycle profile and the effect of drugs that directly affect the cell cycles, on progression through the cell cycle for a 72 hour period.</p>
+<p>Strengths:</p>
+<p>This is a METHODS paper. The one potentially novel finding is that they can identify cells that are at the G1-S transition by the change in color as one protein starts to go up and the other one goes down, similar to the change seen as cells enter G2/M.</p>
+<p>Weaknesses:</p>
+<p>They did not clearly indicate whether the G1/S cells are identified automatically or need to be identified by the person reviewing the data. In Figures 1 and S1, the movie shows cells with no color at a time corresponding to what is about the G1/S transition. Their assigned cell cycle phase is shown in Figure 1 but not in Figure S1. None of these pictures show the G1/S cells that they talk about being able to detect with a different color.</p>
+</disp-quote>
+<p>Thank you for your valuable feedback regarding the identification of G1/S cells in our pipeline. To clarify, the G1/S phase identification process is entirely automated within our pipeline. We apologize for any confusion caused by the lack of explicit indication in our manuscript. We will ensure to update the manuscript to clearly state that the identification of G1/S cells is performed automatically by our algorithm, eliminating the need for manual intervention.</p>
+<p>Regarding the visualization of G1/S cells in Figures 1 and S1, we will revise the figures to include all the available frames referred to the G1/S transition. It's important to note that during this transition, fluorescence intensities for both the green and the red channels, are dimmer in comparison with their intensity levels during the G2/M transitions. This can result in frames that may seem visually darker, despite both colors coexisting at the same time point. In our revised figures, we will ensure to include all available frames relevant to the G1/S transition and provide a clearer representation of this phenomenon.</p>
+<p>In response to Reviewer #2's recommendation, we plan to conduct additional experiments to further validate our observations. We will utilize the EdU technology to highlight the S-phase in FUCCI cells, allowing for better discrimination between the red and green fluorescence of the FUCCI reporter during the initial S-phase.</p>
+<p>Additionally, we acknowledge that the link to the Docker container (<ext-link ext-link-type="uri" xlink:href="https://hub.docker.com/r/emanuelsoda/rf_semi_sup">https://hub.docker.com/r/emanuelsoda/rf_semi_sup</ext-link>)  was not included in the manuscript. We apologize for this oversight, and it will be included in the revised version of the paper.</p>
+</body>
+</sub-article>
+</article>
