@@ -1,0 +1,717 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">98300</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.98300</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.98300.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Microbiology and Infectious Disease</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Benchmarking reveals superiority of deep learning variant callers on bacterial nanopore sequence data</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3683-6208</contrib-id>
+<name>
+<surname>Hall</surname>
+<given-names>Michael B.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">✉</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8349-0778</contrib-id>
+<name>
+<surname>Wick</surname>
+<given-names>Ryan R.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3613-4839</contrib-id>
+<name>
+<surname>Judd</surname>
+<given-names>Louise M.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4893-6636</contrib-id>
+<name>
+<surname>Nguyen</surname>
+<given-names>An N. T.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5399-5353</contrib-id>
+<name>
+<surname>Steinig</surname>
+<given-names>Eike J.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5032-1932</contrib-id>
+<name>
+<surname>Xie</surname>
+<given-names>Ouli</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6141-5179</contrib-id>
+<name>
+<surname>Davies</surname>
+<given-names>Mark R.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6046-610X</contrib-id>
+<name>
+<surname>Seemann</surname>
+<given-names>Torsten</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0150-123X</contrib-id>
+<name>
+<surname>Stinear</surname>
+<given-names>Timothy P.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="author-notes" rid="n1">‡</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4300-455X</contrib-id>
+<name>
+<surname>Coin</surname>
+<given-names>Lachlan J. M.</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">‡</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Microbiology and Immunology, The University of Melbourne, at the Peter Doherty Institute for Infection and Immunity</institution>, Melbourne, <country>Australia</country></aff>
+<aff id="a2"><label>2</label><institution>Centre for Pathogen Genomics, The University of Melbourne</institution>, Melbourne, Victoria, <country>Australia</country></aff>
+<aff id="a3"><label>3</label><institution>Department of Infectious Diseases, The University of Melbourne, at the Peter Doherty Institute for Infection and Immunity</institution>, Melbourne, <country>Australia</country></aff>
+<aff id="a4"><label>4</label><institution>Monash Infectious Diseases, Monash Health</institution>, Melbourne, <country>Australia</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Weigel</surname>
+<given-names>Detlef</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Max Planck Institute for Biology Tübingen</institution>
+</institution-wrap>
+<city>Tübingen</city>
+<country>Germany</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Weigel</surname>
+<given-names>Detlef</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Max Planck Institute for Biology Tübingen</institution>
+</institution-wrap>
+<city>Tübingen</city>
+<country>Germany</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>✉</label><bold>Correspondence:</bold> <email>michael.hall2@unimelb.edu.au</email></corresp>
+<fn id="n1" fn-type="others"><label>‡</label><p>These authors jointly supervised this work.</p></fn>
+<fn fn-type="supported-by"><p><bold>Funding:</bold> This work was supported by the Australian Government Medical Research Future Fund (MRFF) Genomics Health Futures Mission (GHFM) Flagships – Pathogen Genomics Grant (FSPGN000045) META-GP: DELIVERING A CLINICAL METAGENOMICS PLATFORM FOR AUSTRALIA. The funding body had no role in the design, analysis, interpretation, or writing of this work.</p></fn>
+<fn fn-type="others"><p><bold>Competing interests:</bold> L.J.M.C. has received support from ONT to present his findings at scientific conferences. ONT played no role in study design, execution, analysis, or publication. L.J.M.C. has received research funding from ONT unrelated to this project.</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-05-20">
+<day>20</day>
+<month>05</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP98300</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-03-29">
+<day>29</day>
+<month>03</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-03-28">
+<day>28</day>
+<month>03</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.03.15.585313"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Hall et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Hall et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-98300-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Variant calling is fundamental in bacterial genomics, underpinning the identification of disease transmission clusters, the construction of phylogenetic trees, and antimicrobial resistance prediction. This study presents a comprehensive benchmarking of SNP and indel variant calling accuracy across 14 diverse bacterial species using Oxford Nanopore Technologies (ONT) and Illumina sequencing. We generate gold standard reference genomes and project variations from closelyrelated strains onto them, creating biologically realistic distributions of SNPs and indels.</p><p>Our results demonstrate that ONT variant calls from deep learning-based tools delivered higher SNP and indel accuracy than traditional methods and Illumina, with Clair3 providing the most accurate results overall. We investigate the causes of missed and false calls, highlighting the limitations inherent in short reads and discover that ONT’s traditional limitations with homopolymerinduced indel errors are absent with high-accuracy basecalling models and deep learning-based variant calls. Furthermore, our findings on the impact of read depth on variant calling offer valuable insights for sequencing projects with limited resources, showing that 10x depth is sufficient to achieve variant calls that match or exceed Illumina.</p><p>In conclusion, our research highlights the superior accuracy of deep learning tools in SNP and indel detection with ONT sequencing, challenging the primacy of short-read sequencing. The reduction of systematic errors and the ability to attain high accuracy at lower read depths enhance the viability of ONT for widespread use in clinical and public health bacterial genomics.</p>
+</abstract>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>L.J.M.C. has received support from ONT to present his findings at scientific conferences. ONT played no role in study design, execution, analysis, or publication. L.J.M.C. has received research funding from ONT unrelated to this project.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Updated Acknowledgements and affiliations and update the accessions spreadsheet.</p></fn>
+</fn-group>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://github.com/mbhall88/NanoVarBench">https://github.com/mbhall88/NanoVarBench</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Variant calling is a cornerstone of bacterial genomics as well as one of the major applications of next generation sequencing. Its downstream applications include identification of disease transmission clusters, prediction of antimicrobial resistance, and phylogenetic tree construction and subsequent evolutionary analyses, to name a few [<xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c4">4</xref>]. Variant calling is used extensively in public health laboratories to inform decisions on managing bacterial outbreaks [<xref ref-type="bibr" rid="c5">5</xref>] and in molecular diagnostic laboratories as the basis for clinical decisions on how to best treat patients with disease [<xref ref-type="bibr" rid="c6">6</xref>].</p>
+<p>Over the last 15 years, short-read sequencing technologies, such as Illumina, have been the mainstay of variant calling in bacterial genomes, largely due to its relatively high level of basecalling accuracy. However, nanopore sequencing on devices from Oxford Nanopore Technologies (ONT) have emerged as an alternative technology. One of the major advantages of ONT sequencing from an infectious diseases public health perspective is the ability to generate sequencing data in near real-time, as well as the portability of the devices, which has enabled researchers to sequence in remote regions, closer to the source of the disease outbreak [<xref ref-type="bibr" rid="c7">7</xref>, <xref ref-type="bibr" rid="c8">8</xref>]. Limitations in ONT basecalling accuracy have historically limited its widespread adoption for bacterial genome variant calling [<xref ref-type="bibr" rid="c9">9</xref>]. ONT have recently released a new R10.4 pore, along with a new basecaller<sup><xref ref-type="fn" rid="fn1">1</xref></sup> with 3 different accuracy modes (fast, high-accuracy [hac] and super high-accuracy [sup]). These new software and hardware bring the ability to identify a subset of paired reads for which both strands have been sequenced (duplex), leading to impressive gains in basecalling accuracy [<xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c12">12</xref>].</p>
+<p>A number of variant callers have been developed for ONT sequencing [<xref ref-type="bibr" rid="c13">13</xref>–<xref ref-type="bibr" rid="c15">15</xref>]. However, to date, benchmarking studies have focused on human genome variant calling, and have mostly used the older pores, which do not have the ability to identify duplex reads [<xref ref-type="bibr" rid="c16">16</xref>–<xref ref-type="bibr" rid="c18">18</xref>]. In addition, modern deep learning-based variant callers use models trained on human DNA sequence only, leaving an open question of their generalisability to bacteria [<xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c19">19</xref>]. Human genomes have a very different distribution of <italic>k</italic>-mers and patterns of DNA modification, and as such, results from human studies may not directly carry over into bacterial genomics. Moreover there is substantial <italic>k</italic>-mer and DNA modification variation within bacteria, mandating a broad multi-species approach for evaluation [<xref ref-type="bibr" rid="c20">20</xref>]. Existing benchmarks for bacterial genomes, while immensely beneficial and thorough, only assess short-read Illumina data [<xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c22">22</xref>].</p>
+<p>In this study, we conduct a benchmark of SNP and indel variant calling using ONT and Illumina sequencing across a comprehensive spectrum of 14 Gram-positive and Gram-negative bacterial species. We used the same DNA extractions for both Illumina and ONT sequencing to ensure our results are not biased by acquisition of new mutations during culture. We develop a novel strategy for generating benchmark variant truthsets in which we project variations from different strains onto our gold standard reference genomes in order to create biologically realistic distribution of SNPs and indels. We assess both deep learning-based and traditional variant calling methods and investigate the sources of errors and the impact of read depth on variant accuracy.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>We analysed ONT data basecalled with three different accuracy models - fast, high accuracy (hac), and super-high accuracy (sup) - along with different read types - simplex and duplex (Basecalling and quality control). Duplex reads are those in which both DNA strands from a single molecule are sequenced back-to-back, whereas simplex is the standard reads where only a single DNA strand is sequenced. The median (unfiltered) read identities for each basecalling model and read type are shown in <bold><italic><xref rid="fig1" ref-type="fig">Figure 1</xref></italic></bold>. Duplex reads basecalled with the sup model had the highest median read identity of 99.93% (Q32), followed by duplex hac (99.79% [Q27]), simplex sup (99.26% [Q21]), simplex hac (98.31% [Q18]), and simplex fast (94.09% [Q12]). Full summary statistics of the reads can be found in Supplementary Table S1.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>Median read identity (x-axis) for each sample (points) stratified by basecalling model (colours) and read type (y-axis).</p></caption>
+<graphic xlink:href="585313v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2a">
+<title>Genome and variant truthset</title>
+<p>Ground truth reference assemblies were generated for each sample using ONT and Illumina reads (Genome assembly).</p>
+<p>Creating a truthset of variants for such a benchmark is nontrivial [<xref ref-type="bibr" rid="c23">23</xref>, <xref ref-type="bibr" rid="c24">24</xref>]. Theoretically, calling variants with respect to a sample’s own reference would yield no variant calls. Therefore, in order to have sufficient variants to assess calling methods, we generated a mutated version of a sample’s reference. Rather than simulate mutations randomly, which does not imitate natural mutational patterns, we took a pseudo-real approach [<xref ref-type="bibr" rid="c24">24</xref>, <xref ref-type="bibr" rid="c25">25</xref>]. We identified variants between a sample’s reference and a donor genome and applied these variants to our reference, thus creating a mutated reference. This approach has the advantage of a simulation, in that we can be certain of the truthset of variants, but with the added benefit of the variants being real differences between two genomes.</p>
+<p>For each sample, we chose a (donor) genome with ANI closest to 99.5% (see Truthset and reference generation). We then identified all variants between the sample and this donor using both minimap2 [<xref ref-type="bibr" rid="c26">26</xref>] and mummer [<xref ref-type="bibr" rid="c27">27</xref>]. We took the intersection of those variant sets and removed overlaps and duplicates, along with indels longer than 50bp. This variant truthset was then applied to the sample’s reference to create a mutated reference. This way we know exactly what variants are expected between a sample’s reads and the mutated reference, with no complications from large structural differences between the sample and donor. While incorporating structural variation would be an interesting and useful addition to the current work, we chose to focus here on small (&lt; 50bp) variants.</p>
+<p><bold><italic><xref rid="tbl1" ref-type="table">Table 1</xref></italic></bold> shows a summary of the samples used in this work, as well as the number of variants between each sample and its donor genome, along with the ANI between the two. In total, we have 14 samples from 14 different species, which span a wide range of GC content (30-66%). Despite the wide range in the number of SNPs (2102-57887), the number of indels is reasonably consistent (in the same order of magnitude) across the samples (see Suppl. Table S2 for full details).</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Summary of the ANI and number of variants found between each sample and its donor genome.</title></caption>
+<graphic xlink:href="585313v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2b">
+<title>Which method is the best?</title>
+<p>For this study, we benchmarked the performance of six variant callers on ONT sequencing data: BCFtools (v1.19; [<xref ref-type="bibr" rid="c28">28</xref>]), Clair3 (v1.0.5; [<xref ref-type="bibr" rid="c14">14</xref>]), DeepVariant (v1.6.0; [<xref ref-type="bibr" rid="c19">19</xref>]), FreeBayes (v1.3.7; [<xref ref-type="bibr" rid="c29">29</xref>]), Longshot (v0.4.5; [<xref ref-type="bibr" rid="c13">13</xref>]), and NanoCaller (v3.4.1; [<xref ref-type="bibr" rid="c15">15</xref>]). In addition, we called variants from each sample’s Illumina data using Snippy<sup><xref ref-type="fn" rid="fn2">2</xref></sup> to act as a performance comparison.</p>
+<p>Alignments of ONT reads to each sample’s mutated reference (Genome and variant truthset) were produced with minimap2 and provided to each variant caller. Variant calls were assessed against the truthset using vcfdist (v2.3.3; [<xref ref-type="bibr" rid="c30">30</xref>]), which classifies each called variant as either a true positive (TP) or false positive (FP; i.e., the variant is not in the truthset) and each truth variant as either TP (i.e., the variant was correctly identified by the caller) or false negative (FN; i.e., the caller missed the variant). With these classifications, precision, recall, and the F1 score were calculated at every increment of the VCF quality score for both SNPs and indels. <bold><italic><xref rid="fig2" ref-type="fig">Figure 2</xref></italic></bold> shows the highest</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p>The highest F1 score for each sample (points), stratified by basecalling model (colours), variant type (rows), and read type (columns). Illumina results (green) are included as a reference and do no have different basecalling models or read types. Note, longshot does not provide indel calls.</p></caption>
+<graphic xlink:href="585313v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>F1 score achieved by each variant caller for every sample, basecalling model, read type and variant type.</p>
+<p>The F1 score is the harmonic mean of precision and recall and acts as a good metric for overall evaluation. From <bold><italic><xref rid="fig2" ref-type="fig">Figure 2</xref></italic></bold> we see that Clair3 and DeepVariant produce the highest F1 scores for both SNPs and indels with both read types. Unsurprisingly, the sup basecalling model leads to the highest F1 scores across all variant callers; though hac is not much lower. SNP F1 scores of 99.99% are obtained from Clair3 and DeepVariant on sup-basecalled data. For indel calls, Clair3 achieves F1 scores of 99.53% and 99.20% for sup simplex and duplex, respectively, while DeepVariant scores 99.61% and 99.22%. The higher depth of the simplex reads likely explains why the best duplex indel F1 scores are slightly lower than simplex (see How much read depth is enough?). The precision and recall values at the highest F1 score can be seen in Supplementary Figures S1 and S2 (see Suppl. Table S3 for a summary and S4 for full details). What is clear from <bold><italic><xref rid="fig2" ref-type="fig">Figure 2</xref></italic></bold> is that reads basecalled with the fast model are an order of magnitude worse than the hac and sup models.</p>
+<p><bold><italic><xref rid="fig3" ref-type="fig">Figure 3</xref></italic></bold> shows the precision-recall curves for the sup basecalling model (see Suppl. Figures S3 and S4 for the hac and fast model curves, respectively) for each variant and read type - aggregated across samples to produce a single curve for each variant caller. Due to the right-angle-like shape of the Clair3 and DeepVariant curves, filtering based on low-value variant quality improves precision considerably for variant calls, without losing much recall. A similar pattern holds true for BCFtools SNP calls. The best Clair3 and DeepVariant F1 scores are obtained with no quality filtering on sup data, except for indels from duplex data were a value of 4 provides the best. See Suppl. Table S5 for the full details.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><p>Precision and recall curves for each variant caller (colours) on sequencing data basecalled with the sup model, stratified by variant type (rows) and read type (columns) and aggregated across samples. The curves are generated by using increasing variant quality score thresholds to filter variants and calculating precision and recall at each threshold. The lowest threshold is the lower right part of the curve, moving to the highest at the top left. Note, Longshot does not provide indel calls.</p></caption>
+<graphic xlink:href="585313v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>A striking feature of <bold><italic><xref rid="fig2" ref-type="fig">Figure 2</xref></italic></bold> and <bold><italic><xref rid="fig3" ref-type="fig">Figure 3</xref></italic></bold> is the comparison of the deep learning-based variant callers (Clair3, DeepVariant, and NanoCaller) to Illumina. For all variant and read types with hac or sup data - across F1 score, precision, and recall - these deep learning methods are as good as, or better than, Illumina: the median best SNP and indel F1 scores for Illumina are 99.45% and 95.76%, respectively. In the case of Clair3 and DeepVariant, they are an order of magnitude better. Traditional variant callers Longshot, BCFtools and FreeBayes match, or slightly exceed, Illumina for SNP calls with hac and sup model data. FreeBayes also matches Illumina for indel calls, however, BCFtools has reduced indel accuracy compared to Illumina for all models and read types (Longshot does not make indel calls). In all cases, fast model ONT data has a lower F1 score than Illumina, and only achieves parity in the best case for SNPs.</p>
+</sec>
+<sec id="s2c">
+<title>Understanding missed and false calls</title>
+<p>Conventional wisdom will likely leave most readers surprised at finding ONT data can provide better variant calls than Illumina. In order to convince ourselves (and others) of these results, we investigate the main causes for this difference.</p>
+<p>In light of the ONT read-level accuracy now exceeding Q20 (<bold><italic><xref rid="fig1" ref-type="fig">Figure 1</xref></italic></bold>; simplex sup), read length remains the primary difference between the two technologies. Suppl. Figure S2 highlights that the main contributor to the lower F1 score of Illumina is recall, rather than precision (Suppl. Figure S1). Given this, along with the shorter reads, we hypothesized that the Illumina errors could be related to alignment difficulties in repetitive or variant-dense regions.</p>
+<p><bold><italic><xref rid="fig4" ref-type="fig">Figure 4</xref></italic></bold> demonstrates that variant density and repetitive regions account for many of the false negatives (and thus lower recall). We define variant density as the number of variants (missed or called) in a 100bp window centred on each call. <bold><italic><xref rid="fig4" ref-type="fig">Figure 4</xref></italic></bold>a, in particular, reveals a bimodal distribution of variant density for Illumina FNs, with the second peak having very minimal overlap with the distribution of TP and FP calls. This secondary peak centres around 20 variants per 100bp. This is in contrast to one of the best-performing ONT variant callers, Clair3, showing no bimodal distribution for any call type (<bold><italic><xref rid="fig4" ref-type="fig">Figure 4</xref></italic></bold>b), with hardly any missed or false calls at a density of 20. Indeed, the read pileups show that Illumina reads cannot align across these variant-dense regions, while ONT can (Suppl. Figure S5); a density of 20 is a much larger proportion of an Illumina read when compared to an ONT read.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><p>Impact of variant density and repetitive regions on Illumina variant calling. Variant density is the number of (true or false) variants in a 100bp window centred on a call. a and b) the distribution of variant densities for true positive (TP), false positive (FP) and false negative (FN) calls. The y-axis, percent, indicates the percent of all calls of that decision that fall within the density bin on the x-axis. Illumina calls, aggregated across all samples are shown in a, while b shows Clair3 calls from simplex sup-basecalled reads at 100x depth. c) impact of repetitive regions on the F1 score (y-axis) for Clair3 (100x simplex sup) and Illumina. The x-axis indicates whether variants that fall within repetitive regions are excluded from the calculation of the F1 score. Points indicate the F1 score for a single sample.</p></caption>
+<graphic xlink:href="585313v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In addition to looking at the impact of variant density, we also assessed the change in F1 score when masking repetitive regions of the genome (Identifying repetitive regions). Again, due the shorter Illumina read length, we expect short reads to have a harder time aligning in repetitive regions than ONT [<xref ref-type="bibr" rid="c31">31</xref>]. The read pileups again illustrate the troubles Illumina reads have in repetitive regions, with Suppl. Figure S6 showing a number of missing variants and alignment gaps exclusive to Illumina data. These alignment difficulties are further quantified by the increase in F1 score for Illumina data when repetitive regions are masked (<xref ref-type="fig" rid="fig4"><bold><italic>Figure 4</italic></bold>c</xref>). Without masking, the median F1 score across all samples for Illumina is 99.3% and this increases to 99.7% when repetitive regions are masked - Clair3 100x simplex sup data only has an increase of 0.003%.</p>
+<p>Indels have traditionally been a systematic weakness for ONT sequencing data; primarily driven by variability in the length of homopolymeric regions as determined by basecallers [<xref ref-type="bibr" rid="c9">9</xref>]. Having seen the drastic improvements in read accuracy in <bold><italic><xref rid="fig1" ref-type="fig">Figure 1</xref></italic></bold>, we sought to determine whether false positive indel calls are still a byproduct of homopolymer-driven errors.</p>
+<p>When analysing the best-performing ONT caller, Clair3, we see that for reads basecalled with the fast model, there is a tendency to get homopolymer lengths wrong by 1 or 2bp (<bold><italic><xref rid="fig5" ref-type="fig">Figure 5</xref></italic></bold>), though there is an equal amount of non-homopolymeric false indel calls. In contrast, the sup model produces a drastically reduced number of false indel calls of both kinds; with counts and a profile similar to Illumina. The hac model shows a marked improvement over the fast model, though it still produces a noticeable number of false indel calls, predominantly getting homopolymers wrong by 1bp. DeepVariant showed a similar error profile to Clair3 (Suppl. Figure S8), while FreeBayes (Suppl. Figure S9) and NanoCaller (Suppl. Figure S10) were not much worse. However, BCFtools (Suppl. Figure S7) suffers from this homopolymeric indel error bias, even with sup model reads, indicating that while the sup basecaller clearly has a reduced bias, it still exists to a certain extent, and the deep learning methods circumvent this by training models that take these systematic issues into account. Therefore, an honourable mention must go to FreeBayes, which is a traditional variant caller, and therefore handles errors with no <italic>a priori</italic> bias information.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5.</label>
+<caption><p>Relationship between indel length (x-axis) and homopolymer length (y-axis) for false positive (FP) indel calls for Clair3 100x simplex fast (top left), hac (top right), and sup (lower left) calls. Illumina is shown in the lower right for reference. The vertical red line indicates the threshold above which we deem a run of the same nucleotide to be a ‘true’ homopolymer. Indel length is the number of bases inserted/deleted for an indel, whereas the homopolymer length indicates how long the tract of the same nucleotide is after the indel. The colour of a cell indicates how many FP indels of that indel-homopolymer length combination.</p></caption>
+<graphic xlink:href="585313v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Lastly, we did not see any systematic indel bias in the context of missed calls (Suppl. Figures S11-S15), especially when compared to Illumina indel error profiles.</p>
+</sec>
+<sec id="s2d">
+<title>How much read depth is enough?</title>
+<p>Having established the accuracy of variant calls from ‘full depth’ ONT datasets (100x), we turn to answering the question of how much ONT read depth is required to reach a precision or recall value of interest; this value will likely be different for different use cases and different levels of resource access. This question is a somewhat unique aspect of ONT, where sequencing can be analysed, and stopped, in real-time, when a ‘sufficient’ amount of data has been generated. An important consideration when time and/or resources are constrained.</p>
+<p>To answer this question, we randomly subsampled each ONT readset with rasusa (v0.8.0; [<xref ref-type="bibr" rid="c32">32</xref>]) to average depths of 5, 10, 25, 50, and 100x and called variants with these reduced sets. Note, due to only one sample having a full readset duplex depth of 100x or more, 50x was the maximum read depth used for that read type, while 100x was used for simplex - these maximum read depths are the read sets that have been used in the preceding sections.</p>
+<p>The F1 score, precision, and recall, as a function of read depth, is shown in <bold><italic><xref rid="fig6" ref-type="fig">Figure 6</xref></italic></bold> and <bold><italic><xref rid="fig7" ref-type="fig">Figure 7</xref></italic></bold> for SNPs and indels, respectively. As expected, precision and recall decrease as read depth is reduced. For SNPs, this drop is especially noticeable when going below 25x, with the same being true for indels with sup data. However, perhaps the most compelling result from this analysis is the finding that using Clair3 or DeepVariant on 10x of ONT sup simplex data provides F1 scores consistent with, or better than, full-depth Illumina for both SNPs and indels (see Table S1 for Illumina read depths); the same is also true of duplex hac or sup reads.</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6.</label>
+<caption><p>Effect of read depth (x-axis) on the highest SNP F1 score, and precision and recall at that F1 score (y-axis), for each variant caller (colours). Each column is a basecall model and read type combination. The grey bars indicate the number of samples with at least that much read depth in the full read set. Samples with less than that depth were not used to calculate that depth’s metrics. Bars on each point at each depth depict the 95% confidence interval. The horizontal red dashed line is the full-depth Illumina value for that metric, with the red bands indicating the 95% confidence interval.</p></caption>
+<graphic xlink:href="585313v2_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7.</label>
+<caption><p>Effect of read depth (x-axis) on the highest indel F1 score, and precision and recall at that F1 score (y-axis), for each variant caller (colours). Each column is a basecall model and read type combination. The grey bars indicate the number of samples with at least that much read depth in the full read set. Samples with less than that depth were not used to calculate that depth’s metrics. Bars on each point at each depth depict the 95% confidence interval. The horizontal red dashed line is the full-depth Illumina value for that metric, with the red bands indicating the 95% confidence interval.</p></caption>
+<graphic xlink:href="585313v2_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>With 5x of ONT read depth the F1 score is lower than Illumina for almost all variant caller and basecalling models. However, BCFtools surprisingly produces SNP F1 scores on par with Illumina on duplex sup reads. Despite the inferior F1 scores across the board at 5x, SNP precision remains above Illumina with duplex reads for all methods except NanoCaller, and calls from Clair3 and DeepVariant simplex sup data.</p>
+</sec>
+<sec id="s2e">
+<title>What computational resources do I need?</title>
+<p>The final consideration when calling variants is what computational resources are required. For those with the luxury of high-performance computing (HPC) access, this may be a trivial concern. However, due to the small size of bacterial genomes in comparison to eukaryotes, personal computers, such as laptops, are a common platform on which to analyse sequencing data. The two main resource types that can be limiting are memory and runtime. For variant calling, the heaviest steps in analysis are aligning the sequencing reads to a reference, and then taking that alignment and calling variants from it. Though we do note that if the person performing the variant calling has received the raw (pod5) ONT data, basecalling also needs to be accounted for, as depending on how much sequencing was done, this step can also be resource-intensive.</p>
+<p>In <bold><italic><xref rid="fig8" ref-type="fig">Figure 8</xref></italic></bold> we present the runtime (expressed as seconds per megabase of sequencing data) and maximum memory usage for read alignment and execution of each variant caller (see Figure S16 and Table S7 for basecalling GPU runtimes). Calling variants with DeepVariant was both the slowest (median 5.7s/Mbp) and most memory-consuming (median 8GB) step. For a 4Mbp genome with 100x of read depth, this equates to a runtime of 38 minutes. However, FreeBayes has the largest variation in runtime, with the maximum (597s/Mbp) equating to 2.75 days on the previous example. For the other best-performing variant caller in this study, Clair3, the median memory usage and runtime were 1.6GB and 0.86s/Mbp (&lt; 6 minutes on the example), respectively. See Suppl. Table S6 for full details.</p>
+<fig id="fig8" position="float" fig-type="figure">
+<label>Figure 8.</label>
+<caption><p>Computational resource usage of alignment and each variant caller (y-axis and colours). The top panel shows the maximum memory usage (x-axis) and the lower panel shows the runtime as a function of the CPU time (seconds) divided by the number of basepairs in the readset (seconds per megabasepairs; x-axis). Each point represents a single run across read depths, basecalling models, read types, and samples for that variant caller (or alignment). s=seconds; m=minutes; MB=megabytes; GB=gigabytes; Mbp=megabasepairs.</p></caption>
+<graphic xlink:href="585313v2_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this study, we evaluated the accuracy of bacterial variant calls derived from Oxford Nanopore Technologies (ONT) using both conventional and deep learning-based tools. Our findings show that deep learning approaches, specifically Clair3 and DeepVariant, deliver high accuracy in SNP and indel calls from the latest high-accuracy basecalled ONT data, outperforming Illumina-based methods, with Clair3 achieving median F1 scores of 99.99% for SNPs and 99.53% for indels.</p>
+<p>Our dataset comprised deep sequencing of 14 bacterial species using the latest ONT R10.4.1 flowcells, with a 5 kHz sampling rate, and complementary deep Illumina sequencing. Consistent with previous studies [<xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c12">12</xref>], we observed read accuracies greater than 99.0% (Q20) and 99.9% for simplex and duplex reads, respectively (<bold><italic><xref rid="fig1" ref-type="fig">Figure 1</xref></italic></bold>).</p>
+<p>The high-quality sequencing data enabled the creation of near-perfect reference genomes, crucial for evaluating variant calling accuracy. While not claiming perfection for these genomes, we consider them to be as accurate as current technology allows (or as philosophically possible) [<xref ref-type="bibr" rid="c12">12</xref>, <xref ref-type="bibr" rid="c33">33</xref>].</p>
+<p>To benchmark variant calling, we utilised a variant truthset generated by applying known differences between closely related genomes to a reference. This pseudo-real method offers a realistic evaluation framework and a reliable truthset for assessing variant calling accuracy [<xref ref-type="bibr" rid="c24">24</xref>, <xref ref-type="bibr" rid="c25">25</xref>].</p>
+<p>Our comparison of variant calling performances across different methods revealed that deep learning techniques provided the highest F1 scores for SNP and indel detection. This not only highlights the potential of deep learning in genomic analyses but also suggests a paradigm shift towards more sophisticated computational approaches for variant calling. The superior performance of these methods has been established for human variant calls [<xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c17">17</xref>]; however, as these models were all trained on human data, we sought to determine if these results generalise to bacteria. The resounding answer from our work is: yes, they certainly do.</p>
+<p>The investigation into the causes of missed and false variant calls brings to light the inherent challenges posed by sequencing technology limitations, particularly in relation to read length, alignment issues in complex genomic regions, and variable indel length in homopolymers. Our findings show that variant density and repetitive regions impede the accuracy of Illumina variant calling due to the alignment limitations inherent in short reads. We also found that with the huge improvements in ONT read accuracy, coupled with deep learning-based variant callers, homopolymerinduced false positive indel calls, traditionally a major systematic bias of ONT data [<xref ref-type="bibr" rid="c9">9</xref>], are no longer a concern [<xref ref-type="bibr" rid="c12">12</xref>].</p>
+<p>Having established the accuracy and error sources of modern methods, we examined the impact of read depth on variant calling accuracy, revealing that even at reduced read depths of 10x, high accuracy in variant calling can be achieved, particularly with the use of super high-accuracy basecalling models and deep learning-based variant calling algorithms. This finding has significant implications for sequencing projects with limited resources, suggesting that strategic choices in technology and methodologies can still yield reliable genomic analyses. We found that with duplex super high-accuracy ONT data, even 5x depth was sufficient for SNPs on par with Illumina. Having such confidence in low-depth calls will no doubt be a boon for many clinical and public health applications where sequencing direct-from-sample is desired [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c34">34</xref>–<xref ref-type="bibr" rid="c36">36</xref>].</p>
+<p>Lastly, the consideration of computational resource requirements for variant calling highlights a practical aspect of genomic research, particularly for individuals and institutions with limited access to high-performance computing facilities [<xref ref-type="bibr" rid="c7">7</xref>, <xref ref-type="bibr" rid="c8">8</xref>, <xref ref-type="bibr" rid="c37">37</xref>]. Our findings reveal a wide range in the computational demands of different variant calling methods, with the worst-case require over two days to generate variant calls (FreeBayes). However, in most cases runtime is less than 40 minutes, with Clair3 having a median runtime in the order of 6 minutes. In terms of memory usage, all methods use less than 8GB, making them compatible with most laptops.</p>
+<p>There are two main limitations to this work. The first is that we only assess small variant and ignored structural variants. Zhou <italic>et al</italic>. benchmarked structural variant calling from ONT data [<xref ref-type="bibr" rid="c38">38</xref>], though this focused on human sequencing data. Generating a truthset of structural variants between two genomes is, in itself, a difficult task. However, we believe such an undertaking with a thorough investigation of structural variant calling methods for bacterial genomes would be highly beneficial. The second limitation is not using a diverse range ANI values for selecting the variant donor genomes when generating the truthset. Previous work from Bush <italic>et al</italic>. examined different diversity thresholds for selecting reference genomes when calling variants from Illumina data, and found it to be one of the main differentiating factors in accuracy [<xref ref-type="bibr" rid="c22">22</xref>]. Our results mirror this to an extent, showing the reduction in Illumina accuracy as the variant density increases, though it would be interesting to determine whether the divergence in reference genomes has an affect on ONT variant calling accuracy. Nevertheless, to maintain our focus on the nuances of variant calling methods, including basecalling models, read types, error types, and the influence of read depth, we decided that introducing another layer of complexity into our benchmark could potentially obscure some of the insights.</p>
+<p>In conclusion, this study presents a comprehensive evaluation of the accuracy of bacterial variant calls using Oxford Nanopore Technologies (ONT) and underscores the superior performance of deep learning-based tools, notably Clair3 and DeepVariant, in SNP and indel detection. Our extensive dataset and rigorous benchmarking against nearly perfect reference genomes have demonstrated the significant advancements in sequencing accuracy, especially with the latest ONT technologies. Our analysis revealed the diminishing impact of previously challenging factors like homopolymer-associated errors due to improvements in ONT read accuracy and the application of deep learning variant callers. Additionally, our exploration into the effects of read depth on variant calling accuracy and the computational demands of different variant calling methods has highlighted the feasibility of achieving high accuracy with lower read depths and the practicality of these methods for use in settings with limited computational resources. The capability to achieve reliable variant calling with reduced sequencing depth and computational requirements marks a significant step forward in making advanced genomic analysis more accessible and impactful.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Sequencing</title>
+<p>Bacterial isolates were streaked onto agar plates and grown overnight at 37°C. <italic>Mycobacterium tuberculosis, Streptococcus pyogenes</italic>, and <italic>Streptococcus dysgalatiae</italic> subsp. <italic>equisimilis</italic> were grown in liquid media of 7H9 or TSB with shaking until reaching high cell density (OD ∼ 1; see Suppl. Section S1 for <italic>Streptococcus</italic> sample selection). The cultures were centrifuged at 13000rpm for 10 minutes and cell pellets were collected. Bacteria was lysed with appropriate enzymatic treatment except for <italic>Mycobacterium</italic> and <italic>Streptococcus</italic>, which were lysed by bead beating (PowerBead, 0.5mm glass beads (13116-50) or Lysing Matrix Y (116960050-CF) and Precellys or Tissue lyser (Qiagen)). DNA extraction was performed by sodium acetate precipitation and further Ampure XP bead purification (Beckman Coulter) or either Beckman Coulter GenFind v2 (A41497) or QIAGEN Blood and Tissue DNEasy kit (69506). Illumina library preparation was performed using Illumina DNA prep (20060059) using quarter reagents and Illumina DNA/RNA UD Indexes. Short-read whole genome sequencing was performed on an Illumina NextSeq 2000 or MiSeq with a 150bp PE kit. ONT library preparation was performed using either Rapid Barcoding Kit V14 (SQK-RBK114.96) or Native Barcoding Kit V14 (SQK-NBD114.96). Long-read whole genome sequencing was performed on a MinION Mk1b or GridION using R10.4.1 MinION flow cells (FLO-MIN114).</p>
+</sec>
+<sec id="s4b">
+<title>Basecalling and quality control</title>
+<p>Raw ONT data were basecalled with Dorado<sup><xref ref-type="fn" rid="fn3">3</xref></sup> (v0.5.0) using the v4.3.0 models <italic>fast</italic> (dna_r10.4.1 _e8.2_400bps_fast@v4.3.0), <italic>hac</italic> (dna_r10.4.1_e8.2_400bps_hac@v4.3.0), and <italic>sup</italic> (dna_r10.4.1_e8.2 _400bps_sup@v4.3.0). Duplex reads were additionally generated using the <monospace><monospace>duplex</monospace></monospace> subcommand of Dorado with hac and sup models as fast is not compatible with duplex. Reads shorter than 1000bp or with a quality score below 10 were removed with SeqKit (v2.6.1; [<xref ref-type="bibr" rid="c39">39</xref>]) and each readset was randomly subsampled to a maximum mean read depth of 100x with Rasusa (v0.8.0; [<xref ref-type="bibr" rid="c32">32</xref>]).</p>
+<p>Illumina reads were preprocessed with fastp (v0.23.4; [<xref ref-type="bibr" rid="c40">40</xref>]) to remove adapter sequences, trim low-quality bases from the ends of the reads, and remove duplicate reads and reads shorter than 30bp.</p>
+</sec>
+<sec id="s4c">
+<title>Genome assembly</title>
+<p>Ground truth assemblies were generated for each sample as per Wick <italic>et al</italic>. [<xref ref-type="bibr" rid="c33">33</xref>]. Briefly, the unfiltered ONT simplex sup reads were filtered with Filtlong<sup><xref ref-type="fn" rid="fn4">4</xref></sup> (v0.2.1) to keep the best 90% (<monospace>-p 90</monospace>) and fastp (default settings) was used to process the raw Illumina reads. We performed 24 separate assemblies using the <italic>Extra-thorough assembly</italic> instructions in Trycycler’s (v0.5.4; [<xref ref-type="bibr" rid="c41">41</xref>]) documentation<sup><xref ref-type="fn" rid="fn5">5</xref></sup>. Assemblies were combined into a single consensus assembly with Trycycler and Illumina reads were used to polish that assembly using Polypolish (v0.6.0; default settings; [<xref ref-type="bibr" rid="c42">42</xref>]) and Py-POLCA (v0.3.1; [<xref ref-type="bibr" rid="c43">43</xref>, <xref ref-type="bibr" rid="c44">44</xref>]) with <monospace>--careful</monospace>. Manual curation and investigation of all polishing changes was made as per Wick <italic>et al</italic>. [<xref ref-type="bibr" rid="c33">33</xref>] (e.g., for very long homopolymers, the correct length was chosen as per Illumina reads support).</p>
+</sec>
+<sec id="s4d">
+<title>Truthset and reference generation</title>
+<p>To generate the variant truthset for each sample, we identified all variants between the sample and a <italic>donor</italic> genome. To select the variant-donor genome for a given sample, we downloaded all RefSeq assemblies for that species (up to a maximum of 10000) using genome_updater<sup><xref ref-type="fn" rid="fn6">6</xref></sup> (v0.6.3; [<xref ref-type="bibr" rid="c45">45</xref>]). ANI was calculated between each downloaded genome and the sample reference using skani (v0.2.1; [<xref ref-type="bibr" rid="c46">46</xref>]). We only kept genomes with an ANI, <italic>a</italic>, such that 98.40% ≤ <italic>a</italic> &lt;= 99.80%. In addition, we excluded any genomes with CheckM[<xref ref-type="bibr" rid="c47">47</xref>] completeness less than 98% and contamination greater than 5%. We then selected the genome with the ANI closest to 99.50%. Our reasoning for this range exclusion is that genomes with <italic>a</italic> &lt; 99.80% are almost always members of the same sequence type (ST)[<xref ref-type="bibr" rid="c48">48</xref>, <xref ref-type="bibr" rid="c49">49</xref>], and we found very little variation between them (data not shown).</p>
+<p>We then identified variants between the reference and donor genomes using both minimap2 (v2.26; [<xref ref-type="bibr" rid="c26">26</xref>]) and mummer (v4.0.0rc1; [<xref ref-type="bibr" rid="c27">27</xref>]). We took the intersection of the variants identified by minimap2 and mummer into a single VCF and used BCFtools (v1.19; [<xref ref-type="bibr" rid="c28">28</xref>]) to decompose multi nucleotide polymorphisms (MNPs) into SNPs, left-align and normalise indels, remove duplicate and overlapping variants, and exclude any indel longer than 50bp. The resulting VCF file is our truthset.</p>
+<p>Next, we generated a mutated reference genome, which we used as the reference against which variants were called by the different methods we assess. BCFtools’ <monospace>consensus</monospace> subcommand was used to apply the truthset of variants to the sample reference, thus producing a mutated reference.</p>
+</sec>
+<sec id="s4e">
+<title>Alignment and variant calling</title>
+<p>ONT reads were aligned to the mutated reference with minimap2 using options <monospace>--cs</monospace>, <monospace>--MD</monospace>, and <monospace>-aLx map-ont</monospace> and output to a BAM alignment file.</p>
+<p>Variant calling was performed from the alignment files with BCFtools (v1.19; [<xref ref-type="bibr" rid="c28">28</xref>]), Clair3 (v1.0.5; [<xref ref-type="bibr" rid="c14">14</xref>]), DeepVariant (v1.6.0; [<xref ref-type="bibr" rid="c19">19</xref>]), FreeBayes (v1.3.7; [<xref ref-type="bibr" rid="c29">29</xref>]), Longshot (v0.4.5; [<xref ref-type="bibr" rid="c13">13</xref>]), and NanoCaller (v3.4.1; [<xref ref-type="bibr" rid="c15">15</xref>]). Individual parameters used for each variant caller can be found in the accompanying GitHub repository<sup><xref ref-type="fn" rid="fn7">7</xref></sup>.</p>
+<p>Where a variant caller provided an option to set the expected ploidy, haploid was given. In addition, where a minimum read depth or base quality option was available, a value of 2 and 10, respectively, was used in order to try and make downstream assessment and filtering consistent across callers.</p>
+<p>For Clair3, the pretrained models for Dorado model v4.3.0 provided by ONT<sup><xref ref-type="fn" rid="fn8">8</xref></sup> were used. However, as no fast model is available, we used the hac model with the fast-basecalled reads. The pretrained model option <monospace>--model_type ONT_R104</monospace> was used with DeepVariant, and the default model was used for NanoCaller.</p>
+<p>For the Illumina variant calls that act as a benchmark to compare ONT against, we chose Snippy<sup><xref ref-type="fn" rid="fn9">9</xref></sup> due to being tailored for haploid genomes and being one of the best performing variant callers on Illumina data[<xref ref-type="bibr" rid="c22">22</xref>]. Snippy performs alignmen of read with BWA-MEM [<xref ref-type="bibr" rid="c50">50</xref>] and calls variants with FreeBayes.</p>
+<p>Variant call files (VCFs) are then filtered to remove overlapping variants, make heterzygous calls homozygous for the allele with the most depth, normalise and left-align indels, break MNPs into SNPs and remove indels longer than 50bp, all with BCFtools.</p>
+</sec>
+<sec id="s4f">
+<title>Variant call assessment</title>
+<p>Filtered VCFs were assessed with vcfdist (v2.3.3; [<xref ref-type="bibr" rid="c30">30</xref>]) using the truth VCFs and mutated references from Truthset and reference generation. We disabled partial credit with <monospace>--credit-threshold 1.0</monospace> and set the maximum variant quality threshold (<monospace>-mx</monospace>) to the maximum in the VCF being assessed.</p>
+</sec>
+<sec id="s4g">
+<title>Identifying repetitive regions</title>
+<p>To identify repetitive regions in the mutated reference, we used the following mummer utilities. <monospace>nucmer --maxmatch --nosimplify</monospace> to align the reference against itself and retain non-unique alignments. We then passed the output into <monospace>show-coords -rTH -I 60</monospace> to obtain the coordinates for all alignments with an identity of 60% or greater. Alignments where the start and end coordinates of the alignment do not match are considered as repeats and these are output in the BED format, with intervals being merged with BEDtools [<xref ref-type="bibr" rid="c51">51</xref>].</p>
+</sec>
+</sec>
+<sec id="d1e1126" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="d1e1234">
+<label>Supplementary Tables</label>
+<media xlink:href="supplements/585313_file02.xlsx"/>
+</supplementary-material>
+<supplementary-material id="d1e1241">
+<label>Supplementary Material</label>
+<media xlink:href="supplements/585313_file03.pdf"/>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<sec id="s5">
+<title>Code availability</title>
+<p>All code to perform the analyses in this work are available on GitHub<sup><xref ref-type="fn" rid="fn10">10</xref></sup> and archived on Zenodo [<xref ref-type="bibr" rid="c52">52</xref>].</p>
+</sec>
+<sec id="s6">
+<title>Data availability</title>
+<p>The unfiltered fastq, and assembly files generated in this study have been submitted to the NCBI BioProject database<sup><xref ref-type="fn" rid="fn11">11</xref></sup> under accession numbers PRJNA1087001 and PRJNA1042815. See Suppl. Table S8 for a list of all BioSample and Run accessions. Variant truthsets and associated data are archived on Zenodo [<xref ref-type="bibr" rid="c53">53</xref>].</p>
+<p>Acknowledgements</p>
+<p>This research was performed in part at Doherty Applied Microbial Genomics, Department of Microbiology and Immunology, The University of Melbourne at the Peter Doherty Institute for Infection and Immunity. This research was supported by the University of Melbourne’s Research Computing Services and the Petascale Campus Initiative. We are grateful to Bart Currie and Tony Korman for providing the <italic>Streptococcus dysgalactiae</italic> (MMC234 202311) and <italic>Streptococcus pyogenes</italic> (RDH275 202311) samples. We thank Zamin Iqbal and Martin Hunt for insightful discussions relating to truthset and reference generation. We would also like to thank Romain Guérillot and Miranda Pitt for invaluable feedback throughout the project.</p>
+</sec>
+<sec id="s7">
+<title>Author contributions</title>
+<p>Michael B. Hall: Conceptualization, Data curation, Formal Analysis, Investigation, Methodology, Project administration, Software, Writing – original draft, Visualization, Writing – review &amp; editing. Ryan R. Wick: Conceptualization, Data curation, Formal Analysis, Investigation, Methodology, Software, Writing – original draft, Writing – review &amp; editing. Louise M. Judd: Conceptualization, Data curation, Investigation, Methodology, Project administration, Resources, Writing – original draft, Writing – review &amp; editing. An N. T. Nguyen: Investigation, Methodology, Resources, Writing – original draft, Writing – review &amp; editing. Eike J. Steinig: Conceptualization, Data curation, Formal Analysis, Investigation, Methodology, Software, Writing – review &amp; editing. Ouli Xie: Methodology, Resources, Writing – review &amp; editing. Mark R. Davies: Methodology, Resources, Supervision, Writing – review &amp; editing. Torsten Seemann: Conceptualization, Methodology, Supervision, Writing – review &amp; editing. Lachlan J. M. Coin: Conceptualization, Funding acquisition, Methodology, Resources, Supervision, Writing – original draft, Writing – review &amp; editing. Timothy P. Stinear: Conceptualization, Funding acquisition, Methodology, Resources, Supervision, Writing – review &amp; editing.</p>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>James</given-names> <surname>Stimson</surname></string-name> <etal>et al.</etal> <article-title>‘Beyond the SNP Threshold: Identifying Outbreak Clusters Using Inferred Transmissions’</article-title>. In: <source>Molecular Biology and Evolution</source> <volume>36</volume>.<issue>3</issue> (<year>2019</year>), pp. <fpage>587</fpage>–<lpage>603</lpage>. ISSN: <issn>0737-4038</issn>. DOI: <pub-id pub-id-type="doi">10.1093/molbev/msy242</pub-id>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>Dropen</given-names> <surname>Sheka</surname></string-name>, <string-name><given-names>Nikolay</given-names> <surname>Alabi</surname></string-name>, and <string-name><given-names>Paul M K</given-names> <surname>Gordon</surname></string-name>. <article-title>‘Oxford nanopore sequencing in clinical microbiology and infection diagnostics’</article-title>. In: <source>Briefings in Bioinformatics</source> <volume>22</volume>.<issue>5</issue> (<year>2021</year>), <fpage>bbaa403</fpage>. ISSN: <issn>1477-4054</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bib/bbaa403</pub-id>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>Timothy M</given-names> <surname>Walker</surname></string-name> <etal>et al.</etal> <article-title>‘The 2021 WHO catalogue of Mycobacterium tuberculosis complex mutations associated with drug resistance: a genotypic analysis’</article-title>. In: <source>The Lancet Microbe</source> (<year>2022</year>). ISSN: <issn>2666-5247</issn>. DOI: <pub-id pub-id-type="doi">10.1016/s2666-5247(21)00301-3</pub-id>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>Frederic</given-names> <surname>Bertels</surname></string-name> <etal>et al.</etal> <article-title>‘Automated Reconstruction of Whole-Genome Phylogenies from Short-Sequence Reads’</article-title>. In: <source>Molecular Biology and Evolution</source> <volume>31</volume>.<issue>5</issue> (<year>2014</year>), pp. <fpage>1077</fpage>–<lpage>1088</lpage>. ISSN: <issn>0737-4038</issn>. DOI: <pub-id pub-id-type="doi">10.1093/molbev/msu088</pub-id>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>Claire L</given-names> <surname>Gorrie</surname></string-name> <etal>et al.</etal> <article-title>‘Key parameters for genomics-based real-time detection and tracking of multidrug-resistant bacteria: a systematic analysis’</article-title>. In: <source>The Lancet Microbe</source> (<year>2021</year>). ISSN: <issn>2666-5247</issn>. DOI: <pub-id pub-id-type="doi">10.1016/s2666-5247(21)00149-x</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>Norelle L.</given-names> <surname>Sherry</surname></string-name> <etal>et al.</etal> <article-title>‘An ISO-certified genomics workflow for identification and surveillance of antimicrobial resistance’</article-title>. In: <source>Nature Communications</source> <volume>14</volume>.<issue>1</issue> (<year>2023</year>), p. <fpage>60</fpage>. ISSN: <issn>2041-1723</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41467-022-35713-4</pub-id>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>Nuno Rodrigues</given-names> <surname>Faria</surname></string-name> <etal>et al.</etal> <article-title>‘Mobile real-time surveillance of Zika virus in Brazil’</article-title>. In: <source>Genome Medicine</source> <volume>8</volume>.<issue>1</issue> (<year>2016</year>), p. <fpage>97</fpage>. DOI: <pub-id pub-id-type="doi">10.1186/s13073-016-0356-2</pub-id>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>Thomas</given-names> <surname>Hoenen</surname></string-name> <etal>et al.</etal> <article-title>‘Nanopore Sequencing as a Rapidly Deployable Ebola Outbreak Tool’</article-title>. In: <source>Emerging Infectious Diseases</source> <volume>22</volume>.<issue>2</issue> (<year>2016</year>), pp. <fpage>331</fpage>–<lpage>334</lpage>. ISSN: <issn>1080-6040</issn>. DOI: <pub-id pub-id-type="doi">10.3201/eid2202.151796</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>Clara</given-names> <surname>Delahaye</surname></string-name> and <string-name><given-names>Jacques</given-names> <surname>Nicolas</surname></string-name>. <article-title>‘Sequencing DNA with nanopores: Troubles and biases’</article-title>. In: <source>PLOS ONE</source> <volume>16</volume>.<issue>10</issue> (<year>2021</year>), <fpage>e0257521</fpage>. ISSN: <issn>1932-6203</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pone.0257521</pub-id>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>Nicholas D.</given-names> <surname>Sanderson</surname></string-name> <etal>et al.</etal> <article-title>‘Comparison of R9.4.1/Kit10 and R10/Kit12 Oxford Nanopore flowcells and chemistries in bacterial genome reconstruction’</article-title>. In: <source>Microbial Genomics</source> <volume>9</volume>.<issue>1</issue> (<year>2023</year>), p. <fpage>000910</fpage>. ISSN: <issn>2057-5858</issn>. DOI: <pub-id pub-id-type="doi">10.1099/mgen.0.000910</pub-id>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>Nicholas D.</given-names> <surname>Sanderson</surname></string-name> <etal>et al.</etal> <article-title>‘Evaluation of the accuracy of bacterial genome reconstruction with Oxford Nanopore R10.4.1 long-read-only sequencing’</article-title>. In: <source>bioRxiv</source> (<year>2024</year>). DOI: <pub-id pub-id-type="doi">10.1101/2024.01.12.575342</pub-id>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>Mantas</given-names> <surname>Sereika</surname></string-name> <etal>et al.</etal> <article-title>‘Oxford Nanopore R10.4 long-read sequencing enables the generation of near-finished bacterial genomes from pure cultures and metagenomes without short-read or reference polishing’</article-title>. In: <source>Nature Methods</source> (<year>2022</year>), pp. <fpage>1</fpage>–<lpage>4</lpage>. ISSN: <issn>1548-7091</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41592-022-01539-7</pub-id>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><string-name><given-names>Peter</given-names> <surname>Edge</surname></string-name> and <string-name><given-names>Vikas</given-names> <surname>Bansal</surname></string-name>. <article-title>‘Longshot enables accurate variant calling in diploid genomes from single-molecule long read sequencing’</article-title>. In: <source>Nature Communications</source> <volume>10</volume>.<issue>1</issue> (<year>2019</year>), p. <fpage>4660</fpage>. ISSN: <issn>2041-1723</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41467-019-12493-y</pub-id>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><string-name><given-names>Zhenxian</given-names> <surname>Zheng</surname></string-name> <etal>et al.</etal> <article-title>‘Symphonizing pileup and full-alignment for deep learning-based long-read variant calling’</article-title>. In: <source>Nature Computational Science</source> <volume>2</volume>.<issue>12</issue> (<year>2022</year>), pp. <fpage>797</fpage>–<lpage>803</lpage>. ISSN: <issn>2662-8457</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s43588-022-00387-x</pub-id>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>Mian Umair</given-names> <surname>Ahsan</surname></string-name> <etal>et al.</etal> <article-title>‘NanoCaller for accurate detection of SNPs and indels in difficult-to-map regions from long-read sequencing by haplotype-aware deep neural networks’</article-title>. In: <source>Genome Biology</source> <volume>22</volume>.<issue>1</issue> (<year>2021</year>), p. <fpage>261</fpage>. ISSN: <issn>1474-760X</issn>. DOI: <pub-id pub-id-type="doi">10.1186/s13059-021-02472-2</pub-id>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>Nathan D.</given-names> <surname>Olson</surname></string-name> <etal>et al.</etal> <article-title>‘Variant calling and benchmarking in an era of complete human genome sequences’</article-title>. In: <source>Nature Reviews Genetics</source> <volume>24</volume>.<issue>7</issue> (<year>2023</year>), pp. <fpage>464</fpage>–<lpage>483</lpage>. ISSN: <issn>1471-0064</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41576-023-00590-0</pub-id>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>Nathan D.</given-names> <surname>Olson</surname></string-name> <etal>et al.</etal> <article-title>‘PrecisionFDA Truth Challenge V2: Calling variants from short and long reads in difficult-to-map regions’</article-title>. In: <source>Cell Genomics</source> <volume>2</volume>.<issue>5</issue> (<year>2022</year>), p. <fpage>100129</fpage>. ISSN: <issn>2666-979X</issn>. DOI: <pub-id pub-id-type="doi">10.1016/j.xgen.2022.100129</pub-id>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>Surui</given-names> <surname>Pei</surname></string-name> <etal>et al.</etal> <article-title>‘Benchmarking variant callers in next-generation and third-generation sequencing analysis’</article-title>. In: <source>Briefings in Bioinformatics</source> <volume>22</volume>.<issue>3</issue> (<year>2021</year>), <fpage>bbaa148</fpage>. ISSN: <issn>1477-4054</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bib/bbaa148</pub-id>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>Ryan</given-names> <surname>Poplin</surname></string-name> <etal>et al.</etal> <article-title>‘A universal SNP and small-indel variant caller using deep neural networks’</article-title>. In: <source>Nature Biotechnology</source> <volume>36</volume>.<issue>10</issue> (<year>2018</year>), pp. <fpage>983</fpage>–<lpage>987</lpage>. ISSN: <issn>1087-0156</issn>. DOI: <pub-id pub-id-type="doi">10.1038/nbt.4235</pub-id>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>Alan</given-names> <surname>Tourancheau</surname></string-name> <etal>et al.</etal> <article-title>‘Discovering multiple types of DNA methylation from bacteria and microbiome using nanopore sequencing’</article-title>. In: <source>Nature methods</source> <volume>18</volume>.<issue>5</issue> (<year>2021</year>), pp. <fpage>491</fpage>–<lpage>498</lpage>. ISSN: <issn>1548-7091</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41592-021-01109-3</pub-id>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="journal"><string-name><given-names>Stephen J</given-names> <surname>Bush</surname></string-name>. <article-title>‘Generalizable characteristics of false-positive bacterial variant calls’</article-title>. In: <source>Microbial Genomics</source> <volume>7</volume>.<issue>8</issue> (<year>2021</year>). DOI: <pub-id pub-id-type="doi">10.1099/mgen.0.000615</pub-id>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>Stephen J</given-names> <surname>Bush</surname></string-name> <etal>et al.</etal> <article-title>‘Genomic diversity affects the accuracy of bacterial single-nucleotide polymorphism–calling pipelines’</article-title>. In: <source>GigaScience</source> <volume>9</volume>.<issue>2</issue> (<year>2020</year>), <fpage>giaa007.</fpage>#x2013;. ISSN: <issn>2047-217X</issn>. DOI: <pub-id pub-id-type="doi">10.1093/gigascience/giaa007</pub-id>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>Sina</given-names> <surname>Majidian</surname></string-name> <etal>et al.</etal> <article-title>‘Genomic variant benchmark: if you cannot measure it, you cannot improve it’</article-title>. In: <source>Genome Biology</source> <volume>24</volume>.<issue>1</issue> (<year>2023</year>), p. <fpage>221</fpage>. ISSN: <issn>1474-760X</issn>. DOI: <pub-id pub-id-type="doi">10.1186/s13059-023-03061-1</pub-id>.</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>Heng</given-names> <surname>Li</surname></string-name>. <article-title>‘Toward better understanding of artifacts in variant calling from high-coverage samples’</article-title>. In: <source>Bioinformatics</source> <volume>30</volume>.<issue>20</issue> (<year>2014</year>), pp. <fpage>2843</fpage>–<lpage>2851</lpage>. ISSN: <issn>1367-4803</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bioinformatics/btu356</pub-id>.</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>Heng</given-names> <surname>Li</surname></string-name> <etal>et al.</etal> <article-title>‘A synthetic-diploid benchmark for accurate variant-calling evaluation’</article-title>. In: <source>Nature Methods</source> <volume>15</volume>.<issue>8</issue> (<year>2018</year>), pp. <fpage>595</fpage>–<lpage>597</lpage>. ISSN: <issn>1548-7105</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41592-018-0054-7</pub-id>.</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>Heng</given-names> <surname>Li</surname></string-name>. <article-title>‘Minimap2: pairwise alignment for nucleotide sequences’</article-title>. In: <source>Bioinformatics</source> <volume>34</volume>.<issue>18</issue> (<year>2018</year>), pp. <fpage>3094</fpage>–<lpage>3100</lpage>. ISSN: <issn>1367-4803</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bioinformatics/bty191</pub-id>.</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>Guillaume</given-names> <surname>Marçais</surname></string-name> <etal>et al.</etal> <article-title>‘MUMmer4: A fast and versatile genome alignment system’</article-title>. In: <source>PLOS Computational Biology</source> <volume>14</volume>.<issue>1</issue> (<year>2018</year>), <fpage>e1005944</fpage>. ISSN: <issn>1553-734X</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1005944</pub-id>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>Petr</given-names> <surname>Danecek</surname></string-name> <etal>et al.</etal> <article-title>‘Twelve years of SAMtools and BCFtools’</article-title>. In: <source>GigaScience</source> <volume>10</volume>.<issue>2</issue> (<year>2021</year>), <fpage>giab008</fpage>. ISSN: <issn>2047-217X</issn>. DOI: <pub-id pub-id-type="doi">10.1093/gigascience/giab008</pub-id>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><string-name><given-names>Erik</given-names> <surname>Garrison</surname></string-name> and <string-name><given-names>Gabor</given-names> <surname>Marth</surname></string-name>. <article-title>Haplotype-based variant detection from short-read sequencing</article-title> <source>arXiv</source> <year>2012</year>. DOI: <pub-id pub-id-type="doi">10.48550/arXiv.1207.3907</pub-id>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>Tim</given-names> <surname>Dunn</surname></string-name> and <string-name><given-names>Satish</given-names> <surname>Narayanasamy</surname></string-name>. <article-title>‘vcfdist: accurately benchmarking phased small variant calls in human genomes’</article-title>. In: <source>Nature Communications</source> <volume>14</volume>.<issue>1</issue> (<year>2023</year>), p. <fpage>8149</fpage>. ISSN: <issn>2041-1723</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41467-023-43876-x</pub-id>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>Todd J.</given-names> <surname>Treangen</surname></string-name> and <string-name><given-names>Steven L.</given-names> <surname>Salzberg</surname></string-name>. <article-title>‘Repetitive DNA and next-generation sequencing: computational challenges and solutions’</article-title>. In: <source>Nature Reviews Genetics</source> <volume>13</volume>.<issue>1</issue> (<year>2012</year>), pp. <fpage>36</fpage>–<lpage>46</lpage>. ISSN: <issn>1471-0064</issn>. DOI: <pub-id pub-id-type="doi">10.1038/nrg3117</pub-id>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>Michael B.</given-names> <surname>Hall</surname></string-name>. <article-title>‘Rasusa: Randomly subsample sequencing reads to a specified coverage’</article-title>. In: <source>Journal of Open Source Software</source> <volume>7</volume>.<issue>69</issue> (<year>2022</year>), p. <fpage>3941</fpage>. ISSN: <issn>2475-9066</issn>. DOI: <pub-id pub-id-type="doi">10.21105/joss.03941</pub-id>.</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="journal"><string-name><given-names>Ryan R.</given-names> <surname>Wick</surname></string-name>, <string-name><given-names>Louise M.</given-names> <surname>Judd</surname></string-name>, and <string-name><given-names>Kathryn E.</given-names> <surname>Holt</surname></string-name>. <article-title>‘Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing’</article-title>. In: <source>PLOS Computational Biology</source> <volume>19</volume>.<issue>3</issue> (<year>2023</year>), <fpage>e1010905</fpage>. ISSN: <issn>1553-7358</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1010905</pub-id>.</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>Teresa L.</given-names> <surname>Street</surname></string-name> <etal>et al.</etal> <article-title>‘Optimizing DNA Extraction Methods for Nanopore Sequencing of Neisseria gonorrhoeae Directly from Urine Samples’</article-title>. In: <source>Journal of Clinical Microbiology</source> <volume>58</volume>.<issue>3</issue> (<year>2020</year>), 10.1128/jcm.01822–19. DOI: <pub-id pub-id-type="doi">10.1128/jcm.01822-19</pub-id>.</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>Charles Y.</given-names> <surname>Chiu</surname></string-name> and <string-name><given-names>Steven A.</given-names> <surname>Miller</surname></string-name>. <article-title>‘Clinical metagenomics’</article-title>. In: <source>Nature Reviews Genetics</source> <volume>20</volume>.<issue>6</issue> (<year>2019</year>), pp. <fpage>341</fpage>–<lpage>355</lpage>. ISSN: <issn>1471-0064</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41576-019-0113-7</pub-id>.</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>Kayzad</given-names> <surname>Nilgiriwala</surname></string-name> <etal>et al.</etal> <article-title>‘Genomic Sequencing from Sputum for Tuberculosis Disease Diagnosis, Lineage Determination, and Drug Susceptibility Prediction’</article-title>. In: <source>Journal of Clinical Microbiology</source> <volume>61</volume>.<issue>3</issue> (<year>2023</year>), <fpage>e01578</fpage>–<lpage>22</lpage>. DOI: <pub-id pub-id-type="doi">10.1128/jcm.01578-22</pub-id>.</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="other"><string-name><given-names>Lillian</given-names> <surname>Musila</surname></string-name>. <article-title>‘Genomic outbreak surveillance in resource-poor settings’</article-title>. In: <source>Nature Reviews Genetics</source> (<year>2022</year>), pp. <fpage>1</fpage>–<lpage>1</lpage>. ISSN: <issn>1471-0056</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41576-022-00500-w</pub-id>.</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="journal"><string-name><given-names>Anbo</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>Timothy</given-names> <surname>Lin</surname></string-name>, and <string-name><given-names>Jinchuan</given-names> <surname>Xing</surname></string-name>. <article-title>‘Evaluating nanopore sequencing data processing pipelines for structural variation identification’</article-title>. In: <source>Genome Biology</source> <volume>20</volume>.<issue>1</issue> (<year>2019</year>), p. <fpage>237</fpage>. ISSN: <issn>1474-760X</issn>. DOI: <pub-id pub-id-type="doi">10.1186/s13059-019-1858-1</pub-id>.</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="journal"><string-name><given-names>Wei</given-names> <surname>Shen</surname></string-name> <etal>et al.</etal> <article-title>‘SeqKit: A Cross-Platform and Ultrafast Toolkit for FASTA/Q File Manipulation’</article-title>. In: <source>PLOS ONE</source> <volume>11</volume>.<issue>10</issue> (<year>2016</year>), <fpage>e0163962</fpage>. ISSN: <issn>1932-6203</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pone.0163962</pub-id>.</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="journal"><string-name><given-names>Shifu</given-names> <surname>Chen</surname></string-name> <etal>et al.</etal> <article-title>‘fastp: an ultra-fast all-in-one FASTQ preprocessor’</article-title>. In: <source>Bioinformatics</source> <volume>34</volume>.<issue>17</issue> (<year>2018</year>), pp. <fpage>i884</fpage>–<lpage>i890</lpage>. ISSN: <issn>1367-4803</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bioinformatics/bty560</pub-id>.</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><string-name><given-names>Ryan R.</given-names> <surname>Wick</surname></string-name> <etal>et al.</etal> <article-title>‘Trycycler: consensus long-read assemblies for bacterial genomes’</article-title>. In: <source>Genome Biology</source> <volume>22</volume>.<issue>1</issue> (<year>2021</year>), p. <fpage>266</fpage>. ISSN: <issn>1474-760X</issn>. DOI: <pub-id pub-id-type="doi">10.1186/s13059-021-02483-z</pub-id>.</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><string-name><given-names>Ryan R.</given-names> <surname>Wick</surname></string-name> and <string-name><given-names>Kathryn E.</given-names> <surname>Holt</surname></string-name>. <article-title>‘Polypolish: Short-read polishing of long-read bacterial genome assemblies’</article-title>. In: <source>PLOS Computational Biology</source> <volume>18</volume>.<issue>1</issue> (<year>2022</year>), <fpage>e1009802</fpage>. ISSN: <issn>1553-7358</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1009802</pub-id>.</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>George</given-names> <surname>Bouras</surname></string-name> <etal>et al.</etal> <article-title>‘How low can you go? Short-read polishing of Oxford Nanopore bacterial genome assemblies’</article-title>. In: <source>bioRxiv</source> (<year>2024</year>). DOI: <pub-id pub-id-type="doi">10.1101/2024.03.07.584013</pub-id>.</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><string-name><given-names>Aleksey V.</given-names> <surname>Zimin</surname></string-name> and <string-name><given-names>Steven L.</given-names> <surname>Salzberg</surname></string-name>. <article-title>‘The genome polishing tool POLCA makes fast and accurate corrections in genome assemblies’</article-title>. In: <source>PLOS Computational Biology</source> <volume>16</volume>.<issue>6</issue> (<year>2020</year>), <fpage>e1007981</fpage>. ISSN: <issn>1553-7358</issn>. DOI: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1007981</pub-id>.</mixed-citation></ref>
+<ref id="c45"><label>[45]</label><mixed-citation publication-type="other"><string-name><given-names>Vitor C.</given-names> <surname>Piro</surname></string-name>. <source>genome_updater</source>. Version 0.6.3. <year>2023</year>. DOI: <pub-id pub-id-type="doi">10.5281/zenodo.8108640</pub-id>.</mixed-citation></ref>
+<ref id="c46"><label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>Jim</given-names> <surname>Shaw</surname></string-name> and <string-name><given-names>Yun William</given-names> <surname>Yu</surname></string-name>. <article-title>‘Fast and robust metagenomic sequence comparison through sparse chaining with skani’</article-title>. In: <source>Nature Methods</source> <volume>20</volume>.<issue>11</issue> (<year>2023</year>), pp. <fpage>1661</fpage>–<lpage>1665</lpage>. ISSN: <issn>1548-7105</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41592-023-02018-3</pub-id>.</mixed-citation></ref>
+<ref id="c47"><label>[47]</label><mixed-citation publication-type="journal"><string-name><given-names>Donovan H.</given-names> <surname>Parks</surname></string-name> <etal>et al.</etal> <article-title>‘CheckM: assessing the quality of microbial genomes recovered from isolates, single cells, and metagenomes’</article-title>. In: <source>Genome Research</source> <volume>25</volume>.<issue>7</issue> (<year>2015</year>), pp. <fpage>1043</fpage>–<lpage>1055</lpage>. ISSN: <issn>1088-9051, 1549-5469</issn>. DOI: <pub-id pub-id-type="doi">10.1101/gr.186072.114</pub-id>.</mixed-citation></ref>
+<ref id="c48"><label>[48]</label><mixed-citation publication-type="journal"><string-name><given-names>Luis M.</given-names> <surname>Rodriguez-R</surname></string-name> <etal>et al.</etal> <article-title>‘An ANI gap within bacterial species that advances the definitions of intra-species units’</article-title>. In: <source>mBio</source> <volume>15</volume>.<issue>1</issue> (<year>2023</year>), <fpage>e02696</fpage>–<lpage>23</lpage>. DOI: <pub-id pub-id-type="doi">10.1128/mbio.02696-23</pub-id>.</mixed-citation></ref>
+<ref id="c49"><label>[49]</label><mixed-citation publication-type="journal"><string-name><given-names>Tomeu</given-names> <surname>Viver</surname></string-name> <etal>et al.</etal> <article-title>‘Towards estimating the number of strains that make up a natural bacterial population’</article-title>. In: <source>Nature Communications</source> <volume>15</volume>.<issue>1</issue> (<year>2024</year>), p. <fpage>544</fpage>. ISSN: <issn>2041-1723</issn>. DOI: <pub-id pub-id-type="doi">10.1038/s41467-023-44622-z</pub-id>.</mixed-citation></ref>
+<ref id="c50"><label>[50]</label><mixed-citation publication-type="other"><string-name><given-names>Heng</given-names> <surname>Li</surname></string-name>. <article-title>‘Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM’</article-title>. In: <source>arXiv</source> (<year>2013</year>). DOI: <pub-id pub-id-type="doi">10.48550/arXiv.1303.3997</pub-id>.</mixed-citation></ref>
+<ref id="c51"><label>[51]</label><mixed-citation publication-type="journal"><string-name><given-names>Aaron R.</given-names> <surname>Quinlan</surname></string-name> and <string-name><given-names>Ira M.</given-names> <surname>Hall</surname></string-name>. <article-title>‘BEDTools: a flexible suite of utilities for comparing genomic features’</article-title>. In: <source>Bioinformatics</source> <volume>26</volume>.<issue>6</issue> (<year>2010</year>), pp. <fpage>841</fpage>–<lpage>842</lpage>. ISSN: <issn>1367-4803</issn>. DOI: <pub-id pub-id-type="doi">10.1093/bioinformatics/btq033</pub-id>.</mixed-citation></ref>
+<ref id="c52"><label>[52]</label><mixed-citation publication-type="other"><string-name><given-names>Michael B.</given-names> <surname>Hall</surname></string-name>. <source>mbhall88/NanoVarBench</source>. <year>2024</year>. DOI: <pub-id pub-id-type="doi">10.5281/zenodo.10820970</pub-id>.</mixed-citation></ref>
+<ref id="c53"><label>[53]</label><mixed-citation publication-type="other"><string-name><given-names>Michael B.</given-names> <surname>Hall</surname></string-name>. <article-title>NanoVarBench variant truthset files</article-title>. <source>Zenodo</source>, <year>2024</year>. DOI: <pub-id pub-id-type="doi">10.5281/zenodo.10867171</pub-id>.</mixed-citation></ref>
+</ref-list>
+<fn-group>
+<fn id="fn1"><label><sup>1</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/nanoporetech/dorado">https://github.com/nanoporetech/dorado</ext-link></p></fn>
+<fn id="fn2"><label><sup>2</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/tseemann/snippy">https://github.com/tseemann/snippy</ext-link></p></fn>
+<fn id="fn3"><label><sup>3</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/nanoporetech/dorado">https://github.com/nanoporetech/dorado</ext-link></p></fn>
+<fn id="fn4"><label><sup>4</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/rrwick/Filtlong">https://github.com/rrwick/Filtlong</ext-link></p></fn>
+<fn id="fn5"><label><sup>5</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/rrwick/Trycycler">https://github.com/rrwick/Trycycler</ext-link></p></fn>
+<fn id="fn6"><label><sup>6</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/pirovc/genome_updater">https://github.com/pirovc/genome_updater</ext-link></p></fn>
+<fn id="fn7"><label><sup>7</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/mbhall88/NanoVarBench">https://github.com/mbhall88/NanoVarBench</ext-link></p></fn>
+<fn id="fn8"><label><sup>8</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/nanoporetech/rerio">https://github.com/nanoporetech/rerio</ext-link></p></fn>
+<fn id="fn9"><label><sup>9</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/tseemann/snippy">https://github.com/tseemann/snippy</ext-link></p></fn>
+<fn id="fn10"><label><sup>10</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://github.com/mbhall88/NanoVarBench">https://github.com/mbhall88/NanoVarBench</ext-link></p></fn>
+<fn id="fn11"><label><sup>11</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/bioproject/">https://www.ncbi.nlm.nih.gov/bioproject/</ext-link></p></fn>
+</fn-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.98300.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Weigel</surname>
+<given-names>Detlef</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Max Planck Institute for Biology Tübingen</institution>
+</institution-wrap>
+<city>Tübingen</city>
+<country>Germany</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study provides evidence for a combination of the latest generation of Oxford Nanopore Technology long reads with state-of-the art variant callers enabling bacterial variant discovery at accuracy that matches or exceeds the current &quot;gold standard&quot; with short reads. The evidence supporting the claims of the authors is <bold>convincing</bold>, although the inclusion of a larger number of reference genomes would further strengthen the study. The work will be of interest to anyone performing sequencing for outbreak investigations, bacterial epidemiology, or similar studies.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.98300.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors assess the accuracy of short variant calling (SNPs and indels) in bacterial genomes using Oxford Nanopore reads generated on R10.4 flow cells from a very similar genome (99.5% ANI), examining the impact of variant caller choice (three traditional variant callers: bcftools, freebayes, and longshot, and three deep learning based variant callers: clair3, deep variant, and nano caller), base calling model (fast, hac and sup) and read depth (using both simplex and duplex reads).</p>
+<p>Strengths:</p>
+<p>Given the stated goal (analysis of variant calling for reads drawn from genomes very similar to the reference), the analysis is largely complete and results are compelling. The authors make the code and data used in their analysis available for re-use using current best practices (a computational workflow and data archived in INSDC databases or Zenodo as appropriate).</p>
+<p>Weaknesses:</p>
+<p>While the medaka variant caller is now deprecated for diploid calling, it is still widely used for haploid variant calling and should at least be mentioned (even if the mention is only to explain its exclusion from the analysis).</p>
+<p>Appraisal:</p>
+<p>The experiments the authors engaged in are well structured and the results are convincing. I expect that these results will be incorporated into &quot;best practice&quot; bacterial variant calling workflows in the future.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.98300.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Hall et al describe the superiority of ONT sequencing and deep learning-based variant callers to deliver higher SNP and Indel accuracy compared to previous gold-standard Illumina short-read sequencing. Furthermore, they provide recommendations for read sequencing depth and computational requirements when performing variant calling.</p>
+<p>Strengths:</p>
+<p>The study describes compelling data showing ONT superiority when using deep learning-based variant callers, such as Clair3, compared to Illumina sequencing. This challenges the paradigm that Illumina sequencing is the gold standard for variant calling in bacterial genomes. The authors provide evidence that homopolymeric regions, a systematic and problematic issue with ONT data, are no longer a concern in ONT sequencing.</p>
+<p>Weaknesses:</p>
+<p>(1) The inclusion of a larger number of reference genomes would have strengthened the study to accommodate larger variability (a limitation mentioned by the authors).</p>
+<p>(2) In Figure 2, there are clearly one or two samples that perform worse than others in all combinations (are always below the box plots). No information about species-specific variant calls is provided by the authors but one would like to know if those are recurrently associated with one or two species. Species-specific recommendations could also help the scientific community to choose the best sequencing/variant calling approaches.</p>
+<p>(3) The authors support that a read depth of 10x is sufficient to achieve variant calls that match or exceed Illumina sequencing. However, the standard here should be the optimal discriminatory power for clinical and public health utility (namely outbreak analysis). In such scenarios, the highest discriminatory power is always desirable and as such an F1 score, Recall and Precision that is as close to 100% as possible should be maintained (which changes the minimum read sequencing depth to at least 25x, which is the inflection point).</p>
+<p>(4) The sequencing of the samples was not performed with the same Illumina and ONT method/equipment, which could have introduced specific equipment/preparation artefacts that were not considered in the study. See for example <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/nargab/article/3/1/lqab019/6193612">https://academic.oup.com/nargab/article/3/1/lqab019/6193612</ext-link>.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.98300.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Hall et al. benchmarked different variant calling methods on Nanopore reads of bacterial samples and compared the performance of Nanopore to short reads produced with Illumina sequencing. To establish a common ground for comparison, the authors first generated a variant truth set for each sample and then projected this set to the reference sequence of the sample to obtain a mutated reference. Subsequently, Hall et al. called SNPs and small indels using commonly used deep learning and conventional variant callers and compared the precision and accuracy from reads produced with simplex and duplex Nanopore sequencing to Illumina data. The authors did not investigate large structural variation, which is a major limitation of the current manuscript. It will be very interesting to see a follow-up study covering this much more challenging type of variation.</p>
+<p>In their comprehensive comparison of SNPs and small indels, the authors observed superior performance of deep learning over conventional variant callers when Nanopore reads were basecalled with the most accurate (but also computationally very expensive) model, even exceeding Illumina in some cases. Not surprisingly, Nanopore underperformed compared to Illumina when basecalled with the fastest (but computationally much less demanding) method with the lowest accuracy. The authors then investigated the surprisingly higher performance of Nanopore data in some cases and identified lower recall with Illumina short read data, particularly from repetitive regions and regions with high variant density, as the driver. Combining the most accurate Nanopore basecalling method with a deep learning variant caller resulted in low error rates in homopolymer regions, similar to Illumina data. This is remarkable, as homopolymer regions are (or, were) traditionally challenging for Nanopore sequencing.</p>
+<p>Lastly, Hall et al. provided useful information on the required Nanopore read depth, which is surprisingly low, and the computational resources for variant calling with deep learning callers. With that, the authors established a new state-of-the-art for Nanopore-only variant, calling on bacterial sequencing data. Most likely these findings will be transferred to other organisms as well or at least provide a proof-of-concept that can be built upon.</p>
+<p>As the authors mention multiple times throughout the manuscript, Nanopore can provide sequencing data in nearly real-time and in remote regions, therefore opening up a ton of new possibilities, for example for infectious disease surveillance.</p>
+<p>However, the high-performing variant calling method as established in this study requires the computationally very expensive sup and/or duplex Nanopore basecalling, whereas the least computationally demanding method underperforms. Here, the manuscript would greatly benefit from extending the last section on computational requirements, as the authors determine the resources for the variant calling but do not cover the entire picture. This could even be misleading for less experienced researchers who want to perform bacterial sequencing at high performance but with low resources. The authors mention it in the discussion but do not make clear enough that the described computational resources are probably largely insufficient to perform the high-accuracy basecalling required.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.98300.1.sa4</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Hall</surname>
+<given-names>Michael B.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3683-6208</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wick</surname>
+<given-names>Ryan R.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8349-0778</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Judd</surname>
+<given-names>Louise M.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3613-4839</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Nguyen</surname>
+<given-names>An N. T.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4893-6636</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Steinig</surname>
+<given-names>Eike J.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5399-5353</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Xie</surname>
+<given-names>Ouli</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5032-1932</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Davies</surname>
+<given-names>Mark R.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6141-5179</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Seemann</surname>
+<given-names>Torsten</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6046-610X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Stinear</surname>
+<given-names>Timothy P.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0150-123X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Coin</surname>
+<given-names>Lachlan J. M.</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4300-455X</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>eLife assessment</bold></p>
+<p>This important study provides evidence for a combination of the latest generation of Oxford Nanopore Technology long reads with state-of-the art variant callers enabling bacterial variant discovery at accuracy that matches or exceeds the current &quot;gold standard&quot; with short reads. The evidence supporting the claims of the authors is convincing, although the inclusion of a larger number of reference genomes would further strengthen the study. The work will be of interest to anyone performing sequencing for outbreak investigations, bacterial epidemiology, or similar studies.</p>
+</disp-quote>
+<p>We thank the editor and reviewers for the accurate summary and positive assessment. We address the comment about increasing the number of reference genomes in the response to reviewer 2.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>Summary:</p>
+<p>The authors assess the accuracy of short variant calling (SNPs and indels) in bacterial genomes using Oxford Nanopore reads generated on R10.4 flow cells from a very similar genome (99.5% ANI), examining the impact of variant caller choice (three traditional variant callers: bcftools, freebayes, and longshot, and three deep learning based variant callers: clair3, deep variant, and nano caller), base calling model (fast, hac and sup) and read depth (using both simplex and duplex reads).</p>
+<p>Strengths:</p>
+<p>Given the stated goal (analysis of variant calling for reads drawn from genomes very similar to the reference), the analysis is largely complete and results are compelling. The authors make the code and data used in their analysis available for re-use using current best practices (a computational workflow and data archived in INSDC databases or Zenodo as appropriate).</p>
+<p>Weaknesses:</p>
+<p>While the medaka variant caller is now deprecated for diploid calling, it is still widely used for haploid variant calling and should at least be mentioned (even if the mention is only to explain its exclusion from the analysis).</p>
+</disp-quote>
+<p>We agree that this would be an informative addition to the study and will add it to the benchmarking.</p>
+<disp-quote content-type="editor-comment">
+<p>Appraisal:</p>
+<p>The experiments the authors engaged in are well structured and the results are convincing. I expect that these results will be incorporated into &quot;best practice&quot; bacterial variant calling workflows in the future.</p>
+</disp-quote>
+<p>Thank you for the positive appraisal.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>Summary:</p>
+<p>Hall et al describe the superiority of ONT sequencing and deep learning-based variant callers to deliver higher SNP and Indel accuracy compared to previous gold-standard Illumina short-read sequencing. Furthermore, they provide recommendations for read sequencing depth and computational requirements when performing variant calling.</p>
+<p>Strengths:</p>
+<p>The study describes compelling data showing ONT superiority when using deep learning-based variant callers, such as Clair3, compared to Illumina sequencing. This challenges the paradigm that Illumina sequencing is the gold standard for variant calling in bacterial genomes. The authors provide evidence that homopolymeric regions, a systematic and problematic issue with ONT data, are no longer a concern in ONT sequencing.</p>
+<p>Weaknesses:</p>
+<p>(1) The inclusion of a larger number of reference genomes would have strengthened the study to accommodate larger variability (a limitation mentioned by the authors).</p>
+</disp-quote>
+<p>Our strategic selection of 14 genomes—spanning a variety of bacterial genera and species, diverse GC content, and both gram-negative and gram-positive species (including <italic>M. tuberculosis</italic>, which is neither)—was designed to robustly address potential variability in our results. Moreover, all our genome assemblies underwent rigorous manual inspection as the quality of the true genome sequences is the foundation this research is built upon. Given this, the fundamental conclusions regarding the accuracy of variant calls would likely remain unchanged with the addition of more genomes.  However, we do acknowledge that a substantially larger sample size, which is beyond the scope of this study, would enable more fine-grained analysis of species differences in error rates.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) In Figure 2, there are clearly one or two samples that perform worse than others in all combinations (are always below the box plots). No information about species-specific variant calls is provided by the authors but one would like to know if those are recurrently associated with one or two species. Species-specific recommendations could also help the scientific community to choose the best sequencing/variant calling approaches.</p>
+</disp-quote>
+<p>Thank you for highlighting this observation. The precision, recall, and F1 scores for each sample and condition can be found in Supplementary Table S4. We will investigate the samples that consistently perform below expectation to determine if this is associated with specific species, which may necessitate tailored recommendations for those species. Additionally, we will produce a species-segregated version of Figure 2 for a clearer interpretation and will place it in the supplementary materials.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) The authors support that a read depth of 10x is sufficient to achieve variant calls that match or exceed Illumina sequencing. However, the standard here should be the optimal discriminatory power for clinical and public health utility (namely outbreak analysis). In such scenarios, the highest discriminatory power is always desirable and as such an F1 score, Recall and Precision that is as close to 100% as possible should be maintained (which changes the minimum read sequencing depth to at least 25x, which is the inflection point).</p>
+</disp-quote>
+<p>We agree that the highest discriminatory power is always desirable for clinical or public health applications. In which case, 25x is probably a better minimum recommendation. However, we are also aware that there are resource-limited settings where parity with Illumina is sufficient. In these cases, 10x depth from ONT would provide sufficient data.</p>
+<p>The manuscript currently emphasises the latter scenario, but we will revise the text to clearly recommend 25x depth as a conservative aim in settings where resources are not a constraint, ensuring the highest possible discriminatory power for applications like outbreak analysis.</p>
+<disp-quote content-type="editor-comment">
+<p>(4) The sequencing of the samples was not performed with the same Illumina and ONT method/equipment, which could have introduced specific equipment/preparation artefacts that were not considered in the study. See for example <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/nargab/article/3/1/lqab019/6193612">https://academic.oup.com/nargab/article/3/1/lqab019/6193612</ext-link>.</p>
+</disp-quote>
+<p>To our knowledge, there is no evidence that sequencing on different ONT machines or barcoding kits leads to a difference in read characteristics or accuracy. To ensure consistency and minimise potential variability, we used the same ONT flowcells for all samples and performed basecalling on the same Nvidia A100 GPU. We will update the methods to emphasise this.</p>
+<p>For Illumina and ONT, the exact machines used for which samples will be added as a supplementary table. We will also add a comment about possible Illumina error rate differences in the ‘Limitations’ section of the Discussion.</p>
+<p>In summary, while there may be specific equipment or preparation artifacts to consider, we took steps to minimise these effects and maintain consistency across our sequencing methods.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 (Public Review):</bold></p>
+<p>Hall et al. benchmarked different variant calling methods on Nanopore reads of bacterial samples and compared the performance of Nanopore to short reads produced with Illumina sequencing. To establish a common ground for comparison, the authors first generated a variant truth set for each sample and then projected this set to the reference sequence of the sample to obtain a mutated reference. Subsequently, Hall et al. called SNPs and small indels using commonly used deep learning and conventional variant callers and compared the precision and accuracy from reads produced with simplex and duplex Nanopore sequencing to Illumina data. The authors did not investigate large structural variation, which is a major limitation of the current manuscript. It will be very interesting to see a follow-up study covering this much more challenging type of variation.</p>
+</disp-quote>
+<p>We fully agree that investigating structural variations (SVs) would be a very interesting and important follow-up. Identifying and generating ground truth SVs is a nontrivial task and we feel it deserves its own space and study. We hope to explore this in the future.</p>
+<disp-quote content-type="editor-comment">
+<p>In their comprehensive comparison of SNPs and small indels, the authors observed superior performance of deep learning over conventional variant callers when Nanopore reads were basecalled with the most accurate (but also computationally very expensive) model, even exceeding Illumina in some cases. Not surprisingly, Nanopore underperformed compared to Illumina when basecalled with the fastest (but computationally much less demanding) method with the lowest accuracy. The authors then investigated the surprisingly higher performance of Nanopore data in some cases and identified lower recall with Illumina short read data, particularly from repetitive regions and regions with high variant density, as the driver. Combining the most accurate Nanopore basecalling method with a deep learning variant caller resulted in low error rates in homopolymer regions, similar to Illumina data. This is remarkable, as homopolymer regions are (or, were) traditionally challenging for Nanopore sequencing.</p>
+<p>Lastly, Hall et al. provided useful information on the required Nanopore read depth, which is surprisingly low, and the computational resources for variant calling with deep learning callers. With that, the authors established a new state-of-the-art for Nanopore-only variant, calling on bacterial sequencing data. Most likely these findings will be transferred to other organisms as well or at least provide a proof-of-concept that can be built upon.</p>
+<p>As the authors mention multiple times throughout the manuscript, Nanopore can provide sequencing data in nearly real-time and in remote regions, therefore opening up a ton of new possibilities, for example for infectious disease surveillance.</p>
+<p>However, the high-performing variant calling method as established in this study requires the computationally very expensive sup and/or duplex Nanopore basecalling, whereas the least computationally demanding method underperforms. Here, the manuscript would greatly benefit from extending the last section on computational requirements, as the authors determine the resources for the variant calling but do not cover the entire picture. This could even be misleading for less experienced researchers who want to perform bacterial sequencing at high performance but with low resources. The authors mention it in the discussion but do not make clear enough that the described computational resources are probably largely insufficient to perform the high-accuracy basecalling required.</p>
+</disp-quote>
+<p>We have provided runtime benchmarks for basecalling in Supplementary Figure S16 and detailed these times in Supplementary Table S7. In addition, we state in the Results section (P10 L228-230) “Though we do note that if the person performing the variant calling has received the raw (pod5) ONT data, basecalling also needs to be accounted for, as depending on how much sequencing was done, this step can also be resource-intensive.”</p>
+<p>Even with super-accuracy basecalling considered, our analysis shows that variant calling remains the most resource-intensive step for Clair3, DeepVariant, FreeBayes, and NanoCaller. Therefore, the statement “the described computational resources are probably largely insufficient to perform the high-accuracy basecalling required”, is incorrect. However, we will endeavour to make the basecalling component and considerations more prominent in the Results and Discussion.</p>
+</body>
+</sub-article>
+</article>
