@@ -1,0 +1,513 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">96955</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.96955</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.96955.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Chromosomes and Gene Expression</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Benchmarking tRNA-Seq quantification approaches by realistic tRNA-Seq data simulation identifies two novel approaches with higher accuracy</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0697-8777</contrib-id>
+<name>
+<surname>Smith</surname>
+<given-names>Tom</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0617-9457</contrib-id>
+<name>
+<surname>Monti</surname>
+<given-names>Mie</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1470-8531</contrib-id>
+<name>
+<surname>Willis</surname>
+<given-names>Anne E</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3691-8350</contrib-id>
+<name>
+<surname>Kalmár</surname>
+<given-names>Lajos</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>MRC Toxicology Unit, University of Cambridge, University of Cambridge</institution>, CB2 1QR, Cambridge, <country>UK</country></aff>
+<aff id="a2"><label>2</label><institution>Centre for Genomic Regulation (CRG), The Barcelona Institute of Science and Technology</institution>, Barcelona, <country>Spain</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Park</surname>
+<given-names>Jong-Eun</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Korean Advanced Institute of Science and Technology</institution>
+</institution-wrap>
+<city>Daejeon</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Correspondence: Further information and requests should be directed to and will be fulfilled by the lead contact, Tom Smith, <email>tss38@cam.ac.uk</email></corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-06-21">
+<day>21</day>
+<month>06</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP96955</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-03-05">
+<day>05</day>
+<month>03</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-12-14">
+<day>14</day>
+<month>12</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.12.13.571582"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Smith et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Smith et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-96955-v1.pdf"/>
+<abstract>
+<title>Abstract</title><p>Quantification of transfer RNA (tRNA) using illumina sequencing based tRNA-Seq is complicated by their degree of redundancy and extensive modifications. As such, no tRNA-Seq method has become well established, while various approaches have been proposed to quantify tRNAs from sequencing reads. Here, we use realistic tRNA-Seq simulations to benchmark tRNA-Seq quantification approaches, including two novel approaches. We demonstrate that these novel approaches are consistently the most accurate, using data simulated to mimic five different tRNA-Seq methods. This simulation-based benchmarking also identifies specific shortfalls for each quantification approach and suggests that up to 13% of the variance observed between cell lines in real tRNA-Seq data could be due to systematic differences in quantification accuracy.</p>
+</abstract>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Transfer RNA (tRNA) are abundant, highly structured, and short (70-100 nt) non-coding RNAs which are essential for the conversion of coding sequences into polypeptides<sup><xref ref-type="bibr" rid="c1">1</xref></sup>. They can be categorised by their aminoacylation identity into 20 groups, each composed of several tRNAs, known as isoacceptors, that are able to translate synonymous codons with the same amino acid. Adding to this complexity, in higher eukaryotes, there are also isodecoders: tRNAs with the same anticodon but different sequences. tRNAs also undergo substantial chemical modification, containing on average 13 modifications by molecule<sup><xref ref-type="bibr" rid="c2">2</xref></sup> with over 100 post-transcriptional modifications identified to date<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c3">3</xref></sup>. Notably, a myriad of human diseases have been associated with dysregulation of tRNA expression<sup><xref ref-type="bibr" rid="c4">4</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup> and mutations in tRNA modification enzymes<sup><xref ref-type="bibr" rid="c7">7</xref>–<xref ref-type="bibr" rid="c10">10</xref></sup>, underscoring their central role in cellular homeostasis.</p>
+<p>Given their complexity, quantification of tRNAs is more challenging than other RNA species. Experimentally, tRNAs have been intractable to high-throughput illumina sequencing due to the compact secondary and tertiary structure. In particular, the highly base-paired 5’ and 3’ termini interfere with adaptor ligation<sup><xref ref-type="bibr" rid="c11">11</xref></sup>, although this has been addressed in recent publications using splint adapters which take advantage of the 3’ CCA on mature tRNAs<sup><xref ref-type="bibr" rid="c11">11</xref>,<xref ref-type="bibr" rid="c12">12</xref></sup>. Moreover, some of the post-transcriptional modifications present on tRNAs disrupt the Watson-Crick face and impede reverse transcription (RT), leading to either premature termination of the RT reaction and/or high misincorporation rates around the modified nucleotide<sup><xref ref-type="bibr" rid="c13">13</xref></sup>. To alleviate the impact of such modification, demethylating enzymes, such as AlkB, have been utilised in several methods including DM-tRNA-Seq<sup><xref ref-type="bibr" rid="c14">14</xref></sup> and ARM-seq<sup><xref ref-type="bibr" rid="c15">15</xref></sup>, although the activity of these enzymes have not been well characterised. An alternative solution is the use of a modification tolerant RT, such as TGIRT<sup><xref ref-type="bibr" rid="c14">14</xref>,<xref ref-type="bibr" rid="c16">16</xref></sup>, Superscript IV<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c17">17</xref></sup> or marathonRT<sup><xref ref-type="bibr" rid="c18">18</xref></sup>, which have a higher processivity though modified nucleotides. Regardless of the approach taken, tRNA-Seq reads inevitably possess increased misincorporation rates and usually 3’ truncations. The processing of tRNA-Seq data is also more complex than other forms of RNA-seq, as the evolution processes exerted upon tRNA genes has led to the accumulation of dozens near identical sequences<sup><xref ref-type="bibr" rid="c19">19</xref></sup>. In the case of the human genome and model mammalian species such as mouse and rat, this has generated hundreds of actively transcribed tRNA genes<sup><xref ref-type="bibr" rid="c20">20</xref>,<xref ref-type="bibr" rid="c21">21</xref></sup>. This sequence redundancy complicates the easy assignment of tRNA-Seq reads to their genomic loci and, therefore, quantification is normally performed at the level of the mature tRNA sequences, or else anticodons.</p>
+<p>Multiple quantification approaches for full length illumina-based tRNA-Seq have been employed, all relying upon alignment of reads to tRNA sequences, with considerable variability in how multi-mapped reads are handled. Bowtie2<sup><xref ref-type="bibr" rid="c22">22</xref></sup> is the most frequently used aligner for tRNA-Seq<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c23">23</xref>,<xref ref-type="bibr" rid="c24">24</xref></sup>, although aligners designed for small RNA-seq such as SHRiMP<sup><xref ref-type="bibr" rid="c25">25</xref></sup> have also been used<sup><xref ref-type="bibr" rid="c11">11</xref></sup>. For tRNA-Seq read alignment with bowtie2, a wide variety of parameterisations have been employed, which frequently include utilising very short and/or non-exact alignment seeds<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c23">23</xref></sup>. Due to the high similarity between tRNA sequences, multi-mapped reads present a significant problem, which has again been solved by a variety of means, including the complete exclusion of multi-mapped reads<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c14">14</xref></sup>, fractional assignment to all aligned tRNAs<sup><xref ref-type="bibr" rid="c17">17</xref></sup>, and random selection from amongst the alignments<sup><xref ref-type="bibr" rid="c15">15</xref></sup>. Recently, mimseq, an end-to-end tRNA-Seq quantification pipeline was developed<sup><xref ref-type="bibr" rid="c16">16</xref></sup>. This pipeline uses GSNAP<sup><xref ref-type="bibr" rid="c26">26</xref></sup> to align reads to consensus sequences representing clusters of similar tRNAs along with a novel iterative mapping procedure, in which mutated positions are masked. Despite this significant variability between the quantification approaches which have been applied to tRNA-Seq, to date, no systematic comparison of these approaches has been performed.</p>
+<p>Here, we used real tRNA-Seq data to generate realistic benchmark data simulations and compare common quantification approaches. This allowed us to identify the best generic quantification approach across different tRNA-Seq methods and to establish specific shortfalls of each approach.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Optimising read alignment for tRNA-Seq</title>
+<p>Read alignment software needs to be carefully parameterised for tRNA-Seq and a number of alternative parameterisations have been proposed, predominantly using bowtie2 with a short seed length<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c14">14</xref>,<xref ref-type="bibr" rid="c17">17</xref></sup>. To evaluate alignment parameters for bowtie2 with a short seed length, we simulated the highest possible quality of tRNA-Seq reads: full length and including only sequencing errors. These reads were then aligned to the reference tRNA sequences with bowtie2, using a sensitive parameterisation, allowing a single error in the seed, as frequently employed for tRNA-Seq to accommodate the increased misincorporation rate<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c23">23</xref></sup>. Two parameters were varied: L and D, representing the seed length and how much effort to expend trying to find a better alignment, respectively. This simulation and alignment procedure was performed for tRNA from <italic>Homo sapiens</italic> and <italic>Mus musculus</italic> tRNAs separately. We observed that when an error in the seed is allowed, as the seed length is decreased, there needs to be a concomitant increase in effort expended to allow bowtie2 more opportunities to find the best possible alignment, especially with respect to the Transcript ID (<xref rid="fig1" ref-type="fig">Figure 1a</xref>). Thus, previously employed alignment parameters have been sub-optimal, even for unrealistically high quality tRNA-Seq reads<sup><xref ref-type="bibr" rid="c12">12</xref></sup>.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p><bold>Alignment parameterisation in the context of frequent multiple-alignment. a)</bold>. Impact of bowtie2 parameterisation on the percentage of correct alignments. <bold>b)</bold> The percentage of single and multi-mapped reads at each level of tRNA nomenclature. <bold>c).</bold> The frequency of reads multi-mapping at the Gene locus ID, Transcript ID and Anticodon level. Frequencies were normalised by dividing by the total number of reads aligned to the two tRNAs. Data shown is from YAMAT-Seq, BT20, replicate A.</p></caption>
+<graphic xlink:href="571582v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Inevitably, tRNA-Seq reads will frequently be mapped to multiple tRNA sequences with equal alignment scores, since some tRNA sequences are nearly identical and real tRNA-Seq reads will be truncated and include misincorporations. To explore the extent of the multi-mapping issue for tRNA-Seq, we aligned reads from ALL-tRNAseq<sup><xref ref-type="bibr" rid="c18">18</xref></sup>, DM-tRNA-seq<sup><xref ref-type="bibr" rid="c14">14</xref></sup>, mim-tRNAseq<sup><xref ref-type="bibr" rid="c16">16</xref></sup>, QuantM-tRNA-seq<sup><xref ref-type="bibr" rid="c12">12</xref></sup> and YAMAT-seq<sup><xref ref-type="bibr" rid="c11">11</xref></sup> samples to the reference tRNA sequences, using bowtie2 (–L 10 –D 100). We then summarised the extent of multi-mapping at four levels using the naming convention from GtRNAdb<sup><xref ref-type="bibr" rid="c20">20</xref></sup>: Gene locus ID, Transcript ID, Anticodon and Amino acid. As expected, at the higher levels of tRNA annotation, the number of reads mapping to a single feature increases (<xref rid="fig1" ref-type="fig">Figure 1b</xref>). Many pairs of tRNA sequences showed high rates of multi-mapping at the Gene locus ID level, including pairs of tRNAs for different anticodons, but multi-mapping is less prominent at higher levels (<xref rid="fig1" ref-type="fig">Figure 1c</xref>). These data demonstrate that multi-mapping is prevalent at the level of the alignments to the tRNA sequences, but it should be less problematic at higher levels if it is dealt with appropriately.</p>
+</sec>
+<sec id="s2b">
+<title>Simulating realistic tRNA-Seq data</title>
+<p>To address the question of how to most accurately quantify tRNAs from tRNA-Seq, we aimed to simulate realistic tRNA-Seq data by using the frequency of misincorporations and truncations (hereafter referred to jointly as the ‘error profile’) as observed in tRNA-Seq data. To ensure our findings were generically applicable, error profiles were learned from five tRNA-Seq methods: ALL-tRNAseq, DM-tRNA-seq, mim-tRNAseq, QuantM-tRNA-seq and YAMAT-seq, and two species: <italic>Homo sapiens</italic> and <italic>Mus musculus</italic>. This was achieved by first aligning reads to a tRNA reference transcriptome, following which, error profiles were determined from the alignments by tallying mutation frequencies and read alignment coordinates.</p>
+<p>Since the mutations and truncations are dependent on the tRNA modifications, the position of the mutations and truncation events in the error profiles should match the positions of known modifications. Furthermore, the relationship between the tRNA modifications and error profiles should depend on whether tRNA modifications are enzymatically removed, which RT used, and whether there was a size selection step prior to sequencing. Thus, samples from different tRNA-Seq methods should have different error profiles. To confirm this, we used the experimentally determined modifications listed in MODOMICS<sup><xref ref-type="bibr" rid="c27">27</xref></sup>. As expected, adenosines modified to inosine cause misincorporation of guanine<sup><xref ref-type="bibr" rid="c28">28</xref></sup> (<xref rid="fig2" ref-type="fig">Figure 2a</xref>). In contrast, N1-methyladenosine (m1A) frequently causes misincorporation for all methods, except DM-tRNA-seq and ALL-tRNAseq, which employ AlkB to remove methylations. Interestingly, an overall higher proportion of mutations was observed with mim-tRNA-Seq, likely reflecting the optimisation of the RT step to allow more processivity over modified bases (Supplementary Figure 1a). In keeping with the more restrictive size selection of YAMAT-Seq, and the improved RT processivity with mim-tRNA-Seq and ALL-tRNA-Seq, the reads from these methods are less frequently truncated than the other methods (<xref rid="fig2" ref-type="fig">Figure 2b</xref>; Supplementary Figure 1b). Notably, while read truncations were frequently close to known modified nucleotides for all methods except YAMAT-Seq, the modified nucleotides around the site of truncation varied considerably between the tRNA-Seq methods (<xref rid="fig2" ref-type="fig">Figure 2c</xref>). This is likely due to the considerable differences between the tRNA-Seq library preparation steps for these five methods. Overall, the error profiles appear to reflect the different mutation and truncation rates that would be expected for the five tRNA-Seq methods and should thus enable relatively realistic simulation of tRNA-Seq reads from a broad range of tRNA-Seq protocols.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p><bold>The observed error profiles reflect the expected misincorporations from modifications in MODOMICS. a)</bold>. Misincorporation frequencies for Inosine and m1A sites <bold>b)</bold>. The proportion of reads which are truncated and how often this occurs close to a known modification site. <bold>c)</bold>. The proportion of truncated reads which are truncated within 1 nucleotide of common modifications. m2,2G = N2,N2-dimethylguanosine, m2G = N2-methylguanosine, m1Y = 1-methylpseudouridine, m5C = 5-methylcytidine, m1G = 1-methylguanosine, m1A = 1-methyladenosine, D = dihydrouridine, Y = pseudouridine.</p></caption>
+<graphic xlink:href="571582v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>From these error profiles, we then simulated 2 datasets: <italic>Uniform</italic>: an equal number of reads from all tRNA species, with misincorporation and truncations added at the frequencies observed in the real tRNA-Seq data. One set of simulated reads was generated for each tRNA-Seq sample. <italic>Realistic</italic>: a randomly varied number of reads from each tRNA sequence, drawn from a log2-Gaussian distribution with a mean of 10 and standard deviation of 5, left-censored at zero. Misincorporation and truncations were added at the frequencies observed in the real tRNA-Seq data. Ten sets of simulated reads were generated for each tRNA-Seq sample.</p>
+</sec>
+<sec id="s2c">
+<title>Comparing alignment strategies</title>
+<p>The first question we wished to address was which read alignment strategy yielded the most accurate alignments. We therefore compared 3 strategies using the <italic>Uniform</italic> simulation data by employing either bowtie2 or SHRiMP alignment to tRNA sequences or alignment to consensus tRNA sequences using GSNAP, using the mimseq pipeline<sup><xref ref-type="bibr" rid="c16">16</xref></sup>.</p>
+<p>Bowtie2 and SHRiMP alignments were analysed at 3 levels using the naming convention from GtRNAdb: Gene locus ID, Transcript ID and Anticodon. The mimseq pipeline aligns to consensus tRNA sequences that approximate a single transcript ID and are associated with a single anticodon. Therefore, we also analysed the bowtie2 and SHRiMP alignments at the ‘Mimseq isodecoder’ level to make them comparable.</p>
+<p>With the configurations used here, bowtie2 and SHRiMP aligned the most reads, with the median percentage of aligned reads across all <italic>Homo sapiens</italic> samples being 98.5%, 93.0% and 71.3%, for bowtie2, SHRiMP and mimseq (GSNAP), respectively (<xref rid="fig3" ref-type="fig">Figure 3a</xref>). However, relative to mimseq, SHRiMP and bowtie2 had up to 3.3% and 4.0%, respectively, fewer alignments correct at the anticodon level for <italic>Homo sapiens</italic> samples (<xref rid="fig3" ref-type="fig">Figure 3b</xref>; supplementary Figure 2a). This suggests there is an expected trade-off between the proportion of aligned reads and the accuracy of the alignments (Supplementary Figure 2b).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3.</label>
+<caption><p><bold>Alignment accuracy is dependent upon the alignment strategy and tRNA-Seq method. a)</bold> Percentage of reads aligned. <bold>b)</bold>. Percentage of correct alignments. <bold>c)</bold>. Spearman correlations for read misalignments rates between pairs of tRNA-Seq methods or pairs of samples within a single tRNA-Seq method. QuantM-tRNA-seq is not included since these samples were only for <italic>Mus musculus</italic>. <bold>d)</bold>. A comparison of correct assignments for 4 selected <italic>Homo sapiens</italic> anticodons which are most variable across tRNA-Seq methods. QuantM-tRNA-seq is not included since these samples were only for <italic>Mus musculus</italic>.</p></caption>
+<graphic xlink:href="571582v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We next considered the consistency for the read misalignments patterns. Notably, the read misalignments were more correlated between samples from the same tRNA-Seq method than between the two tRNA-Seq methods for each species (<xref rid="fig3" ref-type="fig">Figure 3c</xref>), likely due to the differences in error profiles between each tRNA-Seq method (<xref rid="fig1" ref-type="fig">Figure 1</xref>). Interestingly, some tRNAs anticodons were difficult to align when simulating reads from specific tRNA-Seq methods. For example, using bowtie2, reads from <italic>Homo sapiens</italic> Sup-TTA tRNAs are more correctly aligned for YAMAT-seq than DM-tRNA-seq. In contrast, mimseq accurately aligned Sup-TTA reads simulated from DM-tRNA-seq, but not from YAMAT-seq (<xref rid="fig3" ref-type="fig">Figure 3d</xref>).</p>
+<p>We also observed cell-line specific misalignment patterns that vary across the tRNA-Seq methods and alignment approaches (Supplementary Figure 2c). For example, using mimseq, reads simulated from mim-tRNAseq for Asp-ATC tRNAs were missassigned to Cys-GCA tRNAs 67%, 40% and 100% of the time for BT20, MCF7, and SKBR3, respectively. However, using bowtie2, the misalignment rates were only 18%, 24% and 36%, respectively. The difference in the misalignments between the cell lines and tRNA-Seq methods supports the approach taken herein to use learn sample-specific error profiles from multiple tRNA-Seq methods to enable simulation of a broad set of representative samples from which to identify a generically accurate quantification approach.</p>
+</sec>
+<sec id="s2d">
+<title>Handling multiple mapped reads</title>
+<p>Once reads are aligned, the major variable is how to handle multi-mapped reads in the process of tallying read counts per tRNA. To compare approaches, we aligned the Realistic simulated reads to tRNA sequences with bowtie2 or SHRiMP and applied 4 approaches used previously to count reads per tRNA, alongside two further approaches which we expected would be more accurate that have not previously been applied, to our knowledge (<xref rid="tbl1" ref-type="table">Table 1</xref>). In addition, we used the dedicated tRNA-Seq quantification tool, mimseq.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Read tallying approaches. SHRiMP does not report MAPQ, so the MAPQ&gt;10 approach is not possible. Decision and Salmon have not previously been utilised.</title></caption>
+<graphic xlink:href="571582v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>With the exception of Decision and mimseq, which inherently generate quantification at multiple levels, all other approaches quantify at the level of the Gene locus ID sequences included in the reference fasta. We further summarised quantification to transcript ID and anticodon-level feature abundances by summation. We also summarised the quantification values to the same ‘mimseq isodecoder’ features quantified by mimseq, to make them comparable. A summary of the 4 levels of quantification and how these are obtained for each read tallying approach is shown (<xref rid="tbl2" ref-type="table">Table 2</xref>).</p>
+<table-wrap id="tbl2" orientation="portrait" position="float">
+<label>Table 2.</label>
+<caption><title>Quantification levels, using GtRNAdb nomenclature, and how quantification is achieved at each level by each read tallying approach.</title></caption>
+<graphic xlink:href="571582v1_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>The proportion of reads used by each read tallying approach varies considerably. <italic>Salmon</italic>, <italic>Fractional</italic> and <italic>Random</italic> use all mapped reads for each level of quantification, whereas stricter approaches which filter by multimapping or mapping quality use the least reads and frequently assign fewer than 50% of the mapped reads (<xref rid="fig4" ref-type="fig">Figure 4a</xref>; Supplementary Figure 3a). As intended, <italic>Decision</italic> uses increasingly more reads at higher levels of quantification. Importantly, <italic>Decision</italic> uses approximately the same number of reads as mimseq at the mimseq isodecoder level, but consistently more at the anticodon level, where it approaches the use of all mapped reads. In contrast, <italic>Mimseq</italic> uses the same number of reads for both mimseq isodecoder and anticodon level quantification. This suggests <italic>Decision</italic> is more appropriately determining which reads to utilise for each level of quantification.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4.</label>
+<caption><p><bold>a)</bold> Reads assigned at anticodon and mimseq isodecoder level for each read tally method. Only results from alignment with bowtie2 or GSNAP (Mimseq) are shown. <bold>b)</bold> Mean RMSE at anticodon and mimseq isodecoder level. *=Best approach for each tRNA-Seq method, ▾=Worst approach. <bold>c)</bold>. As per (b), except Pearson correlation coefficient. <bold>d)</bold> The percentage of reads from each simulation sample which are single or multiple aligned, separated by whether the alignment position(s) have the correct anticodon. Multi-aligned reads with more than more anticodon were deemed incorrect.</p></caption>
+<graphic xlink:href="571582v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2e">
+<title>Comparing read tallying approaches</title>
+<p>To assess the overall accuracy of the abundance estimates obtained with the varying read tallying approaches, we calculated two metrics. The root mean squared error (RMSE) is a common error metric which captures how closely the quantification estimates match the ground truth<sup><xref ref-type="bibr" rid="c29">29</xref></sup>. However, in many applications of tRNA-Seq, including the comparison between conditions or tissues, it’s sufficient to accurately capture the abundance relationship between samples, even if there is a systematic over or under-estimation across all samples. Hence, we complemented the evaluation using RMSE by also considering the Pearson correlation coefficient between the quantification estimates and ground truth.</p>
+<p>To compare the quantification approaches, we considered the mean RMSE and mean correlation across all features at a given quantification level. At the anticodon and mimseq isodecoder level, our novel approaches, <italic>Decision</italic> and <italic>Salmon</italic> consistently show the lowest RMSE and highest correlation, suggesting they deal with multi-mapped reads most appropriately. Of the previously used read-tallying approaches, <italic>Mimseq</italic> shows the highest accuracy. Surprisingly, <italic>Random</italic> and <italic>Fractional</italic> also perform well at the anticodon level, while <italic>Unique</italic> and <italic>MAPQ&gt;10</italic> performed poorly (<xref rid="fig4" ref-type="fig">Figure 4b-c</xref>). On further inspection, this is because the multi-mapped reads are predominantly mapped to multiple tRNA species from the same anticodon (<xref rid="fig4" ref-type="fig">Figure 4d</xref>; Supplementary Figure 3a). Thus, requiring unique alignments at the level of individual tRNA sequences (using <italic>Unique</italic> or <italic>MAPQ&gt;10)</italic> leads to detrimental discarding of multi-mapped reads which could be assigned to a single anticodon. For these reads, selecting one alignment at random, or equally distributing the read between all of them, is a more sensible approach and thus leads to more accurate anticodon level quantification. However, for quantification at lower levels, Unique and <italic>MAPQ &gt; 10</italic> are more accurate than <italic>Random</italic> and <italic>Fractional</italic>, suggesting discarding of multi-mapped reads is better than naive resolution for quantification below the anticodon level (<xref rid="fig4" ref-type="fig">Figure 4b-c</xref>). Very similar results are observed when SHRiMP is used in place of bowtie2 (Supplementary Figure 3b-c). Finally, for quantification at the level of individual tRNA sequences, all methods perform equally well, with the exception of <italic>Random</italic>, which performed the worst. Overall, <italic>Decision</italic> and <italic>Salmon</italic> are consistently the best read tallying methods to apply.</p>
+<p>We reasoned that the misalignment of reads should be one of the major factors reducing quantification accuracy for all methods. In support of this, the fraction of reads correctly aligned and the quantification evaluation metrics were correlated (Supplementary Figure 4a-b). The exception was <italic>MAPQ&gt;10</italic> at anticodon level, which shows poor accuracy even when the proportion of correctly aligned reads is high. This agrees with the previous observation that discarding low quality reads is detrimental for anticodon-level read tallying because reads are typically mapped across multiple tRNAs for the same anticodon, not between anticodons (<xref rid="fig3" ref-type="fig">Figure 3d</xref>). Thus, excepting quantification by <italic>MAPQ&gt;10,</italic> our results indicate that misalignment is one of the major issues with tRNA-Seq quantification.</p>
+</sec>
+<sec id="s2f">
+<title>Using simulations to inform interpretation of results</title>
+<p>Summarising the RMSE and correlation metrics to the mean value over all features enables read tallying approaches to be easily compared, but masks fine-grained differences which go against the trend and could give false confidence when interpreting quantification of individual features. We therefore further considered which features each approach quantifies best, focusing on the simulations from the YAMAT-Seq data and quantification at the anticodon level. For these simulations, <italic>Decision</italic> had the highest mean correlation and lowest mean RMSE, with <italic>Salmon</italic> performing nearly equivalently and <italic>Mimseq</italic> also being accurate (<xref rid="fig4" ref-type="fig">Figure 4c</xref>). However, we observed that the correlations for some anticodons were very sensitive to the read tallying approach (<xref rid="fig5" ref-type="fig">Figure 5a-b</xref>). For example, the correlation for Ser-GGA is much lower with <italic>Mimseq</italic> than <italic>Decision</italic> or <italic>Salmon</italic>, whilst the correlation for Pro-AGG is much higher with <italic>Mimseq</italic> than <italic>Decision</italic> or <italic>Salmon</italic> (<xref rid="fig5" ref-type="fig">Figure 5b</xref>; Supplementary Figure 4c). This suggests the choice of quantification approach may have different impacts on quantification accuracy for each anticodon and the interpretation of results should ideally take into account the limits of each quantification approach.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5.</label>
+<caption><p><bold>Each quantification approach has specific shortfalls. a)</bold> Pearson correlation between ground truth and estimated read counts for six anticodons with variable quantification accuracy between read tallying approaches. <bold>b). c)</bold> The variance in observed fold-changes in the real tRNA-Seq data that is explained by fold-changes in the uniform simulation data. x = The mean variance explained across the four <italic>Homo sapiens</italic> datasets.</p></caption>
+<graphic xlink:href="571582v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Given the observed association between read misassignment and quantification accuracy, we hypothesised that differences in read misalignments between cell lines could erroneously induce apparent differences in tRNA feature abundances. To test this, we compared the fold-change between cell lines when simulating the same number of reads for each tRNA with the fold-changes observed in the real data. The fold-changes with the simulated data should reflect technical biases resulting from systematic differences in misassignments between cell lines due to differences in the error profiles. Strikingly, up to 13% of the variance in fold-changes in the real data were explained by technical biases (<xref rid="fig5" ref-type="fig">Figure 5c</xref>). Even using the most accurate quantification method, <italic>Decision</italic>, up to 7% of the variance for anticodon level fold-changes in the real data is explained by technical biases. All quantification methods appeared to show some propensity to identify fold-changes between conditions that were partially explained by technical biases for at least one level of tRNA quantification. The exception to this was salmon, for which a maximum of 2% of the variance in fold-changes were explained by technical biases. This suggests salmon may be a more trustable quantification method for the detection of fold-changes between experimental conditions.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>Recent advances in sequencing using nanopores promise a potential revolution for RNA sequencing, including tRNAs<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. Despite this, illumina sequencing is expected to remain the dominant approach for tRNA sequencing, at least in the short-term. The first tRNA-seq approaches using illumina sequencing were published in 2015<sup><xref ref-type="bibr" rid="c14">14</xref>,<xref ref-type="bibr" rid="c15">15</xref></sup>, since which, the comparison of bioinformatic approaches for tRNA quantification from tRNA-Seq has received surprisingly little attention. In part, this may be because tRNA-Seq methods continue to be developed and the optimal quantification is considered to be dependent upon the method. Encouragingly, however, we have identified two robust quantification methods that appear to be suitable for all tRNA-Seq data.</p>
+<p>An important aspect of our benchmarking is the simulation of realistic tRNA-Seq data, which has not been attempted before, to our knowledge. The only previous attempt to simulate tRNA-Seq reads that we are aware of did not capture the effect of modifications on read truncations and mutations<sup><xref ref-type="bibr" rid="c31">31</xref></sup>. By learning error profiles of individual samples and then simulating data from these error profiles, our simulations at least partially capture the technical variability between samples, cell lines and tRNA-Seq methods. However, there are limitations to this approach. All truncation and misincorporation events are measured independently, such that the error profiles will not capture dependencies between the events, which occur with respect to correlated misincorporations at nucleotides due to linked modifications<sup><xref ref-type="bibr" rid="c32">32</xref></sup>. In addition, the error profiles are inherently biased by the ability to align the tRNA-Seq reads. Misincorporations and truncations which prevent the read being aligned appropriately will not be captured in the error profiles. As such, the simulated data may be considered to simulate the alignable portion of a tRNA-Seq sample, with biases due to the alignment strategy used. Here, we attempted to mitigate this by aligning reads with multiple aligners. Despite these limitations, our simulations represent the most realistic simulation of tRNA-Seq data to date, and enabled us to perform a rigorous comparison of tRNA-Seq quantification approaches.</p>
+<p>The crucial steps for accurate tRNA-Seq quantification are the alignment of reads and handling of multi-mapped reads, with the latter being the step which varies most between the approaches that have been applied to date. Although reads may be multi-mapped across different tRNA species, we show here that the issue is most pressing at the Gene locus ID and Transcript ID level, and much less so at the Anticodon level. However, dealing with multi-mapped reads inappropriately can itself create issues at the anticodon level. The approaches used to date resolve the multi-mapping are only suitable for quantification at particular levels, which has not previously been appreciated. Crucially, the common approach of removing multi-mapped reads and/or low quality reads is significantly suboptimal for the anticodon level quantification which it has been previously employed for<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c14">14</xref></sup>, since it leads to the unnecessary discarding of reads which have multi-mapped across tRNAs with the same anticodon. The bespoke quantification approach of <italic>Mimseq</italic> is better than filtering multi-mapped reads, but our simulations indicate it performed no better than simple random assignment of multi-mapped reads for anticodon-level quantification.</p>
+<p>The central observation of this benchmarking study is that two simple approaches alleviate the issue of multi-mapped reads and perform better than existing approaches at all levels of quantification. This is observed across all 4 of the tRNA-Seq methods, suggesting our observation can likely be extrapolated to all tRNA-Seq methods using illumina sequencing for full length tRNAs. The <italic>Salmon</italic>-based approach involves reporting all alignment positions and then using salmon to probabilistically resolve the multi-mapped reads. The <italic>Decision</italic> approach involves counting reads at each level of quantification where the read maps to tRNAs from a single feature, e.g multiple tRNAs from the same anticodon. Given the lower propensity for technical biases to explain fold-changes in real data with <italic>Salmon</italic> and the reduced barrier to its use, we suspect salmon will prove to be the most popular. For this approach, bowtie2 simply needs to be run with the –a flag to report all reads. The alignments must then be filtered to retain only the equal top-scoring alignments for each read, before passing the alignments to salmon quant.</p>
+<p>While the motivation of this study was to determine the optimal overall quantification approach, our simulations also identified specific tRNAs that cannot be accurately quantified in particular samples. Our simulations further allowed us to establish that a small proportion of the observed variability between cell lines may not be biological. Thus, comparisons between samples should be interpreted with caution, since they may be partially due to technical biases in read miss-alignment. We propose that a simulation-based approach could be applied more widely as a quality control step to highlight features whose quantification may be inaccurate. In particular, where changes in tRNA abundance between cell lines are observed, it would be prudent to use similar simulations to demonstrate that such changes are not driven by differences in tRNA modifications driving systematic differences in misincorporations and truncations.</p>
+<p>The decision about what level to interrogate tRNA abundance is a trade off between a desire to obtain the most ‘fine-grained’ data possible, and the practical consideration of how accurately tRNAs can be quantified at each level. tRNA isodecoders have been found to be functionality distinct<sup><xref ref-type="bibr" rid="c33">33</xref>,<xref ref-type="bibr" rid="c34">34</xref></sup> and differential abundance of specific Transcript IDs has been identified across mouse tissues<sup><xref ref-type="bibr" rid="c12">12</xref></sup> and human cell lines<sup><xref ref-type="bibr" rid="c16">16</xref></sup>. Nonetheless, tRNA abundances are more accurately quantified at the Anticodon level and this is likely to remain the predominant approach for the foreseeable future. As tRNA-Seq methods continue to improve the processivity of reverse transcriptase over modified bases and yield fewer truncated reads, the potential for highly accurate Transcript ID level quantification will open up. Sequencing tRNAs using nanopores is also likely to provide a significant benefit in this respect<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. However, these improvements in experimental methods need to be complemented by rigorous improvements in the data processing to take full advantage of the potential benefits. We envisage the simulation-based approach we have used here being reutilised as new experimental methods are developed, to maintain a high standard of tRNA-Seq data analysis.</p>
+</sec>
+<sec id="s4">
+<title>Data and code availability</title>
+<p>The data processing pipeline is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant">https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant</ext-link> and the version used (v0.1) is archived at zenodo, DOI: 10.5281/zenodo.10229154. The pipeline makes extensive use of a dedicated python package we developed for the simulation of tRNA-Seq samples, simulatetrna, which is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/simulate_trna">https://github.com/MRCToxBioinformatics/simulate_trna</ext-link> and the version used (v0.1) is archived at zenodo: DOI: 10.5281/zenodo.10235438. The downstream data analysis and visualisation was performed using R markdown notebooks <sup><xref ref-type="bibr" rid="c35">35</xref></sup>, which are available at <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking">https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking</ext-link> (v0.1.1), archived with zenodo, DOI: 10.5281/zenodo.10372994.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The original motivation to benchmark tRNA-Seq quantification approaches came from discussions with Tuija Poyry and Thomas Mulroney and we would like to thank them for their continued insightful comments and suggestions. TS, LS, MM and AEW are supported by the Medical Research Council, grant number RG94251</p>
+</ack>
+<sec id="s5">
+<title>Author contributions</title>
+<p>T.S: Conceptualization, Data Curation, Formal Analysis, Methodology, Project administration, Investigation, Software, Visualization, Writing – Original Draft, Writing – Review &amp; Editing. MM: Investigation, Visualization, Writing – Original Draft, Writing – Review &amp; Editing. AEW: Project administration, Funding acquisition, Writing – Review &amp; Editing. LK: Project administration, Supervision, Writing – Review &amp; Editing.</p>
+</sec>
+<sec id="s6">
+<title>Copyright</title>
+<p>For the purpose of open access, the author has applied a Creative Commons Attribution (CC BY) licence to any Author Accepted Manuscript version arising from this submission.</p>
+</sec>
+<sec id="s7">
+<title>Methods</title>
+<p>A CGAT-core <sup><xref ref-type="bibr" rid="c36">36</xref></sup> python pipeline was used to generate error profiles, compare errors with known modifications, simulate tRNA-Seq samples, align reads, run mimseq, compare simulation ground truth and observed alignments, tally tRNA counts and compare simulation ground truths and quantification estimation, as described below. The pipeline is available from <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant">https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant</ext-link> and the version used (v0.1) is archived at zenodo, DOI: 10.5281/zenodo.10229154.</p>
+<p>Downstream data analysis and visualisation was performed on a macOS (12.1×86_64-apple-darwin17) with R v4.1.2, using Rstudio v2023.09.0+463. The Rmarkdown notebooks are available from <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking">https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking</ext-link> (v0.1.1), archived with zenodo, 10.5281/zenodo.10372994.</p>
+<sec id="s7a">
+<title>Software versions</title>
+<p>All data-processing software was installed in a dedicated conda environment. A yaml file detailing the software versions is included in the github repository for the data-processing pipeline, <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant">https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant</ext-link> (v0.1), archived at zenodo, DOI: 10.5281/zenodo.10229154. Downstream data analysis and visualisation was performed with R v4.1.2. R package dependencies and the versions used are detailed in the github repository for the data analysis and visualisation, <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking">https://github.com/MRCToxBioinformatics/trna_seq_quantification_benchmarking</ext-link> (v0.1.1), archived with zenodo, DOI: 10.5281/zenodo.10372994.</p>
+</sec>
+<sec id="s7b">
+<title>Data acquisition</title>
+<p><italic>Homo sapiens</italic> mim-tRNAseq samples were downloaded from <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/ena/browser/view/PRJNA639839">https://www.ebi.ac.uk/ena/browser/view/PRJNA639839</ext-link>. These comprised two replicates each for iPSC, HEK293T and K562. <italic>Homo sapiens</italic> YAMAT-Seq data were downloaded from <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/ena/browser/view/PRJNA360886">https://www.ebi.ac.uk/ena/browser/view/PRJNA360886</ext-link>. These comprised 3 replicates each for BT-20, SK-BR-3 and MCF-7. <italic>Homo sapiens</italic> DM-tRNA-Seq were downloaded from <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/ena/browser/view/PRJNA277309">https://www.ebi.ac.uk/ena/browser/view/PRJNA277309</ext-link>. These comprised 2 replicates of HEK293T. <italic>Homo sapiens</italic> ALL-tRNASeq were downloaded from <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/ena/browser/view/PRJNA775872">https://www.ebi.ac.uk/ena/browser/view/PRJNA775872</ext-link>. These comprised 3 replicates of hESC at day 0 and day 5 of retinoic acid differentiation. <italic>Mus musculus</italic> QuantM-tRNA-Seq data were downloaded from <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/ena/browser/view/PRJNA593498">https://www.ebi.ac.uk/ena/browser/view/PRJNA593498</ext-link>. These comprised 3 replicates each from Cortex and Cerebellum. Mature tRNA-Seq sequences, mitochondrial tRNA sequences and tRNAscan-SE output files were obtained from v1.3.8 of the mimseq GitHub repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/nedialkova-lab/mim-tRNAseq/releases/tag/v1.3.8">https://github.com/nedialkova-lab/mim-tRNAseq/releases/tag/v1.3.8</ext-link>). Copies of the tRNA sequence files used are contained in the GitHub repository for the data processing pipeline: <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant">https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant</ext-link>; version used (v0.1) archived with zenodo: DOI: 10.5281/zenodo.10229154</p>
+</sec>
+<sec id="s7c">
+<title>Measuring multi-mapping</title>
+<p>Reads from YAMAT-Seq, DM-tRNA-Seq, ALL-tRNASeq, QuantM-tRNA-Seq and mim-tRNAseq were aligned to the tRNA sequences with bowtie2<sup><xref ref-type="bibr" rid="c22">22</xref></sup>. bowtie2 was run with the following non-default parameters: –-min-score G,1,8 –-local –a –D 20 –R 3 –N 1 –L 10 –i S,1,0.5, where –a makes bowtie2 report all read alignments. The bam.filter_sam function from simulatetrna was used to filter read alignment BAM files from bowtie2 and SHRiMP to remove alignments whose alignment score was less than the highest alignment score for the read. To summarise the multimapping for each sample, the number of reads uniquely aligning to each tRNA sequence and multimapping between each pair of tRNA sequences was computed. The number of multimapping reads for each tRNA sequence pair was normalised to 0-1 through dividing by the sum of the multimapped reads and the uniquely mapped reads for each of the tRNA sequences. This procedure was performed at all levels of tRNA sequence nomenclature, as described by GtRNAdb<sup><xref ref-type="bibr" rid="c20">20</xref></sup>. To achieve this, the tRNA sequences to which a read was aligned (Gene locus ID level) were summarised to the higher levels of nomenclature (e.g Anticodon level) by taking the set of unique tRNAs when expressed at the higher level. For example, a read multimapping to the tRNA sequences for Val-CAC-8-1 and Val-CAC-9-1 (Gene locus ID level) would be multi-mapped to Val-CAC-8 and Val-CAC-9 at the Transcript ID level and uniquely mapped to Val-CAC at the anticodon level. Thus, reads multimapping at lower levels could be deemed uniquely mapping at higher levels.</p>
+</sec>
+<sec id="s7d">
+<title>Obtaining error profiles</title>
+<p>Error profiles for each sample were obtained by aligning reads to the reference tRNA sequences using bowtie2<sup><xref ref-type="bibr" rid="c22">22</xref></sup> and BWA-MEM<sup><xref ref-type="bibr" rid="c37">37</xref></sup>, reporting a maximum of one alignment per read. Bowtie2 was run with the following non-default parameters: –-min-score G,1,8 –-local –D 100 –R 3 –N 1 –L 10 –i S,1,0.5. BWA-MEM was run with the following non-default parameters: –k 10 –T 15. The bowtie2 and BWA-MEM alignments for each sample were merged and passed to alignmentSummary.clustalwtrnaAlignmentSummary from the simulatetrna python library to obtain the error profiles. Error profiles represent the frequency of misincorporations at each position in each tRNA, the frequency for each observed read start site (3’ with respect to tRNA), and the frequency of truncations (5’ with respect to tRNA sequence) for each observed read start site. The error profiles do not encode dependencies between misincorporations at each position and between misincorporations and truncations. To avoid error profiles for rare tRNA sequences being inaccurately measured, error profiles were also summarised within tRNAs sharing the same anticodon for the purpose of simulating tRNA-Seq reads.</p>
+</sec>
+<sec id="s7e">
+<title>Comparing error profiles to known modifications</title>
+<p>Modification data was obtained from MODOMICS on 23 January 2023 using their API, with the URLs <ext-link ext-link-type="uri" xlink:href="https://www.genesilico.pl/modomics/api/sequences?RNAtype=tRNA&amp;organism=Homo+sapiens&amp;format=json">https://www.genesilico.pl/modomics/api/sequences?RNAtype=tRNA&amp;organism=Homo+sapiens&amp;format=json</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://www.genesilico.pl/modomics/api/sequences?RNAtype=tRNA&amp;organism=Mus+musculus&amp;format=json">https://www.genesilico.pl/modomics/api/sequences?RNAtype=tRNA&amp;organism=Mus+musculus&amp;format=json</ext-link>. The details of MODOMICS modifications were downloaded from <ext-link ext-link-type="uri" xlink:href="https://genesilico.pl/modomics/modifications">https://genesilico.pl/modomics/modifications</ext-link> on 23 January 2023. Copies of the MODOMICS files used are contained in the GitHub repository for the data processing pipeline: <ext-link ext-link-type="uri" xlink:href="https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant">https://github.com/MRCToxBioinformatics/pipeline_compare_trnaseq_quant</ext-link>; version used (v0.1) archived with zenodo, DOI: 10.5281/zenodo.10229154.</p>
+<p>MODOMICS defines modifications for only a minor portion of tRNAs. On the assumption that tRNAs which share the same anticodon and have a very similar sequence to the MODOMICS tRNA sequence will likely have the same modifications, the positions of the modifications in MODOMICS were mapped to the positions in the reference tRNA sequences. A local alignment was performed using pairwise2.align.localms from Biopython<sup><xref ref-type="bibr" rid="c38">38</xref></sup> with match, mismatch, gap opening and gap extension scores set to 1, –1, –1 and –.1, respectively, and only one alignment reported. Only alignments with a score over 65 were retained. Using the alignments, the modification positions were then lifted over to the fasta sequence positions and the rates of misincorporation and truncations at modified positions were calculated.</p>
+</sec>
+<sec id="s7f">
+<title>Simulating tRNA-Seq samples</title>
+<p>The simulation of tRNA-Seq data was performed using simulateReads.simulate_reads from the simulatetrna python library to generate single end fastq files. Simulated reads contained the ground truth tRNA sequence name in their fastq sequence identifier. Three sets of simulated data were generated.</p>
+<sec id="s7fa">
+<label>1)</label><title>No modifications</title>
+<p>To compare aligner parameterisation options in the absence of modification-induced truncations and misincorporations, 1 million full length reads were simulated with a sequence error rate of 0.001. One tRNA-Seq sample was simulated from each of the Homo sapiens and Mus musculus tRNA sequences fasta files, with the same number of reads per tRNA.</p>
+</sec>
+<sec id="s7fb">
+<label>2)</label><title>Uniform</title>
+<p>To compare alignment rates and mis-assignments with reads that approximated the misincorporation profile of real tRNA-Seq data, an equal number of reads was simulated from each tRNA, with a sequencing error rate of 0.01 and truncations and misincorporations added as observed in the error profile. Anticodon-level error profiles were used to simulate truncation and misincorporations by adding these events at a probability equal to the observed frequency. tRNA sequence positions with total misincorporation frequencies less than 0.1 were excluded. One tRNA-Seq sample was simulated from each of the sample-specific error profiles.</p>
+</sec>
+<sec id="s7fc">
+<label>3)</label><title>Realistic</title>
+<p>To compare the tRNA-Seq quantification approaches, the same approach was taken as for <italic>Uniform</italic>, but with a random number of reads from each tRNA. The random sampling for the number of reads per tRNA was performed using simulateReads.make_gt from the simulatetrna python library. The number of reads was sampled from a left-censured, log2-Gaussian distribution with a mean of 10 and standard deviation of 5. The exponentiated read number was rounded to an integer and values below zero were replaced with zero. A total of 1 million reads were simulated, with the numbers of reads per tRNA sequence down-scaled to achieve this. Ten tRNA-Seq samples were simulated from each of the sample-specific error profiles to enable sample-level evaluation metrics to be obtained.</p>
+</sec>
+</sec>
+<sec id="s7g">
+<title>Comparing read alignments strategies</title>
+<p><italic>Uniform</italic> simulated samples were aligned to the reference tRNA sequences with bowtie2<sup><xref ref-type="bibr" rid="c22">22</xref></sup>, SHRiMP<sup><xref ref-type="bibr" rid="c25">25</xref></sup>. bowtie2 was run with the following non-default parameters: –-min-score G,1,8 –local –a –D 20 –R 3 –N 1 –L 10 –i S,1,0.5, where –a makes bowtie2 report all read alignments. SHRiMP was run with the following non-default parameters: –-strata –-report 1000 –-sam-unaligned –-mode mirna, where report 1000 makes SHRiMP report up to 1000 alignments per read. The bam.filter_sam function from simulatetrna was used to filter read alignment BAM files from bowtie2 and SHRiMP to remove alignments whose alignment score was less than the highest alignment score for the read. In addition, the mimseq pipeline, which uses GSNAP to align to tRNA sequence clusters was also used. As recommended by mimseq developers (<ext-link ext-link-type="uri" xlink:href="https://github.com/nedialkova-lab/mim-tRNAseq/blob/master/README.md">https://github.com/nedialkova-lab/mim-tRNAseq/blob/master/README.md</ext-link>), mimseq was run with the following parameterisation: –-cluster-id 0.97--min-cov 0.0005 –-max-mismatches 0.075 –-max-multi 4 –-remap –-remap-mismatches 0.05. To compare the read alignments to the ground truths, reads which were multi-mapped by bowtie2 or SHRiMP were assigned in an equal proportion to all aligned coordinates. Ground truth vs assignments for bowtie2 and SHRiMP were compared at Gene locus ID, Transcript ID and anticodon level, where a correct match means that the ground truth and alignment have the same e.g anticodon. The comparison was also made at the mimseq isodecoder level, where the output of mimseq was used to define the mimseq isodecoders. For multi-mapped reads, the match score for multi-mapped reads are bounded between 0 (no alignments are correct) and 1 (all alignments are correct). Ground truth vs assignments for mimseq alignments were compared at anticodon and mimseq isodecoder level.</p>
+</sec>
+<sec id="s7h">
+<title>Optimising bowtie2 alignment parameters</title>
+<p>Bowtie2 was used to align the reads from the <italic>No modifications</italic> simulation samples to the reference tRNA sequences with the following non-default parameters –-min-score G,1,8 –local –R 3 –i S,1,0.5 with the value for –D varied from 10 to 100 in steps of 10, the value of –L varied from 10 to 20 in steps of 2, and the value of –N varied from 0 to 1. All combinations of –D, –L and –N were tested. Read alignments were compared to the ground truth as described above.</p>
+</sec>
+<sec id="s7i">
+<title>Evaluating accuracy of read tallying approaches</title>
+<p><italic>Realistic</italic> simulated samples were aligned to the reference tRNA sequences with bowtie2, SHRiMP, using the same parameters as for the alignment of <italic>Uniform</italic> simulated samples. In addition, the mimseq pipeline, which uses GSNAP to align to tRNA sequence clusters was also used, with the same parameterisation as for the alignment of <italic>Uniform</italic> simulated samples. Five approaches were used to tally reads from the read alignments at the tRNA sequences level (Gene locus ID): <italic>Random, Fractional, Unique, MAPQ&gt;10</italic> and <italic>Salmon</italic>. The read tallying approaches involved the following. <italic>Fractional</italic> – Assign reads in equal fractions to all tRNA sequences to which they are aligned. <italic>Random</italic> – Assign reads at random to one of the tRNA sequences to which they are aligned. <italic>Unique</italic> – Remove all reads aligned to multiple tRNA sequences. Assign remaining reads to their aligned tRNA sequence. <italic>MAPQ&gt;10</italic> – Remove all reads with a mapping quality (MAPQ) score less than 10. MAPQ&gt;10 read tallying was not possible from SHRiMP alignments as SHRiMP does not report a MAPQ. <italic>Salmon</italic> – Use salmon<sup><xref ref-type="bibr" rid="c39">39</xref></sup> quant command to estimate the read counts for each tRNA sequence from the alignments.</p>
+<p>Read counts were then summed to the transcript ID, anticodon and mimseq isodecoder level, where the output of mimseq was used to define the mimseq isodecoders. <italic>Decision</italic> – assign reads at the Gene locus ID, transcript ID, anticodon and mimseq isodecoder levels. This involved taking the set of alignments for each read and assigning the read at each level where the read was aligned to just a single feature. <italic>Mimseq</italic> – use the mimseq pipeline<sup><xref ref-type="bibr" rid="c16">16</xref></sup> to tally reads for each anticodon and isodecoder, where the tRNA sequences within each isodecoder group are defined by mimseq at runtime.</p>
+<p>Read tallies per tRNA were compared to the ground truth using two evaluation metrics which were calculated for each tRNA separately: the root mean square error (RMSE)<sup><xref ref-type="bibr" rid="c29">29</xref></sup> and the Pearson Correlation coefficient. The evaluation metrics were calculated at Gene locus ID, Transcript ID, anticodon and mimseq isodecoder levels. To compare between quantification approaches, evaluation metrics were further summarised across all features at each level for each tRNA-Seq method by taking the mean value.</p>
+</sec>
+<sec id="s7j">
+<title>Estimating the contribution of systematic biases to fold-changes</title>
+<p>The read alignment and tallying approaches outlined above were applied to the <italic>Uniform</italic> simulated samples and real tRNA-Seq data to quantify the tRNA read counts. For each tRNA-Seq method, fold-changes between pairs of cell-lines/tissues were then calculated at each quantification level for both the <italic>Uniform</italic> simulated sample and real tRNA-Seq samples.</p>
+<p>The real tRNA-Seq sample log2-fold changes were modeled as being dependent upon the <italic>Uniform</italic> simulated sample log2-fold changes using a least squares linear model with a zero intercept. A separate linear model was used for each level of quantification. The fraction of variance in the real log2-fold changes explained by the log2-fold changes for the simulated sample was obtained from the linear model R-squared value.</p>
+</sec>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><string-name><surname>Schimmel</surname>, <given-names>P</given-names></string-name>. <article-title>The emerging complexity of the tRNA world: mammalian tRNAs beyond protein synthesis</article-title>. <source>Nat. Rev. Mol. Cell Biol</source>. <volume>19</volume>, <fpage>45</fpage>–<lpage>58</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><string-name><surname>Pan</surname>, <given-names>T</given-names></string-name>. <article-title>Modifications and functional genomics of human transfer RNA</article-title>. <source>Cell Res</source>. <volume>28</volume>, <fpage>395</fpage>–<lpage>404</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><string-name><surname>Su</surname>, <given-names>D.</given-names></string-name> <etal>et al.</etal> <article-title>Quantitative analysis of ribonucleoside modifications in tRNA by HPLC-coupled mass spectrometry</article-title>. <source>Nat. Protoc</source>. <volume>9</volume>, <fpage>828</fpage>–<lpage>841</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><string-name><surname>Dittmar</surname>, <given-names>K. A.</given-names></string-name>, <string-name><surname>Goodenbour</surname>, <given-names>J. M.</given-names></string-name> &amp; <string-name><surname>Pan</surname>, <given-names>T</given-names></string-name>. <article-title>Tissue-specific differences in human transfer RNA expression</article-title>. <source>PLoS Genet</source>. <volume>2</volume>, <fpage>e221</fpage> (<year>2006</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><string-name><surname>Gingold</surname>, <given-names>H.</given-names></string-name> <etal>et al.</etal> <article-title>A dual program for translation regulation in cellular proliferation and differentiation</article-title>. <source>Cell</source> <volume>158</volume>, <fpage>1281</fpage>–<lpage>1292</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><string-name><surname>Goodarzi</surname>, <given-names>H.</given-names></string-name> <etal>et al.</etal> <article-title>Modulated Expression of Specific tRNAs Drives Gene Expression and Cancer Progression</article-title>. <source>Cell</source> <volume>165</volume>, <fpage>1416</fpage>–<lpage>1427</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><string-name><surname>Schaffer</surname>, <given-names>A. E.</given-names></string-name>, <string-name><surname>Pinkard</surname>, <given-names>O.</given-names></string-name> &amp; <string-name><surname>Coller</surname>, <given-names>J. M.</given-names></string-name> <article-title>tRNA Metabolism and Neurodevelopmental Disorders</article-title>. <source>Annu. Rev. Genomics Hum. Genet</source>. <volume>20</volume>, <fpage>359</fpage>–<lpage>387</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><string-name><surname>Jonkhout</surname>, <given-names>N.</given-names></string-name> <etal>et al.</etal> <article-title>The RNA modification landscape in human disease</article-title>. <source>RNA N. Y. N</source> <volume>23</volume>, <fpage>1754</fpage>–<lpage>1769</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><string-name><surname>Torres</surname>, <given-names>A. G.</given-names></string-name>, <string-name><surname>Batlle</surname>, <given-names>E.</given-names></string-name> &amp; <string-name><surname>Ribas de Pouplana</surname>, <given-names>L.</given-names></string-name> <article-title>Role of tRNA modifications in human diseases</article-title>. <source>Trends Mol. Med</source>. <volume>20</volume>, <fpage>306</fpage>–<lpage>314</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><string-name><surname>Suzuki</surname>, <given-names>T</given-names></string-name>. <article-title>The expanding world of tRNA modifications and their disease relevance</article-title>. <source>Nat. Rev. Mol. Cell Biol</source>. <volume>22</volume>, <fpage>375</fpage>–<lpage>392</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><string-name><surname>Shigematsu</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal> <article-title>YAMAT-seq: an efficient method for high-throughput sequencing of mature transfer RNAs</article-title>. <source>Nucleic Acids Res</source>. <volume>45</volume>, <fpage>e70</fpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><string-name><surname>Pinkard</surname>, <given-names>O.</given-names></string-name>, <string-name><surname>McFarland</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Sweet</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>Coller</surname>, <given-names>J</given-names></string-name>. <article-title>Quantitative tRNA-sequencing uncovers metazoan tissue-specific tRNA regulation</article-title>. <source>Nat. Commun</source>. <volume>11</volume>, <fpage>4104</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><string-name><surname>Motorin</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Muller</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Behm-Ansmant</surname>, <given-names>I.</given-names></string-name> &amp; <string-name><surname>Branlant</surname>, <given-names>C</given-names></string-name>. <article-title>Identification of modified residues in RNAs by reverse transcription-based methods</article-title>. <source>Methods Enzymol</source>. <volume>425</volume>, <fpage>21</fpage>–<lpage>53</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><string-name><surname>Zheng</surname>, <given-names>G.</given-names></string-name> <etal>et al.</etal> <article-title>Efficient and quantitative high-throughput tRNA sequencing</article-title>. <source>Nat. Methods</source> <volume>12</volume>, <fpage>835</fpage>–<lpage>837</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><string-name><surname>Cozen</surname>, <given-names>A. E.</given-names></string-name> <etal>et al.</etal> <article-title>ARM-seq: AlkB-facilitated RNA methylation sequencing reveals a complex landscape of modified tRNA fragments</article-title>. <source>Nat. Methods</source> <volume>12</volume>, <fpage>879</fpage>–<lpage>884</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><string-name><surname>Behrens</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Rodschinka</surname>, <given-names>G.</given-names></string-name> &amp; <string-name><surname>Nedialkova</surname>, <given-names>D. D</given-names></string-name>. <article-title>High-resolution quantitative profiling of tRNA abundance and modification status in eukaryotes by mim-tRNAseq</article-title>. <source>Mol. Cell</source> <volume>81</volume>, <fpage>1802</fpage>–<lpage>1815</lpage>.e7 (<year>2021</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><string-name><surname>Erber</surname>, <given-names>L.</given-names></string-name> <etal>et al.</etal> <article-title>LOTTE-seq (Long hairpin oligonucleotide based tRNA high-throughput sequencing): specific selection of tRNAs with 3’-CCA end for high-throughput sequencing</article-title>. <source>RNA Biol</source>. <volume>17</volume>, <fpage>23</fpage>–<lpage>32</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><string-name><surname>Scheepbouwer</surname>, <given-names>C.</given-names></string-name> <etal>et al.</etal> <article-title>ALL-tRNAseq enables robust tRNA profiling in tissue samples</article-title>. <source>Genes Dev</source>. <volume>37</volume>, <fpage>243</fpage>–<lpage>257</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><string-name><surname>Velandia-Huerto</surname>, <given-names>C. A.</given-names></string-name> <etal>et al.</etal> <article-title>Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies</article-title>. <source>BMC Genomics</source> <volume>17</volume>, <issue>617</issue> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><string-name><surname>Chan</surname>, <given-names>P. P.</given-names></string-name> &amp; <string-name><surname>Lowe</surname>, <given-names>T. M</given-names></string-name>. <article-title>GtRNAdb 2.0: an expanded database of transfer RNA genes identified in complete and draft genomes</article-title>. <source>Nucleic Acids Res</source>. <volume>44</volume>, <fpage>D184</fpage>–<lpage>189</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><string-name><surname>Torres</surname>, <given-names>A. G</given-names></string-name>. <article-title>Enjoy the Silence: Nearly Half of Human tRNA Genes Are Silent</article-title>. <source>Bioinforma. Biol. Insights</source> <volume>13</volume>, <fpage>1177932219868454</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><string-name><surname>Langmead</surname>, <given-names>B.</given-names></string-name> &amp; <string-name><surname>Salzberg</surname>, <given-names>S. L</given-names></string-name>. <article-title>Fast gapped-read alignment with Bowtie 2</article-title>. <source>Nat. Methods</source> <volume>9</volume>, <fpage>357</fpage>–<lpage>359</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><string-name><surname>Torres</surname>, <given-names>A. G.</given-names></string-name> <etal>et al.</etal> <article-title>Inosine modifications in human tRNAs are incorporated at the precursor tRNA level</article-title>. <source>Nucleic Acids Res</source>. <volume>43</volume>, <fpage>5145</fpage>–<lpage>5157</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><string-name><surname>Torres</surname>, <given-names>A. G.</given-names></string-name>, <string-name><surname>Reina</surname>, <given-names>O.</given-names></string-name>, <string-name><surname>Stephan-Otto Attolini</surname>, <given-names>C.</given-names></string-name> &amp; <string-name><given-names>Ribas</given-names> <surname>de Pouplana</surname></string-name>, L. <article-title>Differential expression of human tRNA genes drives the abundance of tRNA-derived fragments</article-title>. <source>Proc. Natl. Acad. Sci</source>. <volume>116</volume>, <fpage>8451</fpage>–<lpage>8456</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><string-name><surname>David</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Dzamba</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Lister</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Ilie</surname>, <given-names>L.</given-names></string-name> &amp; <string-name><surname>Brudno</surname>, <given-names>M</given-names></string-name>. <article-title>SHRiMP2: Sensitive yet Practical Short Read Mapping</article-title>. <source>Bioinformatics</source> <volume>27</volume>, <fpage>1011</fpage>–<lpage>1012</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><string-name><surname>Wu</surname>, <given-names>T. D.</given-names></string-name>, <string-name><surname>Reeder</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Lawrence</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Becker</surname>, <given-names>G.</given-names></string-name> &amp; <string-name><surname>Brauer</surname>, <given-names>M. J</given-names></string-name>. <article-title>GMAP and GSNAP for Genomic Sequence Alignment: Enhancements to Speed</article-title>, <source>Accuracy, and Functionality. Methods Mol. Biol. Clifton NJ</source> <volume>1418</volume>, <fpage>283</fpage>–<lpage>334</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><string-name><surname>Boccaletto</surname>, <given-names>P.</given-names></string-name> <etal>et al.</etal> <article-title>MODOMICS: a database of RNA modification pathways. 2021 update</article-title>. <source>Nucleic Acids Res</source>. <volume>50</volume>, <fpage>D231</fpage>–<lpage>D235</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><string-name><surname>Torres</surname>, <given-names>A. G.</given-names></string-name>, <string-name><surname>Wulff</surname>, <given-names>T. F.</given-names></string-name>, <string-name><surname>Rodríguez-Escribà</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Camacho</surname>, <given-names>N.</given-names></string-name> &amp; <string-name><surname>Ribas de Pouplana</surname>, <given-names>L.</given-names></string-name> <article-title>Detection of Inosine on Transfer RNAs without a Reverse Transcription Reaction</article-title>. <source>Biochemistry</source> <volume>57</volume>, <fpage>5641</fpage>–<lpage>5647</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><string-name><surname>Hodson</surname>, <given-names>T. O</given-names></string-name>. <article-title>Root-mean-square error (RMSE) or mean absolute error (MAE): when to use them or not</article-title>. <source>Geosci. Model Dev</source>. <volume>15</volume>, <fpage>5481</fpage>–<lpage>5487</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><string-name><surname>Lucas</surname>, <given-names>M. C.</given-names></string-name> <etal>et al.</etal> <article-title>Quantitative analysis of tRNA abundance and modifications by nanopore RNA sequencing</article-title>. <source>Nat. Biotechnol</source>. <fpage>1</fpage>–<lpage>15</lpage> (<year>2023</year>) doi:<pub-id pub-id-type="doi">10.1038/s41587-023-01743-6</pub-id>.</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><string-name><surname>Hoffmann</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal> <article-title>Accurate mapping of tRNA reads</article-title>. <source>Bioinformatics</source> <volume>34</volume>, <fpage>1116</fpage>–<lpage>1124</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><string-name><surname>Hernandez-Alias</surname>, <given-names>X.</given-names></string-name> <etal>et al.</etal> <article-title>Single-read tRNA-seq analysis reveals coordination of tRNA modification and aminoacylation and fragmentation</article-title>. <source>Nucleic Acids Res</source>. <volume>51</volume>, <fpage>e17</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><string-name><surname>Rudinger-Thirion</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Lescure</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Paulus</surname>, <given-names>C.</given-names></string-name> &amp; <string-name><surname>Frugier</surname>, <given-names>M</given-names></string-name>. <article-title>Misfolded human tRNA isodecoder binds and neutralizes a 3′ UTR-embedded Alu element</article-title>. <source>Proc. Natl. Acad. Sci</source>. <volume>108</volume>, <fpage>E794</fpage>–<lpage>E802</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><string-name><surname>Geslain</surname>, <given-names>R.</given-names></string-name> &amp; <string-name><surname>Pan</surname>, <given-names>T</given-names></string-name>. <article-title>Functional analysis of human tRNA isodecoders</article-title>. <source>J. Mol. Biol</source>. <volume>396</volume>, <issue>821</issue> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="other"><string-name><surname>Allaire</surname>, <given-names>J. J.</given-names></string-name>, <etal>et al.</etal> <source>rmarkdown: Dynamic Documents for R</source>. (<year>2021</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><string-name><surname>Cribbs</surname>, <given-names>A. P.</given-names></string-name>, <etal>et al.</etal> <article-title>CGAT-core: a python framework for building scalable, reproducible computational biology workflows</article-title>. <source>F1000Research</source> <pub-id pub-id-type="doi">10.12688/f1000research.18674.2</pub-id> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="preprint"><string-name><surname>Li</surname>, <given-names>H.</given-names></string-name> <article-title>Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM</article-title>. <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.1303.3997</pub-id> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><string-name><surname>Cock</surname>, <given-names>P. J. A.</given-names></string-name> <etal>et al.</etal> <article-title>Biopython: freely available Python tools for computational molecular biology and bioinformatics</article-title>. <source>Bioinforma. Oxf. Engl</source>. <volume>25</volume>, <fpage>1422</fpage>–<lpage>1423</lpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><string-name><surname>Patro</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Duggal</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Love</surname>, <given-names>M. I.</given-names></string-name>, <string-name><surname>Irizarry</surname>, <given-names>R. A.</given-names></string-name> &amp; <string-name><surname>Kingsford</surname>, <given-names>C</given-names></string-name>. <article-title>Salmon: fast and bias-aware quantification of transcript expression using dual-phase inference</article-title>. <source>Nat. Methods</source> <volume>14</volume>, <fpage>417</fpage>–<lpage>419</lpage> (<year>2017</year>).</mixed-citation></ref>
+</ref-list>
+<sec id="s18">
+<title>Supplementary Figures</title>
+<p>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 1.</label>
+<caption><p><bold>a)</bold> The complete misincorporation frequencies for all modifications. <bold>b)</bold> The frequency of read truncations with respect to the distance from the 3’ end of the tRNA.</p></caption>
+<graphic xlink:href="571582v1_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary figure 2.</label>
+<caption><p><bold>a)</bold> Percentage of correct alignments at all levels of quantification. <bold>b)</bold> Aligned reads vs correct alignments. Aligners with a higher percentage of aligned reads tend to have a lower percentage of correct alignments. <bold>c)</bold> Example misincorporation events with differential frequency across cell lines in the mim-tRNAseq and YAMATseq simulations.</p></caption>
+<graphic xlink:href="571582v1_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 3.</label>
+<caption><p><bold>a)</bold> Reads assigned at each level for each read tally method. Only results from alignment with bowtie2 or GSNAP (Mimseq) are shown. <bold>b)</bold> The percentage of reads from each simulation sample which are single or multiple aligned, separated by whether the alignment position(s) have the correct anticodon. Multi-aligned reads with more than more anticodon were deemed incorrect. <bold>c)</bold> Mean RMSE for all approaches at all levels. *=Best approach for each tRNA-Seq method, ▾=Worst approach. <bold>c)</bold> As per (c), except Pearson correlation coefficient.</p></caption>
+<graphic xlink:href="571582v1_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 4.</label>
+<caption><p><bold>a)</bold> The correlation between the fraction of reads correctly assigned for each anticodon and the Pearson correlation between the estimated and true read counts. The blue line shows a linear regression fit. <bold>b).</bold> As per (a) but for mimseq isodecoder level quantification. <bold>c)</bold> The correlation between ground truth and estimated read counts for 6 anticodons with variable quantification accuracy, from YAMAT-Seq simulations. The dashed line represents equality.</p></caption>
+<graphic xlink:href="571582v1_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</p>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96955.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Park</surname>
+<given-names>Jong-Eun</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Korean Advanced Institute of Science and Technology</institution>
+</institution-wrap>
+<city>Daejeon</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study provides a <bold>valuable</bold> resource by thoroughly benchmarking multiple sequencing-based tRNA quantification methods. The suggested best practice is supported by <bold>solid</bold> evidence from in silico experiments in multiple scenarios. The major weakness of the manuscript is the <bold>incomplete</bold> validation of newly generated experimental datasets.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96955.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In the manuscript titled &quot;Benchmarking tRNA-Seq quantification approaches by realistic tRNA-Seq data simulation identifies two novel approaches with higher accuracy,&quot; Tom Smith and colleagues conducted a comparative evaluation of various sequencing-based tRNA quantification methods. The inherent challenges in accurately quantifying tRNA transcriptional levels, stemming from their short sequences (70-100nt), extensive redundancy (~600 copies in human genomes with numerous isoacceptors and isodecoders), and potential for over 100 post-transcriptional chemical modifications, necessitate sophisticated approaches. Several wet-experimental methods (QuantM-tRNA, mim-tRNA, YAMAT, DM-tRNA, and ALL-tRNA) combined with bioinformatics tools (bowtie2-based, SHRiMP, and mimseq) have been proposed for this purpose. However, their practical strengths and weaknesses have not been comprehensively explored to date. In this study, the authors systematically assessed and compared these methods, considering factors such as incorrect alignments, multiple alignments, misincorporated bases (experimental errors), truncated reads, and correct assignments. Additionally, the authors introduced their own bioinformatic approaches (referred to as Decision and Salmon), which, while not without flaws (as perfection is unattainable), exhibit significant improvements over existing methods.</p>
+<p>Strengths:</p>
+<p>The manuscript meticulously compares tRNA quantification methods, offering a comprehensive exploration of each method's relative performance using standardized evaluation criteria. Recognizing the absence of &quot;ground-truth&quot; data, the authors generated in silico datasets mirroring common error profiles observed in real tRNA-seq data. Through the utilization of these datasets, the authors gained insights into prevalent sources of tRNA read misalignment and their implications for accurate quantification. Lastly, the authors proposed their downstream analysis pipelines (Salmon and Decision), enhancing the manuscript's utility.</p>
+<p>Weaknesses:</p>
+<p>As discussed in the manuscript, the error profiles derived from real-world tRNA-seq datasets may still harbor biases, as reads that failed to &quot;align&quot; in the analysis pipelines were not considered. Additionally, the authors did not validate the efficacy of their &quot;best practice&quot; pipelines on new real-world datasets, preferably those generated by the authors themselves. Such validation would not only confirm the improvements but also demonstrate how these pipelines could alter biological interpretations.</p>
+<p>
+Because tRNA-sequencing methods have not been widely used (compared to mRNA-seq), many readers would not be familiar with the characteristics of different methods introduced in this study (QuantM-tRNA, mim-tRNA, YAMAT, DM-tRNA, and ALL-tRNA; bowtie2-based, SHRiMP, and mimseq; what are the main features of &quot;Salmon?&quot;). The manuscript will read better when the basic features of these methods are described in the manuscript, however brief.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96955.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors provided benchmarking study results on tRNA-seq in terms of read alignment and quantification software with optimal parameterization. This result can be a useful guideline for choosing optimal parameters for tRNA-seq read alignment and quantification.</p>
+<p>Strengths:</p>
+<p>Benchmarking results for read alignment can be a useful guideline to choose optimal parameters and mapping strategy (mapping to amino acid) for various tRNAseq.</p>
+<p>Weaknesses:</p>
+<p>The topic is highly specific, and the novelty of the analysis might not be widely useful for general readers.</p>
+<p>Some details of the sequencing data analysis pipeline are not clear for general readers:</p>
+<p>(1) The explanation of the parameter D for bowtie2 sounds ambiguous. &quot;How much effort to expend&quot; needs to be explained in more detail.</p>
+<p>(2) Please provide optimal parameters (L and D) for tRNA-seq alignment.</p>
+<p>(3) I think the authors chose L=10 and D=100 based on Figure 1A. Which dataset did you choose for this parameterization among ALL-tRNAseq, DM-tRNAseq, mim-tRNAseq, QuantM-tRNA-seq, and YAMAT-seq?</p>
+<p>(4) Salmon does not need a read alignment process such as Bowtie2. Hence, it is not clear &quot;Only results from alignment with bowtie2&quot; in Figure legend for Figure 4a.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96955.1.sa3</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Smith</surname>
+<given-names>Tom</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0697-8777</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Monti</surname>
+<given-names>Mie</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0617-9457</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Willis</surname>
+<given-names>Anne E</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1470-8531</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kalmár</surname>
+<given-names>Lajos</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3691-8350</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We thank the reviewers for their critical appraisal of our manuscript. We will address the points of confusion and/or lack of clarity in a revised manuscript. We agree with reviewer 1 that applying the best practice pipeline(s) on new experimental data and comparing this approach with current practices would be a useful demonstration of how this alters the biological interpretation. This is something we are in the process of completing but believe this is best addressed in a separate manuscript where we can focus on the associated biological findings, allowing this manuscript to remain focused on the accurate quantification of tRNA-Seq data.</p>
+</body>
+</sub-article>
+</article>
