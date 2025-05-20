@@ -1,0 +1,974 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">96421</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.96421</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.96421.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Balancing reaction-diffusion network for cell polarization pattern with stability and asymmetry</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Chen</surname>
+<given-names>Yixuan</given-names>
+</name>
+<xref ref-type="aff" rid="A1">a</xref>
+<xref ref-type="aff" rid="A2">b</xref>
+<xref ref-type="aff" rid="A3">c</xref>
+<xref ref-type="fn" rid="FN1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Guan</surname>
+<given-names>Guoye</given-names>
+</name>
+<xref ref-type="aff" rid="A1">a</xref>
+<xref ref-type="aff" rid="A4">d</xref>
+<xref ref-type="aff" rid="A5">e</xref>
+<xref ref-type="fn" rid="FN1">1</xref>
+<xref ref-type="fn" rid="FN2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Tang</surname>
+<given-names>Lei-Han</given-names>
+</name>
+<xref ref-type="aff" rid="A1">a</xref>
+<xref ref-type="aff" rid="A5">e</xref>
+<xref ref-type="aff" rid="A6">f</xref>
+<xref ref-type="aff" rid="A7">g</xref>
+<xref ref-type="corresp" rid="CR1">*</xref>
+<email xlink:href="mailto:lhtang@hkbu.edu.hk">lhtang@hkbu.edu.hk</email>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Tang</surname>
+<given-names>Chao</given-names>
+</name>
+<xref ref-type="aff" rid="A3">c</xref>
+<xref ref-type="aff" rid="A4">d</xref>
+<xref ref-type="aff" rid="A8">h</xref>
+<xref ref-type="corresp" rid="CR1">*</xref>
+<email xlink:href="mailto:tangc@pku.edu.cn">tangc@pku.edu.cn</email>
+</contrib>
+<aff id="A1"><label>a.</label><institution>South Bay Interdisciplinary Science Center, Songshan Lake Materials Laboratory</institution>, <addr-line>Guangdong 523808</addr-line>, <country>China</country></aff>
+<aff id="A2"><label>b.</label><institution>Department of Physics, Sichuan University</institution>, <addr-line>Sichuan 610065</addr-line>, <country>China</country></aff>
+<aff id="A3"><label>c.</label><institution>School of Physics, Peking University</institution>, <addr-line>Beijing 100871</addr-line>, <country>China</country></aff>
+<aff id="A4"><label>d.</label><institution>Center for Quantitative Biology, Peking University</institution>, <addr-line>Beijing 100871</addr-line>, <country>China</country></aff>
+<aff id="A5"><label>e.</label><institution>Department of Physics, Hong Kong Baptist University</institution>, <addr-line>Hong Kong 999077</addr-line>, <country>China</country></aff>
+<aff id="A6"><label>f.</label><institution>Institute of Computational and Theoretical Studies, Hong Kong Baptist University</institution>, <addr-line>Hong Kong 999077</addr-line>, <country>China</country></aff>
+<aff id="A7"><label>g.</label><institution>State Key Laboratory of Environmental and Biological Analysis, Hong Kong Baptist University</institution>, <addr-line>Hong Kong 999077</addr-line>, <country>China</country></aff>
+<aff id="A8"><label>h.</label><institution>Peking-Tsinghua Center for Life Sciences, Peking University</institution>, <addr-line>Beijing 100871</addr-line>, <country>China</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Gómez-Schiavon</surname>
+<given-names>Mariana</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Universidad Nacional Autónoma de México</institution>
+</institution-wrap>
+<city>Querétaro</city>
+<country>Mexico</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Walczak</surname>
+<given-names>Aleksandra M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>CNRS</institution>
+</institution-wrap>
+<city>Paris</city>
+<country>France</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="CR1"><label>*</label>Corresponding authors. <italic>E-mail addresses:</italic> <email xlink:href="mailto:lhtang@hkbu.edu.hk">lhtang@hkbu.edu.hk</email> (L.-H. Tang), <email xlink:href="mailto:tangc@pku.edu.cn">tangc@pku.edu.cn</email> (C. Tang).</corresp>
+<fn id="FN1"><label>1</label><p>These authors contributed equally to this work.</p></fn>
+<fn id="FN2"><label>2</label><p>Current address: Dana-Farber Cancer Institute and Department of Systems Biology, Harvard Medical School, Boston 02115, USA.</p></fn>
+</author-notes>
+<pub-date pub-type="epub">
+<day>14</day>
+<month>01</month>
+<year>2024</year>
+</pub-date>
+<pub-date date-type="original-publication" iso-8601-date="2024-06-21">
+<day>21</day>
+<month>06</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP96421</elocation-id>
+<history><date date-type="sent-for-review" iso-8601-date="2024-03-01">
+<day>01</day>
+<month>03</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-01-12">
+<day>12</day>
+<month>01</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.48550/arXiv.2401.07227"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Chen et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Chen et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-96421-v1.pdf"/>
+<abstract>
+<p>Cell polarization is a critical process that separates molecules into two distinct regions in prokaryotic and eukaryotic cells, guiding biological processes such as cell division and cell differentiation. Although several underlying antagonistic reaction-diffusion networks capable of setting up cell polarization have been identified experimentally and theoretically, our understanding of how to manipulate pattern stability and asymmetry remains incomplete, especially when only a subset of network components are known. Here we present numerical results to show that the polarized pattern of an antagonistic 2-node network collapses into a homogeneous state when subjected to single-sided self-regulation, single-sided additional regulation, or unequal system parameters. However, polarity can be restored through a combination of two modifications that have opposing effects. Additionally, spatially inhomogeneous parameters favoring respective domains stabilize their interface at designated locations. To connect our findings to cell polarity studies of the nematode <italic>Caenorhabditis elegans</italic> zygote, we reconstituted a 5-node network where a 4-node circuit with full mutual inhibitions between anterior and posterior is modified by a mutual activation in the anterior and an additional mutual inhibition between the anterior and the posterior. Once again, a generic set of kinetic parameters moves the interface towards either the anterior or posterior end, yet a polarized pattern can be stabilized through spatial tuning of one or more parameters coupled to intracellular or extracellular cues. A user-friendly software, <italic>PolarSim</italic>, is introduced to facilitate the exploration of networks with alternative node numbers, parameter values, and regulatory pathways.</p>
+</abstract>
+<kwd-group>
+<title>Keywords</title>
+<kwd>Reaction-diffusion network</kwd>
+<kwd>Cell polarization</kwd>
+<kwd>Stability</kwd>
+<kwd>Asymmetry</kwd>
+<kwd><italic>Caenorhabditis elegans</italic></kwd>
+<kwd>Embryogenesis</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="s1" sec-type="intro">
+<title>1. Introduction</title>
+<p>Cell polarization is a biophysical and biochemical process where a cell acquires spatial anisotropy by establishing directional gradients of molecules across its membrane or in the cytosol [<xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c2">2</xref>]. Polarity establishment is an essential step in a wide range of biological phenomena, including embryonic development, wound healing, immune activity, and so forth [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c4">4</xref>]. During cytokinesis, a polarized cell can allocate its molecular contents unequally to its daughter cells, leading to asymmetric cell size and cell fate [<xref ref-type="bibr" rid="c5">5</xref>]. At the multicellular level, a group of polarized cells can undergo collective movements and constitute stereotypic architectures [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c4">4</xref>]. Thus, loss or disorder of cell polarization could severely violate normal biological processes, for example, resulting in embryonic lethality and cancerous tumor [<xref ref-type="bibr" rid="c4">4</xref>, <xref ref-type="bibr" rid="c6">6</xref>]. To this day, cell polarization has been a long-term research focus in cell and developmental biology, where more and more efforts have been paid to uncover both the regulatory pathways and design principles involved [<xref ref-type="bibr" rid="c7">7</xref>–<xref ref-type="bibr" rid="c10">10</xref>].</p>
+<p>Much of our knowledge on cell polarization is derived from the zygote of the nematode <italic>Caenorhabditis elegans</italic> (referred to as <italic>C. elegans</italic>), which has served as a prominent model organism for studying cell polarization [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c12">12</xref>]. After fertilization, the <italic>C. elegans</italic> zygote is polarized where the entry side of the sperm (one pole of the ellipsoidal egg) turns into the posterior of the embryo [<xref ref-type="bibr" rid="c13">13</xref>, <xref ref-type="bibr" rid="c14">14</xref>]. Driven by cell polarization, the embryo proceeds through four successive rounds of asymmetric cell divisions and produces four somatic founder cells sequentially [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c16">16</xref>].</p>
+<p>The asymmetric division in the <italic>C. elegans</italic> zygote is governed by a protein family termed <underline>par</underline>titioning-defective protein (PAR) [<xref ref-type="bibr" rid="c17">17</xref>]. The initial PAR family only consisted of the PAR-3/PAR-6/PKC-3 complex and PAR-1/PAR-2 complex, which are stably accumulated in the anterior and posterior domains on the membrane of the zygote before its division, respectively [<xref ref-type="bibr" rid="c18">18</xref>]. A series of experiments (including RNA interference, immunoprecipitations, fluorescence recovery after photobleaching, and time-lapse single-molecule imaging) further uncovered the mutual inhibition of those two groups of proteins upon their association with the membrane and demonstrated its essential role in the robust spatial separation of PAR proteins [<xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c18">18</xref>]. Soon, theoretical and numerical studies proved that mutual inhibition forms the backbone (hereafter referred to as an antagonistic 2-node network) of a polarized pattern [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>]. In the <italic>C. elegans</italic> zygote, the antagonism between these two protein groups directs the uneven distribution in downstream cell fate determinants (<italic>e.g.</italic>, PIE-1 and P granules), which is inherited by the two daughter cells during the following asymmetric cell division, leading to cell differentiation [<xref ref-type="bibr" rid="c19">19</xref>, <xref ref-type="bibr" rid="c20">20</xref>].</p>
+<p>In recent years, more proteins have been identified to significantly interact with the antagonistic 2-node network, such as the CDC-42, LGL-1, and, CHIN-1 in the cell polarization of <italic>C. elegans</italic> zygote [<xref ref-type="bibr" rid="c21">21</xref>–<xref ref-type="bibr" rid="c23">23</xref>]. The addition of these players increases the complexity of the cell polarity network tremendously, not only because of the explosion of the associated kinetic parameters, but also their role in related cellular processes such as cytoskeleton organization and localization at the poles that determines cell division dynamics [<xref ref-type="bibr" rid="c24">24</xref>, <xref ref-type="bibr" rid="c25">25</xref>]. Therefore a more general understanding of the stability and asymmetry of cell polarity patterns will help to streamline experimental data analysis and interpretation. In a separate development, the theoretical knowledge acquired from nature is urgently needed for <italic>de novo</italic> construction of cells with designated characteristics, where the capability of cell polarization has been a design target since over a decade ago [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c26">26</xref>, <xref ref-type="bibr" rid="c27">27</xref>].</p>
+<p>In this work, we focus on the generation of stable asymmetric patterns in both the widely- used 2-node network and a more realistic <italic>C. elegans</italic> 5-node network. Starting from a symmetric antagonistic network, a polarized pattern can be stabilized at any interface location between the two antagonistic domains when translational symmetry is assumed. Unbalanced modification of kinetic parameters triggers movement of the interface in favor of one of the coexisting domains. There are three types of such unbalanced modification: single-sided self-regulation, single-sided additional regulation, and unequal system parameters. Nevertheless, the combination of two or more unbalanced modifications can recover pattern stability through fine-tuning of kinetic parameters. Alternatively, we show that the interface can also be stabilized at a designated location with a step-like spatial profile of one or more of the kinetic parameters, with values leading to opposing velocities when the interface is displaced. Intriguingly, such a program strategy is found to be employed in the <italic>C. elegans</italic> cell polarization network to maintain pattern stability along with considerable parameter robustness, while inducing pattern asymmetry by interface localization control.</p>
+</sec>
+<sec id="s2" sec-type="results">
+<title>2. Results</title>
+<sec id="s2a">
+<title>2.1. A computational pipeline for simulating cell polarization</title>
+<p>To investigate both the simplified network and the realistic network consisting of various node numbers and regulatory pathways [<xref ref-type="bibr" rid="c12">12</xref>, <xref ref-type="bibr" rid="c28">28</xref>], we propose a computational pipeline for numerical exploration of the dynamics of a given reaction-diffusion network capable of maintaining stable cell polarization. Numerous biological experiments on different organisms have demonstrated that such a reaction-diffusion network typically comprises two groups of molecules. Each group, once associated with a part of the cell membrane from the cell cytosol, inhibits the association of the other group in the same region, thereby creating two types of distinct domains [<xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c7">7</xref>]. At the interface between the two domains, the membrane association of proteins in either group is compromised due to the elevated level of antagonists. Nevertheless, one of the domains may expand at the expense of the other, leading to a finite interface velocity in general. For simplicity, three assumptions previously used in research are adopted to establish a reaction-diffusion model to describe the dynamics of each molecular species (denoted by [X]) during cell polarization:
+<list list-type="order">
+<list-item><p>The cellular space is reduced to a one-dimensional line of length <italic>L</italic> = 0.5, where <italic>x</italic> = −0.25 (anterior, where the concentration of molecules accumulated on the cell membrane is denoted by [A<sub>m</sub>]) and 0.25 (posterior, where the molecule accumulated on the cell membrane is denoted by [P<sub>m</sub>]) are its two poles (<xref ref-type="fig" rid="fig1">Fig. 1</xref>) [<xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c30">30</xref>].</p></list-item>
+<list-item><p>A molecule of type [X] can associate with the cell membrane from cell cytosol at a rate
+<inline-formula id="ID1">
+<alternatives>
+<mml:math display="inline" id="I1"><mml:mrow><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>on</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq1.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and dissociate from the cell membrane into cell cytosol at a rate <inline-formula id="ID2">
+<alternatives>
+<mml:math display="inline" id="I2"><mml:mrow><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>off</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq2.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>, where <italic>t</italic> represents time. Both rates include leaky term and regulatory pathways affected by other molecules [<xref ref-type="bibr" rid="c31">31</xref>, <xref ref-type="bibr" rid="c32">32</xref>].</p></list-item>
+<list-item><p>Based on previous experimental measurements, it has been reported that the diffusion rate of molecules involved in cell polarization (<italic>i.e.</italic>, PAR-2 and PAR-6) is two orders of magnitude higher in the cell cytosol compared to the cell membrane [<xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c33">33</xref>]. Consequently, the cytoplasmic molecules can be regarded as well-mixed. We further assume that these molecules are sufficiently abundant in the pool of cell cytosol, where the concentration is conserved as constant [X<sub>c</sub>], although the analysis below can be extended to the more general case [<xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c34">34</xref>].</p></list-item>
+</list>
+</p>
+<p>For the concentration of each molecular species [X] on the cell membrane [X<sub>m</sub>] , the evolution equation is described by:
+<disp-formula id="FD1">
+<alternatives>
+<mml:math id="M1" display="block"><mml:mfrac><mml:mrow><mml:mo>∂</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mo>∂</mml:mo></mml:mfrac><mml:mo>=</mml:mo><mml:msubsup><mml:mi>D</mml:mi><mml:mi mathvariant="normal">m</mml:mi><mml:mi mathvariant="normal">x</mml:mi></mml:msubsup><mml:mfrac><mml:mrow><mml:msup><mml:mo>∂</mml:mo><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mrow><mml:mo>∂</mml:mo><mml:msup><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mfrac><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mi mathvariant="normal">X</mml:mi><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>on</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mi mathvariant="normal">X</mml:mi><mml:mi mathvariant="normal">c</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>off</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:math>
+<graphic xlink:href="2401.07227v1_eqn1.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(1)</label>
+</disp-formula>
+</p>
+<p>where <inline-formula id="ID3">
+<alternatives>
+<mml:math display="inline" id="I3"><mml:mrow><mml:msubsup><mml:mi>D</mml:mi><mml:mi mathvariant="normal">m</mml:mi><mml:mi mathvariant="normal">X</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq3.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> is the diffusion coefficient of molecule [X] on the cell membrane. The first term on the right side represents the diffusion across the cell membrane; the second term represents the association with the cell membrane from the cytosol; while the third term represents the dissociation from the cell membrane into the cytosol. These regulated association and dissociation are given by the Hill equation [<xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c35">35</xref>]:
+<disp-formula id="FD2">
+<alternatives>
+<mml:math id="M2" display="block"><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>on</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>γ</mml:mi><mml:mtext>X</mml:mtext></mml:msub><mml:mo>+</mml:mo><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mtext>Y</mml:mtext></mml:munder><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y2</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>Y</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yq</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y1</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>Y</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yq</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle><mml:mo>,</mml:mo></mml:math>
+<graphic xlink:href="2401.07227v1_eqn2.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(2)</label>
+</disp-formula>
+<disp-formula id="FD3">
+<alternatives>
+<mml:math id="M3" display="block"><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>off</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mtext>X</mml:mtext></mml:msub><mml:mo>+</mml:mo><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mtext>Y</mml:mtext></mml:munder><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y2</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>Y</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yk</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y1</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>Y</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yk</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle><mml:mo>,</mml:mo></mml:math>
+<graphic xlink:href="2401.07227v1_eqn3.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(3)</label>
+</disp-formula>
+</p>
+<p>where <inline-formula id="ID4">
+<alternatives>
+<mml:math display="inline" id="I4"><mml:mrow><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>on</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq4.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> consists of a basal on-rate (<italic>i.e.</italic>, association rate) γ<sub>X</sub> and recruitment by other membrane-bound molecules (Y ≠ X) and itself (Y = X, <italic>i.e.</italic>, self-activation), quantified by positive parameters <inline-formula id="ID5">
+<alternatives>
+<mml:math display="inline" id="I5"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y</mml:mtext><mml:mi>i</mml:mi></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq5.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> (i = 1,2); <inline-formula id="ID6">
+<alternatives>
+<mml:math display="inline" id="I6"><mml:mrow><mml:msubsup><mml:mi>F</mml:mi><mml:mrow><mml:mtext>off</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq6.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> consists of a basal off-rate (<italic>i.e.</italic>, dissociation rate) α<sub>X</sub> and exclusion by other molecules (Y ≠ X) and itself (Y = X, <italic>i.e.</italic>, self-inhibition), quantified by positive parameters <inline-formula id="ID7">
+<alternatives>
+<mml:math display="inline" id="I7"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y</mml:mtext><mml:mi>i</mml:mi></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq7.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> (i = 1,2); the Hill coefficients <inline-formula id="ID8">
+<alternatives>
+<mml:math display="inline" id="I8"><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yq</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq8.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and <inline-formula id="ID9">
+<alternatives>
+<mml:math display="inline" id="I9"><mml:mrow><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Yk</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq9.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> are set to 2 as used before [<xref ref-type="bibr" rid="c31">31</xref>, <xref ref-type="bibr" rid="c35">35</xref>]. To further simplify the model for numerical exploration, we set the same responsive concentration <inline-formula id="ID10">
+<alternatives>
+<mml:math display="inline" id="I10"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y1</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mo>=</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y1</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup><mml:mo>=</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq10.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> for both activation and inhibition pathways; the inhibition intensities <inline-formula id="ID11">
+<alternatives>
+<mml:math display="inline" id="I11"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y2</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq11.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> are set to 1, which also defines our unit of time, with a nominal value of 1 sec in the observation experiment [<xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c36">36</xref>]. We also set self and mutual activation parameters <inline-formula id="ID12">
+<alternatives>
+<mml:math display="inline" id="I12"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y2</mml:mtext></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq12.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = <italic>q</italic><sub>2</sub> to be the same for synergistic proteins in the same group. Finally, the basal association and dissociation rates are regarded the same so that these spatially-independent effects can be neutralized, in other words, <italic>γ</italic><sub>X</sub> = <italic>α</italic><sub>X</sub> = <italic>γ</italic>. Consequently, there are only three independent parameters governing this system: γ, <italic>k</italic><sub>1</sub>, and q<sub>2</sub>. A detailed description of the parameters is listed in Table S1. This dimensionally reduced parameter configuration is sufficient to describe the temporal evolution of polarization distribution on the membrane under the well-mixed cytoplasmic protein concentration. All the simplified parameter value assignments above will be extensively explored by giving different values to different molecules and pathways as well as setting a heterogeneous spatial distribution.</p>
+<p>Simulations are performed by systematically scanning the dimensionless parameter set (<italic>γ</italic>, <italic>k</italic><sub>1</sub>, q<sub>2</sub>) on a three-dimensional (3D) grid <italic>γ</italic> ∈ [0,0.05] in steps Δγ = 0.001, <italic>k</italic><sub>1</sub> ∈ [0,5] in steps Δ<italic>k</italic><sub>1</sub> = 0.05, and q<sub>2</sub> ∈ [0,0.05] in steps Δq<sub>2</sub> = 0.001. The initial state of the molecule distribution [X<sub>m</sub>](<italic>x</italic>, 0) is set as a polarized pattern with the sigmoid function as follows:
+<disp-formula id="FD4">
+<alternatives>
+<mml:math id="M4" display="block"><mml:mrow><mml:mo>{</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mn>20</mml:mn><mml:mi>x</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mtext>for anterior molecule</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mtext>s</mml:mtext><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mn>20</mml:mn><mml:mi>x</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mtext>for posterior molecule</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mtext>s</mml:mtext><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+<graphic xlink:href="2401.07227v1_eqn4.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(4)</label>
+</disp-formula>
+</p>
+<p>Then the set of partial differential <xref ref-type="disp-formula" rid="FD1">equations (1)</xref> evolves for 500 steps with a time step of 1 (or equivalent to 500 steps × 1 sec per step = 8 min 20 sec in reality), approaching the period of maintenance phase in cell polarization, ~10 min, measured <italic>in vivo</italic> [<xref ref-type="bibr" rid="c37">37</xref>]. The solution at t = 500 is saved for further analysis if:
+<list list-type="alpha-lower">
+<list-item><p>All the molecules still have a polarized pattern, as defined by [X<sub>m</sub>](<italic>x</italic> = –L/2, t = 500) &gt; 0.5 and [X<sub>m</sub>|(<italic>x</italic> = L/2, t = 500) &lt; 0.5 for the anterior molecule(s) and [X<sub>m</sub>](<italic>x</italic> = –L/2, t = 500) &lt; 0.5 and [X<sub>m</sub>](<italic>x</italic> = L/2, t = 500) &gt; 0.5 for the posterior molecule(s).</p></list-item>
+<list-item><p>The cell polarization pattern is stable or nearly intact over time, as defined by <inline-formula id="ID13">
+<alternatives>
+<mml:math display="inline" id="I13"><mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>499</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>499</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mrow><mml:mo>|</mml:mo></mml:mrow></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq13.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> &lt; 10<sup>–4</sup> (<italic>x</italic><sub>0</sub> ∈ [–0.25,0.25]) for each molecule.</p></list-item>
+</list>
+</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Fig. 1.</label>
+<caption><title>The single modification on the antagonistic 2-node network causes the collapse of the cell polarization pattern.</title><p>(a) Basic network with the interface region shaded by grey. (b) Two subtypes of single-sided self-regulation. (c) Four subtypes of single-sided additional regulation. (d) Two subtypes of unequal system parameters, exemplified by unequal inhibition intensity and unequal cytoplasmic concentration. For each network, the corresponding concentration distribution of [A<sub>m</sub>] and [P<sub>m</sub>] at <italic>t</italic> = 0, 100, 200, 300, 400, and 500 are shown beneath with a color scheme listed in the bottom left corner. Note that within a network, normal arrows and blunt arrows symbolize activation and inhibition respectively.</p></caption>
+<graphic xlink:href="2401.07227v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2b">
+<title>2.2. An unbalanced network structure or parameter leads to the collapse of a polarized pattern</title>
+<p>Previous experimental and theoretical discoveries have uncovered the mutual inhibition between two molecular species as a fundamental design capable of generating cell polarization [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c17">17</xref>, <xref ref-type="bibr" rid="c18">18</xref>]. Thus, we utilize the completely symmetric antagonistic 2-node network to investigate the behavior of its cell polarization pattern when the network structure or parameter is modified. The two nodes (<italic>i.e.</italic>, molecules) placed in the anterior and posterior are denoted by [A] and [P]. As there is no activation here then q<sub>2</sub> is not considered, the computational pipeline above establishes a total of 122 viable parameter sets (<italic>γ</italic>, <italic>k</italic><sub>1</sub>) that can achieve stable cell polarization. We use (<italic>γ</italic> = 0.05, <italic>k</italic><sub>1</sub> = 0.05) as a representative to show how the corresponding cell polarization pattern behaves under elementary modification (<xref ref-type="fig" rid="fig1">Fig. 1a</xref>). In total, three types of modification are exerted on the node [A]:
+<list list-type="alpha-lower">
+<list-item><p>Single-sided self-regulation (<xref ref-type="fig" rid="fig1">Fig. 1b</xref>): a self-activation (<inline-formula id="ID14">
+<alternatives>
+<mml:math display="inline" id="I14"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq14.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.012) or self-inhibition (<inline-formula id="ID15">
+<alternatives>
+<mml:math display="inline" id="I15"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq15.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.1) is added on the node [A].</p></list-item>
+<list-item><p>Single-sided additional regulation (<xref ref-type="fig" rid="fig1">Fig. 1c</xref>): a new node [L] is added in the anterior or posterior, with mutual activation <inline-formula id="ID16">
+<alternatives>
+<mml:math display="inline" id="I16"><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup><mml:mo>=</mml:mo><mml:mn>0.012</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq16.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> or inhibition (<inline-formula id="ID17">
+<alternatives>
+<mml:math display="inline" id="I17"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mrow><mml:mi>A</mml:mi></mml:msubsup><mml:mo>=</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mi>A</mml:mi><mml:mn>2</mml:mn></mml:mrow><mml:mi>L</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq17.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.025) with [A].</p></list-item>
+<list-item><p>Unequal system parameters (<xref ref-type="fig" rid="fig1">Fig. 1d</xref>): on one hand, the inhibition intensity <italic>k</italic><sub>2</sub> from [P] to [A] is increased from 1 to 1.6; on the other hand, the cytoplasmic concentration of [A] is increased from 1 to 1.25. The other system parameters (<italic>e.g.</italic>, basal on-rate <italic>γ</italic> and basal off-rate <italic>α</italic>) will be explored independently in the next section.</p></list-item>
+</list>
+</p>
+<p>In comparison with the stable cell polarization pattern generated by the basic network, the protein distribution dynamics of eight modified conditions are simulated as shown in <xref ref-type="fig" rid="fig1">Fig. 1</xref> and Movie S1, where the domain of one molecular species keeps invading the domain of the other one, ending in a homogeneous distribution. This intuitively reveals that the antagonistic 2-node reaction-diffusion network is prone to become unstable with its interface keeps moving when the perturbation is introduced to the network structure or parameter.</p>
+</sec>
+<sec id="s2c">
+<title>2.2. The combination of two modifications can recover the cell polarization pattern stability</title>
+<p>Since a single modification of reaction-diffusion network structure or parameter is enough to break the cell polarization pattern, an appealing question just comes up: how can the network be designed to maintain pattern stability considering such modifications? This is crucial for cell polarization in reality where stability is essential for cell function and survival; without stability, the spatial information defined by the pattern is inaccurate for guiding downstream biological events such as cell division and cell differentiation [<xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c20">20</xref>]. The simplest idea for stability recovery is to combine two kinds of modifications with opposite trends, for example, adding self-activation and posteriorly inhibition on [A] simultaneously. For the three types of modification, we arbitrarily select one subtype within each of them from <xref ref-type="fig" rid="fig1">Fig. 1b-d</xref> so three combinatorial networks are constituted, all of whose interfaces turn out to be stabilized finally (<xref ref-type="fig" rid="fig2">Fig. 2</xref> and Movie S2).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Fig. 2.</label>
+<caption><title>The combination of two opposite modifications recovers the stability of the cell polarization pattern.</title><p>The basic network and the ones added with a single modification are shown in the 1<sup>st</sup> and 2<sup>nd</sup> columns respectively; the three combinatorial networks composed of any two of the three single modifications are shown in the 3<sup>rd</sup> column. For each network, the corresponding concentration distribution of [A<sub>m</sub>] and [P<sub>m</sub>] at <italic>t</italic> = 0, 100, 200, 300, 400, and 500 are shown beneath with a color scheme listed on the right. Here, the value assignments on the modifications in the 3<sup>rd</sup> column are as follows: <inline-formula id="ID18">
+<alternatives>
+<mml:math display="inline" id="I18"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq18.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.012 and <inline-formula id="ID19">
+<alternatives>
+<mml:math display="inline" id="I19"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq19.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.01 for 1<sup>st</sup> row, <inline-formula id="ID20">
+<alternatives>
+<mml:math display="inline" id="I20"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq20.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.012 and <inline-formula id="ID21">
+<alternatives>
+<mml:math display="inline" id="I21"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>P</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq21.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 1.24 for 2<sup>nd</sup> row, and <inline-formula id="ID22">
+<alternatives>
+<mml:math display="inline" id="I22"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq22.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.012 and <inline-formula id="ID23">
+<alternatives>
+<mml:math display="inline" id="I23"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>P</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq23.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 2 for 3<sup>rd</sup> row. Note that within a network, normal arrows and blunt arrows symbolize activation and inhibition respectively.</p></caption>
+<graphic xlink:href="2401.07227v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To more precisely elucidate how two opposite modifications coordinate the pattern stability together, we make use of the network with self-activation and additional inhibition on [A] (shown in the top right corner of <xref ref-type="fig" rid="fig2">Fig. 2</xref>), where the two corresponding intensities <inline-formula id="ID24">
+<alternatives>
+<mml:math display="inline" id="I24"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq24.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and <inline-formula id="ID25">
+<alternatives>
+<mml:math display="inline" id="I25"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq25.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> compose a phase diagram that distinguishes the final state of the reaction-diffusion pattern. The moving velocity of the pattern is defined as follows:
+<disp-formula id="FD5">
+<alternatives>
+<mml:math id="M5" display="block"><mml:mi>v</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>t</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mtext>x</mml:mtext></mml:munder><mml:mrow><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:mrow><mml:msubsup><mml:mo>∫</mml:mo><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow></mml:msubsup><mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow><mml:mi>d</mml:mi><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:mstyle></mml:mrow><mml:mi>L</mml:mi></mml:mfrac></mml:mrow></mml:mstyle><mml:mo>.</mml:mo></mml:math>
+<graphic xlink:href="2401.07227v1_eqn5.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(5)</label>
+</disp-formula>
+</p>
+<p>where <italic>N</italic> is the total number of the molecules. Here, we classify the final state by calculating the moving velocity of the pattern at the final time <italic>t</italic> = 500; the region with <italic>v</italic> &lt; 10<sup>–4</sup> around the diagonal line is marked as the polarized state, while the regions upon and beneath it are homogeneous states dominated by [A] and [P] respectively (<xref ref-type="fig" rid="fig3">Fig. 3a</xref>). Therefore, the triphase diagram and the exemplary patterns generated by the parameter assignments ①②③ shown in <xref ref-type="fig" rid="fig3">Fig. 3a</xref> suggest the necessity of the detailed balance between two opposite modifications for setting up a stable cell polarization pattern.</p>
+<p>Apart from the unequal inhibition intensity and cytoplasmic concentration mentioned in <xref ref-type="fig" rid="fig2">Fig. 2d</xref>, we further ask if all the kinetic parameters with biophysical significance (including inhibition intensity <italic>k<sub>2</sub></italic>, responsive concentration <italic>k</italic><sub>1</sub>, basal on-rate γ, basal off-rate <italic>α</italic>, and cytoplasmic concentration [X<sub>c</sub>]) also have a detailed balance under the requirement of pattern stability. For this purpose, we generate the phase diagrams between each of them and the inhibition intensity <inline-formula id="ID26">
+<alternatives>
+<mml:math display="inline" id="I26"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>P</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq26.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>. Fascinatingly, monotonic correlations exist between all those system parameters, suggesting that they can be tuned to maintain pattern stability (<xref ref-type="fig" rid="fig3">Fig. 3b</xref>). In the grey region, the symmetric-broken parameters can be weighed against each other to realize the interface velocity close to zero.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Fig. 3.</label>
+<caption><title>The detailed balance between system parameters is needed for maintaining pattern stability.</title><p>(a) The phase diagram between <inline-formula id="ID27">
+<alternatives>
+<mml:math display="inline" id="I27"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq27.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and <inline-formula id="ID28">
+<alternatives>
+<mml:math display="inline" id="I28"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq28.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> in the network modified by self-activation (quantified by <inline-formula id="ID29">
+<alternatives>
+<mml:math display="inline" id="I29"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq29.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>) and additional inhibition (quantified by <inline-formula id="ID30">
+<alternatives>
+<mml:math display="inline" id="I30"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq30.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>) on [A]. The representative parameter assignment for each phase are marked with ① (<italic>i.e.</italic>, <inline-formula id="ID31">
+<alternatives>
+<mml:math display="inline" id="I31"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq31.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.015 and <inline-formula id="ID32">
+<alternatives>
+<mml:math display="inline" id="I32"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq32.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0 with a homogeneous state dominated by [A]), ② (<italic>i.e.</italic>, <inline-formula id="ID33">
+<alternatives>
+<mml:math display="inline" id="I33"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq33.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.015 and <inline-formula id="ID34">
+<alternatives>
+<mml:math display="inline" id="I34"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq34.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.0135 with a stable polarized state), and ③ (<italic>i.e.</italic>, <inline-formula id="ID35">
+<alternatives>
+<mml:math display="inline" id="I35"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq35.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.02 and <inline-formula id="ID36">
+<alternatives>
+<mml:math display="inline" id="I36"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq36.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0 with a homogeneous state dominated by [P]). The corresponding concentration distribution of [A<sub>m</sub>] and [P<sub>m</sub>] at <italic>t</italic> = 0,100,200, 300,400, and 500 are shown around the phase diagram with a color scheme listed on top. (b) The phase diagram between responsive concentration <italic>k</italic><sub>1</sub>, basal on-rate <italic>γ</italic>, basal off-rate <italic>α</italic>, cytoplasmic concentration [X<sub>c</sub>], and inhibition intensity <italic>k</italic><sub>2</sub>. For each phase diagram in (a)(b), the final state dominated by [A] or [P] or stable polarized is colored in orange, green, and gray, respectively. Note that within a network, normal arrows and blunt arrows symbolize activation and inhibition respectively.</p></caption>
+<graphic xlink:href="2401.07227v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d">
+<title>2.3. The speed and position of the interface can be adjusted by setting up spatial cues</title>
+<p>The detailed balance between parameters provides insight into controlling the pattern stability. However, in biological organisms, there exists interference from extracellular/intercellular signals, leading to changeable parameter values in different parts of space. How do cells maintain pattern stability in the case of non-uniform parameters, namely finding zero-velocity solutions at interfaces? Based on the symmetric 2-node network (<italic>γ</italic> = 0.05, <italic>k<sub>1</sub></italic> = 0.05, <xref ref-type="fig" rid="fig4">Fig. 4a</xref>), we employ the following adjustment on the parameter set:
+<list list-type="alpha-lower">
+<list-item><p>Increasing the inhibitory intensity of [A] on [P], <inline-formula id="ID37">
+<alternatives>
+<mml:math display="inline" id="I37"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>P</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq37.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>, from 1 to 1.5, leads to the interface continuously shifting to the posterior, and [A] finally dominates.</p></list-item>
+<list-item><p>Reducing the basal on-rate of [A], <italic>γ</italic><sub>A</sub>, from 0.05 to 0.01, results in the interface moving to the anteriority, and [P] finally dominates.</p></list-item>
+</list>
+</p>
+<p>When these two systems are combined, the stable polarity pattern recovers with (i) used in the region <italic>x</italic> &lt; 0 while (ii) used in <italic>x</italic> &gt; 0 (<xref ref-type="fig" rid="fig4">Fig. 4b</xref>). By moving the step position of the parameter function to <italic>x</italic> = 0.1 (<xref ref-type="fig" rid="fig4">Fig. 4c</xref>) and <italic>x</italic> = –0.1 (<xref ref-type="fig" rid="fig4">Fig. 4d</xref>), the interface stabilizes around the step, which means the interface localization is tunable. This indicates that by using parameter sets with values corresponding to opposite interface velocities on two sides of the interface, the interface speed and position of the polarity pattern can be precisely regulated. The nonuniform spatial distribution of parameters imitates signaling perception, which provides a strategy for more robust control of the adjustable interface localization in response to variable cues.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Fig. 4.</label>
+<caption><title>Adopting parameter sets corresponding to opposite interface velocities on two sides of the interface, the stability of the polarity pattern recovers, with a regulable zero-velocity solution of the interface localization.</title><p>(a) Spatially uniform parameters of a symmetric 2-node network generate a symmetric pattern. (b) Using the parameter combination with the posteriorshifting interface on the left and anterior-shifting interface on the right, a stable polarity pattern can also be obtained by increasing <inline-formula id="ID38">
+<alternatives>
+<mml:math display="inline" id="I38"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>P</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq38.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> to 1.5 at <italic>x</italic> &lt; 0 and decreasing <italic>γ</italic><sub>A</sub> to 0.01 at <italic>x</italic> &gt; 0. (cd) The stable interface localization can be optionally adjusted by setting the change position of the step-up function. (c) As in (b), but changing the step position to <italic>x</italic> = 0.1. (d) As in (b), but changing the step position to <italic>x</italic> = –0.1. For each parameter set, the corresponding concentration distribution of [A<sub>m</sub>] and [P<sub>m</sub>] at <italic>t</italic> = 0,100,200, 300,400, and 500 are shown beneath with a color scheme listed in the right bottom corner.</p></caption>
+<graphic xlink:href="2401.07227v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2e">
+<title>2.4. Reconstruction of the molecular interaction network and the design principle of parameter trade-off in C. elegans zygote</title>
+<p>In the 2-node network, the cell polarization pattern stability could be broken by a single modification (<xref ref-type="fig" rid="fig2">Fig. 2</xref>) and recovered by two combinatorial modifications (<xref ref-type="fig" rid="fig3">Fig. 3</xref>), or with the zero-velocity interface position regulated by spatially inhomogeneous parameters (<xref ref-type="fig" rid="fig4">Fig. 4</xref>). We further ask if such a fundamental rule is employed in the cell polarization network programming in a real system. To this end, we focus on the zygote of the nematode <italic>C. elegans</italic>, which has been a popular model for cell polarization study from both experimental and theoretical perspectives for more than 3 decades [<xref ref-type="bibr" rid="c12">12</xref>, <xref ref-type="bibr" rid="c17">17</xref>, <xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c28">28</xref>]. By conducting an exhaustive literature search (a total of 19 references), we summarize the mutual interaction network in <italic>C. elegans</italic> zygote that consists of five interacting molecules or molecular complexes: PAR-3/PAR-6/PKC-3 complex (<italic>abbr.</italic>, [A]) and CDC-42 protein (<italic>abbr.</italic>, [C]) accumulated in the anterior, and PAR-1/PAR-2 complex (<italic>abbr.</italic>, [P]), LGL-1 (<italic>abbr.</italic>, [L]), and CHIN-1 (<italic>abbr.</italic>, [H]) accumulated in the posterior (<xref ref-type="fig" rid="fig5">Fig. 5a</xref>). The detailed description of the biochemical mechanism of each regulatory pathway as well as the corresponding supporting references are listed in Table S2. Based on the network obtained experimentally, the computational pipeline described in Section 2.1 establishes a total of 602 viable parameter sets (<italic>γ</italic>, <italic>k</italic><sub>1</sub>, <italic>q</italic><sub>2</sub>) that can achieve stable cell polarization (<xref ref-type="fig" rid="fig5">Fig. 5d, e</xref>).</p>
+<p>To verify whether the computational pipeline is reliable enough to simulate the dynamics of protein distribution of the <italic>C. elegans</italic> network <italic>in vivo</italic>, we further reproduce the perturbation experiments on [L] (the protein accumulated in the posterior and with a mutual inhibition with [A] in the anterior). A group of experiments were conducted by knocking down or overexpressing [L] in different conditions, followed by a measurement of the lethality (defined by death rate) in embryo individuals. Here, we utilize the pattern error in a mutant <italic>(abbr.</italic>, MT) embryo compared to the wild-type (<italic>abbr.</italic>, WT) one, Error = <inline-formula id="ID39">
+<alternatives>
+<mml:math display="inline" id="I39"><mml:mstyle scriptlevel="+1"><mml:mfrac><mml:mn>1</mml:mn><mml:mi>M</mml:mi></mml:mfrac></mml:mstyle><mml:mstyle displaystyle="true"><mml:msubsup><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>M</mml:mi></mml:msubsup><mml:mrow><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:mrow><mml:msubsup><mml:mo>∫</mml:mo><mml:mrow><mml:mo>−</mml:mo><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow></mml:msubsup><mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:msub><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mtext>WT</mml:mtext></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mtext>MT</mml:mtext></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow><mml:mtext>d</mml:mtext><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:mstyle></mml:mrow><mml:mi>L</mml:mi></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq39.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>, to represent lethality qualitatively, where <italic>M</italic> = 602 is the number of parameter sets. The first group of experiments is that the double depletion on [P] and [L] leads to much more lethality than single depletion on either [P] or [L], which is faithfully recapitulated by <xref ref-type="fig" rid="fig8">Fig. S2a, b</xref> [<xref ref-type="bibr" rid="c38">38</xref>]. The second group of experiments is that the overexpression of [L] lowers the lethality induced by single depletion on [P] and such effect is weakened when [H] is depleted as well, which is faithfully recapitulated by <xref ref-type="fig" rid="fig8">Fig. S2c, d</xref> [<xref ref-type="bibr" rid="c23">23</xref>, <xref ref-type="bibr" rid="c39">39</xref>]. To sum up, apart from the cell polarization in a wild-type embryo, our modeling framework is further validated by reproducing two groups of perturbation experiments that haven’t been theoretically explained before, allowing further computational investigation of the network dynamics.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Fig. 5.</label>
+<caption><title>The molecular interaction network in <italic>C. elegans</italic> zygote and its natural advantages in terms of pattern stability, viable parameter sets, balanced network configuration, and parameter robustness.</title><p>(a) The schematic diagram of the network is composed of five molecules or molecular complexes, each of which has a polarized concentration distribution on the cell membrane shown beneath. Note that within the network, normal arrows and blunt arrows symbolize activation and inhibition respectively. (b-d) The structure of 4-Node, LGL-1<sup>−</sup>, and WT networks (1<sup>st</sup> row). The final concentration distribution averaged over all established viable parameter sets for each molecule, shown by a solid line (2<sup>nd</sup> row). For each position, MEAN ± STD (<italic>i.e.</italic>, standard deviation) calculated with all viable parameter sets is shown by shadow. The moving velocity of the pattern (3<sup>rd</sup> row). For each subfigure in 3<sup>rd</sup> row, a unique color represents the simulation of a viable parameter set, and <inline-formula id="ID40">
+<alternatives>
+<mml:math display="inline" id="I40"><mml:mover accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq40.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 10<sup>–4</sup> is marked by a dashed line. (e) The viable parameter sets of WT and 4-Node networks. (f) The detailed balance between [A]~[C] mutual activation and [A]~[L] mutual inhibition. The contour map of the interface velocity <inline-formula id="ID41">
+<alternatives>
+<mml:math display="inline" id="I41"><mml:msub><mml:mover accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mtext>I</mml:mtext></mml:msub></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq41.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> with different parameter combinations of <inline-formula id="ID42">
+<alternatives>
+<mml:math display="inline" id="I42"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>C</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>C</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq42.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and <inline-formula id="ID43">
+<alternatives>
+<mml:math display="inline" id="I43"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq43.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> represents the moving trend of the pattern. (g) The averaged pattern error in a perturbed condition compared to the original 4-Node, LGL-1<sup>−</sup>, and WT networks.</p></caption>
+<graphic xlink:href="2401.07227v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>With the well-validated model of the <italic>C. elegans</italic> cell polarization network, here we study if it follows the balance design revealed by the exhaustive study on the antagonistic 2-node network. Interestingly, the central structure of the <italic>C. elegans</italic> network is shown to be a completely symmetric network composed of 2 nodes in the anterior (<italic>i.e.</italic>, [A] and [C]) and posterior (<italic>i.e.</italic>, [P] and [H]) respectively; this symmetric 4-node network is modified by a mutual activation in the anterior (<italic>i.e.</italic>, [A]~[C]) firstly and an additional mutual inhibition between the anterior and the posterior (<italic>i.e.</italic>, [A]~[L]) subsequently, turning into an asymmetric 5-node network (<xref ref-type="fig" rid="fig5">Fig. 5b-d</xref>). The abovementioned symmetric structure, the mutual activation, and the additional inhibition are in analogy with the basic 2-node network modified by self-activation and additional inhibition as shown in the top right corner of <xref ref-type="fig" rid="fig2">Fig. 2</xref> and <xref ref-type="fig" rid="fig3">Fig. 3a</xref>.</p>
+<p>Here, we seek to compare the concentration distribution and moving velocity of the patterns generated by the three successive network structures termed “4-Node” (the symmetric structure) (<xref ref-type="fig" rid="fig5">Fig. 5b</xref>), “LGL-1<sup>−</sup>” (the symmetric structure with [A]~[C] added, <italic>i.e.</italic>, the mutant network with [A]~[L] depleted from the wild-type network) (<xref ref-type="fig" rid="fig5">Fig. 5c</xref>), and “WT” (the symmetric structure with both [A]~[C] and [A]~[L] added, <italic>i.e.</italic>, the wild-type network) (<xref ref-type="fig" rid="fig5">Fig. 5d</xref>). As expected, both simulations on the 4-Node and WT networks successfully pass the computation pipeline described in Section 2.1 with 62 and 602 solution numbers respectively (<xref ref-type="fig" rid="fig5">Fig. 5e</xref>), all of which stabilize into a cell polarization pattern the concentration distribution highly intact and the moving velocity of each parameter set continuously declining below 10<sup>-4</sup> (<xref ref-type="fig" rid="fig5">Fig. 5b, d</xref>). Nonetheless, the intermediate one (generated by depleting [A]~[L] from the WT network) with [A]~[C] but without [A]~[L] fails (<xref ref-type="fig" rid="fig5">Fig. 5c</xref>), exhibiting a dispersed concentration distribution and stubbornly high moving velocity for its pattern. Therefore, WT shows the largest variable parameter sets in the limited 3D grid and the strongest stability among the three network structures.</p>
+<p>Remarkably, the detailed balance between these two modifications is required to achieve stable cell polarization (<xref ref-type="fig" rid="fig5">Fig. 5f</xref>). To evaluate how the interface moves, we quantify the position of the transition plane <italic>x<sub>T</sub>(t)</italic> of the pattern, defined by the mean position of all the molecules where the absolute value of the curve derivative reaches its maximum. To avoid the influence of the initial state, the interface velocity is then calculated as the average velocity from <italic>t</italic> = 300 to <italic>t</italic> = 500.</p>
+<disp-formula id="FD6">
+<alternatives>
+<mml:math id="M6" display="block"><mml:msub><mml:mi>v</mml:mi><mml:mtext>I</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>T</mml:mi></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mtext>T</mml:mtext></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>300</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>200</mml:mn></mml:mrow></mml:mfrac></mml:math>
+<graphic xlink:href="2401.07227v1_eqn6.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(6)</label>
+</disp-formula>
+<p>Scanning the intensities of [A]~[C] mutual activation (<italic>i.e.</italic>, <inline-formula id="ID44">
+<alternatives>
+<mml:math display="inline" id="I44"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>C</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>C</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq44.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>) and [A]~[L] mutual inhibition (<italic>i.e.</italic>, <inline-formula id="ID45">
+<alternatives>
+<mml:math display="inline" id="I45"><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>L</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>L</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq45.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>), a contour map is shown in consideration of the interface velocity averaged over all viable parameter sets (<italic>i.e.</italic>, <inline-formula id="ID46">
+<alternatives>
+<mml:math display="inline" id="I46"><mml:msub><mml:mover accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mtext>I</mml:mtext></mml:msub></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq46.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula>): the system can be stably polarized when they are in detailed balance with its interface velocity close to zero, but the overshoot of either intensity leads to a homogeneous state in the end (<xref ref-type="fig" rid="fig5">Fig. 5f</xref>). The redder the contour color is, the faster the interface moves posteriorly, with an increasing aPARs domain; the bluer the contour color is, the faster the interface moves anteriorly, with pPARs invading.</p>
+<p>Next, we wonder if such combinatorial modifications may be an optimal choice selected during evolution. To this end, we regard the [A]~[C] mutual activation as a primary modification that induces pattern asymmetry as proposed before [<xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c32">32</xref>], then the existence, as well as the form of the feed loops between [L] and a preexisting molecule, is a supporting modification that consolidates stable polarization. Considering the symmetric structure of the LGL-1<sup>−</sup> network, there is an identical role between [A] and [C] and between [P] and [H], so [L] can be effectively connected to [A] or [P]; meanwhile, there are three types of directional regulation between them: activation, inhibition, and none. Thus, in theory, there are 34 possible network structures with an additional regulation (<xref ref-type="fig" rid="fig9">Fig. S3</xref>). Strikingly, only the WT network with mutual inhibition between [A] and [L] passes the computational pipeline with viable parameter sets. Thus, without any parametric asymmetry concessions, the configuration of the <italic>C. elegans</italic> network in nature is well optimized among all other alternatives for maintaining cell polarization pattern stability.</p>
+<p>As pattern stability means how fast the pattern moves over time, does the lack of pattern stability result in a more dispersed concentration distribution when the system parameters fluctuate in time? To test this hypothesis, for each viable parameter set, we exert Gaussian noise on all the original values of system parameters <italic>γ</italic>, <italic>α</italic>, <italic>k<sub>1</sub></italic>, <italic>k<sub>2</sub></italic>, <italic>q<sub>1</sub></italic>, and, <italic>q<sub>2</sub></italic>, and initiate 1000 independent simulations, where the noise amplification is represented by the standard deviation <italic>σ</italic> of the Gaussian noise [<xref ref-type="bibr" rid="c40">40</xref>]. To compare the variance of perturbed condition (<italic>abbr.</italic>, PT) to the original pattern (<italic>abbr.</italic>, OP, including, 4-Node, LGL-1<sup>−</sup>, and WT), the pattern error, averaged over all molecules, all the viable parameter sets, and all independent simulations, is defined as follows:
+<disp-formula id="FD7">
+<alternatives>
+<mml:math id="M7" display="block"><mml:mtext>Error</mml:mtext><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mi>M</mml:mi><mml:mi>Q</mml:mi><mml:mi>N</mml:mi></mml:mrow></mml:mfrac><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>M</mml:mi></mml:munderover><mml:mrow><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>Q</mml:mi></mml:munderover><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mtext>X</mml:mtext></mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mtext>x</mml:mtext></mml:munder><mml:mrow><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:mrow><mml:msubsup><mml:mo>∫</mml:mo><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow></mml:msubsup><mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:msub><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mtext>OP</mml:mtext></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mtext>X</mml:mtext><mml:mi mathvariant="normal">m</mml:mi></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mtext>PT</mml:mtext></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow><mml:mi>d</mml:mi><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:mstyle></mml:mrow><mml:mi>L</mml:mi></mml:mfrac></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle></mml:math>
+<graphic xlink:href="2401.07227v1_eqn7.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(7)</label>
+</disp-formula>
+</p>
+<p>where <italic>M, Q, N</italic> represents the number of the viable parameter sets (<italic>i.e.</italic> 602 for WT, 62 for 4-Node and LGL-1<sup>−</sup>), independent simulations (<italic>i.e. = 1000</italic>) and molecules (<italic>i.e.</italic> five for WT, four for 4-Node and LGL-1<sup>−</sup>). It turns out that the pattern error is always the smallest in the WT network and biggest in the LGL-1<sup>−</sup> network, no matter how strong the noise is, indicating parameter robustness as the companion advantage of pattern stability (<xref ref-type="fig" rid="fig5">Fig. 5g</xref>).</p>
+</sec>
+<sec id="s2f">
+<title>2.5. A protocol to identify responsive parameters for interface positioning</title>
+<p>For a polarization pattern to be stable, fine-tuning of the kinetic parameters is required to reach vanishing interface velocity. Using the 5-node <italic>C. elegans</italic> network as an example, we outline a method to delineate iso-velocity surfaces <italic>v<sub>I</sub>(P)</italic> = constant in the high-dimensional space of the parameter set <italic>P</italic>. We show that the information gained can be used to quantify the role of individual molecular components in controlling the polarized pattern. Additionally, this knowledge enables us to design experiments to produce desired patterns.</p>
+<p>In Sec. 2.4, 602 groups of parameters capable of reaching stable polarity patterns are found by scanning through parameter space. When plotted in the three-dimensional parameter space shown in <xref ref-type="fig" rid="fig5">Fig. 5e</xref>, they span an iso-velocity surface at vanishing speed. To illustrate the local orientation of the surface, we selected 9261 points (enumerated on a 3D grid <italic>γ</italic> ∈ [0.034,0.044] in steps Δ<italic>γ</italic> = 0.0005, <italic>k</italic><sub>1</sub> ∈ [1.05,2.05] in steps Δ<italic>k</italic><sub>1</sub> = 0.05, and q<sub>2</sub> ∈ [0.045, 0.055] in steps Δq<sub>2</sub> = 0.0005) in the neighborhood of a benchmark point <italic>P</italic>*(<italic>γ</italic>* = 0.039, <inline-formula id="ID47">
+<alternatives>
+<mml:math display="inline" id="I47"><mml:msubsup><mml:mi>k</mml:mi><mml:mn>1</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq47.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 1.55, <inline-formula id="ID48">
+<alternatives>
+<mml:math display="inline" id="I48"><mml:msubsup><mml:mi>q</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq48.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.05), as shown by the brown box in <xref ref-type="fig" rid="fig6">Fig. 6a</xref>, top. The least-square fit of computed interface velocity to a linear function yields
+<disp-formula id="FD8">
+<alternatives>
+<mml:math id="M8" display="block"><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>γ</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:mn>0.0308</mml:mn><mml:mo>×</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>γ</mml:mi><mml:mo>−</mml:mo><mml:mi>γ</mml:mi><mml:mo>*</mml:mo></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mn>6.08</mml:mn><mml:mo>×</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>−</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mn>1</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mn>0.02</mml:mn><mml:mo>×</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>−</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<graphic xlink:href="2401.07227v1_eqn8.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(8)</label>
+</disp-formula>
+</p>
+<p>with the coefficient of determination
+<disp-formula id="FD9">
+<alternatives>
+<mml:math id="M9" display="block"><mml:msup><mml:mi>R</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:msubsup><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>9261</mml:mn></mml:mrow></mml:msubsup><mml:mrow><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>I</mml:mtext></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mstyle></mml:mrow><mml:mrow><mml:mstyle displaystyle="true"><mml:msubsup><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>9261</mml:mn></mml:mrow></mml:msubsup><mml:mrow><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>I</mml:mtext></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>9261</mml:mn></mml:mrow></mml:mfrac><mml:mstyle displaystyle="true"><mml:msubsup><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>9261</mml:mn></mml:mrow></mml:msubsup><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>I</mml:mtext></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mstyle></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mn>0.9918.</mml:mn></mml:math>
+<graphic xlink:href="2401.07227v1_eqn9.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+<label>(9)</label>
+</disp-formula>
+</p>
+<p>The coefficients in <xref ref-type="disp-formula" rid="FD8">Eq. (8)</xref> give the ascending gradient of the interface velocity (<xref ref-type="fig" rid="fig6">Fig. 6a</xref>, bottom).</p>
+<p>Within the assumed relationships adopted for parameter reduction (see Sec. 2.1), <xref ref-type="disp-formula" rid="FD8">Eq. (8)</xref> shows a strong dependence of the interface velocity on basal on/off-rates <italic>γ</italic> and activation intensity q<sub>2</sub>, but weak sensitivity to responsive concentration <italic>k</italic><sub>1</sub> in the inspected parameter region. Interestingly, increase in the basal on/off-rates <italic>γ</italic> and the self-activation rate <italic>q</italic><sub>2</sub> have opposite effects on the interface velocity, which can be attributed to the asymmetric 5-node network topology. In a more realistic scenario, one may consider on/off-rates for different molecules and their pairwise interactions separately and explore the relationships in a much larger parameter space. An expression similar to <xref ref-type="disp-formula" rid="FD8">Eq. (8)</xref> enables quantitative prediction of the interface velocity against individual or simultaneous changes of parameters, even when knowledge of the polarity circuit is incomplete. In particular, the parameter-dependent interface velocity picture potentially enables biologists to manipulate and even synthesize the cell polarization pattern by rational modulation of parameters, controlling the interface location for specific physiological functions, such as designating a desired cell volume partition ratio [<xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c40">40</xref>].</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Fig. 6.</label>
+<caption><title>The control of the interface velocity and position by adjusting parameters in a multidimensional system.</title><p>(a) The parameter space and the linear relationship between interface velocity and parameters. The discrete parameter space of WT is fitted by a blue curved surface to represent its null surface. The benchmark point <italic>P*</italic> and its neighborhood are marked by an orange cube (top). Centering on the benchmark point <italic>P*(γ</italic> = 0.039, <italic>k<sub>1</sub></italic> = 1.55, <italic>q</italic><sub>2</sub> = 0.05), the relationship between the velocity interface and parameters is shown by slice planes orthogonal to the <italic>γ</italic>-axis at the values 0.034, 0.036, 0.038, 0.04, 0.042, and 0.044. (b-d) As in <xref ref-type="fig" rid="fig4">Fig. 4</xref>, the control of the interface position by spatially inhomogeneous parameters can be applied to the realistic <italic>C. elegans</italic> network. (b) Using <italic>P</italic>*(<italic>γ</italic>* = 0.039, <inline-formula id="ID49">
+<alternatives>
+<mml:math display="inline" id="I49"><mml:msubsup><mml:mi>k</mml:mi><mml:mn>1</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq49.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 1.55, <inline-formula id="ID50">
+<alternatives>
+<mml:math display="inline" id="I50"><mml:msubsup><mml:mi>q</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq50.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.05) as a representative, spatially uniform parameters generate a stable polarity pattern. (c) A stable polarity pattern with its interface around <italic>x</italic> = 0 can be obtained by increasing <inline-formula id="ID51">
+<alternatives>
+<mml:math display="inline" id="I51"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>C</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>C</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq51.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> to 0.12 at <italic>x</italic> &lt; 0 and increasing <italic>γ</italic><sub>P</sub>, <italic>γ</italic><sub>L</sub>, and <italic>γ</italic><sub>H</sub> to 0.06 at <italic>x</italic> &gt; 0. (d) As in (c) but changing the step position to <italic>x</italic> = –0.1, the interface stabilizes around <italic>x</italic> = –0.1. (e) As in (c), but changing the step position to <italic>x</italic> = 0.1.</p></caption>
+<graphic xlink:href="2401.07227v1_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Experimental studies have revealed that the interface localization in the <italic>C. elegans</italic> zygotic cell polarization pattern provides an accurate spatial cue to regulate the dynamics of their downstream molecules, like the protein LIN-5 and microtubules that control cell division and volume partition [<xref ref-type="bibr" rid="c24">24</xref>, <xref ref-type="bibr" rid="c41">41</xref>], while the acquired cell volume has been reported to have a chain effect in its cell cycle, cell position, and other behaviors [<xref ref-type="bibr" rid="c40">40</xref>, <xref ref-type="bibr" rid="c42">42</xref>–<xref ref-type="bibr" rid="c44">44</xref>]. As in the 2-node network, the precise control of the stable position of the interface can be realized by taking the parameters corresponding to the opposite direction of the interface velocity on both sides of the interface. Based on the parameter set P* which gives out the most stable pattern (<xref ref-type="fig" rid="fig6">Fig. 6b</xref>), two modifications are adopted to generate patterns with opposite interface velocity: (i) increasing the activation intensity between [A] and [C] <inline-formula id="ID52">
+<alternatives>
+<mml:math display="inline" id="I52"><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>C</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>&amp;</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>C</mml:mtext></mml:msubsup></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq52.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> to 0.12 leads to the interface traveling backward, (ii) increasing the basal on-rate of posterior proteins (<italic>γ</italic><sub>P</sub>, <italic>γ</italic><sub>L</sub>, <italic>γ</italic><sub>H</sub>) to 0.06 results in the interface traveling forward. Combining the two sets of parameters with its step switch located at <italic>x</italic> = 0 ((i) on the left and (ii) on the right), the stabilized polarity interface settles around <italic>x</italic> = 0 (<xref ref-type="fig" rid="fig6">Fig. 6b</xref>). The interface position turns tunable as the step switch moves to <italic>x</italic> = –0.1 (<xref ref-type="fig" rid="fig6">Fig. 6c</xref>) and <italic>x</italic> = 0.1 (<xref ref-type="fig" rid="fig6">Fig. 6d</xref>). One pre-known example in reality that matches this scheme is the asymmetric division of the P2 and P3 cells (the granddaughter and great-granddaughter cells of the <italic>C. elegans</italic> zygote P0), where the extracellular protein MES-1 and intracellular protein SRC-1 transduct signals from the EMS and E cells (the sister cell of P2 and its posterior daughter cell), inducing polarity reversal by affecting the on-rate of PAR-2 [<xref ref-type="bibr" rid="c45">45</xref>, <xref ref-type="bibr" rid="c46">46</xref>]. Such a scheme depicts the introduction of extracellular or intracellular cues that break the spatial uniformity of parameters and tune the stable localization of interface, serving as a theoretical basis for controlling oriented cell division with designated volume partition and fate differentiation [<xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c19">19</xref>, <xref ref-type="bibr" rid="c45">45</xref>].</p>
+</sec>
+</sec>
+<sec id="s3" sec-type="discussion|conclusion">
+<title>3. Discussion and conclusion</title>
+<p>Cell polarization is a fundamental issue in both prokaryotes and eukaryotes, playing crucial roles in diverse biological phenomena ranging from chemotaxis to embryogenesis [<xref ref-type="bibr" rid="c47">47</xref>, <xref ref-type="bibr" rid="c48">48</xref>]. The reaction-diffusion network responsible for cell polarization has been a long-term research focus for both experimentalists and theorists, who have identified many interactive functional molecules, discovered underlying design principles for networks, and even synthesized new systems <italic>de novo</italic> [<xref ref-type="bibr" rid="c8">8</xref>–<xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c12">12</xref>, <xref ref-type="bibr" rid="c26">26</xref>, <xref ref-type="bibr" rid="c27">27</xref>]. In this paper, we focus on a basic problem – how to control the cell polarization pattern stability over time and regulate the stabilized interface localization, from the perspective of a reaction-diffusion network. First, we established a computational pipeline to search the viable parameter sets in an <italic>N</italic>-node (molecule) network that can achieve a stable cell polarization pattern. The simple antagonistic network with only two nodes was revealed to be unstable (<italic>i.e.</italic>, transit from a polarized distribution to a homogeneous distribution spontaneously) when any of the 3 unbalanced modifications (<italic>i.e.</italic>, single-sided self-regulation, single-sided additional regulation, and unequal system parameters) were introduced. To recover stable polarization, two strategies are proposed: (i) the combination of two unbalanced modifications with opposite effects; (ii) the spatially inhomogeneous parameter values, either of which can lead to opposite interface velocity. Additionally, the stable interface localization can be discretionarily regulated by the step-like parameter profile and contributes to the asymmetric geometry of the cell polarization pattern, potentially providing a spatial cue for significant physiological functions like unequal cell volume partition and consequent punctuated cell movement [<xref ref-type="bibr" rid="c40">40</xref>, <xref ref-type="bibr" rid="c42">42</xref>–<xref ref-type="bibr" rid="c44">44</xref>]. Analogous conclusions are further identified in the <italic>C. elegans</italic> network summarized experimentally which obtains larger parameter space and is higher robustness against parameter perturbations, supporting them as strategies indeed applied in real biological scenarios. Importantly, the linear relationship between the interface velocity and biophysical parameters serves as a useful tool to characterize and predict how the cell polarization pattern, especially where the interface is located or moved toward, responds to parameter changes; this not only helps understand the regulatory molecules and pathways, as well as the biophysical parameters learned from experiments, play their role but also guides the design of artificial cell polarization system with desired functions. The joint study on a simple 2-node network and <italic>C. elegans</italic> 5-node network demonstrated that the cell polarization pattern with both stability and asymmetry can be explicitly realized by a combinatorial network and spatially inhomogeneous parameters, which is expected to facilitate the interpretation of natural systems and design of artificial systems.</p>
+<p>Although we deciphered the stability and asymmetry of the pattern generated by the <italic>C. elegans</italic> cell polarization network, there might be more experimental details remaining to be uncovered, which are indispensable for achieving a more comprehensive understanding of this problem. For instance, in this paper, we presumed that the parameter values were the same for each molecule and each pathway at first and drew a phase diagram to visualize the trade-off between any two parameters, regardless of the others. Such simplification is unavoidable because the <italic>in vivo</italic> measurement of those massive parameters (&gt;50 in total) is not only timeconsuming but also technically difficult, as the molecules and pathways interact with each other in a coupled manner. Besides, some molecules and pathways may have not been quantitively identified yet, especially for the later stages where the cell polarization requests more dynamic functions. Furthermore, previous works have shown that the polarized pattern is self-organized with its interface stabilizing automatically under a mass-conserving framework [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c49">49</xref>]. However, here we provide a more robust strategy to control the location of the interface artificially by a step-like parameter shift, which can be realized by any parameter with sufficient biological dynamic range. Although nonuniform parameters imply potential signaling, additional revision on the model is needed to describe the concrete effects of external cues like MES-1 and SRC-1, which is necessary for the orientation of the cleavage spindle and polarity reversal [<xref ref-type="bibr" rid="c45">45</xref>, <xref ref-type="bibr" rid="c46">46</xref>]. With more information on the molecules involved, regulatory pathways, and parameter values, a more comprehensive and reliable model can be built to explain more experimental observations and unveil more design principles for networks in the future.</p>
+<p>Beyond the <italic>C. elegans</italic> zygote studied in this paper, cell polarization also exists in later stages of <italic>C. elegans</italic> embryogenesis as well as in other organisms, where diverse functional dynamics have been reported [<xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c11">11</xref>]. Governed by the cell polarization, the <italic>C. elegans</italic> embryo actually proceeds 4 rounds of asymmetric division to produce 4 somatic founder cells, then such reaction-diffusion pattern will lose its sharp transition plane as it is unscalable over cell size, leading to symmetric cell division at last [<xref ref-type="bibr" rid="c16">16</xref>]. Furthermore, as the reaction-diffusion network itself is not particularly constricted in the cellular scale, but also possibly in subcellular and multicellular scales, it would be interesting to investigate if the general principles proposed in this paper are also at work for the network programming and pattern modulation in other scales [<xref ref-type="bibr" rid="c50">50</xref>, <xref ref-type="bibr" rid="c51">51</xref>].</p>
+<p>Nowadays, the <italic>de novo</italic> construction of artificial cells with designated new functions is emerging, demanding theoretical guidance about how to synthesize the molecular control circuits beneath [<xref ref-type="bibr" rid="c52">52</xref>, <xref ref-type="bibr" rid="c53">53</xref>]. Like toggle switch, oscillation, and adaptation [<xref ref-type="bibr" rid="c52">52</xref>, <xref ref-type="bibr" rid="c54">54</xref>, <xref ref-type="bibr" rid="c55">55</xref>], the polarized distribution of molecules (accounting for cell polarization) is also another elementary behavior in a cell, and the corresponding circuits have been synthesized successfully around a decade ago [<xref ref-type="bibr" rid="c10">10</xref>]. However, it remains unclear whether the distribution pattern (<italic>e.g.</italic>, the transition plane of a molecule) can be altered while maintaining stability. Taking the <italic>C. elegans</italic> network as an example, our computational framework has been demonstrated to be capable of deciphering such a real reaction-diffusion network with pattern stability and asymmetry, and has been packed as a user-friendly software, <italic>PolarSim</italic>; thus we believe it can be used for not only understanding the natural molecular networks reported before but also designing new molecular networks in the polarized cells with more physiological functions, for example, with tunable transition plane of a molecule to guide the allocation of downstream fate determinants and unequal cleavage during cytokinesis [<xref ref-type="bibr" rid="c56">56</xref>]. In the future, our computational framework for cell polarity network could be linked to the one about cytoskeleton activity, achieving a more comprehensive modeling description for cell division [<xref ref-type="bibr" rid="c57">57</xref>, <xref ref-type="bibr" rid="c58">58</xref>].</p>
+</sec>
+</body>
+<back>
+<sec id="s4">
+<title>Conflict of interest</title>
+<p>The authors declare that they have no conflict of interest.</p>
+</sec>
+<ack>
+<title>Acknowledgments</title>
+<p>We thank Prof. Wei Wang, Dr. Daimin Li, Peng Xie, Shiyu Shen, and Qi Ding for their assistance in the numerical simulation, and Prof. Hongli Wang for his constructive advice on the project. We are grateful to Dr. Siyu Li, Dr. Baoshuang Shang, Dr. Shipu Xu, and Yuqing Zhong for their help during Yixuan Chen and Guoye Guan’s academic visit to Songshan Lake Materials Laboratory. We appreciate Zhengyang Han for their assistance in improving the paper materials. Gratitude is extended to Prof. Zhongying Zhao for his help during Guoye Guan’s academic visit to Hong Kong Baptist University. This work was supported by funding from the National Natural Science Foundation of China (12090053 and 32088101) and the Research Grants Council of the Hong Kong SAR (12303219). Computation was performed partly on the High-Performance Computing Platform at Peking University.</p>
+</ack>
+<sec id="s5">
+<title>Author contributions</title>
+<p>Y.C. and G.G. designed and conceived the project, and wrote the paper; Y.C., G.G., L.- H.T., and C.T. performed research and conducted analysis; L.-H.T. and C.T. supervised the project and revised the paper.</p>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Knoblich</surname> <given-names>JA</given-names></string-name></person-group>. <article-title>Asymmetric cell division during animal development</article-title>. <source>Nat Rev Mol Cell Biol</source> <year>2001</year>;<volume>2</volume>:<fpage>11</fpage>–<lpage>20</lpage>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goodrich</surname> <given-names>LV</given-names></string-name>, <string-name><surname>Strutt</surname> <given-names>D</given-names></string-name></person-group>. <article-title>Principles of planar polarity in animal development</article-title>. <source>Development</source> <year>2011</year>;<volume>138</volume>:<fpage>1877</fpage>–<lpage>92</lpage>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Etienne-Manneville</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hall</surname> <given-names>A</given-names></string-name></person-group>. <article-title>Rho GTPases in cell biology</article-title>. <source>Nature</source> <year>2002</year>;<volume>420</volume>:<fpage>629</fpage>–<lpage>35</lpage>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bilder</surname> <given-names>D</given-names></string-name>, <string-name><surname>Li</surname> <given-names>M</given-names></string-name>, <string-name><surname>Perrimon</surname> <given-names>N</given-names></string-name></person-group>. <article-title>Cooperative regulation of cell polarity and growth by <italic>Drosophila</italic> tumor suppressors</article-title>. <source>Science</source> <year>2000</year>;<volume>289</volume>:<fpage>113</fpage>–<lpage>6</lpage>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Macara</surname> <given-names>IG</given-names></string-name></person-group>. <article-title>Parsing the polarity code</article-title>. <source>Nat Rev Mol Cell Biol</source> <year>2004</year>;<volume>5</volume>:<fpage>220</fpage>–<lpage>31</lpage>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kim</surname> <given-names>M</given-names></string-name>, <string-name><surname>Datta</surname> <given-names>A</given-names></string-name>, <string-name><surname>Brakeman</surname> <given-names>P</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Polarity proteins PAR6 and aPKC regulate cell death through GSK-3P in 3D epithelial morphogenesis</article-title>. <source>J Cell Sci</source> <year>2007</year>;<volume>120</volume>:<fpage>2309</fpage>–<lpage>17</lpage>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Doe</surname> <given-names>CQ</given-names></string-name>, <string-name><surname>Bowerman</surname> <given-names>B</given-names></string-name></person-group>. <article-title>Asymmetric cell division: fly neuroblast meets worm zygote</article-title>. <source>Curr Opin Cell Biol</source> <year>2001</year>;<volume>13</volume>:<fpage>68</fpage>–<lpage>75</lpage>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Koorman</surname> <given-names>T</given-names></string-name>, <string-name><surname>Klompstra</surname> <given-names>D</given-names></string-name>, <string-name><surname>van der Voet</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>A combined binary interaction and phenotypic map of <italic>C. elegans</italic> cell polarity proteins</article-title>. <source>Nat Cell Biol</source> <year>2016</year>;<volume>18</volume>:<fpage>337</fpage>–<lpage>46</lpage>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tostevin</surname> <given-names>F</given-names></string-name>, <string-name><surname>Howard</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Modeling the establishment of PAR protein polarity in the one-cell <italic>C. elegans</italic> embryo</article-title>. <source>Biophys J</source> <year>2008</year>;<volume>95</volume>:<fpage>4512</fpage>–<lpage>22</lpage>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chau</surname> <given-names>AH</given-names></string-name>, <string-name><surname>Walter</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Gerardin</surname> <given-names>J</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Designing synthetic regulatory networks capable of self-organizing cell polarization</article-title>. <source>Cell</source> <year>2012</year>;<volume>151</volume>:<fpage>320</fpage>–<lpage>32</lpage>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rose</surname> <given-names>LS</given-names></string-name>, <string-name><surname>Gönczy</surname> <given-names>P</given-names></string-name></person-group>. <article-title>Polarity establishment, asymmetric division and segregation of fate determinants in early <italic>C. elegans</italic> embryo</article-title>. <source>WormBook</source> <year>2014</year>;<fpage>1</fpage>–<lpage>43</lpage>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lang</surname> <given-names>CF</given-names></string-name>, <string-name><surname>Munro</surname> <given-names>E</given-names></string-name></person-group>. <article-title>The PAR proteins: from molecular circuits to dynamic self-stabilizing cell polarity</article-title>. <source>Development</source> <year>2017</year>;<volume>144</volume>:<fpage>3405</fpage>–<lpage>16</lpage>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goldstein</surname> <given-names>B</given-names></string-name>, <string-name><surname>Hird</surname> <given-names>SN</given-names></string-name></person-group>. <article-title>Specification of the anteroposterior axis in <italic>Caenorhabditis elegans</italic></article-title>. <source>Development</source> <year>1996</year>;<volume>122</volume>:<fpage>1467</fpage>–<lpage>74</lpage>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Motegi</surname> <given-names>F</given-names></string-name>, <string-name><surname>Zonies</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hao</surname> <given-names>Y</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Microtubules induce self-organization of polarized PAR domains in <italic>Caenorhabditis elegans</italic> zygotes</article-title>. <source>Nat Cell Biol</source> <year>2011</year>;<volume>13</volume>:<fpage>1361</fpage>–<lpage>7</lpage>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sulston</surname> <given-names>JE</given-names></string-name>, <string-name><surname>Schierenberg</surname> <given-names>E</given-names></string-name>, <string-name><surname>White</surname> <given-names>JG</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>The embryonic cell lineage of the nematode <italic>Caenorhabditis elegans</italic></article-title>. <source>Dev Biol</source> <year>1983</year>;<volume>100</volume>:<fpage>64</fpage>–<lpage>119</lpage>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hubatsch</surname> <given-names>L</given-names></string-name>, <string-name><surname>Peglion</surname> <given-names>F</given-names></string-name>, <string-name><surname>Reich</surname> <given-names>JD</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>A cell-size threshold limits cell polarity and asymmetric division potential</article-title>. <source>Nat Phys</source> <year>2019</year>;<volume>15</volume>:<fpage>1075</fpage>–<lpage>85</lpage>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kemphues</surname> <given-names>KJ</given-names></string-name>, <string-name><surname>Priess</surname> <given-names>JR</given-names></string-name>, <string-name><surname>Morton</surname> <given-names>DG</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Identification of genes required for cytoplasmic localization in early <italic>C. elegans</italic> embryos</article-title>. <source>Cell</source> <year>1988</year>;<volume>52</volume>:<fpage>311</fpage>–<lpage>20</lpage>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cuenca</surname> <given-names>AA</given-names></string-name>, <string-name><surname>Schetter</surname> <given-names>A</given-names></string-name>, <string-name><surname>Aceto</surname> <given-names>D</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Polarization of the <italic>C. elegans</italic> zygote proceeds via distinct establishment and maintenance phases</article-title>. <source>Development</source> <year>2003</year>;<volume>130</volume>:<fpage>1255</fpage>–<lpage>65</lpage>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schubert</surname> <given-names>CM</given-names></string-name>, <string-name><surname>Lin</surname> <given-names>R</given-names></string-name>, <string-name><surname>de Vries</surname> <given-names>CJ</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>MEX-5 and MEX-6 function to establish soma/germline asymmetry in early <italic>C. elegans</italic> embryos</article-title>. <source>Mol. Cell</source> <year>2000</year>:<volume>5</volume>:<fpage>671</fpage>–<lpage>82</lpage>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Seydoux</surname> <given-names>G</given-names></string-name></person-group>. <article-title>Germ cell specification</article-title>. <source>Adv Exp Med Biol</source> <year>2013</year>;<volume>757</volume>:<fpage>17</fpage>–<lpage>39</lpage>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kumfer</surname> <given-names>KT</given-names></string-name>, <string-name><surname>Cook</surname> <given-names>SJ</given-names></string-name>, <string-name><surname>Squirrell</surname> <given-names>JM</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>CGEF-1 and CHIN-1 regulate CDC-42 activity during asymmetric division in the <italic>Caenorhabditis elegans</italic> embryo</article-title>. <source>Mol Biol Cell</source> <year>2010</year>;<volume>21</volume>:<fpage>266</fpage>–<lpage>77</lpage>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sailer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Anneken</surname> <given-names>A</given-names></string-name>, <string-name><surname>Li</surname> <given-names>Y</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Dynamic opposition of clustered proteins stabilizes cortical polarity in the <italic>C. elegans</italic> zygote</article-title>. <source>Dev Cell</source> <year>2015</year>;<volume>35</volume>:<fpage>131</fpage>–<lpage>42</lpage>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Beatty</surname> <given-names>A</given-names></string-name>, <string-name><surname>Morton</surname> <given-names>D</given-names></string-name>, <string-name><surname>Kemphues</surname> <given-names>K</given-names></string-name></person-group>. <article-title>The <italic>C. elegans</italic> homolog of <italic>Drosophila</italic> lethal giant larvae functions redundantly with PAR-2 to maintain polarity in the early embryo</article-title>. <source>Development</source> <year>2010</year>;<volume>137</volume>:<fpage>3995</fpage>–<lpage>4004</lpage>.</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ajduk</surname> <given-names>A</given-names></string-name>, <string-name><surname>Zernicka-Goetz</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Polarity and cell division orientation in the cleavage embryo: from worm to human</article-title>. <source>Mol Hum Reprod</source> <year>2016</year>;<volume>22</volume>:<fpage>691</fpage>–<lpage>703</lpage>.</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lim</surname> <given-names>YW</given-names></string-name>, <string-name><surname>We</surname> <given-names>FL</given-names></string-name>, <string-name><surname>Shankar</surname> <given-names>P</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>A balance between antagonizing PAR proteins specifies the pattern of asymmetric and symmetric divisions in <italic>C. elegans</italic> embryogenesis</article-title>. <source>Cell Rep</source> <year>2021</year>;<volume>36</volume>:<fpage>109326</fpage>.</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lin</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>YQ</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Construction of intracellular asymmetry and asymmetric division in <italic>Escherichia coli</italic></article-title>. <source>Nat Commun</source> <year>2021</year>;<volume>12</volume>:<fpage>888</fpage>.</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Watson</surname> <given-names>JL</given-names></string-name>, <string-name><surname>Krüger</surname> <given-names>LK</given-names></string-name>, <string-name><surname>Ben-Sasson</surname> <given-names>AJ</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Synthetic Par polarity induces cytoskeleton asymmetry in unpolarized mammalian cells</article-title>. <source>Cell</source> <year>2023</year>;<volume>186</volume>:<fpage>4710</fpage>–<lpage>27</lpage>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goehring</surname> <given-names>NW</given-names></string-name>, <string-name><surname>Trong</surname> <given-names>PK</given-names></string-name>, <string-name><surname>Bois</surname> <given-names>JS</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Polarization of PAR proteins by advective triggering of a pattern-forming system</article-title>. <source>Science</source> <year>2011</year>;<volume>334</volume>:<fpage>1137</fpage>–<lpage>41</lpage>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gross</surname> <given-names>P</given-names></string-name>, <string-name><surname>Kumar</surname> <given-names>KV</given-names></string-name>, <string-name><surname>Goehring</surname> <given-names>NW</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Guiding self-organized pattern formation in cell polarity establishment</article-title>. <source>Nat Phys</source> <year>2019</year>;<volume>15</volume>:<fpage>293</fpage>–<lpage>300</lpage>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seirin-Lee</surname> <given-names>S</given-names></string-name></person-group>. <article-title>Asymmetric cell division form a cell to cells: shape, length, and location of polarity domain</article-title>. <source>Dev Growth Differ</source> <year>2020</year>;<volume>62</volume>:<fpage>188</fpage>–<lpage>95</lpage>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seirin-Lee</surname> <given-names>S</given-names></string-name>, <string-name><surname>Shibata</surname> <given-names>T</given-names></string-name></person-group>. <article-title>Self-organization and advective transport in the cell polarity formation for asymmetric cell division</article-title>. <source>J Theor Biol</source> <year>2015</year>;<volume>382</volume>:<fpage>1</fpage>–<lpage>14</lpage>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seirin-Lee</surname> <given-names>S</given-names></string-name>, <string-name><surname>Gaffney</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Dawes</surname> <given-names>AT</given-names></string-name></person-group>. <article-title>CDC-42 interactions with Par proteins are critical for proper patterning in polarization</article-title>. <source>Cells</source> <year>2020</year>;<volume>9</volume>:<fpage>2036</fpage>.</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goehring</surname> <given-names>NW</given-names></string-name>, <string-name><surname>Hoege</surname> <given-names>C</given-names></string-name>, <string-name><surname>Grill</surname> <given-names>SW</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>PAR proteins diffuse freely across the anterior-posterior boundary in polarized <italic>C. elegans</italic> embryos</article-title>. <source>J Cell Biol</source> <year>2011</year>;<volume>193</volume>:<fpage>583</fpage>–<lpage>94</lpage>.</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kravtsova</surname> <given-names>N</given-names></string-name>, <string-name><surname>Dawes</surname> <given-names>AT</given-names></string-name></person-group>. <article-title>Actomyosin regulation and symmetry breaking in a model of polarization in the early <italic>Caenorhabditis elegans</italic> embryo</article-title>. <source>Bull Math Biol</source> <year>2014</year>;<volume>76</volume>:<fpage>2426</fpage>–<lpage>48</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seirin-Lee</surname> <given-names>S</given-names></string-name></person-group>. <article-title>The role of cytoplasmic MEX-5/6 polarity in asymmetric cell division</article-title>. <source>Bull Math Biol</source> <year>2021</year>;<volume>83</volume>:<fpage>29</fpage>.</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname> <given-names>T</given-names></string-name>, <string-name><surname>You</surname> <given-names>L</given-names></string-name></person-group>. <article-title>The persistence potential of transferable plasmids</article-title>. <source>Nat Commun</source> <year>2020</year>;<volume>11</volume>:<fpage>5589</fpage>.</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Blanchoud</surname> <given-names>S</given-names></string-name>, <string-name><surname>Busso</surname> <given-names>C</given-names></string-name>, <string-name><surname>Naef</surname> <given-names>F</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Quantitative analysis and modeling probe polarity establishment in <italic>C. elegans</italic> embryos</article-title>. <source>Biophys J</source> <year>2015</year>;<volume>108</volume>:<fpage>799</fpage>–<lpage>809</lpage>.</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoege</surname> <given-names>C</given-names></string-name>, <string-name><surname>Constantinescu</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schwager</surname> <given-names>A</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>LGL can partition the cortex of one-cell <italic>Caenorhabditis elegans</italic> embryos into two domains</article-title>. <source>Curr Biol</source> <year>2010</year>;<volume>20</volume>:<fpage>1296</fpage>–<lpage>303</lpage>.</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Beatty</surname> <given-names>A</given-names></string-name>, <string-name><surname>Morton</surname> <given-names>DG</given-names></string-name>, <string-name><surname>Kemphues</surname> <given-names>K</given-names></string-name></person-group>. <article-title>PAR-2, LGL-1 and the CDC-42 GAP CHIN-1 act in distinct pathways to maintain polarity in the <italic>C. elegans</italic> embryo</article-title>. <source>Development</source> <year>2013</year>;<volume>140</volume>:<fpage>2005</fpage>–<lpage>14</lpage>.</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Guan</surname> <given-names>G</given-names></string-name>, <string-name><surname>Wong</surname> <given-names>MK</given-names></string-name>, <string-name><surname>Zhao</surname> <given-names>Z</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Volume segregation programming in a nematode’s early embryogenesis</article-title>. <source>Phys Rev E</source> <year>2021</year>;<volume>104</volume>:<fpage>054409</fpage>.</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schneider</surname> <given-names>SQ</given-names></string-name>, <string-name><surname>Bowerman</surname> <given-names>B</given-names></string-name></person-group>. <article-title>Cell polarity and the cytoskeleton in the <italic>Caenorhabditis elegans</italic> zygote</article-title>. <source>Annu Rev Genet</source> <year>2003</year>;<volume>37</volume>:<fpage>221</fpage>–<lpage>49</lpage>.</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fickentscher</surname> <given-names>R</given-names></string-name>, <string-name><surname>Krauss</surname> <given-names>SW</given-names></string-name>, <string-name><surname>Weiss</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Anti-correlation of cell volumes and cell-cycle times during the embryogenesis of a simple model organism</article-title>. <source>New J Phys</source> <year>2018</year>;<volume>20</volume>:<fpage>113001</fpage>.</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fickentscher</surname> <given-names>R</given-names></string-name>, <string-name><surname>Struntz</surname> <given-names>P</given-names></string-name>, <string-name><surname>Weiss</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Setting the clock for fail-safe early embryogenesis</article-title>. <source>Phys Rev Lett</source> <year>2016</year>;<volume>117</volume>:<fpage>188101</fpage>.</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tian</surname> <given-names>B</given-names></string-name>, <string-name><surname>Guan</surname> <given-names>G</given-names></string-name>, <string-name><surname>Tang</surname> <given-names>L-H</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Why and how the nematode’s early embryogenesis can be precise and robust: a mechanical perspective</article-title>. <source>Phys Biol</source> <year>2020</year>;<volume>17</volume>:<fpage>026001</fpage>.</mixed-citation></ref>
+<ref id="c45"><label>[45]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Arata</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>JY</given-names></string-name>, <string-name><surname>Boldstein</surname> <given-names>B</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Extracellular control of PAR protein localization during asymmetric cell division in the <italic>C. elegans</italic> embryo</article-title>. <source>Development</source> <year>2010</year>;<volume>137</volume>:<fpage>3337</fpage>–<lpage>45</lpage>.</mixed-citation></ref>
+<ref id="c46"><label>[46]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seirin-Lee</surname> <given-names>S</given-names></string-name></person-group>. <article-title>Positioning of polarity formation by extracellular signaling during asymmetric cell division</article-title>. <source>J Theor Biol</source> <year>2016</year>;<volume>400</volume>:<fpage>52</fpage>–<lpage>64</lpage>.</mixed-citation></ref>
+<ref id="c47"><label>[47]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nance</surname> <given-names>J</given-names></string-name></person-group>, <article-title>Getting to know your neighbor: cell polarization in early embryos</article-title>. <source>J Cell Biol</source> <year>2014</year>;<volume>206</volume>:<fpage>823</fpage>–<lpage>32</lpage>.</mixed-citation></ref>
+<ref id="c48"><label>[48]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kondo</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Ledderose</surname> <given-names>C</given-names></string-name>, <string-name><surname>Slubowski</surname> <given-names>CJ</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Frontline Science: <italic>Escherichia coli</italic> use LPS as decoy to impair neutrophil chemotaxis and defeat antimicrobial host defense</article-title>. <source>J Leukoc Biol</source> <year>2019</year>;<volume>106</volume>:<fpage>1211</fpage>–<lpage>9</lpage>.</mixed-citation></ref>
+<ref id="c49"><label>[49]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Geßele</surname> <given-names>R</given-names></string-name>, <string-name><surname>Halatek</surname> <given-names>J</given-names></string-name>, <string-name><surname>Würthner</surname> <given-names>L</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Geometric cues stabilise long-axis polarisation of PAR protein patterns in <italic>C. elegans.</italic></article-title> <source>Nat Commun</source> <year>2020</year>;<volume>11</volume>:<fpage>539</fpage>.</mixed-citation></ref>
+<ref id="c50"><label>[50]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chao</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Wong</surname> <given-names>AKO</given-names></string-name>, <string-name><surname>Tavassoli</surname> <given-names>S</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Polarization of the endoplasmic reticulum by ER-septin tethering</article-title>. <source>Cell</source> <year>2014</year>;<volume>158</volume>:<fpage>620</fpage>–<lpage>32</lpage>.</mixed-citation></ref>
+<ref id="c51"><label>[51]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Guan</surname> <given-names>C</given-names></string-name>, <string-name><surname>Qiao</surname> <given-names>L</given-names></string-name>, <string-name><surname>Xiong</surname> <given-names>Y</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Coactivation of antagonistic genes stabilizes polarity patterning during shoot organogenesis</article-title>. <source>Sci Adv</source> <year>2022</year>;<volume>8</volume>:<elocation-id>eabn0368</elocation-id>.</mixed-citation></ref>
+<ref id="c52"><label>[52]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhou</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Feng</surname> <given-names>Y</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Engineering longevity—design of a synthetic gene oscillator to slow cellular aging</article-title>. <source>Science</source> <year>2023</year>;<volume>380</volume>:<fpage>3760381</fpage>.</mixed-citation></ref>
+<ref id="c53"><label>[53]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhu</surname> <given-names>R</given-names></string-name>, <string-name><surname>Santat</surname> <given-names>LA</given-names></string-name>, <string-name><surname>Markson</surname> <given-names>JS</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Reconstitution of morphogen shuttling circuits</article-title>. <source>Sci Adv</source> <year>2023</year>;<volume>9</volume>:<elocation-id>eadf9336</elocation-id>.</mixed-citation></ref>
+<ref id="c54"><label>[54]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gardner</surname> <given-names>TS</given-names></string-name>, <string-name><surname>Cantor</surname> <given-names>CR</given-names></string-name>, <string-name><surname>Collins</surname> <given-names>JJ</given-names></string-name></person-group>. <article-title>Construction of a genetic toggle switch in <italic>Escherichia coli</italic></article-title>, <source>Nature</source> <year>2000</year>;<volume>403</volume>:<fpage>339</fpage>–<lpage>42</lpage>.</mixed-citation></ref>
+<ref id="c55"><label>[55]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sun</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Wei</surname> <given-names>W</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Synthetic robust perfect adaptation achieved by negative feedback coupling with linear weak positive feedback</article-title>. <source>Nucleic Acids Res</source> <year>2022</year>;<volume>50</volume>:<fpage>2377</fpage>–<lpage>86</lpage>.</mixed-citation></ref>
+<ref id="c56"><label>[56]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fickentscher</surname> <given-names>R</given-names></string-name>, <string-name><surname>Weiss</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Physical determinants of asymmetric cell divisions in the early development of <italic>Caenorhabditis elegans</italic></article-title>. <source>Sci Rep</source> <year>2017</year>;<volume>7</volume>:<fpage>9369</fpage>.</mixed-citation></ref>
+<ref id="c57"><label>[57]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pavin</surname> <given-names>N</given-names></string-name>, <string-name><surname>Laan</surname> <given-names>L</given-names></string-name>, <string-name><surname>Ma</surname> <given-names>R</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Positioning of microtubule organizing centers by cortical pushing and pulling forces</article-title>. <source>New J Phys</source> <year>2012</year>; <volume>14</volume>:<fpage>105025</fpage>.</mixed-citation></ref>
+<ref id="c58"><label>[58]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ma</surname> <given-names>R</given-names></string-name>, <string-name><surname>Laan</surname> <given-names>L</given-names></string-name>, <string-name><surname>Dogterom</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>General theory for the mechanics of confined microtubule asters</article-title>. <source>New J Phys</source> <year>2014</year>;<volume>16</volume>:<fpage>013018</fpage>.</mixed-citation></ref>
+<ref id="c59"><label>[59]</label><mixed-citation publication-type="book"><source>MATLAB version: 9.13.0 (R2022b)</source>, <publisher-loc>Natick, Massachusetts</publisher-loc>: <publisher-name>The MathWorks Inc.</publisher-name>; <year>2022</year>.</mixed-citation></ref>
+</ref-list>
+<sec id="s6">
+<title>Supplementary Materials</title>
+<sec id="s7">
+<title>Supplemental Figures</title>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Fig. S1.</label>
+<caption><title>The initial state at <italic>t</italic> = 0 (shown on the left) and stable state at <italic>t</italic> = 500 (shown in the middle) of the cell polarization pattern generated by the simple 2-node network and <italic>C. elegans</italic> 5-node network (shown on the right).</title><p>Note that the concentration distribution on the cell membrane (c) is averaged over all established viable parameter sets for each molecule (<italic>i.e.</italic>, 122 sets for the simple 2-node network and 602 sets for the <italic>C. elegans</italic> 5-node network).</p></caption>
+<graphic xlink:href="2401.07227v1_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig8" position="float" fig-type="figure">
+<label>Fig. S2.</label>
+<caption><title>The <italic>in silico</italic> perturbation experiments on [L] based on the <italic>C. elegans</italic> modeling framework.</title><p>(a) The final concentration distribution of [A] and [C] on the cell membrane generated by <italic>C. elegans</italic> mutant networks with depletion on [P] (2<sup>nd</sup> column), [L] (3<sup>rd</sup> column), or both (4<sup>th</sup> column), in comparison with the one generated by <italic>C. elegans</italic> wild-type network (1<sup>st</sup> column). (b) The pattern error in <italic>C. elegans</italic> mutant networks with depletion on [P], [L], or both (shown from left to right), compared to the pattern in <italic>C. elegans</italic> wild-type network. (c) The final concentration distribution of [A] and [C] on the cell membrane generated by <italic>C. elegans</italic> mutant networks with depletion on [P] (2<sup>nd</sup> column), depletion on [P] but overexpression of [L] ([LC] from 1 to 1.5) (3<sup>rd</sup> column), and depletion on both [P] and [H] but overexpression of [L] ([LC] from 1 to 1.5) (4<sup>th</sup> column), in comparison with the one generated by <italic>C. elegans</italic> wild-type network (1<sup>st</sup> column). (d) The pattern error in <italic>C. elegans</italic> mutant networks with depletion on [P] or both [P] and [H] but overexpression of [L] ([LC] from 1 to 1.5), compared to the pattern in <italic>C. elegans</italic> wild-type network. For (a)(c), the final concentration distribution on the cell membrane generated by the <italic>C. elegans</italic> wild-type network (1<sup>st</sup> column) is illustrated with dashed lines in the <italic>C. elegans</italic> mutant networks (2<sup>nd</sup> ~ 4<sup>th</sup> column) as a comparative reference. Note that within a network, normal arrows and blunt arrows symbolize activation and inhibition respectively. For (b)(d), the pattern error is shown by a bar chart with the average of all viable parameter sets, while the values from each viable parameter set are plotted with gray dots then the ones from the same viable parameter set but in different networks are connected with gray lines.</p></caption>
+<graphic xlink:href="2401.07227v1_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig9" position="float" fig-type="figure">
+<label>Fig. S3.</label>
+<caption><title>The 34 possible additional feed loops between LGL-1 (<italic>abbr.</italic>, [L]) and PAR-3/PAR-6/PKC-3 (<italic>abbr.</italic>, [A]) or PAR-1/PAR-2 (<italic>abbr.</italic>, [P]).</title><p>Note that within a network, normal arrows and blunt arrows symbolize activation and inhibition respectively, while dashed lines mean no regulation.</p></caption>
+<graphic xlink:href="2401.07227v1_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s8" sec-type="supplementary-material">
+<title>Supplemental Table</title>
+<supplementary-material id="tbls1">
+<label>Table S1.</label>
+<caption><title>The parameter description of the reaction-diffusion model for simulating a general cell polarization network.</title></caption>
+<media xlink:href="2401.07227v1_tbls1.docx"/>
+</supplementary-material>
+<supplementary-material id="tbls2">
+<label>Table S2.</label>
+<caption><title>The literature summary on the cell polarization network in the <italic>C. elegans</italic> zygote.</title></caption>
+<media xlink:href="2401.07227v1_tbls2.docx"/>
+</supplementary-material>
+</sec>
+<sec id="s9" sec-type="supplementary-material">
+<title>Supplemental Movies</title>
+<supplementary-material id="video1">
+<label>Movie S1.</label>
+<caption><title>The concentration distribution of each molecule on the cell membrane over time generated by the antagonistic 2-node network and the ones with a single modification added, corresponding to <xref ref-type="fig" rid="fig1">Fig. 1</xref>.</title></caption>
+<media xlink:href="2401.07227v1_video1.mp4"/>
+</supplementary-material>
+<supplementary-material id="video2">
+<label>Movie S2.</label>
+<caption><title>The concentration distribution of each molecule on the cell membrane over time generated by the antagonistic 2-node network and the ones with a single modification or two combinatorial modifications added, correstitleonding to <xref ref-type="fig" rid="fig2">Fig. 2</xref>.</title></caption>
+<media xlink:href="2401.07227v1_video2.mp4"/>
+</supplementary-material>
+<supplementary-material id="video3">
+<label>Movie S3.</label>
+<caption><title>The concentration distribution of each molecule on the cell membrane over time generated by the antagonistic 2-node network with stitleatially inhomogeneous titlearameters, correstitleonding to <xref ref-type="fig" rid="fig4">Fig. 4</xref>.</title></caption>
+<media xlink:href="2401.07227v1_video3.mp4"/>
+</supplementary-material>
+<supplementary-material id="video4">
+<label>Movie S4.</label>
+<caption><title>The concentration distribution of each molecule on the cell membrane over time generated by the 4-Node, LGL-1<sup>−</sup>, and WT networks, correstitleonding to <xref ref-type="fig" rid="fig5">Fig. 5b-d</xref>.</title></caption>
+<media xlink:href="2401.07227v1_video4.mp4"/>
+</supplementary-material>
+<supplementary-material id="video5">
+<label>Movie S5.</label>
+<caption><title>The concentration distribution of each molecule on the cell membrane over time generated by the <italic>C. elegans</italic> 5-node network with stitleatially inhomogeneous titlearameters, correstitleonding to <xref ref-type="fig" rid="fig6">Fig. 6b-e</xref>.</title></caption>
+<media xlink:href="2401.07227v1_video5.mp4"/>
+</supplementary-material>
+</sec>
+<sec id="s10">
+<title>Instructions for <italic>PolarSim</italic></title>
+<sec id="s10a">
+<title>1. Introduction</title>
+<p><italic>PolarSim</italic> is a <underline>g</underline>raphical <underline>u</underline>ser <underline>i</underline>nterface (GUI) on <italic>Matlab</italic> 2022b [<xref ref-type="bibr" rid="c59">59</xref>] for simulating the evolution of cell polarization patterns. Based on the reaction-diffusion model, the GUI allows users to compute the behaviors of cell polarity networks in different biological scenarios. All the simulations are tested with a 12th Gen Intel(R) Core(TM) i7-1260P CPU.</p>
+</sec>
+<sec id="s10b">
+<title>2. Tutorials</title>
+<list list-type="bullet">
+<list-item><p>Download the folder “PolarSim” from <ext-link ext-link-type="uri" xlink:href="https://github.com/YixuanChen0726/Cell-Polarization/tree/main/PolarSim">https://github.com/YixuanChen0726/Cell-Polarization/tree/main/PolarSim</ext-link>.</p></list-item>
+<list-item><p>Open <italic>Matlab</italic> under the “PolarSim” folder path and execute script “GUI.m”. Click “Run” and then an interactive interface pops up (<xref ref-type="fig" rid="fig10">Fig. G1</xref>).
+<fig id="fig10" position="float" fig-type="figure">
+<label>Fig. G1.</label>
+<caption><title>The instructions to open the <italic>PolarSim</italic> GUI.</title><p>① The files in the folder “PolarSim”. ② Open the <italic>Matlab</italic> under the path of the folder “PolarSim” and double-click to open “GUI.m”. ③ Click “Run” to open the <italic>PolarSim</italic> GUI shown by ④.</p></caption>
+<graphic xlink:href="2401.07227v1_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+</fig></p></list-item>
+<list-item><p>With the following parameters inputted, the GUI gives out a group of “Pattern_*.mat” files containing pattern information.
+<list list-type="order">
+<list-item><p>Import: Network Parameter.</p>
+<p>We give out three examples “Simple Antagonistic 2_Node Network.xlsx”, “LGL-1 Mutant 4-Node Network.xlsx” and “C. elegans Wild-Type 5-Node Network.xlsx” in the folder “PolarSim”, respectively representing the typical networks in this paper (<xref ref-type="fig" rid="fig11">Fig. G2</xref>). The Excel table for parameter value assignments should follow the format below:
+<table-wrap id="tbl1" position="float" orientation="portrait">
+<label>Table G1</label>
+<caption><title>The instructions for the format of Network Parameter in an Excel table.</title><p>In the 1<sup>st</sup> row and 1<sup>st</sup> column, “Node N” represents the name of the node. The 2<sup>nd</sup> row explains the characteristic parameters of each node (<italic>i.e.</italic> location, cytoplasmic concentration, basal on-rate, and basal off-rate as listed from left to right). The interaction parameters start from the 3<sup>rd</sup> row and 2<sup>nd</sup> column, where the <italic>i</italic><sup>th</sup> row and <italic>j</italic><sup>th</sup> column describe the activation/inhibition effect from Node <italic>j</italic> to Node <italic>i</italic>. Note that <inline-formula id="ID53">
+<alternatives>
+<mml:math display="inline" id="I53"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>Y</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq53.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> and <inline-formula id="ID54">
+<alternatives>
+<mml:math display="inline" id="I54"><mml:mrow><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>Y</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>X</mml:mtext></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq54.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> should be set to 0 when no activation or inhibition is exerted on X from Y respectively. “Location” should be assigned with the string “a” or “p” while the description of the other parameters is detailed in Table S1.</p></caption>
+<alternatives>
+<graphic xlink:href="2401.07227v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<table frame="box" rules="all">
+<thead>
+<tr>
+<th align="center" valign="top"/>
+<th align="center" valign="top">Node A</th>
+<th align="center" valign="top">Node B</th>
+<th align="center" valign="top">…</th>
+<th align="center" valign="top">Node N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="top"/>
+<td align="center" valign="top">Location (a or p)/[A<sub>c</sub>]/<italic>γ</italic><sub>A</sub>/<italic>α</italic><sub>A</sub></td>
+<td align="center" valign="top">Location (a or p)/ [B<sub>c</sub>]/<italic>γ</italic><sub>B</sub>/<italic>α</italic><sub>B</sub></td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top">Location (a or p)/[N<sub>c</sub>]/<italic>γ</italic><sub>N</sub>/<italic>α</italic><sub>N</sub></td>
+</tr>
+<tr>
+<td align="center" valign="top">Node A</td>
+<td align="center" valign="top"><inline-formula id="ID55">
+<alternatives>
+<mml:math display="inline" id="I55"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Aq</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A1</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A2</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Ak</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq55.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top"><inline-formula id="ID56">
+<alternatives>
+<mml:math display="inline" id="I56"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bq</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B1</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B2</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bk</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq56.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top"><inline-formula id="ID57">
+<alternatives>
+<mml:math display="inline" id="I57"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nq</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N1</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N2</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nk</mml:mtext></mml:mrow><mml:mtext>A</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq57.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+</tr>
+<tr>
+<td align="center" valign="top">Node B</td>
+<td align="center" valign="top"><inline-formula id="ID58">
+<alternatives>
+<mml:math display="inline" id="I58"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Aq</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A1</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A2</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Ak</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq58.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top"><inline-formula id="ID59">
+<alternatives>
+<mml:math display="inline" id="I59"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bq</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B1</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B2</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bk</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq59.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top"><inline-formula id="ID60">
+<alternatives>
+<mml:math display="inline" id="I60"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nq</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N1</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N2</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nk</mml:mtext></mml:mrow><mml:mtext>B</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq60.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+</tr>
+<tr>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top">…</td>
+</tr>
+<tr>
+<td align="center" valign="top">Node N</td>
+<td align="center" valign="top"><inline-formula id="ID61">
+<alternatives>
+<mml:math display="inline" id="I61"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>A</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Aq</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A1</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>A2</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Ak</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq61.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top"><inline-formula id="ID62">
+<alternatives>
+<mml:math display="inline" id="I62"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>B</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bq</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B1</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>B2</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Bk</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq62.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+<td align="center" valign="top">…</td>
+<td align="center" valign="top"><inline-formula id="ID63">
+<alternatives>
+<mml:math display="inline" id="I63"><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>1</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>q</mml:mi><mml:mrow><mml:mtext>N</mml:mtext><mml:mn>2</mml:mn></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nq</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N1</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>N2</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup><mml:mo>/</mml:mo><mml:msubsup><mml:mi>n</mml:mi><mml:mrow><mml:mtext>Nk</mml:mtext></mml:mrow><mml:mtext>N</mml:mtext></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq63.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula></td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<fig id="fig11" position="float" fig-type="figure">
+<label>Fig. G2.</label>
+<caption><title>The examples of network parameters.</title><p>(a) “Simple Antagonistic 2-Node Network.xlsx” lists the parameters in <xref ref-type="fig" rid="fig1">Fig. 1a</xref>. (b) “C. elegans Wild-Type 5-Node Network.xlsx” lists the parameters for the benchmark point <italic>P</italic>*(<italic>γ</italic>* = 0.039, <inline-formula id="ID64">
+<alternatives>
+<mml:math display="inline" id="I64"><mml:msubsup><mml:mi>k</mml:mi><mml:mn>1</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq64.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 1.55, <inline-formula id="ID65">
+<alternatives>
+<mml:math display="inline" id="I65"><mml:msubsup><mml:mi>q</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2401.07227v1_ieq65.tif" mimetype="image" mime-subtype="tiff"/></alternatives>
+</inline-formula> = 0.05) in <xref ref-type="fig" rid="fig6">Fig. 6b</xref>. (c) “LGL-1 Mutant 4-Node Network.xlsx” lists the parameters as in (b) but with the Node [L] knocked out.</p></caption>
+<graphic xlink:href="2401.07227v1_fig11.tif" mimetype="image" mime-subtype="tiff"/>
+</fig></p></list-item>
+<list-item><p>Import: Cell Length</p>
+<p>We take “0.5” as an example. Any positive number is allowed in this box. The effects of cell length on cell polarization patterns are shown in <xref ref-type="fig" rid="fig15">Fig. G6</xref>.</p></list-item>
+<list-item><p>Import: Output Folder</p>
+<p>Give a folder name for storing the output results (<italic>e.g.</italic> “Output 2-Node”)</p></list-item>
+<list-item><p>Setting: Time for Simulation</p>
+<p>Simulation duration “500” is used in this paper. Any positive number is allowed in this box.</p></list-item>
+<list-item><p>Setting: Time Step Length</p>
+<p>We take “1” as an example. Larger values are not recommended, in consideration of possible time failure, and one may try a smaller step length while the error tolerance is exceeded.</p></list-item>
+<list-item><p>Setting: Saving Interval</p>
+<p>It must be an integer multiple of the time step length. The time point will be saved in this designated interval and can be used for pattern plotting later.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p>Click “Run” in the interface, and then its status on the progress bar is shown (<xref ref-type="fig" rid="fig12">Fig. G3a</xref>). A folder named “Import: Output Folder” is generated in the current path to store the output “Pattern_*.mat” data containing the name, location, and concentration distribution on the cell membrane of the node (molecule), where “*” denotes the <italic>in silico</italic> time corresponding to each file (<xref ref-type="fig" rid="fig13">Fig. G4a</xref>, right).</p></list-item>
+<list-item><p>Import the pathway of the file outputted by <italic>PolarSim</italic> into the box “Import: Pattern”.</p></list-item>
+<list-item><p>Click “Plot” and then a figure comes out to show the cell polarization pattern while the position of the transition plane appears in the box “Output: Transition Plane”.</p></list-item>
+<list-item><p>Import the pathway of two files outputted by <italic>PolarSim</italic> into the box “Import: Start Time” and “Import: End Time”.</p></list-item>
+<list-item><p>Click “Run” and then the mean interface velocity between two input time points appears in the box “Output: Interface Velocity”.</p></list-item>
+</list>
+<fig id="fig12" position="float" fig-type="figure">
+<label>Fig. G3.</label>
+<caption><title>(a) The progress bar showing the running progress. (b) The output subfolders in the folder “PolarSim”.</title></caption>
+<graphic xlink:href="2401.07227v1_fig12.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig13" position="float" fig-type="figure">
+<label>Fig. G4.</label>
+<caption><title>The results of Example 1 (Simple Antagonistic 2-Node Network) and Example 2 (<italic>C. elegans</italic> Wild-Type 5-Node Network) of <italic>PolarSim</italic>.</title><p>(a) The flow chart for computing Example 1: ① input parameters; ② click “Run”; ③ the simulation is completed with a progress bar shown and the files are saved in the folder “Output 2-Node”; the file “Pattern_500.mat” is used to show the data format in the right, where the first part stores the name and location of the nodes (molecules) while the second part stores the concentration distribution of each node (molecule) on the cell membrane; ④ input the pathway of the outputted pattern file; ⑤ click “Plot”; ⑥ the simulation is completed with a figure shown and the position of the transition plane given in the box “Output: Transition Plane”; ⑦ input the pathway of the two outputted files “Pattern_*.mat” at different time points into “Import: Start Time” and “Import: End Time”, where “*” denotes the start time and end time respectively; ⑧ click “Run”; ⑨ the simulation is completed with the interface velocity given in the box “Output: Interface Velocity”. (b) The same as (a) but for the <italic>C. elegans</italic> Wild-Type 5-Node Network.</p></caption>
+<graphic xlink:href="2401.07227v1_fig13.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s10c">
+<title>3. Examples</title>
+<list list-type="bullet">
+<list-item><p><bold>Example 1</bold>: Simple Antagonistic 2-Node Network simulation as <xref ref-type="fig" rid="fig1">Fig. 1a</xref>.
+<list list-type="order">
+<list-item><p>Input the following parameters: “Simple Antagonistic 2-Node Network.xlsx” into “Import: Network Parameter”; “0.5” into “Import: Cell Length”; “Output 2-Node” into “Import: Output Folder”; “500” into “Setting: Time for Simulation”; “1” into “Setting: Time Step Length” and “100” into “Setting: Saving Interval”. (<xref ref-type="fig" rid="fig13">Fig. G4a</xref>, ①)</p></list-item>
+<list-item><p>Click “Run”, and then 6 “Pattern_*.mat” files at different time points are saved in the subfolder “Output 2-Node” (<xref ref-type="fig" rid="fig13">Fig. G4a</xref>, ②-③).</p></list-item>
+<list-item><p>Input “Output 2-Node\Pattern_500.mat” into the box “Import: Pattern”, and a figure of Simple 2-Node Antagonistic Network at <italic>t</italic> = 500 appears. The position of the transition plane <italic>X<sub>T</sub> = 0.00252525</italic> is given in the box “Output: Transition Plane” (<xref ref-type="fig" rid="fig13">Fig. G4a</xref>, ④-⑥).</p></list-item>
+<list-item><p>Input “Output 2-Node\Pattern_300.mat” and “Output 2-Node\Pattern_500.mat” into the box “Import: Start Time” and “Import: End Time” respectively, and then the mean interface velocity between <italic>t</italic> = 300 and <italic>t</italic> = 500 is given in the box “Output: Interface Velocity” (<xref ref-type="fig" rid="fig13">Fig. G4a</xref>, ⑦-⑨). The 2-node network approaches a stable polarized pattern with its interface velocity being 0.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p><bold>Example 2</bold>: C. elegans Wild-Type 5-Node Network simulation as <xref ref-type="fig" rid="fig6">Fig. 6b</xref>.
+<list list-type="order">
+<list-item><p>Input the following parameters: “C. elegans Wild-Type 5-Node Network.xlsx” into “Import: Network Parameter”; “0.5” into “Import: Cell Length”; “Output 5-Node” into “Import: Output Folder”; “500” into “Setting: Time for Simulation”; “1” into “Setting: Time Step Length” and “100” into “Setting: Saving Interval” (<xref ref-type="fig" rid="fig13">Fig. G4b</xref>, ①).</p></list-item>
+<list-item><p>Click “Run”, and then 6 “Pattern_*.mat” files at different time points are saved in the subfolder “Output 5-Node” (<xref ref-type="fig" rid="fig13">Fig. G4b</xref>, ②-③).</p></list-item>
+<list-item><p>Input “Output 5-Node\Pattern_500.mat” into the box “Import: Pattern”, and a figure of <italic>C. elegans</italic> Wild-Type 5-Node Network at <italic>t</italic> = 500 appears. The position of the transition plane <italic>XT</italic> = -0.0176768 is given in the box “Output: Transition Plane” (<xref ref-type="fig" rid="fig13">Fig. G4b</xref>, ④-⑥).</p></list-item>
+<list-item><p>Input “Output 5-Node\Pattern_300.mat” and “Output 5-Node\Pattern_500.mat” in the box “Import: Start Time” and “Import: End Time” respectively, and then the mean interface velocity between <italic>t</italic> = 300 and <italic>t</italic> = 500 is given in the box “Output: Interface Velocity” (<xref ref-type="fig" rid="fig13">Fig. G4b</xref>, ⑦-⑨). The 5-node network approaches a stable polarized pattern with its interface velocity being 0.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p><bold>Example 3</bold>: LGL-1 Mutant 4-Node Network, originated from the <italic>C. elegans</italic> Wild-Type 5- Node Network but with the Node [L] knocked out.
+<list list-type="order">
+<list-item><p>Input the following parameters: “LGL-1 Mutant 4-Node Network.xlsx” into “Import: Network Parameter”; “0.5” into “Import: Cell Length”; “Output 4-Node” into “Import: Output Folder”; “1000” into “Setting: Time for Simulation”; “1” into “Setting: Time Step Length” and “100” in “Setting: Saving Interval” (<xref ref-type="fig" rid="fig14">Fig. G5a</xref>).</p></list-item>
+<list-item><p>Click “Run”, and then 11 “Pattern_*.mat” files at different time points are saved in the subfolder “Output 4-Node”.</p></list-item>
+<list-item><p>Input “Output 4-Node\Pattern_500.mat” into the box “Import: Pattern”, and then a figure of LGL-1 Mutant 4-Node Network at <italic>t</italic> = 500 appears with the transition plane close to the posterior pole. The position of the transition plane <italic>X<sub>T</sub></italic> = 0.207071 is given in the box “Output: Transition Plane” (<xref ref-type="fig" rid="fig14">Fig. G5a</xref>).</p></list-item>
+<list-item><p>Input “Output 4-Node\Pattern_300.mat” and “Output 4-Node\Pattern_500.mat” in the box “Import: Start Time” and “Import: End Time” respectively, and then the mean interface velocity between <italic>t</italic> = 300 and <italic>t</italic> = 500 is given in the box “Output: Interface Velocity” (<xref ref-type="fig" rid="fig14">Fig. G5a</xref>). The interface of the 4-node network keeps moving toward the posterior with <italic>V<sub>I</sub></italic> = 0.000429293.</p></list-item>
+<list-item><p>Input “Output 4-Node\Pattern_1000.mat” in the box “Import: Pattern”, and then a figure of LGL-1 Mutant 4-Node Network at <italic>t</italic> = 1000 appears. The string “Transition plane doesn’t exist” appears in the box “Output: Transition Plane” as the pattern reaches a homogeneous state dominated by [A] and [C] (<xref ref-type="fig" rid="fig14">Fig. G5b</xref>).</p></list-item>
+<list-item><p>Input “Output 4-Node\Pattern_800.mat” and “Output 4-Node\Pattern_1000.mat” in the box “Import: Start Time” and “Import: End Time” respectively. The mean interface velocity between <italic>t</italic> = 800 and <italic>t</italic> = 1000 doesn’t exist with the string “It isn’t a polarized pattern” appearing in the box “Output: Interface Velocity” to hint (<xref ref-type="fig" rid="fig14">Fig. G5b</xref>). Note that the interface velocity can’t be calculated when either pattern at start time or end time is homogeneous.</p></list-item>
+</list>
+</p></list-item>
+</list>
+<fig id="fig14" position="float" fig-type="figure">
+<label>Fig. G5.</label>
+<caption><title>The results of Example 3 (LGL-1 Mutant 4-Node Network) of <italic>PolarSim</italic>.</title><p>(a) The transition plane is shown at <italic>t</italic> = 500, with a result of <italic>XT</italic> = 0.207071. The interface velocity is calculated between <italic>t</italic> = 300 and <italic>t</italic> = 500, with the value <italic>v<sub>I</sub></italic> = 0.000429293 representing an unstable pattern (top). The figure is plotted at <italic>t</italic> = 500 (bottom). (b) The transition plane and the figure are shown at <italic>t</italic> = 1000 and the interface velocity is calculated between <italic>t</italic> = 800 and <italic>t</italic> = 1000. The pattern collapses to a homogeneous state with [A] and [C] invading the posterior domain at <italic>t</italic> = 1000, and thereby the transition plane doesn’t exist and the interface can’t be calculated.</p></caption>
+<graphic xlink:href="2401.07227v1_fig14.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s10d">
+<title>4. Extensive Application</title>
+<p>Our <italic>PolarSim</italic> is extensively applicable to similar biological systems. Here, we take the cell size (length) as an exemplary research target to study how the concentration distribution on the cell membrane depends on it. Different cell lengths are applied to the two examples to see whether there is a cell size threshold limiting cell polarization as discovered before [<xref ref-type="bibr" rid="c16">16</xref>]. Patterns at t = 500 are plotted with the cell length ranging from 0.1 to 0.5 in steps 0.1 (<xref ref-type="fig" rid="fig15">Fig. G6</xref>).</p>
+<fig id="fig15" position="float" fig-type="figure">
+<label>Fig. G6.</label>
+<caption><title>The effects of cell size (length) on the cell polarization pattern.</title><p>(a-e) The pattern of Simple Antagonistic 2-Node Network at <italic>t</italic> = 500. From left to right, the cell lengths are 0.1, 0.2, 0.3, 0.4 and 0.5, respectively. (f-j) The same as (a-e) but for the <italic>C. elegans</italic> Wild-Type 5- Node Network.</p></caption>
+<graphic xlink:href="2401.07227v1_fig15.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The <italic>PolarSim</italic>-based simulations above indicate that the proper cell polarization demands a reasonable spatial scale, which to some extent gives an explicit constraint for the volume of a cell in reality when it needs to divide asymmetrically. It’s worth noting that the collapse of cell polarization pattern over cell size decrease may be attributed to two different mechanisms - while the curve of concentration distribution changes with the interface becoming indistinguishable as proposed in [<xref ref-type="bibr" rid="c16">16</xref>], our new results further suggest that the whole curve of concentration distribution will even turn fully homogeneous when the cell size is too small. In all, <italic>PolarSim</italic> provides a user-friendly tool for more applications on the studies in cell polarization.</p>
+</sec>
+<sec id="s10e">
+<title>5. Contact</title>
+<p>All the scripts of the <italic>PolarSim</italic> GUI have been uploaded onto GitHub <ext-link ext-link-type="uri" xlink:href="https://github.com/YixuanChen0726/Cell-Polarization/tree/main/PolarSim">https://github.com/YixuanChen0726/Cell-Polarization/tree/main/PolarSim</ext-link>. If there is any question, please contact Yixuan Chen (yixuanchen@stu.pku.edu.cn) or Guoye Guan (guanguoye@gmail.com) anytime.</p>
+</sec>
+</sec>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96421.1.sa1</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Gómez-Schiavon</surname>
+<given-names>Mariana</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Universidad Nacional Autónoma de México</institution>
+</institution-wrap>
+<city>Querétaro</city>
+<country>Mexico</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This manuscript makes <bold>valuable</bold> contributions to our understanding of cell polarisation dynamics and its underlying mechanisms. Through the development of a computational pipeline, the authors provide <bold>solid</bold> evidence that compensatory actions, whether regulatory or spatial, are essential for the robustness of the polarisation pattern. However, a more comprehensive validation against experimental data and a proper estimation of model parameters are required for further characterization and predictions in natural systems, such as the C. elegans embryo.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96421.1.sa0</article-id>
+<title-group>
+<article-title>Joint Public Review:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The polarisation phenomenon describes how proteins within a signalling network segregate into different spatial domains. This phenomenon holds fundamental importance in biology, contributing to various cellular processes such as cell migration, cell division, and symmetry breaking in embryonic morphogenesis. In this manuscript, the authors assess the robustness of stable asymmetric patterns using both a previously proposed minimal model of a 2-node network and a more realistic 5-node network based on the C. elegans cell polarisation network, which exhibits anterior-posterior asymmetry. They introduce a computational pipeline for numerically exploring the dynamics of a given reaction-diffusion network and evaluate the stability of a polarisation pattern. Typically, the establishment of polarisation requires the mutual inhibition of two groups of proteins, forming a 2-node antagonistic network. Through a reaction-diffusion formulation, the authors initially demonstrate that the widely-used 2-node antagonistic network for creating polarised patterns fails to maintain the polarised pattern in the face of simple modifications. However, the collapsed polarisation can be restored by combining two or more opposing regulations. The position of the interface can be adjusted with spatially varied kinetic parameters. Furthermore, the authors show that the 5-node network utilised by C. elegans is the most stable for maintaining polarisation against parameter changes, identifying key parameters that impact the position of the interface. While the results offer novel and insightful perspectives on the network's robustness for cell polarisation, the manuscript lacks comprehensive validation against experimental data, justified node-node network interactions, and proper estimation of model parameters (based on quantitative measurements or molecular intensity distributions). These limitations significantly restrict the utility of the model in making meaningful predictions or advancing our understanding of cell polarisation and pattern formation in natural systems, such as the C. elegans embryo.</p>
+<p>
+In more detail, the authors demonstrate that the simplified 2-node model requires precise parameter fine-tuning to maintain stable polarisation. Any single modification to this 2-node network disrupts the polarisation pattern, highlighting the model's lack of robustness. However, stability is achieved when two opposite modifications are applied, which also increases the number of parameter sets that sustain the pattern. This robustness is contingent on monotonic correlations between all system parameters.</p>
+<p>The study extends its significance by examining how cells maintain pattern stability amid spatial parameter variations, which are common in natural systems due to extracellular and intracellular fluctuations. The authors found that in the 2-node network, varying individual parameters spatially disrupt the pattern, but stability is restored with compensatory variations. Additionally, the polarisation interface stabilises around the step transition between parameter values, making its localisation tunable. This suggests a potential biological mechanism where localisation might be regulated through signalling perception.</p>
+<p>Focusing on the C. elegans cell polarisation network, the authors propose a 5-node network based on an exhaustive literature review, summarised in a supplementary table. Using their computational pipeline, they identify several parameter sets capable of achieving stable polarisation and claim that their model replicates experimental behaviour, even when simulating mutants. They also found that among 34 possible network structures, the wild-type network with mutual inhibition is the only one that proves viable in the computational pipeline. Compared with previous studies, which typically considered only 2- or 3-node networks, this analysis provides a more complete and realistic picture of the signalling network behind polarisation in the C. elegans embryo. In particular, the model for C. elegans cell polarisation paves the way for further in silico experiments to investigate the role of the network structure over the polarisation dynamics. The authors suggest that the natural 5-node network of C. elegans is optimised for maintaining cell polarisation, demonstrating the elegance of evolution in finding the optimal network structure to achieve certain functions.</p>
+<p>Noteworthy limitations are also found in this work. To simplify the model for numerical exploration, the authors assume several reactions have equivalent dynamics, reducing the parameter space to three independent dimensions. While the authors briefly acknowledge this limitation in the &quot;Discussion and Conclusion&quot; section, further analysis might be required to understand the implications. For instance, it is not clear how the results depend on the particular choice of parameters. The authors showed that adding additional regulation might disrupt the polarised pattern, with the conclusion apparently depending on the strength of the regulation. Even for the 5-node wild-type network, which is the most robust, adding a strong enough self-activation of [A], as done in the 2-node network, will probably cause the polarised pattern to collapse as well.</p>
+<p>Additionally, the authors utilise parameter values that are unrealistic, fail to provide units for some of them, and assume unknown parameter values without justification. The model appears to have non-dimensionalised length but not time, resulting in a mix of dimensional and non-dimensional variables that can be confusing. Furthermore, they assume equal values for Hill coefficients and many parameters associated with activation and inhibition pathways, while setting inhibition intensity parameters to 1. These arbitrary choices raise concerns about the fidelity of the proposed model in representing the real system, as their selected values could potentially differ by many orders of magnitude from the actual parameters.</p>
+<p>The definition of stability and its evaluation in the proposed pipeline might also be too narrow. Throughout the paper, the authors discuss the stability of the polarised pattern, checked by an exhaustive search of the parameter space where the system reaches a steady state with a polarised pattern instead of a homogeneous pattern. It is not clear if the stability is related to the linear stability analysis of the reaction terms, as conducted in Goehring et al. (Science, 2011), which could indicate if a homogeneous state exists and whether it is stable or unstable. The stability test is performed through a pipeline procedure where they always start from a polarised pattern described by their model and observe how it evolves over time. It is unclear if the conclusions depend on the chosen initial conditions. Particularly, it is unclear what would happen if the initial distribution of posterior molecules is not exactly symmetric with respect to the anterior molecules, or if the initial polarisation is not strong.</p>
+<p>Regarding the biological interpretation and relevance of the model, it overlooks some important aspects of the C. elegans polarisation system. The authors focus solely on a reaction-diffusion formulation to reproduce the polarisation pattern. However, the polarisation of the C. elegans zygote consists of two distinct phases: establishment and maintenance, with actomyosin dynamics playing a crucial role in both phases (see Munro et al., Dev Cell 2004; Shivas &amp; Skop, MBoC 2012; Liu et al., Dev Biol 2010; Wang et al., Nat Cell Biol 2017). Both myosin and actin are crucial to maintaining the localisation of PAR proteins during cell polarisation, yet the authors neglect cortical flows during the establishment phase and any effects driven by myosin and actin in their model, failing to capture the system's complexity. How this affects the proposed model and conclusions about the establishment of the polarisation pattern needs careful discussion. Additionally, they assume that diffusion in the cytoplasm is infinitely fast and that cytoplasmic flows do not play any role in cell polarity. Finite cytoplasmic diffusion combined with cytoplasmic flows could compromise the stability of the anterior-posterior molecular distributions. The authors claim that cytoplasmic diffusion coefficients are two orders of magnitude higher than membrane diffusion coefficients, but they seem to differ by only one order of magnitude (Petrášek et al., Biophys. J. 2008). The strength of cytoplasmic flows has been quantified by a few studies, including Cheeks et al., and Curr Biol 2004.</p>
+<p>Although the authors compare their model predictions to experimental observations, particularly in reproducing mutant behaviours, they do not explicitly show or discuss these comparisons in detail. Diffusion coefficients and off-rates for some PAR proteins have been measured (Goehring et al., JCB 2011), but the authors seem to use parameter values that differ by many orders of magnitude, perhaps due to applied scaling. To ensure meaningful predictions, whether their proposed model captures the extensive published data should be evaluated. Various cellular/genetic perturbations have been studied to understand their effects on anterior-posterior boundary positioning. Testing these perturbations' responses in the model would be important. For example, comparing the intensity distribution of PAR-6 and PAR-2 with measurements during the maintenance phase by Goehring et al., JCB 2011, or comparing the normalised intensity of PAR-3 and PKC-3 from the model with those measured by Wang et al., Nat Cell Biol 2017, during establishment and maintenance phases (in both wild-type and cdc-42 (RNAi) zygotes) could provide insightful validation. Additionally, in the presence of active CDC-42, it has been observed that PAR-6 extends further into the posterior side (Aceto et al., Dev Biol 2006). Conducting such validation tests is essential to convince readers that the model accurately represents the actual system and provides insights into pattern formation during cell polarisation.</p>
+<p>A clear justification, with references, for each network interaction between nodes in the five-node model is needed. Some of the activatory/inhibitory signals proposed by the authors have not been demonstrated (e.g. CDC-42 directly inhibiting CHIN-1). Table S2 provided by the authors is insufficient to justify each node-node interaction, requiring additional explanations. (See the review by Gubieda et al., Phil. Trans. R. Soc. B 2020, for a similar node network that differs from the authors' model.) Additionally, the intensity distributions of cortical PAR-3 and PKC-3 seem to vary significantly during both establishment and maintenance phases (Wang et al., Nat Cell Biol 2017), yet the authors consider the PAR-3/PAR-6/PKC-3 as a single complex. The choices in the model should be justified, as the presence or absence of clustering of these PAR proteins can be crucial during cell polarisation (Wang et al., Nat Cell Biol 2017; Dawes &amp; Munro, Biophys J 2011).</p>
+<p>In summary, the authors successfully demonstrate the importance of compensatory actions in maintaining polarisation robustness. Their computational pipeline offers valuable insights into the dynamics of reaction-diffusion networks. However, the lack of detailed experimental validation and realistic parameter estimation limits the model's applicability to real biological systems. While the study provides a solid foundation, further work is needed to fully characterise and validate the model in natural contexts. This work has the potential to significantly impact the field by providing a new perspective on the robustness of cell polarisation networks.</p>
+<p>The computational pipeline developed could be a valuable tool for further in silico experiments, allowing researchers to explore the dynamics of more complex networks. To maximise its utility, the model needs comprehensive validation and refinement to ensure it accurately represents biological systems. Addressing these limitations, particularly the need for more detailed experimental validation and realistic parameter choices, will enhance the model's predictive power and its applicability to understanding cell polarisation in natural systems.</p>
+</body>
+</sub-article>
+</article>
