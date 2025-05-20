@@ -1,0 +1,660 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">96017</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.96017</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.96017.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.4</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Automating clinical assessments of memory deficits: Deep Learning based scoring of the Rey-Osterrieth Complex Figure</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Langer</surname>
+<given-names>Nicolas</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Weber</surname>
+<given-names>Maurice</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Vieira</surname>
+<given-names>Bruno Hebling</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Strzelczyk</surname>
+<given-names>Dawid</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wolf</surname>
+<given-names>Lukas</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Pedroni</surname>
+<given-names>Andreas</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Heitz</surname>
+<given-names>Jonathan</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Müller</surname>
+<given-names>Stephan</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Schultheiss</surname>
+<given-names>Christoph</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Tröndle</surname>
+<given-names>Marius</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Arango-Lasprilla</surname>
+<given-names>Juan Carlos</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Rivera</surname>
+<given-names>Diego</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Scarpina</surname>
+<given-names>Federica</given-names>
+</name>
+<xref ref-type="aff" rid="a8">8</xref>
+<xref ref-type="aff" rid="a9">9</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhao</surname>
+<given-names>Qianhua</given-names>
+</name>
+<xref ref-type="aff" rid="a10">10</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Leuthold</surname>
+<given-names>Rico</given-names>
+</name>
+<xref ref-type="aff" rid="a11">11</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wehrle</surname>
+<given-names>Flavia</given-names>
+</name>
+<xref ref-type="aff" rid="a12">12</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Jenni</surname>
+<given-names>Oskar G.</given-names>
+</name>
+<xref ref-type="aff" rid="a12">12</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Brugger</surname>
+<given-names>Peter</given-names>
+</name>
+<xref ref-type="aff" rid="a13">13</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3673-4869</contrib-id>
+<name>
+<surname>Zaehle</surname>
+<given-names>Tino</given-names>
+</name>
+<xref ref-type="aff" rid="a14">14</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lorenz</surname>
+<given-names>Romy</given-names>
+</name>
+<xref ref-type="aff" rid="a15">15</xref>
+<xref ref-type="aff" rid="a16">16</xref>
+<xref ref-type="aff" rid="a17">17</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Ce</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Methods of Plasticity Research, Department of Psychology, University of Zurich</institution>, Zurich, <country>Switzerland</country></aff>
+<aff id="a2"><label>2</label><institution>University Research Priority Program (URPP) Dynamics of Healthy Aging</institution>, Zurich, <country>Switzerland</country></aff>
+<aff id="a3"><label>3</label><institution>Neuroscience Center Zurich (ZNZ), University of Zurich and ETH Zurich</institution>, Zurich, <country>Switzerland</country></aff>
+<aff id="a4"><label>4</label><institution>Department of Computer Science</institution>, ETH, Zurich, <country>Switzerland</country></aff>
+<aff id="a5"><label>5</label><institution>Virginia Commonwealth University. Richmond</institution>, Virginia</aff>
+<aff id="a6"><label>6</label><institution>Department of Health Science, Public University of Navarre</institution>, Pamplona, <country>Spain</country></aff>
+<aff id="a7"><label>7</label><institution>Instituto de Investigación Sanitaria de Navarra (IdiSNA)</institution>, Pamplona, <country>Spain</country></aff>
+<aff id="a8"><label>8</label><institution>&quot;Rita Levi Montalcini&quot; Department of Neurosciences, University of Turin</institution>, <country>Italy</country></aff>
+<aff id="a9"><label>9</label><institution>I.R.C.C.S. Istituto Auxologico Italiano, U.O. di Neurologia e Neuroriabilitazione, Ospedale San Giuseppe, Piancavallo (VCO)</institution>, <country>Italy</country></aff>
+<aff id="a10"><label>10</label><institution>Huashan Hospital</institution>, Shanghai, <country>China</country></aff>
+<aff id="a11"><label>11</label><institution>Smartcode</institution>, Zurich, <country>Switzerland</country></aff>
+<aff id="a12"><label>12</label><institution>University Children’s Hospital Zurich, Child Development Center</institution>, Zurich, <country>Switzerland</country></aff>
+<aff id="a13"><label>13</label><institution>Rehabilitation Center</institution>, Valens, <country>Switzerland</country></aff>
+<aff id="a14"><label>14</label><institution>University Hospital Magdeburg University Department of Neurology</institution>, Magdeburg, <country>Germany</country></aff>
+<aff id="a15"><label>15</label><institution>MRC Cognition and Brain Sciences Unit, University of Cambridge</institution>, Cambridge, <country>United Kingdom</country></aff>
+<aff id="a16"><label>16</label><institution>Department of Neurophysics, Max Planck Institute for Human Cognitive and Brain Sciences</institution>, Leipzig, <country>Germany</country></aff>
+<aff id="a17"><label>17</label><institution>Stanford University</institution>, Stanford, CA, <country>United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Zhou</surname>
+<given-names>Juan Helen</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of Singapore</institution>
+</institution-wrap>
+<city>Singapore</city>
+<country>Singapore</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Bi</surname>
+<given-names>Yanchao</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Beijing Normal University</institution>
+</institution-wrap>
+<city>Beijing</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>CORRESPONDING AUTHOR(*): Nicolas Langer, Methods of Plasticity Research Department of Psychology University of Zurich Andreasstrasse 15, CH-8050, Zürich, Switzerland, E-mail: <email>n.langer@psychologie.uzh.ch</email></corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-06-21">
+<day>21</day>
+<month>06</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP96017</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-01-23">
+<day>23</day>
+<month>01</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-01-25">
+<day>25</day>
+<month>01</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2022.06.15.496291"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Langer et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Langer et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-96017-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<sec>
+<title>Background</title>
+<p>Memory deficits are a hallmark of many different neurological and psychiatric conditions. The Rey-Osterrieth complex figure (ROCF) is the state–of-the-art assessment tool for neuropsychologists across the globe to assess the degree of non-verbal visual memory deterioration. To obtain a score, a trained clinician inspects a patient’s ROCF drawing and quantifies deviations from the original figure. This manual procedure is time-consuming, slow and scores vary depending on the clinician’s experience, motivation and tiredness.</p>
+</sec>
+<sec>
+<title>Methods</title>
+<p>Here, we leverage novel deep learning architectures to automatize the rating of memory deficits. For this, we collected more than 20k hand-drawn ROCF drawings from patients with various neurological and psychiatric disorders as well as healthy participants. Unbiased ground truth ROCF scores were obtained from crowdsourced human intelligence. This dataset was used to train and evaluate a multi-head convolutional neural network.</p>
+</sec>
+<sec>
+<title>Results</title>
+<p>The model performs highly unbiased as it yielded predictions very close to the ground truth and the error was similarly distributed around zero. The neural network outperforms both online raters and clinicians. The scoring system can reliably identify and accurately score individual figure elements in previously unseen ROCF drawings, which facilitates explainability of the AI-scoring system. To ensure generalizability and clinical utility, the model performance was successfully replicated in a large independent prospective validation study that was pre-registered prior to data collection.</p>
+</sec>
+<sec>
+<title>Conclusions</title>
+<p>Our AI-powered scoring system provides healthcare institutions worldwide with a digital tool to assess objectively, reliably and time-efficiently the performance in the ROCF test from hand-drawn images.</p>
+</sec>
+</abstract>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>1. a sentence was adapted in the introduction to clarify the Immediate Recall condition. 2. the github link was updated 3. parts of the supplementary were moved to the main manuscript</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Neurological and psychiatric disorders are among the most common and debilitating illnesses across the lifespan. In addition, the aging of our population, with the increasing prevalence of physical and cognitive disorders, poses a major burden on our society with an estimated economic cost of 2.5 trillion US$ per year (Trautmann, Rehm, and Wittchen 2016). Currently, neuropsychologists typically use paper-pencil tests to assess individual neuropsychological functions and brain dysfunctions, including memory, attention, reasoning and problem-solving. Most neuropsychologists around the world use the Rey-Osterrieth complex figure (ROCF) in their daily clinical practice(Rabin, Barr, and Burton 2005; Rabin, Paolillo, and Barr 2016), which provides insights into a person’s nonverbal visuo-spatial memory capacity in healthy and clinical populations of all ages, from childhood to old age (Shin et al. 2006).</p>
+<p>Our estimation revealed that a single neuropsychological division (e.g. at the University Hospital Zurich) scores up to 6000 ROCF drawing per year. The ROCF test has several advantages as it does not depend on auditory processing and differences in language skills that are omnipresent in cosmopolitan societies (Osterrieth 1944; Somerville, Tremont, and Stern 2000). The test exhibits adequate psychometric properties (e.g. sufficient test–retest reliability (John E. Meyers and Volbrecht 1999; Levine et al. 2004) and internal consistency (Berry, Allen, and Schmitt 1991; Fastenau, Bennett, and Denburg 1996)). Furthermore, the ROCF test has demonstrated to be sensitive to discriminate between various clinical populations (Alladi et al. 2006) and the progression of Alzheimer’s disease (Trojano and Gainotti 2016).</p>
+<p>The ROCF test consists of three test conditions: First, in the <italic>Copy condition</italic> subjects are presented with the ROCF and are asked to draw a copy of the same figure. Subsequently, the ROCF figure and the drawn copy are removed and the subject is instructed to reproduce the figure from memory immediately (Shin et al., 2006) or 3 min after the Copy condition (Meyers J, Meyers K, 1996) (<italic>Immediate Recall condition</italic>). After a delay of 30 minutes, the subject is required to draw the same figure once again (<italic>Delayed Recall</italic> condition). For further description of the clinical usefulness of the ROCF please refer to Shin and colleagues (Shin et al. 2006).</p>
+<p>The current quantitative scoring system (Meyers, Bayless, and Meyers 1996) splits the ROCF into 18 identifiable elements (see <xref rid="fig1" ref-type="fig">Figure 1A</xref>), each of which is considered separately and marked on the accuracy in both distortion and placement according to a set of rules and scored between 0 and 2 points (see supplementary Figure S1). Thus, the scoring is currently undertaken manually by a trained clinician, who inspects the reproduced ROCF drawing and tracks deviations from the original figure, which can take up to 15 minutes per figure (individually <italic>Copy</italic>, <italic>Immediate Recall</italic> and <italic>Delayed Recall</italic> conditions).</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>A: ROCF figure with 18 elements. B: demographics of the participants and clinical population. C: examples of hand-drawn ROCF images. D: Pie chart illustrates the numerical proportion of the different clinical conditions. E: performance in the copy and (immediate) recall condition across the lifespan in the present data set. F: distribution of number of images for each total score (online raters).</p></caption>
+<graphic xlink:href="496291v4_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>One major limitation of this quantitative scoring system is that the criteria of what position and distortion is considered “accurate” or “inaccurate” may vary from clinician to clinician (Groth-Marnat 2000; Shin et al. 2006; Canham, Smith, and Tyrrell 2000). In addition, the scoring might vary as a function of motivation and tiredness or because the clinicians may be unwittingly influenced by interaction with the patient. Therefore, an automated system that offers reliable, objective, robust and standardized scoring, while saving clinicians’ time, would be desirable from an economic perspective and more importantly leads to more accurate scoring and subsequently diagnosing.</p>
+<p>In recent years, computerized image analysis and machine learning methods have entered the clinical neuropsychological diagnosis field providing the potential for establishing quantitative scoring methods. Using machine-learning methods, such as convolutional neural networks and support vector machines, studies have successfully recognized visual structures of interest produced by subjects in the Bender Gestalt Test (BGT) (Nazar et al. 2017), and the Clock Draw Task (CDT) (Kim, Cho, and Do 2010; Harbi, Hicks, and Setchi 2016) - both are less frequently applied screening tests for visuospatial and visuo-constructive (dis-)abilities (Webb et al. 2021). Given the wide application of the ROCF, it is not surprising that we are not the first to take steps towards a machine-based scoring system. Canham et al. (2000) have developed an algorithm to automatically identify a selection of parts of the ROCF (6 of 18 elements) with great precision. This approach provides first evidence for the feasibility of automated segmentation and feature recognition of the ROCF. More recently, Vogt et al. (2019) developed an automated scoring using a deep neural network. The authors reported a r=0.88 Pearson correlation with human ratings, but equivalence testing demonstrated that the automated scoring did not produce strictly equivalent total scores compared to the human ratings. Moreover, it is unclear if the reported correlation was observed in an independent test data set, or in the training set. Finally, Petilli et al. (2021) have proposed a novel tablet-based digital system for the assessment of the ROCF task, which provides the opportunity to extract a variety of parameters such as spatial, procedural, and kinematic scores. However, none of the studies described have been able to produce machine-based scores according to the original scoring system currently used in clinics (Meyers, Bayless, and Meyers 1996) that are equivalent or superior to human raters. A major challenge in developing automated scoring systems is to gather a rich enough set of data with instances of all possible mistakes that humans can make. In this study, we have trained convolutional neural networks with over 20’000 digitized ROCFs from different populations regarding age and diagnostic status (healthy individuals or individuals with neurological and psychiatric disorder (e.g. Alzheimer, Parkinson)).</p>
+</sec>
+<sec id="s2">
+<title>Methods</title>
+<sec id="s2a">
+<title>Data</title>
+<p>For our experiments, we used a data set of 20225 hand-drawn ROCF images collected from 90 different countries (see supplementary Figure S2) as well as various research and clinical settings. This large dataset spans the complete range of ROCF scores (<xref rid="fig1" ref-type="fig">Figure 1F</xref>) which allows the development of a more robust and generalizable automated scoring system. Our convergence analysis suggests that the error converges when approaching 10’000 digitized ROCFs. The data is collected from various populations regarding age and diagnostic status (healthy or with neurological and /or psychiatric disorder), shown respectively in <xref rid="fig1" ref-type="fig">Figure 1E</xref> and <xref rid="fig1" ref-type="fig">Figure 1D</xref>. The demographics of the participants and some example images are shown respectively in <xref rid="fig1" ref-type="fig">Figure 1B</xref> and <xref rid="fig1" ref-type="fig">Figure 1C</xref>. For a subset of the figures (4030), the clinician’s scores were available. For each figure only one clinician rating is available. The clinicians ratings derive from six different international clinics (University Hospital Zurich, Switzerland; University Children’s Hospital Zurich, Switzerland; BioCruces Health Research Institute, Spain; I.R.C.C.S. Istituto Auxologico Italiano, Ospedale San Giuseppe, Italy; Huashan Hospital, China; University Hospital Magdeburg, Germany).</p>
+<p>The study was approved by the Institutional Ethics Review Board of the “Kantonale Ethikkommission” (BASEC-Nr. 2020-00206). All collaborators have written informed consent and/or data usage agreements for the recorded drawings from the participants. The authors assert that all procedures contributing to this work comply with the ethical standards of the relevant national and institutional committees on human experimentation and with the Helsinki Declaration of 1975, as revised in 2008. To ensure generalizability and clinical utility, the model performance was replicated in a large independent prospective validation study that was pre-registered prior to data collection (<ext-link ext-link-type="uri" xlink:href="https://osf.io/82796">https://osf.io/82796</ext-link>). For the independent prospective validation study, an additional data set was collected and contained 2498 ROCF images from 961 healthy adults from and 288 patients with various neurological and psychiatric disorders. Further information about the participants demographics and performance in the copy and recall condition can be found in the supplementary Figure S3.</p>
+</sec>
+<sec id="s2b">
+<title>Convergence Analysis</title>
+<p>To get an estimate on the number of ROCF needed to train our models we conducted a convergence analysis. That is, for a fixed test set with 4045 samples, we used different fractions of the remaining dataset to train the multilabel classification model, ending up with training set sizes of 1000, 2000, 3000, 4000, 6000, 8000, 12000, and 16000 samples. By evaluating the performance (i.e. MAE) of the resulting models on the fixed test set, we determined what amount of data is required for the model performance to converge. With ∼3000 images, we obtain diminishing mean MAEs. After ∼10000 images, no substantial improvements could be achieved by including more data, as can be seen from the progression plot in <xref rid="fig2" ref-type="fig">Figure 2D</xref>. From this, we conclude that the acquired dataset is rich and diverse enough to obtain a powerful machine learning model for the task at hand. In addition, this opens up an avenue for future research in that improvements to the model performance are likely to be achieved via algorithmic improvements, rather than via data-centric efforts.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2.</label>
+<caption><p>A: network architecture, constituted of a shared feature extractor and 18 item-specific feature extractors and output blocks. The shared feature extractor consists of three convolutional blocks, whereas item-specific feature extractors have one convolutional block with global max-pooling. Convolutional blocks consist of two convolution and batch-normalization pairs, followed by max-pooling. Output blocks consist of two fully connected layers. ReLU activation is applied after batch normalization. After pooling, dropout is applied. B. item-specific MAE for the regression-based network (blue) and multilabel classification network (orange). In the final model, we determine whether to use the regressor or classifier network based on its performance in the validation data set, indicated by an opaque color in the bar chart. In case of identical performance, the model resulting in least variance was selected. C: Model variants were compared and the performance of the best model in the original, retrospectively collected (green) and the independent, prospectively collected (purple) test set is displayed; Clf: multilabel classification network; Reg: regression-based network; NA: no augmentation; DA: data augmentation; TTA: test time augmentation. D. Convergence analysis revealed that after ∼8000 images, no substantial improvements could be achieved by including more data. E. The effect of image size on the model performance measured in terms of MAE.</p></caption>
+<graphic xlink:href="496291v4_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2c">
+<title>Crowdsourced human intelligence for ground truth score</title>
+<p>To reach high accuracy in predicting individual sample scores of the ROCFs, it is imperative that the scores of the training set are based on a systematic scheme with as little human bias as possible influencing the score. However, our analysis (see results section) and previous work (Canham, Smith, and Tyrrell 2000) suggested that the scoring conducted by clinicians may not be consistent, because the clinicians may be unwittingly influenced by the interaction with the patient/participant or by the clinicians factor (e.g. motivation and fatigue). For this reason, we have harnessed a large pool (∼5000) of human workers (crowdsourced human intelligence) who scored ROCFs, guided by our self-developed interactive web application (see supplementary Fig. S4). In this web application, the worker was first trained by guided instructions and examples. Subsequently, the worker rated each area of real ROCF drawings separately to guarantee a systematic approach. For each of the 18 elements in the figure, participants were asked to answer three binary questions: Is the item visible &amp; recognizable? Is the item in the right place? Is the item drawn correctly? This corresponds to the original Osterrieth scoring system (Meyers, Bayless, and Meyers 1996) (see supplementary Figure S3). The final assessment consisted of answers to these questions for each of the 18 items and enabled calculation of item-wise scores (possible scores: 0, 0.5, 1, 2), which enabled to compute the total score for each image (i.e. sum over all 18 item-wise scores: range total score: 0-36).</p>
+<p>Since participants are paid according to how many images they score, there is a danger of collecting unreliable scores when participants rush through too quickly. In order to avoid taking such assessments into account, 600 images have also been carefully scored manually by trained clinicians at the neuropsychological unit of the University Hospital Zurich (in the same interactive web application). We ensured that each crowdsourcing worker rated at least two of these 600 images, which results in 108 ratings (2 figures * 18 items * 3 questions) to compute a level of disagreement. The assessments of crowdsourcing participants that have a high level of disagreement (&gt;20% disagreement) with this rating from clinicians are considered cheaters and are excluded from the data set. After this data cleansing, there remained an average of 13.38 crowdsource-based scores per figure. In order to use this information for training an algorithm, we require one ground truth score for each image. We assume that the scores approximately follow a normal distribution centered around the true score. With this in mind, we have obtained the ground truth for each drawing by computing the median for each item in the figure, and then summed up the medians to get the total score for the drawing in question. Taking the median has the advantage of being robust to outliers. The identical crowdsourcing approach has also used to obtain ground truth scores for the independent prospective validation study (an average of 10,36 crowdsource-based scores per figure; minimum number of ratings = 10).</p>
+</sec>
+<sec id="s2d">
+<title>Human MSE</title>
+<p>As described in the previous section there are multiple independent scores (from different crowdsourcing workers) available for each image. It frequently happens that two people scoring the same image produce different scores. In order to quantify the disagreement among the crowdsourcing participants, we calculated the empirical standard deviation of the scores for each image. With <italic>s1,…,sk</italic> referring to the <italic>k</italic> crowdsourcing scores for a given image and <italic>S</italic> to their mean, the empirical standard deviation is calculated as
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>The mean empirical standard deviation is 3.25. Using as ground truth the sum of item score medians, we can also calculate a <italic>human MSE</italic>. Assuming that the sum of median scores of all items of an image is the ground truth, the average rating performance of human raters can be estimated by computing the mean squared error (MSE) and the mean absolute error (MAE) of the human ratings by first computing the mean error for each human rater, and then computing the mean of all individual MSEs. These metrics describe how close one assessment is to this ground truth on average and lets us make a statement on the difficulty of the task. Reusing above notation, we denote the k crowdsourcing scores for a given image by <italic>s1,…,sk</italic>. Let <italic>S</italic> be their median. For an image or item, we define the <italic>human MSE</italic> as
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>Similarly, we define the human MAE as
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>Based on clinician ratings, we define both <italic>MSE</italic><sub><italic>clinician</italic></sub> and <italic>MAE</italic><sub><italic>clinician</italic></sub> in similar fashion. These metrics are used to compare individual crowdsourced scores, clinician scores and AI-based scores.</p>
+</sec>
+<sec id="s2e">
+<title>Convolutional Neural Network (CNN)</title>
+<p>For the automated scoring of ROCF drawings, two variations of deep learning system were implemented: a regression-based network and a multilabel classification network. The multilabel classification problem is based on the assumption that one drawing can contain multiple classes. That is, the scores for a specific element correspond to four mutually exclusive classes (i.e. 0, 0.5, 1, 2), which corresponds to the original Osterrieth scoring system (Meyers, Bayless, and Meyers 1996) (see also supplementary Figure S1). Each class can appear simultaneously with score classes corresponding to other elements in the figure. While the scores for different elements share common features such as e.g., texture or drawing style, which are relevant for the element score, one can view the scoring of different elements as independent processes, given these shared features. These considerations are the starting point for the architectural design of our scoring system, shown in <xref rid="fig2" ref-type="fig">Figure 2A</xref>. The architecture consists of a shared feature extractor network and eighteen parallel decision heads, one for each item score. The shared feature extractor is composed of three blocks, introducing several model hyperparameters: Each block consists of a 3×3 convolutional layer, batch normalization, 3×3 convolutional layer, batch normalization and max pooling with 2×2 stride. The ReLU activation function is applied after each batch normalization and dropout is applied after max pooling. The output of each block is a representation with 64, 128 and 256 channels, respectively. Each of the eighteen per-item networks is applied on this representation. These consist of a similar feature extractor block, but with global max pooling instead, which outputs a 512-dimensional representation that is subsequently fed into a fully connected layer, that outputs a 1024-dimensional vector, followed by batch normalization, ReLU, dropout and an output fully connected layer.</p>
+<p>Two variations of this network were implemented: a regression-based network and a multilabel classification network. They differ in the output layer and in the loss function used during training. The regression-based network outputs a single number, while the multilabel classification network outputs class probabilities, each of which corresponds to one of the four different item scores {0, 0.5, 1.0, 2.0}. Secondly, the choice of loss functions also incurs different dynamics during optimization. The MSE loss used for the regression model penalizes smaller errors less than big errors, e.g., for an item with score 0.5, predicting the score 1.0 is penalized less than when the model predicts 2.0. In other words the MSE loss naturally respects the ordering in the output space. This is in contrast to the multilabel classification model for which a cross entropy loss was used for each item, which does not differentiate between different classes in terms of “how wrong” the model is: in the example above, 1.0 is considered equally wrong as 2.0.</p>
+</sec>
+<sec id="s2f">
+<title>Data augmentation</title>
+<p>In a further study, we investigated the effect of data augmentation during training from two perspectives. Firstly, data augmentation is a standard technique to prevent machine learning models from overfitting to training data. The intuition is that enriching the dataset with perturbed versions of the original images leads to better generalization by enriching the dataset with additional and more diverse training set. Secondly, data augmentation can also help in making models more robust against semantic transformations like rotations or changes in perspective. These transformations are particularly relevant for the present application since users in real-life are likely to take pictures of drawings which might be slightly rotated or with a slightly tilted perspective. With these intuitions in mind, we randomly transformed drawings during training. Each transformation was a combination of Gaussian blur, a random perspective change and a rotation with angles chosen randomly between −10° and 10°.</p>
+</sec>
+<sec id="s2g">
+<title>Training &amp; Validation</title>
+<p>To evaluate our model, we set aside 4045 of the 20225 ROCF drawings as a testing set, corresponding to 20% of the dataset. The remaining 16180 images were used for training and validation. Specifically, we used 12944 (80%) drawings for training and 3236 (20%) as a validation set for early stopping.</p>
+<p>The networks and training routines were implemented in PyTorch 1.8.1 (Paszke et al. 2019). The training procedure introduces additional hyperparameters: Our main model was trained on drawings of size 232×300 (see <xref rid="fig2" ref-type="fig">Figure 2D</xref> and supplementary on details on the image resolution analysis), using batches of 16 images. Model parameters were optimized by the Adam optimizer (Kingma and Ba 2014) with the default parameters β1 = 0.9, β2 = 0.999 and ε=1e-8. The initial learning rate was set to 0.01 and decayed every epoch exponentially with decay rate γ = 0.95. To prevent overfitting dropout rates were set to 0.3 and 0.5 in the convolutional and fully-connected layers, respectively. Additionally, we used the validation split (20%) of the training data for early stopping. Since our dataset is imbalanced and contains a disproportionately high number of high score drawings, we sampled the drawings in a way that results in evenly distributed scores in a single batch. We trained the model for 75 epochs and picked the weights corresponding to the epoch with the smallest validation loss. The multilabel classification model was trained with cross entropy loss applied to each item classifier independently so that the total loss is obtained by summing the individual loss terms. The regression model was trained in an analogous manner except that we used the MSE for each item score, instead of the cross entropy loss.</p>
+</sec>
+<sec id="s2h">
+<title>Performance evaluation</title>
+<p>We evaluated the overall performance of the final model on the test set based on MSE, MAE and R-squared. Even though item-specific scores are discrete and we also implement a classification-based approach, we chose not to rely on accuracy to assess performance. Because Accuracy penalizes errors equally, minor differences in scores can lead to arbitrarily small Accuracy, or even worse scores than a model that leads to bigger differences on average. MAE gives a better picture of how accurate the model is.</p>
+<p>Performance metrics (MSE, MAE, R-squared) were examined for the total score and additionally for each of the 18 items individually. To probe the performance of the model across a wide range of scores, we also obtained MSE and MAE for each total score. Given predictions ŷ, true scores ŷ and the average of true scores <italic>y</italic><sup>-</sup>, MSE, MAE and R-squared are defined, respectively, as
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula> and
+<disp-formula>
+<graphic xlink:href="496291v4_ueqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>In addition, we evaluated the performance in a pre-registered (<ext-link ext-link-type="uri" xlink:href="https://osf.io/82796">https://osf.io/82796</ext-link>) independent prospective validation study. Importantly, both data sets (original test set (i.e. 4045 images) and the independent prospective data set (i.e. 2498 images) were never seen by the neural networks.</p>
+</sec>
+<sec id="s2i">
+<title>Test-time augmentation</title>
+<p>Test-time augmentation (TTA) was performed to promote robustness at test-time to slight variations in input data. First, we experimented with the same augmentations that we used in our data augmentation training policy, namely randomly applying perspective change, resizing the image and applying rotations. In addition to the original image, we fed four to seven randomly transformed drawings (see description of data augmentation for the possible transformations) to the model and averaged the output logits to obtain a prediction. In addition, we experimented with approaches exclusively applying either random rotations or random perspective change. None of these random procedures improved the model performance. Nonetheless, performance improvement was achieved by applying deterministic rotations along positive and negative angles on the unit circle. We performed five rotations, uniformly distributed between −2° and 2°. For this choice, computational restrictions for the model’s intended use-case were considered. Specifically, time complexity increases linearly with the number of augmentations. In keeping a small set of augmentations, we believe that small perturbations to rotation present an obvious correspondence to the variations the model will be exposed to in a real application.</p>
+</sec>
+<sec id="s2j">
+<title>Final model selection</title>
+<p>Both model and training procedure contain various hyperparameters and even optional building blocks such as using data augmentation (DA) during training, as well as applying test-time-augmentation (TTA) during inference. After optimizing the hyperparameters of each model independently, all of the possible variants that emerge from applying DA and TTA were explored on both classification and regression models. Therefore, the space of possible model variants is spanned by the non-augmented model, the model trained with data augmentation, the model applying test-time-augmentation during inference, as well as the model variant applying both aforementioned building blocks.</p>
+<p>To take advantage of particularities in both models, a mixture of the best performing regression and classification models was obtained. In this model, the per-item performances of both models are compared on the held-out validation set. During inference, for each item, we output the prediction of the best performing model. Therefore, on a figure-wide scale, the prediction of the combined model uses both classification and regression models concurrently, while not combining the models’ per-item predictions.</p>
+</sec>
+<sec id="s2k">
+<title>Robustness Analysis</title>
+<p>We investigated the robustness of our model against different semantic transformations which are likely to occur in real life scenarios. These were rotations, perspective changes, and changes to brightness and contrast. To assess the robustness against these transformations, we transformed images from our test set with different transformation parameters. For rotations, we rotated drawings with angles chosen randomly from increasingly higher orders, both clockwise and counterclockwise. That is, we sampled angles between 0° and 5°, between 5° and 10° and so on, up to 40° to 45°. The second transform we investigated were changes in perspective as these are also likely to occur, for example when photos of drawings are taken with a camera in a tilted position. The degree of perspective change was guided by a parameter between 0 and 1, where 0 corresponds to the original image and 1 corresponds to an extreme change in perspective, making the image almost completely unrecognizable. Furthermore, due to changes in light conditions, an image might appear brighter or with a different contrast. We used brightness parameters between 0.1 and 2.0, where values below 1.0 correspond to a darkening of the image and values above 1.0 correspond to a brighter image. Similarly, for contrast, we varied the contrast parameter between 0.1 and 2.0, with values above (below) 1.0 corresponding to high (low) contrast images.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Results</title>
+<sec id="s3a">
+<title>A human MSE and clinicians’ scoring</title>
+<p>We have harnessed a large pool (∼5000) of human workers (crowdsourced human intelligence) to obtain ground truth scores and compute the <italic>human MSE</italic>. An average of 13.38 (sd = 2.23) crowdsource-based scores per figure were gathered. The <italic>average human MSE</italic> over all images is 16.3, and the <italic>average human MAE</italic> is 2.41.</p>
+<p>For a subset (4030) of the 20225 ROCF images, we had access to scores conducted by different professional clinicians. This enabled us to analyze and compare the scoring of professionals to the crowdsourcing results. The clinician MSE over all images is 9.25 and the clinician MAE is 2.15, indicating a better performance of the clinicians compared to the average human rater.</p>
+</sec>
+<sec id="s3b">
+<title>Machine-based scoring system</title>
+<p>The multilabel classification network achieved a total score MSE of 3.56 and MAE of 1.22, which is already considerably lower than the corresponding human performance. Implementing additional data augmentation has led to a further improvement in accuracy with an MSE of 3.37 and MAE of 1.16. Furthermore, when combining data augmentation with test time augmentation leads to a further improvement of performance with an MSE of 3.32 and MAE of 1.15.</p>
+<p>The regression based network variant led to a further slight improvement in performance, reducing the total score MSE to 3.07 and the MAE to 1.14. Finally, our best model results from combining the regression model with the multilabel classification model in the following way: For each item of the figure we determine whether to use the regressor or classifier based on its performance on the validation set (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). Aggregating the two models in this way, leads to a MSE of 3.00 and a MAE of 1.11. <xref rid="fig2" ref-type="fig">Figure 2C</xref> presents the error for all combinations of data and test time augmentation with the multilabel classification and regression model separately and in combination. During the experiments it became apparent that for the multilabel classification network applying both data augmentation as well as test-time-augmentation jointly improves the model’s performance (see <xref rid="fig2" ref-type="fig">Figure 2C</xref>). Somewhat surprisingly, applying these elements to the multihead regression model did not improve the performance compared to the non-augmented version of the model. The exact performance metrics (MSE, MAE and R-squared) of all model variants are reported in the supplementary table S1 and for each figure element in table S2. In addition, the model performance was replicated in the independent prospective validation study (i.e. MSE = 3.32; MAE = 1.13). The performance metrics of each figure element for the independent prospective validation study are reported in the supplementary table S4 and S5.</p>
+<p>We further conducted a more fine-grained analysis of our best model. <xref rid="fig3" ref-type="fig">Figure 3A</xref> shows the score for each figure in the data set contrasted with the ground truth score (i.e. median of online raters). In addition, we computed the difference between ground truth score and predicted score revealing that errors made by our model are concentrated closely around 0 (<xref rid="fig3" ref-type="fig">Figure 3B</xref>), while the distribution of clinician’s errors is much more spread out (<xref rid="fig3" ref-type="fig">Figure 3D</xref> and <xref rid="fig3" ref-type="fig">3E</xref>). It is interesting to note that, like the clinicians, our model exhibits a slight bias towards higher scores, although much less pronounced. Importantly, the model does not demonstrate any considerable bias towards specific figure elements. In contrast to the clinicians, the MAE is very balanced across each individual item of the figure (<xref rid="fig3" ref-type="fig">Figure 3C</xref> and <xref rid="fig3" ref-type="fig">3F</xref>, and supplementary table S2). Finally, a detailed breakdown of the expected performance across the entire range of total scores is displayed for the model (<xref rid="fig3" ref-type="fig">Figure 3G</xref> and supplementary table S3), the clinicians (3H) and average online raters (3I). As can be seen, the model exhibits a comparable MAE for the entire range of total scores, although there is a trend that high scores exhibit lower MAEs. These results were confirmed in the independent prospective validation study (see <xref rid="fig3" ref-type="fig">Figure 3G</xref>-<xref rid="fig3" ref-type="fig">3I</xref>, supplementary Figure S5 and supplementary table S5).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3.</label>
+<caption><p>Contrasting the ratings of our model (A) and clinicians (D) against the ground truth revealed a larger deviation from the regression line for the clinicians. A jitter is applied to better highlight the dot density. The distribution of errors for our model (B) and the clinicians ratings (E) are displayed. The MAE of our model (C) and the clinicians (F) is displayed for each individual item of the figure (see also supplementary table S2). The corresponding plots for the performance on the prospectively collected data is displayed in the supplementary Figure S5. The model performance for the retrospective (green) and prospective (purple) sample across the entire range of total scores for model (G), clinicians (H) and online raters (I) are presented.</p></caption>
+<graphic xlink:href="496291v4_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s3c">
+<title>Robustness Analysis</title>
+<p>Using data augmentation did not critically improve the accuracy, which is likely due to the fact that our dataset is already large and diverse enough. However, data augmentation does significantly improve robustness against semantic transformations, as can be seen from supplementary Figure S6. In particular, using our data augmentation pipeline, the model becomes much more robust against rotations and changes in perspective. On the other hand, for changes to brightness and contrast we could not find a clear trend. This is however not surprising as the data augmentation pipeline does not explicitly encourage the model to be more robust against these transformations. Overall, we demonstrate that our scoring system is highly robust for realistic changes in rotations, perspective, brightness, and contrast of the images (<xref rid="fig4" ref-type="fig">Figure 4</xref>). Performance is degraded only under unrealistic and extreme transformations.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4.</label>
+<caption><p>Robustness to geometric, brightness and contrast variations. The MAE is depicted for different degrees of transformations. In addition examples of the transformed ROCF draw are provided.</p></caption>
+<graphic xlink:href="496291v4_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s4">
+<title>Discussion</title>
+<p>In this study, we developed an AI-based scoring system for a nonverbal visuo-spatial memory test that is being utilized in clinics around the world on a daily basis. For this, we trained two variations of deep learning systems and used a rich data set of more than 20k hand-drawn ROCF images covering the entire life span, different research and clinical environments as well as representing global diversity. By leveraging human crowdsourcing we obtained unbiased high-precision training labels. Our best model results from combining a multihead convolutional neural network for regression with a network for multilabel classification. Data and test time augmentation were used to improve the accuracy and made our model more robust against geometric transformations like rotations and changes in perspective.</p>
+<p>Overall, our results provide evidence that our AI-scoring tool outperforms both amateur raters and clinicians. Our model performed highly unbiased as it yielded predictions very close to the ground truth and the error was similarly distributed around zero. Importantly, these results have been replicated in an independent prospectively collected data set. The scoring system reliably identified and accurately scored individual figure elements in previously unseen ROCF drawings, which facilitates explainability of the AI-scoring system. Comparable performance for each figure element indicates no considerable bias towards specific figure compositions. Furthermore, the error of our scoring system is rather balanced across the entire range of total scores. An exception are the highest scored images displaying the smallest error, which has two explanations: First, compared to low score images, for which the same score can be achieved by numerous combinations of figure elements, the high score images by nature do not have as many possible combinations. Secondly, the data set contains a proportional larger amount of available training data for the high score images.</p>
+<p>While the ROCF is one of the most commonly employed neuropsychological test to evaluate nonverbal visuo-spatial memory in clinical setting (Shin et al. 2006), the current manual scoring in clinics is time-consuming (5 to 15 minutes for each drawing), requires training, and ultimately depends on subjective judgements, which inevitably introduces human scoring biases (Watkins 2017; Franzen 2000) and low inter-rater reliability (Franzen 2000; Huygelier et al. 2020) (see also supplementary Figure S7). Thus, an objective and reliable automated scoring system is in great demand as it can overcome the problem of intra- and inter-rater variability. More importantly, such an automated system can remove a time-consuming, tedious and repetitive task from clinicians and thereby helps to reduce workload of clinicians and/or allowing more time for more patient-centered care. Overall, automation can support clinicians to make healthcare decisions more accurate and timely.</p>
+<p>Over the past years, deep learning has made significant headway in achieving above human-level performance on well-specified and isolated tasks in computer vision. However, unleashing the power of deep learning depends on the availability of large training sets with accurate training labels. We obtained over 20k hand-drawn ROCF images and invested immense time and labor to manually scan the ROCF drawings. This effort was only possible by orchestrating across multiple clinical sites and having funds available to hire the work force to accomplish the digitization. Our approach highlights the need to intensify national and international effort of the digitalization of health record data. Although electronic health records (EHR) are increasingly available (e.g. quadrupled in the US from 2007 to 2012 (Hsiao, Hing, and Ashman 2014)), challenges remain in terms of handling, processing and moving such big data. Improved data accessibility and better consensus in organization and sharing could simplify and foster similar approaches in neuropsychology and medicine.</p>
+<p>Another important difficulty is that data typically comes from various sources and thus exhibits large heterogeneity in terms of quality, size, format of the images, and crucially the quality of the labeled dataset. High-quality labeled and annotated datasets are the foundation of a successful computer vision system. A novelty of our approach is that we have trained a large pool of human internet workers (crowdsourced human intelligence) to score ROCFs drawings guided by our self-developed interactive web application. Each element of the figure was scored by several human workers (13 workers on average per figure). To derive ground truth scores, we took the median score, as it has the advantage of being robust to outliers. To further ensure high-quality data annotation, we identified and excluded crowdsourcing participants that have a high level of disagreement (&gt;20% disagreement) with this rating from trained clinicians, who carefully scored manually a subset of the data in the same interactive web application. Importantly our two-fold innovative approach that combines the digitization of neuropsychological tests and the high-quality scoring using crowdsourced intelligence can provide a roadmap for how AI can be leveraged in neuropsychological testing more generally as it can be easily adapted and applied to various other neuropsychological tests (e.g. Clock Drawing Test (Freedman et al. 1994), Taylor Complex Figure Test (Awad et al. 2004), Hamasch 5-point test (Regard, Strauss, and Knapp 1982)).</p>
+<p>Another important prerequisite of using AI for the automated scoring of neuropsychological tests is the availability of training data that is sufficiently diverse and obtains sufficient examples from all possible scores. Recent examples in computer vision have demonstrated that insufficient diversity in training data can lead to biases and adverse consequences (Buolamwini and Gebru 23--24 Feb 2018; Ensign et al. 2017). Given that our training data set included data from children and a representative sample of patients (see <xref rid="fig1" ref-type="fig">Figure 1B</xref>), exhibiting a range of neurological disorders, drawings were frequently extremely dissimilar to the target figure. Importantly, our scoring system delivers accurate scores even in cases where drawings are distorted (e.g. caused by fine motor impairments) or omissions (e.g. due to visuospatial deficits), which are typical impairment patterns in neurological patients. In addition, our scoring system is robust against different semantic transformations (e.g. rotations, perspective change, brightness) which are likely to occur in real life scenarios, when the examiner takes a photo of the ROCF drawing, which naturally will lead to varying viewpoints and illumination conditions. Thus, this robustness is a pivotal prerequisite for any potential clinical utility.</p>
+<p>To improve usability of our system and guarantee clinical utility, we have integrated our model into a tablet-(and smartphone-) based application, in which users can take a photo (or upload an image) of an ROCF drawing and the application instantly provides a total score. Importantly, the automated scoring system also maintains explainability by providing visualization of detailed score breakdowns (i.e. item-specific scores), which is a highly valued property of AI-assisted medical decision making and key to help interpret the score and communicate them to the patient (see supplementary Figure S8). The scoring is completely reproducible and thus facilitates valid large-scale comparisons of ROCF data, which enable population-based cognitive screening and (assisted) self-assessments.</p>
+<p>In summary, we have created a highly robust and automated AI-based scoring tool, which provides unbiased, reproducible and immediate scores for the ROCF test in research and clinical environments. Our current machine-based automated quantitative scoring system outperforms both amateur raters and clinicians.</p>
+<p>The present findings demonstrate that automated scoring systems can be developed to advance the quality of neuropsychological assessments by diminishing reliance on subjective ratings and efficiently improving scoring in terms of time and costs. Our innovative approach can be translated to many different neuropsychological tests, thus providing a roadmap for paving the way to AI-guided neuropsychology.</p>
+</sec>
+<sec id="d1e922" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="d1e1061">
+<label>Supplementary Material</label>
+<media xlink:href="supplements/496291_file02.pdf"/>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><string-name><surname>Alladi</surname>, <given-names>Suvarna</given-names></string-name>, <string-name><given-names>Robert</given-names> <surname>Arnold</surname></string-name>, <string-name><given-names>Joanna</given-names> <surname>Mitchell</surname></string-name>, <string-name><given-names>Peter J.</given-names> <surname>Nestor</surname></string-name>, and <string-name><given-names>John R.</given-names> <surname>Hodges</surname></string-name>. <year>2006</year>. “<article-title>Mild Cognitive Impairment: Applicability of Research Criteria in a Memory Clinic and Characterization of Cognitive Profile</article-title>.” <source>Psychological Medicine</source>. <pub-id pub-id-type="doi">10.1017/s0033291705006744</pub-id>.</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><string-name><surname>Awad</surname>, <given-names>Nesrine</given-names></string-name>, <string-name><given-names>Maria</given-names> <surname>Tsiakas</surname></string-name>, <string-name><given-names>Michèle</given-names> <surname>Gagnon</surname></string-name>, <string-name><given-names>Valérie B.</given-names> <surname>Mertens</surname></string-name>, <string-name><given-names>Eva</given-names> <surname>Hill</surname></string-name>, and <string-name><given-names>Claude</given-names> <surname>Messier</surname></string-name>. <year>2004</year>. “<article-title>Explicit and Objective Scoring Criteria for the Taylor Complex Figure Test</article-title>.” <source>Journal of Clinical and Experimental Neuropsychology</source> <volume>26</volume> (<issue>3</issue>): <fpage>405</fpage>–<lpage>15</lpage>.</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><string-name><surname>Berry</surname>, <given-names>David T. R.</given-names></string-name>, <string-name><given-names>Rebecca S.</given-names> <surname>Allen</surname></string-name>, and <string-name><given-names>Frederick A.</given-names> <surname>Schmitt</surname></string-name>. <year>1991</year>. “<article-title>Rey-Osterrieth Complex Figure: Psychometric Characteristics in a Geriatric Sample</article-title>.” <source>Clinical Neuropsychologist</source>. <pub-id pub-id-type="doi">10.1080/13854049108403298</pub-id>.</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><string-name><surname>Buolamwini</surname>, <given-names>Joy</given-names></string-name>, and <string-name><given-names>Timnit</given-names> <surname>Gebru</surname></string-name>. 23--24 Feb <year>2018</year>. <article-title>Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification</article-title>.” In Proceedings of the 1st Conference on Fairness, Accountability and Transparency, edited by Sorelle A. Friedler and Christo Wilson, 81:77–91. <source>Proceedings of Machine Learning Research</source>. PMLR.</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><string-name><surname>Canham</surname>, <given-names>R. O.</given-names></string-name>, <string-name><given-names>S. L.</given-names> <surname>Smith</surname></string-name>, and <string-name><given-names>A. M.</given-names> <surname>Tyrrell</surname></string-name>. <year>2000</year>. <article-title>“Automated Scoring of a Neuropsychological Test: The Rey Osterrieth Complex Figure.” Proceedings of the 26th Euromicro Conference. EUROMICRO 2000</article-title>. <source>Informatics: Inventing the Future</source>. <pub-id pub-id-type="doi">10.1109/eurmic.2000.874519</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="preprint"><string-name><surname>Ensign</surname>, <given-names>Danielle</given-names></string-name>, <string-name><given-names>Sorelle A.</given-names> <surname>Friedler</surname></string-name>, <string-name><given-names>Scott</given-names> <surname>Neville</surname></string-name>, <string-name><given-names>Carlos</given-names> <surname>Scheidegger</surname></string-name>, and <string-name><given-names>Suresh</given-names> <surname>Venkatasubramanian</surname></string-name>. <year>2017</year>. <article-title>Runaway Feedback Loops in Predictive Policing</article-title>. <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.1706.09847</pub-id>.</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><string-name><surname>Fastenau</surname>, <given-names>P. S.</given-names></string-name>, <string-name><given-names>J. M.</given-names> <surname>Bennett</surname></string-name>, and <string-name><given-names>N. L.</given-names> <surname>Denburg</surname></string-name>. <year>1996</year>. “<article-title>Application of Psychometric Standards to Scoring System Evaluation: Is ‘New’ Necessarily ‘Improved’?</article-title>” <source>Journal of Clinical and Experimental Neuropsychology</source> <volume>18</volume> (<issue>3</issue>): <fpage>462</fpage>–<lpage>72</lpage>.</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><string-name><surname>Franzen</surname>, <given-names>Michael D</given-names></string-name>. <year>2000</year>. “<article-title>Validity as Applied to Neuropsychological Assessment</article-title>.” <source>Reliability and Validity in Neuropsychological Assessment</source>. <pub-id pub-id-type="doi">10.1007/978-1-4757-3224-5_5</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="book"><string-name><surname>Freedman</surname>, <given-names>Morris</given-names></string-name>, <string-name><given-names>Larry</given-names> <surname>Leach</surname></string-name>, <string-name><given-names>Edith</given-names> <surname>Kaplan</surname></string-name>, <string-name><given-names>Gordon</given-names> <surname>Winocur</surname></string-name>, <string-name><given-names>Kenneth</given-names> <surname>Shulman</surname></string-name>, <string-name><given-names>Dean C.</given-names> <surname>Delis</surname></string-name>, and Others. <year>1994</year>. <source>Clock Drawing: A Neuropsychological Analysis</source>. <publisher-name>Oxford University Press</publisher-name>, <publisher-loc>USA</publisher-loc>.</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><string-name><surname>Groth-Marnat</surname>, <given-names>Gary</given-names></string-name>. <year>2000</year>. <article-title>Neuropsychological Assessment in Clinical Practice: A Guide to Test Interpretation and Integration</article-title>. <source>Wiley</source>.</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><string-name><surname>Harbi</surname>, <given-names>Zainab</given-names></string-name>, <string-name><given-names>Yulia</given-names> <surname>Hicks</surname></string-name>, and <string-name><given-names>Rossitza</given-names> <surname>Setchi</surname></string-name>. <year>2016</year>. “<article-title>Clock Drawing Test Digit Recognition Using Static and Dynamic Features</article-title>.” <source>Procedia Computer Science</source>. <pub-id pub-id-type="doi">10.1016/j.procs.2016.08.166</pub-id>.</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><string-name><surname>Hsiao</surname>, <given-names>Chun-Ju</given-names></string-name>, <string-name><given-names>Esther</given-names> <surname>Hing</surname></string-name>, and <string-name><given-names>Jill</given-names> <surname>Ashman</surname></string-name>. <year>2014</year>. <article-title>“Trends in Electronic Health Record System Use among Office-Based Physicians: United States, 2007-2012.”</article-title> <source>National Health Statistics Reports</source>, no. <volume>75</volume> (May): <fpage>1</fpage>–<lpage>18</lpage>.</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><string-name><surname>Huygelier</surname>, <given-names>Hanne</given-names></string-name>, <string-name><given-names>Margaret Jane</given-names> <surname>Moore</surname></string-name>, <string-name><given-names>Nele</given-names> <surname>Demeyere</surname></string-name>, and <string-name><given-names>Céline R.</given-names> <surname>Gillebert</surname></string-name>. <year>2020</year>. “<article-title>Non-Spatial Impairments Affect False-Positive Neglect Diagnosis Based on Cancellation Tasks</article-title>.” <source>Journal of the International Neuropsychological Society: JINS</source> <volume>26</volume> (<issue>7</issue>): <fpage>668</fpage>–<lpage>78</lpage>.</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><string-name><surname>Kim</surname>, <given-names>Hyungsin</given-names></string-name>, <string-name><given-names>Young Suk</given-names> <surname>Cho</surname></string-name>, and <string-name><given-names>Ellen Yi-Luen</given-names> <surname>Do</surname></string-name>. <year>2010</year>. <article-title>“Computational Clock Drawing Analysis for Cognitive Impairment Screening.” <italic>Proceedings of the Fifth International Conference on Tangible</italic></article-title>, <source>Embedded, and Embodied Interaction</source>. <pub-id pub-id-type="doi">10.1145/1935701.1935768</pub-id>.</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><string-name><surname>Kingma</surname>, <given-names>Diederik P.</given-names></string-name>, and <string-name><given-names>Jimmy</given-names> <surname>Ba</surname></string-name>. <year>2014</year>. “<article-title>Adam: A Method for Stochastic Optimization</article-title>,” <source>December</source>. <pub-id pub-id-type="doi">10.48550/arXiv.1412.6980</pub-id>.</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><string-name><surname>Levine</surname>, <given-names>Andrew J.</given-names></string-name>, <string-name><given-names>Eric N.</given-names> <surname>Miller</surname></string-name>, <string-name><given-names>James T.</given-names> <surname>Becker</surname></string-name>, <string-name><given-names>Ola A.</given-names> <surname>Selnes</surname></string-name>, and <string-name><given-names>Bruce A.</given-names> <surname>Cohen</surname></string-name>. <year>2004</year>. “<article-title>Normative Data for Determining Significance of Test–Retest Differences on Eight Common Neuropsychological Instruments</article-title>.” <source>The Clinical Neuropsychologist</source>. <pub-id pub-id-type="doi">10.1080/1385404049052420</pub-id>.</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><string-name><surname>Meyers</surname>, <given-names>J. E.</given-names></string-name>, <string-name><given-names>J. D.</given-names> <surname>Bayless</surname></string-name>, and <string-name><given-names>K. R.</given-names> <surname>Meyers</surname></string-name>. <year>1996</year>. “<article-title>Rey Complex Figure: Memory Error Patterns and Functional Abilities</article-title>.” <source>Applied Neuropsychology</source> <volume>3</volume> (<issue>2</issue>): <fpage>89</fpage>–<lpage>92</lpage>.</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><string-name><surname>Meyers</surname>, <given-names>John E.</given-names></string-name>, and <string-name><given-names>Marie</given-names> <surname>Volbrecht</surname></string-name>. <year>1999</year>. “<article-title>Detection of Malingerers Using the Rey Complex Figure and Recognition Trial</article-title>.” <source>Applied Neuropsychology</source>. <pub-id pub-id-type="doi">10.1207/s15324826an0604_2</pub-id>.</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><string-name><surname>Nazar</surname>, <given-names>Haris Bin</given-names></string-name>, <string-name><given-names>Momina</given-names> <surname>Moetesum</surname></string-name>, <string-name><given-names>Shoaib</given-names> <surname>Ehsan</surname></string-name>, <string-name><given-names>Imran</given-names> <surname>Siddiqi</surname></string-name>, <string-name><given-names>Khurram</given-names> <surname>Khurshid</surname></string-name>, <string-name><given-names>Nicole</given-names> <surname>Vincent</surname></string-name>, and <string-name><given-names>Klaus D.</given-names> <surname>McDonald-Maier</surname></string-name>. <year>2017</year>. <article-title>Classification of Graphomotor Impressions Using Convolutional Neural Networks: An Application to Automated Neuro-Psychological Screening Tests.</article-title> <source>2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR)</source>. <pub-id pub-id-type="doi">10.1109/icdar.2017.78</pub-id>.</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><string-name><surname>Osterrieth</surname>, <given-names>Paul Alexandre</given-names></string-name>. <year>1944</year>. <article-title>Le test de copie d’une figure complexe: Contribution à l’étude de la perception et de la mémoire</article-title>. <source>Delachaux et Niestlé</source>.</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><string-name><surname>Paszke</surname>, <given-names>Adam</given-names></string-name>, <string-name><given-names>Sam</given-names> <surname>Gross</surname></string-name>, <string-name><given-names>Francisco</given-names> <surname>Massa</surname></string-name>, <string-name><given-names>Adam</given-names> <surname>Lerer</surname></string-name>, <string-name><given-names>James</given-names> <surname>Bradbury</surname></string-name>, <string-name><given-names>Gregory</given-names> <surname>Chanan</surname></string-name>, <string-name><given-names>Trevor</given-names> <surname>Killeen</surname></string-name>, <etal>et al.</etal> <year>2019</year>. “<article-title>PyTorch: An Imperative Style, High-Performance Deep Learning Library</article-title>.” <source>In Proceedings of the 33rd International Conference on Neural Information Processing Systems</source>. <pub-id pub-id-type="doi">10.48550/arXiv.1912.01703</pub-id>.</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><string-name><surname>Petilli</surname>, <given-names>Marco A.</given-names></string-name>, <string-name><given-names>Roberta</given-names> <surname>Daini</surname></string-name>, <string-name><given-names>Francesca Lea</given-names> <surname>Saibene</surname></string-name>, and <string-name><given-names>Marco</given-names> <surname>Rabuffetti</surname></string-name>. <year>2021</year>. “<article-title>Automated Scoring for a Tablet-Based Rey Figure Copy Task Differentiates Constructional, Organisational, and Motor Abilities</article-title>.” <source>Scientific Reports</source> <volume>11</volume> (<issue>1</issue>): <fpage>14895</fpage>.</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><string-name><surname>Rabin</surname>, <given-names>Laura A.</given-names></string-name>, <string-name><given-names>William B.</given-names> <surname>Barr</surname></string-name>, and <string-name><given-names>Leslie A.</given-names> <surname>Burton</surname></string-name>. <year>2005</year>. “<article-title>Assessment Practices of Clinical Neuropsychologists in the United States and Canada: A Survey of INS, NAN, and APA Division 40 Members</article-title>.” <source>Archives of Clinical Neuropsychology: The Official Journal of the National Academy of Neuropsychologists</source> <volume>20</volume> (<issue>1</issue>): <fpage>33</fpage>–<lpage>65</lpage>.</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><string-name><surname>Rabin</surname>, <given-names>Laura A.</given-names></string-name>, <string-name><given-names>Emily</given-names> <surname>Paolillo</surname></string-name>, and <string-name><given-names>William B.</given-names> <surname>Barr</surname></string-name>. <year>2016</year>. “<article-title>Stability in Test-Usage Practices of Clinical Neuropsychologists in the United States and Canada Over a 10-Year Period: A Follow-Up Survey of INS and NAN Members</article-title>.” <source>Archives of Clinical Neuropsychology: The Official Journal of the National Academy of Neuropsychologists</source> <volume>31</volume> (<issue>3</issue>): <fpage>206</fpage>–<lpage>30</lpage>.</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><string-name><surname>Regard</surname>, <given-names>Marianne</given-names></string-name>, <string-name><given-names>Esther</given-names> <surname>Strauss</surname></string-name>, and <string-name><given-names>Paul</given-names> <surname>Knapp</surname></string-name>. <year>1982</year>. “<article-title>Children’s Production on Verbal and Non-Verbal Fluency Tasks</article-title>.” <source>Perceptual and Motor Skills</source>. <pub-id pub-id-type="doi">10.2466/pms.1982.55.3.839</pub-id>.</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><string-name><surname>Shin</surname>, <given-names>Min-Sup</given-names></string-name>, <string-name><given-names>Sun-Young</given-names> <surname>Park</surname></string-name>, <string-name><given-names>Se-Ran</given-names> <surname>Park</surname></string-name>, <string-name><given-names>Soon-Ho</given-names> <surname>Seol</surname></string-name>, and <string-name><given-names>Jun Soo</given-names> <surname>Kwon</surname></string-name>. <year>2006</year>. “<article-title>Clinical and Empirical Applications of the Rey–Osterrieth Complex Figure Test</article-title>.” <source>Nature Protocols</source>. <pub-id pub-id-type="doi">10.1038/nprot.2006.115</pub-id>.</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><string-name><surname>Somerville</surname>, <given-names>J.</given-names></string-name>, <string-name><given-names>G.</given-names> <surname>Tremont</surname></string-name>, and <string-name><given-names>R. A.</given-names> <surname>Stern</surname></string-name>. <year>2000</year>. “<article-title>The Boston Qualitative Scoring System as a Measure of Executive Functioning in Rey-Osterrieth Complex Figure Performance</article-title>.” <source>Journal of Clinical and Experimental Neuropsychology</source> <volume>22</volume> (<issue>5</issue>): <fpage>613</fpage>–<lpage>21</lpage>.</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="report"><string-name><surname>Trautmann</surname>, <given-names>Sebastian</given-names></string-name>, <string-name><given-names>Jürgen</given-names> <surname>Rehm</surname></string-name>, and <string-name><surname>Hans-ulrich</surname> <given-names>Wittchen</given-names></string-name>. <year>2016</year>. <source>“The Economic Costs of Mental Disorders.” EMBO Reports</source>. <pub-id pub-id-type="doi">10.15252/embr.201642951</pub-id>.</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><string-name><surname>Trojano</surname>, <given-names>Luigi</given-names></string-name>, and <string-name><given-names>Guido</given-names> <surname>Gainotti</surname></string-name>. <year>2016</year>. “<article-title>Drawing Disorders in Alzheimer’s Disease and Other Forms of Dementia</article-title>.” <source>Journal of Alzheimer’s Disease</source>. <pub-id pub-id-type="doi">10.3233/jad-160009</pub-id>.</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><string-name><surname>Vogt</surname>, <given-names>J.</given-names></string-name>, <string-name><given-names>H.</given-names> <surname>Kloosterman</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Vermeent</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Van Elswijk</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Dotsch</surname></string-name>, and <string-name><given-names>B.</given-names> <surname>Schmand</surname></string-name>. <year>2019</year>. “<article-title>Automated Scoring of the Rey-Osterrieth Complex Figure Test Using a Deep-Learning Algorithm</article-title>.” <source>Archives of Clinical Neuropsychology</source>. <pub-id pub-id-type="doi">10.1093/arclin/acz035.04</pub-id>.</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><string-name><surname>Watkins</surname>, <given-names>Marley W</given-names></string-name>. <year>2017</year>. “<article-title>The Reliability of Multidimensional Neuropsychological Measures: From Alpha to Omega</article-title>.” <source>The Clinical Neuropsychologist</source> <volume>31</volume> (<issue>6-7</issue>): <fpage>1113</fpage>–<lpage>26</lpage>.</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><string-name><surname>Webb</surname>, <given-names>Sam S.</given-names></string-name>, <string-name><given-names>Margaret Jane</given-names> <surname>Moore</surname></string-name>, <string-name><given-names>Anna</given-names> <surname>Yamshchikova</surname></string-name>, <string-name><given-names>Valeska</given-names> <surname>Kozik</surname></string-name>, <string-name><given-names>Mihaela D.</given-names> <surname>Duta</surname></string-name>, <string-name><given-names>Irina</given-names> <surname>Voiculescu</surname></string-name>, and <string-name><given-names>Nele</given-names> <surname>Demeyere</surname></string-name>. <year>2021</year>. “<article-title>Validation of an Automated Scoring Program for a Digital Complex Figure Copy Task within Healthy Aging and Stroke</article-title>.” <source>Neuropsychology</source> <volume>35</volume> (<issue>8</issue>): <fpage>847</fpage>–<lpage>62</lpage>.</mixed-citation></ref>
+</ref-list>
+<sec id="s5">
+<title>Financial Support</title>
+<p>This work was supported by the URPP “Dynamics of Healthy Aging” and BRIDGE [40B2-0_187132], which is a joint programme of the Swiss National Science Foundation SNSF and Innosuisse. Furthermore, BHV is funded by the Swiss National Science Foundation [10001C_197480]. Finally, CL is supported by the Swiss State Secretariat for Education, Research and Innovation (SERI) under contract number MB22.00036. None of the authors have been paid to write this article by a pharmaceutical company or other agency. Authors were not precluded from accessing data in the study, and they accept responsibility to submit for publication.</p>
+</sec>
+<sec id="s6">
+<title>Declaration of Interests</title>
+<p>The authors declare no conflict of interest.</p>
+</sec>
+<sec id="s7">
+<title>Data sharing</title>
+<p>The clinical dataset can not be shared publicly because the consent for data sharing was not obtained from study participants. The Prolific dataset is available on request after signing a data use agreement. All preprocessing and analysis scripts used for the analyses are uploaded on github (<ext-link ext-link-type="uri" xlink:href="https://github.com/methlabUZH/rey-figure">https://github.com/methlabUZH/rey-figure</ext-link>).</p>
+</sec>
+<sec id="s8">
+<title>Authorship Contribution</title>
+<p><bold>Nicolas Langer:</bold> Conceptualization, Methodology, Software, Formal analysis, Writing - original draft, Writing - review &amp; editing, Visualization, Supervision, Project administration, Resources, Funding acquisition.</p>
+<p><bold>Maurice Weber:</bold> Conceptualization, Methodology, Software, Formal analysis, Validation, Data curation, Writing - original draft, Writing - review &amp; editing, Visualization.</p>
+<p><bold>Bruno Hebling Vieira:</bold> Conceptualization, Methodology, Software, Formal analysis, Validation, Data curation, Writing - original draft, Writing - review &amp; editing, Visualization.</p>
+<p><bold>Dawid Strzelcy:</bold> Conceptualization, Methodology, Software, Formal analysis, Data curation, Validation, Resources, Writing - original draft, Writing - review &amp; editing, Visualization.</p>
+<p><bold>Lukas Wolf:</bold> Conceptualization, Methodology, Software, Formal analysis, Data curation, Validation, Writing - original draft, Writing - review &amp; editing, Visualization.</p>
+<p><bold>Andreas Pedroni:</bold> Conceptualization, Methodology, Writing - review &amp; editing</p>
+<p><bold>Jonathan Heitz:</bold> Conceptualization, Methodology, Writing - review &amp; editing</p>
+<p><bold>Stephan Müller:</bold> Conceptualization, Methodology, Writing - review &amp; editing</p>
+<p><bold>Christoph Schultheiss:</bold> Conceptualization, Methodology, Writing - review &amp; editing</p>
+<p><bold>Marius Tröndle:</bold> Conceptualization, Methodology, Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Juan Carlos Arango-Lasprilla:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Diego Rivera:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Federica Scarpina:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Qianhua Zhao:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Rico Leuthold:</bold> Conceptualization, Methodology, Software</p>
+<p><bold>Flavia Wehrle:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Oskar G. Jenni:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Peter Brugger:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Tino Zaehle:</bold> Data curation, Resources, Writing - review &amp; editing</p>
+<p><bold>Romy Lorenz:</bold> Conceptualization, Methodology, Writing - original draft, Writing - review &amp; editing</p>
+<p><bold>Ce Zhang:</bold> Conceptualization, Methodology, Formal analysis, Writing - review &amp; editing, Supervision, Resources, Funding acquisition.</p>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96017.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Zhou</surname>
+<given-names>Juan Helen</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>National University of Singapore</institution>
+</institution-wrap>
+<city>Singapore</city>
+<country>Singapore</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Compelling</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study presented a <bold>valuable</bold> inventory in scoring a neuropsychological test, ROCFT. The level of evidence is <bold>compelling</bold>. The authors constructed large samples from multi-center international researchers and tested the model using internet data with excellent performance. Their deep learning method could potentially apply to neuropsychological tests as well as other related fields.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96017.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors aimed to develop and validate an automated, deep learning-based system for scoring the Rey-Osterrieth Complex Figure Test (ROCF), a widely used tool in neuropsychology for assessing memory deficits. Their goal was to overcome the limitations of manual scoring, such as subjectivity and time consumption, by creating a model that provides automatic, accurate, objective, and efficient assessments of memory deterioration in individuals with various neurological and psychiatric conditions.</p>
+<p>Strengths:</p>
+<p>Comprehensive Data Collection:</p>
+<p>
+The authors collected over 20,000 hand-drawn ROCF images from a wide demographic and geographic range, ensuring a robust and diverse dataset. This extensive data collection is critical for training a generalizable and effective deep learning model.</p>
+<p>Advanced Deep Learning Approach:</p>
+<p>
+Utilizing a multi-head convolutional neural network to automate ROCF scoring represents a sophisticated application of current AI technologies. This approach allows for detailed analysis of individual figure elements, potentially increasing the accuracy and reliability of assessments.</p>
+<p>Validation and Performance Assessment:</p>
+<p>
+The model's performance was rigorously evaluated against crowdsourced human intelligence and professional clinician scores, demonstrating its ability to outperform both groups. The inclusion of an independent prospective validation study further strengthens the credibility of the results.</p>
+<p>Robustness Analysis Efficacy:</p>
+<p>
+The model underwent a thorough robustness analysis, testing its adaptability to variations in rotation, perspective, brightness, and contrast. Such meticulous examination ensures the model's consistent performance across different clinical imaging scenarios, significantly bolstering its utility for real-world applications.</p>
+<p>Weaknesses:</p>
+<p>Insufficient Network Analysis for Explainability:</p>
+<p>
+The paper does not sufficiently delve into network analysis to determine whether the model's predictions are based on accurately identifying and matching the 18 items of the ROCF or if they rely on global, item-irrelevant features. This gap in analysis limits our understanding of the model's decision-making process and its clinical relevance.</p>
+<p>Generative Model Consideration:</p>
+<p>
+The critique suggests exploring generative models to model the joint distribution of images and scores, which could offer deeper insights into the relationship between scores and specific visual-spatial disabilities. The absence of this consideration in the study is seen as a missed opportunity to enhance the model's explainability and clinical utility.</p>
+<p>Appraisal and discussion:</p>
+<p>
+By leveraging a comprehensive dataset and employing advanced deep learning techniques, they demonstrated the model's ability to outperform both crowdsourced raters and professional clinicians in scoring the ROCF. This achievement represents a significant step forward in automating neuropsychological assessments, potentially revolutionizing how memory deficits are evaluated in clinical settings. Furthermore, the application of deep learning to clinical neuropsychology opens avenues for future research, including the potential automation of other neuropsychological tests and the integration of AI tools into clinical practice. The success of this project may encourage further exploration into how AI can be leveraged to improve diagnostic accuracy and efficiency in healthcare.</p>
+<p>However, the critique regarding the lack of detailed analysis across different patient demographics, the inadequacy of network explainability, and concerns about the selection of median crowdsourced scores as ground truth raises questions about the completeness of their objectives. These aspects suggest that while the aims were achieved to a considerable extent, there are areas of improvement that could make the results more robust and the conclusions stronger.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96017.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors aimed to develop and validate a machine-learning-driven neural network capable of automatic scoring of the Rey-Osterrieth Complex Figure. They aimed to further assess the robustness of the model to various parameters such as tilt and perspective shift in real drawings. The authors leveraged the use of a huge sample of lay workers in scoring figures and also a large sample of trained clinicians to score a subsample of figures. Overall, the authors found their model to have exceptional accuracy and perform similarly to crowdsourced workers and clinicians with, in some cases, less degree of error/score dispersion than clinicians.</p>
+<p>Strengths:</p>
+<p>The authors used very large data; including a large number of Rey-Osterrieth Complex Figures, a huge crowdsourced human worker sample, and a large clinician sample.</p>
+<p>The authors deeply describe their model in relatively accessible terms.</p>
+<p>The writing style of the paper is accessible, scientific, and thorough.</p>
+<p>Pre-registration of the prospectively collected new data was acceptable.</p>
+<p>Weaknesses:</p>
+<p>There is no detail on how the final scoring app can be accessed and whether it is medical device-regulated.</p>
+<p>No discussion on the difference in sample sizes between the pre-registration of the prospective study and the results (e.g., aimed for 500 neurological patients but reported data from 288).</p>
+<p>Details in pre-registration and paper regarding samples obtained in the prospective study were lacking.</p>
+<p>Demographics for the assessment of the representation of healthy and non-healthy participants were not present.</p>
+<p>The authors achieved their aims and their results and conclusions are supported by strong methods and analyses. The resulting app produced in this work, if suitable for clinical practice, will have impact in automated scoring, which many clinicians will be exceptionally happy with.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.96017.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This study presented a valuable inventory of scoring a neuropsychological test, ROCFT, with constructing an artificial intelligence model.</p>
+<p>Strengths:</p>
+<p>They constructed huge samples collected among multi-center international researchers and tested the model precisely using internet data.</p>
+<p>
+The model scored the test with excellent ability, surpassing even experts. The product can run an application on a tablet, which helps clinicians and patients.</p>
+<p>
+Their method of building the model of deep learning and testing will apply to tests in all fields, not just the psychological field.</p>
+<p>Weaknesses:</p>
+<p>The considerable effort and cost to make the model only for an existing neuropsychological test.</p>
+</body>
+</sub-article>
+</article>
