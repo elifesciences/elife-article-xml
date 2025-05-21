@@ -1,0 +1,671 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">89361</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.89361</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.89361.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>An image segmentation method based on the spatial correlation coefficient of Local Moran’s I - identification of A-type potassium channel clusters in the thalamus</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Dávid</surname>
+<given-names>Csaba</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2993-6115</contrib-id>
+<name>
+<surname>Giber</surname>
+<given-names>Kristóf</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9500-8758</contrib-id>
+<name>
+<surname>Kerti-Szigeti</surname>
+<given-names>Katalin</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kollo</surname>
+<given-names>Mihaly</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7004-4111</contrib-id>
+<name>
+<surname>Nusser</surname>
+<given-names>Zoltán</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0679-2980</contrib-id>
+<name>
+<surname>Acsády</surname>
+<given-names>László</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Lendület Laboratory of Thalamus Research, Institute of Experimental Medicine</institution>, Budapest, 1083 Szigony u 43</aff>
+<aff id="a2"><label>2</label><institution>Department of Anatomy</institution>, Histology and Embryology, <institution>Semmelweis University</institution>, Budapest, H-1094 Budapest, Tűzoltó u 54</aff>
+<aff id="a3"><label>3</label><institution>Laboratory of Cellular Neurophysiology, Institute of Experimental Medicine</institution>, Budapest, 1083 Szigony u 43</aff>
+<aff id="a4"><label>4</label><institution>Novarino Group, Institute of Science and Technology</institution>, <country>Austria</country>, A-3400 Klosterneuburg</aff>
+<aff id="a5"><label>5</label><institution>Sensory Circuits and Neurotechnology Laboratory, Francis Crick Institute</institution>, 1 Midland Road, NW1 1AT, London, <country>UK</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Cheong</surname>
+<given-names>Eunji</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Yonsei University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Huguenard</surname>
+<given-names>John R</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Stanford University School of Medicine</institution>
+</institution-wrap>
+<city>Stanford</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author: László Acsády Email: <email>acsady@koki.hu</email></corresp>
+<fn id="fn1" fn-type="con"><p><bold>Author Contributions:</bold> CD, ZN and AL designed the research; CD, KG, KK, MK performed the experimental work; CD implemented analytic tools and analyzed data, CD, ZN, LA wrote the manuscript.</p></fn>
+<fn id="fn2" fn-type="conflict"><p><bold>Competing Interest Statement:</bold> The authors declare no competing interest</p></fn>
+<fn id="fn3" fn-type="others"><p><bold>Classification:</bold> Biological sciences, Neuroscience</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2023-10-02">
+<day>02</day>
+<month>10</month>
+<year>2023</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2024-09-13">
+<day>13</day>
+<month>09</month>
+<year>2024</year>
+</pub-date>
+<volume>12</volume>
+<elocation-id>RP89361</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2023-06-14">
+<day>14</day>
+<month>06</month>
+<year>2023</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-05-02">
+<day>02</day>
+<month>05</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.05.02.539063"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2023-10-02">
+<day>02</day>
+<month>10</month>
+<year>2023</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.89361.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.89361.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89361.1.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.89361.1.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.89361.1.sa3">Author Response</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2023, Dávid et al</copyright-statement>
+<copyright-year>2023</copyright-year>
+<copyright-holder>Dávid et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-89361-v2.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Unsupervised segmentation in biological and non-biological images is only partially resolved. Segmentation either requires arbitrary thresholds or large teaching datasets. Here we propose a spatial autocorrelation method based on Local Moran’s I coefficient to differentiate signal, background and noise in any type of image. The method, originally described for geoinformatics, does not require a predefined intensity threshold or teaching algorithm for image segmentation and allows quantitative comparison of samples obtained in different conditions. It utilizes relative intensity as well as spatial information of neighboring elements to select spatially contiguous groups of pixels. We demonstrate that Moran’s method outperforms threshold-based method (TBM) in both artificially generated as well as in natural images especially when background noise is substantial. This superior performance can be attributed to the exclusion of false positive pixels resulting from isolated, high intensity pixels in high noise conditions. To test the method’s power in real situation we used high power confocal images of the somatosensory thalamus immunostained for Kv4.2 and Kv4.3 (A-type) voltage gated potassium channels. Moran’s method identified high intensity Kv4.2 and Kv4.3 ion channel clusters in the thalamic neuropil. Spatial distribution of these clusters displayed strong correlation with large sensory axon terminals of subcortical origin. The unique association of the special presynaptic terminals and a postsynaptic voltage gated ion channel cluster was confirmed with electron microscopy. These data demonstrate that Moran’s method is a rapid, simple image segmentation method optimal for variable and high nose conditions.</p>
+</abstract>
+<kwd-group kwd-group-type="author">
+<title>Keywords</title>
+<kwd>image segmentation</kwd>
+<kwd>object selection in noisy images</kwd>
+<kwd>local spatial autocorrelation</kwd>
+<kwd>voltage gated potassium channels</kwd>
+<kwd>somatosensory thalamus</kwd>
+</kwd-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>The title of the manuscript has changed.</p></fn>
+</fn-group>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m">https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Differentiation of signal from noise is a key step in any image segmentation process<sup><xref ref-type="bibr" rid="c1">1</xref></sup> and is based on the assumption that pixels constituting the image can be divided into spatially non-overlapping regions which are characterized by statistically similar intrinsic features<sup><xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c3">3</xref></sup>.</p>
+<p>During the segmentation process, the signal can be defined as a spatially congruent population of pixels with gray values, which are statistically different from the neighboring pixels, i.e., from the background<sup><xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c3">3</xref></sup>. A theoretically optimal segmentation process should be independent of the person performing the analysis and should be based on the intrinsic properties of the image rather than manually defined values. It should consider not only the intensities but also the spatial arrangement of the picture elements (i.e., pixels).</p>
+<p>The current segmentation methods are either based on hard or soft computing<sup><xref ref-type="bibr" rid="c4">4</xref></sup>. Though there is huge surge of soft computation methods based on fuzzy logic, deep learning methods neuronal networks and artificial intelligence<sup><xref ref-type="bibr" rid="c5">5</xref>–<xref ref-type="bibr" rid="c7">7</xref></sup>, image analysis based on binary, hard computation methods have their own advantages<sup><xref ref-type="bibr" rid="c8">8</xref></sup> and best results can be expected from the combination of the two<sup><xref ref-type="bibr" rid="c9">9</xref></sup>. Many hard computing image segmentation methods depend on thresholding<sup><xref ref-type="bibr" rid="c4">4</xref>, <xref ref-type="bibr" rid="c10">10</xref></sup>. Although more advanced threshold-based methods (TBM) utilize local not global thresholds or multilevel thresholding<sup><xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c12">12</xref></sup> the threshold is still defined using the intrinsic properties of the image (e.g., as deviation from the mean intensity in the picture), selection of the degree of deviation is subjective and can yield different results (<xref rid="figs1" ref-type="fig">Fig S1</xref>). Furthermore, even in local thresholding there is no guarantee that spatially inhomogeneous noise reaching or approaching the intensity of the signal will not be included as signal.</p>
+<p>Here we propose a novel hard computing method for unsupervised image segmentation based on Local Moran’s spatial correlation coefficient (Local Moran’s I)<sup><xref ref-type="bibr" rid="c13">13</xref></sup>. The method was originally invented for geoinformatics and was used to study large-scale spatial correlation of geological<sup><xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c15">15</xref></sup>, social or medical events e.g. suicide rates among counties <sup><xref ref-type="bibr" rid="c16">16</xref></sup> or in geomorphological studies<sup><xref ref-type="bibr" rid="c17">17</xref></sup>. The method, as used here, is based on the statistical evaluation of intensities among neighboring pixels, estimating the probability whether a given pixel intensity arrangement is due to a random process or not. The proposed method allows for selecting spatially congruent pixels with statistically similar intensity (i.e., signal and background) and pixels with intensity distribution not significantly different from random (i.e., noise).</p>
+<p>In this paper, we systematically compare the performance of TBM and Local Moran’s method using images with different levels of noise. We show that, especially at high noise levels, Moran’s method convincingly outperforms TBM on both artificial and natural images. Finally, we also test Moran’s in a biological problem: clustering of voltage-gated ion channels in neuronal membranes. We show that the method can segment ion channel clusters, which are biologically relevant since their existence can be demonstrated using independent methods.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>In order to demonstrate the way Local Moran’s method works for image segmentation, we used high magnification fluorescent (i.e. dark field) (<xref rid="fig1" ref-type="fig">Fig. 1a-j</xref>) as well as bright field (<xref rid="fig1" ref-type="fig">Fig 1k-t</xref>) light microscopic images showing immunoreactivity for Kv4.2 potassium channel subunit in the ventral posteromedial nucleus (VPM) of the mouse thalamus. In our approach, the unit of the analysis is the individual pixel of the image.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 1:</label>
+<caption><title>Calculation of local Moran’s I in darkfield (a-j) and brightfield (k-t) light micrographs.</title>
+<p><bold>a,</bold> Large magnification fluorescent immunostaining for Kv4.2 in the VPM nucleus. <bold>b,</bold> A 6×6 pixel segment of the image shown in a. The squares represent the pixels with grayscale values. <bold>c,</bold> Normalized intensity values (z<sub>i</sub>). The purple framed area demonstrates the convolution step of calculations (see also methods step 1-3). <bold>d</bold>, A first-order convolution matrix (weight matrix, w<sub>ij</sub>) was used for this calculation. <bold>e,</bold> Weighted intensity values (w<sub>ij</sub>z<sub>j</sub>). <bold>f,</bold> Lagged gray values. <bold>g,</bold> Local Moran’s I (I<sub>i</sub>) values. <bold>h,</bold> Pseudosignificance values for each pixel. <bold>i,</bold> Masking the non-significant pixels (middle gray tone without numbers) resulted in two groups of pixels, where the intensity values significantly differ from a random distribution. <bold>j</bold>, Considering the intensity values, the upper pixel group is interpreted as an object (red), the lower one as background (blue), and the grey field between them represent an area where the pixel intensities could come from a random distribution (interpreted as noise). <bold>k-t</bold>, The same as a-j, but the calculations are shown on a bright field image. In this case, the low-intensity pixels representing the object are labeled with blue (t) high-intensity pixels (background) with red. Scale bars: <bold>a</bold>: 5 μm, <bold>k</bold>: 10 μm.</p></caption>
+<graphic xlink:href="539063v2_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>The method is based on testing the null hypothesis that pixel intensity distribution in the image is random, which is analyzed with the aid of convolution matrices. The results are tested by Monte Carlo simulation to identify whether the pixel intensity distribution is non-random in an image (<xref rid="fig1" ref-type="fig">Fig. 1</xref>). In dark field images, contiguous clustered pixels with similarly high intensities represent object (red in <xref rid="fig1" ref-type="fig">Fig. 1j</xref>), clustered pixels with low intensities indicate no object (e.g. lumen of a blood vessel) (blue in <xref rid="fig1" ref-type="fig">Fig. 1j</xref>). Group of pixels with random intensity value distribution (which do not reach significance) represent noise (grey in <xref rid="fig1" ref-type="fig">Fig. 1j</xref>). In bright field images, the picture is reversed, contiguous low and high-intensity pixels represent the object and no object, respectively (blue and red in <xref rid="fig1" ref-type="fig">Fig. 1t</xref>).</p>
+<p>Local Moran’s I differentiates between object, no object and noise in the following way: the method first normalizes each pixel intensity value (<xref rid="fig1" ref-type="fig">Fig. 1c</xref> and <xref rid="fig1" ref-type="fig">m</xref>) (see Methods). Next, it defines a weight matrix in the local neighborhood (3×3 in this particular case) for each pixel (<xref rid="fig1" ref-type="fig">Fig. 1d</xref> and <xref rid="fig1" ref-type="fig">n</xref>), where the pixel in question receives zero weight. Then it calculates a weighted intensity value for each pixel in the image using the summed values of the neighboring pixels (<xref rid="fig1" ref-type="fig">Fig. 1e</xref> and <xref rid="fig1" ref-type="fig">o</xref>). Immediate neighbors of each pixel are assigned with the weight of 1. Next, it creates lagged grey values by dividing the matrix values with the number of neighboring pixels (<xref rid="fig1" ref-type="fig">Fig. 1f</xref> and <xref rid="fig1" ref-type="fig">p</xref>). This was called “lagged” in the original description<sup><xref ref-type="bibr" rid="c18">18</xref></sup>, since the distance (lag) was considered in the calculation of this particular value (which was 1 in our case). Finally, it generates the Local Moran’s I value for each pixel by multiplying the lagged gray values (<xref rid="fig1" ref-type="fig">Fig. 1f</xref> and <xref rid="fig1" ref-type="fig">p</xref>) with the normalized values (<xref rid="fig1" ref-type="fig">Fig. 1c</xref> and <xref rid="fig1" ref-type="fig">m</xref>).</p>
+<p>The resulting Local Moran’s I value (<xref rid="fig1" ref-type="fig">Fig. 1g</xref> and <xref rid="fig1" ref-type="fig">q</xref>) will represent how the intensity of the pixel and its neighbors differs from the distribution of intensities of all pixels in the image (clusteredness). We can test the salience of this value if we repeat the same procedure with randomly selected neighboring pixels. For each pixel, the method determines the probability (pseudosignificance) of obtaining this or higher Local Moran’s I value using Monte Carlo simulations of the intensity values of all pixels in the image (<xref rid="fig1" ref-type="fig">Fig. 1h</xref> and <xref rid="fig1" ref-type="fig">r</xref>). Significant pixels (p&lt;0.05) with high intensities (in case of dark field images) or low intensities (in case of bright filed images) will be considered as object. These steps ensures that signal is not determined by an arbitrarily defined threshold, but by the combination of spatial arrangement and pixel intensities. As a consequence, in this method consideration of each pixel as signal will not depend purely on the absolute intensity value of the pixel but on the intensity values of the neighboring pixels and the statistical probability that this spatial arrangement can arise (or not) randomly.</p>
+<sec id="s2a">
+<title>Comparison of TBM and Moran’s method on artificial images</title>
+<p>We compared the performance of Moran’s and TBM on artificial binary objects with various levels of Gaussian noise (<xref rid="fig2" ref-type="fig">Fig. 2a</xref>). Since in this case we defined the objects (the ground truth), True Positive Rates (TPR=true positive pixels/number of object pixels) and False Positive Rates (FPR=false positive pixels/number of background pixels) could be directly determined.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 2:</label>
+<caption><title>Comparison of TBM and Moran’s image selection on artificial objects.</title>
+<p><bold>a,</bold> A series of artificial objects with different diameters (white circle on black background) was defined, and varying levels of noise were added (first row). <bold>b-c,</bold> The objects are segmented using the threshold (<bold>b</bold>) and Moran’s I method (<bold>c</bold>). Red, true positive (TP) pixels; cyan, false positive (FP); black, true negative; black true and false negative. <bold>d,</bold> Pixel intensity values along the sampling lines at the three noise levels. Grey rectangles indicate the threshold level. Portions of the graph’s line are color-coded (red: true positive, cyan: false positive, black: negative). <bold>e-f,</bold> Average TPR and FPR values of Moran’s and TBM at different noise levels from 100 random samples. Individual data points are shown separately at a different scale (<bold>f</bold>).</p></caption>
+<graphic xlink:href="539063v2_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Since Moran’s method can be performed with convolution matrices of different sizes (i.e., Moran’s order, see Methods)<sup><xref ref-type="bibr" rid="c14">14</xref></sup> we first determined the optimal matrix size for different object sizes at variable noise levels on circular artificial objects (<xref rid="figs2" ref-type="fig">Fig. S2a</xref>). First order matrix contains the immediate neighboring pixels of the central pixel (3×3), the second order contains all the immediate neighbors of the first order pixels (5×5) and so on. We found that optimal Moran’s order was independent of the noise level, and it was 0.25 times (range: 0.238-0.253) of the object size (<xref rid="figs2" ref-type="fig">Fig. S2b</xref>) Thus, for these measures, we selected Moran’s order 4. For the TBM, the threshold was set to 50% of the intensity level of the objects.</p>
+<p>At zero noise, both methods had 1 TPR and 0 FPR values (<xref rid="fig2" ref-type="fig">Fig. 2a-c</xref>). Increasing noise levels resulted in a parallel decrease in TRP values. However, in case of the TBM FPR increased dramatically (cyan dots in <xref rid="fig2" ref-type="fig">Fig. 2b</xref>) due to the higher fluctuation of pixel values (<xref rid="fig2" ref-type="fig">Fig. 2d</xref>), which indicates a highly unreliable exclusion of false positive pixels (<xref rid="fig2" ref-type="fig">Fig. 2e</xref>, circles), while the FPR value in case of Moran’s method remained nearly constant (<xref rid="fig2" ref-type="fig">Fig. 2e</xref> triangles) with increasing noise. In case of TBM FPR increase was the consequence of that random noise frequently increased the pixel intensity values of the background above the threshold level (<xref rid="fig2" ref-type="fig">Fig. 2</xref>), which were detected as positive pixels.</p>
+<p>Next, we compared the two methods in a larger sample of images (n=100) which contained 64 randomly distributed objects of different sizes. The diameter of the objects varied between 4 and 64 pixels in each image (<xref rid="fig2" ref-type="fig">Fig. 2a</xref>). Here, we also examined the effect of Moran’s order on the quality of detection (<xref rid="figs3" ref-type="fig">Fig S3</xref>). Similar to same-sized objects in images containing variable-sized objects at 0 noise level, both methods selected the objects equally well (TRP=1 SD=0, FPR= 0, SD=0, n=100 images). However, increasing the noise level resulted again in a pronounced increase in FPR in the case of TBM (<xref rid="fig2" ref-type="fig">Fig. 2b</xref>) whereas using Moran’s, this effect was evident only at the edges of detected objects and FPR just marginally increased even at very high noise levels (<xref rid="fig2" ref-type="fig">Fig. 2c</xref>). Huge increase in false positive pixels in TBM with increasing noise resulted in significantly lower FPR values compared to that of Moran’s. (<xref rid="fig2" ref-type="fig">Fig. 2e-f</xref>, FPR values noise 80: threshold, 0.13333±0.0009; Moran’s: 0.0085±0.0003, p&lt;5.4*10<sup>-215</sup>; noise 160: threshold, 0.3866±0.0012, Moran, 0.0055±0.0005 p&lt;2.1*10<sup>-244</sup>). TPR of Moran’s was also significantly better at noise 80 (<xref rid="fig2" ref-type="fig">Fig. 2e-f</xref>, TPR values noise 80: threshold, 0.9116±0.0023; Moran’s, 0.9674±0.0025, p&lt;2.7*10<sup>-130</sup>). The TPR of TBM was marginally better at noise 160 (<xref rid="fig2" ref-type="fig">Fig. 2e-f</xref>, noise 160: threshold, 0.6799±0.0041; Moran’s: 0.6609±0.0060 p&lt;5.04*10<sup>-69</sup>), but the difference in FPR values was so large between the two methods that it far outweighed this effect. We defined the quality of detection as a vector in the FPR/TPR space starting from the FPR=0, TPR=1 point. Quality of detection was significantly better with Moran’s method at both noise levels in a population of 100 randomly generated images (<xref rid="fig2" ref-type="fig">Fig. 2e</xref> FPR/TPR vector noise 80: threshold, 0.1600±2.2*10<sup>-6</sup>; Moran’s: 0.0337±5.8*10<sup>-6</sup>, p&lt;5*10<sup>-169</sup>; noise 160: threshold, 0.5019±7.5*10<sup>-6</sup>, Moran, 0.3391±3.7*10<sup>-5</sup>, p&lt;10<sup>-156</sup>).</p>
+<p>Finally, to gain insight into the performance of the two detection methods in a larger parameter space, we repeated the comparison using 13 Moran’s order, 13 threshold levels and 13 noise levels (n=100 images for each condition). We found that with the exception of the lowest noise levels (0-30) Moran’s method outperformed TBM at every noise levels irrespective of the threshold mostly independent of the exact Moran’s order used (range 4-13; <xref rid="figs4" ref-type="fig">Fig. S4</xref>). These data demonstrate that, especially in high noise situations, Moran’s method successfully eliminates background noise and selects objects with extremely low FPR.</p>
+</sec>
+<sec id="s2b">
+<title>Comparison of TBM and Moran’s methods on natural images</title>
+<p>Next, we tested the performance of the two methods on greyscale images of natural objects (<xref rid="fig3" ref-type="fig">Fig. 3a</xref>) where, by definition, the ground truth is not known, and therefore the comparison of the two methods to a common reference is not possible. To circumvent this problem, we chose a high magnification confocal image of a nerve tissue immunostained with vesicular glutamate transporter (vGluT2), a ubiquitous marker of axon terminals with subcortical origin in the thalamus<sup><xref ref-type="bibr" rid="c19">19</xref>–<xref ref-type="bibr" rid="c21">21</xref></sup>. We prepared images with three different added noise levels and asked 23 expert human observers, who were blind to the nature of the image and the nature of the investigation, to delineate objects (<xref rid="fig3" ref-type="fig">Fig. 3a-b</xref>, <xref rid="figs5" ref-type="fig">Fig S5</xref>). Observers always started delineation in the images with the highest noise level. Next, we generated a heat map and labeled the number of experts selecting each individual pixel. For the purpose of this study, we defined ground truth as pixels which were selected by at least 12 experts (<xref rid="figs5" ref-type="fig">Fig. S5</xref>) and compared the performance of the two methods to this common reference (<xref rid="fig3" ref-type="fig">Fig. 3c-e</xref>). The size of the objects (n=36) in the image varied between 1 and 303 pixels corresponding to 0.043 and 13.003 μm<sup>2</sup>, respectively. For a systematic comparison of the two image segmentation methods, we analyzed the data using different threshold levels and matrix sizes (<xref rid="figs6" ref-type="fig">Fig. S6</xref>) at three noise levels (0, 80, 160).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 3.</label>
+<caption><title>Comparison of threshold-based, and Moran’s image selection on natural objects.</title>
+<p><bold>a</bold>, High-resolution confocal image (single optical plane) of Kv4.2 immunostaining in the VB complex of the mouse thalamus at three added noise levels (0, 80, 160). <bold>b</bold>, Majority projection of segmentation of the same images by expert human observers (n=23, see methods). Pixels selected by the majority of observers are defined as ground truth. <bold>c,</bold> Threshold-based segmentation with the best TPR/FPR values. <bold>d,</bold> Moran’s based segmentation using matrix size 4. <bold>e,</bold> Pixel intensity values along the sampling lines at the three noise levels. Grey areas indicate threshold levels. Portions of the graph’s line are color-coded (red: true positive, cyan: false positive, black: negative). <bold>f,</bold> TPR and FPR values of Moran’s and TBS at different noise levels. The threshold curve (dotted, blue line) is computed using 254 threshold levels, some of which are labeled (blue circles). Filled blue circle, optimal threshold value. Orange triangle, TPR/FPR values of Moran’s based segmentation using different matrix sizes. The size of the matrices are shown by numbers. Red filled triangle, optimal Moran’s order. Orange and blue arrows indicate the distance of the optimal points from the theoretical best point (maximal TPR, zero FPR). Scale bar a: 10 μm.</p></caption>
+<graphic xlink:href="539063v2_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Similar to artificial objects, Moran’s method outperformed TBM at every noise level. The FPR values remained low with Moran’s method even at high noise levels at every Moran’s order tested (<xref rid="fig3" ref-type="fig">Fig. 3f</xref>). Thus, even though at the best threshold levels, the TPR values were comparable between the two methods, lower FPR values resulted in a better quality of detection (shorter vector) in the TPR/FPR space (<xref rid="fig3" ref-type="fig">Fig. 3f</xref>).</p>
+<p>It is important to emphasize that in the case of TBM at increased noise levels, false positive pixels were homogeneously distributed in the image due to the increased background noise (<xref rid="fig3" ref-type="fig">Fig. 3c</xref>). In contrast, with Moran’s, most false positive pixels surrounded the human-based selection areas (<xref rid="fig3" ref-type="fig">Fig. 3d</xref>). This is largely the consequence of that Moran’s method detected the out of focus pixels as well, which were routinely not selected by the human experts.</p>
+<p>These data demonstrate that when natural images were analyzed, the quality of detection was better with Moran’s method in every condition tested. The main strength of Moran’s was that it did not include pixels of random noise, like TBM.</p>
+</sec>
+<sec id="s2c">
+<title>Application of Moran’s method for a biological problem</title>
+<p>Next, we tested Moran’s method to address a biologically relevant problem, the clustering of Kv4.2/4.3 subunits of the voltage-gated K<sup>+</sup> channels in thalamocortical neurons. Voltage-gated ion channels are either distributed homogeneously, along a gradient<sup><xref ref-type="bibr" rid="c22">22</xref>, <xref ref-type="bibr" rid="c23">23</xref></sup> or form high-density clusters in neuronal membranes<sup><xref ref-type="bibr" rid="c24">24</xref>–<xref ref-type="bibr" rid="c26">26</xref></sup>, endowing neurons with unique electrical properties<sup><xref ref-type="bibr" rid="c27">27</xref>–<xref ref-type="bibr" rid="c30">30</xref></sup>. However, the exact subcellular distribution of these subunits and the logic of their possible clustering in thalamic cells are unknown. Therefore, we tested whether Kv4.2/4.3 ion channel clusters, detected by Moran’s I method, form biologically relevant membrane protein aggregations.</p>
+<p>Immunostainings for the Kv4.2 and Kv4.3 subunits displayed homogenous, diffuse labeling in the major somatosensory nucleus of the thalamus (VPM). At high magnifications, however, it became visually evident that Kv4 subunits also form strongly immunopositive clusters (2-10 µm; <xref rid="fig4" ref-type="fig">Fig. 4a</xref>). To study the precise subcellular distribution of Kv4 subunits, we first examined the Kv4.2 subunit at the electron microscopic level using preembedding immunogold reactions. This approach confirmed the exclusive dendritic localization of this subunit (n = 123 profiles). As suggested by the light microscopic observations, large caliber dendrites of relay cells displayed a high density of immunogold particles for the Kv4.2 subunit (n = 9 animals, <xref rid="fig4" ref-type="fig">Fig. 4b-c</xref>). Quantification of silver particles along the dendritic membranes (n = 3 animals) demonstrated more than three times higher density on thick (minor diameter over 1.2 µm) dendrites, preferentially innervated by large excitatory terminals containing round vesicles (RL terminals) compared to thin (minor diameter below 1.2 µm) dendrites which received very little of this type of inputs (<xref rid="fig4" ref-type="fig">Fig. 4d</xref>).</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 4:</label>
+<caption><title>High-resolution localization of Kv4.2 subunit in the VPM nucleus of the thalamus</title>
+<p><bold>a,</bold> High-resolution light micrograph of a VPM neuron immunolabeled for the Kv4.2 subunit displaying intense immunopositive puncta (white arrows) along its proximal dendrites. <bold>b,</bold> An electron micrograph showing Kv4.2 immunolabeling in the VPM using the preembedding immunogold technique. A proximal dendrite, identified by its large diameter (d), has more silver intensified gold particles (white arrowheads) than thin dendrites (d2, d3). Arrows, synapses; arrowheads, puncta adhaerentia. <bold>c,</bold> Accumulation of gold particles in small dendritic appendages (asterisks). <bold>d,</bold> Quantitative analysis revealed an approximately three-fold higher density of gold particles along the membrane in large (&gt;1.2 µm) compared to small dendrites (left y-axis, gray bars). The histogram also shows the ratio of large excitatory terminals with round vesicles (RL) innervating each dendritic category (right y-axis, white bars). <bold>e,</bold> Freeze-fracture replica labeling of the protoplasmic-face membrane segment of a large thalamocortical cell dendrite in VPM is shown with intense immunogold labeling for the Kv4.3 subunit. The dendrite is surrounded by a large axon terminal (yellow). Boxed areas are shown at higher magnifications in <bold>f, g,</bold> and <bold>h</bold>. <bold>f-h,</bold> Membrane area in the vicinity of the axon terminal contains a high density of gold particles <bold>(f)</bold>, whereas a neighboring area (<bold>g</bold>) has very few gold particles, indicating an inhomogeneous distribution of the Kv4.3 subunit. Note the intense immunogold labeling around a cross-fractured dendritic appendage <bold>(h)</bold>. Black arrows, synapses; black arrowheads, puncta adherentia. Scale bars: <bold>a</bold>: 10 μm, <bold>b</bold>: 1 μm, <bold>c</bold>: 0.5 μm, <bold>e</bold>, 1 µm, <bold>f-h,</bold> 200 nm.</p></caption>
+<graphic xlink:href="539063v2_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>To exclude the possibility that the uneven (i.e. clustered) immunogold labeling is the consequence of uneven accessibility of the antibodies to the epitopes in thick tissue and to better visualize protein aggregates at high resolution, we performed another electron microscopic experiment using the diffusion-free freeze-fracture replica immunogold labeling technique <sup><xref ref-type="bibr" rid="c31">31</xref></sup> (<xref rid="fig4" ref-type="fig">Fig. 4e-h</xref>). Examination of replicas of the VPM immunolabeled for the Kv4.2 or the Kv4.3 subunits revealed gold particles associated with the protoplasmic face of dendritic segments, consistent with the intracellular location of the epitopes. On large diameter dendrites, we observed uneven distribution of gold particles (<xref rid="fig4" ref-type="fig">Fig. 4e</xref>) consistent with our observations using confocal microscopy and pre-embedding immunogold localization. Quantitative evaluation of the reactions in one rat demonstrated that the density of gold particles for the Kv4.3 subunit was twice as high in large, compared to small diameter dendrites (12.6 ± 8.0 gold/µm<sup>2</sup>, n = 18 vs 6.0 ± 3.6 gold/µm<sup>2</sup>, n = 18). A similar difference was found for the Kv4.2 subunit, for which the density of gold particles was 22.8 ± 8.8 gold/µm<sup>2</sup> (n = 9) in large diameter proximal dendrites, whereas it was 9.3 ± 3.2 gold/µm<sup>2</sup> (n = 6) in small, distal dendrites. Dendritic appendages were also decorated with gold particles (<xref rid="fig4" ref-type="fig">Fig. 4h</xref>).</p>
+<p>These data together demonstrate that Kv4.2 and Kv4.3 subunits display weak distal dendritic labeling, but the proximal, large diameter dendrites contain high densities of these ion channel subunits in VPM.</p>
+<p>Next, we investigated whether the Moran’s method as described above can delineate Kv4.2 subunit clusters and quantitatively characterize them in the VPM (<xref rid="fig5" ref-type="fig">Fig. 5</xref>). Moran’s method clearly segmented immunopositive and negative regions (<xref rid="fig5" ref-type="fig">Fig. 5a-c</xref>). The immunopositive regions displayed large variability in size intensity and contained diffuse labeling and high-intensity clusters as suggested by electron microscopic investigation. To test to what extent Kv4.2 clusters detected by Moran’s method represent ion channel clusters identified on the proximal dendrites of VPM cells at the electron microscopic level (<xref rid="fig4" ref-type="fig">Fig. 4</xref>), we visualized large excitatory axon terminals known to be associated with the proximal dendrites of VPM cells<sup><xref ref-type="bibr" rid="c32">32</xref></sup>. These subcortical excitatory inputs were labeled with vesicular glutamate transporter type 2 (vGluT2, <xref rid="fig5" ref-type="fig">Fig. 5d</xref>)<sup><xref ref-type="bibr" rid="c33">33</xref>, <xref ref-type="bibr" rid="c34">34</xref></sup>. We selected the proximal dendrites by performing segmentation using Moran’s method in both channels of the Kv4.2/vGluT2 double immunofluorescent images. The data showed that large, high-density clusters of Kv4.2 ion channels were indeed associated with vGluT2-immunopositive terminals (Fig.5e, cyan arrows), whereas the smaller and less intense ones were not (<xref rid="fig5" ref-type="fig">Fig. 5f</xref>, yellow arrows). Immunopositive clusters generally had highly variable sizes (5.59±13.26 µm<sup>2</sup>) and intensities (745±260 a.u.). The large majority of the non-colocalizing Kv clusters were below 1 µm<sup>2</sup> and faintly stained (<xref rid="fig5" ref-type="fig">Fig. 5g</xref>) whereas more than the half of the colocalized Kv4.2 structures were above 5 µm<sup>2</sup> and more intensely labeled (<xref rid="fig5" ref-type="fig">Fig. 5g</xref>). Kv4.2 clusters associated with vGluT2-positive terminals were significantly larger (12.21±18.63 µm<sup>2</sup>) and more intense (894±280 a.u.) than Kv4.2 regions outside the vGluT2 terminals (average size: 0.90±1.31 µm<sup>2</sup>, average intensity: 639±182 a.u.) indicating that Moran’s I method could delineate functionally relevant ion channel clusters associated with a specific synaptic input (<xref rid="fig5" ref-type="fig">Fig. 5h</xref>).</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. 5:</label>
+<caption><title>Delineation of functionally relevant Kv4.2 ion channel clusters by Moran’s method</title>
+<p><bold>a,</bold> High magnification confocal image of Kv4.2 immunostaining in the VPM of mouse thalamus. <bold>b,</bold> Segmentation of Kv4.2 immunopositive objects by Moran’s (magenta outlines). <bold>c,</bold> Segmentation of immunonegative areas by Moran’s (white outlines). <bold>d,</bold> Confocal image of vGluT2 immunostaining (green channel) of the same section shown in <bold>a</bold>. <bold>e,</bold> Kv4.2 ion channel clusters which overlap with vGluT2-positive terminals (cyan outlines). <bold>f,</bold> Kv4.2 ion channel clusters which do not overlap with vGluT2-positive terminals (yellow outlines). Blue arrows, Kv4.2 clusters overlapping with vGluT2 terminals; yellow arrows, Kv4.2 clusters non-overlapping with vGluT2 terminals (holds for a-f). <bold>g,</bold> Histograms of the colocalizing and non-colacalizing Kv 4.2 immunopositive boutons pooled from three animals segmented by Moran’s method and binned by area (left) and intensity (right). Yellow bars, Kv4.2 objects non-overlapping with vGluT2; cyan bars, Kv4.2 objects overlapping with vGluT2. <bold>h,</bold> Scatterplot of area vs staining intensity from three different animals. Yellow dots, Kv4.2 objects non-overlapping with vGluT2; cyan dots, Kv4.2 objects overlapping with vGluT2. <bold>i, j</bold> Silver particles (black arrowheads) indicating Kv4.2 immunoreactivity are localized on dendritic appendages (asterisks) and dendritic shafts (d) contacted by vGluT2-positive terminals (b, DAB positive) in the VPM. The plasma membrane of the same dendrites that are not contacted by vGluT2 positive terminals (white arrowheads) contains very few particles for the Kv4.2 subunit. Scale bars: a-f: 5 μm <bold>i</bold>: 1 μm, <bold>j:</bold> 0.5 μm</p></caption>
+<graphic xlink:href="539063v2_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>To verify the association of afferents and ion channel clusters, we performed double immunostaining for Kv4.2 and vGluT2 at the electron microscopic level (<xref rid="fig5" ref-type="fig">Fig. 5i-j</xref>). Indeed, membrane-associated silver intensified gold particles for the Kv4.2 subunit were associated with membrane surfaces covered by vGluT2 positive terminals, as demonstrated by the Moran’s method at the light microscopic level. Membrane segments contacted by vGluT2 boutons showed more than 4 times higher gold particle density (37.0 particles/100 μm membrane profile, total measured length: 601 μm) compared to surrounding membrane surfaces that were not contacted by vGluT2 positive axons (8.9 particles/100 μm, total measured length: 394 μm). These data reveal a novel association of voltage-gated ion channel clusters on the postsynaptic membrane surfaces with a specialized presynaptic terminal.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this study, we demonstrate that Local Moran’s method is suitable for image segmentation and outperforms TBM in both artificial and natural images, especially when the noise is substantial. We used this method to successfully delineate and quantify biologically relevant membrane protein clusters. Since Moran’s selections are based on the relative intensity values of neighboring pixels, it can select contiguous points as objects, unlike TBM. TBM does not use spatial information of the pixels. Therefore, it selects random noise as well, provided it reaches the threshold. Unlike in TBM, selection of the signal will not depend on the absolute intensity of its pixels in Moran’s method since the image processing starts with a normalization step. This way, it uses inherent properties of the image to select clusters. This will allow the systematic, quantitative comparison of images where sample preparation and image acquisition cannot be standardized, such as in most histological samples.</p>
+<p>Local Moran’s method has not been used for image segmentation so far. Its global version, however, has already been utilized in a wide range of biomedical image analyses. Global Moran’s method assigns a value to the whole image and describes whether pixel distribution is random or not, but does not segment pixels to object, no object and noise. Global Moran’s I were used to examine muscle and fat tissue on 3D MRI images<sup><xref ref-type="bibr" rid="c35">35</xref></sup> or to measure anisotropy in ultrasound imaging<sup><xref ref-type="bibr" rid="c36">36</xref></sup>. In addition, Global Moran’s method was also used to analyze the homogeneity of the temporal information in Ca<sup>2+</sup>- signals in periodontal fibroblasts<sup><xref ref-type="bibr" rid="c37">37</xref></sup> or to detect correlated neuronal activity<sup><xref ref-type="bibr" rid="c38">38</xref></sup>. Based on these, the utilization of Local Moran’s method, as described here, will not be restricted to segmenting objects on 2D images but can be extended for 3D image segmentation and analyzing temporal signals.</p>
+<p>The strongest argument to use Local Moran’s I instead of threshold-based segmentation is the effective elimination of false positive pixels from the background. Although the intensity of noisy pixels can reach or exceed that of the objects, white noise does not cause a pattern. Detection of the lack of spatial correlation is a powerful tool to ignore false positive salient pixels in the background.</p>
+<p>As indicated above, Moran’s method works without user-dependent intensity values. However, the size of the convolution matrix needs to be set by the user. In this study, we examined the effect of matrix size in a wide range of applications (<xref rid="fig3" ref-type="fig">Fig. 3f</xref>, <xref rid="figs2" ref-type="fig">Fig. S2</xref>-<xref rid="figs4" ref-type="fig">4</xref>). We determined that selection of the signal is relatively insensitive of the exact matrix size within a certain range (Moran’s order 3-8), especially in noisy conditions. A priori knowledge of the expected object size helps to define the best matrix size since we found a linear correlation between object size and Moran’s order for optimal image segmentation (<xref rid="figs2" ref-type="fig">Fig. S2b</xref>).</p>
+<p>We found that Local Moran’s method can delineate and quantitatively characterize Kv4.2 ion channel clusters in the somatosensory thalamus formed in the proximity of large vGluT2 positive afferent nerve terminals. The selective association of a given presynaptic terminal type and the postsynaptic accumulation of ion channel clusters was verified by independent electron microscopic methods. The functional relevance of this unique association remains to be determined: it may participate in timing the precision of sensory integration, but recently the non-synaptic role of voltage-gated ion channel accumulation has also been proposed<sup><xref ref-type="bibr" rid="c39">39</xref></sup>.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Animals</title>
+<p>Six adult male C57Bl6 mice were perfused to examine the Kv4.2 expression. All animals were bred and kept in the Animal Facility of the Institute of Experimental Medicine, Budapest, Hungary. All procedures with mice were approved by the Animal Welfare Committee of the Institute of Experimental Medicine, Budapest, conformed to guidelines established by the European Community’s Council Directive of November 24, 1986 (86/609/EEC). Experiments were authorized by the National Animal Research Authorities of Hungary (PE/EA/877-7/2020).</p>
+<p>The animals were deeply anesthetized with a mixture of ketamin, xylazine (Produlab Pharma BV, Raamsdonksveer, The Netherlands) and promethazine (Pipolphen, EGIS, Budapest, Hungary; 2 mg/kg, 10 mg/kg and 5 mg/kg body weight, respectively) and perfused through the heart using a fixative containing 2% or 4% paraformaldehyde (TAAB, Berkshire, UK) and 15% saturated picric acid (Spektrum-3D Kft, Debrecen, Hungary) dissolved in 0.1 M phosphate buffer (PB).</p>
+</sec>
+<sec id="s4b">
+<title>Immunohistochemistry, light microscopy</title>
+<p>Coronal sections (50 µm) were cut from the thalamus, and thoroughly rinsed in 0.1 M PB followed by 0.1 M tris-buffered saline (TBS, pH=7.4). For the investigation of the distribution of A-type K<sup>+</sup> channel subunits in different nuclei of the thalamus, the following antibodies were used; mouse anti-Kv4.2 (from NeuroMab Inc, UC Davis, CA; 1:300, code 75-016 and 75-017); rabbit anti-Kv4.2 (from Alomone labs, Jerusalem, Israel, 1:500, code APC-023 and APC-017). This was followed by the incubation with biotinylated horse anti-mouse or goat anti-rabbit antibodies (bHAM or bGAR; Vector Laboratories, 1:300; in TBS; 3 hours, code BA-2000 and BA-1000, respectively) and by avidin-biotinylated horseradish peroxidase complex (ABC, Vector, 1:300; 90 min, code PK-6200). The immunoreactions were visualized using diaminobenzidine (DAB, Sigma) or nickel intensified DAB (DAB-Ni) as chromogens. Sections were treated with OsO<sub>4</sub> (1% in 0.1 M PB; 40 minutes, EMS, Munich, Germany), dehydrated in ethanol and propylene oxide, and embedded in Durcupan (ACM, Fluka, Buchs, Switzerland).</p>
+<p>For the visualization of the vesicular glutamate transporter 2 (vGlut2) and the Kv4.2 subunit, fluorescent double labeling experiments were carried out. The sections were incubated with a mixture of mouse anti-Kv4.2 (1:300) and rabbit anti-vGlut2 (1:1500; Synaptic Systems, Göttingen, Germany, code 135 402) or rabbit anti-Kv4.2 and mouse anti-vGlut2 (1:3000, Millipore, Temecula, CA, code MAB 5504). This was followed by a mixture of Alexa488 conjugated goat anti-rabbit (A488-GAR; 1:500; 2.5h; Molecular Probes, Leiden, The Netherlands, code A-11001) and Alexa594 conjugated goat anti-mouse (A594-GAM; 1:500; 2.5h; Molecular Probes, Leiden, The Netherlands, code A-11012) IgGs. In some experiments Cy3 conjugated goat anti-mouse (1:500 Jackson ImmunoResearch Europe Ltd., Suffolk UK, code 111-165-144) IgGs were used instead of Alexa594. After the reactions, the sections were mounted on glass slides in Vectashield (Vector Laboratories, Burlingame, CA) and were examined using a Zeiss Axioplan2 microscope (wavelengths for filter set absorption and emission in nm: 365 bandpass/420–460; 450–490/512–542; 540–546/578–643). Digital micrographs were taken with a digital camera (Olympus, DP70, Tokyo, Japan). Z image-stacks were also acquired with a confocal laser scanning microscope (Olympus FV1000 or Nikon ECLIPSE Ni-E).</p>
+</sec>
+<sec id="s4c">
+<title>Freeze-fracture replica labeling</title>
+<p>80 μm coronal sections were cut from the forebrain of a perfusion fixed Wistar rat (2% paraformaldehyde and 15 v/v% picric acid in 0.1 M BP) and small blocks from the VPM were cut out for rapid freezing with a high pressure freezing machine (HPM100, Leica Microsystems) and were fractured and coated as described earlier<sup><xref ref-type="bibr" rid="c23">23</xref></sup>.</p>
+<p>Replicas were digested in a solution containing 2.5% sodium dodecil sulphate (SDS) and 20% sucrose in TBS (pH = 8.3) at 80°C for 18 hours. Following several washes in TBS containing 0.05% bovine serum albumin (BSA), replicas were blocked in TBS containing 5% BSA for 1 h, then incubated overnight in blocking solution containing either a rabbit anti-Kv4.3 (1:500; Chemicon/Millipor, code AB5194) or a rabbit anti-Kv4.2 IgG (1:500; Alomone Labs, code APC-023). After this, the reactions were visualized with goat anti-rabbit IgGs coupled to 10 nm gold particles (1:100; British Biocell International).</p>
+</sec>
+<sec id="s4d">
+<title>Calculation and properties of Moran’s I</title>
+<p>The code for the analysis is available online as a user-friendly MATLAB script at: <ext-link ext-link-type="uri" xlink:href="https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m">https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m</ext-link></p>
+<p>In details, methods for detecting spatial inhomogeneities (clustering) in geostatistics were described long ago<sup><xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c18">18</xref></sup> and they were adapted biomedical research much later. There are only sporadic papers using Moran’s spatial correlation coefficient (Global Moran’s I) for biomedical image analysis in order to detect clustering in general<sup><xref ref-type="bibr" rid="c40">40</xref></sup> without separating particular clusters. We were interested in localization of clusters that is also possible with the help of a special case of local indicators of spatial association named Local Moran’s I <sup><xref ref-type="bibr" rid="c18">18</xref></sup>. It can be calculated for each individual pixel of the image:
+<disp-formula>
+<graphic xlink:href="539063v2_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where z<sub>i</sub> is the observed pixel intensity value, z<sub>j</sub> are the neighboring pixel intensity values weighted by w<sub>ij</sub>. The minimal size of detectable particles is heavily influenced by the size of the weight matrix<sup><xref ref-type="bibr" rid="c41">41</xref></sup>. In our case we considered the immediate neighboring pixels (j) of each pixel when calculated (i) with an equal weight of 1 in first order matrices. In case of larger matrices, the weights were assigned according to a Gaussian distribution. This coefficient (I) gives an estimate of the homogeneity of the spatial distribution of pixels with similar gray values. Morans’s I is close to zero if the distribution is random, whereas it has a value around −1 if the distribution is uniform and scattered, and +1 if the distribution is uniform and clustered. The result can be statistically tested by a permutation test, where the data points (pixels) are randomly redistributed and the same coefficient is calculated for each permutation. Then a pseudo significance is computed as p=(G+1)/(R+1), where G is the number of instances where the absolute value of the observed I is higher than or equal to the absolute value of the original I, and R the number of repeats. For example, if none of 99 permutations have a higher I value, then the pseudo p-value is 1/100=0.01.</p>
+<p>Based on the principles above we performed the following step-by-step procedures of Moran’s analysis.
+<list list-type="order">
+<list-item><p>Normalization of pixel intensity values (V)</p>
+<p>z<sub>i</sub>=(V-Vm)/SD</p>
+<p>where z<sub>i</sub> is the normalized intensity value, V is the original intensity value, Vm is the mean intensity of all pixels and SD is the standard deviation of intensity of all pixels (<xref rid="fig1" ref-type="fig">Fig. 1a-c</xref>)</p></list-item>
+<list-item><p>Creating weights (w<sub>ij</sub>)</p>
+<p>For each pixel, a set of neighboring pixels was defined. These pixels got the weight 1, all others including the actual central pixel got the weight 0. For the present work, we considered the immediate 8 neighbors of the pixels, in other words we applied a first order queen contiguity. (<xref rid="fig1" ref-type="fig">Fig. 1d</xref>)</p></list-item>
+<list-item><p>Calculating weighted intensity values (w<sub>ij</sub>z<sub>j</sub>)</p>
+<p>After multiplying the weights (w<sub>ij</sub>) with the appropriate normalized pixel intensities (z<sub>j</sub>), each weighted intensity values belonging to a central pixel were summed (Σ<sub><italic>j</italic></sub><italic>w<sub>ij</sub>z<sub>j</sub></italic>) (<xref rid="fig1" ref-type="fig">Fig. 1e</xref>)</p></list-item>
+<list-item><p>Calculating the lagged gray values that are used for the scatter plots lgv=Σ<sub><italic>j</italic></sub><italic>w<sub>ij</sub>z<sub>j</sub></italic>/n</p>
+<p>where n is the number of neighbors considered (in the corner n=3, on the edge n=5, else n=8, <xref rid="fig1" ref-type="fig">Fig. 1f</xref>).</p></list-item>
+<list-item><p>Multiply the lagged gray values with the normalized intensity values gives the Moran’s coefficient (I<sub>i</sub>) for each pixel. (<xref rid="fig1" ref-type="fig">Fig. 1g</xref>)</p></list-item>
+<list-item><p>Calculation of pseudo-significance (p)</p>
+<p>The pixels of the image were randomly distributed except the central one and the Local Moran’s I is calculated again. The pseudo significance level (see above) was calculated for each pixel. The pixels where the p is extreme low, considered to be surrounded by similar pixel values, thus members of homogenous, non-random pixel groups (<xref rid="fig1" ref-type="fig">Fig. 1h</xref>).</p></list-item>
+<list-item><p>Defining clusters</p>
+<p>The non-random pixel groups can be divided in further sub-groups according to the relation of the pixel intensities of their central (z<sub>i</sub>) and neighboring (lagged gray value) pixels: high-high, high-low, low-high and low-low. If both values are high, then this group is regarded a cluster (<xref rid="fig1" ref-type="fig">Fig. 1i-j</xref>).</p></list-item>
+</list></p>
+<p>Previously this method was used for analyzing geographical distribution of medical data only, but univariate Local Moran’s I seems to be suitable for delineating clusters of pixels with similar gray values (either high or low) as outliers from the assumed random distribution. The results can be mapped as a graded image and can be used for observer-independent identification of fluorescent clusters. We selected the biologically meaningful spots, which might correspond to pre-or postsynaptic ion channel clusters if they meet the size criteria defined by electron microscopic observations.</p>
+</sec>
+<sec id="s4e">
+<title>Matrix Size</title>
+<p>The convolution matrix size defines the number neighboring pixels considered in the convolution step. Traditionally the size of the matrix is described as the order of the Moran’s test. The first order matrix contains 1 pixel in all directions of a central pixel, i.e. size of the matrix is 3×3, the second order matrix contains the first order pixels and their neighbors, therefore the size is 5×5, etc (<xref rid="figs6" ref-type="fig">Fig S6</xref>, orange transparent squares). The matrix size has reportedly a strong effect on Global Moran’s I results <sup><xref ref-type="bibr" rid="c41">41</xref></sup>.</p>
+<p>Thus, we determine optimal matrix order in our Local Moran’s calculation, to find out which provided the best object selection under different noise levels. Each object size (2, 4, 8, 16, 32, 64 pixels in diameter) was tested with 13 different Moran’s order (1-10, 16, 32, 64) (<xref rid="figs3" ref-type="fig">Fig. S3a</xref>). The data indicated that independent of noise levels, the best Moran’s order is 0.25 times the object size (<xref rid="figs2" ref-type="fig">Fig. S2b</xref>).</p>
+</sec>
+<sec id="s4f">
+<title>Manual delineation</title>
+<p>Twenty-three volunteers were asked to delineate objects on images. The volunteers did not have any a priori knowledge about the images. The only information that they had is it contains light objects on dark background. Each volunteer received three images in the same order. All three images were the same micrograph of vGluT2 immunostained boutons but with different level of noise (SD of noise was set 160, 80, 0, in this order). Each volunteer must have completed the delineation of all objects of the noisiest image (<xref rid="figs5" ref-type="fig">Fig. S5a</xref>) first, before receiving the less noisy and finally the noiseless image (<xref rid="figs5" ref-type="fig">Fig. S5b-c</xref>). Human observers drew quite different borders (<xref rid="figs5" ref-type="fig">Fig. S5g-i</xref>), but the majority projections (set of pixels selected by the majority of participants, i.e. at least 12 observers) of these object masks resembled to the original structure even in case of the noisiest image (<xref rid="figs5" ref-type="fig">Fig. S5d</xref>), but of course it was much clearer in case of the noiseless image (<xref rid="figs5" ref-type="fig">Fig. S5f</xref>). Since the biological samples does not have a similar ground truth like the generated objects, we used the areas of such projections of human delineations as a control in the further tests.</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>This research was supported by the Wellcome Trust (ZN, LA). In addition, LA was supported by an ERC Advanced Grant (FRONTHAL, 742595) and the European Union project RRF-2.3.1-21-2022-00004 within the framework of the Artificial Intelligence National Laboratory and Lendület_2023_90. ZN is the recipient of a Hungarian Academy of Sciences Momentum Grant (Lendület, LP2012-29) and an ERC Advanced Grant (293681). We thank the Light Microscopy Center at Institute of Experimental Medicine for kindly providing microscopy support. Authors would like to express their deepest gratitude to Prof Luc Anselin (Center for Spatial Data Science, University of Chicago) and Dr Szabolcs Káli (Instiute of Experimental Medicine, Budapest) for the valuable discussion about analysis of spatial association, and to Krisztina Faddi for the excellent technical assistance.</p>
+</ack>
+<ref-list>
+<title>Reference</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pham</surname>, <given-names>D. L.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>C.</given-names></string-name> &amp; <string-name><surname>Prince</surname>, <given-names>J. L.</given-names></string-name></person-group> <article-title>Current Methods in Medical Image Segmentation1</article-title>. <source>Annual Review of Biomedical Engineering</source>. <pub-id pub-id-type="doi">10.1146/annurev.bioeng.2.1.315</pub-id> <volume>2</volume>, <fpage>315</fpage>–<lpage>337</lpage> (<year>2003</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Haralick</surname>, <given-names>R. M.</given-names></string-name> &amp; <string-name><surname>Shapiro</surname>, <given-names>L. G.</given-names></string-name></person-group> <article-title>Image segmentation techniques</article-title>. <source>Comput Vis Graph Image Process</source> <volume>29</volume>, <fpage>100</fpage>–<lpage>132</lpage> (<year>1985</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pal</surname>, <given-names>N. R.</given-names></string-name> &amp; <string-name><surname>Pal</surname>, <given-names>S. K.</given-names></string-name></person-group> <article-title>A review on image segmentation techniques</article-title>. <source>Pattern Recognit</source> <volume>26</volume>, <fpage>1277</fpage>– <lpage>1294</lpage> (<year>1993</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sinha</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Tuteja</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Saxena</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Medical image segmentation: hard and soft computing approaches</article-title>. <source>SN Appl Sci</source> <volume>2</volume>, <fpage>1</fpage>–<lpage>8</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dey</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Ashour</surname>, <given-names>A. S.</given-names></string-name>, <string-name><surname>Shi</surname>, <given-names>F.</given-names></string-name> &amp; <string-name><surname>Balas</surname>, <given-names>V. E.</given-names></string-name></person-group> <article-title>Soft Computing Based Medical Image Analysis</article-title>. <source>Soft Computing Based Medical Image Analysis</source> <fpage>1</fpage>–<lpage>276</lpage> (<year>2018</year>) doi:<pub-id pub-id-type="doi">10.1016/c2016-0-04419-4</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hemanth</surname>, <given-names>D. J.</given-names></string-name> &amp; <string-name><surname>Anitha</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Medical image analysis using soft computing techniques</article-title>. <source>Studies in Computational Intelligence</source> <volume>543</volume>, <fpage>131</fpage>–<lpage>139</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Devi</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Singh</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Tiwari</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Chandra Patel</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Ayana</surname>, <given-names>M. T.</given-names></string-name></person-group> <article-title>A Survey of Soft Computing Approaches in Biomedical Imaging</article-title>. <source>J Healthc Eng</source> <volume>2021</volume>, (<year>2021</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jena</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Krishna Nayak</surname>, <given-names>G.</given-names></string-name> &amp; <string-name><surname>Saxena</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Comprehensive Review of Abdominal Image Segmentation using Soft and Hard Computing Approaches</article-title>. <year>2020</year> <source>International Conference on Computer Science, Engineering and Applications, ICCSEA 2020</source> (<volume>2020</volume>) doi:<pub-id pub-id-type="doi">10.1109/ICCSEA49143.2020.9132883</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Perfilieva</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Montero</surname>, <given-names>J.</given-names></string-name> &amp; <string-name><surname>Sessa</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Editorial to image processing with soft computing techniques</article-title>. <source>Soft Computing 2019</source> <issue>23:6</issue> <volume>23</volume>, <fpage>1777</fpage>–<lpage>1778</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sahoo</surname>, <given-names>P. K.</given-names></string-name>, <string-name><surname>Soltani</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Wong</surname>, <given-names>A. K. C.</given-names></string-name></person-group> <article-title>A survey of thresholding techniques</article-title>. <source>Comput Vis Graph Image Process</source> <volume>41</volume>, <fpage>233</fpage>–<lpage>260</lpage> (<year>1988</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Manikandan</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Ramar</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Willjuice Iruthayarajan</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Srinivasagan</surname>, <given-names>K. G.</given-names></string-name></person-group> <article-title>Multilevel thresholding for segmentation of medical brain images using real coded genetic algorithm</article-title>. <source>Measurement</source> <volume>47</volume>, <fpage>558</fpage>–<lpage>568</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Umaa Mageswari</surname>, <given-names>S.</given-names> </string-name>, <string-name><surname>Sridevi</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Mala</surname>, <given-names>C.</given-names></string-name></person-group>, <article-title>An Experimental Study and Analysis of Different Image Segmentation Techniques</article-title>. <source>Procedia Eng</source> <volume>64</volume>, <fpage>36</fpage>–<lpage>45</lpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Anselin</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Syabri</surname>, <given-names>I.</given-names></string-name> &amp; <string-name><surname>Kho</surname>, <given-names>Y.</given-names></string-name></person-group> <article-title>GeoDa: An Introduction to Spatial Data Analysis</article-title>. <source>Geogr Anal</source> <volume>38</volume>, <fpage>5</fpage>–<lpage>22</lpage> (<year>2006</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Moran</surname>, <given-names>P. A. P.</given-names></string-name></person-group> <article-title>The Interpretation of Statistical Maps</article-title>. <source>Journal of the Royal Statistical Society. Series B (Methodological)</source> <fpage>243</fpage>–<lpage>251</lpage> <ext-link ext-link-type="uri" xlink:href="http://www.jstor.org/stable/2983777?seq=1#fndtn-page_scan_tab_contents">http://www.jstor.org/stable/2983777?seq=1#fndtn-page_scan_tab_contents</ext-link> (<year>1948</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Getis</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Ord</surname>, <given-names>J. K.</given-names></string-name></person-group> <article-title>The Analysis of Spatial Association by Use of Distance Statistics</article-title>. <source>Geogr Anal</source> <volume>24</volume>, <fpage>189</fpage>–<lpage>206</lpage> (<year>1992</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Helbich</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Leitner</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Kapusta</surname>, <given-names>N. D.</given-names></string-name></person-group> <article-title>Lithium in drinking water and suicide mortality: interplay with lithium prescriptions</article-title>. <source>Br J Psychiatry</source> <volume>207</volume>, <fpage>64</fpage>–<lpage>71</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Alvioli</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Automatic delineation of geomorphological slope units with r.slopeunits v1.0 and their optimization for landslide susceptibility modeling</article-title>. <source>Geosci Model Dev</source> <volume>9</volume>, <fpage>3975</fpage>–<lpage>3991</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Anselin</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>Local Indicators of Spatial Association-LISA</article-title>. <source>Geogr Anal</source> <volume>27</volume>, <fpage>93</fpage>–<lpage>115</lpage> (<year>1995</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lavallée</surname>, <given-names>P.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Feedforward inhibitory control of sensory information in higher-order thalamic nuclei</article-title>. <source>J Neurosci</source> <volume>25</volume>, <fpage>7489</fpage>–<lpage>98</lpage> (<year>2005</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Graziano</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>X.-B.</given-names></string-name>, <string-name><surname>Murray</surname>, <given-names>K. D.</given-names></string-name> &amp; <string-name><surname>Jones</surname>, <given-names>E. G.</given-names></string-name></person-group> <article-title>Vesicular glutamate transporters define two sets of glutamatergic afferents to the somatosensory thalamus and two thalamocortical projections in the mouse</article-title>. <source>J Comp Neurol</source> <volume>507</volume>, <fpage>1258</fpage>–<lpage>76</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rovó</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Ulbert</surname>, <given-names>I.</given-names></string-name> &amp; <string-name><surname>Acsády</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>Drivers of the primate thalamus</article-title>. <source>J Neurosci</source> <volume>32</volume>, <fpage>17894</fpage>–<lpage>908</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lorincz</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Nusser</surname>, <given-names>Z.</given-names></string-name></person-group> <article-title>Molecular Identity of Dendritic Voltage-Gated Sodium Channels</article-title>. <source>Science (1979)</source> <volume>328</volume>, <fpage>906</fpage>–<lpage>909</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kerti</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Lorincz</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Nusser</surname>, <given-names>Z.</given-names></string-name></person-group> <article-title>Unique somato-dendritic distribution pattern of Kv4.2 channels on hippocampal CA1 pyramidal cells</article-title>. <source>Eur J Neurosci</source> <volume>35</volume>, <fpage>66</fpage>–<lpage>75</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Alonso</surname>, <given-names>G.</given-names></string-name> &amp; <string-name><surname>Widmer</surname>, <given-names>H.</given-names></string-name></person-group> <article-title>Clustering of KV4.2 potassium channels in postsynaptic membrane of rat supraoptic neurons: an ultrastructural study</article-title>. <source>Neuroscience</source> <volume>77</volume>, <fpage>617</fpage>–<lpage>21</lpage> (<year>1997</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kollo</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Holderith</surname>, <given-names>N. B.</given-names></string-name> &amp; <string-name><surname>Nusser</surname>, <given-names>Z.</given-names></string-name></person-group> <article-title>Novel subcellular distribution pattern of A-type K+ channels on neuronal surface</article-title>. <source>J Neurosci</source> <volume>26</volume>, <fpage>2684</fpage>–<lpage>91</lpage> (<year>2006</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kollo</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Holderith</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Antal</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Nusser</surname>, <given-names>Z.</given-names></string-name></person-group> <article-title>Unique clustering of A-type potassium channels on different cell types of the main olfactory bulb</article-title>. <source>Eur J Neurosci</source> <volume>27</volume>, <fpage>1686</fpage>–<lpage>99</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chen</surname>, <given-names>X.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Deletion of Kv4.2 gene eliminates dendritic A-type K+ current and enhances induction of long-term potentiation in hippocampal CA1 pyramidal neurons</article-title>. <source>J Neurosci</source> <volume>26</volume>, <fpage>12143</fpage>–<lpage>51</lpage> (<year>2006</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoffman</surname>, <given-names>D. A.</given-names></string-name>, <string-name><surname>Magee</surname>, <given-names>J. C.</given-names></string-name>, <string-name><surname>Colbert</surname>, <given-names>C. M.</given-names></string-name> &amp; <string-name><surname>Johnston</surname>, <given-names>D.</given-names></string-name></person-group> <article-title>K+ channel regulation of signal propagation in dendrites of hippocampal pyramidal neurons</article-title>. <source>Nature</source> <volume>387</volume>, <fpage>869</fpage>–<lpage>75</lpage> (<year>1997</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Johnston</surname>, <given-names>D.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Active dendrites, potassium channels and synaptic plasticity</article-title>. <source>Philos Trans R Soc Lond B Biol Sci</source> <volume>358</volume>, <fpage>667</fpage>–<lpage>74</lpage> (<year>2003</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Losonczy</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Makara</surname>, <given-names>J. K.</given-names></string-name> &amp; <string-name><surname>Magee</surname>, <given-names>J. C.</given-names></string-name></person-group> <article-title>Compartmentalized dendritic plasticity and input feature storage in neurons</article-title>. <source>Nature</source> <volume>452</volume>, <fpage>436</fpage>–<lpage>441</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Masugi-Tokita</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Shigemoto</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>High-resolution quantitative visualization of glutamate and GABA receptors at central synapses</article-title>. <source>Curr Opin Neurobiol</source> <volume>17</volume>, <fpage>387</fpage>–<lpage>393</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Sherman</surname>, <given-names>S. M.</given-names></string-name> &amp; <string-name><surname>Guillery</surname>, <given-names>R. W.</given-names></string-name></person-group> <source>Exploring the Thalamus and Its Role in Cortical Functions</source>. (<publisher-name>MIT Press</publisher-name>, <year>2006</year>).</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Herzog</surname>, <given-names>E.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>The existence of a second vesicular glutamate transporter specifies subpopulations of glutamatergic neurons</article-title>. <source>J Neurosci</source> <volume>21</volume>, (<year>2001</year>).</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fremeau</surname> <suffix>Jr.</suffix>, <given-names>R.T.</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>The expression of vesicular glutamate transporters defines two classes of excitatory synapse</article-title>. <source>Neuron</source> <volume>31</volume>, <fpage>247</fpage>–<lpage>60</lpage>. (<year>2001</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Santago</surname> 2nd, <given-names>A. C.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Quantitative Analysis of Three-Dimensional Distribution and Clustering of Intramuscular Fat in Muscles of the Rotator Cuff</article-title>. <source>Ann Biomed Eng</source> <volume>44</volume>, <fpage>2158</fpage>–<lpage>2167</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ahn</surname>, <given-names>A. C.</given-names></string-name> &amp; <string-name><surname>Kaptchuk</surname>, <given-names>T. J.</given-names></string-name></person-group> <article-title>Spatial anisotropy analyses of subcutaneous tissue layer: potential insights into its biomechanical characteristics</article-title>. <source>J Anat</source> <volume>219</volume>, <fpage>515</fpage>–<lpage>524</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ei Hsu Hlaing</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Ishihara</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Odagaki</surname>, <given-names>N.</given-names></string-name> &amp; <string-name><surname>Kamioka</surname>, <given-names>H.</given-names></string-name></person-group> <article-title>Role of intracellular Ca(2+)- based mechanotransduction of human periodontal ligament fibroblasts</article-title>. <source>FASEB J</source> <volume>33</volume>, <fpage>10409</fpage>– <lpage>10424</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schmal</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Myung</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Herzel</surname>, <given-names>H.</given-names></string-name> &amp; <string-name><surname>Bordyugov</surname>, <given-names>G.</given-names></string-name></person-group> <article-title>Moran’s I quantifies spatio-temporal pattern formation in neural imaging data</article-title>. <source>Bioinformatics</source> <volume>33</volume>, <fpage>3072</fpage>–<lpage>3079</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cserép</surname>, <given-names>C.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Microglia monitor and protect neuronal function through specialized somatic purinergic junctions</article-title>. <source>Science</source> <volume>367</volume>, <fpage>528</fpage>–<lpage>537</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Guy</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Intracortical Network Effects Preserve Thalamocortical Input Efficacy in a Cortex Without Layers</article-title>. <source>Cerebral Cortex</source> (<year>2016</year>) doi:<pub-id pub-id-type="doi">10.1093/cercor/bhw281</pub-id>.</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Thompson</surname>, <given-names>E. S.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Characterisation of heterogeneity and spatial autocorrelation in phase separating mixtures using Moran’s I</article-title>. <source>J Colloid Interface Sci</source> <volume>513</volume>, <fpage>180</fpage>–<lpage>187</lpage> (<year>2018</year>).</mixed-citation></ref>
+</ref-list>
+<sec id="s55">
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S1.</label>
+<caption><title>Effect of threshold level on object detection.</title>
+<p><bold>a,</bold> High power confocal image of Kv4.2 immunostaining in the ventrobasal complex of the mouse thalamus. <bold>b-d,</bold> Segmented objects (purple) of the same picture at three different threshold levels. <bold>e-g,</bold> Number of objects (<bold>e</bold>, No), average area of selected objects (<bold>f</bold>) and average pixel intensity values of the selected objects (<bold>g</bold>). Note the large difference in every measure depending on the threshold level. Scale bar a: 5 μm.</p></caption>
+<graphic xlink:href="539063v2_figs1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S2.</label>
+<caption><title>Defining optimal Moran’s matrix</title>
+<p><bold>a,</bold> Sizes of convolution matrices with different order (1, 2, 3; orange squares around the central pixel) with artificial objects (white) of different sizes (4 and 8 pixels in diameter) used in Moran’s tests. <bold>b,</bold> Optimal order number in relation to the object size (4-64) at different noise levels. To determine the optimal Moran’s order, we examined the quality of detection of objects with variable object sizes (diameter 4-64 pixels) at different noise levels. The optimal order was plotted against the object size. The points were fitted on a line with a slope of approximately 0.25, independent of the noise level.</p></caption>
+<graphic xlink:href="539063v2_figs2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S3.</label>
+<caption><title>The effect of Moran’s order on the quality of detection using variable object sizes and different noise levels.</title>
+<p><bold>a,</bold> One image out of the 100 containing randomly placed artificial objects with diameters ranging from 4-64 pixels. <bold>b,</bold> The same image with added noise. <bold>c,</bold> Objects selected by Moran’s method with a 16<sup>th</sup> order convolution matrix. <bold>d,</bold> The same selection pseudocolored with red (true positive) and cyan (false positive). <bold>e,</bold> Similar objects were investigated at different noise levels and with different orders of Moran’s test. Note the increase of false positive rates at high noise levels and higher Moran’s order. Yellow and white arrows indicate small objects that became undetected at higher Moran’s order. <bold>f,</bold> Effect of matrix size on the quality of detection (in a TPR/FPR space) in images containing 100 objects with variable size at three different noise levels. <bold>g,</bold> Zoomed in version of the plot shown in <bold>f</bold>. Numbers indicate the matrix size.</p></caption>
+<graphic xlink:href="539063v2_figs3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S4.</label>
+<caption><title>Comparison of the vector length at various noise levels (20-240) from the theoretical best (0, 1 point in the TPR/FPR space) to the closest point of the TPR/FPR curve in case of the TBS and Moran’s methods using images containing randomly placed artificial objects with diameter ranging from 4-64 pixels. Blue: TBM, red: Moran’s method.</title>
+<p>The bins of the x-axis (1-13) indicate different x-values for the two methods (see the table at the bottom) for comparisons. Threshold levels vary between 10-250 for TBS (blue bars), Moran’s orders between 1-64 (orange bars). Shorter vector length indicates better performance. Note that between 60 and 160 noise levels the exact value of Moran’s order does not affect the quality of detection and all Moran’s values are below the TBS values.</p></caption>
+<graphic xlink:href="539063v2_figs4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs5" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S5.</label>
+<caption><title>Definition of ground truth on natural images</title>
+<p><bold>a</bold>-<bold>c</bold>) Micrograph of fluorescently labeled Kv4.2 ion channel clusters with added noise (<bold>a</bold>, <bold>b</bold>, <bold>c</bold>, noise level 160, 80, 0, respectively) in the order in which they were presented to the human observes. <bold>d</bold>-<bold>f</bold>) Selection of objects by 23 observers who were blind to the nature in the same images. Gray pixels were selected by less than half of the participants (n=23), the pseudocolored pixels were selected by more than half and were referred as “ground truth” in this study. <bold>g</bold>-<bold>j</bold>) Selection of objects within the framed areas (magenta rectangles in <bold>a</bold>-<bold>c</bold>) by each of the 23 human observer. Each observer outlined first the noisiest image (<bold>g</bold>, rectangle in <bold>a</bold>), then the less noisy one (<bold>h</bold>, rectangle in <bold>b</bold>), finally the original input image (<bold>I</bold>, rectangle in <bold>c</bold>). Scale bar c: 10 μm.</p></caption>
+<graphic xlink:href="539063v2_figs5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs6" position="float" orientation="portrait" fig-type="figure">
+<label>Fig. S6.</label>
+<caption><title>Effect of convolution matrix size on the visual results.</title>
+<p>Natural image (Kv4.2 immunoreactive boutons) at three different noise levels (0, 80, 160). The putative objects were detected with different convolution matrices (1<sup>st</sup>, 3<sup>rd</sup>, 10<sup>th</sup> order). The sizes of matrices are displayed on one of the boutons for the sake of comparison. Red: true positive pixels, cyan: false positive pixels. Scalebar 10 μm.</p></caption>
+<graphic xlink:href="539063v2_figs6.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89361.2.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Cheong</surname>
+<given-names>Eunji</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Yonsei University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>The manuscript introduces an <bold>important</bold> and innovative non-AI computational method for segmenting noisy grayscale images, with a particular focus on identifying immunostained potassium ion channel clusters. This method significantly enhances accuracy over basic threshold-based techniques while remaining user-friendly and accessible, even for researchers with limited computational backgrounds. The evidence supporting the method's efficacy is <bold>convincing</bold>. Its practical application and ease of use make it a tool that will benefit a wide range of laboratories.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89361.2.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The manuscript introduces a valuable and innovative non-AI computational method for segmenting noisy grayscale images, with a particular focus on identifying immunostained potassium ion channel clusters.</p>
+<p>Strengths:</p>
+<p>(1) Applicability and Usability: The method is exceptionally accessible to biologists and researchers without advanced computational expertise. It offers a highly practical alternative to AI-based methods, which often require significant training data and computational resources, making it an excellent choice for a broader range of laboratories.</p>
+<p>(2) Proof-of-Concept: The manuscript provides compelling evidence through multiple experiments, showcasing the method's superior performance over traditional threshold-based techniques, particularly in noisy environments. The dual immuno-electron microscopy experiments further reinforce the robustness and effectiveness of this approach.</p>
+<p>(3) Clarity and Methodology: The manuscript is exceptionally well-written, with clear and concise descriptions that effectively highlight the method's advantages. The detailed figures and comprehensive references greatly enhance the manuscript's credibility and strongly support the claims made.</p>
+<p>Weaknesses:</p>
+<p>The manuscript does not include comparisons with more advanced segmentation techniques, particularly those based on artificial intelligence. While the authors have provided a rationale for this decision, including such comparisons could have enriched the discussion and offered additional insights. Additionally, there are some concerns about the computational demands of the method, especially when applied to large-scale or 3D image analysis. Although the authors have shared some computational data, further optimization or practical recommendations would enhance the method's utility. Initially, the manuscript lacked a data and code availability statement, which could have limited the method's accessibility. However, this issue has since been resolved, with the code now being made available to the community. Lastly, while the findings related to Kv4.2 in the thalamus are noteworthy, they might achieve even greater impact if presented in a separate paper. Nevertheless, the authors have chosen to retain these results within the current manuscript to strengthen the overall narrative and relevance.</p>
+<p>We appreciate that the authors have provided thorough explanations for their original choices. These justifications offer a clearer understanding of their approach and the reasons behind the presentation of the data.</p>
+<p>Conclusion:</p>
+<p>The revised manuscript successfully addresses the majority of the reviewers' concerns, presenting a strong case for the proposed segmentation method. The method's ease of use for non-experts in AI, combined with its proven effectiveness in proof-of-concept experiments, positions it as a valuable addition to the field. While the manuscript could benefit from incorporating comparisons with more advanced segmentation methods and offering a more detailed discussion of computational requirements, it remains a robust contribution. The decision to include the Kv4.2 findings within the paper is well-justified by the authors, though these results could potentially have an even greater impact if published separately.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89361.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The manuscript by David et al. describes a novel image segmentation method, implementing Local Moran's method, which determines whether the value of a datapoint or a pixel is randomly distributed among all values, in differentiating pixel clusters from the background noise. The study includes several proof-of-concept analyses to validate the power of the new approach, revealing that implementation of Local Moran's method in image segmentation is superior to threshold-based segmentation methods commonly used in analyzing confocal images in neuroanatomical studies.</p>
+<p>Strengths:</p>
+<p>Several proof-of-concept experiments are performed to confirm the sensitivity and validity of the proposed method. Using composed images with varying levels of background noise and analyzing them in parallel with the Local Moran's or a Threshold-Based Method (TBM), the study is able to compare these approaches directly and reveal their relative power in isolating clustered pixels.</p>
+<p>Similarly, dual immuno-electron microscopy was used to test the biological relevance of a colocalization that was revealed by Local Moran's segmentation approach on dual-fluorescent labeled tissue using immuno-markers of the axon terminal and a membrane-protein (Figure 5). The EM revealed that the two markers were present in terminals and their post-synaptic partners, respectively. This is a strong approach to verify the validity of the new approach for determining object-based colocalization in fluorescent microscopy.</p>
+<p>The methods section is clear in explaining the rationale and the steps of the new method (however, see the weaknesses section). Figures are appropriate and effective in illustrating the methods and the results of the study. The writing is clear; the references are appropriate and useful.</p>
+<p>Weaknesses:</p>
+<p>While the steps of the mathematical calculations to implement Local Moran's principles for analyzing high-resolution images are clearly written, the manuscript currently does not provide a computation tool that could facilitate easy implementation of the method by other researchers. Without a user-friendly tool, such as an ImageJ plugin or a code, the use of the method developed by David et al by other investigators may remain limited.</p>
+<p>This weakness is eliminated in the revision, which now provides the approach as a Matlab tool.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.89361.2.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Dávid</surname>
+<given-names>Csaba</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Giber</surname>
+<given-names>Kristóf</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2993-6115</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kerti-Szigeti</surname>
+<given-names>Katalin</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9500-8758</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kollo</surname>
+<given-names>Mihaly</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Nusser</surname>
+<given-names>Zoltán</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7004-4111</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Acsády</surname>
+<given-names>László</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-0679-2980</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the original reviews.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>The study describes a new computational method for unsupervised (i.e., non-artificial intelligence) segmentation of objects in grayscale images that contain substantial noise, to differentiate object, no object, and noise. Such a problem is essential in biology because they are commonly confronted in the analysis of microscope images of biological samples and recently have been resolved by artificial intelligence, especially by deep neural networks. However, training artificial intelligence for specific sample images is a difficult task and not every biological laboratory can handle it. Therefore, the proposed method is particularly appealing to laboratories with little computational background. The method was shown to achieve better performance than a threshold-based method for artificial and natural test images. To demonstrate the usability, the authors applied the method to high-power confocal images of the thalamus for the identification and quantification of immunostained potassium ion channel clusters formed in the proximity of large axons in the thalamic neuropil and verified the results in comparison to electron micrographs.</p>
+<p>Strengths:</p>
+<p>The authors claim that the proposed method has higher pixel-wise accuracy than the threshold-based method when applied to gray-scale images with substantial noises.</p>
+<p>Since the method does not use artificial intelligence, training and testing are not necessary, which would be appealing to biologists who are not familiar with machine learning technology.</p>
+<p>The method does not require extensive tuning of adjustable parameters (trying different values of &quot;Moran's order&quot;) given that the size of the object in question can be estimated in advance.</p>
+</disp-quote>
+<p>We appreciate the positive assessment of our approach.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>It is understood that the strength of the method is that it does not depend on artificial intelligence and therefore the authors wanted to compare the performance with another non-AI method (i.e. the threshold-based method; TBM). However, the TBM used in this work seems too naive to be fairly compared to the expensive computation of &quot;Moran's I&quot; used for the proposed method. To provide convincing evidence that the proposed method advances object segmentation technology and can be used practically in various fields, it should be compared to other advanced methods, including AI-based ones, as well.</p>
+</disp-quote>
+<p>Protein localization studies revealed that protein distributions are frequently inhomogeneous in a cell. This is very common in neurons which are highly polarized cell types with distinct axo-somato-dendritic functions. Moreover, due to the nature of the cell-to-cell interactions among neurons (e.g. electrical and chemical synapses) the cell membrane includes highly variable microdomains with unique protein assemblies (i.e. clusters). Protein clusters are defined as membrane segments with higher protein densities compared to neighboring membrane regions. However, protein density can continuously change between “clusters” and “non-clusters”. As a consequence, differentiating proteins involved vs not involved in clusters is a challenging task.  Indeed, our analysis showed that the boundaries of protein clusters varied remarkably when 23 human experts delineated them.</p>
+<p>Despite the fact the protein clusters can only be vaguely defined numerous studies have demonstrated the functional relevance of inhomogeneous protein distribution. Thus, there is a high relevance and need for an observer independent, “operative” segmentation method that can be accomplished and compared among different conditions and specimens. The strength of the Moran’s I analysis we propose here, as pointed out by our reviewers and editors, is that it can extract the relevant signals from an image generated in different, often noisy condition using a simple algorithm that allows quantitative characterization and identification of changes in many biological and non-biological samples.</p>
+<p>In AI based analysis the ground truth is known by an observer and using a large training set AI learns to extract the relevant information for image segmentation. As outlined above the “ground truth”, however, cannot be unequivocally defined for protein clusters. There is no doubt, that with sufficient resource investment there would be an AI based analysis of the same problem. In our view, however, in an average laboratory setting generating a training set using hundreds of images examined by many experts may not be plausible. Moreover, generalization of one training set to another set of cluster, resistance to noise or different levels of background could also not be guaranteed.</p>
+<disp-quote content-type="editor-comment">
+<p>This method was claimed to be better than the TBM when the noise level was high. Related to the above, TBMs can be used in association with various denoising methods as a preprocess. It is questionable whether the claim is still valid when compared to the methods with adequate complexity used together with denoising. Consider for example, Weigert et al. (2018) <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/s41592-018-0216-7">https://doi.org/10.1038/s41592-018-0216-7</ext-link>; or Lehtinen et al (2018) <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.48550/arXiv.1803.04189">https://doi.org/10.48550/arXiv.1803.04189</ext-link>.</p>
+</disp-quote>
+<p>In Weigert et al. AI was trained with high-quality images of the same object obtained with extreme photon exposure in confocal microscope. As delineated above without training AI systems cannot be used for such purposes. The Lehtinen paper is unfortunately no longer available at this doi.</p>
+<p>We must emphasize that in our work we did not intend to compare the image segmentation method based on local Moran’s I with all other available segmentation techniques. Rather we wanted to demonstrate a straightforward method of grouping pixels with similar intensities and in spatial proximity which does not require a priori knowledge of the objects. We used TBM to benchmark the method. We agree that with more advanced TBM methods the difference between Moran’s and TBM might have been smaller. The critical component here is, however, that even with most advanced TBM an artificial threshold is needed to be defined. The optimal threshold may change from sample to sample depending on the experimental conditions which makes quantification questionable. Moran’s method overcomes this problem and allows more objective segmentation of images even if the exact conditions (background labeling, noise, intensity etc) are not identical among the samples.</p>
+<disp-quote content-type="editor-comment">
+<p>The computational complexity of the method, determined by the convolution matrix size (Moran's order), linearly increases as the object size increases (Fig. S2b). Given that the convolution must be run separately for each pixel, the computation seems quite demanding for scale-up, e.g. when the method is applied for 3D image volumes. It will be helpful if the requirement for computer resources and time is provided.</p>
+</disp-quote>
+<p>Here we provide the required data concerning the hardware and the computational time:</p>
+<p>Hardware used for performing the analysis:</p>
+<p>Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz, 2594 Mhz, 4 kernel CPU, 64GB RAM, NVIDIA GeForce GTX 1080 graphic card.</p>
+<p>MATLAB R2021b software was used for implementation.</p>
+<p><bold>Author response table.</bold></p>
+<p>Computation times:</p>
+<disp-formula id="sa3equ1">
+<graphic mime-subtype="jpg" xlink:href="elife-89361-sa3-equ1.jpg" mimetype="image"/>
+</disp-formula>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>Summary:</p>
+<p>The manuscript by David et al. describes a novel image segmentation method, implementing Local Moran's method, which determines whether the value of a datapoint or a pixel is randomly distributed among all values, in differentiating pixel clusters from the background noise. The study includes several proof-of-concept analyses to validate the power of the new approach, revealing that implementation of Local Moran's method in image segmentation is superior to threshold-based segmentation methods commonly used in analyzing confocal images in neuroanatomical studies.</p>
+<p>Strengths:</p>
+<p>Several proof-of-concept experiments are performed to confirm the sensitivity and validity of the proposed method. Using composed images with varying levels of background noise and analyzing them in parallel with the Local Moran's or a Threshold-Based Method (TBM), the study is able to compare these approaches directly and reveal their relative power in isolating clustered pixels.</p>
+<p>Similarly, dual immuno-electron microscopy was used to test the biological relevance of a colocalization that was revealed by Local Moran's segmentation approach on dual-fluorescent labeled tissue using immuno-markers of the axon terminal and a membrane-protein (Figure 5). The EM revealed that the two markers were present in terminals and their post-synaptic partners, respectively. This is a strong approach to verify the validity of the new approach for determining object-based colocalization in fluorescent microscopy.</p>
+<p>The methods section is clear in explaining the rationale and the steps of the new method (however, see the weaknesses section). Figures are appropriate and effective in illustrating the methods and the results of the study. The writing is clear; the references are appropriate and useful.</p>
+</disp-quote>
+<p>We are grateful for the constructive assessment of our results.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>While the steps of the mathematical calculations to implement Local Moran's principles for analyzing high-resolution images are clearly written, the manuscript currently does not provide a computation tool that could facilitate easy implementation of the method by other researchers. Without a user-friendly tool, such as an ImageJ plugin or a code, the use of the method developed by David et al by other investigators may remain limited.</p>
+</disp-quote>
+<p>The code for the analysis is now available online as a user-friendly MATLAB script at: <ext-link ext-link-type="uri" xlink:href="https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m">https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m</ext-link></p>
+<disp-quote content-type="editor-comment">
+<p><bold>Recommendations for the authors:</bold></p>
+<p>Summary of reviews:</p>
+<p>Both reviewers acknowledge the potential significance and practicality of the newly proposed image segmentation method. This method uses Local Moran's principles, offering an advantage over traditional intensity thresholding approaches by providing more sensitivity, particularly in reducing background noise and preserving biologically relevant pixels.</p>
+<p>Strengths Highlighted:</p>
+<p>• The proposed method can provide more accurate results, especially for grayscale images with significant noise.</p>
+<p>• The method is not dependent on artificial intelligence, making it appealing for researchers with minimal computational background.</p>
+<p>• The approach can operate without the need for extensive tuning, given that the size of the object is known.</p>
+<p>• Several proof-of-concept experiments were carried out, revealing the effectiveness of the method in comparison with the threshold-based segmentation methods.</p>
+<p>• The manuscript is clear in terms of methodology, and the results are supported by effective illustrations and references.</p>
+<p>Weaknesses Noted:</p>
+<p>• The study lacked a comparative analysis with advanced segmentation methods, especially those that employ artificial intelligence.</p>
+</disp-quote>
+<p>See our response above to the same question of Reviewer 1.</p>
+<disp-quote content-type="editor-comment">
+<p>• There are concerns about computational complexity, especially when dealing with larger data sets or 3D image volumes.</p>
+</disp-quote>
+<p>See our response about the calculations of computation times above to the similar question of Reviewer 1.</p>
+<disp-quote content-type="editor-comment">
+<p>• Both reviewers noted the absence of a data/code availability statement in the manuscript, which might restrict the method's adoption by other researchers.</p>
+</disp-quote>
+<p>The code availability is provided now.</p>
+<disp-quote content-type="editor-comment">
+<p>• Reviewer 2 suggested that some results, particularly related to Kv4.2 in the thalamus, might be better presented in a separate study due to their significance.</p>
+</disp-quote>
+<p>We thank our reviewers for this suggestion. We carefully evaluated the pros and cons of publishing the Kv4.2 data separately. We finally decided to keep the segmentation and experimental data together due to the following reason. We believe that the ultrastructural localization provides strong experimental proof for the relevance of our novel segmentation method. In order to make the potassium channel data more visible we added a subsentence to the title. In this manner we think scientist interested in the imaging method as well as the neurobiology will be both find and cite the paper. The novel title reads now:</p>
+<p>“An image segmentation method based on the spatial correlation coefficient of Local Moran’s I - identification of A-type potassium channel clusters in the thalamus.”</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer Recommendations:</bold></p>
+<p>(1) Provide details about the data and program code availability.</p>
+</disp-quote>
+<p>See our response above</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Offer practical recommendations and provide clarity on software packages and coding for the proposed method to enhance its adoption.</p>
+</disp-quote>
+<p>Done.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Consider presenting the findings about Kv4.2 in the thalamus separately as they hold significant importance on their own.</p>
+</disp-quote>
+<p>See our response above</p>
+<disp-quote content-type="editor-comment">
+<p>Given the reviews, the proposed image segmentation method presents a promising advancement in the domain of image analysis. The technique offers tangible benefits, especially for researchers dealing with biological microscopy data. However, for this method to see a broader application, it's imperative to provide clearer practical guidance and make data or code easily accessible. Additionally, while the findings regarding Kv4.2 in the thalamus are intriguing, they might achieve more impact if detailed in a dedicated paper.</p>
+<p><bold>Reviewer #1 (Recommendations For The Authors):</bold></p>
+<p>The availability of data or program code was not stated in the manuscript.</p>
+<p><bold>Reviewer #2 (Recommendations For The Authors):</bold></p>
+<p>(1) While the principles of the method are explained clearly in a step-by-step fashion in the Methods section, the practical aspects of running sequential computations over a large matrix of pixel values are not well described. It would be very useful if the authors could provide recommendations on how to set the data structure and clarify which software and programming package for Local Moran's analysis they used. In addition, providing the code for the sequential implementation described in the Methods section would facilitate the adoption of the method by other researchers, and thus, the impact of the study. Currently, there is no data or code availability statement included in the manuscript.</p>
+</disp-quote>
+<p>See our response above.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Figure 4 illustrates an experiment in which transmission electron microscopy and freeze-fracture replica labeling approaches were used to demonstrate that a potassium channel marker, Kv4.2 was selective to synapses forming on larger caliber dendrites in the thalamus. As impressive as the EM approaches utilized in this figure are, the results of this experiment have a somewhat tangential bearing on the segmentation method that is the focus of this study. In fact, the experiments illustrated in Figure 5, dual immuno-EM, are more than sufficient to confirm what the dual-confocal imaging coupled with Local Moran's segmentation analysis reveals. Furthermore, the author's findings about the localization and selectivity of Kv4.2 in the thalamus are too important and exciting to bury in a paper focusing on the methodology. Those results may have a wider impact if they are presented and discussed in a separate experimental paper.</p>
+</disp-quote>
+<p>See our response above</p>
+</body>
+</sub-article>
+</article>
