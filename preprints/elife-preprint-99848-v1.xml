@@ -1,0 +1,850 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">99848</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.99848</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.99848.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Cell Biology</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>CellSeg3D: self-supervised 3D cell segmentation for microscopy</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Achard</surname>
+<given-names>Cyril</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">✉</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kousi</surname>
+<given-names>Timokleia</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Frey</surname>
+<given-names>Markus</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Vidal</surname>
+<given-names>Maxime</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Paychère</surname>
+<given-names>Yves</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hofmann</surname>
+<given-names>Colin</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Iqbal</surname>
+<given-names>Asim</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hausmann</surname>
+<given-names>Sebastien B</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Pagès</surname>
+<given-names>Stéphane</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7368-4456</contrib-id>
+<name>
+<surname>Mathis</surname>
+<given-names>Mackenzie Weygandt</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">✉</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Brain Mind Institute &amp; Neuro X, École Polytechnique Fédérale de Lausanne (EPFL). Geneva</institution>, <country>Switzerland</country></aff>
+<aff id="a2"><label>2</label><institution>Wyss Center for Bio and Neuroengineering. Geneva</institution>, <country>Switzerland</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Cardona</surname>
+<given-names>Albert</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Cambridge</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Cardona</surname>
+<given-names>Albert</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Cambridge</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label> Corresponding author; email: <email>mackenzie.mathis@epfl.ch</email></corresp>
+<fn id="n1" fn-type="others"><label>✉</label><p><email>cyril.achard@epfl.ch</email> and <email>mackenzie.mathis@epfl.ch</email></p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-09-06">
+<day>06</day>
+<month>09</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP99848</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-06-11">
+<day>11</day>
+<month>06</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-05-17">
+<day>17</day>
+<month>05</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.05.17.594691"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Achard et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Achard et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-99848-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Understanding the complex three-dimensional structure of cells is crucial across many disciplines in biology and especially in neuroscience. Here, we introduce a novel 3D self-supervised learning method designed to address the inherent complexity of quantifying cells in 3D volumes, often in cleared neural tissue. We offer a new 3D mesoSPIM dataset and show that CellSeg3D can match state-of-the-art supervised methods. Our contributions are made accessible through a Python package with full GUI integration in napari.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="external-links">
+<fn fn-type="dataset"><p>
+<ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link>
+</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Main</title>
+<p>Recent advancements in three-dimensional (3D) imaging techniques have provided unprecedented insights into cellular and tissue-level processes. In addition to confocal imaging and other fluorescent techniques, imaging systems based on light-sheet microscopy (LSM), such as the mesoscopic selective plane-illumination microscopy (mesoSPIM) initiative (<xref ref-type="bibr" rid="c1">1</xref>), have emerged as powerful tools for non-invasive, high-resolution 3D imaging of biological specimens. Due to its minimal phototoxicity and ability to capture high-resolution 3D images of thick biological samples, it has been a powerful new approach for imaging thick samples, such as the whole mouse brain, without the need for sectioning.</p>
+<p>The analysis of such large-scale 3D datasets presents a significant challenge due to the size, complexity and heterogeneity of the samples. Yet, accurate and efficient segmentation of cells is a crucial step towards density estimates as well as quantification of morphological features. To begin to address this challenge, several studies have explored the use of supervised deep learning techniques using convolutional neural networks (CNNs) or transformers for improving cell segmentation accuracy (<xref ref-type="bibr" rid="c2">2</xref>–<xref ref-type="bibr" rid="c5">5</xref>). Various methods now exist for performing instance segmentation on the models” outputs in order to separate segmentation masks into individual cells.</p>
+<p>Typically, these methods use a multi-step approach, first segmenting cells in 2D images, optionally performing instance segmentation, and then reconstructing them in 3D using the volume information (<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c3">3</xref>). While this can be successful in many contexts, this approach can suffer from low recall or have trouble retaining finer, non-convex labeling. Nevertheless, by training on (ideally large) human-annotated datasets, these supervised learning methods can learn to accurately segment cells in 2D, and ample 2D datasets now exist thanks to community efforts (<xref ref-type="bibr" rid="c6">6</xref>).</p>
+<p>However, directly segmenting in 3D (“direct-3D”) volumes could limit errors and streamline processing by retaining important morphological information. Yet, 3D annotated data is lacking (<xref ref-type="bibr" rid="c6">6</xref>), likely due to the fact that it is highly time-consuming to generate. For example, to our knowledge, 3D segmentation datasets of cells in whole-brain LSM volumes are not available, despite the existence of open-source microscopy database repositories (<xref ref-type="bibr" rid="c7">7</xref>).</p>
+<p>Moreover, unsupervised learning, such as self-supervised learning, has emerged as a powerful approach for training deep neural networks without the need for explicit labeling of data. In the context of segmentation of cells, several studies have explored the use of unsupervised techniques to learn representations of cellular structures and improve segmentation accuracy (<xref ref-type="bibr" rid="c8">8</xref>, <xref ref-type="bibr" rid="c9">9</xref>). However, these methods rely on adversarial learning, which can be difficult to train and have not been shown to provide accurate 3D results on cleared tissue for LSM data, which can suffer from clearing and artefacts.</p>
+<p>Here, we present a new 3D dataset (<xref rid="fig1" ref-type="fig">Figure 1a</xref>) and custom toolbox for direct-3D supervised and self-supervised cell segmentation built on state-of-the-art transformers and 3D CNN architectures (<xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c11">11</xref>) paired with classical image processing techniques (<xref ref-type="bibr" rid="c12">12</xref>). First, we benchmark our methods against Cellpose and StarDist, two leading supervised cell segmentation packages with user-friendly workflows, and show our methods match or outperform them in 3D instance segmentation on mesoSPIM-acquired volumes (<xref rid="fig1" ref-type="fig">Figure 1b, c</xref>). Then, we show that our self-supervised model, WNet3D, without any human labeled data can be as good as, or better than, supervised models (<xref rid="fig1" ref-type="fig">Figure 1d-h</xref>).</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Performance of 3D Semantic and Instance Segmentation Models.</title>
+<p><bold>a:</bold> Raw mesoSPIM whole-brain sample, volumes and corresponding ground truth labels from somatosensory (S1) and visual (V1) cortical regions. <bold>b:</bold> Evaluation of instance segmentation performance for several supervised models over three data subsets. F1-score is computed from the Intersection over Union (IoU) with ground truth labels, then averaged. Error bars represent 50% Confidence Intervals (CIs). <bold>c:</bold> View of 3D instance labels from supervised models, as noted, for visual cortex volume in <bold>b</bold> evaluation. <bold>d:</bold> Illustration of our WNet3D architecture showcasing the dual 3D U-Net structure with modifications (see Methods). <bold>e:</bold> Example 3D instance labels from WNet3D; top row is S1, bottom is V1, with artifacts removed. <bold>f:</bold> Semantic segmentation performance: comparison of model efficiency, indicating the volume of training data required to achieve a given performance level. Each supervised model was trained with an increasing percentage of training data (with 10, 20, 60 or 80%, left to right within each model grouping); Dice score was computed on unseen test data, over three data subsets for each training/evaluation split. Our self-supervised model (WNet3D) is also trained on a subset of the training set of images, but always without human labels. Far right: We also show performance of the pretrained WNet3D available in the plugin (far right), with and without removing artifacts in the image. See Methods for details. The central box represents the interquartile range (IQR) of values with the median as a horizontal line, the upper and lower limits the upper and lower quartiles. Whiskers extend to data points within 1.5 IQR of the quartiles. <bold>g:</bold> Instance segmentation performance comparison of Swin-UNetR and WNet3D (pretrained, see Methods), evaluated on unseen data across 3 data subsets, compared with a Swin-UNetR model trained using labels from the WNet3D self-supervised model. Here, WNet3D was trained on separate data, producing semantic labels that were then used to train a supervised Swin-UNetR model, still on held-out data. This supervised model was evaluated as the other models, on 3 held-out images from our dataset, unseen during training. Error bars indicate 50% CIs.</p></caption>
+<graphic xlink:href="594691v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>First, we developed a 3D human-annotated dataset based on data acquired with a mesoSPIM system (<xref ref-type="bibr" rid="c1">1</xref>) (<xref rid="fig1" ref-type="fig">Figure 1a</xref>, see Methods). Using whole-brain data from mice we cropped small regions and human annotated in 3D 2,632 neurons that were endogenously labeled by TPH2-tdTomato (<xref rid="fig1" ref-type="fig">Figure 1a</xref>).</p>
+<p>We then trained two models for supervised direct-3D segmentation. Specifically, we used a SwinUNetR transformer (<xref ref-type="bibr" rid="c11">11</xref>), and a SegResNet CNN (<xref ref-type="bibr" rid="c13">13</xref>) from the MONAI project (<xref ref-type="bibr" rid="c14">14</xref>). We benchmarked these models against Cell-pose (<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c15">15</xref>) and StarDist (<xref ref-type="bibr" rid="c2">2</xref>) and find that our supervised models have comparable instance segmentation performance on held-out (unseen) test data set as measured by the F1 vs. IoU threshold; see Methods, <xref rid="fig1" ref-type="fig">Figure 1b, c</xref>). Note, for a fair comparison, we performed a hyperparameter sweep of all models tested (<xref rid="figS1" ref-type="fig">Supplemental Figure S1a-d</xref>), and in <xref rid="fig1" ref-type="fig">Figure 1b</xref> and <xref rid="fig1" ref-type="fig">c</xref> we show the quantitative and qualitative best models.</p>
+<p>Next, we built a new self-supervised model for direct-3D segmentation that requires no ground truth training data, only raw volumes. Our new model, called WNet3D, is built on WNet (<xref ref-type="bibr" rid="c10">10</xref>) (see Methods, <xref rid="fig1" ref-type="fig">Figure 1d</xref>). Our changes include a conversion to a fully 3D architecture, adding the SoftNCuts loss, replacing the proposed two-step model update with the weighted sum of the encoder and decoder losses, and trimming the number of weights for fast inference (see Methods).</p>
+<p>We found that WNet3D could be as good or better than the fully supervised models, especially in the low data regime, on this dataset at semantic and instance segmentation (<xref rid="fig1" ref-type="fig">Figure 1e, f</xref>). Notably, our pre-trained WNet3D, which is trained on 100% of raw data without any labels, achieves 0.81±0.004 Dice coefficient with simple filtering of artifacts (removing the slices containing the problematic regions) and 0.74±0.12 without any filtering. To compare, we trained supervised models with 10, 20, 60 or 80% of the training data and tested on the held-out data subsets. Considering models with 80% of the training data, the Dice coefficient for SwinUNetR was 0.83±0.01, 0.76±0.03 for Cellpose tuned, 0.74±0.06 for SegResNet, 0.72±0.07 for StarDist (tuned), 0.61±0.07 for StarDist (default), 0.43±0.09 for Cellpose (default). For WNet3D with 80% raw data for training was 0.71±0.03 (un-filtered) (<xref rid="fig1" ref-type="fig">Figure 1f</xref>), which is still on-par with the top supervised models.</p>
+<p>Notably, for models with only 10% of the training data, the Dice coefficient was 0.78 ± 0.07 for SwinUNetR, 0.69 ± 0.02 for StarDist (tuned), 0.42 ± 0.13 for SegResNet, 0.39 ± 0.36 for StarDist (default), 0.32 ± 0.4 for Cellpose tuned, 0.20 ± 0.35 for Cellpose (default), and WNet3D was 0.74 ± 0.02 (unfiltered), which is still on-par with the top supervised model, and much improved (2X) over most supervised base-lines, most strikingly at low-data regimes (<xref rid="fig1" ref-type="fig">Figure 1f</xref>).</p>
+<p>Thus, over the four data subsets we tested (<xref rid="figS1" ref-type="fig">Supplemental Figure S1e</xref>), we find significant differences in model performance (Kruskal-Wallis H test, H=49.21, p=2.06e-08, n=12). With post-hoc Conover-Iman testing, WNet3D showed significant performance gains over StarDist and Cellpose (defaults) (statistics in <xref rid="figS1" ref-type="fig">Supplemental Figure S1f</xref>). More importantly, it is not significantly different from the best performing models (i.e., SwinUNetR p=1, and other competitive supervised models: Cellpose (tuned) p=0.21, or Seg-ResNet p=0.076; <xref rid="figS1" ref-type="fig">Supplemental Figure S1f</xref>). Altogether, our self-supervised model can perform as well as top supervised approaches.</p>
+<p>Note that WNet3D uses brightness to detect objects, and therefore cannot discriminate cells vs artifacts. Filtering could be used when sufficient (e.g., using rules based on label volume to remove aberrantly small or large particles), or one could use WNet3D to generate 3D labels in order to train a suitable supervised model (such as Cellpose or SwinUNetR), which would be able to distinguish artifacts from cells.</p>
+<p>To show the feasibility of this approach, we trained a Swin-UNetR using WNet3D self-supervised generated labels (<xref rid="fig1" ref-type="fig">Figure 1g</xref>) and show it can be nearly as good as a fully supervised model that required human 3D labels (no significant difference across F1 vs. IoU thresholds; Kruskal-Wallis H test H=4.91, p=0.085, n=9).</p>
+<p>Lastly, we highlight that the models we present are available in a new napari plugin we developed, with full support for labeling, training (self-supervised or supervised), model inference, and evaluation plus many other utilities (<xref rid="fig2" ref-type="fig">Figure 2a</xref>). Moreover, our pretrained WNet3D can be used “zero-shot” on diverse data, such as Platynereis nuclei, mouse skull bone nuclei (both collected with confocal microscopy; (<xref rid="fig2" ref-type="fig">Figure 2b-c</xref>), even though qualitatively these datasets are quite distinct looking from the dataset used for pretraining. We also tested the pretrained WNet3D on c-FOS stained tissue, which had more difficult signal to noise due to clearing and anti-body staining, from whole brains of mice acquired with a mesoSPIM (<xref rid="fig2" ref-type="fig">Figure 2d</xref>).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>CellSeg3D napari plugin pipeline, training, and example outputs.</title>
+<p><bold>a:</bold> Workflow diagram depicting the segmentation pipeline: either raw data can be used directly (self-supervised) or labeled and used for training and then other data can be used for model inference. Each stream concludes with posthoc inspection and refinement, if needed (post-processing analysis and/or refining the model). <bold>b:</bold> Instance segmentation performance (zero-shot) of the pretrained WNet3D on select datasets featured in <bold>c</bold>, shown as F1-score vs IoU with ground truth labels. <bold>c:</bold> Qualitative examples with WNet3D for semantic and instance segmentation. <bold>d:</bold> Qualitative example of WNet3D-generated prediction (thresholded) and labels on a crop from a whole-brain sample, with c-FOS-labeled neurons, acquired with a mesoSPIM.</p></caption>
+<graphic xlink:href="594691v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>In summary, CellSeg3D supports high-performance supervised and self-supervised direct-3D segmentation. Our napari plugin supports both the pretrained WNet3D and ability to train it and other models presented here (SegRes-Net, SwinUNetR), and has various tools for pre- and post-processing as well as utilities for labeling with minimal effort. We additionally provide our new 3D dataset intended for benchmarking 3D cell segmentation algorithms on LSM acquired cleared-tissue (see Data Card), and all code is fully open-sourced at <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link>.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Fabian F.</given-names> <surname>Voigt</surname></string-name>, <string-name><given-names>Daniel</given-names> <surname>Kirschenbaum</surname></string-name>, <string-name><given-names>Evgenia</given-names> <surname>Platonova</surname></string-name>, <string-name><given-names>Stéphane</given-names> <surname>Pagès</surname></string-name>, <string-name><given-names>Robert A. A.</given-names> <surname>Campbell</surname></string-name>, <string-name><given-names>Rahel</given-names> <surname>Kastli</surname></string-name>, <string-name><given-names>Martina</given-names> <surname>Schaettin</surname></string-name>, <string-name><given-names>Ladan</given-names> <surname>Egolf</surname></string-name>, <string-name><given-names>Alexander</given-names> <surname>van der Bourg</surname></string-name>, <string-name><given-names>Philipp</given-names> <surname>Bethge</surname></string-name>, <string-name><given-names>Karen</given-names> <surname>Haenraets</surname></string-name>, <string-name><surname>Noémie</surname> <given-names>Frézel</given-names></string-name>, <string-name><given-names>Thomas</given-names> <surname>Topilko</surname></string-name>, <string-name><given-names>Paola</given-names> <surname>Perin</surname></string-name>, <string-name><given-names>Daniel</given-names> <surname>Hillier</surname></string-name>, <string-name><given-names>Sven</given-names> <surname>Hildebrand</surname></string-name>, <string-name><given-names>Anna</given-names> <surname>Schueth</surname></string-name>, <string-name><given-names>Alard</given-names> <surname>Roebroeck</surname></string-name>, <string-name><given-names>Botond</given-names> <surname>Roska</surname></string-name>, <string-name><given-names>Esther T.</given-names> <surname>Stoeckli</surname></string-name>, <string-name><given-names>Roberto</given-names> <surname>Pizzala</surname></string-name>, <string-name><given-names>Nicolas</given-names> <surname>Renier</surname></string-name>, <string-name><given-names>Hanns Ulrich</given-names> <surname>Zeilhofer</surname></string-name>, <string-name><given-names>Theofanis</given-names> <surname>Karayannis</surname></string-name>, <string-name><given-names>Urs</given-names> <surname>Ziegler</surname></string-name>, <string-name><given-names>Laura</given-names> <surname>Batti</surname></string-name>, <string-name><given-names>Anthony</given-names> <surname>Holtmaat</surname></string-name>, <string-name><given-names>Christian</given-names> <surname>Lüscher</surname></string-name>, <string-name><given-names>Adriano</given-names> <surname>Aguzzi</surname></string-name>, and <string-name><given-names>Fritjof</given-names> <surname>Helmchen</surname></string-name></person-group>. <chapter-title>The mesoSPIM initiative: open-source light-sheet microscopes for imaging cleared tissue</chapter-title>. <source>Nature Methods</source>, <volume>16</volume>(<issue>11</issue>):<fpage>1105</fpage>–<lpage>1108</lpage>, <month>November</month> <year>2019</year>. ISSN <issn>1548-7105</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41592-019-0554-0</pub-id>. Number: 11 Publisher: <publisher-name>Nature Publishing Group</publisher-name>.</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>Martin</given-names> <surname>Weigert</surname></string-name>, <string-name><given-names>Uwe</given-names> <surname>Schmidt</surname></string-name>, <string-name><given-names>Robert</given-names> <surname>Haase</surname></string-name>, <string-name><given-names>Ko</given-names> <surname>Sugawara</surname></string-name>, and <string-name><given-names>Gene</given-names> <surname>Myers</surname></string-name></person-group>. <article-title>Star-convex polyhedra for 3d object detection and segmentation in microscopy</article-title>. <source>Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision</source>, pages <fpage>3666</fpage>–<lpage>3673</lpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Carsen</given-names> <surname>Stringer</surname></string-name>, <string-name><given-names>Tim</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Michalis</given-names> <surname>Michaelos</surname></string-name>, and <string-name><given-names>Marius</given-names> <surname>Pachitariu</surname></string-name></person-group>. <chapter-title>Cellpose: a generalist algorithm for cellular segmentation</chapter-title>. <source>Nature Methods</source>, <volume>18</volume>(<issue>1</issue>):<fpage>100</fpage>–<lpage>106</lpage>, <month>January</month> <year>2021</year>. ISSN <issn>1548-7105</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41592-020-01018-x</pub-id>. Number: 1 Publisher: <publisher-name>Nature Publishing Group</publisher-name>.</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Asim</given-names> <surname>Iqbal</surname></string-name>, <string-name><given-names>Asfandyar</given-names> <surname>Sheikh</surname></string-name>, and <string-name><given-names>Theofanis</given-names> <surname>Karayannis</surname></string-name></person-group>. <article-title>Denerd: high-throughput detection of neurons for brain-wide analysis with deep learning</article-title>. <source>Scientific Reports</source>, <volume>9</volume>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Fabian</given-names> <surname>Hörst</surname></string-name>, <string-name><given-names>Moritz</given-names> <surname>Rempe</surname></string-name>, <string-name><given-names>Lukas</given-names> <surname>Heine</surname></string-name>, <string-name><given-names>Constantin</given-names> <surname>Seibold</surname></string-name>, <string-name><given-names>Julius</given-names> <surname>Keyl</surname></string-name>, <string-name><given-names>Giulia</given-names> <surname>Baldini</surname></string-name>, <string-name><given-names>Selma</given-names> <surname>Ugurel</surname></string-name>, <string-name><given-names>Jens</given-names> <surname>Siveke</surname></string-name>, <string-name><given-names>Barbara</given-names> <surname>Grünwald</surname></string-name>, <string-name><given-names>Jan</given-names> <surname>Egger</surname></string-name>, and <string-name><given-names>Jens</given-names> <surname>Kleesiek</surname></string-name></person-group>. <article-title>CellViT: Vision Transformers for Precise Cell Segmentation and Classification</article-title>. <source>arXiv</source>, <month>October</month> <year>2023</year>. <pub-id pub-id-type="doi">10.48550/arXiv.2306.15350</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Jun</given-names> <surname>Ma</surname></string-name>, <string-name><given-names>Ronald</given-names> <surname>Xie</surname></string-name>, <string-name><given-names>Shamini</given-names> <surname>Ayyadhury</surname></string-name>, <string-name><given-names>Cheng</given-names> <surname>Ge</surname></string-name>, <string-name><given-names>Anubha</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>Ritu</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>Song</given-names> <surname>Gu</surname></string-name>, <string-name><given-names>Yao</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Gihun</given-names> <surname>Lee</surname></string-name>, <string-name><given-names>Joonkee</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>Wei</given-names> <surname>Lou</surname></string-name>, <string-name><given-names>Haofeng</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Eric</given-names> <surname>Upschulte</surname></string-name>, <string-name><given-names>Timo</given-names> <surname>Dickscheid</surname></string-name>, <string-name><given-names>José Guilherme</given-names> <surname>de Almeida</surname></string-name>, <string-name><given-names>Yixin</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Lin</given-names> <surname>Han</surname></string-name>, <string-name><given-names>Xin</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Marco</given-names> <surname>Labagnara</surname></string-name>, <string-name><given-names>Vojislav</given-names> <surname>Gligorovski</surname></string-name>, <string-name><given-names>Maxime</given-names> <surname>Scheder</surname></string-name>, <string-name><given-names>Sahand Jamal</given-names> <surname>Rahi</surname></string-name>, <string-name><given-names>Carly</given-names> <surname>Kempster</surname></string-name>, <string-name><given-names>Alice</given-names> <surname>Pollitt</surname></string-name>, <string-name><given-names>Leon</given-names> <surname>Espinosa</surname></string-name>, <string-name><given-names>Tâm</given-names> <surname>Mignot</surname></string-name>, <string-name><given-names>Jan Moritz</given-names> <surname>Middeke</surname></string-name>, <string-name><given-names>Jan-Niklas</given-names> <surname>Eckardt</surname></string-name>, <string-name><given-names>Wangkai</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Zhaoyang</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Xiaochen</given-names> <surname>Cai</surname></string-name>, <string-name><given-names>Bizhe</given-names> <surname>Bai</surname></string-name>, <string-name><given-names>Noah F.</given-names> <surname>Greenwald</surname></string-name>, <string-name><given-names>David</given-names> <surname>Van Valen</surname></string-name>, <string-name><given-names>Erin</given-names> <surname>Weisbart</surname></string-name>, <string-name><given-names>Beth A.</given-names> <surname>Cimini</surname></string-name>, <string-name><given-names>Trevor</given-names> <surname>Cheung</surname></string-name>, <string-name><given-names>Oscar</given-names> <surname>Brück</surname></string-name>, <string-name><given-names>Gary D.</given-names> <surname>Bader</surname></string-name>, and <string-name><given-names>Bo</given-names> <surname>Wang</surname></string-name></person-group>. <chapter-title>The multimodality cell segmentation challenge: toward universal solutions</chapter-title>. <source>Nature Methods</source>, pages <fpage>1</fpage>–<lpage>11</lpage>, <month>March</month> <year>2024</year>. ISSN <issn>1548-7105</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41592-024-02233-6</pub-id>. Publisher: <publisher-name>Nature Publishing Group</publisher-name>.</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Eleanor</given-names> <surname>Williams</surname></string-name>, <string-name><given-names>Josh</given-names> <surname>Moore</surname></string-name>, <string-name><given-names>Simon W.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Gabriella</given-names> <surname>Rustici</surname></string-name>, <string-name><given-names>Aleksandra</given-names> <surname>Tarkowska</surname></string-name>, <string-name><given-names>Anatole</given-names> <surname>Chessel</surname></string-name>, <string-name><given-names>Simone</given-names> <surname>Leo</surname></string-name>, <string-name><given-names>Bálint</given-names> <surname>Antal</surname></string-name>, <string-name><given-names>Richard K.</given-names> <surname>Ferguson</surname></string-name>, <string-name><given-names>Ugis</given-names> <surname>Sarkans</surname></string-name>, <string-name><given-names>Alvis</given-names> <surname>Brazma</surname></string-name>, <string-name><given-names>Rafael E. Carazo</given-names> <surname>Salas</surname></string-name>, and <string-name><given-names>Jason R.</given-names> <surname>Swedlow</surname></string-name></person-group>. <chapter-title>Image Data Resource: a bioimage data integration and publication platform</chapter-title>. <source>Nature Methods</source>, <volume>14</volume>(<issue>8</issue>):<fpage>775</fpage>–<lpage>781</lpage>, <month>August</month> <year>2017</year>. ISSN <issn>1548-7105</issn>. doi: <pub-id pub-id-type="doi">10.1038/nmeth.4326</pub-id>. Number: 8 Publisher: <publisher-name>Nature Publishing Group</publisher-name>.</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kai</given-names> <surname>Yao</surname></string-name>, <string-name><given-names>Jie</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>Kaizhu</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Linzhi</given-names> <surname>Jing</surname></string-name>, <string-name><given-names>Hang</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Dejian</given-names> <surname>Huang</surname></string-name>, and <string-name><given-names>Curran</given-names> <surname>Jude</surname></string-name></person-group>. <article-title>Analyzing Cell-Scaffold Interaction through Unsupervised 3D Nuclei Segmentation</article-title>. <source>International Journal of Bioprinting</source>, <volume>8</volume>(<issue>1</issue>):<fpage>495</fpage>, <month>December</month> <year>2021</year>. ISSN <issn>2424-7723</issn>. doi: <pub-id pub-id-type="doi">10.18063/ijb.v8i1.495</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Liang</given-names> <surname>Han</surname></string-name> and <string-name><given-names>Zhaozheng</given-names> <surname>Yin</surname></string-name></person-group>. <chapter-title>Unsupervised Network Learning for Cell Segmentation</chapter-title>. In <person-group person-group-type="editor"><string-name><given-names>Marleen</given-names> <surname>de Bruijne</surname></string-name>, <string-name><given-names>Philippe C.</given-names> <surname>Cattin</surname></string-name>, <string-name><given-names>Stéphane</given-names> <surname>Cotin</surname></string-name>, <string-name><given-names>Nicolas</given-names> <surname>Padoy</surname></string-name>, <string-name><given-names>Stefanie</given-names> <surname>Speidel</surname></string-name>, <string-name><given-names>Yefeng</given-names> <surname>Zheng</surname></string-name>, and <string-name><given-names>Caroline</given-names> <surname>Essert</surname></string-name></person-group>, editors, <source>Medical Image Computing and Computer Assisted Intervention – MICCAI 2021, Lecture Notes in Computer Science</source>, pages <fpage>282</fpage>–<lpage>292</lpage>, Cham, <year>2021</year>. <publisher-name>Springer International Publishing</publisher-name>. ISBN <isbn>978-3-030-87193-2</isbn>. doi: <pub-id pub-id-type="doi">10.1007/978-3-030-87193-2_27</pub-id>.</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Xide</given-names> <surname>Xia</surname></string-name> and <string-name><given-names>Brian</given-names> <surname>Kulis</surname></string-name></person-group>. <article-title>W-Net: A Deep Model for Fully Unsupervised Image Segmentation</article-title>. <source>arXiv</source>, <month>November</month> <year>2017</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1711.08506</pub-id>.</mixed-citation></ref>
+    <ref id="c11"><label>11.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Ali</given-names> <surname>Hatamizadeh</surname></string-name>, <string-name><given-names>Yucheng</given-names> <surname>Tang</surname></string-name>, <string-name><given-names>Vishwesh</given-names> <surname>Nath</surname></string-name>, <string-name><given-names>Dong</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Andriy</given-names> <surname>Myronenko</surname></string-name>, <string-name><given-names>Bennett</given-names> <surname>Landman</surname></string-name>, <string-name><given-names>Holger</given-names> <surname>Roth</surname></string-name>, and <string-name><given-names>Daguang</given-names> <surname>Xu</surname></string-name></person-group>. <article-title>UNETR: Transformers for 3D Medical Image Segmentation</article-title>. <source>arXiv</source>, <month>October</month> <year>2021</year>. <pub-id pub-id-type="doi">10.48550/arXiv.2103.10504</pub-id>.</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Robert</given-names> <surname>Haase</surname></string-name>, <string-name><given-names>Loic A.</given-names> <surname>Royer</surname></string-name>, <string-name><given-names>Peter</given-names> <surname>Steinbach</surname></string-name>, <string-name><given-names>Deborah</given-names> <surname>Schmidt</surname></string-name>, <string-name><given-names>Alexandr</given-names> <surname>Dibrov</surname></string-name>, <string-name><given-names>Uwe</given-names> <surname>Schmidt</surname></string-name>, <string-name><given-names>Martin</given-names> <surname>Weigert</surname></string-name>, <string-name><given-names>Nicola</given-names> <surname>Maghelli</surname></string-name>, <string-name><given-names>Pavel</given-names> <surname>Tomancak</surname></string-name>, <string-name><given-names>Florian</given-names> <surname>Jug</surname></string-name>, and <string-name><given-names>Eugene W.</given-names> <surname>Myers</surname></string-name></person-group>. <chapter-title>CLIJ: GPU-accelerated image processing for everyone</chapter-title>. <source>Nature Methods</source>, <volume>17</volume>(<issue>1</issue>):<fpage>5</fpage>–<lpage>6</lpage>, <month>January</month> <year>2020</year>. ISSN <issn>1548-7105</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41592-019-0650-1</pub-id>. Number: 1 Publisher: <publisher-name>Nature Publishing Group</publisher-name>.</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Andriy</given-names> <surname>Myronenko</surname></string-name></person-group>. <article-title>3D MRI brain tumor segmentation using autoen-coder regularization</article-title>. <source>arXiv</source>, <month>November</month> <year>2018</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1810.11654</pub-id>.</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="data"><person-group person-group-type="author"><collab>The MONAI Consortium. Project monai</collab></person-group>. <source>Zenodo</source>, <month>December</month> <year>2020</year>. doi: <pub-id pub-id-type="doi">10.5281/zenodo.4323059</pub-id>.</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Carsen</given-names> <surname>Stringer</surname></string-name> and <string-name><given-names>Marius</given-names> <surname>Pachitariu</surname></string-name></person-group>. <article-title>Cellpose 2.0: how to train your own model</article-title>. <source>Nature Methods</source>, <volume>19</volume>:<fpage>1634</fpage>–<lpage>1641</lpage>, <year>2022</year>.</mixed-citation></ref>
+    <ref id="c16"><label>16.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Manan</given-names> <surname>Lalit</surname></string-name>, <string-name><given-names>Pavel</given-names> <surname>Tomancak</surname></string-name>, and <string-name><given-names>Florian</given-names> <surname>Jug</surname></string-name></person-group>. <article-title>Embedding-based instance segmentation of microscopy images</article-title>. <source>arXiv</source>, <year>2021</year>. <pub-id pub-id-type="doi">10.48550/arXiv.2101.10033</pub-id>.</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Nicolas</given-names> <surname>Renier</surname></string-name>, <string-name><given-names>Zhuhao</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>David J</given-names> <surname>Simon</surname></string-name>, <string-name><given-names>Jing</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Pablo</given-names> <surname>Ariel</surname></string-name>, and <string-name><given-names>Marc</given-names> <surname>Tessier-Lavigne</surname></string-name></person-group>. <article-title>idisco: a simple, rapid method to immunolabel large tissue samples for volume imaging</article-title>. <source>Cell</source>, <volume>159</volume>(<issue>4</issue>): <fpage>896</fpage>–<lpage>910</lpage>, <year>2014</year>.</mixed-citation></ref>
+    <ref id="c18"><label>18.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Yuxin</given-names> <surname>Wu</surname></string-name> and <string-name><given-names>Kaiming</given-names> <surname>He</surname></string-name></person-group>. <article-title>Group Normalization</article-title>. <source>arXiv</source>, <month>June</month> <year>2018</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1803.08494</pub-id>.</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Jianbo</given-names> <surname>Shi</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Malik</surname></string-name></person-group>. <chapter-title>Normalized cuts and image segmentation</chapter-title>. <source>IEEE Transactions on Pattern Analysis and Machine Intelligence</source>, <volume>22</volume>(<issue>8</issue>):<fpage>888</fpage>–<lpage>905</lpage>, <month>August</month> <year>2000</year>. ISSN <issn>1939-3539</issn>. doi: <pub-id pub-id-type="doi">10.1109/34.868688</pub-id>. Conference Name: <publisher-name>IEEE Transactions on Pattern Analysis and Machine Intelligence</publisher-name>.</mixed-citation></ref>
+    <ref id="c20"><label>20.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Fausto</given-names> <surname>Milletari</surname></string-name>, <string-name><given-names>Nassir</given-names> <surname>Navab</surname></string-name>, and <string-name><given-names>Seyed-Ahmad</given-names> <surname>Ahmadi</surname></string-name></person-group>. <article-title>V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation</article-title>. <source>arXiv</source>, <month>June</month> <year>2016</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1606.04797</pub-id>.</mixed-citation></ref>
+    <ref id="c21"><label>21.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Carole H.</given-names> <surname>Sudre</surname></string-name>, <string-name><given-names>Wenqi</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Tom</given-names> <surname>Vercauteren</surname></string-name>, <string-name><given-names>Sébastien</given-names> <surname>Ourselin</surname></string-name>, and <string-name><given-names>M. Jorge</given-names> <surname>Cardoso</surname></string-name></person-group>. <article-title>Generalised Dice overlap as a deep learning loss function for highly unbalanced segmentations</article-title>. <source>arXiv</source>, <year>2017</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1707.03237</pub-id>.</mixed-citation></ref>
+    <ref id="c22"><label>22.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Seyed Sadegh Mohseni</given-names> <surname>Salehi</surname></string-name>, <string-name><given-names>Deniz</given-names> <surname>Erdogmus</surname></string-name>, and <string-name><given-names>Ali</given-names> <surname>Gholipour</surname></string-name></person-group>. <article-title>Tversky loss function for image segmentation using 3D fully convolutional deep networks</article-title>. <source>arXiv</source>, <month>June</month> <year>2017</year>. <pub-id pub-id-type="doi">10.48550/arXiv.1706.05721</pub-id>.</mixed-citation></ref>
+    <ref id="c23"><label>23.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Alexander</given-names> <surname>Kirillov</surname></string-name>, <string-name><given-names>Eric</given-names> <surname>Mintun</surname></string-name>, <string-name><given-names>Nikhila</given-names> <surname>Ravi</surname></string-name>, <string-name><given-names>Hanzi</given-names> <surname>Mao</surname></string-name>, <string-name><given-names>Chloe</given-names> <surname>Rolland</surname></string-name>, <string-name><given-names>Laura</given-names> <surname>Gustafson</surname></string-name>, <string-name><given-names>Tete</given-names> <surname>Xiao</surname></string-name>, <string-name><given-names>Spencer</given-names> <surname>Whitehead</surname></string-name>, <string-name><given-names>Alexander C.</given-names> <surname>Berg</surname></string-name>, <string-name><given-names>Wan-Yen</given-names> <surname>Lo</surname></string-name>, <string-name><given-names>Piotr</given-names> <surname>Dollár</surname></string-name>, and <string-name><given-names>Ross</given-names> <surname>Girshick</surname></string-name></person-group>. <article-title>Segment anything</article-title>. <source>arXiv</source>, <year>2023</year>. <pub-id pub-id-type="doi">10.48550/arXiv.2304.02643</pub-id>.</mixed-citation></ref>
+</ref-list>
+<ack>
+<title>Acknowledgments</title>
+<p>The authors thank Martin Weigert, Jessy Lauer and members of the Mathis Lab for inputs and comments on the manuscript.</p>
+<p>M.W.M. acknowledges the Wyss Institute for partly funding this work, and the Bertarelli Foundation.</p>
+</ack>
+<sec id="s2">
+<title>Author Contributions Statement</title>
+<p>Conceptualization: C.A., M.W.M.; Methodology: C.A., M.V., M.F.; Software: C.A., M.V., C.H., Y.P., T.K.; Investigation: C.A.; Dataset Acquisition: S.B.H, T.K., S.P.; Dataset Labeling: T.K.; Writing-Original Draft: C.A., M.W.M., T.K., M.F.; Supervision: M.W.M., M.F., A.I.; Funding Acquisition: M.W.M.</p>
+</sec>
+<sec id="s3">
+<title>Declaration of interests</title>
+<p>The authors declare no competing interests.</p>
+</sec>
+<sec id="s4">
+<title>Dataset Availability</title>
+<p>Labeled 3D data is available at: <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link>;see our Supplemental Data Card.</p>
+</sec>
+<sec id="s5">
+<title>Code Availability</title>
+<p>All code is available at: <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link> and code to reproduce the Figures is available at: <ext-link ext-link-type="uri" xlink:href="https://github.com/C-Achard/CellSeg3D-figures">https://github.com/C-Achard/CellSeg3D-figures</ext-link>.</p>
+</sec>
+<sec id="s6">
+<title>Methods</title>
+<sec id="s6a">
+<title>Datasets</title>
+<sec id="s6a1">
+<title>CellSeg3D LSM dataset: acquisition and labeling</title>
+<p>The whole-brain data by Voigt et al. (<xref ref-type="bibr" rid="c1">1</xref>) was obtained from the IDR platform (<xref ref-type="bibr" rid="c7">7</xref>); the volume consists of CLARITY cleared tissue from a TPH2-tdTomato mouse. Data was acquired with the mesoSPIM system at a zoom of 0.63X with 561 nm excitation.</p>
+<p>The data was cropped to several regions of the somatosensory (5 volumes, without artifacts) and visual cortex (1 volume, with artifacts) and annotated by an expert. The ground-truth cell count for the dataset is as follows:</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Dataset ground-truth cell count per volume.</title></caption>
+<graphic xlink:href="594691v1_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+</sec>
+<sec id="s6a2">
+<title>Additional datasets</title>
+<p>Additional datasets, used in <xref rid="fig2" ref-type="fig">Figure 2c</xref> were taken from the <ext-link ext-link-type="uri" xlink:href="https://github.com/juglab/EmbedSeg/releases/tag/v0.1.0">GitHub page</ext-link> of EmbedSeg, by (<xref ref-type="bibr" rid="c16">16</xref>). We used our pretrained WNet3D, without re-training (the model was only trained on our new dataset described above), to generate semantic segmentation. The channel containing the foreground was then thresholded and the Voronoi-Otsu algorithm used to generate instance labels (for Platynereis data), with hyperparameters based on the Dice metric with the ground truth. However, these parameters can also be estimated directly.</p>
+<p>For the Mouse Skull Nuclei instance segmentation, we performed additional post-processing using clEsperanto (<xref ref-type="bibr" rid="c12">12</xref>) to perform a morphological closing operation with radius 8 on semantic labels in order to remove small holes. The image was then remapped to values ∈[0; 100] for convenience, before merging labels with a touching border within intensity range between 35 and 100 using the <italic>merge_labels_with_border_intensity_within_range</italic> function.</p>
+<p>For <xref rid="fig2" ref-type="fig">Figure 2d</xref>, we used a wild type C57BL/6J adult mouse (17 weeks old, Female) that was given appetitive food 90 min before deep anesthesia and intra-cardial perfusion with 4% PFA. We followed establish guidelines for iDISCO (<xref ref-type="bibr" rid="c17">17</xref>). In brief, the brain was dehydrated, bleached, permeabilized and stained for c-FOS using anti-c-FOS Rat monoclonal purified IgG (Synaptic Systems, Cat. No. 226 017) followed by a Donkey anti-Rat IgG Alexa Fluor− 555 (Invitrogen A78945) secondary antibody.</p>
+<p>Then, the whole brain was imaged on a mesoSPIM (<xref ref-type="bibr" rid="c1">1</xref>). Imaging was performed with a laser at a wavelength of 561 nm, with a pixel size of 5.26×5.26 µm in x,y, and a step size of 5 µm in z. All experimental protocols adhered to the stringent ethical standards set forth by the Veterinary Department of the Canton Geneva, Switzerland, with all procedures receiving approval and conducted under license number 33020 (GE10A).</p>
+</sec>
+</sec>
+<sec id="s6b">
+<title>Segmentation models and algorithms: Self-supervised semantic segmentation</title>
+<sec id="s6b1">
+<title>WNet3D model architecture</title>
+<p>To perform self-supervised cell segmentation, we adapted the WNet architecture proposed by Xia and Kulis (<xref ref-type="bibr" rid="c10">10</xref>), an autoencoder architecture based on joining two U-Net models end-to-end. We provide a modified version of the WNet, named WNet3D, with the following changes:</p>
+<list list-type="bullet">
+<list-item><p>A conversion of the architecture for fully-3D segmentation, including the SoftNCuts loss</p></list-item>
+<list-item><p>Replacing the proposed two-step model update with the weighted sum of the encoder and decoder losses, updated in a single backward pass</p></list-item>
+<list-item><p>Reducing the overall depth of the encoder and decoder, using three up/downsampling steps instead of four</p></list-item>
+<list-item><p>Replacing batch normalization with group normalization, tuning the number of groups based on performance</p></list-item>
+</list>
+<p>Reducing the number of layers improved overall performance by reducing overfitting and sped up training and inference. This trimming was meant to reduce the large number of parameters resulting from a naive conversion of the original WNet architecture to 3D, which were found to be unnecessary for the present cell segmentation task. Finally, we introduced group normalization(<xref ref-type="bibr" rid="c18">18</xref>) to replace batch normalization, which improved performance in the present low batch size setting, as well as training and inference speed.</p>
+<p>To summarize, the model consists of an encoder <italic>U</italic><sub><italic>enc</italic></sub> and decoder <italic>U</italic><sub><italic>dec</italic></sub>, as originally proposed; however, each UNet comprises 7 blocks, for a total of 14 blocks, down from 9 blocks per UNet originally. <italic>U</italic><sub><italic>enc</italic></sub> and <italic>U</italic><sub><italic>dec</italic></sub> start and end with 2 3 × 3 × 3 3D convolutional layers, in-between are 5 blocks, each block being defined by two 3×3×3 3D convolutional layers, followed by a ReLU and group normalization (<xref ref-type="bibr" rid="c18">18</xref>) (instead of batch normalization). Skip connections are used to propagate information by concatenating the output of descending blocks to that of their corresponding ascending blocks. Blocks are followed by 2×2×2 max pooling layers in the descending half of <italic>U</italic><sub><italic>enc</italic></sub> and <italic>U</italic><sub><italic>dec</italic></sub>, the ascending half uses 2×2×2 transpose convolution layers with stride= 2 ; <italic>U</italic><sub><italic>enc</italic></sub> is then followed by a 1× 1× 13D convolutional layer to obtain class logits, follwed by a softmax, the output of which is provided to <italic>U</italic><sub><italic>dec</italic></sub> to perform the reconstruction. <italic>U</italic><sub><italic>dec</italic></sub> is similarly followed by a 1×1×13D convolutional layer and outputs the reconstructed volume. Refer to figure (<xref rid="fig1" ref-type="fig">Figure 1d</xref>) for a complete overview of the WNet3D architecture.</p>
+</sec>
+<sec id="s6b2">
+<title>Losses</title>
+<p>Segmentation is performed in <italic>U</italic><sub><italic>enc</italic></sub> by using the an adapted 3D SoftNCuts loss as an objective, with the voxel brightness differences defining the edge weight in the calculation, as proposed in the initial Ncuts algorithm by Shi and Malik (<xref ref-type="bibr" rid="c19">19</xref>).</p>
+<p>The SoftNCuts is defined as
+<disp-formula id="eqn1">
+<graphic xlink:href="594691v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>cut</italic>(<italic>A, B</italic>) = Σ<sub><italic>u</italic>∈<italic>A,v</italic>∈<italic>B</italic></sub><italic>w</italic>(<italic>u, v</italic>), <italic>V</italic> is the set of all pixels, <italic>A</italic><sub><italic>k</italic></sub> the set of all pixels labeled as class <italic>k</italic> and <italic>w</italic>(<italic>u, v</italic>) is the weight of the edge <italic>uv</italic> in a graph representation of the image; in order to group the voxels according to brightness, <italic>w</italic>(<italic>u, v</italic>) is defined here as
+<disp-formula id="eqn2">
+<graphic xlink:href="594691v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+with <italic>F</italic> (<italic>i</italic>) = <italic>I</italic>(<italic>i</italic>) the intensity value, <italic>σ</italic><sub><italic>I</italic></sub> the standard deviation of the feature similarity term, termed “intensity sigma”, <italic>σ</italic><sub><italic>X</italic></sub> the standard deviation of the spatial proximity term, termed “spatial sigma”, and <italic>r</italic> the radius for the calculation of the loss, to avoid computing every pairwise value.</p>
+<p>In our experiments, lowering the radius greatly sped up training without impacting performance, even with a radius as low as 2 voxels. For the spatial sigma, the original value of 4 was used, whereas for the intensity sigma we use a value of 1 (originally 4), after remapping voxel values in each image to the [0; 100] range.</p>
+<p><italic>U</italic><sub><italic>dec</italic></sub> then uses a suitable reconstruction loss to reconstruct the original image; we used either Mean Squared Error (MSE) or Binary Cross Entropy (BCE) as defined in PyTorch.</p>
+</sec>
+<sec id="s6b3">
+<title>Hyperparameters</title>
+<p>To achieve proper cell segmentation, it was crucial to prevent the SoftNCuts from simply separating the data in broad regions with differing overall brightness; this was achieved by adjusting the weighting of the reconstruction loss accordingly. In our experiments, we empirically adapted the weights to equalize the contribution of each loss term, making sure we have uniform gradients in the backward pass. This proved effective for training on our provided dataset; however, for different samples, adjusting the reconstruction weight and learning rate using the ranges specified below was necessary for good performance; other parameters were kept constant.</p>
+<p>The default number of classes is two, to segment background and cells, but this number may be raised to add more brightness-grouped classes; this could be useful to mitigate the over-segmentation of cells due to brightness “halos” surrounding the nucleus, or to help produce labels for object boundary segmentation.</p>
+<p>We found that summing the losses, instead of iteratively updating the encoder first followed by the whole network as suggested, improved stability and consistency of loss convergence during training; in our version the trade-off between accuracy of reconstruction and quality of segmentation is controlled by adjusting the parameters of the weighted sum instead of individual learning rates.</p>
+<p>This modified model was usually trained for 50 epochs, unless stated otherwise. We use a batch size of 2, 2 classes, a radius of 2 for the NCuts loss and the MSE reconstruction loss, and use a learning rate between 2 · 10<sup>−3</sup> and 2 · 10<sup>−5</sup> and reconstruction loss weight between 5 · 10<sup>−3</sup> and 5 · 10<sup>−1</sup>, depending on the data.</p>
+<p>See <xref rid="figS2" ref-type="fig">Supplemental Figure S2a</xref> for an overview of the training process, including loss curves and model outputs.</p>
+</sec>
+</sec>
+<sec id="s6c">
+<title>Segmentation models and algorithms: Supervised semantic segmentation</title>
+<sec id="s6c1">
+<title>Model architectures</title>
+<p>In order to perform supervised fully-3D cell segmentation, we leveraged computer vision models and losses implemented by the MONAI project, which offers several state-of-the-art architectures. The MONAI API was used as the basis for our napari plugin, and we retained two of the provided models based on their performance on the provided dataset:</p>
+<list list-type="bullet">
+<list-item><p>SegResNet (<xref ref-type="bibr" rid="c13">13</xref>)</p></list-item>
+<list-item><p>SwinUNetR (<xref ref-type="bibr" rid="c11">11</xref>)</p></list-item>
+</list>
+<p>SegResNet is based on the Convolutional Neural Network (CNN) architecture, whereas SwinUNetR uses a transformer-based encoder.</p>
+<p>Several relevant segmentation losses are made available for training:</p>
+<list list-type="bullet">
+<list-item><p>Dice loss (<xref ref-type="bibr" rid="c20">20</xref>)</p></list-item>
+<list-item><p>Dice-Cross Entropy loss</p></list-item>
+<list-item><p>Generalized Dice loss (<xref ref-type="bibr" rid="c21">21</xref>)</p></list-item>
+<list-item><p>Tversky loss (<xref ref-type="bibr" rid="c22">22</xref>)</p></list-item>
+</list>
+<p>The SegResNet and SwinUNetR models shown here were trained using the Generalized Dice loss for 50 epochs, with a learning rate of 1·10<sup>−3</sup>, batch size of 5 (SwinUNetR) or 10 (SegResNet), and data augmentation enabled. Unless stated otherwise, a train/test split of 80/20% was used.</p>
+<p>The outputs were then passed through a threshold to discard low-confidence predictions; this was estimated using the training set to find the threshold that maximized the Dice metric between predictions and ground truth. The same process was repeated for Cellpose (cell probability threshold) and StarDist (non-maximum suppression (NMS) and cell probability thresholds) to ensure fair comparisons, see “Model comparison” below and <xref rid="figS1" ref-type="fig">Supplemental Figure S1a,b,c,d</xref> for tuning results. Inference outputs are processed a-posteriori to obtain instance labels, as detailed below.</p>
+</sec>
+</sec>
+<sec id="s6d">
+<title>Instance segmentation</title>
+<p>Several methods for instance segmentation are available in the plugin: the connected components and watershed algorithms (scikit-image), and the Voronoi-Otsu labeling method (clEsperanto). The latter combines an Otsu threshold and a Voronoi tessellation to perform instance segmentation, and more readily avoids fusing clumped cells than the former two, provided that the objects are spherical, which is the case in the present task.</p>
+<p>The Voronoi-Otsu method was therefore used to perform instance segmentation in the benchmarks, with its two parameters, spatial sigma and outline sigma, tuned to fit the training data when relevant, and manually selected otherwise.</p>
+</sec>
+<sec id="s6e">
+<title>Model Comparisons</title>
+<p>StarDist was retrained using the provided example notebook for 3D, using default parameters. For the model we refer to as “Default”, we used a patch size of 8x64x64, a grid of (2,1,1), a batch size of 2 and 96 rays, as computed automatically in the provided example code for StarDist. For the “Tuned” version (referred to simply as “StarDist”), we changed the patch size to 64x64x64 and the grid to (1,1,1).</p>
+<p>Cellpose was retrained without pretrained weights using default parameters, except for the mean diameter which was set to 3.3 according to the provided object size estimation utility. We investigated all pretrained models provided by Cellpose, as well as attempting transfer learning, but no pretrained model was found to be suitable for our data. “Default” refers to automatically estimated parameters for StarDist (NMS and probability threshold, estimated on the training data), and cell probability threshold of 0 with resampling enabled for Cellpose. For both models, inference hyperparameters (respectively NMS and cell probability threshold for StarDist and cell probability threshold and resampling on CellPose) were tuned on the training set to maximize the Dice metric with GT labels, exactly like our models. After tuning, we found that Cellpose achieved best performance with a cell probability threshold of −9 and resampling enabled (see <xref rid="figS1" ref-type="fig">Supplemental Figure S1a</xref>) across all data subset. For StarDist, best parameters varied across subsets (see <xref rid="figS1" ref-type="fig">Supplemental Figure S1d</xref>), however, as this did not affect performance significantly, we used the parameters estimated automatically as part of the training.</p>
+<p>Models provided in the plugin (SwinUNetR, SegResNet and WNet3D), which we refer to as “pretrained”, are trained on the entire dataset, using all images (and labels only for the supervised models). The WNet3D model was used in <xref rid="fig1" ref-type="fig">Figure 1f</xref> (WNet3D - pretrained), g (WNet3D pretrained and SwinUnetR), and <xref rid="fig2" ref-type="fig">Figure2b</xref> (WNet3D). Hyperparameters used are as mentioned above, except for the number of epochs, which was selected based on validation curves.</p>
+</sec>
+<sec id="s6f">
+<title>Label efficiency comparison</title>
+<p>To assess how many labeled cells are required to reach a certain performance, we trained StarDist, Cellpose, SegResNet, SwinUNetR and WNet on three distinct subsets of the data, each time holding out one full volume of the full dataset for evaluation, fragmenting the remaining volumes and labels into 64 pixels cubes, and training on distinct train/validation splits on remaining data. We used 10%, 20%, 60% and 80% splits in order to assess how much labeled data is necessary for the supervised models, and whether they show variability based on the data used for training. To note, the evaluation data remained the same for all percentages in a given data subset, ensuring a consistent performance comparison. We used 50 epochs for all runs, and no early stopping or hyperparameter tuning was performed based on the validation performance during training. Instead, we reused the best hyperparameters found for <xref rid="fig1" ref-type="fig">Figure 1b</xref>.</p>
+<p>For example, the first subset consists of all five somatosensory cortex volumes as training/validation data, and the visual cortex volume is held out for evaluation. For Cellpose two conditions are shown, default (cell probability threshold of 0) and fine-tuned (threshold of -9), which improved performance.</p>
+<p>To avoid training on data with artifacts present in the visual cortex volume, WNet3D was only trained on the first of the subsets. Instead, the model was trained on a percentage of the first subset using three different seeds. We also avoid evaluating on artifacts in the visual volume, unless mentioned otherwise, as the model is not meant to handle these regions.</p>
+</sec>
+<sec id="s6g">
+<title>WNet3D-based retraining of supervised models</title>
+<p>To assess whether WNet3D can generalize to unseen data when trained on a specific brain volume, we trained a WNet3D from scratch using volumes cropped from a different mesoSPIM-acquired whole brain sample, labeled with c-FOS, imaged at 561 nm with a pixel size of 5.26 × 5.26<italic>µm</italic> in x and y, and a step size in z of 5<italic>µm</italic> (see Additional Datasets).</p>
+<p>This model was then used to generate labels for our provided dataset. A SwinUNetR model was then trained using these WNet3D generated labels, and compared to the performance of the pretrained model we provide in our napari plugin.</p>
+</sec>
+<sec id="s6h">
+<title>Performance evaluation</title>
+<sec id="s6h1">
+<title>Instance segmentation</title>
+<p>Model performance was evaluated and compared via the matching dataset utilities provided by StarDist (<xref ref-type="bibr" rid="c2">2</xref>). Briefly, several accuracy metrics are computed as functions of several overlap thresholds <italic>τ</italic> ; true positives are pairings of model predictions and ground-truth labels having an intersection over union (<italic>IoU</italic>) value greater than the specified threshold, with automated matching to prevent additional instances from being assigned to the same ground truth or model-predicted instance of a label. The thresholds for the 3D models were chosen based on the Dice metric between training labels and model-generated labels, unless specified otherwise.</p>
+</sec>
+<sec id="s6h2">
+<title>Semantic segmentation</title>
+<p>The Dice-Sørensen coefficient was used to evaluate semantic segmentation performance, defined as
+<disp-formula id="eqn3">
+<graphic xlink:href="594691v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+</sec>
+</sec>
+<sec id="s6i">
+<title>CellSeg3D napari plugin workflow</title>
+<p>To facilitate the use of our models, we provide a napari plugin where users can easily annotate data, train models, run inference, and perform various post-processing steps. Starting from raw data, users can quickly crop regions into regions of interest, and create training data from those. Users may manually annotate the data in napari using our labeling interface, which provides additional interface such as orthogonal projections to better view the ongoing labeling process, as well as keeping track of time spent labeling each slice, or alternatively train a self-supervised model to automatically perform a first iteration of the segmentation and labeling, without annotation. Users can also try pretrained models, including the self-supervised one, to generate labels which can then be corrected using the same labeling interface. Supervised or self-supervised models can then be trained using the generated data. Full documentation for the plugin can be found on our GitHub website.</p>
+<p>In the case of supervised learning, the volumes (random patches or whole images) are split into training and validation sets according to a user-set proportion, using 80%/20% by default. Input images are normalized by setting all values above and below the 1st and 99th percentile to the corresponding percentile value, respectively. Data augmentation can be used; by default a random shift of the intensity, elastic and affine deformations, flipping and rotation are used.</p>
+<p>For the self-supervised model, images are remapped to values in the [0;100] range to accommodate the intensity sigma of the SoftNCuts loss. No percentile normalization is used and data augmentation is restricted to flipping and rotating in this case.</p>
+<p>Deterministic training may also be enabled for all models and the random generation seed set; unless specified otherwise, models were trained on cropped cubes with 64 pixels edges, with both data augmentation and deterministic training enabled.</p>
+<p>We additionally provide a Colab notebook to train our self-supervised model using the same procedure described above. The pretrained weights for all our models are also made available through the HuggingFace platform (and automatically downloaded by the plugin or in Colab), so that users without the recommended hardware can still easily train or try our models. All code is open source and available on GitHub.</p>
+</sec>
+<sec id="s6j">
+<title>Statistical Methods</title>
+<p>To confirm whether there were statistically significant differences in model performance, we pooled accuracy values (across IoU for <xref rid="fig1" ref-type="fig">Figure 1b</xref>, and <xref rid="fig1" ref-type="fig">g</xref> and <xref rid="fig2" ref-type="fig">Figure 2b</xref>, and across percentage of training data used for <xref rid="fig1" ref-type="fig">Figure 1f</xref>) and in Python 3.8 using the scikit_posthocs package we performed a Kruskal-Wallis test to check the null hypothesis that the median of all models was equal. When this test was significant, we used two-sided Conover-Iman post-hoc testing to test pairwise differences between models, also using the “scikit_posthoc” implementation, with the Holm-Bonferroni correction for multiple comparisons (step-down method using Bonferroni adjustments).</p>
+</sec>
+</sec>
+<sec id="s7">
+<title>Supplemental Information</title>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Figure S1.</label>
+<caption><title>Hyperparameter tuning of baselines and statistics</title>
+<p><bold>a,b,c:</bold> Hyperparameter optimisation for several supervised models. In Cellpose, the cell probability threshold value is applied before the sigmoid, hence values between <italic>−</italic>12 and 12 were tested. CellSeg3D models return predictions between 0 and 1 after applying the softmax, values tested were therefore in this range. Error bars show 95% CIs. <bold>d:</bold> StarDist hyperparameter optimisation. Several parameters were tested for non-maximum suppression (NMS) threshold and cell probability threshold. <bold>e:</bold> Pooled Dice scores per split, related to <xref rid="fig1" ref-type="fig">Figure 1f</xref>, used for statistical testing shown in <bold>f</bold>. The central box represents the interquartile range (IQR) of values with the median as a horizontal line, the upper and lower limits the upper and lower quartiles. Whiskers extend to data points within 1.5 IQR of the quartiles. Outliers are shown separately. <bold>f:</bold> Pairwise Conover’s test p-values for the Dice metric values per model shown in <bold>e</bold>. Colors are based on level of significance.</p></caption>
+<graphic xlink:href="594691v1_figS1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figS2" position="float" fig-type="figure">
+<label>Figure S2.</label>
+<caption><title>Training WNet3D</title>
+<p><bold>a:</bold> Overview of the training process of WNet3D. The loss for the encoder <italic>U</italic><sub><italic>enc</italic></sub> is the SoftNCuts, whereas the reconstruction loss for <italic>U</italic><sub><italic>dec</italic></sub> is MSE. The weighted sum of losses is calculated as indicated in Methods. For select epochs, input volumes are shown, with outputs from encoder <italic>U</italic><sub><italic>enc</italic></sub> above, and outputs from decoder <italic>U</italic><sub><italic>dec</italic></sub> below.</p></caption>
+<graphic xlink:href="594691v1_figS2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<sec id="s7a">
+<title>Dataset Card</title>
+<sec id="s7a1">
+<title>A. Motivation</title>
+<list list-type="order">
+<list-item><p><italic>For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description</italic>. The contributions of our dataset to the vision and cell biology communities are twofold: 1) We release a 3D cell segmentation dataset of 2632 TPH2 positive cells, based on data from Voigt et al.(<xref ref-type="bibr" rid="c1">1</xref>). 2) The dataset is one of the first cell segmentation datasets to date created in 3D. It aims to advance cell segmentation research in neuroscience and vision communities.</p></list-item>
+<list-item><p><italic>Who created the dataset (which team, research group) and on behalf of which entity (company, institution, organization)?</italic> The annotated dataset was created by the Mathis Lab of Adaptive Intelligence of EPFL. The raw brain data is publicly available on <ext-link ext-link-type="uri" xlink:href="https://idr.openmicroscopy.org/webclient/?show=project-854">https://idr.openmicroscopy.org/webclient/?show=project-854</ext-link>.</p></list-item>
+<list-item><p><italic>Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number</italic>. This project was funded, in part, by the Wyss Center via a grant to PI Mathis.</p></list-item>
+<list-item><p><italic>Any other comments?</italic> No.</p></list-item>
+</list>
+</sec>
+<sec id="s7a2">
+<title>Composition</title>
+<list list-type="order">
+<list-item><p><italic>What do the instances that comprise the dataset represent (e.g</italic>.,<italic>documents, photos, people, countries)? Are there multiple types of instances (e.g</italic>., <italic>movies, users, and ratings; people and interactions between them; nodes and edges)? Please provide a description</italic>. The instances in our dataset represent 3D volumetric segments, extracted from mesoSPIM scans of mouse brains. Each instance is essentially a three-dimensional image that has been carefully cropped mainly from the somatosensory and visual cortex of the scanned data. In each of these 3D volumes, TPH2 cells are identified and labeled.</p></list-item>
+<list-item><p><italic>How many instances are there in total (of each type, if appropriate)?</italic> There are six 3D volumetric segments, that contain a total of 2638 TPH2 positive cells identified and labeled in 3D.</p></list-item>
+<list-item><p><italic>Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g</italic>., <italic>geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g</italic>., <italic>to cover a more diverse range of instances, because instances were withheld or unavailable)</italic>. The dataset provided is a subset of the available whole-brain sample, selected from larger raw volumetric data obtained from mesoSPIM scans of mouse brains. This selection primarily consists of 3D volumes cropped mainly from the somatosensory and visual cortex regions, where the TPH2 cells are labeled meticulously. The broader dataset from which these instances were extracted represents scans of whole mouse brains. However, due to the immense volume of the entire scanned data, creating a manageable and focused dataset was key for addressing specific research questions and computational manageability.</p></list-item>
+<list-item><p><italic>What data does each instance consist of? “Raw” data (e.g</italic>., <italic>unprocessed text or images) or features? In either case, please provide a description</italic>. Each instance in the dataset consists of “raw” 3D volumetric data derived from mesoSPIM scans of mouse brains, specifically focusing on the somatosensory cortex and vision cortex regions. The instances are essentially unprocessed and maintain the integrity of the original scanned data.</p></list-item>
+<list-item><p><italic>Is there a label or target associated with each instance? If so, please provide a description</italic>. Yes, each instance in the dataset is annotated with masks. There are no categories or text associated with the masks.</p></list-item>
+<list-item><p><italic>Is any information missing from individual instances? If so,please provide a description, explaining why this information is missing (e.g</italic>., <italic>because it was unavailable). This does not include intentionally removed information, but might include, e.g</italic>., <italic>redacted text</italic>. In our dataset, there is no information missing from individual instances.</p></list-item>
+<list-item><p><italic>Are relationships between individual instances made explicit (e.g</italic>., <italic>users” movie ratings, social network links)? If so, please describe how these relationships are made explicit</italic>. Not applicable.</p></list-item>
+<list-item><p><italic>Are there any errors, sources of noise, or redundancies in the dataset? If so, please provide a description</italic>. While we have taken extensive measures to ensure the accuracy and quality of the dataset, it is challenging to rule out the presence of minor errors or noise, especially considering the complex nature of the 3D cell segmentation task. Nonetheless, we believe that any such inconsistencies do not compromise the overall reliability and utility of the dataset.</p></list-item>
+<list-item><p><italic>Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g</italic>., <italic>websites, tweets, other datasets)? If it links to or relies on external resources, a) are there guarantees that they will exist, and remain constant, over time; b) are there official archival versions of the complete dataset (i.e</italic>., <italic>including the external resources as they existed at the time the dataset was created); c) are there any restrictions (e.g</italic>., <italic>licenses, fees) associated with any of the external resources that might apply to a dataset consumer? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate</italic>. The dataset is self-contained.</p></list-item>
+<list-item><p><italic>Does the dataset contain data that might be considered confidential (e.g</italic>., <italic>data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals” non-public communications)? If so, please provide a description</italic>. No.</p></list-item>
+<list-item><p><italic>Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? If so, please describe why</italic>. No. The dataset is composed solely on scientific, non-human biological data.</p></list-item>
+<list-item><p><italic>Does the dataset identify any subpopulations (e.g</italic>., <italic>by age, gender)? If so, please describe how these subpopulations are identified and provide a description of their respective distributions within the dataset</italic>. Not applicable.</p></list-item>
+<list-item><p><italic>Is it possible to identify individuals (i.e</italic>., <italic>one or more natural persons), either directly or indirectly (i.e</italic>., <italic>in combination with other data) from the dataset? If so, please describe how</italic>. Not applicable.</p></list-item>
+<list-item><p><italic>Does the dataset contain data that might be considered sensitive in anyway (e.g</italic>., <italic>data that reveals race or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)? If so, please provide a description</italic>. No.</p></list-item>
+<list-item><p><italic>Any other comments?</italic> No.</p></list-item>
+</list>
+</sec>
+<sec id="s7a3">
+<title>Collection Process</title>
+<list list-type="order">
+<list-item><p><italic>How was the data associated with each instance acquired? Was the data directly observable (e.g</italic>., <italic>raw text, movie ratings), reported by subjects (e.g</italic>., <italic>survey responses), or indirectly inferred/derived from other data (e.g</italic>., <italic>part-of-speech tags, model-based guesses for age or language)? If the data was reported by subjects or indirectly inferred/derived from other data, was the data validated/verified? If so, please describe how</italic>. The data associated with each instance was acquired through mesoSPIM scans of mouse brains, providing raw, directly observable 3D volumetric data. The data was not reported by subjects or indirectly inferred or derived from other data; it was directly observed and recorded from the scientific imaging process. All collected volumes were annotated by expert human annotators. The quality of the annotations was validated by an external expert not involved in the annotation process.</p></list-item>
+<list-item><p><italic>What mechanisms or procedures were used to collect the data (e.g</italic>., <italic>hardware apparatuses or sensors, manual human curation, software programs, software APIs)? How were these mechanisms or procedures validated?</italic> The raw data is open source and provided by the Image Data Resource (IDR).</p></list-item>
+<list-item><p><italic>If the dataset is a sample from a larger set, what was the sampling strategy (e.g</italic>., <italic>deterministic, probabilistic with specific sampling probabilities)?</italic> Our sampling strategy was designed to select volumes where TPH2 cells are clearly discernible. We aimed to include a varied range of volumes, from densely packed with TPH2 cells to ones more sparsely populated, ensuring a good representation of various brain areas. Another important factor was the manageability of the volumes from an annotation perspective, to facilitate accurate and efficient labeling.</p></list-item>
+<list-item><p><italic>Who was involved in the data collection process(e.g</italic>.,<italic>students,crowdworkers, contractors) and how were they compensated (e.g</italic>., <italic>how much were crowdworkers paid)?</italic> The released masks were created by research personnel of the Mathis Lab of Adaptive Intelligence, EPFL.</p></list-item>
+<list-item><p><italic>Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g</italic>., <italic>recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created</italic>. The raw data was downloaded from the Image Data Resource (IDR) website. The labels were created between June and October 2021.</p></list-item>
+</list>
+</sec>
+</sec>
+<sec id="s7b">
+<title>If the dataset does not relate to people, you may skip the remaining questions in this section</title>
+<sec id="s7b1">
+<title>Preprocessing / Cleaning / Labeling</title>
+<list list-type="order">
+<list-item><p><italic>Was any preprocessing / cleaning / labeling of the data done (e.g</italic>., <italic>discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section</italic>. Yes, extensive preprocessing, and labeling were conducted to ensure the usability and reliability of the dataset. The initial step involved examination of the raw 3D volumetric data, where we ruled out the presence of anomalies or artefacts. During this phase, we ensured the visibility of TPH2-positive cells within the volumetric segments. We proceeded to label the TPH2-positive cells through a well-defined annotation process, where each cell within the selected volumes was identified and marked by our experts. At the end of the annotation process, the quality of the work was verified by a human expert not involved in the annotation work.</p></list-item>
+<list-item><p><italic>Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g</italic>., <italic>to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data</italic>. The raw data is open source and available on the Image Data Resource (IDR) website.</p></list-item>
+<list-item><p><italic>Is the software that was used to preprocess/clean/label the data available? If so, please provide a link or other access point</italic>. Yes. We used the napari interactive viewer for multidimensional images in Python.</p></list-item>
+</list>
+</sec>
+<sec id="s7b2">
+<title>Uses</title>
+<list list-type="order">
+<list-item><p><italic>Has the dataset been used for any tasks already? If so, please provide a description</italic>. The dataset was used to train our segmentation models.</p></list-item>
+<list-item><p><italic>Is there a repository that links to any or all papers or systems that use the dataset? If so, please provide a link or other access point</italic>. Yes, the repository hosting the model weights which were trained on our data, as well as the repository for our napari plugin for 3D cell segmentation.</p></list-item>
+<list-item><p><italic>What (other) tasks could the dataset be used for?</italic> We intend the dataset to be used to train cell segmentation models. However, we invite the research community to gather additional annotations for mesoSPIM acquired datasets via the tools we contribute in the present publication.</p></list-item>
+<list-item><p><italic>Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g</italic>., <italic>stereotyping, quality of service issues) or other risks or harms (e.g</italic>., <italic>legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?</italic> Not applicable.</p></list-item>
+<list-item><p><italic>Are there tasks for which the dataset should not be used? If so, please provide a description</italic>. Full terms of use for the dataset can be found at <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link>, but the project is made open source under an MIT license.</p></list-item>
+</list>
+</sec>
+<sec id="s7b3">
+<title>Distribution</title>
+<list list-type="order">
+<list-item><p><italic>Will the dataset be distributed to third parties outside of the entity (e.g</italic>., <italic>company, institution, organization) on behalf of which the dataset was created? If so, please provide a description</italic>. The dataset is released on zenodo at: <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link>.</p></list-item>
+<list-item><p><italic>How will the dataset will be distributed (e.g</italic>., <italic>tarball on website, API, GitHub)? Does the dataset have a digital object identifier (DOI)?</italic> The dataset is released on zenodo at: <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link>.</p></list-item>
+<list-item><p><italic>When will the dataset be distributed?</italic> The dataset is released on zenodo at: <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link> alongside the publication of this paper.</p></list-item>
+<list-item><p><italic>Will the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)? If so, please describe this license and/or ToU, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms or ToU, as well as any fees associated with these restrictions</italic>. The dataset is released under a MIT license.</p></list-item>
+<list-item><p><italic>Have any third parties imposed IP-based or other restrictions on the data associated with the instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms, as well as any fees associated with these restrictions</italic>. Full terms of use and restrictions on use of the provided 3D cell segmentation dataset can be found at <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link>.</p></list-item>
+<list-item><p><italic>Do any export controls or other regulatory restrictions apply to the dataset or to individual instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any supporting documentation</italic>. The dataset is released under a MIT license.</p></list-item>
+<list-item><p><italic>Any other comments?</italic> No.</p></list-item>
+</list>
+</sec>
+<sec id="s7b4">
+<title>Maintenance</title>
+<list list-type="order">
+<list-item><p><italic>Who will be supporting/hosting/maintaining the dataset?</italic> The dataset will be hosted at <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link> and maintained by the Mathis Lab of Adaptive Intelligence.</p></list-item>
+<list-item><p><italic>How can the owner/curator/manager of the dataset be contacted(e.g</italic>.,<italic>email address)?</italic> Please see contact information at <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link>.</p></list-item>
+<list-item><p><italic>Is there an erratum? If so, please provide a link or other access point</italic>. No.</p></list-item>
+<list-item><p><italic>Will the dataset be updated (e.g</italic>., <italic>to correct labeling errors, add new instances, delete instances)? If so, please describe how often, by whom, and how updates will be communicated to dataset consumers (e.g</italic>., <italic>mailing list, GitHub)?</italic> To ensure reproducibility of research this dataset won”t be updated. Any issues or errors will be publicly shared.</p></list-item>
+<list-item><p><italic>If the dataset relates to people, are there applicable limits on the retention of the data associated with the instances (e.g</italic>., <italic>were the individuals in question told that their data would be retained for a fixed period of time and then deleted)? If so, please describe these limits and explain how they will be enforced</italic>. Not applicable.</p></list-item>
+<list-item><p><italic>Will older versions of the dataset continue to be supported/hosted/maintained? If so, please describe how. If not, please describe how its obsolescence will be communicated to dataset consumers</italic>. This is the first version.</p></list-item>
+<list-item><p><italic>If others want to extend/augment/build on/contribute to the dataset,is there a mechanism for them to do so? If so, please provide a description. Will these contributions be validated/verified? If so, please describe how. If not, why not? Is there a process for communicating/distributing these contributions to dataset consumers? If so, please provide a description</italic>. We warmly encourage users to enhance the value of this project by contributing additional annotations and annotated datasets. If you have relevant data, please consider sharing them by linking the data to our GitHub repository. For any inquiries, suggestions, or discussions related to the project, please feel free to reach out to us on GitHub <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D">https://github.com/AdaptiveMotorControlLab/CellSeg3D</ext-link>.</p></list-item>
+<list-item><p><italic>Any other comments?</italic> No.</p></list-item>
+</list>
+</sec>
+</sec>
+<sec id="s7c">
+<label>B.</label>
+<title>Data Annotation Card</title>
+<sec id="s7c1">
+<title>Task Formulation</title>
+<list list-type="order">
+<list-item><p><italic>At a high level, what are the subjective aspects of your task?</italic> Object segmentation within an image is a subjective task (<xref ref-type="bibr" rid="c23">23</xref>). Distinguishing between structures that represent cells and artifacts relies on the annotator”s judgment and expertise. This can lead to variability in the quality and quantity of the masks generated per image by different annotators. To mitigate this risk we engaged experts from our research lab, to annotate the volumes. We insisted on the quality of annotations over their quantity; we aimed to annotate smaller volumes to ensure accurate representation of the cell nuclei, even if it meant having fewer annotations.</p></list-item>
+<list-item><p><italic>What assumptions do you make about annotators?</italic> Our annotator is a member of our research lab, ensuring a close understanding of the project”s goals. The team concentrated on two main objectives. 1) Clear Understanding of Project Goals: We worked to fully understand the project”s aims and translated them into clear and straightforward guidelines, which included visual examples. 2) Regular Sharing of Updates and Results: we reviewed our aims and results to make ongoing improvements to the annotation process. This regular check-in helped in quickly addressing any issues and adding new material to improve our annotation quality.</p></list-item>
+<list-item><p><italic>How did you choose the specific wording of your task instructions? What steps, if any, were taken to verify the clarity of task instructions and wording for annotators?</italic> The annotator was a co-creator of the annotation instructions and guidelines, which boosted their understanding. As our task was annotations images, we crafted visual examples with step by step instructions. We collectively decide how to handle complex and unambiguous cases, and refine the guidelines throughout the process. The project team met for feedback and updates, while the annotator was able to give feedback on an asynchronous way at any time.</p></list-item>
+<list-item><p><italic>What, if any,risks did your task pose for annotators and were they informed of the risks prior to engagement with the task?</italic> No identified risks.</p></list-item>
+<list-item><p><italic>What are the precise instructions that were provided to annotators?</italic> We created clear guides on installing and using the napari annotation tool. The task was to segment every TPH2 positive cell in a given image. The annotator created a 3D mask for each cell they identified, using the tool to precisely add or remove areas of the mask around the cell. In simpler terms, they had to isolate each cell in 3D using the tool, making sure it was accurate down to the pixel-level.</p></list-item>
+</list>
+</sec>
+<sec id="s7c2">
+<title>Selecting Annotations</title>
+<list list-type="order">
+<list-item><p><italic>Are there certain perspectives that should be privileged? If so, how did you seek these perspectives out?</italic> We chose to engage researchers that have a deep understanding on cell biology and vision research.</p></list-item>
+<list-item><p><italic>Are there certain perspectives that would be harmful to include? If so, how did you screen these perspectives out?</italic> No.</p></list-item>
+<list-item><p><italic>Were sociodemographic characteristics used to select annotators for your task? If so, please detail the process</italic>. No.</p></list-item>
+<list-item><p><italic>If you have any aggregated socio-demographic statistics about your annotator pool, please describe. Do you have reason to believe that sociode-mographic characteristics of annotators may have impacted how they annotated the data? Why or why not?</italic> Our annotator worked in our research institute.</p></list-item>
+<list-item><p><italic>Consider the intended context of use of the dataset and the individuals and communities that may be impacted by a model trained on this dataset. Are these communities represented in your annotator pool?</italic> Not applicable.</p></list-item>
+</list>
+</sec>
+<sec id="s7c3">
+<title>Platform and Infrastructure Choices</title>
+<list list-type="simple">
+<list-item><label>1.</label><p><italic>What annotation platform did you utilize? At a high level, what considerations informed your decision to choose this platform? Did the chosen platform sufficiently meet the requirements you outlined for annotator pools? Are any aspects not covered?</italic> We used napari, a fast, interactive viewer for multi-dimensional images in Python. Link: <ext-link ext-link-type="uri" xlink:href="https://napari.org/stable/">https://napari.org/stable/</ext-link></p></list-item>
+<list-item><label>2.</label><p><italic>What, if any, communication channels did your chosen platform offer to facilitate communication with annotators? How did this channel of communication influence the annotation process and/or resulting annotations?</italic> Communication was established through other internal communication platforms.</p></list-item>
+<list-item><label>4.</label><p><italic>How much were annotators compensated? Did you consider any particular pay standards, when determining their compensation?</italic> If so, please describe. The compensation was based on their employment contract at EPFL.</p></list-item>
+</list>
+</sec>
+<sec id="s7c4">
+<title>Dataset Analysis and Evaluation</title>
+<list list-type="order">
+<list-item><p><italic>How do you define the quality of annotations in your context, and how did you assess the quality in the dataset you constructed?</italic> To assess the quality of the annotations in the constructed dataset, we included a review process. Annotations were created by an expert well-acquainted with the morphological characteristics of TPH2 positive cells, ensuring a high level of initial accuracy. Any ambiguous cases in annotation were resolved through discussions amongst the team until a consensus was reached. Regular feedback was provided to the annotator, and any identified errors or inconsistencies were promptly corrected.</p></list-item>
+<list-item><p><italic>Have you conducted any analysis on disagreement patterns? If so, what analyses did you use and what were the major findings? Did you analyze potential sources of disagreement?</italic> We provided regular feedback sessions in a synchronous and asynchronous way.</p></list-item>
+<list-item><p><italic>How do the individual annotator responses relate to the final labels released in the dataset?</italic> Our dataset along with our annotations are available and accessible through zenodo: <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/11095111">https://zenodo.org/records/11095111</ext-link>.</p></list-item>
+</list>
+</sec>
+<sec id="s7c5">
+<title>Dataset Release and Maintenance</title>
+<list list-type="order">
+<list-item><p><italic>Do you have reason to believe the annotations in this dataset may change over time? Do you plan to update your dataset?</italic> No.</p></list-item>
+<list-item><p><italic>Are there any conditions or definitions that, if changed, could impact the utility of your dataset?</italic> We do not believe so.</p></list-item>
+<list-item><p><italic>Will you attempt to track, impose limitations on, or otherwise influence how your dataset is used? If so, how?</italic> No.</p></list-item>
+<list-item><p><italic>Were annotators informed about how the data is externalized? If changes to the dataset are made, will they be informed?</italic> Yes.</p></list-item>
+<list-item><p><italic>Is there a process by which annotators can later choose to withdraw their data from the dataset? If so, please detail</italic>. No.</p></list-item>
+</list>
+</sec>
+</sec>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.99848.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Cardona</surname>
+<given-names>Albert</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Cambridge</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This work presents a <bold>valuable</bold> new approach for self-supervised segmentation for fluorescence microscopy data, which could eliminate time-consuming data labeling and speed up quantitative analysis. The experimental evidence supplied is currently <bold>incomplete</bold> as the comparison with other methods is only done on a single dataset, lacks common metrics, and could not be easily reproduced for other sample data listed in the manuscript.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.99848.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>This work makes several contributions: (1) a method for the self-supervised segmentation of cells in 3D microscopy images, (2) an cell-segmented dataset comprising six volumes from a mesoSPIM sample of a mouse brain, and (3) a napari plugin to apply and train the proposed method.</p>
+<p>(1) Method</p>
+<p>This work presents itself as a generalizable method contribution with a wide scope: self-supervised 3D cell segmentation in microscopy images. My main critique is that there is almost no evidence for the proposed method to have that wide of a scope. Instead, the paper is more akin to a case report that shows that a particular self-supervised method is good enough to segment cells in two datasets with specific properties.</p>
+<p>To support the claim that their method &quot;address[es] the inherent complexity of quantifying cells in 3D volumes&quot;, the method should be evaluated in a comprehensive study including different kinds of light and electron microscopy images, different markers, and resolutions to cover the diversity of microscopy images that both title and abstract are alluding to.</p>
+<p>The main dataset used here (a mesoSPIM dataset of a whole mouse brain) features well-isolated cells that are easily distinguishable from the background. Otsu thresholding followed by a connected component analysis already segments most of those cells correctly. The proposed method relies on an intensity-based segmentation method (a soft version of a normalized cut) and has at least five free parameters (radius, intensity, and spatial sigma for SoftNCut, as well as a morphological closing radius, and a merge threshold for touching cells in the post-processing). Given the benefit of tweaking parameters (like thresholds, morphological operation radii, and expected object sizes), it would be illuminating to know how other non-learning-based methods will compare on this dataset, especially if given the same treatment of segmentation post-processing that the proposed method receives. After inspecting the WNet3D predictions (using the napari plugin) on the used datasets I find them almost identical to the raw intensity values, casting doubt as to whether the high segmentation accuracy is really due to the self-supervised learning or instead a function of the post-processing pipeline after thresholding.</p>
+<p>I suggest the following baselines be included to better understand how much of the segmentation accuracy is due to parameter tweaking on the considered datasets versus a novel method contribution:</p>
+<p>
+* comparison to thresholding (with the same post-processing as the proposed method)</p>
+<p>
+* comparison to a normalized cut segmentation (with the same post-processing as the proposed method)</p>
+<p>
+* comparison to references 8 and 9.</p>
+<p>I further strongly encourage the authors to discuss the limitations of their method. From what I understand, the proposed method works only on well-separated objects (due to the semantic segmentation bottleneck), is based on contrastive FG/BG intensity values (due to the SoftNCut loss), and requires tuning of a few parameters (which might be challenging if no ground-truth is available).</p>
+<p>(2) Dataset</p>
+<p>I commend the authors for providing ground-truth labels for more than 2500 cells. I would appreciate it if the Methods section could mention how exactly the cells were labelled. I found a good overlap between the ground truth and Otsu thresholding of the intensity images. Was the ground truth generated by proofreading an initial automatic segmentation, or entirely done by hand? If the former, which method was used to generate the initial segmentation, and are there any concerns that the ground truth might be biased towards a given segmentation method?</p>
+<p>(3) Napari plugin</p>
+<p>The plugin is well-documented and works by following the installation instructions. However, I was not able to recreate the segmentations reported in the paper with the default settings for the pre-trained WNet3D: segments are generally too large and there are a lot of false positives. Both the prediction and the final instance segmentation also show substantial border artifacts, possibly due to a block-wise processing scheme.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.99848.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors propose a new method for self-supervised learning of 3d semantic segmentation for fluorescence microscopy. It is based on a WNet architecture (Encoder / Decoder using a UNet for each of these components) that reconstructs the image data after binarization in the bottleneck with a soft n-cuts clustering. They annotate a new dataset for nucleus segmentation in mesoSPIM imaging and train their model on this dataset. They create a napari plugin that provides access to this model and provides additional functionality for training of own models (both supervised and self-supervised), data labeling, and instance segmentation via post-processing of the semantic model predictions. This plugin also provides access to models trained on the contributed dataset in a supervised fashion.</p>
+<p>Strengths:</p>
+<p>(1) The idea behind the self-supervised learning loss is interesting.</p>
+<p>(2) The paper addresses an important challenge. Data annotation is very time-consuming for 3d microscopy data, so a self-supervised method that yields similar results to supervised segmentation would provide massive benefits.</p>
+<p>Weaknesses:</p>
+<p>The experiments presented by the authors do not adequately support the claims made in the paper. There are several shortcomings in the design of the experiment and presentation of the results. Further, it is unclear if results of similar quality as reported can be achieved within the GUI by non-expert users.</p>
+<p>Major weaknesses:</p>
+<p>(1) The main experiments are conducted on the new mesoSPIM dataset, which contains quite small and well separated nuclei. It is unclear if the good performance of the novel self-supervised learning method compared to CellPose and StarDist would hold for dataset with other characteristics, such as larger nuclei with a more complex morphology or crowded nuclei. Further, additional preprocessing of the mesoSPIM images may improve results for StarDist and CellPose (see the first point in minor weaknesses). Note: having a method that works better for small nuclei would be an important contribution. But I am uncertain the claims hold for larger and/or more crowded nuclei as the current version of the paper implies. The contribution of the paper would be stronger if a comparison with StarDist / CellPose was also done on the additional datasets from Figure 2.</p>
+<p>(2) The experimental setup for the additional datasets seems to be unrealistic. In general, the description of these experiments is quite short and so the exact strategy is unclear from the text. However, you write the following: &quot;The channel containing the foreground was then thresholded and the Voronoi-Otsu algorithm used to generate instance labels (for Platynereis data), with hyperparameters based on the Dice metric with the ground truth.&quot; I.e., the hyperparameters for the post-processing are found based on the ground truth. From the description it is unclear whether this is done a) on the part of the data that is then also used to compute metrics or b) on a separate validation split that is not used to compute metrics. If a): this is not a valid experimental setup and amounts to training on your test set. If b): this is ok from an experimental point of view, but likely still significantly overestimates the quality of predictions that can be achieved by manual tuning of these hyperparameters by a user that is not themselves a developer of this plugin or an absolute expert in classical image analysis, see also 3. Note that the paper provides notebooks to reproduce the experimental results. This is very laudable, but I believe that a more extended description of the experiments in the text would still be very helpful to understand the set-up for the reader. Further, from inspection of these notebooks it becomes clear that hyper-parameters where indeed found on the testset (a), so the results are not valid in the current form.</p>
+<p>(3) I cannot obtain similar results to the ones reported in the manuscript using the plugin. I tried to obtain some of the results from the paper qualitatively: First I downloaded one of the volumes from the mesoSPIM dataset (c5image) and applied the WNet3D to it. The prediction looks ok, however the value range is quite narrow (Average BG intensity ~0.4, FG intensity 0.6-0.7). I try to apply the instance segmentation using &quot;Convert to instance labels&quot; from &quot;Utilities&quot;. Using &quot;Voronoi-Otsu&quot; does not work due to an error in pyClesperanto (&quot;clGetPlatformIDs failed: PLATFORM_NOT_FOUND_KHR&quot;). Segmentation via &quot;Connected Components&quot; and &quot;Watershed&quot; requires extensive manual tuning to get a somewhat decent result, which is still far from perfect.</p>
+<p>Then I tried to obtain the results for the Mouse Skull Nuclei Dataset from EmbedSeg. The results look like a denoised version of the input image, not a semantic segmentation. I was skeptical from the beginning that the method would transfer without retraining, due to the very different morphology of nuclei (much larger and elongated). None of the available segmentation methods yield a good result, the best I can achieve is a strong over-segmentation with watersheds.</p>
+<p>Minor weaknesses:</p>
+<p>(1) CellPose can work better if images are resized so that the median object size in new images matches the training data. For CellPose the cyto2 model should do this automatically. It would be important to report if this was done, and if not would be advisable to check if this can improve results.</p>
+<p>(2) It is a bit confusing that F1-Score and Dice Score are used interchangeably to evaluate results. The dice score only evaluates semantic predictions, whereas F1-Score evaluates the actual instance segmentation results. I would advise to only use F1-Score, which is the more appropriate metric. For Figure 1f either the mean F1 score over thresholds or F1 @ 0.5 could be reported. Furthermore, I would advise adopting the recommendations on metric reporting from <ext-link ext-link-type="uri" xlink:href="https://www.nature.com/articles/s41592-023-01942-8">https://www.nature.com/articles/s41592-023-01942-8</ext-link>.</p>
+<p>(3) A more conceptual limitation is that the (self-supervised) method is limited to intensity-based segmentation, and so will not be able to work for cases where structures cannot be distinguished based on intensity only. It is further unclear how well it can separate crowded nuclei. While some object separation can be achieved by morphological operations this is generally limited for crowded segmentation tasks and the main motivation behind the segmentation objective used in StarDist, CellPose, and other instance segmentation methods. This limitation is only superficially acknowledged in &quot;Note that WNet3D uses brightness to detect objects [...]&quot; but should be discussed in more depth.</p>
+<p>Note: this limitation does not mean at all that the underlying contribution is not significant, but I think it is important to address this in more detail so that potential users know where the method is applicable and where it isn't.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.99848.1.sa3</article-id>
+<title-group>
+<article-title>Author Response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Achard</surname>
+<given-names>Cyril</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kousi</surname>
+<given-names>Timokleia</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Frey</surname>
+<given-names>Markus</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Vidal</surname>
+<given-names>Maxime</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Paychère</surname>
+<given-names>Yves</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hofmann</surname>
+<given-names>Colin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Iqbal</surname>
+<given-names>Asim</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hausmann</surname>
+<given-names>Sebastien B</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Pagès</surname>
+<given-names>Stéphane</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mathis</surname>
+<given-names>Mackenzie Weygandt</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7368-4456</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>This work makes several contributions: (1) a method for the self-supervised segmentation of cells in 3D microscopy images, (2) an cell-segmented dataset comprising six volumes from a mesoSPIM sample of a mouse brain, and (3) a napari plugin to apply and train the proposed method.</p>
+</disp-quote>
+<p>First, thanks for acknowledging our contributions of a new tool, new dataset, and new software.</p>
+<disp-quote content-type="editor-comment">
+<p>(1) Method</p>
+<p>This work presents itself as a generalizable method contribution with a wide scope: self-supervised 3D cell segmentation in microscopy images. My main critique is that there is almost no evidence for the proposed method to have that wide of a scope. Instead, the paper is more akin to a case report that shows that a particular self-supervised method is good enough to segment cells in two datasets with specific properties.</p>
+</disp-quote>
+<p>First, thanks for acknowledging our contributions of a new tool, new dataset, and new software. We agree we focus on lightsheet microscopy data, therefore to narrow the scope we have changed the title to “CellSeg3D: self-supervised 3D cell segmentation for <bold>light-sheet</bold> microscopy”.</p>
+<disp-quote content-type="editor-comment">
+<p>To support the claim that their method &quot;address[es] the inherent complexity of quantifying cells in 3D volumes&quot;, the method should be evaluated in a comprehensive study including different kinds of light and electron microscopy images, different markers, and resolutions to cover the diversity of microscopy images that both title and abstract are alluding to. The main dataset used here (a mesoSPIM dataset of a whole mouse brain) features well-isolated cells that are easily distinguishable from the background. Otsu thresholding followed by a connected component analysis already segments most of those cells correctly.</p>
+</disp-quote>
+<p>You have selectively dropped the last part of that sentence that is key: “.... 3D volumes, <bold>often in cleared neural tissue</bold>” – which <italic>is</italic> what we tackle. The next sentence goes on to say: “We offer a new 3D mesoSPIM dataset and show that CellSeg3D can match state-of-the-art supervised methods.” Thus, we literally make it clear our claims are on MesoSPIM and cleared data.</p>
+<disp-quote content-type="editor-comment">
+<p>The proposed method relies on an intensity-based segmentation method (a soft version of a normalized cut) and has at least five free parameters (radius, intensity, and spatial sigma for SoftNCut, as well as a morphological closing radius, and a merge threshold for touching cells in the post-processing). Given the benefit of tweaking parameters (like thresholds, morphological operation radii, and expected object sizes), it would be illuminating to know how other non-learning-based methods will compare on this dataset, especially if given the same treatment of segmentation post-processing that the proposed method receives. After inspecting the WNet3D predictions (using the napari plugin) on the used datasets I find them almost identical to the raw intensity values, casting doubt as to whether the high segmentation accuracy is really due to the self-supervised learning or instead a function of the post-processing pipeline after thresholding.</p>
+</disp-quote>
+<p>First, thanks for testing our tool, and glad it works for you. The deep learning methods we use cannot “solve” this dataset, and we also have a F1-Score (dice) of ~0.8 with our self-supervised method. We don’t see the value in applying non-learning methods; this is unnecessary and beyond the scope of this work.</p>
+<disp-quote content-type="editor-comment">
+<p>I suggest the following baselines be included to better understand how much of the segmentation accuracy is due to parameter tweaking on the considered datasets versus a novel method contribution:</p>
+<p>
+* comparison to thresholding (with the same post-processing as the proposed method)</p>
+<p>
+* comparison to a normalized cut segmentation (with the same post-processing as the proposed method)</p>
+<p>
+* comparison to references 8 and 9.</p>
+</disp-quote>
+<p>Ref 8 and 9 don’t have readily usable (<ext-link ext-link-type="uri" xlink:href="https://github.com/LiangHann/USAR">https://github.com/LiangHann/USAR</ext-link>) or even shared code (<ext-link ext-link-type="uri" xlink:href="https://github.com/Kaiseem/AD-GAN">https://github.com/Kaiseem/AD-GAN</ext-link>), so re-implementing this work is well beyond the bounds of this paper. We benchmarked Cellpose, StartDist, SegResNets, and a transformer – SwinURNet. Moreover, models in the MONAI package can be used. Note, to our knowledge the transformer results also are a new contribution that the Reviewer does not acknowledge.</p>
+<disp-quote content-type="editor-comment">
+<p>I further strongly encourage the authors to discuss the limitations of their method. From what I understand, the proposed method works only on well-separated objects (due to the semantic segmentation bottleneck), is based on contrastive FG/BG intensity values (due to the SoftNCut loss), and requires tuning of a few parameters (which might be challenging if no ground-truth is available).</p>
+</disp-quote>
+<p>We added text on limitations. Thanks for this suggestion.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Dataset</p>
+<p>I commend the authors for providing ground-truth labels for more than 2500 cells. I would appreciate it if the Methods section could mention how exactly the cells were labelled. I found a good overlap between the ground truth and Otsu thresholding of the intensity images. Was the ground truth generated by proofreading an initial automatic segmentation, or entirely done by hand? If the former, which method was used to generate the initial segmentation, and are there any concerns that the ground truth might be biased towards a given segmentation method?</p>
+</disp-quote>
+<p>In the already submitted version, we have a 5-page DataSet card that fully answers your questions. They are ALL labeled by hand, without any semi-automatic process.</p>
+<p>In our main text we even stated “Using whole-brain data from mice we cropped small regions and human annotated in 3D 2,632 neurons that were endogenously labeled by TPH2-tdTomato” - clearly mentioning it is human-annotated.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Napari plugin</p>
+<p>The plugin is well-documented and works by following the installation instructions.</p>
+</disp-quote>
+<p>Great, thanks for the positive feedback.</p>
+<disp-quote content-type="editor-comment">
+<p>However, I was not able to recreate the segmentations reported in the paper with the default settings for the pre-trained WNet3D: segments are generally too large and there are a lot of false positives. Both the prediction and the final instance segmentation also show substantial border artifacts, possibly due to a block-wise processing scheme.</p>
+</disp-quote>
+<p>Your review here does not match your comments above; above you said it was working well, such that you doubt the GT is real and the data is too easy as it was perfectly easy to threshold with non-learning methods.</p>
+<p>You would need to share more details on what you tried. We suggest following our code; namely, we provide the full experimental code and processing for every figure, as was noted in our original submission: <ext-link ext-link-type="uri" xlink:href="https://github.com/C-Achard/cellseg3d-figures">https://github.com/C-Achard/cellseg3d-figures</ext-link>.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>Summary:</p>
+<p>The authors propose a new method for self-supervised learning of 3d semantic segmentation for fluorescence microscopy. It is based on a WNet architecture (Encoder / Decoder using a UNet for each of these components) that reconstructs the image data after binarization in the bottleneck with a soft n-cuts clustering. They annotate a new dataset for nucleus segmentation in mesoSPIM imaging and train their model on this dataset. They create a napari plugin that provides access to this model and provides additional functionality for training of own models (both supervised and self-supervised), data labeling, and instance segmentation via post-processing of the semantic model predictions. This plugin also provides access to models trained on the contributed dataset in a supervised fashion.</p>
+<p>Strengths:</p>
+<p>(1) The idea behind the self-supervised learning loss is interesting.</p>
+<p>(2) The paper addresses an important challenge. Data annotation is very time-consuming for 3d microscopy data, so a self-supervised method that yields similar results to supervised segmentation would provide massive benefits.</p>
+</disp-quote>
+<p>Thank you for highlighting the strengths of our work and new contributions.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>The experiments presented by the authors do not adequately support the claims made in the paper. There are several shortcomings in the design of the experiment and presentation of the results. Further, it is unclear if results of similar quality as reported can be achieved within the GUI by non-expert users.</p>
+<p>Major weaknesses:</p>
+<p>(1) The main experiments are conducted on the new mesoSPIM dataset, which contains quite small and well separated nuclei. It is unclear if the good performance of the novel self-supervised learning method compared to CellPose and StarDist would hold for dataset with other characteristics, such as larger nuclei with a more complex morphology or crowded nuclei.</p>
+</disp-quote>
+<p>StarDist is not pretrained, we trained it from scratch as we did for WNet3D. We retrained Cellpose and reported the results both with their pretrained model and our best-retrained model. This is documented in Figure 1 and Suppl. Figure 1. We also want to push back and say that they both work very well on this data. <bold>In fact, our main claim is not that we beat them, it is that we can match them with a self-supervised method.</bold></p>
+<disp-quote content-type="editor-comment">
+<p>Further, additional preprocessing of the mesoSPIM images may improve results for StarDist and CellPose (see the first point in minor weaknesses). Note: having a method that works better for small nuclei would be an important contribution. But I am uncertain the claims hold for larger and/or more crowded nuclei as the current version of the paper implies.</p>
+</disp-quote>
+<p>Figure 2 benchmarks our method on larger and denser nuclei, but we do not intend to claim this is a universal tool. It was specifically designed for light-sheet (brain) data, and we have adjusted the title to be more clear. But we also show in Figure 2 it works well on more dense and noisy samples, hinting that it could be a promising approach. But we agree, as-is, it’s unlikely to be good for extremely dense samples like in electron microscopy, which we never claim it would be.</p>
+<p>With regards to preprocessing, we respectfully disagree. We trained StarDist (and asked the main developer of StarDist, Martin Weigert, to check our work and he is acknowledged in the paper) and it does very well. Cellpose we also retrained and optimized and we show it works as-well-as leading transformer and CNN-based approaches. Again, we only claimed we can be as good as these methods with an unsupervised approach.</p>
+<disp-quote content-type="editor-comment">
+<p>The contribution of the paper would be stronger if a comparison with StarDist / CellPose was also done on the additional datasets from Figure 2.</p>
+</disp-quote>
+<p>We appreciate that more datasets would be ideal, but we always feel it’s best for the authors of tools to benchmark their own tools on data. We only compared others in Figure 1 to the new dataset we provide so people get a sense of the quality of the data too; there we did extensive searches for best parameters for those tools. So while we think it would be nice, we will leave it to those authors to be most fair. We also narrowed the scope of our claims to mesoSPIM data (added light-sheet to the title), which none of the other examples in Figure 2 are.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) The experimental setup for the additional datasets seems to be unrealistic. In general, the description of these experiments is quite short and so the exact strategy is unclear from the text. However, you write the following: &quot;The channel containing the foreground was then thresholded and the Voronoi-Otsu algorithm used to generate instance labels (for Platynereis data), with hyperparameters based on the Dice metric with the ground truth.&quot; I.e., the hyperparameters for the post-processing are found based on the ground truth. From the description it is unclear whether this is done a) on the part of the data that is then also used to compute metrics or b) on a separate validation split that is not used to compute metrics. If a): this is not a valid experimental setup and amounts to training on your test set. If b): this is ok from an experimental point of view, but likely still significantly overestimates the quality of predictions that can be achieved by manual tuning of these hyperparameters by a user that is not themselves a developer of this plugin or an absolute expert in classical image analysis, see also 3. Note that the paper provides notebooks to reproduce the experimental results. This is very laudable, but I believe that a more extended description of the experiments in the text would still be very helpful to understand the set-up for the reader. Further, from inspection of these notebooks it becomes clear that hyper-parameters where indeed found on the testset (a), so the results are not valid in the current form.</p>
+</disp-quote>
+<p>We apologize for this confusion; we have now expanded the methods to clarify the setup is now <bold>b</bold>; you can see what we exactly did as well in the figure notebook: <ext-link ext-link-type="uri" xlink:href="https://c-achard.github.io/cellseg3d-figures/fig2-b-c-extra-datasets/self-supervised-extra.html#threshold-predictions">https://c-achard.github.io/cellseg3d-figures/fig2-b-c-extra-datasets/self-supervised-extra.html#threshold-predictions</ext-link>. For clarity, we additionally link each individual notebook now in the Methods.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) I cannot obtain similar results to the ones reported in the manuscript using the plugin. I tried to obtain some of the results from the paper qualitatively: First I downloaded one of the volumes from the mesoSPIM dataset (c5image) and applied the WNet3D to it. The prediction looks ok, however the value range is quite narrow (Average BG intensity ~0.4, FG intensity 0.6-0.7). I try to apply the instance segmentation using &quot;Convert to instance labels&quot; from &quot;Utilities&quot;. Using &quot;Voronoi-Otsu&quot; does not work due to an error in pyClesperanto (&quot;clGetPlatformIDs failed: PLATFORM_NOT_FOUND_KHR&quot;). Segmentation via &quot;Connected Components&quot; and &quot;Watershed&quot; requires extensive manual tuning to get a somewhat decent result, which is still far from perfect.</p>
+</disp-quote>
+<p>We are sorry to hear of the installation issue; pyClesperanto is a dependency that would be required to reproduce the images (sounds like you had this issue; <ext-link ext-link-type="uri" xlink:href="https://forum.image.sc/t/pyclesperanto-prototype-doesnt-work/45724">https://forum.image.sc/t/pyclesperanto-prototype-doesnt-work/45724</ext-link> ) We added to our docs now explicitly the fix: <ext-link ext-link-type="uri" xlink:href="https://github.com/AdaptiveMotorControlLab/CellSeg3D/pull/90">https://github.com/AdaptiveMotorControlLab/CellSeg3D/pull/90</ext-link>. We recommend checking the reproduction notebooks (which were linked in initial submission): <ext-link ext-link-type="uri" xlink:href="https://c-achard.github.io/cellseg3d-figures/intro.html">https://c-achard.github.io/cellseg3d-figures/intro.html</ext-link>.</p>
+<disp-quote content-type="editor-comment">
+<p>Then I tried to obtain the results for the Mouse Skull Nuclei Dataset from EmbedSeg. The results look like a denoised version of the input image, not a semantic segmentation. I was skeptical from the beginning that the method would transfer without retraining, due to the very different morphology of nuclei (much larger and elongated). None of the available segmentation methods yield a good result, the best I can achieve is a strong over-segmentation with watersheds.</p>
+</disp-quote>
+<p>- We are surprised to hear this; did you follow the following notebook which directly produces the steps to create this figure? (This was linked in preprint): <ext-link ext-link-type="uri" xlink:href="https://c-achard.github.io/cellseg3d-figures/fig2-c-extra-datasets/self-supervised-extra">https://c-achard.github.io/cellseg3d-figures/fig2-c-extra-datasets/self-supervised-extra</ext-link> .html</p>
+<p>-  We have made a video demo for you such that any step that might be unclear is also more clear to a user: (<ext-link ext-link-type="uri" xlink:href="https://youtu.be/U2a9IbiO7nE">https://youtu.be/U2a9IbiO7nE</ext-link>).</p>
+<p>-  We also expanded the methods to include the exact values from the notebook into the text.</p>
+<disp-quote content-type="editor-comment">
+<p>Minor weaknesses:</p>
+<p>(1) CellPose can work better if images are resized so that the median object size in new images matches the training data. For CellPose the cyto2 model should do this automatically. It would be important to report if this was done, and if not would be advisable to check if this can improve results.</p>
+</disp-quote>
+<p>We reported this value in Figure 1 and found it to work poorly, that is why we retrained Cellpose and found good performance results (also reported in Figure 1). Resizing GB to TB volumes for mesoSPIM data is otherwise not practical, so simply retraining seems the preferable option, which is what we did.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) It is a bit confusing that F1-Score and Dice Score are used interchangeably to evaluate results. The dice score only evaluates semantic predictions, whereas F1-Score evaluates the actual instance segmentation results. I would advise to only use F1-Score, which is the more appropriate metric. For Figure 1f either the mean F1 score over thresholds or F1 @ 0.5 could be reported. Furthermore, I would advise adopting the recommendations on metric reporting from <ext-link ext-link-type="uri" xlink:href="https://www.nature.com/articles/s41592-023-01942-8">https://www.nature.com/articles/s41592-023-01942-8</ext-link>.</p>
+</disp-quote>
+<p>We are using the common metrics in the field for instance and semantic segmentation, and report them in the methods. In Figure 2f we actually report the “Dice” as defined in StarDist (as we stated in the Methods). Note, their implementation is functionally equivalent to F1-Score of an IoU &gt;= 0, so we simply changed this label in the figure now for clarity. We agree this clarifies for the expert readers what was done, and we expanded the methods to be more clear about metrics. We added a link to the paper you mention as well.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) A more conceptual limitation is that the (self-supervised) method is limited to intensity-based segmentation, and so will not be able to work for cases where structures cannot be distinguished based on intensity only. It is further unclear how well it can separate crowded nuclei. While some object separation can be achieved by morphological operations this is generally limited for crowded segmentation tasks and the main motivation behind the segmentation objective used in StarDist, CellPose, and other instance segmentation methods. This limitation is only superficially acknowledged in &quot;Note that WNet3D uses brightness to detect objects [...]&quot; but should be discussed in more depth.</p>
+<p>Note: this limitation does not mean at all that the underlying contribution is not significant, but I think it is important to address this in more detail so that potential users know where the method is applicable and where it isn't.</p>
+</disp-quote>
+<p>We agree, and we added a new section specifically on limitations. Thanks for raising this good point. Thus, while self-supervision comes at the saving of hundreds of manual labor, it comes at the cost of more limited regimes it can work on. Hence why we don’t claim this should replace excellent methods like Cellpose or Stardist, but rather complement them and can be used on mesoSPIM samples, as we show here.</p>
+</body>
+</sub-article>
+</article>
