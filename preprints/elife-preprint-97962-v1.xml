@@ -1,0 +1,618 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">97962</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.97962</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.97962.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8937-1427</contrib-id>
+<name>
+<surname>Fuchs</surname>
+<given-names>Michael</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Genty</surname>
+<given-names>Emilie</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zuberbühler</surname>
+<given-names>Klaus</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4103-5467</contrib-id>
+<name>
+<surname>Cotofrei</surname>
+<given-names>Paul</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Information Management Institute, University of Neuchâtel</institution>, Neuchâtel, <country>Switzerland</country></aff>
+<aff id="a2"><label>2</label><institution>Institute of Biology, University of Neuchâtel</institution>, Neuchâtel, <country>Switzerland</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Tung</surname>
+<given-names>Jenny</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Max Planck Institute for Evolutionary Anthropology</institution>
+</institution-wrap>
+<city>Leipzig</city>
+<country>Germany</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Perry</surname>
+<given-names>George H</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Pennsylvania State University</institution>
+</institution-wrap>
+<city>University Park</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>corresponding author: <email>michael.fuchs@unine.ch</email> (MF)</corresp>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-08-02">
+<day>02</day>
+<month>08</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP97962</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-04-05">
+<day>05</day>
+<month>04</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-09-25">
+<day>25</day>
+<month>09</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.09.24.559236"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Fuchs et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Fuchs et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-97962-v1.pdf"/>
+<abstract>
+<title>Abstract</title><p>To date, the investigation and classification of animal behaviors have mostly relied on direct human observations or video recordings with posthoc analysis, which can be labor-intensive, time-consuming, and prone to human bias. Recent advances in machine learning for computer vision tasks, such as pose estimation and action recognition, thus have the potential to significantly improve and deepen our understanding of animal behavior. However, despite the increased availability of open-source toolboxes and large-scale datasets for animal pose estimation, their practical relevance for behavior recognition remains under-explored. In this paper, we propose an innovative framework, <italic>ASBAR</italic>, for <italic>Animal Skeleton-Based Action Recognition</italic>, which fully integrates animal pose estimation and behavior recognition. We demonstrate the use of this framework in a particularly challenging task: the classification of great ape natural behaviors in the wild. First, we built a robust pose estimator model leveraging OpenMonkeyChallenge, one of the largest available open-source primate pose datasets, through a benchmark analysis on several CNN models from DeepLabCut, integrated into our framework. Second, we extracted the great ape’s skeletal motion from the PanAf dataset, a large collection of in-the-wild videos of gorillas and chimpanzees annotated for natural behaviors, which we used to train and evaluate PoseConv3D from MMaction2, a second deep learning model fully integrated into our framework. We hereby classify behaviors into nine distinct categories and achieve a Top 1 accuracy of 74.98%, comparable to previous studies using video-based methods, while reducing the model’s input size by a factor of around 20. Additionally, we provide an open-source terminal-based GUI that integrates our full pipeline and release a set of 5,440 keypoint annotations to facilitate the replication of our results on other species and/or behaviors. All models, code, and data can be accessed at: <ext-link ext-link-type="uri" xlink:href="https://github.com/MitchFuchs/asbar">https://github.com/MitchFuchs/asbar</ext-link>.</p>
+</abstract>
+<abstract abstract-type="teaser">
+<title>Author summary</title>
+<p>The study of animal behaviors has mostly relied on human observations and/or video analysis traditionally. In this paper, we introduce a new framework called <italic>ASBAR</italic> (for <italic>Animal Skeleton-Based Action Recognition</italic>) that integrates recent advances in machine learning to classify animal behaviors from videos. Compared to other methods that use the entire video information, our approach relies on the detection of the animal’s pose (e.g., position of the head, eyes, limbs) from which the behavior can be recognized. We demonstrate its successful application in a challenging task for computers as it classifies nine great ape behaviors in their natural habitat with high accuracy. To facilitate its use for other researchers, we provide a graphical user interface (GUI) and annotated data to replicate our results for other animal species and/or behaviors.</p>
+</abstract>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Direct observation and manual annotation of animal behaviors are labor-intensive, time-consuming, prone to human error [<xref ref-type="bibr" rid="c67">67</xref>], and can present limitations such as information loss, especially in natural low-visibility settings, during complex, fast-paced social interactions involving multiple partners. The use of video recording and post-hoc annotation of video data has thus been considered methods of choice to study animal behavior. They allow the identification and interpretation of animal behaviors in fine-grained details, and facilitate the testing of reliability and replication of the coding. Animal behavior research would nevertheless greatly benefit from easing the burden of intensive and lengthy manual video annotation thanks to the help of automated animal behavior recognition systems. New machine learning tools could thus allow to identify relevant video sections containing social interactions and classify behaviour categories automatically. The development of such tools could furthermore significantly enlarge the scope and robustness of observational studies and therefore deepen our understanding of animal behaviors [<xref ref-type="bibr" rid="c1">1</xref>].</p>
+<p>Recent advances in machine learning computer vision techniques can offer innovative ways to build such systems, as some of their models can be trained to recognize or detect behaviors recorded on videos. Specifically, models from the task known as <italic>action recognition</italic> can learn deep representations of the visual features in a video and classify the recognized action into the appropriate behavior category.</p>
+<p>In the context of deep learning, two primary approaches have emerged within the action recognition task: video-based methods and skeleton-based methods.</p>
+<p>Video-based action recognition involves analyzing raw RGB video data and identifying spatio-temporal patterns to recognize actions in video clips. This field of research typically relies on the use of Convolutional Neural Networks (CNNs) ([<xref ref-type="bibr" rid="c25">25</xref>]) and their adaptation to data extending over the temporal domain. Typical state-of-the-art video-based methods for human action recognition include models such as Two-Stream CNNs [<xref ref-type="bibr" rid="c50">50</xref>], C3D [<xref ref-type="bibr" rid="c57">57</xref>], I3D [<xref ref-type="bibr" rid="c7">7</xref>], (2+1)D ResNet [<xref ref-type="bibr" rid="c56">56</xref>], and SlowFast [<xref ref-type="bibr" rid="c13">13</xref>]. Similar methods have been subsequently adapted to classify animal behaviors from videos [<xref ref-type="bibr" rid="c52">52</xref>, <xref ref-type="bibr" rid="c31">31</xref>, <xref ref-type="bibr" rid="c48">48</xref>, <xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c4">4</xref>, <xref ref-type="bibr" rid="c34">34</xref>] and extended to multimodal audio-visual data types [<xref ref-type="bibr" rid="c2">2</xref>].</p>
+<p>On the other hand, skeleton-based methods predict the action class from the body’s skeletal structure and its motion [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c11">11</xref>]. They thus rely on an additional preprocessing step called <italic>pose estimation</italic>, in which the body parts, such as joints and bones, are detected and their coordinates extracted from each video frame [<xref ref-type="bibr" rid="c6">6</xref>]. Despite the additional workload that pose estimation represents, a skeleton-based approach offers numerous advantages for the advancement of behavioral analysis over other video-based methods for computational ethology [<xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c67">67</xref>, <xref ref-type="bibr" rid="c20">20</xref>]. Firstly, by focusing on the skeletal motion rather than the apparent animal’s movements, such a model can recognize cross-subject behaviors within the same species (see e.g., [<xref ref-type="bibr" rid="c32">32</xref>] for humans, and [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c53">53</xref>] for non-humans). Furthermore, as it is less subject to animal’s physical traits, the model can be trained to recognize inter-species behaviors. Thirdly, video-based methods can be sensitive to visual setting changes [<xref ref-type="bibr" rid="c8">8</xref>] - such as different lighting conditions, changes in backgrounds, etc. - or even visual input changes imperceptible to the human eye ([<xref ref-type="bibr" rid="c54">54</xref>, <xref ref-type="bibr" rid="c33">33</xref>]) which can lead to a drop in the network’s ability to perform its task. In other words, a video-based model trained within a certain visual context (e.g., from cameras in a zoo) may completely fail to recognize behaviors from the same species in a different visual setting, for instance, in their natural habitat. Comparatively, skeleton-based methods are less sensitive to these changes [<xref ref-type="bibr" rid="c18">18</xref>] and, given a robust pose estimator, are therefore likely to maintain a high action recognition accuracy. Furthermore, extracting the animal’s pose coordinates from high-dimensional video segments drastically reduces the network’s input space dimensionality, its computational complexity, and overall power consumption [<xref ref-type="bibr" rid="c15">15</xref>], which can represent game-changing advantages for field researchers with limited computational resources. Finally, identifying the pose offers a pre-computed geometrical quantification of the animal’s body motion and behavioral changes [<xref ref-type="bibr" rid="c67">67</xref>, <xref ref-type="bibr" rid="c45">45</xref>].</p>
+<p>One of the major challenges for skeleton-based methods for animal behavior concerns the extraction process of the required pose-estimated data. Whereas for human pose estimation this process benefits from the availability of large-scale open source datasets and state-of-the-art keypoint detectors achieving high performance, trying to replicate the same performances for other animal species can easily become a daunting task. Thankfully, on one hand, the number of available large annotated datasets with animal pose is surging (e.g., Animal Kingdom [<xref ref-type="bibr" rid="c41">41</xref>], Animal Pose [<xref ref-type="bibr" rid="c5">5</xref>], AP-10K [<xref ref-type="bibr" rid="c65">65</xref>], OpenMonkeyChallenge [<xref ref-type="bibr" rid="c64">64</xref>], OpenApePose [<xref ref-type="bibr" rid="c10">10</xref>], MacaquePose [<xref ref-type="bibr" rid="c26">26</xref>], Horse-30 [<xref ref-type="bibr" rid="c36">36</xref>]). On the other hand, open-source frameworks for animal pose estimation are increasingly accessible (e.g., DeepLabCut [<xref ref-type="bibr" rid="c35">35</xref>, <xref ref-type="bibr" rid="c37">37</xref>, <xref ref-type="bibr" rid="c27">27</xref>], SLEAP [<xref ref-type="bibr" rid="c46">46</xref>, <xref ref-type="bibr" rid="c44">44</xref>], or AniPose [<xref ref-type="bibr" rid="c23">23</xref>]). Despite these remarkable advances, studies leveraging pose estimation to classify animal behaviors remain under-explored, especially outside the laboratory settings. This could be primarily attributed to the scarcity of open-source datasets labeled with both keypoint coordinates and behavioral annotations. Moreover, an additional challenge lies in the tendency of researchers to investigate pose estimation and skeleton-based action recognition as two distinct subjects rather than two facets of a comprehensive approach to behavior analysis.</p>
+<p>In practice, however, ethologists may not have the resources to manually label their behavioral data with the animals’ poses and could therefore considerably benefit from robust, ready-to-use keypoint detectors that streamline the pose estimation process. In addition, some researchers may also be limited by resources to overcome the technical challenges of integrating both machine learning tasks of pose estimation and behavior recognition.</p>
+<p>To alleviate these practical challenges, we introduce ASBAR, an innovative framework for animal skeleton-based action recognition. We demonstrate the successful application of our methodology by tackling a particularly challenging problem: classifying great ape behaviors in their natural habitat. Our contributions are fivefold:
+<list list-type="bullet">
+<list-item><p>We developed a fully integrated data/model pipeline, comprising a first module for animal pose estimation based on the state-of-the-art DeepLabCut toolbox, and a second one for animal behavior recognition, based on the open-source toolbox MMaction2;</p></list-item>
+<list-item><p>We built a general and robust (to visual context shift) primate keypoint detector, by leveraging OpenMonkeyChallenge [<xref ref-type="bibr" rid="c64">64</xref>], one of the largest primate pose datasets with 26 primate species;</p></list-item>
+<list-item><p>We provide a methodology to extract the pose of great apes (chimpanzees and gorillas) from a dataset of videos representing large-scale footage from camera traps in the forest, and train a behavior classifier with 9 classes (such as walking, standing, climbing up), which achieves comparable results to video-based methods;</p></list-item>
+<list-item><p>We provide a dataset of 5,440 high-quality keypoint annotations from great apes in their natural habitat;</p></list-item>
+<list-item><p>We open-source a GUI that encapsulates the ASBAR framework to provide other researchers with easy access to our methods. This GUI is terminal-based and can therefore be used to train DeepLabCut and MMaction2 on a remote machine (such as in cloud- or HPC-based settings) without any programming knowledge.</p></list-item>
+</list>
+</p>
+</sec>
+<sec id="s2">
+<title>Materials and methods</title>
+<sec id="s2a">
+<title>Datasets</title>
+<p>For the experiment concerning the classification of great ape behaviors in their natural habitat, three datasets are considered: OpenMonkeyChallenge, PanAf, and PanAf-Pose.</p>
+<sec id="s2a1">
+<title>OpenMonkeyChallenge</title>
+<p>OpenMonkeyChallenge (OMC) [<xref ref-type="bibr" rid="c64">64</xref>] is a collection of 111,529 images of 26 primate species, designed to provide a public benchmark dataset for a competitive non-human primate tracking challenge. The various sources for this dataset include images available on the web, photos from three US-National Primate Research Centers, and captures from multiview cameras at the Minnesota Zoo. All images were processed and annotated with species, bounding box, and pose information corresponding to 17 keypoints: nose, eyes, head, neck, shoulders, elbows, wrists, hip, tail, knees, and ankles. The commercial service commissioned to annotate the pose (Hive AI) was instructed to identify the best guess location in case of occluded keypoints and to specify their visibility. The dataset is split into a training (60%), validation (20%), and testing datasets (20%) (where the annotations of the latter have not been made public, but preserved for the competition). In our experiment, both training and validation datasets were merged to obtain a <italic>pose</italic> dataset including 89,223 images (see examples in <xref rid="fig1" ref-type="fig">Fig 1</xref>).</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 1.</label>
+<caption><title>Image examples from OpenMonkeyChallenge (<italic>pose</italic> dataset).</title>
+<p>A large collection of primate images annotated with pose. The dataset was primarily designed for an open benchmarking competition and includes a total of more than 100,000 images of primates from 26 species.</p></caption>
+<graphic xlink:href="559236v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2a2">
+<title>PanAf</title>
+<p>The Pan African Programme ”The Cultured Chimpanzee” [<xref ref-type="bibr" rid="c12">12</xref>], whose mission is to enhance the comprehension of the evolutionary-ecological factors that shape chimpanzee behavior diversity, has accumulated thousands of hours of footage from camera traps stationed in the forests of Central Africa. A collection of 500 videos of chimpanzees or gorillas, each with a duration of 15 seconds (180,000 frames @ 24 FPS), were annotated with bounding boxes coordinates for ape detection [<xref ref-type="bibr" rid="c63">63</xref>, <xref ref-type="bibr" rid="c62">62</xref>] and behaviors for action recognition [<xref ref-type="bibr" rid="c48">48</xref>] (see examples in <xref rid="fig2" ref-type="fig">Fig 2</xref>). The nine labeled behaviors include: walking, standing, sitting, running, hanging, climbing up, climbing down, sitting on back, and camera interaction.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 2.</label>
+<caption><title>Image examples from PanAf (<italic>behavior</italic> dataset).</title>
+<p>Videos of gorillas and chimpanzees are captured in the forest using video camera traps. Notable visual challenges among others include the small size of certain individuals due to the camera distance, the abundant vegetation, nocturnal imaging, and changes in backgrounds.</p></caption>
+<graphic xlink:href="559236v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2a3">
+<title>PanAf-Pose</title>
+<p>We annotated a set of 5,440 keypoints from 320 images extracted from the PanAf dataset. The chosen keypoints are similar to those annotated in OMC. The images were selected in a two-step process. Firstly, a shortlisting of about 4,000 images was extracted automatically from the PanAf dataset, for which two models (ResNet152 and EfficientNet-B6, see section Models benchmarking) showed a high overall prediction confidence. Secondly, from the shortlist, we manually selected 320 frames, from 32 different video clips, representing different scenes, lighting conditions, postures, sizes, and species - and avoiding consecutive frames as much as possible.</p>
+<p>For each selected frame, we created an associated mini-clip of 34 frames (24 frames before and 10 frames after the frame to annotate) that captures the ape’s motion and allows us to label occluded keypoints more precisely. We started our annotation process with a semi-automated labeling approach, i.e., using the best predictions of the ResNet152 model. Then, using DeepLabCut’s napari plugin [<xref ref-type="bibr" rid="c51">51</xref>] for manual labeling, these predictions were refined, in a first phase, by a non-trained human (MF) and then finalized by a great ape behavior and signaling expert (EG) [<xref ref-type="bibr" rid="c17">17</xref>], to ensure high-quality annotations. Our annotations can be found at: <ext-link ext-link-type="uri" xlink:href="https://github.com/MitchFuchs/asbar">https://github.com/MitchFuchs/asbar</ext-link></p>
+</sec>
+</sec>
+<sec id="s2b">
+<title>Domain adaptation</title>
+<p>The ASBAR framework requires two distinct datasets. The first dataset (denoted as <italic>pose</italic>) consists of images annotated with keypoint coordinates, used to build a pose estimator model. The second dataset (denoted as <italic>behavior</italic>) comprises video clips labeled with specific behaviors. Poses are then extracted from these clips using the aforementioned pose estimator.</p>
+<p>Under ideal conditions, the two datasets come from the same visual distribution, e.g., the images from the <italic>pose</italic> dataset represent a subset of the video frames from the <italic>behavior</italic> dataset. In practice, however, the time-consuming and high-cost process of annotating a video dataset, with both pose and behavior information, may be impractical. Ethologists may therefore opt to <italic>shift domains</italic> and combine pose and behavioral annotated data from two datasets coming from different visual distributions, e.g., with keypoint annotated images captured indoors and behavioral data labeled in videos recorded outdoors. We refer to the latter case as <italic>domain adaptation</italic>, where the <italic>behavior</italic> dataset is called ’out-of-domain’, in opposition to ’within-domain’ <italic>pose</italic> dataset. As our experiments suggest, large enough open-source pose datasets can be leveraged to create pose extractors robust to domain shifts and sufficient for behavior recognition.</p>
+</sec>
+<sec id="s2c">
+<title>Pose estimation</title>
+<p>The task of estimating the coordinates of anatomical keypoints, denoted as <italic>pose estimation</italic>, is a crucial prerequisite for skeleton-based action recognition. In most cases, each RGB frame of a video clip of an action is preprocessed to extract the set of (<italic>x, y</italic>) coordinates in the image plane of each keypoint and its relative confidence <italic>c</italic>. In practice, this transformation is often performed via supervised CNN-based machine learning models trained for keypoint detection (<xref rid="fig3" ref-type="fig">Fig 3</xref>).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 3.</label>
+<caption><title>From RGB image to pseudo-heatmaps.</title>
+<p>The transformation of an RGB image into a 3D heatmap volume. An input image is passed through a Conv-Deconv architecture to output a probabilistic scoremap of the keypoint location (e.g., the right elbow). By finding a local maximum in the scoremap, the location coordinates and confidence can be extracted. Using a Gaussian transformation, a pseudo heatmap is generated for each keypoint and used as input of the subsequent behavior recognition model.</p></caption>
+<graphic xlink:href="559236v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2c1">
+<title>DeeperCut</title>
+<p>In their paper [<xref ref-type="bibr" rid="c22">22</xref>], the authors developed DeeperCut, a model architecture for human pose estimation, by combining an adapted version of ResNet [<xref ref-type="bibr" rid="c21">21</xref>] (a state-of-the-art CNN-based image classifier trained on ImageNet) to create a deep representation of the visual features of an image, followed by a series of deconvolutional layers to recover the image’s original size by upsampling. Such a method, inspired by semantic segmentation (see [<xref ref-type="bibr" rid="c59">59</xref>]), allows the network to output a keypoint probabilistic scoremap, i.e., a pixel-wise probability that a pixel represents the location of a specific keypoint (<xref rid="fig3" ref-type="fig">Fig 3</xref>). Using the <italic>argmax</italic> transformation, the coordinates (<italic>x, y</italic>) and the confidence <italic>c</italic> of the local maxima of a scoremap can be extracted, outputting the prediction of the specific keypoint. During the training step, a target scoremap for each keypoint is calculated, in which a probability of 1 is assigned to all pixels within a given distance from the ground-truth (<italic>x, y</italic>) coordinates (i.e., the correctly labeled location of the keypoint) and a probability of 0 for all other remaining pixels. By computing the cross-entropy loss function between the target scoremap and the predicted one, the weights and biases of the convolutional-deconvolutional model can thus be learned during training by stochastic gradient descent. This original work was further adapted and extended to the detection of other animal species’ body parts in DeepLabCut.</p>
+</sec>
+<sec id="s2c2">
+<title>DeepLabCut</title>
+<p>DeepLabCut (DLC) is an open-source multi-animal markerless pose estimation, tracking, and identification framework [<xref ref-type="bibr" rid="c35">35</xref>, <xref ref-type="bibr" rid="c40">40</xref>, <xref ref-type="bibr" rid="c27">27</xref>], and one of the first toolboxes leveraging the advances in human pose estimation for application to animals. For keypoint detection, the framework allows the choice from different CNN models, including ResNet [<xref ref-type="bibr" rid="c21">21</xref>] and EfficientNet [<xref ref-type="bibr" rid="c55">55</xref>] of various depths. Due to its high qualitative detection accuracy, the availability of a large collection of models with multiple animal species, and its active community of users and developers, DLC currently sets a standard for researchers studying animal behaviors from various fields such as neuroscience, ecology, etc. (see e.g., [<xref ref-type="bibr" rid="c60">60</xref>, <xref ref-type="bibr" rid="c19">19</xref>, <xref ref-type="bibr" rid="c66">66</xref>]).</p>
+<p>In addition, one particular aspect of the framework is its user-friendly GUI, which facilitates adoption by users less inclined to programming. However, this GUI comes with a caveat: users whose local machine does not support GPU-accelerated CNNs training - as is often the case - will likely have to learn to use DLC’s terminal commands to train their models on a remote platform (such as cloud computing or HPCs). To avoid such technical challenges, our ASBAR framework offers a terminal-based GUI, which fully integrates DLC’s model training, thus allowing users to remotely train their models without any programming skills (See <xref rid="figs1" ref-type="fig">Fig S1</xref> in Annex ”Supporting Information” for UI element examples).</p>
+</sec>
+</sec>
+<sec id="s2d">
+<title>Skeleton-based action recognition</title>
+<p>This computer vision task involves the recognition of a specific action (performed by human or non-human individuals) from a sequence of skeletal joint data (i.e., coordinate lists), captured by sensors or extracted by markerless pose estimators.</p>
+<sec id="s2d1">
+<title>GCN-based methods</title>
+<p>Traditionally, skeleton-based action recognition studies [<xref ref-type="bibr" rid="c15">15</xref>] have focused on model architectures relying on Graph Convolutional Networks (GCNs) [<xref ref-type="bibr" rid="c24">24</xref>], in which the model’s input consists of a graph <italic>G</italic> = (<italic>V, E</italic>). For human action recognition [<xref ref-type="bibr" rid="c61">61</xref>], this graph consists of a set of vertices <italic>V</italic> = <italic>{v<sub>ti</sub>| t</italic> = 1<italic>, . . ., T, i</italic> = 1<italic>, . . ., K}</italic> corresponding to <italic>K</italic> keypoints over <italic>T</italic> frames, and a set of edges <italic>E</italic> partitioned into two subsets <italic>E<sub>S</sub></italic> and <italic>E<sub>F</sub></italic>, where <italic>E<sub>S</sub></italic> = <italic>{v<sub>ti</sub>v<sub>tj</sub>|</italic>(<italic>i, j</italic>) <italic>∈ H}</italic> with <italic>H</italic> being the set of anatomical body limbs and <italic>E<sub>F</sub></italic> = <italic>{v<sub>ti</sub>v</italic><sub>(<italic>t</italic>+1)<italic>i</italic></sub><italic>|i ∈ H}</italic> their temporal connection between frames. Each node’s features vector includes its coordinates (<italic>x, y</italic>) and the estimation confidence <italic>c</italic>. After defining the spatial temporal node’s neighborhood, this data structure can be passed into GCNs to classify actions via supervised learning [<xref ref-type="bibr" rid="c61">61</xref>, <xref ref-type="bibr" rid="c30">30</xref>, <xref ref-type="bibr" rid="c29">29</xref>].</p>
+</sec>
+<sec id="s2d2">
+<title>3DCNN-based methods</title>
+<p>More recent model architectures, such as PoseConv3D in [<xref ref-type="bibr" rid="c11">11</xref>], have demonstrated superior performance when applying 3D-CNNs to pose estimated data rather than GCNs. Particularly in the context of animal behavior recognition, this approach is more suitable, as it significantly outperforms previous GCN-based architectures in differentiating between subtly different actions (such as in the case of FineGym [<xref ref-type="bibr" rid="c49">49</xref>]) and is more robust with noisy pose data. Furthermore, PoseConv3D can deal with multi-individual settings without additional computation expense (where GCN techniques see their number of trainable parameters and FLOPs increase linearly with each additional individual), generalizes better in cross-dataset setting, and can easily integrate dual-modality of pose and RGB data.</p>
+<p>In comparison with GCN approaches, this type of architecture uses pose data to create 3D heatmap volumes instead of graphs. From a set of pose coordinates (<italic>x<sub>k</sub>, y<sub>k</sub>, c<sub>k</sub></italic>) corresponding to the (<italic>x, y</italic>) coordinates and <italic>c</italic> confidence of the <italic>k</italic>-th keypoint in a frame of size <italic>H × W</italic>, a heatmap <italic>J</italic> can be generated by applying the following Gaussian transformation:
+<disp-formula id="eqn1">
+<graphic xlink:href="559236v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<p>where <italic>i, j</italic> refer to the pixel frame coordinates and <italic>σ</italic> is the variance of the Gaussian map (<xref rid="fig3" ref-type="fig">Fig 3</xref>). For each frame, a total of <italic>K</italic> heatmaps are produced. After transforming all <italic>T</italic> frames from the sample (i.e., video clip), all generated heatmaps are stacked in a 3D volume of size <italic>K × T × H × W</italic>. This data can then be used to train an adapted video-based action recognition 3D-CNN model such as [<xref ref-type="bibr" rid="c57">57</xref>, <xref ref-type="bibr" rid="c7">7</xref>, <xref ref-type="bibr" rid="c13">13</xref>] in a supervised manner using stochastic gradient descent (<xref rid="fig4" ref-type="fig">Fig 4</xref>).</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 4.</label>
+<caption><title>From extracted poses to behavior classification.</title>
+<p>From a set of consecutive RGB frames (e.g., 20 in our experiments), the animal pose is extracted, transformed into pseudo-heatmaps, and stacked as input of the behavior recognition model. A 3D-CNN is trained to classify the represented action into the correct behavior category (e.g., here ’walking’)</p></caption>
+<graphic xlink:href="559236v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d3">
+<title>MMAction2</title>
+<p>As a member of the OpenMMLab family [<xref ref-type="bibr" rid="c43">43</xref>], MMAction2 [<xref ref-type="bibr" rid="c38">38</xref>] is an open-source toolkit that supports different types of models for the task of action detection, localization, and recognition in video datasets. The toolkit implements state-of-the-art models for <italic>action recognition, skeleton-based action recognition, spatio-temporal action detection</italic>, and <italic>temporal action localization</italic>. MMAction2 has a modular design, allowing users to define requested modules, and provides several analysis tools, such as visualizers or model evaluators.</p>
+</sec>
+</sec>
+<sec id="s2e">
+<title>The ASBAR framework</title>
+<p>ASBAR is a framework designed as an integrated data/model pipeline (marked in red in <xref rid="fig5" ref-type="fig">Fig 5</xref>), composed of two sequential modules corresponding to the two machine learning tasks of <italic>pose estimation</italic> and <italic>action recognition</italic>. The first module for animal pose estimation (marked in green in <xref rid="fig5" ref-type="fig">Fig 5</xref>) is developed based on the DeepLabCut toolbox. Specifically, it integrates DeepLabCut’s methods for the creation of projects and multi-animal training datasets, model selection, training and evaluation, configuration editing, and video analysis. The second module for behavior recognition (marked in blue in <xref rid="fig5" ref-type="fig">Fig 5</xref>) is developed using MMAction2 and integrates its APIs for distributed training and testing.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 5.</label>
+<caption><title>The ASBAR framework</title>
+<p>The data/model pipeline of the ASBAR framework (red). The framework includes two modules - the first <italic>pose estimation</italic> (green), which is based on the DeepLabCut toolbox, and the second <italic>action recognition</italic> (blue), integrating APIs from MMAction2.</p></caption>
+<graphic xlink:href="559236v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2e1">
+<title>Module Pose estimation</title>
+<p>The goal of the first module is to extract pose information from the <italic>behavior</italic> dataset (see section <bold>Domain Adaptation</bold>) using a robust pose estimator model. This objective can be achieved by training and evaluating a keypoint detection model on the <italic>pose</italic> dataset and using it to predict the joint coordinates of the <italic>behavior</italic> dataset. The functionalities of this module include: <italic>data preprocessing, model benchmarking, model selection</italic>, and <italic>pose extraction</italic>.</p>
+<sec id="s2e1a">
+<title>Data preprocessing</title>
+<p>The framework offers four preprocessing steps: data formatting, data selection, dataset splitting for cross-validation, and configuration setup. Data formatting ensures that the information from the pose dataset meets the structural requirements of DLC. The data selection functionality allows users to select or deselect any of the species present in the pose dataset, any of the keypoints annotated, and to include/exclude invisible keypoints from their selection. For example, one can decide to create a dataset with only two species (e.g., chimpanzees and bonobos) containing only the annotations of three visible keypoints: the eyes and the nose. The third preprocessing step defines the data split for cross-validation and lets users choose between no cross-validation, 5-fold cross-validation, and 10-fold cross-validation for model assessment. Finally, users can choose to modify DLC configuration files, including the training hyperparameters.</p>
+</sec>
+<sec id="s2e1b">
+<title>Model benchmarking</title>
+<p>Higher pose prediction performance is likely to positively affect the accuracy of the behavior recognition phase. Therefore, one may want to benchmark different pose estimation models by assessing their relative performance. Users can thus train and evaluate several model variations with different backbones (ResNet or EfficientNet) and various layer depths (ResNet50, ResNet101, EfficientNet-B0, etc.). To statistically validate the model’s accuracy, the framework integrates an optional k-fold cross-validation procedure.</p>
+</sec>
+<sec id="s2e1c">
+<title>Model selection</title>
+<p>In the case of a <italic>behavior</italic> dataset being ’within-domain’ (see section <bold>Domain Adaptation</bold>), this assessment is sufficient for selecting the best model during the model benchmarking phase and proceeding with pose extraction. Conversely, if the <italic>behavior</italic> dataset is ’out-of-domain’, as is the case in our experiments, an additional model selection step may be required, since a good ’within-domain’ model may not be robust against visual domain shift. In the literature, models with EfficientNet backbones have shown higher generalization capacity in domain adaptation than those with ResNet [<xref ref-type="bibr" rid="c36">36</xref>]. To assess a model ’out-of-domain’ performance, one can, for instance, compare its predictions to a set of manually labeled video frames from the behavior datasets. For more details, see our Results section.</p>
+</sec>
+<sec id="s2e1d">
+<title>Pose extraction</title>
+<p>The pose information can be extracted from the <italic>behavior</italic> dataset by the selected model. Users can choose a particular snapshot of the trained model or let the framework pick the one with the lowest test set error.</p>
+</sec>
+</sec>
+<sec id="s2e2">
+<title>Module Action recognition</title>
+<p>The goal of the second module is to classify the behaviors from the <italic>behavior</italic> dataset, using as input the extracted pose generated at the end of the first module. The functionalities of this module include <italic>data preprocessing, model training</italic>, and <italic>model evaluation</italic>.</p>
+<sec id="s2e2a">
+<title>Data preprocessing</title>
+<p>To allow behavior recognition from pose predictions, the framework implements four preprocessing steps: predictions filtering, data sampling, data formatting, and configuration setup. The prediction filtering step ensures that at most one prediction provided by the pose estimation model, for each frame and for each keypoint, is kept and the rest are filtered out. More specifically, from the set of all predicted coordinates that fall within the labeled bounding box, the pair of coordinates with the highest prediction confidence for each keypoint is kept, while all others are discarded. The data sampling step extracts the set of items (where an item represents a sequence of consecutive frames satisfying particular constraints of time and behavior label) from the behavior dataset. In the next step, the skeleton data is formatted to ensure compatibility with PoseConv3D’s input data structure. Finally, users can choose to modify the PoseConv3D configuration file, including its hyperparameter values.</p>
+</sec>
+<sec id="s2e2b">
+<title>Model training</title>
+<p>Users have the possibility to train several architectural variations of PoseC3D and RGBPose-C3D available in the MMAction2 toolbox [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c38">38</xref>]. These can be based on different 3D-CNN backbones (SlowOnly [<xref ref-type="bibr" rid="c14">14</xref>], C3D [<xref ref-type="bibr" rid="c57">57</xref>], or X3D [<xref ref-type="bibr" rid="c13">13</xref>]) with an I3D classification head on top [<xref ref-type="bibr" rid="c7">7</xref>]. Model training can be distributed across multi-GPU settings to reduce computation time. The optimal values of hyperparameters may be obtained using random or grid search with a hold-out approach.</p>
+</sec>
+<sec id="s2e2c">
+<title>Model evaluation</title>
+<p>The model is a probabilistic classification model, which returns, for each sample, a list of potential behavior candidates, listed in descending order by the confidence probability. The final predicted behavior corresponds to the first candidate and is used to calculate the Top1 accuracy measure, i.e., the percentage of samples whose predicted behavior matches the ground-truth label. Meanwhile, the list of candidates can be used to calculate alternative accuracy measures, such as Top-k accuracy, which is the ratio of ground-truth behaviors ranked within the first <italic>k</italic> generated candidates. Mean class accuracy is another available metric, which computes the average Top1 accuracy per behavior class.</p>
+</sec>
+</sec>
+<sec id="s2e3">
+<title>Artificial Intelligence Tools and Technologies</title>
+<p>GPT-4 [<xref ref-type="bibr" rid="c42">42</xref>] was used for data visualization as well as sporadic text and code editing.</p>
+</sec>
+</sec>
+</sec>
+<sec id="s3">
+<title>Results</title>
+<p>In order to fully demonstrate the capability of the ASBAR framework to fulfill the task of animal behavior recognition from pose estimation, we designed a particularly challenging experiment: the classification of great ape natural behaviors in the wild. For this, we used PanAf as the <italic>behavior</italic> dataset and OpenMonkeyChallenge (OMC) as the <italic>pose</italic> dataset. The complete methodology of this experiment and the full results are presented following the data/model pipeline of the framework.</p>
+<sec id="s3a">
+<title>Pose estimation</title>
+<p>For the pose estimation module, the OMC dataset represents the ’within-domain’ dataset, whereas the PanAf dataset, constructed from a different visual distribution (the natural habitat of great apes), represents the ’out-of-domain’ dataset.</p>
+<p><bold>Data preprocessing</bold> For our experiment, we selected all data from OMC, i.e., all 26 species and all 17 keypoints including those not visible. Given the large size of OMC (approx. 90k images), we chose a 5-fold cross-validation for the model benchmarking step. Most training hyperparameters are left as default, except for batch size and number of iterations, those values were chosen constrained by the hardware resources, as described below.</p>
+<sec id="s3a1">
+<title>Models benchmarking</title>
+<p>We initially assess the ’within-domain’ relative performance with 5-fold cross-validation of nine variations of pose estimation architectures, including three ResNet networks (ResNet-50, ResNet-101, and ResNet-152), and six EfficientNet networks (EfficientNet-B0, EfficientNet-B1, EfficientNet-B2, EfficientNet-B3, EfficientNet-B5, and EfficientNet-B6) [<xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c55">55</xref>]. All models were pretrained on ImageNet [<xref ref-type="bibr" rid="c47">47</xref>] and subsequently trained on OMC data during 40,000 iterations. The number of iterations was set identical (40,000) for all models, as preliminary tests had shown to be enough for the loss convergence of the largest network (i.e., EfficientNet-B6). The batch size was set to 16, i.e., the largest number of images fitting into the GPU memory (NVIDIA A100 40GB) for EfficientNet-B6. The learning rate schedule is left as default: 1.0e-04 until iteration 7,500, then 5.0e-05 until iteration 12,000, and finally 1.0e-05 until the end. Cross-validation followed the standard 5-fold procedure where 80% of the data was used for training and the remaining 20% for testing, ensuring that all 89,223 images were part of the test set once. Using our terminal-based GUI, all models were remotely trained on the Google Cloud platform either with a NVIDIA A100 40GB or a NVIDIA V100 16GB.</p>
+<p>During the training process, the snapshot model (the network’s weights after <italic>i</italic> learning iterations) is saved at every 5,000 iterations and then evaluated on the test set data. Therefore, each of the eight snapshot models is evaluated five times, once for every fold of cross-validation. Due to the large size of OMC and the necessary number of evaluations for a given model (8 <italic>∗</italic> 5 = 40) using a 5-fold cross-validation procedure, we customized the network evaluation method provided by DLC to speed up the processing time. For this, we implemented a batched data pipeline (compared to a single-image process in DLC) and restrict the evaluation only to the test set data (compared to both training set and test set evaluation, as implemented in DLC). These modifications, which altered the source code of DLC, were not integrated in the release of our framework. However, the default DLC network evaluation method is accessible within our provided GUI to allow the replication of our results and methodology. The performance metrics considered during the evaluation procedure are similar to DLC’s evaluation method, i.e., the mean average Euclidean error (MAE), computed as the distance between the ground-truth labels from OMC (<italic>x</italic>^ <italic>∈</italic> R<sup>2</sup>) and the ones predicted by the model (<italic>x ∈</italic> R<sup>2</sup>), defined as the closest candidate to the ground-truth having a confidence of at least 0.1.
+<disp-formula id="eqn2">
+<graphic xlink:href="559236v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<p>where <italic>J</italic> is the number of images (i.e., 89,223) and <italic>K</italic> is the number of keypoints (i.e., 17). See <xref rid="figs2" ref-type="fig">Fig S2</xref> in Annex ”Supporting Information” for prediction comparison. Additionally, we computed the percentage of correct keypoint (PCK) that falls within the distance of the nasal dorsum (PCK nasal dorsum, see <xref rid="figs3" ref-type="fig">Fig S3</xref> in Annex ”Supporting Information” for example), i.e., the length between the middle of the eyes and the tip of the nose, computed as
+<disp-formula id="eqn3">
+<graphic xlink:href="559236v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<p>where <italic>δ</italic>(<italic>·</italic>) is a function that outputs 1 when its condition is met and 0 otherwise and <italic>ɛ</italic> is calculated in each frame as
+<disp-formula id="eqn4">
+<graphic xlink:href="559236v1_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<sec id="s3a1a">
+<title>Within-domain evaluation</title>
+<p>For each model, the deviation chart of the corresponding snapshot variants, plotting the mean and the standard deviation, are displayed in (<xref rid="fig6" ref-type="fig">Fig 6</xref>) (left chart for MAE metrics, right chart for PCK nasal dorsum metrics). To compare the performance of the models, we can define the 95% confidence interval for the mean of the performance metric MAE after 40, 000 iterations. Due to the small number of evaluations (5) generated by the cross-validation procedure, the confidence interval is constructed using a t-distribution (<italic>α</italic> = 0.025<italic>, ν</italic> = 4). For the MAE metric, the corresponding confidence intervals for all nine models are displayed in (<xref rid="fig7" ref-type="fig">Fig 7</xref>). The results show that ResNet-152 performs statistically better (14.05 <italic>±</italic> 0.199) than any other models, whereas ResNet-101 achieves second best results (14.334 <italic>±</italic> 0.080). The performance of EfficientNet-B5 (14.958 <italic>±</italic> 0.299), EfficientNet-B6 (14.981 <italic>±</italic> 0.288) and ResNet-50 (15.098 <italic>±</italic> 0.12) cannot be statistically distinguished; however all three perform better than EfficientNet-B3 (15.455 <italic>±</italic> 0.097) and EfficientNet-B2 (15.519 <italic>±</italic> 0.25). Finally, EfficientNet-B1 and EfficientNet-B0 both show higher error rate than all other models (16.031 <italic>±</italic> 0.167 and 16.631 <italic>±</italic> 0.546 respectively).</p>
+<fig id="fig6" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 6.</label>
+<caption><title>Model’s relative performance throughout ’within-domain’ training.</title>
+<p>The mean <italic>±</italic> std of the Mean average Euclidean error (MAE) in pixels (<italic>left</italic>, lower is better) and percentage of correct keypoint (PCK nasal dorsum) (<italic>right</italic>, higher is better) for all nine model variations. Evaluation results of 5-fold cross-validation on test set data, at every 5,000 iterations.</p></caption>
+<graphic xlink:href="559236v1_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig7" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 7.</label>
+<caption><title>Final ’within-domain’ model’s relative performance.</title>
+<p>The mean and 95% confidence intervals of the MAE in pixels after 40,000 iterations (end of training). Disjoint confidence intervals represent significant statistical differences. ResNet152 in this task performs significantly better than any other model.</p></caption>
+<graphic xlink:href="559236v1_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3a2">
+<title>Model selection</title>
+<p>While all models were previously trained and tested on images from the same ’in-domain’ visual distribution (i. e. trained and tested on <italic>pose</italic> dataset OMC), their final goal is to predict keypoints on images coming from a different ’out-of-domain’ dataset, the <italic>behavior</italic> dataset PanAf. A good ’within-domain’ model does not necessarily guarantee robustness to visual domain shift. Therefore, to select the best model, we decided to pre-select four of the nine models as potential candidates for pose estimation in the context of domain adaptation. The set includes two ResNet models (ResNet-152, which performed best in the ’within-domain’, and ResNet-50, due to its wide use and popularity among researchers), and two EfficientNet models (B6 and B3). The model EfficientNet-B6 has shown best generalizing performance on ’out-of-domain’ data in other experiments (see [<xref ref-type="bibr" rid="c36">36</xref>]), whereas EfficientNet-B3, although having a ’within-domain’ accuracy lower than all three others, has a Top-1 accuracy on ImageNet [<xref ref-type="bibr" rid="c55">55</xref>] and the capacity to generalize on ’out-of-domain’ data [<xref ref-type="bibr" rid="c36">36</xref>] higher than those of ResNet-152 and ResNet-50. Moreover, this model has a much lower computational cost (1.8G FLOPs compared to 4.1G FLOPs for ResNet-50 and 11G FLOPs for ResNet-152), which makes it much more portable for ethology in the field.</p>
+<p>All four pre-selected models were trained on all 89,223 images from OMC for which annotations were made public (so no image from the OMC dataset is left out for testing purpose). During this second training phase, all models are retrained from scratch during 100,000 iterations with initial weights pre-trained on ImageNet. An increased number of training iterations reflects the larger number of images in the training dataset, while preventing underfitting. The batch size is set to 16 and learning rate schedule left again as default. During training, a model weight snapshot is saved at every 5,000 iterations for later evaluation, resulting in 20 snapshots for each of the four models.</p>
+<sec id="s3a2a">
+<title>Out-of-domain evaluation</title>
+<p>Each saved snapshot is evaluated using as a test set the PanAf-Pose dataset, a selection of 320 images from the <italic>behavior</italic> dataset PanAf, for which we separately labeled the ground-truth keypoint coordinates (see section PanAf-Pose). To filter out noisy model predictions, we maintained the minimum confidence threshold for pose prediction at the default value of 0.1.</p>
+<p>To evaluate the performance, we computed two metrics, namely the normalized error rate (NMER) and PCK-nasal dorsum (see <xref rid="eqn3" ref-type="disp-formula">equation 3</xref>). Both metrics account for the ape’s relative distance and/or size, which is particularly relevant in the case of images captured through fixed forest camera traps. The normalized error is computed as the mean raw pixel distance between the best prediction (with confidence threshold set to 0.1) and its corresponding ground truth, divided by the square root of the bounding box area [<xref ref-type="bibr" rid="c36">36</xref>].
+<disp-formula id="eqn5">
+<graphic xlink:href="559236v1_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<p>where <italic>w</italic> and <italic>h</italic> represent the width and height of the bounding box.</p>
+<p>Our results suggest that ResNet-152 best generalized on ’out-of-domain’ data (<xref rid="fig8" ref-type="fig">Fig 8</xref>), evidenced by its highest overall PCK nasal dorsum of 54.17% across all keypoints (n=5,440) and the lowest normalized error rate standing at 10.19%.</p>
+<fig id="fig8" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 8.</label>
+<caption><title>’Out-of-domain’ performance on PanAf-Pose.</title>
+<p>Models are compared with two metrics accounting for the animal’s relative size and/or distance. PCK nasal dorsum (<italic>left</italic>, higher is better) and normalized error rate (<italic>right</italic>, lower is better) showcase the superiority of RN-152 to predict great ape poses in their natural habitat. Vertical/horizontal dashed lines represent max/min values and corresponding number of iterations. We select RN-152 at 60,000 iteration for pose extraction.</p></caption>
+<graphic xlink:href="559236v1_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3a3">
+<title>Pose extraction</title>
+<p>Given ResNet-152 high accuracy observed at 60,000 iterations — marked by a detection rate of 53.9% (very close to highest observed value) and the minimal normalized error (10.19%) — we decided to use this snapshot of ResNet-152 as the final keypoint detector with domain adaptation. This optimal pose estimation model is applied to predict the pose information on all 180,000 frames of PanAf. Due to the visual domain shift between OMC and PanAf, we drastically reduced the model’s minimum confidence threshold for predictions from 10<italic><sup>−</sup></italic><sup>1</sup> to 10<italic><sup>−</sup></italic><sup>6</sup> in order to generate a sufficient number of keypoints candidates and avoid ”no prediction” case.</p>
+</sec>
+</sec>
+<sec id="s3b">
+<title>Alternative performance evaluation</title>
+<p>To reach a deeper understanding of the performance of the final pose estimation model related to the keypoint type and the primate species, we evaluated the model, using a 5-fold cross-validation, on all 89,223 images from the OMC dataset (’within-domain’) and all 320 images from PanAf-Pose dataset (’out-of-domain’). The minimum confidence threshold was set to its default value.</p>
+</sec>
+<sec id="s3c">
+<title>Keypoint detection rate</title>
+<p>Our experiments showed that, for non-human primates, not all keypoints are equal, i.e., some are easier to predict than others. For each keypoint, the detection rate at a given distance is computed, i.e., the cumulative distribution of the predicted distance in pixels (<xref rid="fig9" ref-type="fig">Fig 9</xref>). On the <italic>left</italic> chart from <xref rid="fig9" ref-type="fig">Fig 9</xref>, the test predictions of ResNet-152 during cross-validation on OMC are gathered (<italic>n</italic> = 89, 223 <italic>∗</italic> 17 = 1, 516, 791). From this, we may conclude that: (1) keypoints of facial features (nose, left eyes, right eyes) are more easily detectable than others; (2) the head’s position can be predicted more accurately than any other keypoints below the neck; (3) generally upper body limbs (wrists, elbows, shoulders) are recognized more effectively than lower body limbs (ankles and knees); (4) the location of keypoints from limb extremities is predicted more accurately than those closer to the body (wrists vs. elbows/shoulder and ankles vs. knees); (5) the position of tail and hip are the hardest to predict accurately.</p>
+<fig id="fig9" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 9.</label>
+<caption><title>Keypoint detection rate on ’within-domain’ vs. ’out-of-domain’ test data.</title>
+<p>The keypoint detection rate at a pixel distance, i. e. the percentage of keypoints detected within a distance, is visualized for OMC (<italic>left</italic>) and PanAf-Pose (<italic>right</italic>). For instance, within a distance of 10 pixels or less, the nose is detected in around 95% of the 89, 223 images of OMC. In comparison, within the same distance, the tail is only detected in around 38% of the cases.</p></caption>
+<graphic xlink:href="559236v1_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>These observations could partially be explained by the fact that (a) facial features can more easily be distinguished visually, that (b) the individual’s head and limb extremities tend to stick out from the rest of the body, and that (c) lower limbs, hips, and tail can often be partially occluded and therefore more ambiguous to locate.</p>
+<p>Compared to the detection rate on PanAf-Pose (<italic>right</italic> chart from <xref rid="fig9" ref-type="fig">Fig 9</xref>), we observe a similar <italic>s</italic>-shape distribution, demonstrating the model’s robustness to domain shift. Note here that all ground truth annotations were precisely labeled by a great ape behavior and signaling expert (EG), which may result in a lower detection rate for specific keypoints as ground-truth annotations in OMC may be less accurate (e. g., in OMC, fingers are sometimes labeled instead of wrists and toes instead of ankles). Also, consider that the dataset is much smaller (320 images, i. e. 5, 440 keypoints), includes only two species (gorillas and chimpanzees), and that the <italic>x</italic>-axis is the absolute distance in pixels for both charts (i. e. the image size was not taken into account).</p>
+</sec>
+<sec id="s3d">
+<title>Per species accuracy</title>
+<p>To evaluate the performance of the model related to both dimensions, keypoints, and species, we restricted the analysis to the OMC dataset. In <xref rid="fig10" ref-type="fig">Fig 10</xref>, the normalized error rate (NMER, see <xref rid="eqn5" ref-type="disp-formula">equation 5</xref>) and 95% confidence interval are visualized for Chimpanzee (n=6,190) and Gorilla (n=1,777). We can conclude that the model’s performance is statistically dependent on the species, as the error rate confidence intervals for all Gorilla keypoints are disjoint from the ones of Chimpanzees. The fact that the ranges of the confidence interval are always lower for Gorillas indicates that the model can detect the keypoint location more accurately for this species. See <xref rid="figs4" ref-type="fig">Fig S4</xref> in Annex ”Supporting Information” for other species grouped by family.</p>
+<fig id="fig10" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 10.</label>
+<caption><title>Normalized error rate for Chimpanzee and Gorilla</title>
+<p>The mean and 95% confidence interval for NMER. Disjoint confidence intervals suggest statistical significance. Here the model’s error rate is lower for all Gorilla keypoints, i. e. those keypoints can be predicted more accurately by the model.</p></caption>
+<graphic xlink:href="559236v1_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s3e">
+<title>Behavior Recognition</title>
+<sec id="s3e1">
+<title>Data preprocessing</title>
+<p>For the data sampling step, we adopted the methodology proposed by [<xref ref-type="bibr" rid="c48">48</xref>], which involves setting a minimum threshold of 72 consecutive frames (corresponding time: 3 seconds) that exhibit the same behavior. This approach ensures that only prolonged and significant behavioral patterns are considered. The chosen video clips are then divided into samples, each one comprising 20 consecutive frames, with no gaps or overlaps between them. However, since the validation set suggested in [<xref ref-type="bibr" rid="c48">48</xref>] included only four out of the nine classes of behavior, we reshuffled the dataset split using a random 70-15-15 distribution of the 500 video clips. Given the low minimum confidence threshold for pose prediction (10<italic><sup>−</sup></italic><sup>6</sup>) used during the pose extraction step, data filtering ensures that at most 17 keypoint predictions per frame are selected, i.e. those with the highest confidence and within the given bounding box. The resulting data were formatted and stored as triplets of (x, y, confidence). The model was configured to use only joints (not limbs) with a sigma value of 0.6 (see examples in <xref rid="fig4" ref-type="fig">Fig 4</xref>). We did not account for the probabilistic score of the predictions (the parameter <italic>c<sub>k</sub></italic> in <xref rid="eqn1" ref-type="disp-formula">equation 1</xref>) as our minimum confidence threshold was extremely low, and detection probabilities often close to 0.</p>
+</sec>
+<sec id="s3e2">
+<title>Model training</title>
+<p>A PoseConv3D with a ResNet3dSlowOnly backbone and an I3D classification head on top was trained and tested. We selected this architecture due to its high performance on NTU60-XSub [<xref ref-type="bibr" rid="c32">32</xref>], a benchmark dataset for human action recognition, as reported by [<xref ref-type="bibr" rid="c11">11</xref>]. The search for optimal hyperparameters on the validation set was conducted on the HPC cluster of the University of Neuchâtel, on 4x NVIDIA RTX 2080 Ti (4x 11GB). Specifically, we used random search and grid search to define the following training parameters: number of videos per GPU (32), number of epochs (100), initial learning rate (0.512), momentum (0.858), weight decay (0.0005). Other parameters remained similar to [<xref ref-type="bibr" rid="c11">11</xref>]. To best demonstrate an unadulterated skeleton-based approach, the model was trained on pose estimated data only and did not make use of <bold>RGB+Pose</bold> multimodal capability (i. e., no additional data stream was fed with RGB information).</p>
+</sec>
+<sec id="s3e3">
+<title>Model evaluation</title>
+<p>We defined our key metrics as Top1 accuracy, Top3 accuracy, and mean class accuracy similar to [<xref ref-type="bibr" rid="c48">48</xref>] for comparison. After 80 epochs, we reached our highest Top1 accuracy score on the validation set at 62.95%, which was used for our final test results described below.</p>
+</sec>
+</sec>
+<sec id="s3f">
+<title>Final results on PanAf</title>
+<p>Our results (<xref rid="tbl1" ref-type="table">Table 1</xref>) demonstrate the successful application of our skeleton-based action recognition for animals. In particular, in the context of the highly relevant yet challenging task of automating the recognition of great ape behaviors in the wild, its accuracy is comparable to other video-based techniques (as in [<xref ref-type="bibr" rid="c48">48</xref>]). On the PanAf dataset, we achieved 74.98% Top1 accuracy in classifying nine different classes of behaviors. To the best of our knowledge, this also represents the first use of a skeleton-based approach to classify great ape behavior. Note here that the full size of the PanAf dataset after pose extraction, i. e. the input features of the behavior classifier, can be stored in text format on less than 60 MB of memory, around 20 times less than the storage space needed for the same dataset following a video-based approach. For ethologists working in the field, with scarce and often unreliable computational, storage, and transfer resources, this can represent a significant improvement without any performance loss in behavior recognition.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Performance comparison with previous studies.</title><p>Comparison of Top1 accuracy, Top3 accuracy, and mean class accuracy with previous video-based methods. Our framework improves both TopK accuracies while shrinking by a factor of around 20 times the volume of the behavior recognition model.</p></caption>
+<graphic xlink:href="559236v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>A limitation of our methodology can, however, be observed as the mean class accuracy, an important metric when dealing with unbalanced datasets, is lower than in previous video-based experiments (<xref rid="tbl1" ref-type="table">Table 1</xref>). The final model’s confusion matrix is depicted in <xref rid="fig11" ref-type="fig">Fig 11</xref>, where one can observe that the model predominantly predicts behavior classes for which a larger number of samples are available in the dataset. Moreover, we note that three classes of behaviors, namely <italic>climbing down</italic>, <italic>running</italic> and <italic>camera interaction</italic>, have none of their samples correctly classified. This indicates the need for future work in animal pose estimation with domain adaptation and skeleton-based approaches for behavior classification.</p>
+<fig id="fig11" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 11.</label>
+<caption><title>Final confusion matrix on PanAf</title>
+<p>For each true behavior label (vertically), the percentage of prediction is reported across all predicted behaviors (horizontally). The cells on the diagonal represent the percentage of correct predictions per class. For example, 61% of all the samples labeled ’standing’ were correctly classified, while the remaining ones were wrongly predicted as ’sitting’ (28%) and ’walking’ (11%).</p></caption>
+<graphic xlink:href="559236v1_fig11.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s4">
+<title>Discussion</title>
+<p>Despite a rapid increase in open-source resources, such as large-scale animal pose datasets and machine learning toolboxes for animal pose estimation and human skeleton-based action recognition, their integration has mostly remained unexplored in the context of animal behavior recognition, especially outside of captive settings. By introducing ASBAR, a framework that combines both machine learning tasks of animal pose estimation and skeleton-based action recognition, we offer a new data/model pipeline, methodology, and GUI to help researchers automatically classify animal behaviors via pose estimation. In our experiments, we demonstrate the use and successful implementation of the framework by applying it to a complex and challenging task for machine learning models: the classification of great ape behaviors in their natural habitat. Compared to previous video-based approaches, we achieve comparable classification performance results, while reducing the action recognition model input size by a factor of around 20, leading to less required computational power, storage space, and data transfer necessity. Additionally, our skeleton-based method is known to be less sensitive to changes in visual settings and therefore less context-dependent. The pose estimator used in our experiments can extract poses from many other primate species without any further training (as it was trained with 26 species) and is robust to visual domain shift, which can speed up the pose estimation process for primatologists in diverse fields.</p>
+<p>Regarding our experiment’s results, we denote the need for future work, as our method achieves lower mean class accuracy than previous video-based methods. On one hand, this can potentially be explained by the noisy nature of the pose extracted data due to domain adaptation and, on the other hand, the action recognition model’s failure to correctly classify behaviors for which only a small number of samples are available, due to the unbalanced nature of the behavior dataset.</p>
+<p>We believe that our final model’s performance can be increased either algorithmically and/or by enhancing data quality. In terms of algorithms, [<xref ref-type="bibr" rid="c11">11</xref>] reports higher accuracies when the data pipeline uses the keypoint detection as pose scoremaps rather than compressing them as (<italic>x, y, c</italic>) triplets, particularly in the context of lower-quality pose predictions, which may be relevant with domain adaptation. Additionally, making use of the RGB-Pose dual-modality may reflect positively on the model’s performance as it fuses the predictions of both RGB and pose information for final behavior classification. Finally, we note that the performance assessment of ’within-domain’ and ’out-of-domain’ pose estimation models relying on EfficientNet’s architectures did not achieve higher results than the ResNet one, as others have suggested [<xref ref-type="bibr" rid="c36">36</xref>]. This might have been caused by the initial learning rate being similar for all models for comparison, whereas EfficientNet models may have required hyperparameter tuning.</p>
+<p>In terms of data quality, techniques to reduce the domain adaptation gap between <italic>pose</italic> and <italic>behavior</italic> datasets may result in more accurate pose extraction [<xref ref-type="bibr" rid="c58">58</xref>]. Similarly, the use of the extracted pose as pseudo-labels for semi-supervised learning could lead to significant performance gains for ’out-of-domain’ pose estimation [<xref ref-type="bibr" rid="c5">5</xref>, <xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c39">39</xref>]. More specifically for pose prediction on PanAf, training a pose estimator on OpenApePose [<xref ref-type="bibr" rid="c10">10</xref>] may improve the final behavior classification.</p>
+<p>In the future, our framework can also be extended to other animal pose datasets such as Animal Kingdom [<xref ref-type="bibr" rid="c41">41</xref>], MammalNet [<xref ref-type="bibr" rid="c9">9</xref>], or Animal Pose [<xref ref-type="bibr" rid="c5">5</xref>]. Beyond action recognition, the task of spatio-temporal action detection, a task highly relevant for ethologists, could be straightforwardly integrated into the framework, as it is accessible on MMaction2’s platform already.</p>
+<p>In conclusion, we demonstrated the practical use and relevance of skeleton-based action recognition approaches in computational ethology as well as future research directions for further improvement. Our framework and provided GUI offer other researchers the tools and methodology to apply ASBAR in their own research to study other behaviors and/or animal species.</p>
+</sec>
+</body>
+<back>
+<sec id="s5">
+<title>ANNEX Supporting information</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig S1.</label>
+<caption><title>Examples of UI elements of the ASBAR graphical user interface</title>
+<p>The GUI is terminal-based and therefore can be rendered even when accessed on a distant machine, such as a cloud-based platform or a remote high-performance computer. Researchers may thus train and evaluate remotely the different models of DeepLabCut and MMaction2 without the need to write any programming code or terminal commands. See more details at <ext-link ext-link-type="uri" xlink:href="https://github.com/MitchFuchs/asbar">https://github.com/MitchFuchs/asbar</ext-link></p></caption>
+<graphic xlink:href="559236v1_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Fig S2.</label>
+<caption><title>Prediction comparison of the nine models at test time.</title>
+<p>After 40,000 training iterations, the models’ test predictions are visually compared on one example of the test set. Note for example that i) ResNet-50 (<italic>center</italic>) wrongly predicts the top of the head as the tail’s position, ii) only three models can predict the left ankle’s position accurately (ResNet-50 (<italic>center</italic>), ResNet-101 (<italic>center right</italic>), and EfficientNet-B1 (<italic>bottom left</italic>)) and iii) no model correctly detects the left knee’s location.</p></caption>
+<graphic xlink:href="559236v1_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Fig S3.</label>
+<caption><title>PCK nasal dorsum</title>
+<p>The turquoise segment represents the length between the center of the eyes and the tip of the nose, i.e., the nasal dorsum. Any model prediction (represented in green) that falls within this distance of the ground-truth location (indicated in red) is considered as detected. In this case, all keypoints are detected except for the shoulders, neck, left wrist, and the hip (circled in purple). Hence, for this image, the detection rate would be 12<italic>/</italic>17 = 0.706 = 70.56%.</p></caption>
+<graphic xlink:href="559236v1_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Fig S4.</label>
+<caption><title>Normalized error rate by families, species and keypoints.</title>
+<p>For all OMC images at test time, we visualize the normalized error rate (NMER) for each species.</p></caption>
+<graphic xlink:href="559236v1_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<ack>
+<title>Acknowledgments</title>
+<p>We extend our sincere gratitude to the team behind the Pan African Programme: ‘The Cultured Chimpanzee’, along with their partners, for granting us permission to use their data for this study. For access to the videos from the dataset, please reach out directly with the copyright holder Pan African Programme at <ext-link ext-link-type="uri" xlink:href="http://panafrican.eva.mpg.de">http://panafrican.eva.mpg.de</ext-link>. In particular, we would like to thank H Kuehl, C Boesch, M Arandjelovic, and P Dieguez. Further acknowledgments go to: K Corogenes, E Normand, V Vergnes, A Meier, J Lapuente, D Dowd, S Jones, V Leinert, EWessling, H Eshuis, K Langergraber, S Angedakin, S Marrocoli, K Dierks, T C Hicks, J Hart, K Lee, M Murai and the team at Chimp&amp;See.</p>
+<p>The work that allowed for the collection of the PanAf dataset was made possible due to the generous support from the Max Planck Society, Max Planck Society Innovation Fund, and Heinz L. Krekeler. By extension, we also wish to thank: Foundation Ministre de la Recherche Scientifique, and Ministre des Eaux et For^ets in Cote d’Ivoire; Institut Congolais pour la Conservation de la Nature and Ministre de la Recherche Scientifique in DR Congo; Forestry Development Authority in Liberia; Direction des Eaux, For^ets Chasses et de la Conservation des Sols in Senegal; and Uganda National Council for Science and Technology, Uganda Wildlife Authority, and National Forestry Authority in Uganda.</p>
+<p>In addition, we would like to thank the team at NCCR Evolving Language and in particular Guanghao You, for allowing us to use their computational platform.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>David J.</given-names> <surname>Anderson</surname></string-name> and <string-name><given-names>Pietro</given-names> <surname>Perona</surname></string-name>. “<article-title>Toward a Science of Computational Ethology</article-title>”. In: <source>Neuron</source> <volume>84</volume>.<issue>1</issue> <year>2014</year>, pp. <fpage>18</fpage>–<lpage>31</lpage>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>Max</given-names> <surname>Bain</surname></string-name>, <etal>et al.</etal> “<article-title>Automated audiovisual behavior recognition in wild primates</article-title>”. In: <source>Science Advances</source> <volume>7</volume>.<issue>46</issue> (<year>2021</year>), <fpage>eabi4883</fpage>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>Praneet C</given-names> <surname>Bala</surname></string-name>, <etal>et al.</etal> “<article-title>Automated markerless pose estimation in freely moving macaques with OpenMonkeyStudio</article-title>”. In: <source>Nature communications</source> <volume>11</volume>.<issue>1</issue> (<year>2020</year>), pp. <fpage>1</fpage>–<lpage>12</lpage>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>James P</given-names> <surname>Bohnslav</surname></string-name> <etal>et al.</etal> “<article-title>DeepEthogram, a machine learning pipeline for supervised behavior classification from raw pixels</article-title>”. In: <source>eLife</source> <volume>10</volume> <year>2021</year>. <elocation-id>e63377</elocation-id>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>Jinkun</given-names> <surname>Cao</surname></string-name> <etal>et al.</etal> “<article-title>Cross-domain adaptation for animal pose estimation</article-title>”. In: <source>Proceedings of the IEEE/CVF International Conference on Computer Vision</source>. <year>2019</year>, pp. <fpage>9498</fpage>–<lpage>9507</lpage>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>Zhe</given-names> <surname>Cao</surname></string-name> <etal>et al.</etal> “<article-title>Realtime multi-person 2d pose estimation using part affinity fields</article-title>”. In: <source>Proceedings of the IEEE conference on computer vision and pattern recognition</source>. <year>2017</year>, pp. <fpage>7291</fpage>–<lpage>7299</lpage>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>Joao</given-names> <surname>Carreira</surname></string-name> and <string-name><given-names>Andrew</given-names> <surname>Zisserman</surname></string-name>. “<article-title>Quo vadis, action recognition? a new model and the kinetics dataset</article-title>”. In: <source>proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</source>. <year>2017</year>, pp. <fpage>6299</fpage>–<lpage>6308</lpage>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>Chen</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Roozbeh</given-names> <surname>Jafari</surname></string-name>, and <string-name><given-names>Nasser</given-names> <surname>Kehtarnavaz</surname></string-name>. “<article-title>A survey of depth and inertial sensor fusion for human action recognition</article-title>”. In: <source>Multimedia Tools and Applications</source> <volume>76</volume> (<year>2017</year>), pp. <fpage>4405</fpage>–<lpage>4425</lpage>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>Jun</given-names> <surname>Chen</surname></string-name> <etal>et al.</etal> “<article-title>MammalNet: A Large-Scale Video Benchmark for Mammal Recognition and Behavior Understanding</article-title>”. In: <source>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</source>. <year>2023</year>, pp. <fpage>13052</fpage>–<lpage>13061</lpage>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>Nisarg</given-names> <surname>Desai</surname></string-name>, <etal>et al.</etal> “<article-title>OpenApePose: a database of annotated ape photographs for pose estimation</article-title>”. In: <source>arXiv preprint</source> <volume>arXiv</volume>:<fpage>2212.00741</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="confproc"><string-name><given-names>Haodong</given-names> <surname>Duan</surname></string-name> <etal>et al.</etal> “<article-title>Revisiting skeleton-based action recognition</article-title>”. In: <conf-name>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</conf-name>. <year>2022</year>, pp. <fpage>2969</fpage>–<lpage>2978</lpage>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="web"><collab>Max Planck Institute for Evolutionary Anthropology</collab>. <article-title>Pan African programme: The Cultured Chimpanzee</article-title>. url: <ext-link ext-link-type="uri" xlink:href="http://panafrican.eva.mpg.de/index.php">http://panafrican.eva.mpg.de/index.php</ext-link>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="confproc"><string-name><given-names>Christoph</given-names> <surname>Feichtenhofer</surname></string-name>. “<article-title>X3d: Expanding architectures for efficient video recognition</article-title>”. In: <conf-name>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</conf-name>. <year>2020</year>, pp. <fpage>203</fpage>–<lpage>213</lpage>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="confproc"><string-name><given-names>Christoph</given-names> <surname>Feichtenhofer</surname></string-name> <etal>et al.</etal> “<article-title>SlowFast Networks for Video Recognition</article-title>”. In: <conf-name>2019 IEEE/CVF International Conference on Computer Vision (ICCV)</conf-name>. <year>2019</year>, pp. <fpage>6201</fpage>–<lpage>6210</lpage>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>Liqi</given-names> <surname>Feng</surname></string-name>, <etal>et al.</etal> “<article-title>A comparative review of graph convolutional networks for human skeleton-based action recognition</article-title>”. In: <source>Artificial Intelligence Review</source> (<year>2022</year>), pp. <fpage>4275</fpage>–<lpage>4305</lpage>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>Liqi</given-names> <surname>Feng</surname></string-name> <etal>et al.</etal> “<article-title>Action Recognition Using a Spatial-Temporal Network for Wild Felines</article-title>”. In: <source>Animals</source> <volume>11</volume>.<issue>2</issue>. <year>2021</year>, p. <fpage>485</fpage>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="software"><string-name><given-names>Emilie</given-names> <surname>Genty</surname></string-name> and <string-name><given-names>Michael</given-names> <surname>Fuchs</surname></string-name>. <data-title>GApS: A Coding Scheme for Great Apes Signals in ELAN</data-title>. <source>Zenodo</source> <month>Jan.</month> <year>2023</year>. doi: <pub-id pub-id-type="doi">10.5281/zenodo.7371604</pub-id>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>Fei</given-names> <surname>Han</surname></string-name>, <etal>et al.</etal> “<article-title>Space-time representation of people based on 3D skeletal data: A review</article-title>”. In: <source>Computer Vision and Image Understanding</source> <volume>158</volume> (<year>2017</year>), pp. <fpage>85</fpage>–<lpage>105</lpage>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>Abigail</given-names> <surname>Hardin</surname></string-name> and <string-name><given-names>Ingo</given-names> <surname>Schlupp</surname></string-name>. “<article-title>Using machine learning and DeepLabCut in animal behavior</article-title>”. In: <source>acta ethologica</source> <volume>25</volume>.<issue>3</issue> (<year>2022</year>), pp. <fpage>125</fpage>–<lpage>133</lpage>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>Benjamin Y</given-names> <surname>Hayden</surname></string-name>, <string-name><given-names>Hyun Soo</given-names> <surname>Park</surname></string-name>, and <string-name><given-names>Jan</given-names> <surname>Zimmermann</surname></string-name>. “<article-title>Automated pose estimation in primates</article-title>”. <source>In: American journal of primatology</source> <volume>84</volume>.<issue>10</issue> (<year>2022</year>), <fpage>e23348</fpage>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="confproc"><string-name><given-names>Kaiming</given-names> <surname>He</surname></string-name> <etal>et al.</etal> “<article-title>Deep residual learning for image recognition</article-title>”. In: <conf-name>Proceedings of the IEEE conference on computer vision and pattern recognition</conf-name>. <year>2016</year>, pp. <fpage>770</fpage>–<lpage>778</lpage>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="book"><string-name><given-names>Eldar</given-names> <surname>Insafutdinov</surname></string-name> <etal>et al.</etal> “<article-title>Deepercut: A deeper, stronger, and faster multi-person pose estimation model</article-title>”. In: <source>European conference on computer vision</source>. <publisher-name>Springer</publisher-name>. <year>2016</year>, pp. <fpage>34</fpage>–<lpage>50</lpage>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>Pierre</given-names> <surname>Karashchuk</surname></string-name>, <etal>et al.</etal> “<article-title>Anipose: a toolkit for robust markerless 3D pose estimation</article-title>”. In: <source>Cell reports</source> <volume>36</volume>.<issue>13</issue> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="book"><string-name><given-names>Thomas N.</given-names> <surname>Kipf</surname></string-name> and <string-name><given-names>Max</given-names> <surname>Welling</surname></string-name>. “<article-title>Semi-Supervised Classification with Graph Convolutional Networks</article-title>”. In: <source>Proceedings of the 5th International Conference on Learning Representations (ICLR)</source>. <publisher-name>ICLR ’17</publisher-name>. <publisher-loc>Palais des Congrès Neptune, Toulon, France</publisher-loc>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>Alex</given-names> <surname>Krizhevsky</surname></string-name>, <string-name><given-names>Ilya</given-names> <surname>Sutskever</surname></string-name>, and <string-name><given-names>Geoffrey E.</given-names> <surname>Hinton</surname></string-name>. “<article-title>ImageNet classification with deep convolutional neural networks</article-title>”. In: <source>Communications of the ACM</source> <volume>60</volume>.<issue>6</issue> <year>2017</year>, pp. <fpage>84</fpage>–<lpage>90</lpage>.</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>Rollyn</given-names> <surname>Labuguen</surname></string-name>, <etal>et al.</etal> “<article-title>MacaquePose: A novel “in the wild” macaque monkey pose dataset for markerless motion capture</article-title>”. In: <source>Frontiers in behavioral neuroscience</source> <volume>14</volume> (<year>2021</year>), p. <fpage>581154</fpage>.</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>Jessy</given-names> <surname>Lauer</surname></string-name>, <etal>et al.</etal> “<article-title>Multi-animal pose estimation, identification and tracking with DeepLabCut</article-title>”. In: <source>Nature Methods</source> <volume>19</volume> (<year>2022</year>), pp. <fpage>496</fpage>–<lpage>504</lpage>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>Chen</given-names> <surname>Li</surname></string-name> and <string-name><given-names>Gim Hee</given-names> <surname>Lee</surname></string-name>. “<article-title>From synthetic to real: Unsupervised domain adaptation for animal pose estimation</article-title>”. In: <source>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</source>. <year>2021</year>, pp. <fpage>1482</fpage>–<lpage>1491</lpage>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><string-name><given-names>Fanjia</given-names> <surname>Li</surname></string-name>, <etal>et al.</etal> “<article-title>Enhanced Spatial and Extended Temporal Graph Convolutional Network for Skeleton-Based Action Recognition</article-title>”. In: <source>Sensors</source> <volume>20</volume>.<issue>18</issue> (<year>2020</year>), p. <fpage>5260</fpage>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>Maosen</given-names> <surname>Li</surname></string-name> <etal>et al.</etal> “<article-title>Actional-structural graph convolutional networks for skeleton-based action recognition</article-title>”. In: <source>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</source>. <year>2019</year>, pp. <fpage>3595</fpage>–<lpage>3603</lpage>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>Weining</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Sirnam</given-names> <surname>Swetha</surname></string-name>, and <string-name><given-names>Mubarak</given-names> <surname>Shah</surname></string-name>. <article-title>Wildlife action recognition using deep learning</article-title>. <source>Center for Research in Computer Vision</source> <year>2020</year>. <ext-link ext-link-type="uri" xlink:href="https://www.crcv.ucf.edu/wp-content/uploads/2018/11/Weining_L_Report.pdf">https://www.crcv.ucf.edu/wp-content/uploads/2018/11/Weining_L_Report.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>Jun</given-names> <surname>Liu</surname></string-name>, <etal>et al.</etal> “<article-title>NTU RGB+D 120: A Large-Scale Benchmark for 3D Human Activity Understanding</article-title>”. In: <source>IEEE Transactions on Pattern Analysis and Machine Intelligence</source> <volume>42</volume>.<issue>10</issue> (<year>2020</year>), pp. <fpage>2684</fpage>–<lpage>2701</lpage>.</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="preprint"><string-name><given-names>Aleksander</given-names> <surname>Madry</surname></string-name>, <etal>et al.</etal> “<article-title>Towards deep learning models resistant to adversarial attacks</article-title>”. <source>arXiv</source> doi: <pub-id pub-id-type="doi">10.48550/arXiv.1706.06083</pub-id> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>Markus</given-names> <surname>Marks</surname></string-name>, <etal>et al.</etal> “<article-title>Deep-learning-based identification, tracking, pose estimation and behaviour classification of interacting primates and mice in complex environments</article-title>”. In: <source>Nature machine intelligence</source> <volume>4</volume>.<issue>4</issue> (<year>2022</year>), pp. <fpage>331</fpage>–<lpage>340</lpage>.</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>Alexander</given-names> <surname>Mathis</surname></string-name>, <etal>et al.</etal> “<article-title>DeepLabCut: markerless pose estimation of user-defined body parts with deep learning</article-title>”. In: <source>Nature neuroscience</source> <volume>21</volume>.<issue>9</issue> (<year>2018</year>), pp. <fpage>1281</fpage>–<lpage>1289</lpage>.</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>Alexander</given-names> <surname>Mathis</surname></string-name> <etal>et al.</etal> “<article-title>Pretraining boosts out-of-domain robustness for pose estimation</article-title>”. In: <source>Proceedings of the IEEE/CVF winter conference on applications of computer vision.</source> <year>2021</year>, pp. <fpage>1859</fpage>–<lpage>1868</lpage>.</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>Mackenzie Weygandt</given-names> <surname>Mathis</surname></string-name> and <string-name><given-names>Alexander</given-names> <surname>Mathis</surname></string-name>. “<article-title>Deep learning tools for the measurement of animal behavior in neuroscience</article-title>”. In: <source>Current opinion in neurobiology</source> <volume>60</volume> (<year>2020</year>), pp. <fpage>1</fpage>–<lpage>11</lpage>.</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="web">MMAction2 Contributors. <source>OpenMMLab’s Next Generation Video Understanding Toolbox and Benchmark</source>. <version designator="Version 1.0.0">Version 1.0.0</version>. July 21, <year>2020</year>. url: <ext-link ext-link-type="uri" xlink:href="https://github.com/open-mmlab/mmaction2">https://github.com/open-mmlab/mmaction2</ext-link>.</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="journal"><string-name><given-names>Jiteng</given-names> <surname>Mu</surname></string-name> <etal>et al.</etal> “<article-title>Learning from synthetic animals</article-title>”. In: <source>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</source>. <year>2020</year>, pp. <fpage>12386</fpage>–<lpage>12395</lpage>.</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="journal"><string-name><given-names>Tanmay</given-names> <surname>Nath</surname></string-name>, <etal>et al.</etal> “<article-title>Using DeepLabCut for 3D markerless pose estimation across species and behaviors</article-title>”. In: <source>Nature protocols</source> <volume>14</volume>.<issue>7</issue> (<year>2019</year>), pp. <fpage>2152</fpage>–<lpage>2176</lpage>.</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><string-name><given-names>Xun Long</given-names> <surname>Ng</surname></string-name> <etal>et al.</etal> “<article-title>Animal kingdom: A large and diverse dataset for animal behavior understanding</article-title>”. In: <source>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</source>. <year>2022</year>, pp. <fpage>19023</fpage>–<lpage>19034</lpage>.</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><collab>OpenAI</collab>. <article-title>GPT-4 Technical Report</article-title>. <year>2023</year>. <source>arXiv: 2303.08774 [cs.CL]</source>.</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="web"><collab>OpenMMLab Contributors</collab>. <article-title>Open-source Computer Vision Deep Learning Algorithm System</article-title>.  <date-in-citation iso-8601-date="2018-11-01">January 11, 2018</date-in-citation> url: <ext-link ext-link-type="uri" xlink:href="https://github.com/open-mmlab">https://github.com/open-mmlab</ext-link>.</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><string-name><given-names>Talmo D</given-names> <surname>Pereira</surname></string-name>, <etal>et al.</etal> “<article-title>SLEAP: A deep learning system for multi-animal pose tracking</article-title>”. In: <source>Nature methods</source> <volume>19</volume>.<issue>4</issue> (<year>2022</year>), pp. <fpage>486</fpage>–<lpage>495</lpage>.</mixed-citation></ref>
+<ref id="c45"><label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>Talmo D.</given-names> <surname>Pereira</surname></string-name>, <string-name><given-names>Joshua W.</given-names> <surname>Shaevitz</surname></string-name>, and <string-name><given-names>Mala</given-names> <surname>Murthy</surname></string-name>. “<article-title>Quantifying behavior to understand the brain</article-title>”. In: <source>Nature Neuroscience</source> <volume>23</volume>.<issue>12</issue> <year>2020</year>, pp. <fpage>1537</fpage>–<lpage>1549</lpage>.</mixed-citation></ref>
+<ref id="c46"><label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>Talmo D.</given-names> <surname>Pereira</surname></string-name> <etal>et al.</etal> “<article-title>Fast animal pose estimation using deep neural networks</article-title>”. In: <source>Nature Methods</source> <volume>16</volume>.<issue>1</issue> <year>2018</year>, pp. <fpage>117</fpage>–<lpage>125</lpage>.</mixed-citation></ref>
+<ref id="c47"><label>[47]</label><mixed-citation publication-type="journal"><string-name><given-names>Olga</given-names> <surname>Russakovsky</surname></string-name> <etal>et al.</etal> “<article-title>ImageNet Large Scale Visual Recognition Challenge</article-title>”. <source>In: International Journal of Computer Vision (IJCV</source><italic>)</italic> <volume>115</volume>.<issue>3</issue> (<year>2015</year>), pp. <fpage>211</fpage>–<lpage>252</lpage>.</mixed-citation></ref>
+<ref id="c48"><label>[48]</label><mixed-citation publication-type="book"><string-name><given-names>Faizaan</given-names> <surname>Sakib</surname></string-name> and <string-name><given-names>Tilo</given-names> <surname>Burghardt</surname></string-name>. “<article-title>Visual Recognition of Great Ape Behaviours in the Wild</article-title>”. <source>English</source>. In: <publisher-name>International Conference on Pattern Recognition (ICPR) Workshop on Visual Observation and Analysis of Vertebrate And Insect Behavior, VAIB</publisher-name> ; Conference date: 10-01-2021 Through 15-01-2021. Jan. <year>2021</year>.</mixed-citation></ref>
+<ref id="c49"><label>[49]</label><mixed-citation publication-type="journal"><string-name><given-names>Dian</given-names> <surname>Shao</surname></string-name> <etal>et al.</etal> “<article-title>Finegym: A hierarchical video dataset for fine-grained action understanding</article-title>”. In: <source>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</source>. <year>2020</year>, pp. <fpage>2616</fpage>–<lpage>2625</lpage>.</mixed-citation></ref>
+<ref id="c50"><label>[50]</label><mixed-citation publication-type="book"><string-name><given-names>Karen</given-names> <surname>Simonyan</surname></string-name> and <string-name><given-names>Andrew</given-names> <surname>Zisserman</surname></string-name>. “<article-title>Two-Stream Convolutional Networks for Action Recognition in Videos</article-title>”. In: <source>Proceedings of the 27th International Conference on Neural Information Processing Systems - Volume 1</source>. <publisher-loc>NIPS’14. Montreal, Canada</publisher-loc>: <publisher-name>MIT Press</publisher-name>, <year>2014</year>, pp. <fpage>568</fpage>–<lpage>576</lpage>.</mixed-citation></ref>
+<ref id="c51"><label>[51]</label><mixed-citation publication-type="web"><string-name><given-names>Nicholas</given-names> <surname>Sofroniew</surname></string-name> <etal>et al.</etal> <source>napari: a multi-dimensional image viewer for Python</source>. doi: <pub-id pub-id-type="doi">10.5281/zenodo.3555620</pub-id>. url: <ext-link ext-link-type="uri" xlink:href="https://github.com/napari/napari">https://github.com/napari/napari</ext-link>.</mixed-citation></ref>
+<ref id="c52"><label>[52]</label><mixed-citation publication-type="journal"><string-name><given-names>Ulrich</given-names> <surname>Stern</surname></string-name>, <string-name><given-names>Ruo</given-names> <surname>He</surname></string-name>, and <string-name><given-names>Chung-Hui</given-names> <surname>Yang</surname></string-name>. “<article-title>Analyzing animal behavior via classifying each video frame using convolutional neural networks</article-title>”. In: <source>Scientific reports</source> <volume>5</volume>.<issue>1</issue> (<year>2015</year>), p. <fpage>14351</fpage>.</mixed-citation></ref>
+<ref id="c53"><label>[53]</label><mixed-citation publication-type="journal"><string-name><given-names>Oliver</given-names> <surname>Sturman</surname></string-name>, <etal>et al.</etal> “<article-title>Deep learning-based behavioral analysis reaches human accuracy and is capable of outperforming commercial solutions</article-title>”. In: <source>Neuropsychopharmacology</source> <volume>45</volume>.<issue>11</issue> (<year>2020</year>), pp. <fpage>1942</fpage>–<lpage>1952</lpage>.</mixed-citation></ref>
+<ref id="c54"><label>[54]</label><mixed-citation publication-type="journal"><string-name><given-names>Christian</given-names> <surname>Szegedy</surname></string-name>, <etal>et al.</etal> “<article-title>Intriguing properties of neural networks</article-title>”. In: <source>arXiv preprint arXiv</source>:<fpage>1312.6199</fpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c55"><label>[55]</label><mixed-citation publication-type="book"><string-name><given-names>Mingxing</given-names> <surname>Tan</surname></string-name> and <string-name><given-names>Quoc</given-names> <surname>Le</surname></string-name>. “<article-title>Efficientnet: Rethinking model scaling for convolutional neural networks</article-title>”. In: <source>International conference on machine learning</source>. <publisher-name>PMLR</publisher-name>. <year>2019</year>, pp. <fpage>6105</fpage>–<lpage>6114</lpage>.</mixed-citation></ref>
+<ref id="c56"><label>[56]</label><mixed-citation publication-type="journal"><string-name><given-names>Du</given-names> <surname>Tran</surname></string-name> <etal>et al.</etal> “<article-title>A closer look at spatiotemporal convolutions for action recognition</article-title>”. In: <source>Proceedings of the IEEE conference on Computer Vision and Pattern Recognition</source>. <year>2018</year>, pp. <fpage>6450</fpage>–<lpage>6459</lpage>.</mixed-citation></ref>
+<ref id="c57"><label>[57]</label><mixed-citation publication-type="journal"><string-name><given-names>Du</given-names> <surname>Tran</surname></string-name> <etal>et al.</etal> “<article-title>Learning spatiotemporal features with 3d convolutional networks</article-title>”. In: <source>Proceedings of the IEEE international conference on computer vision</source>. <year>2015</year>, pp. <fpage>4489</fpage>–<lpage>4497</lpage>.</mixed-citation></ref>
+<ref id="c58"><label>[58]</label><mixed-citation publication-type="journal"><string-name><given-names>Mei</given-names> <surname>Wang</surname></string-name> and <string-name><given-names>Weihong</given-names> <surname>Deng</surname></string-name>. “<article-title>Deep visual domain adaptation: A survey</article-title>”. In: <source>Neurocomputing</source> <volume>312</volume> (<year>2018</year>), pp. <fpage>135</fpage>–<lpage>153</lpage>.</mixed-citation></ref>
+<ref id="c59"><label>[59]</label><mixed-citation publication-type="book"><string-name><given-names>Panqu</given-names> <surname>Wang</surname></string-name> <etal>et al.</etal> “<article-title>Understanding convolution for semantic segmentation</article-title>”. In: <source>2018 IEEE winter conference on applications of computer vision (WACV)</source>. <publisher-name>Ieee</publisher-name>. <year>2018</year>, pp. <fpage>1451</fpage>–<lpage>1460</lpage>.</mixed-citation></ref>
+<ref id="c60"><label>[60]</label><mixed-citation publication-type="journal"><string-name><given-names>Charlotte</given-names> <surname>Wiltshire</surname></string-name> <etal>et al.</etal> “<article-title>DeepWild: Application of the pose estimation tool DeepLabCut for behaviour tracking in wild chimpanzees and bonobos</article-title>”. In: <source>Journal of Animal Ecology</source> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c61"><label>[61]</label><mixed-citation publication-type="journal"><string-name><given-names>Sijie</given-names> <surname>Yan</surname></string-name>, <string-name><given-names>Yuanjun</given-names> <surname>Xiong</surname></string-name>, and <string-name><given-names>Dahua</given-names> <surname>Lin</surname></string-name>. “<article-title>Spatial temporal graph convolutional networks for skeleton-based action recognition</article-title>”. In: <source>Proceedings of the AAAI conference on artificial intelligence</source>. Vol. <volume>32</volume>. <fpage>1</fpage>. <year>2018</year>.</mixed-citation></ref>
+<ref id="c62"><label>[62]</label><mixed-citation publication-type="journal"><string-name><given-names>Xinyu</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Tilo</given-names> <surname>Burghardt</surname></string-name>, and <string-name><given-names>Majid</given-names> <surname>Mirmehdi</surname></string-name>. “<article-title>Dynamic curriculum learning for great ape detection in the wild</article-title>”. In: <source>International Journal of Computer Vision</source> (<year>2023</year>), pp. <fpage>1</fpage>–<lpage>19</lpage>.</mixed-citation></ref>
+<ref id="c63"><label>[63]</label><mixed-citation publication-type="journal"><string-name><given-names>Xinyu</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Majid</given-names> <surname>Mirmehdi</surname></string-name>, and <string-name><given-names>Tilo</given-names> <surname>Burghardt</surname></string-name>. “<article-title>Great ape detection in challenging jungle camera trap footage via attention-based spatial and temporal feature blending</article-title>”. In: <source>Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops</source>. <year>2019</year>.</mixed-citation></ref>
+<ref id="c64"><label>[64]</label><mixed-citation publication-type="journal"><string-name><given-names>Yuan</given-names> <surname>Yao</surname></string-name> <etal>et al.</etal> “<article-title>OpenMonkeyChallenge: Dataset and Benchmark Challenges for Pose Estimation of Non-human Primates</article-title>”. <source>In: International Journal of Computer Vision</source> <volume>131</volume>.<issue>1</issue> (<year>2023</year>), pp. <fpage>243</fpage>–<lpage>258</lpage>.</mixed-citation></ref>
+<ref id="c65"><label>[65]</label><mixed-citation publication-type="journal"><string-name><given-names>Hang</given-names> <surname>Yu</surname></string-name>, <etal>et al.</etal> “<article-title>Ap-10k: A benchmark for animal pose estimation in the wild</article-title>”. In: <source>arXiv</source> preprint <volume>arXiv</volume>:<fpage>2108.12617</fpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c66"><label>[66]</label><mixed-citation publication-type="journal"><string-name><given-names>Wei</given-names> <surname>Zhan</surname></string-name> <etal>et al.</etal> “<article-title>Key points tracking and grooming behavior recognition of Bactrocera minax (Diptera: Trypetidae) via DeepLabCut</article-title>”. In: <source>Mathematical problems in engineering</source> <volume>2021</volume> (<year>2021</year>), pp. <fpage>1</fpage>–<lpage>15</lpage>.</mixed-citation></ref>
+<ref id="c67"><label>[67]</label><mixed-citation publication-type="journal"><string-name><given-names>Lukas</given-names> <surname>von Ziegler</surname></string-name>, <string-name><given-names>Oliver</given-names> <surname>Sturman</surname></string-name>, and <string-name><given-names>Johannes</given-names> <surname>Bohacek</surname></string-name>. “<article-title>Big behavior: challenges and opportunities in a new era of deep behavior profiling</article-title>”. In: <source>Neuropsychopharmacology</source> <volume>46</volume>.<issue>1</issue> (<year>2021</year>), pp. <fpage>33</fpage>–<lpage>44</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.97962.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Tung</surname>
+<given-names>Jenny</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Max Planck Institute for Evolutionary Anthropology</institution>
+</institution-wrap>
+<city>Leipzig</city>
+<country>Germany</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Compelling</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study presents a new framework (ASBAR) that combines open-source toolboxes for pose estimation and behavior recognition to automate the process of categorizing behaviors in wild apes from video data. The authors present <bold>compelling</bold> evidence that this pipeline can categorize simple wild ape behaviors from out-of-context video at a similar level of accuracy as previous models, while simultaneously vastly reducing the size of the model. The study's results should be of particular interest to primatologists and other behavioral biologists working with natural populations.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.97962.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Advances in machine vision and computer learning have meant that there are now state-of-the-art and open-source toolboxes that allow for animal pose estimation and action recognition. These technologies have the potential to revolutionize behavioral observations of wild primates but are often held back by labor-intensive model training and the need for some programming knowledge to effectively leverage such tools. The study presented here by Fuchs et al unveils a new framework (ASBAR) that aims to automate behavioral recognition in wild apes from video data. This framework combines robustly trained and well-tested pose estimate and behavioral action recognition models. The framework performs admirably at the task of automatically identifying simple behaviors of wild apes from camera trap videos of variable quality and contexts. These results indicate that skeletal-based action recognition offers a reliable and lightweight methodology for studying ape behavior in the wild and the presented framework and GUI offer an accessible route for other researchers to utilize such tools.</p>
+<p>Given that automated behavior recognition in wild primates will likely be a major future direction within many subfields of primatology, open-source frameworks, like the one presented here, will present a significant impact on the field and will provide a strong foundation for others to build future research upon.</p>
+<p>Strengths:</p>
+<p>- Clearly articulated the argument as to why the framework was needed and what advantages it could convey to the wider field.</p>
+<p>- For a very technical paper it was very well written. Every aspect of the framework the authors clearly explained why it was chosen and how it was trained and tested. This information was broken down in a clear and easily digestible way that will be appreciated by technical and non-technical audiences alike.</p>
+<p>- The study demonstrates which pose estimation architectures produce the most robust models for both within-context and out-of-context pose estimates. This is invaluable knowledge for those wanting to produce their own robust models.</p>
+<p>- The comparison of skeletal-based action recognition with other methodologies for action recognition helps contextualize the results.</p>
+<p>Weaknesses</p>
+<p>While I note that this is a paper most likely aimed at the more technical reader, it will also be of interest to a wider primatological readership, including those who work extensively in the field. When outlining the need for future work I felt the paper offered almost exclusively very technical directions. This may have been a missed opportunity to engage the wider readership and suggest some practical ways those in the field could collect more ASBAR-friendly video data to further improve accuracy.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.97962.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public Review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Fuchs et al. propose a framework for action recognition based on pose estimation. They integrate functions from DeepLabCut and MMAction2, two popular machine-learning frameworks for behavioral analysis, in a new package called ASBAR.</p>
+<p>They test their framework by</p>
+<p>- Running pose estimation experiments on the OpenMonkeyChallenge (OMC) dataset (the public train + val parts) with DeepLabCut.</p>
+<p>- Annotating around 320 image pose data in the PanAf dataset (which contains behavioral annotations). They show that the ResNet-152 model generalizes best from the OMC data to this out-of-domain dataset.</p>
+<p>- They then train a skeleton-based action recognition model on PanAf and show that the top-1/3 accuracy is slightly higher than video-based methods (and strong), but that the mean class accuracy is lower - 33% vs 42%. Likely due to the imbalanced class frequencies. This should be clarified. For Table 1, confidence intervals would also be good (just like for the pose estimation results, where this is done very well).</p>
+</body>
+</sub-article>
+</article>
