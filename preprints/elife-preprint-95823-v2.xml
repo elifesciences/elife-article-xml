@@ -1,0 +1,740 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">95823</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.95823</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.95823.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.5</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Using normative models pre-trained on cross-sectional data to evaluate longitudinal changes in neuroimaging data</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5619-3946</contrib-id>
+<name>
+<surname>Rehák Bučková</surname>
+<given-names>Barbora</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7088-9250</contrib-id>
+<name>
+<surname>Fraza</surname>
+<given-names>Charlotte</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3030-3067</contrib-id>
+<name>
+<surname>Rehák</surname>
+<given-names>Rastislav</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2382-3478</contrib-id>
+<name>
+<surname>Kolenič</surname>
+<given-names>Marián</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3373-3193</contrib-id>
+<name>
+<surname>Beckmann</surname>
+<given-names>Christian</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3479-696X</contrib-id>
+<name>
+<surname>Španiel</surname>
+<given-names>Filip</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5903-203X</contrib-id>
+<name>
+<surname>Marquand</surname>
+<given-names>Andre</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+<email>andre.marquand@donders.ru.nl</email>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1402-1470</contrib-id>
+<name>
+<surname>Hlinka</surname>
+<given-names>Jaroslav</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+<email>hlinka@cs.cas.cz</email>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Complex Systems, Institute of Computer Science of the Czech Academy of Sciences</institution>, <city>Prague</city>, <country>Czech Republic</country></aff>
+<aff id="a2"><label>2</label><institution>Department of Cybernetics, Czech Technical University in Prague</institution>, <city>Prague</city>, <country>Czech Republic</country></aff>
+<aff id="a3"><label>3</label><institution>National Institute of Mental Health</institution>, <city>Klecany</city>, <country>Czech Republic</country></aff>
+<aff id="a4"><label>4</label><institution>Donders Institute for Brain, Cognition and Behaviour</institution>, <city>Nijmegen</city>, <country>Netherlands</country></aff>
+<aff id="a5"><label>5</label><institution>Max Planck Institute for Research on Collective Goods</institution>, <city>Bonn</city>, <country>Germany</country></aff>
+<aff id="a6"><label>6</label><institution>University of Cologne</institution>, <country>Germany</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Lerch</surname>
+<given-names>Jason P</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Roiser</surname>
+<given-names>Jonathan</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University College London</institution>
+</institution-wrap>
+<city>London</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1" fn-type="equal"><label>†</label><p>These authors contributed equally to this work.</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-04-29">
+<day>29</day>
+<month>04</month>
+<year>2024</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2024-10-28">
+<day>28</day>
+<month>10</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP95823</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-01-24">
+<day>24</day>
+<month>01</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-02-01">
+<day>01</day>
+<month>02</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2023.06.09.544217"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2024-04-29">
+<day>29</day>
+<month>04</month>
+<year>2024</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.95823.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.95823.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.95823.1.sa1">None</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.95823.1.sa0">Reviewer #2 (Public Review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.95823.1.sa3">Author response:</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Rehák Bučková et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Rehák Bučková et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-95823-v2.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Longitudinal neuroimaging studies offer valuable insight into intricate dynamics of brain development, ageing, and disease progression over time. However, prevailing analytical approaches rooted in our understanding of population variation are primarily tailored for cross-sectional studies. To fully harness the potential of longitudinal neuroimaging data, we have to develop and refine methodologies that are adapted to longitudinal designs, considering the complex interplay between population variation and individual dynamics.</p><p>We build on normative modelling framework, which enables the evaluation of an individual’s position compared to a population standard. We extend this framework to evaluate an individual’s longitudinal <italic>change</italic> compared to the longitudinal change reflected by the (population) standard dynamics. Thus, we exploit the existing normative models pre-trained on over 58,000 individuals and adapt the framework so that they can also be used in the evaluation of longitudinal studies. Specifically, we introduce a quantitative metric termed <italic>“z-diff”</italic> score, which serves as an indicator of a temporal change of an individual compared to a population standard. Notably, our framework offers advantages such as flexibility in dataset size and ease of implementation.</p><p>To illustrate our approach, we applied it to a longitudinal dataset of 98 patients diagnosed with early-stage schizophrenia who underwent MRI examinations shortly after diagnosis and one year later.</p><p>Compared to cross-sectional analyses, which showed global thinning of grey matter at the first visit, our method revealed a significant normalisation of grey matter thickness in the frontal lobe over time. Furthermore, this result was not observed when using more traditional methods of longitudinal analysis, making our approach more sensitive to temporal changes.</p><p>Overall, our framework presents a flexible and effective methodology for analysing longitudinal neuroimaging data, providing insights into the progression of a disease that would otherwise be missed when using more traditional approaches.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>We improved the description of the generalised longitudinal dynamics followed by a simulation study. We further made changes in formatting to improve the flow of the theoretical part and clarifications in text where necessary based on the feedback from reviewers.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Longitudinal neuroimaging studies provide a unique opportunity to gain insight into the temporal dynamics of a disease, over and above the insights offered by cross-sectional studies. Consequently, it is crucial to have tools to effectively analyse them whilst also making use of more widely available cross-sectional data to refine inferences. Therefore, in this manuscript, we develop a novel method for evaluating longitudinal <italic>changes</italic> in a subject’s neuroimaging data, building upon an existing normative modelling framework originally designed to assess a subject’s <italic>position</italic> within a population. This adaptation allows us to track individual changes over time, providing a more dynamic understanding of neuroanatomical variations.</p>
+<p>Normative modelling is a promising technique for modelling population variation in neuroimaging data [<xref ref-type="bibr" rid="c1">1</xref>, <xref ref-type="bibr" rid="c2">2</xref>]. This framework models each image-derived phenotype (IDP) (e.g., voxel intensity, regional thickness, or regional volume) independently as a function of demographic or clinical variables (e.g., age, sex, scanning site) in a large healthy population. Subjects are subsequently compared to the normative model characterizing the healthy population, which enables us to evaluate the position of each individual, rather than just compare group differences between patients and controls [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c4">4</xref>]. Application of these models has already provided valuable insights into the individual neuroanatomy of various diseases, such as Alzheimer’s, schizophrenia, autism, and other neurological and mental disorders [<xref ref-type="bibr" rid="c5">5</xref>–<xref ref-type="bibr" rid="c8">8</xref>].</p>
+<p>Longitudinal data are conceptually well suited to extend standard normative modelling since they analyse individual trajectories over time. If adjusted appropriately, normative models could not only improve predictive accuracy but also identify patterns of temporal change, thereby enhancing our understanding of the disease.</p>
+<p>However, despite their potential, longitudinal normative models have not yet been systematically explored [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c9">9</xref>]. Indeed, virtually all large-scale normative models released to date are estimated on cross-sectional data [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c10">10</xref>] and a recent report [<xref ref-type="bibr" rid="c9">9</xref>] has provided empirical data to suggest that such cross-sectional models may underestimate the variance in longitudinal data [<xref ref-type="bibr" rid="c9">9</xref>]. However, from a theoretical perspective, it is very important to recognise that cross-sectional models describe group-level population variation across the lifespan, where such group level centiles are interpolated smoothly across time. It is well-known in the pediatric growth-charting literature (e.g., [<xref ref-type="bibr" rid="c11">11</xref>]) that centiles in such cross-sectional models do not necessarily correspond to individual level trajectories, rather it is possible that individuals cross multiple centiles as they proceed through development, even in the absence of pathology. Crucially, classical growth charts and current normative brain charts provide no information about how frequent such centile crossings are in general. In other words, they provide a <italic>trajectory of distributions</italic>, <bold>not</bold> a <italic>distribution over trajectories</italic>. There are different approaches to tackle this problem in the growth charting literature, including the estimation of ‘thrive lines’ that map centiles of constant velocity across the lifespan and can be used to declare ‘failure to thrive’ at the individual level (e.g., see [<xref ref-type="bibr" rid="c11">11</xref>] for details). Unfortunately, this approach requires densely sampled longitudinal neuroimaging data to estimate growth velocity, that are not available across the human lifespan at present. Therefore, in this work, we adopt a different approach based on estimates of the uncertainty in the centile estimates themselves together with the uncertainty with which a point is measured (e.g., bounded by the test-retest reliability, noise, etc.). By accounting for such variability, this provides a statistic to determine whether a centile crossing is large enough to be statistically different from the base level within the population.</p>
+<p>We stress that our aim is not to build a longitudinal normative model <italic>per se</italic>. Considering the much greater availability of cross-sectional data relative to longitudinal data, we instead leverage existing models constructed from densely sampled cross-sectional populations and provide methods for applying these to longitudinal cohorts. We argue that although these models lack explicit intra-subject dynamics, they contain sufficient information to enable precise assessments of changes over time. Nevertheless, the inclusion of longitudinal data into existing models largely estimated from cross-sectional data is also an important goal and can be approached with hierarchical models [<xref ref-type="bibr" rid="c12">12</xref>]; however, we do not tackle this problem here.</p>
+<p>We derive a novel set of difference (“<italic>z-diff</italic>”) scores for statistical evaluation of longitudinal change between two measurements (the “diff” in the name refers to the temporal difference that we are evaluating as opposed to a one-time position evaluated by the simple <italic>z</italic>-score). We utilise the Warped Bayesian Linear Regression normative model [<xref ref-type="bibr" rid="c3">3</xref>] as a basis for our work. Training these models requires significant amounts of data and computational resources, limiting their use for smaller research groups. However, the availability of pre-trained models has made them more accessible to researchers from a wider range of backgrounds, as reported by Rutherford et al. [<xref ref-type="bibr" rid="c10">10</xref>]. We present a comprehensive theoretical analysis of our method, followed by numerical simulations and a practical application to an in-house longitudinal dataset of 98 patients in the early stages of schizophrenia who underwent fMRI examinations shortly after being diagnosed and one year after.</p>
+</sec>
+<sec id="s2">
+<label>2.</label>
+<title>Methods</title>
+<sec id="s2a">
+<label>2.1</label>
+<title>Model formulation</title>
+<sec id="s2a1">
+<label>2.1.1</label>
+<title>Original model for cross-sectional data</title>
+<p>Here, we briefly present the original normative model [<xref ref-type="bibr" rid="c3">3</xref>], developed to be trained and used on cross-sectional data. In the following subsection, we take this model pre-trained on a large cross-sectional dataset, and extend it so that it can be used on longitudinal data.</p>
+<p>The original model [<xref ref-type="bibr" rid="c3">3</xref>] is pre-trained on a cross-sectional dataset <bold>Y</bold> = (<italic>y</italic><sub><italic>nd</italic></sub>) ∈ R<sup><italic>N</italic>×<italic>D</italic></sup>, <bold>X</bold> = (<italic>x</italic><sub><italic>nm</italic></sub>) ∈ R<sup><italic>N</italic>×<italic>M</italic></sup> of <italic>N</italic> subjects, for whom we observe <italic>D</italic> IDPs and <italic>M</italic> covariates (e.g., age or sex). Thus, <italic>y</italic><sub><italic>nd</italic></sub> is the <italic>d</italic>-th IDP of the <italic>n</italic>-th subject and <italic>x</italic><sub><italic>nm</italic></sub> is the <italic>m</italic>-th covariate of the <italic>n</italic>-th subject.</p>
+<p>Since each IDP is treated separately, we focus on a fixed IDP <italic>d</italic> and drop this index for ease of exposition. To simplify notation, we denote <bold>y</bold> = (<italic>y</italic><sub>1</sub>, …, <italic>y</italic><sub><italic>N</italic></sub>)<sup><italic>T</italic></sup> the column of observations of this fixed IDP across subjects. The observations are assumed to be independent (across <italic>n</italic> subjects). To model the relationship between IDP <italic>y</italic><sub><italic>n</italic></sub> and covariates <bold>x</bold><sub><italic>n</italic></sub> = (<italic>x</italic><sub><italic>n</italic>1</sub>, …, <italic>x</italic><sub><italic>nM</italic></sub>)<sup><italic>T</italic></sup>, we want to exploit a normal linear regression model described in [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c10">10</xref>]. However, we make a couple of adjustments first:</p>
+<list list-type="bullet">
+<list-item><p>To accommodate non-Gaussian errors in the original space of dependent variables, we transform the original variable <italic>y</italic><sub><italic>n</italic></sub> by a warping function <italic>φ</italic>(<italic>y</italic><sub><italic>n</italic></sub>), which is parametrised by hyper-parameters <bold><italic>γ</italic></bold> (see <xref ref-type="sec" rid="s2c">Section 2.3</xref>. in [<xref ref-type="bibr" rid="c3">3</xref>] for details).</p></list-item>
+<list-item><p>To capture non-linear relationships, we use a B-spline basis expansion of the original independent variables <bold>x</bold><sub><italic>n</italic></sub> (see <xref ref-type="sec" rid="s2c">Section 2.3</xref>. in [<xref ref-type="bibr" rid="c3">3</xref>] for details). To accommodate site-level effects, we append it with site dummies. We denote the resulting transformation of <bold>x</bold><sub><italic>n</italic></sub> as <italic>ϕ</italic>(<bold>x</bold><sub><italic>n</italic></sub>) ∈ R<sup><italic>K</italic></sup>.</p></list-item>
+</list>
+<p>We also treat the variance of measurements as a hyper-parameter and we denote it by <italic>σ</italic><sup>2</sup>. Thus, we model the distribution of the transformed IDP <italic>φ</italic>(<italic>y</italic><sub><italic>n</italic></sub>) conditional on covariates <bold>x</bold><sub><italic>n</italic></sub>, vector of parameters <bold>w</bold>, and hyper-parameters <italic>σ</italic><sup>2</sup> and <bold><italic>γ</italic></bold> as
+<disp-formula id="eqn1">
+<graphic xlink:href="544217v5_eqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>ε</italic><sub><italic>n</italic></sub> are independent from <bold>x</bold><sub><italic>n</italic></sub> and across <italic>n</italic>. We further denote the design matrix <bold>Φ</bold> = (<italic>ϕ</italic>(<bold>x</bold><sub><italic>n</italic></sub>)<sub><italic>k</italic></sub>) ∈ R<sup><italic>N</italic>×<italic>K</italic></sup> (<italic>ϕ</italic>(<bold>x</bold><sub><italic>n</italic></sub>)<sub><italic>k</italic></sub> is the <italic>k</italic>-the element of vector <italic>ϕ</italic>(<bold>x</bold><sub><italic>n</italic></sub>)).</p>
+<p>The estimation of parameters <bold>w</bold> is performed by empirical Bayesian methods. In particular, prior about <bold>w</bold>
+<disp-formula id="eqn2">
+<graphic xlink:href="544217v5_eqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+is combined with the likelihood function to derive the posterior
+<disp-formula id="eqn3">
+<graphic xlink:href="544217v5_eqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn4">
+<graphic xlink:href="544217v5_eqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn5">
+<graphic xlink:href="544217v5_eqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+The hyper-parameters <italic>ω</italic><sup>2</sup>, <italic>σ</italic><sup>2</sup>, <bold><italic>γ</italic></bold> are estimated by maximising the warped marginal log-likelihood.</p>
+<p>The predictive distribution of <italic>φ</italic>(<italic>y</italic>) for a subject with <bold>x</bold> is
+<disp-formula id="eqn6">
+<graphic xlink:href="544217v5_eqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Hence, the <italic>z</italic>-score characterising the position of this subject within population is
+<disp-formula id="eqn7">
+<graphic xlink:href="544217v5_eqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>φ</italic>(<italic>y</italic>) is the realised warped observation of IDP <italic>d</italic> for this subject. This score captures how surprising is the actual observation <italic>φ</italic>(<italic>y</italic>) relative to what one would expect for an average subject with the same characteristics <inline-formula><inline-graphic xlink:href="544217v5_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and this deviation has to be compared to (normalized by) the variability stemming from the natural variability in the data (<italic>σ</italic><sup>2</sup>) and the modelling uncertainty (<italic>ϕ</italic>(<bold>x</bold>)<sup><italic>T</italic></sup> <bold>A</bold><sup>−1</sup><italic>ϕ</italic>(<bold>x</bold>)).</p>
+<p>In this form, the original models were fit on a large dataset consisting of 58,836 participants scanned across 82 sites. Specifically, cortical thickness and subcortical volumes were modelled, and the models were validated against a subset of 24,000 participants, the quality of which were was checked manually [<xref ref-type="bibr" rid="c10">10</xref>].</p>
+<p>Note that formulae (6) and (7) implicitly evaluate only (potentially new) subjects measured at sites already present in the original dataset <bold>y, Φ</bold>. If we want to evaluate subjects measured at a new site, we will have to run an adaptation procedure to account for its effect. This adaptation procedure is described and readily accessible online in [<xref ref-type="bibr" rid="c10">10</xref>]. In short, a sample of a reference (healthy) cohort measured on the same scanner as the population of interest is needed to accommodate a site-specific effect.</p>
+<p>In the following section, we develop a procedure that allows us to extend the original cross-sectional framework pre-trained on dataset <bold>y, Φ</bold> to evaluate a new longitudinal dataset for assessment of temporal changes.</p>
+</sec>
+<sec id="s2a2">
+<label>2.1.2</label>
+<title>Adaptation to longitudinal data</title>
+<p>We adapt the original cross-sectional normative modelling framework [<xref ref-type="bibr" rid="c3">3</xref>] (reviewed in the previous section) to the evaluation of intra-subject longitudinal changes. Specifically, we design a score for a longitudinal change between visits (further referred to as <italic>z-diff</italic> score), based on which we can assess temporal changes in regional brain thickness and potentially detect any unusually pronounced deviations from normative trajectories.</p>
+<p>We start by noticing that the original cross-sectional normative modelling framework [<xref ref-type="bibr" rid="c3">3</xref>] features an implicit assumption that pertains to the longitudinal view. Specifically, it assumes that had we randomly sampled the population at a different time (e.g., 5 years sooner or later), we would have gotten equivalent picture about the “norm” (up to randomness of the sampling, <xref rid="fig1" ref-type="fig">Figure 1 A</xref>). In other words, the parameters of the normative model would be the same irrespective of the time we sampled the population, including the case in which we would sample the same people again, just later (while appropriately compensating for the resulting under-representation of younger ages). We further assume comparability of people of any given age irrespective of their birth time (i.e., we assume independence of birth dates and trajectories, <xref rid="fig1" ref-type="fig">Figure 1 B</xref>). Together, these assumptions imply a form of stationarity (formally discussed in the next paragraph). These are indispensable assumptions for the practical usefulness of normative modelling, albeit one can see that in the real world they are not fulfilled perfectly, e.g., due to evolutionary dynamics, the ever-changing environment, or any changes in the distribution of those demographic variables that are not explicitly accounted for in the normative model.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1:</label>
+<caption><p>Visualisations of the core assumptions of normative modelling: (A) The parameters of the fitted normative model are independent of the time of sampling. (B) People of the same age are comparable irrespective of their year of birth (datasets sampled at different times can be combined)</p></caption>
+<graphic xlink:href="544217v5_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Formally, we work with the process {(<italic>y</italic><sub><italic>n,t</italic></sub>, <bold>x</bold><sub><italic>n,t</italic></sub>)} where <italic>n</italic> indexes a subject and <italic>t</italic> indexes age (to avoid technicalities, we assume discrete time). The minimal requirement imposed implicitly by the above assumptions is <italic>ε</italic><sub><italic>t</italic></sub> ∼ 𝒩(0, <italic>σ</italic><sup>2</sup>) for every age <italic>t</italic>. We further restrict our focus to the class of stationary Gaussian processes <italic>ε</italic>, i.e., processes such that <inline-formula><inline-graphic xlink:href="544217v5_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are jointly normal for any finite set of ages <italic>t</italic><sub>1</sub>, <italic>t</italic><sub>2</sub>, …, <italic>t</italic><sub><italic>k</italic></sub> and their joint distribution is invariant to any admissible time shift <italic>t</italic><sub>1</sub> +<italic>s, t</italic><sub>2</sub> +<italic>s</italic>, …, <italic>t</italic><sub><italic>k</italic></sub> +<italic>s</italic>. Furthermore, we focus on a specific process in this section for ease of exposition, and we discuss the general case in the next section.</p>
+<p>The specific process we focus on in this section reflects the assumption that a healthy subject does not deviate substantially from their position within the population as they get older [<xref ref-type="bibr" rid="c8">8</xref>]; the observed position change between the visits stems from observation noise (due to technical or physiological factors) and is therefore constrained by the test-retest reliability of the measurement. Formally,
+<disp-formula id="ueqn1">
+<graphic xlink:href="544217v5_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>η</italic> is a subject-specific time-independent factor independent of the iid noise process <italic>ξ</italic>. Note that this does not imply that a healthy subject does not change over time, but rather that the change follows approximately the population centile at which the individual is placed. We generalise our method to other stationary Gaussian processes in the next section.</p>
+<p>According to this model, the <italic>i</italic>-th visit of a healthy subject with given covariates <bold>x</bold><sup>(<italic>i</italic>)</sup> is generated by
+<disp-formula id="eqn8">
+<graphic xlink:href="544217v5_eqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>η, ξ</italic><sup>(<italic>i</italic>)</sup>, and <bold>x</bold><sup>(<italic>i</italic>)</sup> are mutually independent for a given <italic>i</italic>, and the measurement errors <italic>ξ</italic><sup>(<italic>i</italic>)</sup> and <italic>ξ</italic><sup>(<italic>j</italic>)</sup> are independent across visits <italic>i</italic> ≠ <italic>j</italic>. Note that we dropped the subject-specific index <italic>n</italic> (and subsumed the age <inline-formula><inline-graphic xlink:href="544217v5_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in the visit index <italic>i</italic>). This should remind the reader that the goal is just to evaluate longitudinal change of a given subject from our new longitudinal data, and not to re-estimate the parameters with these additional data. Nevertheless, to properly adapt the cross-sectional model, we will need to estimate one new parameter stemming from the further structure we impose on <italic>ε</italic>.</p>
+<p>In our longitudinal data, we are interested in the change for a given individual across two visits. According to model (8), the difference in the transformed IDP between visits 1 and 2, <italic>φ</italic>(<italic>y</italic><sup>(2)</sup>) − <italic>φ</italic>(<italic>y</italic><sup>(1)</sup>), for a subject with covariates <bold>x</bold><sup>(1)</sup> and <bold>x</bold><sup>(2)</sup> is given by
+<disp-formula id="eqn9">
+<graphic xlink:href="544217v5_eqn9.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+with <inline-formula><inline-graphic xlink:href="544217v5_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We use the posterior distribution of <bold>w</bold> with hyper-parameters <italic>ω</italic><sup>2</sup>, <italic>σ</italic><sup>2</sup>, <bold><italic>γ</italic></bold> estimated on the original cross-sectional dataset <bold>y, Φ</bold> (the estimates are available at <ext-link ext-link-type="uri" xlink:href="https://github.com/predictive-clinical-neuroscience/braincharts">https://github.com/predictive-clinical-neuroscience/braincharts</ext-link>). Therefore, the posterior predictive distribution for the difference <italic>φ</italic>(<italic>y</italic><sup>(2)</sup>) − <italic>φ</italic>(<italic>y</italic><sup>(1)</sup>) for our subject is (for more detailed derivation, please refer to the supplement)
+<disp-formula id="eqn10">
+<graphic xlink:href="544217v5_eqn10.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Hence, the <italic>z</italic>-score for the difference in the transformed IDP between visits 1 and 2 is
+<disp-formula id="eqn11">
+<graphic xlink:href="544217v5_eqn11.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>φ</italic>(<italic>y</italic><sup>(2)</sup>) − <italic>φ</italic>(<italic>y</italic><sup>(1)</sup>) is the realised temporal change in the warped observations of the IDP for this subject. Since this <italic>z-diff</italic> score is standard normal for the population of healthy controls, any large deviations may be used to detect unusual temporal changes.</p>
+<p>The primary role of adaptation of the (pre-trained) cross-sectional model to (new) longitudinal data is to account for the measurement noise variance <inline-formula><inline-graphic xlink:href="544217v5_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, thus taking care of the atemporal source of variability <italic>η</italic>. In other words, having an estimate of <inline-formula><inline-graphic xlink:href="544217v5_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in hand helps us to use the proper scaling. To arrive at an estimator of<inline-formula><inline-graphic xlink:href="544217v5_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula>,notice that from the posterior predictive distribution (10), we have (denoting the set of conditionals Ω = {<bold>x</bold><sup>(1)</sup>, <bold>x</bold><sup>(2)</sup>; <bold>y, Φ</bold>; <italic>ω</italic><sup>2</sup>, <italic>σ</italic><sup>2</sup>, <bold><italic>γ</italic></bold>})
+<disp-formula id="eqn12">
+<graphic xlink:href="544217v5_eqn12.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Hence, by the Law of Iterated Expectations (to integrate out <bold>x</bold><sup>(1)</sup> and <bold>x</bold><sup>(2)</sup>), we obtain
+<disp-formula id="eqn13">
+<graphic xlink:href="544217v5_eqn13.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Therefore, we estimate <inline-formula><inline-graphic xlink:href="544217v5_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula> by the sample analogue of the left-hand side in (13). Specifically, we devote a subsample <italic>C</italic> of the controls from our (new) longitudinal data just to this estimation (i.e., the subjects from <italic>C</italic> will not be used in the evaluation) and we compute
+<disp-formula id="eqn14">
+<graphic xlink:href="544217v5_eqn14.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where |<italic>C</italic>| denotes the number of subjects in subsample <italic>C</italic>.</p>
+<p>Another useful feature of longitudinal data is that <inline-formula><inline-graphic xlink:href="544217v5_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is negligible (especially with stable covariates, like sex and age). Sex (typically) does not change across the two visits and age relatively little (in our target application) with respect to the full span of ageing. Consequently, <inline-formula><inline-graphic xlink:href="544217v5_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in (17) is negligible in adult cohorts but must be treated with caution in developmental or ageing groups. Finally, it is apparent from (4) that <bold>A</bold> scales with the number of subjects, and its inverse will be negligible for substantial training datasets, such as the one that was used for pre-training.</p>
+<p>To conclude this subsection, we caution against the naive use of the difference of the simple <italic>z</italic>-scores
+<disp-formula id="eqn15">
+<graphic xlink:href="544217v5_eqn15.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+instead of the <italic>z-diff</italic> score to evaluate the longitudinal change. The problem with such an approach is apparent by comparing it to the <italic>z-diff</italic> score (11): it does not properly account for the modelling uncertainty (instead of using the combined term <inline-formula><inline-graphic xlink:href="544217v5_inline11.gif" mime-subtype="gif" mimetype="image"/></inline-formula> to scale the difference of the numerators in (15), it scales the individual terms of the difference by their individual model uncertainty). More importantly, even if the modelling uncertainty is negligible, expression (15) does not properly scale the difference of the “residuals” because it incorrectly includes the common source of subject-level variability <italic>η</italic> (it uses <inline-formula><inline-graphic xlink:href="544217v5_inline12.gif" mime-subtype="gif" mimetype="image"/></inline-formula> instead of <inline-formula><inline-graphic xlink:href="544217v5_inline13.gif" mime-subtype="gif" mimetype="image"/></inline-formula>).</p>
+</sec>
+<sec id="s2a3">
+<label>2.1.3</label>
+<title>More general dynamics</title>
+<p>The model we introduced in the previous section is an intuitive extension of the original model introduced in <xref ref-type="sec" rid="s2a1">section 2.1.1</xref>. However, the model operates with a seemingly strong (although reasonable) assumption that healthy subjects inherently follow their centiles. Due to the lack of large longitudinal data testing this assumption, in this section, we investigate the generalisation to other stationary Gaussian processes to illustrate the robustness of our method. As an example, we are able to deal with a stationary Gaussian AR(1) process <italic>ε</italic><sub><italic>t</italic></sub> = <italic>Φε</italic><sub><italic>t</italic>−1</sub> + <italic>ξ</italic><sub><italic>t</italic></sub> with |<italic>φ</italic>| &lt; 1, <italic>ξ</italic> iid 𝒩(0, (1 −<italic>φ</italic><sup>2</sup>)<italic>σ</italic><sup>2</sup>), and <italic>ε</italic><sup>0</sup> ∼ 𝒩(0, <italic>σ</italic><sup>2</sup>).</p>
+<p>Importantly, our framework evaluates change only between two visits. Hence, we do not need to consider the full specification of the process <italic>ε</italic>, but only the time-dependence between the two visits that can arise under it. Formally, since we are in the class of stationary Gaussian processes, we only need to consider the autocorrelation between <italic>ε</italic><sup>(1)</sup> and <italic>ε</italic><sup>(2)</sup> <italic>ρ</italic> ∈ [−1, 1]. Just as an example, the stationary Gaussian AR(1) process introduced above would produce autocorrelation <inline-formula><inline-graphic xlink:href="544217v5_inline14.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, where <italic>t</italic><sub>2</sub> − <italic>t</italic><sub>1</sub> is the time between the two visits.</p>
+<p>Considering this more general class of processes, this amounts to <italic>ε</italic><sup>(2)</sup> − <italic>ε</italic><sup>(1)</sup> ∼ 𝒩(0, 2<italic>σ</italic><sup>2</sup>(1 − <italic>ρ</italic>)). Going through the same derivations as before, we obtain the score for the evaluation of longitudinal change
+<disp-formula id="eqn16">
+<graphic xlink:href="544217v5_eqn16.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and the estimator
+<disp-formula id="eqn17">
+<graphic xlink:href="544217v5_eqn17.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+These take the same form as in the specific case considered in the previous section. Hence, the method developed in the previous section does not depend on that particular assumption about the process <italic>ε</italic> and will still yield valid inferences even if the seemingly strong assumption of centile tracking is violated. In either case, we need one more free parameter to properly account for the potential non-iid dynamics of <inline-formula><inline-graphic xlink:href="544217v5_inline15.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in the previous section, <italic>ρ</italic> in this section. The only substantial difference is that while 2<italic>σ</italic><sup>2</sup>(1 − <italic>ρ</italic>) can be larger than 2<italic>σ</italic><sup>2</sup> (for <italic>ρ</italic> &lt; 0), the process from the previous section leads to <inline-formula><inline-graphic xlink:href="544217v5_inline16.gif" mime-subtype="gif" mimetype="image"/></inline-formula> with values only lower than 2<italic>σ</italic><sup>2</sup>. This could provide a test of the assumption about the process from the previous section: if our estimate <inline-formula><inline-graphic xlink:href="544217v5_inline17.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is larger than the cross-sectional estimate <inline-formula><inline-graphic xlink:href="544217v5_inline18.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, then the assumption about <italic>ε</italic> in the previous section is not justified.</p>
+</sec>
+<sec id="s2a4">
+<label>2.1.4</label>
+<title>Simulation study</title>
+<p>To formally evaluate the performance of the proposed method in making accurate inferences about the longitudinal changes, we conduct a simulation study. We imagine a practitioner who would use some lower and upper thresholds for the <italic>z-diff</italic> score to detect unusual change. It is natural to choose the probability of dubbing a healthy control as unusual <italic>θ</italic> ∈ [0, 1], and use the <inline-formula><inline-graphic xlink:href="544217v5_inline19.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="544217v5_inline20.gif" mime-subtype="gif" mimetype="image"/></inline-formula> quantiles of the standard normal distribution as the thresholds (denote them <inline-formula><inline-graphic xlink:href="544217v5_inline21.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and, <inline-formula><inline-graphic xlink:href="544217v5_inline22.gif" mime-subtype="gif" mimetype="image"/></inline-formula> respectively). A subject with <inline-formula><inline-graphic xlink:href="544217v5_inline23.gif" mime-subtype="gif" mimetype="image"/></inline-formula> Or <inline-formula><inline-graphic xlink:href="544217v5_inline24.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is thus flagged as someone with unusual change. We would like to know how successfully this classification detects true changes, i.e., how often it detects a patient with a disrupted trajectory. We capture the disruption by a process <italic>δ</italic>, i.e., the trajectory of a patient in our model would be <italic>φ</italic>(<italic>y</italic><sub><italic>t</italic></sub>) = <bold>w</bold><sup><italic>T</italic></sup> <italic>ϕ</italic>(<bold>x</bold><sub><italic>t</italic></sub>) + <italic>ε</italic><sub><italic>t</italic></sub> + <italic>δ</italic><sub><italic>t</italic></sub>. We treat the realised change in the disruption between the two visits Δ := <italic>δ</italic>(2) − <italic>δ</italic><sup>(1)</sup> as a fixed number to be detected.</p>
+<p>For the simulation, we fix <italic>θ</italic> = 0.05. For each combination of Δ ∈ [−4, 4] and <italic>ρ</italic> ∈ (−1, 1), we generate a large number of patients with various age and gender, disruption Δ, and (<italic>ε</italic><sup>(2)</sup>, <italic>ε</italic><sup>(1)</sup>) from the bivariate normal distribution
+<disp-formula id="eqn18">
+<graphic xlink:href="544217v5_eqn18.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Specifically, we produce <inline-formula><inline-graphic xlink:href="544217v5_inline25.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (the remaining parameters are the cross-sectional estimates). For each patient, we calculate the <italic>z-diff</italic> score and we look at the fraction of patients with a <italic>z-diff</italic> score surpassing the thresholds. The resulting simulation is depicted in <xref rid="fig2" ref-type="fig">Figure 2</xref>.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2:</label>
+<caption><p>Probability of detecting a true disruption Δ for various values of autocorrelation <italic>ρ</italic> (<italic>θ</italic> = 0.05)</p></caption>
+<graphic xlink:href="544217v5_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Two intuitive properties arise from this simulation: larger disruptions are easier to detect; positive autocorrelation in <italic>ε</italic> makes it easier to detect the disruptions, while negative autocorrelation makes it harder. Strong positive autocorrelation reflects a strong common component in <italic>ε</italic> across the two visits, which cancels out through subtracting the two visits, while strong negative autocorrelation indicates strong switching in <italic>ε</italic> across the two visits, which can be easily confounded with the true disruption Δ. Finally, if the true process for <italic>ε</italic> is as assumed in (8) (stable component plus noise), then higher noise <inline-formula><inline-graphic xlink:href="544217v5_inline26.gif" mime-subtype="gif" mimetype="image"/></inline-formula> corresponds to lower (but positive) <italic>ρ</italic>. Intuitively, we can see that more noise makes the detection of true disruptions more difficult.</p>
+</sec>
+<sec id="s2a5">
+<label>2.1.5</label>
+<title>Implementation</title>
+<p>To implement the method (<xref rid="fig3" ref-type="fig">Fig. 3</xref>), we used the <bold>PCN toolkit</bold>. The exact steps of the analysis with detailed explanations are available in the online tutorial at <monospace>PCNtoolkit-demo</monospace> (<ext-link ext-link-type="uri" xlink:href="https://github.com/predictive-clinical-neuroscience/PCNtoolkit-demo">https://github.com/predictive-clinical-neuroscience/PCNtoolkit-demo</ext-link>) in the tutorials section.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3:</label>
+<caption><p>The overview of the analytical pipeline for our schizophrenia patients: First, data are preprocessed using Freesurfer’s longitudinal pipeline. Subsequently, the pre-trained models are adjusted to a local sample of healthy controls. The site-specific measurement noise variance <inline-formula><inline-graphic xlink:href="544217v5_inline33.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in healthy subjects is estimated using held-out controls, and finally, the <italic>z-diff</italic> score is computed.</p></caption>
+<graphic xlink:href="544217v5_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+<sec id="s2b">
+<label>2.2</label>
+<title>Data</title>
+<sec id="s2b1">
+<label>2.2.1</label>
+<title>Early stages of schizophrenia patients</title>
+<p>The clinical data used for the analysis were part of the Early Stages of Schizophrenia study [<xref ref-type="bibr" rid="c13">13</xref>]. We analysed data from 98 patients in the early stages of schizophrenia (38 females) and 67 controls (42 females) (<xref rid="tbl1" ref-type="table">Table 1</xref>). The inclusion criteria were as follows: The subjects were over 18 years of age and undergoing their first psychiatric hospitalisation. They were diagnosed with schizophrenia; or acute and transient psychotic disorders; and suffered from untreated psychosis for less than 24 months. Patients were medically treated upon admission, based on the recommendation of their physician. Patients suffering from psychotic mood disorders were excluded from the study.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1:</label>
+<caption><title>Clinical description of the dataset after quality control</title></caption>
+<graphic xlink:href="544217v5_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<p>Healthy controls over 18 years of age were recruited through advertisements unless: They had a personal history of any psychiatric disorder or had a positive family history of psychotic disorders in first- or second-degree relatives.</p>
+<p>If a subject in either group (patient or control) had a history of neurological or cerebrovascular disorders or any MRI contraindications, they were excluded from the study.</p>
+<p>The study was carried out in accordance with the latest version of the Declaration of Helsinki. The study design was reviewed and approved by the Research Ethics Board. Each participant received a complete description of the study and provided written informed consent.</p>
+<p>Data were acquired at the National Centre of Mental Health in Klecany, Czech Republic. The data were acquired at the National Institute of Mental Health using Siemens MAGNETOM Prisma 3T. The acquisition parameters of T1-weighted images using MPRAGE sequence were: 240 scans; slice thickness: 0.7 mm; repetition time: 2,400 ms; echo time: 2,34 ms; inversion time: 1000 ms; flip angle: 8°, and acquisition matrix: 320 mm × 320 mm.</p>
+</sec>
+</sec>
+<sec id="s2c">
+<label>2.3</label>
+<title>Preprocessing and Analysis</title>
+<p>Prior to normative modelling, all T1 images were preprocessed using the Freesurfer v.(7.2) <monospace>recon-all</monospace> pipeline. While in the context of longitudinal analysis the longitudinal Freesurfer preprocessing pipeline is appropriate, we additionally performed cross-sectional preprocessing [<xref ref-type="bibr" rid="c14">14</xref>]. The reason to conduct this analysis is threefold: First, the impact of preprocessing on the <italic>z</italic>-scores of normative models lacks prior investigation. Second, the training dataset of 58,000 subjects initially underwent cross-sectional preprocessing, introducing a methodological incongruity. Third, certain large-scale studies, constrained by computational resources, exclusively employ cross-sectional preprocessing. Understanding the consistency of results between the two approaches becomes crucial in such cases.</p>
+<p>In line with [<xref ref-type="bibr" rid="c10">10</xref>], we performed a simple quality control procedure whereby all subjects having a rescaled Euler number greater than ten were labelled outliers and were not included in the analysis (<xref rid="tbl1" ref-type="table">Table 1</xref>) (see [<xref ref-type="bibr" rid="c10">10</xref>] and [<xref ref-type="bibr" rid="c12">12</xref>] for further details).</p>
+<p>After preprocessing, patient data were projected into the adapted normative model (median Rho across all IDP was 0.3 and 0.26 for the first and the second visit, respectively—see <xref rid="figS1" ref-type="fig">Supp. Fig. 1</xref>). The pre-trained model used for adaptation was the <monospace>lifespan_58K_82_sites</monospace> [<xref ref-type="bibr" rid="c10">10</xref>]. For each subject and visit, we obtained cross-sectional <italic>z</italic>-score, as well as the underlying values needed for its computation, particularly <italic>φ</italic>(<italic>y</italic>) and <inline-formula><inline-graphic xlink:href="544217v5_inline27.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We conducted a cross-sectional analysis of the original <italic>z</italic>-scores to evaluate each measurement independently. We then tested for the difference of the cross-sectional <italic>z</italic>-scores <italic>z</italic><sup>(2)</sup> − <italic>z</italic><sup>(1)</sup> between the patients and held-out controls using Mann-Whitney U test and corrected for multiple tests using the Benjamini-Hochberg FDR correction at the 5% level of significance.</p>
+<p>Subsequently, following (11), we derived the <italic>z-diff</italic> scores of change between visits. We conducted two analyses: one to investigate the group-level effect, and another to link the <italic>z-diff</italic> to the longitudinal changes in clinical scales.</p>
+<p>At a group-level, we identified regions with <italic>z-diff</italic> scores significantly different from zero using the Wilcoxon test, accounting for multiple comparisons using the Benjamini-Hochberg FDR correction.</p>
+<p>Additionally, we performed a more traditional longitudinal analysis. As all visits were approximately one-year apart, we conducted an analysis of covariance (ANCOVA). The ANCOVA model combines a general linear model and ANOVA. Its purpose is to examine whether the means of a dependent variable (thickness in visit 2) are consistent across levels of a categorical independent variable (patients or controls) while accounting for the influences of other variables (age, gender, and thickness in visit 1). We conducted a separate test for each IDP and controlled the relevant p-values across tests using the FDR correction.</p>
+<p>For linking the <italic>z-diff</italic> score to clinical longitudinal change, we transformed the <italic>z-diff</italic> score across all IDPs using PCA to decrease the dimensionality of the data as well as to avoid fishing. We ran PCA with 10 components and using Spearman correlation related the scores with changes in the Positive and Negative Syndrome Scale (PANSS) and Global Assessment of Functioning (GAF) scale.</p>
+</sec>
+</sec>
+<sec id="s3">
+<label>3</label>
+<title>Results</title>
+<sec id="s3a">
+<label>3.1</label>
+<title>Effect of preprocessing</title>
+<p>After obtaining cross-sectional <italic>z</italic>-scores for both types of preprocessing, we visually observed a decrease in variance between the two visits in longitudinal preprocessing compared to the cross-sectional one (<xref rid="fig4" ref-type="fig">Figure 4</xref>). More specifically, we calculated the mean of the difference between <italic>z</italic>-scores of visit 2 and visit 1 for each individual IDP, stratified by preprocessing and group, across all subjects. We then visualised the distribution of these means using a histogram (<xref rid="fig4" ref-type="fig">Figure 4C</xref>). Alternatively, we also computed the mean difference between <italic>z</italic>-scores of visit 2 and visit 1 across all IDPs for each subject, and plotted a histogram of these values. Note that this step was only done to estimate the effect of preprocessing on <italic>z</italic>-scores for further discussion. Its impact on the results is elaborated on in the discussion.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4:</label>
+<caption><p>The effect of preprocessing across all subjects and IDPs: (A) Cross-sectional preprocessing: Heatmap of the difference of the original <italic>z</italic>-scores (<italic>z</italic><sup>(2)</sup> − <italic>z</italic><sup>(1)</sup>) on held-out controls. (B) Longitudinal preprocessing: Heatmap of the difference of the original <italic>z</italic>-scores (<italic>z</italic><sup>(2)</sup> −<italic>z</italic><sup>(1)</sup>) on held-out controls. (C) Histogram of the average (<italic>z</italic><sup>(2)</sup> −<italic>z</italic><sup>(1)</sup>) across all IDPs stratified by health status and preprocessing. (D) Histogram of the average (<italic>z</italic><sup>(2)</sup> − <italic>z</italic><sup>(1)</sup>) of each subject stratified by health status and preprocessing.</p></caption>
+<graphic xlink:href="544217v5_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s3b">
+<label>3.2</label>
+<title>Cross-sectional results</title>
+<p>At a group level, patients had significantly lower thicknesses in most areas compared to healthy populations. In particular, this difference was distinct even in the first visit, indicating structural changes prior to diagnosis (<xref rid="fig5" ref-type="fig">Figure 5</xref>).</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5:</label>
+<caption><p>Cross-sectional results for each visit separately: p-values of Mann-Whitney U test between patients and held-out controls surviving Benjamini-Hochberg correction. The sign indicates the direction of change (negative means lower thickness in patients).</p></caption>
+<graphic xlink:href="544217v5_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s3c">
+<label>3.3</label>
+<title>Longitudinal results and patterns of change</title>
+<p>A longitudinal analysis that evaluated the amount of structural change between the two visits showed a significant cortex normalisation of several frontal areas, namely the right and left superior frontal sulcus, the right and left middle frontal sulcus, the right and left middle frontal gyrus, and the right superior frontal gyrus (<xref rid="fig6" ref-type="fig">Figure 6</xref>).</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6:</label>
+<caption><p>Regions significantly changed between the visits: Map of regions significantly changed between the two visits (centre). Each region is described using a scatterplot of <italic>z</italic>-scores across all patients for both visits (the <italic>x</italic>-axis describes age, and the <italic>y</italic>-axis depicts the <italic>z</italic>-score. Blue dots represent the first and pink dots represent the second visit). The grey dashed line highlights <italic>z</italic>=0. Histograms in the golden circles depict the distribution of the <italic>z-diff</italic> score.</p></caption>
+<graphic xlink:href="544217v5_fig6.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>In terms of linking longitudinal change in clinical scores with changes captured by <italic>z-diff</italic> scores, each of the two scales was well correlated with different component. The first PCA component, which itself reflected the average change in global thickness across patients, was correlated with the change in GAF score, whereas the second component significantly correlated with the change in PANSS score (see <xref rid="fig7" ref-type="fig">Fig. 7</xref>).</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7:</label>
+<caption><p>Results of the PCA analysis: (A) Scree plot of the explained variance of PCA components. (B) Scatterplot of change in the GAF scale vs. the change in the PANSS scale (C Left) Scatter plot of the first PCA component and difference in the GAF scale. (C Right) Heatmap of PCA loadings for the first component. (D Left) Scatter plot of the second PCA component and difference in the PANSS scale. (D Right) A Heatmap of PCA loadings for the second component. (E) Average <italic>z-diff</italic> score.</p></caption>
+<graphic xlink:href="544217v5_fig7.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+<sec id="s4">
+<label>4</label>
+<title>Discussion</title>
+<p>Longitudinal neuroimaging studies allow us to assess the effectiveness of interventions and gain deeper insights into the fundamental mechanisms of underlying diseases. Despite the significant expansion of our knowledge regarding population variation through the availability of publicly accessible neuroimaging data, this knowledge, predominantly derived from cross-sectional observations, has not been adequately integrated into methods for evaluating longitudinal changes.</p>
+<p>We propose an analytical framework that builds on normative modelling and generates unbiased features that quantify the degree of change between visits, whilst capitalising on information extracted from large cross-sectional cohorts.</p>
+<sec id="s4a">
+<label>4.1</label>
+<title>Methodological contribution</title>
+<p>Our approach is rooted in the normative modelling method based on Bayesian regression [<xref ref-type="bibr" rid="c3">3</xref>], the pre-trained version of which recently became available [<xref ref-type="bibr" rid="c10">10</xref>]. We showed that the estimation of longitudinal changes is available based on a preexisting cross-sectional normative model and only requires a set of healthy controls on which the variance of healthy change might be estimated. We denoted the score obtained after running the procedure as a <italic>z-diff</italic> score, which quantifies the extent of change between visits beyond what one would expect in the healthy population.</p>
+<p>To this end, our approach implies that in a group of healthy controls, we should observe only change that is consistent with the healthy population, i.e., zero average <italic>z-diff</italic> score. We used the data of 33 healthy controls which were originally used for the site-specific adaptation (for more details, see the discussion part on implementation) and computed their <italic>z-diff</italic> scores. After averaging these scores across all subjects, the <italic>z-diff</italic> score of no region was statistically significant from zero (after FDR correction). However, as pointed out by a recent work [<xref ref-type="bibr" rid="c9">9</xref>] studying the effect of cross-sectional normative models on longitudinal predictions, the cross-sectionally derived population centiles <italic>by design</italic> lack information about longitudinal dynamics. Consequently, what may appear as a population-level trajectory does not necessarily align with individual subjects’ actual trajectories. Although it is important to keep this caveat in mind, it can be fully addressed only by proper longitudinal normative models, which is beyond the scope of this paper.</p>
+<p>Instead, we argue that the population-level trajectory carries meaningful information about individual-level trajectories, and we allow for a flexible process of deviations between the two. By estimating the amplitude of the longitudinal change in healthy controls (adjusting for the population-level trajectory), we get an insight into this process. Naturally, if the healthy changes have a high amplitude (corresponding to low to negative <italic>ρ</italic> in <xref ref-type="sec" rid="s2a4">section 2.1.4</xref>), it becomes more challenging to identify subjects who actually diverge from the “healthy” trajectory, i.e., the <italic>z-diff</italic> score becomes overly conservative. A potential reason for the high-amplitude residual process is substantial acquisition or processing noise. As evident from the clinical findings, only a fraction of subjects were identified as having undergone significant changes (<xref rid="figS2" ref-type="fig">Supp. Fig. 2</xref>). However, at the group level, the significance of the observed changes persisted. Therefore, while the method adopts a cautious approach when assessing individual changes, it identifies effectively group-level changes. Note that this is not unique to our method, but is rather a general statistical feature.</p>
+<p>Furthermore, unlike in [<xref ref-type="bibr" rid="c9">9</xref>], our approach does not aim to predict individual trajectories, but rather to quantify whether the observed changes over time exceed what would be expected.</p>
+</sec>
+<sec id="s4b">
+<label>4.2</label>
+<title>Implementation</title>
+<p>At the implementation level, our approach requires two stages of adaptation: sitespecific adaptation, as presented in [<xref ref-type="bibr" rid="c10">10</xref>], and a second level where we compute the variance of healthy longitudinal change (noise) in healthy controls. However, if the number of longitudinal controls is limited, the site-specific adaptation may be omitted. The purpose of site-specific adaptation is to generate unbiased cross-sectional <italic>z</italic>-scores that are zero-centered with a variance of one for healthy controls. However, in the case of longitudinal analysis, the offset and normalisation constant are irrelevant since they will be identical for both visits. Therefore, the estimation of healthy longitudinal change is the only essential factor in producing the <italic>z-diff</italic> score. Note that in this scenario, the cross-sectional result should not be interpreted.</p>
+</sec>
+<sec id="s4c">
+<label>4.3</label>
+<title>Clinical results</title>
+<p>Examination of the effect of preprocessing on <italic>z</italic>-scores showed that longitudinal pre-processing indeed decreases intra-subject variability compared to cross-sectional pre-processing. However, to assess the added benefit of the preprocessing, we also computed the core results (regions that significantly changed in time) for the cross-sectional data. The significant results were mostly consistent with a longitudinal pipeline: Six out of seven originally significant regions were still statistically significant (with the exception of the right middle frontal sulcus), and three other regions were labelled significant: the left superior frontal gyrus, the right inferior frontal sulcus, and the right medial or olfactory orbital sulcus (<xref rid="figS3" ref-type="fig">Supp. Fig. 3</xref>). Therefore, it is also possible to use cross-sectional preprocessing for longitudinal analysis; however, at a cost of increased between-visit variance and consequently decreased power (in comparison to the longitudinal preprocessing).</p>
+<p>The observation of cortical normalisation between the visits of early schizophrenia patients is, to a degree, counterintuitive to the historical narrative, which mostly assumes grey matter thinning. There is now increasing evidence that: (i) trajectories of cortical thickness are highly variable across different individuals after the first psychotic episode and (ii) that individuals treated with second-generation antipsychotics and with careful clinical follow-up can show normalisation of cortical thickness atypicalities after the first episode [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c16">16</xref>]. In [<xref ref-type="bibr" rid="c15">15</xref>], a cohort of 79 first-episode psychosis patients were longitudinally monitored wit two follow-up, after a year and ten years. Although cross-sectionally, patients showed significantly lower (cross-sectional) z-scores at baseline (which is consistent with our findings), their proportion decreased over time, indicating an attenuation of differences over time. Canal et al. reported similar observation in larger cohort [<xref ref-type="bibr" rid="c16">16</xref>] of 357 people with first-episode psychosis followed over 10 year period. Notably, no changes in cortical thickness were observed within the first three years. Afterwards, the trajectories started diverging, with cortical thinning observed only in people who experienced worsening of negative symptoms on the expressivity dimension of Scale for the Assessment of Negative Symptoms.</p>
+<p>Furthermore, a meta-analysis of 50 longitudinal studies examining individuals with a heightened risk of psychosis revealed that 15 of the 19 studies indicated deviations in grey matter developmental trajectories between those with persistent symptoms and those whose symptoms resolved [<xref ref-type="bibr" rid="c17">17</xref>]. The authors propose that grey matter developmental trajectories may return to normal levels in individuals in the High-Risk Remitting group by early adulthood, whereas neurological irregularities may continue to advance in those whose symptoms do not resolve. Although our cohort had already received a diagnosis of schizophrenia, it is possible that early identification and treatment supported these compensatory mechanisms, as demonstrated by the normalisation of grey matter thickness in frontal regions. Notably, the affected regions also increased in raw grey matter thickness (as measured in mm, see <xref rid="figS4" ref-type="fig">Supp. Fig. 4</xref>).</p>
+<p>Additionally, we observed significant correlations between the PCA components of the <italic>z-diff</italic> score and longitudinal changes in clinical scales, as illustrated in <xref rid="fig7" ref-type="fig">Fig. 7</xref>. Notably, each clinical scale exhibited distinct associations with separate PCA components, despite substantial intercorrelations (<xref rid="fig7" ref-type="fig">Fig. 7 (B)</xref>).</p>
+<p>The first PCA component, which predominantly captured global changes in grey matter thickness, displayed a negative correlation with improvements in the GAF score (<xref rid="fig7" ref-type="fig">Fig. 7 (C)</xref>). This unexpected inverse relationship would suggest that patients who demonstrated clinical improvement over time exhibited a more pronounced decrease in grey matter thickness, as quantified by the <italic>z-diff</italic> score. However, further investigation revealed that this correlation was primarily driven by the patients’ GAF scores in the initial visit. Specifically, the correlation between GAF scores at the first visit and the first PCA component yielded a coefficient of R = 0.19 (p = 0.06), whereas the correlation with scores at the second visit was R = -0.10 (p = 0.31). These findings suggest that lower GAF scores during the initial visit are predictive of subsequent grey matter thinning.</p>
+<p>Conversely, the interpretation of the second PCA component, significantly correlated with changes in the PANSS score, was more straightforward (<xref rid="fig7" ref-type="fig">Fig. 7 (D)</xref>). The observed normalisation of grey matter thickness in frontal areas was positively correlated with improvements in the PANSS scale, indicating that symptom amelioration was accompanied by the normalisation of grey matter thickness in these regions.</p>
+<p>Finally, we conducted an analysis of longitudinal change using conventional statistical approaches to compare the results with normative modelling. Out of 148 areas tested by ANCOVA, 6 were statistically significant. However, after controlling for multiple comparisons, no IDP persisted. This result highlights the advantages of normative models and shows improved sensitivity of our method in comparison with more conventional approaches.</p>
+</sec>
+<sec id="s4d">
+<label>4.4</label>
+<title>Limitations</title>
+<p>Estimating the intra-subject variability is a complex task that might be affected by acquisition and physiological noise. Assumptions must be made about the longitudinal behaviour of healthy subjects. The former problem is unavoidable, whereas the latter might be addressed by constructing longitudinal normative models. However, the project necessary for such a task would have to map individuals across their lifespan consistently. The efforts to create such a dataset are already in progress through projects like the ABCD study [<xref ref-type="bibr" rid="c18">18</xref>], but much more data are still needed to construct a full-lifespan longitudinal model.</p>
+<p>Additionally, the <italic>z-diff</italic> score only quantifies the size of the change irrespective of the initial position (e.g. cross-sectional z-score being above or below 0). However, in subsequent analyses, it is possible to construct models that include both, the original (cross-sectional) position combined with the (longitudinal) change. Indeed, the non-random sampling of large cohort studies is a challenge for nearly all studies using such cohorts, and regardless of the statistical approach used.</p>
+<p>Finally, our clinical results may be affected by selection bias, where subjects experiencing a worsening of their condition dropped out of the study, whereas patients with lower genetic risk or more effective treatment continued to participate.</p>
+</sec>
+<sec id="s4e">
+<label>4.5</label>
+<title>Conclusion</title>
+<p>We have developed a method that utilises pre-trained normative models to detect unusual longitudinal changes in neuroimaging data. Our approach offers a user-friendly implementation and has demonstrated its effectiveness through a comprehensive analysis. Specifically, we observed significant grey matter changes in the frontal lobe of schizophrenia patients over time, surpassing the sensitivity of conventional statistical approaches. This research represents a significant advancement in longitudinal neuroimaging analysis and holds great potential for further discoveries in neurodegenerative disorders.</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>This research was supported by the Czech Health Research Council (NU21-08-00432); Programme Johannes Amos Comenius (‘BRADY’ CZ.02.01.01/00/22 008/0004643); European Research Council (grant ‘MENTALPRECISION’, 10100118), the Wellcome Trust under an Innovator awards (‘BRAINCHART’, 215698/Z/19/Z and ‘PRECOG-NITION’, 226706/Z/22/Z), the Ministry of Education, Youth and Sports (CZ.02.2.69 /0.0/0.0/18 053/0017594); and the Czech Technical University Internal Grant Agency (SGS22/062/OHK3/1T/13).</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A. F.</given-names> <surname>Marquand</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Rezek</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Buitelaar</surname></string-name>, and <string-name><given-names>C. F.</given-names> <surname>Beckmann</surname></string-name></person-group>, “<article-title>Understanding Heterogeneity in Clinical Cohorts Using Normative Models: Beyond Case-Control Studies</article-title>,” <source>Biological Psychiatry, Obsessive-Compulsive Disorder</source>, vol. <volume>80</volume>, no. <issue>7</issue>, pp. <fpage>552</fpage>–<lpage>561</lpage>, <month>Oct</month>. <year>2016</year>, issn: <issn>0006-3223</issn>. doi: <pub-id pub-id-type="doi">10.1016/j.biopsych.2015.12.023</pub-id>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>R. a. I.</given-names> <surname>Bethlehem</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Brain charts for the human lifespan</article-title>,” <source>Nature</source>, vol. <volume>604</volume>, no. <issue>7906</issue>, pp. <fpage>525</fpage>–<lpage>533</lpage>, <month>Apr</month>. <year>2022</year>, issn: <issn>1476-4687</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41586-022-04554-y</pub-id>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>C. J.</given-names> <surname>Fraza</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Dinga</surname></string-name>, <string-name><given-names>C. F.</given-names> <surname>Beckmann</surname></string-name>, and <string-name><given-names>A. F.</given-names> <surname>Marquand</surname></string-name></person-group>, “<article-title>Warped Bayesian linear regression for normative modelling of big data</article-title>,” <source>NeuroImage</source>, vol. <volume>245</volume>, p. <fpage>118</fpage> 715, <month>Dec</month>. <year>2021</year>, issn: <issn>1053-8119</issn>. doi: <pub-id pub-id-type="doi">10.1016/j.neuroimage.2021.118715</pub-id>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Habes</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>The Brain Chart of Aging: Machine-learning analytics reveals links between brain aging, white matter disease, amyloid burden, and cognition in the iSTAGING consortium of 10,216 harmonized MR scans</article-title>,” <source>Alzheimer’s &amp; Dementia</source>, vol. <volume>17</volume>, no. <issue>1</issue>, pp. <fpage>89</fpage>–<lpage>102</lpage>, <year>2021</year>, issn: <issn>1552-5279</issn>. doi: <pub-id pub-id-type="doi">10.1002/alz.12178</pub-id>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>W. H. L.</given-names> <surname>Pinaya</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Using normative modelling to detect disease progression in mild cognitive impairment and Alzheimer’s disease in a cross-sectional multicohort study</article-title>,” <source>Scientific Reports</source>, vol. <volume>11</volume>, no. <issue>1</issue>, p. <fpage>15</fpage> 746, <month>Aug</month>. <year>2021</year>, issn: <issn>2045-2322</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41598-021-95098-0</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>T.</given-names> <surname>Wolfers</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Replicating extensive brain structural heterogeneity in individuals with schizophrenia and bipolar disorder</article-title>,” <source>Human Brain Mapping</source>, vol. <volume>42</volume>, no. <issue>8</issue>, pp. <fpage>2546</fpage>–<lpage>2555</lpage>, <year>2021</year>, issn: <issn>1097-0193</issn>. doi: <pub-id pub-id-type="doi">10.1002/hbm.25386</pub-id>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Zabihi</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Dissecting the Heterogeneous Cortical Anatomy of Autism Spectrum Disorder Using Normative Models</article-title>,” <source>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging, The Bridging of Scales: Techniques for Translational Neuroscience</source>, vol. <volume>4</volume>, no. <issue>6</issue>, pp. <fpage>567</fpage>–<lpage>578</lpage>, <month>Jun</month>. <year>2019</year>, issn: <issn>2451-9022</issn>. doi: <pub-id pub-id-type="doi">10.1016/j.bpsc.2018.11.013</pub-id>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A. F.</given-names> <surname>Marquand</surname></string-name>, <string-name><given-names>S. M.</given-names> <surname>Kia</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Zabihi</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Wolfers</surname></string-name>, <string-name><given-names>J. K.</given-names> <surname>Buitelaar</surname></string-name>, and <string-name><given-names>C. F.</given-names> <surname>Beckmann</surname></string-name></person-group>, “<article-title>Conceptualizing mental disorders as deviations from normative functioning</article-title>,” <source>Molecular Psychiatry</source>, vol. <volume>24</volume>, no. <issue>10</issue>, pp. <fpage>1415</fpage>–<lpage>1424</lpage>, <month>Oct</month>. <year>2019</year>, issn: <issn>1476-5578</issn>. doi: <pub-id pub-id-type="doi">10.1038/s41380-019-0441-1</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M. A.</given-names> <surname>Di Biase</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Mapping human brain charts cross-sectionally and longitudinally</article-title>,” <source>Proceedings of the National Academy of Sciences</source>, vol. <volume>120</volume>, no. <issue>20</issue>, <fpage>e2216798120</fpage>, <month>May</month> <year>2023</year>. doi: <pub-id pub-id-type="doi">10.1073/pnas.2216798120</pub-id>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>S.</given-names> <surname>Rutherford</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Charting Brain Growth and Aging at High Spatial Precision</article-title>,” <source>bioRxiv</source>., <year>2021</year>, p. <elocation-id>2021.08.08.455487</elocation-id>. doi: <pub-id pub-id-type="doi">10.1101/2021.08.08.455487</pub-id>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>T.</given-names> <surname>Cole</surname></string-name></person-group>, “<article-title>The development of growth references and growth charts</article-title>,” <source>Annals of Human Biology</source>, vol. <volume>39</volume>, no. <issue>5</issue>, pp. <fpage>382</fpage>–<lpage>394</lpage>, <month>Sep</month>. <year>2012</year>. doi: <pub-id pub-id-type="doi">10.3109/03014460.2012.694475</pub-id>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S. M.</given-names> <surname>Kia</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Closing the life-cycle of normative modeling using federated hierarchical Bayesian regression</article-title>,” <source>PLOS ONE</source>, vol. <volume>17</volume>, no. <issue>12</issue>, <fpage>e0278776</fpage>, <year>2022</year>, issn: <issn>1932-6203</issn>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0278776</pub-id>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>F.</given-names> <surname>Spaniel</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Altered Neural Correlate of the Self-Agency Experience in First-Episode Schizophrenia-Spectrum Patients: An fMRI Study</article-title>,” <source>Schizophrenia Bulletin</source>, vol. <volume>42</volume>, no. <issue>4</issue>, pp. <fpage>916</fpage>–<lpage>925</lpage>, <month>Jul</month>. <year>2016</year>, issn: <issn>0586-7614</issn>. doi: <pub-id pub-id-type="doi">10.1093/schbul/sbv188</pub-id>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Reuter</surname></string-name>, <string-name><given-names>N. J.</given-names> <surname>Schmansky</surname></string-name>, <string-name><given-names>H. D.</given-names> <surname>Rosas</surname></string-name>, and <string-name><given-names>B.</given-names> <surname>Fischl</surname></string-name></person-group>, “<article-title>Within-subject tem-plate estimation for unbiased longitudinal image analysis</article-title>,” <source>Neuroimage</source>, vol. <volume>61</volume>, no. <issue>4</issue>, pp. <fpage>1402</fpage>–<lpage>1418</lpage>, <month>Jul</month>. <year>2012</year>, issn: <issn>1053-8119</issn>. doi: <pub-id pub-id-type="doi">10.1016/j.neuroimage.2012.02.084</pub-id>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>P.</given-names> <surname>Berthet</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>A 10-year longitudinal study of brain cortical thickness in people with first-episode psychosis using normative models</article-title>,” <source>medRxiv</source>, pp. <fpage>2024</fpage>–<lpage>04</lpage>, <year>2024</year>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Canal-Rivero</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>Longitudinal trajectories in negative symptoms and changes in brain cortical thickness: 10-year follow-up study</article-title>,” <source>The British Journal of Psychiatry</source>, vol. <volume>223</volume>, no. <issue>1</issue>, pp. <fpage>309</fpage>–<lpage>318</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>K.</given-names> <surname>Merritt</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Luque Laguna</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Irfan</surname></string-name>, and <string-name><given-names>A. S.</given-names> <surname>David</surname></string-name></person-group>, “<article-title>Longitudinal Structural MRI Findings in Individuals at Genetic and Clinical High Risk for Psychosis: A Systematic Review</article-title>,” <source>Frontiers in Psychiatry</source>, vol. <volume>12</volume>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>B. J.</given-names> <surname>Casey</surname></string-name> <etal>et al.</etal></person-group>, “<article-title>The Adolescent Brain Cognitive Development (ABCD) study: Imaging acquisition across 21 sites</article-title>,” <source>Developmental Cognitive Neuroscience, The Adolescent Brain Cognitive Development (ABCD) Consortium: Rationale, Aims, and Assessment Strategy</source>, vol. <volume>32</volume>, pp. <fpage>43</fpage>–<lpage>54</lpage>, <month>Aug</month>. <year>2018</year>, issn: <issn>1878-9293</issn>. doi: <pub-id pub-id-type="doi">10.1016/j.dcn.2018.03.001</pub-id>.</mixed-citation></ref>
+</ref-list>
+<sec id="s5">
+<title>Supplement</title>
+<sec id="s5a">
+<title>Posterior predictive distribution for difference between visits</title>
+<p>Here we derive the posterior predictive distribution for the difference <italic>φ</italic>(<italic>y</italic><sup>(2)</sup>)−<italic>φ</italic>(<italic>y</italic><sup>(1)</sup>). The argument is standard. Denote Δ<sub><bold>x</bold></sub> = <italic>ϕ</italic>(<bold>x</bold><sup>(2)</sup>)−<italic>ϕ</italic>(<bold>x</bold><sup>(1)</sup>) and Δ<sub><italic>y</italic></sub> = <italic>φ</italic>(<italic>y</italic><sup>(2)</sup>)−<italic>φ</italic>(<italic>y</italic><sup>(1)</sup>). Since <inline-formula><inline-graphic xlink:href="544217v5_inline28.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="544217v5_inline29.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, the posterior predictive density is
+<disp-formula id="ueqn2">
+<graphic xlink:href="544217v5_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+This has the familiar convolution form of the densities of <inline-formula><inline-graphic xlink:href="544217v5_inline30.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="544217v5_inline31.gif" mime-subtype="gif" mimetype="image"/></inline-formula> It is known to produce the density of <inline-formula><inline-graphic xlink:href="544217v5_inline32.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (by completion to squares in the exponent).</p>
+</sec>
+<sec id="s5b">
+<title>Quality of fit across regions of interest</title>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Supplementary Figure 1:</label>
+<caption><title>Quality of fit as measured by Rho for the first and the second visit.</title></caption>
+<graphic xlink:href="544217v5_figS1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s5c">
+<title>Comparison of preprocessing</title>
+<fig id="figS2" position="float" fig-type="figure">
+<label>Supplementary Figure 2:</label>
+<caption><p>Regions significantly changed between the visits (longitudinal preprocessing): Map of regions significantly changed between the two visits (centre). Each region is described using a scatterplot of <italic>z-diff</italic> across all patients for both visits (the <italic>x</italic>-axis describes age, and the <italic>y</italic>-axis depicts the <italic>z-diff</italic>. Blue dots represent individual patients and the pink line shows a trend of <italic>z-diff</italic> change). The Grey dashed line highlights <italic>z</italic>=0. Histograms in the golden circles depict the distribution of the <italic>z-diff</italic> score.</p></caption>
+<graphic xlink:href="544217v5_figS2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figS3" position="float" fig-type="figure">
+<label>Supplementary Figure 3:</label>
+<caption><p>Regions significantly changed between the visits (cross-sectional preprocessing): Map of regions significantly changed between the two visits (centre). Each region is described using a scatterplot of <italic>z-diff</italic> scores across all patients for both visits (the <italic>x</italic>-axis describes age, and the <italic>y</italic>-axis depicts the <italic>z-diff</italic> score. The grey dashed line highlights <italic>z</italic>=0. Histograms in the golden circles depict the distribution of the <italic>z-diff</italic> score.</p></caption>
+<graphic xlink:href="544217v5_figS3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s5d">
+<title>Raw changes observed in significant regions</title>
+<fig id="figS4" position="float" fig-type="figure">
+<label>Supplementary Figure 4:</label>
+<caption><p>Raw changes in grey matter thickness: Each significantly changed region is presented twice, once as a scatter plot containing the original grey matter thickness for both visits (left); females are plotted in pink, males in blue. The figure on the right depicts visit 2 minus visit 1 in raw thicknesses (separately for females – pink, and males – blue).</p></caption>
+<graphic xlink:href="544217v5_figS4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.95823.2.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Lerch</surname>
+<given-names>Jason P</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This paper addresses an <bold>important</bold> topic (normative trajectory modelling), seeking to provide a method aiming to accurately reflect the individual deviation of longitudinal/temporal change compared to the normal temporal change characterized based on a pre-trained population normative model. The evidence provided for the new methods is, however, <bold>incomplete</bold>, with the simulations validating the method needing to be extended.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.95823.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this manuscript, the authors provide a method aiming to accurately reflect the individual deviation of longitudinal/temporal change compared to the normal temporal change characterized based on pre-trained population normative model (i.e., a Bayesian linear regression normative model), which was built based on cross-sectional data. This manuscript aims at solving a recently identified problem of using normative models based on cross-sectional data to make inferences about longitudinal change.</p>
+<p>Strengths:</p>
+<p>The efforts of this work make a good contribution to addressing an important question of normative modeling. With the greater availability of cross-sectional studies for normative modeling than longitudinal studies, and the inappropriateness of making inferences about longitudinal subject-specific changes using these cross-sectional data-based normative models, it's meaningful to try to address this gap from the aspect of methodological development.</p>
+<p>In the 1st revision, the authors added a simulation study to show how the performance of the classification based on z-diff scores relatively changes with different disruptions (and autocorrelation). Unfortunately, in my view this is insufficient as it only shows how the performance of using z-diff score relatively changes in different scenarios. I would suggest adding the comparison of performance to using the naïve difference in two simple z-scores to first show its better performance, which should also further highlight the inappropriate use of simple z-scores in inferring within-subject longitudinal changes. Additionally, Figure 1 is hard to read and obtain the actual values of the performance measure. I would suggest reducing it to several 2-dimensional figures. For example, for several fixed values of rho, how the performance changes with different values of the true disruption (and also adding the comparison to the naïve method (difference in two z-scores)).</p>
+<p>I would also suggest changing the title to reflect that the evaluation of &quot;intra-subject&quot; longitudinal change is the method's focus.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.95823.2.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Rehák Bučková</surname>
+<given-names>Barbora</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5619-3946</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Fraza</surname>
+<given-names>Charlotte</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7088-9250</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Rehák</surname>
+<given-names>Rastislav</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3030-3067</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kolenič</surname>
+<given-names>Marián</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2382-3478</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Beckmann</surname>
+<given-names>Christian</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3373-3193</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Španiel</surname>
+<given-names>Filip</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3479-696X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Marquand</surname>
+<given-names>Andre</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5903-203X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hlinka</surname>
+<given-names>Jaroslav</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1402-1470</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the original reviews.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1 (Public Review):</bold></p>
+<p>The models described are not fundamentally novel, essentially a random intercept model (with a warping function), and some flexible covariate effects using splines (i.e., additive models).</p>
+</disp-quote>
+<p>We respectfully but strongly disagree with the reviewer’s assessment of the novelty of our work. The models referred to by the reviewer as “random intercept models … and some flexible covariate effects” seem to relate to the estimation of normative models derived cross-sectionally as developed in and adopted from previous work, not to the work presented here. To be clear, the contributions of this work are: (i) a principled methodology to make statistical predictions for individual subjects in longitudinal studies based on a novel z-diff score, (ii) an approach to transfer information large scale normative models estimated on large scale cross-sectional data to longitudinal studies (iii) an extensive theoretical analysis of the properties of this approach and (iv) empirical evaluation on an unpublished psychosis dataset. Put simply, we provide the ability to estimate within subject <italic>change</italic> in normative models which until now only provide the ability to show a subject's <italic>position</italic> in the normative range at a given timepoint. With the exception of the reference [13] cited in the main text, we are not aware of any methods available that can achieve this. Based on this feedback combined with the feedback of the Reviewer 2, we now improved our introduction and clearly state our contribution right from the outset of the manuscript whilst also shortening the introduction to make it more concise. In this work, we are trying to be very transparent in showing to the reader that our method builds on a previously peer-reviewed model.</p>
+<disp-quote content-type="editor-comment">
+<p>The assumption of constant quantiles is very strong, and limits the utility of the model to very short term data.</p>
+</disp-quote>
+<p>We now provide an extensive theoretical analysis of our approach (section 2.1.3), where we show that this assumption is actually not strictly necessary and that our approach yields valid inferences even under much milder assumptions. More specifically, we first provide a mathematical grounding for the assumption we made in the initial submission, then generalise our method to a wider class of residual processes and show that our original assumption of constant quantiles is not too restrictive. We also provide a simulation study to show how the practitioner can evaluate the validity and implications of this assumption on a case-by-case basis. This generalisation is described in depth in section 2.1.3.</p>
+<disp-quote content-type="editor-comment">
+<p>The schizophrenia example leads to a counter-intuitive normalization of trajectories, which leads to suspicions that this is driven by some artifact of the data modeling/imaging pipelines.</p>
+</disp-quote>
+<p>We understand that the observed normalisation effects might appear surprising. As we outlined in our provisional response, we would like to emphasise that there is increasing evidence that the old neurodegenerative view of psychosis is an oversimplification and that trajectories of cortical thickness are highly variable across different individuals after the first psychotic episode. More specifically, we have shown in an independent sample and with different methodology that individuals treated with second-generation antipsychotics and with careful clinical follow-up can show normalisation of cortical thickness atypicalities after the first episode (<ext-link ext-link-type="uri" xlink:href="https://www.medrxiv.org/content/10.1101/2024.04.19.24306008v2">https://www.medrxiv.org/content/10.1101/2024.04.19.24306008v2</ext-link>, now accepted in Schizophrenia Bulletin). These results are well-aligned with the results we show in this manuscript. We now added remarks on this topic into the discussion. We would also like to re-emphasise that the data were processed with the utmost rigour using state of the art processing pipelines including quality control, which we have reported as transparently as possible. The confidence that the results are not ‘driven by some artifact of the data modeling/imaging pipelines’ is also supported by the fact that analysis of a group of healthy controls did not show any significant z-diffs (see Discussion section), neither frontally nor elsewhere. If the reviewer believes there are additional quality control checks that would further increase confidence in our findings, we would welcome the reviewer to provide specific details.</p>
+<disp-quote content-type="editor-comment">
+<p>The method also assumes that the cross-sectional data is from a &quot;healthy population&quot; without describing what this population is (there is certainly every chance of ascertainment bias in large scale studies as well as small scale studies). This issue is completely elided over in the manuscript.</p>
+</disp-quote>
+<p>Indeed, we do not describe the cross-sectional population used for training the models, as these models were already trained and published with in-depth description of the datasets used for the training (<ext-link ext-link-type="uri" xlink:href="https://elifesciences.org/articles/72904">https://elifesciences.org/articles/72904</ext-link>). We now make this more explicit in the section 2.1.1. of the manuscript (page 7), and also more explicitly acknowledge the possibility of ascertainment bias in the simulation section 2.1.4. However, we would like to emphasise that such ascertainment bias is not in any way specific to the analyses we report. In fact it is present in all studies that utilise large scale cohorts such as UK Biobank. Indeed, we are currently working on another manuscript to address this question in detail, but given the complexity of this problem and the fact that many publicly available legacy studies simply do not record sufficient demographic information, e.g. to assess racial bias properly, we believe that this is beyond the scope of the current work.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public Review):</bold></p>
+<p>The organization and clarity of this manuscript need enhancement for better comprehension and flow. For example, in the first few paragraphs of the introduction, the wording is quite vague. A lot of information was scattered and repeated in the latter part of the introduction, and the actual challenges/motivation of this work were not introduced until the 5th paragraph.</p>
+</disp-quote>
+<p>As noted above in our response to Reviewer 1, we significantly pruned the introduction, stating our objective in the first paragraph and elaborating on the topic later in the text. We hope that it is now less repetitive and easier to follow.</p>
+<disp-quote content-type="editor-comment">
+<p>There are no simulation studies to evaluate whether the adjustment of the crosssectional normative model to longitudinal data can make accurate estimations and inferences regarding the longitudinal changes. Also, there are some assumptions involved in the modeling procedure, for example, the deviation of a healthy control from the population over time is purely caused by noise and constant variability of error/noise across x_n, and these seem to be quite strong assumptions. The presentation of this work's method development would be strengthened if the authors can conduct a formal simulation study to evaluate the method's performance when such assumptions are violated, and, ideally, propose some methods to check these assumptions before performing the analyses.</p>
+</disp-quote>
+<p>This comment encouraged us to zoom out from our original assumption and generalise our method to a wider class of residual processes (stationary Gaussian processes) in section 2.1.3. We now present a theoretical analysis of our model to show that our original assumption (of stable quantiles plus noise) is actually not necessary for valid inference in our method, which broadens the applicability of our method. Of course, we also discuss in what way the original assumption is restrictive and how it aligns with the more general dynamics. We also include a simulation study to evaluate the method's performance and elucidate the role of the more general dynamics in section 2.1.4.</p>
+<disp-quote content-type="editor-comment">
+<p>The proposed &quot;z-diff score&quot; still falls in the common form of z-score to describe the individual deviation from the population/reference level, but now is just specifically used to quantify the deviation of individual temporal change from the population level. The authors need to further highlight the difference between the &quot;z-score&quot; and &quot;z-diff score&quot;, ideally at its first mention, in case readers get confused (I was confused at first until I reached the latter part of the manuscript). The z-score can also be called a measure of &quot;standardized difference&quot; which kind of collides with what &quot;z-diff&quot; implies by its name.</p>
+</disp-quote>
+<p>We added the mention of the difference between z-score and z-diff score into the last paragraph of introduction.</p>
+<disp-quote content-type="editor-comment">
+<p>Explaining that one component of the variance is related to the estimation of the model and the other is due to prediction would be helpful for non-statistical readers.</p>
+</disp-quote>
+<p>We now added an interpretation of the z-score in the original model below equation 7.</p>
+<disp-quote content-type="editor-comment">
+<p>It would be easier for the non-statistical reader if the authors consistently used precision or variance for all variance parameters. Probably variance would be more accessible.</p>
+</disp-quote>
+<p>This was a very useful observation, we unified the notation and now only use variance.</p>
+<disp-quote content-type="editor-comment">
+<p>The functions psi were never explicitly described. This would be helpful to have in the supplement with a reference to that in the paper.</p>
+</disp-quote>
+<p>Indeed, while describing the original model we had to make choices about how to condense the necessary information from the original model so that we can build upon it. As the phi function is only used for data transformation in the original model, we did not further elaborate on it, however, we now refer to the specific section of the original paper of Fraza et al. 2021 where it is described more in detail (<ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S1053811921009873">https://www.sciencedirect.com/science/article/pii/S1053811921009873</ext-link>).</p>
+<disp-quote content-type="editor-comment">
+<p>What is the goal of equations (13) and (14)? The authors should clarify what the point of writing these equations is prior to showing the math. It seems like it is to obtain an estimate of \sigma_{\ksi}^2, which the reader only learns at the end.</p>
+</disp-quote>
+<p>We corrected the formatting.</p>
+<disp-quote content-type="editor-comment">
+<p>What is the definition of &quot;adaption&quot; as used to describe equation (15)? In this equation, I think norm on subsample was not defined.</p>
+</disp-quote>
+<p>We added a more detailed description of the adaptation after equation 15.</p>
+<disp-quote content-type="editor-comment">
+<p>&quot;(the sandwich part with A)&quot; - maybe call this an inner product so that it is not confused with a sandwich variance estimator. This is a bit unclear. Equation (8) does have the inner product involving A and \beta^{-1} does include variability of \eta. It seems like you mean that equation (8) incorrectly includes variability of \eta and does not have the right term vector component of the inner product involving A, but this needs clarifying.</p>
+</disp-quote>
+<p>We now changed the formulation to be less confusing and also explicitly clarified the caveat regarding the difference of z-scores.</p>
+<disp-quote content-type="editor-comment">
+<p>One challenge with the z-diff score is that it does not account for whether a person sits above or below zero at the first time point. It might make it difficult to interpret the results, as the results for a particular pathology could change depending on what stage of the lifespan a person is in. I am not sure how the authors would address those challenges.</p>
+</disp-quote>
+<p>We agree with the outlined limitation in interpretation of overall trends when the position in the visit one is different between the subjects. However, this is a much broader challenge and is not specific to our approach. This effect is generally independent of the lifespan, but may further interact with the typical lifespan of disease. rWhen the z scores are taken in the context of the cross-sectional normative models, it does make it possible to identify what the overall trend of an illness is across the lifespan, and individual patient’s z-diffs not in line (with what would this typical group trajectory predicts) may e.g. correspond to early/late onset of their individual atrophy. We now make these considerations explicitly in the discussion section.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Recommendations For The Authors):</bold></p>
+<p>Other minor suggestions to help improve the text:...</p>
+</disp-quote>
+<p>We thank Reviewer #2 for the list of minor suggestions to improve the text, which we all implemented in the manuscript.</p>
+</body>
+</sub-article>
+</article>
