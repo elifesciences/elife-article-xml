@@ -1,0 +1,703 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">101204</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.101204</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.101204.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.4</article-version>
+</article-version-alternatives>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Scale matters: Large language models with billions (rather than millions) of parameters better match neural representations of natural language</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0002-1295-105X</contrib-id>
+<name>
+<surname>Hong</surname>
+<given-names>Zhuoqiao</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+<email>hongzhuoqiao@gmail.com</email>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0000-8500-6054</contrib-id>
+<name>
+<surname>Wang</surname>
+<given-names>Haocheng</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3096-0059</contrib-id>
+<name>
+<surname>Zada</surname>
+<given-names>Zaid</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Gazula</surname>
+<given-names>Harshvardhan</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Turner</surname>
+<given-names>David</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Aubrey</surname>
+<given-names>Bobbi</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Niekerken</surname>
+<given-names>Leonard</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Doyle</surname>
+<given-names>Werner</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2554-1850</contrib-id>
+<name>
+<surname>Devore</surname>
+<given-names>Sasha</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Dugan</surname>
+<given-names>Patricia</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Friedman</surname>
+<given-names>Daniel</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Devinsky</surname>
+<given-names>Orrin</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Flinker</surname>
+<given-names>Adeen</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3599-7168</contrib-id>
+<name>
+<surname>Hasson</surname>
+<given-names>Uri</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n2">**</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7013-5275</contrib-id>
+<name>
+<surname>Nastase</surname>
+<given-names>Samuel A</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n2">**</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<name>
+<surname>Goldstein</surname>
+<given-names>Ariel</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="author-notes" rid="n2">**</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution>Department of Psychology and the Neuroscience Institute, Princeton University</institution>, <city>Princeton</city>, <country>United States</country></aff>
+<aff id="a2"><label>2</label><institution>McGovern Institute for Brain Research, Massachusetts Institute of Technology</institution>, <city>Cambridge</city>, <country>United States</country></aff>
+<aff id="a3"><label>3</label><institution>New York University Grossman School of Medicine</institution>, <city>New York</city>, <country>United States</country></aff>
+<aff id="a4"><label>4</label><institution>Business School, Data Science Department and Cognitive Science Department, Hebrew University</institution>, <city>Jerusalem</city>, <country>Israel</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Ding</surname>
+<given-names>Nai</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Zhejiang University</institution>
+</institution-wrap>
+<city>Hangzhou</city>
+<country>China</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Bi</surname>
+<given-names>Yanchao</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Beijing Normal University</institution>
+</institution-wrap>
+<city>Beijing</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1" fn-type="equal"><label>*</label><p>equal first author, alphabetical order</p></fn>
+<fn id="n2" fn-type="equal"><label>**</label><p>equal senior author</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-10-22">
+<day>22</day>
+<month>10</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP101204</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-07-18">
+<day>18</day>
+<month>07</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-10-16">
+<day>16</day>
+<month>10</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.06.12.598513"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Hong et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Hong et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-101204-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Recent research has used large language models (LLMs) to study the neural basis of naturalistic language processing in the human brain. LLMs have rapidly grown in complexity, leading to improved language processing capabilities. However, neuroscience researchers haven’t kept up with the quick progress in LLM development. Here, we utilized several families of transformer-based LLMs to investigate the relationship between model size and their ability to capture linguistic information in the human brain. Crucially, a subset of LLMs were trained on a fixed training set, enabling us to dissociate model size from architecture and training set size. We used electrocorticography (ECoG) to measure neural activity in epilepsy patients while they listened to a 30-minute naturalistic audio story. We fit electrode-wise encoding models using contextual embeddings extracted from each hidden layer of the LLMs to predict word-level neural signals. In line with prior work, we found that larger LLMs better capture the structure of natural language and better predict neural activity. We also found a log-linear relationship where the encoding performance peaks in relatively earlier layers as model size increases. We also observed variations in the best-performing layer across different brain regions, corresponding to an organized language processing hierarchy.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Changed co-first author name to official government name</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>How has the functional architecture of the human brain come to support everyday language processing? Modeling the underlying neural basis that supports natural language processing has proven to be prohibitively challenging for many years. Deep learning has brought about a transformative shift in our ability to model natural language in recent years. Leveraging principles from statistical learning theory and using vast real-world datasets, deep learning algorithms can reproduce complex natural behaviors in visual perception, speech analyses, and even human-like conversations. With the recent emergence of large language models (LLMs), we are finally beginning to see explicit computational models that respect and reproduce the context-rich complexity of natural language and communication. Remarkably, these models learn from much the same shared space as humans: from real-world language generated by humans. LLMs rely on simple self-supervised objectives (e.g., next-word prediction) to learn to produce context-specific linguistic outputs from real-world corpora—and, in the process, implicitly encode the statistical structure of natural language into a multidimensional embedding space (<xref ref-type="bibr" rid="c25">Manning et al., 2020</xref>; <xref ref-type="bibr" rid="c23">Linzen &amp; Baroni, 2021</xref>; Pavlick, 2022).</p>
+<p>Critically, there appears to be an alignment between the internal activity in LLMs for each word embedded in a natural text and the internal activity in the human brain while processing the same natural text. Indeed, recent studies have revealed that the internal, layer-by-layer representations learned by these models predict human brain activity during natural language processing better than any previous generations of models (<xref ref-type="bibr" rid="c6">Caucheteux &amp; King, 2022</xref>; <xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>, <xref ref-type="bibr" rid="c11">2024</xref>; <xref ref-type="bibr" rid="c21">Kumar et al., 2022</xref>; <xref ref-type="bibr" rid="c32">Schrimpf et al., 2021</xref>).</p>
+<p>LLMs, however, contain millions or billions of parameters, making them highly expressive learning algorithms. Combined with vast training text, these models can encode a rich array of linguistic structures—ranging from low-level morphological and syntactic operations to high-level contextual meaning—in a high-dimensional embedding space. Recent work has argued that the “size” of these models—the number of learnable parameters—is critical, as some linguistic competencies only emerge in larger models with more parameters (<xref ref-type="bibr" rid="c2">Bommasani et al., 2021</xref>; <xref ref-type="bibr" rid="c19">Kaplan et al., 2020</xref>; <xref ref-type="bibr" rid="c25">Manning et al., 2020</xref>; <xref ref-type="bibr" rid="c34">Sutton, 2019</xref>; <xref ref-type="bibr" rid="c41">Zhang et al., 2021</xref>). For instance, in-context learning (<xref ref-type="bibr" rid="c24">Liu et al., 2021</xref>; <xref ref-type="bibr" rid="c38">Xie et al., 2021</xref>) involves a model acquiring the ability to carry out a task for which it was not initially trained, based on a few-shot examples provided by the prompt. This capability is present in the bigger GPT-3 (<xref ref-type="bibr" rid="c3">Brown et al., 2020</xref>) but not in the smaller GPT-2, despite both models having similar architectures. This observation suggests that simply scaling up models produces more human-like language processing. Such an observation is intriguing. While building and training LLMs with billions to trillions of parameters is an impressive engineering achievement, such artificial neural networks are tiny compared to cortical neural networks. In the human brain, each cubic millimeter of cortex contains a remarkable number of about 150 million synapses, and the language network can cover a few centimeters of the cortex (<xref ref-type="bibr" rid="c4">Cantlon &amp; Piantadosi, 2024</xref>). Thus, scaling could be a property that the human brain, similar to LLMs, can utilize to enhance performance.</p>
+<p>Our study focuses on one crucial question: what is the relationship between the size of an LLM and how well it can predict linguistic information encoded in the brain? In this study, we define “model size” as the number of all trainable parameters in the model. In addition to size, we also consider the model’s expressivity: its capacity to predict the statistics of natural language. Perplexity measures expressivity by evaluating the average level of surprise or uncertainty the model attributes to a sequence of words. Larger models possess a greater capacity for expressing linguistic structure, which tends to yield lower (better) perplexity scores (<xref ref-type="bibr" rid="c29">Radford et al., 2019</xref>). In this paper, we hypothesized that larger models that capture linguistic structure more accurately (lower perplexity) would better capture neural activity.</p>
+<p>To test this hypothesis, we used electrocorticography (ECoG) to measure neural activity in ten epilepsy patient participants while they listened to a 30-minute audio podcast. Invasive ECoG recordings more directly measure neural activity than non-invasive neuroimaging modalities like fMRI, with much higher temporal resolution. We extracted contextual embeddings at each hidden layer from multiple families of transformer-based LLMs, including GPT-2, GPT-Neo, OPT, and Llama 2 (<xref ref-type="bibr" rid="c7"><italic>EleutherAI</italic>, n.d.</xref>; <xref ref-type="bibr" rid="c29">Radford et al., 2019</xref>; <xref ref-type="bibr" rid="c36">Touvron et al., 2023</xref>; <xref ref-type="bibr" rid="c42">S. Zhang et al., 2022</xref>), and fit electrode-wise encoding models to predict neural activity for each word in the podcast stimulus. We found that larger language models, with greater expressivity and lower perplexity, better predicted neural activity (<xref ref-type="bibr" rid="c1">Antonello et al., 2023</xref>). This result was consistent across all model families. Critically, we then focus on a particular family of models (GPT-Neo), which span a broad range of sizes and are trained on the same text corpora. This allowed us to assess the effect of scaling on the match between LLMs and the human brain while keeping the size of the training set constant.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>To investigate scaling effects between model size and the alignment of the model internal representations (embeddings) with brain activity, we utilized four families of transformer-based language models: GPT-2, GPT-Neo, OPT, and Llama 2 (<xref ref-type="bibr" rid="c7"><italic>EleutherAI</italic>, n.d.</xref>; <xref ref-type="bibr" rid="c29">Radford et al., 2019</xref>; <xref ref-type="bibr" rid="c36">Touvron et al., 2023</xref>; <xref ref-type="bibr" rid="c42">S. Zhang et al., 2022</xref>). These models span 82 million to 70 billion parameters and 6 to 80 layers (<xref rid="tbl1" ref-type="table">Table 1</xref>). Different families of models vary in architectural details and are trained on different text corpora. To control for these confounding variables, we also focused on the GPT-Neo family (<xref ref-type="bibr" rid="c10">Gao et al., 2020</xref>) with a comprehensive range of models that vary only in size (but not training data), spanning 125 million to 20 billion parameters. For simplicity, we renamed the four models as “SMALL” (gpt-neo-125M), “MEDIUM” (gpt-neo-1.3B), “LARGE” (gpt-neo-2.7B), and “XL” (gpt-neox-20b).</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Summary of four families of open large language models: GPT-2, GPT-Neo, OPT, and Llama-2.</title>
+<p>Context length is the maximum context length for the model, ranging from 1024 to 4096 tokens. The model name is the model’s name as it appears in the transformers package from Hugging Face (Wolf et al., 2019). Model size is the total number of parameters; M represents million, and B represents billion. The number of layers is the depth of the model, and the hidden embedding size is the internal width.</p></caption>
+<graphic xlink:href="598513v4_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<p>We collected ECoG data from ten epilepsy patients while they listened to a 30-minute audio podcast (<xref ref-type="bibr" rid="c33"><italic>So a Monkey and a Horse Walk into a Bar</italic>, 2017</xref>). We extracted high-frequency broadband power (70–200 Hz) in 200 ms bins at lags ranging from −2000 ms to +2000 ms relative to the onset of each word in the podcast stimulus. We ran a preliminary encoding analysis using non-contextual language embeddings (GloVe; Pennington et al., 2014) to select a subset of 160 language-sensitive electrodes across the cortical language network of eight patients; all subsequent analyses were performed within this set of electrodes (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>). Using a podcast transcription, we next extracted contextual embeddings from each hidden layer across the four families of autoregressive large language models. We used the maximum context length of each word for each language model. We constructed linear, electrode-wise encoding models using contextual embeddings from every layer of each language model to predict neural activity for each word in the stimulus. We estimated and evaluated the encoding models using a 10-fold cross-validation procedure: ridge regression was used to estimate a weight matrix for predicting word-by-word neural signals in 9 out of 10 contiguous training segments of the podcast; for each electrode, we then calculated the Pearson correlation between predicted and actual word-by-word neural signals for the left-out test segment of the podcast. We repeated this analysis for 161 lags from −2,000 ms to 2,000 ms in 25 ms increments relative to word onset (<xref rid="fig1" ref-type="fig">Fig. 1</xref>).</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Naturalistic language comprehension model comparison framework.</title>
+<p><bold>A.</bold> Participants listened to a 30-minute story while undergoing ECoG recording. A word-level aligned transcript was obtained and served as input to four language models of varying size from the same GPT-Neo family. <bold>B.</bold> For every layer of each model, a separate linear regression encoding model was fitted on a training portion of the story to obtain regression weights that can predict each electrode separately. Then, the encoding models were tested on a held-out portion of the story and evaluated by measuring the Pearson correlation of their predicted signal with the actual signal. <bold>C.</bold> Encoding model performance (correlations) was measured as the average over electrodes and compared between the different language models.</p></caption>
+<graphic xlink:href="598513v4_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Prior to encoding analysis, we measured the “expressiveness” of different language models—that is, their capacity to predict the structure of natural language. Perplexity quantifies expressivity as the average level of surprise or uncertainty the model assigns to a sequence of words. A lower perplexity value indicates a better alignment with linguistic statistics and a higher accuracy during next-word prediction. For each model, we computed perplexity values for the podcast transcript. Consistent with prior research (<xref ref-type="bibr" rid="c17">Hosseini et al., 2022</xref>; <xref ref-type="bibr" rid="c19">Kaplan et al., 2020</xref>), we found that perplexity decreases as model size increases (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). In simpler terms, we confirmed that larger models better predict the structure of natural language.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Model performance improves with increasing model size.</title>
+<p><bold>A.</bold> The relationship between model size (measured as the number of parameters, shown on a log scale) and perplexity: as the model size increases, perplexity decreases. Each data point corresponds to a model. <bold>B.</bold> The relationship between model size (shown on a log scale) and brain encoding performance: correlations for each model are calculated by averaging the maximum correlations across all lags and layers across electrodes. As the model size increases, the encoding performance increases. Each data point corresponds to a model. The error bars represent standard error. <bold>C.</bold> For the GPT-Neo model family, the relationship between encoding performance and layer number. Encoding performance is best for intermediate layers. The shaded colors represent standard error. <bold>D</bold>. Same as C, but the layer number was transformed to a layer percentage for better model comparison.</p></caption>
+<graphic xlink:href="598513v4_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<sec id="s2a">
+<title>Larger language models better predict brain activity</title>
+<p>We compared encoding model performance across language models at different sizes. For each electrode, we obtained the maximum encoding performance correlation across all lags and layers, then averaged these correlations across electrodes to derive the overall maximum correlation for each model (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>). Using ECoG neural signals with superior spatiotemporal resolution, we replicated the previous fMRI work reporting a log-linear relationship between model size and encoding performance (<xref ref-type="bibr" rid="c1">Antonello et al., 2023</xref>), indicating that larger models better predict neural activity. We also observed a plateau in the maximal encoding performance, occurring around 13 billion parameters (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>).</p>
+<p>To dissociate model size and control for other confounding variables, we next focused on the GPT-Neo models and assessed layer-by-layer and lag-by-lag encoding performance. For each layer of each model, we identified the maximum encoding performance correlation across all lags and averaged this maximum correlation across electrodes (<xref rid="fig2" ref-type="fig">Fig. 2C</xref>). Additionally, we converted the absolute layer number into a percentage of the total number of layers to compare across models (<xref rid="fig2" ref-type="fig">Fig. 2D</xref>). We found that correlations for all four models typically peak at intermediate layers, forming an inverted U-shaped curve, corroborating with previous fMRI findings (<xref ref-type="bibr" rid="c5">Caucheteux et al., 2021</xref>; <xref ref-type="bibr" rid="c32">Schrimpf et al., 2021</xref>; <xref ref-type="bibr" rid="c35">Toneva &amp; Wehbe, 2019</xref>). Furthermore, we replicated the phenomenon observed by (<xref ref-type="bibr" rid="c1">Antonello et al., 2023</xref>), wherein smaller models (e.g. SMALL) achieve maximum encoding performance approximately three-quarters into the model, while larger models (e.g. XL) peak in relatively earlier layers before gradually declining. The size of the contextual embedding varies across models depending on the model’s size and architecture. This can range from 762 in the smallest distill GPT2 model to 8192 in the largest LLAMA-2 70 billion parameter model. To control for the different embedding dimensionality across models, we standardized all embeddings to the same size using principal component analysis (PCA) and trained linear encoding models using ordinary least-squares regression, replicating all results (<xref ref-type="fig" rid="figs1">Fig. S1</xref>). Leveraging the high temporal resolution of ECoG, we compared the encoding performance of models across various lags relative to word onset. We identified the optimal layer for each electrode and model and then averaged the encoding performance across electrodes. We found that XL significantly outperformed SMALL in encoding models for most lags from 2000 ms before word onset to 575 ms after word onset (<xref ref-type="fig" rid="figs2">Fig. S2</xref>).</p>
+</sec>
+<sec id="s2b">
+<title>Encoding model performance across electrodes and brain regions</title>
+<p>Next, we examined the differences in the encoding model across electrodes and brain regions. For each of the 160 electrodes, we identified the maximum encoding performance correlation across all lags and layers (<xref rid="fig3" ref-type="fig">Fig. 3A</xref>). Consistent with prior studies (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>, <xref ref-type="bibr" rid="c12">2023</xref>), our encoding model for SMALL achieved the highest correlations in superior temporal gyrus (STG) and inferior frontal gyrus (IFG). We then compared the encoding performances between SMALL and the other three models, plotting the percent change in encoding performance relative to SMALL for each electrode (<xref rid="fig3" ref-type="fig">Fig. 3B</xref>). Across all three comparisons, we observed significantly higher encoding performance for the larger models in approximately one-third of the 160 electrodes (two-sided pairwise t-test across cross-validation folds for each electrode, <italic>p</italic> &lt; 0.05, Bonferroni corrected).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>A. Maximum correlation per electrode for SMALL.</title>
+<p>The encoding model achieves the highest correlations in STG and IFG. <bold>B.</bold> For MEDIUM, LARGE, and XL, the percentage difference in correlation relative to SMALL for all electrodes with significant encoding differences. The encoding performance is significantly higher for the bigger models for almost all electrodes across the brain (pairwise t-test across cross-validation folds). <bold>C.</bold> Maximum encoding correlations for SMALL and XL for each ROI (mSTG, aSTG, BA44, BA45, and TP area). The encoding performance is significantly higher for XL for all ROIs except TP. Each data point corresponds to an electrode in the corresponding ROI. <bold>D.</bold> Percent difference in correlation relative to SMALL for all ROIs. As model size increases, the percent change in encoding performance also increases for mSTG, aSTG, and BA44. After the medium model, the percent change in encoding performance plateaus for BA45 and TP. The shaded colors represent standard error.</p></caption>
+<graphic xlink:href="598513v4_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>We then compared the maximum correlations between SMALL and XL models across five regions of interest (ROIs) across the cortical language network (<xref ref-type="fig" rid="figs3">Fig. S3</xref>): middle superior temporal gyrus (mSTG, n = 28 electrodes), anterior superior temporal gyrus (aSTG, n = 13 electrodes), Brodmann area 44 (BA44, n = 19 electrodes), Brodmann area 45 (BA45, n = 26 electrodes), and temporal pole (TP, n = 6 electrodes). Encoding performance for the XL model significantly surpassed that of the SMALL model in mSTG, aSTG, BA44, and BA45 (<xref rid="fig3" ref-type="fig">Fig. 3C</xref>, <xref ref-type="table" rid="tbls1">Table S1</xref>). Additionally, we calculated the percent change in encoding performance relative to SMALL for each brain region by averaging across electrodes and plotting against model size (<xref rid="fig3" ref-type="fig">Fig. 3D</xref>). As model size increases, the fit to the brain nominally increases across all observed regions. However, the increase plateaued after the Medium model for regions BA45 and TP.</p>
+</sec>
+<sec id="s2c">
+<title>The best layer for encoding performance varies with model size</title>
+<p>In the previous analyses, we observed that encoding performance peaks at intermediate to later layers for some models and relatively earlier layers for others (<xref rid="fig1" ref-type="fig">Fig. 1C</xref>, 1D). To examine this phenomenon more closely, we selected the best layer for each electrode based on its maximum encoding performance across lags. To account for the variation in depth across models, we computed the best layer as the percentage of each model’s overall depth. We found that as models increase in size, peak encoding performance tends to occur in relatively earlier layers, being closer to the input in larger models (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>). This was consistent across multiple model families, where we found a log-linear relationship between model size and best encoding layers (<xref rid="fig4" ref-type="fig">Fig. 4B</xref>).</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>Relative layer preference varies with model size.</title>
+<p><bold>A.</bold> Relative layer (in percentage of total number of layers) with peak encoding performance for all four GPT-Neo models: the larger the model size, the earlier relative layer where the encoding performance peaks. <bold>B.</bold> The relationship between model size (shown on a log scale) and best encoding layer (in percentage) for all four model families: as the model size increases, the best encoding layer (in percentage) decreases, although the rate of decrease is different between model families. We estimate a linear regression model per model family of the form: best percent layer ∼ log(model size). The slopes (<italic>β</italic>) indicate the decrease in the relative best-performing layer at increasing log model size; p-values are obtained from a Wald test against the null hypothesis that the slope is 0. Each data point corresponds to a model. <bold>C.</bold> Best relative encoding layer (in percentage) for all four GPT-Neo models. <bold>D</bold>. Best encoding layer for XL with electrodes that peak in the first half of the model (Layer 0 to 22). <bold>E.</bold> Best encoding layer (in percentage) for SMALL and XL for each ROI (mSTG, aSTG, BA44, BA45, and TP). Each data point corresponds to an electrode in the corresponding ROI.</p></caption>
+<graphic xlink:href="598513v4_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>We further observed variations of the best encoding layers across the brain within the same model. We found that the language processing hierarchy was better reflected in the best encoding layer preference for smaller than for larger models (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>). Specifically, in the SMALL model, peak encoding was observed in earlier layers for STG electrodes and in later layers for IFG electrodes (<xref rid="fig4" ref-type="fig">Fig.4C</xref>, <xref ref-type="table" rid="tbls2">Table S2</xref>). A similar trend is evident in MEDIUM and partially in LARGE models, but not in the XL model, where the majority of electrodes exhibited peak encoding in the first 25% of all layers (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>). However, despite the XL model showing less variance in the best layer distributions across cortex, we found the same hierarchy present for the first half of the model (layers 0–22, <xref rid="fig4" ref-type="fig">Fig. 4D</xref>). In this analysis, we observed that the best relative layer nominally increases from mSTG electrodes (M = 21.916, SD = 10.556) to aSTG electrodes (M = 29.720, SD = 17.979) to BA45 (M = 30.157, SD = 16.039) and TP electrodes (M = 31.061, SD = 16.305), and finally to BA44 electrodes (M = 36.962, SD = 13.140, <xref rid="fig4" ref-type="fig">Fig. 4E</xref>).</p>
+</sec>
+<sec id="s2d">
+<title>The best lag for encoding performance does not vary with model size</title>
+<p>Leveraging the high temporal resolution of ECoG, we investigated whether peak lag for encoding performance relative to word onset is affected by model size. For each ROI, we identified the optimal layer for each electrode in the ROI and then averaged the encoding performance (<xref rid="fig5" ref-type="fig">Fig. 5A</xref>). Within the SMALL model, we observed a trend where putatively lower-level regions of the language processing hierarchy peak earlier relative to word onset: mSTG encoding performance peaks around 25 ms before word onset, followed by aSTG encoding peak 225 ms after onset, and subsequently TP, BA44, and BA45 peak at approximately 350 ms. Within the XL model, we observed a similar trend, with mSTG encoding peaking first, followed by aSTG encoding peak, and finally, TP, BA44, and BA45 encodings. We also identified the lags when the encoding performance peaks for each electrode and visualized them on the brain map (<xref rid="fig5" ref-type="fig">Fig. 5B</xref>). Notably, the optimal lags for each electrode do not exhibit significant variation when transitioning from SMALL to XL.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5.</label>
+<caption><title>Encoding performance across lags does not vary with model size.</title>
+<p><bold>A.</bold> Average ROI encoding performance for SMALL and XL models. mSTG encoding peaks first before word onset, then aSTG peaks after word onset, followed by BA44, BA45, and TP encoding peaks at around 400 ms after onset. The dots represent the peak lag for each ROI. <bold>B.</bold> Lag with best encoding performance correlation for each electrode, using SMALL and XL model embeddings. Only electrodes with the best lags that fall within 600 ms before and after word onset are plotted.</p></caption>
+<graphic xlink:href="598513v4_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this study, we investigated how the quality of model-based predictions of neural activity scales with LLM model size (i.e., the number of parameters across layers). Prior studies have shown that encoding models constructed from the internal embeddings of LLMs provide remarkably good predictions of neural activity during natural language comprehension (<xref ref-type="bibr" rid="c32">Schrimpf et al., 2021</xref>; <xref ref-type="bibr" rid="c6">Caucheteux &amp; King, 2022</xref>; <xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>). Corroborating prior work using fMRI (<xref ref-type="bibr" rid="c1">Antonello et al., 2023</xref>), across a range of models with 82 million to 70 billion parameters, we found that larger models are better aligned with neural activity. This result was consistent across several autoregressive LLM families varying in architectural details and training corpora and within a single model family trained on the same corpora and varying only in size. Our findings indicate that this trend does not trivially result from arbitrarily increasing model complexity: (a) models of varying size were estimated using regularized regression and evaluated using out-of-sample prediction to minimize the risks of overfitting, and (b) we obtained qualitatively similar results with explicitly matched dimensionality using PCA. Combined with the observation that larger models yield lower perplexity, our findings suggest that larger models’ capacity for learning the structure of natural language also yields better predictions of brain activity. By leveraging their increased size and representational power, these models have the potential to provide valuable insights into the mechanisms underlying language comprehension.</p>
+<p>We focused on a particular family of models (GPT-Neo) trained on the same corpora and varying only in size to investigate how model size impacts layerwise encoding performance across lags and ROIs. We found that model-brain alignment improves consistently with increasing model size across the cortical language network. However, the increase plateaued after the MEDIUM model for regions BA45 and TP, possibly due to already high encoding correlations for the SMALL model and a small number of electrodes in the area, respectively.</p>
+<p>A more detailed investigation of layerwise encoding performance revealed a log-linear relationship where peak encoding performance tends to occur in relatively earlier layers as both model size and expressivity increase (<xref ref-type="bibr" rid="c26">Mischler et al., 2024</xref>). This is an unexpected extension of prior work on both language (<xref ref-type="bibr" rid="c6">Caucheteux &amp; King, 2022</xref>; <xref ref-type="bibr" rid="c21">Kumar et al., 2022</xref>; <xref ref-type="bibr" rid="c35">Toneva &amp; Wehbe, 2019</xref>) and vision (<xref ref-type="bibr" rid="c18">Jiahui et al., 2023</xref>), where peak encoding performance was found at late-intermediate layers. Moreover, we observed variations in best relative layers across different brain regions, corresponding to a language processing hierarchy. This is particularly evident in smaller models and early layers of larger models. These findings indicate that as LLMs increase in size, the later layers of the model may contain representations that are increasingly divergent from the brain during natural language comprehension. Previous research has indicated that later layers of LLMs may not significantly contribute to benchmark performances during inference (<xref ref-type="bibr" rid="c8">Fan et al., 2024</xref>; <xref ref-type="bibr" rid="c14">Gromov et al., 2024</xref>). Future studies should explore the linguistic features, or absence thereof, within these later-layer representations of larger LLMs. Leveraging the high temporal resolution of ECoG, we found that putatively lower-level regions of the language processing hierarchy peak earlier than higher-level regions. However, we did not observe variations in the optimal lags for encoding performance across different model sizes. Since we exclusively employ textual LLMs, which lack inherent temporal information due to their discrete token-based nature, future studies utilizing multimodal LLMs integrating continuous audio or video streams may better unravel the relationship between model size and temporal dynamic representations in LLMs.</p>
+<p>Our podcast stimulus comprised ∼5,000 words over a roughly 30-minute episode. Although this is a rich language stimulus, naturalistic stimuli of this kind have relatively low power for modeling infrequent linguistic structures (<xref ref-type="bibr" rid="c15">Hamilton &amp; Huth, 2020</xref>). While perplexity for the podcast stimulus continued to decrease for larger models, we observed a plateau in predicting brain activity for the largest LLMs. The largest models learn to capture relatively nuanced or rare linguistic structures, but these may occur too infrequently in our stimulus to capture much variance in brain activity. Encoding performance may continue to increase for the largest models with more extensive stimuli (<xref ref-type="bibr" rid="c1">Antonello et al., 2023</xref>), motivating future work to pursue dense sampling with numerous, diverse naturalistic stimuli (<xref ref-type="bibr" rid="c12">Goldstein et al., 2023</xref>; <xref ref-type="bibr" rid="c22">LeBel et al., 2023</xref>).</p>
+<p>The advent of deep learning has marked a tectonic shift in how we model brain activity in more naturalistic contexts, such as real-world language comprehension (<xref ref-type="bibr" rid="c16">Hasson et al., 2020</xref>; <xref ref-type="bibr" rid="c30">Richards et al., 2019</xref>). Traditionally, neuroscience has sought to extract a limited set of interpretable rules to explain brain function. However, deep learning introduces a new class of highly parameterized models that can challenge and enhance our understanding. The vast number of parameters in these models allows them to achieve human-like performance on complex tasks like language comprehension and production. It is important to note that LLMs have fewer parameters than the number of synapses in any human cortical functional network. Furthermore, the complexity of what these models learn enables them to process natural language in real-life contexts as effectively as the human brain does. Thus, the explanatory power of these models is in achieving such expressivity based on relatively simple computations in pursuit of a relatively simple objective function (e.g., next-word prediction). As we continue to develop larger, more sophisticated models, the scientific community is tasked with advancing a framework for understanding these models to better understand the intricacies of the neural code that supports natural language processing in the human brain.</p>
+</sec>
+<sec id="s4">
+<title>Materials and methods</title>
+<sec id="s4a">
+<title>Participants</title>
+<p>Ten patients (6 female, 20-48 years old) with treatment-resistant epilepsy undergoing intracranial monitoring with subdural grid and strip electrodes for clinical purposes participated in the study. Two patients consented to have an FDA-approved hybrid clinical research grid implanted, which includes standard clinical electrodes and additional electrodes between clinical contacts. The hybrid grid provides a broader spatial coverage while maintaining the same clinical acquisition or grid placement. All participants provided informed consent following the protocols approved by the Institutional Review Board of the New York University Grossman School of Medicine. The patients were explicitly informed that their participation in the study was unrelated to their clinical care and that they had the right to withdraw from the study at any time without affecting their medical treatment. One patient was removed from further analyses due to excessive epileptic activity and low SNR across all experimental data collected during the day.</p>
+</sec>
+<sec id="s4b">
+<title>Stimuli</title>
+<p>Participants listened to a 30-minute auditory story stimulus, “So a Monkey and a Horse Walk Into a Bar: Act One, Monkey in the Middle,” (<xref ref-type="bibr" rid="c33"><italic>So a Monkey and a Horse Walk into a Bar</italic>, 2017</xref>) from the This American Life Podcast. The audio narrative is 30 minutes long and consists of approximately 5000 words. Participants were not explicitly aware that we would examine word prediction in our subsequent analyses. The onset of each word was marked using the Penn Phonetics Lab Forced Aligner (<xref ref-type="bibr" rid="c40">Yuan &amp; Liberman, 2008</xref>) and manually validated and adjusted as needed. The stimulus and alignment processes are described in prior work (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>).</p>
+</sec>
+<sec id="s4c">
+<title>Data acquisition and preprocessing</title>
+<p>Across all patients, 1106 electrodes were placed on the left and 233 on the right hemispheres (signal sampled at or downsampled to 512 Hz). Brain activity was recorded from a total of 1339 intracranially implanted subdural platinum-iridium electrodes embedded in silastic sheets (2.3mm diameter contacts, Ad-Tech Medical Instrument; for the hybrid grids, 64 standard contacts had a diameter of 2 mm and an additional 64 contacts were 1mm diameter, PMT corporation, Chananssen, MN). We also preprocessed the neural data to get the power in the high-gamma-band activity (70-200 HZ). The full description of ECoG recording procedure is provided in prior work (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>).</p>
+<p>Electrode-wise preprocessing consisted of four main stages: First, large spikes exceeding four quartiles above and below the median were removed, and replacement samples were imputed using cubic interpolation. Second, the data were re-referenced using common average referencing. Third, 6-cycle wavelet decomposition was used to compute the high-frequency broadband (HFBB) power in the 70–200 Hz band, excluding 60, 120, and 180 Hz line noise. In addition, the HFBB time series of each electrode was log-transformed and z-scored. Fourth, the signal was smoothed using a Hamming window with a kernel size of 50 ms. The filter was applied in both the forward and reverse directions to maintain the temporal structure. Additional preprocessing details can be found in prior work (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>).</p>
+</sec>
+<sec id="s4d">
+<title>Electrode selection</title>
+<p>We used a nonparametric statistical procedure with correction for multiple comparisons(<xref ref-type="bibr" rid="c27">Nichols &amp; Holmes, 2002</xref>) to identify significant electrodes. We randomized each electrode’s signal phase at each iteration by sampling from a uniform distribution. This disconnected the relationship between the words and the brain signal while preserving the autocorrelation in the signal. We then performed the encoding procedure for each electrode (for all lags). We repeated this process 5000 times. After each iteration, the encoding model’s maximal value across all lags was retained for each electrode. We then took the maximum value for each permutation across electrodes. This resulted in a distribution of 5000 values, which was used to determine the significance for all electrodes. For each electrode, a <italic>p</italic>-value was computed as the percentile of the non-permuted encoding model’s maximum value across all lags from the null distribution of 5000 maximum values. Performing a significance test using this randomization procedure evaluates the null hypothesis that there is no systematic relationship between the brain signal and the corresponding word embedding. This procedure yielded a <italic>p</italic>-value per electrode, corrected for the number of models tested across all lags within an electrode. To further correct for multiple comparisons across all electrodes, we used a false-discovery rate (FDR). Electrodes with <italic>q</italic>-values less than .01 are considered significant. This procedure identified 160 electrodes from eight patients in the left hemisphere’s early auditory, motor cortex, and language areas.</p>
+</sec>
+<sec id="s4e">
+<title>Perplexity</title>
+<p>We computed the perplexity values for each LLM using our story stimulus, employing a stride length half the maximum token length of each model (stride 512 for GPT-2 models, stride 1024 for GPT-Neo models, stride 1024 for OPT models, and stride 2048 for Llama-2 models). These stride values yield the lowest perplexity value for each model. We also replicated our results on fixed stride length across model families (stride 512, 1024, 2048, 4096).</p>
+</sec>
+<sec id="s4f">
+<title>Contextual embeddings</title>
+<p>We extracted contextual embeddings from all layers of four families of autoregressive large language models. The GPT-2 family, particularly <italic>gpt2-xl</italic>, has been extensively used in previous encoding studies (<xref ref-type="bibr" rid="c13">Goldstein et al., 2022</xref>; <xref ref-type="bibr" rid="c32">Schrimpf et al., 2021</xref>). Here we include distilGPT-2 as part of the GPT-2 family. The GPT-Neo family, released by EleutherAI (<xref ref-type="bibr" rid="c7"><italic>EleutherAI</italic>, n.d.</xref>), features three models plus GPT-Neox-20b, all trained on the Pile dataset (<xref ref-type="bibr" rid="c10">Gao et al., 2020</xref>). These models adhere to the same tokenizer convention, except for GPT-Neox-20b, which assigns additional tokens to whitespace characters (<xref ref-type="bibr" rid="c7"><italic>EleutherAI</italic>, n.d.</xref>). The OPT and Llama-2 families are released by MetaAI (<xref ref-type="bibr" rid="c36">Touvron et al., 2023</xref>; <xref ref-type="bibr" rid="c42">S. Zhang et al., 2022</xref>). For Llama-2, we use the pre-trained versions before any reinforcement learning from human feedback. All models we used are implemented in the HuggingFace environment (<xref ref-type="bibr" rid="c37">Tunstall et al., 2022</xref>). We define “model size” as the combined width of a model’s hidden layers and its number of layers, determining the total parameters. We first converted the words from the raw transcript (including punctuation and capitalization) to tokens comprising whole words or sub-words (e.g., (1) there’s → (1) there (2) ‘s). All models in the same model family adhere to the same tokenizer convention, except for GPT-Neox-20B, whose tokenizer assigns additional tokens to whitespace characters (<xref ref-type="bibr" rid="c7"><italic>EleutherAI</italic>, n.d.</xref>). To facilitate a fair comparison of the encoding effect across different models, we aligned all tokens in the story across all models in each model family. For each word, we utilized a context window with the maximum context length of each language model containing prior words from the podcast (i.e., the word and its history) and extracted the embedding for the final word in the sequence (i.e., the word itself).</p>
+<p>Transformer-based language model consists of blocks containing a self-attention sub-block and a subsequent feedforward sub-block. The output of a block is obtained through a residual connection applied to the sum of the block’s input and the output of the feedforward sub-block. The self-attention output is added to this sum later in the layer normalization step. This output is commonly referred to as the “hidden state” of language models. This hidden state is considered the contextual embedding for the preceding block. For convenience, we refer to the blocks as “layers”; that is, the hidden state at the output of block 3 is referred to as the contextual embedding for layer 3. To generate the contextual embeddings for each layer, we store each layer’s hidden state for each word in the input text. Fortunately, the HuggingFace implementation of those language models automatically stores these hidden states when a forward pass of the model is conducted. Different models have different numbers of layers and embeddings of different dimensionality. For instance, gpt-neo-125M (SMALL) has 12 layers, and the embeddings at each layer are 768-dimensional vectors. Since we generate an embedding for each word at every layer, this results in 12 768-dimensional embeddings per word.</p>
+</sec>
+<sec id="s4g">
+<title>Encoding models</title>
+<p>Linear encoding models were estimated at each lag (−2000 ms to 2000 ms in 25-ms increments) relative to word onset (0 ms) to predict the brain activity for each word from the corresponding contextual embedding. Before fitting the encoding model, we smoothed the signal using a rolling 200-ms window (i.e., for each lag, the model learns to predict the average single +-100 ms around the lag). We estimated and evaluated the encoding models using a 10-fold cross-validation procedure: ridge regression was used to estimate a weight matrix for predicting word-by-word neural signals in 9 out of 10 contiguous training segments of the podcast; for each electrode, we then calculated the Pearson correlation between predicted and actual neural signals for the left-out test segment of the podcast. This procedure was performed for all layers of contextual embeddings from each LLM.</p>
+</sec>
+<sec id="s4h">
+<title>Dimensionality reduction</title>
+<p>To control for the different hidden embedding sizes across models, we standardized all embeddings to the same size using principal component analysis (PCA) and trained linear regression encoding models using ordinary least-squares regression, replicating all results (<xref ref-type="fig" rid="figs1">Fig. S1</xref>). This procedure effectively focuses our subsequent analysis on the 50 orthogonal dimensions in the embedding space that account for the most variance in the stimulus. We compute PCA separately on the training and testing set to avoid data leakage.</p>
+</sec>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Antonello</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Vaidya</surname>, <given-names>A.</given-names></string-name>, &amp; <string-name><surname>Huth</surname>, <given-names>A. G.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Scaling laws for language encoding models in fMRI</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2305.11863">http://arxiv.org/abs/2305.11863</ext-link></mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Bommasani</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Hudson</surname>, <given-names>D. A.</given-names></string-name>, <string-name><surname>Adeli</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Altman</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Arora</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>von Arx</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Bernstein</surname>, <given-names>M. S.</given-names></string-name>, <string-name><surname>Bohg</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Bosselut</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Brunskill</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Brynjolfsson</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Buch</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Card</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Castellon</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Chatterji</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Creel</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Davis</surname>, <given-names>J. Q.</given-names></string-name>, <string-name><surname>Demszky</surname>, <given-names>D.</given-names></string-name>, <etal>…</etal> <string-name><surname>Liang</surname>, <given-names>P.</given-names></string-name></person-group> (<year>2021</year>). <article-title>On the Opportunities and Risks of Foundation Models</article-title>. In <source>arXiv [cs.LG]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2108.07258">http://arxiv.org/abs/2108.07258</ext-link></mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Brown</surname>, <given-names>T. B.</given-names></string-name>, <string-name><surname>Mann</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Ryder</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Subbiah</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Kaplan</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Dhariwal</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Neelakantan</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Shyam</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Sastry</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Askell</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Agarwal</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Herbert-Voss</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Krueger</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Henighan</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Child</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Ramesh</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Ziegler</surname>, <given-names>D. M.</given-names></string-name>, <string-name><surname>Wu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Winter</surname>, <given-names>C.</given-names></string-name>, <etal>…</etal> <string-name><surname>Amodei</surname>, <given-names>D.</given-names></string-name></person-group> (<year>2020</year>). <article-title>Language Models are Few-Shot Learners</article-title>. <conf-name>Advances in Neural Information Processing Systems</conf-name>, <elocation-id>abs/2005.14165</elocation-id>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html">https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html</ext-link></mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cantlon</surname>, <given-names>J. F.</given-names></string-name>, &amp; <string-name><surname>Piantadosi</surname>, <given-names>S. T</given-names></string-name></person-group>. (<year>2024</year>). <article-title>Uniquely human intelligence arose from expanded information capacity</article-title>. <source>Nature Reviews Psychology</source>, <fpage>1</fpage>–<lpage>19</lpage>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Caucheteux</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Gramfort</surname>, <given-names>A.</given-names></string-name>, &amp; <string-name><surname>King</surname>, <given-names>J.-R</given-names></string-name></person-group>. (<year>2021</year>). <article-title>GPT-2’s activations predict the degree of semantic comprehension in the human brain</article-title>. <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2021.04.20.440622</pub-id></mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Caucheteux</surname>, <given-names>C.</given-names></string-name>, &amp; <string-name><surname>King</surname>, <given-names>J.-R</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Brains and algorithms partially converge in natural language processing</article-title>. <source>Communications Biology</source>, <volume>5</volume>(<issue>1</issue>), <fpage>134</fpage>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="web"><person-group person-group-type="author"><collab>EleutherAI</collab></person-group>. (<year>n.d.</year>). <source>Github</source>. Retrieved July 6, 2023, from <ext-link ext-link-type="uri" xlink:href="https://github.com/EleutherAI">https://github.com/EleutherAI</ext-link></mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Fan</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Jiang</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Meng</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Han</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Shang</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Sun</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Wang</surname>, <given-names>Z.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Not all Layers of LLMs are Necessary during Inference</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2403.02181">http://arxiv.org/abs/2403.02181</ext-link></mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Friederici</surname>, <given-names>A. D</given-names></string-name></person-group>. (<year>2011</year>). <article-title>The brain basis of language processing: from structure to function</article-title>. <source>Physiological Reviews</source>, <volume>91</volume>(<issue>4</issue>), <fpage>1357</fpage>–<lpage>1392</lpage>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Gao</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Biderman</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Black</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Golding</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Hoppe</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Foster</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Phang</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>He</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Thite</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Nabeshima</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Presser</surname>, <given-names>S.</given-names></string-name>, &amp; <string-name><surname>Leahy</surname>, <given-names>C.</given-names></string-name></person-group> (<year>2020</year>). <article-title>The Pile: An 800GB Dataset of Diverse Text for Language Modeling</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2101.00027">http://arxiv.org/abs/2101.00027</ext-link></mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goldstein</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Grinstein-Dabush</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Schain</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Hong</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Aubrey</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Schain</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Nastase</surname>, <given-names>S. A.</given-names></string-name>, <string-name><surname>Zada</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Ham</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Feder</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Gazula</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Buchnik</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Doyle</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Devore</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Dugan</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Reichart</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Friedman</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Brenner</surname>, <given-names>M.</given-names></string-name>, <etal>…</etal> <string-name><surname>Hasson</surname>, <given-names>U</given-names></string-name></person-group>. (<year>2024</year>). <article-title>Alignment of brain embeddings and artificial contextual embeddings in natural language points to common geometric patterns</article-title>. <source>Nature Communications</source>, <volume>15</volume>(<issue>1</issue>), <fpage>2768</fpage>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Goldstein</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Niekerken</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Zada</surname>, <given-names>Z.</given-names></string-name>, &amp; <string-name><surname>Aubrey</surname>, <given-names>B.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Deep speech-to-text models capture the neural basis of spontaneous speech in everyday conversations</article-title>. <source>bioRxiv</source>. <ext-link ext-link-type="uri" xlink:href="https://www.biorxiv.org/content/10.1101/2023.06.26.546557.abstract">https://www.biorxiv.org/content/10.1101/2023.06.26.546557.abstract</ext-link></mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goldstein</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Zada</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Buchnik</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Schain</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Price</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Aubrey</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Nastase</surname>, <given-names>S. A.</given-names></string-name>, <string-name><surname>Feder</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Emanuel</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Cohen</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Jansen</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Gazula</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Choe</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Rao</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Kim</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Casto</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Fanda</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Doyle</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Friedman</surname>, <given-names>D.</given-names></string-name>, <etal>…</etal> <string-name><surname>Hasson</surname>, <given-names>U</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Shared computational principles for language processing in humans and deep language models</article-title>. <source>Nature Neuroscience</source>, <volume>25</volume>(<issue>3</issue>), <fpage>369</fpage>–<lpage>380</lpage>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Gromov</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Tirumala</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Shapourian</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Glorioso</surname>, <given-names>P.</given-names></string-name>, &amp; <string-name><surname>Roberts</surname>, <given-names>D. A.</given-names></string-name></person-group> (<year>2024</year>). <article-title>The Unreasonable Ineffectiveness of the Deeper Layers</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2403.17887">http://arxiv.org/abs/2403.17887</ext-link></mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hamilton</surname>, <given-names>L. S.</given-names></string-name>, &amp; <string-name><surname>Huth</surname>, <given-names>A. G</given-names></string-name></person-group>. (<year>2020</year>). <article-title>The revolution will not be controlled: natural stimuli in speech neuroscience. <italic>Language</italic></article-title>, <source>Cognition and Neuroscience</source>, <volume>35</volume>(<issue>5</issue>), <fpage>573</fpage>–<lpage>582</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hasson</surname>, <given-names>U.</given-names></string-name>, <string-name><surname>Nastase</surname>, <given-names>S. A.</given-names></string-name>, &amp; <string-name><surname>Goldstein</surname>, <given-names>A</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Direct Fit to Nature: An Evolutionary Perspective on Biological and Artificial Neural Networks</article-title>. <source>Neuron</source>, <volume>105</volume>(<issue>3</issue>), <fpage>416</fpage>–<lpage>434</lpage>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Hosseini</surname>, <given-names>E. A.</given-names></string-name>, <string-name><surname>Schrimpf</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Bowman</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Zaslavsky</surname>, <given-names>N.</given-names></string-name>, &amp; <string-name><surname>Fedorenko</surname>, <given-names>E</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Artificial neural network language models align neurally and behaviorally with humans even after a developmentally realistic amount of training</article-title>. <source>bioRxiv</source> (p. <fpage>2022.10.04.510681</fpage>). <pub-id pub-id-type="doi">10.1101/2022.10.04.510681</pub-id></mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jiahui</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Feilong</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Visconti di Oleggio Castello</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Nastase</surname>, <given-names>S. A.</given-names></string-name>, <string-name><surname>Haxby</surname>, <given-names>J. V.</given-names></string-name>, &amp; <string-name><surname>Gobbini</surname>, <given-names>M. I.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Modeling naturalistic face processing in humans with deep convolutional neural networks</article-title>. <source>Proceedings of the National Academy of Sciences of the United States of America</source>, <volume>120</volume>(<issue>43</issue>), <fpage>e2304085120</fpage>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Kaplan</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>McCandlish</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Henighan</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Brown</surname>, <given-names>T. B.</given-names></string-name>, <string-name><surname>Chess</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Child</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Gray</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Radford</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wu</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Amodei</surname>, <given-names>D.</given-names></string-name></person-group> (<year>2020</year>). <article-title>Scaling Laws for Neural Language Models</article-title>. In <source>arXiv [cs.LG]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2001.08361">http://arxiv.org/abs/2001.08361</ext-link></mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kriegeskorte</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2015</year>). <article-title>Deep Neural Networks: A New Framework for Modeling Biological Vision and Brain Information Processing</article-title>. <source>Annual Review of Vision Science</source>, <volume>1</volume>, <fpage>417</fpage>–<lpage>446</lpage>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Kumar</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Sumers</surname>, <given-names>T. R.</given-names></string-name>, <string-name><surname>Yamakoshi</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Goldstein</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Hasson</surname>, <given-names>U.</given-names></string-name>, <string-name><surname>Norman</surname>, <given-names>K. A.</given-names></string-name>, <string-name><surname>Griffiths</surname>, <given-names>T. L.</given-names></string-name>, <string-name><surname>Hawkins</surname>, <given-names>R. D.</given-names></string-name>, &amp; <string-name><surname>Nastase</surname>, <given-names>S. A</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Reconstructing the cascade of language processing in the brain using the internal computations of a transformer-based language model</article-title>. <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2022.06.08.495348</pub-id></mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>LeBel</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wagner</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Jain</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Adhikari-Desai</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Gupta</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Morgenthal</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Tang</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><surname>Huth</surname>, <given-names>A. G</given-names></string-name></person-group>. (<year>2023</year>). <article-title>A natural language fMRI dataset for voxelwise encoding models</article-title>. <source>Scientific Data</source>, <volume>10</volume>(<issue>1</issue>), <fpage>555</fpage>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Linzen</surname>, <given-names>T.</given-names></string-name>, &amp; <string-name><surname>Baroni</surname>, <given-names>M</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Syntactic Structure from Deep Learning</article-title>. <source>Annual Review of Applied Linguistics</source>, <volume>7</volume>(<issue>Volume 7, 2021</issue>), <fpage>195</fpage>–<lpage>212</lpage>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Shen</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Dolan</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Carin</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><surname>Chen</surname>, <given-names>W.</given-names></string-name></person-group> (<year>2021</year>). <article-title>What Makes Good In-Context Examples for GPT-3?</article-title> In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2101.06804">http://arxiv.org/abs/2101.06804</ext-link></mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Manning</surname>, <given-names>C. D.</given-names></string-name>, <string-name><surname>Clark</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Hewitt</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Khandelwal</surname>, <given-names>U.</given-names></string-name>, &amp; <string-name><surname>Levy</surname>, <given-names>O</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Emergent linguistic structure in artificial neural networks trained by self-supervision</article-title>. <source>Proceedings of the National Academy of Sciences of the United States of America</source>, <volume>117</volume>(<issue>48</issue>), <fpage>30046</fpage>–<lpage>30054</lpage>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Mischler</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>Y. A.</given-names></string-name>, <string-name><surname>Bickel</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Mehta</surname>, <given-names>A. D.</given-names></string-name>, &amp; <string-name><surname>Mesgarani</surname>, <given-names>N.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Contextual Feature Extraction Hierarchies Converge in Large Language Models and the Brain</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2401.17671">http://arxiv.org/abs/2401.17671</ext-link></mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nichols</surname>, <given-names>T. E.</given-names></string-name>, &amp; <string-name><surname>Holmes</surname>, <given-names>A. P</given-names></string-name></person-group>. (<year>2002</year>). <article-title>Nonparametric permutation tests for functional neuroimaging: a primer with examples</article-title>. <source>Human Brain Mapping</source>, <volume>15</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>25</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Piantadosi</surname>, <given-names>S</given-names></string-name></person-group>. (<year>2023</year>). <article-title>Modern language models refute Chomsky’s approach to language</article-title>. <source>Lingbuzz Preprint, Lingbuzz</source>, <volume>7180</volume>. <ext-link ext-link-type="uri" xlink:href="https://lingbuzz.net/lingbuzz/007180/current.pdf">https://lingbuzz.net/lingbuzz/007180/current.pdf</ext-link></mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Radford</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Child</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Luan</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Amodei</surname>, <given-names>D.</given-names></string-name>, &amp; <string-name><surname>Sutskever</surname>, <given-names>I.</given-names></string-name></person-group> (<year>2019</year>). <source>Language Models are Unsupervised Multitask Learners</source>. <ext-link ext-link-type="uri" xlink:href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf</ext-link></mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Richards</surname>, <given-names>B. A.</given-names></string-name>, <string-name><surname>Lillicrap</surname>, <given-names>T. P.</given-names></string-name>, <string-name><surname>Beaudoin</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Bengio</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Bogacz</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Christensen</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Clopath</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Costa</surname>, <given-names>R. P.</given-names></string-name>, <string-name><surname>de Berker</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Ganguli</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Gillon</surname>, <given-names>C. J.</given-names></string-name>, <string-name><surname>Hafner</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Kepecs</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Kriegeskorte</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Latham</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Lindsay</surname>, <given-names>G. W.</given-names></string-name>, <string-name><surname>Miller</surname>, <given-names>K. D.</given-names></string-name>, <string-name><surname>Naud</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Pack</surname>, <given-names>C. C.</given-names></string-name>, <etal>…</etal> <string-name><surname>Kording</surname>, <given-names>K. P.</given-names></string-name></person-group> (<year>2019</year>). <article-title>A deep learning framework for neuroscience</article-title>. <source>Nature Neuroscience</source>, <volume>22</volume>(<issue>11</issue>), <fpage>1761</fpage>–<lpage>1770</lpage>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Saxe</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Brett</surname>, <given-names>M.</given-names></string-name>, &amp; <string-name><surname>Kanwisher</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2006</year>). <article-title>Divide and conquer: a defense of functional localizers [Review of <italic>Divide and conquer: a defense of functional localizers</italic>]</article-title>. <source>NeuroImage</source>, <volume>30</volume>(<issue>4</issue>), <fpage>1088</fpage>–<lpage>1096</lpage>; discussion 1097–1099. Elsevier.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schrimpf</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Blank</surname>, <given-names>I. A.</given-names></string-name>, <string-name><surname>Tuckute</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Kauf</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Hosseini</surname>, <given-names>E. A.</given-names></string-name>, <string-name><surname>Kanwisher</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Tenenbaum</surname>, <given-names>J. B.</given-names></string-name>, &amp; <string-name><surname>Fedorenko</surname>, <given-names>E</given-names></string-name></person-group>. (<year>2021</year>). <article-title>The neural architecture of language: Integrative modeling converges on predictive processing</article-title>. <source>Proceedings of the National Academy of Sciences of the United States of America</source>, <volume>118</volume>(<fpage>45</fpage>). <pub-id pub-id-type="doi">10.1073/pnas.2105646118</pub-id></mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="web"><person-group person-group-type="author"><collab>So a monkey and a horse walk into a bar</collab></person-group>. (<year>2017</year>, <month>November</month> <day>10</day>). This American Life. <ext-link ext-link-type="uri" xlink:href="https://www.thisamericanlife.org/631/so-a-monkey-and-a-horse-walk-into-a-bar">https://www.thisamericanlife.org/631/so-a-monkey-and-a-horse-walk-into-a-bar</ext-link></mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sutton</surname>, <given-names>R</given-names></string-name></person-group>. (<year>2019</year>). <article-title>The bitter lesson</article-title>. <source>Incomplete Ideas (blog</source><italic>)</italic>, <volume>13</volume>(<issue>1</issue>), <fpage>38</fpage>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Toneva</surname>, <given-names>M.</given-names></string-name>, &amp; <string-name><surname>Wehbe</surname>, <given-names>L</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Interpreting and improving natural-language processing (in machines) with natural language-processing (in the brain)</article-title>. <source>Advances in Neural Information Processing Systems</source>, <volume>32</volume>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper/2019/hash/749a8e6c231831ef7756db230b4359c8-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/749a8e6c231831ef7756db230b4359c8-Abstract.html</ext-link></mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Touvron</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Martin</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Stone</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Albert</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Almahairi</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Babaei</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Bashlykov</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Batra</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Bhargava</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Bhosale</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Bikel</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Blecher</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Ferrer</surname>, <given-names>C. C.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Cucurull</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Esiobu</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Fernandes</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Fu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Fu</surname>, <given-names>W.</given-names></string-name>, <etal>…</etal> <string-name><surname>Scialom</surname>, <given-names>T.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Llama 2: Open Foundation and Fine-Tuned Chat Models</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2307.09288">http://arxiv.org/abs/2307.09288</ext-link></mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tunstall</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>von Werra</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><surname>Wolf</surname>, <given-names>T.</given-names></string-name></person-group> (<year>2022</year>). <article-title>Natural Language Processing with Transformers</article-title>. “<source>O’Reilly Media, Inc</source>.”</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Xie</surname>, <given-names>S. M.</given-names></string-name>, <string-name><surname>Raghunathan</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Liang</surname>, <given-names>P.</given-names></string-name>, &amp; <string-name><surname>Ma</surname>, <given-names>T.</given-names></string-name></person-group> (<year>2021</year>). <article-title>An Explanation of In-context Learning as Implicit Bayesian Inference</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2111.02080">http://arxiv.org/abs/2111.02080</ext-link></mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yamins</surname>, <given-names>D. L. K.</given-names></string-name>, &amp; <string-name><surname>DiCarlo</surname>, <given-names>J. J</given-names></string-name></person-group>. (<year>2016</year>). <article-title>Using goal-driven deep learning models to understand sensory cortex</article-title>. <source>Nature Neuroscience</source>, <volume>19</volume>(<issue>3</issue>), <fpage>356</fpage>–<lpage>365</lpage>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yuan</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Liberman</surname>, <given-names>M</given-names></string-name></person-group>. (<year>2008</year>). <article-title>Speaker identification on the SCOTUS corpus</article-title>. <source>The Journal of the Acoustical Society of America</source>, <volume>123</volume>(<issue>5</issue>), <fpage>3878</fpage>–<lpage>3878</lpage>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhang</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Bengio</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Hardt</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Recht</surname>, <given-names>B.</given-names></string-name>, &amp; <string-name><surname>Vinyals</surname>, <given-names>O</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Understanding deep learning (still) requires rethinking generalization</article-title>. <source>Communications of the ACM</source>, <volume>64</volume>(<issue>3</issue>), <fpage>107</fpage>–<lpage>115</lpage>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Zhang</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Roller</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Goyal</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Artetxe</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Dewan</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Diab</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Lin</surname>, <given-names>X. V.</given-names></string-name>, <string-name><surname>Mihaylov</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Ott</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Shleifer</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Shuster</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Simig</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Koura</surname>, <given-names>P. S.</given-names></string-name>, <string-name><surname>Sridhar</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>T.</given-names></string-name>, &amp; <string-name><surname>Zettlemoyer</surname>, <given-names>L.</given-names></string-name></person-group> (<year>2022</year>). <article-title>OPT: Open Pre-trained Transformer Language Models</article-title>. In <source>arXiv [cs.CL]</source>. arXiv. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2205.01068">http://arxiv.org/abs/2205.01068</ext-link></mixed-citation></ref>
+</ref-list>
+<sec id="s5">
+<title>Supplementary</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 1.</label>
+<caption><title>Model performance improves with increasing model size.</title>
+<p>To control for the different embedding dimensionality across models, we standardized all embeddings to the same size using principal component analysis (PCA) and trained linear encoding models using ordinary least-squares regression (cf. <xref rid="fig2" ref-type="fig">Fig. 2</xref>). <bold>A.</bold> Scatter plot of max correlation for the PCA + linear regression model and the ridge regression model. Each data point corresponds to an electrode. <bold>B.</bold> For the GPT-Neo model family, the relationship between encoding performance and layer number. Encoding performance is best for intermediate layers. The shaded color represents standard error. <bold>C</bold>. Same as B, but the layer number was transformed to a layer percentage for better comparison across models.</p></caption>
+<graphic xlink:href="598513v4_figs1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 2.</label>
+<caption><title>Lag-wise encoding for the GPT-Neo Family.</title>
+<p><bold>Top.</bold> Lag-wise encoding for all four models of the GPT-Neo family, averaged across electrodes. The dots represent lags where XL significantly outperformed Small (paired two-sided <italic>t</italic>-test across electrodes, df = 159, <italic>p</italic> &lt; 0.001, Bonferroni corrected). XL significantly outperformed Small in encoding models for most lags from 2000 ms before word onset to 575 ms after word onset. <bold>Bottom.</bold> Lag-wise encoding difference for the three bigger models compared to SMALL, averaged across electrodes.</p></caption>
+<graphic xlink:href="598513v4_figs2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 3.</label>
+<caption><title>Brain map of electrodes in five regions of interest (ROIs) across the cortical language network:</title>
+<p>middle superior temporal gyrus (mSTG, n = 28 electrodes), anterior superior temporal gyrus (aSTG, n = 13 electrodes), Brodmann area 44 (BA44, n = 19 electrodes), Brodmann area 45 (BA45, n = 26 electrodes), and temporal pole (TP, n = 6 electrodes).</p></caption>
+<graphic xlink:href="598513v4_figs3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 4.</label>
+<caption><title>The optimal lags for each electrode do not exhibit significant variation when transitioning between SMALL and XL models.</title>
+<p><bold>A.</bold> Scatter plot of best-performing lag for SMALL and XL models, colored by max correlation. Each data point corresponds to an electrode. <bold>B.</bold> Scatter plot of best-performing lag for SMALL and XL models, colored by ROIs. Each data point corresponds to an electrode. Only the electrodes in <xref ref-type="fig" rid="figs3">Fig. S3</xref> are included.</p></caption>
+<graphic xlink:href="598513v4_figs4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<table-wrap id="tbls1" orientation="portrait" position="float">
+<label>Supplementary Table 1.</label>
+<caption><title>Summary statistics and paired <italic>t</italic>-test results for maximum correlations between SMALL and XL models across five regions of interest.</title>
+<p>Encoding performance for the XL model significantly surpassed that of the SMALL model in whole brain, mSTG, aSTG, BA44, and BA45.</p></caption>
+<graphic xlink:href="598513v4_tbls1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<table-wrap id="tbls2" orientation="portrait" position="float">
+<label>Supplementary Table 2.</label>
+<caption><title>Summary statistics and paired <italic>t</italic>-test results for best-performing layers (in percentage) for the SMALL model across five regions of interest.</title>
+<p>The best-performing layer (in percentage) occurred earlier for electrodes in mSTG and aSTG and later for electrodes in BA44, BA45, and TP.</p></caption>
+<graphic xlink:href="598513v4_tbls2.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+</sec>
+<ack>
+<title>Acknowledgments</title>
+<p>This work was supported by the National Institutes of Health under award numbers DP1HD091948 (to A.G., Z.H., H.W., Z.Z., B.A., L.N., A.F. and U.H.), R01NS109367 (to A.F.), and R01DC022534 (to S.A.N.), Finding a Cure for Epilepsy and Seizures (FACES), and Schmidt Futures Foundation DataX Fund.</p>
+<p>Z.H. devised the project, performed experimental design and data analysis, and wrote the article; H.W. devised the project, performed experimental design and data analysis, and wrote the article; Z.Z. devised the project, performed experimental design and data analysis, and critically revised the article; H.G. performed data analysis; B.A. performed data analysis; L.N. performed data analysis; W.D. devised the project; S.D. devised the project; P.D. devised the project; D.F. devised the project; O.D. devised the project; A.F. devised the project; U.H. devised the project, performed experimental design, and critically revised the article; S.A.N. devised the project, performed experimental design, wrote and critically revised the article; A.G. devised the project, performed experimental design, and critically revised the article.</p>
+</ack>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.101204.1.sa4</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ding</surname>
+<given-names>Nai</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Zhejiang University</institution>
+</institution-wrap>
+<city>Hangzhou</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study investigates how the size of an LLM may influence its ability to model the human neural response to language recorded by ECoG. Overall, <bold>solid</bold> evidence is provided that larger language models can better predict the human ECoG response. Further discussion would be beneficial as to how the results can inform us about the brain or LLMs, especially about the new message that can be learned from this ECoG study beyond previous fMRI studies on the same topic. This study will be of interest to both neuroscientists and psychologists who work on language comprehension and computer scientists working on LLMs.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.101204.1.sa3</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors perform an analysis of the relationship between the size of an LMM and the predictive performance of an ECoG encoding model made using the representations from that LMM. They find a logarithmic relationship between model size and prediction performance, consistent with previous findings in fMRI. They additionally observe that as the model size increases, the location of the &quot;peak&quot; encoding performance typically moves further back into the model in terms of percent layer depth, an interesting result worthy of further analysis into these representations.</p>
+<p>Strengths:</p>
+<p>The evidence is quite convincing, consistent across model families, and complementary to other work in this field. This sort of analysis for ECoG is needed and supports the decade-long enduring trend of the &quot;virtuous cycle&quot; between neuroscience and AI research, where more powerful AI models have consistently yielded more effective predictions of responses in the brain. The lag analysis showing that optimal lags do not change with model size is a nice result using the higher temporal resolution of ECoG compared to other methods like fMRI.</p>
+<p>Weaknesses:</p>
+<p>I would have liked to have seen the data scaling trends explored a bit too, as this is somewhat analogous to the main scaling results. While better performance with more data might be unsurprising, showing good data scaling would be a strong and useful justification for additional data collection in the field, especially given the extremely limited amount of existing language ECoG data. I realize that the data here is somewhat limited (only 30 minutes per subject), but authors could still in principle train models on subsets of this data.</p>
+<p>Separately, it would be nice to have better justification of some of these trends, in particular the peak layerwise encoding performance trend and the overall upside-down U-trend of encoding performance across layers more generally. There is clearly something very fundamental going on here, about the nature of abstraction patterns in LLMs and in the brain, and this result points to that. I don't see the lack of justification here as a critical issue, but the paper would certainly be better with some theoretical explanation for why this might be the case.</p>
+<p>Lastly, I would have wanted to see a similar analysis here done for audio encoding models using Whisper or WavLM as this is the modality where you might see real differences between ECoG and other slower scanning approaches. Again, I do not see this omission as a fundamental issue, but it does seem like the sort of analysis for which the higher temporal resolution of ECoG might grant some deeper insight.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.101204.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper investigates whether large language models (LLMs) of increasing size more accurately align with brain activity during naturalistic language comprehension. The authors extracted word embeddings from LLMs for each word in a 30-minute story and regressed them against electrocorticography (ECoG) activity time-locked to each word as participants listened to the story. The findings reveal that larger LLMs more effectively predict ECoG activity, reflecting the scaling laws observed in other natural language processing tasks.</p>
+<p>Strengths:</p>
+<p>(1) The study compared model activity with ECoG recordings, which offer much better temporal resolution than other neuroimaging methods, allowing for the examination of model encoding performance across various lags relative to word onset.</p>
+<p>(2) The range of LLMs tested is comprehensive, spanning from 82 million to 70 billion parameters. This serves as a valuable reference for researchers selecting LLMs for brain encoding and decoding studies.</p>
+<p>(3) The regression methods used are well-established in prior research, and the results demonstrate a convincing scaling law for the brain encoding ability of LLMs. The consistency of these results after PCA dimensionality reduction further supports the claim.</p>
+<p>Weaknesses:</p>
+<p>(1) Some claims of the paper are less convincing. The authors suggested that &quot;scaling could be a property that the human brain, similar to LLMs, can utilize to enhance performance&quot;, however, many other animals have brains with more neurons than the human brain, making it unlikely that simple scaling alone leads to better language performance. Additionally, the authors claim that their results show 'larger models better predict the structure of natural language.' However, it remains unclear to what extent the embeddings of LLMs capture the &quot;structure&quot; of language better than the lexical semantics of language.</p>
+<p>(2) The study lacks control LLMs with randomly initialized weights and control regressors, such as word frequency and phonetic features of speech, making it unclear what the baseline is for the model-brain correlation.</p>
+<p>(3) The finding that peak encoding performance tends to occur in relatively earlier layers in larger models is somewhat surprising and requires further explanation. Since more layers mean more parameters, if the later layers diverge from language processing in the brain, it raises the question of what aspects of the larger models make them more brain-like.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.101204.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>This manuscript studies the connection between neural activity collected through electrocorticography and hidden vector representations from autoregressive language models, with the specific aim of studying the influence of language model size on this connection. Neural activity was measured from subjects who listened to a segment from a podcast, and the representations from language models were calculated using the written transcription as the input text. The ability of vector representations to predict neural activity was evaluated using 10-fold cross-validation with ridge regression models.</p>
+<p>The main results are that (as well summarized in section headings):</p>
+<p>(1) Larger models predict neural activity better.</p>
+<p>(2) The ability of language model representations to predict neural activity differs across electrodes and brain regions.</p>
+<p>(3) The layer that best predicts neural activity differs according to model size, with the &quot;SMALL&quot; model showing a correspondence between layer number and the language processing hierarchy.</p>
+<p>(4) There seems to be a similar relationship between the time lag and the ability of language model representations to predict neural activity across models.</p>
+<p>Strengths:</p>
+<p>(1) The experimental and modeling protocols generally seem solid, which yielded results that answer the authors' primary research question.</p>
+<p>(2) Electrocorticography data is especially hard to collect, so these results make a nice addition to recent functional magnetic resonance imaging studies.</p>
+<p>Weaknesses:</p>
+<p>(1) The interpretation of some results seems unjustified, although this may just be a presentational issue.</p>
+<p>a) Figure 2B: The authors interpret the results as &quot;a plateau in the maximal encoding performance,&quot; when some readers might interpret this rather as a decline after 13 billion parameters. Can this be further supported by a significance test like that shown in Figure 4B?</p>
+<p>b) Figure S1A: It looks like the drop in PCA max correlation is larger for larger models, which may suggest to some readers that the same trend observed for ridge max correlation may not hold, contra the authors' claim that all results replicate. Why not include a similar figure as Figure 2B as part of Figure S1?</p>
+<p>(2) Discussion of what might be driving the main result about the influence of model size appears to be missing (cf. the authors aim to provide an explanation of what seems to drive the influence of the layer location in Paragraph 3 of the Discussion section). What explanations have been proposed in the previous functional magnetic resonance imaging studies? Do those explanations also hold in the context of this study?</p>
+<p>(3) The GloVe-based selection of language-sensitive electrodes (at least to me) isn't explained/motivated clearly enough (I think a more detailed explanation should be included in the Materials and Methods section). If the electrodes are selected based on GloVe embeddings, then isn't the main experiment just showing that representations from larger language models track more closely with GloVe embeddings? What justifies this methodology?</p>
+<p>(4) (Minor weakness) The main experiments are largely replications of previous functional magnetic resonance imaging studies, with the exception of the one lag-based analysis. Is there anything else that the electrocorticography data can reveal that functional magnetic resonance imaging data can't?</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.101204.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Hong</surname>
+<given-names>Zhuoqiao</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0002-1295-105X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Haocheng</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0000-8500-6054</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zada</surname>
+<given-names>Zaid</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3096-0059</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Gazula</surname>
+<given-names>Harshvardhan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Turner</surname>
+<given-names>David</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Aubrey</surname>
+<given-names>Bobbi</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Niekerken</surname>
+<given-names>Leonard</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Doyle</surname>
+<given-names>Werner</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Devore</surname>
+<given-names>Sasha</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2554-1850</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Dugan</surname>
+<given-names>Patricia</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Friedman</surname>
+<given-names>Daniel</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Devinsky</surname>
+<given-names>Orrin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Flinker</surname>
+<given-names>Adeen</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hasson</surname>
+<given-names>Uri</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3599-7168</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Nastase</surname>
+<given-names>Samuel A</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7013-5275</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Goldstein</surname>
+<given-names>Ariel</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We thank the reviewers for their thoughtful feedback and valuable comments. We plan to fully address their concerns by including the following experiments and analyses:</p>
+<p>Reviewer 1 suggested exploring data scaling trends for encoding models, as successful scaling would justify larger datasets for language ECoG studies. To estimate scaling effects, we will develop encoding models on subsets of our data.</p>
+<p>Reviewer 2 expressed uncertainty about the baseline for model-brain correlation and recommended adding control LLMs with randomly initialized weights. In response, we will generate embeddings using untrained LLMs to establish a more robust baseline for encoding results.</p>
+<p>Reviewer 2 also proposed incorporating control regressors such as word frequency and phonetic features of speech. We will re-run our modeling analysis using control regressors for word frequency, 8 syntactic features (e.g., part of speech, dependency, prefix/suffix), and 3 phonetic features (e.g., phonemes, place/manner of articulation) to assess how much these features contribute to encoding performance.</p>
+<p>Reviewer 3 raised concerns that the “plateau in maximal encoding performance” was actually a decline for the largest models. We will add significance tests in Figure 2B to clarify this issue.</p>
+<p>Reviewer 3 also noted that in Supplementary Figure 1A, the decline in encoding performance was more pronounced when using PCA to reduce embedding dimensionality, in contrast to the trend observed when using ridge regression. To address this, we will attempt to replicate the observed scaling trends in Figure 2B using PCA combined with OLS.</p>
+<p>Additionally, we will provide a point-by-point response and revise the manuscript with updated analyses and figures in the near future.</p>
+</body>
+</sub-article>
+</article>
