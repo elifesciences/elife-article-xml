@@ -1,0 +1,764 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">103660</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.103660</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.103660.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Neural dynamics of reversal learning in the prefrontal cortex and recurrent neural networks</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1322-6207</contrib-id>
+<name>
+<surname>Kim</surname>
+<given-names>Christopher M</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">*</xref>
+<email>chrismkkim@gmail.com</email>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Chow</surname>
+<given-names>Carson C</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3976-8565</contrib-id>
+<name>
+<surname>Averbeck</surname>
+<given-names>Bruno B</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00adh9b73</institution-id><institution>Laboratory of Biological Modeling, NIDDK/NIH</institution></institution-wrap>, <city>Bethesda</city>, <country>United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/04xeg9z08</institution-id><institution>Laboratory of Neuropsychology, NIMH/NIH</institution></institution-wrap>, <city>Bethesda</city>, <country>United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Ponte Costa</surname>
+<given-names>Rui</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Luo</surname>
+<given-names>Huan</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Peking University</institution>
+</institution-wrap>
+<city>Beijing</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1" fn-type="present-address"><label>*</label><p>Present address: Department of Mathematics, Howard University, Washington, DC</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-12-06">
+<day>06</day>
+<month>12</month>
+<year>2024</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP103660</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-10-04">
+<day>04</day>
+<month>10</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-09-15">
+<day>15</day>
+<month>09</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.09.14.613033"/>
+</event>
+</pub-history>
+<permissions>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/publicdomain/zero/1.0/">
+<ali:license_ref>https://creativecommons.org/publicdomain/zero/1.0/</ali:license_ref>
+<license-p>This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 public domain dedication</ext-link>.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-103660-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>In probabilistic reversal learning, the choice option yielding reward at higher probability switches at a random trial. To perform optimally in this task, one has to accumulate evidence across trials to infer the probability that a reversal has occurred. In this study, we investigated how this reversal probability is represented in cortical neurons by analyzing the neural activity in prefrontal cortex of monkeys and recurrent neural networks trained on the task. We found that neural trajectories encoding reversal probability had substantial dynamics associated with intervening behaviors necessary to perform the task. Furthermore, the neural trajectories were translated systematically in response to whether outcomes were rewarded, and their position in the neural subspace captured information about reward outcomes. These findings suggested that separable dynamic trajectories, instead of fixed points on a line attractor, provided a better description of neural representation of reversal probability. Near the behavioral reversal, in particular, the trajectories shifted monotonically across trials with stable ordering, representing varying estimates of reversal probability around the reversal point. Perturbing the neural trajectory of trained networks biased when the reversal trial occurred, showing the role of reversal probability activity in decision-making. In sum, our study shows that cortical neurons encode reversal probability in a family of dynamic neural trajectories that accommodate flexible behavior while maintaining separability to represent distinct probabilistic values.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>To survive in a dynamically changing world, animals must interact with the environment and learn from their experience to adjust their behavior. Reversal learning has been used for assessing ability to adapt one’s behavior in such environment [<xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c6">6</xref>]. For instance, in the two-armed bandit tasks with probabilistic reward, the subject learns from initial trials that one option has higher reward probability than the other. When the reward probability of two options is reversed at a random trial, the subject must learn to reverse its preferred choice to maximize reward outcome. In these tasks, there is uncertainty in when to reverse one’s choice, as reward is received stochastically even when the less favorable option is chosen. Therefore, it is essential that reward outcomes are integrated over multiple trials before the initial choice preference is reversed. Although neural mechanisms for accumulating evidence within a trial have been studied extensively [<xref ref-type="bibr" rid="c7">7</xref>–<xref ref-type="bibr" rid="c10">10</xref>], it remains unclear if a recurrent neural circuit uses a similar neural mechanism for accumulating evidence across multiple trials, while performing intervening behavior during each trial. In this study, we merged two classes of computational models, i.e., behavioral and neural, to investigate the neural basis of multi-trial evidence accumulation. The behavior models capture subject’s behavioral strategies for performing the reversal learning task. For instance, Model-free reinforcement learning (RL) [<xref ref-type="bibr" rid="c11">11</xref>–<xref ref-type="bibr" rid="c13">13</xref>] assumes that the subject learns only from choices and reward outcomes with-out specific knowledge about task structure. Model-based Bayesian inference [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c15">15</xref>], in contrast, assumes that the task structure is known to the subject, and one can infer reversal points statistically, resulting in abrupt switches in their choice preference. Model-based and model-free RL models are formal models that do not specify implementation in a network of neurons. On the other hand, neural models implemented with recurrent neural networks (RNNs) can be trained to use recurrent activity to perform the reversal learning task. In particular, attractor dynamics, in which the network state moves towards discrete [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c16">16</xref>] or along continuous [<xref ref-type="bibr" rid="c8">8</xref>, <xref ref-type="bibr" rid="c17">17</xref>] attractor states, have been studied extensively as a potential neural mechanism for decision-making and evidence accumulation [<xref ref-type="bibr" rid="c18">18</xref>, <xref ref-type="bibr" rid="c19">19</xref>].</p>
+<p>Here, we trained RNNs that learned from a Bayesian inference model to mimic the behavioral strategies of monkeys performing the reversal learning task [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c4">4</xref>]. We found that, in the prefrontal cortex of monkeys and in trained RNNs, neural activity during a baseline hold period encoded reversal probability in a one-dimensional subspace, similar to a line attractor. However, intervening behavior during a trial, including making decisions and receiving feedback, produced substantial non-stationary neural dynamics. This observation made the attractor dynamics, which require the network state to stay close to attractor states [<xref ref-type="bibr" rid="c8">8</xref>, <xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c17">17</xref>], ill-suited for explaining the neural activity associated with evidence accumulation in reversal learning.</p>
+<p>Instead, we found that reversal probability was encoded in dynamic neural trajectories that shifted systematically across trials. Reward outcome pushed the entire trajectory in a positive (without reward) or negative (with reward) direction, separating trajectories of adjacent trials. Moreover, integrating reward outcomes across trials captured the position of a trajectory. These results suggested a neural mechanism where separable dynamic trajectories encode accumulated evidence. Around the behavioral reversal trial, reversal probabilities were represented by a family of rank-ordered trajectories that shifted monotonically. Perturbation experiment in trained RNNs demonstrated a causal link between reversal probability activity and choice outcomes.</p>
+<p>In sum, our results show that, in a probabilistic reversal learning task that requires evidence integration across trials and execution of intervening behavior in-between trials, reversal probability is encoded in separable dynamic trajectories that allow for temporally flexible representation of accumulated evidence.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<label>1</label>
+<title>Trained RNN’s choices are consistent with monkey behavior</title>
+<p>In the reversal learning task, in each trial, two options were available. The subject (either the monkeys or the network) chose one of the options. Rewards were delivered stochastically. The initial high-value option was rewarded 70% of the time when chosen, and the initial low value option was rewarded 30% of the time when chosen. The task was executed in blocks of trials. On a randomly chosen trial, the reward probability of the two options was switched. Because reward delivery was stochastic, the agent had to infer the reversal by accumulating evidence that a reversal had occurred. In this study, we will focus on this reversal inference process.</p>
+<p>We began by training an RNN on the reversal learning task and comparing the performance of the network to the monkeys. This allowed us to study the solutions adopted by the network, to generate hypotheses that we could test in neural data. Therefore, we trained an RNN to choose from two options in each trial when triggered by a cue. Following the choice, feedback was provided to the network, signaling the choice it made and reward outcome (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>). The reward schedule was probabilistic and identical to the task monkeys performed. This reward schedule was reversed at a random trial, and the RNN learned to reverse its decision by mimicking the outputs of a Bayesian inference model that captures the monkey’s reversal behavior (See <xref ref-type="sec" rid="s5b3">Methods Section 2.3</xref> for the RNN training scheme). In a typical block consisting of 36 trials, a trained RNN selected the initial high reward options, despite receiving occasional no rewards, but abruptly switched its choice when consecutive no-reward trials persisted (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>).</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1:</label>
+<caption><p>Comparison of the behavior of trained RNNs and monkeys. <bold>(A)</bold> Schematic of RNN training setup. In a trial, network makes a choice in response to a cue. Then, a feedback input, determined by the choice and reward outcome, is injected to the network. This procedure is repeated across trials. <bold>(B)</bold> Example of a trained RNN’s choice outcomes. Vertical bars show RNN choices in each trial and the reward outcomes (magenta: choice A, blue: choice B, light: rewarded, dark: not rewarded). Horizontal bars on the top show reward schedules (magenta: choice A receiving reward is 70%, choice B receiving reward is 30%; blue: reward schedule is reversed). Black curve shows the RNN output. Green horizontal bars show the posterior of reversal probability at each trial inferred using Bayesian model. <bold>(C)</bold> Probability of choosing the initial best option. Relative trial indicates the trial number relative to the behavioral reversal trial inferred from the Bayesian model. Relative trial number 0 is the trial at which the choice was reversed. <bold>(D)</bold> Fraction of no-reward blocks as a function of relative trial. Dotted lines show 0.3 and 0.7. <bold>(E)</bold> Distribution of RNN’s and monkey’s reversal trial, relative to the experimentally scheduled reversal trial.</p></caption>
+<graphic xlink:href="613033v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>The reversal behavior of trained RNNs was similar to the monkey’s behavior on the same task. RNNs selected the high reward option with high probability before the behavioral reversal, at which time they abruptly switched their choice (<xref rid="fig1" ref-type="fig">Fig. 1C</xref>). The behavioral reversal was preceded by a gradually increasing number of no-reward trials (<xref rid="fig1" ref-type="fig">Fig. 1D</xref>). The distribution of behavioral reversal trials (i.e., trial at which preferred choice was reversed) relative to the scheduled reversal trial (i.e., trial at which reward schedule was reversed) was similar to the distribution of monkey’s reversal trials (<xref rid="fig1" ref-type="fig">Fig. 1E</xref>).</p>
+</sec>
+<sec id="s2b">
+<label>2</label>
+<title>Task-relevant neural activity evolves dynamically</title>
+<p>Next we examined the temporal dynamics of task-relevant neural activity, in particular activity encoding the choice and reversal probability. This analysis focused on trials around the reversal point in each block. To capture task-relevant neural activity, we first identified population vectors that encoded the task variables using a method called targeted dimensionality reduction [<xref ref-type="bibr" rid="c20">20</xref>]. It regresses the activity of individual neurons onto task variables and finds the maximal population vector of each task variable. Then, neural activity representing the task variable is obtained by projecting the population activity onto the identified task vectors (see <xref ref-type="sec" rid="s2c">Methods Section 3</xref> for details).</p>
+<p>When averaged over blocks, the neural activity associated with choices and inferred reversal probability, denoted as <italic>x</italic><sub><italic>choice</italic></sub> and <italic>x</italic><sub><italic>rev</italic></sub>, respectively, produced non-stationary dynamics in each trial (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). Their activity level reached a maximum around the time of cue onset (black squares in <xref rid="fig2" ref-type="fig">Fig. 2A</xref>), when the monkey and RNN were about to make a choice. The rotational neural dynamics were found both in the prefrontal cortex (PFC) of monkeys and trained RNNs.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2:</label>
+<caption><p>Neural trajectories encoding choice and reversal probability variables. <bold>(A)</bold> Neural trajectories of PFC (top) and RNN (bottom) obtained by projecting population activity onto task vectors encoding choice and reversal probability. Trial numbers indicate their relative position to the behavioral reversal trial. Neural trajectories in each trial were averaged over 8 experiment sessions and 23 blocks for the PFC, and 40 networks and 20 blocks for the RNNs. Black square indicates the time of cue onset. <bold>(B-C)</bold> Neural activity encoding reversal probability and choice in PFC (top) and RNN (bottom) at the time of cue onset (black squares in panel A) around the behavioral reversal trial. Shaded blue shows the standard error of mean over sessions (or networks) and blocks.</p></caption>
+<graphic xlink:href="613033v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>The orientation of rotational trajectories shifted as trials progressed, indicating systematic changes in the choice and reversal probability activity across trials. When the task-relevant activity at cue onset was analyzed, we found that reversal probability activity, <italic>x</italic><sub><italic>rev</italic></sub>, peaked at the reversal trial in the PFC and RNN (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>). On the other hand, choice activity, <italic>x</italic><sub><italic>choice</italic></sub>, decreased gradually over trials reflecting the changes in choice preference (<xref rid="fig2" ref-type="fig">Fig. 2C</xref>). The inverted-V shape of <italic>x</italic><sub><italic>rev</italic></sub> and the monotonic decrease in <italic>x</italic><sub><italic>choice</italic></sub> over trials explained the counter-clockwise shift in the rotational trajectories observed in the two-dimensional phase space (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>).</p>
+</sec>
+<sec id="s2c">
+<label>3</label>
+<title>Integration of reward outcomes drives reversal probability activity</title>
+<p>We asked if the changes in reversal probability activity <italic>x</italic><sub><italic>rev</italic></sub> across trials, as shown in <xref rid="fig2" ref-type="fig">Fig. 2B</xref>, can be explained by integrating reward outcomes. In particular, we wondered if the reward outcomes from each trial would drive the shifts in reversal probability activity. To investigate this question, we set up a reward integration equation <inline-formula><inline-graphic xlink:href="613033v1_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> that predicts the next trial’s reversal probability activity based on current trial’s reversal probability and reward outcome, therefore predicting across-trial reversal probability by integrating reward outcomes. Here, <inline-formula><inline-graphic xlink:href="613033v1_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is the reversal probability activity at the time of cue onset <italic>t</italic><sub><italic>onset</italic></sub> at trial <italic>k</italic>, and <inline-formula><inline-graphic xlink:href="613033v1_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is an estimate of the shift in reversal probability activity driven by trial <italic>k</italic>’s reward outcome (± if rewarded and − if not rewarded. See <xref ref-type="sec" rid="s2d">Methods Section 4</xref> for details).</p>
+<p>The predicted reversal probability activity was in good agreement with the actual activity of PFC and RNN (example blocks shown in <xref rid="fig3" ref-type="fig">Figs.3A,C</xref>; prediction accuracy of all blocks shown in <xref rid="fig3" ref-type="fig">Fig. 3E</xref>). Moreover, we found that <inline-formula><inline-graphic xlink:href="613033v1_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, the neural activity encoding reversal probability, responded to reward outcomes consistently with how reversal probability itself would be updated. In other words, receiving no-reward at trial <italic>k</italic> increased the reversal probability activity <inline-formula><inline-graphic xlink:href="613033v1_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in the next trial <italic>k</italic> + 1 (<xref rid="fig3" ref-type="fig">Figs.3B, D</xref>; no reward), while receiving a reward at trial <italic>k</italic> decreased <inline-formula><inline-graphic xlink:href="613033v1_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (<xref rid="fig3" ref-type="fig">Figs.3B, D</xref>; reward). At the behavioral reversal trial (<italic>k</italic> = 0), however, the reversal probability activity in the following trial (<italic>k</italic> = 1) decreased regardless of the reward outcome at the reversal trial. When the reward integration equation was fitted to the reversal probability activity at other time points (i.e., <inline-formula><inline-graphic xlink:href="613033v1_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula> was estimated at each <italic>t</italic>), the prediction accuracy remained stable in time (<xref rid="fig3" ref-type="fig">Fig. 3F</xref>).</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3:</label>
+<caption><p>Integration of reward outcomes drives reversal probability activity. <bold>(A)</bold> The reversal probability activity of PFC (orange) and prediction by the reward integration equation (blue) at the time of cue onset across trials around the behavioral reversal trial. Three example blocks are shown. Pearson correlation between the actual andpredicted PFC activity is shown on each panel. <bold>(B)</bold> <inline-formula><inline-graphic xlink:href="613033v1_inline67.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of PFC estimated from the reward integration equation at cue onset. <inline-formula><inline-graphic xlink:href="613033v1_inline68.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline69.gif" mime-subtype="gif" mimetype="image"/></inline-formula> correspond to no-reward (red) and reward trials (blue), respectively. <bold>(C-D)</bold> Same as in panels (A) and (B) but for trained RNNs. <bold>(E)</bold> Prediction accuracy of the reward integration equation of all 8 PFC recording sessions and all 40 trained RNNs at cue onset. <bold>(F)</bold> Average prediction accuracy of the reward integration equation across time. The value at each time point shows the prediction accuracy averaged over all blocks in PFC recording sessions (top) or trained RNNs (bottom).</p></caption>
+<graphic xlink:href="613033v1_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>These findings show that neural activity encoding reversal probability exhibits structured responses to reward outcomes, consistent with how reversal probability itself would respond: increase with no reward and decrease with reward. In addition, the reversal probability activity can be predicted by integrating reward outcomes, supporting that it encodes accumulation of decision-related evidence.</p>
+</sec>
+<sec id="s2d">
+<label>4</label>
+<title>Dynamic neural trajectories encoding reversal probability are separable</title>
+<p>Previous works have shown that accumulation of decision-related evidence can be represented as a line attractor in a stable subspace of network activity [<xref ref-type="bibr" rid="c20">20</xref>, <xref ref-type="bibr" rid="c21">21</xref>]. One might hypothesize that reversal probability in the reversal learning task could be similarly characterized by such line attractor dynamics. A direct application of the line attractor model would imply that, across a trial when no decision-related evidence is presented, the reversal probability activity should remain constant (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>, line attractor).</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4:</label>
+<caption><p>Dynamic neural trajectories encoding reversal probability are separated in response to reward outcomes. <bold>(A)</bold> Two neural models for the reversal probability dynamics. Left: Line attractor model where <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) remains constant during a trial. Right: Dynamic trajectory model where <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) is non-stationary. In both models, the trajectories of adjacent trials are separable if the shift due to reward <inline-formula><inline-graphic xlink:href="613033v1_inline70.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (or no reward <inline-formula><inline-graphic xlink:href="613033v1_inline71.gif" mime-subtype="gif" mimetype="image"/></inline-formula>) is negative (or positive) throughout the trial. <bold>(B)</bold> Left: Block-averaged <italic>x</italic><sub><italic>rev</italic></sub><italic>/dt</italic> of PFC across trial and time. Dotted red lines indicate the onset time of fixation (−0.5s), cue (0s) and reward (0.8s); same lines shown on the right. Right: Average of <italic>x</italic><sub><italic>rev</italic></sub><italic>/dt</italic> over trials shown on the left panel. <bold>(C)</bold> Left: <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) of PFC at current trial (black) is compared to <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) in the next trial when reward is received (red) and not received (blue). Right: The difference of <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) between current and next trials shown on the left panels. <bold>(D)</bold> Difference of <italic>x</italic><sub><italic>rev</italic></sub> of two adjacent trials when reward is not received (<italic>R</italic><sub>−</sub>) or received (<italic>R</italic><sub>+</sub>). The approximate time of reward outcome is shown. <bold>(E)</bold> Left: <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>) of PFC of consecutive no reward trials before the behavioral reversal trial (top) and consecutive reward trials after the behavioral reversal (bottom). The initial value was subtracted to compare the ramping rates of <italic>x</italic><sub><italic>rev</italic></sub>(<italic>t</italic>). Right: Difference in the ramping rates of trajectories of adjacent trials, when reward was received (blue) and not received (red). <bold>(F)</bold> External (left) and recurrent (middle) inputs to the reversal probability dynamics, when reward was not received (red) and received (blue). Amplification factor (right) shows the ratio of no reward (or reward) input to the reference input. The amplification factors for both the external and recurrent inputs are shown. <bold>(G-H)</bold> Same as the right panels in (C) and (E) but for trained RNNs.</p></caption>
+<graphic xlink:href="613033v1_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>However, we found that there was substantial activity in this neural subspace (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). In particular, the non-stationary neural activity was associated with intervening behaviors during a trial. The time derivative of reversal probability activity increased rapidly at the time of cue onset, when a decision is made, followed by sharp decrease until the time of reward (<italic>dx</italic><sub><italic>rev</italic></sub><italic>/dt</italic> in <xref rid="fig4" ref-type="fig">Fig. 4B</xref>). So, instead of a static view of evidence accumulation, we explored the hypothesis that different levels of reversal probability could be encoded in dynamic neural trajectories (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>, dynamic trajectory).</p>
+<p>To encode distinct values of reversal probability in dynamic trajectories, the trajectories representing the values must remain separated as they evolve in time. We compared trajectories at adjacent trials to examine if the reward outcome drives the next trial’s trajectory away from the current trial’s trajectory, thus separating them, and, if so, to what extent the trajectories are separated.</p>
+<p>Analysis of PFC activity showed that, not receiving a reward increased the next trial’s trajectory <inline-formula><inline-graphic xlink:href="613033v1_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, compared to the current trial’s trajectory <inline-formula><inline-graphic xlink:href="613033v1_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> Within a trial, this positive shift was observed over the entire trial duration until the next trial’s reward was revealed, as shown in the difference of adjacent trials’ trajectories (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>, <italic>R</italic><sub>−</sub>). Moreover, across trials, the same trend was observed in all the trials except at the behavioral reversal trial, at which the reversal probability activity reached its maximum value and decreased in the following trial (<xref rid="fig4" ref-type="fig">Fig. 4D</xref>, <italic>R</italic><sub>−</sub>). On the other hand, when a reward was received, the next trial’s trajectory was decreased compared to the current trial’s trajectory. This negative shift persisted until the next trial’s reward, similarly to the case when reward was received (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>, <italic>R</italic><sub>+</sub>). Across trials, the same trend was observed in all the trials except at the trial preceding the behavioral reversal trial, at which the trajectory increased to the maximum value at the reversal trial (<xref rid="fig4" ref-type="fig">Fig. 4D</xref>, <italic>R</italic><sub>+</sub>). Additional analysis on <italic>R</italic><sub>−</sub> and <italic>R</italic><sub>+</sub> beyond the next trial’s reward time can be found in <xref rid="figS1" ref-type="fig">Supp. Figure S1</xref>.</p>
+<p>We examined what type of activity mode the dynamic trajectories exhibited when separating away from the previous trial’s trajectory. Ramping activity is often observed in cortical neurons of animals engaged in decision-making [<xref ref-type="bibr" rid="c22">22</xref>–<xref ref-type="bibr" rid="c26">26</xref>]. We found that, when no rewards were received, trajectories were separated from the previous trial’s trajectory by increasing their ramping rates towards the decision time (<italic>dR</italic><sub>−</sub><italic>/dt &gt;</italic> 0 in <xref rid="fig4" ref-type="fig">Fig. 4E</xref>). On the other hand, when rewards were received, trajectories were separated by decreasing their ramping rate (<italic>dR</italic><sub>+</sub><italic>/dt &lt;</italic> 0 in <xref rid="fig4" ref-type="fig">Fig. 4E</xref>). The increase (or decrease) in the ramping rates was observed in consecutive no reward (or reward) trials around the reversal trial (<xref rid="fig4" ref-type="fig">Fig. 4E</xref>, left).</p>
+<p>Consistently with the PFC activity, the trained RNN exhibited similar activity responses to reward outcomes: neural trajectories encoding reversal probability increased when reward was not received and decreased when reward was received. The shift in trajectories persisted throughout the trial duration (<xref rid="fig4" ref-type="fig">Fig. 4G</xref>) and ramping rates changed in agreement with the PFC findings (<xref rid="fig4" ref-type="fig">Fig. 4H</xref>).</p>
+<p>Since the dynamics of trained RNNs are fully known, we sought to examine the circuit dynamic motif that separates neural trajectories. We projected the differential equation governing the network dynamics onto a one-dimensional subspace and analyzed the contribution of recurrent and external inputs to reversal probability dynamics: <inline-formula><inline-graphic xlink:href="613033v1_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (see <xref ref-type="sec" rid="s5a">Methods Section 1</xref> for details). We found that the external input <italic>x</italic><sub><italic>ext</italic></sub> was positive, while the recurrent input <italic>x</italic><sub><italic>rec</italic></sub> was negative and curtailed the external input (<xref rid="fig4" ref-type="fig">Fig. 4F</xref>, external and recurrent). When no reward was received, <italic>x</italic><sub><italic>ext</italic></sub> and <italic>x</italic><sub><italic>rec</italic></sub> were both amplified by approximately the same factor and resulted in increased total input: <inline-formula><inline-graphic xlink:href="613033v1_inline11.gif" mime-subtype="gif" mimetype="image"/></inline-formula> with <italic>γ</italic><sup><italic>norew</italic></sup> <italic>&gt;</italic> 1 (<xref rid="fig4" ref-type="fig">Fig. 4F</xref>, amplification). On the other hand, when reward was received, they were both suppressed, resulting in decreased total input: <inline-formula><inline-graphic xlink:href="613033v1_inline12.gif" mime-subtype="gif" mimetype="image"/></inline-formula> with <italic>γ</italic><sup><italic>reward</italic></sup> <italic>&lt;</italic> 1. This suggested a circuit dynamic motif, where external feedback balanced by recurrent inhibition drives the reversal probability dynamics. The total drive is amplified or suppressed, depending on reward outcomes, resulting in a trajectory that separates from the previous trial’s trajectory.</p>
+<p>In sum, our findings show that dynamic neural trajectories encoding reversal probability are separated from the previous trial’s trajectory in response to reward outcomes, allowing them to represent distinct values of reversal probability across a trial.</p>
+</sec>
+<sec id="s2e">
+<label>5</label>
+<title>Monotonic shift of reversal probability trajectories across trials</title>
+<p>So far, we showed that neural trajectories of two adjacent trials, encoding reversal probability, were separable. In this section, we investigated if trajectories exhibited systematic changes across multiple trials. Specifically, we quantified the mean behavior of trajectories in each trial (referred to as mean trajectory of a trial) and looked for consistent trends in the changes of mean trajectories across trials.</p>
+<p>Since a mean trajectory was obtained by averaging over all reward outcomes, we compared how reward and no-reward blocks contributed to modifying the next trial’s mean trajectory. This analysis amounted to comparing <inline-formula><inline-graphic xlink:href="613033v1_inline13.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline14.gif" mime-subtype="gif" mimetype="image"/></inline-formula> shown in <xref rid="fig4" ref-type="fig">Fig. 4D</xref>. Since <inline-formula><inline-graphic xlink:href="613033v1_inline15.gif" mime-subtype="gif" mimetype="image"/></inline-formula> <italic>&gt;</italic> 0 and <inline-formula><inline-graphic xlink:href="613033v1_inline16.gif" mime-subtype="gif" mimetype="image"/></inline-formula><italic>&lt;</italic> 0 throughout a trial, we flipped the sign of <inline-formula><inline-graphic xlink:href="613033v1_inline17.gif" mime-subtype="gif" mimetype="image"/></inline-formula> to <inline-formula><inline-graphic xlink:href="613033v1_inline18.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and compared the magnitudes of two positive traces, <inline-formula><inline-graphic xlink:href="613033v1_inline19.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline20.gif" mime-subtype="gif" mimetype="image"/></inline-formula> We found that, before the behavioral reversal trial (<italic>k &lt;</italic> 0), the contribution of no-reward <inline-formula><inline-graphic xlink:href="613033v1_inline21.gif" mime-subtype="gif" mimetype="image"/></inline-formula> was larger than reward <inline-formula><inline-graphic xlink:href="613033v1_inline22.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. This is shown as <inline-formula><inline-graphic xlink:href="613033v1_inline23.gif" mime-subtype="gif" mimetype="image"/></inline-formula> lying above <inline-formula><inline-graphic xlink:href="613033v1_inline24.gif" mime-subtype="gif" mimetype="image"/></inline-formula> during a trial and across pre-reversal trials (see relative trials <italic>k</italic> = −5 to −1 in <xref rid="fig5" ref-type="fig">Fig. 5A</xref>). Their temporal averages over trial duration also captured this finding: <inline-formula><inline-graphic xlink:href="613033v1_inline25.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, was larger than <inline-formula><inline-graphic xlink:href="613033v1_inline26.gif" mime-subtype="gif" mimetype="image"/></inline-formula> before the behavioral reversal trial (<xref rid="fig5" ref-type="fig">Fig. 5B</xref>, bottom). This analysis showed that the sum <inline-formula><inline-graphic xlink:href="613033v1_inline27.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, i.e., the difference of mean trajectories between two adjacent trials, stayed positive during the pre-reversal trials (<xref rid="fig5" ref-type="fig">Fig. 5B</xref>, top). We confirmed that the fraction of trials, for which <inline-formula><inline-graphic xlink:href="613033v1_inline28.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is positive, was close to 0.8 in the pre-reversal phase (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>, top).</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5:</label>
+<caption><p>Mean trajectories encoding reversal probability shift monotonically across trials. <bold>(A)</bold> Traces of <inline-formula><inline-graphic xlink:href="613033v1_inline72.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline73.gif" mime-subtype="gif" mimetype="image"/></inline-formula> around the behavioral reversal trial. Note the sign flip in <inline-formula><inline-graphic xlink:href="613033v1_inline74.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, which was introduced to compare the magnitudes of <inline-formula><inline-graphic xlink:href="613033v1_inline75.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline76.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. <bold>(B)</bold> Top: <inline-formula><inline-graphic xlink:href="613033v1_inline77.gif" mime-subtype="gif" mimetype="image"/></inline-formula> across trial and time. Bottom: Temporal averages of <inline-formula><inline-graphic xlink:href="613033v1_inline78.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline79.gif" mime-subtype="gif" mimetype="image"/></inline-formula> over the trial duration. <bold>(C)</bold> Top: Traces of <inline-formula><inline-graphic xlink:href="613033v1_inline80.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of pre-reversal trials (relative trial <italic>k</italic> = −5 to −1), and the fraction of trials at each time point that satisfy <inline-formula><inline-graphic xlink:href="613033v1_inline81.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Bottom: Mean PFC reversal probability trajectories of pre-reversal trials. <bold>(D)</bold> Same as in panel (C), but for post-reversal trials (relative trial <italic>k</italic> = 0 to 4). <bold>(E)</bold> Spearman rank correlation between trial numbers and the mean PFC reversal probability trajectories across pre-reversal (red) and post-reversal (blue) trials at each time point. For the post-reversal trials, Spearman rank correlation was calculated with the trial numbers in reversed order to capture the descending order. <bold>(F)</bold> <inline-formula><inline-graphic xlink:href="613033v1_inline82.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of trained RNNs across trial and time. <bold>(G-I)</bold> Trained RNNs’ block-averaged <italic>x</italic><sub><italic>rev</italic></sub> before and after the reversal trial and their average Spearman correlation at each time point.</p></caption>
+<graphic xlink:href="613033v1_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>The sum <inline-formula><inline-graphic xlink:href="613033v1_inline29.gif" mime-subtype="gif" mimetype="image"/></inline-formula> being positive meant that the next trial’s mean trajectory was increased relative to the current trial’s mean trajectory. Furthermore, the sum <inline-formula><inline-graphic xlink:href="613033v1_inline30.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of pre-reversal trials being positive was equivalent to the mean trajectories increasing monotonically across trials towards the behavioral reversal trial (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>, bottom). The monotonicity of trajectories implied that a topological structure was present in pre-reversal trajectories; namely, the rank order of the trajectories was preserved throughout the trial duration. Consistent with this observation, we found that the Spearman rank correlation of pre-reversal trajectories was stable in time (<xref rid="fig5" ref-type="fig">Fig. 5E</xref>, pre).</p>
+<p>After the reversal trial (<italic>k</italic> ≥ 0), on the other hand, the contributions of no reward <inline-formula><inline-graphic xlink:href="613033v1_inline31.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and reward <inline-formula><inline-graphic xlink:href="613033v1_inline32.gif" mime-subtype="gif" mimetype="image"/></inline-formula> were the opposite of pre-reversal trials. The traces of <inline-formula><inline-graphic xlink:href="613033v1_inline33.gif" mime-subtype="gif" mimetype="image"/></inline-formula> were positioned above <inline-formula><inline-graphic xlink:href="613033v1_inline34.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (see relative trials <italic>k</italic> = 0 to 4 in <xref rid="fig5" ref-type="fig">Fig. 5A</xref>), and the temporal average <inline-formula><inline-graphic xlink:href="613033v1_inline35.gif" mime-subtype="gif" mimetype="image"/></inline-formula> was larger than <inline-formula><inline-graphic xlink:href="613033v1_inline36.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (<xref rid="fig5" ref-type="fig">Fig. 5B</xref>, bottom). This showed that <inline-formula><inline-graphic xlink:href="613033v1_inline37.gif" mime-subtype="gif" mimetype="image"/></inline-formula> was mostly negative during post-reversal trials. The fraction of trials, for which <inline-formula><inline-graphic xlink:href="613033v1_inline38.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is negative, was close to 0.8 in the post-reversal phase (<xref rid="fig5" ref-type="fig">Fig. 5D</xref>, top). The negativity of <inline-formula><inline-graphic xlink:href="613033v1_inline39.gif" mime-subtype="gif" mimetype="image"/></inline-formula> across post-reversal trials meant that the post-reversal trajectories were monotonically decreasing (<xref rid="fig5" ref-type="fig">Fig. 5D</xref>, bottom). Similarly to the pre-reversal trajectories but in reversed order, the rank order of post-reversal trajectories was stable over the trial duration (<xref rid="fig5" ref-type="fig">Fig. 5E</xref>, post).</p>
+<p>Consistently with the PFC findings, in the trained RNNs, the effects of reward outcomes on mean trajectories were characterized by <inline-formula><inline-graphic xlink:href="613033v1_inline40.gif" mime-subtype="gif" mimetype="image"/></inline-formula> being positive and negative before and after the reverse trial, respectively (<xref rid="fig5" ref-type="fig">Fig. 5F</xref>). Consequently, trained RNNs exhibited monotonic increase and decrease in the pre- and post-reversal phases, respectively (<xref rid="fig5" ref-type="fig">Figs. 5G, H</xref>). Also, the rank order of trajectories was stable over the trial duration (<xref rid="fig5" ref-type="fig">Fig. 5I</xref>)).</p>
+<p>Our analyses show that the mean behavior of dynamic neural trajectories, encoding reversal probability, is to shift monotonically across trials near the behavioral reversal. It suggests that a family of graded neural trajectories, with a temporally stable rank order, could represent varying estimates of the probability that a reversal has occurred.</p>
+</sec>
+<sec id="s2f">
+<label>6</label>
+<title>Perturbing neural activity encoding reversal probability biases choice outcomes</title>
+<p>Next we turned to the RNN to see if we could perturb activity within the reversal probability space, and consequently perturb the network’s choice preference. Previous experimental works demonstrated that perturbing neural activity of medial frontal cortex [<xref ref-type="bibr" rid="c27">27</xref>], specific cell types [<xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c29">29</xref>] or neuromodulators [<xref ref-type="bibr" rid="c5">5</xref>, <xref ref-type="bibr" rid="c6">6</xref>] affect the performance of reversal learning. In our study, the perturbation was tailored to be within the reversal probability space by applying an external stimulus aligned (<italic>v</italic><sub>+</sub>) or opposite (<italic>v</italic><sub>−</sub>) to the reversal probability vector. An external stimulus in a random direction was also applied as a control (<italic>v</italic><sub><italic>rnd</italic></sub>). All the stimuli were applied before the time of choice at the reversal trial or at preceding trials (<xref rid="fig6" ref-type="fig">Fig. 6A</xref>).</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6:</label>
+<caption><p>Perturbing RNN’s neural activity encoding reversal probability biases choice outcomes. <bold>(A)</bold> RNN perturbation scheme. Three perturbation stimuli were used; <italic>v</italic><sub>+</sub>, population vector encoding the reversal probability; <italic>v</italic><sub>−</sub>, negative of <italic>v</italic><sub>+</sub>; <italic>v</italic><sub><italic>rnd</italic></sub>, control stimulus in random direction. Perturbation stimuli were applied at the reversal (0) and two preceding (−2, -1) trials. <bold>(B)</bold> Deviation of reversal probability activity Δ<italic>x</italic><sub><italic>rev</italic></sub> and choice activity Δ<italic>x</italic><sub><italic>choice</italic></sub> from the unperturbed activity. Perturbation was applied at the reversal trial during a time interval the cue was presented (shaded red). Choice was made after a short delay (shaded gray). Perturbation response along the reversal probability vector <italic>v</italic><sub>+</sub> (solid) and random vector <italic>v</italic><sub><italic>rnd</italic></sub> (dotted) are shown. <bold>(C)</bold> Perturbation of reversal probability activity (left) and choice activity (right) in response to three types of stimulus. Δ<italic>x</italic><sub><italic>rev</italic></sub> shows the activity averaged over the duration of perturbation, and Δ<italic>x</italic><sub><italic>choice</italic></sub> shows the averaged activity over the duration of choice. <bold>(D-E)</bold> Fraction of blocks in all 40 trained RNNs that exhibited delayed or accelerated reversal trials in response to perturbations of the reversal probability activity. Perturbations at trial number -1 by three stimulus types are shown on the left panels, and perturbations at all three trials by the stimulus of interest (<italic>v</italic><sub>−</sub> in D and <italic>v</italic><sub>+</sub> in E) are shown on the right panels. <bold>(F)</bold> Left: The slope of linear regression model fitted to the residual activity of reversal probability and choice. The residual activity at each trial over the time interval [0, 500]ms was used to fit the linear model. Red dot indicates the slope at trial number -1. Right: Each dot is the residual activity of a block at trial number -1. Red line shows the fitted linear model.</p></caption>
+<graphic xlink:href="613033v1_fig6.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>We found that the deviation of perturbed reversal probability activity from the unperturbed activity peaked at the end of perturbation duration and decayed gradually (<xref rid="fig6" ref-type="fig">Fig. 6B</xref>, red solid). The perturbed choice activity, however, deviated more slowly and peaked during the choice duration (<xref rid="fig6" ref-type="fig">Fig. 6B</xref>, black solid). This showed that perturbation of the reversal probability activity had its maximal effect on the choice activity when the choice was made. The strong perturbative effects on the reversal probability and choice activity were not observed in the control (<xref rid="fig6" ref-type="fig">Fig. 6B</xref>, dotted).</p>
+<p>The perturbation in the aligned (<italic>v</italic><sub>+</sub>) and opposite (<italic>v</italic><sub>−</sub>) directions shifted the reversal probability activity along the same directions as the perturbation vector, as expected (<xref rid="fig6" ref-type="fig">Fig. 6C</xref>, left). The choice activity, on the other hand, increased when the perturbation was in the opposite direction (<italic>v</italic><sub>−</sub>) and decreased when the perturbation was in the aligned direction (<italic>v</italic><sub>+</sub>) (<xref rid="fig6" ref-type="fig">Fig. 6C</xref>, right). This finding showed that the choice activity could be biased (1) towards pre-reversal choices if the perturbation decreases the reversal probability activity and (2) towards the post-reversal choices if the perturbation increases the reversal probability activity.</p>
+<p>We further analyzed if perturbing within the reversal probability space could affect the choice outcomes, specifically the behavioral reversal trial. We found that the reversal trial was delayed when <italic>v</italic><sub>−</sub> stimulus was applied to reduce the reversal probability activity (<xref rid="fig6" ref-type="fig">Fig. 6D</xref>, left). The effect of <italic>v</italic><sub>−</sub> stimulus increased gradually with the stimulus strength and was significantly stronger than the <italic>v</italic><sub>+</sub> or <italic>v</italic><sub><italic>rnd</italic></sub> stimuli in delaying the reversal trial. Perturbation had the strongest effect when applied to the reversal trial, while perturbations on trials preceding the reversal showed appreciable but reduced effects (<xref rid="fig6" ref-type="fig">Fig. 6D</xref>, right). When the <italic>v</italic><sub>+</sub> stimulus was applied to trials preceding the reversal trial, the reversal was accelerated (<xref rid="fig6" ref-type="fig">Fig. 6E</xref>, left). The effect of <italic>v</italic><sub>+</sub> stimulus also increased with stimulus strength and was significantly stronger than the <italic>v</italic><sub>−</sub> or <italic>v</italic><sub><italic>rnd</italic></sub> stimuli in accelerating the reversal trial (<xref rid="fig6" ref-type="fig">Fig. 6E</xref>, right).</p>
+<p>We asked if perturbation of neural activity in PFC could exhibit similar responses. In other words, does increase (or decrease) in reversal probability activity lead to decrease (or increase) in choice activity in PFC? Although PFC activity was not perturbed by external inputs, we considered the residual activity of single trials, i.e., deviation of single trial neural activity around the trial-averaged activity, to be “natural” perturbation responses. We fitted a linear model to the residual activity of reversal probability and choice and found that they were strongly negatively correlated (i.e., negative slope in <xref rid="fig6" ref-type="fig">Fig. 6F</xref>)) at the trial preceding the behavioral reversal trial. This analysis demonstrated the correlation between perturbation responses of reversal probability and choice activity. However, it remains to be investigated, through perturbation experiments, whether reversal probability activity is causally linked to choice activity in PFC and, moreover, to animal’s choice outcomes.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<sec id="s3a">
+<title>Reversal learning</title>
+<p>Reversal learning has been a behavioral framework for investigating how the brain supports flexible behavior [<xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c6">6</xref>] and for elucidating neural mechanisms underlying mental health issues [<xref ref-type="bibr" rid="c30">30</xref>, <xref ref-type="bibr" rid="c31">31</xref>]. It has been shown that multiple brain regions (cortical [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c4">4</xref>, <xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c27">27</xref>–<xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c32">32</xref>] and subcortical [<xref ref-type="bibr" rid="c3">3</xref>, <xref ref-type="bibr" rid="c33">33</xref>]), neuromodulators [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c5">5</xref>, <xref ref-type="bibr" rid="c6">6</xref>] and different inhibitory neuron types [<xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c29">29</xref>] are involved in reversal learning.</p>
+</sec>
+<sec id="s3b">
+<title>Our results</title>
+<p>Despite these recent advances, the dynamics of neural activity in cortical areas during a reversal learning task have not been well characterized. In this study, we investigated how reversal probability is represented in cortical neurons by analyzing neural activity in the prefrontal cortex of monkeys and recurrent neural networks performing the reversal learning task. Reversal probability was encoded in dynamically evolving neural trajectories that shifted in response to reward outcomes. Neural trajectories were translated in the direction consistent with how reversal probability would be updated by reward outcomes, and their position could be estimated by integrating reward outcomes across trials. These suggested a neural mechanism where separable dynamic trajectories represent reversal probability by accumulating reward outcomes. Around the behavioral reversal, the average effects of reward outcomes became monotonic, resulting in graded neural representation of reversal probabilities. Perturbation experiments in trained networks demonstrated a potential causal link between reversal probability activity and choice outcomes.</p>
+</sec>
+<sec id="s3c">
+<title>Attractor dynamics</title>
+<p>RNNs with attractor dynamics have been investigated in various contexts as a neural implementation of normative models of decision-making and evidence integration [<xref ref-type="bibr" rid="c34">34</xref>–<xref ref-type="bibr" rid="c38">38</xref>]. One perspective is to consider decision variables as discrete or continuous attractor states of an RNN. Then, the network activity converges to an attracting state as a decision is made. Biologically plausible network models [<xref ref-type="bibr" rid="c7">7</xref>, <xref ref-type="bibr" rid="c16">16</xref>] and neural recordings in cortical areas have been shown to exhibit discrete [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c39">39</xref>] and continuous [<xref ref-type="bibr" rid="c40">40</xref>] attractor dynamics. Another perspective, more closely related to our study, is to consider evidence integration as a movement of network state along a one-dimensional continuous attractor, as demonstrated in [<xref ref-type="bibr" rid="c8">8</xref>, <xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c41">41</xref>] (see also continuous attractor dynamics in spatial mapping [<xref ref-type="bibr" rid="c17">17</xref>, <xref ref-type="bibr" rid="c42">42</xref>–<xref ref-type="bibr" rid="c44">44</xref>]).</p>
+<p>In most of the studies, decision-related evidence was presented without significant interruption until the decision point [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c20">20</xref>, <xref ref-type="bibr" rid="c39">39</xref>]. However, this was not the case in a reversal learning task with probabilistic rewards, as reward outcomes were revealed intermittently over multiple trials while intervening behavior must be performed in-between trials. We showed that such multi-trial evidence integration promoted substantial non-stationary activity in the neural subspace encoding reversal probability. Therefore, the continuous attractor dynamics, in which the network state stays close to the attracting states, did not fully account for the observed neural dynamics. Instead, our findings suggest that separable dynamic trajectories could serve as a neural mechanism for representing accumulated evidence in a temporally flexible way.</p>
+</sec>
+<sec id="s3d">
+<title>Related work</title>
+<p>Recent studies showed that intervening behaviors, such as introducing an intruder [<xref ref-type="bibr" rid="c21">21</xref>] or accumulating reward across trials [<xref ref-type="bibr" rid="c41">41</xref>], could produce neural trajectories that deviate from and retract to a line attractor. In our study, we focused on characterizing the neural representation of reversal probability but did not investigate it from dynamical systems perspective. It remains as future work to characterize if and how the separable dynamic trajectories observed in our study could be augmented to the continuous attractor model and compare it to previous works [<xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c41">41</xref>].</p>
+<p>In a related work [<xref ref-type="bibr" rid="c45">45</xref>], RNNs were trained to perform a change point detection task designed by the International Brain Laboratory [<xref ref-type="bibr" rid="c46">46</xref>]. Authors showed that trained RNNs exhibited behavior outputs consistent with an ideal Bayesian observer, as found in our study. However, their trained RNN exhibited line attractor dynamics in contrast to ours. One possible reason for this discrepancy is that their network model stepped through only a few time points in a trial, which limited the possible range of temporal dynamics RNNs can exhibit. This suggests that the setup of a task RNNs learn can shape the trained RNN dynamics. Moreover, it needs to be investigated whether such attractor dynamics are present in the neural recordings from mice performing the change point detection task.</p>
+<p>Although RNNs in our study were trained via supervised learning, animals learn a reversal learning task from reward feedback, making it into a reinforcement learning (RL) problem. Neuromodulators play a key role in mediating RL in the brain. In a recent study, dopamine-based RL was used to train artificial RNNs to conduct reversal learning tasks. It was shown that neural activity in RNNs and mice performing the same tasks were in good agreement [<xref ref-type="bibr" rid="c47">47</xref>]. In addition, projections of serotonin from dorsal raphe nuclei [<xref ref-type="bibr" rid="c6">6</xref>, <xref ref-type="bibr" rid="c48">48</xref>] and norepinephrine from the locus coeruleus [<xref ref-type="bibr" rid="c5">5</xref>] to the cortical areas were shown to be involved in reversal learning. Further studies with biologically plausible network models including neuromodulatory effects [<xref ref-type="bibr" rid="c49">49</xref>, <xref ref-type="bibr" rid="c50">50</xref>] or formal RL theories incorporating neuromodulators [<xref ref-type="bibr" rid="c51">51</xref>] could provide further insights into the role of neuromodulators in reversal learning.</p>
+</sec>
+<sec id="s4">
+<title>Conclusion</title>
+<p>Our findings show that, when performing a reversal learning task that requires evidence integration across trials, a cortical circuit adopts a dynamic neural representation of accumulated evidence to accommodate non-stationary activity associated with intervening behaviors. Such neural mechanism demonstrates the temporal flexibility of cortical computation and opens the opportunity for extending existing neural model for evidence accumulation by augmenting temporal dynamics.</p>
+</sec>
+</sec>
+<sec id="s5">
+<title>Methods</title>
+<sec id="s5a">
+<label>1</label>
+<title>Recurrent neural network</title>
+<sec id="s5a1">
+<title>Network model</title>
+<p>We trained a recurrent neural network with purely inhibitory synaptic connections. A baseline excitatory external input was applied to neurons, without which the network activity became quiescent. Such inhibitory network operated in a balanced regime where the recurrent inhibitory inputs were balanced with the external excitatory inputs [<xref ref-type="bibr" rid="c52">52</xref>]. Neurons were connected sparsely with connection probability <italic>p</italic>. Throughout network training, the signs of synaptic weights were preserved, resulting in a trained network that had only inhibitory synaptic connections.</p>
+<p>The network dynamics were governed by the following equation
+<disp-formula id="eqn1">
+<graphic xlink:href="613033v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and the network readout was
+<disp-formula id="eqn2">
+<graphic xlink:href="613033v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Here, <bold>u</bold> ∈ ℝ <sup><italic>N</italic></sup> is the neural activity of population of <italic>N</italic> neurons, <italic>W</italic> <sup><italic>rec</italic></sup> is an <italic>N</italic> × <italic>N</italic> recurrent connectivity matrix with inhibitory synaptic weights: <inline-formula><inline-graphic xlink:href="613033v1_inline41.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is connection from neurons <italic>j</italic> to <italic>i</italic>. The activation function was sigmoidal, <italic>ϕ</italic>(<italic>x</italic>) = 1<italic>/</italic>(1 +exp[(<italic>ax</italic> + <italic>b</italic>)]), and was applied to <bold>u</bold> elementwise in <italic>ϕ</italic>(<bold>u</bold>). The baseline input <bold>I</bold><sub><italic>base</italic></sub> was constant in time and same for all neurons, the cue <bold>I</bold><sub><italic>cue</italic></sub> was turned on to signal the RNN to make a choice, and the feedback <bold>I</bold><sub><italic>feedback</italic></sub> provided information about the previous trial’s choice and reward outcome (see <xref rid="tbl1" ref-type="table">Table 1</xref>).</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1:</label>
+<caption><title>Four types of feedback inputs</title></caption>
+<graphic xlink:href="613033v1_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<p>The duration of a trial was <italic>T</italic> = 500ms. The feedback <bold>I</bold><sub><italic>feedback</italic></sub> was applied on the time interval [0, <italic>T</italic><sub><italic>feedback</italic></sub>], and the cue <bold>I</bold><sub><italic>cue</italic></sub> was applied on the the time interval <inline-formula><inline-graphic xlink:href="613033v1_inline42.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <italic>T</italic><sub><italic>feedback</italic></sub> = 300ms and <inline-formula><inline-graphic xlink:href="613033v1_inline43.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, <inline-formula><inline-graphic xlink:href="613033v1_inline44.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. The network choice was defined using the average of the readout <italic>z</italic> on the time interval <inline-formula><inline-graphic xlink:href="613033v1_inline45.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <inline-formula><inline-graphic xlink:href="613033v1_inline46.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline47.gif" mime-subtype="gif" mimetype="image"/></inline-formula>.</p>
+</sec>
+<sec id="s5a2">
+<title>Reduced model</title>
+<p>One-dimensional reduction of the network dynamics in a subspace defined by a task vector, <bold>v</bold>, was derived as follows (see <xref rid="fig4" ref-type="fig">Fig. 4</xref>). The projection of network activity onto the task vector was
+<disp-formula id="eqn3">
+<graphic xlink:href="613033v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Then, the dynamics of the projected activity is governed by
+<disp-formula id="eqn4">
+<graphic xlink:href="613033v1_eqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where
+<disp-formula id="eqn5">
+<graphic xlink:href="613033v1_eqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn6">
+<graphic xlink:href="613033v1_eqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Here <italic>x</italic><sub><italic>rec</italic></sub> includes both the decay and recurrent terms, and <italic>x</italic><sub><italic>ext</italic></sub> accounts for all external inputs <bold>I</bold> = <bold>I</bold><sub><italic>base</italic></sub> + <bold>I</bold><sub><italic>cue</italic></sub> + <bold>I</bold><sub><italic>feedback</italic></sub>.</p>
+</sec>
+</sec>
+<sec id="s5b">
+<label>2</label>
+<title>Reversal learning task</title>
+<p><italic>Overview</italic>. Each block consisted of <italic>T</italic> = 24 trials during network training. The reversal trial <italic>r</italic> was sampled randomly and uniformly from 10 trials around the midtrial:.
+<disp-formula id="ueqn1">
+<graphic xlink:href="613033v1_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The network made a choice in each trial: A or B. To model which choice was rewarded, we generated a “rewarded” choice for each trial. One of the choices was more likely to be rewarded than the other. The network’s choice was compared to the rewarded choice, and the network received a feedback that signaled its choice and reward outcome (e.g., chose A and received a reward). The option that yielded higher reward prior to the reversal trial was switched to the other option at the reversal trial.</p>
+<p>To train the network to reverse its preferred choice, we used the output of an ideal Bayesian observer model as teaching signal. Specifically, we first inferred the scheduled reversal trial (i .e., the trial at which reward probability switched) using the Bayesian model. Then, the network was trained to flip its preferred choice a few trials after the inferred scheduled reversal trial, such that network’s behavioral reversal trial occurred a few trials after the scheduled reversal trial.</p>
+<p>Note that, although we refer to “rewarded” choices, there were no actual rewards in our network model. The “rewarded” choices were set up to define feedback inputs that mimic the reward outcomes monkey received.</p>
+<sec id="s5b1">
+<label>2.1</label>
+<title>Experiment variables</title>
+<p>The important variables for training the RNN were network choice, rewarded choice and feedback. <italic>Network choice</italic>. To define network choice, we symmetrized the readout <bold>z</bold> <sup><italic>sym</italic></sup> = (<italic>z</italic>, −<italic>z</italic>) and computed its log-softmax <inline-formula><inline-graphic xlink:href="613033v1_inline48.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <italic>s</italic> = <italic>e</italic><sup><italic>z</italic></sup> + <italic>e</italic><sup>−<italic>z</italic></sup>. The network choice was
+<disp-formula id="eqn7">
+<graphic xlink:href="613033v1_eqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where
+<disp-formula id="eqn8">
+<graphic xlink:href="613033v1_eqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><italic>Rewarded choice</italic>. To model stochastic rewards, rewarded choices were generated probabilistically for each trial <italic>k</italic>:
+<disp-formula id="eqn9">
+<graphic xlink:href="613033v1_eqn9.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The reversal of reward schedule was implemented by switching the target probability at the scheduled reversal trial of the block, denoted by <italic>r</italic><sub><italic>sch</italic></sub>.
+<disp-formula id="eqn10">
+<graphic xlink:href="613033v1_eqn10.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><italic>Feedback</italic>. We considered that reward is delivered when the network choice agreed with the rewarded choice, and no reward is delivered when they disagreed. This led to four types of feedback inputs show in <xref rid="tbl1" ref-type="table">Table 1</xref>.</p>
+</sec>
+<sec id="s5b2">
+<label>2.2</label>
+<title>Bayesian inference model</title>
+<p>Here we formulate Bayesian models that infer the scheduled reversal trial or the behavior reversal trial.</p>
+<sec id="s5b2a">
+<title>Ideal observer model</title>
+<p>The ideal observer model, developed previously [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c4">4</xref>], inferred the scheduled reversal trial and assumed that (a) the target probability was known (<xref ref-type="disp-formula" rid="eqn9">Eq. 9</xref>) and (b) it switched at the reversal trial (<xref ref-type="disp-formula" rid="eqn10">Eq. 10</xref>).</p>
+<p>The data available to the ideal observer were the choice <italic>y</italic><sub><italic>k</italic></sub> ∈ {<italic>A, B</italic>} and the reward outcome <italic>z</italic><sub><italic>k</italic></sub> ∈ {0, 1} at all the trials <italic>k</italic> ∈ [1, <italic>T</italic>]. We inferred the posterior distribution of scheduled reversal at trials <italic>k</italic> ∈ [1, <italic>T</italic>]. By Bayes’ rule
+<disp-formula id="eqn11">
+<graphic xlink:href="613033v1_eqn11.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We evaluated the posterior distribution of <italic>r</italic> when data were available up to any trial <italic>t</italic> ≤ <italic>T</italic>. The likelihood function <italic>f</italic><sub><italic>IO</italic></sub>(<italic>r</italic>) = <italic>p</italic>(<italic>y</italic><sub>1:<italic>t</italic></sub>, <italic>z</italic><sub>1:<italic>t</italic></sub>|<italic>r</italic>) of the ideal observer was defined by
+<disp-formula id="ueqn2">
+<graphic xlink:href="613033v1_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>For <italic>k &lt; r</italic>,
+<disp-formula id="eqn12">
+<graphic xlink:href="613033v1_eqn12.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn13">
+<graphic xlink:href="613033v1_eqn13.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn14">
+<graphic xlink:href="613033v1_eqn14.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn15">
+<graphic xlink:href="613033v1_eqn15.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>For <italic>k</italic> ≥ <italic>r</italic>,
+<disp-formula id="eqn16">
+<graphic xlink:href="613033v1_eqn16.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn17">
+<graphic xlink:href="613033v1_eqn17.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn18">
+<graphic xlink:href="613033v1_eqn18.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn19">
+<graphic xlink:href="613033v1_eqn19.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>To obtain the posterior distribution of <italic>r</italic> (<xref ref-type="disp-formula" rid="eqn11">Eq. 11</xref>), the likelihood function <italic>f</italic><sub><italic>IO</italic></sub>(<italic>r</italic>) was evaluated for all <italic>r</italic> ∈ [<xref ref-type="bibr" rid="c1">1</xref>, <italic>t</italic>], assuming flat prior <italic>p</italic>(<italic>r</italic>) and normalizing by the choice and reward data <italic>p</italic>(<italic>y</italic><sub>1:<italic>t</italic></sub>, <italic>z</italic><sub>1:<italic>t</italic></sub>).</p>
+</sec>
+<sec id="s5b2b">
+<title>Behavioral model</title>
+<p>To infer the trial at which choice reversed, i.e., behavior reversal, we used a likelihood function that assumed the preferred choice probability switched at the behavior reversal. Here, the reward schedule was not known.</p>
+<p>The data available to the behavioral model were the choice <italic>y</italic><sub><italic>k</italic></sub> ∈ {<italic>A, B</italic>} at all the trials <italic>k</italic> ∈ [<xref ref-type="bibr" rid="c1">1</xref>, <italic>T</italic>]. We inferred the posterior distribution of behavior reversal at trials <italic>k</italic> ∈ [1, <italic>T</italic>]. By Bayes’ rule
+<disp-formula id="eqn20">
+<graphic xlink:href="613033v1_eqn20.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The likelihood function for the behavioral model was
+<disp-formula id="ueqn3">
+<graphic xlink:href="613033v1_ueqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>For <italic>k &lt; r</italic>,
+<disp-formula id="eqn21">
+<graphic xlink:href="613033v1_eqn21.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn22">
+<graphic xlink:href="613033v1_eqn22.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>For <italic>k</italic> ≥ <italic>r</italic>,
+<disp-formula id="eqn23">
+<graphic xlink:href="613033v1_eqn23.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn24">
+<graphic xlink:href="613033v1_eqn24.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>To obtain the posterior distribution of <italic>r</italic>, we assumed flat prior <italic>p</italic>(<italic>r</italic>), as in the ideal observer, and normalized by the choice data <italic>p</italic>(<italic>y</italic><sub>1:<italic>t</italic></sub>).</p>
+</sec>
+</sec>
+<sec id="s5b3">
+<label>2.3</label>
+<title>Training scheme</title>
+<p><italic>Overview</italic>. The ideal observer successfully inferred a scheduled reversal trial, which occurred randomly around the mid-trial. To learn to switch its preferred choice, we trained the network to learn from scheduled reversal trials inferred from the ideal observer. In other words, in a block consisting of <italic>T</italic> trials, the network choices and reward outcomes were fed into the ideal observer model to infer the randomly chosen scheduled reversal trial. Then, the network was trained to switch its preferred choice a few trials after the inferred reversal trial. This delay in the behavior reversal from the scheduled reversal was observed in monkey’s reversal behavior [<xref ref-type="bibr" rid="c4">4</xref>] and a running estimate of the Maximum a Posterior of the reversal probability (see Step 3 below). As the inferred scheduled reversal trial varied across blocks, the network learned to reverse its choice in a block-dependent manner.</p>
+<p>Below we described the specific steps taken to train the network.</p>
+<p><italic>Step 1</italic>. Simulate the network and store the network choices and reward outcomes.</p>
+<p><italic>Step 2</italic>. Apply the ideal observer model to network’s choice and reward data to infer the scheduled reversal.</p>
+<p><italic>Step 3</italic>. Identify the trial <italic>t</italic><sup>*</sup> at which network choice should be reversed.</p>
+<p>The main observation is that the running estimate of Maximum a Posterior (MAP) of the reversal probability converges a few trials past the MAP estimate. In other words, let
+<disp-formula id="ueqn4">
+<graphic xlink:href="613033v1_ueqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+then,
+<disp-formula id="ueqn5">
+<graphic xlink:href="613033v1_ueqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where the convergence occurs around
+<disp-formula id="ueqn6">
+<graphic xlink:href="613033v1_ueqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><italic>Step 4</italic>. Construct the choice sequences the network will learn.
+<disp-formula id="ueqn7">
+<graphic xlink:href="613033v1_ueqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><italic>Step 5</italic>. Define the loss function of a block.
+<disp-formula id="ueqn8">
+<graphic xlink:href="613033v1_ueqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><italic>Step 6</italic>. Train the recurrent connectivity weights <italic>W</italic> <sup><italic>rec</italic></sup> and the readout weights <bold>w</bold><sup><italic>out</italic></sup> with backpropagation using Adam optimizer with learning rate 10<sup>−2</sup>. The learning rate was decayed by a factor 0.9 every 3 epochs. The batch size (i.e., the number of networks trained) was 256. The training was continued until the fraction of rewarded trials was close to reward probability <italic>p</italic> of the preferred option.</p>
+</sec>
+</sec>
+<sec id="s5c">
+<label>3</label>
+<title>Targeted dimensionality reduction</title>
+<p>Targeted dimensionality reduction (TDR) identifies population vectors that encode task variables explicitly or implicitly utilized in the experiment the subject or RNN performs [<xref ref-type="bibr" rid="c20">20</xref>]. In this study, we were interested in identifying population vectors that encode choice preference and reversal probability. Once those task vectors were identified, we analyzed the neural activity projected to those vectors to investigate neural representation of task variables.</p>
+<p>We describe how TDR was performed in our study (see [<xref ref-type="bibr" rid="c20">20</xref>] for the original reference). First we regressed the neural activity of each neuron at each time point onto task variables of interest. Then we used the matrix of regression coefficients (i.e., neuron by time) to identify the task vector. Let <italic>y</italic><sub><italic>it</italic></sub>(<italic>k</italic>) be the spiking rate of neuron <italic>i</italic> at time <italic>t</italic> on trial <italic>k</italic> where we have <italic>N</italic> neurons and <italic>M</italic> time points. We regressed the spiking activity on task variables of interest <italic>z</italic><sup><italic>v</italic></sup>(<italic>k</italic>) where the task variables were <italic>v</italic> ∈ {reversal probability, choice preference, direction, object, block type, reward outcome, trial number}. For each neuron-time pair, (<italic>i, t</italic>), we performed linear regression over all trials <italic>k</italic> ∈ [0, <italic>T</italic>] with a bias:
+<disp-formula id="eqn25">
+<graphic xlink:href="613033v1_eqn25.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>This regression analysis yielded an <italic>N</italic> ×<italic>M</italic> coefficient matrix <inline-formula><inline-graphic xlink:href="613033v1_inline49.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for each task variable, <italic>v</italic>. We considered this coefficient matrix as a population vector evolving in time:<inline-formula><inline-graphic xlink:href="613033v1_inline50.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Then, a task vector was defined as the population vector <bold>w</bold><sup><italic>v</italic></sup> ∈ ℝ <sup><italic>N</italic></sup> at which the <italic>L</italic><sub>2</sub>-norm <inline-formula><inline-graphic xlink:href="613033v1_inline51.gif" mime-subtype="gif" mimetype="image"/></inline-formula> achieved its maximum:
+<disp-formula id="eqn26">
+<graphic xlink:href="613033v1_eqn26.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn27">
+<graphic xlink:href="613033v1_eqn27.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We performed QR-decomposition on the matrix of task vectors <italic>W</italic> = [<bold>w</bold><sub><italic>rev</italic></sub>, <bold>w</bold><sub><italic>choice</italic></sub>, …] to orthogonalize the task vectors. Then, the population activity was projected onto each (orthogonalized) task vector to obtain the neural activity encoding each task variable:
+<disp-formula id="eqn28">
+<graphic xlink:href="613033v1_eqn28.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <bold>y</bold><sub><italic>t</italic></sub>(<italic>k</italic>) = (<italic>y</italic><sub>1<italic>t</italic></sub>(<italic>k</italic>), …, <italic>y</italic><sub><italic>Nt</italic></sub>(<italic>k</italic>)) is the population activity at time <italic>t</italic> on trial <italic>k</italic>.</p>
+</sec>
+<sec id="s5d">
+<label>4</label>
+<title>Reward integration equation</title>
+<p>To derive the reward integration equation shown in <xref rid="fig3" ref-type="fig">Figure 3</xref>, we considered the neural activity in a subspace encoding the reversal probability:
+<disp-formula id="eqn29">
+<graphic xlink:href="613033v1_eqn29.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We analyzed the neural activity at the time of cue onset <italic>t</italic> = <italic>t</italic><sub><italic>on</italic></sub> and obtained a sequence of reversal probability activity across trials: <inline-formula><inline-graphic xlink:href="613033v1_inline52.gif" mime-subtype="gif" mimetype="image"/></inline-formula> To set up the reward integration equation
+<disp-formula id="eqn30">
+<graphic xlink:href="613033v1_eqn30.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+we estimated the update <inline-formula><inline-graphic xlink:href="613033v1_inline53.gif" mime-subtype="gif" mimetype="image"/></inline-formula> driven by reward outcomes at each trial <italic>k</italic>. Specifically, the update term was defined as the block-average of the difference of reversal probability activity at adjacent trials:
+<disp-formula id="eqn31">
+<graphic xlink:href="613033v1_eqn31.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Here, <inline-formula><inline-graphic xlink:href="613033v1_inline54.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denotes all the blocks across sessions (or networks) in which reward was received at trial <italic>k</italic>. Similarly, <inline-formula><inline-graphic xlink:href="613033v1_inline55.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denotes all the blocks in which reward was not received at trial <italic>k</italic>.</p>
+<p>To predict <inline-formula><inline-graphic xlink:href="613033v1_inline56.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, we set the initial value <inline-formula><inline-graphic xlink:href="613033v1_inline57.gif" mime-subtype="gif" mimetype="image"/></inline-formula> at trial 0 and sequentially predicted the following trials using Eq. (30) with the update term from Eq. (31). The same analysis was performed at different time points <italic>t</italic>. We derived integration equations for each time and assessed its prediction accuracy as shown in <xref rid="fig3" ref-type="fig">Figure 3F</xref>.</p>
+<p>To evaluate the contribution of reward and no-reward outcomes on the average responses of <inline-formula><inline-graphic xlink:href="613033v1_inline58.gif" mime-subtype="gif" mimetype="image"/></inline-formula> over blocks, we computed
+<disp-formula id="eqn32">
+<graphic xlink:href="613033v1_eqn32.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where
+<disp-formula id="eqn33">
+<graphic xlink:href="613033v1_eqn33.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+with <inline-formula><inline-graphic xlink:href="613033v1_inline59.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote the fractions of reward and no-reward blocks at trial <italic>k</italic>. In <xref rid="fig4" ref-type="fig">Figure 4D</xref> and <xref rid="fig5" ref-type="fig">Figure 5A</xref>, the weighted responses, i.e., <inline-formula><inline-graphic xlink:href="613033v1_inline60.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="613033v1_inline61.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, were shown.</p>
+</sec>
+<sec id="s5e">
+<label>5</label>
+<title>Decoding monkey’s behavioral reversal trial</title>
+<p>The PFC activity <inline-formula><inline-graphic xlink:href="613033v1_inline62.gif" mime-subtype="gif" mimetype="image"/></inline-formula> encoding reversal probability was used to decode the behavioral reversal trial at which monkey reversed its preferred choice (see <xref rid="figS2" ref-type="fig">Supp. Fig. S2</xref>). Our analysis is similar to the Linear Discriminant Analysis (LDA) performed in a previous study [<xref ref-type="bibr" rid="c4">4</xref>] at a fixed time point. Here, we applied LDA to time points across a trial.</p>
+<p>For training, 90% of the blocks were randomly selected to train the decoder and remaining 10% of the blocks were used for testing. This was repeated 20 times. Input data to LDA was <inline-formula><inline-graphic xlink:href="613033v1_inline63.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of Δ<italic>k</italic> trials around the reverse trial, i.e., <italic>k</italic> ∈ [<italic>k</italic><sub><italic>rev</italic></sub> − Δ<italic>k</italic>, …, <italic>k</italic><sub><italic>rev</italic></sub> + Δ<italic>k</italic>] with Δ<italic>k</italic> = 10. At each trial <italic>k</italic>, we took the activity vector <inline-formula><inline-graphic xlink:href="613033v1_inline64.gif" mime-subtype="gif" mimetype="image"/></inline-formula> around time <italic>t</italic><sub>0</sub> with Δ<italic>t</italic> = 160ms. The target output <italic>t</italic><sub>0</sub> <italic>t</italic><sub>0</sub>−Δ<italic>t t</italic><sub>0</sub>+Δ<sub><italic>t</italic></sub> of LDA was a one-hot vector <bold>y</bold><sup><italic>target</italic></sup>, whose element was 1 at the reversal trial <italic>k</italic><sub><italic>rev</italic></sub> and 0 at other trials. The following input-output shows dataset of a block used for training:
+<disp-formula id="eqn34">
+<graphic xlink:href="613033v1_eqn34.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn35">
+<graphic xlink:href="613033v1_eqn35.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Here <inline-formula><inline-graphic xlink:href="613033v1_inline65.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <italic>T</italic><sub><italic>dec</italic></sub> = 2Δ<italic>t/</italic>Δ<italic>h</italic> + 1 denotes the number of time points around <italic>t</italic><sub>0</sub> with time increment Δ<italic>h</italic> = 20ms, and the one-hot vector <inline-formula><inline-graphic xlink:href="613033v1_inline66.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <italic>K</italic><sub><italic>dec</italic></sub> = 2Δ<italic>k</italic> + 1 denotes the number of trials around the reversal trial. As mentioned above, this analysis was repeated for time point <italic>t</italic><sub>0</sub> across a trial.</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>This research was supported by the Intramural Research Program of the National Institutes of Health: the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) and the National Institute of Mental Health (NIMH).</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Charles M</given-names> <surname>Butter</surname></string-name></person-group>. <article-title>Perseveration in extinction and in discrimination reversal tasks following selective frontal ablations in macaca mulatta</article-title>. <source>Physiology &amp; Behavior</source>, <volume>4</volume>(<issue>2</issue>):<fpage>163</fpage>–<lpage>171</lpage>, <year>1969</year>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Vincent D</given-names> <surname>Costa</surname></string-name>, <string-name><given-names>Valery L</given-names> <surname>Tran</surname></string-name>, <string-name><given-names>Janita</given-names> <surname>Turchi</surname></string-name>, and <string-name><given-names>Bruno B</given-names> <surname>Averbeck</surname></string-name></person-group>. <article-title>Reversal learning and dopamine: a bayesian perspective</article-title>. <source>Journal of Neuroscience</source>, <volume>35</volume>(<issue>6</issue>):<fpage>2407</fpage>–<lpage>2416</lpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Stephanie M</given-names> <surname>Groman</surname></string-name>, <string-name><given-names>Colby</given-names> <surname>Keistler</surname></string-name>, <string-name><given-names>Alex J</given-names> <surname>Keip</surname></string-name>, <string-name><given-names>Emma</given-names> <surname>Hammarlund</surname></string-name>, <string-name><given-names>Ralph J</given-names> <surname>DiLeone</surname></string-name>, <string-name><given-names>Christopher</given-names> <surname>Pittenger</surname></string-name>, <string-name><given-names>Daeyeol</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Jane R</given-names> <surname>Taylor</surname></string-name></person-group>. <article-title>Orbitofrontal circuits control multiple reinforcement-learning processes</article-title>. <source>Neuron</source>, <volume>103</volume>(<issue>4</issue>):<fpage>734</fpage>–<lpage>746</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Ramon</given-names> <surname>Bartolo</surname></string-name> and <string-name><given-names>Bruno B</given-names> <surname>Averbeck</surname></string-name></person-group>. <article-title>Prefrontal cortex predicts state switches during reversal learning</article-title>. <source>Neuron</source>, <volume>106</volume>(<issue>6</issue>):<fpage>1044</fpage>–<lpage>1054</lpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Zhixiao</given-names> <surname>Su</surname></string-name> and <string-name><given-names>Jeremiah Y</given-names> <surname>Cohen</surname></string-name></person-group>. <article-title>Two types of locus coeruleus norepinephrine neurons drive reinforcement learning</article-title>. <source>bioRxiv</source>, pages <fpage>2022</fpage>–<lpage>12</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Jung Ho</given-names> <surname>Hyun</surname></string-name>, <string-name><given-names>Patrick</given-names> <surname>Hannan</surname></string-name>, <string-name><given-names>Hideki</given-names> <surname>Iwamoto</surname></string-name>, <string-name><given-names>Randy D</given-names> <surname>Blakely</surname></string-name>, and <string-name><given-names>Hyung-Bae</given-names> <surname>Kwon</surname></string-name></person-group>. <article-title>Serotonin in the orbitofrontal cortex enhances cognitive flexibility</article-title>. <source>bioRxiv</source>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Xiao-Jing</given-names> <surname>Wang</surname></string-name></person-group>. <article-title>Probabilistic decision making by slow reverberation in cortical circuits</article-title>. <source>Neuron</source>, <volume>36</volume>(<issue>5</issue>):<fpage>955</fpage>–<lpage>968</lpage>, <year>2002</year>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Valerio</given-names> <surname>Mante</surname></string-name>, <string-name><given-names>David</given-names> <surname>Sussillo</surname></string-name>, <string-name><given-names>Krishna V</given-names> <surname>Shenoy</surname></string-name>, and <string-name><given-names>William T</given-names> <surname>Newsome</surname></string-name></person-group>. <article-title>Context-dependent computation by recurrent dynamics in prefrontal cortex</article-title>. <source>nature</source>, <volume>503</volume>(<issue>7474</issue>):<fpage>78</fpage>–<lpage>84</lpage>, <year>2013</year>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Hidehiko K</given-names> <surname>Inagaki</surname></string-name>, <string-name><given-names>Lorenzo</given-names> <surname>Fontolan</surname></string-name>, <string-name><given-names>Sandro</given-names> <surname>Romani</surname></string-name>, and <string-name><given-names>Karel</given-names> <surname>Svoboda</surname></string-name></person-group>. <article-title>Discrete attractor dynamics underlies persistent activity in the frontal cortex</article-title>. <source>Nature</source>, <volume>566</volume>(<issue>7743</issue>):<fpage>212</fpage>–<lpage>217</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Thomas Zhihao</given-names> <surname>Luo</surname></string-name>, <string-name><given-names>Timothy Doyeon</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>Diksha</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>Adrian G</given-names> <surname>Bondy</surname></string-name>, <string-name><given-names>Charles D</given-names> <surname>Kopec</surname></string-name>, <string-name><given-names>Verity A</given-names> <surname>Elliot</surname></string-name>, <string-name><given-names>Brian</given-names> <surname>DePasquale</surname></string-name>, and <string-name><given-names>Carlos D</given-names> <surname>Brody</surname></string-name></person-group>. <article-title>Transitions in dynamical regime and neural mode underlie perceptual decision-making</article-title>. <source>bioRxiv</source>, pages <fpage>2023</fpage>–<lpage>10</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Richard S</given-names> <surname>Sutton</surname></string-name></person-group>. <article-title>Learning to predict by the methods of temporal differences</article-title>. <source>Machine learning</source>, <volume>3</volume>:<fpage>9</fpage>–<lpage>44</lpage>, <year>1988</year>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Rescorla</surname> <given-names>RA</given-names></string-name>, <string-name><surname>Wagner</surname> <given-names>AR</given-names></string-name></person-group> <chapter-title>A theory of pavlovian conditioning: variations in the effectiveness of reinforcement and nonreinforcement</chapter-title>. <person-group person-group-type="editor"><string-name><surname>Black</surname> <given-names>AH</given-names></string-name>, <string-name><surname>Prokasy</surname> <given-names>WF</given-names></string-name></person-group> <source>Classsical conditioning II: Current research and theory</source>, pages <fpage>64</fpage>–<lpage>99</lpage>, <year>1972</year>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>Bruno B</given-names> <surname>Averbeck</surname></string-name></person-group>. <chapter-title>Amygdala and ventral striatum population codes implement multiple learning rates for reinforcement learning</chapter-title>. In <conf-name>2017 IEEE Symposium Series on Computational Intelligence (SSCI)</conf-name>, pages <fpage>1</fpage>–<lpage>5</lpage>. <publisher-name>IEEE</publisher-name>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Anthony I</given-names> <surname>Jang</surname></string-name>, <string-name><given-names>Vincent D</given-names> <surname>Costa</surname></string-name>, <string-name><given-names>Peter H</given-names> <surname>Rudebeck</surname></string-name>, <string-name><given-names>Yogita</given-names> <surname>Chudasama</surname></string-name>, <string-name><given-names>Elisabeth A</given-names> <surname>Murray</surname></string-name>, and <string-name><given-names>Bruno B</given-names> <surname>Averbeck</surname></string-name></person-group>. <article-title>The role of frontal cortical and medial-temporal lobe brain areas in learning a bayesian prior belief on reversals</article-title>. <source>Journal of Neuroscience</source>, <volume>35</volume>(<issue>33</issue>):<fpage>11751</fpage>–<lpage>11760</lpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Robert C</given-names> <surname>Wilson</surname></string-name>, <string-name><given-names>Matthew R</given-names> <surname>Nassar</surname></string-name>, and <string-name><given-names>Joshua I</given-names> <surname>Gold</surname></string-name></person-group>. <article-title>Bayesian online learning of the hazard rate in change-point problems</article-title>. <source>Neural computation</source>, <volume>22</volume>(<issue>9</issue>):<fpage>2452</fpage>–<lpage>2476</lpage>, <year>2010</year>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kong-Fatt</given-names> <surname>Wong</surname></string-name> and <string-name><given-names>Xiao-Jing</given-names> <surname>Wang</surname></string-name></person-group>. <article-title>A recurrent network mechanism of time integration in perceptual decisions</article-title>. <source>Journal of Neuroscience</source>, <volume>26</volume>(<issue>4</issue>):<fpage>1314</fpage>–<lpage>1328</lpage>, <year>2006</year>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>H Sebastian</given-names> <surname>Seung</surname></string-name></person-group>. <article-title>How the brain keeps the eyes still</article-title>. <source>Proceedings of the National Academy of Sciences</source>, <volume>93</volume>(<issue>23</issue>):<fpage>13339</fpage>–<lpage>13344</lpage>, <year>1996</year>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Anil</given-names> <surname>Bollimunta</surname></string-name>, <string-name><given-names>Douglas</given-names> <surname>Totten</surname></string-name>, and <string-name><given-names>Jochen</given-names> <surname>Ditterich</surname></string-name></person-group>. <article-title>Neural dynamics of choice: single-trial analysis of decision-related activity in parietal cortex</article-title>. <source>Journal of Neuroscience</source>, <volume>32</volume>(<issue>37</issue>):<fpage>12684</fpage>–<lpage>12701</lpage>, <year>2012</year>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Carlos D</given-names> <surname>Brody</surname></string-name> and <string-name><given-names>Timothy D</given-names> <surname>Hanks</surname></string-name></person-group>. <article-title>Neural underpinnings of the evidence accumulator</article-title>. <source>Current opinion in neurobiology</source>, <volume>37</volume>:<fpage>149</fpage>–<lpage>157</lpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Valerio</given-names> <surname>Mante</surname></string-name>, <string-name><given-names>David</given-names> <surname>Sussillo</surname></string-name>, <string-name><given-names>Krishna V</given-names> <surname>Shenoy</surname></string-name>, and <string-name><given-names>William T</given-names> <surname>Newsome</surname></string-name></person-group>. <article-title>Context-dependent computation by recurrent dynamics in prefrontal cortex</article-title>. <source>nature</source>, <volume>503</volume>(<issue>7474</issue>):<fpage>78</fpage>–<lpage>84</lpage>, <year>2013</year>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Aditya</given-names> <surname>Nair</surname></string-name>, <string-name><given-names>Tomomi</given-names> <surname>Karigo</surname></string-name>, <string-name><given-names>Bin</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Surya</given-names> <surname>Ganguli</surname></string-name>, <string-name><given-names>Mark J</given-names> <surname>Schnitzer</surname></string-name>, <string-name><given-names>Scott W</given-names> <surname>Linderman</surname></string-name>, <string-name><given-names>David J</given-names> <surname>Anderson</surname></string-name>, and <string-name><given-names>Ann</given-names> <surname>Kennedy</surname></string-name></person-group>. <article-title>An approximate line attractor in the hypothalamus encodes an aggressive state</article-title>. <source>Cell</source>, <volume>186</volume>(<issue>1</issue>):<fpage>178</fpage>–<lpage>193</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Nuo</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Tsai-Wen</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Zengcai V</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>Charles R</given-names> <surname>Gerfen</surname></string-name>, and <string-name><given-names>Karel</given-names> <surname>Svoboda</surname></string-name></person-group>. <article-title>A motor cortex circuit for motor planning and movement</article-title>. <source>Nature</source>, <volume>519</volume>(<issue>7541</issue>):<fpage>51</fpage>–<lpage>56</lpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Nuo</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Kayvon</given-names> <surname>Daie</surname></string-name>, <string-name><given-names>Karel</given-names> <surname>Svoboda</surname></string-name>, and <string-name><given-names>Shaul</given-names> <surname>Druckmann</surname></string-name></person-group>. <article-title>Robust neuronal dynamics in premotor cortex during motor planning</article-title>. <source>Nature</source>, <volume>532</volume>(<issue>7600</issue>):<fpage>459</fpage>–<lpage>464</lpage>, <year>2016</year>.</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Arseny</given-names> <surname>Finkelstein</surname></string-name>, <string-name><given-names>Lorenzo</given-names> <surname>Fontolan</surname></string-name>, <string-name><given-names>Michael N</given-names> <surname>Economo</surname></string-name>, <string-name><given-names>Nuo</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Sandro</given-names> <surname>Romani</surname></string-name>, and <string-name><given-names>Karel</given-names> <surname>Svoboda</surname></string-name></person-group>. <article-title>Attractor dynamics gate cortical information flow during decision-making</article-title>. <source>Nature neuroscience</source>, <volume>24</volume>(<issue>6</issue>):<fpage>843</fpage>–<lpage>850</lpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kenneth W</given-names> <surname>Latimer</surname></string-name>, <string-name><given-names>Jacob L</given-names> <surname>Yates</surname></string-name>, <string-name><given-names>Miriam LR</given-names> <surname>Meister</surname></string-name>, <string-name><given-names>Alexander C</given-names> <surname>Huk</surname></string-name>, and <string-name><given-names>Jonathan W</given-names> <surname>Pillow</surname></string-name></person-group>. <article-title>Single-trial spike trains in parietal cortex reveal discrete steps during decision-making</article-title>. <source>Science</source>, <volume>349</volume>(<issue>6244</issue>):<fpage>184</fpage>–<lpage>187</lpage>, <year>2015</year>.</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>David M</given-names> <surname>Zoltowski</surname></string-name>, <string-name><given-names>Kenneth W</given-names> <surname>Latimer</surname></string-name>, <string-name><given-names>Jacob L</given-names> <surname>Yates</surname></string-name>, <string-name><given-names>Alexander C</given-names> <surname>Huk</surname></string-name>, and <string-name><given-names>Jonathan W</given-names> <surname>Pillow</surname></string-name></person-group>. <article-title>Discrete stepping and nonlinear ramping dynamics underlie spiking responses of lip neurons during decision-making</article-title>. <source>Neuron</source>, <volume>102</volume>(<issue>6</issue>):<fpage>1249</fpage>–<lpage>1258</lpage>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Huriye</given-names> <surname>Atilgan</surname></string-name>, <string-name><given-names>Cayla E</given-names> <surname>Murphy</surname></string-name>, <string-name><given-names>Hongli</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Heather K</given-names> <surname>Ortega</surname></string-name>, <string-name><given-names>Lucas</given-names> <surname>Pinto</surname></string-name>, and <string-name><given-names>Alex C</given-names> <surname>Kwan</surname></string-name></person-group>. <article-title>Change point estimation by the mouse medial frontal cortex during probabilistic reward learning</article-title>. <source>bioRxiv</source>, pages <fpage>2022</fpage>–<lpage>05</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Jee Hyun</given-names> <surname>Yi</surname></string-name>, <string-name><given-names>Young Ju</given-names> <surname>Yoon</surname></string-name>, <string-name><given-names>Huijeong</given-names> <surname>Jeong</surname></string-name>, <string-name><given-names>Seo Yeon</given-names> <surname>Choe</surname></string-name>, and <string-name><given-names>Min Whan</given-names> <surname>Jung</surname></string-name></person-group>. <article-title>Selective engagement of prefrontal vip neurons in reversal learning</article-title>. <source>bioRxiv</source>, pages <fpage>2024</fpage>–<lpage>04</lpage>, <year>2024</year>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Huijeong</given-names> <surname>Jeong</surname></string-name>, <string-name><given-names>Dohoung</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>Min</given-names> <surname>Song</surname></string-name>, <string-name><given-names>Se-Bum</given-names> <surname>Paik</surname></string-name>, and <string-name><given-names>Min Whan</given-names> <surname>Jung</surname></string-name></person-group>. <article-title>Distinct roles of parvalbumin-and somatostatin-expressing neurons in flexible representation of task variables in the prefrontal cortex</article-title>. <source>Progress in Neurobiology</source>, <volume>187</volume>:<fpage>101773</fpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Stephanie M</given-names> <surname>Groman</surname></string-name>, <string-name><given-names>Summer L</given-names> <surname>Thompson</surname></string-name>, <string-name><given-names>Daeyeol</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Jane R</given-names> <surname>Taylor</surname></string-name></person-group>. <article-title>Reinforcement learning detuned in addiction: integrative and translational approaches</article-title>. <source>Trends in neurosciences</source>, <volume>45</volume>(<issue>2</issue>):<fpage>96</fpage>–<lpage>105</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Geoffrey</given-names> <surname>Schoenbaum</surname></string-name>, <string-name><given-names>Matthew R</given-names> <surname>Roesch</surname></string-name>, and <string-name><given-names>Thomas A</given-names> <surname>Stalnaker</surname></string-name></person-group>. <article-title>Orbitofrontal cortex, decision-making and drug addiction</article-title>. <source>Trends in neurosciences</source>, <volume>29</volume>(<issue>2</issue>):<fpage>116</fpage>–<lpage>124</lpage>, <year>2006</year>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Robert C</given-names> <surname>Wilson</surname></string-name>, <string-name><given-names>Yuji K</given-names> <surname>Takahashi</surname></string-name>, <string-name><given-names>Geoffrey</given-names> <surname>Schoenbaum</surname></string-name>, and <string-name><given-names>Yael</given-names> <surname>Niv</surname></string-name></person-group>. <article-title>Orbitofrontal cortex as a cognitive map of task space</article-title>. <source>Neuron</source>, <volume>81</volume>(<issue>2</issue>):<fpage>267</fpage>–<lpage>279</lpage>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Bruno</given-names> <surname>Averbeck</surname></string-name> and <string-name><given-names>John P</given-names> <surname>O’Doherty</surname></string-name></person-group>. <article-title>Reinforcement-learning in fronto-striatal circuits</article-title>. <source>Neuropsychopharmacology</source>, <volume>47</volume>(<issue>1</issue>):<fpage>147</fpage>–<lpage>162</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Roger</given-names> <surname>Ratcliff</surname></string-name></person-group>. <article-title>A theory of memory retrieval</article-title>. <source>Psychological review</source>, <volume>85</volume>(<issue>2</issue>):<fpage>59</fpage>, <year>1978</year>.</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>John</given-names> <surname>Palmer</surname></string-name>, <string-name><given-names>Alexander C</given-names> <surname>Huk</surname></string-name>, and <string-name><given-names>Michael N</given-names> <surname>Shadlen</surname></string-name></person-group>. <article-title>The effect of stimulus strength on the speed and accuracy of a perceptual decision</article-title>. <source>Journal of vision</source>, <volume>5</volume>(<issue>5</issue>):<fpage>1</fpage>–<lpage>1</lpage>, <year>2005</year>.</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Michael N</given-names> <surname>Shadlen</surname></string-name> and <string-name><given-names>William T</given-names> <surname>Newsome</surname></string-name></person-group>. <article-title>Neural basis of a perceptual decision in the parietal cortex (area lip) of the rhesus monkey</article-title>. <source>Journal of neurophysiology</source>, <volume>86</volume>(<issue>4</issue>):<fpage>1916</fpage>–<lpage>1936</lpage>, <year>2001</year>.</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Mark E</given-names> <surname>Mazurek</surname></string-name>, <string-name><given-names>Jamie D</given-names> <surname>Roitman</surname></string-name>, <string-name><given-names>Jochen</given-names> <surname>Ditterich</surname></string-name>, and <string-name><given-names>Michael N</given-names> <surname>Shadlen</surname></string-name></person-group>. <article-title>A role for neural integrators in perceptual decision making</article-title>. <source>Cerebral cortex</source>, <volume>13</volume>(<issue>11</issue>):<fpage>1257</fpage>–<lpage>1269</lpage>, <year>2003</year>.</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Roger</given-names> <surname>Ratcliff</surname></string-name>, <string-name><given-names>Anil</given-names> <surname>Cherian</surname></string-name>, and <string-name><given-names>Mark</given-names> <surname>Segraves</surname></string-name></person-group>. <article-title>A comparison of macaque behavior and superior colliculus neuronal activity to predictions from models of two-choice decisions</article-title>. <source>Journal of neurophysiology</source>, <volume>90</volume>(<issue>3</issue>):<fpage>1392</fpage>–<lpage>1407</lpage>, <year>2003</year>.</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Mikhail</given-names> <surname>Genkin</surname></string-name>, <string-name><given-names>Krishna V</given-names> <surname>Shenoy</surname></string-name>, <string-name><given-names>Chandramouli</given-names> <surname>Chandrasekaran</surname></string-name>, and <string-name><given-names>Tatiana A</given-names> <surname>Engel</surname></string-name></person-group>. <article-title>The dynamics and geometry of choice in premotor cortex</article-title>. <source>BioRxiv</source>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Klaus</given-names> <surname>Wimmer</surname></string-name>, <string-name><given-names>Duane Q</given-names> <surname>Nykamp</surname></string-name>, <string-name><given-names>Christos</given-names> <surname>Constantinidis</surname></string-name>, and <string-name><given-names>Albert</given-names> <surname>Compte</surname></string-name></person-group>. <article-title>Bump attractor dynamics in prefrontal cortex explains behavioral precision in spatial working memory</article-title>. <source>Nature neuroscience</source>, <volume>17</volume>(<issue>3</issue>):<fpage>431</fpage>–<lpage>439</lpage>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Emily L</given-names> <surname>Sylwestrak</surname></string-name>, <string-name><given-names>YoungJu</given-names> <surname>Jo</surname></string-name>, <string-name><given-names>Sam</given-names> <surname>Vesuna</surname></string-name>, <string-name><given-names>Xiao</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Blake</given-names> <surname>Holcomb</surname></string-name>, <string-name><given-names>Rebecca H</given-names> <surname>Tien</surname></string-name>, <string-name><given-names>Doo Kyung</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>Lief</given-names> <surname>Fenno</surname></string-name>, <string-name><given-names>Charu</given-names> <surname>Ramakrishnan</surname></string-name>, <string-name><given-names>William E</given-names> <surname>Allen</surname></string-name>, <etal>et al.</etal></person-group> <article-title>Cell-type-specific population dynamics of diverse reward computations</article-title>. <source>Cell</source>, <volume>185</volume>(<issue>19</issue>):<fpage>3568</fpage>–<lpage>3587</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Richard J</given-names> <surname>Gardner</surname></string-name>, <string-name><given-names>Erik</given-names> <surname>Hermansen</surname></string-name>, <string-name><given-names>Marius</given-names> <surname>Pachitariu</surname></string-name>, <string-name><given-names>Yoram</given-names> <surname>Burak</surname></string-name>, <string-name><given-names>Nils A</given-names> <surname>Baas</surname></string-name>, <string-name><given-names>Benjamin A</given-names> <surname>Dunn</surname></string-name>, <string-name><given-names>May-Britt</given-names> <surname>Moser</surname></string-name>, and <string-name><given-names>Edvard I</given-names> <surname>Moser</surname></string-name></person-group>. <article-title>Toroidal topology of population activity in grid cells</article-title>. <source>Nature</source>, <volume>602</volume>(<issue>7895</issue>):<fpage>123</fpage>–<lpage>128</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ben Sorscher</surname>, <given-names>Gabriel C Mel</given-names></string-name>, <string-name><given-names>Samuel A</given-names> <surname>Ocko</surname></string-name>, <string-name><given-names>Lisa M</given-names> <surname>Giocomo</surname></string-name>, and <string-name><given-names>Surya</given-names> <surname>Ganguli</surname></string-name></person-group>. <article-title>A unified theory for the computational and mechanistic origins of grid cells</article-title>. <source>Neuron</source>, <volume>111</volume>(<issue>1</issue>):<fpage>121</fpage>–<lpage>137</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Brad K</given-names> <surname>Hulse</surname></string-name> and <string-name><given-names>Vivek</given-names> <surname>Jayaraman</surname></string-name></person-group>. <article-title>Mechanisms underlying the neural computation of head direction</article-title>. <source>Annual review of neuroscience</source>, <volume>43</volume>:<fpage>31</fpage>–<lpage>54</lpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c45"><label>[45]</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>Rylan</given-names> <surname>Schaeffer</surname></string-name>, <string-name><given-names>Mikail</given-names> <surname>Khona</surname></string-name>, <string-name><given-names>Leenoy</given-names> <surname>Meshulam</surname></string-name>, <collab>Brain Laboratory International</collab>, and <string-name><given-names>Ila</given-names> <surname>Fiete</surname></string-name></person-group>. <chapter-title>Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice</chapter-title>. <conf-name>Advances in Neural Information Processing Systems</conf-name>, volume <volume>33</volume>, pages <fpage>4584</fpage>–<lpage>4596</lpage>. <publisher-name>Curran Associates, Inc</publisher-name>., <year>2020</year>.</mixed-citation></ref>
+<ref id="c46"><label>[46]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Charles</given-names> <surname>Findling</surname></string-name>, <string-name><given-names>Felix</given-names> <surname>Hubert</surname></string-name>, <collab>International Brain Laboratory</collab>, <string-name><given-names>Luigi</given-names> <surname>Acerbi</surname></string-name>, <string-name><given-names>Brandon</given-names> <surname>Benson</surname></string-name>, <string-name><given-names>Julius</given-names> <surname>Benson</surname></string-name>, <string-name><given-names>Daniel</given-names> <surname>Birman</surname></string-name>, <string-name><given-names>Niccolò</given-names> <surname>Bonacchi</surname></string-name>, <string-name><given-names>Matteo</given-names> <surname>Carandini</surname></string-name>, <string-name><given-names>Joana A</given-names> <surname>Catarino</surname></string-name>, <etal>et al.</etal></person-group> <article-title>Brain-wide representations of prior information in mouse decision-making</article-title>. <source>BioRxiv</source>, pages <fpage>2023</fpage>–<lpage>07</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c47"><label>[47]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Jane X</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Zeb</given-names> <surname>Kurth-Nelson</surname></string-name>, <string-name><given-names>Dharshan</given-names> <surname>Kumaran</surname></string-name>, <string-name><given-names>Dhruva</given-names> <surname>Tirumala</surname></string-name>, <string-name><given-names>Hubert</given-names> <surname>Soyer</surname></string-name>, <string-name><given-names>Joel Z</given-names> <surname>Leibo</surname></string-name>, <string-name><given-names>Demis</given-names> <surname>Hassabis</surname></string-name>, and <string-name><given-names>Matthew</given-names> <surname>Botvinick</surname></string-name></person-group>. <article-title>Prefrontal cortex as a meta-reinforcement learning system</article-title>. <source>Nature neuroscience</source>, <volume>21</volume>(<issue>6</issue>):<fpage>860</fpage>–<lpage>868</lpage>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c48"><label>[48]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Sara</given-names> <surname>Matias</surname></string-name>, <string-name><given-names>Eran</given-names> <surname>Lottem</surname></string-name>, <string-name><given-names>Guillaume P</given-names> <surname>Dugué</surname></string-name>, and <string-name><given-names>Zachary F</given-names> <surname>Mainen</surname></string-name></person-group>. <article-title>Activity patterns of serotonin neurons underlying cognitive flexibility</article-title>. <source>Elife</source>, <volume>6</volume>:<elocation-id>e20552</elocation-id>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c49"><label>[49]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Emerson F</given-names> <surname>Harkin</surname></string-name>, <string-name><given-names>Michael B</given-names> <surname>Lynn</surname></string-name>, <string-name><given-names>Alexandre</given-names> <surname>Payeur</surname></string-name>, <string-name><given-names>Jean-François</given-names> <surname>Boucher</surname></string-name>, <string-name><given-names>Léa</given-names> <surname>Caya-Bissonnette</surname></string-name>, <string-name><given-names>Dominic</given-names> <surname>Cyr</surname></string-name>, <string-name><given-names>Chloe</given-names> <surname>Stewart</surname></string-name>, <string-name><given-names>André</given-names> <surname>Longtin</surname></string-name>, <string-name><given-names>Richard</given-names> <surname>Naud</surname></string-name>, and <string-name><given-names>Jean-Claude</given-names> <surname>Béïque</surname></string-name></person-group>. <article-title>Temporal derivative computation in the dorsal raphe network revealed by an experimentally driven augmented integrate-and-fire modeling framework</article-title>. <source>Elife</source>, <volume>12</volume>:<elocation-id>e72951</elocation-id>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c50"><label>[50]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Carlos</given-names> <surname>Wert-Carvajal</surname></string-name>, <string-name><given-names>Melissa</given-names> <surname>Reneaux</surname></string-name>, <string-name><given-names>Tatjana</given-names> <surname>Tchumatchenko</surname></string-name>, and <string-name><given-names>Claudia</given-names> <surname>Clopath</surname></string-name></person-group>. <article-title>Dopamine and serotonin interplay for valence-based spatial learning</article-title>. <source>Cell Reports</source>, <volume>39</volume>(<issue>2</issue>), <year>2022</year>.</mixed-citation></ref>
+<ref id="c51"><label>[51]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Emerson F</given-names> <surname>Harkin</surname></string-name>, <string-name><given-names>Cooper D</given-names> <surname>Grossman</surname></string-name>, <string-name><given-names>Jeremiah Y</given-names> <surname>Cohen</surname></string-name>, <string-name><given-names>Jean-Claude</given-names> <surname>Béïque</surname></string-name>, and <string-name><given-names>Richard</given-names> <surname>Naud</surname></string-name></person-group>. <article-title>Serotonin predictively encodes value</article-title>. <source>bioRxiv</source>, pages <fpage>2023</fpage>–<lpage>09</lpage>, <year>2023</year>.</mixed-citation></ref>
+<ref id="c52"><label>[52]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Carl</given-names> <surname>van Vreeswijk</surname></string-name> and <string-name><given-names>Haim</given-names> <surname>Sompolinsky</surname></string-name></person-group>. <article-title>Chaos in neuronal networks with balanced excitatory and inhibitory activity</article-title>. <source>Science</source>, <volume>274</volume>(<issue>5293</issue>):<fpage>1724</fpage>, <year>1996</year>.</mixed-citation></ref>
+</ref-list>
+<sec id="s6">
+<title>Supplementary material</title>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Figure S1:</label>
+<caption><p>Break down of <italic>R</italic><sup>+</sup>, <italic>R</italic><sup>−</sup> by the reward outcomes of two consecutive trials. <bold>(A)</bold> <italic>R</italic><sup>+</sup> was decomposed into two components <italic>R</italic><sup>+</sup> = <italic>R</italic><sup>++</sup> + <italic>R</italic><sup>+−</sup>, where <italic>R</italic><sup>++</sup> indicates two consecutive reward trials and <italic>R</italic><sup>+−</sup> indicates a reward followed by no reward. Left: <italic>R</italic><sup>++</sup> across trial and time (top). Traces of <italic>R</italic><sup>++</sup> at individual trials and the fraction of trials whose traces are negative (bottom). Middle: Same as the left panel but for <italic>R</italic><sup>+−</sup>. Right: Same as the other panels but for <italic>R</italic><sup>+</sup>. <bold>(B)</bold> <italic>R</italic><sup>−</sup> was decomposed into two components <italic>R</italic><sup>−</sup> = <italic>R</italic><sup>−+</sup> + <italic>R</italic><sup>−−</sup>, where <italic>R</italic><sup>−+</sup> indicates no reward followed by a reward and <italic>R</italic><sup>−−</sup> indicates two consecutive no rewards. Same analysis as in panel (A) was performed.</p></caption>
+<graphic xlink:href="613033v1_figS1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="figS2" position="float" fig-type="figure">
+<label>Figure S2:</label>
+<caption><p>Decoding reward outcome and the behavioral reversal trial using neural trajectories encoding reversal probability. <bold>(A)</bold> Left: Decoding the reward outcome (i.e., reward or no reward) of every trial at each time point, given the difference of neural trajectories of two adjacent trials. At each time point, 300ms segment of the trajectories were used for decoding. Right: Decoding accuracy is averaged over all trials shown on the left panel. Red dotted line shows the approximate time of next trial’s reward. Gray dotted line shows the chance level performance. <bold>(B)</bold> Left: Decoding the behavioral reversal trial using neural trajectories of 20 trials around the reversal trial. Decoding error shows the position of predicted reversal trial relative to the actual reverse trial. At each time point, 300ms segment of each trajectory was used for decoding. Black shows the decoding error when single trial trajectories were used, and green shows the result when randomly chosen 5 blocks of trajectories were averaged before decoding. Gray dotted line shows the chance level performance. Right: Distance between trajectories was measured by taking the average of normalized mean-squared-error of adjacent trajectories at all trials. Each dot corresponds to a time point shown on the left panel.</p></caption>
+<graphic xlink:href="613033v1_figS2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103660.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ponte Costa</surname>
+<given-names>Rui</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>The findings of this study are potentially <bold>valuable</bold>, offering insights into the neural representation of reversal probability in decision-making tasks, with potential implications for understanding flexible behavior in changing environments. The evidence presented is <bold>incomplete</bold>, with interesting comparisons between neural data and models, but the analyses do not yet provide clear evidence against line attractor dynamics for the accumulation of evidence of a reversal in this probabilistic reversal learning task.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103660.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The authors aimed to investigate how the probability of a reversal in a decision-making task is represented in cortical neurons. They analyzed neural activity in the prefrontal cortex of monkeys and units in recurrent neural networks (RNNs) trained on a similar task. Their goal was to understand how the dynamical systems that implement computation perform a probabilistic reversal learning task in RNNs and nonhuman primates.</p>
+<p>Major strengths and weaknesses:</p>
+<p>Strengths:</p>
+<p>(1) Integrative Approach: The study exemplifies a modern approach by combining empirical data from monkey experiments with computational modeling using RNNs. This integration allows for a more comprehensive understanding of the dynamical systems that implement computation in both biological and artificial neural networks.</p>
+<p>(2) The focus on using perturbations to identify causal relationships in dynamical systems is a good goal. This approach aims to go beyond correlational observations.</p>
+<p>Weaknesses:</p>
+<p>(1) The description of the RNN training procedure and task structure lacks detail, making it difficult to fully evaluate the methodology.</p>
+<p>(2) The conclusion that the representation is better described by separable dynamic trajectories rather than fixed points on a line attractor may be premature.</p>
+<p>(3) The use of targeted dimensionality reduction (TDR) to identify the axis determining reversal probability may not necessarily isolate the dimension along which the RNN computes reversal probability.</p>
+<p>Appraisal of aims and conclusions:</p>
+<p>The authors claim that substantial dynamics associated with intervening behaviors provide evidence against a line attractor. The conclusion that this representation is better described by separable dynamic trajectories rather than fixed points on a line attractor may be premature. The authors found that the state was translated systematically in response to whether outcomes were rewarded, and this translation accumulated across trials. This is consistent with a line attractor, where reward input bumps the state along a line. The observed dynamics could still be consistent with a curved line attractor, with faster timescale dynamics superimposed on this structure.</p>
+<p>Likely impact and utility:</p>
+<p>This work contributes to our understanding of how probabilistic information is represented in neural circuits and how it influences decision-making. The methods used, particularly the combination of empirical data and RNN modeling, provide a valuable approach for investigating neural computations. However, the impact may be limited by some of the methodological concerns raised.</p>
+<p>The data and methods could be useful to the community, especially if the authors provide more detailed descriptions of their RNN training procedures and task structure. However, reverse engineering of the network dynamics was minimal. Most analyses didn't take advantage of the full access to the RNN's update equations.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103660.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this work, the authors trained RNN to perform a reversal task also performed by animals while PFC activity is recorded. The authors devised a new method to train RNN on this type of reversal task, which in principle ensures that the behavior of the RNN matches the behavior of the animal. They then performed some analysis of neural activity, both RNN and PFC recording, focusing on the neural representation of the reversal probability and its evolution across trials. Given the analysis presented, it has been difficult for me to assess at which point RNN can reasonably be compared to PFC recordings.</p>
+<p>Strengths:</p>
+<p>Focusing on a reversal task, the authors address a challenge in RNN training, as they do not use a standard supervised learning procedure where the desired output is available for each trial. They propose a new way of doing that.</p>
+<p>They attempt to confront RNN and neural recordings in behaving animals.</p>
+<p>Weaknesses:</p>
+<p>The design of the task for the RNN does not seem well suited to support the claim of the paper: no action is required to be performed by neurons in the RNN, instead, the choice of the animal is determined by applying a non-linearity to the RNN's readout (equation 7), no intervening behavior is thus performed by neurons on which the analysis is performed throughout the paper.
+Instead, it would have been nice to mimic more closely the task structure of the experiments on monkeys, with a fixation period where the read-out is asked to be at a zero value, and then asked to reach a target value (not just taking its sign), depending on the expected choice after a cue presentation period.</p>
+<p>The comparison between RNN and neural data focuses on very specific features of neural activity. It would have been nice to see how individual units in the RNN behave over the course of the trial, do all units show oscillatory behavior like the readout shown in Figure 1B?</p>
+<p>It would be nice to justify why it has been chosen to take a network of inhibitory neurons and to know whether the analysis can also be performed with excitatory neurons.
+All the analysis relies on the dimensionality reduction. It would have been nice to have some other analysis confirming the claim of the absence of a line attractor in the neural data. Or at least to better characterize this dimensionality reduction procedure, e.g. how much of the variance is explained by this analysis for instance?</p>
+<p>It is thus difficult to grasp, besides the fact that reversal behavior is similar, to what extent the RNN is comparable to PFC functioning and to what extent we learn anything about the latter.</p>
+<p>Other computational works (e.g. [1,2]) have developed procedures to train RNN on reversal-like tasks, it would have been nice to compare the procedure presented here with these other works.</p>
+<p>[1] H Francis Song &amp; Xiao-Jing Wang. Reward-based training of recurrent neural networks for cognitive and value-based tasks. eLife doi:10.7554/elife.21492.001.</p>
+<p>[2] Molano-Mazón, M. et al. Recurrent networks endowed with structural priors explain suboptimal animal behavior. Current Biology 33, 622-638.e7 (2023).</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103660.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Kim et al. present a study of the neural dynamics underlying reversal learning in monkey PFC and neural networks. The concept of studying neural dynamics throughout the task (including intervening behaviour) is interesting, and the data provides some insights into the neural dynamics driving reversal learning. The modelling seems to support the analyses, but both the modelling and analyses also leave several open questions.</p>
+<p>Strengths:</p>
+<p>The paper addresses an interesting topic of the neural dynamics underlying reversal learning in PFC, using a combination of biological and simulated data. Reversal learning has been studied extensively in neuroscience, but this paper takes a step further by analysing neural dynamics throughout the trials instead of focusing on just the evidence integration epoch.</p>
+<p>The authors show some close parallels between the experimental data and RNN simulations, both in terms of behaviour and neural dynamics. The analyses of how rewarded and unrewarded trials differentially affect dynamics throughout the trials in RNNs and PFC were particularly interesting. This work has the potential to provide new insights into the neural underpinnings of reversal learning.</p>
+<p>Weaknesses:</p>
+<p>Conceptual:</p>
+<p>A substantial focus of the paper is on the within-trial dynamics associated with &quot;intervening behaviour&quot;, but it is not clear whether that is well-modelled by the RNN. In particular, since there is little description of the experimental task, and the RNN does not have to do any explicit computation during the non-feedback parts of the trial, it is unclear whether the RNN 'non-feedback' dynamics can be expected to reasonably model the experimental data.</p>
+<p>Data analyses:</p>
+<p>While the basic analyses seem mostly sound, it seems like a potential confound that they are all aligned to the inferred reversal trial rather than the true experimental reversal trial. For example, the analyses showing that 'x_rev' decays strongly after the reversal trial, irrespective of the reward outcome, seem like they are true essentially by design. The choice to align to the inferred reversal trial also makes this trial seem 'special' (e.g. in Figure 2, Figure 5A), but it is unclear whether this is a real feature of the data or an artifact of effectively conditioning on a change in behaviour. It would be useful to investigate whether any of these analyses differ when aligned to the true reversal trial. It is also unsurprising that x_rev increases before the reversal and decreases after the reversal (it is hard to imagine a system where this is not the case), yet all of Figure 5 and much of Figure 4 is devoted to this point.</p>
+<p>Most of the analyses focus on the dynamics specifically in the x_rev subspace, but a major point of the paper is to say that biological (and artificial) networks may also have to do other things at different times in the trial. If that is the case, it would be interesting to also ask what happens in other subspaces of neural activity, that are not specifically related to evidence integration or choice - are there other subspaces that explain substantial variance? Do they relate to any meaningful features of the experiment?</p>
+<p>On a related note, descriptions of the task itself, the behaviour of the animal(s?), and the neural recordings are largely absent, making it difficult to know what we should expect from neural dynamics throughout a trial. In fact, we are not even told how many monkeys were used for the paper or which part of PFC the recordings are from.</p>
+<p>Modelling:</p>
+<p>There are a number of surprising and non-standard modelling choices made in this paper. For example, the choice to only use inhibitory neurons is non-conventional and not consistent with prior work. The authors cite van Vreeswijk &amp; Sompolinsky's balanced network paper, but this and most other balanced networks use a combination of excitatory and inhibitory neurons.</p>
+<p>It also seems like the inputs are provided without any learnable input weights (and the form of the inputs is not described in any detail). This makes it hard to interpret the input-driven dynamics during the different phases of a trial, despite these dynamics being a central topic of the paper.</p>
+<p>It is surprising that the RNN is &quot;trained to flip its preferred choice a few trials after the inferred scheduled reversal trial&quot;, with the reversal trial inferred by an ideal Bayesian observer. A more natural approach would be to directly train the RNN to solve the task (by predicting the optimal choice) and then investigate the emergent behaviour &amp; dynamics. If the authors prefer their imitation learning approach (which should at least be motivated), it is also surprising that the network is trained to predict the reversal trial inferred using Bayesian smoothing instead of Bayesian filtering.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103660.1.sa4</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Kim</surname>
+<given-names>Christopher M</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1322-6207</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Chow</surname>
+<given-names>Carson C</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Averbeck</surname>
+<given-names>Bruno B</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3976-8565</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We appreciate Reviewer 1’s observation that our findings (i.e., separable dynamic trajectories are systematically translated in response to whether outcomes are rewarded, and this translation is accumulated across trials) are consistent with a line attractor model. We agree with this assessment and, in the revised manuscript, will reframe our findings about the dynamic trajectories to address its consistency with a line attractor.</p>
+<p>However, we would like to emphasize that a line attractor model does not account for the dynamic nature of reversal probability activity observed in the neural data. Line attractor, regardless of whether it is curved or straight, implies that the activity is fixed when no reward information is presented. The focus of our work is to highlight this dynamic nature of reversal probability activity and its incompatibility with the line attractor model.</p>
+<p>This leads to the question of how we could reconcile the line attractor-like properties and the dynamic nature of reversal probability activity. In the revised manuscript, we will provide evidence for an augmented model that has an attractor state at the beginning of each trial, followed by dynamic activity during the trial. Such a model is an example of superposition of initial attractor states with fast within-trial dynamics, as pointed out by Reviewer 1.</p>
+<p>We also thank Reviewer 2 and Reviewer 3 for their comments on how the manuscript could be improved. In the revised manuscript, we will provide detailed explanations to clarify the choice of network model, data analysis methods and experiment and model setups.</p>
+<p>In addition, we would like to take this opportunity to point out potentially misleading statements in the reviews by Reviewer 2 and Reviewer 3. Reviewer 2 stated that “no action is required to be performed by neurons in the RNN, …, no intervening behavior is thus performed by neurons”. Reviewer 3 stated that “the RNN does not have to do any explicit computation during the non-feedback parts of the trial…”. These statements convey the message that the trained RNN does not perform any computation. In fact, the RNN is trained to make a choice during non-feedback period in response to feedback. This is the (and the only) computation RNN performs. “Intervening behavior” refers to the choice the RNN makes across trials until reversing its initially preferred choice. We think that this confusion might have happened because the meaning of the term “intervening behavior” was unclear. We will clarify this point in the revised manuscript.</p>
+<p>Again, thank you for the insightful comments. We will provide a more detailed response to the reviews and revise the manuscript accordingly.</p>
+</body>
+</sub-article>
+</article>
