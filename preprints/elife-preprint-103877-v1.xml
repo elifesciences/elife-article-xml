@@ -1,0 +1,803 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">103877</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.103877</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.103877.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Cell Biology</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Physics of Living Systems</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>A differentiable Gillespie algorithm for simulating chemical kinetics, parameter estimation, and designing synthetic biological circuits</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7236-7387</contrib-id>
+<name>
+<surname>Rijal</surname>
+<given-names>Krishna</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>krishnarijal331@gmail.com</email>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Mehta</surname>
+<given-names>Pankaj</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/05qwgg493</institution-id><institution>Department of Physics, Boston University</institution></institution-wrap>, <city>Boston</city>, <country>USA</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Bitbol</surname>
+<given-names>Anne-Florence</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Ecole Polytechnique Federale de Lausanne (EPFL)</institution>
+</institution-wrap>
+<city>Lausanne</city>
+<country>Switzerland</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Walczak</surname>
+<given-names>Aleksandra M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>CNRS</institution>
+</institution-wrap>
+<city>Paris</city>
+<country>France</country>
+</aff>
+</contrib>
+</contrib-group>
+<pub-date date-type="original-publication" iso-8601-date="2025-01-07">
+<day>07</day>
+<month>01</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP103877</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-10-10">
+<day>10</day>
+<month>10</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-09-25">
+<day>25</day>
+<month>09</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.07.07.602397"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Rijal &amp; Mehta</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Rijal &amp; Mehta</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-103877-v1.pdf"/>
+<abstract>
+<p>The Gillespie algorithm is commonly used to simulate and analyze complex chemical reaction networks. Here, we leverage recent breakthroughs in deep learning to develop a fully differentiable variant of the Gillespie algorithm. The differentiable Gillespie algorithm (DGA) approximates discontinuous operations in the exact Gillespie algorithm using smooth functions, allowing for the calculation of gradients using backpropagation. The DGA can be used to quickly and accurately learn kinetic parameters using gradient descent and design biochemical networks with desired properties. As an illustration, we apply the DGA to study stochastic models of gene promoters. We show that the DGA can be used to: (i) successfully learn kinetic parameters from experimental measurements of mRNA expression levels from two distinct <italic>E. coli</italic> promoters and (ii) design nonequilibrium promoter architectures with desired input-output relationships. These examples illustrate the utility of the DGA for analyzing stochastic chemical kinetics, including a wide variety of problems of interest to synthetic and systems biology.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<notes notes-type="competing-interest-statement">
+<title>Competing Interest Statement</title><p>The authors have declared no competing interest.</p></notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>A few sentences have been added to the introduction, citing earlier works on parameter sensitivity analysis.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<p>Randomness is a defining feature of our world. Stock market fluctuations, the movement of particles in fluids, and even the change of allele frequencies in organismal populations can all be described using the language of stochastic processes. For this reason, disciplines as diverse as physics, biology, ecology, evolution, finance, and engineering have all developed tools to mathematically model stochastic processes [<xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c4">4</xref>]. In the context of biology, an especially fruitful area of research has been the study of stochastic gene expression in single cells [<xref ref-type="bibr" rid="c5">5</xref>–<xref ref-type="bibr" rid="c8">8</xref>]. The small number of molecules involved in gene expression make stochasticity an inherent feature of protein production and numerous mathematical and computational techniques have been developed to model gene expression and relate mathematical models to experimental observations [<xref ref-type="bibr" rid="c9">9</xref>, <xref ref-type="bibr" rid="c10">10</xref>].</p>
+<p>One prominent computational algorithm for understanding stochasticity in gene expression is the Gillespie algorithm (also known as the Stochastic Simulation Algorithm) [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c12">12</xref>]. The Gillespie algorithm is an extremely efficient computational technique used to simulate the time evolution of a system in which events occur randomly and discretely [<xref ref-type="bibr" rid="c12">12</xref>]. Beyond gene expression, the Gillespie algorithm is widely employed across numerous disciplines to model stochastic systems characterized by discrete, randomly occurring events including epidemiology [<xref ref-type="bibr" rid="c13">13</xref>], ecology [<xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c15">15</xref>], neuroscience [<xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c17">17</xref>], and chemical kinetics [<xref ref-type="bibr" rid="c18">18</xref>, <xref ref-type="bibr" rid="c19">19</xref>].</p>
+<p>Here, we revisit the Gillespie algorithm in light of the recent progress in deep learning and differentiable programming by presenting a “fully-differentiable” variant of the Gillespie algorithm we dub the Differentiable Gillespie Algorithm (DGA). The DGA modifies the traditional Gillespie algorithm to take advantage of powerful automatic differentiation libraries (for example, PyTorch [<xref ref-type="bibr" rid="c20">20</xref>] and Jax [<xref ref-type="bibr" rid="c21">21</xref>]) and gradient-based optimization. The DGA allows us to quickly fit kinetic parameters to data and design discrete stochastic systems with a desired behavior. Our work is similar in spirit to other recent work that seeks to harness the power of differentiable programming to accelerate scientific simulations [<xref ref-type="bibr" rid="c22">22</xref>–<xref ref-type="bibr" rid="c27">27</xref>]. The DGA’ s use of differential programming tools also complements more specialized numerical methods designed for performing parameter sensitivity analysis on Gillespie simulations such as finite-difference methods [<xref ref-type="bibr" rid="c28">28</xref>–<xref ref-type="bibr" rid="c30">30</xref>], the likelihood ratio method [<xref ref-type="bibr" rid="c31">31</xref>–<xref ref-type="bibr" rid="c33">33</xref>] and pathwise derivative methods [<xref ref-type="bibr" rid="c34">34</xref>].</p>
+<p>One of the difficulties in formulating a differentiable version of the Gillespie algorithm is that the stochastic systems it treats are inherently discrete. For this reason, there is no obvious way to take derivatives with respect to kinetic parameters without making approximations. As shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref>, in the traditional Gillespie algorithm both the selection of the index for the next reaction and the updates of chemical species are both discontinuous functions of the kinetic parameters. To circumnavigate these difficulties, the DGA modifies the traditional Gillespie algorithm by approximating discrete operations with continuous, differentiable functions, smoothing out abrupt transitions to facilitate gradient computation via automatic differentiation (<xref rid="fig1" ref-type="fig">Fig. 1</xref>). This significant modification preserves the core characteristics of the original algorithm while enabling integration with modern deep learning techniques.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>FIG. 1.</label>
+<caption><p>Comparison between the exact Gillespie algorithm and the DGA for simulating chemical kinetics. (a) Example of kinetics with N = 3 reactions with rates r<sub><italic>i</italic></sub>(I = 1, 2, 3). (b) Visualization of approximations made in DGA. (c) Flow chart comparing exact and differentiable Gillespie simulations.</p></caption>
+<graphic xlink:href="602397v2_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>One natural setting for exploring the efficacy of the DGA is recent experimental and theoretical works exploring stochastic gene expression. Here, we focus on a set of beautiful experiments that explore the effect of promoter architecture on steady-state gene expression [<xref ref-type="bibr" rid="c35">35</xref>]. An especially appealing aspect of [<xref ref-type="bibr" rid="c35">35</xref>] is that the authors independently measured the kinetic parameters for these promoter architectures using orthogonal experiments. This allows us to directly compare the predictions of DGA to ground truth measurements of kinetic parameters. We then extend our considerations to more complex promoter architectures [<xref ref-type="bibr" rid="c36">36</xref>] and illustrate how the DGA can be used to design circuits with a desired input-output relation.</p>
+<sec id="s1">
+<label>I.</label>
+<title>A differentiable approximation to the Gillespie algorithm</title>
+<p>Before proceeding to discussing the DGA, we start by briefly reviewing how the traditional Gillespie algorithm simulates discrete stochastic processes. For concreteness, in our exposition, we focus on the chemical system shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref> consisting of three species, A, B, and C, whose abundances are described by a state vector <bold>x</bold> = (<italic>x</italic><sub>1</sub>, <italic>x</italic><sub>2</sub>, <italic>x</italic><sub>3</sub>). These chemical species can undergo <italic>N</italic> = 3 chemical reactions, characterized by rate constants, <italic>r</italic><sub><italic>i</italic></sub>(<bold>x</bold>) where <italic>i</italic> = 1, …, 3, and a stoichiometric matrix <italic>S</italic><sub><italic>iα</italic></sub> whose <italic>i</italic>-th row encodes how the abundance <italic>x</italic><sub><italic>α</italic></sub> of species <italic>α</italic> changes due to reaction <italic>i</italic>. Note that in what follows, we will often supress the dependence of the rates <italic>r</italic><sub><italic>i</italic></sub>(<bold>x</bold>) on <bold>x</bold> and simply write <italic>r</italic><sub><italic>i</italic></sub>.</p>
+<p>In order to simulate such a system, it is helpful to discretize time into small intervals of size Δ<italic>t</italic> ≪ 1. The probability that a reaction <italic>i</italic> with rate <italic>r</italic><sub><italic>i</italic></sub> occurs during such an interval is simply <italic>r</italic><sub><italic>i</italic></sub>Δ<italic>t</italic>. By construction, we choose Δ<italic>t</italic> to be small enough that <italic>r</italic><sub><italic>i</italic></sub>Δ<italic>t</italic> ≪ 1 and that the probability that a reaction occurs in any interval Δ<italic>t</italic> is extremely small and well described by a Poisson process. This means that naively simulating such a process is extremely inefficient because, in most intervals, no reactions will occur.</p>
+<sec id="s1a">
+<label>A.</label>
+<title>Gillespie algorithm</title>
+<p>The Gillespie algorithm circumnavigates this problem by: (i) exploiting the fact that the reactions are independent so that the rate at which <italic>any</italic> reaction occurs is also described by an independent Poisson process with rate<inline-formula><inline-graphic xlink:href="602397v2_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and (ii) the waiting time distribution <italic>p</italic>(<italic>τ</italic>) of a Poisson process with rate <italic>R</italic> is the exponential distribution <italic>p</italic>(<italic>τ</italic>) = <italic>Re</italic><sup>−<italic>Rτ</italic></sup>. The basic steps of the Gillespie algorithm are illustrated in <xref rid="fig1" ref-type="fig">Fig. 1</xref>.</p>
+<p>The simulation begins with the initialization of time and state variables:
+<disp-formula id="ueqn1">
+<graphic xlink:href="602397v2_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>t</italic> is the simulation time. One then samples the waiting time distribution <italic>p</italic>(<italic>τ</italic>) for a reaction to occur to determine when the next the reaction occurs. This is done by drawing a random number <italic>u</italic> from a uniform distribution over [0, 1] and updating
+<disp-formula id="eqn1">
+<graphic xlink:href="602397v2_eqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Note that this time update is a fully differentiable function of the rates <italic>r</italic><sub><italic>i</italic></sub>.</p>
+<p>In order to determine which of the reactions <italic>i</italic><sup>′</sup> occurs after a time <italic>τ</italic>, we note that probability that reaction <italic>i</italic> occurs is simply given by <italic>q</italic><sub><italic>i</italic></sub> = <italic>r</italic><sub><italic>i</italic></sub><italic>/R</italic>. Thus, we can simply draw another random number <italic>u</italic><sup>′</sup> and choose <italic>i</italic><sup>′</sup> such that <italic>i</italic><sup>′</sup> equals the smallest integer satisfying
+<disp-formula id="eqn2">
+<graphic xlink:href="602397v2_eqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+The reaction abundances <bold>x</bold> are then updated using the stoichiometric matrix
+<disp-formula id="eqn3">
+<graphic xlink:href="602397v2_eqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Unlike the time update, both the choice of the reaction <italic>i</italic><sup>′</sup> and the abundance updates are not differentiable since the choice of the reaction <italic>i</italic><sup>′</sup> is a discontinuous function of the parameters <italic>r</italic><sub><italic>i</italic></sub>.</p>
+</sec>
+<sec id="s1b">
+<label>B.</label>
+<title>Approximating updates in the Gillespie with differentiable functions</title>
+<p>In order to make use of modern deep learning techniques and modern automatic differentiation packages, it is necessary to modify the Gillespie algorithm in such as way as to make the choice of reaction index (<xref ref-type="disp-formula" rid="eqn2">Eq. (2)</xref>) and abundance updates (<xref ref-type="disp-formula" rid="eqn3">Eq. (3)</xref>) differentiable functions of the kinetic parameters. To do so, we rewrite <xref ref-type="disp-formula" rid="eqn2">Eq. (2)</xref> using a sum of Heaviside step function Θ(<italic>y</italic>) (recall Θ(<italic>y</italic>) = 0 if <italic>y &lt;</italic> 0 and Θ(<italic>y</italic>) = 1 if <italic>y &gt;</italic> 0):
+<disp-formula id="eqn4">
+<graphic xlink:href="602397v2_eqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+This formulation of index selection makes clear the source of non-differentiability. The derivative of the <italic>i</italic><sup>′</sup> with respect to <italic>r</italic><sub><italic>i</italic></sub> does not exist at the transition points where the Heaviside function jumps (see <xref rid="fig1" ref-type="fig">Fig. 1b</xref>).</p>
+<p>This suggests a natural modification of the Gillespie algorithm to make it differentiable-replacing the Heaviside function Θ(<italic>y</italic>) by a sigmoid function of the form
+<disp-formula id="eqn5">
+<graphic xlink:href="602397v2_eqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where we have introduced a “hyper-parameter” <italic>a</italic> that controls the steepness of the sigmoid and plays an analogous role to temperature in a Fermi function in statistical mechanics. A larger value of <italic>a</italic><sup>−1</sup> results in a steeper slope for the sigmoid functions, thereby more closely approximating the true Heaviside functions which is recovered in the limit <italic>a</italic>→ 0 (see <xref rid="fig1" ref-type="fig">Fig. 1(b)</xref>). With this replacement, the index selection equation becomes
+<disp-formula id="eqn6">
+<graphic xlink:href="602397v2_eqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Note that in making this approximation, our index is no longer an integer, but instead can take on all real values between 0 and <italic>N</italic>. However, by making <italic>a</italic> sufficiently small, <xref ref-type="disp-formula" rid="eqn6">Eq. (6)</xref> still serves as a good approximation to the discrete jumps in <xref ref-type="disp-formula" rid="eqn4">Eq. (4)</xref>. In general, <italic>a</italic> is a hyperparameter that is chosen to be as small as possible while still ensuring that the gradient of <italic>i</italic><sup>′</sup> with respect to the kinetic parameters <italic>r</italic><sub><italic>i</italic></sub> can be calculated numerically with high accuracy. For a detailed discussion, please see <xref rid="fig9" ref-type="fig">Fig. 9</xref> and Appendix A.</p>
+<p>Since the index <italic>i</italic><sup>′</sup> is no longer an integer but a real number, we must also modify the abundance update in <xref ref-type="disp-formula" rid="eqn3">Eq. (3)</xref> to make it fully differentiable. To do this, we start by rewriting <xref ref-type="disp-formula" rid="eqn3">Eq. (3)</xref> using the Kronecker delta <italic>δ</italic><sub><italic>ij</italic></sub> (where <italic>δ</italic><sub><italic>ij</italic></sub> = 1 if <italic>i</italic> = <italic>j</italic> and <italic>δ</italic><sub><italic>ij</italic></sub> = 0 if <italic>i</italic>≠ <italic>j</italic>) as
+<disp-formula id="eqn7">
+<graphic xlink:href="602397v2_eqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Since <italic>i</italic><sup>′</sup> is no longer an integer, we can approximate the Kronecker delta <italic>δ</italic><sub><italic>ii</italic></sub><sup><italic>′</italic></sup> by a Gaussian function, to arrive at the approximate update equation
+<disp-formula id="eqn8">
+<graphic xlink:href="602397v2_eqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+The hyperparameter <italic>b</italic> is generally chosen to be as small as possible while still ensuring numerical stability of gradients (<xref rid="fig9" ref-type="fig">Fig. 9</xref>). Note by using an abundance update of the form <xref ref-type="disp-formula" rid="eqn8">Eq. (8)</xref>, the species abundances <bold>x</bold> are now real numbers. This is in stark contrast with the exact Gillespie algorithm where the abundance update (<xref ref-type="disp-formula" rid="eqn7">Eq. (7)</xref>) ensures that the <italic>x</italic><sub><italic>α</italic></sub> are all integers.</p>
+</sec>
+<sec id="s1c">
+<label>C.</label>
+<title>Combining the DGA with gradient-based optimization</title>
+<p>The goal of making Gillespie simulations differentiable is to enable the computation of the gradient of a <italic>loss function, L</italic> (<bold><italic>θ</italic></bold>), with respect to the kinetics parameters <bold><italic>θ</italic></bold>. A loss function quantifies the difference between simulated and desired values for quantities of interest. For example, when employing the DGA in the context of fitting noisy gene expression models, a natural choice for <italic>L</italic> (<bold><italic>θ</italic></bold>) is the difference between the simulated and experimentally measured moments of mRNA/protein expression (or alternatively, the Kullback-Leibler divergence between the experimental and simulated mRNA/protein expression distributions if full distributions can be measured). When using the DGA to design gene circuits, the loss function can be any function that characterizes the difference between the simulated and desired values of the input-output relation.</p>
+<p>The goal of the optimization using the DGA is to find parameters <bold><italic>θ</italic></bold> that minimize the loss. The basic workflow of a DGA-based optimization is shown in <xref rid="fig2" ref-type="fig">Fig. 2</xref>. One starts with an initial guess for the parameters <bold><italic>θ</italic></bold><sub>0</sub>. One then uses DGA algorithm to simulate the systems and calculate the gradient of the loss function ∇<sub><italic>θ</italic></sub><italic>L</italic>(<bold><italic>θ</italic></bold>). One then updates the parameters, moving in the direction of the gradient using gradient descent or more sophisticated second-order methods such as ADAM [<xref ref-type="bibr" rid="c37">37</xref>, <xref ref-type="bibr" rid="c38">38</xref>], until one reaches a local minimum of the loss function.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>FIG. 2.</label>
+<caption><p>Flowchart of the parameter optimization process using the DGA. The process begins by initializing the parameters <inline-formula><inline-graphic xlink:href="602397v2_inline93.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Simulations are then run using the DGA to obtain statistics <inline-formula><inline-graphic xlink:href="602397v2_inline94.gif" mime-subtype="gif" mimetype="image"/></inline-formula> like moments. These statistics are used to compute the loss <italic>L</italic>({S<sub><italic>i</italic></sub>}), and the gradient of the loss ∇<italic>L</italic> is obtained. Finally, parameters are updated using the ADAM optimizer, and the process iterates to minimize the loss.</p></caption>
+<graphic xlink:href="602397v2_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s1d">
+<label>D.</label>
+<title>The price of differentiability</title>
+<p>A summary of the DGA is shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref>. Unsurprisingly, differentiability comes at a price. The foremost of these is that unlike the Gillespie algorithm, the DGA is no longer exact. The DGA replaces the exact discrete stochastic system by an approximate differentiable stochastic system. This is done by allowing both the reaction index and the species abundances to be continuous numbers. Though in theory, the errors introduced by these approximations can be made arbitrarily small by choosing the hyper-parameters <italic>a</italic> and <italic>b</italic> small enough (see <xref rid="fig1" ref-type="fig">Fig. 1</xref>), in practice, gradients become numerically unstable when <italic>a</italic> and <italic>b</italic> are sufficiently small (see Appendix A and <xref rid="fig9" ref-type="fig">Fig. 9</xref>).</p>
+<p>In what follows, we focus almost exclusively on steady-state properties that probe the “bulk ”, steady-state properties of the stochastic system of interest. We find the DGA works well in this setting. However, we note that the effect of the approximations introduced by the DGA may be pronounced in more complex settings such as the calculation of rare events, modeling of tail-driven processes, or dealing with non-stationary time series.</p>
+</sec>
+<sec id="s1e">
+<label>E.</label>
+<title>Implementation</title>
+<p>A detailed explanation of how the DGA is implemented using PyTorch is given in the Appendix. In addition, all code for the DGA is available on Github at our Github repository <ext-link ext-link-type="uri" xlink:href="https://github.com/Emergent-Behaviors-in-Biology/">https://github.com/Emergent-Behaviors-in-Biology/</ext-link> Differentiable-Gillespie-Algorithm.</p>
+</sec>
+</sec>
+<sec id="s2">
+<label>II.</label>
+<title>Benchmarking the dga on a simple model for stochastic gene expression</title>
+<p>In order to better understand the DGA in the context of stochastic gene expression, we benchmarked the DGA on a simple two-state promoter model inspired by experiments in <italic>E. coli</italic> [<xref ref-type="bibr" rid="c35">35</xref>]. This simple model had several advantages that make it well suited for exploring the performance of DGA. These include the ability to analytically calculate mRNA expression distributions and independent experimental measurements of kinetic parameters.</p>
+<sec id="s2a">
+<label>A.</label>
+<title>Two-state promoter model</title>
+<p>Gene regulation is tightly regulated at the transcriptional level to ensure that genes are expressed at the right time, place, and in the right amount [<xref ref-type="bibr" rid="c39">39</xref>]. Transcriptional regulation involves various mechanisms, including the binding of transcription factors to specific DNA sequences, the modification of chromatin structure, and the influence of non-coding RNAs, which collectively control the initiation and rate of transcription [<xref ref-type="bibr" rid="c39">39</xref>–<xref ref-type="bibr" rid="c41">41</xref>]. By orchestrating these regulatory mechanisms, cells can respond to internal signals and external environmental changes, maintaining homeostasis and enabling proper development and function.</p>
+<p>Here, we focus on a classic two-state promoter gene regulation [<xref ref-type="bibr" rid="c35">35</xref>]. Two-state promoter systems are commonly studied because they provide a simplified yet powerful model for understanding gene regulation dynamics. These systems, characterized by promoters toggling between active and inactive states, offer insights into how genes are turned on or off in response to various stimuli (see <xref rid="fig3" ref-type="fig">Fig. 3(a)</xref>). The two-state gene regulation circuit involves the promoter region, where RNA polymerase (RNAP) binds to initiate transcription and synthesize mRNA molecules at a rate <italic>r</italic>. A repressor protein can also bind to the operator site at a rate <inline-formula><inline-graphic xlink:href="602397v2_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and unbind at a rate <inline-formula><inline-graphic xlink:href="602397v2_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. When the repressor is bound to the operator, it prevents RNAP from accessing the promoter, effectively turning off transcription. mRNA is also degraded at a rate <italic>γ</italic>. An appealing feature of this model is that both mean mRNA expression and the Fano factor can be calculated analytically and there exist beautiful quantitative measurements of both these quantities (<xref rid="fig3" ref-type="fig">Fig. 3(b)</xref>). For this reason, we use this two-state promoters to benchmark the efficacy of DGA below.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>FIG. 3.</label>
+<caption><p>Two-state gene regulation architecture. (a) Schematic of gene regulatory circuit for transcriptional repression. RNA polymerase (RNAP) binds to the promoter region to initiate transcription at a rate <italic>r</italic>, leading to the synthesis of mRNA molecules (red curvy lines). mRNA is degraded at a rate <italic>γ</italic>. A repressor protein can bind to the operator site, with association and dissociation rates<inline-formula><inline-graphic xlink:href="602397v2_inline95.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline96.gif" mime-subtype="gif" mimetype="image"/></inline-formula> respectively. (b) Experimental data from Ref. [<xref ref-type="bibr" rid="c35">35</xref>], showing the relationship between the mean mRNA level and the Fano factor for two different promoter constructs: <italic>lac</italic>UD5 (green squares) and 5DL1 (red squares).</p></caption>
+<graphic xlink:href="602397v2_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s2b">
+<label>B.</label>
+<title>Characterizing errors due to approximations in the DGA</title>
+<p>We begin by testing the DGA to do forward simulations on the two-state promoter system described above and comparing the results to simulations performed with the exact Gillespie algorithm (see Appendix B for simulation details). <xref rid="fig4" ref-type="fig">Fig. 4(a)</xref> compares the probability distribution function (PDF) for the steady-state mRNA levels obtained from the DGA (in red) and the exact Gillespie simulation (in blue). The close overlap of these distributions demonstrates that the DGA can accurately replicate the results of the exact Gillespie simulation. This is also shown by the very close match of the first four moments ⟨ <italic>m</italic><sup><italic>n</italic></sup>⟩ of the mRNA count between the exact Gillespie and the DGA in <xref rid="fig4" ref-type="fig">Fig. 4(b)</xref>, though the DGA systematically overestimates these moments. As observed in <xref rid="fig4" ref-type="fig">Fig. 4(a)</xref>, the DGA also fails to accurately capture the tails of the underlying PDF. This discrepancy arises because rare events result from very frequent low-probability reaction events where the sigmoid approximation used in the DGA significantly impacts the reaction selection process and, consequently, the final simulation results.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>FIG. 4.</label>
+<caption><p>Accuracy of the DGA in simulating the two-state promoter architecture in <xref ref-type="fig" rid="fig3">Fig. 3(a)</xref>. Comparison between the DGA and exact simulations for (a) steady-state mRNA distribution, (b) moments of the steady-state mRNA distribution, and (c) the probability for the promoter to be in the “ON” or “OFF” state. (d) Ratio of the Jensen-Shannon divergence JSD <inline-formula><inline-graphic xlink:href="602397v2_inline97.gif" mime-subtype="gif" mimetype="image"/></inline-formula> between the differentiable Gillespie PDF pDGA and the exact steady-state PDF <inline-formula><inline-graphic xlink:href="602397v2_inline98.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the Shannon entropy <inline-formula><inline-graphic xlink:href="602397v2_inline99.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of the exact steady-state PDF. In all of the plots, 2000 trajectories are used. The simulation time used in panels (a)-(c) is marked by blue ‘x’. Parameter values: <inline-formula><inline-graphic xlink:href="602397v2_inline100.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and 1/b = 20.</p></caption>
+<graphic xlink:href="602397v2_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Next, we compare the accuracy of the DGA in simulating mRNA abundance distributions across a range of simulation times (see <xref rid="fig4" ref-type="fig">Fig. 4(d)</xref>). The accuracy is quantified by the ratio of the Jensen-Shannon divergence JSD <inline-formula><inline-graphic xlink:href="602397v2_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula> between the differentiable Gillespie PDF <italic>p</italic><sub>DGA</sub> and the exact steady-state PDF <inline-formula><inline-graphic xlink:href="602397v2_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the entropy <inline-formula><inline-graphic xlink:href="602397v2_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of the exact steady-state PDF. For probability distributions <italic>P</italic> and <italic>Q</italic> over the same discrete space 𝒳, the JSD and H are defined as:
+<disp-formula id="eqn9">
+<graphic xlink:href="602397v2_eqn9.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <inline-formula><inline-graphic xlink:href="602397v2_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <italic>D</italic><sub>KL</sub> denotes the Kullback-Leibler divergence
+<disp-formula id="eqn10">
+<graphic xlink:href="602397v2_eqn10.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+As expected, the <inline-formula><inline-graphic xlink:href="602397v2_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula> ratio decreases with increasing simulation time, indicating convergence towards the steady-state distribution of the exact Gillespie simulation, which is obtained at a simulation time of 10<sup>4</sup>. The saturation of the <inline-formula><inline-graphic xlink:href="602397v2_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> ratio at approximately 0.003 for long simulation times is due to the finite values of <italic>a</italic><sup>−1</sup> and <italic>b</italic><sup>−1</sup>. In percentage terms, this ratio represents a 0.3% divergence, meaning that the DGA’ s approximation introduces only a 0.3% deviation from the exact distribution, relative to the total uncertainty (entropy) in the exact system.</p>
+<p>Finally, the bar plot in <xref rid="fig4" ref-type="fig">Fig. 4(c)</xref> shows simulation results for the probability of the promoter being in the “ OFF” and “ ON” states as predicted by the DGA (in red) and the exact Gillespie simulation (in blue). The differentiable Gillespie over-estimates the probability of being in the “ OFF” state and under-estimates the probability of being in the “ ON” state. Nonetheless, given the discrete nature of this system, the DGA does a reasonable job of matching the results of the exact simulations.</p>
+<p>As we will see below, despite these errors the DGA is able to accurately capture gradient information and hence works remarkably well at gradient-based optimization of loss functions.</p>
+</sec>
+</sec>
+<sec id="s3">
+<label>III.</label>
+<title>Parameter estimation using the DGA</title>
+<p>In many applications, one often wants to estimate kinetic parameters from experimental measurements of a stochastic system. For example, in the context of gene expression, biologists are often interested in understanding biophysical parameters such as the rate at which promoters switch between states or a transcription factor unbinds from DNA. However, estimating kinetic parameters in stochastic systems poses numerous challenges because the vast majority of methods for parameter estimation are designed with deterministic systems in mind. Moreover, it is often difficult to analytically calculate likelihood functions making it difficult to perform statistical inference. One attractive method for addressing these difficulties is to combine differentiable Gillespie simulations with gradient-based optimization methods. By choosing kinetic parameters that minimize the difference between simulations and experiments as measured by a loss function, one can quickly and efficiently estimate kinetic parameters and error bars.</p>
+<sec id="s3a">
+<label>A.</label>
+<title>Loss Function for parameter estimation</title>
+<p>To use the DGA for parameter estimation, we start by defining a loss function <italic>L</italic> (<bold><italic>θ</italic></bold>) that measures the discrepancy between simulations and experiments. In the context of the two-state promoter model (<xref rid="fig3" ref-type="fig">Fig. 3</xref>), a natural choice of loss function is the square error between the simulated and experimentally measured mean and standard deviations of the steady-state mRNA distributions:
+<disp-formula id="eqn11">
+<graphic xlink:href="602397v2_eqn11.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <inline-formula><inline-graphic xlink:href="602397v2_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline11.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote the mean and standard deviation obtained from DGA simulations, and ⟨ <italic>m</italic>⟩ and <italic>σ</italic><sub><italic>m</italic></sub> are the experimentally measured values of the same quantities. Having specified the loss function and parameters, we then use the gradient-based optimization to minimize the loss and find the optimal parameters <inline-formula><inline-graphic xlink:href="602397v2_inline12.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (see <xref rid="fig2" ref-type="fig">Fig. 2</xref>). Note that in general the solution to the optimization problem need not be unique (see below).</p>
+</sec>
+<sec id="s3b">
+<label>B.</label>
+<title>Confidence intervals and visualizing loss landscapes</title>
+<p>Given a set of learned parameters: <inline-formula><inline-graphic xlink:href="602397v2_inline13.gif" mime-subtype="gif" mimetype="image"/></inline-formula> that minimize <italic>L</italic> (<bold><italic>θ</italic></bold>), one would also ideally like to assign a confidence interval (CI) to this estimate that reflect how constrained these parameters are. One natural way to achieve this is by examining the curvature of the loss function as the parameter <italic>θ</italic><sub><italic>i</italic></sub> varies around its minimum value, <inline-formula><inline-graphic xlink:href="602397v2_inline14.gif" mime-subtype="gif" mimetype="image"/></inline-formula> Motivated by this, we define the 95% CIs for parameter <italic>θ</italic><sub><italic>i</italic></sub> by:
+<disp-formula id="eqn12">
+<graphic xlink:href="602397v2_eqn12.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where
+<disp-formula id="eqn13">
+<graphic xlink:href="602397v2_eqn13.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and <inline-formula><inline-graphic xlink:href="602397v2_inline15.gif" mime-subtype="gif" mimetype="image"/></inline-formula> A detailed explanation of how to numerically estimate the CIs is given in Appendix C.</p>
+<p>One shortcoming of <xref ref-type="disp-formula" rid="eqn13">Eq. (13)</xref> is that it treats each parameter in isolation and ignores correlations between parameters. On a technical level, this is reflected in the observation that the confidence intervals only know about the diagonal elements of the full Hessian <inline-formula><inline-graphic xlink:href="602397v2_inline16.gif" mime-subtype="gif" mimetype="image"/></inline-formula> This shortcoming is especially glaring when there are many sets of parameters that all optimize the loss function [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c43">43</xref>]. As discuss below, this is often the case in many stochastic systems including the two-state promoter architecture in <xref rid="fig3" ref-type="fig">Fig. 3</xref>. For this reason, it is often useful to make two dimensional plots of the loss function <italic>L</italic> (<bold><italic>θ</italic></bold>). To do so, for each pair of parameters, we simply sample the parameters around their optimal value and forward simulate to calculate the loss function <italic>L</italic> (<bold><italic>θ</italic></bold>). We then use this simulations to create two-dimensional heat maps of the loss function, allowing us to identify “ soft directions” in parameter space.</p>
+</sec>
+<sec id="s3c">
+<label>C.</label>
+<title>Parameter estimation on synthetic data</title>
+<p>Before proceeding to experiments, we start by bench-marking the DGA’ s ability to perform parameter estimation on synthetic data generated using the two-state promoter model shown in <xref rid="fig3" ref-type="fig">Fig. 3</xref>. This model nominally has four independent kinetic parameters: the rate at which repressors bind the promoter, <inline-formula><inline-graphic xlink:href="602397v2_inline17.gif" mime-subtype="gif" mimetype="image"/></inline-formula>; the rate at which the repressor unbinds from the promoter, <inline-formula><inline-graphic xlink:href="602397v2_inline18.gif" mime-subtype="gif" mimetype="image"/></inline-formula>; the rate at which mRNA is produced, <italic>r</italic>; and the rate at which mRNA degrades, <italic>γ</italic>. Since we are only concerned with steady-state properties of the mRNA distribution, we choose to measure time in units of the off rate and set <inline-formula><inline-graphic xlink:href="602397v2_inline19.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in everything that follows. In Appendix D, we make use of exact analytical results for ⟨ <italic>m</italic>⟩ and <italic>σ</italic><sub><italic>m</italic></sub> to show that the solution to the optimization problem specified by loss function in <xref ref-type="disp-formula" rid="eqn11">Eq. (11)</xref> is degenerate-there are many combinations of the three parameters <inline-formula><inline-graphic xlink:href="602397v2_inline20.gif" mime-subtype="gif" mimetype="image"/></inline-formula> that all optimize <italic>L</italic> (<bold><italic>θ</italic></bold>). On the other hand, if one fixes the mRNA degradation rate <italic>γ</italic>, this degeneracy is lifted and there is a unique solution to the optimization problem for the two parameters <inline-formula><inline-graphic xlink:href="602397v2_inline21.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We discuss both these cases below.</p>
+<sec id="s3c1">
+<label>1.</label>
+<title>Generating synthetic data</title>
+<p>To generate synthetic data, we randomly sample the three parameters: <inline-formula><inline-graphic xlink:href="602397v2_inline22.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, <italic>r</italic>, and <italic>γ</italic> within the range [0.1, 10], while keeping <inline-formula><inline-graphic xlink:href="602397v2_inline23.gif" mime-subtype="gif" mimetype="image"/></inline-formula> fixed at 1. In total, we generate 20 different sets of random parameters. We then perform exact Gillespie simulations for each set of parameters. Using these simulations, we obtain the mean ⟨ <italic>m</italic>⟩ and standard deviation <italic>σ</italic><sub><italic>m</italic></sub> of the mRNA levels, which are then used as input to the loss function in <xref ref-type="disp-formula" rid="eqn11">Eq. (11)</xref>. We then use the DGA to estimate the parameters using the procedure outlined above and compare the resulting predictions with ground truth values for simulations.</p>
+</sec>
+<sec id="s3c2">
+<label>2.</label>
+<title>Estimating parameters in the non-degenerate case</title>
+<p>We begin by considering the case where the mRNA degradation rate <italic>γ</italic> is known and the goal is to estimate the two other parameters: the repressor binding rate <inline-formula><inline-graphic xlink:href="602397v2_inline24.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and the mRNA production rate <italic>r</italic>. As discussed above, in this case, the loss function in <xref ref-type="disp-formula" rid="eqn11">Eq. (11)</xref> has a unique minima, considerably simplifying the inference task. <xref rid="fig5" ref-type="fig">Fig. 5(a)</xref> shows a scatter plot of the learned and the true parameter values for wide variety of choices of <italic>γ</italic>. As can be seen, there is very good agreement between the true parameters and learned parameters. <xref rid="fig5" ref-type="fig">Fig. 5(c)</xref> shows that even when the true and learned parameters differ, the DGA can predict the mean ⟨<italic>m</italic>⟩ and standard deviation <italic>σ</italic><sub><italic>m</italic></sub> of the steady-state mRNA distribution almost perfectly (see Appendix E for discussion of how error bars were estimated). To better understand this, we selected a set of learned parameters: <inline-formula><inline-graphic xlink:href="602397v2_inline25.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, <italic>r</italic> = 3.83, and <italic>γ</italic> = 2.43. We then plotted the loss function in the neighborhood of these parameters (<xref rid="fig5" ref-type="fig">Fig. 5(b)</xref>). As can be seen, the loss function around the true parameters is quite flat and the learned parameters live at the edge of this flat region. The flatness of the loss function reflects the fact that the mean and standard deviation of the mRNA distribution depend weakly on the kinetic parameters.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>FIG. 5.</label>
+<caption><p>Gradient-based learning via DGA is applied to the synthetic data for the gene expression model in <xref ref-type="fig" rid="fig3">Fig. 3(a)</xref>. Parameters <inline-formula><inline-graphic xlink:href="602397v2_inline101.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are fixed at 1, with 1/a = 200 and 1/b = 20 for a simulation time of 10. (a) Scatter plot of true vs. inferred parameters <inline-formula><inline-graphic xlink:href="602397v2_inline102.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline103.gif" mime-subtype="gif" mimetype="image"/></inline-formula>) with <italic>γ</italic> constant. Error bars are 95% CIs. Panel (b) plots the logarithm of the loss function near a learned parameter set (shown in red circles in (a)), showing insensitivity regions. Panel (c) compares true and predicted mRNA mean and standard deviation with 95% CIs.</p></caption>
+<graphic xlink:href="602397v2_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s3c3">
+<label>3.</label>
+<title>Estimating parameters for the degenerate case</title>
+<p>We now estimate parameters for the two-state promoter model when all three parameters <inline-formula><inline-graphic xlink:href="602397v2_inline26.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, <italic>r</italic>, and <italic>γ</italic> are unknown. As discussed above, in this case, there are many sets of parameters that all minimize the loss function in <xref ref-type="disp-formula" rid="eqn11">Eq. (11)</xref>. <xref rid="fig6" ref-type="fig">Fig. 6(a)</xref> shows a comparison between the learned and true parameters along with a heat map of the loss function for one set of synthetic parameters (<xref rid="fig6" ref-type="fig">Fig. 6(b)</xref>). As can be seen in the plots, though the true parameters and learned parameter values differ significantly, they do so along “ sloppy” directions where loss function is flat. Consistent with this intuition, we performed simulations comparing the mean <inline-formula><inline-graphic xlink:href="602397v2_inline27.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and standard deviation <inline-formula><inline-graphic xlink:href="602397v2_inline28.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of the steady-state mRNA levels using the true and learned parameters and found near-perfect agreement across all of the synthetic data (<xref rid="fig6" ref-type="fig">Fig. 6(c)</xref>).</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>FIG. 6.</label>
+<caption><p>Gradient-based learning via DGA is applied to the synthetic data for the gene expression model in <xref ref-type="fig" rid="fig3">Fig. 3(a)</xref>. Parameters<inline-formula><inline-graphic xlink:href="602397v2_inline104.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are fixed at 1, with 1/a = 200 and 1/b = 20 for a simulation time of 10. (a) Scatter plot of true vs. inferred parameters (<inline-formula><inline-graphic xlink:href="602397v2_inline105.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and <italic>γ</italic>). Error bars are 95% CIs. Panel (b) plots the logarithm of the loss function near a learned parameter set (shown in red circles in (a)), showing insensitivity regions. Panel (c) compares true and predicted mRNA mean and standard deviation with 95% CIs.</p></caption>
+<graphic xlink:href="602397v2_fig6.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3d">
+<label>D.</label>
+<title>Parameter estimation on experimental data</title>
+<p>In the previous section, we demonstrated that our DGA can effectively obtain parameters for synthetic data. However, real experimental data often contains noise and variability, which can complicate the parameter estimation process. To test the DGA in this more difficult setting, we reanalyze experiments by Jones <italic>et al</italic>. [<xref ref-type="bibr" rid="c35">35</xref>] which measured how mRNA expression changes in a system well described by the two-state gene expression model in <xref rid="fig3" ref-type="fig">Fig. 3</xref>. In these experiments, two constitutive promoters <italic>lac</italic>UD5 and 5DL1 (with different transcription rates <italic>r</italic>) were placed under the control of a LacI repressor through the insertion of a LacI binding site. By systematically varying LacI concentrations, the authors were able to adjust the repressor binding rate <inline-formula><inline-graphic xlink:href="602397v2_inline29.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. mRNA fluorescence in situ hybridization (FISH) was employed to measure mRNA expression, providing data on both mean expression levels ⟨ <italic>m</italic>⟩ and the variability as quantified by the Fano factor <inline-formula><inline-graphic xlink:href="602397v2_inline30.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for both promoters (see <xref rid="fig3" ref-type="fig">Fig. 3(b)</xref>).</p>
+<p>Given a set of measurements of the mean and Fano factor <inline-formula><inline-graphic xlink:href="602397v2_inline31.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for a promoter (<italic>lac</italic>UD5 and 5DL1), we construct a loss function of the form:
+<disp-formula id="eqn14">
+<graphic xlink:href="602397v2_eqn14.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>i</italic> runs over data points (each with a different lac repressor concentration) and <inline-formula><inline-graphic xlink:href="602397v2_inline32.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline33.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are the mean and standard deviation obtained from a sample of DGA simulations. This loss function is chosen because, at its minimum, <inline-formula><inline-graphic xlink:href="602397v2_inline34.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline35.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for all <italic>i</italic>. As above, we set <inline-formula><inline-graphic xlink:href="602397v2_inline36.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and focus on estimating the other three parameters <inline-formula><inline-graphic xlink:href="602397v2_inline37.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. When performing our gradient-based optimization, we assume that the transcription rate <italic>r</italic> and the mRNA degradation rate <italic>γ</italic> are the same for all data points <italic>i</italic>, while allowing <inline-formula><inline-graphic xlink:href="602397v2_inline38.gif" mime-subtype="gif" mimetype="image"/></inline-formula> to vary across data points <italic>i</italic>. This reflects the fact that <inline-formula><inline-graphic xlink:href="602397v2_inline39.gif" mime-subtype="gif" mimetype="image"/></inline-formula>is a function of the lac repressor concentration which, by design, is varied across data points (see Appendix F for details on how this optimization is implemented and calculation of error bars).</p>
+<p>The results of this procedure are summarized in <xref rid="fig7" ref-type="fig">Fig. 7</xref>. We find that for the <italic>lac</italic>UD5 promoter <inline-formula><inline-graphic xlink:href="602397v2_inline40.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and that <inline-formula><inline-graphic xlink:href="602397v2_inline41.gif" mime-subtype="gif" mimetype="image"/></inline-formula> varies from a minimum value of 0.18 to a maximum value of 99.0. For the 5DL1 promoters <inline-formula><inline-graphic xlink:href="602397v2_inline42.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline43.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline44.gif" mime-subtype="gif" mimetype="image"/></inline-formula> varies between 3.64 and 99.0. Recall that we have normalized all rates to the repressor unbinding rate <inline-formula><inline-graphic xlink:href="602397v2_inline45.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. These values indicate that mRNA transcription occurs much faster compared to the unbinding of the repressor, suggesting that once the promoter is in an active state, it produces mRNA rapidly. The relatively high mRNA degradation rates indicate a mechanism for fine-tuning gene expression levels, ensuring that mRNA does not persist too long in the cell, which could otherwise lead to prolonged expression even after promoter deactivation. The broad range of repressor-binding rates shows that the system can adjust its sensitivity to repressor concentration, allowing for both tight repression and rapid activation depending on the cellular context.</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>FIG. 7.</label>
+<caption><p>Fitting of experimental data from Ref. [<xref ref-type="bibr" rid="c35">35</xref>] using the DGA. (a) Comparison between theoretical predictions from the DGA (solid curves) and experimental values of mean and the Fano factor for the steady-state mRNA levels are represented by square markers, along with the error bars, for two different promoters, <italic>lac</italic>UD5 and 5DL1. Solid curves are generated by using DGA to estimate <inline-formula><inline-graphic xlink:href="602397v2_inline106.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and <inline-formula><inline-graphic xlink:href="602397v2_inline107.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and using this as input to exact analytical formulas. (b) Comparison between the inferred values of <inline-formula><inline-graphic xlink:href="602397v2_inline108.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, using DGA with experimentally measured values of this parameter from Ref. [<xref ref-type="bibr" rid="c35">35</xref>].</p></caption>
+<graphic xlink:href="602397v2_fig7.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p><xref rid="fig7" ref-type="fig">Fig. 7(a)</xref> shows a comparison between the predictions of the DGA (solid curves) and the experimental data (squares) for mean mRNA levels ⟨ <italic>m</italic>⟩ and the Fano factor <italic>f</italic>. The theoretical curves are obtained by using analytical expression for ⟨ <italic>m</italic>⟩ and <italic>f</italic> from [<xref ref-type="bibr" rid="c35">35</xref>] with parameters estimated from the DGA. We find that for the <italic>lac</italic>UD5 and the 5DL1 promoters, the mean percentage errors for predictions of the Fano factor are 25% and 28% respectively (see Appendix F).</p>
+<p>An appealing feature of [<xref ref-type="bibr" rid="c35">35</xref>] is that the authors performed independent experiments to directly measure the normalized transcription rate <italic>r/γ</italic> (namely the ratio of the transcription rate and the mRNA degradation rate). This allows us to compare the DGA predictions for these parameters to ground truth measurements of kinetic parameters. As can be seen in <xref rid="fig7" ref-type="fig">Fig. 7(b)</xref>, the predictions of the DGA agree remarkably well for both the <italic>lac</italic>UD5 and 5DL1 promoters.</p>
+</sec>
+</sec>
+<sec id="s4">
+<label>IV.</label>
+<title>Designing gene regulatory circuits with desired behaviors</title>
+<p>Another interesting application of the DGA is to design stochastic chemical or biological networks that exhibit a particular behavior. In many cases, this design problem can be reformulated as identifying choices of parameter that give rise to a desired behavior. Here, we show that the DGA is ideally suited for such a task. We focus on designing the input-output relation of a four state promoter model of gene regulation [<xref ref-type="bibr" rid="c36">36</xref>]. We have chosen this more complex promoter architecture because, un-like the two-state promoter model analyzed above, it allows for nonequilibrium currents. In making this choice, we are inspired by numerous recent works have investigated how cells can tune kinetic parameters to operate out of equilibrium in order to achieve increased sharp-ness/sensitivity [<xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c44">44</xref>–<xref ref-type="bibr" rid="c46">46</xref>].</p>
+<sec id="s4a">
+<label>A.</label>
+<title>Model of nonequilibrium promoter</title>
+<p>We focus on designing the steady-state input-output relationship of the four-state promoter model of gene regulation model shown in <xref rid="fig8" ref-type="fig">Fig. 8(a)</xref> [<xref ref-type="bibr" rid="c36">36</xref>]. The locus can be in either an “ ON” state where mRNA is transcribed at a rate <italic>r</italic> or an “ OFF” state where the locus is closed and there is no transcription. In addition, a transcription factor (assumed to be an activator) with concentration [<italic>c</italic>] can bind to the locus with a concentration dependent rate [<italic>c</italic>]<italic>k</italic><sub><italic>b</italic></sub> in the “ OFF” state and a rate [<italic>c</italic>]<italic>η</italic><sub><italic>ba</italic></sub><italic>k</italic><sub><italic>b</italic></sub> in the “ ON” rate. The activator can also unbind at a rate <italic>k</italic><sub><italic>u</italic></sub> in the “ OFF” state and a rate <italic>η</italic><sub><italic>ua</italic></sub><italic>k</italic><sub><italic>u</italic></sub> in the “ ON” state. The average mRNA production rate (averaged over many samples) in this model is given by</p>
+<p>
+<disp-formula id="eqn15">
+<graphic xlink:href="602397v2_eqn15.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>π</italic><sub><italic>s</italic></sub> (<italic>s</italic> = 2, 3) is the steady-state probability of finding the system in each of the “ ON” states (see <xref rid="fig8" ref-type="fig">Fig. 8(a)</xref>). Such promoter architectures are often studied in the context of protein gradient-based development [<xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c47">47</xref>, <xref ref-type="bibr" rid="c48">48</xref>]. One well-known example of such a gradient is the dorsal protein gradient in Drosophila, which plays a crucial role in determining the spatial boundaries of geneexpression domains during early embryonic development. In this context, the sharpness of the response as a function of activator concentration is a critical aspect. High sharpness ensures that the transition between different gene expression domains occurs over a very narrow region, leading to well-defined and precise boundaries. Inspired by this, our objective is to determine the parameters such that the variation in <inline-formula><inline-graphic xlink:href="602397v2_inline46.gif" mime-subtype="gif" mimetype="image"/></inline-formula> as a function of the activator concentration [<italic>c</italic>] follows a desired response. We consider the two target responses (shown in <xref rid="fig8" ref-type="fig">Fig. 8(b)</xref>) of differing sharpness, which following [<xref ref-type="bibr" rid="c36">36</xref>] we quantify as max <inline-formula><inline-graphic xlink:href="602397v2_inline47.gif" mime-subtype="gif" mimetype="image"/></inline-formula> For simplicity, we use 6th-degree polynomials to model the input-output functions, with the x-axis plotted on a logarithmic scale. We note that our results do not depend on this choice and any other functional form works equally well.</p>
+<fig id="fig8" position="float" fig-type="figure">
+<label>FIG. 8.</label>
+<caption><p>Design of the four-state promoter architecture using the DGA. (a) Schematic of four-state promoter model. (b) Target input-output relationships (solid curves) and learned input-output relationships (blue dots) between activator concentration [c] and average mRNA production rate. (c) Parameters learned by DGA for the two responses in (b). (d) The sharpness of the response <inline-formula><inline-graphic xlink:href="602397v2_inline109.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the energy dissipated per unit time for two responses in (b). (e) Logarithm of the loss function for the learned parameter set for Response-2, revealing directions (or curves) of insensitivity in the model’s parameter space. The red circles are the learned parameter values.</p></caption>
+<graphic xlink:href="602397v2_fig8.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<fig id="fig9" position="float" fig-type="figure">
+<label>FIG. 9.</label>
+<caption><p>In panels (a) and (b), we plot the ratio of the Jensen-Shannon divergence JSD <inline-formula><inline-graphic xlink:href="602397v2_inline110.gif" mime-subtype="gif" mimetype="image"/></inline-formula> between the differentiable Gillespie PDF <italic>p</italic><sub>DGA</sub> and the exact steady-state PDF, <inline-formula><inline-graphic xlink:href="602397v2_inline111.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the Shannon entropy, <inline-formula><inline-graphic xlink:href="602397v2_inline112.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, of the exact steady-state PDF, as a function of the two sharpness parameters 1/<italic>a</italic> and 1/<italic>b</italic>. In panel (a), 1/<italic>b</italic> = 20; in panel (b), 1/<italic>a</italic> = 200. The simulation time is set to 10. In panels (c) and (d), for these same values, we show the gradient ∇<italic>L</italic><sub><italic>r</italic></sub> of the loss function <italic>L</italic> with respect to the parameter <italic>r</italic> near the true parameter values. In all the plots, the values of the rates are:, <inline-formula><inline-graphic xlink:href="602397v2_inline113.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and <italic>γ</italic> = 1. 5000 trajectories are used to obtain the PDFs, while 200 trajectories are used to obtain the gradients.</p></caption>
+<graphic xlink:href="602397v2_fig9.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s4b">
+<label>B.</label>
+<title>Loss function</title>
+<p>In order to use the DGA to learn a desired input-output relation, we must specify a loss function that quantifies the discrepancy between the desired and actual responses of the promoter network. To construct such a loss function, we begin by discretizing the activator concentration into <italic>N</italic> = 10 logarithmically spaced points, [<italic>c</italic>]<sub><italic>i</italic></sub>, where <italic>i</italic> = 1, 2, … <italic>N</italic>. For each [<italic>c</italic>]<sub><italic>i</italic></sub>, we denote the corresponding average mRNA production rate <inline-formula><inline-graphic xlink:href="602397v2_inline48.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (see <xref ref-type="disp-formula" rid="eqn15">Eq. (15)</xref>). After discretization, the loss function is simply the square error between the desired response, <inline-formula><inline-graphic xlink:href="602397v2_inline49.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the current response, <inline-formula><inline-graphic xlink:href="602397v2_inline50.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, of the circuit
+<disp-formula id="eqn16">
+<graphic xlink:href="602397v2_eqn16.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <inline-formula><inline-graphic xlink:href="602397v2_inline51.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denotes the predicted average mRNA production rates obtained from the DGA simulations given the current parameters <bold><italic>θ</italic></bold>. To compute <inline-formula><inline-graphic xlink:href="602397v2_inline52.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for a concentration [<italic>c</italic>]<sub><italic>i</italic></sub>, we perform <italic>n</italic> = 600 DGA simulations (indexed by capital letters <italic>A</italic> = 1, …, <italic>n</italic>) using the DGA and use these simulations to calculate the fraction of time spent in transcriptionally active states (states <italic>s</italic> = 2 and <italic>s</italic> = 3 in <xref rid="fig8" ref-type="fig">Fig. 8(a)</xref>). If we denote the fraction of time spent in state <italic>s</italic> in simulation <italic>A</italic> by <inline-formula><inline-graphic xlink:href="602397v2_inline53.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, then we can calculate the probability <italic>π</italic><sub><italic>s</italic></sub> of being in state <italic>s</italic> by
+<disp-formula id="eqn17">
+<graphic xlink:href="602397v2_eqn17.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and use <xref ref-type="disp-formula" rid="eqn15">Eq. (15)</xref> to calculate <inline-formula><inline-graphic xlink:href="602397v2_inline54.gif" mime-subtype="gif" mimetype="image"/></inline-formula></p>
+<p>As before, we optimize this loss using gradient descent (see <xref rid="fig2" ref-type="fig">Fig. 2</xref>). We assume that the transcription rate <italic>r</italic> is known (this just corresponds to an overall scaling of mRNA numbers). Since we are concerned only with steady-state properties, we fix the activator binding rate to a constant value, <italic>k</italic><sub><italic>b</italic></sub> = 0.02. This is equivalent to measuring time in units of <inline-formula><inline-graphic xlink:href="602397v2_inline55.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We then use gradient descent to optimize the remaining seven parameters governing transitions between promoter states.</p>
+</sec>
+<sec id="s4c">
+<label>C.</label>
+<title>Assessing circuits found by the DGA</title>
+<p><xref rid="fig8" ref-type="fig">Fig. 8(b)</xref> shows a comparison between the desired and learned input-output relations. This is good agreement between the learned and desired responses, showing that the DGA is able to design dose-response curves with different sensitivities and maximal values. <xref rid="fig8" ref-type="fig">Fig. 8(c)</xref> shows the learned parameters for both response curves. Notably, the degree of activation resulting from transcription factor binding, denoted by <italic>η</italic><sub><italic>ab</italic></sub>, is substantially higher for the sharper response (Response-2). In contrast, the influence on transcription factor binding due to activation, represented by <italic>η</italic><sub><italic>ba</italic></sub>, is reduced for the sharper response curve. Additionally, the unbinding rate <italic>k</italic><sub><italic>u</italic></sub> is observed to be lower for the sharper response. However, it is essential to approach these findings with caution, as the parameters are highly interdependent. These inter-dependencies can be visualized by plotting the loss function around the optimized parameter values. <xref rid="fig8" ref-type="fig">Fig. 8(e)</xref> shows two dimensional heat maps of the loss function for Response-2. There are seven free parameters, resulting in a total of 21 possible 2D slices of the loss function within the 7-dimensional loss landscape.</p>
+<p>The most striking feature of these plots is the central role played by the parameters <italic>η</italic><sub><italic>ab</italic></sub> and <italic>η</italic><sub><italic>ua</italic></sub> which must both be high, suggesting that the sharpness in Response-2 may result from creating a high-flux nonequilibrium cycle through the four promoter states (see <xref rid="fig8" ref-type="fig">Fig. 8(a)</xref>). This observation is consistent with recent works suggesting that creating such nonequilibrium kinetics represents a general design principle for engineering sharp responses [<xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c44">44</xref>–<xref ref-type="bibr" rid="c46">46</xref>]. To better understand if this is indeed what is happening, we quantified the energy dissipation per unit time (power consumption), Φ, in the nonequilibrium circuit. The energetic cost of operating biochemical networks can be quantified using ideas from nonequilibrium thermodynamics using a generalized Ohm’ s law of the form [<xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c49">49</xref>–<xref ref-type="bibr" rid="c53">53</xref>]
+<disp-formula id="eqn18">
+<graphic xlink:href="602397v2_eqn18.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where we have defined a nonequilibrium drive
+<disp-formula id="eqn19">
+<graphic xlink:href="602397v2_eqn19.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and the nonequilibrium flux
+<disp-formula id="eqn20">
+<graphic xlink:href="602397v2_eqn20.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>π</italic><sub>0</sub> and <italic>π</italic><sub>1</sub> are the probabilities of finding the system in state 0 and 1, respectively. <xref rid="fig8" ref-type="fig">Fig. 8(d)</xref> shows a comparison between energy consumption and sharpness of the two learned circuits. Consistent with the results of [<xref ref-type="bibr" rid="c36">36</xref>], we find that the sharper response curve is achieved by consuming more energy.</p>
+</sec>
+</sec>
+<sec id="s5">
+<label>V.</label>
+<title>Conclusion</title>
+<p>In this paper, we introduced a fully differentiable variant of the Gillespie algorithm, the DGA. By integrating differentiable components into the traditional Gillespie algorithm, the DGA facilitates the use of gradient-based optimization techniques, such as gradient descent, for parameter estimation and network design. The ability to smoothly approximate the discrete operations of the traditional Gillespie algorithm with continuous functions facilitates the computation of gradients via backpropagation, a foundational technique in machine learning and has the potential to significantly expands the utility of stochastic simulations. Our work demonstrates the efficacy of the DGA through various applications, including parameter learning and the design of simple gene regulatory networks.</p>
+<p>We benchmarked the DGA’ s ability to accurately replicate the results of the exact Gillespie algorithm through simulations on a two-state promoter architecture. We found the DGA could accurately approximate the moments of the steady-state distribution and other major qualitative features. Unsurprisingly, it was less accurate at capturing information about the tails of distributions. We then demonstrated that the DGA could be accurately used for parameter estimation on both simulated and real experimental data. This capability to infer kinetic parameters from noisy experimental data underscores the robustness of the DGA, making it a potentially powerful computation tool for real-world applicaions in quantitative biology. Furthermore, we showcased the DGA’ s application in designing biological networks. Specifically, for a complex four-state promoter architecture, we learned parameters that enable the gene regulation network to produce desired input-output relationships. This demonstrates how the DGA can be used to rapidly design complex biological systems with specific behaviors. We expect computational design of synthetic circuits with differentiable simulations to become an increasingly important tool in synthetic biology.</p>
+<p>There remains much work still to be done. In this paper, we focused almost entirely on properties of the steady-states. However, a powerful aspect of the traditional Gillespie algorithm is that it can be used to simulate dynamical trajectories. How to adopt the DGA to utilize dynamical data remains an extremely important open question. In addition, it will be interesting to see if the DGA can be adapted to understand the kinetic of rare events. It will also be interesting to compare the DGA with other recently developed approximation methods such as those based on tensor networks [<xref ref-type="bibr" rid="c54">54</xref>, <xref ref-type="bibr" rid="c55">55</xref>]. Be-yond the gene regulatory networks, extending the DGA to handle larger and more diverse datasets will be crucial for applications in epidemiology, evolution, ecology, and neuroscience. On a technical level, this may be facilitated by developing more sophisticated smoothing functions and adaptive algorithms to improve numerical stability and convergence.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgments</title>
+<p>This work was supported by NIH NIGMS R35GM119461 to P.M. and Chan-Zuckerburg Institute Investigator grant to P.M. The authors also acknowledge support from the Shared Computing Cluster (SCC) administered by Boston University Research Computing Services. We would also like to thank the Mehta and Kondev groups for useful discussions.</p>
+</ack>
+<ref-list>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>N. G.</given-names> <surname>Van Kampen</surname></string-name></person-group>, <source>Stochastic processes in physics and chemistry</source>, Vol. <volume>1</volume> (<publisher-name>Elsevier</publisher-name>, <year>1992</year>).</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>C.</given-names> <surname>Gardiner</surname></string-name></person-group>, <source>Stochastic methods</source>, Vol. <volume>4</volume> (<publisher-name>Springer Berlin</publisher-name>, <year>2009</year>).</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>T.</given-names> <surname>Rolski</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Schmidli</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Schmidt</surname></string-name>, and <string-name><given-names>J. L.</given-names> <surname>Teugels</surname></string-name></person-group>, <source>Stochastic processes for insurance and finance</source> (<publisher-name>John Wiley &amp; Sons</publisher-name>, <year>2009</year>).</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>E.</given-names> <surname>Wong</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Hajek</surname></string-name></person-group>, <source>Stochastic processes in engineering systems</source> (<publisher-name>Springer Science &amp; Business Media</publisher-name>, <year>2012</year>).</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>H. H.</given-names> <surname>McAdams</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Arkin</surname></string-name></person-group>, <article-title>Stochastic mechanisms in gene expression</article-title> <source>Proceedings of the National Academy of Sciences</source> <volume>94</volume>, <fpage>814</fpage> (<year>1997</year>).</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M. B.</given-names> <surname>Elowitz</surname></string-name>, <string-name><given-names>A. J.</given-names> <surname>Levine</surname></string-name>, <string-name><given-names>E. D.</given-names> <surname>Siggia</surname></string-name>, and <string-name><given-names>P. S.</given-names> <surname>Swain</surname></string-name></person-group>, <article-title>Stochastic Gene Expression in a Single Cell</article-title> <source>Science</source> <volume>297</volume>, <fpage>1183</fpage> (<year>2002</year>).</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Raj</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Van Oudenaarden</surname></string-name></person-group>, <article-title>Nature, nurture, or chance: stochastic gene expression and its consequences</article-title> <source>Cell</source> <volume>135</volume>, <fpage>216</fpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Sanchez</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Golding</surname></string-name></person-group>, <article-title>Genetic determinants and cellular constraints in noisy gene expression</article-title> <source>Science</source> <volume>342</volume>, <fpage>1188</fpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Paulsson</surname></string-name></person-group>, <article-title>Models of stochastic gene expression</article-title> <source>Physics of life reviews</source> <volume>2</volume>, <fpage>157</fpage> (<year>2005</year>).</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>D. J.</given-names> <surname>Wilkinson</surname></string-name></person-group>, <source>Stochastic modelling for systems biology</source> (<publisher-name>Chapman and Hall/CRC</publisher-name>, <year>2018</year>).</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J. L.</given-names> <surname>Doob</surname></string-name></person-group>, <article-title>Markoff chains—denumerable case</article-title> <source>Transactions of the American Mathematical Society</source> <volume>58</volume>, <fpage>455</fpage> (<year>1945</year>).</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. T.</given-names> <surname>Gillespie</surname></string-name></person-group>, <article-title>Exact stochastic simulation of coupled chemical reactions</article-title> <source>The journal of physical chemistry</source> <volume>81</volume>, <fpage>2340</fpage> (<year>1977</year>).</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Pineda-Krch</surname></string-name></person-group>, <article-title>GillespieSSA: Implementing the Gillespie Stochastic Simulation Algorithm in R</article-title> <source>Journal of Statistical Software</source> <volume>25</volume>, <fpage>1</fpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Parker</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Kamenev</surname></string-name></person-group>, <article-title>Extinction in the Lotka-Volterra Model</article-title> <source>Physical Review E</source> <volume>80</volume>, <fpage>021129</fpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>U.</given-names> <surname>Dobramysl</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mobilia</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Pleimling</surname></string-name>, and <string-name><given-names>U. C.</given-names> <surname>Täuber</surname></string-name></person-group>, <article-title>Stochastic population dynamics in spatially extended predator–prey systems</article-title> <source>Journal of Physics A: Mathematical and Theoretical</source> <volume>51</volume>, <fpage>063001</fpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Benayoun</surname></string-name>, <string-name><given-names>J. D.</given-names> <surname>Cowan</surname></string-name>, <string-name><given-names>W.</given-names> <surname>van Drongelen</surname></string-name>, and <string-name><given-names>E.</given-names> <surname>Wallace</surname></string-name></person-group>, <article-title>Avalanches in a Stochastic Model of Spiking Neurons</article-title> <source>PLoS computational biology</source> <volume>6</volume>, <fpage>e1000846</fpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>K.</given-names> <surname>Rijal</surname></string-name>, <string-name><given-names>N. I.</given-names> <surname>Müller</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Friauf</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Singh</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Prasad</surname></string-name>, and <string-name><given-names>D.</given-names> <surname>Das</surname></string-name></person-group>, <article-title>Exact Distribution of the Quantal Content in Synaptic Transmission</article-title> <source>Physical Review Letters</source> <volume>132</volume>, <fpage>228401</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. T.</given-names> <surname>Gillespie</surname></string-name></person-group>, <article-title>A general method for numerically simulating the stochastic time evolution of coupled chemical reactions</article-title> <source>Journal of computational physics</source> <volume>22</volume>, <fpage>403</fpage> (<year>1976</year>).</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. T.</given-names> <surname>Gillespie</surname></string-name></person-group>, <article-title>Stochastic simulation of chemical kinetics</article-title> <source>Annu. Rev. Phys. Chem</source>. <volume>58</volume>, <fpage>35</fpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Paszke</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Gross</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Massa</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Lerer</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bradbury</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Chanan</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Killeen</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Lin</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Gimelshein</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Antiga</surname></string-name>, <etal>et al.</etal></person-group>, <article-title>PyTorch: An Imperative Style, High-Performance Deep Learning Library</article-title> <conf-name>Advances in neural information processing systems</conf-name> <volume>32</volume> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="software"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Bradbury</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Frostig</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Hawkins</surname></string-name>, <string-name><given-names>M. J.</given-names> <surname>Johnson</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Leary</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Maclaurin</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Necula</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Paszke</surname></string-name>, <string-name><given-names>J.</given-names> <surname>VanderPlas</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Wanderman-Milne</surname></string-name>, and <string-name><given-names>Q.</given-names> <surname>Zhang</surname></string-name></person-group>, <article-title>JAX: composable transformations of Python+NumPy programs</article-title> <source>GitHub</source> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>H.-J.</given-names> <surname>Liao</surname></string-name>, <string-name><given-names>J.-G.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Wang</surname></string-name>, and <string-name><given-names>T.</given-names> <surname>Xiang</surname></string-name></person-group>, <article-title>Differentiable Programming Tensor Networks</article-title> <source>Physical Review X</source> <volume>9</volume>, <fpage>031041</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>S.</given-names> <surname>Schoenholz</surname></string-name> and <string-name><given-names>E. D.</given-names> <surname>Cubuk</surname></string-name></person-group>, <article-title>JAX MD: A Framework for Differentiable Physics</article-title> <conf-name>Advances in Neural Information Processing Systems</conf-name> <volume>33</volume>, <fpage>11428</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Wei</surname></string-name>, <string-name><given-names>X.</given-names> <surname>Chu</surname></string-name>, <string-name><given-names>X.-Y.</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Xu</surname></string-name>, <string-name><given-names>H.-X.</given-names> <surname>Deng</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Wei</surname></string-name>, and <string-name><given-names>M.</given-names> <surname>Lei</surname></string-name></person-group>, <article-title>Machine learning in materials science</article-title> <source>InfoMat</source> <volume>1</volume>, <fpage>338</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Degrave</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Hermans</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Dambre</surname></string-name>, <etal>et al.</etal></person-group>, <article-title>A Differentiable Physics Engine for Deep Learning in Robotics</article-title> <source>Frontiers in neurorobotics</source> <volume>13</volume>, <fpage>406386</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>G.</given-names> <surname>Arya</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Seyer</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Schäfer</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Lew</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Huot</surname></string-name>, <string-name><given-names>V. K.</given-names> <surname>Mansinghka</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Rackauckas</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Chandra</surname></string-name>, and <string-name><given-names>M.</given-names> <surname>Schauer</surname></string-name></person-group>, <article-title>Differentiating Metropolis-Hastings to Optimize Intractable Densities
+</article-title> <source>arXiv</source> arXiv:<pub-id pub-id-type="arxiv">2306.07961</pub-id> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. A.</given-names> <surname>Bezgin</surname></string-name>, <string-name><given-names>A. B.</given-names> <surname>Buhendwa</surname></string-name>, and <string-name><given-names>N. A.</given-names> <surname>Adams</surname></string-name></person-group>, <article-title>JAX-Fluids: A fully-differentiable high-order computational fluid dynamics solver for compressible two-phase flows</article-title> <source>Computer Physics Communications</source> <volume>282</volume>, <fpage>108527</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. F.</given-names> <surname>Anderson</surname></string-name></person-group>, <article-title>An Efficient Finite Difference Method for Parameter Sensitivities of Continuous Time Markov Chains</article-title> <source>SIAM Journal on Numerical Analysis</source> <volume>50</volume>, <fpage>2237</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>R.</given-names> <surname>Srivastava</surname></string-name>, <string-name><given-names>D. F.</given-names> <surname>Anderson</surname></string-name>, and <string-name><given-names>J. B.</given-names> <surname>Rawlings</surname></string-name></person-group>, <article-title>Comparison of finite difference based methods to obtain sensitivities of stochastic chemical kinetic models</article-title> <source>The Journal of chemical physics</source> <volume>138</volume> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>V. H.</given-names> <surname>Thanh</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Zunino</surname></string-name>, and <string-name><given-names>C.</given-names> <surname>Priami</surname></string-name></person-group>, <article-title>Efficient finite-difference method for computing sensitivities of biochemical reactions</article-title> <source>Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences</source> <volume>474</volume>, <fpage>20180303</fpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P. W.</given-names> <surname>Glynn</surname></string-name></person-group>, <article-title>Likelihood Ratio Gradient Estimation for Stochastic Systems</article-title> <source>Communications of the ACM</source> <volume>33</volume>, <fpage>75</fpage> (<year>1990</year>).</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J. A.</given-names> <surname>McGill</surname></string-name>, <string-name><given-names>B. A.</given-names> <surname>Ogunnaike</surname></string-name>, and <string-name><given-names>D. G.</given-names> <surname>Vlachos</surname></string-name></person-group>, <article-title>Efficient gradient estimation using finite differencing and likelihood ratios for kinetic Monte Carlo simulations</article-title> <source>Journal of Computational Physics</source> <volume>231</volume>, <fpage>7170</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Núñez</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Vlachos</surname></string-name></person-group>, <article-title>Steady state likelihood ratio sensitivity analysis for stiff kinetic Monte Carlo simulations</article-title> <source>The Journal of chemical physics</source> <volume>142</volume> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P. W.</given-names> <surname>Sheppard</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Rathinam</surname></string-name>, and <string-name><given-names>M.</given-names> <surname>Khammash</surname></string-name></person-group>, <article-title>A pathwise derivative approach to the computation of parameter sensitivities in discrete stochastic chemical systems</article-title> <source>The Journal of chemical physics</source> <volume>136</volume> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. L.</given-names> <surname>Jones</surname></string-name>, <string-name><given-names>R. C.</given-names> <surname>Brewster</surname></string-name>, and <string-name><given-names>R.</given-names> <surname>Phillips</surname></string-name></person-group>, <article-title>Promoter architecture dictates cell-to-cell variability in gene expression</article-title> <source>Science</source> <volume>346</volume>, <fpage>1533</fpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>N. C.</given-names> <surname>Lammers</surname></string-name>, <string-name><given-names>A. I.</given-names> <surname>Flamholz</surname></string-name>, and <string-name><given-names>H. G.</given-names> <surname>Garcia</surname></string-name></person-group>, <article-title>Competing constraints shape the nonequilibrium limits of cellular decision-making</article-title> <source>Proceedings of the National Academy of Sciences</source> <volume>120</volume>, <fpage>e2211203120</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>D. P.</given-names> <surname>Kingma</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Ba</surname></string-name></person-group>, <article-title>Adam: A Method for Stochastic Optimization</article-title> <source>arXiv</source> arXiv:<pub-id pub-id-type="arxiv">1412.6980</pub-id> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P.</given-names> <surname>Mehta</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Bukov</surname></string-name>, <string-name><given-names>C.-H.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>A. G.</given-names> <surname>Day</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Richardson</surname></string-name>, <string-name><given-names>C. K.</given-names> <surname>Fisher</surname></string-name>, and <string-name><given-names>D. J.</given-names> <surname>Schwab</surname></string-name></person-group>, <article-title>A high-bias, low-variance introduction to Machine Learning for physicists</article-title> <source>Physics reports</source> <volume>810</volume>, <fpage>1</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>R.</given-names> <surname>Phillips</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kondev</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Theriot</surname></string-name>, and <string-name><given-names>H.</given-names> <surname>Garcia</surname></string-name></person-group>, <source>Physical biology of the cell</source> (<publisher-name>Garland Science</publisher-name>, <year>2012</year>).</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Sanchez</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Choubey</surname></string-name>, and <string-name><given-names>J.</given-names> <surname>Kondev</surname></string-name></person-group>, <article-title>Regulation of noise in gene expression</article-title> <source>Annual review of biophysics</source> <volume>42</volume>, <fpage>469</fpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>R.</given-names> <surname>Phillips</surname></string-name>, <string-name><given-names>N. M.</given-names> <surname>Belliveau</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Chure</surname></string-name>, <string-name><given-names>H. G.</given-names> <surname>Garcia</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Razo-Mejia</surname></string-name>, and <string-name><given-names>C.</given-names> <surname>Scholes</surname></string-name></person-group>, <article-title>Figure 1 Theory Meets Figure 2 Experiments in the Study of Gene Expression</article-title> <source>Annual review of biophysics</source> <volume>48</volume>, <fpage>121</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>T.</given-names> <surname>Einav</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Duque</surname></string-name>, and <string-name><given-names>R.</given-names> <surname>Phillips</surname></string-name></person-group>, <article-title>Theoretical analysis of inducer and operator binding for cyclic-AMP receptor protein mutants</article-title> <source>PLoS One</source> <volume>13</volume>, <fpage>e0204275</fpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Razo-Mejia</surname></string-name>, <string-name><given-names>S. L.</given-names> <surname>Barnes</surname></string-name>, <string-name><given-names>N. M.</given-names> <surname>Belliveau</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Chure</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Einav</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Lewis</surname></string-name>, and <string-name><given-names>R.</given-names> <surname>Phillips</surname></string-name></person-group>, <article-title>A Predictive Theory of Allosteric Induction</article-title> <source>Cell systems</source> <volume>6</volume>, <fpage>456</fpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>B.</given-names> <surname>Zoller</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Gregor</surname></string-name>, and <string-name><given-names>G.</given-names> <surname>Tkačik</surname></string-name></person-group>, <article-title>Eukaryotic gene regulation at equilibrium, or non?</article-title> <source>Current opinion in systems biology</source> <volume>31</volume>, <fpage>100435</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c45"><label>[45]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>F.</given-names> <surname>Wong</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Gunawardena</surname></string-name></person-group>, <article-title>Gene Regulation in and out of Equilibrium</article-title> <source>Annual review of biophysics</source> <volume>49</volume>, <fpage>199</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c46"><label>[46]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S.</given-names> <surname>Dixit</surname></string-name>, <string-name><given-names>T. C.</given-names> <surname>Middelkoop</surname></string-name>, and <string-name><given-names>S.</given-names> <surname>Choubey</surname></string-name></person-group>, <article-title>Governing principles of transcriptional logic out of equilibrium</article-title> <source>Biophysical Journal</source> <volume>123</volume>, <fpage>1015</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c47"><label>[47]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Estrada</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Wong</surname></string-name>, <string-name><given-names>A.</given-names> <surname>DePace</surname></string-name>, and <string-name><given-names>J.</given-names> <surname>Gunawardena</surname></string-name></person-group>, <article-title>Information Integration and Energy Expenditure in Gene Regulation</article-title> <source>Cell</source> <volume>166</volume>, <fpage>234</fpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c48"><label>[48]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J. A.</given-names> <surname>Owen</surname></string-name> and <string-name><given-names>J. M.</given-names> <surname>Horowitz</surname></string-name></person-group>, <article-title>Size limits the sensitivity of kinetic schemes</article-title> <source>Nature Communications</source> <volume>14</volume>, <fpage>1280</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c49"><label>[49]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>H.</given-names> <surname>Qian</surname></string-name></person-group>, <article-title>Phosphorylation energy hypothesis: open chemical systems and their biological functions</article-title> <source>Annu. Rev. Phys. Chem</source>. <volume>58</volume>, <fpage>113</fpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c50"><label>[50]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P.</given-names> <surname>Mehta</surname></string-name> and <string-name><given-names>D. J.</given-names> <surname>Schwab</surname></string-name></person-group>, <article-title>Energetic costs of cellular computation</article-title> <source>Proceedings of the National Academy of Sciences</source> <volume>109</volume>, <fpage>17978</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c51"><label>[51]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>G.</given-names> <surname>Lan</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Sartori</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Neumann</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Sourjik</surname></string-name>, and <string-name><given-names>Y.</given-names> <surname>Tu</surname></string-name></person-group>, <article-title>The energy–speed–accuracy trade-off in sensory adaptation</article-title> <source>Nature physics</source> <volume>8</volume>, <fpage>422</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c52"><label>[52]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A. H.</given-names> <surname>Lang</surname></string-name>, <string-name><given-names>C. K.</given-names> <surname>Fisher</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Mora</surname></string-name>, and <string-name><given-names>P.</given-names> <surname>Mehta</surname></string-name></person-group>, <article-title>Thermodynamics of Statistical Inference by Cells</article-title> <source>Physical review letters</source> <volume>113</volume>, <fpage>148103</fpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c53"><label>[53]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P.</given-names> <surname>Mehta</surname></string-name>, <string-name><given-names>A. H.</given-names> <surname>Lang</surname></string-name>, and <string-name><given-names>D. J.</given-names> <surname>Schwab</surname></string-name></person-group>, <article-title>Landauer in the Age of Synthetic Biology: Energy Consumption and Information Processing in Biochemical Networks</article-title> <source>Journal of Statistical Physics</source> <volume>162</volume>, <fpage>1153</fpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c54"><label>[54]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>N. E.</given-names> <surname>Strand</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Vroylandt</surname></string-name>, and <string-name><given-names>T. R.</given-names> <surname>Gingrich</surname></string-name></person-group>, <article-title>Computing time-periodic steady-state currents via the time evolution of tensor network states</article-title> <source>The Journal of Chemical Physics</source> <volume>157</volume> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c55"><label>[55]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S. B.</given-names> <surname>Nicholson</surname></string-name> and <string-name><given-names>T. R.</given-names> <surname>Gingrich</surname></string-name></person-group>, <article-title>Quantifying Rare Events in Stochastic Reaction-Diffusion Dynamics Using Tensor Networks</article-title> <source>Physical Review X</source> <volume>13</volume>, <fpage>041006</fpage> (<year>2023</year>).</mixed-citation></ref>
+</ref-list>
+<app-group>
+<app id="app1">
+<label>Appendix A:</label>
+<title>Balancing accuracy and stability: Hyperparameter tradeoffs</title>
+<p>In this section, we explore the tradeoffs involved in tuning the hyperparameters <italic>a</italic> and <italic>b</italic> in the DGA. These hyperparameters are crucial for balancing the accuracy and numerical stability of the DGA in approximating the exact Gillespie algorithm.</p>
+<p>The hyperparameter <italic>a</italic><sup>−1</sup> controls the steepness of the sigmoid function used to approximate the Heaviside step function in reaction selection. Similarly, <italic>b</italic><sup>−1</sup> determines the sharpness of the Gaussian function used to approximate the Kronecker delta function in abundance updates. A larger value of <italic>a</italic><sup>−1</sup> or <italic>b</italic><sup>−1</sup> results in a steeper sigmoid or Gaussian function, thus more closely approximating the discrete functions in the exact Gillespie algorithm.</p>
+<sec id="s6">
+<label>1.</label>
+<title>Accuracy of the forward DGA simulations</title>
+<p>To assess the impact of these hyperparameters on the accuracy of the DGA, we measure the ratio of the Jensen– Shannon divergence between the DGA–generated PDF <italic>p</italic><sub>DGA</sub> and the exact PDF <italic>p</italic><sub>exact</sub>, normalized by the entropy H(<italic>p</italic><sub>exact</sub>) of the exact steady-state PDF (see <xref ref-type="disp-formula" rid="eqn9">Eq. (9)</xref>). This ratio, <inline-formula><inline-graphic xlink:href="602397v2_inline56.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, provides a measure of how closely the DGA approximates the exact Gillespie algorithm.</p>
+<p><xref rid="fig9" ref-type="fig">Fig. 9(a)</xref> and <xref rid="fig9" ref-type="fig">9(b)</xref> show the ratio, <inline-formula><inline-graphic xlink:href="602397v2_inline57.gif" mime-subtype="gif" mimetype="image"/></inline-formula> as a function of the sharpness parameters <italic>a</italic><sup>−1</sup> and <italic>b</italic><sup>−1</sup>. In panel (a), <italic>b</italic><sup>−1</sup> is fixed at 20, and <italic>a</italic><sup>−1</sup> is varied. In panel (b), <italic>a</italic><sup>−1</sup> is fixed at 200, and <italic>b</italic><sup>−1</sup> is varied. Some key insights can be drawn from these plots.</p>
+<p>First, as <italic>a</italic><sup>−1</sup> or <italic>b</italic><sup>−1</sup> increases, the ratio <inline-formula><inline-graphic xlink:href="602397v2_inline1a.gif" mime-subtype="gif" mimetype="image"/></inline-formula> decreases, indicating that the DGA’ s approximation becomes more accurate. This is because steeper sigmoid and Gaussian functions better mimics the discrete steps of the exact Gillespie algorithm. Interestingly, while the ratio decreases for both parameters, <italic>a</italic><sup>−1</sup> plateaus at high values, whereas <italic>b</italic><sup>−1</sup> rises at high values. This plateau occurs because the sigmoid function used for reaction selection becomes so steep that it effectively becomes a step function, beyond which further steepening has negligible impact. As <italic>b</italic><sup>−1</sup> becomes very large, the width of the Gaussian function used for abundance updates becomes extremely narrow. In such a scenario, it becomes increasingly improbable for the chosen reaction index to fall within this narrow width, especially because the reaction indices are not exact integers but are instead near-integer continuous values. Therefore, as <italic>b</italic><sup>−1</sup> becomes very large, the discrepancy between the DGA-generated probabilities and the exact probabilities widens, causing the ratio <inline-formula><inline-graphic xlink:href="602397v2_inline58.gif" mime-subtype="gif" mimetype="image"/></inline-formula>to increase.</p>
+</sec>
+<sec id="s7">
+<label>2.</label>
+<title>Stability of the backpropagation of DGA simulations</title>
+<p>Numerical stability for gradient computation is crucial. Therefore, it is important to examine how the gradient behaves as a function of the hyperparameters. Panels (c) and (d) of <xref rid="fig9" ref-type="fig">Fig. 9</xref> provide insights into this behavior. The plots show the gradient ∇<italic>L</italic><sub><italic>r</italic></sub> of the loss function <italic>L</italic> with respect to the parameter <italic>r</italic> near the true parameter values. The gradients are computed for the loss function in <xref ref-type="disp-formula" rid="eqn11">Eq. (11)</xref> with ⟨<italic>m</italic>⟩ and <italic>σ</italic><sub><italic>m</italic></sub> equal to 8 and 2.5 respectively, for the parameter values <inline-formula><inline-graphic xlink:href="602397v2_inline59.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, <italic>r</italic> = 10, and <italic>γ</italic> = 1. With these parameter values, the true mean and standard deviation are equal to 6.67 and 3.94 respectively.</p>
+<p>As <italic>a</italic><sup>−1</sup> or <italic>b</italic><sup>−1</sup> increases, the gradients become more accurate, but their numerical stability can be compromised. This is evidenced by the increased variability and erratic behavior in the gradients at very high sharpness values (see <xref rid="fig9" ref-type="fig">Figs. 9(c)</xref> and <xref rid="fig9" ref-type="fig">9(d)</xref>). Hence, very large values of <italic>a</italic><sup>−1</sup> or <italic>b</italic><sup>−1</sup> lead to oscillations and convergence issues, highlighting the need for a balance between accuracy and stability.</p>
+<p>The tradeoff between accuracy and numerical stability is evident. This necessitates careful tuning of <italic>a</italic> and <italic>b</italic> to ensure stable and efficient optimization. In practice, this involves selecting values that provide sufficient approximation quality without compromising the stability of the gradients.</p>
+</sec>
+</app>
+<app id="app2">
+<label>Appendix B</label>
+<title>Implementation of the DGA in PyTorch</title>
+<p>This section explains the implementation of the DGA used to simulate the two-state promoter model. The implementation can be adapted to any model where the stoichiometric matrix and propensities are known. The model involves promoter state switching and mRNA production/degradation (<xref rid="fig3" ref-type="fig">Fig. 3(a)</xref>), and the algorithm is designed to handle these sub-processes effectively.</p>
+<sec id="s8">
+<title>Stoichiometric matrix</title>
+<p>The stoichiometric matrix is a key component in modeling state changes due to reactions. Each row represents a reaction, and each column corresponds to a state variable (promoter state and mRNA level). The matrix for the two-state promoter model includes:</p>
+<list list-type="bullet">
+<list-item><p><bold>Reaction 1:</bold> Promoter state transitions from the OFF state (1) to the ON state (+1).</p></list-item>
+<list-item><p><bold>Reaction 2:</bold> Production of mRNA.</p></list-item>
+<list-item><p><bold>Reaction 3:</bold> Promoter state transitions from the ON state (+1) to the OFF state (1).</p></list-item>
+<list-item><p><bold>Reaction 4:</bold> Degradation of mRNA.</p></list-item>
+</list>
+<p>The stoichiometric matrix <italic>S</italic> for this model is:
+<disp-formula id="ueqn2">
+<graphic xlink:href="602397v2_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+In this matrix, the rows correspond to the reactions listed above, and the columns represent the promoter state and mRNA level, respectively.</p>
+<sec id="s8a">
+<title>Propensity calculations</title>
+<p>The levels vector is a 2-dimensional vector where the first element represents the promoter state (1 or +1) and the second element represents the mRNA number <italic>m</italic>. Propensities are the rates at which reactions occur, given the current state of the system. In our PyTorch implementation, the propensities are calculated using the following expressions:</p>
+<code>
+propensities = torch.stack([
+   kon * torch.sigmoid (-c * levels[0]),
+   # Promoter state switching from 1 to +1
+   r * torch.sigmoid(-c * levels[0]),
+   # mRNA production
+   torch.sigmoid(c * levels[0]),
+   # Promoter state switching from +1 to 1
+   g * levels[1]
+   # mRNA degradation
+])
+</code>
+<p>Each propensity corresponds to a different reaction:</p>
+<list list-type="bullet">
+<list-item><p><bold>Promoter state switching from -1 to +1:</bold> The value of <monospace>kon * torch.sigmoid(-c * levels[0])</monospace> is around <inline-formula><inline-graphic xlink:href="602397v2_inline60.gif" mime-subtype="gif" mimetype="image"/></inline-formula> when the <monospace>levels[0]</monospace> (promoter state) is around 1 and close to zero when <monospace>levels[0]</monospace> is around +1. The sigmoid function ensures a smooth transition, allowing differentiability and preventing abrupt changes in rates. The constant <italic>c</italic> controls the sharpness of the sigmoid function.</p></list-item>
+<list-item><p><bold>mRNA production:</bold> The rate is proportional to <italic>r</italic> and modulated by the same sigmoid function, <monospace>torch.sigmoid(- c * levels[0])</monospace>, such that the rate is equal to <italic>r</italic> only when the promoter is in 1 state.</p></list-item>
+<list-item><p><bold>Promoter state switching from +1 to 1:</bold> The rate is set to 1 and modulated by the sigmoid function, <monospace>torch.sigmoid(- c * levels[0])</monospace>, such that the rate is equal to 1 only when the promoter is in +1 state.</p></list-item>
+<list-item><p><bold>mRNA degradation:</bold> The rate is proportional to the current mRNA level, <monospace>g * levels</monospace>[<xref ref-type="bibr" rid="c1">1</xref>], reflecting the natural decay of mRNA with rate <italic>mγ</italic>.</p></list-item>
+</list>
+<p>Using the sigmoid function in the propensity calculations is crucial for ensuring smooth and differentiable transitions between states. This smoothness is essential for gradient-based optimization methods, which rely on continuous and differentiable functions to compute gradients effectively. Without the sigmoid function, the propensity rates could change abruptly, leading to numerical instability and difficulties in optimizing the model parameters.</p>
+</sec>
+<sec id="s8b">
+<title>Reaction selection function</title>
+<p>We define a function <monospace>reaction_selection</monospace> that selects the next reaction to occur based on the transition points and a random number between [0,1]. The function basically implements using <xref ref-type="disp-formula" rid="eqn6">Eq. (6)</xref>. The transition points are first calculated from the cumulative sum of reaction rates normalized to the total rate.</p>
+</sec>
+<sec id="s8c">
+<title>State jump function</title>
+<p>We define another function <monospace>state_jump</monospace> that calculates the state change vector when a reaction occurs. It uses a Gaussian function to smoothly transition between states based on the selected reaction index and the stoichiometry matrix (see <xref ref-type="disp-formula" rid="eqn8">Eq. (8)</xref>).</p>
+</sec>
+<sec id="s8d">
+<title>Gillespie simulation function</title>
+<p>The main <monospace>gillespie_simulation</monospace> function uses the previously described functions, each with specific roles, to perform the actual simulation step-by-step, as shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref>. This function iterates through the number of simulations, updating the system’ s state and the propensities of each reaction at each step.</p>
+</sec>
+</sec>
+</app>
+<app id="app3">
+<label>Appendix C</label>
+<title>Estimating confidence intervals for parameters</title>
+<p>In this section, we describe the methodology used to estimate the confidence intervals for the parameters using polynomial fitting and numerical techniques. This approach uses the results of multiple simulations to determine the range within which the parameter <italic>θ</italic><sub><italic>i</italic></sub> is likely to lie, based on the curvature of the loss function around its minimum value. Specifically, we perform the following steps:</p>
+<list list-type="order">
+<list-item><p><bold>Parameter initialization:</bold> Set up and initialize the necessary parameters. This includes defining the number of evaluation points, the number of simulations, the simulation time, and the hyper-parameters <italic>a</italic><sup>−1</sup>, <italic>b</italic><sup>−1</sup>, and <italic>c</italic>.</p></list-item>
+<list-item><p><bold>Range generation:</bold> For each set of learned parameters <inline-formula><inline-graphic xlink:href="602397v2_inline61.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, generate a range of values for the parameter of interest <italic>θ</italic><sub><italic>i</italic></sub> while keeping the other parameters fixed at their learned values. Let the learned value of the parameter <italic>θ</italic><sub><italic>i</italic></sub> be <inline-formula><inline-graphic xlink:href="602397v2_inline62.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, Then the range of evaluation is approximately <inline-formula><inline-graphic xlink:href="602397v2_inline63.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, de pending on the flatness of the loss landscape around its minimum.</p></list-item>
+<list-item><p><bold>Simulation and loss calculation:</bold> For each value in this range, perform forward DGA simulations to calculate the mean and standard deviation of the results, using which the loss function is computed and stored.</p></list-item>
+<list-item><p><bold>Polynomial fitting:</bold> Fit a polynomial of degree 6 to the computed loss values across the range of <italic>θ</italic><sub><italic>i</italic></sub>. Compute the first and second derivatives of the fitted polynomial to identify the minimum and evaluate the curvature.</p></list-item>
+<list-item><p><bold>Identifying minimum</bold>: Identify the valid minimum <inline-formula><inline-graphic xlink:href="602397v2_inline64.gif" mime-subtype="gif" mimetype="image"/></inline-formula>of the loss function by solving for the roots of the first derivative and filtering out the points where the second derivative is positive.</p></list-item>
+<list-item><p><bold>Curvature and standard deviation calculation:</bold> Calculate the curvature of the loss landscape at its minimum using its second derivative at the minimum. An estimation of the standard deviation <inline-formula><inline-graphic xlink:href="602397v2_inline65.gif" mime-subtype="gif" mimetype="image"/></inline-formula>of the parameter <italic>θ</italic><sub><italic>i</italic></sub> is given by:
+<disp-formula id="eqnC1">
+<graphic xlink:href="602397v2_eqnC1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p></list-item>
+<list-item><p><bold>Confidence interval calculation:</bold> The loss function is typically asymmetric around its minimum, with the left side usually steeper than the right (see <xref rid="fig10" ref-type="fig">Fig. 10</xref>). To determine the right error bar, we use <inline-formula><inline-graphic xlink:href="602397v2_inline66.gif" mime-subtype="gif" mimetype="image"/></inline-formula> For the left error bar, we find the point where <inline-formula><inline-graphic xlink:href="602397v2_inline67.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (see <xref rid="fig10" ref-type="fig">Fig. 10</xref>). Therefore, the balanced 95% CI for the parameter <italic>θ</italic><sub><italic>i</italic></sub> is given by:</p></list-item>
+</list>
+<p>
+<disp-formula id="eqnC2">
+<graphic xlink:href="602397v2_eqnC2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+This methodology allows for a robust estimation of the confidence intervals, providing insights into the reliability and precision of the parameter estimates.</p>
+<fig id="fig10" position="float" fig-type="figure">
+<label>FIG. 10.</label>
+<caption><p>Error bars estimation for asymmetric loss function.</p></caption>
+<graphic xlink:href="602397v2_fig10.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</app>
+<app id="app4">
+<label>Appendix D</label>
+<title>Demonstrating parameter degeneracy in the two-state promoter model</title>
+<p>We will now demonstrate the existence of degeneracy in the two-state promoter architecture. Setting <inline-formula><inline-graphic xlink:href="602397v2_inline68.gif" mime-subtype="gif" mimetype="image"/></inline-formula> in the analytical expressions for the mean⟨ <italic>m</italic>⟩ and the Fano factor <italic>f</italic> from Ref. [<xref ref-type="bibr" rid="c35">35</xref>], we have:
+<disp-formula id="eqnD1">
+<graphic xlink:href="602397v2_eqnD1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+We want to solve <xref ref-type="disp-formula" rid="eqnD1">Eqs. (D1)</xref> for <italic>r</italic> and <italic>γ</italic>. By isolating <italic>r</italic> in the expression for ⟨ <italic>m</italic>⟩, we obtain:
+<disp-formula id="eqnD2">
+<graphic xlink:href="602397v2_eqnD2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Next, we substitute the expression for <italic>r</italic> from <xref ref-type="disp-formula" rid="eqnD2">Eq. (D2)</xref> into the expression for the <italic>f</italic> in <xref ref-type="disp-formula" rid="eqnD1">Eq. (D1)</xref>:
+<disp-formula id="ueqn3">
+<graphic xlink:href="602397v2_ueqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Expanding and isolating terms involving <italic>γ</italic>:
+<disp-formula id="ueqn4">
+<graphic xlink:href="602397v2_ueqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Rearranging to solve for <italic>γ</italic>:
+<disp-formula id="ueqn5">
+<graphic xlink:href="602397v2_ueqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Thus, we obtain:
+<disp-formula id="eqnD3">
+<graphic xlink:href="602397v2_eqnD3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+We substitute back <xref ref-type="disp-formula" rid="eqnD3">Eq. (D3)</xref> in <xref ref-type="disp-formula" rid="eqnD1">Eq. (D1)</xref> to obtain <italic>r</italic>:
+<disp-formula id="eqnD4">
+<graphic xlink:href="602397v2_eqnD4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Eqs. (D3) and (D4) indicate that for any given <italic>k</italic><sup>R</sup> there exists a corresponding pair of values for <italic>r</italic> and <italic>γ</italic> that satisfy the equations. Therefore, the solutions are not unique, demonstrating a high degree of degeneracy in the parameter space. This degeneracy arises because multiple combinations of <inline-formula><inline-graphic xlink:href="602397v2_inline69.gif" mime-subtype="gif" mimetype="image"/></inline-formula>can produce the same observable ⟨ <italic>m</italic>⟩ and <italic>f</italic>. The lack of unique solutions is a common issue in parameter estimation for complex systems, where different parameter sets can lead to similar system behaviors.</p>
+<sec id="s9">
+<title>Resolving degeneracy with known <italic>γ</italic></title>
+<p>To resolve the degeneracy, we can fix the value of <italic>γ</italic>. Now, if the rate <italic>γ</italic> is known, we can solve Eqs. (D1) for the other parameters. Starting by rearranging the mean expression from Eqs. (D1):
+<disp-formula id="eqnD5">
+<graphic xlink:href="602397v2_eqnD5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Substituting <xref ref-type="disp-formula" rid="eqnD5">Eq. (D5)</xref> in the expression of <italic>f</italic> in <xref ref-type="disp-formula" rid="eqnD1">Eq. (D1)</xref>, we have
+<disp-formula id="eqnD6">
+<graphic xlink:href="602397v2_eqnD6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+Substituting <xref ref-type="disp-formula" rid="eqnD6">Eq. (D6)</xref> into <xref ref-type="disp-formula" rid="eqnD5">Eq. (D5)</xref>, we obtain:
+<disp-formula id="eqnD7">
+<graphic xlink:href="602397v2_eqnD7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<xref ref-type="disp-formula" rid="eqnD6">Eqs. (D6)</xref> and <xref ref-type="disp-formula" rid="eqnD7">(D7)</xref> provide unique solutions for <italic>r</italic> and<inline-formula><inline-graphic xlink:href="602397v2_inline70.gif" mime-subtype="gif" mimetype="image"/></inline-formula> given a known value of <italic>γ</italic>. By fixing <italic>γ</italic>, the degeneracy is resolved, and the remaining parameters can be accurately determined.</p>
+</sec>
+</app>
+<app id="app5">
+<label>Appendix E</label>
+<title>Estimating confidence intervals for ⟨<italic>m</italic>⟩ and <italic>σ</italic></title>
+<p>To assess the reliability of the statistics predicted through DGA-based optimization, we calculate error bars using the following procedure. For the non-degenerate situation, we use the learned parameter values <inline-formula><inline-graphic xlink:href="602397v2_inline71.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline72.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and perform forward DGA simulations with many different random seeds. This generates multiple samples of the mean mRNA level ⟨<italic>m</italic>⟩ and the standard deviation <italic>σ</italic><sub><italic>m</italic></sub>. These samples provide us with the variability due to the stochastic nature of the simulations. The 95% CIs are then determined using their standard deviations, de-noted as <italic>δ</italic><sub>⟨<italic>m</italic>⟩</sub> and <inline-formula><inline-graphic xlink:href="602397v2_inline73.gif" mime-subtype="gif" mimetype="image"/></inline-formula> For the mean mRNA level, the CI is calculated as:
+<disp-formula id="eqnE1">
+<graphic xlink:href="602397v2_eqnE1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+For the standard deviation of mRNA levels, the CI is calculated as:
+<disp-formula id="eqnE2">
+<graphic xlink:href="602397v2_eqnE2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+</app>
+<app id="app6">
+<label>Appendix F</label>
+<title>DGA-based optimization for experimental data and estimation of errors</title>
+<sec id="s10">
+<label>1.</label>
+<title>Optimization Procedure</title>
+<p>Given a set of measurements of the mean mRNA expression levels (⟨<italic>m</italic>⟩ <sub><italic>i</italic></sub>) and the Fano factor <inline-formula><inline-graphic xlink:href="602397v2_inline74.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for promoters (<italic>lac</italic>UD5 and 5DL1), we construct a loss function as follows:
+<disp-formula id="eqnF1">
+<graphic xlink:href="602397v2_eqnF1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>i</italic> runs over data points (each with a different lac repressor concentration), and <inline-formula><inline-graphic xlink:href="602397v2_inline75.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline76.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are the mean and standard deviation obtained from a sample of DGA simulations. This loss function is chosen because, at its minimum, <inline-formula><inline-graphic xlink:href="602397v2_inline77.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline78.gif" mime-subtype="gif" mimetype="image"/></inline-formula>for all <italic>i</italic>.</p>
+<p>For the optimization, we set <inline-formula><inline-graphic xlink:href="602397v2_inline79.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and focus on estimating the parameters <inline-formula><inline-graphic xlink:href="602397v2_inline80.gif" mime-subtype="gif" mimetype="image"/></inline-formula> During the gradient-based optimization, the transcription rate <italic>r</italic> and the mRNA degradation rate <italic>γ</italic> are assumed to be the same for all data points <italic>i</italic>, while allowing <inline-formula><inline-graphic xlink:href="602397v2_inline81.gif" mime-subtype="gif" mimetype="image"/></inline-formula> to vary across data points <italic>i</italic>. This reflects the fact that <inline-formula><inline-graphic xlink:href="602397v2_inline82.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is a function of the lac repressor concentration, which is varied across data points.</p>
+<p>Instead of <inline-formula><inline-graphic xlink:href="602397v2_inline83.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, we actually learn a transformed parameter <inline-formula><inline-graphic xlink:href="602397v2_inline84.gif" mime-subtype="gif" mimetype="image"/></inline-formula> which is the probability for the promoter to be in the OFF state. This approach is based on our observation that the gradient of the loss function with respect to <italic>p</italic><sub>off</sub> is more numerically stable compared to the gradient with respect to <inline-formula><inline-graphic xlink:href="602397v2_inline85.gif" mime-subtype="gif" mimetype="image"/></inline-formula></p>
+<p>The parameters are initialized randomly as follows:</p>
+<list list-type="bullet">
+<list-item><p><italic>r</italic> is initialized to a random number in [0, 100].</p></list-item>
+<list-item><p><italic>γ</italic> is initialized to a random number between [0, 10].</p></list-item>
+<list-item><p>The <italic>p</italic><sub>off</sub> values, which depend on the index <italic>i</italic> of the data points, are initially set as linearly spaced points within the range [0.03, 0.97].</p></list-item>
+</list>
+<p>The hyperparameters used for the simulations are as follows:</p>
+<list list-type="bullet">
+<list-item><p>Number of simulations: 200</p></list-item>
+<list-item><p>Simulation time: 0.2</p></list-item>
+<list-item><p>Steepness of the sigmoid function: <italic>a</italic><sup>−1</sup> = 200.0</p></list-item>
+<list-item><p>Sharpness of the Gaussian function: <italic>b</italic><sup>−1</sup> = 20.0</p></list-item>
+<list-item><p>Steepness of the sigmoid in propensities: <italic>c</italic> = 20.0 The parameters are iteratively updated to minimize</p></list-item>
+</list>
+<p>the loss function. During each iteration of the optimization, the following steps are performed:</p>
+<list list-type="order">
+<list-item><p><bold>Forward simulation:</bold> The DGA is used to simulate the system, generating predictions for the mean mRNA levels and their standard deviations.</p></list-item>
+<list-item><p><bold>Loss calculation:</bold> The loss function is computed based on the differences between the simulated and experimentally measured values of the mean mRNA levels and standard deviations (see <xref ref-type="disp-formula" rid="eqnF1">Eq. (F1)</xref>).</p></list-item>
+<list-item><p><bold>Gradient calculation:</bold> The gradients of the loss function with respect to the parameters <italic>r, γ</italic>, and <inline-formula><inline-graphic xlink:href="602397v2_inline86.gif" mime-subtype="gif" mimetype="image"/></inline-formula>are calculated using backpropagation.</p></list-item>
+<list-item><p><bold>Parameter update:</bold> The ADAM optimizer updates the parameters in the direction that reduces the loss function. ADAM adjusts the learning rates based on the history of gradients and their moments. The learning rate used is 0.1.</p></list-item>
+</list>
+<p>The values of the parameters and the loss value are saved after each iteration. The parameter values corresponding to the minimum loss after convergence are picked at the end.</p>
+<sec id="s10a">
+<label>2.</label>
+<title>Goodness of fit</title>
+<p>To quantitatively assess the goodness of the fit, we define the mean percentage error (MPE) as follows:
+<disp-formula id="eqnF2">
+<graphic xlink:href="602397v2_eqnF2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <inline-formula><inline-graphic xlink:href="602397v2_inline87.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is the predicted Fano factor for the <italic>i</italic>-th data point. This metric provides a measure of the average discrepancy between the predicted and experimental Fano factors, expressed as a percentage of the experimental values.</p>
+</sec>
+<sec id="s10b">
+<title>Error bars</title>
+<p>The error bars in the ratio <inline-formula><inline-graphic xlink:href="602397v2_inline88.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are obtained by applying error propagation to the standard deviations <italic>δ</italic><sub><italic>r</italic></sub> and <italic>δ</italic><sub><italic>γ</italic></sub> of the individual values <inline-formula><inline-graphic xlink:href="602397v2_inline89.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline90.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. The propagated error is given by:
+<disp-formula id="eqnF3">
+<graphic xlink:href="602397v2_eqnF3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>δ</italic><sub><italic>r</italic></sub> and <italic>δ</italic><sub><italic>γ</italic></sub> are the standard deviations of <inline-formula><inline-graphic xlink:href="602397v2_inline91.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="602397v2_inline92.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, respectively. These standard deviations are obtained using the curvature of the loss function, as discussed earlier.</p>
+</sec>
+</sec>
+</app>
+</app-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103877.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Bitbol</surname>
+<given-names>Anne-Florence</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Ecole Polytechnique Federale de Lausanne (EPFL)</institution>
+</institution-wrap>
+<city>Lausanne</city>
+<country>Switzerland</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study introduces a fully differentiable variant of the Gillespie algorithm as an approximate stochastic simulation scheme for complex chemical reaction networks, allowing kinetic parameters to be inferred from empirical measurements of network outputs using gradient descent. The concept and algorithm design are <bold>convincing</bold> and innovative. While the proofs of concept are promising, the determination of the range of applicability and of the errors is <bold>incomplete</bold>, leaving open some questions about implications for more complex systems that cannot be addressed by existing methods. This work has the potential to be of significant interest to a broad audience of quantitative and synthetic biologists.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103877.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This work introduces the differentiable Gillespie algorithm, DGA, which is a differentiable variant of the celebrated (and exact) Gillespie algorithm commonly used to perform stochastic simulations across numerous fields, notably in the life sciences. The proposed DGA approximates the exact Gillespie algorithm using smooth functions yielding a suitable approximate differentiable stochastic system as a proxy for the underlying discrete stochastic system, where DGA stochastic reactions have continuous reaction index and the species abundances. To illustrate their methodology, the authors specifically consider in detail the case of a well-studied two-state promoter gene regulation system that they analyze using a machine learning approach, and by combining simulation data with analytical results. For the two-state promoter gene system, the DGA is benchmarked by accurately reproducing the results of the exact Gillespie algorithm. For this same simple system, the authors also show that how the DGA can be used for estimating kinetic parameters of both simulated and real noisy experimental data. This let them argue convincingly that the DGA can become a powerful computation tool for applications in quantitative and synthetic biology. In order to argue that the DGA can be employed to design circuits with ad-hoc input-output relations, these considerations are then extended to a more complex four-state promoter model of gene regulation.</p>
+<p>Strengths:</p>
+<p>The main strength of the paper is its clarity and its pedagogical presentation of the simulation methods.</p>
+<p>Weaknesses:</p>
+<p>It would have been useful to have a brief discussion, based on a concrete example, of what can be achieved with the DGA and is totally beyond the reach of the Gillespie algorithm and the numerous existing stochastic simulation methods. A more comprehensive and quantitative analysis of the limitations of the DGA, e.g. for rare events, would have also been helpful.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103877.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this work, the authors present a differentiable version of the widely-used Gillespie Algorithm. The Gillespie Algorithm has been used for decades to simulate the behavior of stochastic biochemical reaction networks. But while the Gillespie Algorithm is a powerful tool for the forward simulation of biochemical systems given some set of known reaction parameters, it cannot be used for reverse process, i.e. inferring reaction parameters given a set of measured system characteristics. The Differentiable Gillespie Algorithm (&quot;DGA&quot;) overcomes this limitation by approximating two discontinuous steps in the Gillespie Algorithm with continuous functions. This makes it possible to calculate of gradients for each step in the simulation process which, in turn, allows the reaction parameters to be optimized via powerful backpropagation techniques. In addition to describing the theoretical underpinnings of DGA, the authors demonstrate different potential use-cases for the algorithm in the context of simple models of stochastic gene expression.</p>
+<p>Overall, the DGA represents an important conceptual step forward for the field, and should lay the groundwork for exciting innovations in the analysis and design of stochastic reaction networks. At the same time, significantly more work is needed to establish when the approximations made by DGA are valid, and to demonstrate the viability of the algorithm in the context of complicated reaction networks.</p>
+<p>Strengths:</p>
+<p>This work makes an important conceptual leap by introducing a version of the Gillespie Algorithm that is end-to-end differentiable. This idea alone has the potential to drive a number of exciting innovations in the analysis, inference, and design of biochemical reaction networks. Beyond the theoretical adjustments, the authors also implement their algorithm in a Python-based codebase that combines DGA powerful optimization libraries like PyTorch. This codebase has the potential to be of interest to a wide range of researchers, even if the true scope of the method's applicability remains to be fully determined.</p>
+<p>The authors also demonstrate how DGA can be used in practice both to infer reaction parameters from real experimental data (Figure 7) and to design networks with user-specified input-output characteristics (Figure 8). These illustrations should provide a nice roadmap for researchers interested in applying DGA to their own projects/systems.</p>
+<p>Finally, although it does not stem directly from DGA, the exploration of pairwise parameter dependencies in different network architectures provides an interesting window into the design constraints (or lack thereof) that shape the architecture of biochemical reaction networks.</p>
+<p>Weaknesses:</p>
+<p>While it is clear that the DGA represents an important conceptual advancement, the authors do not do enough in the present manuscript to (i) validate the robustness of DGA inference and (ii) demonstrate that DGA inference works in the kinds of complex biochemical networks where it would actually be of legitimate use.</p>
+<p>It is to the authors' credit that they are open and explicit about the potential limitations of DGA due to breakdowns in its continuous approximations. However they do not provide the reader with nearly enough empirical (i.e. simulation-based) or theoretical context to assess when, why, and to what extent DGA will fail in different situations. In Figure 2, they compare DGA to GA (i.e. ground-truth) in the context of a simple two state model of a stochastic transcription. Even in this minimal system, we see that DGA deviates notably from ground-truth both in the simulated mRNA distributions (Figure 2A) and in the ON/OFF state occupancy (Figure 2C). This begs the question of how DGA will scale to more complicated systems, or systems with non-steady state dynamics. Will the deviations become more severe? This is important because, in practice, there is really not much need for using DGA with a simple 2 state system-we have analytic solutions for this case. It is the more complex systems where DGA has the potential to move the needle.</p>
+<p>A second concern is that the authors' present approach for parameter inference and error calculation does not seem to be reliable. For example, in Figure 5A, they show DGA inference results for the ON rate of a two-state system. We see substantial inference errors in this case, even though the inference problem should be non-degenerate in this case. One reason for this seems to be that the inference algorithm does not reliably find the global minimum of the loss function (Figure 2B). To turn DGA into a viable approach, it is paramount that the authors find some way to improve this behavior, perhaps by using multiple random initializations to better search the loss space.</p>
+<p>Finally, the authors do a good job of illustrating how DGA might be used to infer biological parameters (Figure 7) and design reaction networks with desired input-output characteristics (Figure 8). However, analytic solutions exist for both of the systems they select for examples. This means that, in practice, there would be no need for DGA in these contexts, since one could directly optimize, e.g., the expressions for the mean and Fano Factor of the system in Figure 7A. I still believe that it is useful to have these examples, but it seems critical to add a use-case where DGA is the only option.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.103877.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This manuscript introduces a differentiable variant of the Gillespie algorithm (DGA) that allows gradient calculation using backpropagation. The most significant contribution of this work is the development of the DGA itself, a novel approach to making stochastic simulations differentiable. This is achieved by replacing discontinuous operations in the traditional Gillespie algorithm with smooth, differentiable approximations using sigmoid and Gaussian functions. This conceptual advance opens up new avenues for applying powerful gradient-based optimization techniques, prevalent in machine learning, to studying stochastic biological systems.</p>
+<p>The method was tested on a simple two-state promoter model of gene expression. The authors found that the DGA accurately captured the moments of the steady-state distribution and other major qualitative features. However, it was less accurate at capturing information about the distribution's tails, potentially because rare events result from frequent low-probability reaction events where the approximations made by the DGA have a greater impact. The authors could further use the DGA to design a four-state promoter model of gene regulation that exhibited a desired input-output relationship. The DGA could learn parameters that produced a sharper response curve, which was achieved by consuming more energy.</p>
+<p>The authors conclude that the DGA is a powerful tool for analyzing and designing stochastic systems.</p>
+<p>Strengths:</p>
+<p>The DGA allows gradient-based optimization techniques to estimate parameters and design networks with desired properties.</p>
+<p>The DGA efficacy in estimating kinetic parameters from both synthetic and experimental data. This capability highlights the DGA's potential to extract meaningful biophysical parameters from noisy biological data.</p>
+<p>The DGA's ability to design a four-state promoter architecture exhibiting a desired input-output relationship. This success indicates the potential of the DGA as a valuable tool for synthetic biology, enabling researchers to engineer biological circuits with predefined behaviours.</p>
+<p>Weaknesses:</p>
+<p>The study primarily focuses on analysing the steady-state properties of stochastic systems. It is unclear how and if this framework can be used beyond the steady-state data presented in the case studies, where it is already quite computationally heavy.</p>
+<p>
+A more in-depth exploration of the DGA's performance in analysing dynamic trajectories, which capture the system's evolution over time, would provide a more comprehensive view of the algorithm's capabilities.</p>
+<p>
+Gradient computations in the DGA can be susceptible to numerical instability, particularly when the sharpness parameters of the sigmoid and Gaussian approximations are set to high values. This issue could lead to challenges in convergence during the optimization process.</p>
+</body>
+</sub-article>
+</article>
