@@ -1,0 +1,927 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">105740</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.105740</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.105740.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Chromosomes and Gene Expression</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Physics of Living Systems</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>A mathematical model clarifies the ABC Score formula used in enhancer-gene prediction</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5941-5751</contrib-id>
+<name>
+<surname>Nasser</surname>
+<given-names>Joseph</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>joseph.nasser21@gmail.com</email>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3594-6141</contrib-id>
+<name>
+<surname>Nam</surname>
+<given-names>Kee-Myoung</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7280-1152</contrib-id>
+<name>
+<surname>Gunawardena</surname>
+<given-names>Jeremy</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>jeremy@hms.harvard.edu</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03vek6s52</institution-id><institution>Department of Systems Biology, Harvard Medical School</institution></institution-wrap>, <city>Boston</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/05abbep66</institution-id><institution>Department of Physics, Brandeis University</institution></institution-wrap>, <city>Waltham</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03v76x132</institution-id><institution>Department of Molecular, Cellular and Developmental Biology, Yale University</institution></institution-wrap>, <city>New Haven</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Amir</surname>
+<given-names>Ariel</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Weizmann Institute of Science</institution>
+</institution-wrap>
+<city>Rehovot</city>
+<country>Israel</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Moses</surname>
+<given-names>Alan M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Toronto</institution>
+</institution-wrap>
+<city>Toronto</city>
+<country>Canada</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-04-11">
+<day>11</day>
+<month>04</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP105740</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-01-10">
+<day>10</day>
+<month>01</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-12-03">
+<day>03</day>
+<month>12</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.11.29.626072"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Nasser et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Nasser et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-105740-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Enhancers are discrete DNA elements that regulate the expression of eukaryotic genes. They are important not only for their regulatory function, but also as loci that are frequently associated with disease traits. Despite their significance, our conceptual understanding of how enhancers work remains limited. CRISPR-interference methods have recently provided the means to systematically screen for enhancers in cell culture, from which a formula for predicting whether an enhancer regulates a gene, the Activity-by-Contact (ABC) Score, has emerged and has been widely adopted. While useful as a binary classifier, it is less effective at predicting the quantitative effect of an enhancer on gene expression. It is also unclear how the algebraic form of the ABC Score arises from the underlying molecular mechanisms and what assumptions are needed for it to hold. Here, we use the graph-theoretic linear framework, previously introduced to analyze gene regulation, to formulate the <italic>default model</italic>, a mathematical model of how multiple enhancers independently regulate a gene. We show that the algebraic form of the ABC Score arises from this model. However, the default model assumptions also imply that enhancers act additively on steady-state gene expression. This is known to be false for certain genes and we show how modifying the assumptions can accommodate this discrepancy. Overall, our approach lays a rigorous, biophysical foundation for future studies of enhancer-gene regulation.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Much of our current understanding of how genes are regulated arose from classical studies in bacteria of the lac operon and <italic>λ</italic>-phage [<xref ref-type="bibr" rid="c1">1</xref>]. However, the eukaryotic context differs from the bacterial in many significant ways. One key difference is that, in bacteria, regulatory DNA is found proximal to the gene, typically within 1kb upstream of the transcription start site (TSS), whereas eukaryotic regulatory sequences are found in discrete pieces that may be proximal to, or distal from, the TSS. The eukaryotic regulatory elements known as enhancers form a particularly important class. Enhancers were originally defined as DNA sequences which could drive the expression of genes in a location and orientation independent manner [<xref ref-type="bibr" rid="c2">2</xref>, <xref ref-type="bibr" rid="c3">3</xref>]. Since these initial discoveries, many native enhancers have been identified which play critical roles in a variety of processes, such as embryonic development [<xref ref-type="bibr" rid="c4">4</xref>], physiology [<xref ref-type="bibr" rid="c5">5</xref>] and evolution [<xref ref-type="bibr" rid="c6">6</xref>]. Genetic variation in enhancers has also been shown to mediate risk for complex disease [<xref ref-type="bibr" rid="c7">7</xref>], Mendelian disease [<xref ref-type="bibr" rid="c8">8</xref>] and cancer [<xref ref-type="bibr" rid="c9">9</xref>]. Based on these and many other studies, we know that enhancers can be located over 1Mb from a target gene TSS, an individual enhancer may regulate multiple genes, some genes are regulated by multiple enhancers and the set of enhancers actively regulating a given gene may depend on cellular context. These properties have made it difficult to identify the rules governing enhancer-gene regulation.</p>
+<p>Given their importance, much attention has been given to systematically identifying enhancer sequences and the genes they regulate. An important breakthrough has been the development of high-throughput CRISPR interference (CRISPRi) screens, which enable putative enhancer sequences to be perturbed in cell culture and the resulting effect on expression of a target gene to be measured [<xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c13">13</xref>]. These screens typically measure quantitative effects on gene expression as the proportional change in mean gene expression over a cell population. We call this quantity the <italic>fractional change</italic> and, given its importance in this paper, define it formally as follows: let <italic>ψ</italic>(<italic>g</italic>) denote the wild-type mean expression level of a gene <italic>g</italic>, in whatever units are used to measure it, and let <inline-formula><inline-graphic xlink:href="626072v1_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote the mean expression level of <italic>g</italic> after an enhancer of <italic>g, e</italic><sub><italic>q</italic></sub>, has been perturbed. The <italic>fractional change</italic> of <italic>e</italic><sub><italic>q</italic></sub> is then the non-dimensional quantity,
+<disp-formula id="eqn1">
+<graphic xlink:href="626072v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The fractional change for thousands of putative enhancer-gene connections has been measured and computational methods have assessed whether the observed fractional change is statistically different from zero. Current efforts are now focused on two main questions. First, what can we learn about enhancer biology from these screens? Second, can the results from these screens be used to develop computational methods which can predict which enhancers regulate which genes in arbitrary cellular contexts?</p>
+<p>The Activity-by-Contact (ABC) model has been proposed as a way to make progress on both of these questions [<xref ref-type="bibr" rid="c11">11</xref>]. The ABC model is based on the mechanistic notion that an enhancer’s effect on gene expression depends on the intrinsic strength of the enhancer (activity) and the frequency with which it comes into physical proximity to the gene promoter (contact). The ABC model gives rise to the ABC Score, a quantitative formula which is intended to predict the fractional change observed in an enhancer perturbation experiment. For a gene, <italic>g</italic>, with <italic>N</italic> putative enhancers, <italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>, the ABC Score for a specific enhancer <italic>e</italic><sub><italic>q</italic></sub>, is given by,
+<disp-formula id="eqn2">
+<graphic xlink:href="626072v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <italic>α</italic><sub><italic>i</italic></sub> represents the activity of <italic>e</italic><sub><italic>i</italic></sub> and <italic>γ</italic><sub><italic>i</italic></sub> represents the contact frequency between <italic>e</italic><sub><italic>i</italic></sub> and the promoter of</p>
+<p><italic>g</italic>. In [<xref ref-type="bibr" rid="c11">11</xref>] a putative enhancer was defined as a chromatin-accessible DNA element of approximately 500 base pairs; <italic>α</italic><sub><italic>i</italic></sub> was assigned using measures of chromatin state of the enhancer, such as DNase-Seq and H3K27ac ChIP-Seq; <italic>γ</italic><sub><italic>i</italic></sub> was assigned using the contact frequency between a putative enhancer and the gene promoter, as measured by Hi-C; and the sum in the denominator of <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref> was taken over all putative enhancers within 5Mb of <italic>g</italic>.</p>
+<p>The ABC Score is reasonably effective at predicting the results of CRISPRi screens. When considered as a binary classifier, the ABC Score has achieved a precision of 59% at 70% recall benchmarked against a database of nearly 4,000 putative enhancer-gene connections in the K562 cell line [<xref ref-type="bibr" rid="c11">11</xref>]. Similar performance has also been observed in other cell types [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c14">14</xref>] and in subsequent benchmarking against other CRISPRi screens in K562 cells [<xref ref-type="bibr" rid="c15">15</xref>, Fig.S8a]. We emphasize that the ABC Score is computed directly from genomic data orthogonal to the CRISPRi experiment. As such, it has no free parameters and does not require fitting or training. The classification ability of the ABC Score and its modest input data requirements have resulted in its widespread use to interpret non-coding genetic variation [<xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c16">16</xref>, <xref ref-type="bibr" rid="c17">17</xref>], identify enhancers in disease related contexts [<xref ref-type="bibr" rid="c18">18</xref>, <xref ref-type="bibr" rid="c19">19</xref>] and investigate the dosage effect of transcription factor concentration on gene expression [<xref ref-type="bibr" rid="c20">20</xref>].</p>
+<p>Despite its practical utility as a binary classifier, the ability of the ABC Score to predict the fractional change is fundamentally limited [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="fig" rid="fig3">Fig.3c</xref>]. From <xref ref-type="disp-formula" rid="eqn2">Eqn. 2</xref>, it is clear that the sum of the ABC Scores over all putative enhancers of a given gene is equal to 1,
+<disp-formula id="eqn3">
+<graphic xlink:href="626072v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We define the total fractional change of a gene to be the sum of the fractional changes of all enhancers for the gene, f(<italic>g, e</italic><sub>1</sub>) + · · · + f(<italic>g, e</italic><sub><italic>N</italic></sub>). If the ABC model were perfectly reflecting the fractional change, so that ABC(<italic>g, e</italic><sub><italic>i</italic></sub>) = <italic>f</italic> (<italic>g, e</italic><sub><italic>i</italic></sub>), it would predict that the total fractional change for all genes is equal to 1. However, experimentally, a range of total fractional changes has been observed from 0 to greater than 3 [<xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c21">21</xref>–<xref ref-type="bibr" rid="c23">23</xref>]. This incompatibility is a consequence of the algebraic structure of the ABC Score formula and cannot be resolved in a straightforward way. For example, it cannot be resolved by using different types of epigenomic data to assign values to <italic>α</italic><sub><italic>i</italic></sub> or <italic>γ</italic><sub><italic>i</italic></sub>.</p>
+<p>What, if anything, about enhancer biology can be concluded from the successes and limitations of the ABC Score? We believe that considering this question requires a formal description of the ABC model. The original description of the ABC model is <italic>informal</italic>, in the sense that the relationships between the mechanisms of activity and contact and the ABC Score formula were not determined by formal mathematical arguments. In consequence, the biological and biophysical assumptions that underlie formulas of this kind have not been clarified.</p>
+<p>In the present paper, we present a strategy for the formal mathematical modeling of enhancer-gene regulation. We introduce the <italic>default model</italic>, a set of assumptions for how multiple enhancers independently regulate a gene. We show that a formula with the same algebraic structure as the ABC Score formula in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref> can be rigorously derived from a special case of the default model. This clarifies the assumptions that underlie the ABC Score formula. However, these assumptions also imply that the total fractional change of a gene is equal to one. We show how changing the assumptions of the default model can lead to total fractional changes which are less than or greater than one. More generally, the framework introduced here offers a rigorous foundation for future studies of enhancer-gene regulation.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>An activation-communication model of enhancer function</title>
+<p>Our approach to modelling enhancer-gene regulation is based on the linear framework, a method of using graphs to analyse biomolecular systems [<xref ref-type="bibr" rid="c24">24</xref>–<xref ref-type="bibr" rid="c26">26</xref>] that has been previously introduced to study gene regulation [<xref ref-type="bibr" rid="c26">26</xref>]; see [<xref ref-type="bibr" rid="c27">27</xref>, <xref ref-type="bibr" rid="c28">28</xref>] for up-to-date reviews. The graphs in question have vertices that are linked by labelled, directed edges. The vertices represent molecular states of DNA, the edges represent transitions between these molecular states and the labels represent the transition rates, which are positive numbers with dimensions of (time)<sup>−1</sup>.</p>
+<p>An example linear framework graph is shown in <xref ref-type="fig" rid="fig1">Fig.1a</xref>. This graph, which we have called <italic>H</italic>, represents a single enhancer which can be either activated (filled red circle) or not and in communication with its target gene (curved arrow) or not. It thereby captures the two main notions in the original ABC model, although we prefer to speak here of “communication” rather than of “contact” (see below). These two features of the enhancer are treated in the graph as being independent of each other: the rates for becoming activated or deactivated do not depend on the state of communication, and the rates for making or losing communication do not depend on the state of activation. Independence will be one of the central features of our treatment and will appear both in how an individual enhancer is treated, as in this example in <xref ref-type="fig" rid="fig1">Fig.1a</xref>, and in how a gene is regulated by multiple enhancers, as we will explain below.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1:</label>
+<caption><p>The activation-communication coarse graining. <bold>a)</bold> An example linear framework graph, <italic>H</italic>, representing a coarse-grained view of an enhancer. Each vertex contains a schematic of the enhancer (circle) and its target gene (black rectangle with the transcription start site marked with an arrow). The enhancer may be activated (filled red circle) or communicating (curved arrow to the target gene), encoded in the notation (<italic>i, j</italic>) used to denote vertices. The edge labels show that activation and communication take place independently of each other. <bold>b)</bold> A more detailed picture of the molecular complexity that may underlie the coarse-grained graph in panel <bold>a</bold>, as described further in the text. <bold>c)</bold> The example graph <italic>H</italic> in panel <bold>a</bold> is the graph product of two simpler 2-vertex graphs, <italic>K</italic><sub><italic>a</italic></sub>, which represents activation, and <italic>K</italic><sub><italic>c</italic></sub>, which represents communication. The product structure of <italic>H</italic> is equivalent to the independence of activation and communication.</p></caption>
+<graphic xlink:href="626072v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>The graph <italic>H</italic> in <xref ref-type="fig" rid="fig1">Fig.1a</xref> represents a <italic>coarse-graining</italic> of the actual complexity of enhancer-gene regulation (<xref ref-type="fig" rid="fig1">Fig.1b</xref>). Activation is intended to capture processes local to the enhancer sequence such as transcription factor binding, chromatin reorganisation, nucleosome remodelling, recruitment of co-regulators or transcription of the enhancer sequence itself to generate enhancer RNA. Communication refers to the processes by which information is transferred from the enhancer to its target gene. Many communication mechanisms have been proposed including physical contact through DNA looping [<xref ref-type="bibr" rid="c29">29</xref>], diffusion of regulatory molecules and phase separation [<xref ref-type="bibr" rid="c31">31</xref>]. We thus use the word ‘communication’ instead of ‘contact’ to reflect that enhancer-gene regulation may not require physical contact. It is, of course, possible that the specific activation or communication mechanisms may differ between enhancers. The value of this coarse-graining lies in not making commitments about the underlying mechanism, at the price of ignoring the potential consequences of how activation and communication are implemented in molecular terms. This particular coarse-graining will facilitate our clarification of the ABC Score formula below.</p>
+<p>Having provided an example of a linear framework graph and explained how it describes the biological context that we will be studying, we now go into the details of the linear framework. We will make use of the example in <xref ref-type="fig" rid="fig1">Fig.1a</xref> throughout this work.</p>
+</sec>
+<sec id="s2b">
+<title>Preliminaries on the linear framework</title>
+<sec id="s2b1">
+<title>Notation and terminology</title>
+<p>We will start by introducing some basic ideas about linear framework graphs. We will use a letter like <italic>G</italic> or <italic>H</italic> to refer to a graph. Vertices will generally be denoted <italic>i, j</italic>, etc. We will use the notation <italic>i</italic> ∈ <italic>G</italic> to mean the state <italic>i</italic> from the graph <italic>G</italic>. Edges will be denoted <italic>i</italic> → <italic>j</italic> and edge labels will be denoted <italic>ℓ</italic>(<italic>i</italic> → <italic>j</italic>). So, using the notation for the example graph <italic>H</italic> in <xref ref-type="fig" rid="fig1">Fig.1a</xref>, <italic>ℓ</italic>((0, 0) → (0, 1)) = <italic>ℓ</italic>((1, 0) → (1, 1)) = <italic>k</italic><sub><italic>c</italic></sub> (the notation for the vertices in this graph arises from its product structure and will be explained later). If some feature <italic>X</italic> is being discussed for different graphs, we will sometimes use brackets, as in <italic>X</italic>(<italic>G</italic>), or a subscript, as in <italic>X</italic><sub><italic>G</italic></sub>, to specify the graph in question. We will use the word <italic>structure</italic> to refer to just the vertices and edges of a graph, ignoring the edge labels; when we say “graph”, we will always be including the labels, even when they are not mentioned explicitly.</p>
+</sec>
+<sec id="s2b2">
+<title>The Markov process</title>
+<p>A graph <italic>G</italic> is equivalent to a finite-state, continuous-time, time-homogeneous Markov process [<xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c32">32</xref>]. This stochastic behaviour can be understood as follows. If the system is in state <italic>i</italic>, then for each edge <italic>i</italic> → <italic>j</italic> which leaves <italic>i</italic>, a “firing” time is randomly chosen from the exponential probability distribution, <italic>λ</italic> exp(−<italic>λt</italic>), where <italic>λ</italic> is the transition rate of that edge, <italic>λ</italic> = <italic>ℓ</italic>(<italic>i</italic> → <italic>j</italic>), and the edge with the lowest firing time is taken, at that time. This generates a stochastic trajectory of states and transitions. If we follow a trajectory up to time <italic>T</italic> and measure the proportion of time spent in state <italic>i</italic>, then that ratio stabilises with increasing <italic>T</italic> to become the <italic>steady-state probability</italic> of state <italic>i</italic> [<xref ref-type="bibr" rid="c32">32</xref>], which we will denote by <inline-formula><inline-graphic xlink:href="626072v1_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Provided <italic>G</italic> is <italic>strongly connected</italic>, this quantity does not depend on the state in which the trajectory starts and the steady-state probability is a property of the graph [<xref ref-type="bibr" rid="c25">25</xref>]. A strongly connected graph is one in which any two distinct vertices, <italic>i</italic> and <italic>j</italic> ≠ <italic>i</italic>, are connected by a directed path, <italic>i</italic> = <italic>i</italic><sub>1</sub> → <italic>i</italic><sub>2</sub> → · · · → <italic>i</italic><sub><italic>k</italic></sub> = <italic>j</italic>. The example graph <italic>H</italic> in <xref ref-type="fig" rid="fig1">Fig.1a</xref> is strongly connected but ceases to be if the edges (1, 1) → (1, 0) and (1, 1) → (0, 1) are removed. We will assume from now on that all our graphs are strongly connected.</p>
+</sec>
+<sec id="s2b3">
+<title>Thermodynamic equilibrium and steady-state probabilities</title>
+<p>One of the advantages of the linear framework is that, provided the graph is finite, its steady-state probabilities can be calculated algebraically in terms of the edge labels. (We will encounter an infinite graph below but, as we will see, we do not have to deal with them directly and can work only with finite graphs.) If the graph can reach <italic>thermodynamic equilibrium</italic> the algebra can be done quite easily but, importantly, it can also be done when the graph is away from thermodynamic equilibrium, although the formulas become more complicated. A graph can reach thermodynamic equilibrium if, and only if, it satisfies two conditions. First, it must be <italic>reversible</italic>, so that if there is an edge <italic>i</italic> → <italic>j</italic>, then there is also an edge <italic>j</italic> → <italic>i</italic>, which represents the reverse of the process that corresponds to <italic>i</italic> → <italic>j</italic>. Second, it must satisfy the <italic>cycle condition</italic>: the product of the label ratios around any cycle of reversible edges must be 1. The graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref> is evidently reversible and has only one cycle of reversible edges, (0, 0) ⇋ (1, 0) ⇋ (1, 1) ⇋ (0, 1) ⇋ (0, 0), for which the product of label ratios is
+<disp-formula id="eqn4">
+<graphic xlink:href="626072v1_eqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>For this graph, the independence of activation and communication ensures that the graph can reach thermodynamic equilibrium.</p>
+<p>When a graph can reach thermodynamic equilibrium, its steady-state probabilities can be calculated as follows. First, choose any vertex as a reference; let us call it 1. Second, choose any path of reversible edges from 1 to the state in question, say <italic>i</italic>: 1 ⇋ <italic>i</italic><sub>1</sub> ⇋ · · · ⇋ <italic>i</italic><sub><italic>k</italic></sub> = <italic>i</italic>. The steady-state probability of <italic>i</italic> is then proportional to the product of the label ratios along this path,
+<disp-formula id="eqn5">
+<graphic xlink:href="626072v1_eqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>It is a simple consequence of the cycle condition that the quantity on the right-hand side of <xref ref-type="disp-formula" rid="eqn5">Eqn.5</xref> does not depend on the choice of path from 1 to <italic>i</italic>. The proportionality constant in <xref ref-type="disp-formula" rid="eqn5">Eqn.5</xref> is readily obtained by exploiting the fact that the sum of all the probabilities must be 1, so that, if the vertices are denoted 1, · · ·, <italic>N</italic>, then <inline-formula><inline-graphic xlink:href="626072v1_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> If we follow this prescription for the graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref>, we find that, for example,
+<disp-formula id="eqn6">
+<graphic xlink:href="626072v1_eqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn7">
+<graphic xlink:href="626072v1_eqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>(We will sometimes use a “·” to denote multiplication to make formulas like this look clearer.) The reorganisation of <xref ref-type="disp-formula" rid="eqn6">Eqn.6</xref> into <xref ref-type="disp-formula" rid="eqn7">Eqn.7</xref> reveals a product structure in the algebra whose significance will emerge below. The formula in <xref ref-type="disp-formula" rid="eqn6">Eqn.6</xref> is the same as would arise from equilibrium statistical mechanics. It is one of the features of the linear framework that it reduces to equilibrium statistical mechanics for systems that are at thermodynamic equilibrium but also yields algebraic formulas for systems away from thermodynamic equilibrium.</p>
+</sec>
+<sec id="s2b4">
+<title>Product graphs as models of independence</title>
+<p>In studying gene regulation, a very helpful construction is that of a <italic>product graph</italic>, because it captures the default situation in which two or more genetic systems operate independently of each other. The example graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref> is a case in point. This graph <italic>H</italic> is the product of the graphs <italic>K</italic><sub><italic>a</italic></sub> and <italic>K</italic><sub><italic>c</italic></sub> in <xref ref-type="fig" rid="fig1">Fig.1c</xref>. Here, <italic>K</italic><sub><italic>a</italic></sub> is a two-vertex graph that represents just the activation of the enhancer and <italic>K</italic><sub><italic>c</italic></sub> is a two-vertex graph that represents just the communication.</p>
+<p>We will use <italic>K</italic><sub><italic>a</italic></sub> and <italic>K</italic><sub><italic>c</italic></sub> to describe the product graph construction. We will do this in two steps. We will first specify the vertices and edges by building the <italic>product structure</italic>, denoted <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub>, and then we will specify the labels to get the <italic>product graph</italic>, denoted <italic>K</italic><sub><italic>a</italic></sub>⊗<italic>K</italic><sub><italic>c</italic></sub>. As we will see below, product structures underlie other constructions in which the independence of the product graph is broken, which is why it is helpful to distinguish structures and graphs. The vertices in <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub> are ordered pairs, (i, j), of vertices <italic>i</italic> ∈ <italic>K</italic><sub><italic>a</italic></sub> and <italic>j</italic> ∈ <italic>K</italic><sub><italic>c</italic></sub>. The edges in <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub> arise from the edges in either component <italic>K</italic><sub><italic>a</italic></sub> or <italic>K</italic><sub><italic>c</italic></sub>, taken independently of the state of the other component. In other words, if <italic>i</italic><sub>1</sub> → <italic>i</italic><sub>2</sub> is any edge in <italic>K</italic><sub><italic>a</italic></sub>, then (<italic>i</italic><sub>1</sub>, <italic>j</italic>) → (<italic>i</italic><sub>2</sub>, <italic>j</italic>) is an edge in <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub>, for all <italic>j</italic> ∈ <italic>K</italic><sub><italic>c</italic></sub>; similarly, if <italic>j</italic><sub>1</sub> → <italic>j</italic><sub>2</sub> is any edge in <italic>K</italic><sub><italic>c</italic></sub>, then (<italic>i, j</italic><sub>1</sub>) → (<italic>i, j</italic><sub>2</sub>) is an edge in <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub>, for all <italic>i</italic> ∈ <italic>K</italic><sub><italic>a</italic></sub>; these are the only edges in <italic>K</italic><sub><italic>a</italic></sub> <italic>× K</italic><sub><italic>c</italic></sub>. This prescription yields the structure of the graph <italic>H</italic> in <xref ref-type="fig" rid="fig1">Fig.1a</xref>.</p>
+<p>The labels of the product graph, <italic>K</italic><sub><italic>a</italic></sub> ⊗ <italic>K</italic><sub><italic>c</italic></sub>, are also inherited from those in <italic>K</italic><sub><italic>a</italic></sub> or <italic>K</italic><sub><italic>c</italic></sub>, independently of the state of the other component,
+<disp-formula id="ueqn1">
+<graphic xlink:href="626072v1_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We see that <italic>K</italic><sub><italic>a</italic></sub> ⊗ <italic>K</italic><sub><italic>c</italic></sub> corresponds exactly to the graph <italic>H</italic> in <xref ref-type="fig" rid="fig1">Fig.1a</xref>. The graph product precisely captures the sense in which the components of the product, here <italic>K</italic><sub><italic>a</italic></sub> and <italic>K</italic><sub><italic>c</italic></sub>, operate independently of each other: the transitions in either component are unaffected, as to their occurrence and their rates, by the state of the other component.</p>
+<p>In the more general case of a product of <italic>m</italic> graphs, the vertices are naturally indexed as ordered tuples, (<italic>i</italic><sub>1</sub>, · · ·, <italic>i</italic><sub><italic>m</italic></sub>).</p>
+<p>One of the consequences of the product graph construction is that its steady-state probabilities are easily calculated. If <italic>K</italic><sub>1</sub>, · · ·, <italic>K</italic><sub><italic>N</italic></sub> are any set of <italic>N</italic> strongly connected graphs, then the steady-state probabilities in the product graph <italic>K</italic><sub>1</sub> ⊗ · · · ⊗ <italic>K</italic><sub><italic>N</italic></sub> can be computed by multiplying the steady-state probabilities in the individual graphs,
+<disp-formula id="eqn8">
+<graphic xlink:href="626072v1_eqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref>, which is proved in [<xref ref-type="bibr" rid="c26">26</xref>], again captures the sense in which the components <italic>K</italic><sub>1</sub>, · · ·, <italic>K</italic><sub><italic>N</italic></sub> are independent of each other. We note that <xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> holds even for graphs which are unable to reach thermodynamic equilibrium.</p>
+<p>We can see <xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> at work for the graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref>, which is the product of the graphs <italic>K</italic><sub><italic>a</italic></sub> and <italic>K</italic><sub><italic>c</italic></sub> in <xref ref-type="fig" rid="fig1">Fig.1c</xref>. If we follow the prescription in <xref ref-type="disp-formula" rid="eqn5">Eqn.5</xref>, we see that
+<disp-formula id="eqn9">
+<graphic xlink:href="626072v1_eqn9.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>If we apply <xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> to the formulas above, we see that,
+<disp-formula id="eqn10">
+<graphic xlink:href="626072v1_eqn10.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+which recovers the expression in <xref ref-type="disp-formula" rid="eqn7">Eqn.7</xref>, whose algebraic product structure is now seen to reflect the underlying product graph.</p>
+<p><xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> for individual vertices has a straightforward extension to subsets of vertices. To explain this, let <italic>K</italic> be any graph and let <italic>S</italic> ⊆ <italic>K</italic> be any subset of vertices in <italic>K</italic>. The steady-state probability of being in any vertex of <italic>S</italic>, denoted <inline-formula><inline-graphic xlink:href="626072v1_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. is given by <inline-formula><inline-graphic xlink:href="626072v1_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Now suppose, as above, that <italic>K</italic><sub>1</sub>, · · ·, <italic>K</italic><sub><italic>N</italic></sub> are any strongly connected graphs. Let <italic>S</italic><sub><italic>i</italic></sub> ⊆ <italic>K</italic><sub><italic>i</italic></sub> be any subset of vertices of <italic>K</italic><sub><italic>i</italic></sub> and let <italic>S</italic><sub>1</sub> <italic>×</italic> · · · <italic>× S</italic><sub><italic>N</italic></sub> be the corresponding <italic>set product</italic> in <italic>K</italic>. This set product, for which we use, for convenience, the same notation as for the product structure, has the obvious definition that it consists of all those tuples (<italic>i</italic><sub>1</sub>, · · ·, <italic>i</italic><sub><italic>N</italic></sub>) where <italic>i</italic><sub><italic>k</italic></sub> ∈ <italic>S</italic><sub><italic>k</italic></sub>. It is then a simple consequence of <xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> that,
+<disp-formula id="eqn11">
+<graphic xlink:href="626072v1_eqn11.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+One of the implications of <xref ref-type="disp-formula" rid="eqn11">Eqn.11</xref> is that if we take <italic>i</italic><sub><italic>j</italic></sub> to be a coordinate that runs over the vertices of <italic>K</italic><sub><italic>j</italic></sub>, then the probability that <italic>i</italic><sub><italic>j</italic></sub> has a particular value, say <italic>i</italic><sub><italic>j</italic></sub> = <italic>b</italic>, remains the same irrespective of the other factors in the graph product,
+<disp-formula id="eqn12">
+<graphic xlink:href="626072v1_eqn12.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><xref ref-type="disp-formula" rid="eqn12">Eqn.12</xref> follows from <xref ref-type="disp-formula" rid="eqn11">Eqn.11</xref> because the subset {<italic>i</italic><sub><italic>j</italic></sub> = <italic>b</italic>} in <italic>K</italic><sub>1</sub> ⊗ · · · ⊗ <italic>K</italic><sub><italic>N</italic></sub> is the product subset,
+<disp-formula id="ueqn2">
+<graphic xlink:href="626072v1_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and <inline-formula><inline-graphic xlink:href="626072v1_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We can see an example of <xref ref-type="disp-formula" rid="eqn12">Eqn.12</xref> at work in <xref rid="fig1" ref-type="fig">Figure 1</xref>. Let {a=1} = {(1,0), (1,1)} be the subset of vertices of <italic>H</italic> in which the enhancer is activated. Then <xref ref-type="disp-formula" rid="eqn12">Eqn.12</xref> shows that <inline-formula><inline-graphic xlink:href="626072v1_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We will make further use of <xref ref-type="disp-formula" rid="eqn12">Eqn.12</xref> in what follows.</p>
+</sec>
+<sec id="s2b5">
+<title>The gene expression response</title>
+<p>The graphs we have considered up to now are models of the regulatory state of the gene. We now discuss how to incorporate the production and degradation of mRNA. The standard approach in the literature is known as <italic>kinetic modeling</italic> and uses a Markovian framework based on the chemical master equation [<xref ref-type="bibr" rid="c33">33</xref>]. We follow this same approach within the graph-theoretic setting introduced here.</p>
+<p>At any given time, the state of gene expression is specified by a certain number of molecules of the corresponding mRNA. This number increases by 1 each time RNA polymerase transcribes the gene and decreases by 1 each time an mRNA molecule is degraded or lost through transport out of the nucleus. We can represent such an expression system by the (semi)-infinite <italic>pipeline</italic> structure, <italic>P</italic>, in which the state <italic>p</italic> represents the number <italic>p</italic> of mRNA molecules, from <italic>p</italic> = 0 onwards, and the edges correspond to mRNA production, <italic>p</italic> → <italic>p</italic> + 1, and degradation or loss, <italic>p</italic> → <italic>p</italic> − 1 (<xref ref-type="fig" rid="fig2">Fig.2a</xref>).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2:</label>
+<caption><p>Modeling mRNA production and degradation through copy-number graphs. <bold>a)</bold> The pipeline structure <italic>P</italic> represents the number of mRNA molecules and their production and loss. <bold>b)</bold> An example regulatory graph, <italic>G</italic>, and the resulting copy-number graph <italic>G</italic> ⋉ <italic>P</italic>. In this example <italic>G</italic> has two production states, <italic>X</italic> and <italic>Y</italic>, with corresponding mRNA production rates <italic>r</italic><sub><italic>x</italic></sub> and <italic>r</italic><sub><italic>y</italic></sub> respectively. We note that <italic>G</italic> ⋉ <italic>P</italic> is a sub-structure of <italic>G</italic> × <italic>P</italic> ; it has the same vertices but lacks the edges corresponding to a production rate of zero. <italic>G</italic> and <italic>P</italic> also do not operate independently in <italic>G</italic> ⋉ <italic>P</italic> because the mRNA production rates depend on the regulatory state. <bold>c)</bold> A compact way to represent <italic>G</italic> ⋉ <italic>P</italic>. The production states are outlined in purple with corresponding mRNA production rates. The degradation rate, <italic>δ</italic>, is shown above the arrow from purple squiggles (mRNA) to the empty set ∅. <bold>d)</bold> The compact representation of the graph <italic>H</italic> ⋉ <italic>P</italic>, where <italic>H</italic> is given in <xref ref-type="fig" rid="fig1">Fig.1a</xref>. The only production state is the state (1, 1), in which the enhancer is both activated and communicating, which has production rate <italic>r</italic>.</p></caption>
+<graphic xlink:href="626072v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Given a gene-regulatory graph, <italic>G</italic>, we represent the overall system of regulation and expression by a <italic>copy-number graph, G</italic> ⋉ <italic>P</italic>, that will be derived from the product structure, <italic>G × P</italic> (<xref ref-type="fig" rid="fig2">Fig.2b</xref>). The states of <italic>G</italic> ⋉ <italic>P</italic> are identical to those of <italic>G × P</italic> but <italic>G</italic> ⋉ <italic>P</italic> may not have all the edges that are present in <italic>G × P</italic>. Each state in <italic>G</italic> ⋉ <italic>P</italic> keeps track of the regulatory state of the gene and the number of mRNA molecules that are present. We now discuss how to assign labels to this graph (<xref ref-type="fig" rid="fig2">Fig.2b</xref>). We assume that each state, <italic>i</italic> ∈ <italic>G</italic>, has a corresponding non-negative rate of mRNA production, <italic>r</italic><sub><italic>i</italic></sub>(<italic>G</italic>) ≥ 0. If <italic>r</italic><sub><italic>k</italic></sub>(<italic>G</italic>) = 0, so that mRNA production is not possible in state <italic>k</italic> of <italic>G</italic>, then the edges (<italic>k, p</italic>) → (<italic>k, p</italic> + 1) are removed from <italic>G × P</italic> for all <italic>p</italic> ∈ <italic>P</italic>. (Note that edge labels must always be positive.) This is the only way in which the structure of <italic>G</italic> ⋉ <italic>P</italic> differs from that of <italic>G × P</italic>. If <italic>r</italic><sub><italic>k</italic></sub>(<italic>G</italic>) <italic>&gt;</italic> 0, we will assume that the rate of mRNA production does not change with the number of mRNA molecules that have been expressed, so that <italic>ℓ</italic>((<italic>k, p</italic>) → (<italic>k, p</italic> + 1)) = <italic>r</italic><sub><italic>k</italic></sub>(<italic>G</italic>) for any <italic>p</italic> ∈ <italic>P</italic>. As for mRNA degradation or loss, this takes place independently of the regulatory system, so the most parsimonious assumption is that its rate is proportional to the number of mRNAs that are present and is independent of the regulatory state. Accordingly, we may write <italic>ℓ</italic>((<italic>k, p</italic>) → (<italic>k, p</italic> − 1)) = <italic>δ</italic>(<italic>G</italic>) · <italic>p</italic> for any <italic>k</italic> ∈ <italic>G</italic> and any positive <italic>p</italic> ∈ <italic>P</italic>, where <italic>δ</italic>(<italic>G</italic>) is the degradation rate constant. Finally, we assume that regulatory transitions do not depend on gene expression, so that <italic>ℓ</italic>((<italic>i, p</italic>) → (<italic>j, p</italic>)) = <italic>ℓ</italic><sub><italic>G</italic></sub>(<italic>i</italic> → <italic>j</italic>) for all <italic>i, j</italic> ∈ <italic>G</italic> and for all <italic>p</italic> ∈ <italic>P</italic>. A compact way to visually represent a copy-number graph is shown in <xref ref-type="fig" rid="fig2">Fig.2c</xref>.</p>
+<p>At steady state, <italic>G</italic> ⋉ <italic>P</italic> gives rise to a probability distribution over the mRNA copy number. We will define the response of the gene, which we will denote by <italic>R</italic>(<italic>G</italic>), to be given by the average of this number
+<disp-formula id="eqn13">
+<graphic xlink:href="626072v1_eqn13.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We note that <italic>R</italic>(<italic>G</italic>) ≥ 0.</p>
+<p>Because <italic>G</italic> ⋉ <italic>P</italic> is not a finite graph, the prescription given in <xref ref-type="disp-formula" rid="eqn5">Eqn.5</xref> for calculating steady-state probabilities no longer works. (<italic>G</italic> ⋉ <italic>P</italic> is also not at thermodynamic equilibrium, unless every regulatory state has the same rate of mRNA production, as can be checked by following the cycle condition formula in <xref ref-type="disp-formula" rid="eqn4">Eqn.4</xref>.) However, we can appeal to a very useful theorem, due to Sanchez and Kondev, which tells us that we do not have to operate on <italic>G</italic> ⋉ <italic>P</italic> in order to calculate <italic>R</italic>(<italic>G</italic>) [<xref ref-type="bibr" rid="c34">34</xref>]. Translating their work into the graph-theory language used here, we find that the response of the gene can be calculated in terms of the average of <italic>r</italic><sub><italic>i</italic></sub>(<italic>G</italic>) over only the the steady-state probabilities of <italic>G</italic>, normalized by <italic>δ</italic>(<italic>G</italic>),
+<disp-formula id="eqn14">
+<graphic xlink:href="626072v1_eqn14.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>It follows that, although infinite graphs arise to represent the mRNA expression system, we do not need to work with them to calculate the mean steady-state expression <italic>R</italic>(<italic>G</italic>), under the assumptions made above. Sanchez and Kondev did not use graph theory in their work, so we provide an independent graph-based proof of <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> in the Methods. In subsequent work, we will show how the copy-number graphs introduced here lead to generalizations of the results of [<xref ref-type="bibr" rid="c34">34</xref>] but we do not need that for the present paper.</p>
+<p>This result provides some justification for reducing the notational clutter from multiple instances of <italic>P</italic>. We will refer to the <italic>regulatory graph G</italic> when we mean <italic>G</italic> on its own, and to the <italic>copy-number graph G</italic> when we mean <italic>G</italic> ⋉<italic>P</italic>, defined for some specified choice of production rates <italic>r</italic><sub><italic>i</italic></sub>(<italic>G</italic>) and degradation rate <italic>δ</italic>(<italic>G</italic>). These parameters may not be explicitly mentioned when speaking of a copy-number graph but they should be kept in mind.</p>
+<p>As an illustration of <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref>, we will assign production rates to the graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref> and compute its response. We will make the assumption that mRNA is only produced when the enhancer is both activated and communicating (<xref rid="fig2" ref-type="fig">Fig. 2d</xref>). The mRNA production rates of <italic>H</italic> are therefore given by
+<disp-formula id="eqn15">
+<graphic xlink:href="626072v1_eqn15.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We can now use <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> to calculate the response, <italic>R</italic>(<italic>H</italic>), taking advantage of <xref ref-type="disp-formula" rid="eqn10">Eqn.10</xref>, in which we exploited the product graph decomposition <italic>H</italic> = <italic>K</italic><sub><italic>a</italic></sub> ⊗ <italic>K</italic><sub><italic>c</italic></sub>. We see that,
+<disp-formula id="eqn16">
+<graphic xlink:href="626072v1_eqn16.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>It follows from Eqns.9 and 12 that we can interpret <italic>k</italic><sub><italic>a</italic></sub><italic>/</italic>(<italic>k</italic><sub><italic>a</italic></sub> + <italic>l</italic><sub><italic>a</italic></sub>) as the probability that the enhancer is activated and, similarly, <italic>k</italic><sub><italic>c</italic></sub><italic>/</italic>(<italic>k</italic><sub><italic>c</italic></sub> + <italic>l</italic><sub><italic>c</italic></sub>) as the probability that the enhancer is communicating. <xref ref-type="disp-formula" rid="eqn16">Eqn.16</xref> tells us that the response of <italic>H</italic> is the product of the ratio of production to degradation, the probability of activation and the probability of communication.</p>
+<p>This concludes our analysis of a gene regulated by a single enhancer using the activation-communication coarse graining. We now turn to considering how multiple enhancers work together to regulate gene expression.</p>
+</sec>
+</sec>
+<sec id="s2c">
+<title>A default model of how multiple enhancers independently regulate a gene</title>
+<p>We now introduce the <italic>default model</italic> of enhancer-gene regulation. This is a set of assumptions for how multiple enhancers collectively regulate a gene in an independent manner. We previously introduced the product graph construction which represents independence between regulatory graphs. We now broaden those assumptions to also allow for mRNA production. We expect this default model construction to be of general interest. In the next section we will show how a special case of the default model clarifies the ABC Score formula.</p>
+<p>Consider a gene, <italic>g</italic>, that is regulated by <italic>N</italic> enhancers, <italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>. We will assume that enhancer <italic>e</italic><sub><italic>l</italic></sub> is modelled by the graph <italic>G</italic><sub><italic>l</italic></sub>. We make no assumptions about <italic>G</italic><sub><italic>l</italic></sub> other than the prevailing assumption that all our graphs are strongly connected. <italic>G</italic><sub><italic>l</italic></sub> could be substantially more complicated than the graph in <xref ref-type="fig" rid="fig1">Fig.1a</xref> and could incorporate, for example, chromatin organisation, nucleosomes, co-regulators, post-translational modifications, chromosome conformation, etc [<xref ref-type="bibr" rid="c26">26</xref>]. In particular, there is no requirement that <italic>G</italic><sub><italic>l</italic></sub> should be able to reach thermodynamic equilibrium. At this point our assumptions are very general and could apply to essentially any enhancer, when considered from a Markovian perspective.</p>
+<p>We denote the graph that models the collective regulation of the enhancers by <italic>G</italic> and describe how <italic>G</italic> is defined in terms of the <italic>G</italic><sub><italic>l</italic></sub>.</p>
+<p>The first assumption says that each enhancer has its own individual effect.</p>
+<list list-type="order">
+<list-item><p>Individuality. Each enhancer <italic>e</italic><sub><italic>l</italic></sub>, when acting in the absence of any of the other enhancers, drives gene expression at the rate <italic>r</italic><sub><italic>i</italic></sub>(<italic>G</italic><sub><italic>l</italic></sub>) ≥ 0 for each state <italic>i</italic> ∈ <italic>G</italic><sub><italic>l</italic></sub>, and gives rise to the response <italic>R</italic>(<italic>G</italic><sub><italic>l</italic></sub>), as defined by <xref ref-type="disp-formula" rid="eqn13">Eqn.13</xref>. If the enhancer is unable to drive expression on its own, then <italic>r</italic><sub><italic>i</italic></sub>(<italic>G</italic><sub><italic>l</italic></sub>) = 0 for every state <italic>i</italic> ∈ <italic>G</italic><sub><italic>l</italic></sub>.</p>
+<p>The next two assumptions specify how the enhancers work together.</p></list-item>
+<list-item><p>Regulatory independence. Each enhancer acts independently of all the others, so that the regulatory graph of <italic>G</italic> is given by the product graph <italic>G</italic><sub>1</sub> ⊗ · · · ⊗ <italic>G</italic><sub><italic>N</italic></sub>.</p></list-item>
+<list-item><p>Production-rate summation. Each enhancer independently influences mRNA production. Accordingly, if (<italic>i</italic><sub>1</sub>, · · ·, <italic>i</italic><sub><italic>N</italic></sub>) is a state in <italic>G</italic>, then its mRNA production rate is a sum of the corresponding production rates in each enhancer graph:
+<disp-formula id="eqn17">
+<graphic xlink:href="626072v1_eqn17.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The summation of rates in Assumption 3 arises for the following reason. If each enhancer influences mRNA production independently, then the time at which an mRNA is produced will be the minimum of the times at which each individual enhancer has its effect on production. These individual times are exponentially distributed with rates <inline-formula><inline-graphic xlink:href="626072v1_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for state <italic>i</italic><sub><italic>j</italic></sub> in <italic>G</italic><sub><italic>j</italic></sub>. The minimum of several exponentially distributed random variables is a random variable that is also exponentially distributed, with rate given by the sum of the individual rates. This leads to <xref ref-type="disp-formula" rid="eqn17">Eqn.17</xref>. The final assumption specifies the degradation rates.</p></list-item>
+<list-item><p>Uniform degradation. Since mRNA degradation is a separate process to gene regulation and gene expression, we consider the characteristic degradation rate to be a property of the gene, not the enhancer. As such, each graph <italic>G</italic><sub><italic>l</italic></sub> is assumed to have the same degradation rate, <italic>δ</italic>(<italic>G</italic><sub><italic>l</italic></sub>) = <italic>δ</italic> for all <italic>l</italic>, and the mRNA degradation rate of <italic>G</italic> is also <italic>δ</italic>: <italic>δ</italic>(<italic>G</italic>) = <italic>δ</italic>.</p></list-item>
+</list>
+<p>For any set of copy-number graphs <italic>G</italic><sub>1</sub>, …, <italic>G</italic><sub><italic>N</italic></sub>, we denote the copy-number graph which models their collective effect on transcription according to Assumptions 1 to 4 by the graph
+<disp-formula id="eqn18">
+<graphic xlink:href="626072v1_eqn18.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Example constructions using the default model are given in <xref ref-type="fig" rid="fig3">Fig.3</xref>.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3:</label>
+<caption><p>Two examples <bold>a</bold> and <bold>b</bold> of the default model construction. The copy-number graphs are depicted in compact format, as shown in <xref ref-type="fig" rid="fig2">Fig.2c</xref> but omitting the degradation symbols for clarity. Production states are outlined in bold purple with corresponding production rates in purple text. The model in <bold>b</bold> is adapted from Figure 9 of [<xref ref-type="bibr" rid="c26">26</xref>].</p></caption>
+<graphic xlink:href="626072v1_fig3.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>Assumptions 1 to 4 specify our default model of how enhancers collectively regulate a gene. Whether any of the default model assumptions hold for an individual gene is a question that has to be addressed experimentally. In particular, we would expect that Assumption 3 would eventually break down as more enhancers are added to a gene since production rates will be limited by the physical processes involved in transcription. Our goal here is to rigorously work out the consequences of these assumptions, so that we know what to expect when the assumptions do hold and can compare these predictions to what is found experimentally. Of particular significance is that the assumptions above imply that the collective response of the enhancers is always the sum of their individual responses,
+<disp-formula id="eqn19">
+<graphic xlink:href="626072v1_eqn19.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>A proof of this fundamental property of the default model is given in the Methods.</p>
+<p>A recent commentary has argued that formal definitions and rigorous modeling are necessary to investigate whether a set of enhancers is “greater than the sum of its parts” [<xref ref-type="bibr" rid="c35">35</xref>]. We fully agree and suggest that the notion of independence encoded by the default model, which gives rise to <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>, could serve as a definition of what it means for a gene to be the <italic>sum of its parts</italic>.</p>
+<p>Transcription in the default model relies on the presence of enhancers. It is well known that the promoter sequences at some eukaryotic genes are sufficient to drive transcription even in the absence of distal enhancers [<xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c37">37</xref>]. It is a future area of research to incorporate the role of core promoter elements and promoter proximal regulatory sequences along with their interactions with distal enhancers.</p>
+</sec>
+<sec id="s2d">
+<title>A clarification of the ABC Score formula</title>
+<sec id="s2d1">
+<title>Enhancer perturbation and deletion fidelity</title>
+<p>To see how formulas similar to the ABC Score can be derived from the default model, we need to consider how to formally model perturbations to enhancers such as genetic deletions or CRISPRi. As previously, we will assume that the target gene <italic>g</italic> is collectively regulated by enhancers <italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>. We assume that enhancer <italic>e</italic><sub><italic>i</italic></sub> is modeled by the graph <italic>G</italic><sub><italic>i</italic></sub> and that <italic>g</italic> is modeled by <italic>G</italic><sub>1</sub> ⊛ · · · ⊛ <italic>G</italic><sub><italic>N</italic></sub>. Let us consider what happens when enhancers <inline-formula><inline-graphic xlink:href="626072v1_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are perturbed in such a way that they are considered to no longer be working to regulate <italic>g</italic>. We will use a similar notation to that for the fractional change in the Introduction and denote the graph that arises from this perturbation as <inline-formula><inline-graphic xlink:href="626072v1_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. In analogy to the fractional change, we can define the <italic>deletion effect</italic> of the perturbation, <inline-formula><inline-graphic xlink:href="626072v1_inline11.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, to be the proportional change in response of <italic>g</italic>,
+<disp-formula id="eqn20">
+<graphic xlink:href="626072v1_eqn20.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>It is important to keep in mind that the deletion effect is defined in terms of a model of gene regulation, whereas the fractional change is defined in terms of experimental data. The definition in <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref> implicitly assumes that the system has returned to steady state following the perturbation. Furthermore, <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref> says nothing about how the enhancer is perturbed or whether a CRISPRi perturbation has the same effect as a genetic deletion.</p>
+<p>To calculate the deletion effect using <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref>, we need to know the perturbed graph, <inline-formula><inline-graphic xlink:href="626072v1_inline12.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. We assume that the graph shows <italic>deletion fidelity</italic>, which implies that the perturbation completely abrogates the function of the targeted enhancers and does not influence other enhancers. Let <italic>m</italic><sub>1</sub>, · · ·, <italic>m</italic><sub><italic>p</italic></sub> be the remaining indices in 1, · · ·, <italic>N</italic> after <italic>l</italic><sub>1</sub>, · · ·, <italic>l</italic><sub><italic>k</italic></sub> have been removed.</p>
+<p>5. Deletion fidelity. The regulatory graph of <inline-formula><inline-graphic xlink:href="626072v1_inline13.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is the graph product <inline-formula><inline-graphic xlink:href="626072v1_inline14.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and the production rates in <inline-formula><inline-graphic xlink:href="626072v1_inline15.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are directly inherited from <italic>G</italic>,
+<disp-formula id="eqn21">
+<graphic xlink:href="626072v1_eqn21.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Deletion fidelity ensures that if <italic>G</italic> obeys Assumptions 1-4, then <inline-formula><inline-graphic xlink:href="626072v1_inline16.gif" mime-subtype="gif" mimetype="image"/></inline-formula> also obeys Assumptions 1-4 for the remaining enhancers <inline-formula><inline-graphic xlink:href="626072v1_inline17.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and that, for the copy-number graphs,
+<disp-formula id="eqn22">
+<graphic xlink:href="626072v1_eqn22.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Using <xref ref-type="disp-formula" rid="eqn22">Eqn.22</xref>, it follows from <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref> that,
+<disp-formula id="eqn23">
+<graphic xlink:href="626072v1_eqn23.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and so the formula for the deletion effect in <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref> tells us that,
+<disp-formula id="eqn24">
+<graphic xlink:href="626072v1_eqn24.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Eqns.23 and 24 are general properties that hold for the default model whenever Assumption 5 of deletion fidelity also holds. They allow us to formalise the notion of enhancer <italic>additivity</italic>, which we will discuss below, but, first, let us turn to the ABC Score formula.</p>
+</sec>
+<sec id="s2d2">
+<title>The Independent-Activation-Communication (IAC) model</title>
+<p>In the default model, the graph representing each individual enhancer can be arbitrarily complicated. To show how the ABC Score formula can arise from the default model, we need to impose the further assumption that each enhancer is modeled by the activation-communication coarse graining shown in <xref ref-type="fig" rid="fig1">Figs.1a</xref> and <xref ref-type="fig" rid="fig1">1b</xref>.</p>
+<p>6. The activation-communication coarse-graining. Enhancer <italic>e</italic><sub><italic>i</italic></sub> is described by the graph <italic>H</italic><sub><italic>i</italic></sub>, where <italic>H</italic><sub><italic>i</italic></sub> is the same graph as <italic>H</italic> in <xref ref-type="fig" rid="fig2">Fig.2d</xref>. Specifically, <italic>H</italic><sub><italic>i</italic></sub> is the graph product of an activation graph, <italic>K</italic><sub><italic>a,i</italic></sub>, with labels <italic>k</italic><sub><italic>a,i</italic></sub>, <italic>l</italic><sub><italic>a,i</italic></sub>, and a communication graph, <italic>K</italic><sub><italic>c,i</italic></sub>, with labels <italic>k</italic><sub><italic>c,i</italic></sub>, <italic>l</italic><sub><italic>c,i</italic></sub> (<xref ref-type="fig" rid="fig1">Fig.1c</xref>), and <italic>H</italic><sub><italic>i</italic></sub> = <italic>K</italic><sub><italic>a,i</italic></sub> ⊗ <italic>K</italic><sub><italic>c,i</italic></sub>. The only non-zero production rate of <italic>H</italic><sub><italic>i</italic></sub> occurs in the state in which the enhancer is both active and communicating, where the rate is <italic>r</italic><sub><italic>i</italic></sub>.</p>
+<p>The overall regulatory system is then described by <italic>G</italic> = <italic>H</italic><sub>1</sub> ⊛ · · · ⊛ <italic>H</italic><sub><italic>N</italic></sub> (<xref rid="fig4" ref-type="fig">Fig. 4</xref>, Fig.S1). We call the model obeying Assumptions 1-6 the Independent-Activation-Communication (IAC) model. It follows from <xref ref-type="disp-formula" rid="eqn16">Eqn.16</xref> that the response of enhancer <italic>i</italic> in the IAC model is given by</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4:</label>
+<caption><p>The Independent-Activation-Communication (IAC) model. A gene described by the IAC model follows Assumptions 1-6 for the component graphs <italic>H</italic><sub>1</sub>, …, <italic>H</italic><sub><italic>N</italic></sub>. The ordered pair of binary digits for the vertices in each <italic>H</italic><sub><italic>i</italic></sub> represent the activation and communication status, respectively, of each enhancer. Each <italic>H</italic><sub><italic>i</italic></sub> has the same structure as the graph in <xref ref-type="fig" rid="fig2">Fig.2d</xref>, but different labels, and represents the independence of activation and communication within each enhancer. Each <italic>H</italic><sub><italic>i</italic></sub> is assumed to have the same degradation rate which is omitted for clarity. See also Fig.S1.</p></caption>
+<graphic xlink:href="626072v1_fig4.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>
+<disp-formula id="eqn25">
+<graphic xlink:href="626072v1_eqn25.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Let us define <inline-formula><inline-graphic xlink:href="626072v1_inline18.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline18a.gif" mime-subtype="gif" mimetype="image"/></inline-formula> recall from <xref ref-type="disp-formula" rid="eqn16">Eqn.16</xref> that these quantities are the probability of activation and the probability of communication, respectively, of enhancer <italic>e</italic><sub><italic>i</italic></sub>. According to the fundamental property of the default model in <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>, the response, <italic>R</italic>(<italic>G</italic>), of the overall graph, <italic>G</italic> = <italic>H</italic><sub>1</sub> ⊛ · · · ⊛ <italic>H</italic><sub><italic>N</italic></sub>, is given by,
+<disp-formula id="eqn26">
+<graphic xlink:href="626072v1_eqn26.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Furthermore, as a consequence of deletion fidelity (Assumption 5), it follows from <xref ref-type="disp-formula" rid="eqn24">Eqn.24</xref> that the deletion effect for enhancer <italic>e</italic><sub><italic>q</italic></sub> is given by,
+<disp-formula id="eqn27">
+<graphic xlink:href="626072v1_eqn27.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref> shows a striking algebraic similarity to the ABC Score formula in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>. The quantity <inline-formula><inline-graphic xlink:href="626072v1_inline19.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, which is the probability of communication, is analogous to the ‘frequency of contact’, <italic>γ</italic><sub><italic>i</italic></sub>, that was envisaged for the ABC model [<xref ref-type="bibr" rid="c11">11</xref>] and appears in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>. There are different possible interpretations for the other terms. One potential interpretation for the term <inline-formula><inline-graphic xlink:href="626072v1_inline20.gif" mime-subtype="gif" mimetype="image"/></inline-formula>in <xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref>, which is the production rate multiplied by the probability of activation, is that it is analogous to the ‘strength of the enhancer’, <italic>α</italic><sub><italic>i</italic></sub>, appearing in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>. Another potential interpretation is that <inline-formula><inline-graphic xlink:href="626072v1_inline21.gif" mime-subtype="gif" mimetype="image"/></inline-formula> corresponds to <italic>α</italic><sub><italic>i</italic></sub> and that the production rates <italic>r</italic><sub><italic>i</italic></sub> are not represented in the ABC model. If the production rates are assumed to be equal, they would cancel out in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>, which would be consistent with a correspondence between <inline-formula><inline-graphic xlink:href="626072v1_inline22.gif" mime-subtype="gif" mimetype="image"/></inline-formula>and <italic>α</italic><sub><italic>i</italic></sub>. Such interpretational ambiguities are to be expected because the ABC model is informal, while the IAC model presented here is formal. Moreover, our formal model separately specifies the regulatory state of the enhancer and its effect on transcription, whereas the ABC model does not make this distinction. An interesting question arises as to how numerical values can be assigned to the terms in <xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref>, and how this may differ from the strategies used in [<xref ref-type="bibr" rid="c11">11</xref>] to give numerical values to the terms in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>, but this is an area for future work.</p>
+<p><xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref> is our clarification of the algebraic structure of the ABC Score formula. <xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref> rigorously follows if enhancers collectively regulate a gene according to the IAC model (Assumptions 1 to 6).</p>
+</sec>
+</sec>
+<sec id="s2e">
+<title>Enhancer additivity and departures from it</title>
+<p>The default model, satisfying Assumptions 1 to 4, exhibits <italic>response additivity</italic>, as shown by <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>: the response of the gene to all the enhancers acting collectively is just the sum of the responses to each individual enhancer. When the default model also obeys Assumption 5 of deletion fidelity, then response additivity has a counterpart in the deletion effect, as defined in <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref>. This allows us to rigorously define the properties of <italic>super-additivity</italic> and <italic>sub-additivity</italic>. These departures from the properties of the default model may be helpful to interpret the effects of experimental perturbations, such as genetic deletions or CRISPRi, in which subsets of enhancers are prevented from influencing a gene and the effect of these perturbations on the gene expression response is measured.</p>
+<p>With Assumptions 1 to 5, if <italic>U</italic><sub>1</sub>, · · ·, <italic>U</italic><sub><italic>m</italic></sub> are pairwise disjoint subsets of enhancers, so that <italic>U</italic><sub><italic>i</italic></sub> ⊆ {<italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>} and <italic>U</italic><sub><italic>i</italic></sub> ∩ <italic>U</italic><sub><italic>j</italic></sub> = ∅ when <italic>i</italic> ≠ <italic>j</italic>, then it follows from <xref ref-type="disp-formula" rid="eqn24">Eqn.24</xref> that the effect of deleting all the subsets together is just the sum of the individual deletion effects,
+<disp-formula id="eqn28">
+<graphic xlink:href="626072v1_eqn28.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We refer to this property as <italic>deletion additivity</italic>. Furthermore, it is evident from <xref ref-type="disp-formula" rid="eqn24">Eqn.24</xref> that, if all the enhancers are deleted, so that <italic>U</italic><sub>1</sub> ∪ · · · ∪ <italic>U</italic><sub><italic>m</italic></sub> = {<italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>}, then the <italic>total deletion effect</italic> must be 1,
+<disp-formula id="eqn29">
+<graphic xlink:href="626072v1_eqn29.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Assuming deletion fidelity, the total deletion effect being 1 is equivalent to the response additivity in <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>. A special case of <xref ref-type="disp-formula" rid="eqn29">Eqn.29</xref> arises if all enhancers are deleted individually, when, once again, the total deletion effect is 1,
+<disp-formula id="eqn30">
+<graphic xlink:href="626072v1_eqn30.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Now suppose that a gene <italic>g</italic> is regulated by <italic>N</italic> enhancers, <italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>, each enhancer is modeled by the graph <italic>G</italic><sub><italic>i</italic></sub> and the regulatory graph of <italic>g, G</italic>, has the product structure, <italic>G</italic><sub>1</sub> <italic>×</italic> · · · <italic>× G</italic><sub><italic>N</italic></sub>. The labels in <italic>G</italic> need not be related to those of the component graphs <italic>G</italic><sub><italic>i</italic></sub>, so that <italic>G</italic> need not be the product graph <italic>G</italic><sub>1</sub> ⊗· · · ⊗ <italic>G</italic><sub><italic>N</italic></sub>. We can no longer calculate <italic>R</italic>(<italic>G</italic>) in terms of <italic>R</italic>(<italic>G</italic><sub><italic>i</italic></sub>). However, we can still define through <xref ref-type="disp-formula" rid="eqn20">Eqn.20</xref> the deletion effect ∆(<italic>G</italic>; <italic>U</italic>) for any collection <italic>U</italic> ⊆ {<italic>e</italic><sub>1</sub>, · · ·, <italic>e</italic><sub><italic>N</italic></sub>} of enhancers. We say that <italic>g</italic> exhibits response <italic>super-additivity</italic> if,
+<disp-formula id="eqn31">
+<graphic xlink:href="626072v1_eqn31.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>In terms of the deletion effect, this corresponds to when a collective deletion has less effect than the sum of the individual deletions, so that,
+<disp-formula id="eqn32">
+<graphic xlink:href="626072v1_eqn32.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Similarly, <italic>g</italic> exhibits response <italic>sub-additivity</italic> if,
+<disp-formula id="eqn33">
+<graphic xlink:href="626072v1_eqn33.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+and this corresponds to the collective deletion having more effect that the sum of the individual deletions,
+<disp-formula id="eqn34">
+<graphic xlink:href="626072v1_eqn34.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Experimentally, response additivity [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c23">23</xref>, <xref ref-type="bibr" rid="c38">38</xref>–<xref ref-type="bibr" rid="c43">43</xref>], super-additivity [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c39">39</xref>–<xref ref-type="bibr" rid="c44">44</xref>] and sub-additivity [<xref ref-type="bibr" rid="c38">38</xref>, <xref ref-type="bibr" rid="c40">40</xref>, <xref ref-type="bibr" rid="c41">41</xref>] have all been observed. Because the super-additive and sub-additive findings cannot be accounted for by the default model with deletion fidelity, we next consider some extensions of this model that show how such effects could arise.</p>
+</sec>
+<sec id="s2f">
+<title>Mechanisms beyond the default model</title>
+<p>In the following sections, we examine two departures from the default model and consider their impact on whether enhancers act additively (<xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>), super-additively (<xref ref-type="disp-formula" rid="eqn31">Eqn.31</xref>) or sub-additively (<xref ref-type="disp-formula" rid="eqn33">Eqn.33</xref>). This will also illustrate how our modeling framework can be used to reason about different biological mechanisms.</p>
+<sec id="s2f1">
+<title>Non-additivity in mRNA production rates</title>
+<p>In the default model, the summation of production rates in Assumption 3 is crucial for the property of enhancer additivity in <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>. The production rate is a convenient abstraction that aggregates over many underlying molecular mechanisms, such as RNA Polymerase recruitment, pausing and elongation. It is conceivable that, when multiple enhancers jointly influence transcription, the resulting rate is a more complex function than simple addition [<xref ref-type="bibr" rid="c38">38</xref>]. Here, we consider the effect of dropping Assumption 3.</p>
+<p>Let us assume that we have two enhancers, <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub>, which are described by the graphs <italic>H</italic><sub>1</sub> = <italic>K</italic><sub><italic>a</italic>,1</sub> ⊗<italic>K</italic><sub><italic>c</italic>,1</sub> and <italic>H</italic><sub>2</sub> = <italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>, respectively, as specified in Assumption 6 in the coarse-grained version of our default model. The overall regulatory graph is given by <italic>H</italic><sub>1</sub> ⊗ <italic>H</italic><sub>2</sub>, so that <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub> remain independent (Assumption 2). Note that (<italic>K</italic><sub><italic>a</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,1</sub>) ⊗ (<italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>) has a product hierarchy and its vertices are therefore indexed by tuples of tuples of the form,
+<disp-formula id="eqn35">
+<graphic xlink:href="626072v1_eqn35.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Here, <italic>a</italic><sub><italic>i</italic></sub> and <italic>c</italic><sub><italic>i</italic></sub>, for <italic>i</italic> = 1, 2, are coordinates for activation and communication, respectively, which take the values 0 and 1 in all cases. The graphs <italic>H</italic><sub>1</sub> and <italic>H</italic><sub>2</sub> have mRNA production rates, <italic>r</italic><sub>1</sub> and <italic>r</italic><sub>2</sub>, respectively, as specified in <xref ref-type="disp-formula" rid="eqn15">Eqn.15</xref> and mRNA degradation rate <italic>δ</italic>.</p>
+<p>We now consider a copy-number graph, <italic>G</italic><sup>⋄</sup>, whose regulatory graph is given by (<italic>K</italic><sub><italic>a</italic>,1</sub> ⊗<italic>K</italic><sub><italic>c</italic>,1</sub>)⊗(<italic>K</italic><sub><italic>a</italic>,2</sub> ⊗<italic>K</italic><sub><italic>c</italic>,2</sub>) but whose production rates do not obey Assumption 3. Note that we use the same symbol, <italic>G</italic><sup>⋄</sup>, for the regulatory graph and the copy-number graph and rely on the context to clarify which is meant. There are many ways to assign production rates to the vertices of <italic>G</italic><sup>⋄</sup> which do not obey Assumption 3; here we consider one of the simplest possible ways. We define 3 subsets of vertices of <italic>G</italic><sup>⋄</sup> in terms of the coordinates in <xref ref-type="disp-formula" rid="eqn35">Eqn.35</xref>: <italic>W</italic> := {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1, <italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1}, <italic>U</italic> := {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1} <italic>\ W</italic> and <italic>V</italic> := {<italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1} <italic>\ W</italic>. We assign the production rate of vertices in <italic>U</italic> to be <italic>r</italic><sub>1</sub>, of vertices in <italic>V</italic> to be <italic>r</italic><sub>2</sub> and of the vertex in <italic>W</italic> to be (1 + <italic>μ</italic>)(<italic>r</italic><sub>1</sub> + <italic>r</italic><sub>2</sub>); all other vertices have production rate 0. We can summarise these assumptions in the following table, which gives the production rate for each of the 16 states in <italic>G</italic><sup>⋄</sup> in the coordinate system described by <xref ref-type="disp-formula" rid="eqn35">Eqn.35</xref>.</p>
+<table-wrap id="utbl1" orientation="portrait" position="float">
+<graphic xlink:href="626072v1_utbl1.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<p>We further assume that <italic>μ ≥</italic> −1 to ensure that the production rate of <italic>W</italic> does not become negative. If <italic>μ</italic> = 0, then Assumption 3 holds for <italic>G</italic><sup>⋄</sup> but not otherwise. We also assume that <italic>G</italic><sup>⋄</sup> has degradation rate <italic>δ</italic>. We now calculate <italic>R</italic>(<italic>G</italic><sup>⋄</sup>). Using the Sanchez-Kondev theorem in <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> we have,
+<disp-formula id="eqn36">
+<graphic xlink:href="626072v1_eqn36.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Expanding the term on the right hand side of <xref ref-type="disp-formula" rid="eqn36">Eqn.36</xref> and rearranging terms results in,
+<disp-formula id="eqn37">
+<graphic xlink:href="626072v1_eqn37.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Using the fact that the pairs of sets <italic>U</italic> and <italic>W</italic>, and, <italic>V</italic> and <italic>W</italic> are disjoint gives,
+<disp-formula id="eqn38">
+<graphic xlink:href="626072v1_eqn38.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We now note that, by definition, <italic>U</italic> ∪<italic>W</italic> = {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1} and <italic>V</italic> ∪<italic>W</italic> = {<italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1}. Given the independence assumption on <italic>G</italic><sup>⋄</sup>, we can apply <xref ref-type="disp-formula" rid="eqn11">Eqn.11</xref> and have that <inline-formula><inline-graphic xlink:href="626072v1_inline23.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline24.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Substituting into <xref ref-type="disp-formula" rid="eqn38">Eqn.38</xref>, we have,
+<disp-formula id="eqn39">
+<graphic xlink:href="626072v1_eqn39.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Given that
+<disp-formula id="eqn40">
+<graphic xlink:href="626072v1_eqn40.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+we see that <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub> act additively for <italic>μ</italic> = 0 (<xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>), act super-additively for <italic>μ &gt;</italic> 0 (<xref ref-type="disp-formula" rid="eqn31">Eqn.31</xref>) and act sub-additively for <italic>μ</italic> ∈ [−1, 0) (<xref ref-type="disp-formula" rid="eqn33">Eqn.33</xref>).</p>
+</sec>
+<sec id="s2f2">
+<title>Non-independence in regulatory transitions between enhancers</title>
+<p>So far all the graphs we have considered obey regulatory independence as defined by Assumption 2: the state of one enhancer does not affect the transitions or the rates of any other enhancer. Let us examine this more closely for the IAC model, with just two enhancers, <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub>, described by graphs <italic>H</italic><sub>1</sub> and <italic>H</italic><sub>2</sub>, respectively, as in the previous subsection. According to Assumption 6, <italic>H</italic><sub>1</sub> = <italic>K</italic><sub><italic>a</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,1</sub> and <italic>H</italic><sub>2</sub> = <italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub> and the overall regulatory system is therefore described by the graph, <italic>G</italic> = <italic>H</italic><sub>1</sub> ⊗ <italic>H</italic><sub>2</sub> = (<italic>K</italic><sub><italic>a</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,1</sub>) ⊗ (<italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>). Using <xref ref-type="disp-formula" rid="eqn12">Eqn.12</xref> and the coordinate system in <xref ref-type="disp-formula" rid="eqn35">Eqn.35</xref>, we have that <inline-formula><inline-graphic xlink:href="626072v1_inline25.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline26.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. That is, the probability of activation of an enhancer does not depend on the presence of the other enhancer. However, if probability of activation is measured by H3K27ac ChIP-Seq, there is evidence that perturbation of a single enhancer can result in altered H3K27ac signal at distal enhancers [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c22">22</xref>, <xref ref-type="bibr" rid="c45">45</xref>, <xref ref-type="bibr" rid="c46">46</xref>]. If such changes at the distal enhancer are not caused by the perturbation method itself, so that the perturbation obeys the fidelity conditions in Assumption 5, then such experiments suggest that there may be non-independence between enhancers at the level of activation.</p>
+<p>In order to model non-independence between enhancers, we will consider a gene to be modeled by the graph <italic>G</italic><sup><italic>♯</italic></sup>, where <italic>G</italic><sup><italic>♯</italic></sup> is the product between an activation graph <italic>A</italic><sup><italic>♯</italic></sup> and a communication graph <italic>C</italic>, so that <italic>G</italic><sup><italic>♯</italic></sup> = <italic>A</italic><sup><italic>♯</italic></sup> ⊗ <italic>C</italic> (<xref ref-type="fig" rid="fig5">Fig.5</xref>). <italic>A</italic><sup><italic>♯</italic></sup> has the structure <italic>K</italic><sub><italic>a</italic>,1</sub> × <italic>K</italic><sub><italic>a</italic>,2</sub>, in which <italic>K</italic><sub><italic>a</italic>,1</sub> and <italic>K</italic><sub><italic>a</italic>,2</sub> are both present as the subgraphs,</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5:</label>
+<caption><p>A model of non-independence in activation between enhancers. <bold>(a)</bold> The graph <italic>A</italic><sup><italic>♯</italic></sup> represents the activation components of each enhancer. <italic>A</italic><sup><italic>♯</italic></sup> has the structure of <italic>K</italic><sub><italic>a</italic>,1</sub> <italic>× K</italic><sub><italic>a</italic>,2</sub>. Labels on the unmarked edges can be arbitrary. <bold>(b)</bold> The graph <italic>C</italic> = <italic>K</italic><sub><italic>c</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub> represents the communication components of each enhancer.</p></caption>
+<graphic xlink:href="626072v1_fig5.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+<p>
+<disp-formula id="ueqn3">
+<graphic xlink:href="626072v1_ueqn3.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+respectively (<xref ref-type="fig" rid="fig5">Fig.5a</xref>). The remaining labels, on the edges (1, 0) ⇌ (1, 1), which specify the rates of activation and deactivation of <italic>e</italic><sub>2</sub> when <italic>e</italic><sub>1</sub> is activated, and on the edges (0, 1) ⇌ (1, 1), which specify the rates of activation and deactivation of <italic>e</italic><sub>1</sub> when <italic>e</italic><sub>2</sub> is activated, can be arbitrary. For simplicity, we assume that <italic>C</italic> = <italic>K</italic><sub><italic>c</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>, (<xref ref-type="fig" rid="fig5">Fig.5b</xref>), but note that non-independence in communication could be considered similarly. <italic>G</italic><sup><italic>♯</italic></sup> has the same structure as <italic>H</italic><sub>1</sub> × <italic>H</italic><sub>2</sub>, and thus still models the activation and communication statuses of <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub>, but using the form <italic>G</italic><sup><italic>♯</italic></sup> = <italic>A</italic><sup><italic>♯</italic></sup> ⊗ <italic>C</italic> allows us to clarify the independence relationships in <italic>G</italic><sup><italic>♯</italic></sup>. Under this reorganization, the vertex in <xref ref-type="disp-formula" rid="eqn35">Eqn.35</xref> is now described in a new coordinate system as,
+<disp-formula id="eqn41">
+<graphic xlink:href="626072v1_eqn41.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We assume that <italic>G</italic><sup><italic>♯</italic></sup> has the same mRNA production rates as for the IAC model. In terms of the vertex subsets <italic>W</italic> = {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1, <italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1}, <italic>U</italic> = {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1} <italic>\ W</italic> and <italic>V</italic> = {<italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1} <italic>\ W</italic>, the vertices in <italic>U</italic> have production rate <italic>r</italic><sub>1</sub>, those in <italic>V</italic> have production <italic>r</italic><sub>2</sub> and those in <italic>W</italic> have production rate <italic>r</italic><sub>1</sub> + <italic>r</italic><sub>2</sub>; all other vertices have production rate 0. We can summarise this in the following table, in which the states are described by the coordinate system in <xref ref-type="disp-formula" rid="eqn41">Eqn.41</xref>.</p>
+<table-wrap id="utbl2" orientation="portrait" position="float">
+<graphic xlink:href="626072v1_utbl2.tif" mime-subtype="tiff" mimetype="image"/>
+</table-wrap>
+<p>As in the previous section, we can use the Sanchez-Kondev theorem in <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> to calculate,
+<disp-formula id="eqn42">
+<graphic xlink:href="626072v1_eqn42.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn43">
+<graphic xlink:href="626072v1_eqn43.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn44">
+<graphic xlink:href="626072v1_eqn44.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Given that <italic>G</italic><sup><italic>♯</italic></sup> = <italic>A</italic><sup><italic>♯</italic></sup> ⊗ <italic>C</italic>, the probabilities of the sets {<italic>a</italic><sub>1</sub> = 1, <italic>c</italic><sub>1</sub> = 1} and {<italic>a</italic><sub>2</sub> = 1, <italic>c</italic><sub>2</sub> = 1} factor according to <xref ref-type="disp-formula" rid="eqn11">Eqn.11</xref>. Continuing from <xref ref-type="disp-formula" rid="eqn44">Eqn.44</xref> we have,
+<disp-formula id="eqn45">
+<graphic xlink:href="626072v1_eqn45.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn46">
+<graphic xlink:href="626072v1_eqn46.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><xref ref-type="disp-formula" rid="eqn46">Eqn.46</xref> shows that the labels of <italic>A</italic><sup><italic>♯</italic></sup> do not directly appear in <italic>R</italic>(<italic>G</italic><sup><italic>♯</italic></sup>); they only affect <italic>R</italic>(<italic>G</italic><sup><italic>♯</italic></sup>) through the enhancer activation probabilities <inline-formula><inline-graphic xlink:href="626072v1_inline27.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline28.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. As in the previous section, we note that the sum of the individual enhancer responses is,
+<disp-formula id="eqn47">
+<graphic xlink:href="626072v1_eqn47.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Comparing <xref ref-type="disp-formula" rid="eqn46">Eqns.46</xref> and <xref ref-type="disp-formula" rid="eqn47">47</xref>, we see that whether the enhancers act additively (<xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>), sub-additively (<xref ref-type="disp-formula" rid="eqn33">Eqn.33</xref>) or super-additively (<xref ref-type="disp-formula" rid="eqn31">Eqn.31</xref>) depends on the terms
+<disp-formula id="eqn48">
+<graphic xlink:href="626072v1_eqn48.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p><inline-formula><inline-graphic xlink:href="626072v1_inline29.gif" mime-subtype="gif" mimetype="image"/></inline-formula> represents the change in the probability of activation of enhancer 1 due to the presence of enhancer 2, and <inline-formula><inline-graphic xlink:href="626072v1_inline30.gif" mime-subtype="gif" mimetype="image"/></inline-formula> represents the change in the probability of activation of enhancer 2 due to the presence of enhancer 1. If both <inline-formula><inline-graphic xlink:href="626072v1_inline31.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline32.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are positive, then <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub> act super-additively; if they are both negative, then <italic>e</italic><sub>1</sub> and <italic>e</italic><sub>2</sub> act sub-additively. If <inline-formula><inline-graphic xlink:href="626072v1_inline33.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline34.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are of different signs, then the enhancers may act super-additively or subadditively depending on the relative magnitude of these terms compared to <inline-formula><inline-graphic xlink:href="626072v1_inline35.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <italic>r</italic><sub>2</sub>. Experimental data in which both <inline-formula><inline-graphic xlink:href="626072v1_inline36.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline37.gif" mime-subtype="gif" mimetype="image"/></inline-formula> have been measured is limited. There are experimentally observed instances in which both of these terms are positive [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c45">45</xref>] but the precise form that the graph <italic>A</italic><sup><italic>♯</italic></sup> takes in these cases is unknown. We are unaware of experiments that have observed <inline-formula><inline-graphic xlink:href="626072v1_inline38.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula><inline-graphic xlink:href="626072v1_inline39.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of differing signs. Whether the experimentally observed non-additivity between enhancers can be explained by the non-independence between enhancers as described in this section is a future area of research.</p>
+</sec>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this paper, we have introduced mathematical formulations of a <italic>default model</italic> and an <italic>IndependentActivation-Communication model</italic> (IAC model) for how multiple enhancers collectively regulate a gene. The default model encodes the notion that enhancers operate independently of each other (Assumptions 2 and 3). At the same time, the default model imposes no assumptions on how the individual enhancers themselves are working, at the level of transcription factors, co-regulators, chromatin, etc. They can be arbitrarily complicated, so long as they operate within the Markovian setting that is commonly assumed for analysing gene regulation. The default model assumptions imply that the collective response of a gene, as measured by the mean mRNA level, is the sum of the responses coming from each enhancer individually, which we have called <italic>response additivity</italic> (<xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>). The default model explains the mechanistic requirements for a gene to exhibit this property and clarifies how ‘independence implies additivity’. We emphasize that independence refers here to assumptions about gene regulatory mechanisms whereas additivity refers to the consequences of those assumptions on steady-state gene expression. The default model supports the view that response additivity is a reasonable baseline against which to assess the collective action of enhancers in regulating a gene.</p>
+<p>One of the advantages of the default model is that, because it is mathematically formulated, it allows mechanistic departures from its assumptions to be systematically analysed. We have shown how departures from Assumptions 2 and 3 can give rise to response super-additivity (<xref ref-type="disp-formula" rid="eqn32">Eqn.32</xref>) as well as sub-additivity (<xref ref-type="disp-formula" rid="eqn34">Eqn.34</xref>). As we have noted, response additivity [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c23">23</xref>, <xref ref-type="bibr" rid="c38">38</xref>–<xref ref-type="bibr" rid="c43">43</xref>], super-additivity [<xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c21">21</xref>, <xref ref-type="bibr" rid="c39">39</xref>–<xref ref-type="bibr" rid="c44">44</xref>] and subadditivity [<xref ref-type="bibr" rid="c38">38</xref>, <xref ref-type="bibr" rid="c40">40</xref>, <xref ref-type="bibr" rid="c41">41</xref>] have all been observed experimentally. The default model suggests the mechanistic assumptions that could be experimentally tested to determine what underlies the observed response behaviour.</p>
+<p>The IAC model is a special case of the default model that further assumes deletion fidelity, which allows enhancers to be removed from the collective without influencing the remaining enhancers (Assumption 5), and also assumes that individual enhancers can be described at a coarse-grained level in which they are independently becoming activated and communicating their state to the gene (Assumption 6). Under Assumptions 1 to 6 for the IAC model, we derive a formula for the deletion effect of an individual enhancer (<xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref>) that shows a striking algebraic relationship to the ABC Score formula in <xref ref-type="disp-formula" rid="eqn2">Eqn.2</xref>. This relationship suggests that the IAC model has accurately captured in mathematical terms the core intuitions behind the ABC model from which the Score formula emerged [<xref ref-type="bibr" rid="c11">11</xref>].</p>
+<p>A persistent conceptual theme that underlies the results reported here is that of independence. The default model assumes that enhancers act independently, both in their regulatory state (Assumption 2) and in their effect on mRNA production (Assumption 3). Furthermore the IAC model assumes that individual enhancers become activated and communicating independently (Assumption 6). Our clarification of the</p>
+<p>ABC Score formula thus arises from assuming independence <italic>between</italic> enhancers, along with independence of activation and communication <italic>within</italic> each enhancer. The product construction on graphs and on graph structures has been the key mathematical tool for rigorously defining independence, illustrating the value of the graph-based linear framework for analysing gene regulation. We note that the concept of deletion fidelity (Assumption 5) is also easily defined in the context of graphs.</p>
+<p>Previous work used finite linear framework graphs to describe gene regulation [<xref ref-type="bibr" rid="c26">26</xref>]. Here, we have introduced <italic>copy-number graphs</italic>, which have infinitely many vertices that keep track of both regulatory states as well as the numbers of expressed mRNAs (<xref ref-type="fig" rid="fig2">Fig.2</xref>). Copy-number graphs allowed us to exploit the Sanchez-Kondev theorem and calculate the mean mRNA number at steady state in terms solely of the finite regulatory graph (<xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref>). We therefore avoided dealing with infinite graphs despite relying on them. Importantly, the linear framework also allows the unknown parameters within graphs to be treated symbolically, so that conclusions may be drawn, as we saw above, without the need for assigning numerical values to any of the parameters.</p>
+<p>Beyond its utility in clarifying the ABC Score formula, the activation-communication coarse graining in Assumption 6 provides an interesting lens through which to investigate enhancers. Many new experimental technologies have emerged which allow perturbing entire enhancer sequences as a whole (as opposed to small changes to DNA within an enhancer sequence). Such technologies include synthesizing and integrating long DNA sequences [<xref ref-type="bibr" rid="c43">43</xref>, <xref ref-type="bibr" rid="c44">44</xref>], modulating the genomic position of an enhancer [<xref ref-type="bibr" rid="c47">47</xref>–<xref ref-type="bibr" rid="c51">51</xref>], high throughput enhancer perturbations with CRISPRi [<xref ref-type="bibr" rid="c11">11</xref>–<xref ref-type="bibr" rid="c13">13</xref>] and combining CRISPRi screens with rapid protein degradation [<xref ref-type="bibr" rid="c52">52</xref>]. By considering which perturbations affect, and do not affect, activation and communication, it may be possible to probe the validity of the activation-communication coarse graining itself.</p>
+<p>As noted in the Introduction, the ABC Score formula has been widely adopted for predicting enhancergene connections. It has also been suggested that it could be combined with other predictive methods [<xref ref-type="bibr" rid="c53">53</xref>] and that the ABC model could be used as a guiding principle in formulating other quantitative models [<xref ref-type="bibr" rid="c54">54</xref>]. We believe the mathematical formulations that we have introduced here provide a foundation for such efforts.</p>
+<p>The ABC Score formula is quantitative (Eq.2) but the ABC model that gave rise to it is not a formal mathematical model but, rather, an informal statement about the features, of enhancer activation and contact, that are believed to be important in determining the response of a gene. Such informal models play a critical role in biology but have the disadvantage that the underlying mechanistic requirements are not clear. It is therefore difficult to know when the model can be applied and what can be deduced from it when it does apply. In contrast, the mechanistic assumptions underlying our formal mathematical models are precisely stated—Assumptions 1 to 4 for the default model and Assumptions 1 to 6 for the IAC model— making it clear when the model can be applied and suggesting experimental tests to check the assumptions. Moreover, if those assumptions are met, then the conclusions we have drawn, such as the response additivity of the default model (<xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>) and the enhancer deletion formula for the IAC model (<xref ref-type="disp-formula" rid="eqn27">Eqn.27</xref>), are guaranteed to hold as a matter of mathematical logic [<xref ref-type="bibr" rid="c55">55</xref>]. If those conclusions are not found experimentally, for example, if response additivity is not found, then we know, as a matter of logic, that at least one of the assumptions underlying the corresponding model does not hold. This understanding can, in turn, inform experiments to determine where the departures from the assumptions occur. Such an approach allows a level of rigorous reasoning about enhancer behaviour in gene regulation that is significantly harder to undertake with only an informal quantitative model.</p>
+<p>Mathematical theory has typically been introduced to analyse data, but the conceptual issues underlying gene regulation are sufficiently intricate that theory may be necessary to understand the kinds of experiments that are needed and how the data from them should best be interpreted [<xref ref-type="bibr" rid="c56">56</xref>]. Studies of the simple repression motif in bacterial gene regulation may have already reached that point [<xref ref-type="bibr" rid="c57">57</xref>–<xref ref-type="bibr" rid="c60">60</xref>], as reviewed in [<xref ref-type="bibr" rid="c61">61</xref>]. The foundation provided here, based on the linear framework, may offer similar opportunities in the eukaryotic context. We believe our rigorous mathematical approach can play a significant role in investigating the intricate interplay of enhancers in regulating gene expression.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>A graph theory interpretation of the Sanchez and Kondev theorem</title>
+<p>In this section we provide a proof of <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref>. We follow the Sanchez and Kondev approach described in but present it using the graph theory notation and language used in this paper. Sanchez and Kondev provide in [<xref ref-type="bibr" rid="c34">34</xref>] a recurrence relation for all the moments of the mRNA probability distribution. A graph theory interpretation of these results, together with generalisations, will be presented in a separate paper; here we focus on the first moment only. We use bold face to denote matrices and vectors.</p>
+<sec id="s4a1">
+<title>The steady-state distribution of a finite graph</title>
+<p>Let <italic>G</italic> be a finite regulatory graph on the vertex set <italic>V</italic> (<italic>G</italic>) = {1, …, <italic>N</italic>}. We define the <italic>Laplacian matrix</italic> of <italic>G</italic>, ℒ = ℒ (<italic>G</italic>), to be the <italic>N × N</italic> matrix,
+<disp-formula id="eqn49">
+<graphic xlink:href="626072v1_eqn49.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>As mentioned in the main text, <italic>G</italic> is equivalent to a continuous-time Markov process on the state space {1, …, <italic>N</italic>} [<xref ref-type="bibr" rid="c25">25</xref>, <xref ref-type="bibr" rid="c28">28</xref>, <xref ref-type="bibr" rid="c32">32</xref>]. Let <italic>u</italic><sub><italic>i</italic></sub>(<italic>t</italic>) be the probability that the process occupies state <italic>i</italic> at time <italic>t</italic>. Then the time evolution of the probability vector,
+<disp-formula id="ueqn4">
+<graphic xlink:href="626072v1_ueqn4.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+is given by the master equation
+<disp-formula id="eqn50">
+<graphic xlink:href="626072v1_eqn50.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>If <italic>G</italic> is strongly connected, then the kernel of ℒ(<italic>G</italic>) is one dimensional, so there is a unique vector, <bold>u</bold><sup>∗</sup>(<italic>G</italic>), such that ℒ(<italic>G</italic>)<bold>u</bold><sup>∗</sup>(<italic>G</italic>) = 0 and <italic>u</italic><sub>1</sub>(<italic>G</italic>) + · · · + <italic>u</italic><sub><italic>N</italic></sub> (<italic>G</italic>) = 1. <bold>u</bold><sup>∗</sup>(<italic>G</italic>) is the steady-state probability distribution on <italic>G</italic>.</p>
+</sec>
+<sec id="s4a2">
+<title>The master equation for a copy-number graph</title>
+<p>Let <italic>G</italic> ⋉ <italic>P</italic> denote a copy-number graph with regulatory graph <italic>G</italic>, production rate vector <bold>r</bold> ∈ ℝ<sup><italic>N</italic></sup> and degradation rate <italic>δ</italic>. Let <bold>Π</bold> be the diagonal matrix of production rates, <bold>Π</bold><sub><italic>i,i</italic></sub> = <italic>r</italic><sub><italic>i</italic></sub> and <bold>Π</bold><sub><italic>i,j</italic></sub> = 0 when <italic>i ≠j</italic>, and let <bold>I</bold> be the <italic>N × N</italic> identity matrix. Let
+<disp-formula id="ueqn5">
+<graphic xlink:href="626072v1_ueqn5.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+be the vector of probabilities over the regulatory states with mRNA copy number <italic>p</italic>. It follows from the definition of the copy-number graph in the main text that <bold>u</bold>(<italic>p, t</italic>) satisfies the master equation,
+<disp-formula id="eqn51">
+<graphic xlink:href="626072v1_eqn51.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+in which terms with arguments of <italic>p</italic> − 1 are appropriately omitted when <italic>p</italic> = 0. The first term of <xref ref-type="disp-formula" rid="eqn51">Eqn.51</xref> arises from mRNA production, the second term from mRNA degradation and the third term from transitions in the regulatory graph. <xref ref-type="disp-formula" rid="eqn51">Eqn.51</xref> can be rewritten as,
+<disp-formula id="eqn52">
+<graphic xlink:href="626072v1_eqn52.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We now let
+<disp-formula id="ueqn6">
+<graphic xlink:href="626072v1_ueqn6.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+be the vector of marginal probabilities for the regulatory states. Proceeding from <xref ref-type="disp-formula" rid="eqn52">Eqn.52</xref> we have,
+<disp-formula id="ueqn7">
+<graphic xlink:href="626072v1_ueqn7.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>This is a telescoping sum which simplifies to
+<disp-formula id="ueqn8">
+<graphic xlink:href="626072v1_ueqn8.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>It follows that the steady-state marginal probability vector, <bold>q</bold><sup>∗</sup>, lies in the kernel of ℒ(<italic>G</italic>) and must therefore be equal to <bold>u</bold><sup>∗</sup>(<italic>G</italic>),
+<disp-formula id="eqn53">
+<graphic xlink:href="626072v1_eqn53.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>In other words, the steady-state marginal distribution of regulatory states in a copy-number graph is identical to the steady-state distribution of regulatory states in a finite regulatory graph.</p>
+<p><bold>Proof of </bold><xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref></p>
+<p>We want to show that,
+<disp-formula id="ueqn9">
+<graphic xlink:href="626072v1_ueqn9.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Let <bold>u</bold><sup>∗</sup>(<italic>p</italic>) denote the steady-state probability distribution over the copy-number graph. (Note the distinction with the marginal probability distribution over the regulatory states, <italic>u</italic><sup>∗</sup>(<italic>G</italic>) = ∑<sub><italic>p</italic></sub> <italic>u</italic><sup>∗</sup>(<italic>p</italic>).) Let
+<disp-formula id="ueqn10">
+<graphic xlink:href="626072v1_ueqn10.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+be the corresponding steady-state average copy number vector. Evidently,
+<disp-formula id="eqn54">
+<graphic xlink:href="626072v1_eqn54.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+where <bold>1</bold> is the all-ones column vector of dimension <italic>N</italic>. Now let
+<disp-formula id="ueqn11">
+<graphic xlink:href="626072v1_ueqn11.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+be the time-dependent average copy-number vector. It follows from <xref ref-type="disp-formula" rid="eqn52">Eqn.52</xref> that,
+<disp-formula id="eqn55">
+<graphic xlink:href="626072v1_eqn55.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn55a">
+<graphic xlink:href="626072v1_eqn55a.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The first summand in <xref ref-type="disp-formula" rid="eqn55">Eqn.55</xref> can be simplified to,
+<disp-formula id="ueqn12">
+<graphic xlink:href="626072v1_ueqn12.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>The second summand can be simplified to,
+<disp-formula id="ueqn13">
+<graphic xlink:href="626072v1_ueqn13.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>And the third summand is evidently just <italic>ℒ</italic> (<italic>G</italic>) <bold><italic>μ</italic></bold>(<italic>t</italic>). Combining these three simplifications, we see that,
+<disp-formula id="eqn56">
+<graphic xlink:href="626072v1_eqn56.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>At steady state this becomes,
+<disp-formula id="ueqn14">
+<graphic xlink:href="626072v1_ueqn14.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Multiplying both sides <bold>1</bold><sup>T</sup>, and recalling that,
+<disp-formula id="ueqn15">
+<graphic xlink:href="626072v1_ueqn15.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+we find that,
+<disp-formula id="eqn57">
+<graphic xlink:href="626072v1_eqn57.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Using <xref ref-type="disp-formula" rid="eqn53">Eqns.53</xref> and <xref ref-type="disp-formula" rid="eqn54">54</xref>, we see that <xref ref-type="disp-formula" rid="eqn57">Eqn.57</xref> becomes,
+<disp-formula id="eqn58">
+<graphic xlink:href="626072v1_eqn58.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+<disp-formula id="eqn59">
+<graphic xlink:href="626072v1_eqn59.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+as required. This completes the proof of <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref>.</p>
+</sec>
+</sec>
+<sec id="s4b">
+<title>Proof of response summation in the default model</title>
+<p>In this section we prove <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref> which shows that, within the default model, the collective response of all the enhancers is the sum of their individual responses. That is, if <italic>G</italic> = <italic>G</italic><sub>1</sub> ⊛ · · · ⊛ <italic>G</italic><sub><italic>N</italic></sub>, then
+<disp-formula id="eqn60">
+<graphic xlink:href="626072v1_eqn60.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We consider the case with only two enhancers, <italic>N</italic> = 2, from which the general case follows easily. Recall from the Sanchez and Kondev formula in <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> that
+<disp-formula id="eqn61">
+<graphic xlink:href="626072v1_eqn61.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Assumption 3 on response summation tells us that <inline-formula><inline-graphic xlink:href="626072v1_inline40.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <xref ref-type="disp-formula" rid="eqn8">Eqn.8</xref> for the product graph tells us that <inline-formula><inline-graphic xlink:href="626072v1_inline41.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. Substituting these expressions into <xref ref-type="disp-formula" rid="eqn61">Eqn.61</xref> gives the following formula for <italic>δ</italic> · <italic>R</italic>(<italic>G</italic>),
+<disp-formula id="ueqn16">
+<graphic xlink:href="626072v1_ueqn16.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We can perform the summation over (<italic>i</italic><sub>1</sub>, <italic>i</italic><sub>2</sub>) in any order, for instance by first summing over <italic>i</italic><sub>2</sub> and then summing over <italic>i</italic><sub>1</sub>. This gives,
+<disp-formula id="eqn62">
+<graphic xlink:href="626072v1_eqn62.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>In the inner left-hand sum over <italic>i</italic><sub>2</sub>, the terms indexed by <italic>i</italic><sub>1</sub> are constant and may be extracted from that sum to give
+<disp-formula id="eqn63">
+<graphic xlink:href="626072v1_eqn63.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Total probability always sums to 1, so that <inline-formula><inline-graphic xlink:href="626072v1_inline42.gif" mime-subtype="gif" mimetype="image"/></inline-formula>. and <xref ref-type="disp-formula" rid="eqn63">Eqn.63</xref> reduces to
+<disp-formula id="eqn64">
+<graphic xlink:href="626072v1_eqn64.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>Similarly, the inner right-hand sum in <xref ref-type="disp-formula" rid="eqn62">Eqn.62</xref> may be written as
+<disp-formula id="eqn65">
+<graphic xlink:href="626072v1_eqn65.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We recognise from <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> that the sum in brackets is the response of graph <italic>G</italic><sub>2</sub>, so that <xref ref-type="disp-formula" rid="eqn65">Eqn.65</xref> becomes,
+<disp-formula id="eqn66">
+<graphic xlink:href="626072v1_eqn66.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We can now substitute Eqns.64 and 66 back into <xref ref-type="disp-formula" rid="eqn62">Eqn.62</xref> to get,
+<disp-formula id="eqn67">
+<graphic xlink:href="626072v1_eqn67.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+</p>
+<p>We recognise from <xref ref-type="disp-formula" rid="eqn14">Eqn.14</xref> that the left-hand sum is <italic>δ</italic> times the response of graph <italic>G</italic><sub>1</sub>. In the right-hand sum, we can extract the terms that do not depend on <italic>i</italic><sub>1</sub> and use once again that the total probability is 1. This allows us to rewrite <xref ref-type="disp-formula" rid="eqn67">Eqn.67</xref> as,
+<disp-formula id="ueqn17">
+<graphic xlink:href="626072v1_ueqn17.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+from which we conclude that, indeed,
+<disp-formula id="ueqn18">
+<graphic xlink:href="626072v1_ueqn18.gif" mime-subtype="gif" mimetype="image"/>
+</disp-formula>
+as claimed. This completes the proof of <xref ref-type="disp-formula" rid="eqn19">Eqn.19</xref>.</p>
+</sec>
+<sec id="s4c">
+<title>Symbolic computations</title>
+<p>We have provided mathematical proofs for all of our results. However, many of our results were originally discovered by exploration using computer algebra systems. Specifically, the Sage [<xref ref-type="bibr" rid="c62">62</xref>] computer algebra system, and the SymPy [<xref ref-type="bibr" rid="c63">63</xref>] and NetworkX [<xref ref-type="bibr" rid="c64">64</xref>] Python packages were crucial for the development of this paper.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Figure S1:</label>
+<caption><p>IAC model for <italic>N</italic> = 2 enhancers as a product graph of product graphs. <bold>(a)</bold> Graphs describing the activation and communication status of enhancer 1. <bold>(b)</bold> Graphs describing the activation and communication status of enhancer 2. <bold>(c)</bold> The graph <italic>H</italic><sub>1</sub> whose underlying regulatory graph is <italic>K</italic><sub><italic>a</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,1</sub>. <bold>(d)</bold> The graph <italic>H</italic><sub>2</sub> whose underlying regulatory graph is <italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>. <bold>(e)</bold> The graph <italic>H</italic><sub>1</sub> ⊛ <italic>H</italic><sub>2</sub> satisfying the default model Assumptions 1-4 with components <italic>H</italic><sub>1</sub> and <italic>H</italic><sub>2</sub>. The regulatory graph of <italic>H</italic><sub>1</sub> ⊛ <italic>H</italic><sub>2</sub> is given by (<italic>K</italic><sub><italic>a</italic>,1</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,1</sub>) ⊗ (<italic>K</italic><sub><italic>a</italic>,2</sub> ⊗ <italic>K</italic><sub><italic>c</italic>,2</sub>). Each vertex of this graph corresponds to the activation and communication statuses of both enhancers. For the vertices along the top of the graph, the product-graph binary notation is also provided using the coordinate system ((<italic>a</italic><sub>1</sub>, <italic>c</italic><sub>1</sub>), (<italic>a</italic><sub>2</sub>, <italic>c</italic><sub>2</sub>)). Reverse edges and labels of most edges are omitted for clarity. Production states are highlighted in purple with corresponding production rates also in purple font.</p></caption>
+<graphic xlink:href="626072v1_figS1.tif" mime-subtype="tiff" mimetype="image"/>
+</fig>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>JN, K-MN and JG were funded in part by NIH award R01GM122928; JN was also funded the NSF-Simons Center for Mathematical and Statistical Analysis of Biology at Harvard University. We thank Zeba Wunderlich, Rosa Martinez-Corral, Jané Kondev and members of the Gunawardena lab for discussions and comments on the manuscript.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Ptashne</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Gann</surname>, <given-names>A.</given-names></string-name></person-group> <source>Genes and Signals</source> (<publisher-name>Cold Spring Harbor Laboratory Press</publisher-name>, <publisher-loc>Cold Spring Harbor, NY, USA</publisher-loc>, <year>2002</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Banerji</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Rusconi</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Schaffner</surname>, <given-names>W.</given-names></string-name></person-group> <article-title>Expression of a beta-globin gene is enhanced by remote SV40 DNA sequences</article-title>. <source>Cell</source> <volume>27</volume>, <fpage>299</fpage>–<lpage>308</lpage> (<year>1981</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Moreau</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Hen</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Wasylyk</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Everett</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Gaub</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Chambon</surname>, <given-names>P.</given-names></string-name></person-group> <article-title>The SV40 72 base repair repeat has a striking effect on gene expression both in SV40 and other chimeric recombinants</article-title>. <source>Nucleic Acids Research</source> <volume>9</volume>, <fpage>6047</fpage>–<lpage>6068</lpage> (<year>1981</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Levine</surname>, <given-names>M.</given-names></string-name></person-group> <article-title>Transcriptional enhancers in animal development and evolution</article-title>. <source>Current biology : CB</source> <volume>20</volume>, <fpage>R754</fpage>–<lpage>R763</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lempradl</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Pospisilik</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Penninger</surname>, <given-names>J. M.</given-names></string-name></person-group> <article-title>Exploring the emerging complexity in transcriptional regulation of energy homeostasis</article-title>. <source>Nat. Reviews. Genet</source>. <volume>16</volume>, <fpage>665</fpage>–<lpage>81</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Indjeian</surname>, <given-names>V. B.</given-names></string-name>, <string-name><surname>Kingman</surname>, <given-names>G. A.</given-names></string-name>, <string-name><surname>Jones</surname>, <given-names>F. C.</given-names></string-name>, <string-name><surname>Guenther</surname>, <given-names>C. A.</given-names></string-name>, <string-name><surname>Grimwood</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Schmutz</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Myers</surname>, <given-names>R. M.</given-names></string-name> &amp; <string-name><surname>Kingsley</surname>, <given-names>D. M.</given-names></string-name></person-group> <article-title>Evolving new skeletal traits by cis-regulatory changes in bone morphogenetic proteins</article-title>. <source>Cell</source> <volume>164</volume>, <fpage>45</fpage>–<lpage>56</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Corradin</surname>, <given-names>O.</given-names></string-name> &amp; <string-name><surname>Scacheri</surname>, <given-names>P. C.</given-names></string-name></person-group> <article-title>Enhancer variants: evaluating functions in common disease</article-title>. <source>Genome Medicine</source> <volume>6</volume>, <fpage>85</fpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Noonan</surname>, <given-names>J. P.</given-names></string-name> &amp; <string-name><surname>McCallion</surname>, <given-names>A. S.</given-names></string-name></person-group> <article-title>Genomics of long-range regulatory elements</article-title>. <source>Annual Review of Genomics and Human Genetics</source> <volume>11</volume>, <fpage>1</fpage>–<lpage>23</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhang</surname>, <given-names>X.</given-names></string-name> &amp; <string-name><surname>Meyerson</surname>, <given-names>M.</given-names></string-name></person-group> <article-title>Illuminating the noncoding genome in cancer</article-title>. <source>Nature Cancer</source> <volume>1</volume>, <fpage>864</fpage>–<lpage>872</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fulco</surname>, <given-names>C. P.</given-names></string-name>, <string-name><surname>Munschauer</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Anyoha</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Munson</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Grossman</surname>, <given-names>S. R.</given-names></string-name>, <string-name><surname>Perez</surname>, <given-names>E. M.</given-names></string-name>, <string-name><surname>Kane</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Cleary</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Lander</surname>, <given-names>E. S.</given-names></string-name> &amp; <string-name><surname>Engreitz</surname>, <given-names>J. M.</given-names></string-name></person-group> <article-title>Systematic mapping of functional enhancer–promoter connections with CRISPR interference</article-title>. <source>Science</source> <volume>354</volume>, <fpage>769</fpage>–<lpage>773</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fulco</surname>, <given-names>C. P.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Activity-by-contact model of enhancer–promoter regulation from thousands of CRISPR perturbations</article-title>. <source>Nature Genetics</source> <volume>51</volume>, <fpage>1664</fpage>–<lpage>1669</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schraivogel</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Gschwind</surname>, <given-names>A. R.</given-names></string-name>, <string-name><surname>Milbank</surname>, <given-names>J. H.</given-names></string-name>, <string-name><surname>Leonce</surname>, <given-names>D. R.</given-names></string-name>, <string-name><surname>Jakob</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Mathur</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Korbel</surname>, <given-names>J. O.</given-names></string-name>, <string-name><surname>Merten</surname>, <given-names>C. A.</given-names></string-name>, <string-name><surname>Velten</surname>, <given-names>L.</given-names></string-name> &amp; <string-name><surname>Steinmetz</surname>, <given-names>L. M.</given-names></string-name></person-group> <article-title>Targeted perturb-seq enables genome-scale genetic screens in single cells</article-title>. <source>Nature Methods</source> <volume>17</volume>, <fpage>629</fpage>–<lpage>635</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Reilly</surname>, <given-names>S. K.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR–FlowFISH</article-title>. <source>Nature Genetics</source> <volume>53</volume>, <fpage>1166</fpage>–<lpage>1176</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nasser</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Genome-wide enhancer maps link risk variants to disease genes</article-title>. <source>Nature</source> <volume>593</volume>, <fpage>238</fpage>–<lpage>243</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Gschwind</surname>, <given-names>A. R.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>An encyclopedia of enhancer-gene regulatory interactions in the human genome</article-title>. <source>bioRxiv</source> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bick</surname>, <given-names>A. G.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Inherited causes of clonal haematopoiesis in 97,691 whole genomes</article-title>. <source>Nature</source> <volume>586</volume>, <fpage>763</fpage>–<lpage>768</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Xu</surname>, <given-names>Z.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Structural variants drive context-dependent oncogene activation in cancer</article-title>. <source>Nature</source> <volume>612</volume>, <fpage>564</fpage>–<lpage>572</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bendl</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>The three-dimensional landscape of cortical chromatin accessibility in Alzheimer’s disease</article-title>. <source>Nature Neuroscience</source> <volume>25</volume>, <fpage>1366</fpage>–<lpage>1378</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chen</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Dai</surname>, <given-names>J.</given-names></string-name> &amp; <string-name><surname>Bian</surname>, <given-names>Q.</given-names></string-name></person-group> <article-title>Integration of 3D genome topology and local chromatin features uncovers enhancers underlying craniofacial-specific cartilage defects</article-title>. <source>Science Advances</source> <volume>8</volume>, <fpage>eabo3648</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Naqvi</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Precise modulation of transcription factor levels identifies features underlying dosage sensitivity</article-title>. <source>Nature Genetics</source>, <fpage>1</fpage>–<lpage>11</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Shin</surname>, <given-names>H. Y.</given-names></string-name>, <string-name><surname>Willi</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Yoo</surname>, <given-names>K. H.</given-names></string-name>, <string-name><surname>Zeng</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Metser</surname>, <given-names>G.</given-names></string-name> &amp; <string-name><surname>Hennighausen</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>Hierarchy within the mammary STAT5-driven Wap super-enhancer</article-title>. <source>Nature Genetics</source> <volume>48</volume>, <fpage>904</fpage>–<lpage>911</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>K.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Interrogation of enhancer function by enhancer-targeting CRISPR epigenetic editing</article-title>. <source>Nature Communications</source> <volume>11</volume>, <fpage>485</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hay</surname>, <given-names>D.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Genetic dissection of the α-globin super-enhancer in vivo</article-title>. <source>Nature Genetics</source> <volume>48</volume>, <fpage>895</fpage>–<lpage>903</lpage> (<year>2016</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>A linear framework for time-scale separation in nonlinear biochemical systems</article-title>. <source>PLOS One</source> <volume>7</volume>, <fpage>e36321</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mirzaev</surname>, <given-names>I.</given-names></string-name> &amp; <string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Laplacian dynamics on general graphs</article-title>. <source>Bulletin of Mathematical Biology</source> <volume>75</volume>, <fpage>2118</fpage>–<lpage>2149</lpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ahsendorf</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Wong</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Eils</surname>, <given-names>R.</given-names></string-name> &amp; <string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>A framework for modelling gene regulation which accommodates non-equilibrium mechanisms</article-title>. <source>BMC Biology</source> <volume>12</volume>, <fpage>102</fpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nam</surname>, <given-names>K.-M.</given-names></string-name>, <string-name><surname>Martinez-Corral</surname>, <given-names>R.</given-names></string-name> &amp; <string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>The linear framework: using graph theory to reveal the algebra and thermodynamics of biomolecular systems</article-title>. <source>Interface Focus</source> <volume>12</volume>, <fpage>20220013</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nam</surname>, <given-names>K.-M.</given-names></string-name> &amp; <string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>The linear framework II: using graph theory to analyse the transient regime of markov processes</article-title>. <source>Front. Cell Dev. Biol</source> <volume>11</volume>, <fpage>1233808</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Popay</surname>, <given-names>T. M.</given-names></string-name> &amp; <string-name><surname>Dixon</surname>, <given-names>J. R.</given-names></string-name></person-group> <article-title>Coming full circle: on the origin and evolution of the looping model for enhancer–promoter communication</article-title>. <source>Journal of Biological Chemistry</source> <volume>298</volume> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Karr</surname>, <given-names>J. P.</given-names></string-name>, <string-name><surname>Ferrie</surname>, <given-names>J. J.</given-names></string-name>, <string-name><surname>Tjian</surname>, <given-names>R.</given-names></string-name> &amp; <string-name><surname>Darzacq</surname>, <given-names>X.</given-names></string-name></person-group> <article-title>The transcription factor activity gradient (TAG) model: contemplating a contact-independent mechanism for enhancer–promoter communication</article-title>. <source>Genes &amp; Development</source> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hnisz</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Shrinivas</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Young</surname>, <given-names>R. A.</given-names></string-name>, <string-name><surname>Chakraborty</surname>, <given-names>A. K.</given-names></string-name> &amp; <string-name><surname>Sharp</surname>, <given-names>P. A.</given-names></string-name></person-group> <article-title>A phase separation model for transcriptional control</article-title>. <source>Cell</source> <volume>169</volume>, <fpage>13</fpage>–<lpage>23</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Norris</surname>, <given-names>J. R.</given-names></string-name></person-group> <source>Markov Chains</source> (<publisher-name>Cambridge University Press</publisher-name>, <publisher-loc>Cambridge, UK</publisher-loc>, <year>1997</year>).</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Peccoud</surname>, <given-names>J.</given-names></string-name> &amp; <string-name><surname>Ycart</surname>, <given-names>B.</given-names></string-name></person-group> <article-title>Markovian modeling of gene-product synthesis</article-title>. <source>Theoretical Population Biology</source> <volume>48</volume>, <fpage>222</fpage>–<lpage>234</lpage> (<year>1995</year>).</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sánchez</surname>, <given-names>Á.</given-names></string-name> &amp; <string-name><surname>Kondev</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Transcriptional control of noise in gene expression</article-title>. <source>Proceedings of the National Academy of Sciences</source> <volume>105</volume>, <fpage>5081</fpage>–<lpage>5086</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dukler</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Gulko</surname>, <given-names>B.</given-names></string-name><string-name><surname>Huang</surname>, <given-names>Y.-F.</given-names></string-name> &amp; <string-name><surname>Siepel</surname>, <given-names>A.</given-names></string-name></person-group> <article-title>Is a super-enhancer greater than the sum of its parts?</article-title> <source>Nature Genetics</source> <volume>49</volume>, <fpage>2</fpage>–<lpage>3</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Van Arensbergen</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>FitzPatrick</surname>, <given-names>V. D.</given-names></string-name>, <string-name><surname>de Haas</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Pagie</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Sluimer</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Bussemaker</surname>, <given-names>H. J.</given-names></string-name> &amp; <string-name><surname>van Steensel</surname>, <given-names>B.</given-names></string-name></person-group> <article-title>Genome-wide mapping of autonomous promoter activity in human cells</article-title>. <source>Nature Biotechnology</source> <volume>35</volume>, <fpage>145</fpage>–<lpage>153</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Weingarten-Gabbay</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Nir</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Lubliner</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Sharon</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Kalma</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Weinberger</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Segal</surname>, <given-names>E.</given-names></string-name></person-group> <article-title>Systematic interrogation of human promoters</article-title>. <source>Genome Research</source> <volume>29</volume>, <fpage>171</fpage>–<lpage>183</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Martinez-Ara</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Comoglio</surname>, <given-names>F.</given-names></string-name> &amp; <string-name><surname>van Steensel</surname>, <given-names>B.</given-names></string-name></person-group> <article-title>Large-scale analysis of the integration of enhancerenhancer signals by promoters</article-title>. <source>eLife</source> <volume>12</volume>, <elocation-id>RP91994</elocation-id> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Loubiere</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Almeida</surname>, <given-names>B. P. d.</given-names></string-name>, <string-name><surname>Pagani</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Stark</surname>, <given-names>A.</given-names></string-name></person-group> <article-title>Developmental and housekeeping transcriptional programs display distinct modes of enhancer-enhancer cooperativity in drosophila</article-title>. <source>bioRxiv</source> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bothma</surname>, <given-names>J. P.</given-names></string-name>, <string-name><surname>Garcia</surname>, <given-names>H. G.</given-names></string-name>, <string-name><surname>Ng</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Perry</surname>, <given-names>M. W.</given-names></string-name>, <string-name><surname>Gregor</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>Levine</surname>, <given-names>M.</given-names></string-name></person-group> <article-title>Enhancer additivity and non-additivity are determined by enhancer strength in the Drosophila embryo</article-title>. <source>eLife</source> <volume>4</volume>, <elocation-id>e07956</elocation-id> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Scholes</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Biette</surname>, <given-names>K. M.</given-names></string-name>, <string-name><surname>Harden</surname>, <given-names>T. T.</given-names></string-name> &amp; <string-name><surname>DePace</surname>, <given-names>A. H.</given-names></string-name></person-group> <article-title>Signal Integration by Shadow Enhancers and Enhancer Duplications Varies across the Drosophila Embryo</article-title>. <source>Cell Reports</source> <volume>26</volume>, <fpage>2407</fpage>–<lpage>2418.e5</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lam</surname>, <given-names>D. D.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Partially redundant enhancers cooperatively maintain mammalian pomc expression above a critical functional threshold</article-title>. <source>PLOS Genetics</source> <volume>11</volume>, <fpage>e1004935</fpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c43"><label>43.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Brosh</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Synthetic regulatory genomics uncovers enhancer context dependence at the Sox2 locus</article-title>. <source>bioRxiv</source> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Blayney</surname>, <given-names>J. W.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Super-enhancers include classical enhancers and facilitators to fully activate gene expression</article-title>. <source>Cell</source> <volume>186</volume>, <fpage>5826</fpage>–<lpage>5839.e18</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c45"><label>45.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Thomas</surname>, <given-names>H. F.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Temporal dissection of an enhancer cluster reveals distinct temporal and functional contributions of individual elements</article-title>. <source>Molecular Cell</source> <volume>81</volume>, <fpage>969</fpage>–<lpage>982.e13</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c46"><label>46.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mansour</surname>, <given-names>M. R.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>An oncogenic super-enhancer formed through somatic mutation of a noncoding intergenic element</article-title>. <source>Science</source> <volume>346</volume>, <fpage>1373</fpage>–<lpage>1377</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c47"><label>47.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zuin</surname>, <given-names>J.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Nonlinear control of transcription through enhancer–promoter interactions</article-title>. <source>Nature</source>, <fpage>1</fpage>–<lpage>7</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c48"><label>48.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rinzema</surname>, <given-names>N. J.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Building regulatory landscapes reveals that an enhancer can recruit cohesin to create contact domains, engage CTCF sites and activate distant genes</article-title>. <source>Nature Structural &amp; Molecular Biology</source> <volume>29</volume>, <fpage>563</fpage>–<lpage>574</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c49"><label>49.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Thomas</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Feng</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Huber</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Loubiere</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Vanina</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Pitasi</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Stark</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Buecker</surname>, <given-names>C.</given-names></string-name></person-group> <article-title>Enhancer cooperativity can compensate for loss of activity over large genomic distances</article-title>. <source>bioRxiv</source> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c50"><label>50.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Jensen</surname>, <given-names>C. L.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>L.-F.</given-names></string-name>, <string-name><surname>Swigut</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Crocker</surname>, <given-names>O. J.</given-names></string-name>, <string-name><surname>Yao</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Bassik</surname>, <given-names>M. C.</given-names></string-name>, <string-name><surname>Ferrell</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Boettiger</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Wysocka</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Long range regulation of transcription scales with genomic distance in a gene specific manner</article-title>. <source>bioRxiv</source> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c51"><label>51.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Brückner</surname>, <given-names>D. B.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Barinov</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Zoller</surname>, <given-names>B.</given-names></string-name> &amp; <string-name><surname>Gregor</surname>, <given-names>T.</given-names></string-name></person-group> <article-title>Stochastic motion and transcriptional dynamics of pairs of distal DNA loci on a compacted chromosome</article-title>. <source>Science</source> <volume>380</volume>, <fpage>1357</fpage>–<lpage>1362</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c52"><label>52.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Guckelberger</surname>, <given-names>P.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Cohesin-mediated 3D contacts tune enhancer-promoter regulation</article-title>. <source>bioRxiv</source> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c53"><label>53.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>De Almeida</surname>, <given-names>B. P.</given-names></string-name>, <string-name><surname>Reiter</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Pagani</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Stark</surname>, <given-names>A.</given-names></string-name></person-group> <article-title>DeepSTARR predicts enhancer activity from DNA sequence and enables the de novo design of synthetic enhancers</article-title>. <source>Nature Genetics</source> <volume>54</volume>, <fpage>613</fpage>–<lpage>624</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c54"><label>54.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kim</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Wysocka</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Deciphering the multi-scale, quantitative cis-regulatory code</article-title>. <source>Molecular Cell. Reimagining the Central Dogma</source> <volume>83</volume>, <fpage>373</fpage>–<lpage>392</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c55"><label>55.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gunawardena</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Models in biology: ‘accurate descriptions of our pathetic thinking’</article-title>. <source>BMC Biol</source>. <volume>12</volume>, <fpage>29</fpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c56"><label>56.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>Theory in Biology: Figure 1 or Figure 7?</article-title> <source>Trends in Cell Biology</source> <volume>25</volume>, <fpage>723</fpage>–<lpage>729</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c57"><label>57.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Garcia</surname>, <given-names>H. G.</given-names></string-name> &amp; <string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>Quantitative dissection of the simple repression input–output function</article-title>. <source>Proceedings of the National Academy of Sciences</source> <volume>108</volume>, <fpage>12173</fpage>–<lpage>12178</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c58"><label>58.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jones</surname>, <given-names>D. L.</given-names></string-name>, <string-name><surname>Brewster</surname>, <given-names>R. C.</given-names></string-name> &amp; <string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>Promoter architecture dictates cell-to-cell variability in gene expression</article-title>. <source>Science</source> <volume>346</volume>, <fpage>1533</fpage>–<lpage>1536</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c59"><label>59.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Brewster</surname>, <given-names>R. C.</given-names></string-name>, <string-name><surname>Weinert</surname>, <given-names>F. M.</given-names></string-name>, <string-name><surname>Garcia</surname>, <given-names>H. G.</given-names></string-name>, <string-name><surname>Song</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Rydenfelt</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>The transcription factor titration effect dictates level of gene expression</article-title>. <source>Cell</source> <volume>156</volume>, <fpage>1312</fpage>–<lpage>1323</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c60"><label>60.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Razo-Mejia</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Barnes</surname>, <given-names>S. L.</given-names></string-name>, <string-name><surname>Belliveau</surname>, <given-names>N. M.</given-names></string-name>, <string-name><surname>Chure</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Einav</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Lewis</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>Tuning transcriptional regulation through signaling: a predictive theory of allosteric induction</article-title>. <source>Cell Systems</source> <volume>6</volume>, <fpage>456</fpage>–<lpage>469.e10</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c61"><label>61.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Phillips</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Belliveau</surname>, <given-names>N. M.</given-names></string-name>, <string-name><surname>Chure</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Garcia</surname>, <given-names>H. G.</given-names></string-name>, <string-name><surname>Razo-Mejia</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Scholes</surname>, <given-names>C.</given-names></string-name></person-group> <article-title>Figure 1 theory meets figure 2 experiments in the study of gene expression</article-title>. <source>Annual Review of Biophysics</source> <volume>48</volume>, <fpage>121</fpage>–<lpage>163</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c62"><label>62.</label><mixed-citation publication-type="software"><person-group person-group-type="author"><collab>The Sage Developers</collab></person-group>. <source>SageMath, the Sage Mathematics Software System</source> (Version <version>9.6</version>) (<year>2022</year>).</mixed-citation></ref>
+<ref id="c63"><label>63.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Meurer</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>SymPy: symbolic computing in Python</article-title>. <source>PeerJ Computer Science</source> <volume>3</volume>, <fpage>e103</fpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c64"><label>64.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Hagberg</surname>, <given-names>A. A.</given-names></string-name>, <string-name><surname>Schult</surname>, <given-names>D. A.</given-names></string-name> &amp; <string-name><surname>Swart</surname>, <given-names>P. J.</given-names></string-name></person-group> <article-title>Exploring network structure, dynamics, and function using NetworkX</article-title> In <conf-name>Proceedings of the 7th Python in Science Conference</conf-name> (<conf-loc>Pasadena, CA USA</conf-loc>, <year>2008</year>), <fpage>11</fpage>–<lpage>15</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105740.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Amir</surname>
+<given-names>Ariel</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Weizmann Institute of Science</institution>
+</institution-wrap>
+<city>Rehovot</city>
+<country>Israel</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study dissects the mathematical and biological assumptions underlying the commonly used Activity-by-Contact model of enhancer action in transcriptional regulation. The authors provide a <bold>convincing</bold> mathematical analysis that links this (mostly phenomenological) model to concrete molecular mechanisms of enhancer function. This work provides a strong foundation from which to analyze a broad swath of genome-wide data such as that generated by CRISPRi screens.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105740.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors aim to formalize the mathematical underpinnings of a proposed general model and discuss the relationship of this model to the ABC Score, a widely adopted heuristic for enhancer-gene predictions. While the ABC model serves as a useful binary classifier, it struggles to predict quantitative enhancer effects on gene expression. Using a graph-theoretic linear framework, the authors derive a mathematical model (the &quot;default model&quot;) that explains how the algebraic form of the ABC Score arises under specific assumptions. They further demonstrate that the default model's predictions of enhancer additivity are inconsistent with observed non-additive enhancer effects and propose alternative assumptions to account for these discrepancies.</p>
+<p>Strengths:</p>
+<p>The graph-theoretic approach enables systematic exploration of enhancer interactions beyond simple additivity and enables hypothesis generation when such expectations fail. This work makes clear where assumptions are made and the consequences of those assumptions.</p>
+<p>Weaknesses:</p>
+<p>While the theoretical framework is elegant, I think there is always more space to demonstrate the practicality of this approach. Further guidance for how to experimentally connect this framework with typical measurements could help bolster the immediate benefits. To be clear, I do not think this is something the authors &quot;must&quot; do, but rather something that might help drive home the usefulness in a more accessible way.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105740.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The Activity-by-Contact (ABC) model is a relatively widespread model of enhancer-gene regulation. This model leverages CRISPRi data to predict whether a gene is regulated by a given enhancer. To make this possible, this model accounts for the activity of an enhancer and its contact frequency with a target promoter in order to produce an &quot;ABC score&quot;. However, while quantitative in its ability to predict enhancer-promoter regulation, this model is mostly phenomenological and does not commit to specific molecular mechanisms.</p>
+<p>In this manuscript, the authors formalize the molecular and mathematical assumptions made by the ABC model. Specifically, they demonstrate a basic set of assumptions that can be made to arrive at the ABC model's mathematical structure. The resulting default model (basically, a null model) places particular emphasis on the requirement that gene activation and enhancer-gene communication must be independent and at a steady state. The authors leverage and extend a graph-based formalism they have previously spearheaded to show the generality of their conclusions with respect to different molecular realizations of the process by which enhancers interact with their promoters.</p>
+<p>Previously published works have found that specific models of how multiple enhancers communicate with the same gene can result in additive mRNA production rates. Here, the authors demonstrate that steady-state mRNA levels are additive regardless of the specific Markovian model for how any individual enhancer communicates with the gene, as long as the model follows the basic assumptions of their default model.</p>
+<p>By coarse-graining, both gene activation and enhancer-gene communication to simple two-state models, the authors then clearly demonstrate that the mathematical structure of the ABC model emerges. This mathematical structure implies that the ABC score summed over all the enhancers regulating a given gene must equal 1. However, experimental measurements show values ranging from 0 to 3. The authors show that, in order to explain these experimental deviations with respect to the theory, at least one of the assumptions of the default model must be broken. They demonstrate that either invoking enhancer cooperativity in mRNA production rates or breaking the assumption that individual enhancers communicate with the gene independently can explain existing experimental data.</p>
+<p>Strengths:</p>
+<p>By demonstrating that the mathematical structure of the ABC model emerges from a set of basic assumptions including the independence of gene activation and enhancer-gene communication, the authors succeeded in their aim to put the ABC model on a formal and molecular footing. Since some experimental results do not agree with the ABC model, the authors importantly demonstrated which assumptions of the model can be broken to explain such data. The theoretical work in this manuscript is written in a reasonably accessible manner that features how a graph theory-based approach to modeling biochemical networks can result in general statements about biological phenomena.</p>
+<p>Weaknesses:</p>
+<p>While the authors discuss a number of experimental techniques that can be used to test the validity of their model, a more specific discussion of proposed experiments could have strengthened the impact of the paper by providing explicit opportunities for dialogue with experimentalists.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105740.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Nasser</surname>
+<given-names>Joseph</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5941-5751</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Nam</surname>
+<given-names>Kee-Myoung</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3594-6141</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Gunawardena</surname>
+<given-names>Jeremy</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7280-1152</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We thank both reviewers for their time and effort in considering our manuscript. We are pleased that the reviewers recognised the strength of our theoretical analysis and found it &quot;elegant&quot; and &quot;reasonably accessible&quot;. We also acknowledge the suggestions made by both reviewers that the manuscript could be improved by more discussion of potential experiments. We were concerned not to make the original manuscript too long but, in the light of the reviewers' comments, we will submit a revised version with more details of the kinds of experiments that would build on the results that we have presented.</p>
+</body>
+</sub-article>
+</article>
