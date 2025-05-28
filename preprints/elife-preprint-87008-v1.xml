@@ -15,7 +15,10 @@
 <article-id pub-id-type="publisher-id">87008</article-id>
 <article-id pub-id-type="doi">10.7554/eLife.87008</article-id>
 <article-id pub-id-type="doi" specific-use="version">10.7554/eLife.87008.1</article-id>
-<article-version>1.3</article-version>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.3</article-version>
+</article-version-alternatives>
 <article-categories>
 <subj-group subj-group-type="heading">
 <subject>Ecology</subject>
@@ -170,9 +173,6 @@
 <kwd>Facial Action Coding System</kwd>
 <kwd>macaque</kwd>
 </kwd-group>
-<counts>
-<page-count count="28"/>
-</counts>
 </article-meta>
 <notes>
 <notes notes-type="competing-interest-statement">
@@ -207,7 +207,7 @@
 <fig id="fig1" position="float" fig-type="figure">
 <label>Figure 1:</label>
 <caption><p>Bootstrapped entropy ratio of facial behavior across social contexts for three species of macaques. The entropy ratio was calculated on 100 bootstrapped samples of the data by dividing the observed entropy by the expected entropy if Action Units were used randomly for each social context. The entropy ratio ranges from 0 to 1, with higher values indicating higher uncertainty. Symbols and whiskers indicate mean and range of bootstrapped values.</p></caption>
-<graphic xlink:href="519469v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="519469v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2b">
@@ -216,12 +216,12 @@
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2:</label>
 <caption><p>Bipartite network of single Action Units (orange) and social context (blue) for three species of macaques. Edges are shown for Action Units that occurred in at least 1% of observations per context. Edge thickness and transparency are weighted by specificity, which ranges from 0 (indicating an Action Unit is never observed in a context) to 1 (indicating an Action Unit is only observed in one context). Context abbreviations: agg = aggressive, aff = affiliative, sub = submissive.</p></caption>
-<graphic xlink:href="519469v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="519469v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3:</label>
 <caption><p>Specificity of Action Unit combinations that were used in at least 1% of observations per species per social context. Specificity ranges from 0 (indicating an Action Unit is never observed in a context) to 1 (indicating an Action Unit is only observed in one context). (<bold>A</bold>) Distribution of Action Unit combination specificity. Width of violin plots indicate the relative density of the data. Colored symbols indicate unique Action Unit combinations. White symbols indicate mean specificity. (<bold>B</bold>) Proportion of Action Unit combinations used with high (&gt;0.8), moderate (0.4– 0.8) or low (&lt;0.4) specificity. Context abbreviations: agg = aggressive, aff = affiliative, sub = submissive.</p></caption>
-<graphic xlink:href="519469v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="519469v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2c">
@@ -254,7 +254,7 @@
 <table-wrap id="tbl1" orientation="portrait" position="float">
 <label>Table 1:</label>
 <caption><p>Total number of social interactions per species and social context that were MaqFACS coded.</p></caption>
-<graphic xlink:href="519469v3_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="519469v3_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s4c">
@@ -262,7 +262,7 @@
 <p>Prior to analyses, MaqFACS data were formatted as a binary matrix with Action Units and Action Descriptors (hereafter simply Action Units) in the columns. Each row denoted an observation time block of 500ms, where if an Action Unit was active during this time block, it was coded 1 and coded 0 if not. Thus, each row contained information on the combination of facial muscle movements that were co-activated within a 500ms time window. All statistical analyses were conducted in R (version 4.2.1) [<xref ref-type="bibr" rid="c58">58</xref>].</p>
 <p>The observed entropy for each social context was calculated using Shannon’s information entropy formula [<xref ref-type="bibr" rid="c18">18</xref>]:
 <disp-formula id="ueqn1">
-<alternatives><graphic xlink:href="519469v3_ueqn1.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="519469v3_ueqn1.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>n</italic> is the number of unique Action Unit combinations and <italic>p</italic> is the probability of observing each Action Unit combination in each social context. The expected maximum entropy was calculated by randomizing the data matrix while keeping the number of active Action Units per observation (row) the same. This process was repeated 100 times and the mean of the randomized entropy values was used as the expected entropy. Therefore, the expected entropy indicated the entropy of the system if facial muscle contractions occurred at random, while keeping the combination size of co-active muscle movements within the range observed in the data. The entropy ratio was calculated by dividing the observed entropy by the expected (maximum) entropy. To determine whether the entropy ratios for each species differed within social context, the entropy ratio was calculated on 100 bootstrapped samples of the data, resulting in a distribution of possible entropy ratios. If the distribution of bootstrapped entropy ratios did not overlap, the differences between entropy ratios were considered to be meaningful.</p>
 <p>We calculated the specificity with which Action Unit combinations are associated with a social context within each species using the function “specificity” from the R package “NetFACS” (version 0.5.0) [<xref ref-type="bibr" rid="c59">59</xref>]. Due to an imbalanced number of observations across social contexts, contexts with fewer observations were randomly upsampled prior to the specificity calculation. During the upsampling procedure all observations of the minority contexts were kept, and new observations were randomly sampled to match the number of observations in the majority context. This procedure corrects for any bias in the specificity results from an imbalanced dataset (see fig. S1). Specificity is the conditional probability of a social context given that an Action Unit combination is observed, and ranges from 0 (when an Action Unit combination is never observed in a context) to 1 (when an Action Unit is only observed in one context). Low specificity values indicate that Action Units were used flexibly across multiple contexts whereas high values indicate that Action Units were used primarily in a single context. Specificity was calculated for all Action Unit combination sizes ranging from 1 to 11 (the maximum observed combination size) co-active Action Units. When reporting context specificity results, we excluded Action Unit combinations that occurred in less than 1% of observations within a social context because extremely rare signals do not impact the predictability of a communication system regardless of whether specificity is low or high. Therefore, excluding rare Action Unit combinations removes noise from the specificity results. We report the mean specificity of Action Unit combinations per social context and the proportion of Action Unit combinations that have high, moderate, or low specificity. For single Action Units we plotted bipartite networks that show how Action Units are connected to social context weighted by their specificity.</p>
