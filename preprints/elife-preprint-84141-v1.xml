@@ -15,7 +15,10 @@
 <article-id pub-id-type="publisher-id">84141</article-id>
 <article-id pub-id-type="doi">10.7554/eLife.84141</article-id>
 <article-id pub-id-type="doi" specific-use="version">10.7554/eLife.84141.1</article-id>
-<article-version>1.2</article-version>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
 <article-categories>
 <subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
@@ -133,9 +136,6 @@
 <title>Abstract</title>
 <p>An animal entering a new environment typically faces three challenges: explore the space for resources, memorize their locations, and navigate towards those targets as needed. Experimental work on exploration, mapping, and navigation has mostly focused on simple environments – such as an open arena [<xref ref-type="bibr" rid="c55">55</xref>], a pond [<xref ref-type="bibr" rid="c35">35</xref>], or a desert [<xref ref-type="bibr" rid="c37">37</xref>] – and much has been learned about neural signals in diverse brain areas under these conditions [<xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c45">45</xref>]. However, many natural environments are highly complex, such as a system of burrows, or of intersecting paths through the underbrush. The same applies to many cognitive tasks, that typically allow only a limited set of actions at any given stage in the process. Here we propose an algorithm that learns the structure of a complex environment, discovers useful targets during exploration, and navigates back to those targets by the shortest path. It makes use of a behavioral module common to all motile animals, namely the ability to follow an odor to its source [<xref ref-type="bibr" rid="c4">4</xref>]. We show how the brain can learn to generate internal “virtual odors” that guide the animal to any location of interest. This <italic>endotaxis</italic> algorithm can be implemented with a simple 3-layer neural circuit using only biologically realistic structures and learning rules. Several neural components of this scheme are found in brains from insects to humans. Nature may have evolved a general mechanism for search and navigation on the ancient backbone of chemotaxis.</p>
 </abstract>
-<counts>
-<page-count count="31"/>
-</counts>
 </article-meta>
 <notes>
 <notes notes-type="competing-interest-statement">
@@ -167,7 +167,7 @@ Added treatment of homing and patrolling.
 <label>Figure 1:</label>
 <caption><title>A mechanism for endotaxis.</title>
 <p><bold>A:</bold> A constrained environment of tunnels linked by intersections, with special locations offering food, water, and the exit. <bold>1:</bold> A real odor emitted by the food source decreases with distance (shading). <bold>2:</bold> A virtual odor tagged to the water source. <bold>3:</bold> A virtual odor tagged to the exit. <bold>4:</bold> Abstract representation of this environment by a graph of nodes (intersections) and edges (tunnels). <bold>B:</bold> A neural circuit to implement endotaxis. Open circles: four populations of neurons that represent “resource”, “point”, “map”, and “goal”. Arrows: signal flow. Solid circles: synapses. Point cells have small receptive fields localized in the environment and excite map cells. Map cells excite each other (green synapses) and also excite goal cells (blue synapses). Resource cells signal the presence of a resource, e.g. cheese, water, or the exit. Map synapses and goal synapses are modified by activity-dependent plasticity. A “mode” switch selects among various goal signals depending on the animal’s need. They may be virtual odors (water, exit) or real odors (cheese). Another goal cell (clock) may report how recently the agent has visited a location. The output of the mode switch gets fed to the chemotaxis module for gradient ascent. Mathematical symbols used in the text: <italic>u</italic><sub><italic>i</italic></sub> is the output of a point cell at location <italic>i, ν</italic><sub><italic>i</italic></sub> is the output of the corresponding map cell, <bold>M</bold> is the matrix of synaptic weights among map cells, <bold>G</bold> are the synaptic weights from the map cells onto goal cells, and <italic>r</italic><sub><italic>k</italic></sub> is the output of goal cell <italic>k</italic>.</p></caption>
-<graphic xlink:href="461751v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Here we show that such tagging does not need to be physical. Instead we propose a mechanism by which the mouse’s brain may compute a “virtual odor” signal that declines with distance from a chosen target. That neural signal can be made available to the chemotaxis module as though it were a real odor, enabling navigation up the gradient towards the target. Because this goal signal is computed in the brain rather than sensed externally, we call this hypothetical process <italic>endotaxis</italic>.</p>
 <p>The developments reported here were inspired by a recent experimental study with mice navigating a complex labyrinth [<xref ref-type="bibr" rid="c43">43</xref>] that includes 63 three-way junctions. Among other things, we observed that mice could learn the location of a resource in the labyrinth after encountering it just once, and perfect a direct route to that target location after ∼10 encounters. Furthermore, they could navigate back out of the labyrinth using a direct route they had not traveled before, even on the first attempt. Finally, the animals spent most of their waking time patrolling the labyrinth, even long after they had perfected the routes to rewarding locations. These patrols covered the environment efficiently, avoiding repeat visits to the same location. All this happened within a few hours of the animal’s first encounter with the labyrinth. Our modeling efforts here are aimed at explaining these remarkable phenomena of rapid spatial learning in a new environment: one-shot learning of a goal location, zero-shot learning of a return route, and efficient patrolling of a complex maze. In particular we want to do so with a biologically plausible mechanism that could be built out of neurons.</p>
@@ -201,7 +201,7 @@ Added treatment of homing and patrolling.
 <label>Figure 2:</label>
 <caption><title>The phases of endotaxis during exploration, goal-tagging, and navigation.</title>
 <p>A portion of the circuit in Figure 1 is shown, including a single goal cell that responds to the water resource. Bottom shows a graph of the environment, with nodes linked by edges, and the agent’s current location shaded in orange. Each node has a point cell that reports the presence of the agent to a corresponding map cell. Map cells are recurrently connected (green) and feed convergent signals onto the goal cell. <bold>A:</bold> Initially the recurrent synapses are weak (empty circles). <bold>B:</bold> During exploration the agent moves between two adjacent nodes on the graph, and that strengthens the connection between their corresponding map cells (arrowhead, filled circles). <bold>C:</bold> After exploration the map synapses reflect the connectivity of the graph. Now the map cells have an extended profile of activity (darker = more active), centered on the agent’s current location <italic>x</italic> and decreasing from there with distance on the graph. <bold>D:</bold> When the agent reaches the water source <italic>y</italic> the goal cell gets activated by the sensation of water, and this triggers plasticity at its input synapses (arrowhead). Thus the state of the map at the water location gets stored in the goal synapses. This event represents tagging of the water location. <bold>E:</bold> During navigation, as the agent visits different nodes, the map state gets filtered through the goal synapses to excite the goal cell. This produces a signal in the goal cell that declines with the agent’s distance from the water location.</p></caption>
-<graphic xlink:href="461751v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>After this map learning, the output of the map network is a hump of activity, centered on the current location <italic>x</italic> of the animal and declining with distance along the various paths in the graph of the environment (<xref rid="fig2" ref-type="fig">Fig 2C</xref>). If the animal moves to a different location <italic>y</italic>, the map output will change to another hump of activity, now centered on <italic>y</italic> (<xref rid="fig2" ref-type="fig">Fig 2D</xref>). The overlap of the two hump-shaped profiles will be large if nodes <italic>x</italic> and <italic>y</italic> are close on the graph, and small if they are distant. Fundamentally the endotaxis network computes that overlap. How is it done?</p>
 <p>Suppose the animal visits <italic>y</italic> and finds water there. Then the water resource cell fires, triggering synaptic learning in the goal synapses. That stores the current profile of map activity <italic>v</italic><sub><italic>i</italic></sub>(<italic>y</italic>) in the synapses <italic>G</italic><sub><italic>ki</italic></sub> onto the goal cell <italic>k</italic> that responds to water (<xref rid="fig2" ref-type="fig">Fig 2D</xref>), <xref ref-type="disp-formula" rid="eqn8">Eqn 8</xref>). When the animal subsequently moves to a different location <italic>x</italic>, the goal cell <italic>k</italic> receives the current map output <bold>v</bold>(<italic>x</italic>) filtered through the previously stored synaptic template <bold>v</bold>(<italic>y</italic>) (<xref rid="fig2" ref-type="fig">Fig 2E</xref>). This is the desired measure of overlap (<xref ref-type="disp-formula" rid="eqn9">Eqn 9</xref>). Under suitable conditions this goal signal declines monotonically with the shortest graph-distance between <italic>x</italic> and <italic>y</italic>, as we will demonstrate both analytically and in simulations (<xref ref-type="sec" rid="s3">Sections 3</xref>, <xref ref-type="sec" rid="s4">4</xref>, <xref ref-type="sec" rid="s7">7</xref>).</p>
@@ -214,55 +214,55 @@ Added treatment of homing and patrolling.
 <p>Here we formalize the processes of <xref rid="fig2" ref-type="fig">Figure 2</xref> in a concrete mathematical model. The model is simple enough to allow some exact predictions for its behavior. The present section develops an analytical understanding of endotaxis that will help guide the numerical simulations in subsequent parts.</p>
 <p>The environment is modeled as a directed graph consisting of <italic>n</italic> nodes, with adjacency matrix
 <disp-formula id="eqn1">
-<alternatives><graphic xlink:href="461751v2_eqn1.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn1.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Movements of the agent are modeled as a sequence of steps along that graph. During exploration, the agent performs a walk that tries to cover the entire environment; in the simplest case a random walk. During navigation, the agent is instead guided at each intersection by maximizing a goal signal.</p>
 <p>We implement the circuit of <xref rid="fig1" ref-type="fig">Fig 1B</xref> as a textbook linear rate model [<xref ref-type="bibr" rid="c14">14</xref>]. The point neurons are one-hot encoders of location: A point neuron fires if the agent is at that location; all the others are silent:
 <disp-formula id="eqn2">
-<alternatives><graphic xlink:href="461751v2_eqn2.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn2.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 <disp-formula id="eqn3">
-<alternatives><graphic xlink:href="461751v2_eqn3.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn3.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>δ</italic><sub><italic>ix</italic></sub> is the Kronecker delta.</p>
 <p>A map neuron sums synaptic input linearly from its point cell and the other map units; its output is simply proportional to that input:
 <disp-formula id="eqn4">
-<alternatives><graphic xlink:href="461751v2_eqn4.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn4.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>So the vector of all map outputs is
 <disp-formula id="eqn5">
-<alternatives><graphic xlink:href="461751v2_eqn5.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn5.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>γ</italic> is the gain of the map units, and <bold>u</bold> is the one-hot input from point cells.</p>
 <p>Now consider goal cell number <italic>k</italic> that is associated to a particular location <italic>y</italic>, because its resource is present at that node. The goal cell sums input from all the map units <italic>v</italic><sub><italic>i</italic></sub>, weighted by its goal synapses <italic>G</italic><sub><italic>ki</italic></sub>. So with the agent at node <italic>x</italic> the goal signal <italic>r</italic><sub><italic>k</italic></sub> is:
 <disp-formula id="eqn6">
-<alternatives><graphic xlink:href="461751v2_eqn6.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn6.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where we write <bold>g</bold><sub><italic>k</italic></sub> for the <italic>k</italic><sup>th</sup> row vector of the goal synapse matrix <bold>G</bold>. This is the set of synapses from all map cells onto the specific goal cell in question.</p>
 <p>Suppose now that the agent has learned the structure of the environment perfectly, such that the map synapses are a copy of the graph’s adjacency matrix (1),
 <disp-formula id="eqn7">
-<alternatives><graphic xlink:href="461751v2_eqn7.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn7.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Similarly, suppose that the agent has acquired the goal synapses perfectly, namely proportional to the map output at the goal location <italic>y</italic>:
 <disp-formula id="eqn8">
-<alternatives><graphic xlink:href="461751v2_eqn8.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn8.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Then as the agent moves to another location <italic>x</italic>, the goal cell reports a signal
 <disp-formula id="eqn9">
-<alternatives><graphic xlink:href="461751v2_eqn9.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn9.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where the matrix
 <disp-formula id="eqn10">
-<alternatives><graphic xlink:href="461751v2_eqn10.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn10.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>One can show (<xref ref-type="sec" rid="s10a">Section A.1</xref>) that for small <italic>γ</italic> ≪ 1 this matrix <bold>E</bold> reflects the shortest distance between nodes on the graph, namely
 <disp-formula id="eqn11">
-<alternatives><graphic xlink:href="461751v2_eqn11.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn11.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>D</italic><sub><italic>xy</italic></sub> is the smallest number of steps needed to get from node <italic>y</italic> to node <italic>x</italic>.</p>
 <p>Under the assumptions stated, the goal signal <italic>E</italic><sub><italic>xy</italic></sub> between nodes <italic>x</italic> and <italic>y</italic> declines monotonically with their distance. <xref rid="fig3" ref-type="fig">Figure 3</xref> illustrates this with numerical results on a binary tree graph. As expected, for small <italic>γ</italic> the goal signal decays exponentially with graph distance (<xref rid="fig3" ref-type="fig">Fig 3A</xref>). Therefore an agent that makes turning decisions to maximize that goal signal will reach the goal by the shortest possible path.</p>
@@ -270,26 +270,26 @@ where <italic>D</italic><sub><italic>xy</italic></sub> is the smallest number of
 <label>Figure 3:</label>
 <caption><title>Theory of the goal signal.</title>
 <p>Dependence of the goal signal on graph distance, and the consequences for endotaxis navigation. <bold>A:</bold> The graph representing a binary tree labyrinth [<xref ref-type="bibr" rid="c43">43</xref>] serves for illustration. Suppose the endotaxis model has acquired the adjacency matrix perfectly: <bold>M</bold> = <bold>A</bold>. We compute the goal signal <italic>E</italic><sub><italic>xy</italic></sub> between any two nodes on the graph, and compare the results at different values of the map gain <italic>γ</italic>. <bold>B:</bold> Dependence of the goal signal <italic>E</italic><sub><italic>xy</italic></sub> on the graph distance <italic>D</italic><sub><italic>xy</italic></sub> between the two nodes. Mean ± SD, error bars often smaller than markers. Note logarithmic vertical axis. The signal decays exponentially over many log units. At high <italic>γ</italic> the decay distance is greater. <bold>C:</bold> A detailed look at the goal signal, each point is for a pair of nodes (<italic>x, y</italic>). For low <italic>γ</italic> the decay with distance is strictly monotonic. At high <italic>γ</italic> there is overlap between the values at different distances. As <italic>γ</italic> exceeds the critical value <italic>γ</italic><sub>c</sub> = 0.38 the distance-dependence breaks down. <bold>D:</bold> Using the goal signal for navigation. For every pair of start and end nodes we navigate the route by following the goal signal and compare the distance traveled to the shortest graph distance. For all routes with the same graph distance we plot the median navigated distance with 10% and 90% quantiles. Variable gain at a constant noise value of <italic>ϵ</italic> = 0.01. At gains <italic>γ &gt;</italic> 0.35 navigation failed for some point pairs. <bold>E:</bold> As in panel (D) but varying the noise at a constant gain of <italic>γ</italic> = 0.34.</p></caption>
-<graphic xlink:href="461751v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The exponential decay of the goal signal represents a challenge for practical implementation with biological circuits. Neurons have a finite signal-to-noise ratio, so detecting minute differences in the firing rate of a goal neuron will be unreliable. Because the goal signal changes by a factor of <italic>γ</italic> across every link in the graph, one wants to set the map neuron gain <italic>γ</italic> as large as possible. Unfortunately there is a strict upper limit for that gain:
 <disp-formula id="eqn12">
-<alternatives><graphic xlink:href="461751v2_eqn12.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn12.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>For larger <italic>γ</italic> &gt; <italic>γ</italic><sub>c</sub> the goal signal <italic>E</italic><sub><italic>xy</italic></sub> no longer represents graph distances (<xref ref-type="sec" rid="s10b">Section A.2</xref>). The largest eigenvalue of the adjacency matrix in turn is related to the number of edges per node. For graphs with 2 to 4 edges per node, <italic>γ</italic><sub>c</sub> is typically about 0.3. The graph in <xref rid="fig3" ref-type="fig">Figure 3</xref> has <italic>γ</italic><sub>c</sub> ≈ 0.383, and indeed <italic>E</italic><sub><italic>xy</italic></sub> becomes erratic as <italic>γ</italic> approaches that value (<xref rid="fig3" ref-type="fig">Fig 3C</xref>).</p>
 <p>To implement the finite dynamic range explicitly, we add some noise to the goal signal of <xref ref-type="disp-formula" rid="eqn9">Eqn 9</xref>:
 <disp-formula id="eqn13">
-<alternatives><graphic xlink:href="461751v2_eqn13.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn13.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where the noise <italic>η</italic> is uniformly distributed with range <italic>ϵ</italic>:
 <disp-formula id="ueqn1">
-<alternatives><graphic xlink:href="461751v2_ueqn1.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn1.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>The scale <italic>ϵ</italic> of this noise is expressed relative to the maximum value of the goal signal. What is a reasonable value for this noise? For reference, humans and animals can routinely discriminate sensory stimuli that differ by only 1%, for example the pitch of tones or the intensity of a light, especially if they occur in close succession. Clearly the neurons all the way from receptors to perception must represent those small differences. Thus we will use <italic>ϵ</italic> = 0.01 as a reference noise value in many of the results presented here. <sup><xref ref-type="fn" rid="FN3">3</xref></sup></p>
 <p>The process of navigation towards a chosen goal signal is formalized in <xref ref-type="statement" rid="alg1">Algorithm 1</xref>. At each node the agent inspects the goal signal that would be obtained at all the neighboring nodes, corrupted by the readout noise <italic>η</italic>. Then it steps to the neighbor with the highest value. Suppose the agent starts at node <italic>x</italic> and navigates following the goal signal for node <italic>y</italic>. The resulting navigation route <italic>x</italic> = <italic>s</italic><sub>0</sub>, <italic>s</italic><sub>1</sub>, …, <italic>s</italic><sub><italic>n</italic></sub> = <italic>y</italic> has <italic>L</italic><sub><italic>xy</italic></sub> = <italic>n</italic> steps. Navigation is perfect if this equals the shortest graph distance, <italic>L</italic><sub><italic>xy</italic></sub> = <italic>D</italic><sub><italic>xy</italic></sub>. We will assess deviations from perfect performance by the excess length of the routes.</p>
-<fig position="float" fig-type="figure" id="alg1"><label>Algorithm 1</label><caption><title>Navigation</title></caption><graphic xlink:href="461751v2_alg1.tif" mimetype="image" mime-subtype="tiff"/></fig>
+<fig position="float" fig-type="figure" id="alg1"><label>Algorithm 1</label><caption><title>Navigation</title></caption><graphic xlink:href="461751v2_alg1.tif" mime-subtype="tiff" mimetype="image"/></fig>
 <p><xref rid="fig3" ref-type="fig">Figure 3D-E</xref> illustrates how the navigated path distance <italic>L</italic><sub><italic>xy</italic></sub> depends on the noise level <italic>ϵ</italic> and the gain <italic>γ</italic>. For small gain or high noise the goal signal extends only over a graph distance of 5-6 links. Beyond that the navigated distance <italic>L</italic><sub><italic>xy</italic></sub> begins to exceed the graph distance <italic>D</italic><sub><italic>xy</italic></sub>. As the gain increases, the goal signal extends further through the graph and navigation becomes reliable over longer distances (<xref rid="fig3" ref-type="fig">Fig 3D</xref>). Eventually, however, the goal signal loses its monotonic distance dependence (<xref rid="fig3" ref-type="fig">Fig 3C</xref>). At that stage, navigation across the graph may fail because the agent gets trapped in a local maximum of the goal signal. This can happen even before the critical gain value is reached (<xref rid="fig3" ref-type="fig">Fig 3C</xref>). For the example in <xref rid="fig3" ref-type="fig">Fig 3</xref> the highest useful gain is <italic>γ</italic> = 0.34 whereas <italic>γ</italic><sub>c</sub> = 0.383.</p>
 <p>For any given value of the gain, navigation improves with lower noise levels, as expected (<xref rid="fig3" ref-type="fig">Fig 3E</xref>). At the reference value of <italic>ϵ</italic> = 0.01, navigation is perfect even across the 12 links that separate the most distant points on this graph.</p>
 <p>In summary, this analysis spells out the challenges that need to be met for endotaxis to work properly. First, during the learning phase, the agent must reliably extract the adjacency matrix of the graph, and copy it into its map synapses. Second, during the navigation phase, the agent must evaluate the goal signal with enough resolution to distinguish the values at alternative nodes. The neuronal gain <italic>γ</italic> plays a central role: With <italic>γ</italic> too small, the goal signal decays rapidly with distance and vanishes into the noise just a few steps away from the goal. But at large <italic>γ</italic> the network computation becomes unstable.</p>
@@ -300,14 +300,14 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <p>As discussed above, the goal of learning during exploration is that the agent acquires a copy of the graph’s adjacency matrix in its map synapses, <bold>M</bold> ≈ <bold>A</bold>, and stores the map output at a goal location <italic>y</italic> in the goal synapses <bold>g</bold> ≈ <bold>v</bold>(<italic>y</italic>). Here we explore how the rules for synaptic plasticity in the map and goal networks allow that to happen. <xref ref-type="statement" rid="alg2">Algorithm 2</xref> spells out the procedure we implemented for learning from a random walk through the environment.</p>
 <p>The map synapses <italic>M</italic><sub><italic>ij</italic></sub> start out at zero strength. When the agent moves from node <italic>j</italic> = <italic>s</italic>(<italic>t</italic>) at time <italic>t</italic> to node <italic>i</italic> = <italic>s</italic>(<italic>t</italic> + 1), the map cell <italic>j</italic> is excited before the step, and map cell <italic>i</italic> after the step. When that happens, the agent potentiates the synapse between those two neurons to <italic>M</italic><sub><italic>ij</italic></sub> = 1. Of course, a map cell can also get activated through the recurrent network, and we must distinguish that from direct input from its point cell. We found that a simple threshold criterion is sufficient. Here <italic>θ</italic> is a threshold applied to both the pre- and post-synaptic activity, and the map synapse gets established only if both neurons respond above threshold. The tuning requirements for this threshold are discussed below.</p>
 <p>The map learning rule produces a full strength synapse after a single step: This allows the agent to learn a route after the first traversal, which is needed to explain the rapid learning observed in experimental animals. Note also that the potentiation depends on temporal sequence: the pre-synaptic neuron must be active before the post-synaptic neuron. This allows the agent to learn a directed graph, in which links can be traversed in only one direction. For learning on undirected graphs it can be useful to relax the time-dependent rule (see <xref ref-type="sec" rid="s7">Section 7</xref>).</p>
-<fig position="float" fig-type="figure" id="alg2"><label>Algorithm 2</label><caption><title>Map and goal learning</title></caption><graphic xlink:href="461751v2_alg2.tif" mimetype="image" mime-subtype="tiff"/></fig>
+<fig position="float" fig-type="figure" id="alg2"><label>Algorithm 2</label><caption><title>Map and goal learning</title></caption><graphic xlink:href="461751v2_alg2.tif" mime-subtype="tiff" mimetype="image"/></fig>
 <p>The goal synapses <italic>G</italic><sub><italic>kj</italic></sub> similarly start out at zero strength. Consider a particular goal cell <italic>k</italic>, and suppose its corresponding resource cell has activity <italic>F</italic><sub><italic>ky</italic></sub> when the agent is at location <italic>y</italic>. When a positive resource signal arrives, that means the agent is at a goal location. If the goal signal <italic>r</italic><sub><italic>k</italic></sub> received from the map output is smaller than the resource signal <italic>F</italic><sub><italic>ky</italic></sub>, then the goal synapses get incremented by something proportional to the current map output. Learning at the goal synapses saturates when the goal signal correctly predicts the resource signal. The learning rate <italic>α</italic> sets how fast that will happen. Note that both the learning rules for map and goal synapses are Hebbian and strictly local: Each synapse is modified based only on signals available in the pre- and post-synaptic neurons.</p>
 <p>To illustrate the process of map and goal learning we simulate an agent exploring a simple ring graph by a random walk (<xref rid="fig4" ref-type="fig">Fig 4</xref>). At first, there are no targets in the environment that can deliver a resource (<xref rid="fig4" ref-type="fig">Fig 4A</xref>). Then we add one target location, and later a second one. Finally we add a new link to the graph that makes a connection clear across the environment. As the agent explores the graph, we will track how its representations evolve by monitoring the map synapses and the profile of the goal signal.</p>
 <fig id="fig4" position="float" fig-type="figure">
 <label>Figure 4:</label>
 <caption><title>Learning the map and the targets during exploration.</title>
 <p><bold>(A)</bold> Simulation of a random walk on a ring with 14 nodes. Left: Layout of the ring, with resource locations marked in blue. The walk progresses in 800 time steps (top to bottom); with the agent’s position marked in red (nodes 0-13, horizontal axis). At each time the color map shows the goal signal that would be produced if the agent were at position ‘Node’. White horizontal lines mark the appearance of a target at <italic>t</italic> = 200, a second target with the same resource at <italic>t</italic> = 400, and a new link across the ring at step <italic>t</italic> = 600. <bold>(B)</bold> The matrix <bold>M</bold> of map synapses at various times. The pixel in row <italic>i</italic> and column <italic>j</italic> represents the matrix element <italic>M</italic><sub><italic>ij</italic></sub>. Color purple = 0. Note the first few steps (number above graph) each add a new synapse. Eventually, <bold>M</bold> reflects the adjacency matrix of nodes on the graph. <bold>(C)</bold> Goal signals just before and just after the agent encounters the first target. <bold>(D)</bold> Goal signals just before and just after the agent encounters the second target. <bold>(E)</bold> Goal signals just before and just after the agent travels the new link for the first time.</p></caption>
-<graphic xlink:href="461751v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>At the outset, every time the agent steps to a new node, the map synapse corresponding to that link gets potentiated (<xref rid="fig4" ref-type="fig">Fig 4B</xref>). After enough steps, the agent has executed every link on the graph, and the matrix of map synapses resembles the full adjacency matrix of the graph (<xref rid="fig4" ref-type="fig">Fig 4B</xref>). At this stage the agent has learned the connectivity of the environment.</p>
 <p>Once a target appears in the environment it takes the agent a few random steps to encounter it. At that moment the goal synapses get potentiated for the first time, and suddenly a goal signal appears in the goal cell (<xref rid="fig4" ref-type="fig">Fig 4C</xref>). The profile of that goal signal is fully formed and spreads through the entire graph thanks to the pre-established map network. By following this goal signal uphill the agent can navigate along the shortest path to the target from any node on the graph. Note that the absolute scale of the goal signal grows a little every time the agent visits the goal (<xref rid="fig4" ref-type="fig">Fig 4A</xref>) and eventually saturates.</p>
@@ -324,7 +324,7 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <label>Figure 5:</label>
 <caption><title>Navigation using the learned map and targets.</title>
 <p><bold>(A-C)</bold> Ring with 50 nodes. <bold>(A)</bold> Goal signal for a single target location (blue dot on left icon), after learning during random exploration with 10,000 steps. Color scale is logarithmic, yellow=high. Note monotonic decay of the goal signal with graph distance from the target. <bold>(B)</bold> Results of all-to-all navigation where every node is a separate goal. For all pairs of nodes this shows the navigated distance vs the graph distance. Median ± 10/90 percentiles for all routes with the same graph distance. “Ideal” navigation would follow the identity. The actual navigation is ideal over short distances, then begins to deviate from ideal at a critical distance that depends on the noise level <italic>ϵ</italic>. <bold>(C)</bold> As in (B) over a wider range, note logarithmic axis. Noise <italic>ϵ</italic> = 0.01. Includes comparison to navigation by a random walk; and navigation using the optimal goal signal based on knowledge of the graph structure and target location. <italic>γ</italic> = 0.41, <italic>θ</italic> = 0.39, <italic>α</italic> = 0.3. <bold>(D-F)</bold> As in (A-C) for a binary tree graph with 127 nodes. <bold>(D)</bold> Goal signal to the node marked on the left icon. This was the reward port in the labyrinth experiments of [<xref ref-type="bibr" rid="c43">43</xref>]. White lines separate the branches of the tree. <italic>γ</italic> = 0.32, <italic>θ</italic> = 0.27, <italic>α</italic> = 0.3. <bold>(G-I)</bold> As in (A-C) for a “Tower of Hanoi” graph with 81 nodes. <italic>γ</italic> = 0.29, <italic>θ</italic> = 0.27, <italic>α</italic> = 0.3.</p></caption>
-<graphic xlink:href="461751v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p><xref rid="fig5" ref-type="fig">Figure 5A-C</xref> shows results on a ring graph with 50 nodes. With suitable values of the model parameters (<italic>γ, θ, α</italic>) – more on that later – the agent learns a goal signal that declines monotonically with distance from the target node (<xref rid="fig5" ref-type="fig">Fig 5A</xref>). The ability to ascend on that goal signal depends on the noise level <italic>ϵ</italic>, which determines whether the agent can sense the difference in goal signal at neighboring nodes. At a high noise level <italic>ϵ</italic> = 0.1 the agent finds the target by the shortest route from up to 5 links away (<xref rid="fig5" ref-type="fig">Fig 5B</xref>); beyond that range some navigation errors creep in. At a low noise level of <italic>ϵ</italic> = 0.005 navigation is perfect up to 10 links away. Every factor of two increase in noise seems to reduce the range of navigation by about one link.</p>
 <p>How does the process of learning the map of the environment affect the ultimate navigation performance? <xref rid="fig5" ref-type="fig">Figure 5C</xref> makes that comparison by considering an agent with oracular knowledge of the graph structure and target location (<xref ref-type="disp-formula" rid="eqn7">Eqns 7</xref> and <xref ref-type="disp-formula" rid="eqn8">8</xref>). Interestingly this adds only 1 link to the distance range for perfect navigation. Here we also compare to an agent with zero knowledge of the environment that performs a random walk. On this graph that takes about 40 times longer than by using endotaxis.</p>
@@ -342,7 +342,7 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <label>Figure 6:</label>
 <caption><title>Sensitivity of performance to the model parameters.</title>
 <p>On each of the three graphs we simulated endotaxis for all-to-all navigation, where each node serves as a start and a goal node. The performance measure was the range of the goal signal, defined as the graph distance over which at least half the navigated routes follow the shortest path. The exploration path for synaptic learning was of medium length, visiting each edge on the graph approximately 10 times. The noise was set to <italic>ϵ</italic> = 0.01. <bold>(A)</bold> Binary tree maze with 127 nodes. <bold>Left:</bold> Dependence of the goal signal range on the gain <italic>γ</italic> and the threshold <italic>θ</italic> for learning map synapses. Performance increases with higher gain until it collapses beyond the critical value. For each gain there is a sharply defined range of useful thresholds, with lower values at lower gain. <bold>Right:</bold> Dependence of the goal signal range on the learning rate <italic>α</italic> at goal synapses, and the length of the exploratory walk, measured in visits per edge of the graph. For a short walk (1 edge visit) a high learning rate is best. For a long walk (100 edge visits) a lower learning rate wins out. <bold>(B)</bold> As in (A) for the Tower of Hanoi graph with 81 nodes. <bold>(C)</bold> As in (A) for a Ring graph with 50 nodes.</p></caption>
-<graphic xlink:href="461751v2_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>We simulated the learning phase of endotaxis as in the preceding section (<xref rid="fig5" ref-type="fig">Fig 5B, E, H</xref>), using a noise level of <italic>ϵ</italic> = 0.01, and systematically varying the model parameters (<italic>γ, θ, α</italic>). For each parameter set we measured the graph distance over which at least half of the navigated routes were perfect. We defined this distance as the range of the goal signal.</p>
 <p>For example, on the binary tree graph with 127 nodes (<xref rid="fig6" ref-type="fig">Fig 6A</xref>) the signal range improves with gain, until performance collapses beyond a maximal gain value. This is just as predicted by the theory (<xref rid="fig3" ref-type="fig">Fig 3</xref>), except that the maximal gain <italic>γ</italic><sub>max</sub> = 0.34 is slightly below the critical value <italic>γ</italic><sub>c</sub> = 0.383. Clearly the added complications of having to learn the map and goal locations take their toll at high gain. Below the maximal cutoff, the dependence of performance on gain is rather gentle: For example a 10% change in gain from 0.30 to 0.33 leads to a 23% change in performance. At any given gain value, there is a range of values for the threshold <italic>θ</italic> that deliver the identical performance. With <italic>θ</italic> in this range, the map is essentially learned perfectly. Note that this range is generous and does not require precise adjustment: For example, under a near-maximal gain of 0.32, the threshold can vary freely over a 20% range.</p>
@@ -359,7 +359,7 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <label>Figure 7:</label>
 <caption><title>Homing by endotaxis.</title>
 <p><bold>(A)</bold> A binary tree maze as used in [<xref ref-type="bibr" rid="c43">43</xref>]. A simulated mouse begins to explore the labyrinth (colored trajectory, purple=early, yellow=late), traveling from the entrance to one of the end nodes (3), then to another end node (4). Can it return to the entrance from there using endotaxis? <bold>(B)</bold> Goal signal learned by the end of the walk in (A), displayed as in Fig 5D, purple=0. Note the goal signal is non-zero only at the nodes that have been encountered so far. From all those nodes it increases monotonically toward the entrance. <bold>(C)</bold> Detailed plot of the goal signal along the shortest route for homing. Parameters <italic>γ</italic> = 0.32, <italic>θ</italic> = 0.27, <italic>α</italic> = 10, <italic>ϵ</italic> = 0.01.</p></caption>
-<graphic xlink:href="461751v2_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>We assume that the entrance is a salient location, so the agent dedicates a goal cell to the root node of the binary tree. <xref rid="fig7" ref-type="fig">Figure 7B</xref> plots the goal signal after the path in panel A, just as the agent wants to return home. The goal signal is non-zero only at the locations the agent has visited along its path. It clearly increases monotonically towards the entrance (<xref rid="fig7" ref-type="fig">Fig 7C</xref>). At a noise level of <italic>ϵ</italic> = 0.01 the agent can navigate to the entrance by the shortest path without error. Note specifically that the agent does not retrace its steps when arriving at location (2), but instead turns toward (1).</p>
 <p>One unusual aspect of homing is that the goal is identified first, before the agent has even entered the environment to explore it. That strengthens the goal synapse from the sole map cell that is active at the entrance. Only subsequently does the agent build up map synapses that allow the goal signal to spread throughout the map network. Another key assumption behind homing is that any link on the graph can be traversed in both directions. For route-finding in a spatial environment, that is often assured. <sup><xref ref-type="fn" rid="FN4">4</xref></sup> To enable a return home along a path that has only been traveled in the forward direction, we loosened the learning rule for map synapses (<xref ref-type="statement" rid="alg2">Alg 2</xref>) to be independent of the activation sequence, so that synapses in both directions get enhanced when two map neurons are active in near coincidence. In general, this variant of the learning rule helps speed up the learning of undirected graphs.</p>
@@ -372,12 +372,12 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <label>Figure 8:</label>
 <caption><title>Patrolling by endotaxis.</title>
 <p><bold>(A) Left:</bold> A binary tree maze as used in [<xref ref-type="bibr" rid="c43">43</xref>], plotted here so every node has a different vertical offset. <bold>Right:</bold> A perfect patrol path through this environment. It visits every node in 252 steps, then starts over. <bold>(B)</bold> Patrolling efficiency of different agents on the binary tree maze. The focus here is on the 64 end nodes of the labyrinth. We ask how many distinct end nodes are found (vertical axis) as a function of the number of end nodes visited (horizontal axis). For the perfect patrolling path, that relationship is the identity (‘perfect’). For a random walk, the curve is shifted far to the right (‘random’, note log axis). Ten mice in [<xref ref-type="bibr" rid="c43">43</xref>] showed patrolling behavior within the shaded range. Solid lines are the endotaxis agent, operating at different noise levels <italic>ϵ</italic>. Note <italic>ϵ</italic> = 0.01 produces perfect patrolling; in fact, panel A is a path produced by this agent. Higher noise levels lead to lower efficiency. The behavior of mice corresponds to <italic>ϵ</italic> ≈ 1. Gain <italic>γ</italic> = 0.32, habituation <italic>β</italic> = 1.2, with recovery time <italic>τ</italic> = 100 steps.</p></caption>
-<graphic xlink:href="461751v2_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Real mice don’t quite execute this optimal path, but their patrolling behavior is much more efficient than random (<xref rid="fig8" ref-type="fig">Fig 8B</xref>). They avoid revisiting areas they have seen recently. Could endotaxis implement such an efficient patrol of the environment? The task is to steer the agent to locations that haven’t been visited recently. One can formalize this by imagining a resource called “neglect” distributed throughout the environment. At each location neglect increases with time, then resets to zero the moment the agent visits there. To use this in endotaxis one needs a goal cell that represents neglect.</p>
 <p>We add to the core model a goal cell that receives excitation from every map cell, via synapses that are equal and constant in strength (see clock symbol in <xref rid="fig1" ref-type="fig">Fig 1B</xref>). This produces a goal signal that is approximately constant everywhere in the environment. Now suppose that the point neurons undergo a form of habituation: When a point cell fires because the agent walks through its field, its sensitivity decreases by some habituation factor. That habituation then decays over time until the point cell recovers its original sensitivity. As a result, the most recently visited points on the graph produce a smaller goal signal. Endotaxis based on this goal signal will therefore lead the agent to the areas most in need of a visit.</p>
 <p><xref rid="fig8" ref-type="fig">Figure 8B</xref> illustrates that this is a powerful way to implement efficient patrols. Here we modeled endotaxis on the binary-tree labyrinth, using the standard parameters useful for exploration, exploitation, and homing in previous sections. To this we added a habituation in the point cells with exponential recovery dynamics. Formally, the procedure is defined by <xref ref-type="statement" rid="alg3">Algorithm 3</xref>.</p>
-<fig position="float" fig-type="figure" id="alg3"><label>Algorithm 3</label><caption><title>Patrolling</title></caption><graphic xlink:href="461751v2_alg3.tif" mimetype="image" mime-subtype="tiff"/></fig>
+<fig position="float" fig-type="figure" id="alg3"><label>Algorithm 3</label><caption><title>Patrolling</title></caption><graphic xlink:href="461751v2_alg3.tif" mime-subtype="tiff" mimetype="image"/></fig>
 <p>With appropriate choices of habituation <italic>β</italic> and recovery time <italic>τ</italic> the agent does in fact execute a perfect patrol path on the binary tree, traversing every edge of the graph exactly once, and then repeating that sequence indefinitely (<xref rid="fig8" ref-type="fig">Fig 8A</xref>). For this to work, some habituation must persist for the time taken to traverse the entire tree; in this simulation we used <italic>τ</italic> = 100 steps on a graph that requires 252 steps. As in all applications of endotaxis, the performance also depends on the readout noise <italic>ϵ</italic>. For increasing readout noise, the agent’s behavior transitions gradually from the perfect patrol to a random walk (<xref rid="fig8" ref-type="fig">Fig 8B</xref>). The patrolling behavior of real mice is situated about halfway along that range, at an equivalent readout noise of <italic>ϵ</italic> = 1 (<xref rid="fig8" ref-type="fig">Fig 8B</xref>).</p>
 <p>Finally, this suggests a unified explanation for exploration and patrolling: The agent follows the output of the “neglect” cell, which is just the sum total of the map output. However, in the early exploration phase, when the agent is still assembling the cognitive map, it gives the neglect signal zero or low weight, so the turning decisions are dominated by readout noise and produce something close to a random walk. Lateron, the agent assigns a higher weight to the neglect signal, which shifts the behavior towards systematic patrolling. In our simulations, an intrinsic readout noise of <italic>ϵ</italic> = 0.01 is sufficiently low to enable even a perfect patrol path (<xref rid="fig8" ref-type="fig">Fig 8B</xref>).</p>
 <p>In summary, the core model of endotaxis can be enhanced by adding a basic form of habituation at the input neurons. In the endotaxis model this allows the agent to implement an effective patrolling policy that steers towards regions which have been neglected for a while. Of course, habituation among point cells will also change the dynamics of map learning during the exploration phase. We found that both map and goal synapses are still learned effectively, and navigation to targets is only minimally affected by habituation (Suppl Fig 10).</p>
@@ -440,85 +440,85 @@ where the noise <italic>η</italic> is uniformly distributed with range <italic>
 <title>A neuromorphic function to compute the shortest distance on a graph</title>
 <p>Here we prove some of the assertions in the text about the relationship between endotaxis goal signals and the distance between two points on a graph. We begin with a more general discussion of graph distance. For an agent navigating on a graph it is very useful to know the shortest graph distance between any two nodes
 <disp-formula id="eqn14">
-<alternatives><graphic xlink:href="461751v2_eqn14.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn14.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Given this information, one can navigate the shortest route from <italic>x</italic> to <italic>y</italic>: for each of the neighbors of <italic>x</italic>, look up its distance to <italic>y</italic> and step to the neighbor with the shortest distance. Then repeat that process until <italic>y</italic> is reached. Thus the shortest route can be navigated one step at a time without any high-level advanced planning. This is the core idea behind endotaxis.</p>
 <p>Finding the shortest path between all pairs of nodes on a graph is a central problem of graph theory, known as “all pairs shortest path” (APSP) [<xref ref-type="bibr" rid="c58">58</xref>]. Generally, an APSP algorithm delivers a matrix containing the distances <italic>D</italic><sub><italic>ij</italic></sub> for all pairs of nodes. The Floyd-Warshall algorithm [<xref ref-type="bibr" rid="c18">18</xref>] is simple and works even for the more general case of weighted edges between nodes. Unfortunately, we know of no plausible way to implement Floyd-Warshall’s three nested loops of comparison statements with neurons.</p>
 <p>There is, however, a simple function for APSP that can be solved by a recurrent neural network. Specifically: If a connected, directed graph has adjacency matrix <italic>A</italic><sub><italic>ij</italic></sub> (<xref ref-type="disp-formula" rid="eqn1">Eqn 1</xref>), then with a suitably small positive value of <italic>γ</italic> the shortest path distances are given by
 <disp-formula id="eqn15">
-<alternatives><graphic xlink:href="461751v2_eqn15.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn15.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <bold>1</bold> is the identity matrix, and the half-square brackets mean “round up to the nearest integer”.</p>
 <p>
 <bold>Proof:</bold></p>
-<p>Suppose we know <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline1.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula> and want to compute <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline2.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula>. Every path from <italic>j</italic> to <italic>i</italic> of length <italic>k</italic> + 1 steps has to reach a neighbor of node <italic>i</italic> in <italic>k</italic> steps. Therefore
+<p>Suppose we know <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline1.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula> and want to compute <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline2.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula>. Every path from <italic>j</italic> to <italic>i</italic> of length <italic>k</italic> + 1 steps has to reach a neighbor of node <italic>i</italic> in <italic>k</italic> steps. Therefore
 <disp-formula id="eqn16">
-<alternatives><graphic xlink:href="461751v2_eqn16.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn16.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>The RHS corresponds to multiplication by <bold>A</bold>, so the solution is
 <disp-formula id="ueqn4">
-<alternatives><graphic xlink:href="461751v2_ueqn4.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn4.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>We are particularly interested in the shortest path from node <italic>j</italic> to node <italic>i</italic>. If the shortest distance <italic>D</italic><sub><italic>ij</italic></sub> from <italic>j</italic> to <italic>i</italic> is <italic>k</italic> steps then there must exist a path of length <italic>k</italic> but not of any length <italic>&lt; k</italic>. Therefore
 <disp-formula id="eqn17">
-<alternatives><graphic xlink:href="461751v2_eqn17.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn17.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Now consider the Taylor series
 <disp-formula id="eqn18">
-<alternatives><graphic xlink:href="461751v2_eqn18.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn18.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Then
 <disp-formula id="eqn19">
-<alternatives><graphic xlink:href="461751v2_eqn19.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn19.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
-<p>We will show that if <italic>γ</italic> is chosen positive but small enough then the growth of <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline3.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula> with increasing <italic>k</italic> gets eclipsed by the decay of <italic>γ</italic><sup><italic>k</italic></sup> such that
+<p>We will show that if <italic>γ</italic> is chosen positive but small enough then the growth of <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline3.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula> with increasing <italic>k</italic> gets eclipsed by the decay of <italic>γ</italic><sup><italic>k</italic></sup> such that
 <disp-formula id="eqn20">
-<alternatives><graphic xlink:href="461751v2_eqn20.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn20.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
-<p>The left inequality is obvious from <xref ref-type="disp-formula" rid="eqn19">Eqn 19</xref> because <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline4.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula> by <xref ref-type="disp-formula" rid="eqn17">Eqn 17</xref>.</p>
-<p>To understand the right inequality, note first that <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline5.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula> is bounded by a geometric series. From <xref ref-type="disp-formula" rid="eqn16">Eqn 16</xref> it follows that
+<p>The left inequality is obvious from <xref ref-type="disp-formula" rid="eqn19">Eqn 19</xref> because <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline4.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula> by <xref ref-type="disp-formula" rid="eqn17">Eqn 17</xref>.</p>
+<p>To understand the right inequality, note first that <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline5.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula> is bounded by a geometric series. From <xref ref-type="disp-formula" rid="eqn16">Eqn 16</xref> it follows that
 <disp-formula id="ueqn5">
-<alternatives><graphic xlink:href="461751v2_ueqn5.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn5.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>q</italic> is the largest number of neighbors of any node on the graph. So from <xref ref-type="disp-formula" rid="eqn19">Eqn 19</xref>
 <disp-formula id="eqn21">
-<alternatives><graphic xlink:href="461751v2_eqn21.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn21.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
-<p>This expression is <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline6.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula> (<xref ref-type="disp-formula" rid="eqn20">Eqn 20</xref>) as long as
+<p>This expression is <inline-formula><alternatives><inline-graphic xlink:href="461751v2_inline6.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula> (<xref ref-type="disp-formula" rid="eqn20">Eqn 20</xref>) as long as
 <disp-formula id="eqn22">
-<alternatives><graphic xlink:href="461751v2_eqn22.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn22.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>In addition, because
 <disp-formula id="ueqn6">
-<alternatives><graphic xlink:href="461751v2_ueqn6.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn6.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 this is satisfied if one chooses <italic>γ</italic> such that
 <disp-formula id="eqn23">
-<alternatives><graphic xlink:href="461751v2_eqn23.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn23.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>With that condition on <italic>γ</italic>, the inequality (20) holds, and taking the logarithm on both sides leads to the desired result:
 <disp-formula id="ueqn7">
-<alternatives><graphic xlink:href="461751v2_ueqn7.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn7.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>As shown in the text (<xref ref-type="disp-formula" rid="eqn10">Eqn 10</xref>), the endotaxis network, in its linear rate approximation, computes a goal signal equal to the scalar products of the column-vectors in <bold>Y</bold>, namely
 <disp-formula id="eqn24">
-<alternatives><graphic xlink:href="461751v2_eqn24.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn24.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>To understand how that goal signal <italic>E</italic><sub><italic>ij</italic></sub> varies with distance, one can follow arguments parallel to those that led to <xref ref-type="disp-formula" rid="eqn19">Eqn 19</xref>. Using the upper bound by the geometric series (<xref ref-type="disp-formula" rid="eqn21">Eqn 21</xref>) and inserting in <xref ref-type="disp-formula" rid="eqn24">Eqn 24</xref> one finds again that it is possible to choose a <italic>γ</italic> small enough to satisfy
 <disp-formula id="eqn25">
-<alternatives><graphic xlink:href="461751v2_eqn25.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_eqn25.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Under those conditions the goal signal <italic>E</italic><sub><italic>ij</italic></sub> decays exponentially with the graph distance <italic>D</italic><sub><italic>ij</italic></sub>.</p>
@@ -529,16 +529,16 @@ this is satisfied if one chooses <italic>γ</italic> such that
 <title>The critical gain value</title>
 <p>As elaborated in <xref ref-type="sec" rid="s3">Section 3</xref>, there is a benefit to raising the gain <italic>γ</italic> of the map neurons, so as to limit the sharp decline of the goal signal across distance. However, there is an upper limit. Recall that the argument linking the recurrent network function to graph distances traces back to the Taylor expansion in <xref ref-type="disp-formula" rid="eqn18">Eqn 18</xref>:
 <disp-formula id="ueqn8">
-<alternatives><graphic xlink:href="461751v2_ueqn8.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn8.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>For a real function (1 − <italic>x</italic>)<sup>−1</sup>, this Taylor series has a convergence radius of |<italic>x</italic>| <italic>&lt;</italic> 1. The corresponding condition for the matrix series is that the spectral radius <italic>ρ</italic> of <italic>γ</italic><bold>A</bold> must be <italic>&lt;</italic> 1:
 <disp-formula id="ueqn9">
-<alternatives><graphic xlink:href="461751v2_ueqn9.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn9.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 where <italic>λ</italic><sub>1</sub>, …, <italic>λ</italic><sub><italic>n</italic></sub> are the eigenvalues of <bold>A</bold>. So the critical upper bound on <italic>γ</italic> is
 <disp-formula id="ueqn10">
-<alternatives><graphic xlink:href="461751v2_ueqn10.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn10.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 </sec>
@@ -548,7 +548,7 @@ where <italic>λ</italic><sub>1</sub>, …, <italic>λ</italic><sub><italic>n</i
 <p>In the text we often assess the performance of an endotaxis agent by considering point-to-point navigation between all pairs of points on a graph. Given the readout noise <italic>ϵ</italic> that affects the goal signal, navigation is a stochastic process with many random decisions along the route. Different random instantiations of the process will produce routes of different lengths. Fortunately, there is a way to calculate the expectation value of the route length without any Monte-Carlo simulation.</p>
 <p>Consider navigation to goal node <italic>y</italic>. From the state of the network (<bold>M</bold> and <bold>G</bold>) we compute the goal signal <italic>E</italic><sub><italic>yj</italic></sub> at every node <italic>j</italic>. When the agent is at node <italic>j</italic> it chooses among the neighbor nodes the one with the highest sum of goal signal and noise (1). Based on the goal signal <italic>E</italic><sub><italic>yj</italic></sub> and the noise <italic>ϵ</italic> one can compute the probability for each such possible step from <italic>j</italic>. This leads to a transition matrix for the random walk
 <disp-formula id="ueqn11">
-<alternatives><graphic xlink:href="461751v2_ueqn11.gif" mimetype="image" mime-subtype="gif"/></alternatives>
+<alternatives><graphic xlink:href="461751v2_ueqn11.gif" mime-subtype="gif" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>Subsequent decisions along the route are independent of each other. Hence the process is a Markov chain. Then we make use of a well-known result for first-capture times on a Markov chain to compute the expected number of steps to arrival at <italic>y</italic> starting from any node <italic>x</italic>.</p>
@@ -563,14 +563,14 @@ where <italic>λ</italic><sub>1</sub>, …, <italic>λ</italic><sub><italic>n</i
 <label>A.5</label>
 <title>Forgetting of links and resources</title>
 <p>In <xref ref-type="sec" rid="s4">section 4</xref> we discuss the learning algorithm that acquires the connectivity of the environment and the locations of resources. It reacts rapidly to the appearance of new links in the environment: As soon as the agent travels from one point to another, the synapse between the corresponding map cells gets established. Suppose now that a previously existing link becomes blocked: How can one remove the corresponding synapse from the map? A simple solution would be to let all synapses decay over time, balanced by strengthening whenever a link gets traveled. In that case the entire map would be forgotten when the animal goes to sleep for a few hours, whereas it is clear that animals retain such maps over many days. Instead, one wants a mode of <italic>active</italic> forgetting: Memory of the link from node <italic>i</italic> to <italic>j</italic> should be weakened only if the agent find itself at node <italic>i</italic> and repeatedly chooses not to go to <italic>j</italic>. One can formalize this in the following algorithm, which differs only slightly from <xref ref-type="statement" rid="alg2">Alg 2</xref>:</p>
-<fig position="float" fig-type="figure" id="alg4"><label>Algorithm 4</label><caption><title>Learning and forgetting</title></caption><graphic xlink:href="461751v2_alg4.tif" mimetype="image" mime-subtype="tiff"/></fig>
+<fig position="float" fig-type="figure" id="alg4"><label>Algorithm 4</label><caption><title>Learning and forgetting</title></caption><graphic xlink:href="461751v2_alg4.tif" mime-subtype="tiff" mimetype="image"/></fig>
 <p>Here the added parameter <italic>δ</italic> determines how much a map synapse gets depressed each time the corresponding link is not chosen. Similarly, goal synapses decay if their prediction for a resource exceeds the resource signal received by the goal cell. The synaptic learning rule resembles the BCM rule [<xref ref-type="bibr" rid="c7">7</xref>]: Synaptic modification is conditional on presynaptic activity, and leads to either potentiation or depression depending on the level of post-synaptic activity.</p>
 <p><xref rid="fig9" ref-type="fig">Figure 9</xref> illustrates this process with a simulation analogous to <xref rid="fig4" ref-type="fig">Fig 4</xref>. The agent explores a ring graph by a random walk. At some point a new link appears clear across the ring. Later on that link disappears again. Acquisition of the link happens very quickly, within a single time step (<xref rid="fig9" ref-type="fig">Fig 9A, C</xref>). Forgetting that link takes longer, on the order of several hundred steps (<xref rid="fig9" ref-type="fig">Fig 9A, D, E</xref>). In this simulation <italic>δ</italic> = 0.1, so the map synapses decay by about 10% whenever a link is not traveled. One could of course accelerate that with a higher <italic>δ</italic>, but at the cost of destabilizing the entire map. Even the synapses for intact links get depressed frequently (<xref rid="fig9" ref-type="fig">Fig 9E</xref>), because the random choices of the agent lead it to take any given link only a fraction of the time.</p>
 <fig id="fig9" position="float" fig-type="figure">
 <label>Figure 9:</label>
 <caption><title>Forgetting a link during exploration.</title>
 <p><bold>(A)</bold> Simulation of a random walk on a ring with 14 nodes as in <xref ref-type="fig" rid="fig4">Fig 4</xref>. Left: Layout of the ring, with resource locations marked in blue. The walk progresses in 1000 time steps (top to bottom); with the agent’s position marked in red (nodes 0-13, horizontal axis). At each time the color map shows the goal signal that would be produced if the agent were at position ‘Node’. White horizontal lines mark the appearance of a new link between nodes 4 and 11 at <italic>t</italic> = 200, and disappearance of that link at <italic>t</italic> = 400. <bold>(B)</bold> The matrix <bold>M</bold> of map synapses at various times. The pixel in row <italic>i</italic> and column <italic>j</italic> represents the matrix element <italic>M</italic><sub><italic>ij</italic></sub>. Color purple = 0. Note the first few steps (number above graph) each add a new synapse. Eventually, <bold>M</bold> reflects the adjacency matrix of nodes on the graph, and changes as a link is added and removed. <bold>(C)</bold> Goal signals just before and just after the agent travels the new link. <bold>(D)</bold> Goal signals just before the link disappears and at the end of the walk. <bold>(E)</bold> Strength of two synapses in the map, <italic>M</italic><sub>4,5</sub> and <italic>M</italic><sub>4,11</sub>, plotted against time during the random walk. Model parameters: <italic>γ</italic> = 0.32, <italic>θ</italic> = 0.27, <italic>α</italic> = 1, <italic>δ</italic> = 0.1.</p></caption>
-<graphic xlink:href="461751v2_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig9.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>One limitation of the endotaxis agent is that it does not keep a record of what actions are available at each node. Instead, it leaves that information in the environment (see Discussion) and simply tries all the actions that are available. When faced with a blocked tunnel, the endotaxis agent does not know that this was previously available. Clearly, a more advanced model of the world that includes a state-action table would allow more effective editing of the cognitive map.</p>
 </sec>
@@ -584,7 +584,7 @@ where <italic>λ</italic><sub>1</sub>, …, <italic>λ</italic><sub><italic>n</i
 <label>Figure 10:</label>
 <caption><title>Navigation performance with and without habituation.</title>
 <p>Navigated distance on the binary-tree maze, displayed as in <xref ref-type="fig" rid="fig5">Fig 5E</xref>. <bold>Left:</bold> An agent with strong habituation: <italic>β</italic> = 1.2, <italic>τ</italic> = 100. <bold>Right:</bold> no habituation: <italic>β</italic> = 0. The agent learned the map and the goal signals for every node during a random walk with 30,000 steps. Then the agent navigated between all pairs of points on the maze. Graphs show the median ± 10/90 percentile of the navigated distance for all routes with the same graph distance. Other model parameters: <italic>γ</italic> = 0.32, <italic>θ</italic> = 0.27, <italic>α</italic> = 1, <italic>ϵ</italic> as listed.</p></caption>
-<graphic xlink:href="461751v2_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="461751v2_fig10.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
