@@ -717,23 +717,26 @@
 <p>We thank the reviewer for the suggestions. To better align the fMRI and RNN results, we first performed the same IEM analyses used in the fMRI analyses on the RNN data. We found that with IEM, the orientation representation in the EVC module demonstrated a pattern similar to that in the fMRI data, showing a negative trend for the difference between categorization and maintenance, although the trend did not reach statistical significance (Author response image 2A). Meanwhile, the difference between categorization and maintenance remained a positive trend in the sPCS module.</p>
 <p>Second, following the reviewer’s suggestion, we adjusted the ratio of feedforward/feedback connections between modules to 1:2, such that between Modules 1 and 2 and between Modules 2 and 3, there were always more feedback than feedforward connections, consistent with recent theoretical proposals [12]. We found that, this change preserved the positive trend for orientation differences in the sPCS module, but in the meantime also made the orientation difference in the EVC and IPS modules more positive (Author response image 2B).</p>
 <p>To summarize, we found that the positive difference between categorization and maintenance in the sPCS module was robust across difference RNNs and analytical approaches, further supporting that RNNs with stimulus outputs can replicate our key fMRI findings in the frontal cortex. By contrast, the negative difference between categorization and maintenance in EVC was much weaker. It was weakly present using some analytical methods (i.e., the IEM) but not others (i.e., SVMs), and increasing the feedback ratio of the entire network further weakened this difference. We believe that this could be due to that the positive difference was mainly caused by top-down, feedback modulations from higher cortex during categorization, such that increasing the feedback connection strengthens this pattern across modules. We speculate that enhancing the negative difference in the EVC module might require additional modules or inputs to strengthen fine-grained stimulus representation in EVC, a mechanism that might be of interest to future research. We have added a paragraph to the discussion on the limitations of the RNN results on lines 629-644.</p>
-<p><bold>Author response Image 2.</bold></p>
-<p>Stimulus difference across RNN modules.  (A). Results using IEM (p-values from Module 1 to 3: 0.10, 0.48, 0.01). (B). Results using modified RNN2 with changed connection ratio (p-values from Module 1 to 3: 0.12, 0.22, 0.08). All p-values remain uncorrected.</p>
-<disp-formula id="sa3equ1">
-<graphic mime-subtype="jpg" xlink:href="elife-100287-sa3-equ1.jpg" mimetype="image"/>
-</disp-formula>
+<fig id="sa3fig2">
+<label>Author response image 2.</label>
+<caption>
+<title>Stimulus difference across RNN modules.</title>
+<p>(A). Results using IEM (p-values from Module 1 to 3: 0.10, 0.48, 0.01). (B). Results using modified RNN2 with changed connection ratio (p-values from Module 1 to 3: 0.12, 0.22, 0.08). All p-values remain uncorrected.</p>
+</caption>
+<graphic mime-subtype="jpg" xlink:href="elife-100287-sa3-fig2.jpg" mimetype="image"/>
+</fig>
 <disp-quote content-type="editor-comment">
 <p>(2) Can you rule out that during the categorization task, the orientation encoding in PFC isn't just category coding? You had good controls for category coding, but it would be nice to see something for orientation coding. e.g., fit your orientation encoding model after residualizing category encoding, or show that category encoding has worse CV prediction than orientation encoding.</p>
 </disp-quote>
 <p>We thank the reviewer for raising this point. To decouple orientation and category representations, we performed representational similarity analysis (RSA) in combination with linear mixed-effects modeling (LMEM) on the fMRI data. Specifically, we constructed three hypothesized representational dissimilarity matrices (RDMs), one for graded stimulus (increasing distance between orientations as they move farther apart, corresponding to graded feature tuning responses), one for abstract category (0 for all orientations within the same category and 1 for different categories), and another for discrete stimulus (indicating equidistant orientation representations). We then fit the three model RDMs together using LMEM with subject as the random effect (Author response image 3A). This approach is intended to minimize the influence of collinearity between RDMs on the results [13].</p>
 <p>Overall, the LMEM results (Author response image 3B-D) replicated the decoding results in the main text, with significant stimulus but not category representation in sPCS in Experiment 1, and marginally significant category representation in the same brain region in Experiment 2. These results further support the validity of our main findings and emphasize the contribution of stimulus representation independent of category representation.</p>
-<fig id="sa3fig2">
+<fig id="sa3fig3">
 <label>Author response image 3.</label>
 <caption>
 <title>Delineating stimulus and category effects using LMEM.</title>
 <p>(A) Schematic illustration of this method. (B) Results for late epoch in Experiment 1, showing the fit of each model RDM. (C) Results for early epoch in Experiment 2. (D) Results for late epoch in Experiment 2.</p>
 </caption>
-<graphic mime-subtype="jpg" xlink:href="elife-100287-sa3-fig2.jpg" mimetype="image"/>
+<graphic mime-subtype="jpg" xlink:href="elife-100287-sa3-fig3.jpg" mimetype="image"/>
 </fig>
 <disp-quote content-type="editor-comment">
 <p>(3) Is it possible that this region of PFC is involved in categorization in particular and not 'control-demanding working memory'?</p>
