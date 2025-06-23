@@ -178,7 +178,7 @@
 <fig id="fig1" position="float" fig-type="figure">
 <label>Figure 1.</label>
 <caption><p>Biased matching pennies (BMP) task and ketamine-induced behavioral modulation. <bold>A</bold>. Temporal sequence of trial events. Gray cross indicates the target that the animal was required to fixate during each epoch. Each trial began with the animal’s gaze on the fixation target displayed on the center of a computer monitor for 0.5-s. Solid red disks around the fixation target indicated the tokens owned by the animal, namely asset, with empty disks serving as placeholders for the tokens to be acquired for exchange with juice reward. After two green disks were displayed for 0.5-s at the diametrically opposed positions along the horizontal meridian, the fixation target was extinguished signaling the animal to indicate its choice by shifting gaze to one of the two green disks. After 0.5-s of fixation, a feedback ring appeared around the chosen target with its color indicating the choice outcome, followed by the corresponding change in tokens. Once the animal collected 6 tokens, they were automatically exchanged with 6 drops of apple juice. After juice reward, the animal began the subsequent trial with 2-4 free tokens. Tokens and placeholders stayed on the screen throughout the trial and inter-trial interval. <bold>B</bold>. Payoff matrix of BMP. <bold>C</bold>. Coefficients from logistic regression models applied separately to the data from saline (sal) and ketamine (ket) sessions with intramuscular (IM) and intranasal (IN) administration. Lines are exponential functions best fit to the coefficients from saline (solid) and ketamine (dotted) sessions, and those from IM (thick) and IN (thin) sessions. Bars at the top of each panel indicate that the difference between saline and ketamine sessions is statistically significant with the horizontal position and color of each bar coding trial lag and outcome (same color scheme as that of saline sessions), respectively.</p></caption>
-<graphic xlink:href="501468v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2c">
@@ -191,55 +191,55 @@
 <title>Logistic regression model</title>
 <p>The effect of past outcomes on an animal’s choice was analyzed using the following model:
 <disp-formula id="eqn1">
-<graphic xlink:href="501468v3_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <italic>P</italic><sub><italic>t</italic></sub> (<italic>R</italic>) is the probability of animal’s choosing right target at the current trial <italic>t, G(t-i), N(t-i), L(t-i) and R(t-i)</italic> are regressors encoding gain, neutral, loss and juice reward outcome that occurred after right (left) choice in the <italic>i</italic>-th trial into the past as 1(-1), and other outcomes as 0, respectively. <inline-formula><inline-graphic xlink:href="501468v3_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> are regression coefficients, with positive (negative) coefficients indicating that the particular outcome at trial t-<italic>i</italic> tended to increase (decrease) the animal’s tendency to choose the same target at trial <italic>t</italic>, relative to chance level (<xref rid="fig1" ref-type="fig">Figure 1, C</xref>). Separate regression models were fit to saline, intramuscularly (IM)- and intranasally (IN)-administered ketamine sessions for each animal.</p>
+where <italic>P</italic><sub><italic>t</italic></sub> (<italic>R</italic>) is the probability of animal’s choosing right target at the current trial <italic>t, G(t-i), N(t-i), L(t-i) and R(t-i)</italic> are regressors encoding gain, neutral, loss and juice reward outcome that occurred after right (left) choice in the <italic>i</italic>-th trial into the past as 1(-1), and other outcomes as 0, respectively. <inline-formula><inline-graphic xlink:href="501468v3_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are regression coefficients, with positive (negative) coefficients indicating that the particular outcome at trial t-<italic>i</italic> tended to increase (decrease) the animal’s tendency to choose the same target at trial <italic>t</italic>, relative to chance level (<xref rid="fig1" ref-type="fig">Figure 1, C</xref>). Separate regression models were fit to saline, intramuscularly (IM)- and intranasally (IN)-administered ketamine sessions for each animal.</p>
 </sec>
 <sec id="s2d2">
 <title>Nonlinear regression - exponential model</title>
 <p>We modeled the temporal decay of the effect of past outcome over multiple trials and its modulation by ketamine with the following exponential function:
 <disp-formula id="eqn2">
-<graphic xlink:href="501468v3_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <italic>i</italic> is trial lag (<italic>i</italic>-th trial into the past), <italic>I</italic><sub><italic>k</italic></sub> is an indicator variable encoding ketamine (saline) session as 1 (0). <inline-formula><inline-graphic xlink:href="501468v3_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> are initial amplitude and decay time constant respectively, for saline session, whereas <inline-formula><inline-graphic xlink:href="501468v3_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> are modulation by ketamine. Exponential functions were fit to the data with nonlinear regression using <italic>fitnlm</italic>.<italic>m</italic> in <italic>MATLAB</italic> (MathWorks), separately for each outcome.</p>
+where <italic>i</italic> is trial lag (<italic>i</italic>-th trial into the past), <italic>I</italic><sub><italic>k</italic></sub> is an indicator variable encoding ketamine (saline) session as 1 (0). <inline-formula><inline-graphic xlink:href="501468v3_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are initial amplitude and decay time constant respectively, for saline session, whereas <inline-formula><inline-graphic xlink:href="501468v3_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are modulation by ketamine. Exponential functions were fit to the data with nonlinear regression using <italic>fitnlm</italic>.<italic>m</italic> in <italic>MATLAB</italic> (MathWorks), separately for each outcome.</p>
 </sec>
 <sec id="s2d3">
 <title>Reinforcement learning models</title>
 <p>We used reinforcement learning (RL) models to investigate the potential cognitive/computational processes that might be modulated by ketamine. RL models have been extensively and successfully applied to explain reward-guided choice behavior (<xref ref-type="bibr" rid="c28">28</xref>). The general idea of RL is that the outcomes experienced from a particular action/state are integrated over time to form the reward expectation or the value of that action/state, and that an action among alternatives is chosen to maximize the expected outcome. One algorithm for the integration is to incrementally update the old expectation/value with a prediction error which can be formalized as follows for a single-state situation (<xref ref-type="bibr" rid="c29">29</xref>):
 <disp-formula id="eqn3">
-<graphic xlink:href="501468v3_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>Q</italic><sub><italic>t</italic></sub> (<italic>A</italic>) is the value function for action A at trial <italic>t, α</italic><sub><italic>L</italic></sub> is learning rate and <italic>R</italic><sub><italic>t</italic></sub> − <italic>Q</italic><sub><italic>t</italic></sub> (<italic>A</italic>) is the discrepancy between actual outcome,<italic>R</italic><sub><italic>t</italic></sub> and the expectation/value, namely reward prediction error. This formula can be rearranged as follows (<xref ref-type="bibr" rid="c30">30</xref>, <xref ref-type="bibr" rid="c31">31</xref>):
 <disp-formula id="eqn4">
-<graphic xlink:href="501468v3_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>α</italic><sub><italic>F</italic></sub> and <italic>α</italic><sub><italic>L</italic></sub> are separate parameters for the forgetting rate of the old value estimate and the learning rate of a new outcome, respectively. With 0 &lt; <italic>α</italic><sub><italic>F</italic></sub> &lt; 1, the old value function decays exponentially over time, simulating forgetting. Action selection was modeled with a softmax function,
 <disp-formula id="eqn5">
-<graphic xlink:href="501468v3_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where probability of choosing right target, <italic>P</italic><sub><italic>t</italic></sub> (<italic>R</italic>) was a logistic function of the estimated value of right relative to left choice. Inverse temperature, <italic>β</italic> regulated randomness of choice determining the influence of action values on decision.</p>
 <p>To investigate the effects of ketamine, we first tested multiple variants of the general model and determined the model that best explained normal behavior during saline sessions (<xref rid="tbl1" ref-type="table">Table 1</xref>; <xref rid="fig2" ref-type="fig">Figure 2</xref>). This is important, since we can expect to characterize the effect of ketamine accurately only in the context of a reliable behavioral model for how the animal’s behavior was influenced by the outcomes of their previous choices. Then, we examined how the parameters of this model were modulated by ketamine (<xref rid="tbl2" ref-type="table">Table 2</xref>; <xref rid="fig3" ref-type="fig">Figure 3</xref>).</p>
 <table-wrap id="tbl1" orientation="portrait" position="float">
 <label>Table 1.</label>
 <caption><p>Reinforcement learning models for normal behavior during saline sessions.</p></caption>
-<graphic xlink:href="501468v3_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbl2" orientation="portrait" position="float">
 <label>Table 2.</label>
 <caption><p>Reinforcement learning models for ketamine-induced modulation of choice behavior.</p></caption>
-<graphic xlink:href="501468v3_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="501468v3_tbl2a.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="501468v3_tbl2b.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_tbl2.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="501468v3_tbl2a.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="501468v3_tbl2b.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2.</label>
 <caption><p>Model comparison for saline sessions. Each row shows free (filled circles), unused (empty circles) and fixed (specific values) parameters of a variant of reinforcement learning (RL) model. For the details of RL models and parameters, see <xref rid="tbl1" ref-type="table">Table 1</xref>. Heat map on the right represents natural logarithm of differential BIC (Bayesian Information Criterion) of each variant from the best model. Best model for each animal is indicated by check (√) mark. <italic>Q(standard)</italic>: standard Q-learning model; <italic>Q-SE</italic>: Q-learning with subjective outcome evaluation; <italic>DF</italic>: differential forgetting model; <italic>DF-R</italic>: differential forgetting with neutral outcome being the reference point; <italic>NDF</italic>: non-differential forgetting model; <italic>NDF-R</italic>: non-differential forgetting model with neutral outcome being the reference point; <italic>NDF-A</italic>: non-differential forgetting model with asset-gated outcome evaluation.</p></caption>
-<graphic xlink:href="501468v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3.</label>
 <caption><p>Model comparison for the effects of ketamine. Each row shows fixed (gray-filled circles), free (colored circles) and unused (empty circles) parameters of a variant of differential forgetting (DF) model. For the details of each model, see <xref rid="tbl2" ref-type="table">Table 2</xref>. θ represents a set of parameters added to a particular variant of DF model, and the number inside colored circles indicate the number of added parameters (&gt;1). For the details of each model, see <xref rid="tbl2" ref-type="table">Table 2</xref>. Heat map on the right represents natural logarithm of differential BIC (Bayesian Information Criterion) of each variant from the best model. Best model for each animal is indicated by check (√) mark. <italic>DF(saline)</italic>: differential forgetting model fit to the data from saline session; <italic>Common mod. non-gain</italic>: common modulation of non-gain outcome evaluation; <italic>Separate mod. neutral vs. loss</italic>: differential modulation of neutral and loss outcome evaluation; <italic>Separate mod. gain vs. non-gain</italic>: differential modulation of gain and non-gain outcome evaluation; <italic>Separate mod. all</italic>: outcome-dependent modulation of outcome evaluation; <italic>Separate mod. forgetting rate</italic>: differential modulation of forgetting rate for chosen and unchosen target, <italic>Inc. perseveration</italic>: increased perseveration; <italic>Mod. value for all &amp; inc. perseveration</italic>: outcome-dependent modulation of outcome evaluation and increased perseveration; <italic>Inc. misassign</italic>: increased backward credit misassignment; <italic>Inc. spread</italic>: increased forward spread in credit assignment; <italic>Inc. statistical learning</italic>: increased statistical learning of reward rate; <italic>Mod. asset gating</italic>: modulation of asset-gated outcome evaluation.</p></caption>
-<graphic xlink:href="501468v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2d4">
@@ -253,15 +253,15 @@ where probability of choosing right target, <italic>P</italic><sub><italic>t</it
 <title>Model selection for Ketamine sessions</title>
 <p>To understand the effect of ketamine, we started with the best-fitting model of normal behavior during saline sessions – the differential forgetting (DF) model, and then asked how ketamine might modulate the parameters of this model. The null (baseline) model assumed that ketamine didn’t cause any parametric changes in the behavior, and the model prediction of trial-to-trial choice was generated with the maximum likelihood (ML) parameters, namely “baseline parameters” estimated from saline sessions as follows:
 <disp-formula id="eqn6">
-<graphic xlink:href="501468v3_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn7">
-<graphic xlink:href="501468v3_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn7.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn8">
-<graphic xlink:href="501468v3_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="501468v3_eqn8.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> (baseline parameter-estimates) were ML parameters of the DF model fit to the data from saline sessions.</p>
+where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula> (baseline parameter-estimates) were ML parameters of the DF model fit to the data from saline sessions.</p>
 <p>In each of the ketamine models, we set a subset of parameters of the DF model to freely vary from the baseline parameter-estimates. <italic>Value models</italic> (<italic>K</italic>-model 1-4, <xref rid="tbl2" ref-type="table">Table 2</xref>) hypothesized that ketamine changed outcome evaluation differentially for gain, neutral and loss outcomes, whereas a <italic>memory model</italic> (<italic>K</italic>-model 5) tested whether ketamine affected the forgetting rate or the rate of value decay. <italic>Perseveration models</italic> hypothesized that ketamine affected the behavioral tendency to perseverate (<italic>K</italic>-model 6), possibly in tandem with a change in value update (<italic>K</italic>-model 7). <italic>Temporal credit assignment (TCA) models</italic> tested whether ketamine changed the way a particular outcome properly updated the value of causative action, possibly leading to misassignment of the credit for an outcome to the choice that happened in the past (<italic>K</italic>-model 8), spread of the credit to future choice (<italic>K</italic>-model 9) or assignment of the credit for recent outcomes collectively to the frequently chosen target in the near past (<italic>K</italic>-model 10) (<xref ref-type="bibr" rid="c30">30</xref>, <xref ref-type="bibr" rid="c31">31</xref>). Finally, a <italic>motivation model</italic> (<italic>K</italic>-model 11) hypothesized that ketamine changed the gain with which asset position modulated the value update for each outcome.</p>
 </sec>
 </sec>
@@ -271,18 +271,18 @@ where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mimetype
 <fig id="fig4" position="float" fig-type="figure">
 <label>Figure 4.</label>
 <caption><p>Ketamine-induced behavioral modulation simulated with differential forgetting model (for saline session) and best-fitting <italic>K</italic>-model (for ketamine session). Simulated data was generated with the maximum likelihood parameters of best-fitting models for saline (differential forgetting model) and ketamine (<italic>K</italic>-model 4: differential modulation of value for all the outcomes) sessions. Simulated choice was analyzed with logistic regression model (<xref ref-type="disp-formula" rid="eqn1">Eq. 1</xref>).</p></caption>
-<graphic xlink:href="501468v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2f">
 <title>Results</title>
 <p>Three rhesus monkeys were trained to play a token-based matching pennies (BMP) game against a computerized opponent, in which their choice typically depended on the outcomes obtained from each choice in the past trials (<xref rid="fig1" ref-type="fig">Figure 1, A, B</xref>). In the control sessions where saline was administered, animals tended to repeat the choice that yielded a token, while switching away from the choice that led to non-gain outcomes, with a stronger tendency to switch after loss than neutral outcome (i.e. zero token) (<xref ref-type="disp-formula" rid="eqn1">Eq. 1</xref>; <xref rid="fig1" ref-type="fig">Figure 1, C</xref>). The reinforcing and punishing effects of gain and non-gain outcomes also decayed exponentially over time, with the recent outcomes exerting a larger effect than remote ones. Ketamine selectively reduced the punishing effect of non-gain outcomes, with significantly larger change being induced after loss than neutral outcome (<xref rid="fig1" ref-type="fig">Figure 1, C</xref>). In addition, the ketamine-induced modulation was larger for the effect of recent than remote outcomes (<italic>ANOVA</italic>, 3-way interaction among outcome, trial-lag and drug condition, <italic>F(8, 1964)</italic>=4.05, <italic>F(8, 1649)</italic>=4.46, <italic>F(8, 509)</italic>=3.62 for animal P, Y, B, respectively. <italic>p</italic>&lt;.001 in all animals for intramuscular (IM) administration of 0.5mg/kg; <italic>F(8, 1229)</italic>=4.89, <italic>p</italic>&lt;.001 in animal P; <italic>F(8, 389)</italic>=1.89, <italic>p</italic>=.06 in Y; <italic>F(<xref ref-type="bibr" rid="c8">8</xref>, 1002)</italic>=3.27, <italic>p</italic>=.001 in B for intranasal (IN) administration of 1mg/kg). 0.25mg/kg of IM-administered, and 0.5mg/kg of IN-administered ketamine produced qualitatively similar results (<xref rid="figS1" ref-type="fig">Supplemental Figure S1</xref>). We focused our main analyses on the data collected with 0.5mg/kg IM- and 1mg/kg IN-administered ketamine, which produced comparable plasma concentration and behavioral effects (Supplemental Information and <xref rid="figS2" ref-type="fig">Figure S2</xref>). Plasma concentration and its time course over 60 minutes were also comparable to those measured after 0.5mg/kg in human subjects (<xref ref-type="bibr" rid="c35">35</xref>).</p>
-<p>Outcome-dependent choice behavior and its modulation by ketamine were also parametrically modeled by exponential function, in which the initial impact of each outcome at the time of delivery gradually decayed over subsequent trials (<xref ref-type="disp-formula" rid="eqn2">Eq 2</xref>; <xref rid="fig1" ref-type="fig">Figure 1, C</xref>). Ketamine significantly reduced initial amplitude/impact of non-gain outcomes <inline-formula><inline-graphic xlink:href="501468v3_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> consistently in all three animals, and with both IM <inline-formula><inline-graphic xlink:href="501468v3_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, 0.63 (Y), 1.36 (B) for loss, <italic>t</italic>-test, <italic>p</italic>&lt;10<sup>−11</sup> for all animals; <inline-formula><inline-graphic xlink:href="501468v3_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, 0.58 (Y), 0.61 (B) for neutral outcome, <italic>p</italic>&lt;10<sup>−5</sup> for all animals) and IN administration <inline-formula><inline-graphic xlink:href="501468v3_inline8.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, 0.56 (Y), 1.36 (B) for loss, <italic>p</italic>&lt;10<sup>−11</sup> for all animals; <inline-formula><inline-graphic xlink:href="501468v3_inline9.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, 0.31 (Y), 0.83 (B) for neutral outcome, <italic>p</italic>&lt;.001 for all animals). Ketamine didn’t significantly modulate the time constant of decay, and the modulation of initial impact was sufficient to explain the behavioral phenomena.</p>
+<p>Outcome-dependent choice behavior and its modulation by ketamine were also parametrically modeled by exponential function, in which the initial impact of each outcome at the time of delivery gradually decayed over subsequent trials (<xref ref-type="disp-formula" rid="eqn2">Eq 2</xref>; <xref rid="fig1" ref-type="fig">Figure 1, C</xref>). Ketamine significantly reduced initial amplitude/impact of non-gain outcomes <inline-formula><inline-graphic xlink:href="501468v3_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula> consistently in all three animals, and with both IM <inline-formula><inline-graphic xlink:href="501468v3_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, 0.63 (Y), 1.36 (B) for loss, <italic>t</italic>-test, <italic>p</italic>&lt;10<sup>−11</sup> for all animals; <inline-formula><inline-graphic xlink:href="501468v3_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, 0.58 (Y), 0.61 (B) for neutral outcome, <italic>p</italic>&lt;10<sup>−5</sup> for all animals) and IN administration <inline-formula><inline-graphic xlink:href="501468v3_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, 0.56 (Y), 1.36 (B) for loss, <italic>p</italic>&lt;10<sup>−11</sup> for all animals; <inline-formula><inline-graphic xlink:href="501468v3_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, 0.31 (Y), 0.83 (B) for neutral outcome, <italic>p</italic>&lt;.001 for all animals). Ketamine didn’t significantly modulate the time constant of decay, and the modulation of initial impact was sufficient to explain the behavioral phenomena.</p>
 <p>Dependence of choice on the cumulative effect of temporally discounted past outcomes is the signature of reinforcement learning (RL) (<xref ref-type="bibr" rid="c28">28</xref>). We used RL models to gain further insights into the possible mechanisms underlying ketamine-induced behavioral modulation (see Methods and Materials). We first determined the variant/class of RL model that best explained the animals’ choice behavior under normal conditions (i.e., saline sessions) (<xref rid="tbl1" ref-type="table">Table 1</xref>). The differential forgetting (DF) model best fit the data in all three animals, in which the value functions of chosen and unchosen action decayed at different rates, with forgetting being slower for chosen than unchosen action (<xref rid="fig2" ref-type="fig">Figure 2</xref>, <xref rid="tbl3" ref-type="table">Table 3</xref>).</p>
 <table-wrap id="tbl3" orientation="portrait" position="float">
 <label>Table 3.</label>
 <caption><p>Maximum likelihood parameter estimates of the best models for saline and ketamine sessions.</p></caption>
-<graphic xlink:href="501468v3_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_tbl3.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <p>Building on the best model explaining normal behavior – the DF model, we asked how ketamine (0.5mg/kg, IM) modulated the parameters of this model by testing variants of DF models, in each of which a different subset of parameters of the model were allowed to vary/deviate freely from the baseline parameters estimated from saline sessions (<xref rid="tbl2" ref-type="table">Table 2</xref>).</p>
 <p>In all three animals, the model incorporating valence-dependent change in outcome evaluation best fit the choice data from ketamine sessions with (<italic>K</italic>-model 7 in the parenthesis, P) or without (<italic>K</italic>-model 4, P and Y/B) additional change in the tendency of choice perseveration (<xref rid="fig3" ref-type="fig">Figure 3</xref>, <xref rid="tbl3" ref-type="table">Table 3</xref>). Under ketamine, value update increased positively following all outcomes, thus increasing overall probability of repeating the same choice or namely, choice perseveration. However, the change was larger for non-gain outcomes, with the largest modulation after loss, consistent with the results from our model comparison that the model including only a perseveration component performed worse than the best model in all three animals (<xref rid="fig3" ref-type="fig">Figure 3</xref>). When the effect of ketamine was simulated with the best models within each class of ketamine models, <italic>K</italic>-model 4 (differential modulation of outcome evaluation for all three outcomes) produced the most similar results to actual data (<xref rid="fig4" ref-type="fig">Figure 4</xref>, <xref rid="figS3" ref-type="fig">Supplemental Figure S3</xref>).</p>
@@ -292,18 +292,18 @@ where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mimetype
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5.</label>
 <caption><p>Time course of ketamine-induced ocular nystagmus. <bold>A</bold>. Ocular position and velocity during fixation on the peripheral target in example trials during saline (left panel) and ketamine (right panel) sessions. <bold>B</bold>. Time course of mean ocular velocity aligned at the time of saline or ketamine injection. Shades indicate standard error. IM, IN indicates intramuscular and intranasal administration, respectively.</p></caption>
-<graphic xlink:href="501468v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Ketamine’s effects on both ocular nystagmus and negative evaluation of loss peaked and waned away within 1 hour after the injection (<xref rid="fig5" ref-type="fig">Figure 5</xref>, <xref rid="fig6" ref-type="fig">6</xref>). Despite the similar time course, further analysis suggested that these two effects were unlikely to be produced by a common mechanism/process. Nystagmus tended to cause fixation errors during the pre-feedback waiting period in a small number of trials. We found that as the animals owned more tokens and therefore were closer to earning juice reward, fixation errors became less frequent under ketamine (2-way interaction between drug condition and # of owned token in linear regression, <italic>t</italic>=-3.6, -3.3, -9.5 for P, Y and B respectively, <italic>p</italic>&lt;.001 for all three animals; <xref rid="fig7" ref-type="fig">Figure 7, A</xref>), suggesting that animals could counter the undesirable effect of ketamine when they had stronger motivation to obtain juice reward. However, ketamine-induced modulation of loss evaluation (i.e. reduced probability of choice switch after loss) did not systematically change with animals’ motivation gated by the number of accrued tokens (2-way interaction between drug condition and # of owned tokens in linear regression, <italic>p</italic>&gt;0.25 for all three animals; <xref rid="fig7" ref-type="fig">Figure 7, B</xref>).</p>
 <fig id="fig6" position="float" fig-type="figure">
 <label>Figure 6.</label>
 <caption><p>Time course of ketamine-induced modulation of outcome-dependent choice behavior. Time course of attenuation in loss evaluation induced by 0.5mg/kg of intramuscularly (<bold>A</bold>) and 1mg/kg of intranasally (<bold>B</bold>) administered ketamine. Regression coefficient reflecting ketamine’s modulation of the effect of each outcome from the previous trial (trial lag 1) is plotted as a function of time relative to the injection. Dotted lines represent standard error obtained from shuffled data between saline and ketamine sessions separately for each outcome.</p></caption>
-<graphic xlink:href="501468v3_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig7" position="float" fig-type="figure">
 <label>Figure 7.</label>
 <caption><p>Effect of motivation on countering ketamine-induced fixation errors. <bold>A</bold>. Difference in the rate of fixation break/trial between ketamine and saline sessions is plotted as a function of cumulative number of tokens (as a proxy for time with the satiation effect being controlled). Number of tokens owned by the animal at a given trial (asset) is color-coded. Vertical dotted lines demarcate the latest data point that was included in the linear regression analysis. <bold>B</bold>. Difference in the probability of choice switch after loss from the previous trial (trial lag 1) between ketamine and saline sessions is plotted as a function of asset at the time of decision. Due to limited number of loss trials, analysis was performed after dividing trials into 4 groups according to asset (0∼1, 2, 3, 4).</p></caption>
-<graphic xlink:href="501468v3_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -388,22 +388,22 @@ where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mimetype
 <fig id="figS1" position="float" fig-type="figure">
 <label>Supplemental Figure S1.</label>
 <caption><p>Behavioral effect of 0.25mg/kg intramuscularly (IM) administered (top) and 0.5mg/kg intranasally (IN) administered (bottom) ketamine. Regression coefficients reflecting the effects of gain, neutral (zero-token) and loss outcomes obtained in the past trials are plotted. Solid and dotted lines represent data from saline and ketamine sessions respectively. Solid (empty) symbols indicate that the corresponding coefficients are (not) significantly different from zero. * indicates that the coefficients from ketamine and saline sessions are significantly different for corresponding trial lag of outcome.</p></caption>
-<graphic xlink:href="501468v3_figS1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_figS1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figS2" position="float" fig-type="figure">
 <label>Supplemental Figure S2.</label>
 <caption><p>Time course of plasma concentration of ketamine following intramuscular (IM) and intranasal (IN) administration. Dotted lines indicate the data from individual sessions, and dotted lines for average across individual sessions. Blood sample was taken every 20 minute after injection.</p></caption>
-<graphic xlink:href="501468v3_figS2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_figS2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figS3" position="float" fig-type="figure">
 <label>Supplemental Figure S3.</label>
 <caption><p>ketamine-induced behavioral modulation simulated with best-fitting <italic>K-</italic>model of each class of reinforcement learning (RL) models. Format is same as in <xref rid="fig4" ref-type="fig">Figure 4</xref>. Each column represents simulated data with best-fitting parameters for individual monkey (P, Y and B from left to right).</p></caption>
-<graphic xlink:href="501468v3_figS3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_figS3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figS4" position="float" fig-type="figure">
 <label>Supplemental Figure S4.</label>
 <caption><p>Behavioral effects of ketamine do not spread over the sessions subsequent to the injection. Regression coefficients reflecting the effects of gain, neutral (zero-token) and loss outcomes obtained in the past trials are plotted. Solid (dotted) lines represent data from saline sessions &gt; 1 day (1 day) after a ketamine session. Solid (empty) symbols indicate that the corresponding coefficients are (not) significantly different from zero.</p></caption>
-<graphic xlink:href="501468v3_figS4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="501468v3_figS4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -546,9 +546,13 @@ where <inline-formula><inline-graphic xlink:href="501468v3_inline4.gif" mimetype
 <p>(4) For Figure 4 or S3, the authors should show the data fitted to model 7, which was the best for one of the animals.</p>
 </disp-quote>
 <p>We added the parameters and model predictions from both K-model 7 and K-model 4 for monkey P to help comparison between two models in Table 3, and Figure 4. Revised Table 3 and Figure 4 are as follows:</p>
-<p><bold>Author response table 1.</bold></p>
-<p>Maximum likelihood parameter estimates of the best models for saline and ketamine sessions.
-<inline-formula id="sa3equ1"><inline-graphic xlink:href="elife-87529-sa3-equ1.jpg" mimetype="image" mime-subtype="jpeg"/></inline-formula></p>
+<table-wrap id="sa3table1">
+<label>Author response table 1.</label>
+<caption>
+<title>Maximum likelihood parameter estimates of the best models for saline and ketamine sessions.</title>
+</caption>
+<graphic mime-subtype="jpg" xlink:href="elife-87529-sa3-table1.jpg" mimetype="image"/>
+</table-wrap>
 <p>In all three animals, the model incorporating valence-dependent change in outcome evaluation best fit the choice data from ketamine sessions with (K-model 7 in the parenthesis, P) or without (K-model 4, P and Y/B) additional change in the tendency of choice perseveration (Figure 3, Table 3).</p>
 <fig id="sa3fig1">
 <label>Author response image 1.</label>
