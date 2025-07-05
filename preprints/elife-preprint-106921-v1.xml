@@ -1,0 +1,720 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">106921</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.106921</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.106921.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Genetics and Genomics</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Evolutionary Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Minus the Error: Testing for Positive Selection in the Presence of Residual Alignment Errors</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6568-0583</contrib-id>
+<name>
+<surname>Selberg</surname>
+<given-names>Avery</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0006-8374</contrib-id>
+<name>
+<surname>Clark</surname>
+<given-names>Nathan L</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1673-9216</contrib-id>
+<name>
+<surname>Sackton</surname>
+<given-names>Timothy B</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0104-0728</contrib-id>
+<name>
+<surname>Muse</surname>
+<given-names>Spencer V</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4896-6088</contrib-id>
+<name>
+<surname>Lucaci</surname>
+<given-names>Alexander G</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6931-7191</contrib-id>
+<name>
+<surname>Weaver</surname>
+<given-names>Steven</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5987-8032</contrib-id>
+<name>
+<surname>Nekrutenko</surname>
+<given-names>Anton</given-names>
+</name>
+<xref ref-type="aff" rid="a8">8</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2550-5403</contrib-id>
+<name>
+<surname>Chikina</surname>
+<given-names>Maria</given-names>
+</name>
+<xref ref-type="aff" rid="a9">9</xref>
+<email>mchinkina@pitt.edu</email>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4817-4029</contrib-id>
+<name>
+<surname>Pond</surname>
+<given-names>Sergei L Kosakovsky</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>spond@temple.edu</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00kx1jb78</institution-id><institution>Institute for Genomics and Evolutionary Medicine, Temple University</institution></institution-wrap>, <city>Philadelphia</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00kx1jb78</institution-id><institution>Department of Biology, Temple University</institution></institution-wrap>, <city>Philadelphia</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/01an3r305</institution-id><institution>Department of Biological Sciences, University of Pittsburgh</institution></institution-wrap>, <city>Pittsburgh</city>, <country country="US">United States</country></aff>
+<aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03vek6s52</institution-id><institution>FAS Informatics Group, Harvard University</institution></institution-wrap>, <city>Cambridge</city>, <country country="US">United States</country></aff>
+<aff id="a5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/04tj63d06</institution-id><institution>Bioinformatics Research Center, North Carolina State University</institution></institution-wrap>, <city>Raleigh</city>, <country country="US">United States</country></aff>
+<aff id="a6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02r109517</institution-id><institution>Department of Physiology and Biophysics, Weill Cornell Medicine</institution></institution-wrap>, <city>New York</city>, <country country="US">United States</country></aff>
+<aff id="a7"><label>7</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02r109517</institution-id><institution>Weill Cornell Medicine, The HRH Prince Alwaleed Bin Talal Bin Abdulaziz Alsaud Institute for Computational Biomedicine</institution></institution-wrap>, <city>New York</city>, <country country="US">United States</country></aff>
+<aff id="a8"><label>8</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/04p491231</institution-id><institution>Department of Biochemistry and Molecular Biology, The Pennsylvania State University</institution></institution-wrap>, <city>University Park</city>, <country country="US">United States</country></aff>
+<aff id="a9"><label>9</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/01an3r305</institution-id><institution>Department of Computational and Systems Biology, University of Pittsburgh</institution></institution-wrap>, <city>Pittsburgh</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Castric</surname>
+<given-names>Vincent</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Lille</institution>
+</institution-wrap>
+<city>Lille</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Moses</surname>
+<given-names>Alan M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Toronto</institution>
+</institution-wrap>
+<city>Toronto</city>
+<country country="CA">Canada</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-06-26">
+<day>26</day>
+<month>06</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP106921</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-04-03">
+<day>03</day>
+<month>04</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-03-21">
+<day>21</day>
+<month>03</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.11.13.620707"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Selberg et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Selberg et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-106921-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Positive selection is an evolutionary process which increases the frequency of advantageous mutations because they confer a fitness benefit. Inferring the past action of positive selection on protein-coding sequences is fundamental for deciphering phenotypic diversity and the emergence of novel traits. With the advent of genome-wide comparative genomic datasets, researchers can analyze selection not only at the level of individual genes but also globally, delivering systems-level insights into evolutionary dynamics. However, genome-scale datasets are generated with automated pipelines and imperfect curation that does not eliminate all sequencing, annotation, and alignment errors. Positive selection inference methods are highly sensitive to such errors. We present BUSTED-E: a method designed to detect positive selection for amino acid diversification while concurrently identifying some alignment errors. This method builds on the flexible branch-site random effects model (BUSTED) for fitting distributions of dN/dS, with a critical modification: it incorporates an “error-sink” component to represent an abiological evolutionary regime. Using several genome-scale biological datasets that were extensively filtered using state-of-the art automated alignment tools, we show that BUSTED-E identifies pervasive residual alignment errors, produces more realistic estimates of positive selection, reduces bias, and improves biological interpretation. The BUSTED-E model promises to be a more stringent filter to identify positive selection in genome-wide contexts, thus enabling further characterization and validation of the most biologically relevant cases.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>This manuscript has been updated with revised figures (Figures 1 and 4) and a more concise presentation for improved clarity.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Comparative analyses that estimate evolutionary parameters from multiple sequence alignments (MSAs) are a cornerstone of many genomic investigations. For example, conservation metrics, such as those produced by the phyloP software, are widely used to pinpoint functionally constrained regions, guide variant interpretation, and identify elements under purifying selection (<xref ref-type="bibr" rid="c27">Pollard et al., 2010</xref>). A counterpart of purifying selection is episodic diversifying selection (EDS). Whereas purifying selection eliminates deleterious mutations, maintaining sequence similarity across large evolutionary distances, EDS is the process in which advantageous genetic changes are repeatedly fixed along phylogenetic branches, contributing to between-species sequence divergence. Typically, only a small fraction of codons (or amino acid residues) in a gene are subject to selection during these episodes. The ability to identify EDS with reasonable specificity is a necessary condition for more complex analyses which seek to connect adaptive changes to emergence of novel phenotypes or other evolutionary processes.</p>
+<p>Modern comparative genomics covers hundreds of species and tens of thousands of genes. These large-scale datasets typically rely on automated pipelines to assemble and align sequences. Despite continuing improvements in alignment algorithms, it remains nearly impossible to guarantee error-free alignments, especially when manual curation is impractical. These alignment errors present a significant obstacle for EDS analyses, which rely on distinguishing synonymous and nonsynonymous coding substitutions (i.e., dN/dS analyses). Even low rates of alignment error can profoundly bias inference of EDS (<xref ref-type="bibr" rid="c32">Schneider et al., 2009</xref>). Further, while estimates of purifying selection improve as more species are added (<bold><italic>zoo, 2020</italic></bold>), peformance of dN/dS tests for EDS can actually degrade as additional sequences increase the probability of a local alignment error. This can undermine biological interpretations.</p>
+<p>Previous studies using simulated alignment errors have demonstrated increased false positive rates and assessed mitigation strategies (<xref ref-type="bibr" rid="c7">Fletcher and Yang, 2010</xref>; <xref ref-type="bibr" rid="c29">Privman et al., 2012</xref>; <xref ref-type="bibr" rid="c11">Jordan and Goldman, 2012</xref>). One consistent conclusion in simulated alignment error studies is that PRANK-C codon alignments were the least affected and could not be further improved by standard filtering programs (<xref ref-type="bibr" rid="c11">Jordan and Goldman, 2012</xref>). Redelings et al. (<xref ref-type="bibr" rid="c30">Redelings, 2014</xref>) proposed a method for jointly estimating both the positive selection signal and alignment errors in a Bayesian framework. This approach improved alignment accuracy, even for PRANK-C alignments, achieving performance close to that of error-free data. However, the computational cost of Markov Chain Monte Carlo sampling in this framework renders it impractical for genome-scale analyses, and this approach has seen limited adoption.</p>
+<p>Here, we introduce BUSTED-E, a method designed to overcome some of the challenges of quantifying EDS in the presence of alignment errors at a minimal additional computational cost. Based on the BUSTED framework, BUSTED-E incorporates an “error-sink” component that captures aberrant evolutionary patterns unrelated to true biological processes. This novel approach flags problematic alignment regions, refines estimates of selection, and reduces spurious signals commonly encountered in large-scale comparative analyses. By enhancing the robustness of alignment-dependent inferences, BUSTED-E yields more reliable insights into the evolutionary forces shaping genomic diversity.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>To develop intuition for how BUSTED-E works, consider deciding if a gene experienced EDS using a method that estimates dN/dS (<italic>ω</italic>) and uses a statistical test to obtain a p-value for the hypothesis that <italic>ω &gt;</italic> 1 on some sites in the MSA and/or branches of the corresponding phylogenetic tree.</p>
+<p>The new BUSTED-E method is based on BUSTED (<xref ref-type="bibr" rid="c41">Wisotsky et al., 2020</xref>), including synonymous rate variation, which estimates the <italic>ω</italic> distribution across sites with three classes (<italic>ω</italic><sub>1</sub>, <italic>ω</italic><sub>2</sub>, and <italic>ω</italic><sub>3</sub>; the number of classes is a user-tunable parameter). Evolution along each branch at each site is parametrized by a random independent draw from this distribution, and only one value (<italic>ω</italic><sub>3</sub>) is permitted to take values g 1, i.e., positive diversifying selection for amino acid replacement.</p>
+<p>BUSTED uses a likelihood ratio test (LRT) to compute a p-value versus the null hypothesis where <italic>ω</italic><sub>3</sub> f 1. Other frequently used models include those in the PAML suite (<xref ref-type="bibr" rid="c44">Yang, 2007</xref>) or Bayesian approaches (<xref ref-type="bibr" rid="c22">Murrell et al., 2013</xref>; <xref ref-type="bibr" rid="c31">Rodrigue and Lartillot, 2014</xref>; <xref ref-type="bibr" rid="c30">Redelings, 2014</xref>). The advantage of the BUSTED framework is that its modular organization can accommodate flexible rate distributions, while being computationally tractable and scalable (<xref ref-type="bibr" rid="c13">Kosakovsky Pond et al., 2011</xref>). BUSTED-E adds a category described by <italic>ω</italic><sub><italic>E</italic></sub> g 100, whose maximum weight is 1%. This “error-sink” category is meant to capture false signals derived from local alignment errors like those shown in <xref rid="fig1" ref-type="fig">Figure 1</xref>. The bounds on the <italic>ω</italic><sub><italic>E</italic></sub> category are heuristic, adjustable, and informed by parameter estimates from large collections of alignments.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>BUSTED and BUSTED-E applied to the <italic>UROD</italic> gene alignment of 40 bird sequences from Shultz and Sackton <xref ref-type="bibr" rid="c35">Shultz and Sackton (2019)</xref> which used a sophisticated alignment curation and masking procedure to remove artifacts.</title> <p>BUSTED infers three <italic>ω</italic> classes, including a class with <italic>ω &gt;</italic> 1, and deduces the presence of episodic diversifying selection (EDS), <italic>p</italic> = 0.006. BUSTED-E introduces an additional error class (<italic>ω &gt;</italic> 100, maximum weight f 1%). This changes improves model fit (small sample AIC), places a 0.1% fraction of the alignment in the error class, removes the distribution class with 1 <italic>&lt; ω &lt;</italic> 100, and eliminates evidence for EDS (<italic>p</italic> = 0.50). The error attribution procedure of BUSTED-E highlights (red colors) one problematic part of this alignment, located at the 3’ end of the gene, in the <italic>Apteryx rowi (aptHaa)</italic> sequence. BUSTED misinterprets such local misalignments as evidence of rapid diversification, whereas BUSTED-E has the option to correctly treat them as “noise”. Blue and yellow backgrounds represent low error probability.</p>
+<p><bold>Figure 1—figure supplement 1</bold>. Apparent local misalignment at the 3’ end of the PXDNL gene from Shultz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>). The color palette indicates empirical Bayes factor support for assignment to the error class.</p></caption>
+<graphic xlink:href="620707v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To illustrate the new model we analyzed the uroporphyrinogen decarboxylase (UROD) gene involved in heme production. UROD is one of 11,267 genes analyzed for selection by Shultz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>). Seeking to quantify positive selection across bird and mammalian genomes, their work used a sophisticated pipeline that included multiple filtering steps for the MSAs and multiple positive selection inference methods. Notably, the MSAs were produced using PRANK-C, widely assumed to produce the most accurate alignments for positive selection inference (<xref ref-type="bibr" rid="c7">Fletcher and Yang, 2010</xref>; <xref ref-type="bibr" rid="c19">Markova-Raina and Petrov, 2011</xref>; <xref ref-type="bibr" rid="c11">Jordan and Goldman, 2012</xref>). BUSTED identifies significant evidence of EDS (<italic>p</italic> = 0.006) in UROD (<xref rid="fig1" ref-type="fig">Figure 1</xref>) with a moderate positive selection component <italic>ω</italic><sub>3</sub> = 8.90 with localized support (0.7% of the alignment). Manual inspection of the MSA reveals local misalignment near the 3’ end, resulting in several apparent multi-nucleotide substitutions and codon sites with low homology (<xref rid="fig1" ref-type="fig">Figure 1</xref>). BUSTED-E estimates the same three <italic>ω</italic> classes, with the addition of the error class <italic>ω</italic><sub><italic>E</italic></sub>, which is forced to have <italic>ω</italic> g 100 and cannot draw more than 1% weight. This leads to a dramatic reversal in support for EDS for UROD (<italic>p</italic> = 0.50), where all the apparent positive selection weight is absorbed by the error class, and <italic>ω</italic><sub>3</sub> = 1(5.2%) now reflects neutral evolution. As a point of reference, a previous comparative study of UROD and other heme production genes found them to be evolving under strong purifying selection in a broader taxonomic context (<xref ref-type="bibr" rid="c37">Tzou et al., 2014</xref>).</p>
+<sec id="s2a">
+<title>Reanalysis of genome-wide scans</title>
+<p>We selected four studies (<xref ref-type="bibr" rid="c32">Schneider et al., 2009</xref>; <xref ref-type="bibr" rid="c26">Nguyen et al., 2015</xref>; <xref ref-type="bibr" rid="c43">Wu et al., 2018</xref>; <xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>) with publicly available alignments (<xref rid="tbl1" ref-type="table">Table 1</xref>, Supplementary Table 1). All four used one or more dN/dS tests (implemented in HyPhy and/or PAML) to examine a thousand or more coding sequence alignments for evidence of EDS. Each study employed automated quality control and filtering, reflecting a field-wide appreciation that such filtering is necessary. The studies spanned a decade, were done by unconnected research groups, varied in taxonomic range and alignment size, and differed in research goals. All original and filtered multiple sequence alignments and trees are available from <ext-link ext-link-type="uri" xlink:href="https://github.com/veg/pub-data">https://github.com/veg/pub-data</ext-link>.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>The large scale datasets used for BUSTED-E evaluation.</title>
+<p>For all per-alignment quantities (sequences, codons, tree length, gaps per) we report the median value and the [2.5% : 97.5%] range. Gaps per sequence are normalized per 1000 codons. Tree length is the cumulative branch length (expected substitutions/nucleotide) under the simple (MG94xREV) codon model. Abbreviations for the Alignment column are as follows. P2C: translated protein sequences are aligned, then mapped back to codon sequences; P&amp;C: protein based homology and filtering, codon-level alignment; MNM : multi-nucleotide mutations.</p></caption>
+<graphic xlink:href="620707v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2b">
+<title>BUSTED-E drastically reduces the rate of likely erroneous positive selection inference</title>
+<p>Compared to BUSTED (<xref ref-type="bibr" rid="c41">Wisotsky et al., 2020</xref>) with synonymous rate variation, error-compensated BUSTED-E model returned many fewer positive EDS results (<xref rid="tbl2" ref-type="table">Table 2</xref>) across the range of test stringencies (<xref rid="fig2" ref-type="fig">Figure 2</xref>). Even when using the less conservative model averaged approach (MA), where results from BUSTED-S and BUSTED-E models are combined to mitigate the potential loss of power (see Methods), the EDS detection rate is substantially lower. Note that if only a very small fraction of alignments are truly subject to positive selection, then the detection rate should be close to the chosen significance level, assuming the method is neither too conservative nor too anti-conservative. When using a significance level of 0.01 we expect approximately 1% of alignments to be identified as positively selected, since 0.01 is the expected false positive rate.</p>
+<table-wrap id="tbl2" orientation="portrait" position="float">
+<label>Table 2.</label>
+<caption><title>Comparative Method Performance on Genome-Scale Datasets.</title>
+<p>BUSTED (Std.) and BUSTED-E (-E) performance on empirical data sets; both original and filtered using BUSTED-E (see text). MA: model average. *: estimates between BUSTED-E and BUSTED have a Mann-Whitney test p <italic>&lt;</italic> 0.0001. (1) Per lineage branch-site tests using PAML at FDRf0.05 following the Rom correction. (2) No direct dN/dS ë 1 tests were done. (3) FDRf0.01 corrected clade branch-site tests using PAML for different clades. (4). p f 0.05 for different PAML model pairs and the original BUSTED method. The study used a 0.14 rate by requiring unanimous method consent.</p></caption>
+<graphic xlink:href="620707v2_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>The rate at which genes are found to be subject to EDS as function of the nominal p-value cutoff.</title> <p>The grey line shows the expectation under the strict null (no positive selection, at most neutral evolution).</p></caption>
+<graphic xlink:href="620707v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In <xref rid="fig2" ref-type="fig">Figure 2</xref>, we observe that the significance rates for error-corrected models align more closely with expected patterns. Notably, three out of the four datasets exhibit a substantial proportion (∼10-30%) of alignments where BUSTED detects EDS, even for the smallest p-value thresholds. This suggests that such “certain” calls of EDS may stem from the presence of anomalous regions within many of these alignments that are assigned to the error class by BUSTED-E.</p>
+</sec>
+<sec id="s2c">
+<title>BUSTED-E reduces bias in positive selection calls, improving biological interpretation</title>
+<p>Because ground truth in selection analyses is unknown, we cannot claim that our method is provably better for detection of EDS. However, we can evaluate how the choice of method for genomewide analysis of positive selection impacts signal distribution.</p>
+<p>Many genome-wide analyses aim to identify the functional contexts experiencing positive selection. To see how BUSTED-E might impact such inference, we ran enrichment analyses using a collection of functional annotation sources (KEGG, Reactome, GO, WikiPathways) on the top 5% (ranked by LRT) of genes (<xref rid="fig3" ref-type="fig">Figure 3</xref>). Analyzing a combined set of pathways with FDR <italic>&lt;</italic> 0.2 for encrichment in either set, we find that BUSTED-E and BUSTED highlight different pathways with slightly more pathways (10 vs 8) being more strongly enriched in BUSTED-E. However, the results obtained by BUSTED-E are much more closely aligned with both the original Schulz and Sackton analyses, which made a conservative consensus call of several methods, and other analyses, highlighting the general overrepresentation of immune genes in the positively selected set (<xref ref-type="bibr" rid="c39">Vinkler et al., 2023</xref>). These findings are also consistent with the central role of host-pathogen interactions in driving EDS (<xref ref-type="bibr" rid="c6">Enard et al., 2016</xref>). Moreover, pathways enriched in BUSTED have little biological coherence or alignment with prior knowledge, which would be consistent with error contamination. Further analysis suggests factors other than the action of positive selection may contribute to EDS detection with BUSTED. Specifically, we observe that for pathways enriched in BUSTED the genes driving enrichment tend to be unusually long. To quantify the overall trend, we color code each pathway according to how well protein length alone predicts whether a gene is part of the foreground set identified by the method showing the highest enrichment for that pathway (<xref rid="fig3" ref-type="fig">Figure 3</xref>). We quantify the association via a rankbased AUC metric, where a value of 1 would indicate that the pathway genes are ranked entirely at the top by length while a value of 0.5 indicates a random length distribution. This approach reveals that for pathways specific to BUSTED, the genes contributing most to the enrichment exhibit length bias, i.e., longer proteins may disproportionately drive enrichment signals. For example, considering the top BUSTED pathway of “Microtubule-Based Transport” (GO:0099111) the median length for the foreground gene is 1593 codons while the overall median length in the dataset is 390. In contrast, the pathways highlighted by BUSTED-E have relatively weaker length bias with lower length AUCs. Some length bias is expected even under error-free conditions as greater alignment length increases sample size and power.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Enrichment/depletion analysis using top 5% LRT genes (BUSTED-E) as the foreground set, at FDR f 0.2.</title> <p>Each bar is colored by the AUC of a simple predictive model which uses alignment length to predict BUSTED LRT model ranking (see text).</p></caption>
+<graphic xlink:href="620707v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d">
+<title>Datasets where BUSTED and BUSTED-E disagree have a characteristic pattern of inferred rates</title>
+<p><xref rid="fig4" ref-type="fig">Figure 4</xref> shows a characteristic “shift” in both <italic>ω</italic><sub>3</sub> and its proportion among the genes where BUSTED and BUSTED-E disagree. BUSTED-E infers smaller <italic>ω</italic><sub>3</sub> values and larger corresponding weights when the two methods disagree (with BUSTED-E finding no evidence of selection in nearly all such cases). On the other hand, the distributions of <italic>ω</italic><sub>3</sub> and its weight are largely congruent for the genes where the two methods agree. While there are several distinct reasons why genes may be discordantly classified (see below), the major driver is the absorption of a small fraction of the alignment where very large values of <italic>ω</italic> find support into the error class, and the corresponding reduction in the <italic>ω</italic> estimates. For a concrete example, see <xref rid="fig1" ref-type="fig">Figure 1</xref>.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>The distribution of <italic>ω</italic><sub>3</sub> (positive selection class estimate) estimated by BUSTED and BUSTED-E from individual genes in the Shultz and Sackton dataset <xref ref-type="bibr" rid="c35">Shultz and Sackton (2019)</xref>.</title> <p>Genes are separated into groups by how the two methods classify EDS: both ‘no selection’, both ‘yes’, or ‘discordant’ top, middle and last row respectively. (Corresponding fractions of genes are shown.) The first columns shows the <italic>ω</italic><sub>3</sub> values the second column shows the corresponding weight of the <italic>ω</italic><sub>3</sub> class. For readability, values are capped at log<sub>10</sub>(<italic>ω</italic><sub>3</sub>) = 5 and log<sub>10</sub> Pr(<italic>ω</italic> = <italic>ω</italic><sub>3</sub>) = –5 The rectangles show areas of the parameter space where BUSTED estimates are “error-like” (high <italic>ω</italic>, low weight) and BUSTED-E estimates lie in the more nominal range. These ranges are more densely represented among the discordant genes (last row).</p></caption>
+<graphic xlink:href="620707v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2e">
+<title>The inferred error component is small</title>
+<p>Across all four datasets, BUSTED-E allocates an error class weight well below 1% on average, typically less than 0.1% (<xref rid="tbl2" ref-type="table">Table 2</xref>). The majority of the alignments (with one exception) have an estimated error weight of exactly 0, i.e., the BUSTED-E model effectively reduces to the simpler BUSTED model. A median of 9-32 individual codons per alignment are marked for masking by BUSTED-E (see Methods).</p>
+<p>Few alignments have a strict statistical preference for BUSTED-E. BUSTED-E and BUSTED can be tested using an LRT which accounts for boundary conditions (e.g., when <italic>p</italic><sub><italic>e</italic></sub> = 0, <italic>ω</italic><sub><italic>e</italic></sub> is unidentifiable, <bold><italic>Self and Liang</italic></bold> (<bold><italic>1987</italic></bold>)). We chose to use a conservative <sup>2</sup> test statistic with two degrees of freedom (<xref ref-type="bibr" rid="c23">Murrell et al., 2015</xref>). Between 0.5% and 6.9% of the alignments reject BUSTED in favor of BUSTED-E (<italic>p</italic> f 0.05, <xref rid="tbl2" ref-type="table">Table 2</xref>). For these datasets, the presence of an error component provides a significantly better fit to the data. However, on the majority of alignments where the two models disagree (BUSTED finds evidence of EDS, and BUSTED-E does not), BUSTED cannot be rejected in favor of BUSTED-E. For the Shultz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>) dataset, for example, of the 3,814 alignments where BUSTED finds EDS (at <italic>p</italic> = 0.05), there are 3,552 (93.2%) cases when BUSTED cannot be rejected in favor of BUSTED-E (at <italic>p</italic> = 0.05).</p>
+</sec>
+<sec id="s2f">
+<title>Better performance of the BUSTED-E null explains much of the discordance between the models</title>
+<p>Unlike BUSTED, where the null model for EDS testing does not include any provision for positive selection (all <italic>ω</italic> f 1), the error component with <italic>ω</italic><sub><italic>E</italic></sub> g 100 is still available for BUSTED-E. To illustrate, in the SUGP2 (SURP And G-Patch Domain Containing 2) gene alignment from Shultz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>) (Supplementary Table 2), BUSTED shows strong evidence for EDS (p <italic>&lt;</italic> 0.0001), but BUSTED-E does not (<italic>p</italic> = 0.12). The alternative models for EDS tests have exactly the same log-likelihood scores and rate estimates (there is no error estimated component), but for the null model, BUSTED-E allocates 0.05% weight to the error component. The specific sites which are most affected by this change are those where multi-nucleotide substitutions (MNMs, e.g. CAT : AGA) are inferred to occur. Several recent studies report evidence that MNMs affect tests for EDS, increasing false positive rates when standard models are used (<xref ref-type="bibr" rid="c38">Venkat et al., 2018</xref>; <xref ref-type="bibr" rid="c5">Dunn et al., 2019</xref>; <xref ref-type="bibr" rid="c18">Lucaci et al., 2023</xref>). BUSTED-E can be extended to model MNMs directly (discussed below), although this is not our main focus here. Second, consider another discordantly classified gene, COPB1 (COPI Coat Complex Subunit Beta 1, Supplementary Table 3). Here, both BUSTED (EDS p <italic>&lt;</italic> 0.0001) and BUSTED-E (EDS <italic>p</italic> = 0.5) estimate large <italic>ω</italic><sub>3</sub> values for very small fractions of otherwise highly conserved alignments, which obviates the need of a separate error component for unrestricted BUSTED-E. However, the BUSTED-E null model can simply absorb this high rate in the error class, while constraining <italic>ω</italic><sub>3</sub> f 1. The sites where BUSTED draws the selection signal are also enriched for MNM.</p>
+</sec>
+<sec id="s2g">
+<title>Qualitative categorization of discordant alignments</title>
+<p>We bin all alignments where BUSTED returns a positive EDS classification, and BUSTED-E does not into five qualitative categories:</p>
+<list list-type="order">
+<list-item><p>Statistically supported error component, defined as a significant LRT test which rejects BUSTED in factor BUSTED-E. These are the alignments that should be the primary focus for error filtering, because they contain selection signal (non-empty positive selection <italic>ω</italic><sub>3</sub> component in BUSTED) and an error signal (non-empty and statistically supported error <italic>ω</italic><sub><italic>E</italic></sub> component in BUSTED-E), e.g., gene PXDNL from figure Supplement 1.</p></list-item>
+<list-item><p>Possible model misspecification, defined as having an empty error class (weight of <italic>ω</italic><sub><italic>E</italic></sub> is 0), a positive selection component (<italic>ω</italic><sub>3</sub> <italic>&lt;</italic> 100), and an insignificant BUSTED v BUSTED-E LRT test. For these alignments, all the selection signal from BUSTED is absorbed by the error class in BUSTED-E null (e.g., gene SUGP2, Supplementary Table 2). Thus, the evolutionary process giving rise to substitution patterns interpreted as EDS by BUSTED generates abiological substitution rates which may instead reflect model inadequacy.</p></list-item>
+<list-item><p>Only abiological selection rates, defined as having an empty error class (weight of <italic>ω</italic><sub><italic>E</italic></sub> is 0), a positive selection component (<italic>ω</italic><sub>3</sub> g 100), and an insignificant BUSTED v BUSTED-E LRT test. For these alignments there is no statistical support for anything other than an abiologically high evolutionary rate (e.g., gene COPB1, Supplementary Table 3).</p></list-item>
+<list-item><p>Weak basis of selection support, defined as having a non-empty error class (weight of <italic>ω</italic><sub><italic>E</italic></sub> is &gt; 0), a small (<italic>&lt;</italic> 0.01) weight for the selection component (<italic>ω</italic><sub>3</sub> g 100) in BUSTED, and an insignificant BUSTED v BUSTED-E LRT test. These datasets are similar to class type 1 defined above, but fail to reject BUSTED vs BUSTED-E.</p></list-item>
+<list-item><p>All others: alignments that do not belong to any of the previous categories. These include borderline cases (BUSTED p-value near the significant thresholds), or alignments where BUSTEDE may have suffered power loss (see the simulation section).</p></list-item>
+</list>
+</sec>
+<sec id="s2h">
+<title>Power loss suffered by BUSTED-E on null data is not sufficient to explain reduced detection rates</title>
+<p>We compared BUSTED and BUSTED-E on 6, 000 alignments simulated under BUSTED using varying alignment sizes, divergence levels, and <italic>ω</italic> distributions. We found that BUSTED-E suffers some power loss when the underlying data are generated using a model without the error component. The loss is minimal for cases where the selection is strong. BUSTED-E shows a more significant power loss when selection is weaker, but that also occurs with BUSTED. Model averaging recovers much of the power lost due to the unnecessary error component for all scenarios (see <xref rid="fig5" ref-type="fig">Figure 5</xref>). BUSTED-E does not introduce additional systematic biases to parameter estimates (see figure Supplement 1). Thus, we conclude that the dramatic reduction in EDS detection rate cannot be primarily attributed to power loss.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5.</label>
+<caption><title>Rates of EDS selection on data simulated with the BUSTED model (Supplementary Table 6).</title> <p>A LRT test with pf0.05 constitutes a positive result. Horizontal reference lines demarcate 0.05 and 0.90 rates. The datasets are sorted by the number of characters, smallest to largest. Circles are of different sizes to eliminate overlap, and sizes have no specific meaning.</p>
+<p><bold>Figure 5—figure supplement 1</bold>. Rates of EDS selection on data simulated with the BUSTED model (Supplementary Table 6). A LRT test with pf0.05 constitutes a positive result. Horizontal reference lines demarcate 0.05 and 0.90 rates. The datasets are sorted by the number of characters, smallest to largest. Circles are of different sizes to eliminate overlap.</p></caption>
+<graphic xlink:href="620707v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2i">
+<title>Characterizing BUSTED-E alignment filtering</title>
+<p>BUSTED-E can annotate individual codons in the alignment with a score corresponding to the confidence that it is attributable to the error class. Codons with high error-class scores can be masked with gaps and filtered alignments then passed on to other tools.</p>
+<p>When applied to the empirical alignment collections, BUSTED-E filtering masks a modest fraction of input alignments (<xref rid="tbl3" ref-type="table">Table 3</xref>). For the substantial majority of alignments, the filtering procedure does nothing. For the alignments where at least one codon is filtered, an average of 2-3 codons per 1000 codons are masked. With the exception of <xref ref-type="bibr" rid="c43">Wu et al., 2018</xref> (gapless input alignments), the filtering/masking procedure adds one new masked codon per 10-20 existing gapped codon positions.</p>
+<table-wrap id="tbl3" orientation="portrait" position="float">
+<label>Table 3.</label>
+<caption><title>BUSTED-E filtering procedure statistics.</title>
+<p>Unaffected alignments are those where no filtering is deemed necessary. All the following statistics are computed only over those alignments where some filtering was done. Masked codons per is the median [2.5% - 97.5%] number of codons masked per: alignment (raw counts), a single column (normalized), 1000 codons of sequence (normalized). As fraction of total gaps, refers to the median [2.5% - 97.5%] percentage of the gaps in the filtered alignment that are due to those added by filtering (the others were already there). *Input datasets for this reference contained no gaps.</p></caption>
+<graphic xlink:href="620707v2_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>Next, consider the effect that filtering has on EDS detection with standard BUSTED (no error component) models (<xref rid="tbl2" ref-type="table">Table 2</xref>). For all 4 datasets, when BUSTED is applied to filtered datasets, EDS detection rate is reduced significantly but remains higher than BUSTED-E on original datasets in 3 of 4 cases. In these 3 cases, BUSTED-E and MA approaches have essentially the same detection rate on original/filtered data — an indication of internal consistency. The dissenting dataset has an unusually high fraction of original alignments where BUSTED-E is preferred to BUSTED by LRT (0.2), and these alignments are gappy (5% of total alignment size comprises gaps, see <xref rid="tbl1" ref-type="table">Table 1</xref>). Indeed, masking the codons most significantly contributing to the error signal in the original data reduces the residual <italic>ω</italic><sub><italic>E</italic></sub> weight (last column of <xref rid="tbl2" ref-type="table">Table 2</xref>) several fold, with <italic>&gt;</italic> 90% of the datasets allocating no weight to this model component (e.g., <xref rid="fig1" ref-type="fig">Figure 1</xref>).</p>
+</sec>
+<sec id="s2j">
+<title>BUSTED-E filtering compared to existing methods</title>
+<p>We applied two widely used alignment filtering methods: BMGE (<xref ref-type="bibr" rid="c4">Criscuolo and Gribaldo, 2010</xref>) and HMMCleaner (<xref ref-type="bibr" rid="c8">Franco et al., 2019</xref>) to alignments from Schulz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>), and compared how they performed relative to BUSTED-E. The primary goal was to determine whether BUSTED-E targets the same error modalities as the existing methods, both of which are motivated by finding regions of sequences that have low homology to other sequences. The results of this comparison are summarized in <xref rid="tbl4" ref-type="table">Table 4</xref>.</p>
+<table-wrap id="tbl4" orientation="portrait" position="float">
+<label>Table 4.</label>
+<caption><title>The effects of various data filtering approaches on BUSTED and BUSTED-E performance; the “original data” row also includes filtering metrics using BUSTED-E.</title></caption>
+<graphic xlink:href="620707v2_tbl4.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbl5" orientation="portrait" position="float">
+<label>Table 5.</label>
+<caption><title>Key BUSTED-E rate variation parameters.</title></caption>
+<graphic xlink:href="620707v2_tbl5.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>HMMCleaner and BMGE target different errors than BUSTED-E. This follows from (a) noticing that BUSTED found EDS at about the same rate (∼ 30 – 40%) in the alignments filtered by these methods as in the original alignments, and (b) because EDS detection with BUSTED-E was dramatically lower than BUSTED for datasets passed through HMMCleaner and BMGE. In other words, from the standpoint of BUSTED-E, most of the errors it detects pass unchallenged by the other two tools. All three methods mask very small fractions of alignments (0.02 – 0.2%). As a practical advantage, the average run times for BUSTED-E, which performs selection detection and error-filtering jointly, are comparable to the average run times of HMMCleaner and BMGE, which only perform filtering. It is important to reiterate that Schulz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>) alignments had already undergone alignment filtering with custom scripts (<xref ref-type="bibr" rid="c10">Jarvis et al., 2014</xref>). Consequently, it is reasonable to assume that most of the homology, annotation, or assembly errors which are the primary targets of BMGE and HMMCleaner had already been removed and what remains are smaller errors that affect individual sites.</p>
+</sec>
+<sec id="s2k">
+<title>BUSTED-E model extensions</title>
+<p>The core idea of BUSTED-E is to identify alignment regions which appear aberrant in relation to the underlying evolutionary model. When this model is changed, the definition of aberrant patterns is also likely to change. Consider, for example, what happens if the codon substitution model is extended to permit instantaneous multi-nucleotide (MH) substitutions (<xref ref-type="bibr" rid="c17">Lucaci et al., 2021</xref>). As we and others have shown previously (<xref ref-type="bibr" rid="c18">Lucaci et al., 2023</xref>), including MH support in the context of selection detection dramatically lowers the rate of detection. For example, on data from Schulz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>), MH-enabled models detected EDS at a rate about 3 times lower than models without MH support (<xref ref-type="bibr" rid="c17">Lucaci et al., 2021</xref>). Much of this reduction is attributable to the difference in how multi-nucleotide substitutions that occur along short branches are handled. For standard models, MH substitutions drive up the estimates of <italic>ω</italic>, and in many cases one or a few of these substitutions is all that lends statistical support to positive selection in an alignment. For MH-enabled models these types of substitutions will be accommodated by separate 2- or 3-hit substitution rates, and reduce <italic>ω</italic> estimates. As an illustration, we include examples of datasets which are discordant under BUSTED and BUSTED-E (Supplementary Table 4), but not discordant under +MH versions of this model from each of the five qualitative categories we defined previously. Thus, multi-hit and error model components are interacting, with the change in the baseline model substantively modifying what data features are considered “error-like”.</p>
+<p>We reran the alignments from Schulz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>) with the BUSTED- MH model as the baseline, adding the error-sink component, and made the following observations.</p>
+<list list-type="order">
+<list-item><p>The inclusion of +MH reduces EDS detection rates about four-fold, to 10.1% with BUSTED and to only 1.8% with BUSTED-E.</p></list-item>
+<list-item><p>The datasets where BUSTED (without MH) finds EDS and BUSTED-E (also without MH) does not, are somewhat enriched for datasets where there is statistical evidence for including MH support (Odds Ratio = 1.2, p <italic>&lt;</italic> 0.001). The addition of MH support to BUSTED abrogates EDS detection rates. For example, 20% of the datasets assigned to Type 2 discordant class (“Possible model misspecification”) are also discordant between BUSTED and BUSTED-MH, with discordant datasets showing elevated rates of multi-nucleotide substitutions compared to the negative datasets (<xref rid="fig6" ref-type="fig">Figure 6</xref>). Interestingly, concordant positive datasets also have MH rates elevated compared to concordant negative datasets (<xref rid="fig6" ref-type="fig">Figure 6</xref>).</p></list-item>
+<list-item><p>There is an interaction between MH rates and the presence of the error component; when a non-zero error component is inferred, 2- and 3-nucleotide rate estimates are lowered (Supplementary Table 5).</p></list-item>
+<list-item><p>There is a significant additional computational cost for adding the -MH component. On average, BUSTED-MH run times are on average 8x longer than BUSTED run times, and BUSTED- MH-E run times are on average 9x longer than BUSTED-E run times.</p></list-item>
+</list>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6.</label>
+<caption><title>Point estimates of multiple-nucleotide substitution rates (under BUSTED-MH) stratified by BUSTED/BUSTED-E (without MH support) EDS classification at pf0.05, e.g. +-: detected as EDS by BUSTED, but not by BUSTED-E.</title></caption>
+<graphic xlink:href="620707v2_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In the early days of comparative evolutionary analyses, finding a positively selected gene was rare and remarkable, because data were sparse and statistical methods were insensitive, requiring truly powerful signals (<xref ref-type="bibr" rid="c9">Hughes and Nei, 1989</xref>; <xref ref-type="bibr" rid="c15">Lamers et al., 1993</xref>). Today, there are thousands of sequenced genomes, and statistical methods are much more sensitive. As a result, analyses often find that the majority of genes may have been subject to EDS (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>). The imprimatur of “positive selection” has lost its luster. Researchers must further refine prolific candidate lists of selected genes to confirm that the findings are robust and meaningful. Multiple methods are applied, and only genes where all methods agree are tagged as selected. Complex data filtering procedures are devised and run to reduce the influence of outliers and poor-quality sequences.</p>
+<p>Many alignment filtering and curation tools and protocols exist, including GBLOCKS (<xref ref-type="bibr" rid="c3">Castresana, 2000</xref>), ALISCORE (<xref ref-type="bibr" rid="c20">Misof and Misof, 2009</xref>), TrimAl (<xref ref-type="bibr" rid="c2">Capella-Gutiérrez et al., 2009</xref>), BMGE (<xref ref-type="bibr" rid="c4">Criscuolo and Gribaldo, 2010</xref>), Zorro (<xref ref-type="bibr" rid="c42">Wu et al., 2012</xref>), GUIDANCE (<xref ref-type="bibr" rid="c33">Sela et al., 2015</xref>), HMMclean (<xref ref-type="bibr" rid="c8">Franco et al., 2019</xref>), HoT (<xref ref-type="bibr" rid="c16">Landan and Graur, 2007</xref>). However, since the the correct homology and alignment is not known in practice, all approaches must rely on reasonable, but ultimately unverifiable assumptions about what constitutes error. These assumptions are usually not integrated with or informed by downstream analyses that consume MSAs. This creates the potential for errors that bias downstream analyses to leak through the filters. As we demonstrated using published data for which the authors made diligent effort to filter alignment errors with modern tools, “obvious to the eye” (<xref rid="fig1" ref-type="fig">Figure 1</xref>) errors still made it through the filtering process. Sensitive branch-site dN/dS models like BUSTED have little trouble pinpointing such errors with aberrant parameter estimates: high dN/dS values affecting tiny fractions of the alignment. Leveraging this simple intuition to define <italic>ad hoc</italic> error-regions for dN/dS parameter estimates (dN/dS g 100, weight f 1%) turns out to be quite effective at reducing the rate of positive selection detection, with the implication that most of the detected EDS genes in a typical large-scale screens are false positives.</p>
+<p>For a typical practitioner, dN/dS tests of selection are “black boxes”, and the source of signal, or the influence of outliers is difficult to assess <xref ref-type="bibr" rid="c36">Spiess et al. (2024)</xref>, especially if applied at scale. Intuitively, inference of selection is more robust if it is based on multiple substitutions across multiple sites. As sequencing projects ramp up species coverage, including many divergent species in selection analysis increases the chance of misalignment and other error. Given enough data with some errors, and the challenges of catching such errors via automated procedures, every gene in the genome would be inferred under positive selection on at least one branch eventually. This is biologically meaningless and makes selection analyses useless as a binary discriminative tool. On the other hand, even for moderate-sized datasets analyzed here, the BUSTED-E error correction framework improves downstream biological inference by reducing false positive signals due to confounders such as protein length and improving functional relevance (<xref rid="fig3" ref-type="fig">Figure 3</xref>).</p>
+<p>We suggest that whenever researchers consider using dN/dS analyses, especially in high-throughput settings, an error-correcting framework like BUSTED-E be used routinely. In genome-wide scans, especially those involving a large number of species, an automated method to account for sequencing and alignment error will be crucial, lest all of the signal be swamped with residual error. BUSTED-E is not meant to be a primary filter for gross or large-scale errors, which are better handled by other tools, but rather as a secondary filter, as done here. To guard against the loss of power, we recommend using model-averaged approaches. While alignment masking is not necessary for BUSTED-E to mitigate errors during selection screens, its ability to perform such masking is useful prior to applying other tools not equipped with error filtering (<xref ref-type="bibr" rid="c12">Kosakovsky Pond and Frost, 2005</xref>; <xref ref-type="bibr" rid="c44">Yang, 2007</xref>; <xref ref-type="bibr" rid="c21">Murrell et al., 2012</xref>).</p>
+<p>BUSTED-E is at its heart an <italic>ad hoc</italic> method. On the one hand, it finds many obvious errors missed by routine filtering, reduces EDS detection rate to credible levels, and results in more sensible functional description of selected genes. On the other hand, the error component is heuristic and phenomenological, albeit tunable. Other settings for the error component class will influence what is considered an error. Similarly, the choice of baseline substitution model has a major impact on error filtering. We view BUSTED-E as a practical and necessary solution to deal with pervasive alignment contamination to be refined and improved. Because we do not yet fully understand the distribution and nature of sequencing and alignment errors, we expect that BUSTED-E will fail to detect some real errors and also erroneously flag some biological variation as error. Power loss, possibly significant for some selection regimes, is also a concern. Encouragingly, our simulations show that given even moderate selection signal, power loss is minimal and can be mitigated with model averaging. Despite these limitations, BUSTED-E is a robust and scalable “drop-in” solution for improving the accuracy of evolutionary selection analyses in the presence of alignment errors, contributing to a more nuanced understanding of natural selection and adaptive evolution.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Model description</title>
+<p>BUSTED-E (Branch-site Unrestricted Test for Episodic Diversification with an Error component), is a random-effects model of codon evolution, which builds upon the BUSTED class (<xref ref-type="bibr" rid="c23">Murrell et al., 2015</xref>; <xref ref-type="bibr" rid="c41">Wisotsky et al., 2020</xref>; <xref ref-type="bibr" rid="c18">Lucaci et al., 2023</xref>). BUSTED-E is designed to test for a fraction of the alignment evolving with dN/dS (<italic>ω</italic>) <italic>&gt;</italic> 1, i.e. subject to positive diversifying selection, while also accommodating an “abiological”, or error-like, mode of evolution. The key parameters describing the evolution at alignment site <italic>s</italic>, along the branch of a phylogenetic tree <italic>b</italic> are the instantaneous rate of synonymous substitutions <italic>a</italic> and the ratio of non-synonymous to synonymous substitutions <italic>ω</italic>, respectively.</p>
+<p>The key feature of BUSTED-E is the inclusion on an error-component to the distribution of <italic>ω</italic>, with its ratio value bounded below by a large (<italic>a priori</italic> specified) number E, e.g. <italic>E</italic> = 100, and the maximal weight that can be allocated to this error component bounded from above by <italic>p</italic><sub><italic>e</italic></sub>, e.g. 1%. Exceedingly large <italic>ω</italic> values are a hallmark of unrealistic deviations from the expected evolutionary process, and as such are categorized as alignment or sequencing error. We chose these specific values because they represented specific modes of error in empirical data (<xref rid="tbl2" ref-type="table">Table 2</xref>), and because they were decimal round numbers.</p>
+<p>Error class parameters can be adjusted, and potentially even inferred from the data as model parameters. BUSTED-E is otherwise identical to the previously described and validated BUSTED-S model. The default, user-tunable, hyperparameter values are <italic>N</italic> = 4 (number of <italic>ω</italic> bins) and <italic>M</italic> = 3 (number of <italic>a</italic> bins). For N=4, the <italic>ω</italic> distribution accommodates two classes for negative selection or neutral evolution (<italic>ω</italic><sub>1</sub> f <italic>ω</italic><sub>2</sub> <italic>&lt;</italic> 1), a class for positive selection or neutral evolution (1 f <italic>ω</italic><sub>3</sub>), anda class for errors (100 = <italic>E</italic> f <italic>ω</italic><sub>4</sub>).</p>
+</sec>
+<sec id="s4b">
+<title>Formal model definition</title>
+<p>The BUSTED-E model is a standard continuous time discrete space Markov model of codon substitution, which partitions codon substitutions into three classes, with the corresponding instantaneous rate matrix 𝒬, parameterized following the Muse-Gaut (MG94) (<xref ref-type="bibr" rid="c24">Muse and Gaut, 1994</xref>) approach. Here, <italic>θ</italic><sub><italic>ij</italic></sub> = <italic>θ</italic><sub><italic>ji</italic></sub> denote five estimated nucleotide-level substitution bias parameters (<italic>θ</italic><sub><italic>Ag</italic></sub> = 1 for identifiability), <inline-formula><inline-graphic xlink:href="620707v2_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> are the corrected estimates of position-specific equilibrium frequencies for the target nucleotide (<xref ref-type="bibr" rid="c28">Pond et al., 2010</xref>). As described above, <italic>a, ω</italic> vary from site-to-site and from (branch,site) to (branch,site), respectively. All parameters, including branch lengths, are estimated using maximum likelihood, as implemented in the HyPhy package v2.5.56 or later (<xref ref-type="bibr" rid="c14">Kosakovsky Pond et al., 2020</xref>).
+<disp-formula id="ueqn1">
+<graphic xlink:href="620707v2_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+<sec id="s4c">
+<title>Statistical testing using BUSTED-E</title>
+<p>BUSTED-E can be constrained down to BUSTED-S, either as <italic>ω</italic><sub>3</sub> = <italic>ω</italic><sub><italic>E</italic></sub> or its <italic>p</italic><sub><italic>e</italic></sub> = 0. Therefore, we use the conservative χ<sup>2</sup> distribution with two degrees of freedom to compute LRT p-values for rejecting BUSTED-S in favor of BUSTED-E (<xref ref-type="bibr" rid="c34">Self and Liang, 1987</xref>). We test the alignment for evidence of EDS by constraining <italic>ω</italic><sub><italic>N</italic>–1</sub> = 1, optimizing this null model, and comparing it to the alternative BUSTED-E (where <italic>ω</italic><sub><italic>N</italic>–1</sub> g 1) using the likelihood ratio test. Once again, we use the conservative χ<sup>2</sup> with two degrees of freedom as the asymptotic distribution of the test statistic to assess significance. Because the addition of an error rate class is expected to reduce statistical power when the correct model has no error component, or when the alignment is “error-free”, we compute a model-averaged test of significance (following the general framework described in (<xref ref-type="bibr" rid="c18">Lucaci et al., 2023</xref>)). We fit both BUSTED-S and BUSTED-E to the same data, compute the Akaike weights for each model using the small sample AIC<sub>c</sub> information criterion score, and weigh LRT p-values for EDS by the corresponding Akaike weights: <italic>p</italic>(<italic>MA</italic>) = <italic>r</italic>(BUSTED[S])<italic>p</italic>(BUSTED[S]) + <italic>r</italic>(BUSTED-E)<italic>p</italic>(BUSTED-E). An Akaike weight of the model is defined as exp 0.5(min <italic>AIC</italic><sub>c</sub> – model<italic>AIC</italic><sub>c</sub>), with the minimum taken over the models being compared, and normalized to sum to 1 over all models.</p>
+<p>Model averaging is a way to control potential power loss. Assuming the worst-case scenario, where BUSTED-E offers no improvement in log-likelihood at the cost of two additional parameters, its AIC<sub>c</sub> score will be 4 or more units higher than the AIC<sub>c</sub> score for BUSTED-S. Further assume that <italic>p</italic>(BUSTED-E) = 0.5 (the highest p-value for one-sided tests as defined in BUSTED). The contribution from BUSTED-E to the model-averaged p-value will be 0.5 × <italic>r</italic>(BUSTED-E) f 0.06.</p>
+</sec>
+<sec id="s4d">
+<title>Model variations</title>
+<p>The BUSTED-E concept can be extended in several directions. First, we could alter the baseline model, for example by removing the synonymous rate variation (SRV) component, or adding a component for accommodating multi-nucleotide substitutions (<xref ref-type="bibr" rid="c18">Lucaci et al., 2023</xref>). Because the underlying model specifies what the expected biological reality is, it will influence the inference of what constitutes possible alignment errors. Second, we could partition the tree into “foreground” and “background” branches, as is commonly done for detecting lineage-specific selection, and apply to them different <italic>ω</italic> distributions and error components; these options are already implemented and available within HyPhy, but not discussed in detail further.</p>
+</sec>
+<sec id="s4e">
+<title>Heuristic error filtering</title>
+<p>We implement the following heuristic for alignment filtering. Our procedure applies to codons at individual branches, and consists of “masking” a subset of codons with gap characters (–-). First, for each branch and site in the alignment, we compute two empirical Bayes factors (EBF) asking (1) if the <italic>ω</italic> value comes from the error class (EBF<sub>e</sub>), and (2) if the <italic>ω</italic> value comes from the (non-error) positive selection class (EBF<sub>s</sub>). To obtain those EBFs, we compute, for each (branch, site) pair <italic>N</italic> conditional probabilities <inline-formula><inline-graphic xlink:href="620707v2_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, with <inline-formula><inline-graphic xlink:href="620707v2_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> used to represent all other ML parameter estimates. This involves the calculating <italic>N</italic> site-level phylogenetic likelihood functions, and setting the weight of <italic>ω</italic><sub><italic>k</italic></sub> to 1 on a particular branch. These conditional probabilities can be converted into empirical Bayes posterior probabilities, simply by dividing each by <inline-formula><inline-graphic xlink:href="620707v2_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, and computing EBF as the ratio of posterior to prior odds of <italic>ω</italic> = <italic>ω</italic><sub><italic>k</italic></sub>. The computational cost of the procedure for all (branch, site) pairs is roughly equivalent to <italic>N</italic> full-alignment likelihood calculations, and is negligible compared to the cost of BUSTED-E model fitting. EBF<sub>e</sub> is computed for the events <italic>ω</italic> = <italic>ω</italic><sub><italic>N</italic></sub> (error class) vs <italic>ω ≠ ω</italic><sub><italic>k</italic></sub> (not error class). EBF<sub>s</sub> is computed for the events <italic>ω</italic> = <italic>ω</italic><sub><italic>N</italic></sub> (error class) vs <italic>ω</italic> = <italic>ω</italic><sub><italic>N</italic>–1</sub> (selection class).</p>
+<p>A (branch, site) will be filtered when the following two conditions are satisfied. 1. EBF<sub>e</sub> g <italic>C</italic><sub>1</sub>, where <italic>C</italic><sub>1</sub> <italic>&gt;</italic> 1, default = 100 is a cutoff set <italic>a priori</italic> by the user, with higher values being more stringent (more conservative filtering). This condition encodes sufficient evidence that (branch,site) belongs to the error class. 2. EBFs g <italic>C</italic><sub>2</sub>, where <italic>C</italic><sub>2</sub> <italic>&gt;</italic> 1, default = 20 is a cutoff set <italic>a priori</italic> by the user, with higher values being more stringent (more conservative filtering). This condition encodes sufficient evidence that the error class is strongly preferred to the positive selection class.</p>
+<p>When the branch being filtered is a leaf, only the corresponding (observed) codon is masked. For an internal branch, there is no corresponding observed codon, and all of the observed codons in the smaller of the two tree splits defined by the branch are masked. A third user controlled threshold 0 <italic>&lt; C</italic><sub>3</sub> f 1, default = 0.4 is used to mask the entire site (as potentially unreliable), if more than <italic>C</italic><sub>3</sub> fraction of observed codons have been masked. <xref rid="fig7" ref-type="fig">Figure 7</xref> illustrates the filtering procedure on a few key examples.</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7.</label>
+<caption><p>Examples of codon sites filtered and retained by the heuristic filtering procedures based on the empirical Bayes factors for error class membership and for positive selection.</p></caption>
+<graphic xlink:href="620707v2_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s4f">
+<title>Implementation and performance</title>
+<p>BUSTED-E is implemented in HyPhy versions 2.5.53 or later, as well as on the Datamonkey web application <xref ref-type="bibr" rid="c40">Weaver et al. (2018)</xref>; versions of BUSTED-E are different between HyPhy versions, and all of the analyses in the paper were done with 2.5.60, 2.5.61, or 2.5.62. Supplying –error-sink Yes to a hyphy busted call turns on the error sink component. Because BUSTED-E is a mixture random effects model, its parameter estimation using direct optimization (as done here) is sensitive to starting conditions. We devised a multistage model fitting procedure which attempts to identify good starting points to speed up BUSTED-E convergence and improve run-to-run reproducibility:</p>
+<list list-type="order">
+<list-item><p>Fit the nucleotide GTR model to obtain initial estimates of branch lengths and nucleotide bias parameters (<italic>θ</italic><sub><italic>ij</italic></sub>).</p></list-item>
+<list-item><p>Fix all estimates from phase 1, and estimate mean <italic>ω</italic><sub>0</sub> value (or values if there is more than one branch partition) using the MG94xREV codon model.</p></list-item>
+<list-item><p>Use parameter estimates from phase 2 as the starting point, to re-estimate branch lengths, nucleotide bias parameters, and the mean <italic>ω</italic><sub>0</sub> value(s) under the full MG94xREV codon model.</p></list-item>
+<list-item><p>Fix parameter estimates from phase 3. Generate K (=250 by default) Latin Hypercube random samples of <italic>ω</italic> distributions with means constrained to <italic>ω</italic><sub>0</sub> estimates from phase 3, and <italic>a</italic> distributions with means constrained to 1.</p></list-item>
+<list-item><p>Compute the phylogenetic likelihood function on the K initial points, select P (=5 by default) best scores.</p></list-item>
+<list-item><p>Perform “quick-and-dirty” <italic>ω</italic> and <italic>a</italic> distribution optimizations from using the P starting points from phase 5. The optimizations are done using the Nedler-Mead simplex algorithm <xref ref-type="bibr" rid="c25">Nelder and Mead (1965)</xref>, with the stopping criterion that consecutive iterations fail to improve the log likelihood score by at least <italic>max</italic>(0.5, –10<sup>−4</sup> log <italic>L</italic>(<italic>phase</italic>3)).</p></list-item>
+<list-item><p>Select the estimates yielding the best likelihood score as the initial condition for the full direct optimization of the BUSTED model.</p></list-item>
+</list>
+<p>Additionally, if both BUSTED and BUSTED-E are fitted to the same alignment, we first run BUSTED, and add the parameter estimates obtained from BUSTED as 50% of the starting points candidate for step 4 in the fit for BUSTED-E, with the values of the error-sink drawn class drawn randomly.</p>
+</sec>
+<sec id="s4g">
+<title>Simulated null data analysis</title>
+<p>We parametrically generated simulated alignments under the BUSTED (+S) model, using six empirical alignments as guides. Specifically, we fitted the BUSTED (+S) model with 2 or 3 rate classes to the biological alignments previously analyzed for EDS in multiple papers. The alignments included different numbers of sequences, varied in length, divergence, nucleotide composition, nucleotide substitution biases, and the inferred site-to-site distribution of synonymous rates (Supplementary Table 6). For each empirical dataset, we generated 100 replicates under one of 10 selective profiles (Supplementary Table 7), yielding 6,000 total alignments. We then ran BUSTED and BUSTED-E on each replicate and tabulated the results, focusing on the power to detect selection, biases in rate estimates, and the rate at which BUSTED is rejected in favor of BUSTED-E.</p>
+</sec>
+<sec id="s4h">
+<title>Interaction with other filtering methods</title>
+<p>To understand the type of alignment errors detected by BUSTED-E filtering, we explored how traditional alignment filtering methods interact with BUSTED-E. We selected two highly cited “conventional” alignment filtering methods: BMGE (<xref ref-type="bibr" rid="c4">Criscuolo and Gribaldo, 2010</xref>) and HMMCleaner (<xref ref-type="bibr" rid="c8">Franco et al., 2019</xref>) to use in conjunction with BUSTED-E. BMGE utilizes a sliding window approach to detect regions of high entropy, while HMMCleaner generates an alternative sequence aligned with the original sequence to find regions of low similarity. Using data from Schulz and Sackton (<xref ref-type="bibr" rid="c35">Shultz and Sackton, 2019</xref>), we filtered the alignments with each of the conventional filtering methods and used both BUSTED and BUSTED-E to explore the differences in EDS detection rate.</p>
+</sec>
+</sec>
+
+</body>
+<back>
+<ack>
+<title>Acknowledgments</title>
+<p>This work was supported in part by the following awards: NIH/NHGRI (HG009299), NIH/NIGMS (GM151683), and NIH/NIAID (AI183870).</p>
+</ack>
+<sec id="suppd1e1972" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="d1e1963">
+<label>Supplementary figures and tables</label>
+<media xlink:href="supplements/620707_file02.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab>Zoonomia Consortium</collab></person-group>. <article-title>A comparative genomics multitool for scientific discovery and conservation</article-title> <source>Nature</source>. <year>2020</year>; <volume>587</volume>(<issue>7833</issue>):<fpage>240</fpage>–<lpage>245</lpage>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Capella-Gutiérrez</surname> <given-names>S</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses</article-title>. <source>Bioinformatics</source>. <year>2009</year> <month>Aug</month>; <volume>25</volume>(<issue>15</issue>):<fpage>1972</fpage>–<lpage>1973</lpage>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btp348</pub-id>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Castresana</surname> <given-names>J.</given-names></string-name></person-group> <article-title>Selection of Conserved Blocks from Multiple Alignments for Their Use in Phylogenetic Analysis</article-title>. <source>Molecular Biology and Evolution</source>. <year>2000</year> <month>Apr</month>; <volume>17</volume>(<issue>4</issue>):<fpage>540</fpage>–<lpage>552</lpage>. <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a026334</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a026334</pub-id>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Criscuolo</surname> <given-names>A</given-names></string-name>, <string-name><surname>Gribaldo</surname> <given-names>S.</given-names></string-name></person-group> <article-title>BMGE (Block Mapping and Gathering with Entropy): a new software for selection of phylogenetic informative regions from multiple sequence alignments</article-title>. <source>BMC Evolutionary Biology</source>. <year>2010</year> <month>Jul</month>; <volume>10</volume>(<issue>1</issue>):<fpage>210</fpage>. <pub-id pub-id-type="doi">10.1186/1471-2148-10-210</pub-id>, doi: <pub-id pub-id-type="doi">10.1186/1471-2148-10-210</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dunn</surname> <given-names>KA</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Improved inference of site-specific positive selection under a generalized parametric codon model when there are multinucleotide mutations and multiple nonsynonymous rates</article-title>. <source>BMC Evolutionary Biology</source>. <year>2019</year> <month>Jan</month>; <volume>19</volume>(<issue>1</issue>):<fpage>22</fpage>. <pub-id pub-id-type="doi">10.1186/s12862-018-1326-7</pub-id>, doi: <pub-id pub-id-type="doi">10.1186/s12862-018-1326-7</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Enard</surname> <given-names>D</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Viruses are a dominant driver of protein adaptation in mammals</article-title>. <source>eLife</source>. <year>2016</year> <month>May</month>; <volume>5</volume>:<fpage>e12469</fpage>. <pub-id pub-id-type="doi">10.7554/eLife.12469</pub-id>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fletcher</surname> <given-names>W</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>Z.</given-names></string-name></person-group> <article-title>The Effect of Insertions, Deletions, and Alignment Errors on the Branch-Site Test of Positive Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2010</year>; <volume>27</volume>(<issue>10</issue>):<fpage>2257</fpage>–<lpage>2267</lpage>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msq115</pub-id>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Franco</surname> <given-names>D</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Evaluating the usefulness of alignment filtering methods to reduce the impact of errors on evolutionary inferences</article-title>. <source>BMC Evolutionary Biology</source>. <year>2019</year> <month>Jan</month>; <volume>19</volume>:<fpage>21</fpage>, doi: <pub-id pub-id-type="doi">10.1186/s12862-019-1350-2</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hughes</surname> <given-names>AL</given-names></string-name>, <string-name><surname>Nei</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Evolution of the major histocompatibility complex: independent origin of nonclassical class I genes in different groups of mammals</article-title>. <source>Molecular Biology and Evolution</source>. <year>1989</year> <month>Nov</month>; <volume>6</volume>(<issue>6</issue>):<fpage>559</fpage>–<lpage>579</lpage>. <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a040573</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a040573</pub-id>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jarvis</surname> <given-names>ED</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Whole-genome analyses resolve early branches in the tree of life of modern birds</article-title>. <source>Science</source>. <year>2014</year> <month>Dec</month>; <volume>346</volume>(<issue>6215</issue>):<fpage>1320</fpage>–<lpage>1331</lpage>, doi: <pub-id pub-id-type="doi">10.1126/science.1253451</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jordan</surname> <given-names>G</given-names></string-name>, <string-name><surname>Goldman</surname> <given-names>N.</given-names></string-name></person-group> <article-title>The Effects of Alignment Error and Alignment Filtering on the Sitewise Detection of Positive Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2012</year> <month>Apr</month>; <volume>29</volume>(<issue>4</issue>):<fpage>1125</fpage>–<lpage>1139</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msr272</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msr272</pub-id>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kosakovsky Pond</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Frost</surname> <given-names>SDW</given-names></string-name></person-group>. <article-title>Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2005</year> <month>May</month>; <volume>22</volume>(<issue>5</issue>):<fpage>1208</fpage>–<lpage>1222</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msi105</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msi105</pub-id>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kosakovsky Pond</surname> <given-names>SL</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>A Random Effects Branch-Site Model for Detecting Episodic Diversifying Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2011</year> <month>Nov</month>; <volume>28</volume>(<issue>11</issue>):<fpage>3033</fpage>–<lpage>3043</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msr125</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msr125</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kosakovsky Pond</surname> <given-names>SL</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>HyPhy 2.5—A Customizable Platform for Evolutionary Hypothesis Testing Using Phylogenies</article-title>. <source>Molecular Biology and Evolution</source>. <year>2020</year> <month>Jan</month>; <volume>37</volume>(<issue>1</issue>):<fpage>295</fpage>–<lpage>299</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msz197</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msz197</pub-id>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lamers</surname> <given-names>SL</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Independent variation and positive selection in env V1 and V2 domains within maternalinfant strains of human immunodeficiency virus type 1 in vivo</article-title>. <source>Journal of Virology</source>. <year>1993</year> <month>Jul</month>; <volume>67</volume>(<issue>7</issue>):<fpage>3951</fpage>– <lpage>3960</lpage>, doi: <pub-id pub-id-type="doi">10.1128/jvi.67.7.3951-3960.1993</pub-id>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Landan</surname> <given-names>G</given-names></string-name>, <string-name><surname>Graur</surname> <given-names>D.</given-names></string-name></person-group> <article-title>Heads or Tails: A Simple Reliability Check for Multiple Sequence Alignments</article-title>. <source>Molecular Biology and Evolution</source>. <year>2007</year> <month>Jun</month>; <volume>24</volume>(<issue>6</issue>):<fpage>1380</fpage>–<lpage>1383</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msm060</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msm060</pub-id>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lucaci</surname> <given-names>AG</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Extra base hits: Widespread empirical support for instantaneous multiple-nucleotide changes</article-title>. <source>PLOS ONE</source>. <year>2021</year> <month>Mar</month>; <volume>16</volume>(<issue>3</issue>):<fpage>e0248337</fpage>, doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0248337</pub-id>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lucaci</surname> <given-names>AG</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Evolutionary Shortcuts via Multinucleotide Substitutions and Their Impact on Natural Selection Analyses</article-title>. <source>Molecular Biology and Evolution</source>. <year>2023</year> <month>Jul</month>; <volume>40</volume>(<issue>7</issue>):<fpage>msad150</fpage>. <pub-id pub-id-type="doi">10.1093/molbev/msad150</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msad150</pub-id>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Markova-Raina</surname> <given-names>P</given-names></string-name>, <string-name><surname>Petrov</surname> <given-names>D.</given-names></string-name></person-group> <article-title>High sensitivity to aligner and high rate of false positives in the estimates of positive selection in the 12 Drosophila genomes</article-title>. <source>Genome Research</source>. <year>2011</year> <month>Jun</month>; <volume>21</volume>(<issue>6</issue>):<fpage>863</fpage>–<lpage>874</lpage>, doi: <pub-id pub-id-type="doi">10.1101/gr.115949.110</pub-id>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Misof</surname> <given-names>B</given-names></string-name>, <string-name><surname>Misof</surname> <given-names>K.</given-names></string-name></person-group> <article-title>A Monte Carlo Approach Successfully Identifies Randomness in Multiple Sequence Alignments : A More Objective Means of Data Exclusion</article-title>. <source>Systematic Biology</source>. <year>2009</year> <month>Feb</month>; <volume>58</volume>(<issue>1</issue>):<fpage>21</fpage>–<lpage>34</lpage>. <pub-id pub-id-type="doi">10.1093/sysbio/syp006</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/sysbio/syp006</pub-id>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Murrell</surname> <given-names>B</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Detecting Individual Sites Subject to Episodic Diversifying Selection</article-title>. <source>PLOS Genetics</source>. <year>2012</year> <month>Jul</month>; <volume>8</volume>(<issue>7</issue>):<fpage>e1002764</fpage>, doi: <pub-id pub-id-type="doi">10.1371/journal.pgen.1002764</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Murrell</surname> <given-names>B</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>FUBAR: A Fast, Unconstrained Bayesian AppRoximation for Inferring Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2013</year> <month>May</month>; <volume>30</volume>(<issue>5</issue>):<fpage>1196</fpage>–<lpage>1205</lpage>, doi: <pub-id pub-id-type="doi">10.1093/molbev/mst030</pub-id>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Murrell</surname> <given-names>B</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Gene-Wide Identification of Episodic Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2015</year> <month>May</month>; <volume>32</volume>(<issue>5</issue>):<fpage>1365</fpage>–<lpage>1371</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msv035</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msv035</pub-id>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Muse</surname> <given-names>SV</given-names></string-name>, <string-name><surname>Gaut</surname> <given-names>BS</given-names></string-name></person-group>. <article-title>A likelihood approach for comparing synonymous and nonsynonymous nucleotide substitution rates, with application to the chloroplast genome</article-title>. <source>Molecular Biology and Evolution</source>. <year>1994</year> <month>Sep</month>; <volume>11</volume>(<issue>5</issue>):<fpage>715</fpage>– <lpage>724</lpage>. <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a040152</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/oxfordjournals.molbev.a040152</pub-id>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nelder</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Mead</surname> <given-names>R.</given-names></string-name></person-group> <article-title>A Simplex Method for Function Minimization</article-title>. <source>The Computer Journal</source>. <year>1965</year> <month>Jan</month>; <volume>7</volume>(<issue>4</issue>):<fpage>308</fpage>–<lpage>313</lpage>. <pub-id pub-id-type="doi">10.1093/comjnl/7.4.308</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/comjnl/7.4.308</pub-id>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nguyen</surname> <given-names>LP</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Gene expression, chromosome heterogeneity and the fast-X effect in mammals</article-title>. <source>Biology Letters</source>. <year>2015</year> <month>Feb</month>; <volume>11</volume>(<issue>2</issue>):<fpage>20150010</fpage>, doi: <pub-id pub-id-type="doi">10.1098/rsbl.2015.0010</pub-id>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pollard</surname> <given-names>KS</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Detection of nonneutral substitution rates on mammalian phylogenies</article-title>. <source>Genome research</source>. <year>2010</year>; <volume>20</volume>(<issue>1</issue>):<fpage>110</fpage>–<lpage>121</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pond</surname> <given-names>SK</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Correcting the Bias of Empirical Frequency Parameter Estimators in Codon Models</article-title>. <source>PLOS ONE</source>. <year>2010</year> <month>Jul</month>; <volume>5</volume>(<issue>7</issue>):<fpage>e11230</fpage>, doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0011230</pub-id>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Privman</surname> <given-names>E</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Improving the Performance of Positive Selection Inference by Filtering Unreliable Alignment Regions</article-title>. <source>Molecular Biology and Evolution</source>. <year>2012</year>; <volume>29</volume>(<issue>1</issue>):<fpage>1</fpage>–<lpage>5</lpage>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msr177</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Redelings</surname> <given-names>BD</given-names></string-name></person-group>. <article-title>Erasing Errors due to Alignment Ambiguity When Estimating Positive Selection</article-title>. <source>Molecular Biology and Evolution</source>. <year>2014</year>; <volume>31</volume>(<issue>8</issue>):<fpage>1979</fpage>–<lpage>1993</lpage>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msu148</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rodrigue</surname> <given-names>N</given-names></string-name>, <string-name><surname>Lartillot</surname> <given-names>N.</given-names></string-name></person-group> <article-title>Site-heterogeneous mutation-selection models within the PhyloBayes-MPI package</article-title>. <source>Bioinformatics</source>. <year>2014</year> <month>Apr</month>; <volume>30</volume>(<issue>7</issue>):<fpage>1020</fpage>–<lpage>1021</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btt729</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btt729</pub-id>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schneider</surname> <given-names>A</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Estimates of Positive Darwinian Selection Are Inflated by Errors in Sequencing, Annotation, and Alignment</article-title>. <source>Genome Biology and Evolution</source>. <year>2009</year>; <volume>1</volume>:<fpage>114</fpage>–<lpage>118</lpage>, doi: <pub-id pub-id-type="doi">10.1093/gbe/evp012</pub-id>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sela</surname> <given-names>I</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>GUIDANCE2: accurate detection of unreliable alignment regions accounting for the uncertainty of multiple parameters</article-title>. <source>Nucleic Acids Research</source>. <year>2015</year> <month>Jul</month>; <volume>43</volume>(<issue>W1</issue>):<fpage>W7</fpage>–<lpage>W14</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkv318</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/nar/gkv318</pub-id>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Self</surname> <given-names>SG</given-names></string-name>, <string-name><surname>Liang</surname> <given-names>KY</given-names></string-name></person-group>. <article-title>Asymptotic Properties of Maximum Likelihood Estimators and Likelihood Ratio Tests Under Nonstandard Conditions</article-title>. <source>Journal of the American Statistical Association</source>. <year>1987</year>; <volume>82</volume>(<issue>398</issue>):<fpage>605</fpage>–<lpage>610</lpage>, doi: <pub-id pub-id-type="doi">10.2307/2289471</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Shultz</surname> <given-names>AJ</given-names></string-name>, <string-name><surname>Sackton</surname> <given-names>TB</given-names></string-name></person-group>. <article-title>Immune genes are hotspots of shared positive selection across birds and mammals</article-title>. <source>eLife</source>. <year>2019</year> <month>Jan</month>; <volume>8</volume>:<fpage>e41815</fpage>. <pub-id pub-id-type="doi">10.7554/eLife.41815</pub-id>, doi: <pub-id pub-id-type="doi">10.7554/eLife.41815</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Spiess</surname> <given-names>AN</given-names></string-name>, <etal>et al.</etal></person-group>, <article-title>Scientific reasoning driven by influential data: resuscitate dfstat!</article-title> <source>bioRxiv</source>; <year>2024</year>, doi: <pub-id pub-id-type="doi">10.1101/2024.10.30.621016</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tzou</surname> <given-names>WS</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Molecular evolution of multiple-level control of heme biosynthesis pathway in animal kingdom</article-title>. <source>PLoS One</source>. <year>2014</year> <month>Jan</month>; <volume>9</volume>(<issue>1</issue>):<fpage>e86718</fpage>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Venkat</surname> <given-names>A</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Multinucleotide mutations cause false inferences of lineage-specific positive selection</article-title>. <source>Nature Ecology &amp; Evolution</source>. <year>2018</year> <month>Aug</month>; <volume>2</volume>(<issue>8</issue>):<fpage>1280</fpage>–<lpage>1288</lpage>, doi: <pub-id pub-id-type="doi">10.1038/s41559-018-0584-5</pub-id>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vinkler</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Understanding the evolution of immune genes in jawed vertebrates</article-title>. <source>Journal of Evolutionary Biology</source>. <year>2023</year> <month>Jun</month>; <volume>36</volume>(<issue>6</issue>):<fpage>847</fpage>–<lpage>873</lpage>. <pub-id pub-id-type="doi">10.1111/jeb.14181</pub-id>, doi: <pub-id pub-id-type="doi">10.1111/jeb.14181</pub-id>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Weaver</surname> <given-names>S</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Datamonkey 2.0: A Modern Web Application for Characterizing Selective and Other Evolutionary Processes</article-title>. <source>Molecular Biology and Evolution</source>. <year>2018</year> <month>Mar</month>; <volume>35</volume>(<issue>3</issue>):<fpage>773</fpage>–<lpage>777</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msx335</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msx335</pub-id>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wisotsky</surname> <given-names>SR</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Synonymous Site-to-Site Substitution Rate Variation Dramatically Inflates False Positive Rates of Selection Analyses: Ignore at Your Own Peril</article-title>. <source>Molecular Biology and Evolution</source>. <year>2020</year> <month>Aug</month>; <volume>37</volume>(<issue>8</issue>):<fpage>2430</fpage>– <lpage>2439</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msaa037</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msaa037</pub-id>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wu</surname> <given-names>M</given-names></string-name>, <string-name><surname>Chatterji</surname> <given-names>S</given-names></string-name>, <string-name><surname>Eisen</surname> <given-names>JA</given-names></string-name></person-group>. <article-title>Accounting For Alignment Uncertainty in Phylogenomics</article-title>. <source>PLOS ONE</source>. <year>2012</year> <month>Jan</month>; <volume>7</volume>(<issue>1</issue>):<fpage>e30288</fpage>, doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0030288</pub-id>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wu</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Dissecting the basis of novel trait evolution in a radiation with widespread phylogenetic dis-cordance</article-title>. <source>Molecular Ecology</source>. <year>2018</year>; <volume>27</volume>(<issue>16</issue>):<fpage>3301</fpage>–<lpage>3316</lpage>. doi: <pub-id pub-id-type="doi">10.1111/mec.14780</pub-id>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yang</surname> <given-names>Z.</given-names></string-name></person-group> <article-title>PAML 4: Phylogenetic Analysis by Maximum Likelihood</article-title>. <source>Molecular Biology and Evolution</source>. <year>2007</year> <month>Apr</month>; <volume>24</volume>(<issue>8</issue>):<fpage>1586</fpage>–<lpage>1591</lpage>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msm088</pub-id>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106921.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Castric</surname>
+<given-names>Vincent</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Lille</institution>
+</institution-wrap>
+<city>Lille</city>
+<country>France</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>Alignment and sequencing errors are a major concern in molecular evolution, and this <bold>valuable</bold> study represents a welcome improvement for genome-wide scans of positive selection. This new method seems to perform well and is generally <bold>convincing</bold>, although the evidence could be made more direct and more complete through additional simulations to determine the extent to which alignment errors are being properly captured.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106921.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Selberg et al. present a small but apparently very relevant modification to the existing BUSTED model. The new model allows for a fraction of codons to be assigned to an error class characterized by a very high dN/dS value. This &quot;omega_e&quot; category is constrained to represent no more than 1% of the alignment. The analyses convincingly show that the method performs well and represents a real improvement for genome-wide scans of positive selection. Alignment and sequencing errors are a major concern in molecular evolution. This new method, which shows strong performance, is therefore a very welcome contribution.</p>
+<p>Strengths:</p>
+<p>By thoroughly reanalyzing four datasets, the manuscript convincingly demonstrates that omega_e effectively identifies genuine alignment errors. Next, the authors evaluate the reduction in power to detect true selection through simulations. This new model is simple, efficient, and computationally fast. It is already implemented and available in HYPHY software.</p>
+<p>As a side note, I found it particularly interesting how the authors tested the statistical support for the new method compared to the simpler version without the error class. In many cases, the simpler model could not be statistically rejected in favor of the more complex model, despite producing biologically incorrect results in terms of parameter inference. This highlights a broader issue in molecular evolution and phylogenomics, where model selection often relies too heavily on statistical tests, potentially at the expense of biological realism. The analyses also reveal a trade-off between statistical power and the false positive rate. As with other methods, BUSTED-E cannot distinguish between alignment/sequencing errors and episodes of very strong positive selection. The authors are transparent about this limitation in the discussion.</p>
+<p>Weaknesses:</p>
+<p>Regarding the structure of the manuscript, the text could be clearer and more precise. Clear, practical recommendations for users could also be provided in the Results section. Additionally, the simulation analyses could be further developed to include scenarios with both alignment errors and positive selection, in order to better assess the method's performance. Finally, the model is evaluated only in the context of site models, whereas the widely used branch-site model is mentioned as possible but not assessed.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106921.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this paper, Selberg et al present an extension of their widely used BUSTED family of codon models for the detection of episodic (&quot;site-branch&quot;) positive selection from coding gene sequences. The extension adds an &quot;error component&quot; to ω (dN/dS) to capture misaligned codons. This ω component is set to an arbitrarily high value to distinguish it from positive selection, which is characterised by ω &gt; 1 but assumed not to be so high.</p>
+<p>The new method is tested on several datasets of comparative genomes, characterised by their size and the fact that the authors scanned for positive selection and/or provided filtering of alignment quality. It is also tested on simple simulations.</p>
+<p>Overall, the new method appears to capture relatively little of the ω variability in the alignments, although it is often significant. Given the complexity of codon evolution, adding a new parameter is more or less significant, and the question is whether it captures the signal that is intended, preferably in an unbiased manner.</p>
+<p>Strengths:</p>
+<p>This is an important issue, and I am enthusiastic to see it explicitly modeled within the codon modeling framework, rather than externalised to ad hoc filtering methods. The promise of quantifying the divergence signal from alignment error vs selection is exciting.</p>
+<p>The BUSTED family of models is widely used and very powerful for capturing many aspects of codon evolution, and it is thus an excellent choice for this extension.</p>
+<p>Weaknesses:</p>
+<p>(1) The definition of alignment error by a very large ω is not justified anywhere in the paper. There are known cases of bona fide positive selection with many non-synonymous and 0 synonymous substitutions over branches. How would they be classified here? E.g., lysosyme evolution, bacterial experimental evolution.</p>
+<p>Using the power of the model family that the authors develop, I would suggest characterising a more specific error model. E.g., radical amino-acid &quot;changes&quot; clustered close together in the sequence, proximity to gaps in the alignment, correlation of apparent ω with genome quality.</p>
+<p>Also concerning this high ω, how sensitive is its detection to computational convergence issues?</p>
+<p>(2) The authors should clarify the relation between the &quot;primary filter for gross or large-scale errors&quot; and the &quot;secondary filter&quot; (this method). Which sources of error are expected to be captured by the two scales of filters? What is their respective contribution to false positives of positive selection?</p>
+<p>Sources of error in the alignment of coding genes include:</p>
+<p>a) Errors in gene models, which may differ between species but also propagate among close species (i.e., when one species is used as a reference to annotate others).</p>
+<p>b) Inconsistent choice of alternative transcripts/isoforms.</p>
+<p>Both of these lead to asking an alignment algorithm to align non-homologous sequences, which violates the assumptions of the algorithms, yet both are common issues in phylogenomics.</p>
+<p>c) Sequencing errors, but I doubt they affect results much here.</p>
+<p>d) Low complexity regions of proteins.</p>
+<p>e) Aproximations by alignment heuristics, sometimes non-deterministic or dependent on input order.</p>
+<p>f) Failure to capture aspects of protein or gene evolution in the optimality criteria used.</p>
+<p>For example, Figure 1 seems to correspond to a wrong or inconsistent definition of the final exon of the gene in one species, which I would expect to be classified as &quot;gross or large-scale error&quot;.</p>
+<p>(3) The benchmarking of the method could be improved both for real and simulated data.</p>
+<p>For real data, the authors only analysed sequences from land vertebrates with relatively low Ne and thus relatively low true positive selection. I suggest comparing results with e.g. Drosophila genomes, where it has been reported that 50% of all substitutions are fixed by positive selection, or with viral evolution.</p>
+<p>For simulations, the authors should present simulations with or without alignment errors (e.g., introduce non-homologous sequences, or just disturb the alignments) and with or without positive selection, to measure how much the new method correctly captures alignment errors and incorrect positive selection.</p>
+<p>I also recommend simulating under more complex models, such as multinucleotide mutations or strong GC bias, and investigating whether these other features are captured by the alignment error component.</p>
+<p>Finally, I suggest taking true alignments and perturbing them (e.g., add non-homologous segments or random gaps which shift the alignment locally), to verify how the method catches this. It would be interesting to apply such perturbations to genes which have been reported as strong examples of positive selection, as well as to genes with no such evidence.</p>
+<p>(4) It would be interesting to compare to results from the widely used filtering tool GUIDANCE, as well as to the Selectome database pipeline (<ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1093/nar/gkt1065">https://doi.org/10.1093/nar/gkt1065</ext-link>). Moreover, the inconsistency between BUSTED-E and HMMCleaner, and BMGE is worrying and should be better explained.</p>
+<p>(5) For a new method such as this, I would like to see p-value distributions and q-q plots, to verify how unbiased the method is, and how well the chi-2 distribution captures the statistical value.</p>
+<p>(6) I disagree with the motivation expressed at the beginning of the Discussion: &quot;The imprimatur of &quot;positive selection&quot; has lost its luster. Researchers must further refine prolific candidate lists of selected genes to confirm that the findings are robust and meaningful.&quot; Our goal should not be to find a few impressive results, but to measure accurately natural selection, whether it is frequent or rare.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106921.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Selberg</surname>
+<given-names>Avery</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6568-0583</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Clark</surname>
+<given-names>Nathan L</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0006-8374</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sackton</surname>
+<given-names>Timothy B</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1673-9216</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Muse</surname>
+<given-names>Spencer V</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0104-0728</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lucaci</surname>
+<given-names>Alexander G</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4896-6088</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Weaver</surname>
+<given-names>Steven</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6931-7191</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Nekrutenko</surname>
+<given-names>Anton</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5987-8032</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Chikina</surname>
+<given-names>Maria</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2550-5403</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Pond</surname>
+<given-names>Sergei L Kosakovsky</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4817-4029</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>eLife Assessment</bold></p>
+<p>Alignment and sequencing errors are a major concern in molecular evolution, and this valuable study represents a welcome improvement for genome-wide scans of positive selection. This new method seems to perform well and is generally convincing, although the evidence could be made more direct and more complete through additional simulations to determine the extent to which alignment errors are being properly captured.</p>
+</disp-quote>
+<p>We thank the editors for their positive assessment and for highlighting the core strength and a key area for improvement. The main request (also echoed by both reviewers) is for us to conduct additional simulation studies where true alignment errors are known and assess the performance of BUSTED-E. We plan to conduct several simulations (on the order of 100,000 individual alignments in total) in response to that request, with the caveat that we are not aware of any tools that simulate realistic alignment errors, so these simulations are likely only a pale reflection of biological reality.</p>
+<p>(1) Ad hoc small local edits of alignments similar to what was implemented in the HMMCleaner paper. These local edits would include operations like replacement of codons or small stretches of sequences with random data, local transposition, inversion.</p>
+<p>(a) Using parametrically simulated alignments (under BUSTED models).</p>
+<p>(b) Using empirical alignments.</p>
+<p>(2) Simulations under model misspecification, specifically to address the point of reviewer 2. For example, we would simulate under models that allow for multi-nucleotide substitutions, and then apply error filtering under models which do not.</p>
+<p>We will also run several new large-scale screens of existing alignments, to directly and indirectly address the reviewers comments. These will include</p>
+<p>(a) A drosophila dataset (from <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/mbe/article/42/4/msaf068/8092905">https://academic.oup.com/mbe/article/42/4/msaf068/8092905</ext-link>)</p>
+<p>(b) Current Selectome data (<ext-link ext-link-type="uri" xlink:href="https://selectome.org/">https://selectome.org/</ext-link>), both filtered and unfiltered. Here the filtering procedure refers to what Selectome does to obtain what its authors think are high quality alignments.</p>
+<p>(c) Current OrthoMam data, both (<ext-link ext-link-type="uri" xlink:href="https://orthomam.mbb.cnrs.fr/">https://orthomam.mbb.cnrs.fr/</ext-link>) filtered and unfiltered. Here the filtering procedure refers to what OrthoMam does to obtain what its authors think are high quality alignments.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1:</bold></p>
+</disp-quote>
+<p>We are grateful to Reviewer #1 for their positive and encouraging review. We are pleased they found our analyses convincing and recognized BUSTED-E as a &quot;simple, efficient, and computationally fast&quot; improvement for evolutionary scans.</p>
+<disp-quote content-type="editor-comment">
+<p>Strengths:</p>
+<p>As a side note, I found it particularly interesting how the authors tested the statistical support for the new method compared to the simpler version without the error class. In many cases, the simpler model could not be statistically rejected in favor of the more complex model, despite producing biologically incorrect results in terms of parameter inference. This highlights a broader issue in molecular evolution and phylogenomics, where model selection often relies too heavily on statistical tests, potentially at the expense of biological realism.</p>
+</disp-quote>
+<p>We agree that this observation touches upon a critical issue in phylogenomics. A statistically &quot;good&quot; fit does not always equate to a biologically accurate model. We believe our work serves as a useful case study in this regard. We will add discussion of the importance of considering biological realism alongside statistical adequacy in model selection.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>Regarding the structure of the manuscript, the text could be clearer and more precise.</p>
+</disp-quote>
+<p>We appreciate this feedback. We will perform a thorough revision of the entire manuscript to improve its clarity, flow, and precision. We will focus on streamlining the language and ensuring that our methodological descriptions and results are as unambiguous as possible.</p>
+<disp-quote content-type="editor-comment">
+<p>Clear, practical recommendations for users could also be provided in the Results section.</p>
+</disp-quote>
+<p>To make our method more accessible and its application more straightforward, we will add a new section that provides clear, practical recommendations for users. This includes guidance on when to apply BUSTED-E, how to interpret its output, and best practices for distinguishing potential errors from strong selection.</p>
+<disp-quote content-type="editor-comment">
+<p>Additionally, the simulation analyses could be further developed to include scenarios with both alignment errors and positive selection, in order to better assess the method's performance.</p>
+</disp-quote>
+<p>Additional simulations will be conducted (see above)</p>
+<disp-quote content-type="editor-comment">
+<p>Finally, the model is evaluated only in the context of site models, whereas the widely used branch-site model is mentioned as possible but not assessed.</p>
+</disp-quote>
+<p>BUSTED class models support branch-site variation in dN/dS, so technically all of our analyses are already branch-site. However, we interpret the reviewer’s comment as describing use cases when a method is used to test for selection on a subset of tree branches (as opposed to the entire tree). BUSTED-E already supports this ability, and we will add a section in the manuscript describing how this type of testing can be done, including examples. However, we do not plan to conduct additional extensive data analyses or simulations, as this would probably bloat the manuscript too much.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2:</bold></p>
+</disp-quote>
+<p>We thank Reviewer #2 for their detailed and thought-provoking comments, and for their enthusiasm for modeling alignment issues directly within the codon modeling framework. The criticisms raised are challenging and we will work on improving the justification, testing, and contextualization of our method.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>The definition of alignment error by a very large ω is not justified anywhere in the paper... I would suggest characterising a more specific error model. E.g., radical amino-acid &quot;changes&quot; clustered close together in the sequence, proximity to gaps in the alignment, correlation of apparent ω with genome quality... Also concerning this high ω, how sensitive is its detection to computational convergence issues?</p>
+</disp-quote>
+<p>This is a fundamental point that we are grateful to have the opportunity to clarify. Our intention with the high ω category is not to provide a mechanistic or biological definition of an alignment error. Rather, its purpose is to serve as a statistical &quot;sink&quot; for codons exhibiting patterns of divergence so extreme that they are unlikely to have resulted from a typical selective process. It is phenomenological and ad hoc. The reviewer makes sensible suggestions for other ad hoc/empirical approaches to alignment quality filtering, but most of those have already been implemented in existing (excellent) alignment filtering tools. BUSTED-E is never meant to replace them, but rather to catch what is left over. Importantly, error detection is not even the primary goal of BUSTED-E; errors are treated as a statistical nuisance. With all due respect, all of the reviewers suggestions are similarly ad hoc -- there is no rigorous quantitative justification for any of them, but they are all sensible and plausible, and usually work in practice.</p>
+<p>Computational convergence issues can never be fully dismissed, but we do not consider this to be a major issue. Our approach already pays careful attention to proper initialization, does convergence checks, considers multiple initial starting points. We also don’t need to estimate large ω with any degree of precision, it just needs to be “large”.</p>
+<disp-quote content-type="editor-comment">
+<p>The authors should clarify the relation between the &quot;primary filter for gross or large-scale errors&quot; and the &quot;secondary filter&quot; (this method). Which sources of error are expected to be captured by the two scales of filters?</p>
+</disp-quote>
+<p>We will add discussion and examples to explicitly define the distinct and complementary roles of these filtering stages.</p>
+<disp-quote content-type="editor-comment">
+<p>The benchmarking of the method could be improved both for real and simulated data... I suggest comparing results with e.g. Drosophila genomes... For simulations, the authors should present simulations with or without alignment errors... and with or without positive selection... I also recommend simulating under more complex models, such as multinucleotide mutations or strong GC bias...</p>
+</disp-quote>
+<p>We will add more simulations as suggested (see above). We will also analyze a drosophila gene alignment from previously published papers.</p>
+<disp-quote content-type="editor-comment">
+<p>It would be interesting to compare to results from the widely used filtering tool GUIDANCE, as well as to the Selectome database pipeline... Moreover, the inconsistency between BUSTED-E and HMMCleaner, and BMGE is worrying and should be better explained.</p>
+</disp-quote>
+<p>Some of the alignments we have analyzed had already been filtered by GUIDANCE. We’ll also run the Selectome data through BUSTED-E: both filtered and unfiltered. We consider it beyond the scope of this manuscript to conduct detailed filtering pipeline instrumentation and side-by-side comparison.</p>
+<disp-quote content-type="editor-comment">
+<p>For a new method such as this, I would like to see p-value distributions and q-q plots, to verify how unbiased the method is, and how well the chi-2 distribution captures the statistical value.</p>
+</disp-quote>
+<p>We will report these values for new null simulations.</p>
+<disp-quote content-type="editor-comment">
+<p>I disagree with the motivation expressed at the beginning of the Discussion... Our goal should not be to find a few impressive results, but to measure accurately natural selection, whether it is frequent or rare.</p>
+</disp-quote>
+<p>That’s a philosophical point; at some level, given enough time, every single gene likely experiences some positive selection at some point in the evolutionary past. The practically important question is how to improve the sensitivity of the methods while controlling for ubiquitous noise. We do agree with the sentiment that the ultimate goal is to “measure accurately natural selection, whether it is frequent or rare”. However, we also must be pragmatic about what is possible with dN/dS methods on available genomic data.</p>
+</body>
+</sub-article>
+</article>
