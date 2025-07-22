@@ -1,0 +1,494 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">106769</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.106769</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.106769.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Genetics and Genomics</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>The impact of ambient contamination on demultiplexing methods for single-nucleus multiome experiments</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4468-7361</contrib-id>
+<name>
+<surname>Li</surname>
+<given-names>Terence</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a6">6</xref>
+<email>terencewtli@g.ucla.edu</email>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Alvarez</surname>
+<given-names>Marcus</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liu</surname>
+<given-names>Cuining</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Abuhanna</surname>
+<given-names>Kevin</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sun</surname>
+<given-names>Yu</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ernst</surname>
+<given-names>Jason</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="aff" rid="a8">8</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7796-3372</contrib-id>
+<name>
+<surname>Plath</surname>
+<given-names>Kathrin</given-names>
+</name>
+<xref ref-type="aff" rid="a9">9</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Balliu</surname>
+<given-names>Brunilda</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Luo</surname>
+<given-names>Chongyuan</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Zaitlen</surname>
+<given-names>Noah</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>nzaitlen@g.ucla.edu</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Human Genetics, David Geffen School of Medicine, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Computational Medicine, David Geffen School of Medicine, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Biostatistics, Fielding School of Public Health, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Biological Chemistry, David Geffen School of Medicine, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Pathology and Laboratory Medicine, David Geffen School of Medicine, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Bioinformatics Graduate Program, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a7"><label>7</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Department of Medicine, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a8"><label>8</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Computer Science Department, Henry Samueli School of Engineering and Applied Science, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+<aff id="a9"><label>9</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id><institution>Department of Biological Chemistry, David Geffen School of Medicine, University of California, Los Angeles</institution></institution-wrap>, <city>Los Angeles</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Hwang</surname>
+<given-names>Byungjin</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Yonsei University College of Medicine</institution>
+</institution-wrap>, <city>Seoul</city>, <country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-07-08">
+<day>08</day>
+<month>07</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP106769</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-05-07">
+<day>07</day>
+<month>05</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-02-08">
+<day>08</day>
+<month>02</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.02.06.636969"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Li et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Li et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-106769-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Sample multiplexing has become an increasingly common design choice in droplet-based single-nucleus multi-omic sequencing experiments to reduce costs and remove technical variation. Genotype-based demultiplexing is one popular class of methods that was originally developed for single-cell RNA-seq, but has not been rigorously benchmarked in other assays, such as snATAC-seq and joint snRNA/snATAC assays, especially in the context of variable ambient RNA/DNA contamination. To address this, we develop ambisim, a genotype-aware read-level simulator that can flexibly control ambient molecule proportions and generate realistic joint snRNA/snATAC data. We use ambisim to evaluate demultiplexing methods across several important parameters: doublet rate, number of multiplexed donors, and coverage levels. Our simulations reveal that methods are variably impacted by ambient contamination in both modalities. We then applied the demultiplexing methods to two joint snRNA/snATAC datasets and found highly variable concordance between methods in both modalities. Finally, we develop a new metric, <italic>variant consistency</italic>, which we show is correlated with cell-level ambient molecule fractions in singlets. Applying our metric to two multiplexed joint snRNA/snATAC datasets reveals variable ambient contamination across experiments and modalities. We conclude that improved modelling of ambient material in demultiplexing algorithms will increase both sensitivity and specificity.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Single-cell sequencing has enabled scientists to study biological systems at fine-scale resolution<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c2">2</xref>,<xref ref-type="bibr" rid="c3">3</xref>,<xref ref-type="bibr" rid="c4">4</xref></sup>. Recently, significant effort has been devoted to understanding the impact of genetic variation in single-cell RNA sequencing (scRNA-seq) experiments, which requires large sample sizes<sup><xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c6">6</xref>,<xref ref-type="bibr" rid="c7">7</xref>,<xref ref-type="bibr" rid="c8">8</xref>,<xref ref-type="bibr" rid="c9">9</xref>,<xref ref-type="bibr" rid="c10">10</xref>,<xref ref-type="bibr" rid="c11">11</xref></sup>. To achieve this scale and reduce technical variation, researchers use multiplexed designs in which multiple samples are processed simultaneously. Genotype-based demultiplexing methods are then used to infer cell identities by leveraging genetic differences between donors. In addition, genotype-based demultiplexing methods are capable of detecting between-donor (heterotypic) doublets, which cannot be accurately identified by traditional feature-based doublet callers<sup><xref ref-type="bibr" rid="c12">12</xref>,<xref ref-type="bibr" rid="c13">13</xref>,<xref ref-type="bibr" rid="c14">14</xref></sup>. To date, many genotype-based demultiplexing methods<sup><xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c17">17</xref>,<xref ref-type="bibr" rid="c18">18</xref>,<xref ref-type="bibr" rid="c19">19</xref>,<xref ref-type="bibr" rid="c20">20</xref>,<xref ref-type="bibr" rid="c37">37</xref>,<xref ref-type="bibr" rid="c38">38</xref></sup> have been developed explicitly for scRNA-seq and have been shown to be accurate in scRNA-seq data<sup><xref ref-type="bibr" rid="c21">21</xref></sup>. More recently, they have also been successfully applied to joint single nucleus RNA/ATAC sequencing experiments<sup><xref ref-type="bibr" rid="c23">23</xref></sup>.</p>
+<p>One question that has not been rigorously explored is the extent to which ambient RNA/DNA impacts demultiplexing method accuracy in these assays. Ambient RNA/DNA contamination arises from the capture of cytoplasmic molecular material and barcode swapping events<sup><xref ref-type="bibr" rid="c22">22</xref></sup> and is an especially prevalent issue in single nucleus assays<sup><xref ref-type="bibr" rid="c27">27</xref></sup>. Such contamination can impact demultiplexing performance because genetic variants from other multiple donors will be present in contaminated droplets (<xref rid="fig1" ref-type="fig">Fig 1A</xref>). To date, multiple studies have examined demultiplexing method performance in both scRNA-seq and scATAC-seq<sup><xref ref-type="bibr" rid="c21">21</xref>,<xref ref-type="bibr" rid="c23">23</xref>,<xref ref-type="bibr" rid="c24">24</xref>,<xref ref-type="bibr" rid="c25">25</xref>,<xref ref-type="bibr" rid="c40">40</xref>,<xref ref-type="bibr" rid="c41">41</xref>,<xref ref-type="bibr" rid="c42">42</xref>,<xref ref-type="bibr" rid="c43">43</xref></sup> and shown that methods tend to identify similar numbers of singlets both within and across modalities. However, these studies benchmarked demultiplexing across low ambient RNA rates (5 - 10%) that may not be reflective of single-nucleus data<sup><xref ref-type="bibr" rid="c27">27</xref>,<xref ref-type="bibr" rid="c39">39</xref></sup> and have not explored the effects of ambient DNA on snATAC-seq data.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1:</label>
+<caption><title><italic>ambisim</italic>, a multiplexed joint snRNA/snATAC read simulator that controls ambient proportions.</title>
+<p>A) Example of a scenario in which ambient RNA can confound demultiplexing methods. B) Design of <italic>ambisim.</italic> Cell attributes, including donor identity and ambient RNA fraction, are specified, and then reads are sampled from a reference genome. For any read that overlaps a SNP, an allele is sampled from the donor’s genotype. If the read is an ambient read, a SNP is instead sampled based on all donors’ genotypes. C) Simulation designs. Heterotypic doublet proportion and number of multiplexed donors are varied along with ambient RNA/DNA fraction. Demultiplexing methods are evaluated based on two metrics: droplet type accuracy (percentage of droplets assigned to the correct droplet type) and singleton-donor accuracy (percentage of singlets assigned to the correct donor).</p></caption>
+<graphic xlink:href="636969v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To model ambient RNA, previous studies adopted a partial simulation framework<sup><xref ref-type="bibr" rid="c10">10</xref>,<xref ref-type="bibr" rid="c13">13</xref>,<xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c22">22</xref></sup>. First, ground truth singlets are generated from <italic>in silico</italic> mixtures from independent single-donor experiments. Doublets are then artificially generated by merging reads across random pairs of singlets, and ambient RNA is induced by randomly swapping reads across barcodes according to a global contamination rate. However, this approach is problematic, as ambient material tends to originate from non-informative parts of the genome, such as regions outside of genes and peaks<sup><xref ref-type="bibr" rid="c26">26</xref>,<xref ref-type="bibr" rid="c27">27</xref></sup>. While single cell read simulators for both RNA and ATAC exist and can be used to control different experimental designs<sup><xref ref-type="bibr" rid="c28">28</xref>,<xref ref-type="bibr" rid="c29">29</xref>,<xref ref-type="bibr" rid="c30">30</xref></sup>, they are currently unable to model ambient material and cannot simulate from genotypes.</p>
+<p>To address these issues, we developed <italic>ambisim</italic> to generate more realistic multiplexed single nucleus multiome data. In addition, we benchmarked seven genotype-based demultiplexing methods, three of which can be applied with or without reference genotypes (Table S1, Supplemental Information), in a comprehensive set of <italic>ambisim</italic> simulated multiplexed snRNA/snATAC and two real multiplexed snRNA/snATAC datasets. We observed variable performance of methods as a function of study design and ambient contamination. Finally, we propose a new metric, <italic>variant consistency</italic>, which leverages cell-level allele counts to estimate ambient contamination, which we used to further characterize differences in demultiplexing quality between methods.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title><italic>ambisim</italic>: an ambient RNA/DNA aware joint RNA/ATAC read simulator</title>
+<p><italic>ambisim</italic> requires an input a reference joint RNA/ATAC dataset and a reference genotype VCF file. It then generates a droplet set and a corresponding set of fastq files encapsulating the data in a simulated multiplexed experiment. First, for each input barcode, <italic>ambisim</italic> samples a droplet type – singlet, doublet, or empty – and then samples cell-level attributes, including read depth, droplet type, individual identity, and an ambient read fraction (<xref rid="fig1" ref-type="fig">Fig 1B</xref>). Then, <italic>ambisim</italic> samples reads from the genome according to probability distributions based on a read’s ambient status. If the read overlaps a SNP, an allele is sampled based on two cases. If the read is native to one individual, then an allele is sampled from that individual’s genotype. If the read is ambient, then the allele is sampled from all individuals’ genotypes according to the ambient distribution. Complete details on <italic>ambisim</italic> are provided in the Methods section.</p>
+<p>We generated simulations across two sets of experiments. In the first set, we fixed the number of multiplexed donors to 4 and varied the doublet rate between 0% and 30%. In the second set, we varied the number of multiplexed donors between 2 and 16 and fixed the doublet rate to 10%. In total, we generated 44 simulated datasets (<xref rid="fig1" ref-type="fig">Fig 1C</xref>, Table S2). In each experiment, we sampled reads across 9,000 droplets for a mean coverage of 25,000 reads for RNA and 40,000 reads for ATAC (according to the 10X Genomics sequencing depth recommendation) and multiplexed an equal proportion of each individual (Table S3). After generating the simulated experimental data, we applied each demultiplexing method to both the RNA and ATAC BAM files independently, filtering for SNPs with imputation R<sup>2</sup> &gt; 0.90 for methods requiring reference genotypes <bold>(Methods)</bold>.</p>
+</sec>
+<sec id="s2b">
+<title>Simulations reveal variable demultiplexing method performance as a function of ambient RNA/DNA</title>
+<p>We evaluated demultiplexing methods in both modalities based on two metrics: droplet-type accuracy, and singleton-donor accuracy (<xref rid="fig1" ref-type="fig">Fig 1C</xref>). Droplet-type accuracy denotes the proportion of droplets that are identified correctly (singlet vs. unassigned), and singleton-donor accuracy denotes the proportion of singlets that are called the correct individual. We compared each method’s performance as a function of increasing levels of ambient RNA/DNA across both sets of simulations (<xref rid="fig2" ref-type="fig">Figs 2A–2H</xref>, Figs S1–2). As expected, we observed that ambient contamination impacted the performance of most methods. When considering droplet-type accuracy, we found that the increase in contamination generally led to stable decreases in accuracy. However, when considering singleton-donor accuracy, we found that several methods, primarily genotype-free ones, were unstable across ambient contamination estimates across both modalities. We note that freemuxlet was not designed for high-coverage data and would likely perform similarly to other genotype-free methods with minor modifications.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2:</label>
+<caption><title>Accuracy comparisons in simulations.</title>
+<p>A) Comparison of droplet-type accuracy as a function of ambient RNA/DNA, summarized across experiments with number of multiplexed donors = 4 and variable doublet rates. B) Same as A), but for ATAC. C) Comparison of singleton-donor accuracy as a function of ambient RNA/DNA, summarized across experiments with doublet rate = 10% and variable numbers of multiplexed donors. D) Same as C, but for ATAC. E) Same as A), but for singleton-donor accuracy. F) Same as B), but for singleton-donor accuracy. G) Same as C), but for singleton-donor accuracy. H) Same as D), but for singleton-donor accuracy.</p></caption>
+<graphic xlink:href="636969v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We next asked how methods performed on average across various parameter settings. We found that both doublet rate and the number of multiplexed donors had modest impacts on many methods, with some methods’ performance being disproportionately affected (eg. freemuxlet for doublet rate, vireo no genotypes for number of multiplexed donors) (Fig S3). When evaluating demultiplexing methods between modalities, we found that many ATAC-based methods performed slightly better than their RNA-based counterparts, (Fig S4). Finally, we found that genotype-based methods perform modestly better than genotype-free methods (Fig S5).</p>
+<p>We next asked if there were common properties among droplets misidentified by each method. When examining whether inaccurate droplets tended to be miscalled as singlets or doublets, we found differences between methods – for example, genotype-based methods, such as demuxlet and demuxalot, identify more doublets, while most genotype-free methods identify more singlets (Fig S6). Between accurate and inaccurate droplets, we found that the distribution of the number of SNPs was different, for most methods (Fig S7). When considering the true ambient RNA/DNA distributions, we found a similar trend among most genotype-based methods: misclassified droplets tended to have higher ambient contamination (Fig S8). However, for several genotype-free methods, such as freemuxlet and scSplit, the distributions of ambient RNA/DNA between accurate and inaccurate droplets were smaller, suggesting that latent genotype inference is the driving force.</p>
+</sec>
+<sec id="s2c">
+<title>Many demultiplexing methods perform similarly in lower sequencing-depth simulations</title>
+<p>One possible design choice in droplet-based single-nucleus experiments is to sequence more nuclei, at the cost of a lower per-nucleus sequencing depth. This may be an advantageous design choice for several reasons, such as increasing the likelihood of sampling rare cell types and increasing the statistical power of quantitative trait loci mapping by identifying more nuclei per individual. To measure the effects of sequencing depth on demultiplexing method accuracy, we generated an identical set of simulations with a lower depth (mean 7,000 reads for both assays) (<xref rid="fig3" ref-type="fig">Fig 3A–3G</xref>, Figs S9–10, Table S4). We found that, similar to the higher-coverage simulations, demultiplexing method performance decreases stably across ambient contamination levels, with higher variance for methods such as demuxlet and demuxalot. In general, many methods performed similarly across coverage levels, but singleton-donor accuracy in ATAC-based genotype-free methods is disproportionately affected by coverage (Fig S11). One likely explanation for this behavior is that the number of covered SNPs scales with sequencing depth differently for RNA and ATAC, as ATAC reads are derived from a larger portion of the genome, which results in SNPs being more sparsely covered (Fig S12).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3:</label>
+<caption><title>Accuracy comparisons for lower-coverage versions of simulations.</title>
+<p>A) Comparison of droplet-type accuracy as a function of ambient RNA/DNA, summarized across experiments with number of multiplexed donors = 4 and variable doublet rates. B) Same as A), but for ATAC. C) Comparison of singleton-donor accuracy as a function of ambient RNA/DNA, summarized across experiments with doublet rate = 10% and variable numbers of multiplexed donors. D) Same as C, but for ATAC. E) Same as A), but for singleton-donor accuracy. F) Same as B), but for singleton-donor accuracy. G) Same as C), but for singleton-donor accuracy. H) Same as D), but for singleton-donor accuracy.</p></caption>
+<graphic xlink:href="636969v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2d">
+<title>Application of demultiplexing methods to real joint snRNA/snATAC data reveals low between-method droplet-type correlations</title>
+<p>We next applied demultiplexing methods to two multiplexed joint snRNA/snATAC datasets to evaluate their consistency across within and across experiments. The first was a 10X Multiome dataset collected across seven runs in aorta samples (n=35,201 droplets, multiplexed across 12 individuals)<sup><xref ref-type="bibr" rid="c20">20</xref></sup>. The second was an in-house multiplexed induced pluripotent stem cell (iPSC) reprogramming experiment (n=30,497 droplets, multiplexed across 4 individuals), with comparable coverage levels between datasets (Fig S13). When comparing the donor assignment distributions between methods, we found that many methods identify similar proportions of singlets and non-singlets, with the exception of freemuxlet consistently identifying more singlets in both modalities (<xref rid="fig4" ref-type="fig">Fig 4A–B</xref><bold>, Tables S5–S6).</bold></p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4:</label>
+<caption><title>Comparing demultiplexing within modalities in real data.</title>
+<p>A) Distributions of singlet and doublet calls in stem cell dataset. B) Same as A), but for aorta dataset. C) Droplet-type correlations between methods in RNA (top) and ATAC (bottom) in stem cell dataset. D) Same as C), but for aorta dataset.</p></caption>
+<graphic xlink:href="636969v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We next asked how the demultiplexing output differed between methods by comparing correlations of droplet type and singleton-donor assignment. Within each modality, droplet-type correlation was high for most pairs of methods (<xref rid="fig4" ref-type="fig">Fig 4C–D</xref>), but the range was variable (0.69– 0.97 stem cell, 0.71–0.93 aorta). Singleton-donor correlation was also high for most pairs of methods (0.99–1.00 stem cell, 0.96–1.00 aorta), except for scSplit in both RNA and ATAC (0.89–1.00 stem cell, 0.85–0.90 aorta) (Fig S14). We noticed that our between-method droplet-type correlations were lower than previously reported in scRNA-seq<sup><xref ref-type="bibr" rid="c21">21</xref></sup>, which may be due to increased contamination in single-nucleus data. When comparing droplet-type correlations between a representative simulation from <italic>ambisim</italic> (num donors = 4, doublet rate = 20%, ambient rate = 20%) and the iPSC reprogramming experiment, we found that while between-method correlation patterns were similar, the correlation in the iPSC experiment was lower compared to the simulation (Fig S15).</p>
+<p>Recently, there has been interest in using ensemble methods combining multiple genotype-based demultiplexing methods<sup><xref ref-type="bibr" rid="c23">23</xref>,<xref ref-type="bibr" rid="c24">24</xref></sup>. Given our observation of lower between-method correlations, we next asked if it would be feasible to apply a similar ensemble framework to joint snRNA/snATAC data. To address this, we examined how concordant the singlet sets were across modalities and multiple methods. The cross-modality intersection indicated that the average between-method pairwise intersection is similar within and across modalities (<xref rid="fig5" ref-type="fig">Fig 5A</xref>). However, the droplet-type intersection between multiple methods was much lower (0.52–0.73 stem cell, 0.46–0.71 aorta) (<xref rid="fig5" ref-type="fig">Fig 5B</xref>), while the individual intersection remained high (0.94–0.99 stem cell, 0.72–0.83 aorta). An UpSet visualization of droplet-type intersections between methods revealed that droplets outside the all-method intersection do not arise from specific methods, but rather combinations of methods (<xref rid="fig5" ref-type="fig">Fig 5C–D</xref>). These results suggest that single-nucleus data presents additional challenges for demultiplexing compared to single-cell data, and that the intersection of multiple methods may not yield coherent demultiplexing sets. In the next section, we propose and apply a new metric to compare demultiplexing methods by estimated ambient contamination.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5:</label>
+<caption><title>Comparison of demultiplexing methods within and across modalities between multiple methods.</title>
+<p>A) Mean droplet-type overlap between methods, including across modalities. B) Proportion of nuclei that are called the same droplet type and individual across all methods, both within and across modalities. C) UpSet visualization of all methods with both RNA/ATAC-based demultiplexing in the stem cell dataset. D) Same as C), but for the aorta dataset.</p></caption>
+<graphic xlink:href="636969v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2e">
+<title>Variant consistency, a metric to compare demultiplexing methods by estimated ambient contamination</title>
+<p>We reasoned that reference genotypes could be leveraged post-hoc to provide an alternative evaluation of demultiplexing method quality. By quantifying how often a nucleus’s variant set agrees with their assigned donor’s genotype, we can estimate residual ambient RNA/DNA rates on a per-method basis. We define this metric as <italic>variant consistency</italic>. Our variant consistency framework requires the following as input: per-nucleus individual assignments, a pileup matrix of allele counts, and a genotype VCF file. We then classify allele counts of variants as consistent or inconsistent based on whether they match the assigned individual’s genotype (<xref rid="fig6" ref-type="fig">Fig 6A</xref><bold>, Methods)</bold>. We divide consistency counts into sub-categories. Variants that are consistent only in one individual are denoted C1 variants. Variants that are consistent in multiple individuals are denoted as C2 variants. Variants that are inconsistent in one individual, but consistent in at least one other individual are denoted as I1 variants. Finally, variants that inconsistent across all individuals are denoted as I2 variants. Each of these categories provides different information to characterize variant-level properties. I1 reads represent the lower bound of ambient contamination, as those reads must originate from another donor. I2 variants represent sequencing or genotyping errors, as those allele counts do not align with any individual’s genotypes. Our subsequent analyses focus on the difference in the number of I1 read counts between methods and modalities.</p>
+<fig id="fig6" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 6:</label>
+<caption><title>Concept of variant consistency metric and application to simulations.</title>
+<p>A) Schematic of <italic>variant consistency</italic> metric. Per nucleus allele counts are classified into four categories of consistency based on the uniqueness of each variant. B) Variant consistency ratios based on ambient RNA rates and multiplexed donors in simulated experiments. C) I1 rates based on how many times a SNP is covered experiment wide in lower-depth simulations. D) Correlation of allele counts that are inconsistent but non-unique (I1) with true ambient RNA/DNA across simulations is high, showcasing our ability to quantify ambient contamination in real datasets.</p></caption>
+<graphic xlink:href="636969v1_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We first applied our metric to the simulated experiments and compared the distributions of variants across ambient proportions (Table S7). When comparing consistency counts for the same nuclei across both modalities, we noticed that the C1 rates are higher in ATAC than RNA, which suggests that more informative variants lie in non-coding regions of the genome (<xref rid="fig6" ref-type="fig">Fig 6B</xref>). Additionally, C1 rates rapidly decrease based on the number of multiplexed donors. We found that in our lower-coverage simulations, I1 rates of SNPs vary based on how many times that SNP is covered within an experiment (<xref rid="fig6" ref-type="fig">Fig 6C</xref>). When comparing cell-level I1 counts to their corresponding true number of ambient RNA/DNA molecules, we found that the correlation is higher in ATAC (R<sup>2</sup> = 0.970) compared to RNA (R<sup>2</sup> = 0.962) (<xref rid="fig6" ref-type="fig">Fig 6D</xref>).</p>
+</sec>
+<sec id="s2f">
+<title>Variant consistency shows variable demultiplexing method uncertainties in assignments</title>
+<p>We next applied our variant consistency framework on real data to compare demultiplexing method performances. We first subsetted singlets to the ones that are uniquely identified by each method, and found high variance, particularly in freemuxlet and scSplit no genotypes across RNA/ATAC (<xref rid="fig7" ref-type="fig">Fig 7A</xref>). We ran our framework on the unique droplets called by each method and compared C2 and I1 rates (<xref rid="fig7" ref-type="fig">Fig 7B</xref>, Tables S8–S9). Notably, I1 rates differed across methods in both modalities – scSplit called the most contaminated singlets, while demuxalot and demuxlet called the least contaminated singlets. Across datasets, the contamination patterns between RNA and ATAC were inverted, highlighting the utility of our variant consistency metric in understanding ambient contamination patterns on a per-dataset basis.</p>
+<fig id="fig7" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 7:</label>
+<caption><title>Applying variant consistency to real data reveals differences in demultiplexed singlets quality between methods in both RNA and ATAC.</title>
+<p>A) Counting the number of droplets that each method detects outside of the within-modality intersection. B) C2 and I1 rates in the droplets called uniquely by each method. C) Correlation of I1 rates between modalities.</p></caption>
+<graphic xlink:href="636969v1_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>When comparing contamination rates alone, we found that demuxlet, vireo, and demuxalot called droplets with the lowest amount of contamination. However, when considering the number of unique droplets identified by each method, demuxlet (RNA n=4,453, ATAC n=7,598) and demuxalot (RNA n=3,029) were the most conservative. Finally, when comparing consistency distributions per donor in both experiments, we found that variant consistency rates are similar across individuals, except for freemuxlet RNA (Figs S16–S17), suggesting that demultiplexing methods in these datasets do not have biases towards particular individuals.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this study, we introduced ambisim, a joint snRNA/snATAC read-level simulator that can control ambient molecule proportions and sample from reference genotypes, and a novel metric, <italic>variant consistency</italic>, which enables direct comparison of demultiplexing methods based on the quality of the identified singlets. Using these tools, we compared the performance of seven demultiplexing methods in simulated and real multiome data. Our simulations showed that varying levels of ambient RNA/DNA present problems for demultiplexing methods, which would therefore benefit from directly modeling ambient material. In real data, we found that variable between-method correlations suggesting that ensemble methods may not be reliable in single-nucleus experiments in both RNA and ATAC. Finally, our variant consistency metric provides a framework for estimating ambient RNA/DNA proportions in real data and comparing demultiplexing uncertainty between methods.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Aorta endothelial data</title>
+<p>Fastq files were mapped using Cellranger-Arc v.2.0.1 with default parameter settings. VCF files were imputed using the TopMed imputation server using R<sup><xref ref-type="bibr" rid="c2">2</xref></sup> &gt; 0.3 and the 1000 Genomes Phase 3 Reference Panel<sup><xref ref-type="bibr" rid="c34">34</xref>,<xref ref-type="bibr" rid="c35">35</xref>,<xref ref-type="bibr" rid="c36">36</xref></sup>.</p>
+</sec>
+<sec id="s4b">
+<title>Stem cell data processing</title>
+<p>10X Multiome data was mapped to 10X Genomics’ pre-set hg38 reference using CellRanger Arc v.2.0.1 with default parameter settings. Cellranger BAM files and peaks were subset to autosomal chromosomes.</p>
+</sec>
+<sec id="s4c">
+<title>Demultiplexing algorithms</title>
+<sec id="s4c1">
+<title>Demuxlet/Freemuxlet</title>
+<p>Demuxlet is a maximum-likelihood method that requires genotypes as input to the method. After counting alleles at each SNP in a reference set, it uses a statistical model which incorporates base error probabilities and models allele probabilities using a binomial distribution. It also extends the statistical model designed for singlets to detect doublets by modeling all combinations of possible doublets multiplexed in the experiment. The ‘dsc-pileup’ command in the popscle software suite was used to generate read pileups for each BAM. Then, ‘popscle demuxlet’ was run with default options.</p>
+</sec>
+<sec id="s4c2">
+<title>cellSNP/Vireo</title>
+<p>Vireo uses a variational inference approach to estimate latent genotypes. It directly includes the option of including genotypes to establish priors on the genotypes. cellSNP-lite<sup><xref ref-type="bibr" rid="c31">31</xref></sup> was used to generate allele counts per cell based on a variant reference set. Per the developers’ recommendations, cellSNP-lite was applied to a common variant set derived from 1000 Genomes data<sup><xref ref-type="bibr" rid="c44">44</xref></sup> filtered with a minor allele frequency &gt; 0.01, and SNPs with coverage &lt; 20 across the run were discarded. Vireo was then run with and without genotypes based on the cellSNP-lite output.</p>
+</sec>
+<sec id="s4c3">
+<title>scSplit</title>
+<p>scSplit uses an expectation-maximization approach and identifies distinguishing variants to minimize the number of variants used for demultiplexing. The pipeline consists of filtering reads, calling variants directly from the data using freebayes<sup><xref ref-type="bibr" rid="c32">32</xref></sup>, allele count pileup, and model fitting. Genotypes were supplied as priors for the model during the final demultiplexing step. A modified version of scSplit was used to reduce computational time. Briefly, the cells by variants matrix was computed using cellSNP-lite, and a custom version of scSplit designed for reading in cellSNP-lite input was used.</p>
+</sec>
+<sec id="s4c4">
+<title>Souporcell</title>
+<p>Souporcell is a sparse mixture model that clusters cells according to allele fractions. The cluster assignments are optimized using a simulated annealing algorithm. For the genotype-free version, souporcell was supplied with the same 1000 Genomes variant set as previously mentioned for the --common_variants parameter. Souporcell no genotypes was tested without including the common-variants parameter, in which variants are called directly from the data using freebayes, but the performance was determined to be consistently better when including common variants.</p>
+</sec>
+<sec id="s4c5">
+<title>Demuxalot</title>
+<p>Demuxalot is a Bayesian method that aggregates SNPs across genes. It calls variants, assigns base frequencies, and alternately estimates genotype signatures and assignments. Demuxalot was unable to be applied to ATAC-seq due to the lack of UMIs.</p>
+</sec>
+<sec id="s4c6">
+<title>scAVENGERS</title>
+<p>scAVENGERS is a method developed for multiplexed scATAC-seq experiments. It derives reference and alternate allele probabilities by modeling pre-PCR amplification counts based on ATAC barcode attachment probabilities. Strelka2<sup><xref ref-type="bibr" rid="c33">33</xref></sup> was used to call variants from the data, and Vartrix was used to generate the cells by allele counts matrix. A modified version of the scAVENGERS pipeline was then used to derive cell assignments.</p>
+</sec>
+</sec>
+<sec id="s4d">
+<title>Variant consistency</title>
+<p>Given a multiplexed single-cell experiment with <italic>D</italic> droplets, <italic>V</italic> covered variants, and <italic>K</italic> individuals, we are interested in computing both the consistency of each variant between the read pileup and the assigned donor’s genotype and the total consistency proportions in each cell. More specifically, the input to this framework is matrices <italic>R</italic> ∊ <italic>N<sup>D</sup></italic><sup>×<italic>V</italic></sup>, <italic>A</italic> ∊ <italic>N<sup>D</sup></italic><sup>×<italic>V</italic></sup>, and genotype array <italic>G</italic> ∊ <italic>N<sup>K</sup></italic><sup>×<italic>V</italic></sup> which correspond to the sparse reference and alternate counts matrices and genotyping array for <italic>k</italic>individuals. For each droplet <italic>d</italic> ∊ <italic>D</italic>, we extract the reference and alternate allele counts from <italic>P</italic> ∊ <italic>V</italic> variants, and for the genotype of individual <italic>k</italic> at variant <italic>v</italic>, denoted as <italic>G</italic>(<italic>v</italic>), we compute consistency counts consistent(<italic>v</italic>) for each variant, defined as follows:
+<disp-formula>
+<graphic xlink:href="636969v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The output of the above framework is <italic>k</italic> consistency matrices, with each matrix <italic>C</italic> ∊ <italic>N<sup>D</sup></italic><sup>×<italic>V</italic></sup>. Finally, we classify the reads into four categories: consistent with only that donor’s genotype (C1), consistent but matches another donor’s genotype (C2), inconsistent but matches another donor’s genotype (I1), and inconsistent and doesn’t match any donor’s genotype (I2). The final variant consistency matrix is <italic>VC</italic> ∊ <italic>N<sup>D</sup></italic><sup>×<italic>V</italic>×<italic>K</italic>×4</sup>. For each demultiplexing method, the output is a cell assignment matrix <italic>Z</italic> ∊ <italic>N</italic><sup><italic>D</italic>×1</sup>. Using <italic>Z</italic>, we iterate through <italic>D</italic> to extract the consistency counts corresponding from <italic>VC</italic> to the assigned individual, producing the final matrix <italic>F</italic> ∊ <italic>N</italic><sup><italic>D</italic>×4</sup>.</p>
+</sec>
+</sec>
+
+</body>
+<back>
+<sec id="s5">
+<title>Declarations</title>
+<sec sec-type="data-availability" id="d1e1308">
+<title>Availability of data and materials</title>
+<p>Raw fastq and VCF files for the aorta dataset were downloaded from GEO Accession <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228428">GSE228428</ext-link>. Data for the in-house generated iPSC experiment will be available from the Impact of Genomic Variation on Function (IGVF) Consortium: <ext-link ext-link-type="uri" xlink:href="https://data.igvf.org">data.igvf.org</ext-link>. Processed demultiplexing output is available on <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/14827990?preview=1&amp;token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjUzNzE5MzQ1LWFlMmItNDdiNi04NzhjLTY2NGQyN2M2ZDkzZCIsImRhdGEiOnt9LCJyYW5kb20iOiIwYTE5MTc3NTk1MGQzZTYzZjQ0OGEwZWZkOGFhOGRhYyJ9.-_KDCqFYmnZeoJVBsl5fMI2Db1fqbA9sRKaewY_Pjyqpzt1nTEtrZtuRDSZe5Q2XsUbP06VbKXpYkMJu7zY1sA">Zenodo</ext-link>.</p>
+<p>Ambisim is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/marcalva/ambisim">https://github.com/marcalva/ambisim</ext-link>. The variant consistency pipeline is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/terencewtli/variant_consistency">https://github.com/terencewtli/variant_consistency</ext-link>. All code used for generating data and figures, including mapping, demultiplexing, and simulation, is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/terencewtli/demux_benchmark_manuscript/">https://github.com/terencewtli/demux_benchmark_manuscript/</ext-link>.</p>
+</sec>
+<sec id="s5c">
+<title>Funding</title>
+<p>This work was supported by U01HG012079 and R01MH125252.</p>
+</sec>
+<sec id="s5d">
+<title>Authors’ contributions</title>
+<p>T.L., M.A., and N.Z. conceived this project. T.L. performed the analysis and wrote the manuscript with guidance from N.Z and C.Y.L. M.A. designed and wrote the simulation software. C.Y.L. and N.Z. supervised the study. K.A., Y.S., and K.P. generated the stem cell reprogramming experiment. All authors read and edited the manuscript.</p>
+</sec>
+</sec>
+<ack>
+<title>Acknowledgments</title>
+<p>We thank members of the Luo and Zaitlen labs for their feedback on the manuscript.</p>
+</ack>
+<sec id="suppd1e1302" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="d1e1286">
+<label>Supplemental Information</label>
+<media xlink:href="supplements/636969_file02.pdf"/>
+</supplementary-material>
+<supplementary-material id="d1e1293">
+<label>Supplemental Tables</label>
+<media xlink:href="supplements/636969_file03.xlsx"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Stuart</surname>, <given-names>T.</given-names></string-name>, &amp; <string-name><surname>Satija</surname>, <given-names>R</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Integrative single-cell analysis</article-title>. <source>Nature reviews genetics</source>, <volume>20</volume>(<issue>5</issue>), <fpage>257</fpage>–<lpage>272</lpage>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Heumos</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Schaar</surname>, <given-names>A. C.</given-names></string-name>, <string-name><surname>Lance</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Litinetskaya</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Drost</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Zappia</surname>, <given-names>L.</given-names></string-name>, <etal>…</etal> <string-name><surname>Theis</surname>, <given-names>F. J.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Best practices for single-cell analysis across modalities</article-title>. <source>Nature Reviews Genetics</source>, <fpage>1</fpage>-<lpage>23</lpage>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Baysoy</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Bai</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Satija</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Fan</surname>, <given-names>R</given-names></string-name></person-group>. (<year>2023</year>). <article-title>The technological landscape and applications of single-cell multi-omics</article-title>. <source>Nature Reviews Molecular Cell Biology</source>, <volume>24</volume>(<issue>10</issue>), <fpage>695</fpage>–<lpage>713</lpage>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Badia-i-Mompel</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Wessels</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Müller-Dott</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Trimbour</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Ramirez Flores</surname>, <given-names>R. O.</given-names></string-name>, <string-name><surname>Argelaguet</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Saez-Rodriguez</surname>, <given-names>J</given-names></string-name></person-group>. (<year>2023</year>). <article-title>Gene regulatory network inference in the era of single-cell multi-omics</article-title>. <source>Nature Reviews Genetics</source>, <volume>24</volume>(<issue>11</issue>), <fpage>739</fpage>–<lpage>754</lpage>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Perez</surname>, <given-names>R. K.</given-names></string-name>, <string-name><surname>Gordon</surname>, <given-names>M. G.</given-names></string-name>, <string-name><surname>Subramaniam</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Kim</surname>, <given-names>M. C.</given-names></string-name>, <string-name><surname>Hartoularos</surname>, <given-names>G. C.</given-names></string-name>, <string-name><surname>Targ</surname>, <given-names>S.</given-names></string-name>, <etal>…</etal> <string-name><surname>Ye</surname>, <given-names>C. J.</given-names></string-name></person-group> (<year>2022</year>). <article-title>Single-cell RNA-seq reveals cell type–specific molecular and genetic associations to lupus</article-title>. <source>Science</source>, <volume>376</volume>(<issue>6589</issue>), <fpage>eabf1970</fpage>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jerber</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Seaton</surname>, <given-names>D. D.</given-names></string-name>, <string-name><surname>Cuomo</surname>, <given-names>A. S.</given-names></string-name>, <string-name><surname>Kumasaka</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Haldane</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Steer</surname>, <given-names>J.</given-names></string-name>, <etal>…</etal> <string-name><surname>Stegle</surname>, <given-names>O.</given-names></string-name></person-group> (<year>2021</year>). <article-title>Population-scale single-cell RNA-seq profiling across dopaminergic neuron differentiation</article-title>. <source>Nature genetics</source>, <volume>53</volume>(<issue>3</issue>), <fpage>304</fpage>–<lpage>312</lpage>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Elorbany</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Popp</surname>, <given-names>J. M.</given-names></string-name>, <string-name><surname>Rhodes</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Strober</surname>, <given-names>B. J.</given-names></string-name>, <string-name><surname>Barr</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Qi</surname>, <given-names>G.</given-names></string-name>, <etal>…</etal> <string-name><surname>Battle</surname>, <given-names>A.</given-names></string-name></person-group> (<year>2022</year>). <article-title>Single-cell sequencing reveals lineage-specific dynamic genetic regulation of gene expression during human cardiomyocyte differentiation</article-title>. <source>PLoS genetics</source>, <volume>18</volume>(<issue>1</issue>), <fpage>e1009666</fpage>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Fujita</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Gao</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Zeng</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>McCabe</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>White</surname>, <given-names>C. C.</given-names></string-name>, <string-name><surname>Ng</surname>, <given-names>B.</given-names></string-name>, <etal>…</etal> <string-name><surname>De Jager</surname>, <given-names>P. L.</given-names></string-name></person-group> (<year>2022</year>). <article-title>Cell-subtype specific effects of genetic variation in the aging and Alzheimer cortex</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Neavin</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Nguyen</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Daniszewski</surname>, <given-names>M. S.</given-names></string-name>, <string-name><surname>Liang</surname>, <given-names>H. H.</given-names></string-name>, <string-name><surname>Chiu</surname>, <given-names>H. S.</given-names></string-name>, <string-name><surname>Wee</surname>, <given-names>Y. K.</given-names></string-name>, <etal>…</etal> <string-name><surname>Powell</surname>, <given-names>J. E.</given-names></string-name></person-group> (<year>2021</year>). <article-title>Single cell eQTL analysis identifies cell type-specific genetic control of gene expression in fibroblasts and reprogrammed induced pluripotent stem cells</article-title>. <source>Genome biology</source>, <volume>22</volume>, <fpage>1</fpage>–<lpage>19</lpage>.</mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Weber</surname>, <given-names>L. M.</given-names></string-name>, <string-name><surname>Hippen</surname>, <given-names>A. A.</given-names></string-name>, <string-name><surname>Hickey</surname>, <given-names>P. F.</given-names></string-name>, <string-name><surname>Berrett</surname>, <given-names>K. C.</given-names></string-name>, <string-name><surname>Gertz</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Doherty</surname>, <given-names>J. A.</given-names></string-name>, <etal>…</etal> <string-name><surname>Hicks</surname>, <given-names>S. C.</given-names></string-name></person-group> (<year>2021</year>). <article-title>Genetic demultiplexing of pooled single-cell RNA-sequencing samples in cancer facilitates effective experimental design</article-title>. <source>GigaScience</source>, <volume>10</volume>(<issue>9</issue>), <fpage>giab062</fpage>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cardiello</surname>, <given-names>J. F.</given-names></string-name>, <string-name><surname>Araus</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Giatrellis</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Helsens</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Simon</surname>, <given-names>A.</given-names></string-name>, &amp; <string-name><surname>Leigh</surname>, <given-names>N. D</given-names></string-name></person-group>. (<year>2023</year>). <article-title>Evaluation of genetic demultiplexing of single-cell sequencing data from model species</article-title>. <source>Life Science Alliance</source>, <volume>6</volume>(<issue>8</issue>).</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bernstein</surname>, <given-names>N. J.</given-names></string-name>, <string-name><surname>Fong</surname>, <given-names>N. L.</given-names></string-name>, <string-name><surname>Lam</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Roy</surname>, <given-names>M. A.</given-names></string-name>, <string-name><surname>Hendrickson</surname>, <given-names>D. G.</given-names></string-name>, &amp; <string-name><surname>Kelley</surname>, <given-names>D. R</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Solo: doublet identification in single-cell RNA-seq via semi-supervised deep learning</article-title>. <source>Cell systems</source>, <volume>11</volume>(<issue>1</issue>), <fpage>95</fpage>–<lpage>101</lpage>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Germain</surname>, <given-names>P. L.</given-names></string-name>, <string-name><surname>Lun</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Meixide</surname>, <given-names>C. G.</given-names></string-name>, <string-name><surname>Macnair</surname>, <given-names>W.</given-names></string-name>, &amp; <string-name><surname>Robinson</surname>, <given-names>M. D</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Doublet identification in single-cell sequencing data using scDblFinder</article-title>. <source>F1000Research</source>, <volume>10</volume>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wolock</surname>, <given-names>S. L.</given-names></string-name>, <string-name><surname>Lopez</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Klein</surname>, <given-names>A. M</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Scrublet: computational identification of cell doublets in single-cell transcriptomic data</article-title>. <source>Cell systems</source>, <volume>8</volume>(<issue>4</issue>), <fpage>281</fpage>–<lpage>291</lpage>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kang</surname>, <given-names>H. M.</given-names></string-name>, <string-name><surname>Subramaniam</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Targ</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Nguyen</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Maliskova</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>McCarthy</surname>, <given-names>E.</given-names></string-name>, <etal>…</etal> <string-name><surname>Ye</surname>, <given-names>C. J.</given-names></string-name></person-group> (<year>2018</year>). <article-title>Multiplexed droplet single-cell RNA-sequencing using natural genetic variation</article-title>. <source>Nature biotechnology</source>, <volume>36</volume>(<issue>1</issue>), <fpage>89</fpage>–<lpage>94</lpage>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Huang</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>McCarthy</surname>, <given-names>D. J.</given-names></string-name>, &amp; <string-name><surname>Stegle</surname>, <given-names>O</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Vireo: Bayesian demultiplexing of pooled single-cell RNA-seq data without genotype reference</article-title>. <source>Genome biology</source>, <volume>20</volume>, <fpage>1</fpage>–<lpage>12</lpage>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Xu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Falconer</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Nguyen</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Crawford</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>McKinnon</surname>, <given-names>B. D.</given-names></string-name>, <string-name><surname>Mortlock</surname>, <given-names>S.</given-names></string-name>, <etal>…</etal> <string-name><surname>Coin</surname>, <given-names>L. J.</given-names></string-name></person-group> (<year>2019</year>). <article-title>Genotype-free demultiplexing of pooled single-cell RNA-seq</article-title>. <source>Genome biology</source>, <volume>20</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>12</lpage>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Heaton</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Talman</surname>, <given-names>A. M.</given-names></string-name>, <string-name><surname>Knights</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Imaz</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Gaffney</surname>, <given-names>D. J.</given-names></string-name>, <string-name><surname>Durbin</surname>, <given-names>R.</given-names></string-name>, <etal>…</etal> <string-name><surname>Lawniczak</surname>, <given-names>M. K.</given-names></string-name></person-group> (<year>2020</year>). <article-title>Souporcell: robust clustering of single-cell RNA-seq data by genotype without reference genotypes</article-title>. <source>Nature methods</source>, <volume>17</volume>(<issue>6</issue>), <fpage>615</fpage>–<lpage>620</lpage>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Hartoularos</surname>, <given-names>G. C.</given-names></string-name>, <string-name><surname>Si</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Kathail</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Lee</surname>, <given-names>D. S.</given-names></string-name>, <string-name><surname>Ogorodnikov</surname>, <given-names>A.</given-names></string-name>, <etal>…</etal> <string-name><surname>Ye</surname>, <given-names>C. J.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Reference-free multiplexed single-cell sequencing identifies genetic modifiers of the human immune response</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Rogozhnikov</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Ramkumar</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Shah</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Bedi</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Kato</surname>, <given-names>S.</given-names></string-name>, &amp; <string-name><surname>Escola</surname>, <given-names>G. S</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Demuxalot: scaled up genetic demultiplexing for single-cell sequencing</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Neavin</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Senabouth</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Arora</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Lee</surname>, <given-names>J. T. H.</given-names></string-name>, <string-name><surname>Ripoll-Cladellas</surname>, <given-names>A.</given-names></string-name>, <collab>sc-eQTLGen Consortium</collab>, <etal>…</etal> <string-name><surname>Powell</surname>, <given-names>J. E.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Demuxafy: Improvement in droplet assignment by integrating multiple single-cell demultiplexing and doublet detection methods</article-title>. <source>Genome Biology</source>, <volume>25</volume>(<issue>1</issue>), <fpage>94</fpage>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Dixit</surname>, <given-names>A</given-names></string-name></person-group>. (<year>2016</year>). <article-title>Correcting chimeric crosstalk in single cell RNA-seq experiments</article-title>. <source>BioRxiv</source>, <fpage>093237</fpage>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Zoodsma</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Zhan</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Kumar</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Botey-Bataller</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Zhou</surname>, <given-names>L.</given-names></string-name>, <etal>…</etal> <string-name><surname>Li</surname>, <given-names>Y.</given-names></string-name></person-group> (<year>2024</year>). <article-title>CellDemux: coherent genetic demultiplexing in single-cell and single-nuclei experiments</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Fiorini</surname>, <given-names>M. R.</given-names></string-name>, <string-name><surname>Amiri</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Dilliott</surname>, <given-names>A. A.</given-names></string-name>, <string-name><surname>Yde Ohki</surname>, <given-names>C. M.</given-names></string-name>, <string-name><surname>Smigielski</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Walitza</surname>, <given-names>S.</given-names></string-name>, <etal>…</etal> <string-name><surname>Farhan</surname>, <given-names>S. M.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Ensemblex: an accuracy-weighted ensemble genetic demultiplexing framework for population-scale scRNAseq sample pooling</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c25"><label>[25]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Han</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Kim</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Park</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Lee</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Chun</surname>, <given-names>H.</given-names></string-name>, &amp; <string-name><surname>Jung</surname>, <given-names>I</given-names></string-name></person-group>. (<year>2022</year>). <article-title>scAVENGERS: a genotype-based deconvolution of individuals in multiplexed single-cell ATAC-seq data without reference genotypes</article-title>. <source>NAR Genomics and Bioinformatics</source>, <volume>4</volume>(<issue>4</issue>), <fpage>lqac095</fpage>.</mixed-citation></ref>
+<ref id="c26"><label>[26]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Arceneaux</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Simmons</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Heiser</surname>, <given-names>C. N.</given-names></string-name>, <string-name><surname>Southard-Smith</surname>, <given-names>A. N.</given-names></string-name>, <string-name><surname>Brenan</surname>, <given-names>M. J.</given-names></string-name>, <etal>…</etal> <string-name><surname>Lau</surname>, <given-names>K. S.</given-names></string-name></person-group> (<year>2023</year>). <article-title>A contamination focused approach for optimizing the single-cell RNA-seq experiment</article-title>. <source>Iscience</source>, <volume>26</volume>(<issue>7</issue>).</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Caglayan</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Konopka</surname>, <given-names>G</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Neuronal ambient RNA contamination causes misinterpreted and masked cell types in brain single-nuclei datasets</article-title>. <source>Neuron</source>, <volume>110</volume>(<issue>24</issue>), <fpage>4043</fpage>–<lpage>4056</lpage>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Navidi</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><surname>Wang</surname>, <given-names>B</given-names></string-name></person-group>. (<year>2021</year>). <article-title>simATAC: a single-cell ATAC-seq simulation framework</article-title>. <source>Genome biology</source>, <volume>22</volume>, <fpage>1</fpage>–<lpage>16</lpage>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sarkar</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Srivastava</surname>, <given-names>A.</given-names></string-name>, &amp; <string-name><surname>Patro</surname>, <given-names>R</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Minnow: a principled framework for rapid simulation of dscRNA-seq data at the read level</article-title>. <source>Bioinformatics</source>, <volume>35</volume>(<issue>14</issue>), <fpage>i136</fpage>–<lpage>i144</lpage>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yan</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Song</surname>, <given-names>D.</given-names></string-name>, &amp; <string-name><surname>Li</surname>, <given-names>J. J</given-names></string-name></person-group>. (<year>2023</year>). <article-title>scReadSim: a single-cell RNA-seq and ATAC-seq read simulator</article-title>. <source>Nature Communications</source>, <volume>14</volume>(<issue>1</issue>), <fpage>7482</fpage>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Huang</surname>, <given-names>X.</given-names></string-name>, &amp; <string-name><surname>Huang</surname>, <given-names>Y</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Cellsnp-lite: an efficient tool for genotyping single cells</article-title>. <source>Bioinformatics</source>, <volume>37</volume>(<issue>23</issue>), <fpage>4569</fpage>–<lpage>4571</lpage>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Garrison</surname>, <given-names>E.</given-names></string-name>, &amp; <string-name><surname>Marth</surname>, <given-names>G</given-names></string-name></person-group>. (<year>2016</year>). <article-title>Haplotype-based variant detection from short-read sequencing</article-title>. <source>arXiv</source>.</mixed-citation></ref>
+<ref id="c33"><label>[33]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kim</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Scheffler</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Halpern</surname>, <given-names>A. L.</given-names></string-name>, <string-name><surname>Bekritsky</surname>, <given-names>M. A.</given-names></string-name>, <string-name><surname>Noh</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Källberg</surname>, <given-names>M.</given-names></string-name>, <etal>…</etal> <string-name><surname>Saunders</surname>, <given-names>C. T.</given-names></string-name></person-group> (<year>2018</year>). <article-title>Strelka2: fast and accurate calling of germline and somatic variants</article-title>. <source>Nature methods</source>, <volume>15</volume>(<issue>8</issue>), <fpage>591</fpage>–<lpage>594</lpage>.</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Taliun</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Harris</surname>, <given-names>D. N.</given-names></string-name>, <string-name><surname>Kessler</surname>, <given-names>M. D.</given-names></string-name>, <string-name><surname>Carlson</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Szpiech</surname>, <given-names>Z. A.</given-names></string-name>, <string-name><surname>Torres</surname>, <given-names>R.</given-names></string-name>, <etal>…</etal> <string-name><surname>Stilp</surname>, <given-names>A. M.</given-names></string-name></person-group> (<year>2021</year>). <article-title>Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program</article-title>. <source>Nature</source>, <volume>590</volume>(<issue>7845</issue>), <fpage>290</fpage>–<lpage>299</lpage>.</mixed-citation></ref>
+<ref id="c35"><label>[35]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Das</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Forer</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Schönherr</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Sidore</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Locke</surname>, <given-names>A. E.</given-names></string-name>, <string-name><surname>Kwong</surname>, <given-names>A.</given-names></string-name>, <etal>…</etal> <string-name><surname>Fuchsberger</surname>, <given-names>C.</given-names></string-name></person-group> (<year>2016</year>). <article-title>Next-generation genotype imputation service and methods</article-title>. <source>Nature genetics</source>, <volume>48</volume>(<issue>10</issue>), <fpage>1284</fpage>–<lpage>1287</lpage>.</mixed-citation></ref>
+<ref id="c36"><label>[36]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fuchsberger</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Abecasis</surname>, <given-names>G. R.</given-names></string-name>, &amp; <string-name><surname>Hinds</surname>, <given-names>D. A</given-names></string-name></person-group>. (<year>2014</year>). <article-title>minimac2: faster genotype imputation</article-title>. <source>Bioinformatics</source>, <volume>31</volume>(<issue>5</issue>), <fpage>782</fpage>–<lpage>784</lpage>.</mixed-citation></ref>
+<ref id="c37"><label>[37]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Borgsmueller</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Kuipers</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Gawron</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Roncador</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Pohly</surname>, <given-names>M. F.</given-names></string-name>, <string-name><surname>Acar</surname>, <given-names>E.</given-names></string-name>, <etal>…</etal> <string-name><surname>Beerenwinkel</surname>, <given-names>N.</given-names></string-name></person-group> (<year>2024</year>). <article-title>DemoTape: Computational demultiplexing of targeted single-cell sequencing data</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c38"><label>[38]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nassiri</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Kwok</surname>, <given-names>A. J.</given-names></string-name>, <string-name><surname>Bhandari</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Bull</surname>, <given-names>K. R.</given-names></string-name>, <string-name><surname>Garner</surname>, <given-names>L. C.</given-names></string-name>, <string-name><surname>Klenerman</surname>, <given-names>P.</given-names></string-name>, <etal>…</etal> <string-name><surname>Piazza</surname>, <given-names>P.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Demultiplexing of Single-Cell RNA sequencing data using interindividual variation in gene expression</article-title>. <source>Bioinformatics Advances</source>, <fpage>vbae085</fpage>.</mixed-citation></ref>
+<ref id="c39"><label>[39]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fleming</surname>, <given-names>S. J.</given-names></string-name>, <string-name><surname>Chaffin</surname>, <given-names>M. D.</given-names></string-name>, <string-name><surname>Arduini</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Akkad</surname>, <given-names>A. D.</given-names></string-name>, <string-name><surname>Banks</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Marioni</surname>, <given-names>J. C.</given-names></string-name>, <etal>…</etal> <string-name><surname>Babadi</surname>, <given-names>M.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Unsupervised removal of systematic background noise from droplet-based single-cell experiments using CellBender</article-title>. <source>Nature methods</source>, <volume>20</volume>(<issue>9</issue>), <fpage>1323</fpage>–<lpage>1335</lpage>.</mixed-citation></ref>
+<ref id="c40"><label>[40]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Tang</surname>, <given-names>Z.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Shi</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>Y.</given-names></string-name>, <etal>…</etal> <string-name><surname>Xu</surname>, <given-names>J.</given-names></string-name></person-group> (<year>2023</year>). <article-title>MitoSort: robust demultiplexing of pooled single-cell genomics data using endogenous germline mitochondrial variants</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c41"><label>[41]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lin</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Lin</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Yin</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Cheng</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Lin</surname>, <given-names>X.</given-names></string-name>, <etal>…</etal> <string-name><surname>Song</surname>, <given-names>J.</given-names></string-name></person-group> (<year>2023</year>). <article-title>mitoSplitter: A mitochondrial variants-based method for efficient demultiplexing of pooled single-cell RNA-seq</article-title>. <source>Proceedings of the National Academy of Sciences</source>, <volume>120</volume>(<issue>39</issue>), <fpage>e2307722120</fpage>.</mixed-citation></ref>
+<ref id="c42"><label>[42]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wells</surname>, <given-names>M. F.</given-names></string-name>, <string-name><surname>Nemesh</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Ghosh</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Mitchell</surname>, <given-names>J. M.</given-names></string-name>, <string-name><surname>Salick</surname>, <given-names>M. R.</given-names></string-name>, <string-name><surname>Mello</surname>, <given-names>C. J.</given-names></string-name>, <etal>…</etal> <string-name><surname>McCarroll</surname>, <given-names>S. A.</given-names></string-name></person-group> (<year>2023</year>). <article-title>Natural variation in gene expression and viral susceptibility revealed by neural progenitor cell villages</article-title>. <source>Cell Stem Cell</source>, <volume>30</volume>(<issue>3</issue>), <fpage>312</fpage>–<lpage>332</lpage>.</mixed-citation></ref>
+<ref id="c43"><label>[43]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Fiorini</surname>, <given-names>M. R.</given-names></string-name>, <string-name><surname>Amiri</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Dilliott</surname>, <given-names>A. A.</given-names></string-name>, <string-name><surname>Yde Ohki</surname>, <given-names>C. M.</given-names></string-name>, <string-name><surname>Smigielski</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Walitza</surname>, <given-names>S.</given-names></string-name>, <etal>…</etal> <string-name><surname>Farhan</surname>, <given-names>S. M.</given-names></string-name></person-group> (<year>2024</year>). <article-title>Ensemblex: an accuracy-weighted ensemble genetic demultiplexing framework for population-scale scRNAseq sample pooling</article-title>. <source>bioRxiv</source>.</mixed-citation></ref>
+<ref id="c44"><label>[44]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Clarke</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Zheng-Bradley</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Smith</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Kulesha</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Xiao</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Toneva</surname>, <given-names>I.</given-names></string-name>, <etal>…</etal> <collab>1000 Genomes Project Consortium</collab></person-group>. (<year>2012</year>). <article-title>The 1000 Genomes Project: data management and community access</article-title>. <source>Nature methods</source>, <volume>9</volume>(<issue>5</issue>), <fpage>459</fpage>–<lpage>462</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106769.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Hwang</surname>
+<given-names>Byungjin</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Yonsei University College of Medicine</institution>
+</institution-wrap>, <city>Seoul</city>, <country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study introduces ambisim, a rigorously validated and well-documented simulation framework that enables the generation of synthetic, genotype-aware single-cell RNA and ATAC sequencing datasets under realistic conditions. The authors provide <bold>solid</bold> evidence of its utility by benchmarking multiple demultiplexing methods and proposing a new variant consistency metric. While the tool is <bold>valuable</bold> for guiding method selection, the interpretation of the new metric requires further clarification.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106769.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors developed a tool for simulating multiplexed single-cell RNA-seq and ATAC-seq data with various adjustable settings like ambient RNA/DNA rate and sequencing depth. They used the simulated data with different settings to evaluate the performance of many demultiplexing methods. They also proposed a new metric at single-cell level that correlates with the RNA/DNA contamination level.</p>
+<p>Strengths:</p>
+<p>The simulation tool has a straightforward design and provides adjustability in multiple parameters that have practical relevance, such as sequencing depth and ambient contamination rate. With the growing use of multiplexing in single-cell RNAseq and ATACseq experiments, the tools and results in this paper can guide the experimental design and tool selection for many researchers. The simulation tool also provides a platform for benchmarking newly developed demultiplexing tools.</p>
+<p>Weaknesses:</p>
+<p>The usefulness of the proposed new metric of &quot;variant consistency&quot; and how it can guide users in selecting demultiplexing methods seems a little unclear. It correlates with the level of ambient RNA/DNA contamination, which makes it look like a metric on data quality. However, it does depend on the exact demultiplexing method, yet it's not clear how it directly connects to the &quot;accuracy&quot; of each demultiplexing method, which is the most important property that users of these methods care about. Since the simulated data has ground truth of donor identities available, I would suggest using the simulated data to show whether &quot;variant consistency&quot; directly indicates the accuracy of each method, especially the accuracy within those &quot;C2&quot; reads.</p>
+<p>I also think the tool and analyses presented in this paper need some further clarification and documentation on the details, such as how the cell-type gene and peak probabilities are determined in the simulation, and how doublets from different cell types are handled in the simulation and analysis. A few analyses and figures also need a more detailed description of the exact methods used.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.106769.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Li et al. describe ambisim, a tool with the goal of creating realistic synthetic single-nucleus RNA/ATAC sequencing datasets. It has become standard to pool multiple genetically distinct donors when using single-cell sequencing followed by genotype-based demultiplexing (i.e., using donor single-nucleotide variants to identify specific donor origin). A plethora of tools exist to accomplish this demultiplexing, but advanced tools to create synthetic datasets, and therefore provide definitive benchmarking, are lacking. Ambisim is a well-thought-out simulator that improves upon previous tools available by allowing for modeling of variable ambient contamination proportions and doing so in a genotype-aware fashion. This provides more realistic synthetic datasets that provide challenging scenarios for future demultiplexing tools. The authors use ambisim to benchmark a large number of available and commonly used genotype-free and -dependent demultiplexing tools. They identify the strengths and weaknesses of these tools. They also go on to define a new metric, variant consistency, to further assess demultiplexing performance across tools. Overall, this manuscript provides a useful framework to more thoroughly evaluate future demultiplexing tools, as well as provides rationale for tool selection depending on a user's experimental conditions.</p>
+<p>The authors provide measured conclusions that are supported by their findings. There are some aspects that are unclear.</p>
+<p>(1) Throughout the manuscript, the figure legends are difficult to understand, and this makes it difficult to interpret the graphs.</p>
+<p>(2) Since this is both a new tool and a benchmark, it would be worthwhile in the Discussion to comment on which demultiplexing tools one may want to choose for their dataset, especially given the warning against ensemble methods. From this extensive benchmarking, one may want to choose a tool based on the number of donors one has pooled, the modalities present, and perhaps even the ambient RNA (if it has been estimated previously).</p>
+<p>(3) What are the minimal computational requirements for running ambisim? What is the time cost?</p>
+</body>
+</sub-article>
+</article>
