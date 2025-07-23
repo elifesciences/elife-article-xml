@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>3D directional tuning in the orofacial sensorimotor cortex during natural feeding and drinking</article-title>
 </title-group>
 <contrib-group>
@@ -61,7 +62,7 @@
 <institution>Imperial College London</institution>
 </institution-wrap>
 <city>London</city>
-<country country="GB">United Kingdom</country>
+<country>United Kingdom</country>
 </aff>
 </contrib>
 <contrib contrib-type="senior_editor">
@@ -75,7 +76,7 @@
 <institution>University of Cambridge</institution>
 </institution-wrap>
 <city>Cambridge</city>
-<country country="GB">United Kingdom</country>
+<country>United Kingdom</country>
 </aff>
 </contrib>
 </contrib-group>
@@ -191,7 +192,7 @@
 <label>Figure 1.</label>
 <caption><title>Direction of tongue motion in each behavioral task.</title>
 <p><bold>(A)</bold> Schematic of the location of three spouts, left (L), middle (M), and right (R), for the drinking task. Tongue direction was categorized based on spout location. <bold>(B)</bold> Calculation of 3D tongue direction during feeding. θ is the instantaneous 3D direction of the tongue tip over a 100 ms interval between its positions at t1 and t2, where t1 = 0 and t2 = t1 + 100. The dotted line shows the actual trajectory during this interval.</p></caption>
-<graphic xlink:href="601741v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2b">
@@ -212,7 +213,7 @@
 <title>3D kinematics</title>
 <p>3D tongue kinematics were recorded simultaneously with the neural data in all behavioral sessions. All data analyses were performed in MATLAB 2022b (MathWorks, Natick, MA). For feeding, the instantaneous 3D direction of the tongue tip marker for every 100 ms throughout each gape cycle was calculated as:
 <disp-formula id="eqn1">
-<graphic xlink:href="601741v3_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="601741v3_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 Where 𝑣<sub>l</sub> is the 𝑥, 𝑦, 𝑧 position at the start of each 100-ms interval and 𝑣<sub>2</sub>is the position at the end (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>). These directions were then categorized based on whether the movement was negative or positive relative to the horizontal plane (Left/Right), the sagittal plane (Inferior/Superior), and the 𝑥 axis (Posterior/Anterior). This resulted in eight directions: AntSupL, AntSupR, AntInfL, AntInfR, PostSupL, PostSupR, PostInfL, and PostInfR. An equal number of 100-ms intervals from each of these directions was sampled to eliminate the possible effect of different distributions of kinematics across datasets, and spike data during each interval was used for neural analysis. For comparison with the drinking task, the sign was determined relative to the horizontal plane, with rightward tongue movement being positive. This is also the plane of motion which has been the least studied. These left-right directions were categorized into six 10°-bins with a total range of −30° to 30°, which encapsulated most of the observed distribution of directions in each subject. Lingual yaw (transverse rotation) and pitch (elevation/depression) were also calculated to compare tuning across the lateral and vertical components of tongue direction (Supplementary file 2, <xref rid="eqn2" ref-type="disp-formula">Equation 2</xref>). For drinking, the direction was determined by which of the three spouts juice was dispensed from during each lick. The spiking activity used for neural analysis of the drinking task was from intervals of ±250 ms around each minimum protrusion of the tongue. As 100 ms was not sufficient to capture the full range of tongue motion during each drinking cycle, the length of time used was increased to allow a clear distinction between the three directions. The period of 250 ms spans about 75% of the average lick length from minimum to maximum protrusion of the tongue.</p>
 <p>Kinematic performance for feeding was determined by the spread of tongue directions observed across trials. For drinking trials, performance was determined by the variance of endpoint positions as well as by the proportion of “failed” cycles, where the monkey missed the correct spout location with their tongue tip. The difference between control and nerve block performance was evaluated using a two-tailed t-test and f-test.</p>
@@ -225,7 +226,7 @@ Where 𝑣<sub>l</sub> is the 𝑥, 𝑦, 𝑧 position at the start of each 100
 <title>Factor Analysis of population activity</title>
 <p>We used Factor Analysis (FA), a linear dimensionality reduction method, to obtain latent trajectories of spiking activity and compare population responses to different directions across trials. FA defined as:
 <disp-formula id="eqn2">
-<graphic xlink:href="601741v3_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="601741v3_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is the mean spike counts from <bold>n</bold> neurons, <bold><italic>C</italic></bold> (m × n) is the loading matrix mapping <bold>m</bold> latent factors to the spike counts of <bold>n</bold> neurons, and <bold><italic>R</italic></bold> (n × n) represents the unexplained variance of independent neurons(<xref ref-type="bibr" rid="c53">Santhanam et al., 2009</xref>; <xref ref-type="bibr" rid="c32">Horrocks et al., 2024</xref>). The parameters <bold><italic>μ</italic></bold>, <bold><italic>C</italic></bold> and <bold><italic>R</italic></bold> were estimated with expectation-maximization using DataHigh Matlab toolbox (<xref ref-type="bibr" rid="c16">Cowley et al., 2013</xref>). The latent factor space obtained using FA represents the shared population variance of neurons. To obtain latent factors of shared population activity, we binned the spike times of each neuron into 10 ms bins (10 bins for feeding; 50 bins for drinking). Neurons with a mean firing rate &lt; 1.0 spike/s were excluded and the resultant vectors were smoothed using a Gaussian kernel with a 10 ms standard deviation (SD). To determine the dimensionality of the latent variable, we used 3-fold cross-validation to find the value of <bold>m</bold> which maximized the likelihood of the data. We then obtained an FA model by fitting an m-dimensional latent factor model. FA was performed using trial-averaged data to examine the direction-relevant latent factor responses (i.e., neural population trajectories).</p>
 <p>We quantified directional differences in population activity by calculating the Euclidean distance over <bold>m</bold> latent factors) between trial-averaged neural population trajectories for each unique direction pair (drinking = 3 pairs; feeding = 28 pairs). This analysis was performed for every 10 ms bin throughout each trial. To assess differences between experimental conditions (control vs. nerve block) or cortical region (MIo vs. SIo), we applied two-sample t-test to the mean inter-trajectory distances across all direction pairs. We further characterized the neural space spanned by population activity by measuring the cumulative Euclidean distance travelled by trajectories from start to end of a trial.</p>
@@ -249,13 +250,13 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 2.</label>
 <caption><title>Examples of single neuron activity in relation to tongue direction.</title>
 <p><bold>(A)</bold> Each peri-event time histogram (PETH and ±1 SE, smoothed by a 25-ms Gaussian kernel) corresponds to spiking activity for a specific range of tongue direction for feeding trials. Dashed lines indicate 100-ms interval used for calculating the tongue direction. <bold>(B)</bold> PETHs for drinking trials with the same spout, centered at the point of minimum protrusion of the tongue (0-s). Percent tongue displacement along the anterior-posterior axis is shown in grey, with shaded area representing ±1 SD. Vertical lines indicate 500-ms interval used for tuning analysis.</p></caption>
-<graphic xlink:href="601741v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig3" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 3.</label>
 <caption><title>Directional tuning of neurons during control tasks.</title>
 <p><bold>(A)</bold> 3D firing rate map of a neuron in MIo during feeding. Smaller inset plots are 1D tuning curves across each axis. <bold>(B)</bold> Percentage of neurons tuned to direction, combined for both subjects. Recordings were taken from four areas of the OSMCx: rMIo - rostral M1, cMIo - caudal M1, SIo(3a/3b) - area 3a/3b, and SIo(1/2) - area 1/2. Error bars represent ±1 SE.</p></caption>
-<graphic xlink:href="601741v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The proportion of directionally tuned neurons was higher in the feeding vs. drinking task (Chi-square, <italic>p</italic> &lt; 0.05, feeding: 72%, drinking: 66%) and differed significantly between MIo and SIo during the feeding task in both subjects (Chi-square, <italic>p</italic> &lt; 0.001). In rostral and caudal MIo, 80% of neurons were modulated to 3D direction (bootstrap, <italic>p</italic> &lt; 0.05, <xref rid="fig3" ref-type="fig">Fig. 3B</xref>, left), compared to 52% in areas 1/2 and 3a/3b. Notably, fewer MIo neurons showed directional tuning during swallows compared to chewing, while SIo neurons maintained consistent proportions (Figure 3 – figure supplement 2; Chi-square, MIo: <italic>p</italic> &lt; 0.05, SIo: <italic>p</italic> &gt; 0.1). During drinking, the proportion of directionally modulated neurons was more similar between regions (69% in MIo vs. 60% in SIo: Chi-square, <italic>p</italic> &gt; 0.05, <xref rid="fig3" ref-type="fig">Fig. 3B</xref> right). Mean-matched Fano factor was significantly lower in MIo than SIo in both tasks (Wilcoxon rank sum test, <italic>p</italic> &lt; 0.001). We considered that the difference in the directional tuning between the two behaviors could be due to the different time intervals used for each task since the period around minimum tongue protrusion in the drinking may contain more of the sensory inputs from the previous lick. However, when sampling spiking activity from an earlier period in feeding, the percentage of directionally tuned SIo neurons was still significantly lower than MIo (Chi-square, <italic>p</italic> &lt; 0.001, data not shown). Shifting the period of the drinking trials to be after minimum protrusion also did not lead to a significant difference between MIo and SIo (<italic>p</italic> &gt; 0.1).</p>
 <p>Further analysis of the tongue’s lateral (yaw) and vertical (pitch) components during feeding revealed additional insights. <xref rid="fig4" ref-type="fig">Figure 4A</xref> shows peak activity of a neuron in MIo and in SIo at varying degrees of pitch and yaw. Overall, more neurons responded to pitch than yaw (<xref rid="fig4" ref-type="fig">Fig. 4B</xref>), with MIo showing a higher proportion of neurons tuned to both components compared to SIo (Chi-square, yaw: <italic>p</italic> &lt; 0.08, pitch: <italic>p</italic> &lt; 0.001), consistent with our 3D direction results. MIo neurons exhibited sharper and narrower tuning curves than the broader tuning curves observed in SIo (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>, see Supplementary file 2).</p>
@@ -263,7 +264,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 4.</label>
 <caption><title>Directional tuning to yaw and pitch during feeding.</title>
 <p><bold>(A)</bold> Firing rate maps of a neuron in MIo and in SIo across yaw and pitch angles. Firing rates were averaged across all 100 ms feeding intervals within a 10° range. <bold>(B)</bold> Proportion of neurons tuned to yaw and pitch, combined for both subjects. Recordings were taken from four areas of the OSMCx: rM1 - rostral M1, cM1 - caudal M1, SC(3a/3b) - area 3a/3b, and SC(1/2) - area 1/2. Error bars represent ±1 SE.</p></caption>
-<graphic xlink:href="601741v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3b">
@@ -274,13 +275,13 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 5.</label>
 <caption><title>Cosine tuning of MIo and SIo neurons.</title>
 <p><bold>(A)</bold> Distribution of 3D preferred directions in unit sphere for neurons that fit the tuning function during feeding, combined for both subjects. The origin represents the start of a movement. Color bar represents posterior-anterior axis. <bold>(B)</bold> Distribution of the index for the depth of directional tuning, combined for both subjects.</p></caption>
-<graphic xlink:href="601741v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig6" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 6.</label>
 <caption><title>Distribution of PDs in MIo (yellow) and SIo (purple) neurons during control feeding <bold>(A)</bold> and drinking <bold>(B)</bold>.</title>
 <p>For the feeding task, polar plots are split into 10° bins with thick colored lines representing the mean PD. For the drinking task, error bars represent ±1 SE.</p></caption>
-<graphic xlink:href="601741v3_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3c">
@@ -290,10 +291,11 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 7.</label>
 <caption><title>Neural population trajectories vary across directions.</title>
 <p> Trial-averaged trajectories of MIo and SIo population activity along the first three latent factors for Monkey R, grouped by direction. Axes for SIo are 1/4 scale of MIo. Arrows indicate the end of the trajectory. Percentages denote the sum of the variance explained by the first three factors. Inset plots show the difference between the average inter-trajectory distances of MIo and SIo over time for both feeding and drinking.</p></caption>
-<graphic xlink:href="601741v3_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>MIo population trajectories followed a circular path and exhibited consistent patterns based on directional components. For example (<xref rid="fig7" ref-type="fig">Fig. 7</xref> top), trajectories with upward (Sup) components (AntSupL/R, PostSupL/R) rotated opposite from trajectories with downward (Inf) components (AntInfL/R, PostInfL/R). In feeding, Factors 1 and 2 captured superior-inferior and right-left directions, respectively. In drinking, MIo trajectories exhibited consistent rotational direction regardless of spout location (<xref rid="fig7" ref-type="fig">Fig. 7</xref> bottom left), while exhibiting distinct separation of trajectories for left, center, and right spout-directed tongue movements clustering at approximately −0.5, 0, and 0.5 positions along the Factor 2 axis, respectively. Indeed, inter-trajectory distances in Factor 1 were significantly higher in feeding (t-test, <italic>p</italic> &lt; 0.001, mean ± 1 SD: 0.4628 ± 0.0246) than in drinking (mean ± 1 SD: 0.1286 ± 0.0610), indicating that Factor 1 resembled directional information in feeding but a condition-independent feature of population activity in drinking. The latent factors revealed a clear organizational principle: Factor 1 predominantly captured superior-inferior directional components in feeding, while Factor 2 primarily represented left-right directional components of tongue movement in both tasks.</p>
 <p>Similar to previous findings (<xref ref-type="bibr" rid="c52">Russo et al., 2018</xref>), SIo trajectories in both feeding and drinking showed stark differences from MIo as they were more tangled and exhibited less direct (i.e., sharp turns) paths (<xref rid="fig7" ref-type="fig">Fig. 7</xref> right). Unlike MIo trajectories, SIo trajectories spanned a smaller neural space, had variable distances between trajectories, and showed inconsistent patterns based on directional components. Quantitative analysis revealed greater separation between trial-averaged population trajectories in MIo compared to SIo (<xref rid="fig7" ref-type="fig">Fig. 7</xref> inset, t-test, <italic>p</italic> &lt; 0.01, mean ± 1 SD: MIo: 0.34 ± 0.03; SIo: 0.12 ± 0.02). These results were consistent with significantly longer distance travelled by MIo population trajectories compared to SIo in both tasks for Monkey R only (t-test, <italic>p</italic> &lt; 0.001, mean ± 1 SD: feeding: MIo: 0.43 ± 0.07; SIo: 0.26 ± 0.09; drinking: MIo: 2.85 ± 0.42; SIo: 1.36 ± 0.52). The regional differences cannot be attributed to fewer SIo neurons used (Figure 7 – figure supplement 3).</p>
+</sec>
 <sec id="s3d">
 <title>Effects of nerve block</title>
 <p>Sensation plays a key role in tongue positioning and movements for natural behaviors. During ingestion, tactile feedback is necessary for locating the bolus, preventing tongue bites, feeling where the drinking spout is, and identifying when it is safe to swallow. To evaluate the role of oral sensation, we used a bilateral oral nerve block to temporarily eliminate tactile sensation in the oral cavity and observe how the control of tongue movement was impacted. Below, we show how the loss of sensation affected both tongue kinematics and directional tuning of neurons during feeding and drinking. To verify that differences between the control and nerve block conditions were due to the loss of sensory feedback and not because of other factors such as sedation and injection, a sham experiment was conducted where saline was administered to the injection sites instead of nerve block. No significant changes to tongue kinematics were observed following the sham experiments (<xref rid="fig8" ref-type="fig">Fig. 8</xref>).</p>
@@ -301,9 +303,8 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 8.</label>
 <caption><title>Effect of nerve block on direction of tongue movement.</title>
 <p><bold>(A)</bold> Distribution of tongue directions during feeding. <bold>(B)</bold> Variance in 3D trajectory endpoints during drinking (Posterior-Anterior, Inferior-Superior, Left-Right) for each direction: left (L), middle (M), right (R). <bold>(C)</bold> Variation in the distance of drinking endpoint positions from the mean endpoint. Left halves of hemi-violins (black) are control and right halves (red) are nerve block for an individual. Horizontal black lines represent the mean and horizontal red lines the median. Results of two-tailed t-test and f-test are indicated by asterisks and crosses, respectively: *,† p &lt; 0.05; **,†† p &lt; 0.01; ***,††† p &lt; 0.001. Smaller inset plots show that there was no effect in the sham nerve block condition, for reference. The sham procedure was identical to the nerve block, except the anesthetic was substituted with saline solution</p></caption>
-<graphic xlink:href="601741v3_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
-</sec>
 </sec>
 <sec id="s3ca1">
 <title>Changes to tongue kinematics</title>
@@ -313,7 +314,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 9.</label>
 <caption><title>Effect of nerve block on drinking kinematics in Monkey R.</title>
 <p><bold>(A)</bold> Tongue tip trajectories from starting position to one of three drinking spouts in the control and nerve block conditions. <bold>(B)</bold> Drinking trajectory endpoints, where the black dot represents the mean endpoint position.</p></caption>
-<graphic xlink:href="601741v3_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig9.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3e">
@@ -323,7 +324,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 10.</label>
 <caption><title>Effects of nerve block on directional tuning of OSMCx neurons during feeding and drinking tasks.</title>
 <p> <bold>(A)</bold> Percentage of directionally tuned neurons in four areas: rMIo - rostral M1, cMIo - caudal M1, SIo(3a/3b) -area 3a/3b, and SIo(1/2) -area 1/2. Filled in bars represent control while empty bars represent nerve block. Error bars represent ±1 SE. <bold>(B)</bold> Percentage of MIo and SIo neurons which gained or lost directionality with the addition of nerve block.</p></caption>
-<graphic xlink:href="601741v3_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig10.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>We further investigated whether neurons gaining or losing directional selectivity differed across regions. During feeding, MIo and SIo exhibited similar proportions of neurons gaining or losing directional tuning (<xref rid="fig10" ref-type="fig">Fig. 10B-top row</xref>, Chi-square, <italic>p</italic> &gt; 0.1). The drinking task revealed subject-specific differences (<xref rid="fig10" ref-type="fig">Fig. 10B-bottom row</xref>): in Monkey R, significantly more neurons lost directional tuning in SIo compared to MIo (p &lt; 0.01), while in Monkey Y, SIo showed a higher proportion of neurons gaining directional tuning than MIo (p &lt; 0.05). Comparing across behaviors, Monkey R demonstrated consistent patterns of directional tuning changes (Chi-square, <italic>p</italic> &gt; 0.1), whereas Monkey Y showed significantly higher percentages of neurons gaining directionality during drinking than feeding in both MIo and SIo (<italic>p</italic> &lt; 0.05). Interestingly, there was a large proportion (40%) of SIo neurons in Monkey Y that gained directional tuning following sensory loss compared to Monkey R (8%) during drinking.</p>
 <p>Nerve block significantly altered PD distributions during both tasks. During feeding, MIo neurons in both subjects exhibited a significant clockwise shift in mean PD toward the center (0°), resulting in more uniform distributions (<xref rid="fig11" ref-type="fig">Fig. 11A</xref>; circular k-test, p &lt; 0.01). In contrast, SIo neurons showed subject-specific responses, with only Monkey R demonstrating a significant counterclockwise shift (p &lt; 0.05). During drinking under nerve block, MIo neurons displayed subject-dependent directional shifts. In Monkey R, the proportion of neurons with rightward PDs decreased and increased in all other directions whereas Monkey Y showed the opposite with increased neurons with rightward PDs (<xref rid="fig11" ref-type="fig">Fig. 11B</xref>; Chi-square, Y: p = 0.04). Meanwhile, SIo neurons consistently shifted rightward in both animals (Chi-square, R: p = 0.02), suggesting differential regional responses to peripheral deafferentation.</p>
@@ -331,7 +332,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 11.</label>
 <caption><title>Effects of nerve block on the distribution of PDs of MIo (yellow) and SIo (purple) neurons.</title>
 <p><bold>(A)</bold> For the feeding task, polar plots are split into 10° bins with thick colored lines representing the mean PD. Significant circular concentration test (k-test) comparing control and nerve block are indicated by asterisks: *p &lt; 0.05; **p &lt; 0.01; ***p &lt; 0.001. <bold>(B)</bold> For the drinking task, error bars represent ±1 SE. Filled in bars represent control while empty bars represent nerve block.</p></caption>
-<graphic xlink:href="601741v3_fig11.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig11.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3f">
@@ -341,7 +342,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 12.</label>
 <caption><title>Effect of nerve block on population trajectories.</title>
 <p>Trial-averaged trajectories of MIo and SIo population activity for Monkey R’s feeding and drinking sessions, grouped by direction. Axes represent the latent factors from control data, with the x-axis chosen as the factor with the highest degree of separation between directions. Lighter, dotted lines represent superimposed population trajectories in the nerve block condition. Insets show the difference between the average inter-trajectory distances for control and nerve block conditions.</p></caption>
-<graphic xlink:href="601741v3_fig12.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig12.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The effects of nerve block on the distance travelled by population trajectories were inconsistent across subjects and behavior. Following nerve block, the total distance travelled by SIo trajectories became longer in different behaviors for a specific subject (t-test, Monkey R feeding: <italic>p</italic> &lt; 0.001; Monkey Y drinking: <italic>p</italic> &lt; 0.05). In contrast, MIo trajectories became shorter in drinking (Monkey Y, <italic>p</italic> &lt; 0.01).</p>
 </sec>
@@ -352,7 +353,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <label>Figure 13.</label>
 <caption><title>Accuracies of two different decoding algorithms from MIo and SIo populations of equal size (N=28).</title>
 <p><bold>(A)</bold> Comparison between average decoding accuracy of KNN classifier. Chance level is 33.33%. <bold>(B)</bold> Comparison between average decoding accuracy by LSTM network. Data shown separately for each subject, behavioral task, and condition. The dashed line signifies equal decoding performance for MIo and SIo. Decoding accuracies from full populations are included in Figure 13 – figure supplement 2.</p></caption>
-<graphic xlink:href="601741v3_fig13.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="601741v3_fig13.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -361,7 +362,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 <p>Our study investigated the representation of 3D directional information in MIo and SIo during natural feeding and drinking behaviors, and how cortical representations change when tactile sensation is disrupted. By simultaneously recording large-scale cortical activity and 3D tongue kinematics, we revealed a nuanced neural encoding of tongue movement direction that varies systematically across cortical regions, behaviors, and sensory feedback conditions. We found that a substantial proportion of neurons exhibit directional tuning characterized by diverse tuning curve properties (PD, tuning shape, modulation depth). Neural population trajectories demonstrated distinct patterns across different movement directions. Directional tuning in both individual- and population-level is more robust in MIo. Following sensory loss, alterations in tongue kinematics were accompanied by changes in directional information in MIo and SIo, manifesting as modifications in both individual neuron tuning characteristics and the broader dynamics of population-level neural activity.</p>
 <sec id="s4a">
 <title>Differences across behaviors</title>
-<p>In the present study, results from the more natural drinking are consistent with previous findings that MIo and SIo encode tongue direction during a trained protrusion task (<xref ref-type="bibr" rid="c48">Murray and Sessle, 1992</xref>; <xref ref-type="bibr" rid="c57">Sessle et al., 2005a</xref>; <xref ref-type="bibr" rid="c5">Arce et al., 2013</xref>). Our study extends this knowledge by investigating the dynamics of directional tuning of individual and population of neurons in OSMCx to 3D tongue direction during naturalistic behaviors. Unlike previous similar studies, the monkeys were not trained to reach specific targets and were instead allowed to eat and drink relatively naturally. By comparing two naturalistic behaviors, we found that the directional information in OSMcx was higher in feeding than in the drinking task, as seen in higher proportion of directionally tuned neurons, cumulative variance explained by latent factors, and decoding accuracies. That directional tuning is modifiable is consistent with previous findings in primate motor cortex where directional tuning was modulated by movement parameters such as speed, posture, distance (<xref ref-type="bibr" rid="c1">Aflalo and Graziano, 2006</xref>) and by varying task contexts such as availability of prior information (<xref ref-type="bibr" rid="c51">Rickert et al., 2009</xref>), individual vs. segmented arm movements (<xref ref-type="bibr" rid="c9">Ben-Shaul et al., 2004</xref>), one-vs two-target reaching (<xref ref-type="bibr" rid="c20">Ebina et al., 2024</xref>). A high degree of similarity in neural modes have been reported across different wrist tasks in 1-D and 2D (<xref ref-type="bibr" rid="c25">Gallego et al., 2018</xref>). This suggests that in our study, feeding and drinking may reflect more distinct biomechanical constraints and sensorimotor requirements compared to the wrist tasks. In feeding, the tongue moves in varied directions to position the food between left-right toothrows during chewing, whereas in the drinking task, the tongue moves to discrete and fixed spout locations. Additionally, feeding and drinking engage the jaw differently. During feeding, the jaw moves more extensively and in multiple directions, while jaw movements during drinking are smaller and primarily vertical. Lastly, the tongue-jaw coordination differs between tasks; maximum tongue protrusion coincides with maximum gape in drinking but with minimum gape in the feeding behavior (<xref ref-type="bibr" rid="c38">Laurence-Chasen et al., 2022</xref>; <xref ref-type="bibr" rid="c50">Punacha et al., 2024</xref>). Indeed, Mio trajectories’ predominant latent factor contained directional information in the feeding task, resembling superior-inferior directional components which rotated in opposite directions. In contrast, MIo trajectories in drinking exhibited a consistent rotational direction regardless of spout location (<xref rid="fig7" ref-type="fig">Fig. 7</xref>). This may reflect a predominant non-directional information such as condition-independent time-varying spiking activity during drinking (<xref ref-type="bibr" rid="c34">Kaufman et al., 2013</xref>; <xref ref-type="bibr" rid="c36">Kobak et al., 2016</xref>; <xref ref-type="bibr" rid="c6">Arce-McShane et al., 2023</xref>).</p>
+<p>In the present study, results from the more natural drinking are consistent with previous findings that MIo and SIo encode tongue direction during a trained protrusion task (<xref ref-type="bibr" rid="c48">Murray and Sessle, 1992</xref>; <xref ref-type="bibr" rid="c57">Sessle et al., 2005a</xref>; <xref ref-type="bibr" rid="c5">Arce et al., 2013</xref>). Our study extends this knowledge by investigating the dynamics of directional tuning of individual and population of neurons in OSMCx to 3D tongue direction during naturalistic behaviors. Unlike previous similar studies, the monkeys were not trained to reach specific targets and were instead allowed to eat and drink relatively naturally. By comparing two naturalistic behaviors, we found that the directional information in OSMcx was higher in feeding than in the drinking task, as seen in higher proportion of directionally tuned neurons, cumulative variance explained by latent factors, and decoding accuracies. That directional tuning is modifiable is consistent with previous findings in primate motor cortex where directional tuning was modulated by movement parameters such as speed, posture, distance (<xref ref-type="bibr" rid="c1">Aflalo and Graziano, 2006</xref>) and by varying task contexts such as availability of prior information (<xref ref-type="bibr" rid="c51">Rickert et al., 2009</xref>), individual vs. segmented arm movements (<xref ref-type="bibr" rid="c9">Ben-Shaul et al., 2004</xref>), one-vs two-target reaching (<xref ref-type="bibr" rid="c20">Ebina et al., 2024</xref>). A high degree of similarity in neural modes have been reported across different wrist tasks in 1-D and 2D (<xref ref-type="bibr" rid="c25">Gallego et al., 2018</xref>). This suggests that in our study, feeding and drinking may reflect more distinct biomechanical constraints and sensorimotor requirements compared to the wrist tasks. In feeding, the tongue moves in varied directions to position the food between left-right toothrows during chewing, whereas in the drinking task, the tongue moves to discrete and fixed spout locations. Additionally, feeding and drinking engage the jaw differently. During feeding, the jaw moves more extensively and in multiple directions, while jaw movements during drinking are smaller and primarily vertical. Lastly, the tongue-jaw coordination differs between tasks; maximum tongue protrusion coincides with maximum gape in drinking but with minimum gape in the feeding behavior (<xref ref-type="bibr" rid="c38">Laurence-Chasen et al., 2022</xref>; <xref ref-type="bibr" rid="c50">Punacha et al., 2024</xref>). Indeed, MIo trajectories’ predominant latent factor contained directional information in the feeding task, resembling superior-inferior directional components which rotated in opposite directions. In contrast, MIo trajectories in drinking exhibited a consistent rotational direction regardless of spout location (<xref rid="fig7" ref-type="fig">Fig. 7</xref>). This may reflect a predominant non-directional information such as condition-independent time-varying spiking activity during drinking (<xref ref-type="bibr" rid="c34">Kaufman et al., 2013</xref>; <xref ref-type="bibr" rid="c36">Kobak et al., 2016</xref>; <xref ref-type="bibr" rid="c6">Arce-McShane et al., 2023</xref>).</p>
 </sec>
 <sec id="s4b">
 <title>Comparison between MIo and Sio</title>
@@ -383,7 +384,7 @@ where y is the spike counts from n neurons, <bold><italic>μ</italic></bold> is 
 </sec>
 </body>
 <back>
-<sec>
+<sec id="d1e1374">
 <title>Additional information</title>
 <sec id="s5" sec-type="ethics-statement">
 <title>Ethics statement</title>
