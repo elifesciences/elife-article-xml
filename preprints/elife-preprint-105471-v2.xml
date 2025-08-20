@@ -1,0 +1,778 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">105471</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.105471</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.105471.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Immunology and Inflammation</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Thrifty wide-context models of B cell receptor somatic hypermutation</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7289-845X</contrib-id>
+<name>
+<surname>Sung</surname>
+<given-names>Kevin</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3915-2023</contrib-id>
+<name>
+<surname>Johnson</surname>
+<given-names>Mackenzie M</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8617-476X</contrib-id>
+<name>
+<surname>Dumm</surname>
+<given-names>Will</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8985-2474</contrib-id>
+<name>
+<surname>Simon</surname>
+<given-names>Noah</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8324-8324</contrib-id>
+<name>
+<surname>Haddox</surname>
+<given-names>Hugh</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7590-5563</contrib-id>
+<name>
+<surname>Fukuyama</surname>
+<given-names>Julia</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0607-6025</contrib-id>
+<name>
+<surname>Matsen</surname>
+<given-names>Frederick A</given-names>
+<suffix>IV</suffix></name>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="aff" rid="a5">5</xref>
+<xref ref-type="aff" rid="a6">6</xref>
+<email>matsen@fredhutch.org</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/007ps6h72</institution-id><institution>Computational Biology Program, Fred Hutchinson Cancer Center</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00cvxb145</institution-id><institution>Department of Biostatistics, University of Washington</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/01kg8sb98</institution-id><institution>Department of Statistics, Indiana University</institution></institution-wrap>, <city>Bloomington</city>, <country country="US">United States</country></aff>
+<aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id><institution>Howard Hughes Medical Institute</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="a5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00cvxb145</institution-id><institution>Department of Genome Sciences, University of Washington</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="a6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00cvxb145</institution-id><institution>Department of Statistics, University of Washington</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Mora</surname>
+<given-names>Thierry</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>École Normale Supérieure - PSL</institution>
+</institution-wrap>
+<city>Paris</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Walczak</surname>
+<given-names>Aleksandra M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>CNRS</institution>
+</institution-wrap>
+<city>Paris</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-03-18">
+<day>18</day>
+<month>03</month>
+<year>2025</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2025-07-16">
+<day>16</day>
+<month>07</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP105471</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-01-13">
+<day>13</day>
+<month>01</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2024-12-01">
+<day>01</day>
+<month>12</month>
+<year>2024</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.11.26.625407"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2025-03-18">
+<day>18</day>
+<month>03</month>
+<year>2025</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.105471.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.105471.1.sa3">eLife Assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.105471.1.sa2">Reviewer #1 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.105471.1.sa1">Reviewer #2 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.105471.1.sa0">Reviewer #3 (Public review):</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Sung et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Sung et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-105471-v2.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Somatic hypermutation (SHM) is the diversity-generating process in antibody affinity maturation. Probabilistic models of SHM are needed for analyzing rare mutations, for understanding the selective forces guiding affinity maturation, and for understanding the underlying biochemical process. High throughput data offers the potential to develop and fit models of SHM on relevant data sets. In this paper we model SHM using modern frameworks. We are motivated by recent work suggesting the importance of a wider context for SHM, however, assigning an independent rate to each k-mer leads to an exponential proliferation of parameters. Thus, using convolutions on 3-mer embeddings, we develop “thrifty” models of SHM of various sizes; these can have fewer free parameters than a 5-mer model and yet have a significantly wider context. These offer a slight performance improvement over a 5-mer model, and other modern model elaborations worsen performance. We also find that a per-site effect is not necessary to explain SHM patterns given nucleotide context. Also, the two current methods for fitting an SHM model — on out-of-frame sequence data and on synonymous mutations — produce significantly different results, and augmenting out-of-frame data with synonymous mutations does not aid out-of-sample performance.</p>
+</abstract>
+<funding-group>
+<award-group id="funding-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01cwqze88</institution-id>
+<institution>National Institutes of Health</institution>
+</institution-wrap>
+</funding-source>
+<award-id>01-AI146028</award-id>
+</award-group>
+<award-group id="funding-2">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id>
+<institution>Howard Hughes Medical Institute</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Revising to address reviewer comments from eLife. There isn't room here to describe them all, but here are the major ones: &gt; (1) 10x/single cell data has a fairly different error profile compared &gt; to bulk data. A synonymous model should be built from the same &gt; `briney` dataset as the base model to validate the difference between &gt; the two types of training data. We have repeated the same analysis with synonymous mutations derived from the bulk-sequenced `tang` dataset and for Figure 4 and the supplementary figure. The conclusion remains the same. We used `tang` because only the out of frame sequences were available to us for the `briney` data set as we were using preprocessing from the Spisak paper. &gt; (6) Have you looked to see if Soto et al Nature 2019 &gt; (<ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/s41586-019-0934-8">https://doi.org/10.1038/s41586-019-0934-8</ext-link>) provides usable data for &gt; your purposes? Thank you for making us aware of this data set! However, we are afraid that it did not provide the large volume of out-of-frame data that we were hoping for, as we now describe: &quot;&quot;&quot; From Soto et al. (2019), we obtained pre-processed data for all 3 HIP donors from the authors. We ran our pipeline on a large subset of the data (sampling the ﬁrst 1 million sequences for each donor IgH fasta ﬁle) to assess its potential for our purposes. From the 3 million sequences processed, we extracted 2,686 out-of-frame sequences in total. These sequences corresponded to 11 clonal families of size 2+ and 2,618 singletons. We obtained 102 parent-child pairs from non- singletons, of which only 57 contained a mutation event. The relatively low recovery of out-of-frame sequences in this subset of the data suggested that processing the full dataset would not yield a meaningful amount of parent-child pairs for this study. We additionally observed that all of these sequences had no coverage at the start of the V gene, missing the ﬁrst 12-60 bases.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Antibodies are an essential component of the adaptive immune response. They are secreted by B cells, and when displayed on the surface of B cells are called B cell receptors. When stimulated by antigen binding, B cells undergo a process called “affinity maturation” which involves mutation and selection. The mutation process happens at a very high rate relative to the rate of normal somatic mutation and is called somatic hypermutation (SHM). As such, it is an essential part of the adaptive immune response. It is generated by a complex collection of interacting pathways of DNA damage and error-prone repair, which have been elucidated through decades of research (<xref ref-type="bibr" rid="c51">Wagner and Neuberger, 1996</xref>; <xref ref-type="bibr" rid="c47">Teng and Papavasiliou, 2007</xref>; <xref ref-type="bibr" rid="c26">Methot and Di Noia, 2017</xref>; <xref ref-type="bibr" rid="c33">Pilzecker and Jacobs, 2019</xref>). These pathways lead to a very non-uniform distribution of mutations.</p>
+<p>Furthermore, the mutation biases are predictable from local sequence context. Many papers have investigated predictors of mutation rates from molecular sequence, including early work establishing the biases (<xref ref-type="bibr" rid="c6">Dunn-Walters et al., 1998</xref>; <xref ref-type="bibr" rid="c38">Rogozin and Kolchanov, 1992</xref>; <xref ref-type="bibr" rid="c39">Rogozin and Diaz, 2004</xref>), to parametric models estimating the mutability based on local sequence “motif”, or sequence neighborhood around a focal base (<xref ref-type="bibr" rid="c57">Yaari et al., 2013</xref>; <xref ref-type="bibr" rid="c7">Elhanati et al., 2015</xref>; <xref ref-type="bibr" rid="c5">Cui et al., 2016</xref>; <xref ref-type="bibr" rid="c8">Feng et al., 2019</xref>; <xref ref-type="bibr" rid="c9">Fisher et al., 2025</xref>).</p>
+<p>Such models are important when predicting the probability of amino acid changes in affinity maturation, e.g. for understanding the prospects of selecting such mutations in for reverse vaccinology (<xref ref-type="bibr" rid="c54">Wiehe et al., 2018</xref>; <xref ref-type="bibr" rid="c23">Martin Beem et al., 2023</xref>) or in computing a model of natural selection on antibodies (<xref ref-type="bibr" rid="c24">McCoy et al., 2015</xref>; <xref ref-type="bibr" rid="c12">Hoehn et al., 2017</xref>, <xref ref-type="bibr" rid="c13">2019</xref>).</p>
+<p>The most popular models for somatic hypermutation are the S5F 5-mer model and its variants (<xref ref-type="bibr" rid="c57">Yaari et al., 2013</xref>; <xref ref-type="bibr" rid="c5">Cui et al., 2016</xref>). They have shown their worth for over a decade now, including tasks such as predicting the probability of mutations to mature broadly neutralizing antibodies against HIV (<xref ref-type="bibr" rid="c54">Wiehe et al., 2018</xref>, <xref ref-type="bibr" rid="c55">2022</xref>). However, biological considerations suggest that a wider context should be considered.</p>
+<p>Indeed, the consensus view of SHM requires processes such as patch removal around an AID-induced lesion (<xref ref-type="bibr" rid="c33">Pilzecker and Jacobs, 2019</xref>) and error-prone repair. Thus, for example, the presence of an AID hotspot several bases away may influence the probability of a mutation at a focal base. More recently, mesoscale-level sequence effects on AID deamination potentially deriving from local DNA sequence flexibility have been discovered (<xref ref-type="bibr" rid="c52">Wang et al., 2023</xref>). In addition, other work has found that position in the sequence can influence SHM (<xref ref-type="bibr" rid="c4">Cohen et al., 2011</xref>; <xref ref-type="bibr" rid="c59">Zhou and Kleinstein, 2020</xref>; <xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>).</p>
+<p>This begs the question of how one could use more complex models to predict somatic hypermutation. 7-mer models, which have 3 flanking bases on either side of the focal base, have been used (<xref ref-type="bibr" rid="c7">Elhanati et al., 2015</xref>; <xref ref-type="bibr" rid="c22">Marcou et al., 2018</xref>). However, one cannot simply increase the size of the k-mer model indefinitely because the number of parameters grows exponentially with the size of the k-mer. More recent models of somatic hypermutation include position-specific terms (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) and context models of size up to 21 parameterized by a convolutional neural network (<xref ref-type="bibr" rid="c46">Tang et al., 2022</xref>). In other contexts, models based on the transformer architecture (<xref ref-type="bibr" rid="c49">Vaswani et al., 2017</xref>) have shown great success, raising the question of if such an architecture could be used here.</p>
+<p>In this paper we develop new models using modern frameworks, and provide a comprehensive evaluation of the models. We especially focus on the development of parameter-efficient convolutional neural networks of various sizes, which we call “thrifty” models. These models have wide nucleotide context yet can have fewer parameters than a 5-mer model, while providing slightly better performance on metrics in train and test time. On the other hand, we find that elaborations such as a per-site rate and transformer only harm out-of-sample performance. We also find a clear difference between training models to predict well on out-of-frame data, compared to training models to predict well on synonymous mutations. To make these models useful for the community, we have released an open-source Python package <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/netam">https://github.com/matsengrp/netam</ext-link> with pretrained models and a simple API. Our analysis for this paper is reproducible via <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/netam-experiments-1">https://github.com/matsengrp/netam-experiments-1</ext-link>.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Overview of data preparation and objective</title>
+<p>We will begin with an overview of our models and data. Full details are provided in the Methods.</p>
+<p>Our objective in this project is to predict the probability of observed somatic hypermutation in a child sequence relative to a parent sequence. We follow previous work (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) in overall goal and data setup. Specifically, we predict mutations in BCR sequences that are out-of-frame, i.e. such that the sequence cannot code for a productive receptor. Because the data is out-of-frame, this means that the sequences under consideration are less likely to have under-gone selective pressure in the germinal centers, and instead provides more information about the SHM process. We also provide more relevant parent sequences and predict finer-scale events by using phylogenetic reconstruction and ancestral sequence inference on sequences clustered into clonal families (<xref rid="fig1" ref-type="fig">Figure 1a</xref>). We split the tree with ancestral sequences into pairs of parent and child sequences, which we call parent-child pairs. We also experiment with using synonymous mutation data by masking mutations from the loss function that are not synonymous (below; details in Methods).</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><p>(a) Overview of data processing and objective. Out-of-frame sequences are clustered into clonal families. Trees are built on clonal families and then ancestral sequences are reconstructed using a simple sequence model. The prediction task is to predict the location and identity of mutations of child sequences given parent sequences. (b) Strategy for “thrifty” CNNs with relatively few parameters. We use a trainable embedding of each 3-mer into a space; downstream convolutions happen on sequential collections of these embeddings. The “width” of the k-mer model is determined by the size of the convolutional kernel, which in this cartoon is 3. This would give us effectively a 5-mer model because the 3-mer model adds one base on either side of a convolution of length 3. For the sake of simplicity, the probability distribution of the new base conditioned on there being a substitution (which we call the conditional substitution probability or CSP) is not shown. The CSP output can emerge in several ways (<xref ref-type="fig" rid="fig1_S1">Figure 1—figure Supplement 1</xref>).</p>
+<p><xref ref-type="fig" rid="fig1_S1">Figure 1—figure supplement 1</xref>. Strategies for estimating both per-site rate and CSPs.</p></caption>
+<graphic xlink:href="625407v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In all models, the distribution of mutations at a particular site is assumed to be independent of mutations at all other sites (but not independent of context). We follow many authors starting from (<xref ref-type="bibr" rid="c57">Yaari et al., 2013</xref>) in estimating a per-site rate, as well as a per-site probability distribution among the non-identical bases describing the base selected in the event of a mutation. We will call this the conditional substitution probability (CSP). For each site <italic>i</italic>, we assume that the mutation process is an Exponential waiting time process with rate <italic>λ</italic><sub><italic>i</italic></sub>. Once the mutation occurs, we assume that the base is selected according to a categorical distribution with probabilities <bold>p</bold><sub><italic>i</italic></sub>. Similar assumptions have been made previously (<xref ref-type="bibr" rid="c40">Rosset, 2007</xref>; <xref ref-type="bibr" rid="c21">Levinstein Hallak et al., 2018</xref>; <xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>; <xref ref-type="bibr" rid="c20">Levinstein Hallak and Rosset, 2022</xref>). To accommodate evolutionary time in our model, we include <italic>offsets</italic> in our exponential model—if <italic>t</italic> is a branch length parameter for a sequence pair we use parameter <inline-formula><inline-graphic xlink:href="625407v2_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> for model inference so that the model is able to learn <italic>λ</italic> irrespective of evolutionary time on a particular branch. This parameter <italic>t</italic> is frequently the normalized mutation count (as in <xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) but can be optimized as part of a joint optimization.</p>
+<p>We used two data sets, that we will call the briney and tang data sets. The briney data (<xref ref-type="bibr" rid="c2">Briney et al., 2019</xref>) consists of samples from 9 individuals, but 2 of these samples resulted in many more sequences than the rest. Thus, we will use a test-train split in which these 2 samples form the training data and the other 7 samples form the testing data. We acknowledge the important work the <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) team did in processing the briney data. The tang data (<xref ref-type="bibr" rid="c50">Vergani et al., 2017</xref>; <xref ref-type="bibr" rid="c45">Tang et al., 2020</xref>) will be a further test set. Details on data processing appear in the Methods. In the Methods, we describe our attempts to find additional data sets.</p>
+</sec>
+<sec id="s2b">
+<title>Models</title>
+<p>We use the following strategy to combine the predictive power of local-context models without having the parameter penalty (<xref rid="fig1" ref-type="fig">Figure 1b</xref>). Each 3-mer is mapped into a embedding space of a fixed dimension, and these embedding locations are trainable parameters of the model. The idea is that the embedding abstracts some SHM-relevant characteristics of that 3-mer. Each sequence is then represented as a matrix with (sequence length) rows and (embedding dimension) columns. We then apply convolutional filters to these matrices, with taller convolutional filters effectively increasing the context of the model. For example, a kernel size of 11 gives effectively a 13-mer model (because of the additional base on either side of the 3-mer). We then apply a simple linear layer to the result of this step in order to get a mutation rate estimate for each site.</p>
+<p>As described above, this class of models predicts both the per-site rate of SHM as well as the probability of alternate bases after mutation (called the CSP as above). We make these two model outputs in three ways (<xref rid="fig1_S1" ref-type="fig">Figure 1—figure Supplement 1</xref>): they can share everything except for the final layer (“joined” model), or they can share the embedding layer (“hybrid” model), or they can be estimated separately (“independent” model). A key difference with a full k-mer model is that when we increase the size of the kernel, the number of parameters increases linearly, not exponentially. In this way, the thriftiest well-performing model is effectively a 13-mer model with fewer parameters than a 5-mer model, however one can scale these models among a variety of dimensions (<xref rid="tbl1" ref-type="table">Table 1</xref>).</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+    <caption><title>Selected model shapes and dropout probabilities.</title>
+        <p>The release name of the model is the name of the trained model released in the GitHub repository. The paper name is the name of the model used in this manuscript, which describes more about its architecture. “Kernel”: the size of the convolutional kernel used in the model. “Embed”: the size of the embedding used for each 3-mer. Because there is one additional base on either side of a 3-mer, a model with kernel size 9 is effectively an 11-mer model, and a model with kernel size 11 is effectively a 13-mer model. The “Medium” and “Large” labels in the paper name designate the settings for Kernel, Embed, Filters, and Dropout.</p></caption>
+<graphic xlink:href="625407v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>We implemented our models in PyTorch (<xref ref-type="bibr" rid="c32">Paszke et al., 2019</xref>). Because of the small size of these models, they are fast to train and use. The hyperparameters for the models (<xref rid="tbl1" ref-type="table">Table 1</xref>) were selected with a run of Optuna (<xref ref-type="bibr" rid="c1">Akiba et al., 2019</xref>) early in the project and then fixed. Further optimization was not pursued because of the limited performance differences between the existing models.</p>
+</sec>
+<sec id="s2c">
+<title>Thrifty CNNs give a modest performance improvement</title>
+<p>In order to evaluate our proposed methods and compare to previous work, we first characterized the models in terms of predictive performance using AUROC, AUPRC, R-precision, and substitution accuracy. AUROC, the area under the ROC curve, can be interpreted as the probability that the model correctly identifies sites that mutate as having higher mutability than those that do not. In fact, if one randomly selects a positive-negative pair, the AUROC is the probability that the positive example is assigned a higher probability than the negative example. However, this measure is sensitive to class imbalance, and we are in the imbalanced setting here because mutations are relatively rare. AUPRC, the area under the precision-recall curve, provides an alternative that is less sensitive to class imbalance effects (<xref ref-type="bibr" rid="c41">Saito and Rehmsmeier, 2015</xref>; <xref ref-type="bibr" rid="c31">Ozenne et al., 2015</xref>) because the precision is the fraction of positive predictions that are true positives. R-precision gives a sense of how accurate the model is among sites that are most mutable. Specifically, if a given pair of parent and child sequences had <italic>R</italic> mutations, R-precision is the precision of the predictions of mutability at the <italic>R</italic> sites that are ranked as being most mutable. To evaluate performance at predicting perbase substitution probabilities (given a mutation occurred), we report substitution accuracy: how frequently is the predicted-most-likely base the one to which a site mutates?</p>
+<p>We found that the thrifty CNN models gave a modest performance improvement for these predictive metrics compared to existing models (<xref rid="fig2" ref-type="fig">Figure 2</xref>, <xref rid="fig2_S1" ref-type="fig">Figure 2—figure Supplement 1</xref>). Specifically, we compared to a 5-mer model trained in exactly the same way, as well as a reimplementation of the model of <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>). We confirmed that our reimplementation infers very similar parameters to the previous implementation, although we add a slight regularization to avoid some aspects of the original model fit that appear to be artifacts (<xref rid="fig2_S2" ref-type="fig">Figure 2—figure Supplement 2</xref>). Because the <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) model fits a per-site rate, and the <monospace>briney</monospace> data does not have full sequence coverage, we limited all evaluation to a region well covered by the <monospace>briney</monospace> data: positions 80 to 319, inclusive.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+    <caption><title>Model predictive performance on held-out samples: held-out individuals from the <monospace>briney</monospace> data (upper row) and on a separate sequencing experiment (<monospace>tang</monospace> data, lower row).</title>
+    <p>Note that the two rows use different x-axis scales. Integer in parentheses indicates the number of parameters of the model. Each model has multiple points, each corresponding to an independent model training. This is a subset of the models for clarity; see <xref ref-type="fig" rid="fig2_S1">Figure 2—figure Supplement 1</xref> for all models.</p>
+<p><xref ref-type="fig" rid="fig2_S1">Figure 2—figure supplement 1</xref>. Performance results for all the models.</p>
+<p><xref ref-type="fig" rid="fig2_S2">Figure 2—figure supplement 2</xref>. Agreement between the original “shmoof” model of <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) and our “reshmoof” reimplementation.</p>
+<p><xref ref-type="fig" rid="fig2_S3">Figure 2—figure supplement 3</xref>. Performance comparison including S5F model with original coefficients.</p></caption>
+<graphic xlink:href="625407v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We were surprised to find that all metrics except substitution accuracy were better on data from a distinct sequencing experiment (<monospace>tang</monospace> data) than on held-out samples from the same sequencing experiment (<monospace>briney</monospace> data). We attribute this to there being a difference in sequencing error between the two experiments. The briney data allowed sequences with only a single UMI representative (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) while the tang data required at least two sequences per UMI (<xref ref-type="bibr" rid="c45">Tang et al., 2020</xref>). If our model is successfully learning substitution probabilities due to SHM rather than the sequencing error, we would expect our model to under-estimate the number of substitutions at positions with a low probability of substitution in the briney data (which we expect to have more sequencing error) but not in the <monospace>tang</monospace> data (which we expect to have less sequencing error). This is in fact what we see in our characterization of model fit below. We were also surprised to find that the per-site rate did not seem to help the 5-mer model on held-out data, despite the results of <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>); see Discussion.</p>
+<p>We did not see a substantial performance improvement by increasing the number of parameters of the CNNs. Recall that our models differ in terms of how much they share between predicting the position of mutations and predicting their base identity (<xref rid="fig1_S1" ref-type="fig">Figure 1—figure Supplement 1</xref>). Although the “Large Indep” model that has the most flexibility may do a slightly better job with held-out samples from the same experiment in terms of substitution accuracy, it doesn’t appear any better when considering data from another experiment.</p>
+<p>We also compared our work to a previous deep neural network model of SHM (<xref ref-type="bibr" rid="c46">Tang et al., 2022</xref>), which was trained on the tang data set. A DeepSHM model consists of a pair of CNN models, one for estimating mutation frequencies and another for CSPs; this is akin to our “independent” model configuration. Each of these CNNs has over 250,000 parameters, so in total is about 100 times larger than the largest CNN model we trained. These CNNs are also slow to evaluate: because they make predictions one k-mer at a time, one must iterate over the sequence and obtain predictions for every site. Because the DeepSHM model cannot handle ambiguous nucleotides, we had to remove these from the evaluation. The authors found the best performance is achieved with 15-mers, which is comparable with the 11-mers and 13-mers in our thrifty models. We evaluated the DeepSHM 15-mer model on the subset of the briney data and found it performs better than S5F but comparable to our models (<xref rid="tbl2" ref-type="table">Table 2</xref>). Specifically, our models performed comparably when trained on the <monospace>tang</monospace> data only, but when trained on the combined tang data and <monospace>briney</monospace> two largest repertoires, our models performed slightly better on the <monospace>briney</monospace> held-out repertoires.</p>
+<table-wrap id="tbl2" orientation="portrait" position="float">
+<label>Table 2.</label>
+    <caption><title>Performance evaluation on held-out <monospace>briney</monospace> data for S5F, DeepSHM, and thrifty models.</title>
+        <p>The <italic>*</italic> on S5F indicates that this model was trained using synonymous mutations on a distinct data set to those considered here. The † on <monospace>tang</monospace><sup>†</sup> is to signify that this is the <monospace>tang</monospace> data but with a different preprocessing scheme (<xref ref-type="bibr" rid="c46">Tang et al., 2022</xref>).</p></caption>
+<graphic xlink:href="625407v2_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbl3" orientation="portrait" position="float">
+<label>Table 3.</label>
+    <caption><title>Data used in this paper.</title>
+        <p><monospace>briney</monospace> data is from (<xref ref-type="bibr" rid="c2">Briney et al., 2019</xref>) after processing done by (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>). <monospace>tang</monospace> data is from <xref ref-type="bibr" rid="c50">Vergani et al. (2017</xref>); <xref ref-type="bibr" rid="c45">Tang et al. (2020</xref>) and was sequenced using the methods of <xref ref-type="bibr" rid="c50">Vergani et al. (2017</xref>). Out-of-frame sequences from <monospace>briney</monospace> and <monospace>tang</monospace> are used. For productive sequences from <monospace>tang</monospace>, only 4-fold synonymous sites are used. <monospace>jaffe</monospace> data is from <xref ref-type="bibr" rid="c15">Jaffe et al. (2022</xref>) sequenced using 10X, where only 4-fold synonymous sites of productive sequences are used. The “read/cell” column is the sequencing depth listed as average number of reads per cell. “Samples” is the number of individual samples in the dataset; in these datasets, each sample is from a distinct individual. “CFs” is the number of clonal families in the dataset. “PCPs” is the number of parent-child pairs in the dataset. “Median mutations” is the median number of mutations per PCP in the dataset.</p></caption>
+<graphic xlink:href="625407v2_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>We next characterized models in terms of out-of-sample model fit. For each site in the parent of each parent-child pair (PCP) of sequences, we computed the probability of a nucleotide substitution at that site in the corresponding child. We then compared the sum of those probabilities to the actual number of substitutions that were observed at each site in the PCPs (<xref rid="fig3" ref-type="fig">Figure 3</xref>). If the observed and expected counts match, then the model is doing a good job, on average, of predicting site-specific probabilities of substitution. We assessed matching using an “overlap” metric, which quantifies the size of the intersection of the histograms divided by the average area of the histograms. We also assessed model log likelihood. These assessments were performed after branch length optimization to maximize likelihood.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+    <caption><title>Model fit on held-out samples: held-out individuals from the <monospace>briney</monospace> data (upper row) and on a separate sequencing experiment (<monospace>tang</monospace> data, lower row).</title>
+    <p>Observed mutations in held-out data are placed in bins according to their probability of mutation. For every bin, the points show the observed number of mutations in that bin, while the bars show the expected number of mutations in that bin. The overlap metric is the area of the intersection of the observed and expected divided by the average area between the two.</p>
+<p><xref ref-type="fig" rid="fig3_S1">Figure 3—figure supplement 1</xref>. Comparison of held-out log likelihoods between the models.</p></caption>
+<graphic xlink:href="625407v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We found that, as with the predictive metrics, all models gave similar performance, the differences of which were smaller than the differences between data sets. The overlap metric was better on the 5mer model for the held-out briney data, but was better for the CNN models for the tang data. The log likelihood was slightly better for the CNN model for all held-out data sets (<xref rid="fig3_S1" ref-type="fig">Figure 3—figure Supplement 1</xref>).</p>
+</sec>
+<sec id="s2d">
+<title>Further model elaborations did not improve out of sample performance</title>
+<p>We tried adding a per-site rate to our CNN models, as well as other elaborations such as a transformer model directly on the amino acid embeddings, and a transformer combined with a CNN. We also tried adding a positional encoding to the input for the CNN model, which does not require additional parameters, but rather perturbs the input embeddings in a way that indicates their position in the sequence (<xref ref-type="bibr" rid="c49">Vaswani et al., 2017</xref>). None of these elaborations improved performance on held-out data. All of these experiments can be found in notebooks in the GitHub repository associated with this paper.</p>
+<p>We also found that jointly optimizing branch lengths along with model parameters did not improve out-of-sample performance.</p>
+</sec>
+<sec id="s2e">
+<title>Out of frame evolution and synonymous mutations give different results</title>
+<p>We conclude from the above that the richness of these models is limited by data volume, but unfortunately we were not able to find additional data sets with many out-of-frame sequences (see end of <italic>Methods</italic>). This raised the question of if we can use synonymous mutations of productive sequences to augment our data set. To do so, we trained models using a combination of the original training using the briney data but also with the tang data where the loss function was restricted to 4-fold synonymous sites.</p>
+<p>We found that adding these synonymous mutations to the training set reduced performance on the held-out out-of-frame data (<xref rid="fig4" ref-type="fig">Figure 4</xref>). Furthermore, when we train in the usual way using the briney data and evaluate on synonymous data, we do significantly worse than the S5F model, which was trained on synonymous mutations (<xref rid="fig4_S1" ref-type="fig">Figure 4—figure Supplement 1</xref>, <xref rid="fig4_S2" ref-type="fig">Figure 4—figure Supplement 2</xref>). Our conclusion is that these two sources of data capture the effect of different processes.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+    <caption><title>The relative change in performance for each statistic, namely the statistic for the model trained with out of frame (OOF) data and synonymous data, minus the statistic for the model trained with OOF data only, divided by the statistic trained with OOF data only.</title>
+    <p>Thus, adding in synonymous mutations to the training set does not help predict on held-out out-of-frame data. Results shown for <monospace>briney</monospace> data (upper row) and <monospace>tang</monospace> data (lower row).</p>
+<p><xref ref-type="fig" rid="fig4_S1">Figure 4—figure supplement 1</xref>. S5F performs better for mutation position prediction on synonymous mutations in the <monospace>jaffe</monospace> data than any model trained on out of frame data.</p>
+<p><xref ref-type="fig" rid="fig4_S2">Figure 4—figure supplement 2</xref>. S5F performs better for mutation position prediction on synonymous mutations in the <monospace>tang</monospace> data than any model trained on out of frame data.</p></caption>
+<graphic xlink:href="625407v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>Models of somatic hypermutation are important to understand affinity maturation of B cells. They can also provide insight into the mechanism of SHM itself. Here we have developed a collection of models and worked to learn what they can teach us about SHM.</p>
+<p>Specifically, by using an overlapping 3-mer embedding approach, we can parameterize wide-context models with relatively few parameters. For example, we can parameterize a 13-mer model with fewer parameters than a 5-mer model with better out-of-sample performance. A similar approach of embedded k-mers has been successful previously for genome regulatory element function prediction (<xref ref-type="bibr" rid="c16">Ji et al., 2021</xref>).</p>
+<p>Our first main result is that these models are better than previous models using a 5-mer context, but only slightly so. This is interesting given that more distant effects are well motivated biologically, both in terms of the consensus model of somatic hypermutation involving DNA damage, stripping, and repair (<xref ref-type="bibr" rid="c33">Pilzecker and Jacobs, 2019</xref>), as well as more recent results showing that the mesoscale environment of the BCR is important for SHM (<xref ref-type="bibr" rid="c52">Wang et al., 2023</xref>). Although another model formulation may be able to pick up these features, the present approach should be able to pick up features such as a nearby AID hotspot.</p>
+<p>We found that adding a per-site rate to our models did not help predict on out-of-sample data. This is in contrast to recent work of <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) suggesting that a per-site rate was helpful to predict SHM. We suspect that this contrast may be because of the means of evaluating this model. The <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) paper quantifies an improved model fit over a 5mer model by calculating a Pearson <italic>r</italic><sup>2</sup> for each region comparing the model prediction to the aggregated mutation count per site for sites in that region. The <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) model is itself parameterized in a per-site way, and so it is not surprising that the model has excellent fit according to this metric (<xref rid="fig4" ref-type="fig">Figure 4J</xref> of <xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>). Although they did a data-splitting exercise, this data split was on the level of parent-child pairs (not specified in the original paper; clarified via personal communication), which means that many of the parent sequences in the training set were very similar to parent sequences in the test set. Furthermore, the baseline comparison provided in <xref rid="fig4" ref-type="fig">Figure 4J</xref> of <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) is actually not to a separately trained 5mer model, but to the 5mer component <italic>γ</italic><sub><italic>w</italic></sub> of the joint model (typo in the original paper; clarified via personal communication).</p>
+<p>We tried other means of adding per-site rates to the model, such as positional encoding and a transformer component, but these did not help. Although it is quite possible that sites evolve differently according to their absolute position in the sequence, our work shows that this is not necessary as part of a predictive model. Due to commonalities between neighborhoods of sites in sequences, it is difficult or perhaps impossible to disentangle the effect of a per-site rate from the effect of the motif model given a sufficiently rich motif model.</p>
+<p>From a biological perspective, our findings indicate that while per-site rate (<xref ref-type="bibr" rid="c4">Cohen et al., 2011</xref>; <xref ref-type="bibr" rid="c59">Zhou and Kleinstein, 2020</xref>; <xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) and mesoscale-level (<xref ref-type="bibr" rid="c52">Wang et al., 2023</xref>) effects may exist in SHM, their impact appears insufficient to significantly enhance statistical modeling performance. We refrain from making further biological conclusions, and suggest that more definitive conclusions require an explicitly mechanistic model (<xref ref-type="bibr" rid="c9">Fisher et al., 2025</xref>).</p>
+<p>Our work also contrasts the two main ways of training a neutral model: one is to use synonymous mutations (<xref ref-type="bibr" rid="c56">Yaari et al., 2012</xref>), and the other is to use out-of-frame sequences (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) or some other sequences that one can assume are evolving neutrally (<xref ref-type="bibr" rid="c5">Cui et al., 2016</xref>). Here we find evidence that these two methods give different results, and that models trained on one task do not do well on the other. This may be from synonymous mutations being under selection due to codon usage effects, or could be from only a subset of motifs being possible to estimate from synonymous data (<xref ref-type="bibr" rid="c57">Yaari et al., 2013</xref>). Another possible explanation is that the spatial correlation of mutations (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) leads to correlation in mutations at synonymous and non-synonymous sites: as an extreme example, a four-fold synonymous site could be next to a site under strong purifying selection, and if these two sites only mutate together this would effectively lead to purifying selection on the synonymous site. One could also imagine that the out-of-frame sequences are under selection such as having an insertion-deletion mutation that throws a sequence under selection out of frame, but this is mitigated by the ancestral sequence reconstruction and the removal of the naïve sequence from the tree. From a model-fitting perspective, the contrast between these two objectives is disappointing, because productive sequences are much more available than out-of-frame sequences.</p>
+<p>Overall, we have presented and tested a variety of new models with test-train splits, and found a slight improvement using parameter sparse or “thrifty” CNNs. One interesting aspect of these models is that they allow for a wider k-mer context without having a parameter explosion. It is possible that the conclusions would differ if we had considerably more data, though despite our best efforts (see Materials and Methods) we were unable to find a large additional volume of out-of-frame data. If and when additional data becomes available, our reproducible analysis can be used to evaluate these models on that data.</p>
+</sec>
+<sec id="s4">
+<title>Materials and Methods</title>
+<sec id="s4a">
+<title>Data sets and data processing</title>
+<p>Our primary dataset is the one introduced by Spisak et al. (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) in their recent work on modeling somatic hypermutation (SHM). The data consists of human, out-of-frame IgH sequences sampled from several individuals (<xref ref-type="bibr" rid="c2">Briney et al., 2019</xref>), aligned using pRESTO (<xref ref-type="bibr" rid="c48">Vander Heiden et al., 2014</xref>). The resulting data comes to us as a collection of trees, one for each clonal family with at least six observed sequences in an individual, complete with (ancestral and observed) sequences and branch lengths, as well as a collection of metadata annotating, among other things, the identity and position of the V gene in the sequence. Starting from the clonal family clustering and multiple sequence alignments from (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>), we remove sequences containing gaps to avoid ambiguity of site positions due to insertions or deletions. Resulting clonal families with less than six observed sequences are discarded. Phylogenetic inference in each clonal family is then redone with IQ-TREE (<xref ref-type="bibr" rid="c27">Minh et al., 2020</xref>). We apply the K80 (<xref ref-type="bibr" rid="c17">Kimura, 1980</xref>) substitution model and use the germline sequence as an outgroup, following the method of (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>), and additionally allow for mutation rate heterogeneity among sites with a 4-category FreeRate model (<xref ref-type="bibr" rid="c58">Yang, 1995</xref>; <xref ref-type="bibr" rid="c43">Soubrier et al., 2012</xref>). The edges of the inferred phylogenetic trees are taken as parent-child pairs, except for the edge containing the naïve sequence outgroup.</p>
+    <p>Additionally, we use the tang data set of human IgH sequences previously used for modeling SHM by (<xref ref-type="bibr" rid="c46">Tang et al., 2022</xref>). This data set, originally generated by (<xref ref-type="bibr" rid="c45">Tang et al., 2020</xref>; <xref ref-type="bibr" rid="c50">Vergani et al., 2017</xref>), includes full-length BCR repertoires from 21 individuals. We obtained pre-processed samples directly from the authors (see <xref ref-type="bibr" rid="c45">Tang et al., 2020</xref>, for data preprocessing details). We extracted the IgH sequences from marginal zone (MZ), memory (M), and plasma (PC) B cells and completed germline and clonal family inferences with <monospace>partis</monospace> (<xref ref-type="bibr" rid="c34">Ralph and Matsen, 2016a</xref>, <xref ref-type="bibr" rid="c35">b</xref>, <xref ref-type="bibr" rid="c36">2019</xref>). We keep clonal families of two or more sequences that consist of only out-of-frame sequences. In <monospace>partis</monospace>, a sequence is considered out-of-frame if either of the conserved codons for cysteine or tryptophan bounding the CDR3 is out-of-frame with the germline V gene. We then perform phylogenetic inference and ancestral sequence reconstruction for each clonal family using IQ-TREE as described above. The first site of the sequence is set to align with the start of the germline V gene; if necessary, nucleotides before the start of the V gene are truncated or sites at the 5’ end with missing reads are padded with ‘N’.</p>
+<p>A small number of the edges have very long branch lengths, some of which seem to correspond to improper alignments. Following the lead of the authors of (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>), we filter our data to only include edges with fewer than 10 mutations, which results a modest <italic>∼</italic> 6.4% reduction in the available data.</p>
+<p>The <monospace>jaffe</monospace> data set (<xref ref-type="bibr" rid="c15">Jaffe et al., 2022</xref>) consists of paired heavy chain and light chain, full-length sequences of productive antibodies from four donors. We process the data with <monospace>partis</monospace> and IQ-TREE, similar to the <monospace>tang</monospace> data set. The <monospace>jaffe</monospace> synonymous data set are parent-child pairs from <monospace>jaffe</monospace> where we mask sites in the child sequence that are not 4-fold degenerate in the parent context. For each parent-child pair, we check each codon context in the parent sequence for 4-fold degenerate sites. For these sites, the corresponding nucleotide in the child sequence is preserved while all other sites are masked.</p>
+</sec>
+<sec id="s4b">
+<title>Models</title>
+<p>In all the models we propose, we model SHM using a two-part model. First we assume that the occurrence of point mutations follows a per-site exponential waiting time that is dependent entirely on the parent sequence. Furthermore, we assume that all mutations occur simultaneously, so that we can ignore how the order of point mutations along a branch affects likelihood computations. The other output of the model is the prediction of base identity. We interpret the normalized version of these rates as conditional probabilities given that the mutation has occurred.</p>
+    <p>For the “thrifty” models, we have an embedding of each 3-mer along the sequence which is then the input for a convolutional layer (<xref rid="fig1" ref-type="fig">Figure 1b</xref>). The output of the convolutional layer is then the input for the mutation rate estimate, which is shown in (<xref rid="fig1" ref-type="fig">Figure 1b</xref>) as well as the CSP (<xref rid="fig1_S1" ref-type="fig">Figure 1—figure Supplement 1</xref>).</p>
+<p>All models are implemented in PyTorch (<xref ref-type="bibr" rid="c32">Paszke et al., 2019</xref>) and can be found in the GitHub repository associated with this paper.</p>
+</sec>
+<sec id="s4c">
+<title>Model training</title>
+<p>Our loss functions are the likelihood of child mutation locations using offset, as well as a categorical cross-entropy loss for the base identity. We sum these log losses together using a weight of 0.01 on the cross-entropy loss to approximately even out the contributions of these two sources of loss.</p>
+<p>Models were trained for 100 epochs, with the Poisson offset simply being the normalized count of mutations in the child sequence. We also tried a more sophisticated approach of joint optimization of branch length and model parameters.</p>
+</sec>
+<sec id="s4d">
+<title>Model evaluation</title>
+<sec id="s4d1">
+<title>AUROC</title>
+<p>The Receiver Operating Characteristic (ROC) curve is a method of visualizing the trade-off between true positive rate <inline-formula><inline-graphic xlink:href="625407v2_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and false positive rate <inline-formula><inline-graphic xlink:href="625407v2_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> as we vary the cutoff value we use for separating positive and negative predictions. Notice that the denominators in each statistic depend only on the true labels, so the trade-off parallels the one between true positives and false positives. Given a random classifier, the TPR is expected to be equal to FPR, meaning that the ROC would be a diagonal line from (0, 0) to (1, 1).</p>
+    <p>In order to reduce the ROC curve to a single quantity for performance assessment, one can compute the area under the ROC curve (AUROC) which, when compared to 0.5, gives a sense of how well the classifier is doing when compared with a random classifier. <xref ref-type="bibr" rid="c11">Hanley and McNeil (1982)</xref> show that AUROC is equivalent to probability that the classifier correctly ranks a randomly-chosen pair of points, one from the negative and one from the positive class.</p>
+</sec>
+<sec id="s4d2">
+<title>AUPRC</title>
+<p>Class imbalance, where we have many more negative examples than positive examples, can muddle performance evaluation of a classifier. Specifically, a large number of correctly-identified negative examples can obscure the relatively-poor performance of a classifier on a class that is under-represented in the data. Another approach is to instead consider precision and recall (<xref ref-type="bibr" rid="c41">Saito and Rehmsmeier, 2015</xref>). Analogous to the ROC curve, the principle here is to track the precision <inline-formula><inline-graphic xlink:href="625407v2_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and recall <inline-formula><inline-graphic xlink:href="625407v2_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> as we vary the cutoff parameter and plot the resulting points. Similar to before, we can distill the information of this curve down to a single number in the unit interval by computing the area under the precision-recall curve (AUPRC). The precision of a classifier that uniformly assigns sites to the positive and negative classes will be
+<disp-formula id="ueqn1">
+<graphic xlink:href="625407v2_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+in expectation. Thus, if we exclude pathologically bad classifiers, <italic>ρ</italic> forms a base-line minimum value of the AUPRC. In contrast with the AUROC, neither precision nor recall are affected by the addition or removal of true negative (i.e. non-mutated sites that were predicted not to mutate) examples, and in fact the relationship is driven by the tradeoff between false positives and false negatives.</p>
+</sec>
+<sec id="s4d3">
+<title>R-precision</title>
+<p>In order to characterize the ability of our classifiers to correctly identify sites that will mutate we consider another metric: R-precision. This is easiest to explain by first introducing top-<italic>k</italic> precision, in which we take the <italic>k</italic> “hottest” (that is, predicted to mutate with the highest probability) sites according to our classifier and compute the precision on those sites. We can refine top-<italic>k</italic> precision above to <italic>R</italic>-precision, which is the top-<italic>k</italic> precision when <italic>k</italic> is set equal to the expected or observed number of mutations. This value can be interpreted in the following way: an <italic>R</italic>-precision of 0.1 means that if the classifier is told to predict the correct sites to mutate given their count, 10% of them will have actually mutated. As with AUPRC, a random classifier will have an <italic>R</italic>-precision of <italic>ρ</italic>.</p>
+</sec>
+<sec id="s4d4">
+<title>Substitution accuracy</title>
+<p>As described above, when evaluating performance at predicting per-base substitution probabilities (given a mutation occurred), we report accuracy: how frequently is the predicted-most-likely base the one to which a site mutates?</p>
+</sec>
+</sec>
+<sec id="s4e">
+<title>Software</title>
+<p>Our work is released in an open-source Python package <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/netam">https://github.com/matsengrp/netam</ext-link> with a simple API that makes it easy to train and evaluate models. We release trained models and their weights. Our analysis for this paper is reproducible via <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/netam-experiments-1">https://github.com/matsengrp/netam-experiments-1</ext-link>, which includes notebooks that reproduce the figures and tables in this paper. We used the following software: PyTorch (<xref ref-type="bibr" rid="c32">Paszke et al., 2019</xref>), pandas (<xref ref-type="bibr" rid="c25">McKinney, 2010</xref>), matplotlib (<xref ref-type="bibr" rid="c14">Hunter, 2007</xref>), seaborn (<xref ref-type="bibr" rid="c53">Waskom, 2021</xref>), snakemake (<xref ref-type="bibr" rid="c28">Mölder et al., 2021</xref>), pytest (<xref ref-type="bibr" rid="c19">Krekel et al., 2004</xref>), biopython (<xref ref-type="bibr" rid="c3">Cock et al., 2009</xref>).</p>
+</sec>
+<sec id="s4f">
+<title>Attempts to find additional full-length, out-of-frame sequences</title>
+    <p>While the primary dataset used here and originally by <xref ref-type="bibr" rid="c44">Spisak et al. (2020</xref>) provides a large number of out-of-frame human IgH sequences, the sequencing methods used resulted in minimal coverage at the start of the V gene and thus limited information for that region (<xref ref-type="bibr" rid="c2">Briney et al., 2019</xref>). Alternatively, the Tang dataset provides relatively high coverage along the full IgH sequence, but is limited in the amount of unique sequences sampled. We sought to supplement this data with additional full-length, out-of-frame human IgH sequences. Full-length IgH data is generally limited by design in common sequencing approaches. Even productive IgH data show low coverage at the start of the V gene, as evidenced by over 40% of the sequences in the Observed Antibody Space (OAS) database lacking sequence data for the first 15 amino acids (<xref ref-type="bibr" rid="c30">Olsen et al., 2022b</xref>; <xref ref-type="bibr" rid="c18">Kovaltsuk et al., 2018</xref>; <xref ref-type="bibr" rid="c29">Olsen et al., 2022a</xref>). We focus our efforts on datasets from recent studies focused on full-length antibody sequencing (<xref ref-type="bibr" rid="c42">Soto et al., 2019</xref>; <xref ref-type="bibr" rid="c10">Ford et al., 2023</xref>; <xref ref-type="bibr" rid="c37">Rodriguez et al., 2023</xref>). For all datasets, we implemented the partis-IQ-TREE pipeline as previously described on pre-processed data and extracted parent-child pairs for all clonal families of size 2+. Overall, out-of-frame sequences make up a relatively small proportion of sequence data (with this proportion varying by study/sequencing protocols) and none of the datasets considered had enough depth to extract a meaningful amount of out-of-frame sequence data for our purposes. The details of these efforts are described below.</p>
+<p>From <xref ref-type="bibr" rid="c10">Ford et al. (2023</xref>), we obtained pre-processed data for 10 IgG FLAIRR-seq samples from the authors. Using consensus sequences from UMIs that were observed more than once (DUP-COUNT&gt;1), we recovered 7,938 out-of-frame sequences across all samples. These sequences belonged to 226 clonal families of size 2+ and 2,633 singletons. This amounted to only 722 parent-child pairs, of which only 324 contained a mutation event. In attempts to extract more out-of-frame data, we additionally ran our pipeline on the pre-processed data including consensus sequences that were only observed once (and thus included no UMI error correction). From the 10 samples, we were able to recover 52,785 out-of-frame sequences, some of which were not UMI error corrected. This resulted in 2,415 clonal families of size 2+ and 22,983 singletons, but still only gave us 6,296 parent-child pairs with mutation events (9,114 in total). We note that this sequencing method provided a higher proportion of out-of-frame sequences (9% for fully pre-processed data) than other methods we considered.</p>
+<p>From <xref ref-type="bibr" rid="c37">Rodriguez et al. (2023</xref>), we obtained pre-processed 5’ RACE AIRR-seq sequencing data for 51 IgG samples from the authors. We ran our pipeline on the pre-processed data and recovered only 4,337 out-of-frame sequences in total. These sequences belonged to 188 clonal families of size 2+ and 1,925 singletons. Of the 889 parent-child pairs from non-singletons, only 215 contained a mutation event. While the proportion of out-of-frame sequences was on-par with the primary dataset, sequence depth per sample was shallow and thus out-of-frame data was limited.</p>
+<p>From <xref ref-type="bibr" rid="c42">Soto et al. (2019</xref>), we obtained pre-processed data for all 3 HIP donors from the authors. We ran our pipeline on a large subset of the data (sampling the first 1 million sequences for each donor IgH fasta file) to assess its potential for our purposes. From the 3 million sequences processed, we extracted 2,686 out-of-frame sequences in total. These sequences corresponded to 11 clonal families of size 2+ and 2,618 singletons. We obtained 102 parent-child pairs from non-singletons, of which only 57 contained a mutation event. The relatively low recovery of out-of-frame sequences in this subset of the data suggested that processing the full dataset would not yield a meaningful amount of parent-child pairs for this study. We additionally observed that all of these sequences had no coverage at the start of the V gene, missing the first 12-60 bases.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec>
+<fig id="fig1_S1" position="float" fig-type="figure">
+<label>Figure 1—figure supplement 1.</label>
+    <caption><title>Our three strategies for estimating the per-site rate and CSPs.</title>
+        <p>In the joined version, the two outputs come directly out of the convolutional layer. In the hybrid version, the two outputs share the embedding layer. In the independent version, the two outputs are estimated separately.</p></caption>
+<graphic xlink:href="625407v2_fig1_S1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig2_S1" position="float" fig-type="figure">
+<label>Figure 2—figure supplement 1.</label>
+    <caption><title>Performance results for all the models: held-out individuals from the <monospace>briney</monospace> data (upper row) and the <monospace>tang</monospace> data (lower row).</title>
+        <p>The “Small” thrifty models have settings (7, 6, 14, 0.1) for hyperparameters (Kernel, Embed, Filters, Dropout), as described in <xref ref-type="table" rid="tbl1">Table 1</xref>.</p></caption>
+<graphic xlink:href="625407v2_fig2_S1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig2_S2" position="float" fig-type="figure">
+<label>Figure 2—figure supplement 2.</label>
+    <caption><title>There is good agreement between the originally inferred shmoof coefficients and our re-implementation, both in the motif mutability terms and the per-position mutabilities.</title>
+        <p>The primary exception is that we infer more reasonable values when sequencing coverage is weak or absent and avoid an extreme value at site 67. These are due to a slight regularization to the per-position mutabilities.This analysis can be reproduced using the <monospace>reshmoof.ipynb</monospace> notebook.</p></caption>
+<graphic xlink:href="625407v2_fig2_S2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig2_S3" position="float" fig-type="figure">
+<label>Figure 2—figure supplement 3.</label>
+<caption><title>Performance plot including the original S5F model (vertical black lines) for held-out individuals from the briney data (upper row) and on a separate sequencing experiment (tang data, lower row).</title></caption>
+<graphic xlink:href="625407v2_fig2_S3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig3_S1" position="float" fig-type="figure">
+<label>Figure 3—figure supplement 1.</label>
+<caption><title>Comparison of held-out log likelihoods between the models.</title></caption>
+<graphic xlink:href="625407v2_fig3_S1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig4_S1" position="float" fig-type="figure">
+<label>Figure 4—figure supplement 1.</label>
+    <caption><title>S5F performs better for mutation position prediction on synonymous mutations in the <monospace>jaffe</monospace> data than any model trained on out of frame data.</title>
+        <p>Performance plot is as before, but black vertical bar indicates the performance of the S5F model, and all models evaluated on synonymous mutations in the <monospace>jaffe</monospace> data.</p></caption>
+<graphic xlink:href="625407v2_fig4_S1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig4_S2" position="float" fig-type="figure">
+<label>Figure 4—figure supplement 2.</label>
+    <caption><title>S5F performs better for mutation position prediction on synonymous mutations in the <monospace>tang</monospace> data than any model trained on out of frame data.</title>
+        <p>Performance plot is as before, but black vertical bar indicates the performance of the S5F model, and all models evaluated on synonymous mutations in the <monospace>tang</monospace> data.</p></caption>
+<graphic xlink:href="625407v2_fig4_S2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>Thank you to the authors of (<xref ref-type="bibr" rid="c44">Spisak et al., 2020</xref>) for providing the data and answering questions about their work. We are also grateful to the authors of (<xref ref-type="bibr" rid="c46">Tang et al., 2022</xref>) for providing the data and answering questions about their work, as well as to the lab of Corey Watson for sharing data from (<xref ref-type="bibr" rid="c10">Ford et al., 2023</xref>) and (<xref ref-type="bibr" rid="c37">Rodriguez et al., 2023</xref>). Additionally, we thank Luke Myers and the authors of (<xref ref-type="bibr" rid="c42">Soto et al., 2019</xref>) for sharing their pre-processed data.</p>
+<p>This work supported by NIH grant R01-AI146028. Scientific Computing Infrastructure at Fred Hutch funded by ORIP grant S10OD028685. Frederick Matsen is an investigator of the Howard Hughes Medical Institute.</p>
+<p>This work was partially completed at the Kavli Institute for Theoretical Physics (KITP) at the University of California, Santa Barbara, and thus was supported by grant no. NSF PHY-2309135 to the Kavli Institute for Theoretical Physics (KITP) and the Gordon and Betty Moore Foundation Grant No. 2919.02.</p>
+</ack>
+<ref-list>
+<title>References</title>
+    <ref id="c1"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Akiba</surname> <given-names>T</given-names></string-name>, <string-name><surname>Sano</surname> <given-names>S</given-names></string-name>, <string-name><surname>Yanase</surname> <given-names>T</given-names></string-name>, <string-name><surname>Ohta</surname> <given-names>T</given-names></string-name>, <string-name><surname>Koyama</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Optuna: A Next-generation Hyperparameter Optimization Framework</article-title>. In: <conf-name>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</conf-name>; <year>2019</year>. .</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Briney</surname> <given-names>B</given-names></string-name>, <string-name><surname>Inderbitzin</surname> <given-names>A</given-names></string-name>, <string-name><surname>Joyce</surname> <given-names>C</given-names></string-name>, <string-name><surname>Burton</surname> <given-names>DR</given-names></string-name></person-group>. <article-title>Commonality despite exceptional diversity in the baseline human antibody repertoire</article-title>. <source>Nature</source>. <year>2019</year>; <volume>566</volume>(<issue>7744</issue>):<fpage>393</fpage>–<lpage>397</lpage>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cock</surname> <given-names>PJA</given-names></string-name>, <string-name><surname>Antao</surname> <given-names>T</given-names></string-name>, <string-name><surname>Chang</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Chapman</surname> <given-names>BA</given-names></string-name>, <string-name><surname>Cox</surname> <given-names>CJ</given-names></string-name>, <string-name><surname>Dalke</surname> <given-names>A</given-names></string-name>, <string-name><surname>Friedberg</surname> <given-names>I</given-names></string-name>, <string-name><surname>Hamelryck</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kauff</surname> <given-names>F</given-names></string-name>, <string-name><surname>Wilczynski</surname> <given-names>B</given-names></string-name>, <string-name><surname>de Hoon</surname> <given-names>MJL.</given-names></string-name></person-group> <article-title>Biopython: freely available Python tools for computational molecular biology and bioin-formatics</article-title>. <source>Bioinformatics</source>. <year>2009</year> 03; <volume>25</volume>(<issue>11</issue>):<fpage>1422</fpage>–<lpage>1423</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btp163</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btp163</pub-id>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cohen</surname> <given-names>RM</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name>, <string-name><surname>Louzoun</surname> <given-names>Y.</given-names></string-name></person-group> <article-title>Somatic hypermutation targeting is influenced by location within the immunoglobulin V region</article-title>. <source>Mol Immunol</source>. <year>2011</year> <month>Jul</month>; <volume>48</volume>(<issue>12-13</issue>):<fpage>1477</fpage>–<lpage>1483</lpage>. <pub-id pub-id-type="doi">10.1016/j.molimm.2011.04.002</pub-id>, doi: <pub-id pub-id-type="doi">10.1016/j.molimm.2011.04.002</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cui</surname> <given-names>A</given-names></string-name>, <string-name><surname>Di Niro</surname> <given-names>R</given-names></string-name>, <string-name><surname>Vander Heiden</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Briggs</surname> <given-names>AW</given-names></string-name>, <string-name><surname>Adams</surname> <given-names>K</given-names></string-name>, <string-name><surname>Gilbert</surname> <given-names>T</given-names></string-name>, <string-name><surname>O’Connor</surname> <given-names>KC</given-names></string-name>, <string-name><surname>Vigneault</surname> <given-names>F</given-names></string-name>, <string-name><surname>Shlomchik</surname> <given-names>MJ</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>A Model of Somatic Hypermutation Targeting in Mice Based on High-Throughput Ig Sequencing Data</article-title>. <source>J Immunol</source>. <year>2016</year> <month>Nov</month>; <volume>197</volume>(<issue>9</issue>):<fpage>3566</fpage>–<lpage>3574</lpage>. <pub-id pub-id-type="doi">10.4049/jimmunol.1502263</pub-id>, doi: <pub-id pub-id-type="doi">10.4049/jimmunol.1502263</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dunn-Walters</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Dogan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Boursier</surname> <given-names>L</given-names></string-name>, <string-name><surname>MacDonald</surname> <given-names>CM</given-names></string-name>, <string-name><surname>Spencer</surname> <given-names>J.</given-names></string-name></person-group> <article-title>Base-specific sequences that bias somatic hypermutation deduced by analysis of out-of-frame human IgVH genes</article-title>. <source>J Immunol</source>. <year>1998</year> <month>Mar</month>; <volume>160</volume>(<issue>5</issue>):<fpage>2360</fpage>– <lpage>2364</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/pubmed/9498777">https://www.ncbi.nlm.nih.gov/pubmed/9498777</ext-link>.</mixed-citation></ref>
+    <ref id="c7"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Elhanati</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Sethna</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Marcou</surname> <given-names>Q</given-names></string-name>, <string-name><given-names>Callan CG</given-names> <surname>Jr</surname></string-name>, <string-name><surname>Mora</surname> <given-names>T</given-names></string-name>, <string-name><surname>Walczak</surname> <given-names>AM</given-names></string-name></person-group>. <article-title>Inferring processes underlying B-cell reper-toire diversity</article-title>. <source>Philos Trans R Soc Lond B Biol Sci</source>. <year>2015</year> <month>Sep</month>; <volume>370</volume>(<issue>1676</issue>). <pub-id pub-id-type="doi">10.1098/rstb.2014.0243</pub-id>, doi: <pub-id pub-id-type="doi">10.1098/rstb.2014.0243</pub-id>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Feng</surname> <given-names>J</given-names></string-name>, <string-name><surname>Shaw</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Minin</surname> <given-names>VN</given-names></string-name>, <string-name><surname>Simon</surname> <given-names>N</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Survival analysis of DNA mutation motifs with penalized pro-portional hazards</article-title>. <source>Ann Appl Stat</source>. <year>2019</year> <month>Jun</month>; <volume>13</volume>(<issue>2</issue>):<fpage>1268</fpage>–<lpage>1294</lpage>. <ext-link ext-link-type="uri" xlink:href="https://projecteuclid.org/euclid.aoas/1560758446">https://projecteuclid.org/euclid.aoas/1560758446</ext-link>, doi: <pub-id pub-id-type="doi">10.1214/18-AOAS1233</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Fisher</surname> <given-names>T</given-names></string-name>, <string-name><surname>Sung</surname> <given-names>K</given-names></string-name>, <string-name><surname>Simon</surname> <given-names>N</given-names></string-name>, <string-name><surname>Fukuyama</surname> <given-names>J</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Inferring mechanistic parameters of somatic hypermutation using neural networks and approximate Bayesian computation</article-title>. <source>Ann Appl Stat</source>. <year>2025</year> <month>Mar</month>; <volume>19</volume>(<issue>1</issue>):<fpage>720</fpage>–<lpage>743</lpage>. <ext-link ext-link-type="uri" xlink:href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-19/issue-1/">https://projecteuclid.org/journals/annals-of-applied-statistics/volume-19/issue-1/</ext-link> Inferring-mechanistic-parameters-of-somatic-hypermutation-using-neural-networks-and/10.1214/24-AOAS1985. short, doi: <pub-id pub-id-type="doi">10.1214/24-aoas1985</pub-id>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ford</surname> <given-names>EE</given-names></string-name>, <string-name><surname>Tieri</surname> <given-names>D</given-names></string-name>, <string-name><surname>Rodriguez</surname> <given-names>OL</given-names></string-name>, <string-name><surname>Francoeur</surname> <given-names>NJ</given-names></string-name>, <string-name><surname>Soto</surname> <given-names>J</given-names></string-name>, <string-name><surname>Kos</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Peres</surname> <given-names>A</given-names></string-name>, <string-name><surname>Gibson</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Silver</surname> <given-names>CA</given-names></string-name>, <string-name><surname>Deikus</surname> <given-names>G</given-names></string-name>, <string-name><surname>Hudson</surname> <given-names>E</given-names></string-name>, <string-name><surname>Woolley</surname> <given-names>CR</given-names></string-name>, <string-name><surname>Beckmann</surname> <given-names>N</given-names></string-name>, <string-name><surname>Charney</surname> <given-names>A</given-names></string-name>, <string-name><surname>Mitchell</surname> <given-names>TC</given-names></string-name>, <string-name><surname>Yaari</surname> <given-names>G</given-names></string-name>, <string-name><surname>Sebra</surname> <given-names>RP</given-names></string-name>, <string-name><surname>Watson</surname> <given-names>CT</given-names></string-name>, <string-name><surname>Smith</surname> <given-names>ML</given-names></string-name></person-group>. <article-title>FLAIRR-seq: A method for single-molecule resolution of near full-length antibody H chain repertoires</article-title>. <source>J Immunol</source>. <year>2023</year> <month>May</month>; <volume>210</volume>(<issue>10</issue>):<fpage>1607</fpage>–<lpage>1619</lpage>. <pub-id pub-id-type="doi">10.4049/jimmunol.2200825</pub-id>, doi: <pub-id pub-id-type="doi">10.4049/jimmunol.2200825</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hanley</surname> <given-names>JA</given-names></string-name>, <string-name><surname>McNeil</surname> <given-names>BJ</given-names></string-name></person-group>. <article-title>The meaning and use of the area under a receiver operating characteristic (ROC) curve</article-title>. <source>Radiology</source>. <year>1982</year>; <volume>143</volume>(<issue>1</issue>):<fpage>29</fpage>–<lpage>36</lpage>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoehn</surname> <given-names>KB</given-names></string-name>, <string-name><surname>Lunter</surname> <given-names>G</given-names></string-name>, <string-name><surname>Pybus</surname> <given-names>OG</given-names></string-name></person-group>. <article-title>A Phylogenetic Codon Substitution Model for Antibody Lineages</article-title>. <source>Genetics</source>. <year>2017</year> <month>May</month>; <volume>206</volume>(<issue>1</issue>):<fpage>417</fpage>–<lpage>427</lpage>. <pub-id pub-id-type="doi">10.1534/genetics.116.196303</pub-id>, doi: <pub-id pub-id-type="doi">10.1534/genetics.116.196303</pub-id>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoehn</surname> <given-names>KB</given-names></string-name>, <string-name><surname>Vander Heiden</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>JQ</given-names></string-name>, <string-name><surname>Lunter</surname> <given-names>G</given-names></string-name>, <string-name><surname>Pybus</surname> <given-names>OG</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>Repertoire-wide phylogenetic models of B cell molecular evolution reveal evolutionary signatures of aging and vaccination</article-title>. <source>Proc Natl Acad Sci U S A</source>. <year>2019</year> <month>Oct</month>; <pub-id pub-id-type="doi">10.1073/pnas.1906020116</pub-id>, doi: <pub-id pub-id-type="doi">10.1073/pnas.1906020116</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hunter</surname> <given-names>JD</given-names></string-name></person-group>. <article-title>Matplotlib: A 2D graphics environment</article-title>. <source>Computing in Science &amp; Engineering</source>. <year>2007</year>; <volume>9</volume>(<issue>3</issue>):<fpage>90</fpage>–<lpage>95</lpage>. doi: <pub-id pub-id-type="doi">10.1109/MCSE.2007.55</pub-id>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jaffe</surname> <given-names>DB</given-names></string-name>, <string-name><surname>Shahi</surname> <given-names>P</given-names></string-name>, <string-name><surname>Adams</surname> <given-names>BA</given-names></string-name>, <string-name><surname>Chrisman</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Finnegan</surname> <given-names>PM</given-names></string-name>, <string-name><surname>Raman</surname> <given-names>N</given-names></string-name>, <string-name><surname>Royall</surname> <given-names>AE</given-names></string-name>, <string-name><surname>Tsai</surname> <given-names>F</given-names></string-name>, <string-name><surname>Vollbrecht</surname> <given-names>T</given-names></string-name>, <string-name><surname>Reyes</surname> <given-names>DS</given-names></string-name>, <string-name><surname>Hepler</surname> <given-names>NL</given-names></string-name>, <string-name><surname>McDonnell</surname> <given-names>WJ</given-names></string-name></person-group>. <article-title>Functional antibodies exhibit light chain coherence</article-title>. <source>Nature</source>. <year>2022</year> <month>Nov</month>; <volume>611</volume>(<issue>7935</issue>):<fpage>352</fpage>– <lpage>357</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-022-05371-z</pub-id>, doi: <pub-id pub-id-type="doi">10.1038/s41586-022-05371-z</pub-id>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ji</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>H</given-names></string-name>, <string-name><surname>Davuluri</surname> <given-names>RV</given-names></string-name></person-group>. <article-title>DNABERT: pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome</article-title>. <source>Bioinformatics</source>. <year>2021</year> <month>Aug</month>; <volume>37</volume>(<issue>15</issue>):<fpage>2112</fpage>–<lpage>2120</lpage>. <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/bioinformatics/article-pdf/37/15/2112/57195892/btab083.pdf">https://academic.oup.com/bioinformatics/article-pdf/37/15/2112/57195892/btab083.pdf</ext-link>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btab083</pub-id>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kimura</surname> <given-names>M.</given-names></string-name></person-group> <article-title>A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences</article-title>. <source>Journal of Molecular Evolution</source>. <year>1980</year> 06; <volume>16</volume>:<fpage>111</fpage>–<lpage>120</lpage>. <pub-id pub-id-type="doi">10.1007/BF01731581</pub-id>, doi: <pub-id pub-id-type="doi">10.1007/BF01731581</pub-id>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kovaltsuk</surname> <given-names>A</given-names></string-name>, <string-name><surname>Leem</surname> <given-names>J</given-names></string-name>, <string-name><surname>Kelm</surname> <given-names>S</given-names></string-name>, <string-name><surname>Snowden</surname> <given-names>J</given-names></string-name>, <string-name><surname>Deane</surname> <given-names>CM</given-names></string-name>, <string-name><surname>Krawczyk</surname> <given-names>K.</given-names></string-name></person-group> <article-title>Observed Antibody Space: A resource for data mining next-generation sequencing of antibody repertoires</article-title>. <source>J Immunol</source>. <year>2018</year> <month>Oct</month>; <volume>201</volume>(<issue>8</issue>):<fpage>2502</fpage>–<lpage>2509</lpage>. <pub-id pub-id-type="doi">10.4049/jimmunol.1800708</pub-id>, doi: <pub-id pub-id-type="doi">10.4049/jimmunol.1800708</pub-id>.</mixed-citation></ref>
+    <ref id="c19"><mixed-citation publication-type="software"><person-group person-group-type="author"><string-name><surname>Krekel</surname> <given-names>H</given-names></string-name>, <string-name><surname>Oliveira</surname> <given-names>B</given-names></string-name>, <string-name><surname>Pfannschmidt</surname> <given-names>R</given-names></string-name>, <string-name><surname>Bruynooghe</surname> <given-names>F</given-names></string-name>, <string-name><surname>Laugher</surname> <given-names>B</given-names></string-name>, <string-name><surname>Bruhin</surname> <given-names>F</given-names></string-name></person-group>, <article-title>pytest</article-title>; <source>GitHub</source> <version>v.8.1.1</version><year>2004</year>. <ext-link ext-link-type="uri" xlink:href="https://github.com/pytest-dev/pytest">https://github.com/pytest-dev/pytest</ext-link>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Levinstein Hallak</surname> <given-names>K</given-names></string-name>, <string-name><surname>Rosset</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Statistical modeling of SARS-CoV-2 substitution processes: predicting the next variant</article-title>. <source>Commun Biol</source>. <year>2022</year> <month>Mar</month>; <volume>5</volume>(<issue>1</issue>):<fpage>285</fpage>. <pub-id pub-id-type="doi">10.1038/s42003-022-03198-y</pub-id>, doi: <pub-id pub-id-type="doi">10.1038/s42003-022-03198-y</pub-id>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Levinstein Hallak</surname> <given-names>K</given-names></string-name>, <string-name><surname>Tzur</surname> <given-names>S</given-names></string-name>, <string-name><surname>Rosset</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Big data analysis of human mitochondrial DNA substitution models: a regression approach</article-title>. <source>BMC Genomics</source>. <year>2018</year> <month>Oct</month>; <volume>19</volume>(<issue>1</issue>):<fpage>759</fpage>. <pub-id pub-id-type="doi">10.1186/s12864-018-5123-x</pub-id>, doi: <pub-id pub-id-type="doi">10.1186/s12864-018-5123-x</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Marcou</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Mora</surname> <given-names>T</given-names></string-name>, <string-name><surname>Walczak</surname> <given-names>AM</given-names></string-name></person-group>. <article-title>High-throughput immune repertoire analysis with IGoR</article-title>. <source>Nat Commun</source>. <year>2018</year> <month>Feb</month>; <volume>9</volume>(<issue>1</issue>):<fpage>561</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-018-02832-w</pub-id>, doi: <pub-id pub-id-type="doi">10.1038/s41467-018-02832-w</pub-id>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Martin Beem</surname> <given-names>JS</given-names></string-name>, <string-name><surname>Venkatayogi</surname> <given-names>S</given-names></string-name>, <string-name><surname>Haynes</surname> <given-names>BF</given-names></string-name>, <string-name><surname>Wiehe</surname> <given-names>K.</given-names></string-name></person-group> <article-title>ARMADiLLO: a web server for analyzing antibody mutation probabilities</article-title>. <source>Nucleic Acids Res</source>. <year>2023</year> <month>Jul</month>; <volume>51</volume>(<issue>W1</issue>):<fpage>W51</fpage>–<lpage>W56</lpage>. <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/nar/advance-article-abstract/doi/10.1093/nar/gkad398/7187705">https://academic.oup.com/nar/advance-article-abstract/doi/10.1093/nar/gkad398/7187705</ext-link>, doi: <pub-id pub-id-type="doi">10.1093/nar/gkad398</pub-id>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>McCoy</surname> <given-names>CO</given-names></string-name>, <string-name><surname>Bedford</surname> <given-names>T</given-names></string-name>, <string-name><surname>Minin</surname> <given-names>VN</given-names></string-name>, <string-name><surname>Bradley</surname> <given-names>P</given-names></string-name>, <string-name><surname>Robins</surname> <given-names>H</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Quantifying evolutionary constraints on B-cell affinity maturation</article-title>. <source>Philos Trans R Soc Lond B Biol Sci</source>. <year>2015</year> <month>Sep</month>; <volume>370</volume>(<issue>1676</issue>). <pub-id pub-id-type="doi">10.1098/rstb.2014.0244</pub-id>, doi: <pub-id pub-id-type="doi">10.1098/rstb.2014.0244</pub-id>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>W</given-names> <surname>McKinney</surname></string-name></person-group>. <article-title>Data Structures for Statistical Computing in Python</article-title>. <conf-name>Proceedings of the 9th Python in Science Conference</conf-name>; <year>2010</year>. p. <fpage>56</fpage> – <lpage>61</lpage>. doi: <pub-id pub-id-type="doi">10.25080/Majora-92bf1922-00a</pub-id>.</mixed-citation></ref>
+    <ref id="c26"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Methot</surname> <given-names>SP</given-names></string-name>, <string-name><surname>Di Noia</surname> <given-names>JM</given-names></string-name></person-group>. <chapter-title>Chapter Two - Molecular Mechanisms of Somatic Hypermutation and Class Switch Recombination</chapter-title>. In: <person-group person-group-type="editor"><string-name><given-names>Frederick W</given-names> <surname>Alt</surname></string-name>, editor</person-group>. <source>Advances in Immunology</source>, vol. <volume>133</volume> <publisher-name>Academic Press</publisher-name>; <year>2017</year>.p. <fpage>37</fpage>–<lpage>87</lpage>. <pub-id pub-id-type="doi">10.1016/bs.ai.2016.11.002</pub-id>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Minh</surname> <given-names>BQ</given-names></string-name>, <string-name><surname>Schmidt</surname> <given-names>HA</given-names></string-name>, <string-name><surname>Chernomor</surname> <given-names>O</given-names></string-name>, <string-name><surname>Schrempf</surname> <given-names>D</given-names></string-name>, <string-name><surname>Woodhams</surname> <given-names>MD</given-names></string-name>, <string-name><surname>von Haeseler</surname> <given-names>A</given-names></string-name>, <string-name><surname>Lanfear</surname> <given-names>R.</given-names></string-name></person-group> <article-title>IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era</article-title>. <source>Molecular Biology and Evolution</source>. <year>2020</year> 02; <volume>37</volume>(<issue>5</issue>):<fpage>1530</fpage>–<lpage>1534</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msaa015</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msaa015</pub-id>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mölder</surname> <given-names>F</given-names></string-name>, <string-name><surname>Jablonski</surname> <given-names>K</given-names></string-name>, <string-name><surname>Letcher</surname> <given-names>B</given-names></string-name>, <string-name><surname>Hall</surname> <given-names>M</given-names></string-name>, <string-name><surname>Tomkins-Tinch</surname> <given-names>C</given-names></string-name>, <string-name><surname>Sochat</surname> <given-names>V</given-names></string-name>, <string-name><surname>Forster</surname> <given-names>J</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>S</given-names></string-name>, <string-name><surname>Twardziok</surname> <given-names>S</given-names></string-name>, <string-name><surname>Kanitz</surname> <given-names>A</given-names></string-name>, <string-name><surname>Wilm</surname> <given-names>A</given-names></string-name>, <string-name><surname>Holtgrewe</surname> <given-names>M</given-names></string-name>, <string-name><surname>Rahmann</surname> <given-names>S</given-names></string-name>, <string-name><surname>Nahnsen</surname> <given-names>S</given-names></string-name>, <string-name><surname>Köster</surname> <given-names>J.</given-names></string-name></person-group> <article-title>Sustainable data analysis with Snakemake [version 2; peer review: 2 approved]</article-title>. <source>F1000Research</source>. <year>2021</year>; <volume>10</volume>(<issue>33</issue>). doi: <pub-id pub-id-type="doi">10.12688/f1000research.29032.2</pub-id>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Olsen</surname> <given-names>TH</given-names></string-name>, <string-name><surname>Boyles</surname> <given-names>F</given-names></string-name>, <string-name><surname>Deane</surname> <given-names>CM</given-names></string-name></person-group>. <article-title>Observed Antibody Space: A diverse database of cleaned, annotated, and translated unpaired and paired antibody sequences</article-title>. <source>Protein Sci</source>. <year>2022a</year> <month>Jan</month>; <volume>31</volume>(<issue>1</issue>):<fpage>141</fpage>–<lpage>146</lpage>. <pub-id pub-id-type="doi">10.1002/pro.4205</pub-id>, doi: <pub-id pub-id-type="doi">10.1002/pro.4205</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Olsen</surname> <given-names>TH</given-names></string-name>, <string-name><surname>Moal</surname> <given-names>IH</given-names></string-name>, <string-name><surname>Deane</surname> <given-names>CM</given-names></string-name></person-group>. <article-title>AbLang: an antibody language model for completing antibody sequences</article-title>. <source>Bioinform Adv</source>. <year>2022b</year> <month>Jun</month>; <volume>2</volume>(<issue>1</issue>):<fpage>vbac046</fpage>. <pub-id pub-id-type="doi">10.1093/bioadv/vbac046</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/bioadv/vbac046</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ozenne</surname> <given-names>B</given-names></string-name>, <string-name><surname>Subtil</surname> <given-names>F</given-names></string-name>, <string-name><surname>Maucort-Boulch</surname> <given-names>D.</given-names></string-name></person-group> <article-title>The precision–recall curve overcame the optimism of the receiver operating characteristic curve in rare diseases</article-title>. <source>J Clin Epidemiol</source>. <year>2015</year> <month>Aug</month>; <volume>68</volume>(<issue>8</issue>):<fpage>855</fpage>–<lpage>859</lpage>. <pub-id pub-id-type="doi">10.1016/j.jclinepi.2015.02.010</pub-id>, doi: <pub-id pub-id-type="doi">10.1016/j.jclinepi.2015.02.010</pub-id>.</mixed-citation></ref>
+    <ref id="c32"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Paszke</surname> <given-names>A</given-names></string-name>, <string-name><surname>Gross</surname> <given-names>S</given-names></string-name>, <string-name><surname>Massa</surname> <given-names>F</given-names></string-name>, <string-name><surname>Lerer</surname> <given-names>A</given-names></string-name>, <string-name><surname>Bradbury</surname> <given-names>J</given-names></string-name>, <string-name><surname>Chanan</surname> <given-names>G</given-names></string-name>, <string-name><surname>Killeen</surname> <given-names>T</given-names></string-name>, <string-name><surname>Lin</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Gimelshein</surname> <given-names>N</given-names></string-name>, <string-name><surname>Antiga</surname> <given-names>L</given-names></string-name>, <string-name><surname>Desmaison</surname> <given-names>A</given-names></string-name>, <string-name><surname>Köpf</surname> <given-names>A</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>E</given-names></string-name>, <string-name><surname>DeVito</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Raison</surname> <given-names>M</given-names></string-name>, <string-name><surname>Tejani</surname> <given-names>A</given-names></string-name>, <string-name><surname>Chilamkurthy</surname> <given-names>S</given-names></string-name>, <string-name><surname>Steiner</surname> <given-names>B</given-names></string-name>, <string-name><surname>Fang</surname> <given-names>L</given-names></string-name>, <string-name><surname>Bai</surname> <given-names>J</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>PyTorch: An imperative style, high-performance deep learning library</article-title>. <conf-name>33rd Conference on Neural Information Processing Systems (NeurIPS 2019)</conf-name>. <year>2019</year> <month>Dec</month>; <ext-link ext-link-type="uri" xlink:href="https://papers.nips.cc/paper/2019/file/bdbca288fee7f92f2bfa9f7012727740-Paper.pdf">https://papers.nips.cc/paper/2019/file/bdbca288fee7f92f2bfa9f7012727740-Paper.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pilzecker</surname> <given-names>B</given-names></string-name>, <string-name><surname>Jacobs</surname> <given-names>H.</given-names></string-name></person-group> <article-title>Mutating for Good: DNA Damage Responses During Somatic Hypermutation</article-title>. <source>Front Immunol</source>. <year>2019</year> <month>Mar</month>; <volume>10</volume>:<fpage>438</fpage>. <pub-id pub-id-type="doi">10.3389/fimmu.2019.00438</pub-id>, doi: <pub-id pub-id-type="doi">10.3389/fimmu.2019.00438</pub-id>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ralph</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Consistency of VDJ rearrangement and substitution parameters enables accurate B cell receptor sequence annotation</article-title>. <source>PLoS Comput Biol</source>. <year>2016a</year> <month>Jan</month>; <volume>12</volume>(<issue>1</issue>):<elocation-id>e1004409</elocation-id>. <pub-id pub-id-type="doi">10.1371/journal.pcbi.1004409</pub-id>, doi: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1004409</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ralph</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Likelihood-based inference of B cell clonal families</article-title>. <source>PLoS Comput Biol</source>. <year>2016b</year> <month>Oct</month>; <volume>12</volume>(<issue>10</issue>):<elocation-id>e1005086</elocation-id>. <pub-id pub-id-type="doi">10.1371/journal.pcbi.1005086</pub-id>, doi: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1005086</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ralph</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Matsen FA</surname> <given-names>IV</given-names></string-name></person-group>. <article-title>Per-sample immunoglobulin germline inference from B cell receptor deep sequencing data</article-title>. <source>PLoS Comput Biol</source>. <year>2019</year> <month>Jul</month>; <volume>15</volume>(<issue>7</issue>):<elocation-id>e1007133</elocation-id>. <pub-id pub-id-type="doi">10.1371/journal.pcbi.1007133</pub-id>, doi: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1007133</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rodriguez</surname> <given-names>OL</given-names></string-name>, <string-name><surname>Safonova</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Silver</surname> <given-names>CA</given-names></string-name>, <string-name><surname>Shields</surname> <given-names>K</given-names></string-name>, <string-name><surname>Gibson</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Kos</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Tieri</surname> <given-names>D</given-names></string-name>, <string-name><surname>Ke</surname> <given-names>H</given-names></string-name>, <string-name><surname>Jackson</surname> <given-names>KJL</given-names></string-name>, <string-name><surname>Boyd</surname> <given-names>SD</given-names></string-name>, <string-name><surname>Smith</surname> <given-names>ML</given-names></string-name>, <string-name><surname>Marasco</surname> <given-names>WA</given-names></string-name>, <string-name><surname>Watson</surname> <given-names>CT</given-names></string-name></person-group>. <article-title>Genetic variation in the immunoglobulin heavy chain locus shapes the human antibody repertoire</article-title>. <source>Nature Comm</source>. <year>2023</year> <month>Jul</month>; <volume>14</volume>(<issue>1</issue>):<fpage>4419</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-023-40070-x</pub-id>, doi: <pub-id pub-id-type="doi">10.1038/s41467-023-40070-x</pub-id>.</mixed-citation></ref>
+    <ref id="c38"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rogozin</surname> <given-names>IB</given-names></string-name>, <string-name><surname>Kolchanov</surname> <given-names>NA</given-names></string-name></person-group>. <article-title>Somatic hypermutagenesis in immunoglobulin genes. II. Influence of neighbouring base sequences on mutagenesis</article-title>. <source>Biochim Biophys Acta</source>. <year>1992</year> <month>Nov</month>; <volume>1171</volume>(<issue>1</issue>):<fpage>11</fpage>–<lpage>18</lpage>. <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/pubmed/1420357">http://www.ncbi.nlm.nih.gov/pubmed/1420357</ext-link>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rogozin</surname> <given-names>IB</given-names></string-name>, <string-name><surname>Diaz</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Cutting edge: DGYW/WRCH is a better predictor of mutability at G:C bases in Ig hypermutation than the widely accepted RGYW/WRCY motif and probably reflects a two-step activation-induced cytidine deaminase-triggered process</article-title>. <source>J Immunol</source>. <year>2004</year> <month>Mar</month>; <volume>172</volume>(<issue>6</issue>):<fpage>3382</fpage>–<lpage>3384</lpage>. <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/pubmed/15004135">https://www.ncbi.nlm.nih.gov/pubmed/15004135</ext-link>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rosset</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Efficient inference on known phylogenetic trees using Poisson regression</article-title>. <source>Bioinformatics</source>. <year>2007</year> <month>Jan</month>; <volume>23</volume>(<issue>2</issue>):<fpage>e142</fpage>–<lpage>7</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btl306</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btl306</pub-id>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Saito</surname> <given-names>T</given-names></string-name>, <string-name><surname>Rehmsmeier</surname> <given-names>M.</given-names></string-name></person-group> <article-title>The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets</article-title>. <source>PLOS One</source>. <year>2015</year>; <volume>10</volume>(<issue>3</issue>):<fpage>e0118432</fpage>. <ext-link ext-link-type="uri" xlink:href="https://app.dimensions.ai/details/publication/pub.1012273932">https://app.dimensions.ai/details/publication/pub.1012273932</ext-link>, doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0118432</pub-id>, <ext-link ext-link-type="uri" xlink:href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118432">https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118432</ext-link>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Soto</surname> <given-names>C</given-names></string-name>, <string-name><surname>Bombardi</surname> <given-names>RG</given-names></string-name>, <string-name><surname>Branchizio</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kose</surname> <given-names>N</given-names></string-name>, <string-name><surname>Matta</surname> <given-names>P</given-names></string-name>, <string-name><surname>Sevy</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Sinkovits</surname> <given-names>RS</given-names></string-name>, <string-name><surname>Gilchuk</surname> <given-names>P</given-names></string-name>, <string-name><surname>Finn</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Crowe Jr</surname> <given-names>JE</given-names></string-name></person-group>. <article-title>High frequency of shared clonotypes in human B cell receptor repertoires</article-title>. <source>Nature</source>. <year>2019</year> 02; <volume>566</volume>(<issue>7744</issue>):<fpage>398</fpage>–<lpage>402</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-019-0934-8</pub-id>, doi: <pub-id pub-id-type="doi">10.1038/s41586-019-0934-8</pub-id>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Soubrier</surname> <given-names>J</given-names></string-name>, <string-name><surname>Steel</surname> <given-names>M</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>MSY</given-names></string-name>, <string-name><surname>Der Sarkissian</surname> <given-names>C</given-names></string-name>, <string-name><surname>Guindon</surname> <given-names>S</given-names></string-name>, <string-name><surname>Ho</surname> <given-names>SYW</given-names></string-name>, <string-name><surname>Cooper</surname> <given-names>A.</given-names></string-name></person-group> <article-title>The Influence of Rate Hetergeneity among Sites on the Time Dependence of Molecular Rates</article-title>. <source>Molecular Biology and Evolution</source>. <year>2012</year> 07; <volume>29</volume>(<issue>11</issue>):<fpage>3345</fpage>–<lpage>3358</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/mss140</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/mss140</pub-id>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Spisak</surname> <given-names>N</given-names></string-name>, <string-name><surname>Walczak</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Mora</surname> <given-names>T.</given-names></string-name></person-group> <article-title>Learning the heterogeneous hypermutation landscape of immunoglobulins from high-throughput repertoire data</article-title>. <source>Nucleic Acids Res</source>. <year>2020</year> <month>Nov</month>; <volume>48</volume>(<issue>19</issue>):<fpage>10702</fpage>–<lpage>10712</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkaa825</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/nar/gkaa825</pub-id>.</mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Bagnara</surname> <given-names>D</given-names></string-name>, <string-name><surname>Chiorazzi</surname> <given-names>N</given-names></string-name>, <string-name><surname>Scharff</surname> <given-names>MD</given-names></string-name>, <string-name><surname>MacCarthy</surname> <given-names>T.</given-names></string-name></person-group> <article-title>AID overlapping and Pol?? hotspots are key features of evolutionary variation within the human antibody heavy chain (IGHV) genes</article-title>. <source>Front Immunol</source>. <year>2020</year> <month>Apr</month>; <volume>11</volume>:<fpage>788</fpage>. <pub-id pub-id-type="doi">10.3389/fimmu.2020.00788</pub-id>, doi: <pub-id pub-id-type="doi">10.3389/fimmu.2020.00788</pub-id>.</mixed-citation></ref>
+<ref id="c46"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Krantsevich</surname> <given-names>A</given-names></string-name>, <string-name><surname>MacCarthy</surname> <given-names>T.</given-names></string-name></person-group> <article-title>Deep learning model of somatic hypermutation reveals importance of sequence context beyond hotspot targeting</article-title>. <source>iScience</source>. <year>2022</year> <month>Jan</month>; <volume>25</volume>(<issue>1</issue>):<fpage>103668</fpage>. <pub-id pub-id-type="doi">10.1016/j.isci.2021.103668</pub-id>, doi: <pub-id pub-id-type="doi">10.1016/j.isci.2021.103668</pub-id>.</mixed-citation></ref>
+<ref id="c47"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Teng</surname> <given-names>G</given-names></string-name>, <string-name><surname>Papavasiliou</surname> <given-names>FN</given-names></string-name></person-group>. <article-title>Immunoglobulin somatic hypermutation</article-title>. <source>Annu Rev Genet</source>. <year>2007</year>; <volume>41</volume>:<fpage>107</fpage>–<lpage>120</lpage>. <pub-id pub-id-type="doi">10.1146/annurev.genet.41.110306.130340</pub-id>, doi: <pub-id pub-id-type="doi">10.1146/annurev.genet.41.110306.130340</pub-id>.</mixed-citation></ref>
+<ref id="c48"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vander Heiden</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Yaari</surname> <given-names>G</given-names></string-name>, <string-name><surname>Uduman</surname> <given-names>M</given-names></string-name>, <string-name><surname>Stern</surname> <given-names>JNH</given-names></string-name>, <string-name><surname>O’Connor</surname> <given-names>KC</given-names></string-name>, <string-name><surname>Hafler</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Vigneault</surname> <given-names>F</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>pRESTO: a toolkit for processing high-throughput sequencing raw reads of lymphocyte receptor repertoires</article-title>. <source>Bioinformatics</source>. <year>2014</year> 03; <volume>30</volume>(<issue>13</issue>):<fpage>1930</fpage>–<lpage>1932</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btu138</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btu138</pub-id>.</mixed-citation></ref>
+<ref id="c49"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Vaswani</surname> <given-names>A</given-names></string-name>, <string-name><surname>Shazeer</surname> <given-names>N</given-names></string-name>, <string-name><surname>Parmar</surname> <given-names>N</given-names></string-name>, <string-name><surname>Uszkoreit</surname> <given-names>J</given-names></string-name>, <string-name><surname>Jones</surname> <given-names>L</given-names></string-name>, <string-name><surname>Gomez</surname> <given-names>AN</given-names></string-name>, <string-name><given-names>Kaiser</given-names> <surname>Lu</surname></string-name>, <string-name><surname>Polosukhin</surname> <given-names>I.</given-names></string-name></person-group> <article-title>Attention is All you Need</article-title>. <conf-name>Advances in Neural Information Processing Systems</conf-name>, vol. <volume>30</volume> <publisher-name>Curran Associates, Inc</publisher-name>.; <year>2017</year>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c50"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vergani</surname> <given-names>S</given-names></string-name>, <string-name><surname>Korsunsky</surname> <given-names>I</given-names></string-name>, <string-name><surname>Mazzarello</surname> <given-names>AN</given-names></string-name>, <string-name><surname>Ferrer</surname> <given-names>G</given-names></string-name>, <string-name><surname>Chiorazzi</surname> <given-names>N</given-names></string-name>, <string-name><surname>Bagnara</surname> <given-names>D.</given-names></string-name></person-group> <article-title>Novel method for high-throughput full-length IGHV-D-J sequencing of the immune repertoire from bulk B-cells with single-cell resolution</article-title>. <source>Front Immunol</source>. <year>2017</year> <month>Sep</month>; <volume>8</volume>:<fpage>1157</fpage>. <pub-id pub-id-type="doi">10.3389/fimmu.2017.01157</pub-id>, doi: <pub-id pub-id-type="doi">10.3389/fimmu.2017.01157</pub-id>.</mixed-citation></ref>
+<ref id="c51"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wagner</surname> <given-names>SD</given-names></string-name>, <string-name><surname>Neuberger</surname> <given-names>MS</given-names></string-name></person-group>. <article-title>Somatic hypermutation of immunoglobulin genes</article-title>. <source>Annu Rev Immunol</source>. <year>1996</year>; <volume>14</volume>:<fpage>441</fpage>–<lpage>457</lpage>. <pub-id pub-id-type="doi">10.1146/annurev.immunol.14.1.441</pub-id>, doi: <pub-id pub-id-type="doi">10.1146/annurev.immunol.14.1.441</pub-id>.</mixed-citation></ref>
+<ref id="c52"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>S</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>X</given-names></string-name>, <string-name><surname>Hwang</surname> <given-names>JK</given-names></string-name>, <string-name><surname>Zhan</surname> <given-names>C</given-names></string-name>, <string-name><surname>Lian</surname> <given-names>C</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Gui</surname> <given-names>T</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>B</given-names></string-name>, <string-name><surname>Xie</surname> <given-names>X</given-names></string-name>, <string-name><surname>Dai</surname> <given-names>P</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>L</given-names></string-name>, <string-name><surname>Tian</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>H</given-names></string-name>, <string-name><surname>Han</surname> <given-names>C</given-names></string-name>, <string-name><surname>Cai</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Hao</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Ye</surname> <given-names>X</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>J</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Mesoscale DNA feature in antibody-coding sequence facilitates somatic hypermutation</article-title>. <source>Cell</source>. <year>2023</year> <month>Apr</month>; <pub-id pub-id-type="doi">10.1016/j.cell.2023.03.030</pub-id>, doi: <pub-id pub-id-type="doi">10.1016/j.cell.2023.03.030</pub-id>.</mixed-citation></ref>
+<ref id="c53"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Waskom</surname> <given-names>ML</given-names></string-name></person-group>. <article-title>seaborn: statistical data visualization</article-title>. <source>Journal of Open Source Software</source>. <year>2021</year>; <volume>6</volume>(<issue>60</issue>):<fpage>3021</fpage>. <pub-id pub-id-type="doi">10.21105/joss.03021</pub-id>, doi: <pub-id pub-id-type="doi">10.21105/joss.03021</pub-id>.</mixed-citation></ref>
+<ref id="c54"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wiehe</surname> <given-names>K</given-names></string-name>, <string-name><surname>Bradley</surname> <given-names>T</given-names></string-name>, <string-name><surname>Ryan Meyerhoff</surname> <given-names>R</given-names></string-name>, <string-name><surname>Hart</surname> <given-names>C</given-names></string-name>, <string-name><surname>Williams</surname> <given-names>WB</given-names></string-name>, <string-name><surname>Easterhoff</surname> <given-names>D</given-names></string-name>, <string-name><surname>Faison</surname> <given-names>WJ</given-names></string-name>, <string-name><surname>Kepler</surname> <given-names>TB</given-names></string-name>, <string-name><surname>Saunders</surname> <given-names>KO</given-names></string-name>, <string-name><surname>Munir Alam</surname> <given-names>S</given-names></string-name>, <string-name><surname>Bonsignori</surname> <given-names>M</given-names></string-name>, <string-name><surname>Haynes</surname> <given-names>BF</given-names></string-name></person-group>. <article-title>Functional Relevance of Improbable Antibody Mutations for HIV Broadly Neutralizing Antibody Development</article-title>. <source>Cell Host Microbe</source>. <year>2018</year> <month>May</month>; <volume>0</volume>(<issue>0</issue>). <ext-link ext-link-type="uri" xlink:href="http://www.cell.com/article/S1931312818302191/abstract">http://www.cell.com/article/S1931312818302191/abstract</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.chom.2018.04.018</pub-id>.</mixed-citation></ref>
+<ref id="c55"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Wiehe</surname> <given-names>K</given-names></string-name>, <string-name><surname>Saunders</surname> <given-names>KO</given-names></string-name>, <string-name><surname>Stalls</surname> <given-names>V</given-names></string-name>, <string-name><surname>Cain</surname> <given-names>DW</given-names></string-name>, <string-name><surname>Venkatayogi</surname> <given-names>S</given-names></string-name>, <string-name><surname>Martin Beem</surname> <given-names>JS</given-names></string-name>, <string-name><surname>Berry</surname> <given-names>M</given-names></string-name>, <string-name><surname>Evangelous</surname> <given-names>T</given-names></string-name>, <string-name><surname>Henderson</surname> <given-names>R</given-names></string-name>, <string-name><surname>Hora</surname> <given-names>B</given-names></string-name>, <string-name><surname>Xia</surname> <given-names>SM</given-names></string-name>, <string-name><surname>Jiang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Newman</surname> <given-names>A</given-names></string-name>, <string-name><surname>Bowman</surname> <given-names>C</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Bryan</surname> <given-names>ME</given-names></string-name>, <string-name><surname>Bal</surname> <given-names>J</given-names></string-name>, <string-name><surname>Sanzone</surname> <given-names>A</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>H</given-names></string-name>, <string-name><surname>Eaton</surname> <given-names>A</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Mutation-Guided Vaccine Design: A Strategy for Developing Boosting Immunogens for HIV Broadly Neutralizing Antibody Induction</article-title>. <source>bioRxiv</source>. <year>2022</year> <month>Nov</month>; p. 2022.11.11.516143. <ext-link ext-link-type="uri" xlink:href="https://www.biorxiv.org/content/10.1101/2022.11.11.516143v1">https://www.biorxiv.org/content/10.1101/2022.11.11.516143v1</ext-link>, doi: <pub-id pub-id-type="doi">10.1101/2022.11.11.516143</pub-id>.</mixed-citation></ref>
+<ref id="c56"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yaari</surname> <given-names>G</given-names></string-name>, <string-name><surname>Uduman</surname> <given-names>M</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>Quantifying selection in high-throughput Immunoglobulin sequencing data sets</article-title>. <source>Nucleic Acids Res</source>. <year>2012</year> <month>May</month>; <volume>40</volume>(<issue>17</issue>):<fpage>e134</fpage>. <pub-id pub-id-type="doi">10.1093/nar/gks457</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/nar/gks457</pub-id>.</mixed-citation></ref>
+<ref id="c57"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yaari</surname> <given-names>G</given-names></string-name>, <string-name><surname>Vander Heiden</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Uduman</surname> <given-names>M</given-names></string-name>, <string-name><surname>Gadala-Maria</surname> <given-names>D</given-names></string-name>, <string-name><surname>Gupta</surname> <given-names>N</given-names></string-name>, <string-name><surname>Stern</surname> <given-names>JNH</given-names></string-name>, <string-name><surname>O’Connor</surname> <given-names>KC</given-names></string-name>, <string-name><surname>Hafler</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Laserson</surname> <given-names>U</given-names></string-name>, <string-name><surname>Vigneault</surname> <given-names>F</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>Models of somatic hypermutation targeting and substitution based on synonymous mutations from high-throughput immunoglobulin sequencing data</article-title>. <source>Front Immunol</source>. <year>2013</year> <month>Nov</month>; <volume>4</volume>:<fpage>358</fpage>. <pub-id pub-id-type="doi">10.3389/fimmu.2013.00358</pub-id>, doi: <pub-id pub-id-type="doi">10.3389/fimmu.2013.00358</pub-id>.</mixed-citation></ref>
+<ref id="c58"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yang</surname> <given-names>Z.</given-names></string-name></person-group> <article-title>A space-time process model for the evolution of DNA sequences</article-title>. <source>Genetics</source>. <year>1995</year> 02; <volume>139</volume>(<issue>2</issue>):<fpage>993</fpage>–<lpage>1005</lpage>. <pub-id pub-id-type="doi">10.1093/genetics/139.2.993</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/genetics/139.2.993</pub-id>.</mixed-citation></ref>
+<ref id="c59"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhou</surname> <given-names>JQ</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>Position-Dependent Differential Targeting of Somatic Hypermutation</article-title>. <source>J Immunol</source>. <year>2020</year> <month>Nov</month>; <pub-id pub-id-type="doi">10.4049/jimmunol.2000496</pub-id>, doi: <pub-id pub-id-type="doi">10.4049/jimmunol.2000496</pub-id>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105471.2.sa4</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Mora</surname>
+<given-names>Thierry</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>École Normale Supérieure - PSL</institution>
+</institution-wrap>
+<city>Paris</city>
+<country>France</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study provides an <bold>important</bold> method to model the statistical biases of hypermutations during the affinity maturation of antibodies. The authors show <bold>convincingly</bold> that their model outperforms previous methods with fewer parameters; this is made possible by the use of machine learning to expand the context dependence of the mutation bias. They also show that models learned from nonsynonymous mutations and from out-of-frame sequences are different, prompting new questions about germinal center function. Strengths of the study include an open-access tool for using the model, a careful curation of existing datasets, and a rigorous benchmark; it is also shown that current machine-learning methods are currently limited by the availability of data, which explains the only modest gain in model performance afforded by modern machine learning.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105471.2.sa3</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper introduces a new class of machine learning models for capturing how likely a specific nucleotide in a rearranged IG gene is to undergo somatic hypermutation. These models modestly outperform existing state-of-the-art efforts, despite having fewer free parameters. A surprising finding is that models trained on all mutations from non-functional rearrangements give divergent results from those trained on only silent mutations from functional rearrangements.</p>
+<p>Strengths:</p>
+<p>* The new model structure is quite clever and will provide a powerful way to explore larger models.</p>
+<p>
+* Careful attention is paid to curating and processing large existing data sets.</p>
+<p>
+* The authors are to be commended for their efforts to communicate with the developers of previous models and use the strongest possible versions of those in their current evaluation.</p>
+<p>Weaknesses:</p>
+<p>* No significant weaknesses noted</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105471.2.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>This work offers an insightful contribution for researchers in computational biology, immunology, and machine learning. By employing a 3-mer embedding and CNN architecture, the authors demonstrate that it is possible to extend sequence context without exponentially increasing the model's complexity. Key findings include:</p>
+<p>• Efficiency and Performance: Thrifty CNNs outperform traditional 5-mer models and match the performance of significantly larger models like DeepSHM.</p>
+<p>
+• Neutral Mutation Data: A distinction is made between using synonymous mutations and out-of-frame sequences for model training, with evidence suggesting these methods capture different aspects of SHM, or different biases in the type of data.</p>
+<p>
+• Open Source Contributions: The release of a Python package and pretrained models adds practical value for the community.</p>
+<p>However, readers should be aware of the limitations. The improvements over existing models are modest, and the work is constrained by the availability of high-quality out-of-frame sequence data. The study also highlights that more complex modeling techniques, like transformers, did not enhance predictive performance, which underscores the role of data availability in such studies.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105471.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Modeling and estimating sequence context biases during B cell somatic hypermutation is important for accurately modeling B cell evolution to better understand responses to infection and vaccination. Sung et al. introduce new statistical models that capture a wider sequence context of somatic hypermutation with a comparatively small number of additional parameters. They demonstrate their model's performance with rigorous testing across multiple subjects and datasets. Prior work has captured the mutation biases of fixed 3-, 5-, and 7-mers, but each of these expansions has significantly more parameters. The authors developed a machine-learning-based approach to learn these biases using wider contexts with comparatively few parameters.</p>
+<p>Strengths:</p>
+<p>Well motivated and defined problem. Clever solution to expand nucleotide context. Complete separation of training and test data by using different subjects for training vs testing. Release of open-source tools and scripts for reproducibility.</p>
+<p>The authors have addressed my prior comments.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.105471.2.sa0</article-id>
+<title-group>
+<article-title>Author Response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Sung</surname>
+<given-names>Kevin</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7289-845X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Johnson</surname>
+<given-names>Mackenzie M</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3915-2023</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Dumm</surname>
+<given-names>Will</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8617-476X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Simon</surname>
+<given-names>Noah</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8985-2474</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Haddox</surname>
+<given-names>Hugh</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8324-8324</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Fukuyama</surname>
+<given-names>Julia</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-7590-5563</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Matsen</surname>
+<given-names>Frederick A</given-names>
+<suffix>IV</suffix></name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0607-6025</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the previous reviews</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1 – Public Review:</bold></p>
+<p>Summary:</p>
+<p>This paper introduces a new class of machine learning models for capturing how likely a specific nucleotide in a rearranged IG gene is to undergo somatic hypermutation. These models modestly outperform existing state-of-the-art efforts, despite having fewer free parameters. A surprising finding is that models trained on all mutations from non-functional rearrangements give divergent results from those trained on only silent mutations from functional rearrangements.</p>
+<p>Strengths:</p>
+<p>(1) The new model structure is quite clever and will provide a powerful way to explore larger models.</p>
+<p>(2) Careful attention is paid to curating and processing large existing data sets.</p>
+<p>(3) The authors are to be commended for their efforts to communicate with the developers of previous models and use the strongest possible versions of those in their current evaluation.</p>
+</disp-quote>
+<p>Thank you very much for your comments. We especially appreciate the last comment, as we have indeed tried hard to do so.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+    <p>(1) 10x/single cell data has a fairly different error profile compared to bulk data. A synonymous model should be built from the same <monospace>briney</monospace> dataset as the base model to validate the difference between the two types of training data.</p>
+</disp-quote>
+<p>Thank you for pointing this out.</p>
+    <p>We have repeated the same analysis with synonymous mutations derived from the bulk-sequenced <monospace>tang</monospace> dataset for Figure 4 and the supplementary figure. The conclusion remains the same. We used <monospace>tang</monospace> because only the out-of-frame sequences were available to us for the <monospace>briney</monospace> dataset, as we were using preprocessing from the Spisak paper.</p>
+<p>
+The fact that both the 10x and the <monospace>tang</monospace> data give the same results bolsters our claim.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) The decision to test only kernels of 7, 9, and 11 is not described. The selection/optimization of embedding size is not explained. The filters listed in Table 1 are not defined.</p>
+</disp-quote>
+<p>We have added the following to the Models subsection to further explain these decisions:</p>
+<p>“The hyperparameters for the models (Table 1) were selected with a run of Optuna (Akiba et al., 2019) early in the project and then fixed. Further optimization was not pursued because of the limited performance differences between the existing models.”</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 – Public Review:</bold></p>
+<p>Summary:</p>
+<p>This work offers an insightful contribution for researchers in computational biology, immunology, and machine learning. By employing a 3-mer embedding and CNN architecture, the authors demonstrate that it is possible to extend sequence context without exponentially increasing the model's complexity.</p>
+<p>Key findings:</p>
+<p>(1) Efficiency and Performance: Thrifty CNNs outperform traditional 5-mer models and match the performance of significantly larger models like DeepSHM.</p>
+<p>(2)Neutral Mutation Data: A distinction is made between using synonymous mutations and out-of-frame sequences for model training, with evidence suggesting these methods capture different aspects of SHM or different biases.</p>
+<p>(3) Open Source Contributions: The release of a Python package and pre-trained models adds practical value for the community.</p>
+</disp-quote>
+<p>Thank you for your positive comments. We believe that we have been clear about the modest improvements (e.g., the abstract says “slight improvement”), and we discuss the data limitations extensively. If there are ways we can do this more effectively, we are happy to hear them.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 – Public Review:</bold></p>
+<p>Summary:</p>
+<p>Sung et al. introduce new statistical models that capture a wider sequence context of somatic hypermutation with a comparatively small number of additional parameters. They demonstrate their model’s performance with rigorous testing across multiple subjects and datasets.</p>
+<p>Strengths:</p>
+<p>Well-motivated and defined problem. Clever solution to expand nucleotide context. Complete separation of training and test data by using different subjects for training vs testing. Release of open-source tools and scripts for reproducibility.</p>
+</disp-quote>
+<p>Thank you for your positive comments.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>This study could be improved with better descriptions of dataset sequencing technology, sequencing depth, etc.</p>
+</disp-quote>
+<p>We have added columns to Table 3 that report sequencing technology and depth for each dataset.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1 – Recommendations for the Authors:</bold></p>
+<p>(1) There seems to be a contradiction between Tables 2 and 3 as to whether the Tang et al. dataset was used to train models or only to test them.</p>
+</disp-quote>
+<p>Thank you for catching this. The &quot;purpose&quot; column in Table 3 was for the main analysis, while Table 2 is describing only models trained to compare with DeepSHM. Explaining this seems more work than it's worth, so we simply removed that column from Table 2. The dataset purposes are clear from the text.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) In Figure 4, I assume the two rows correspond to the Briney and Tang datasets, as in Figure 2, but this is not explicitly described.</p>
+</disp-quote>
+<p>Yes, you are correct. We added an explanation in the caption of Figure 4.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Figure 2, supplement 1 should include a table like Table 1 that describes these additional models.</p>
+</disp-quote>
+<p>We have added an explanation in the caption to Table 1 that &quot;Medium&quot; and &quot;Large&quot; refer to specific hyperparameter choices. The caption to Figure 2, supplement 1 now describes the corresponding hyperparameter choices for &quot;Small&quot; thrifty models.</p>
+<disp-quote content-type="editor-comment">
+<p>(4) On line 378 &quot;Therefore in either case&quot; seems extraneous.</p>
+</disp-quote>
+<p>Indeed. We have dropped those words.</p>
+<disp-quote content-type="editor-comment">
+<p>(5) In the last paragraph of the Discussion, only the attempt to curate the Ford dataset is described. I am not sure if you intended to discuss the Rodriguez dataset here or not.</p>
+</disp-quote>
+<p>Thank you for pointing this out. We have updated the Materials and Methods section to include our attempts to recover data from Rodriguez et al., 2023.</p>
+<disp-quote content-type="editor-comment">
+<p>(6) Have you looked to see if Soto et al. (Nature 2019) provides usable data for your purposes?</p>
+</disp-quote>
+<p>Thank you for making us aware of this dataset!</p>
+<p>We assessed it but found that the recovery of usable out-of-frame sequences was too low to be useful for our analysis. We now describe this evaluation in the paper.</p>
+<disp-quote content-type="editor-comment">
+<p>(7) Cui et al. note a high similarity between S5F and S5NF (r=0.93). Does that constrain the possible explanations for the divergence you see?</p>
+</disp-quote>
+<p>This is an excellent point.</p>
+<p>We don't believe the correlation observed in Cui and our results are incompatible. Our point is not that the two sources of neutral data are completely different but that they differ enough to limit generalization. Also, the Spearman correlation in Cui is 0.86, which aligns with our observed drop in R-precision.</p>
+<disp-quote content-type="editor-comment">
+<p>(8) Are you able to test the effects of branch length or background SHM on the model?</p>
+</disp-quote>
+<p>We're unsure what is meant by “background SHM.”</p>
+<p>
+We did try joint optimization of branch length and model parameters, but it did not improve performance. Differences in clone size thresholds do exist between datasets, but Figure 3 suggests that tang is better sequence data.</p>
+<disp-quote content-type="editor-comment">
+<p>(9) Would the model be expected to scale up to a kernel of, say, 50? Would that help yield biological insight?</p>
+</disp-quote>
+<p>We did not test such large models because larger kernels did not improve performance.</p>
+<p>While your suggestion is intriguing, distinguishing biological effects from overfitting would be difficult. We explore biological insights more directly in our recent mechanistic model paper (Fisher et al., 2025), which is now cited in a new paragraph on biological conclusions.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 – Recommendations for the Authors:</bold></p>
+<p>(1) Consider applying a stricter filtration approach to the Briney dataset to make it more comparable to the Tang dataset.</p>
+</disp-quote>
+    <p>Thank you. We agree that differences in datasets are interesting, though model rankings remain consistent. We now include supplementary figures comparing synonymous and out-of-frame models from the <monospace>tang</monospace> dataset.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) You omit mutations between the unmutated germline and the MRCA of each tree. Why?</p>
+</disp-quote>
+<p>The inferred germline may be incorrect due to germline variation or CDR3 indels, which could introduce spurious mutations. Following Spisak et al. (2020), we exclude this branch.</p>
+<p>
+Yes, singletons are discarded: ~28k in tang and ~1.1M in jaffe.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Could a unified model trained on both data types offer further insights?</p>
+</disp-quote>
+<p>We agree and present such an analysis in Figure 4.</p>
+<disp-quote content-type="editor-comment">
+<p>(4) Tree inference biases from parent-child distances may impact the results.</p>
+</disp-quote>
+<p>While this is an important issue, all models are trained on the same trees, so we expect any noise or bias to be consistent. Different datasets help confirm the robustness of our findings.</p>
+<disp-quote content-type="editor-comment">
+<p>(5) Simulations would strengthen validation.</p>
+</disp-quote>
+<p>We focused on real datasets, which we view as a strength. While simulations could help, designing a meaningful simulation model would be nontrivial. We have clarified this point in the manuscript.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 – Recommendations for the Authors:</bold></p>
+<p>There are typos in lines 109, 110, 301, 307, and 418.</p>
+</disp-quote>
+<p>Thank you, we have corrected them.</p>
+</body>
+</sub-article>
+</article>
