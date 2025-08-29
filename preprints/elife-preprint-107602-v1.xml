@@ -1,0 +1,782 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">107602</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.107602</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.107602.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Ecology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>New idtracker.ai: rethinking multi-animal tracking as a representation learning problem to increase accuracy and reduce tracking times</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" equal-contrib="yes">
+<name>
+<surname>Torrents</surname>
+<given-names>Jordi</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8538-1345</contrib-id>
+<name>
+<surname>Costa</surname>
+<given-names>Tiago</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="author-notes" rid="n1">†</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5359-3426</contrib-id>
+<name>
+<surname>de Polavieja</surname>
+<given-names>Gonzalo G</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>gonzalo.polavieja@neuro.fchampalimaud.org</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/007rd1x46</institution-id><institution>Champalimaud Research, Champalimaud Center for the Unknown</institution></institution-wrap>, <city>Lisbon</city>, <country country="PT">Portugal</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Berman</surname>
+<given-names>Gordon J</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Emory University</institution>
+</institution-wrap>
+<city>Atlanta</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Cardona</surname>
+<given-names>Albert</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Cambridge</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country country="GB">United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1" fn-type="equal"><label>†</label><p>These authors contributed equally to this work</p></fn>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-08-13">
+<day>13</day>
+<month>08</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP107602</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-05-30">
+<day>30</day>
+<month>05</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-06-02">
+<day>02</day>
+<month>06</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.05.30.657023"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Torrents et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Torrents et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-107602-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>idTracker and idtracker.ai approach multi-animal tracking from video as an image classification problem. For this classification, both rely on segments of video where all animals are visible to extract images and their identity labels. When these segments are too short, tracking can become slow and inaccurate and, if they are absent, tracking is impossible. Here, we introduce a new idtracker.ai that reframes multi-animal tracking as a representation learning problem rather than a classification task. Specifically, we apply contrastive learning to image pairs that, based on video structure, are known to belong to the same or different identities. This approach maps animal images into a representation space where they cluster by animal identity. As a result, the new idtracker.ai eliminates the need for video segments with all animals visible, is more accurate, and tracks up to 440 times faster.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<p>Video-tracking systems that attempt to follow individuals frame-by-frame can fail during occlusions, resulting in identity swaps that accumulate over time <xref ref-type="bibr" rid="c5">Branson et al. (2009</xref>); <xref ref-type="bibr" rid="c23">Plum (2024</xref>); <xref ref-type="bibr" rid="c8">Chen et al. (2023</xref>); <xref ref-type="bibr" rid="c9">Chiara and Kim (2023</xref>); <xref ref-type="bibr" rid="c19">Liu et al. (2023</xref>); <xref ref-type="bibr" rid="c3">Bernardes et al. (2021</xref>). idTracker <xref ref-type="bibr" rid="c22">Pérez-Escudero et al. (2014</xref>) introduced the paradigm of animal tracking by identification from the animal images. This approach, unfeasible for humans, avoids the accumulation of errors by identity swaps during occlusions. Its successor, idtracker.ai <xref ref-type="bibr" rid="c24">Romero-Ferrero et al. (2019</xref>), built on this paradigm by incorporating deep learning and achieved accuracies often exceeding 99.9% in videos of up to 100 animals.</p>
+<p>While both idTracker and idtracker.ai perform well in high-quality video, they share a limitation that can be critical in videos of lower quality or with many occlusions. To understand this limitation, consider the schematics of a video in <xref rid="fig1" ref-type="fig">Figure 1a</xref>. The first step of both idTracker and idtracker.ai consists in detecting instances when animals touch or cross paths (<xref rid="fig1" ref-type="fig">Figure 1a</xref>, shown as boxes with dashed borders and containing images of overlapping fish in this example). The video is then divided into individual fragments, each consisting of the set of images of a single individual between two animal crossings (<xref rid="fig1" ref-type="fig">Figure 1a</xref> shows 14 of them as rectangles with a gray background). A global fragment for a video with <italic>N</italic> animals is a collection of <italic>N</italic> fragments that coexist in one or more consecutive frames in the video (<xref rid="fig1" ref-type="fig">Figure 1a</xref>, the 5 fragments with blue borders are a global fragment). The significance of a global fragment is that it provides a set of images and identity labels for all the animals in the video.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Tracking by identification using deep contrastive learning.</title>
+<p><bold>a</bold> Schematic representation of a video with five fish. It shows 7 portions of video with animals crossing or touching (dashed-border boxes), and 14 individual fragments, sequences of images of a single individual between two crossings (gray-background boxes). The blue-border fragments form a global fragment, as there are as many individual fragments as animals and all the individual fragments coexist in one or more frames. Some pairs of images of the same animal identity are highlighted with green borders (positive images) and some images of different identities are highlighted with red borders (negative images). <bold>b</bold> A ResNet18 network with 8 outputs generates a representation of each animal image as a point in an 8-dimensional space (here shown in 2D for visualization). Each pair of images corresponds to two points in this space, separated by a Euclidean distance. The ResNet18 network is trained to minimize this distance for positive pairs and maximize it for negative pairs. <bold>c</bold> 2D t-SNE visualizations of the learned 8-dimensional representation space. Each dot represents an image of an animal from the video. As training progresses, clusters corresponding to individual animals become clearer, plotted at training with 0, 2,000, 4,000 and 15,000 batches. The t-SNE plot at 15,000 training batches is also shown color-coded by human-validated ground-truth identities. The pink rectangle at 2,000 batches of training highlights clear clusters and the orange square fuzzy clusters. <bold>d</bold> The silhouette score measures cluster coherence and increases during training, as illustrated for a video with 60 zebrafish. <bold>e</bold> A silhouette score of 0.91 corresponds to a human-validated error rate of less than 1% per image.</p>
+<p><xref rid="figS1" ref-type="fig">Figure 1—figure supplement 1</xref>. Models comparison</p>
+<p><xref rid="figS2" ref-type="fig">Figure 1—figure supplement 2</xref>. Embedding dimensions comparison</p>
+<p><xref rid="figS3" ref-type="fig">Figure 1—figure supplement 3</xref>. <italic>D</italic><sub>neg</sub> over <italic>D</italic><sub>pos</sub> comparison</p>
+<p><xref rid="figS4" ref-type="fig">Figure 1—figure supplement 4</xref>. Batch size comparison</p>
+<p><xref rid="figS5" ref-type="fig">Figure 1—figure supplement 5</xref>. Exploration and exploitation comparison</p></caption>
+<graphic xlink:href="657023v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The core idea of idTracker and the original idtracker.ai is to use global fragments for the classification of images of animals into identities. In idtracker.ai, this process starts by training a convolutional neural network (CNN) with the images and labels of the global fragment that contains the longest fragment for the animal that moves the least. Once trained, the network assigns identities to all animal images in the remaining global fragments. Only global fragments meeting strict quality criteria, such as ensuring all animals in a global fragment have unique identities, are retained for further training. This iterative process of training, assigning, and selecting continues until most of the video have images assigned to identities. A second algorithm then tracks animals during crossings given that animals are already identified outside crossings.</p>
+<p><xref rid="fig2" ref-type="fig">Figure 2a</xref> (blue line) shows the accuracies of the original idtracker.ai (version 4 of the software) for a benchmark of 33 videos of zebrafish, flies and mice. These accuracies were computed using all the images of animals in the videos excluding animal crossings. <xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 1a</xref> shows the same results but for the complete trajectory with animal crossings. The names of the videos start with a letter for the species (z,f,m), followed by the number of animals in the video, and possibly an extra number to distinguish the video if there are several of the same species and animal group size. The videos in this figure are ordered by decreasing accuracy of the original idtracker.ai results for ease of visualization. The first 15 videos are videos of zebrafish, flies and mice with an accuracy of &gt; 99.9%. The accuracy in the remaining videos gradually decreases to 92.67% in video <italic>m</italic>_4_2, and a value of 50.4% outside the figure for video <italic>d</italic>_100_3.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Performance for a benchmark of 33 videos of flies, zebrafish and mice.</title>
+<p><bold>a</bold>. Median accuracy was computed using all images of animals in the videos excluding animal crossings. <bold>b</bold>. Median tracking times are shown for the scale of hours and, in the inset, for the scale of days. <xref rid="tblS1" ref-type="table">Supplementary Table 1</xref>, <xref rid="tblS2" ref-type="table">Supplementary Table 2</xref>, <xref rid="tblS3" ref-type="table">Supplementary Table 3</xref> give more complete statistics (median, mean and 20-80 percentiles) for the original idtracker.ai (version 4 of the software), optimized v4 (version 5) and new idtracker.ai (version 6), respectively.</p></caption>
+<graphic xlink:href="657023v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p><xref rid="fig2" ref-type="fig">Figure 2b</xref> (blue line) shows the times that the original idtracker.ai takes to track each of the videos in the benchmark. The videos are ordered by increasing tracking times for ease of visualization. The original idtracker.ai has a faster protocol, “Protocol 2”, which works well for the simplest videos and its tracking times ranging from a few minutes to several hours. However, for complex videos, the software may switch from “Protocol 2” to “Protocol 3”, with Protocol 3 a two-step process. In the first step, all the global fragments are used to train the CNN filters. The second step proceeds like Protocol 2 but with the initial weights of the CNN filters obtained from the first step. While effective, this approach can be extremely slow, often requiring several days or weeks for a single video. Since it is stochastic whether a video is tracked using Protocol 2 or 3 (<xref rid="figS7" ref-type="fig">Figure 2—figure Supplement 2</xref>), a reasonable strategy to use the original idtracker.ai is to track each video multiple times until Protocol 2 successfully tracks the entire video or, when a patience threshold is reached (here set to 5 attempts), switch to Protocol 3. The tracking times shown in <xref rid="fig2" ref-type="fig">Figure 2b</xref> (blue line) correspond to this procedure, with the time being the accumulated time of the multiple attempts made by the software until final tracking. Some of the videos take a few minutes to track, others a few hours, and six videos take more than three days, one nearly two weeks. If we were to run idtracker.ai a single time instead of following this protocol, the tracking times for some of the videos would be longer.</p>
+<p>We first optimized idtracker.ai by improving data loading protocols and redefining the main objects in the software (animal images and fragments) and their properties (see <bold><italic>Methods</italic></bold> for details). This version of the optimized original idtracker.ai (version 5 of the software) achieved better accuracies, <xref rid="fig2" ref-type="fig">Figure 2a</xref> (orange line), and <xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 1a</xref> (orange line) for accuracies including animal crossings. The mean accuracy across the benchmark for this optimized version is 99.58% and 99.40% including or not animal crossings, respectively, while for the original idtracker.ai are 97.52% and 97.38%.</p>
+<p>Even if this version also uses Protocols 2 and 3, we obtain much shorter tracking times, never longer than a day <xref rid="fig2" ref-type="fig">Figure 2b</xref> (orange line). On average, tracking is 13.6 times faster than with the original idtracker.ai and, for the more difficult videos, 118.4 times faster. However, waiting a day to track some videos can make a tracking pipeline too slow. To further improve accuracy and tracking times, we retained these optimizations while also changing the main logic of idtracker.ai. In the original idtracker.ai, when global fragments are short, the quality of the initial CNN is low, leading to either reduced accuracy or the triggering of the very slow Protocol 3. The new system had to be able to track without global fragments.</p>
+<p>We reformulate multi-animal tracking as a representation learning problem. In representation learning, we learn a transformation of the input data that makes it easier to perform downstream tasks <xref ref-type="bibr" rid="c35">Xing et al. (2002</xref>); <xref ref-type="bibr" rid="c2">Bengio et al. (2013</xref>); <xref ref-type="bibr" rid="c12">Ericsson et al. (2022</xref>), in our case clustering into animal identities without needing identity labels. This is possible due to the structure of the video, <xref rid="fig1" ref-type="fig">Figure 1a</xref>. Note that pairs of images of the same individual can be obtained from the same fragment (<xref rid="fig1" ref-type="fig">Figure 1a</xref>, green boxes). Also, pairs of images from different individuals can be obtained from different fragments that coexist in time for one or more frames (<xref rid="fig1" ref-type="fig">Figure 1a</xref>, red boxes). These pairs can be used as “positive” and “negative” pairs of images for contrastive learning, a self-supervised learning framework designed to learn a representation space in which “positive” examples are close together, and “negative” examples are far apart <xref ref-type="bibr" rid="c28">Schroff et al. (2015</xref>); <xref ref-type="bibr" rid="c11">Dong and Shen (2018</xref>); <xref ref-type="bibr" rid="c15">KAYA and BILGE (2019</xref>); <xref ref-type="bibr" rid="c6">Chen et al. (2020a)</xref>; <xref ref-type="bibr" rid="c7">Chen et al. (2020b)</xref>; <xref ref-type="bibr" rid="c13">Guo et al. (2020</xref>); <xref ref-type="bibr" rid="c34">Wang et al. (2020</xref>); <xref ref-type="bibr" rid="c36">Yang et al. (2020</xref>).</p>
+<p>We first evaluated neural networks suitable for contrastive learning with animal images. In addition to our previous CNN from idtracker.ai, we tested 23 networks from 8 different families of state-of-the-art convolutional neural network architectures, selected for their compatibility with consumer-grade GPUs and ability to handle small input images (20 × 20 to 100 × 100 pixels) typical in collective animal behavior videos. Among these architectures, ResNet18 <xref ref-type="bibr" rid="c14">He et al. (2016</xref>) was the fastest to obtain low errors (<xref rid="figS1" ref-type="fig">Figure 1—figure Supplement 1</xref>).</p>
+<p>A ResNet18 with <italic>M</italic> outputs maps each input image to a point in an <italic>M</italic>-dimensional representation space (illustrated in <xref rid="fig1" ref-type="fig">Figure 1b</xref> as a point on a plane). Experiments showed that using <italic>M</italic> = 8 achieved faster convergence to low error (<xref rid="figS2" ref-type="fig">Figure 1—figure Supplement 2</xref>). ResNet18 is trained using a contrastive loss function (<xref ref-type="bibr" rid="c10">Chopra et al. (2005</xref>), see <bold><italic>Methods</italic></bold> for details). Each image in a positive or negative pair is input separately into the network, producing a point in the 8-dimensional representation space. For an image pair, we then obtain two points in an 8-dimensional space, separated by some (Euclidean) distance. The loss function is used to minimize (or maximize) this Euclidean distance for positive (or negative) pairs until the distance <italic>D</italic><sub>pos</sub> (or <italic>D</italic><sub>neg</sub>). The effect of <italic>D</italic><sub>pos</sub> is to prevent the collapse to a single of the positive images coming from the same fragment, allowing for a small region of the 8-dimensional representation space for all the positive pairs of the same identity. The effect of <italic>D</italic><sub>neg</sub> is to prevent excessive scatter of the points representing images from negative pairs. We empirically determined that <italic>D</italic><sub>neg</sub>/<italic>D</italic><sub>pos</sub> = 10 results in a faster method to obtain low error (<xref rid="figS3" ref-type="fig">Figure 1—figure Supplement 3</xref>), and we use <italic>D</italic><sub>pos</sub> = 1 and <italic>D</italic><sub>neg</sub> = 10.</p>
+<p>As the model trains, the representation space becomes increasingly structured, with similar data points forming coherent clusters. <xref rid="fig1" ref-type="fig">Figure 1c</xref> visualizes this progression using 2D t-SNE <xref ref-type="bibr" rid="c20">van der Maaten and Hinton (2008</xref>) plots of the 8-dimensional representation space. After 2, 000 training batches, initial clusters emerge, and by 15,000 batches, distinct clusters corresponding to individual animals are evident. Ground truth identities verified by humans confirm that each cluster corresponds to an animal identity (<xref rid="fig1" ref-type="fig">Figure 1c</xref>, colored clusters).</p>
+<p>The method to select positive and negative pairs is critical for fast learning <xref ref-type="bibr" rid="c1">Awasthi et al. (2022</xref>); <xref ref-type="bibr" rid="c16">Khosla et al. (2021</xref>); <xref ref-type="bibr" rid="c27">Rösch et al. (2024</xref>). This is because not all image pairs contribute equally to training. <xref rid="fig1" ref-type="fig">Figure 1c</xref> shows at 2, 000 training batches that some clusters well-defined (e.g. those inside the orange square) while others remain fuzzy (e.g. those inside the pink rectangle). Images in well-defined clusters have negligible impact on the loss or weight updates, as positive pairs are already close and negative pairs are sufficiently separated. Sampling from these well-defined clusters, therefore, wastes time. In contrast, fuzzy clusters contain images that still contribute significantly to the loss and benefit from further training. To address this, we developed a sampling method that prioritizes pairs from underperforming clusters requiring additional learning, while maintaining baseline sampling for all clusters based on fragment size (<bold><italic>Methods</italic></bold>). This ensures consistent updates across the representation space and prevents forgetting in well-defined clusters.</p>
+<p>To assign identities to animal images, we perform K-means clustering <xref ref-type="bibr" rid="c29">Sculley (2010</xref>) on the points representing all images of the video in the learned 8-dimensional representation space. Each image is then assigned to a cluster with a probability that increases the closer it is to the cluster center. To evaluate clustering quality, we compute the mean Silhouette index <xref ref-type="bibr" rid="c26">Rousseeuw (1987</xref>), which quantifies intra-cluster cohesion and inter-cluster separation. A maximum value of 1 indicates ideal clustering. During training, the mean Silhouette index increases (<xref rid="fig1" ref-type="fig">Figure 1d</xref>). We empirically determined that a value of 0.91 for this index corresponds to an identity assignment error below 1% for a single image (<xref rid="fig1" ref-type="fig">Figure 1e</xref>). As a result, we use 0.91 as the stopping criterion for training (<bold><italic>Methods</italic></bold>).</p>
+<p>After the assignment of identities to images of animals, we run some steps that are common to the previous idtracker.ai. For example, we make a final assignment of all images in fragments as each fragment must have all assignments to be the same, eliminating some errors in individual images. Also, an algorithm already present in idTracker assigns identities in the animal’s crossings taking into account that we know the identities before and after.</p>
+<p>The new idtracker.ai has a higher accuracy than original idtracker.ai and than its optimized version, <xref rid="fig2" ref-type="fig">Figure 2a</xref> (magenta line). Its average accuracy in the benchmark is 99.92% and 99.78% without and with crossings, respectively, an important improvement over the original idtracker.ai (97.52% and 97.38%) and its optimized version (99.58% and 99.40%). It also gives much shorter times than the original idtracker.ai and its optimized version, <xref rid="fig2" ref-type="fig">Figure 2b</xref> (magenta line). It is on average 44 times faster than the original idtracker.ai and, for the more difficult videos, up to 440 times faster.</p>
+<p>As for the original idtracker.ai, the new idtracker.ai can work well with lower resolutions, blur and video compression, and with inhomogeneous light (<xref rid="figS9" ref-type="fig">Figure 2—figure Supplement 4</xref>). We also compared the new idtracker.ai to TRex <xref ref-type="bibr" rid="c33">Walter and Couzin (2021</xref>), which is based on Protocol 2 of idtracker.ai but with additional operations like eroding crossings to make global fragments longer.</p>
+<p>TRex gives comparable accuracies to the original idtracker.ai in the benchmark, but by avoiding Protocol 3, it is on average 31 times faster than the original idtracker.ai and up to 315 times faster (<xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 1b</xref>). However, the new idtracker.ai is both more accurate and faster than TRex (<xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 1</xref>). The mean accuracy of TRex across the benchmark is 98.14% and 97.89% excluding and including animal crossings, respectively. This is noticeably below the values for the new idtracker.ai of 99.92% and 99.78%, respectively. Also, the new idtracker.ai is on average 3.9 times faster and up to 16.5 times faster than TRex. Additionally, the new idtracker.ai has a memory peak lower than TRex (<xref rid="figS8" ref-type="fig">Figure 2—figure Supplement 3</xref>).</p>
+<p>The new idtracker.ai also works in videos in which the original idtracker.ai does not even track because there are no global fragments. Global fragments are absent in videos with very extensive animal occlusions, for example because animals touch or cross more frequently, parts of the setup are covered, or the camera focuses on only a specific region of the setup. To study this systematically, we added a mask on the video with an angle <italic>θ</italic> (<xref rid="fig3" ref-type="fig">Figure 3</xref>). The tracking systems have no access to the information behind the mask. The light and dark gray regions in <xref rid="fig3" ref-type="fig">Figure 3</xref> correspond to videos with no global fragments, and the original idtracker.ai and its optimized version declare tracking impossible. The new idtracker.ai, however, works well until approximately 1/4 of the setup is visible, and afterward it degrades. This also shows the limit of the new idtracker.ai. For the clustering process to be successful, we need enough coexisting individual fragments to have both positive and negative examples. Empirically, we find a deterioration with less than 0.25(<italic>N</italic> − 1) coexisting individual fragments, with <italic>N</italic> the number of animals in the video (<xref rid="fig3" ref-type="fig">Figure 3</xref>, dark gray region). The new idtracker.ai flags when this condition is not met.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Tracking with strong occlusions.</title>
+<p>Accuracies when we mask a region of a video defined by an angle <italic>θ</italic> and the tracking system has no access to the information behind the mask. Light and dark gray region correspond to the angles for which no global fragments exist in the video. Dark gray regions correspond to angles for which the video does not have enough coexisting individual fragments, specifically on average less than 0.25(<italic>N</italic> − 1) coexisting individual fragments, with <italic>N</italic> the number of animals in the video. The original idtracker.ai (v4) and its optimized version (v5) cannot work in the gray regions, and new idtracker.ai is expected to deteriorate only in the dark gray region.</p></caption>
+<graphic xlink:href="657023v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The final output of the new idtracker.ai consists of the <italic>x</italic> − <italic>y</italic> coordinates for each identified animal and video frame. Additionally, it provides several quality metrics: an estimate of the probability of correct identity assignment for each animal and frame, the Silhouette score as a measure of clustering quality, and the average number of coexisting individual fragments per fragment divided by (<italic>N</italic> − 1), with <italic>N</italic> the number of animal in the video, which when above 0.25(<italic>N</italic> − 1) is expected to give good results. The software can also generate a video with the computed animal trajectories for visualization, and an individual video per animal to be able to run pose estimators like the ones in <xref ref-type="bibr" rid="c18">Lauer et al. (2022</xref>); <xref ref-type="bibr" rid="c21">Pereira et al. (2022</xref>); <xref ref-type="bibr" rid="c30">Segalin et al. (2021</xref>); <xref ref-type="bibr" rid="c31">Tang et al. (2025</xref>); <xref ref-type="bibr" rid="c4">Biderman et al. (2024</xref>). For analysis of trajectories and spatial relationships, the user can run our Python package trajectorytools on the trajectories.</p>
+<p>In summary, the new idtracker.ai takes an approach to tracking using representational learning to avoid the need for segments of the video in which all animals are visible. This makes the new idtracker.ai work in more videos, more accurately, much faster and with a lower memory peak.</p>
+<sec id="s2">
+<title>Methods</title>
+<sec id="s4a">
+<title>Tested computer specifications</title>
+<p>The software idtracker.ai depends on PyTorch and is thus compatible with any machine that can run PyTorch, including Windows, MacOS, and Linux systems. Although no specific hardware is required, a graphics card is highly recommended for hardware-accelerated machine-learning computations.</p>
+<p>Version 6 of idtracker.ai was tested on computers running Ubuntu 24.04, Fedora 41, and Windows 11 with NVIDIA GPUs from the 1000 to the 4000 series and MacOS 15 with Metal chips. The benchmark presented in this study was performed on desktop computer running Ubuntu 24.04 LTS 64bit with a AMD Ryzen 9 5950X (32 cores at 3.4 GHz) processor, 128 GB RAM and an NVIDIA GeForce RTX 4090.</p>
+</sec>
+<sec id="s4b">
+<title>Improvements to original idtracker.ai in version 5</title>
+<p>Following the last publication of idtracker.ai <xref ref-type="bibr" rid="c24">Romero-Ferrero et al. (2019</xref>), the software underwent continuous maintenance, including feature additions, performance optimizations, and hyperpa-rameter tuning (released via <ext-link ext-link-type="uri" xlink:href="https://pypi.org/project/idtrackerai/">PyPI</ext-link> from March 2023 for v5.0.0 to June 2024 for v5.2.12). These updates improved the implementation and tracking pipeline but did not alter the core algorithm. Significant advancements were made in user experience, tool availability, processing speed, and memory efficiency. Below, we summarize the most notable changes.</p>
+</sec>
+<sec id="s4c">
+<title>Blob memory optimization</title>
+<p>Blobs are defined as collections of connected pixels belonging to one or more animals. In v4, blobs stored pixel indices, causing memory usage to scale quadratically with blob size. In v5, blobs are represented by simplified contours using the Teh-Chin chain approximation <xref ref-type="bibr" rid="c32">Teh and Chin (1989</xref>), reducing memory usage by 93% in blob instances. This also accelerated blob-related computations (centroid, orientation, area, overlap, identification image creation, etc.).</p>
+</sec>
+<sec id="s4d">
+<title>Efficient image loading</title>
+<p>Identification images are now efficiently loaded on demand from HDF5 files, eliminating the need to load all images into memory. This enables training with all images regardless of video length, with minimal memory usage.</p>
+</sec>
+<sec id="s4e">
+<title>Code optimization</title>
+<p>The source code was revised to eliminate speed bottlenecks. The most impactful changes include:</p>
+<list list-type="bullet">
+<list-item><p>Frame segmentation accelerated by 80% through optimized OpenCV usage.</p></list-item>
+<list-item><p>Faster blob-to-blob overlap checks by first evaluating bounding boxes before deeper comparisons.</p></list-item>
+<list-item><p>Persistent storage of blob overlap checks to avoid redundant computations when reloading data.</p></list-item>
+<list-item><p>Efficient disk access for identification images by reading them in sorted batches, minimizing I/O overhead.</p></list-item>
+<list-item><p>Reduced bounding box image sizes to the minimum necessary, lowering memory and processing demands.</p></list-item>
+<list-item><p>Optimized and parallelized Torch data loaders for more efficient model training.</p></list-item>
+<list-item><p>Caching of computationally expensive properties for blobs, fragments, and global fragments.</p></list-item>
+<list-item><p>Sorted Fragment lists to speed up coexistence detection.</p></list-item>
+</list>
+</sec>
+<sec id="s4f">
+<title>Changes to the identification protocol</title>
+<p>In v4, identity assignments to high-confidence fragments were fixed and excluded from downstream correction, regardless of later evidence. In v5, this was relaxed for short fragments (fewer than 4 frames), allowing corrections due to their statistical unreliability and frequent image noise.</p>
+</sec>
+<sec id="s4g">
+<title>Improved graphical user interface and introduction of Exclusive ROIs</title>
+<p>The graphical user interface was redesigned for improved usability and now includes the “Exclusive Regions of Interest” feature, which allows users to define spatially distinct regions in multi-arena experiments where animal identities are treated independently (see <xref rid="fig4" ref-type="fig">Figure 4</xref> left image). It also incorporates a redesigned video generator for visualizing tracking results.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>idtracker.ai new graphic user interface.</title>
+<p>New graphics user interface (GUI) for versions v5 and v6 of idtracker.ai. On the left the segmentation GUI. On the right the Validator tool.</p></caption>
+<graphic xlink:href="657023v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s4h">
+<title>Validation application</title>
+<p>A standalone GUI for inspecting and correcting tracking results. It allows users to navigate video frames, review tracked positions and metadata, detect tracking errors, and apply corrections using integrated plugins (see <xref rid="fig4" ref-type="fig">Figure 4</xref>, right image).</p>
+</sec>
+<sec id="s4i">
+<title>Direct integration with <monospace>idmatcher.ai</monospace></title>
+<p>A utility for matching identities across videos, originally introduced in <xref ref-type="bibr" rid="c25">Romero-Ferrero et al. (2023</xref>). It allows users to propagate consistent identity labels across multiple recordings, facilitating longitudinal or multi-session experiments. It is now a native feature of both v5 and v6, fully integrated into the idtracker.ai ecosystem.</p>
+</sec>
+<sec id="s4j">
+<title>Protocol details for the new idtracker.ai</title>
+<p>In this section, we give an overview of the tracking protocol. Please refer to <bold>Appendix 1</bold> for details.</p>
+<sec id="s4j1">
+<title>Architectures</title>
+<p>The <italic>contrastive learning</italic> network (<xref rid="fig1" ref-type="fig">Figure 1b</xref>) is a ResNet18 <xref ref-type="bibr" rid="c14">He et al. (2016</xref>) with a single channel in the first convolutional layer for grayscale images and 8 neurons in the last layer. The network receives grayscale images because idtracker.ai always works with grayscale converted video frames.</p>
+</sec>
+<sec id="s4j2">
+<title>Loss function</title>
+<p>The contrastive loss <italic>L</italic> for a pair of images (<italic>I, J</italic>) and label <italic>l</italic> is defined as:
+<disp-formula id="ueqn1">
+<graphic xlink:href="657023v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Here <italic>D</italic><sub><italic>I, J</italic></sub> is the Euclidean distance between the embeddings of images <italic>I</italic> and <italic>J</italic>. <italic>D</italic><sub>pos</sub> is the maximum allowed distance between the two images of a positive pair, and <italic>D</italic><sub>neg</sub>, the minimum allowed distance between the two images in negative pair.</p>
+</sec>
+<sec id="s4j3">
+<title>Training</title>
+<p>ResNet18 is trained using Adam optimizer with the hyperparameters described in <xref ref-type="bibr" rid="c17">Kingma and Ba (2017</xref>). The learning rate is set at the value of 0.001 using training batches of 1600 images (400 positive pairs and 400 negative pairs of images). See <bold>Appendix 2</bold> for details.</p>
+</sec>
+<sec id="s4j4">
+<title>Pair selection</title>
+<p>The selection of pairs was done by combining two sampling strategies:</p>
+<list list-type="order">
+<list-item><p><bold>Sampling fragments according to their size</bold> so that fragments containing more images are sampled more often.</p></list-item>
+<list-item><p><bold>Sampling fragments according to the loss function</bold> by increasing the sampling probability of pairs of fragments from whom the corresponding images had positive loss, and decreasing the sampling probability of pairs of fragments from whom the corresponding images had loss zero.</p></list-item>
+</list>
+<p>See <bold>Appendix 2</bold> for more details on the pair sampling strategy.</p>
+</sec>
+<sec id="s4j5">
+<title>Clustering and stopping criteria</title>
+<p>For clustering, we use the minibatch K-means clustering, which significantly reduces the computation time compared to a classical implementation <xref ref-type="bibr" rid="c29">Sculley (2010</xref>).</p>
+<p>Stopping of the training was done by computing the K-means clustering for a subset of (number of animals times 1,000) images, and measuring the corresponding Silhouette score (SS) <xref ref-type="bibr" rid="c26">Rousseeuw (1987</xref>) every number of animals times 5 batches. We stop training if there have been 30 consecutive SS evaluations without any improvement (patience of 30), or if there have been 2 consecutive SS evaluations without any improvement but the SS already achieved the target value 0.91. Check <bold>Appendix 2</bold> for more details on the criteria to stop the training of the network.</p>
+</sec>
+</sec>
+<sec id="s4k">
+<title>Occlusion tests</title>
+<p>For the occlusion tests, we took videos of freely behaving animals in a round arena (included in the benchmark) and occluded a sector of the circle between 0 and <italic>θ</italic> radians. For the tracking software, animals disappeared when entering this occluded section of the arena. The light gray area in <xref rid="fig3" ref-type="fig">Figure 3</xref> corresponds to a degree of occlusion that prevents the existence of global fragments. The dark gray area in <xref rid="fig3" ref-type="fig">Figure 3</xref> corresponds to a degree of occlusion where there are less than 0.25(<italic>N</italic>−1) coexisting individual fragments (<italic>N</italic> being the number of animals in the video). With these degrees of occlusion, too few animals overlap at any given time and identification is expected to deteriorate in this regime (<xref rid="fig3" ref-type="fig">Figure 3</xref>, dark gray region). idtracker.ai flags when this condition is not met.</p>
+</sec>
+<sec id="s4l">
+<title>Computation of tracking accuracy</title>
+<p>Using the idtracker.ai Validator tool (see <bold><italic>Methods</italic></bold>), we manually generated ground-truth trajectories based on v5 outputs. This ground-truth consists on the positions and identities of all animals in each frame and their classification as either individual or crossing.</p>
+<p>To detect tracking errors, we analyze the video frame by frame, verifying whether the predicted position of each animal deviates from the ground-truth by more than a threshold <italic>T</italic>. Errors are also recorded when the software loses the identity or fails to detect an animal in a given frame.</p>
+<p>Tracking accuracy is then defined as one minus the proportion of errors in the trajectory. For <bold>accuracy with crossings</bold>, we consider all trajectory points, whereas for <bold>accuracy without crossings</bold>, we exclude points corresponding to crossing events in the ground-truth.</p>
+<p>We present all results using a threshold <italic>T</italic> = 1BL with BL being a body length. We also verified that accuracy remains largely unaffected by the value of this threshold. For instance, reducing it to <italic>T</italic> = 0.5BL results in a very small change of the mean accuracy (without crossings) across the benchmark in the new idtracker.ai from 99.92% to 99.90%.</p>
+</sec>
+<sec id="s4m">
+<title>Benchmark of accuracy and tracking time</title>
+<p>To evaluate the tracking time and accuracy of different versions of idtracker.ai and version 1.1.9 of TRex, we used a set of 33 videos with their corresponding human-validated ground-truth trajectories. Each video is 10 minutes long and features one of three species: mice, drosophila, or zebrafish, with the number of individuals ranging from 2 to 100 (see <bold><italic>Methods</italic></bold>).</p>
+<p>Previous versions of idtracker.ai (v4 and v5) can resort to protocol 3 for tracking, a method that can take days to process more complex videos but is necessary when protocol 2 fails. Similarly, TRex, lacking an equivalent of protocol 3, can fail to track certain videos, leading to missing accuracy outputs (<xref rid="figS7" ref-type="fig">Figure 2—figure Supplement 2</xref>).</p>
+<p>To estimate the accuracy and tracking time that a standard user might experience, we simulate a realistic user workflow. This simulation accounts for the possibility that the software may fail to track the video, prompting the user to try again with a slightly different parameter configuration, up to a certain number of attempts.</p>
+<p>The user is given up to 5 attempts to successfully track a video. Attempts are sampled from a precomputed dataset of tracking runs. Accuracy is taken from the first successful run. The reported tracking time is the sum of the time taken by that successful run and all preceding failed attempts. In cases where all attempts fail, accuracy is determined by protocol 3 (in v4 and v5 of idtracker.ai), and tracking time includes the time required for protocol 3 plus the total time of all failed attempts. This sampling process is repeated 10,000 times per software and video to obtain statistically robust estimates of the tracking times and accuracies. <xref rid="fig2" ref-type="fig">Figure 2</xref> and <xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 1</xref> report the median accuracies, without and with crossings, respectively, and tracking times. <xref rid="tblS1" ref-type="table">Supplementary Table 1</xref>, <xref rid="tblS2" ref-type="table">Supplementary Table 2</xref>, <xref rid="tblS3" ref-type="table">Supplementary Table 3</xref>, and <xref rid="tblS4" ref-type="table">Supplementary Table 4</xref> present the median, mean, and the 20 and 80 percentiles in v4, v5, v6 and TRex respectively.</p>
+</sec>
+<sec id="s4n">
+<title>Dataset of tracking runs</title>
+<p>To build the dataset of tracking runs we used for the benchmark of accuracies and times, we define input parameters through each software’s graphical interface. Fixed parameters (e.g., number of animals, regions of interest) are held constant, while those with multiple valid values are treated as variable, with their ranges annotated. In idtracker.ai, the variable parameter is the <monospace>intensity_threshold</monospace>, whereas in TRex, the variable parameters are <monospace>threshold</monospace> and <monospace>track_max_speed</monospace>.</p>
+<p>Tracking is repeated for each video and software until either 5 successful runs or 35 total runs are reached. For the original version of idtracker.ai, this is limited to 3 successful runs or 7 total runs due to significantly longer tracking times. In successful runs, both accuracy and tracking time are recorded. In failed runs, when idtracker.ai defaults to protocol 3 or TRex fails to output identities (see <xref rid="figS6" ref-type="fig">Figure 2—figure Supplement 2</xref>), only the time until failure is recorded. For previous idtracker.ai versions (v4 and v5), failure time corresponds to the time until the software switched to protocol 3.</p>
+<p>Each tracking run is conducted by randomly sampling values for the variable parameters from the annotated ranges and executing the full tracking process. To ensure a fair comparison, TGrabs is included when running TRex, graphical interfaces are always disabled at runtime to maximize performance, and <monospace>output_interpolate_positions</monospace> is enabled in TRex.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec id="s5">
+<title>Supplementary tables</title>
+<table-wrap id="tblS1" orientation="portrait" position="float">
+<label>Supplementary Table 1.</label>
+<caption><title>Performance of original idtracker.ai (v4) in the benchmark.</title></caption>
+<graphic xlink:href="657023v1_tblS1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tblS2" orientation="portrait" position="float">
+<label>Supplementary Table 2.</label>
+<caption><title>Performance of optimized v4 (v5) in the benchmark.</title></caption>
+<graphic xlink:href="657023v1_tblS2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tblS3" orientation="portrait" position="float">
+<label>Supplementary Table 3.</label>
+<caption><title>Performance of new idtracker.ai (v6) in the benchmark.</title></caption>
+<graphic xlink:href="657023v1_tblS3.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tblS4" orientation="portrait" position="float">
+<label>Supplementary Table 4.</label>
+<caption><title>Performance of TRex in the benchmark.</title></caption>
+<graphic xlink:href="657023v1_tblS4.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<ack>
+<title>Acknowledgments</title>
+<p>We thank Alfonso Perez-Escudero, Paco Romero-Ferrero, Francisco J. Hernandez Heras, and Madalena Valente for discussions. This work was supported by Fundaçao para a Ciência e Tecnologia PTDC/BIA-COM/5770/2020 (to G.G.dP.) and Champalimaud Foundation (to G.G.dP.).</p>
+</ack>
+<sec id="d1e863" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="s4" sec-type="data-availability">
+<title>Data availability</title>
+<p>All videos used in this study, their tracking parameters and human-validated groundtruth can be found in our data repository at <ext-link ext-link-type="uri" xlink:href="https://idtracker.ai">https://idtracker.ai</ext-link>.</p>
+</sec>
+<sec id="s1">
+<title>Author contributions</title>
+<p>T.C. and G.G.dP. devised project and main algorithm, T.C. performed tests of the algorithm as stand alone, J.T. developed version 5, implemented the new algorithm into idtracker.ai architecture and made final tests with help from T.C., G.G.dP. supervised project, T.C. wrote the Appendices with help from J.T and G.G.dP., and G.G.dP. wrote the main text with help from J.T and T.C.</p>
+</sec>
+<sec id="s3">
+<title>Software availability</title>
+<p>idtracker.ai is a free and open source project (license GPL v.3). Information about its installation and usage can be found on the official website <ext-link ext-link-type="uri" xlink:href="https://idtracker.ai">https://idtracker.ai</ext-link>. The source code is available in <ext-link ext-link-type="uri" xlink:href="http://gitlab.com/polavieja_lab/idtrackerai">gitlab.com/polavieja_lab/idtrackerai</ext-link> and the package is pip-installable from PyPI. All versions can be found in these platforms, specifically <italic>“original idtracker</italic>.<italic>ai (v4)”</italic> as v4.0.12, <italic>“optimized v4 (v5)”</italic> as v5.2.12 and <italic>“new idtracker</italic>.<italic>ai (v6)”</italic> as v6.0.0.</p>
+</sec>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Awasthi</surname> <given-names>P</given-names></string-name>, <string-name><surname>Dikkala</surname> <given-names>N</given-names></string-name>, <string-name><surname>Kamath</surname> <given-names>P</given-names></string-name></person-group>, <source>Do More Negative Samples Necessarily Hurt in Contrastive Learning?</source>; <year>2022</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2205.01789">https://arxiv.org/abs/2205.01789</ext-link>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bengio</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Courville</surname> <given-names>A</given-names></string-name>, <string-name><surname>Vincent</surname> <given-names>P.</given-names></string-name></person-group> <article-title>Representation Learning: A Review and New Perspectives</article-title>. <source>IEEE Trans Pattern Anal Mach Intell</source>. <year>2013</year> <month>Aug</month>; <volume>35</volume>(<issue>8</issue>):<fpage>1798</fpage>–<lpage>1828</lpage>. doi: <pub-id pub-id-type="doi">10.1109/TPAMI.2013.50</pub-id>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bernardes</surname> <given-names>RC</given-names></string-name>, <string-name><surname>Lima</surname> <given-names>MAP</given-names></string-name>, <string-name><surname>Guedes</surname> <given-names>RNC</given-names></string-name>, <string-name><surname>da Silva</surname> <given-names>CB</given-names></string-name>, <string-name><surname>Martins</surname> <given-names>GF</given-names></string-name></person-group>. <article-title>Ethoflow: Computer Vision and Artificial Intelligence-Based Software for Automatic Behavior Analysis</article-title>. <source>Sensors</source>. <year>2021</year>; <volume>21</volume>(<issue>9</issue>). <ext-link ext-link-type="uri" xlink:href="https://www.mdpi.com/1424-8220/21/9/3237">https://www.mdpi.com/1424-8220/21/9/3237</ext-link>, doi: <pub-id pub-id-type="doi">10.3390/s21093237</pub-id>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Biderman</surname> <given-names>D</given-names></string-name>, <string-name><surname>Whiteway</surname> <given-names>MR</given-names></string-name>, <string-name><surname>Hurwitz</surname> <given-names>C</given-names></string-name>, <string-name><surname>Greenspan</surname> <given-names>N</given-names></string-name>, <string-name><surname>Lee</surname> <given-names>RS</given-names></string-name>, <string-name><surname>Vishnubhotla</surname> <given-names>A</given-names></string-name>, <string-name><surname>Warren</surname> <given-names>R</given-names></string-name>, <string-name><surname>Pedraja</surname> <given-names>F</given-names></string-name>, <string-name><surname>Noone</surname> <given-names>D</given-names></string-name>, <string-name><surname>Schartner</surname> <given-names>MM</given-names></string-name>, <string-name><surname>Huntenburg</surname> <given-names>JM</given-names></string-name>, <string-name><surname>Khanal</surname> <given-names>A</given-names></string-name>, <string-name><surname>Meijer</surname> <given-names>GT</given-names></string-name>, <string-name><surname>Noel</surname> <given-names>JP</given-names></string-name>, <string-name><surname>Pan-Vazquez</surname> <given-names>A</given-names></string-name>, <string-name><surname>Socha</surname> <given-names>KZ</given-names></string-name>, <string-name><surname>Urai</surname> <given-names>AE</given-names></string-name>, <string-name><surname>Cunningham</surname> <given-names>JP</given-names></string-name>, <string-name><surname>Sawtell</surname> <given-names>NB</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Lightning Pose: improved animal pose estimation via semi-supervised learning, Bayesian ensembling and cloud-native open-source tools</article-title>. <source>Nature Methods</source>. <year>2024</year> <month>July</month>; <volume>21</volume>(<issue>7</issue>):<fpage>1316</fpage>–<lpage>1328</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41592-024-02319-1</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Branson</surname> <given-names>K</given-names></string-name>, <string-name><surname>Robie</surname> <given-names>AA</given-names></string-name>, <string-name><surname>Bender</surname> <given-names>J</given-names></string-name>, <string-name><surname>Perona</surname> <given-names>P</given-names></string-name>, <string-name><surname>Dickinson</surname> <given-names>MH</given-names></string-name></person-group>. <article-title>High-throughput ethomics in large groups of Drosophila</article-title>. <source>Nature Methods</source>. <year>2009</year>; <volume>6</volume>(<issue>6</issue>):<fpage>451</fpage>–<lpage>457</lpage>. doi: <pub-id pub-id-type="doi">10.1038/nmeth.1328</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Chen</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kornblith</surname> <given-names>S</given-names></string-name>, <string-name><surname>Norouzi</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hinton</surname> <given-names>G.</given-names></string-name></person-group> <article-title>A simple framework for contrastive learning of visual representations</article-title>. <conf-name>Proceedings of the 37th International Conference on Machine Learning ICML’20, JMLR.org</conf-name>; <year>2020a</year>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Chen</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kornblith</surname> <given-names>S</given-names></string-name>, <string-name><surname>Swersky</surname> <given-names>K</given-names></string-name>, <string-name><surname>Norouzi</surname> <given-names>M</given-names></string-name>, <string-name><surname>Hinton</surname> <given-names>G.</given-names></string-name></person-group> <article-title>Big self-supervised models are strong semi-supervised learners</article-title>. <conf-name>Proceedings of the 34th International Conference on Neural Information Processing Systems NIPS ‘20</conf-name>. <year>2020b</year>..</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chen</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>R</given-names></string-name>, <string-name><surname>Fang</surname> <given-names>HS</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>YE</given-names></string-name>, <string-name><surname>Bal</surname> <given-names>A</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>H</given-names></string-name>, <string-name><surname>Rock</surname> <given-names>RR</given-names></string-name>, <string-name><surname>Padilla-Coreano</surname> <given-names>N</given-names></string-name>, <string-name><surname>Keyes</surname> <given-names>LR</given-names></string-name>, <string-name><surname>Zhu</surname> <given-names>H</given-names></string-name>, <string-name><surname>Li</surname> <given-names>YL</given-names></string-name>, <string-name><surname>Komiyama</surname> <given-names>T</given-names></string-name>, <string-name><surname>Tye</surname> <given-names>KM</given-names></string-name>, <string-name><surname>Lu</surname> <given-names>C.</given-names></string-name></person-group> <article-title>AlphaTracker: a multi-animal tracking and behavioral analysis tool</article-title>. <source>Frontiers in Behavioral Neuroscience</source>. <year>2023</year>; <volume>17</volume>. <ext-link ext-link-type="uri" xlink:href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2023.1111908">https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2023.1111908</ext-link>, doi: <pub-id pub-id-type="doi">10.3389/fnbeh.2023.1111908</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chiara</surname> <given-names>V</given-names></string-name>, <string-name><surname>Kim</surname> <given-names>SY</given-names></string-name></person-group>. <article-title>AnimalTA: A highly flexible and easy-to-use program for tracking and analysing animal movement in different environments</article-title>. <source>Methods in Ecology and Evolution</source>. <year>2023</year>; <volume>14</volume>(<issue>7</issue>):<fpage>1699</fpage>–<lpage>1707</lpage>. <ext-link ext-link-type="uri" xlink:href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.14115">https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.14115</ext-link>, doi: <pub-id pub-id-type="doi">10.1111/2041-210X.14115</pub-id>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Chopra</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hadsell</surname> <given-names>R</given-names></string-name>, <string-name><surname>LeCun</surname> <given-names>Y.</given-names></string-name></person-group> <article-title>Learning a similarity metric discriminatively, with application to face verification</article-title>. <conf-name>2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR’05)</conf-name>, <year>2005</year>. p. <fpage>539</fpage>–<lpage>546</lpage> vol. 1. doi: <pub-id pub-id-type="doi">10.1109/CVPR.2005.202</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Dong</surname> <given-names>X</given-names></string-name>, <string-name><surname>Shen</surname> <given-names>J.</given-names></string-name></person-group> <chapter-title>Triplet Loss in Siamese Network for Object Tracking</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Ferrari</surname> <given-names>V</given-names></string-name>, <string-name><surname>Hebert</surname> <given-names>M</given-names></string-name>, <string-name><surname>Sminchisescu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Weiss</surname> <given-names>Y</given-names></string-name></person-group>, editors. <source>Computer Vision – ECCV 2018</source> <publisher-loc>Cham</publisher-loc>: <publisher-name>Springer International Publishing</publisher-name>; <year>2018</year>. p. <fpage>472</fpage>–<lpage>488</lpage>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ericsson</surname> <given-names>L</given-names></string-name>, <string-name><surname>Gouk</surname> <given-names>H</given-names></string-name>, <string-name><surname>Loy</surname> <given-names>CC</given-names></string-name>, <string-name><surname>Hospedales</surname> <given-names>TM</given-names></string-name></person-group>. <article-title>Self-Supervised Representation Learning: Introduction, advances, and challenges</article-title>. <source>IEEE Signal Processing Magazine</source>. <year>2022</year>; <volume>39</volume>(<issue>3</issue>):<fpage>42</fpage>–<lpage>62</lpage>. doi: <pub-id pub-id-type="doi">10.1109/MSP.2021.3134634</pub-id>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Guo</surname> <given-names>S</given-names></string-name>, <string-name><surname>Xu</surname> <given-names>P</given-names></string-name>, <string-name><surname>Miao</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Shao</surname> <given-names>G</given-names></string-name>, <string-name><surname>Chapman</surname> <given-names>CA</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>X</given-names></string-name>, <string-name><surname>He</surname> <given-names>G</given-names></string-name>, <string-name><surname>Fang</surname> <given-names>D</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>H</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Shi</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Li</surname> <given-names>B.</given-names></string-name></person-group> <article-title>Automatic Identification of Individual Primates with Deep Learning Techniques</article-title>. <source>iScience</source>. <year>2020</year>; <volume>23</volume>(<issue>8</issue>):<fpage>101412</fpage>. <ext-link ext-link-type="uri" xlink:href="https://www.sciencedirect.com/science/article/pii/S2589004220306027">https://www.sciencedirect.com/science/article/pii/S2589004220306027</ext-link>, doi: <pub-id pub-id-type="doi">10.1016/j.isci.2020.101412</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>He</surname> <given-names>K</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>X</given-names></string-name>, <string-name><surname>Ren</surname> <given-names>S</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>J.</given-names></string-name></person-group> <article-title>Deep Residual Learning for Image Recognition</article-title>. <conf-name>2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</conf-name>; <year>2016</year>. p. <fpage>770</fpage>–<lpage>778</lpage>. doi: <pub-id pub-id-type="doi">10.1109/CVPR.2016.90</pub-id>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kaya</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bilge</surname> <given-names>HS</given-names></string-name></person-group>. <article-title>Deep Metric Learning: A Survey</article-title>. <source>Symmetry</source>. <year>2019</year>; <volume>11</volume>(<issue>9</issue>). <ext-link ext-link-type="uri" xlink:href="https://www.mdpi.com/2073-8994/11/9/1066">https://www.mdpi.com/2073-8994/11/9/1066</ext-link>, doi: <pub-id pub-id-type="doi">10.3390/sym11091066</pub-id>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Khosla</surname> <given-names>P</given-names></string-name>, <string-name><surname>Teterwak</surname> <given-names>P</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Sarna</surname> <given-names>A</given-names></string-name>, <string-name><surname>Tian</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Isola</surname> <given-names>P</given-names></string-name>, <string-name><surname>Maschinot</surname> <given-names>A</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Krishnan</surname> <given-names>D</given-names></string-name></person-group>, <source>Supervised Contrastive Learning</source>; <year>2021</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2004.11362">https://arxiv.org/abs/2004.11362</ext-link>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Kingma</surname> <given-names>DP</given-names></string-name>, <string-name><surname>Ba</surname> <given-names>J</given-names></string-name></person-group>, <article-title>Adam: A Method for Stochastic Optimization</article-title>; <source>arXiv</source> <year>2017</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/1412.6980">https://arxiv.org/abs/1412.6980</ext-link>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lauer</surname> <given-names>J</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>M</given-names></string-name>, <string-name><surname>Ye</surname> <given-names>S</given-names></string-name>, <string-name><surname>Menegas</surname> <given-names>W</given-names></string-name>, <string-name><surname>Schneider</surname> <given-names>S</given-names></string-name>, <string-name><surname>Nath</surname> <given-names>T</given-names></string-name>, <string-name><surname>Rahman</surname> <given-names>MM</given-names></string-name>, <string-name><surname>Santo</surname> <given-names>VD</given-names></string-name>, <string-name><surname>Soberanes</surname> <given-names>D</given-names></string-name>, <string-name><surname>Feng</surname> <given-names>G</given-names></string-name>, <string-name><surname>Murthy</surname> <given-names>VN</given-names></string-name>, <string-name><surname>Lauder</surname> <given-names>G</given-names></string-name>, <string-name><surname>Dulac</surname> <given-names>C</given-names></string-name>, <string-name><surname>Mathis</surname> <given-names>MW</given-names></string-name>, <string-name><surname>Mathis</surname> <given-names>A.</given-names></string-name></person-group> <article-title>Multi-animal pose estimation, identification and tracking with DeepLabCut</article-title>. <source>Nature Methods</source>. <year>2022</year> <month>April</month>; <volume>19</volume>(<issue>4</issue>):<fpage>496</fpage>–<lpage>504</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41592-022-01443-0</pub-id>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Liu</surname> <given-names>S</given-names></string-name>, <string-name><surname>Han</surname> <given-names>L</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Ren</surname> <given-names>J</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>F</given-names></string-name>, <string-name><given-names>Ying</given-names> <surname>Liu</surname></string-name>, <string-name><surname>Lin</surname> <given-names>Y</given-names></string-name></person-group>, <source>FishMOT: A Simple and Effective Method for Fish Tracking Based on IoU Matching</source>; <year>2023</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2309.02975">https://arxiv.org/abs/2309.02975</ext-link>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>van der Maaten</surname> <given-names>L</given-names></string-name>, <string-name><surname>Hinton</surname> <given-names>G.</given-names></string-name></person-group> <article-title>Visualizing Data using t-SNE</article-title>. <source>Journal of Machine Learning Research</source>. <year>2008</year>; <volume>9</volume>(<issue>86</issue>):<fpage>2579</fpage>–<lpage>2605</lpage>. <ext-link ext-link-type="uri" xlink:href="http://jmlr.org/papers/v9/vandermaaten08a.html">http://jmlr.org/papers/v9/vandermaaten08a.html</ext-link>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pereira</surname> <given-names>TD</given-names></string-name>, <string-name><surname>Tabris</surname> <given-names>N</given-names></string-name>, <string-name><surname>Matsliah</surname> <given-names>A</given-names></string-name>, <string-name><surname>Turner</surname> <given-names>DM</given-names></string-name>, <string-name><surname>Li</surname> <given-names>J</given-names></string-name>, <string-name><surname>Ravindranath</surname> <given-names>S</given-names></string-name>, <string-name><surname>Papadoyannis</surname> <given-names>ES</given-names></string-name>, <string-name><surname>Normand</surname> <given-names>E</given-names></string-name>, <string-name><surname>Deutsch</surname> <given-names>DS</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>ZY</given-names></string-name>, <string-name><surname>McKenzie-Smith</surname> <given-names>GC</given-names></string-name>, <string-name><surname>Mitelut</surname> <given-names>CC</given-names></string-name>, <string-name><surname>Castro</surname> <given-names>MD</given-names></string-name>, <string-name><surname>D’Uva</surname> <given-names>J</given-names></string-name>, <string-name><surname>Kislin</surname> <given-names>M</given-names></string-name>, <string-name><surname>Sanes</surname> <given-names>DH</given-names></string-name>, <string-name><surname>Kocher</surname> <given-names>SD</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>SSH</given-names></string-name>, <string-name><surname>Falkner</surname> <given-names>AL</given-names></string-name>, <string-name><surname>Shaevitz</surname> <given-names>JW</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>SLEAP: A deep learning system for multi-animal pose tracking</article-title>. <source>Nature Methods</source>. <year>2022</year> <month>April</month>; <volume>19</volume>(<issue>4</issue>):<fpage>486</fpage>–<lpage>495</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41592-022-01426-1</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pérez-Escudero</surname> <given-names>A</given-names></string-name>, <string-name><surname>Vicente-Page</surname> <given-names>J</given-names></string-name>, <string-name><surname>Hinz</surname> <given-names>RC</given-names></string-name>, <string-name><surname>Arganda</surname> <given-names>S</given-names></string-name>, <string-name><surname>De Polavieja</surname> <given-names>GG</given-names></string-name></person-group>. <article-title>idTracker: tracking individuals in a group by automatic identification of unmarked animals</article-title>. <source>Nature methods</source>. <year>2014</year>; <volume>11</volume>(<issue>7</issue>):<fpage>743</fpage>–<lpage>748</lpage>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Plum</surname> <given-names>F.</given-names></string-name></person-group> <article-title>OmniTrax: A deep learning-driven multi-animal tracking and pose-estimation add-on for Blender</article-title>. <source>Journal of Open Source Software</source>. <year>2024</year>; <volume>9</volume>(<issue>95</issue>):<fpage>5549</fpage>. doi: <pub-id pub-id-type="doi">10.21105/joss.05549</pub-id>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Romero-Ferrero</surname> <given-names>F</given-names></string-name>, <string-name><surname>Bergomi</surname> <given-names>MG</given-names></string-name>, <string-name><surname>Hinz</surname> <given-names>RC</given-names></string-name>, <string-name><surname>Heras</surname> <given-names>FJ</given-names></string-name>, <string-name><surname>De Polavieja</surname> <given-names>GG</given-names></string-name></person-group>. <article-title>Idtracker. ai: tracking all individuals in small or large collectives of unmarked animals</article-title>. <source>Nature methods</source>. <year>2019</year>; <volume>16</volume>(<issue>2</issue>):<fpage>179</fpage>–<lpage>182</lpage>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Romero-Ferrero</surname> <given-names>F</given-names></string-name>, <string-name><surname>Heras</surname> <given-names>FJ</given-names></string-name>, <string-name><surname>Rance</surname> <given-names>D</given-names></string-name>, <string-name><surname>de Polavieja</surname> <given-names>GG</given-names></string-name></person-group>. <article-title>A study of transfer of information in animal collectives using deep learning tools</article-title>. <source>Philosophical Transactions of the Royal Society B</source>. <year>2023</year>; <volume>378</volume>(<issue>1874</issue>):<fpage>20220073</fpage>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rousseeuw</surname> <given-names>PJ</given-names></string-name></person-group>. <article-title>Silhouettes: A graphical aid to the interpretation and validation of cluster analysis</article-title>. <source>Journal of Computational and Applied Mathematics</source>. <year>1987</year>; <volume>20</volume>:<fpage>53</fpage>–<lpage>65</lpage>, doi: <pub-id pub-id-type="doi">10.1016/0377-0427(87)90125-7</pub-id>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Rösch</surname> <given-names>PJ</given-names></string-name>, <string-name><surname>Oswald</surname> <given-names>N</given-names></string-name>, <string-name><surname>Geierhos</surname> <given-names>M</given-names></string-name>, <string-name><surname>Libovický</surname> <given-names>J</given-names></string-name></person-group>, <source>Enhancing Conceptual Understanding in Multimodal Contrastive Learning through Hard Negative Samples</source>; <year>2024</year>. <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2403.02875">https://arxiv.org/abs/2403.02875</ext-link>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Schroff</surname> <given-names>F</given-names></string-name>, <string-name><surname>Kalenichenko</surname> <given-names>D</given-names></string-name>, <string-name><surname>Philbin</surname> <given-names>J.</given-names></string-name></person-group> <article-title>FaceNet: A unified embedding for face recognition and clustering</article-title>. <conf-name>2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) IEEE</conf-name>; <year>2015</year>. doi: <pub-id pub-id-type="doi">10.1109/cvpr.2015.7298682</pub-id>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Sculley</surname> <given-names>D.</given-names></string-name></person-group> <article-title>Web-scale k-means clustering</article-title>. <conf-name>Proceedings of the 19th International Conference on World Wide Web WWW ‘10</conf-name>; <year>2010</year>. p. <fpage>1177</fpage>–<lpage>1178</lpage>. doi: <pub-id pub-id-type="doi">10.1145/1772690.1772862</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Segalin</surname> <given-names>C</given-names></string-name>, <string-name><surname>Williams</surname> <given-names>J</given-names></string-name>, <string-name><surname>Karigo</surname> <given-names>T</given-names></string-name>, <string-name><surname>Hui</surname> <given-names>M</given-names></string-name>, <string-name><surname>Zelikowsky</surname> <given-names>M</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>JJ</given-names></string-name>, <string-name><surname>Perona</surname> <given-names>P</given-names></string-name>, <string-name><surname>Anderson</surname> <given-names>DJ</given-names></string-name>, <string-name><surname>Kennedy</surname> <given-names>A.</given-names></string-name></person-group> <article-title>The Mouse Action Recognition System (MARS) software pipeline for automated analysis of social behaviors in mice</article-title>. <source>eLife</source>. <year>2021</year> <month>nov</month>; <volume>10</volume>:<elocation-id>e63720</elocation-id>. doi: <pub-id pub-id-type="doi">10.7554/eLife.63720</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tang</surname> <given-names>G</given-names></string-name>, <string-name><surname>Han</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>X</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>R</given-names></string-name>, <string-name><surname>Han</surname> <given-names>M</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Wei</surname> <given-names>P.</given-names></string-name></person-group> <article-title>Anti-drift pose tracker (ADPT): A transformer-based network for robust animal pose estimation cross-species</article-title>. <source>eLife</source>. <year>2025</year><volume>13</volume>: <elocation-id>95709</elocation-id> <pub-id pub-id-type="doi">10.7554/eLife.95709.2</pub-id>, doi: <pub-id pub-id-type="doi">10.7554/elife.95709.2</pub-id>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Teh</surname> <given-names>CH</given-names></string-name>, <string-name><surname>Chin</surname> <given-names>RT</given-names></string-name></person-group>. <article-title>On the detection of dominant points on digital curve</article-title>. <source>Pattern Analysis and Machine Intelligence, IEEE Transactions on</source>. <year>1989</year> 09; <volume>11</volume>:<fpage>859</fpage> – <lpage>872</lpage>. doi: <pub-id pub-id-type="doi">10.1109/34.31447</pub-id>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Walter</surname> <given-names>T</given-names></string-name>, <string-name><surname>Couzin</surname> <given-names>ID</given-names></string-name></person-group>. <article-title>TRex, a fast multi-animal tracking system with markerless identification, and 2D estimation of posture and visual fields</article-title>. <source>eLife</source>. <year>2021</year> <month>feb</month>; <volume>10</volume>:<elocation-id>e64000</elocation-id>. doi: <pub-id pub-id-type="doi">10.7554/eLife.64000</pub-id>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Wang</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Zheng</surname> <given-names>L</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Li</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Towards Real-Time Multi-Object Tracking</article-title>. <conf-name>Computer Vision – ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XI</conf-name>; <year>2020</year>. p. <fpage>107</fpage>–<lpage>122</lpage>. doi: <pub-id pub-id-type="doi">10.1007/978-3-030-58621-8_7</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Xing</surname> <given-names>E</given-names></string-name>, <string-name><surname>Jordan</surname> <given-names>M</given-names></string-name>, <string-name><surname>Russell</surname> <given-names>SJ</given-names></string-name>, <string-name><surname>Ng</surname> <given-names>A.</given-names></string-name></person-group> <chapter-title>Distance Metric Learning with Application to Clustering with Side-Information</chapter-title>. In: <person-group person-group-type="editor"><string-name><surname>Becker</surname> <given-names>S</given-names></string-name>, <string-name><surname>Thrun</surname> <given-names>S</given-names></string-name>, <string-name><surname>Obermayer</surname> <given-names>K</given-names></string-name></person-group>, editors. <source>Advances in Neural Information Processing Systems</source>, vol. <volume>15</volume> <publisher-name>MIT Press</publisher-name>; <year>2002</year>. <ext-link ext-link-type="uri" xlink:href="https://proceedings.neurips.cc/paper_files/paper/2002/file/c3e4035af2a1cde9f21e1ae1951ac80b-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2002/file/c3e4035af2a1cde9f21e1ae1951ac80b-Paper.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yang</surname> <given-names>F</given-names></string-name>, <string-name><surname>Chang</surname> <given-names>X</given-names></string-name>, <string-name><surname>Dang</surname> <given-names>C</given-names></string-name>, <string-name><surname>Zheng</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Sakti</surname> <given-names>S</given-names></string-name>, <string-name><surname>Nakamura</surname> <given-names>S</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>Y.</given-names></string-name></person-group> <article-title>ReMOTS: Self-Supervised Refining Multi-Object Tracking and Segmentation</article-title>. <source>ArXiv</source>. <year>2020</year> <pub-id pub-id-type="doi">10.48550/arXiv.2007.03200</pub-id>.</mixed-citation></ref>
+</ref-list>
+<app-group>
+<app id="app1">
+<label>Appendix 1</label>
+<sec id="s6">
+<title>Preliminary concepts</title>
+<p>Image-based tracking relies on identifying individuals through their visual features. The process begins by distinguishing the pixels corresponding to animals from those of the background. Let <italic>b</italic> represent a blob that is distinct from the background. For each blob <italic>b</italic> segmented from a video, an identification image <italic>I</italic><sub><italic>b</italic></sub> is generated by first taking the minimal bounding box image around <italic>b</italic> and then converting all pixels in <italic>I</italic><sub><italic>b</italic></sub> that do not belong to <italic>b</italic> to black. The blob within <italic>I</italic><sub><italic>b</italic></sub> is then rotated so that its first principal component is aligned at a <inline-formula><inline-graphic xlink:href="657023v1_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> angle to the x-axis and, finally, the image is cropped to a specified square size suitable for batch processing.</p>
+<p>Each image <italic>I</italic><sub><italic>b</italic></sub> is classified as either an individual or a crossing of individuals. For more details on the background subtraction and individual-crossing classification process, please refer to Appendix D1-2 of the Supplementary Information of <xref ref-type="bibr" rid="c24">Romero-Ferrero et al. (2019</xref>).</p>
+<p>A Fragment <italic>F</italic> is defined as a sequence of blobs that maintain a one-to-one spatial overlap, meaning they share pixels in each pair of consecutive frames over time. If two blobs merge into a single blob in the subsequent frame, or if a single blob splits into two in the next frame, each of these three blobs will terminate or initiate a new Fragment. Fragments are classified as either individual or crossing Fragments based on the classification of the blobs they contain. Blobs of different classifications are not permitted within the same Fragment. Since crossings are solved as a post-processing step after identification, from now on we will not take into consideration crossing Fragments, and we will refer to individual Fragments as Fragments.</p>
+<p>A pair of Fragments is said to coexist if they both contain blobs from the same frames in the video. Moreover, being <italic>N</italic> the number of individuals in a video, a Global Fragment is defined as a collection of <italic>N</italic> Fragments all sharing a common frame.</p>
+<p>By construction, we can assume that all blobs in a Fragment correspond to the same identity, this is the Fragment’s identity. From this, coexisting Fragments will have different identities and Global Fragments will have all identities, one per Fragment.</p>
+<p>From now on, we will denote <italic>F</italic><sub><italic>i</italic></sub> as the fragment with some arbitrary unique identifier <italic>i</italic> and <italic>I</italic><sub><italic>ik</italic></sub> will correspond to the identification image with the unique arbitrary identifier <italic>k</italic> in the fragment <italic>i</italic>.</p>
+<sec id="s6a">
+<title>General overview of Identification Protocols in the original idtracker.ai</title>
+<p>In this section we will give a brief and high level overview on the algorithm idtracker.ai uses to assign identities to the different fragments. Please refer to <xref ref-type="bibr" rid="c24">Romero-Ferrero et al. (2019</xref>) for a more complete description of the algorithm.</p>
+</sec>
+<sec id="s6b">
+<title>Cascade of Training and Identification Protocols</title>
+<p>The identification process begins with three sequential protocols that incrementally refine the identification network’s ability to label individuals. The protocols leverage segments of the video where individuals appear distinctly, called global fragments, to construct a labeled dataset for the training of the network.</p>
+</sec>
+<sec id="s6c">
+<title>Protocol 1: Basic Accumulation of Global Fragments</title>
+<p>In Protocol 1, the algorithm searches for global fragments. The initial set of labeled images from these fragments forms the base dataset to train the identification network. This trained network is then used to label additional global fragments throughout the video. If Protocol is not able to accumulate at least 99.95% of all images in the global fragments, the algorithm proceeds to Protocol 2.</p>
+</sec>
+<sec id="s6d">
+<title>Protocol 2: Iterative Expansion with High-Quality Fragments</title>
+<p>Protocol 2 builds on the initial training by iteratively alternating between accumulating new global fragments and using them to further train the identification network. With each iteration, the network labels more fragments, adding only those that pass strict quality checks (explained in the section below). This process continues until either 99.95% of the images in the global fragments are labeled with high certainty, or no more high-quality fragments are available.</p>
+</sec>
+<sec id="s6e">
+<title>Protocol 3: Pretraining and Fine-Tuning for Complex Scenarios</title>
+<p>Protocol 2 might fail for videos with high visual complexity (accumulating less than 90% of the images). In those cases, idtracker.ai proceeds to Protocol 3. Protocol 3 pretrains the convolutional layers of the identification network on a large sample of global fragments, using the same convolutional layers for each global fragment while changing only the last classification layer. Although this protocol is effective in tracking videos that cannot be tracked with Protocol 2, it is very slow and may take days for some videos.</p>
+</sec>
+<sec id="s6f">
+<title>Labeling and Accumulating Images in Global Fragments</title>
+<p>The process of labeling and accumulating images from global fragments involves the following steps:</p>
+<list list-type="order" id="L1">
+<list-item><p><bold>Selection of Global Fragments:</bold> The algorithm identifies global fragments where all animals are visually distinct, ensuring unambiguous initial identity assignments.</p></list-item>
+<list-item><p><bold>Labeling with the Trained Network:</bold> The identification network, trained on an initial set of global fragments, predicts identities across additional fragments belong to the other global fragments. Each fragment is assigned an identity based on the network’s classification probabilities of its corresponding images, denoted <italic>P</italic> 1(<italic>F, i</italic>).</p></list-item>
+<list-item><p><bold>Quality Checks:</bold> Labeled fragments are subjected to a series of quality checks to ensure the reliability of their identity assignments. For each global fragment these checks include:</p>
+<list list-type="bullet" id="L2">
+<list-item><p><bold>Certainty:</bold> Each fragment <italic>F</italic> must have a high certainty score, defined by the distinction between the highest and second-highest identity probabilities:</p>
+</list-item>
+<list-item><p>where <italic>P</italic> 1(<italic>F, i</italic>) represents the probability of fragment <italic>F</italic> being assigned identity <italic>i</italic>. Here, <italic>a</italic> and <italic>b</italic> represent the identity predictions with the highest and second highest <italic>P</italic> 1 values for fragment for <italic>F</italic>, with <italic>S</italic><sub><italic>a</italic></sub> and <italic>S</italic><sub><italic>b</italic></sub> being the vectors of softmax values of all the images in the fragment <italic>F</italic> assigned to the identities <italic>a</italic> and <italic>b</italic> respectively.</p></list-item>
+<list-item><p><bold>Consistency:</bold> The identity assignment for each fragment must remain consistent across frames, preventing arbitrary changes in identity due to minor variations in appearance. This is reflected on the value of <italic>P</italic> 1.</p></list-item>
+<list-item><p><bold>Uniqueness:</bold> Within a single global fragment, each assigned identity must beunique, ensuring that no two animals share the same identity label within that fragment.</p></list-item>
+</list></list-item>
+<list-item><p><bold>Accumulation into the Training Set:</bold> Fragments that pass the quality checks are added to the training dataset, allowing the network to improve its accuracy iteratively. This accumulation process continues, increasing the network’s generalization ability across the video.</p></list-item>
+</list>
+<disp-formula id="ueqn2">
+<graphic xlink:href="657023v1_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</sec>
+<sec id="s6g">
+<title>Residual Identification</title>
+<p>After the cascade protocols, residual identification is applied to label any fragments that remain unlabeled or have low-certainty assignments. This step uses a probabilistic approach that accounts for temporal coexistence constraints, refining identity assignments. For each unlabeled fragment <italic>F</italic>, an adjusted probability <italic>P</italic> 2(<italic>F, i</italic>) is computed for assigning identity <italic>i</italic>, considering neighboring fragments <italic>γ</italic>(<italic>F</italic>) that overlap in time:
+<disp-formula id="ueqn3">
+<graphic xlink:href="657023v1_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>P</italic> 1(<italic>F, i</italic>) represents the initial probability of <italic>F</italic> being identity <italic>i</italic>.</p>
+<p>Afterwards a new measure of identification certainty is defined as
+<disp-formula id="ueqn4">
+<graphic xlink:href="657023v1_ueqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+in which <italic>a</italic> and <italic>b</italic> again represent the identity predictions with the highest and second highest <italic>P</italic> 1 values for fragment for <italic>F</italic>. Fragments then are assigned identities in descending order of certainty, with the highest-confidence fragments labeled first.</p>
+<p>In this work, the primary advancement was the replacement of protocols in idtracker.ai with an identification method based on deep metric learning. Additionally, several smaller but significant technical improvements were implemented, enhancing feature set, tracking time, and memory usage efficiency.</p>
+</sec>
+</sec>
+</app>
+<app id="app2">
+<label>Appendix 2</label>
+<sec id="s7">
+<title>Contrastive protocol</title>
+<p>Contrastive learning is a type of self-supervised learning that aims to learn useful data representations by contrasting positive and negative pairs of examples. The fundamental idea is to bring similar (positive) pairs closer in the representation space while pushing dissimilar (negative) pairs farther apart. This approach leverages the inherent structure of the data, allowing the model to learn without labeled examples.</p>
+<p>The representation space or embedding in contrastive learning is a high-dimensional environment where data points are mapped to vectors, capturing essential features and patterns of the original data. This space can be conceptualized as a vast, multidimensional environment in which each data point is represented as a vector. The primary objective is to position similar data points in close proximity while ensuring that dissimilar data points are situated at a considerable distance from one another. Positive pairs are typically created by applying different transformations or augmentations to the same data point, such as cropping, rotating, or color jittering an image, preserving the inherent semantics of the original data point. These augmentations ensure that the model learns robust features invariant to such transformations. Conversely, negative pairs are composed of different data points expected to be dissimilar, such as two distinct images.</p>
+<p>As the model undergoes training, the representation space becomes increasingly structured, with similar types of data points forming coherent clusters. These clusters encapsulate the inherent similarities within the data, even if the specific instances differ, such as different breeds of cats or different poses. By maximizing the agreement between positive pairs and minimizing the agreement between negative pairs, the model learns to distinguish subtle differences and similarities within the data. The contrastive loss minimizes the distance between positive pairs and maximizes the distance between negative pairs in the representation space. This contrastive objective ensures the learned representations capture essential features and discriminative patterns, facilitating downstream tasks such as classification, clustering, and retrieval, even without labeled data. Thus, the representation space serves as a learned map where the positions of data points reflect their semantic relationships, enabling the model to capture and utilize the underlying structure of the data for various tasks.</p>
+<p>We apply the principles of contrastive learning to create an embedding of all the images in a video that reflects the fragmented structure of the video. Specifically, points in the embedding corresponding to images from coexisting fragments (different identities) are positioned further apart than points corresponding to images from the same fragment (same identity) (<xref rid="fig1" ref-type="fig">Figure 1a–c</xref>).</p>
+<list list-type="order" id="L3">
+<list-item><p><bold>Segmentation and Fragmentation</bold>: The video is segmented and the blobs grouped into fragments based on temporal or content-based criteria.</p></list-item>
+<list-item><p><bold>Training ResNet18</bold>: ResNet18 is trained using positive pairs (images from the same fragment) and negative pairs (images from coexisting fragments). The network learns a representation space where the distance between positive pairs is minimized, while the distance between negative pairs is maximized.</p></list-item>
+<list-item><p><bold>Clustering in the Representational Space</bold>: All images are passed through the network. K-means clustering is then applied to the embedded images, assigning them to different cluster labels.</p></list-item>
+<list-item><p><bold>Cluster based labeling of Single Image</bold>: Each cluster is labeled as a distinct animal identity. Images are classified based on their assigned clusters, and a probability distribution for each identity prediction is computed based on the Euclidean distance to the center of each cluster. If global fragments are present, proceed to next step; otherwise, proceed to Step 7.</p></list-item>
+<list-item><p><bold>Fragment Identification with Global Fragments</bold>: A thorough identification process is conducted to classify all images belonging to global fragments, correcting any errors from the initial classification. If 99.9% &gt; of all the images in global fragments are successfully accumulated (pass the quality checks, see section 1), go to Step 7; otherwise, go to next step.</p></list-item>
+<list-item><p><bold>Run Accumulation Protocol if Step 5 Fails</bold>: Run protocol 2 from idtracker.ai v5 but using correctly identified images as the ground truth, as a sort of synthetic first Global Fragment.</p></list-item>
+<list-item><p><bold>Residual Identification</bold>: A thorough identification process is conducted to classify all images in the video, correcting any errors from the initial classification step.</p></list-item>
+</list>
+<sec id="s7a">
+<title>Network architecture</title>
+<p>Deep metric learning often requires larger networks for classification tasks compared to standard supervised learning. To identify the most suitable architecture, we evaluated several state-of-the-art image classification networks, including the model used in the original idtracker.ai.</p>
+<p>There were specific constraints in selecting the optimal architecture. The image size is automatically set during each tracking session to fit the average blob size, but it is typically small, ranging from 20×20 to 100×100 pixels. This limited some architectures, such as AlexNet, which requires a fixed input size of 227×227, and DenseNet, which has a minimum input size of 29×29. Additionally, the large training batches commonly associated with deep metric learning necessitate a compact model that can be trained on a consumer-grade GPU. This constraint excluded other architectures, including EfficientNet and the larger ResNet models (ResNet101 and ResNet152).</p>
+<p>As shown in <xref rid="figS1" ref-type="fig">Figure 1—figure Supplement 1</xref>, ResNet18 offered the best balance between training speed and tracking accuracy.</p>
+</sec>
+<sec id="s7b">
+<title>Embedding dimension</title>
+<p>Another critical hyperparameter is the embedding dimension. Here, too, there is a trade-off between achieving a robust representation of subtle differences between animals— differences that may be minimal and even challenging to detect visually—and maintaining a compact network size and efficient training speed. This parameter was empirically determined to be 8 (<xref rid="figS7" ref-type="fig">Figure 1—figure Supplement 2</xref>).</p>
+</sec>
+<sec id="s7c">
+<title>Loss function</title>
+<p>The contrastive loss function operates on pairs of data points, aiming to minimize the distance between positive pairs and maximize the distance for negative pairs. Mathematically for our case, the contrastive loss <italic>L</italic> for a pair of images (<italic>I</italic><sub><italic>ik</italic></sub>, <italic>I</italic><sub><italic>jl</italic></sub>) is defined as:
+<disp-formula id="eqn1">
+<graphic xlink:href="657023v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>D</italic><sub><italic>ik, jl</italic></sub> is the Euclidean distance between the embedding of <italic>I</italic><sub><italic>ik</italic></sub> and <italic>I</italic><sub><italic>jl</italic></sub>, <italic>D</italic><sub>neg</sub> is the minimum allowed distance in a negative pair of images (images coming from coexisting fragments), and <italic>D</italic><sub>pos</sub> is the maximum allowed distance in a positive pair of images (images from the same fragment). It is important to emphasize that the network processes one image at a time, obtaining a single independent point in the representational space for each image. The Euclidean distance between the embeddings for the corresponding pairs of images is computed only afterwards.</p>
+<p><italic>D</italic><sub>neg</sub> and <italic>D</italic><sub>pos</sub> serve as thresholds to regulate distances in the embedding space. <italic>D</italic><sub>neg</sub> prevents images from negative pairs from being pushed indefinitely far apart, while <italic>D</italic><sub>pos</sub> prevents the collapse of images from positive pairs into a single point. These thresholds are crucial in our problem, where we aim to embed individuals of the same identity in similar regions of the representational space. However, we face the restriction of not being able to compare all possible pairs of images and are instead limited to the fragment structure of the video to obtain the labels <italic>l</italic><sub><italic>ik, jl</italic></sub>.</p>
+<p>This limitation means that the loss function does not directly pull together embeddings of the same identity, but rather images from the same fragment. Similarly, the loss does not push apart embeddings of different identities but images from coexisting fragments.</p>
+<p><italic>D</italic><sub>pos</sub> helps prevent the collapse of all images from the same fragment to a single point, allowing for the creation of a diffuse region in the representational space where fragments from the same identity are clustered together. <italic>D</italic><sub>neg</sub> prevents excessive scattering, ensuring better compression of the representational space and maintaining the integrity of clusters of images from the same identity.</p>
+<p>In the contrastive protocol, we used <italic>D</italic><sub>pos</sub> = 1 and <italic>D</italic><sub>neg</sub> = 10. These values were determined empirically and provide effective embeddings and were robust for tracking multiple videos across various species and different numbers of animals (<xref rid="figS8" ref-type="fig">Figure 1—figure Supplement 3</xref>).</p>
+</sec>
+<sec id="s7d">
+<title>Clustering and assignment</title>
+<p>After training the network using contrastive loss, we pass all images through the network to generate their corresponding embeddings in the learned representational space. These embeddings are then grouped using K-means clustering. Each cluster ideally represents images of the same identity, as the training process has encouraged the network to place similar images close together and dissimilar ones farther apart in the embedding space. Next, we perform single-image classification, assigning each image a label based on the cluster to which its embedding belongs. Afterwards, the assignment method follows two conditions. If global fragments are present, follow the procedure mentioned in the subsection 1. If on the contrary there are no global fragments we move straight to residual identification as explained in section 1</p>
+<p>In order to identify fragments we, not only need an identity prediction for each image but also a probability distribution over all the identities. Let <italic>d</italic><sub><italic>j</italic></sub>(<italic>I</italic><sub><italic>ik</italic></sub>) be the distance of image <italic>I</italic><sub><italic>ik</italic></sub> to the center of cluster <italic>j</italic>. We define the probability of image <italic>I</italic><sub><italic>ik</italic></sub> belonging to identity <italic>j</italic> by
+<disp-formula id="eqn2">
+<graphic xlink:href="657023v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Equation (2) is used to emphasize differences in distances between points and clusters, creating a more peaked probability distribution that clearly distinguishes closer clusters from farther ones. The exponent of 7 smooths the probability distribution and reduces the influence of distant clusters, making the assignment more discriminative. In higher-dimensional spaces like the 8-dimensional space in the paper, distances are more spread out, and using a high power helps to counteract this dispersion, resulting in more confident cluster assignments.</p>
+<p>If we are in a scenario where global fragments exist, we use them for K-means initialization: we use the embeddings from the first global fragment as initial cluster centers, choosing the one where the minimum fragment is the largest. This approach provides a strong initialization for the K-means algorithm, aligning it with the different identities and mitigating issues related to random initialization. It also allows us to better compare clusters as training progresses.</p>
+</sec>
+<sec id="s7e">
+<title>Stopping criteria</title>
+<p>Stopping network training using the loss function directly can be highly variable, as different video conditions, the number of individuals and the sampling method significantly influence this value. To circumvent this we use the silhouette score (SS) <xref ref-type="bibr" rid="c26">Rousseeuw (1987</xref>) of the clusters of the embedded images. Let <italic>d</italic>(<italic>I, J</italic>) be the Euclidean distance between the embeddings of image <italic>I</italic> and <italic>J</italic>, for each image <italic>I</italic>, in cluster <italic>C</italic><sub><italic>a</italic></sub> we compute the mean intra-cluster distance
+<disp-formula id="ueqn5">
+<graphic xlink:href="657023v1_ueqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+and the mean nearest-cluster distance
+<disp-formula id="ueqn6">
+<graphic xlink:href="657023v1_ueqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The SS is given by
+<disp-formula id="ueqn7">
+<graphic xlink:href="657023v1_ueqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+To determine when to stop training, every <italic>m</italic> batches we compute the SS by clustering the embeddings of a random sample of the images in the video, generating also a check-point of the model. <italic>m</italic> was set to be the maximum between 100 and number of animals in a video times 5. We stop training if: 1) there have been 30 consecutive SS evaluations with-out any improvement (patience of 30), or 2) there have been 2 consecutive SS evaluations without any improvement but the SS already achieved a value of 0.91. After stopping the training, the model with the highest SS is chosen. A threshold of 0.91 was validated empirically (<xref rid="fig1" ref-type="fig">Figure 1d</xref> and <xref rid="fig1" ref-type="fig">Figure 1e</xref>). The number of images used for the computation of the SS is 1000 times the number of animals.</p>
+</sec>
+<sec id="s7f">
+<title>Pairs selection</title>
+<p>Ideally, we would create two datasets of image pairs: one containing negative pairs and another containing positive pairs. However, the challenge with this approach is that very long videos or those containing a large number of animals can yield trillions of pairs of images, making the process computationally prohibitive. Therefore, we approach the problem with a hierarchical sampling method: first, we randomly select a pair of coexisting fragments, and then we sample an image from each fragment. For a positive pair, we sample two images from the same fragment.</p>
+<p>Following this idea, we start by creating two datasets. The first consists of a list of all the fragments in the video, from which we will sample the positive pairs. The second dataset contains all possible pairs of coexisting fragments in the video. From these lists we exclude all fragments smaller than 4 images to reduce possible noisy blobs.</p>
+<p>Empirical testing has revealed that large and balanced batches, with an equal number of positive and negative pairs, are ideal for our setting of contrastive learning. More concretely, we choose batches consisting of 400 positive pairs of images and 400 negative pairs of images (1600 images in total), as it was the smaller batch size that didn’t compromise training speed/accuracy (<xref rid="figS4" ref-type="fig">Figure 1—figure Supplement 4</xref>). Intuitively, large batch sizes allow for a good spread of pairs from a significant proportion of the video, thereby forcing the network to learn a global embedding of the video. Since positive pairs tend to diminish the size of the representational space while negative pairs tend to increase it, a good balance between the two forces the network to compress the representational space while respecting the negative relationships <xref ref-type="bibr" rid="c6">Chen et al. (2020a)</xref>. This balance between positive and negative pairs is somewhat surprising, given that several works emphasize the importance of negative examples over positive ones <xref ref-type="bibr" rid="c1">Awasthi et al. (2022</xref>); <xref ref-type="bibr" rid="c16">Khosla et al. (2021</xref>). While we do not yet have an explanation for why this balance appears to perform better in our case, we note that it is not possible to compare all images from one class against those of another, as negative pairs of images can only be sampled from coexisting fragments. Additionally, positive pairs that compress the space can only be sampled from the same fragment and not the same identity. Since we cannot compare images freely and are constrained by the fragment structure of the video, we might need more positive pairs to ensure a higher degree of compression of the representational space, such that not only images from the same fragment are close together, but also images from the same identity.</p>
+<p>The hierarchical sampling allows us to address the question of how to select pairs of fragments to optimize the training speed of the network. Since we sample pairs of fragments rather than directly sampling pairs of images, we need to skew the probability of a pair of fragments being sampled to reflect the number of images they contain. More concretely, let <italic>f</italic><sub><italic>i</italic></sub> be the number of images in fragment <italic>F</italic><sub><italic>i</italic></sub>. For negative relations we define <italic>f</italic><sub><italic>i,j</italic></sub> = <italic>f</italic><sub><italic>i</italic></sub> + <italic>f</italic><sub><italic>j</italic></sub> and set the probability of sampling the pair <italic>F</italic><sub><italic>i</italic></sub>, <italic>F</italic><sub><italic>j</italic></sub>, by their size as:
+<disp-formula id="ueqn8">
+<graphic xlink:href="657023v1_ueqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+For positive pairs, the probability of sampling a given fragment <italic>f</italic><sub><italic>i</italic></sub> is:
+<disp-formula id="ueqn9">
+<graphic xlink:href="657023v1_ueqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+By examining the evolution of the clusters during training (<xref rid="fig1" ref-type="fig">Figure 1c</xref>) it becomes clear that the learning process is not uniform; some identities become separated sooner than others. <xref rid="fig1" ref-type="fig">Figure 1c</xref> top row second and third columns give us a nice illustration of this phenomenon. The images embedded in the red rectangle of the representational space already satisfy the loss function, meaning that the negative pairwise relationships are already embedded further away than <italic>D</italic><sub>neg</sub>, and images that form positive pairwise relationships are already embedded closer than <italic>D</italic><sub>pos</sub>. Consequently, the loss function for these pairs is effectively zero, and passing them through the network will not alter the weights, merely prolonging the training process. In contrast, the separation of clusters in the green rectangle is incomplete, indicating that image pairs in this region still contribute to the loss function. These pairs are more pertinent, as they contain information that the network has yet to learn. To bias the sampling of image pairs towards those that still contribute to the loss function, each pair of fragments is assigned a loss score. When a pair of images is sampled for training, if the loss for that pair is not zero, the loss score for the corresponding pair of fragments is incremented by one. This score then undergoes an exponential decay of 2% per batch. More specifically, let <italic>l</italic><sub><italic>s</italic></sub>(<italic>i, j</italic>) be the loss score of the pair of fragments <italic>F</italic><sub><italic>i</italic></sub> and <italic>F</italic><sub><italic>j</italic></sub>, and ℒ (<italic>I</italic><sub><italic>il</italic></sub>, <italic>I</italic><sub><italic>ik</italic></sub>) the loss of the images <italic>I</italic><sub><italic>il</italic></sub> and <italic>I</italic><sub><italic>ik</italic></sub>. If the pair <italic>I</italic><sub><italic>il</italic></sub> and <italic>I</italic><sub><italic>ik</italic></sub> is sampled the loss score is updated by
+<disp-formula id="eqn3">
+<graphic xlink:href="657023v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The exponential decay is always applied independently to every pair of fragments, regardless of whether the pairs of images were sampled from those fragments in the previous batch of images or not. The loss score is converted into a probably distribution over all pairs of fragments by
+<disp-formula id="eqn4">
+<graphic xlink:href="657023v1_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The final probability of sampling pairs of fragments is given by
+<disp-formula id="eqn5">
+<graphic xlink:href="657023v1_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+This balance between these two probabilities can be seen as an exploitation versus exploration paradigm. <italic>P</italic><sub><italic>s</italic></sub>(<italic>F</italic><sub><italic>i</italic></sub>, <italic>F</italic><sub><italic>j</italic></sub>) enforces constant exploration, while <inline-formula><inline-graphic xlink:href="657023v1_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> exploits the current state of learning by dynamically updating the sampling probability. This ensures that pairs of fragments containing unlearned knowledge are sampled more frequently, while maintaining a baseline of exploration based on fragment size. We tried several values for <italic>α</italic> and saw that a value of <italic>α</italic> around <inline-formula><inline-graphic xlink:href="657023v1_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> produced the best decrease the time required to train the network across a large collection of videos (<xref rid="figS5" ref-type="fig">Figure 1—figure Supplement 5</xref>). It is noteworthy that the failure of the <italic>α</italic> = 0 case renders the contrastive protocol ineffective in solving the tracking problem. This failure occurs because the sampling becomes highly biased towards specific regions of the representational space, leading to only local solutions for the separation of negative pairs and the compression of positive pairs. In effect, the network experiences catastrophic forgetting by focusing excessively on small groups of fragments at a time, thereby compromising the embeddings of other images.</p>
+<fig id="figS1" position="float" fig-type="figure">
+<label>Figure 1–figure supplement 1.</label>
+<caption><title>Models comparison.</title>
+<p>Error in image identification as a function of training time for different deep learning models in 6 test videos. For each network we report the multiply-accumulate operations (MAC) in giga operations (G) and the number of parameters in the units of million parameters (M). Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette Score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette Score observed up to that point.</p></caption>
+<graphic xlink:href="657023v1_figS1_1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS2" position="float" fig-type="figure">
+<label>Figure 1–figure supplement 2.</label>
+<caption><title>Embedding dimensions comparison.</title>
+<p>Error in image identification as a function of training time for different embedding dimensions in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette Score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette Score observed up to that point.</p></caption>
+<graphic xlink:href="657023v1_figS1_2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS3" position="float" fig-type="figure">
+<label>Figure 1–figure supplement 3.</label>
+<caption><title><italic>D</italic><sub>neg</sub> over <italic>D</italic><sub>pos</sub> comparison.</title>
+<p>Error in image identification as a function of training time for different ratios of <italic>D</italic><sub>neg</sub>/<italic>D</italic><sub>pos</sub> in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette Score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette Score observed up to that point.</p></caption>
+<graphic xlink:href="657023v1_figS1_3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS4" position="float" fig-type="figure">
+<label>Figure 1–figure supplement 4.</label>
+<caption><title>Batch size comparison.</title>
+<p>Error in image identification as a function of training time for different batch sizes of pairs of images in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette Score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette Score observed up to that point.</p></caption>
+<graphic xlink:href="657023v1_figS1_4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS5" position="float" fig-type="figure">
+<label>Figure 1–figure supplement 5.</label>
+<caption><title>Exploration and exploitation comparison.</title>
+<p>Error in image identification as a function of training time for different exploration/exploitation weights <italic>α</italic> in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette Score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette Score observed up to that point.</p></caption>
+<graphic xlink:href="657023v1_figS1_5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS6" position="float" fig-type="figure">
+<label>Figure 2–figure supplement 1.</label>
+<caption><title>Performance for the benchmark with full trajectories with animal crossings.</title>
+<p><bold>a</bold>. Median accuracy was computed using all images of animals in the videos including animal crossings. <bold>b</bold>. Median tracking times. <xref rid="tblS1" ref-type="table">Supplementary Table 1</xref>, <xref rid="tblS2" ref-type="table">Supplementary Table 2</xref>, <xref rid="tblS3" ref-type="table">Supplementary Table 3</xref> and <xref rid="tblS4" ref-type="table">Supplementary Table 4</xref> give more complete statistics (median, mean and 20-80 percentiles) for the original idtracker.ai (version 4 of the software), optimized v4 (version 5), new idtracker.ai (version 6) and TRex, respectively.</p></caption>
+<graphic xlink:href="657023v1_figS2_1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS7" position="float" fig-type="figure">
+<label>Figure 2–figure supplement 2.</label>
+<caption><title>Protocol 2 failure rate.</title>
+<p>Probability for the different tracking systems of not tracking the video with Protocol 2 in idtracker.ai (v4 and v5) and in TRex the probability that it fails without generating trajectories.</p></caption>
+<graphic xlink:href="657023v1_figS2_2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS8" position="float" fig-type="figure">
+<label>Figure 2–figure supplement 3.</label>
+<caption><title>Memory usage across the different softwares.</title>
+<p>The solid line is a logarithmic fit to the memory peak as a function of the number of blobs in a video. Disclaimer: Both software programs include automatic optimizations that adjust based on machine resources, so results may vary on systems with less available memory. These results were measured on computers with the specifications in <bold>Methods</bold></p></caption>
+<graphic xlink:href="657023v1_figS2_3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figS9" position="float" fig-type="figure">
+<label>Figure 2–figure supplement 4.</label>
+<caption><title>Robustness to blurring and light conditions.</title> <p><bold>First column:</bold> Unmodified video zebrafish_60_1. <bold>Second column:</bold> zebrafish_60_1 with a gaussian blurring of sigma=1 pixel plus a resolution reduction to 40% of the original plus MJPG video compression. <bold>Third column:</bold> Videos of 60 zebrafish with manipulated light conditions (same test as in idtracker.ai <xref ref-type="bibr" rid="c24">Romero-Ferrero et al. (2019</xref>)). <bold>First row:</bold> Uniform light conditions across the arena (ze-brafish_60_1). <bold>Second row:</bold> Similar setup but with lights off in the bottom and right side of the arena.</p></caption>
+<graphic xlink:href="657023v1_figS2_4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+</app>
+</app-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107602.1.sa4</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Berman</surname>
+<given-names>Gordon J</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Emory University</institution>
+</institution-wrap>
+<city>Atlanta</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>important</bold> study introduces an advance in multi-animal tracking by reframing identity assignment as a self-supervised contrastive representation learning problem. It eliminates the need for segments of video where all animals are simultaneously visible and individually identifiable, and significantly improves tracking speed, accuracy, and robustness with respect to occlusion. This innovation has implications beyond animal tracking, potentially connecting with advances in behavioral analysis and computer vision. While the strength of support for these advances is <bold>solid</bold> overall, the presentation could be greatly improved for clarity and broader accessibility; in addition, incorporating more standard metrics in the multi-animal tracking literature would better benchmark the approach against other methods.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107602.1.sa3</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This is a strong paper that presents a clear advance in multi-animal tracking. The authors introduce an updated version of idtracker.ai that reframes identity assignment as a contrastive learning problem rather than a classification task requiring global fragments. This change leads to gains in speed and accuracy. The method eliminates a known bottleneck in the original system, and the benchmarking across species is comprehensive and well executed. I think the results are convincing and the work is significant.</p>
+<p>Strengths:</p>
+<p>The main strengths are the conceptual shift from classification to representation learning, the clear performance gains, and the fact that the new version is more robust. Removing the need for global fragments makes the software more flexible in practice, and the accuracy and speed improvements are well demonstrated. The software appears thoughtfully implemented, with GUI updates and integration with pose estimators.</p>
+<p>Weaknesses:</p>
+<p>I don't have any major criticisms, but I have identified a few points that should be addressed to improve the clarity and accuracy of the claims made in the paper.</p>
+<p>(1) The title begins with &quot;New idtracker.ai,&quot; which may not age well and sounds more promotional than scientific. The strength of the work is the conceptual shift to contrastive representation learning, and it might be more helpful to emphasize that in the title rather than branding it as &quot;new.&quot;</p>
+<p>(2) Several technical points regarding the comparison between TRex (a system evaluated in the paper) and idtracker.ai should be addressed to ensure the evaluation is fair and readers are fully informed.</p>
+<p>(2.1) Lines 158-160: The description of TRex as based on &quot;Protocol 2 of idtracker.ai&quot; overlooks several key additions in TRex, such as posture image normalization, tracklet subsampling, and the use of uniqueness feedback during training. These features are not acknowledged, and it's unclear whether TRex was properly configured - particularly regarding posture estimation, which appears to have been omitted but isn't discussed. Without knowing the actual parameters used to make comparisons, it's difficult to assess how the method was evaluated.</p>
+<p>(2.2) Lines 162-163: The paper implies that TRex gains speed by avoiding Protocol 3, but in practice, idtracker.ai also typically avoids using Protocol 3 due to its extremely long runtime. This part of the framing feels more like a rhetorical contrast than an informative one.</p>
+<p>(2.3) Lines 277-280: The contrastive loss function is written using the label l, but since it refers to a pair of images, it would be clearer and more precise to write it as l_{I,J}. This would help readers unfamiliar with contrastive learning understand the formulation more easily.</p>
+<p>(2.4) Lines 333-334: The manuscript states that TRex can fail to track certain videos, but this may be inaccurate depending on how the authors classify failures. TRex may return low uniqueness scores if training does not converge well, but this isn't equivalent to tracking failure. Moreover, the metric reported by TRex is uniqueness, not accuracy. Equating the two could mislead readers. If the authors did compare outputs to human-validated data, that should be stated more explicitly.</p>
+<p>(2.5) Lines 339-341: The evaluation approach defines a &quot;successful run&quot; and then sums the runtime across all attempts up to that point. If success is defined as simply producing any output, this may not reflect how experienced users actually interact with the software, where parameters are iteratively refined to improve quality.</p>
+<p>(2.6) Lines 344-346: The simulation process involves sampling tracking parameters 10,000 times and selecting the first &quot;successful&quot; run. If parameter tuning is randomized rather than informed by expert knowledge, this could skew the results in favor of tools that require fewer or simpler adjustments. TRex relies on more tunable behavior, such as longer fragments improving training time, which this approach may not capture.</p>
+<p>(2.7) Line 354 onward: TRex was evaluated using two varying parameters (threshold and track_max_speed), while idtracker.ai used only one (intensity_threshold). With a fixed number of samples, this asymmetry could bias results against TRex. In addition, users typically set these parameters based on domain knowledge rather than random exploration.</p>
+<p>(2.8) Figure 2-figure supplement 3: The memory usage comparison lacks detail. It's unclear whether RAM or VRAM was measured, whether shared or compressed memory was included, or how memory was sampled. Since both tools dynamically adjust to system resources, the relevance of this comparison is questionable without more technical detail.</p>
+<p>(3) While the authors cite several key papers on contrastive learning, they do not use the introduction or discussion to effectively situate their approach within related fields where similar strategies have been widely adopted. For example, contrastive embedding methods form the backbone of modern facial recognition and other image similarity systems, where the goal is to map images into a latent space that separates identities or classes through clustering. This connection would help emphasize the conceptual strength of the approach and align the work with well-established applications. Similarly, there is a growing literature on animal re-identification (ReID), which often involves learning identity-preserving representations across time or appearance changes. Referencing these bodies of work would help readers connect the proposed method with adjacent areas using similar ideas, and show that the authors are aware of and building on this wider context.</p>
+<p>(4) Some sections of the Results text (e.g., lines 48-74) read more like extended figure captions than part of the main narrative. They include detailed explanations of figure elements, sorting procedures, and video naming conventions that may be better placed in the actual figure captions or moved to supplementary notes. Streamlining this section in the main text would improve readability and help the central ideas stand out more clearly.</p>
+<p>Overall, though, this is a high-quality paper. The improvements to idtracker.ai are well justified and practically significant. Addressing the above comments will strengthen the work, particularly by clarifying the evaluation and comparisons.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107602.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>This work introduces a new version of the state-of-the-art idtracker.ai software for tracking multiple unmarked animals. The authors aimed to solve a critical limitation of their previous software, which relied on the existence of &quot;global fragments&quot; (video segments where all animals are simultaneously visible) to train an identification classifier network, in addition to addressing concerns with runtime speed. To do this, the authors have both re-implemented the backend of their software in PyTorch (in addition to numerous other performance optimizations) as well as moving from a supervised classification framework to a self-supervised, contrastive representation learning approach that no longer requires global fragments to function. By defining positive training pairs as different images from the same fragment and negative pairs as images from any two co-existing fragments, the system cleverly takes advantage of partial (but high-confidence) tracklets to learn a powerful representation of animal identity without direct human supervision. Their formulation of contrastive learning is carefully thought out and comprises a series of empirically validated design choices that are both creative and technically sound. This methodological advance is significant and directly leads to the software's major strengths, including exceptional performance improvements in speed and accuracy and a newfound robustness to occlusion (even in severe cases where no global fragments can be detected). Benchmark comparisons show the new software is, on average, 44 times faster (up to 440 times faster on difficult videos) while also achieving higher accuracy across a range of species and group sizes. This new version of idtracker.ai is shown to consistently outperform the closely related TRex software (Walter &amp; Couzin, 2021\), which, together with the engineering innovations and usability enhancements (e.g., outputs convenient for downstream pose estimation), positions this tool as an advancement on the state-of-the-art for multi-animal tracking, especially for collective behavior studies.</p>
+<p>Despite these advances, we note a number of weaknesses and limitations that are not well addressed in the present version of this paper:</p>
+<p>(1) The contrastive representation learning formulation</p>
+<p>Contrastive representation learning using deep neural networks has long been used for problems in the multi-object tracking domain, popularized through ReID approaches like DML (Yi et al., 2014\) and DeepReID (Li et al., 2014). More recently, contrastive learning has become more popular as an approach for scalable self-supervised representation learning for open-ended vision tasks, as exemplified by approaches like SimCLR (Chen et al., 2020), SimSiam (Chen et al., 2020\), and MAE (He et al., 2021\) and instantiated in foundation models for image embedding like DINOv2 (Oquab et al., 2023). Given their prevalence, it is useful to contrast the formulation of contrastive learning described here relative to these widely adopted approaches (and why this reviewer feels it is appropriate):</p>
+<p>(1.1) No rotations or other image augmentations are performed to generate positive examples. These are not necessary with this approach since the pairs are sampled from heuristically tracked fragments (which produces sufficient training data, though see weaknesses discussed below) and the crops are pre-aligned egocentrically (mitigating the need for rotational invariance).</p>
+<p>(1.2) There is no projection head in the architecture, like in SimCLR. Since classification/clustering is the only task that the system is intended to solve, the more general &quot;nuisance&quot; image features that this architectural detail normally affords are not necessary here.</p>
+<p>(1.3) There is no stop gradient operator like in BYOL (Grill et al., 2020\) or SimSiam. Since the heuristic tracking implicitly produces plenty of negative pairs from the fragments, there is no need to prevent representational collapse due to class asymmetry. Some care is still needed, but the authors address this well through a pair sampling strategy (discussed below).</p>
+<p>(1.4) Euclidean distance is used as the distance metric in the loss rather than cosine similarity as in most contrastive learning works. While cosine similarity coupled with L2-normalized unit hypersphere embeddings has proven to be a successful recipe to deal with the curse of dimensionality (with the added benefit of bounded distance limits), the authors address this through a cleverly constructed loss function that essentially allows direct control over the intra- and inter-cluster distance (D\_pos and D\_neg). This is a clever formulation that aligns well with the use of K-means for the downstream assignment step.</p>
+<p>No concerns here, just clarifications for readers who dig into the review. Referencing the above literature would enhance the presentation of the paper to align with the broader computer vision literature.</p>
+<p>(2) Network architecture for image feature extraction backbone</p>
+<p>As most of the computations that drive up processing time happen in the network backbone, the authors explored a variety of architectures to assess speed, accuracy, and memory requirements. They land on ResNet18 due to its empirically determined performance. While the experiments that support this choice are solid, the rationale behind the architecture selection is somewhat weak. The authors state that:</p>
+<p>&quot;\[W\]e tested 23 networks from 8 different families of state-of-the-art convolutional neural network architectures, selected for their compatibility with consumer-grade GPUs and ability to handle small input images (20 × 20 to 100 × 100 pixels) typical in collective animal behavior videos.&quot;</p>
+<p>(2.1) Most modern architectures have variants that are compatible with consumer-grade GPUs. This is true of, for example, HRNet (Wang et al., 2019), ViT (Dosovitskiy et al., 2020), SwinT (Liu et al., 2021), or ConvNeXt (Liu et al., 2022), all of which report single GPU training and fast runtime speeds through lightweight configuration or subsequent variants, e.g., MobileViT (Mehta et al., 2021). The authors may consider revising that statement or providing additional support for that claim (e.g., empirical experiments) given that these have been reported to outperform ResNet18 across tasks.</p>
+<p>(2.2) The compatibility of different architectures with small image sizes is configurable. Most convolutional architectures can be readily adapted to work with smaller image sizes, including 20x20 crops. With their default configuration, they lose feature map resolution through repeated pooling and downsampling steps, but this can be readily mitigated by swapping out standard convolutions with dilated convolutions and/or by setting the stride of pooling layers to 1, preserving feature map resolution across blocks. While these are fairly straightforward modifications (and are even compatible with using pretrained weights), an even more trivial approach is to pad and/or resize the crops to the default image size, which is likely to improve accuracy at a possibly minimal memory and runtime cost. These techniques may even improve the performance with the architectures that the authors did test out.</p>
+<p>(2.3) The authors do not report whether the architecture experiments were done with pretrained or randomly initialized weights.</p>
+<p>(2.4) The authors do not report some details about their ResNet18 design, specifically whether a global pooling layer is used and whether the output fully connected layer has any activation function. Additionally, they do not report the version of ResNet18 employed here, namely, whether the BatchNorm and ReLU are applied after (v1) or before (v2) the conv layers in the residual path.</p>
+<p>(3) Pair sampling strategy</p>
+<p>The authors devised a clever approach for sampling positive and negative pairs that is tailored to the nature of the formulation. First, since the positive and negative labels are derived from the co-existence of pretracked fragments, selection has to be done at the level of fragments rather than individual images. This would not be the case if one of the newer approaches for contrastive learning were employed, but it serves as a strength here (assuming that fragment generation/first pass heuristic tracking is achievable and reliable in the dataset). Second, a clever weighted sampling scheme assigns sampling weights to the fragments that are designed to balance &quot;exploration and exploitation&quot;. They weigh samples both by fragment length and by the loss associated with that fragment to bias towards different and more difficult examples.</p>
+<p>(3.1) The formulation described here resembles and uses elements of online hard example mining (Shrivastava et al., 2016), hard negative sampling (Robinson et al., 2020\), and curriculum learning more broadly. The authors may consider referencing this literature (particularly Robinson et al., 2020\) for inspiration and to inform the interpretation of the current empirical results on positive/negative balancing.</p>
+<p>(4) Speed and accuracy improvements</p>
+<p>The authors report considerable improvements in speed and accuracy of the new idTracker (v6) over the original idTracker (v4?) and TRex. It's a bit unclear, however, which of these are attributable to the engineering optimizations (v5?) versus the representation learning formulation.</p>
+<p>(4.1) Why is there an improvement in accuracy in idTracker v5 (L77-81)? This is described as a port to PyTorch and improvements largely related to the memory and data loading efficiency. This is particularly notable given that the progression went from 97.52% (v4; original) to 99.58% (v5; engineering enhancements) to 99.92% (v6; representation learning), i.e., most of the new improvement in accuracy owes to the &quot;optimizations&quot; which are not the central emphasis of the systematic evaluations reported in this paper.</p>
+<p>(4.2) What about the speed improvements? Relative to the original (v4), the authors report average speed-ups of 13.6x in v5 and 44x in v6. Presumably, the drastic speed-up in v6 comes from a lower Protocol 2 failure rate, but v6 is not evaluated in Figure 2 - figure supplement 2.</p>
+<p>(5) Robustness to occlusion</p>
+<p>A major innovation enabled by the contrastive representation learning approach is the ability to tolerate the absence of a global fragment (contiguous frames where all animals are visible) by requiring only co-existing pairs of fragments owing to the paired sampling formulation. While this removes a major limitation of the previous versions of idtracker.ai, its evaluation could be strengthened. The authors describe an ablation experiment where an arc of the arena is masked out to assess the accuracy under artificially difficult conditions. They find that the v6 works robustly up to significant proportions of occlusions, even when doing so eliminates global fragments.</p>
+<p>(5.1) The experiment setup needs to be more carefully described.</p>
+<p>
+What does the masking procedure entail? Are the pixels masked out in the original video or are detections removed after segmentation and first pass tracking is done?</p>
+<p>
+What happens at the boundary of the mask? (Partial segmentation masks would throw off the centroids, and doing it after original segmentation does not realistically model the conditions of entering an occlusion area.)</p>
+<p>
+Are fragments still linked for animals that enter and then exit the mask area?</p>
+<p>
+How is the evaluation done? Is it computed with or without the masked region detections?</p>
+<p>(5.2) The circular masking is perhaps not the most appropriate for the mouse data, which is collected in a rectangular arena.</p>
+<p>(5.3) The number of co-existing fragments, which seems to be the main determinant of performance that the authors derive from this experiment, should be reported for these experiments. In particular, a &quot;number of co-existing fragments&quot; vs accuracy plot would support the use of the 0.25(N-1) heuristic and would be especially informative for users seeking to optimize experimental and cage design. Additionally, the number of co-existing fragments can be artificially reduced in other ways other than a fixed occlusion, including random dropout, which would disambiguate it from potential allocentric positional confounds (particularly relevant in arenas where egocentric pose is correlated with allocentric position).</p>
+<p>(6) Robustness to imaging conditions</p>
+<p>The authors state that &quot;the new idtracker.ai can work well with lower resolutions, blur and video compression, and with inhomogeneous light (Figure 2 - figure supplement 4).&quot; (L156).</p>
+<p>Despite this claim, there are no speed or accuracy results reported for the artificially corrupted data, only examples of these image manipulations in the supplementary figure.</p>
+<p>(7) Robustness across longitudinal or multi-session experiments</p>
+<p>The authors reference idmatcher.ai as a compatible tool for this use case (matching identities across sessions or long-term monitoring across chunked videos), however, no performance data is presented to support its usage.</p>
+<p>This is relevant as the innovations described here may interact with this setting. While deep metric learning and contrastive learning for ReID were originally motivated by these types of problems (especially individuals leaving and entering the FOV), it is not clear that the current formulation is ideally suited for this use case. Namely, the design decisions described in point 1 of this review are at times at odds with the idea of learning generalizable representations owing to the feature extractor backbone (less scalable), low-dimensional embedding size (less representational capacity), and Euclidean distance metric without hypersphere embedding (possible sensitivity to drift).</p>
+<p>It's possible that data to support point 6 can mitigate these concerns through empirical results on variations in illumination, but a stronger experiment would be to artificially split up a longer video into shorter segments and evaluate how generalizable and stable the representations learned in one segment are across contiguous (&quot;longitudinal&quot;) or discontiguous (&quot;multi-session&quot;) segments.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107602.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors propose a new version of idTracker.ai for animal tracking. Specifically, they apply contrastive learning to embed cropped images of animals into a feature space where clusters correspond to individual animal identities.</p>
+<p>Strengths:</p>
+<p>By doing this, the new software alleviates the requirement for so-called global fragments - segments of the video, in which all entities are visible/detected at the same time - which was necessary in the previous version of the method. In general, the new method reduces the tracking time compared to the previous versions, while also increasing the average accuracy of assigning the identity labels.</p>
+<p>Weaknesses:</p>
+<p>The general impression of the paper is that, in its current form, it is difficult to disentangle the old from the new method and understand the method in detail. The manuscript would benefit from a major reorganization and rewriting of its parts. There are also certain concerns about the accuracy metric and reducing the computational time.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107602.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Torrents</surname>
+<given-names>Jordi</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Costa</surname>
+<given-names>Tiago</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8538-1345</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>de Polavieja</surname>
+<given-names>Gonzalo G</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5359-3426</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We thank the editor and reviewers for their positive and detailed review of the preprint. We will use these comments to improve the manuscript's revised version, which we plan to submit in the coming weeks, including: a) tests of variants of ResNet, other network architectures and the use of pre-trained weights, b) clarification and justification of the accuracy metrics used in the benchmark, c) an expanded study about the fragment connectivity in Figure 3, and d) a study the performance of idmatcher.ai with the new idtracker.ai.</p>
+</body>
+</sub-article>
+</article>
