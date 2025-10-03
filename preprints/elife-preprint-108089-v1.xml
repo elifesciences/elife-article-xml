@@ -1,0 +1,849 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">108089</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.108089</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.108089.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.4</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Spyglass: a framework for reproducible and shareable neuroscience research</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6483-9444</contrib-id>
+<name>
+<surname>Lee</surname>
+<given-names>Kyu Hyun</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="author-notes" rid="n1">⧫</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4606-087X</contrib-id>
+<name>
+<surname>Denovellis</surname>
+<given-names>Eric L</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="author-notes" rid="n1">⧫</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9238-0642</contrib-id>
+<name>
+<surname>Ly</surname>
+<given-names>Ryan</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5286-4375</contrib-id>
+<name>
+<surname>Magland</surname>
+<given-names>Jeremy</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2240-1038</contrib-id>
+<name>
+<surname>Soules</surname>
+<given-names>Jeff</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2251-4892</contrib-id>
+<name>
+<surname>Comrie</surname>
+<given-names>Alison E</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-6136-3769</contrib-id>
+<name>
+<surname>Gramling</surname>
+<given-names>Daniel P</given-names>
+</name>
+<xref ref-type="aff" rid="a6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4013-214X</contrib-id>
+<name>
+<surname>Guidera</surname>
+<given-names>Jennifer A</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+<xref ref-type="aff" rid="a8">8</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2144-6952</contrib-id>
+<name>
+<surname>Nevers</surname>
+<given-names>Rhino</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4999-7847</contrib-id>
+<name>
+<surname>Adenekan</surname>
+<given-names>Philip</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3055-6718</contrib-id>
+<name>
+<surname>Brozdowski</surname>
+<given-names>Chris</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-9696-6920</contrib-id>
+<name>
+<surname>Bray</surname>
+<given-names>Samuel R</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5751-231X</contrib-id>
+<name>
+<surname>Monroe</surname>
+<given-names>Emily</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-5700-7823</contrib-id>
+<name>
+<surname>Bak</surname>
+<given-names>Ji Hyun</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0357-351X</contrib-id>
+<name>
+<surname>Coulter</surname>
+<given-names>Michael E</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3076-0994</contrib-id>
+<name>
+<surname>Sun</surname>
+<given-names>Xulu</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5559-2910</contrib-id>
+<name>
+<surname>Broyles</surname>
+<given-names>Emrey</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0000-8916-7314</contrib-id>
+<name>
+<surname>Shin</surname>
+<given-names>Donghoon</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4548-4550</contrib-id>
+<name>
+<surname>Chiang</surname>
+<given-names>Sharon</given-names>
+</name>
+<xref ref-type="aff" rid="a9">9</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0009-8567-3290</contrib-id>
+<name>
+<surname>Holobetz</surname>
+<given-names>Cristofer</given-names>
+</name>
+<xref ref-type="aff" rid="a10">10</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1617-449X</contrib-id>
+<name>
+<surname>Tritt</surname>
+<given-names>Andrew</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9902-1984</contrib-id>
+<name>
+<surname>Rübel</surname>
+<given-names>Oliver</given-names>
+</name>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5964-5872</contrib-id>
+<name>
+<surname>Nguyen</surname>
+<given-names>Thinh</given-names>
+</name>
+<xref ref-type="aff" rid="a11">11</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1844-641X</contrib-id>
+<name>
+<surname>Yatsenko</surname>
+<given-names>Dimitri</given-names>
+</name>
+<xref ref-type="aff" rid="a11">11</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3390-2292</contrib-id>
+<name>
+<surname>Chu</surname>
+<given-names>Joshua</given-names>
+</name>
+<xref ref-type="aff" rid="a12">12</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2054-0234</contrib-id>
+<name>
+<surname>Kemere</surname>
+<given-names>Caleb</given-names>
+</name>
+<xref ref-type="aff" rid="a12">12</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6389-9779</contrib-id>
+<name>
+<surname>Garcia</surname>
+<given-names>Samuel</given-names>
+</name>
+<xref ref-type="aff" rid="a13">13</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3661-527X</contrib-id>
+<name>
+<surname>Buccino</surname>
+<given-names>Alessio</given-names>
+</name>
+<xref ref-type="aff" rid="a14">14</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1752-5677</contrib-id>
+<name>
+<surname>Frank</surname>
+<given-names>Loren M</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<email>loren.frank@ucsf.edu</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Department of Physiology, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id><institution>Howard Hughes Medical Institute, University of California</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Kavli Institute for Fundamental Neuroscience, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02jbv0t02</institution-id><institution>Scientific Data Division, Lawrence Berkeley National Laboratory</institution></institution-wrap>, <city>Berkeley</city>, <country country="US">United States</country></aff>
+<aff id="a5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00sekdz59</institution-id><institution>Center for Computational Mathematics, Flatiron Institute</institution></institution-wrap>, <city>New York</city>, <country country="US">United States</country></aff>
+<aff id="a6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03a1kwz48</institution-id><institution>Graduate Program in Neural and Behavioral Sciences, University of Tübingen</institution></institution-wrap>, <city>Tübingen</city>, <country country="DE">Germany</country></aff>
+<aff id="a7"><label>7</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>UCSF-UC Berkeley Graduate Program in Bioengineering, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a8"><label>8</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Medical Scientist Training Program, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a9"><label>9</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Department of Neurology, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a10"><label>10</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02jx3x895</institution-id><institution>Sainsbury Wellcome Centre, University College London</institution></institution-wrap>, <city>London</city>, <country country="GB">United Kingdom</country></aff>
+<aff id="a11"><label>11</label><institution>DataJoint</institution>, <city>Houston</city>, <country country="US">United States</country></aff>
+<aff id="a12"><label>12</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/008zs3103</institution-id><institution>Department of Electrical and Computer Engineering, Rice University</institution></institution-wrap>, <city>Houston</city>, <country country="US">United States</country></aff>
+<aff id="a13"><label>13</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00pdd0432</institution-id><institution>Centre de Recherche en Neuroscience de Lyon, CNRS</institution></institution-wrap>, <city>Bron</city>, <country country="FR">France</country></aff>
+<aff id="a14"><label>14</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00dcv1019</institution-id><institution>Allen Institute for Brain Science</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Peyrache</surname>
+<given-names>Adrien</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>McGill University</institution>
+</institution-wrap>
+<city>Montreal</city>
+<country country="CA">Canada</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Behrens</surname>
+<given-names>Timothy E</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country country="GB">United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="n1" fn-type="equal"><label>⧫</label><p>Equal contribution</p></fn>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-09-26">
+<day>26</day>
+<month>09</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP108089</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-06-26">
+<day>26</day>
+<month>06</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-06-16">
+<day>16</day>
+<month>06</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.01.25.577295"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Lee et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Lee et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-108089-v1.pdf"/>
+<abstract>
+<title>Abstract</title><p>Scientific progress depends on reliable and reproducible results. Progress can be accelerated when data are shared and re-analyzed to address new questions. Current approaches to storing and analyzing neural data involve bespoke formats and software that make replication and reuse of data difficult. To address these challenges, we created Spyglass, an open-source data management and analysis framework written in Python. Spyglass provides reproducible pipelines for common neuroscience analyses and sharing of raw data, intermediate analyses and final results within and across labs. Spyglass uses the Neurodata Without Borders (NWB) standard and includes pipelines for spectral filtering, spike sorting, pose tracking, and neural decoding. Spyglass can be extended to apply existing and newly developed pipelines to datasets from multiple sources. We demonstrate these features in the context of a cross-laboratory replication by applying advanced state space decoding algorithms to publicly available data.</p>
+<p>New users can try out Spyglass on a Jupyter Hub hosted by HHMI and 2i2c: <ext-link ext-link-type="uri" xlink:href="https://spyglass.hhmi.2i2c.cloud/">https://spyglass.hhmi.2i2c.cloud/</ext-link>.</p>
+</abstract>
+<funding-group>
+<award-group id="funding-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01cwqze88</institution-id>
+<institution>National Institutes of Health</institution>
+</institution-wrap>
+</funding-source>
+<award-id>RF1MH130623</award-id>
+</award-group>
+<award-group id="funding-1a">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01cwqze88</institution-id>
+<institution>National Institutes of Health</institution>
+</institution-wrap>
+</funding-source>
+<award-id>RF1MH133778</award-id>
+</award-group>
+<award-group id="funding-2">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/037ebw447</institution-id>
+<institution>Helen Hay Whitney Foundation</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+<award-group id="funding-3">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id>
+<institution>Howard Hughes Medical Institute</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Significantly revised text throughout the paper; revised Figure 1.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>A central goal of neuroscience is to understand how the structure and dynamics of neural activity relate to the internal states of the organism and the external world. This understanding is derived from analyzing complex, multi-modal datasets. While the community has improved tools and algorithms for data collection and analysis<sup><xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup>, extracting consistent and reproducible insights from data remains a complex and time-consuming task. Often, researchers take years to collect and organize data, which is then transformed through a complicated series of analyses using custom scripts. This begins with preprocessing that isolates specific signals from the data, followed by multiple subsequent analyses that quantify properties of these signals. The outputs of these analyses are then synthesized across datasets, and when they are consistent upon limited replication, they are reported in the scientific literature—with the data and analysis scripts documented to varying degrees.</p>
+<p>Ideally, it would be possible for another group to take the same raw datasets, apply the analyses, and rapidly and reliably reproduce the findings. In practice, this is often difficult, if not impossible. Raw data are seldom shared and metadata critical for understanding the data are often not included, posing a significant challenge to the replication process. Essential components of the analysis pipelines, such as the manual curation of clustered spikes and artifact rejection, are often irretrievable from the written reports. Similarly, the full set of parameters used for each of the analyses are not shared or hidden in cryptic analysis scripts. Efforts to reproduce findings are also hampered by idiosyncratic data and code organization, poor documentation, and missing vital details, including computational hardware requirements<sup><xref ref-type="bibr" rid="c7">7</xref></sup>. In collaborations among multiple scientists, these problems are exacerbated due to the variability in how each participant carries out analysis. Consequently, the full validation of a result usually requires repeating the experiment and reconstructing the analysis from scratch.</p>
+<p>These difficulties in replication of analyses incur significant costs in time and effort. A new trainee might struggle to analyze existing data because they do not understand critical details. A scientist who downloads the data from a previous study may find that the analyses they wanted to carry out are impossible because the raw data is not available. Alternatively, raw data may be available, but the scientist may need intermediate results (e.g. spike waveforms) that are not included. Similarly, shared code, including visualizations, is most often not standardized or documented, causing multiple teams to duplicate efforts and implement the same tools.</p>
+<p>A system that addresses these challenges therefore should enable:
+<list list-type="bullet">
+<list-item><p>compilation of raw data with sufficient metadata for analysis and reuse</p></list-item>
+<list-item><p>sharing of data and all intermediate analysis results in an accessible format</p></list-item>
+<list-item><p>reproducible analysis via well-documented, organized, and searchable pipelines</p></list-item>
+<list-item><p>generation of shareable visualizations to facilitate communication and collaboration</p></list-item>
+<list-item><p>easy use by scientists with minimal formal training in data management.</p></list-item>
+</list>
+Achieving these goals would represent a major step towards meeting the FAIR guiding principles for findable, <underline>a</underline>ccessible, interoperable, and reusable<sup><xref ref-type="bibr" rid="c8">8</xref></sup> data and analysis pipelines<sup><xref ref-type="bibr" rid="c9">9</xref></sup>. For example, it would become possible to easily find publicly available data, analyze it with a standardized pipeline that keeps track of all the parameters, and generate a visualization to share the results over the web—a stark contrast to how science is practiced today.</p>
+<p>In pursuit of this vision, many organizations, such as the Allen Institute for Brain Science (AIBS), Johns Hopkins Applied Physics Lab (APL), and the International Brain Laboratory (IBL), have made strides by standardizing and sharing data and analyses<sup><xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c12">12</xref></sup>. However, these efforts have not fully resolved the issues related to data sharing and reproducible analysis. For instance, a lack of raw data often precludes reproduction of early stages of the analysis, and many steps of the processing pipeline (e.g. the criteria used for manual or automatic curation of spike sorting) that can significantly affect the results<sup><xref ref-type="bibr" rid="c13">13</xref></sup> are omitted. Some of the technologies used, such as cloud computing services (e.g., CodeOcean) and sophisticated databases and APIs<sup><xref ref-type="bibr" rid="c11">11</xref>,<xref ref-type="bibr" rid="c14">14</xref>,<xref ref-type="bibr" rid="c15">15</xref></sup>, can be cost prohibitive or require specialized software engineering expertise that is beyond the reach of most labs. Furthermore, these existing efforts tend to be focused on the needs of specific projects, data types, and behavioral paradigms, limiting their scope. Thus, while these efforts mark important advances, there remains a need for user-friendly, integrated solutions that can be widely adopted across individual labs in the neuroscience community.</p>
+<p>To address this need, we developed Spyglass, an open-source neuroscience data management and analysis framework written in Python. Spyglass builds on widely available community-developed tools and adopts the Neurodata Without Borders (NWB) as the standardized format<sup><xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c17">17</xref></sup>. It uses DataJoint<sup><xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c18">18</xref></sup> to manage reproducible analysis pipelines with a relational database and incorporates novel software tools (e.g. Kachery and Figurl) for sharing data and web-based visualizations to enable collaboration within and across labs. This includes methods for exporting and uploading all raw data and intermediate results used to produce a manuscript, which, along with sharing of code, enables full replication of results. Spyglass is Python-based and thus can accommodate pipelines that use a wide array of analysis packages that have been developed by the community, including SpikeInterface<sup>19</sup>, GhostiPy<sup><xref ref-type="bibr" rid="c20">20</xref></sup>, DeepLabCut<sup><xref ref-type="bibr" rid="c2">2</xref></sup>, and Pynapple<sup><xref ref-type="bibr" rid="c21">21</xref></sup>. Spyglass also offers ready-to-use pipelines for analyzing behavior and electrophysiological data, including spectral analysis of local field potential (LFP), spike sorting, video processing to extract position, and decoding neural data. Spyglass can be extended to support additional pipelines for behavioral, intracellular, optical physiology data, or other data types that can be stored in the NWB format. In addition to extensive documentation and tutorials, new users can try out <ext-link ext-link-type="uri" xlink:href="https://spyglass.hhmi.2i2c.cloud/">a demo version of Spyglass hosted on the web by HHMI and 2i2c as a Jupyter Hub instance</ext-link>. Here we describe the structure of Spyglass and demonstrate its potential by applying the same analysis pipelines to NWB files from different labs and comparing the results.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Overview of Spyglass</title>
+<p>Spyglass is an open-source Python-based software framework for reproducible analysis of neuroscience data and sharing of the results with collaborators and the broader community (<xref rid="fig1" ref-type="fig">Figure 1</xref>). It can be run locally or in the cloud. Analyzing data with Spyglass begins with raw data and experimental metadata stored in the NWB format<sup><xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c22">22</xref></sup>. These NWB files are ingested into a relational database and processed using DataJoint-enabled pipelines. These pipelines are built around common neuroscience tasks such as spectral filtering, spike sorting, pose tracking, and neural decoding. DataJoint stores parameters of each analysis and tracks the intermediate analysis results, which are also stored as NWB files to maintain a shareable standardized data format. Spyglass enables sharing results and interactive visualization of the data over the web via Kachery and Figurl. Finally, Spyglass supports exporting specific parts of the database required to reproduce the results and figures of a manuscript and the upload of the associated raw data and analysis outputs to a public repository. In the following sections, we provide detailed descriptions of these components and the design decisions behind them.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1:</label>
+<caption><title>Overview of Spyglass.</title>
+<p>The raw data—consisting of information about the animal, the behavioral task, the neurophysiological data, etc.—is converted to the NWB format (yellow box) and ingested into the Spyglass database. The pipelines (dark green box) operate on pointers to specific data objects in the NWB file (tan box). The raw and processed data are then shared with the community by depositing them to public archives like DANDI or shared with collaborators via Kachery. Visualizations of key analysis steps can be shared over the web via Figurl. Code is shared by hosting the codebase for Spyglass and project-specific pipelines on online repositories like GitHub. Finally, the populated database may be shared by exporting it to a Docker container.</p></caption>
+<graphic xlink:href="577295v4_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2b">
+<title>The NWB format as data specification</title>
+<sec id="s2b1">
+<title>Why NWB?</title>
+<p>A typical neuroscience experiment consists of multiple data streams stored in different formats. Managing such heterogeneous data in a shareable and accessible manner is challenging. A practical solution is to save the data in a community-supported format like NWB, which is emerging as a standard for neurophysiology and behavior data<sup><xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c22">22</xref></sup>. We have chosen NWB as the data specification in Spyglass for the following reasons:
+<list list-type="bullet">
+<list-item><p>The versatility of NWB accommodates various data types and allows metadata to be saved with the data in a single self-annotated file.</p></list-item>
+<list-item><p>NWB files are immediately shareable.</p></list-item>
+<list-item><p>Public data archives like DANDI<sup><xref ref-type="bibr" rid="c23">23</xref>–<xref ref-type="bibr" rid="c26">26</xref></sup> accept the NWB format and provide <ext-link ext-link-type="uri" xlink:href="https://docs.dandiarchive.org/api/rest-api/">APIs to easily stream file contents</ext-link> for local analysis.</p></list-item>
+<list-item><p><ext-link ext-link-type="uri" xlink:href="https://nwb-overview.readthedocs.io/en/latest/tools/analysis_tools_home.html">Tools developed for NWB files</ext-link> are immediately accessible to users.</p></list-item>
+</list>
+Conversion to NWB can be done using software tools developed by the community, such as the NeuroConv package or NWB GUIDE, a desktop app for converting data to NWB without having to write code.</p>
+<p>Importantly, Spyglass requires all raw data—including neurophysiology, behavioral task, interaction with the environment— to be in the NWB format <italic>prior to any analysis</italic>. This ensures reproducibility of all subsequent analyses by sharing the NWB file containing the raw data and the analysis pipelines. Furthermore, Spyglass stores virtually all intermediate results from downstream analysis pipelines in NWB. This ensures that all data associated with the analysis can be shared and read using the same software tools.</p>
+</sec>
+<sec id="s2b2">
+<title>Spyglass-specific NWB requirements</title>
+<p>NWB allows some flexibility in the specification of data to accommodate a broad range of experiments and lab-specific requirements. For example, the name of data types within the NWB file can differ from those expected by Spyglass. We have fully described the <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/ForDevelopers/UsingNWB/">Spyglass-specific NWB conventions</ext-link> in the documentation website. To further accommodate NWB files from many sources, we have also developed a system that makes it possible to ingest NWB files into Spyglass even when they do not adhere to our naming conventions or best practices by including a configuration yaml file (see Methods and <xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/02_Insert_Data/">02_Insert_data</ext-link>).</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1:</label>
+<caption><title>Tutorials included in Spyglass and their descriptions.</title>
+<p>All available from <ext-link ext-link-type="uri" xlink:href="https://github.com/LorenFrankLab/spyglass">https://github.com/LorenFrankLab/spyglass</ext-link>.</p></caption>
+<graphic xlink:href="577295v4_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+</sec>
+<sec id="s2c">
+<title>Relational database as analysis pipelines</title>
+<sec id="s2c1">
+<title>Why a relational database?</title>
+<p>One significant challenge with data analysis is in managing its complexity. Most results derive from an extended series of steps, including “preprocessing” (e.g. spike sorting for electrophysiological data, region-of-interest identification for optical physiological data, video processing for behavioral data, etc.) and downstream analyses. Each step depends on a different algorithm with a specific set of parameters and generates distinct intermediate data. Tracking these numerous components is difficult, and understanding how another scientist has managed them can be even more daunting. This complexity hinders collaboration, verification of results, and data reuse.</p>
+<p>These issues motivated our use of a formal software system: the relational database, a well-known data structure that uses tables to organize data. To construct an analysis pipeline, we use DataJoint<sup><xref ref-type="bibr" rid="c27">27</xref>,<xref ref-type="bibr" rid="c28">28</xref></sup> to define a series of database tables with a dependency structure. Associated with the database tables is code that carries out an analysis using a specific set of parameters and a specific part of the data. This code then stores the results as a new row in the table with a pointer to the results stored on disk as an NWB file. Creating a new table row is referred to as “populating” the table. Thus, data analysis becomes a matter of populating and interacting with the database. This style of data analysis offers many advantages:
+<list list-type="bullet">
+<list-item><p>It makes it easy to apply the same analysis to multiple datasets, as users need to specify only the data and parameters for computation (“what”) rather than the execution details (“how”).</p></list-item>
+<list-item><p>It provides a structure to organize the analysis parameters, data, and outputs into different tables.</p></list-item>
+<list-item><p>It enables easy access to multiple datasets via queries.</p></list-item>
+<list-item><p>It is concurrently accessible to multiple users.</p></list-item>
+</list>
+Because DataJoint binds the code for running the computation with the table that will store the result, populating the same table will execute the same code. DataJoint also provides additional features for reproducible data analysis, such as maintaining data integrity of the database (e.g. deleting a table entry causes cascading deletion of dependent entries in downstream tables) and the files containing the results (e.g. by checksum verification).</p>
+</sec>
+<sec id="s2c2">
+<title>How does Spyglass differ from DataJoint?</title>
+<p>While Spyglass is based on DataJoint, it offers many useful features that DataJoint lacks. These include:
+<list list-type="bullet">
+<list-item><p>A tight integration with the NWB format: When the NWB file is ingested into Spyglass, pointers to the data types appear as rows in a set of predefined tables. These serve as the starting point for analyses and an interface for the users to access the raw data within Spyglass. We provide the <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/ForDevelopers/UsingNWB/#object-table-mappings">mapping between NWB data types and corresponding Spyglass tables</ext-link> in the documentation website.</p></list-item>
+<list-item><p>Extending table types: Spyglass provides a mix-in class for defining table types that are not included in DataJoint or extending the function of existing table types. This is used to implement many key table types such as <monospace>Merge</monospace> tables, which allow multiple upstream pipelines to feed into the same downstream pipeline. This example is illustrated in the description of the spike sorting pipeline below.</p></list-item>
+<list-item><p>Permission-based delete: Spyglass enables the deletion of individual rows in a table based on pre-defined user permission. This is not naturally supported by MySQL, the underlying relational database management system used by DataJoint.</p></list-item>
+<list-item><p>Improved searching based on restrictions on non-primary keys: Spyglass allows the users to conveniently track the provenance of a particular row in a downstream table across multiple upstream tables with only partial information.</p></list-item>
+<list-item><p>Export system for publishing: Spyglass provides a convenient way to export only the part of the database used for generating results and figures for a publication. This is done by caching the information about tables that are accessed when generating figures.</p></list-item>
+<list-item><p>The inclusion of various helper functions, which are detailed on the Spyglass documentation website.</p></list-item>
+</list>
+</p>
+</sec>
+</sec>
+<sec id="s2d">
+<title>Setup and hardware requirement</title>
+<p>Spyglass can be installed in any setting that can support Python via the Python Package Index (PyPI). We provide detailed installation instructions on the documentation website, including a complete list of software requirements. In addition to the Python package, using Spyglass requires running a relational database (currently MySQL backend is supported). In our laboratory, we run this from a Docker container provided by DataJoint on a lab-wide server and grant access to it to members of the lab and other collaborators. This local configuration is recommended for use cases involving ∼ 10 users. For a larger scale deployment, one could also run the Spyglass database in the cloud using services such as AWS.</p>
+</sec>
+<sec id="s2e">
+<title>Practical use cases and extensions</title>
+<p>Spyglass comes with many pre-defined pipelines that implement common analysis tasks for electrophysiological and behavioral data. For users interested in using these pipelines, they can do so as soon as they ingest their NWB files into the database. Spyglass can also serve as a jumping off point for exploratory data analysis. For example, the user can conveniently read specific data types from the NWB file by first ingesting it into Spyglass and accessing database tables with Spyglass functions (e.g. <monospace>fetch_nwb</monospace>). If they need to pre-process the data first, they can do by running the relevant pipelines. Once the user has decided to formalize a particular analysis that is not yet supported by Spyglass, they can extend Spyglass and create user-generated custom pipelines. These could include data types from NWB files not currently supported by Spyglass (e.g. photometry, optical physiology, etc.), or build on existing Spyglass pipelines. Because the raw data and intermediate results are in NWB format, the custom pipelines can take advantage of analysis software packages within the NWB ecosystem.</p>
+</sec>
+<sec id="s2f">
+<title>Organization of analysis pipelines</title>
+<p>Here we delve deeper into the design and organization of analysis pipelines in Spyglass. As mentioned previously, the analysis pipelines are defined as a set of tables in the relational database. Specifically, Spyglass uses DataJoint syntax to define tables as Python classes. The code for executing the analysis is associated with these tables as class methods, enabling a tight integration of the database structure with the code for populating it. We refer the reader to the DataJoint documentation for more details on specific commands to interact with the database.</p>
+<p>When an NWB file is first ingested into Spyglass, pointers to the data types in the NWB file are stored in database tables of the <monospace>Common</monospace> module. Each <monospace>Common</monospace> table corresponds to a data object in the NWB file and serves as an interface to retrieve it with simple function calls (<monospace>fetch_nwb</monospace>). The retrieval is “lazy” in the sense that only a specific part of the data is loaded for analysis instead of the entire NWB file.</p>
+<p>An analysis pipeline consists of sets of tables downstream of the <monospace>Common</monospace> tables. In each step in the analysis, the user populates one of four table types (<xref rid="fig2" ref-type="fig">Figure 2A</xref>):
+<list list-type="bullet">
+<list-item><p><monospace>Data</monospace> tables contain pointers to data objects in either the original NWB file or ones generated by an upstream analysis.</p></list-item>
+<list-item><p><monospace>Parameter</monospace> tables contain a list of the parameters needed to fully specify the desired analysis.</p></list-item>
+<list-item><p><monospace>Selection</monospace> tables associate parameter entries with data object entries.</p></list-item>
+<list-item><p><monospace>Compute</monospace> tables execute the computations to carry out the analysis using the <monospace>Data</monospace> and <monospace>Parameters</monospace> specified in the <monospace>Selection</monospace> table entry. These results are then stored and can serve as <monospace>Data</monospace> for downstream analysis.</p></list-item>
+</list>
+</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2:</label>
+<caption><title>Analysis pipelines in Spyglass.</title>
+<p>(A) A general structure for a Spyglass pipeline. (B) Example 1: LFP extraction. Note the correspondence to the pipeline structure in (A) as shown by the color scheme. The trace next to the <monospace>Raw</monospace> table is raw data sampled at 30 kHz and is represented by a row in the <monospace>Raw</monospace> table. This, along with parameters from <monospace>LFPElectrodeGroup</monospace>, <monospace>IntervalList</monospace>, and <monospace>FIRFilterParameters</monospace> tables (red arrow), are defined in a Python dictionary and inserted into <monospace>LFPSelection</monospace> table (the code snippet, using the <monospace>insert1</monospace> method, puts the data in the database table). When the <monospace>populate</monospace> method is called on the <monospace>LFP</monospace> table, the filtering is initiated and the output is inserted into the database. The results (e.g. the trace above <monospace>LFP</monospace> table) are stored in NWB format and its object ID within the file is also stored as a row in <monospace>LFP</monospace> table, enabling easy retrieval. (C) Example 2: Sharp-wave ripple (SWR) detection. This pipeline is downstream of the LFP extraction pipeline and consists of two steps: (i) further extraction of a frequency band for SWR (<monospace>LFPBand</monospace>); and (ii) detection of SWR events in that band (<monospace>RippleTimes</monospace>). Note that the output of LFP extraction serves as the input data for the SWR detection pipeline and can thus be thought of as both <monospace>Compute</monospace> and <monospace>Data</monospace> types. As in (B), for each step, the results are saved in NWB files and the object ID of the analysis result within the NWB file are stored as rows in the corresponding <monospace>Compute</monospace> tables. The trace above the <monospace>RippleTimes</monospace> table is the SWR-filtered LFP around the time of a single SWR event (pink shade). In each table, columns in bold are the primary keys. Arrows depict dependency structure within the pipeline.</p></caption>
+<graphic xlink:href="577295v4_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Spyglass includes pipelines for standard analysis tasks in systems neuroscience, such as the analysis of LFP, spike sorting, video and position processing, and fitting state-space models for decoding neural data. Tutorials for all pipelines are available on the <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/">Spyglass documentation website</ext-link> (<xref rid="tbl1" ref-type="table">Table 1</xref>). Many pipelines are powered by community-developed, open-source packages, like GhostiPy<sup><xref ref-type="bibr" rid="c20">20</xref></sup>, SpikeInterface<sup>19</sup>, DeepLabCut<sup><xref ref-type="bibr" rid="c2">2</xref></sup> and Moseq<sup><xref ref-type="bibr" rid="c29">29</xref></sup>. These pipelines store a complete record of the analysis and simplify the application of these tools. Furthermore, multiple versions of the pipelines can co-exist to apply different algorithms to a single data set, making it easy to probe the robustness of the results (see <italic>Merge motif</italic> below).</p>
+<p>Next we provide a detailed description about the implementation of three common analysis tasks in Spyglass pipelines: (i) filtering broadband extracellular voltage traces to extract the lower-frequency LFP bands; (ii) detecting discrete events (e.g. sharp-wave ripples, a hippocampal event marking the time of bursts of population activity) in the LFP signals; and (iii) spike sorting and curation.</p>
+<sec id="s2f1">
+<title>Example 1: LFP extraction (<xref rid="fig2" ref-type="fig">Figure 2B</xref>)</title>
+<p>To extract the LFP signal (below 400 Hz), we use the pipeline shown in <xref rid="fig2" ref-type="fig">Figure 2B</xref>. First, we select a row from the <monospace>Raw</monospace> table, a <monospace>Data</monospace> table that points to an <monospace>ElectricalSeries</monospace> object in the NWB file. We then specify the parameters of the analysis in the <monospace>Parameter</monospace> tables: the list of channels for which LFP should be extracted (<monospace>LFPElectrodeGroup</monospace>), the time interval for the LFP extraction (<monospace>IntervalList</monospace>), and the coefficients for the filter that will be used on the data (<monospace>FIRFilterParameters</monospace>). These parameters are associated with the entry in the <monospace>Raw</monospace> table by defining a Python dictionary object that specifies the <monospace>Data</monospace> and <monospace>Parameter</monospace> entries and inserting it into a <monospace>Selection</monospace> table (<monospace>LFPSelection</monospace>) by calling the <monospace>LFPSelection.insert1</monospace> method (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). Finally, we apply the filter to the selected data over the selected interval using the <monospace>LFP</monospace> table (a <monospace>Compute</monospace> table) by calling the <monospace>LFP.populate</monospace> method. The resulting filtered data is saved to disk in the NWB format, and the object ID associated with the LFP object within the NWB file is also stored in the <monospace>LFP</monospace> table for easy retrieval. Thus, the corresponding entry in the <monospace>LFP</monospace> table contains all the details about the data and the parameters, allowing a user to fully track the provenance of the output.</p>
+</sec>
+<sec id="s2f2">
+<title>Example 2: Sharp-wave ripple detection (<xref rid="fig2" ref-type="fig">Figure 2C</xref>)</title>
+<p>Once the LFP extraction is completed, we can build on the results by applying another filter to isolate a specific frequency band and identifying sharp-wave ripples (SWRs), a prominent LFP event within hippocampal data. This pipeline is illustrated in <xref rid="fig2" ref-type="fig">Figure 2C</xref>. It applies two additional steps to a row in the <monospace>LFP</monospace> table: another band-pass filter to isolate the 150-250 Hz band and a subsequent detection of SWR events. Each step uses the same basic scheme shown in <xref rid="fig2" ref-type="fig">Figure 2A</xref>. These include defining a specific band-pass filter in the <monospace>Parameter</monospace> tables; selecting a time interval for the bandpass filtering; and adding an entry to <monospace>LFPBandSelection</monospace> table that binds both the filter parameters and the time interval with a row in the <monospace>LFP</monospace> table. A call to <monospace>LFPBand.populate</monospace> generates an NWB file containing the ripple-band data and an entry in the <monospace>LFPBand</monospace> table with information about which data and parameters were used. Next, the user selects an entry in <monospace>RippleParameters</monospace> to define the parameters for detecting the ripple events (e.g. threshold over the spectral power) and associates it with filtered data in <monospace>LFPBand</monospace> in the <monospace>RippleLFPSelection</monospace> table. Finally, the <monospace>RippleTimes</monospace> table is populated (by <monospace>RippleTimes.populate)</monospace>, which identifies the start and end times of each ripple event and saves these to a new NWB file.</p>
+</sec>
+<sec id="s2f3">
+<title>Example 3: Spike sorting and curation (<xref rid="fig3" ref-type="fig">Figure 3</xref>)</title>
+<p>The spike sorting pipeline (<xref rid="fig3" ref-type="fig">Figure 3</xref>) combines the principles of analysis pipeline design we outlined previously with additional design features. This pipeline includes the following steps: (1) preprocess the recording (e.g. filter and whiten to remove noise); (2) apply spike sorting algorithm (e.g. MountainSort4, Kilosort3, etc.); (3) curate the results (e.g. either manually or automatically by computing quality metrics); and (4) consolidate the output with other sources of sorted units (e.g. those already present in the NWB file) for downstream analysis. Each of these steps follow the general design shown in <xref rid="fig2" ref-type="fig">Figure 2A</xref>. We also detail additional features that have not been discussed previously.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3:</label>
+<caption><title>Spike sorting pipeline.</title>
+<p>The Spyglass spike sorting pipeline consists of seven components (large gray boxes): preprocess recording (A); detect artifacts to omit from sorting (B); apply spike sorting algorithm (C); curate spike sorting (D), either with quality metrics (E) or manually (F); and merge with other sources of spike sorting for downstream processing (G). Solid arrows describe dependency relationships and dashed arrows indicate that the data is re-inserted upstream for iterative processing. Note the two design motifs (see text): “cyclic iteration” for curation and “merge” for consolidating data streams. Color scheme is the same as <xref rid="fig2" ref-type="fig">Figure 2</xref>, except for light purple (cyclic iteration table), orange (merge table), and peach (<monospace>Parts</monospace> table of the merge table).</p></caption>
+<graphic xlink:href="577295v4_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2f3a">
+<title>Global <monospace>Parameter</monospace> tables (e.g. <monospace>IntervalList</monospace>)</title>
+<p>An important object in any analysis is the time interval during which the data were collected or to which analysis procedures should be applied. To avoid having a separate table for time intervals in every pipeline, we store them in the <monospace>IntervalList</monospace> table of the <monospace>Common</monospace> module for all pipelines. For example, in the spike sorting pipeline (<xref rid="fig3" ref-type="fig">Figure 3</xref>), <monospace>IntervalList</monospace> provides a time interval for both preprocessing the recording (<monospace>SpikeSortingRecordingSelection</monospace>) and running a spike sorting algorithm (<monospace>SpikeSortingSelection</monospace>). In addition, the intervals during which artifacts (i.e. high-amplitude voltage transients from behavioral events such as licking) occur is identified and fed back into <monospace>IntervalList</monospace> (dashed arrow in <xref rid="fig3" ref-type="fig">Figure 3</xref>).</p>
+</sec>
+<sec id="s2f3b">
+<title>“Cyclic iteration” motif for curation</title>
+<p>Certain pipelines, such as curating the output of spike sorting, may need to be run multiple times on the same data. For example, one might first compute quality metrics to identify noise clusters and potential candidates for merging over-clustered units (Automatic); then inspect, merge, and apply curation labels to the result with an external viewer (Manual); and finally, compute a final set of metrics to describe the quality of each unit (Automatic). This results in a sequence of curation steps: Automatic, Manual, Automatic. Depending on the data, the user may choose a different curation sequence, and the order and length of these sequences might change as new algorithms and metrics are developed. This presents a challenge in modeling the pipeline within the relational database.</p>
+<p>We therefore developed a specific design motif to enable this iterative curation with a finite number of tables (<xref rid="fig3" ref-type="fig">Figure 3</xref>). First, a given row of the <monospace>CurationV1</monospace> table (the output of the spike sorting step) is taken through automatic or manual curation steps downstream. Upon completion, the spike sorting object may enter this curation pipeline again as a new row in the <monospace>CurationV1</monospace> table. Importantly, the new row has information about previous curation from which it descended. This allows the user to track each round of curation while applying as many steps as desired. It can also be easily extended; if new automatic curation algorithms are developed in the future, it can simply be added downstream to the <monospace>CurationV1</monospace> table, enabling application of the latest methods to previously collected data.</p>
+</sec>
+<sec id="s2f3c">
+<title>“Merge” motif for consolidating data streams and versioning pipelines</title>
+<p>A different challenge arises when the user wants to feed multiple streams of data of the same type into a single downstream pipeline. For example, once curation is completed, the spike sorting is saved in <monospace>CurationV1</monospace>. But some NWB files may already contain curated spike sorting (as a row in the table <monospace>ImportedSpikeSorting</monospace>), and one may want to apply the same downstream pipeline to both data sources to compare the results. In yet another case, the other data stream could be a different version of the spike sorting pipeline (e.g. <monospace>CurationV2</monospace>) that uses different algorithms but produces output of the same type. Adding the same downstream pipeline to each of these separately would result in code redundancy and database bloat. Simply having these converge onto a single downstream table is not desirable either, as it will require modifying an existing table to add new columns every time a new version or new data stream is added.</p>
+<p>To solve this problem, we have designed a “merge” table type (<xref rid="fig3" ref-type="fig">Figure 3</xref>). Here <monospace>Parts</monospace> tables (a table type within DataJoint tightly associated with a parent table) are used to implement the merging of multiple data streams onto a single table. The downstream pipeline then gets data from this table without any duplication. More details for the implementation and helper functions to maintain data integrity can be found in the tutorial notebook (<xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/04_Merge_Tables/">04_Merge_Tables</ext-link>).</p>
+</sec>
+</sec>
+</sec>
+<sec id="s2g">
+<title>Sharing Data, Analysis, and Visualization</title>
+<sec id="s2g1">
+<title>Complete sharing of data and analysis at the end of projects</title>
+<p>A key goal of our system is to simplify sharing data and analyses when results are ready to be published. Because all raw and intermediate data are in the NWB format, they can be directly deposited to DANDI<sup><xref ref-type="bibr" rid="c16">16</xref>,<xref ref-type="bibr" rid="c24">24</xref>–<xref ref-type="bibr" rid="c26">26</xref></sup>, a NIH-supported public archive for neuroscience data. Sharing the analysis code is also easy: simply share the codebase for the analysis pipelines (i.e. Spyglass plus any project-specific pipelines) and the scripts used to populate the database. Others can then download the raw data from DANDI, set up the database with Spyglass, and recreate all results locally by executing the population script. Alternatively, users may want to share the Spyglass database in its populated state so that the community can access it directly without going through the setup procedures or re-running time-consuming analysis steps. This can be done by (i) hosting the database on the cloud and granting access to users outside the lab; or (ii) exporting and sharing parts of the database that were used by the project. Spyglass facilitates the second option by providing functions that will automatically log the tables and NWB files used for creating figures of a manuscript in a Python environment (<xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/05_Export/">05_Export</ext-link>). These are saved as Docker containers and optionally uploaded to DANDI.</p>
+</sec>
+<sec id="s2g2">
+<title>Controlled sharing for ongoing projects</title>
+<p>For ongoing projects, users may want to limit the sharing of the analyses to their collaborators. This requires controlling access to the database and the underlying NWB files that contain the raw or intermediate data. This is straightforward to manage in Spyglass. DataJoint handles access to the database natively by requiring a username and a password. Managing access to the NWB files is handled by <ext-link ext-link-type="uri" xlink:href="https://github.com/flatironinstitute/kachery-cloud">Kachery</ext-link>, a content-addressed sharing tool for scientific data (<xref rid="fig4" ref-type="fig">Figure 4A</xref>). Specifically, the user selects the NWB files to be shared by inserting pointers to them into <monospace>NwbKachery</monospace> and <monospace>AnalysisNwbKachery</monospace> tables within Spyglass. When the collaborator attempts to access these files, Kachery first looks for them in their local system. If not found, the corresponding files are automatically uploaded from the user’s system to a cloud storage server and then downloaded to the collaborator’s computer. This feature is detailed in a tutorial (<xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/03_Data_Sync/">03_Data_Sync</ext-link>). Kachery offers advantages over other file hosting services (e.g. Dropbox and Google Drive) or alternative architectures (e.g. IBL data architecture) by not requiring a central location to track available files and providing a user-friendly Python API.</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4:</label>
+<caption><title>Sharing data and visualizations.</title>
+<p>(A) Kachery provides a convenient Python API to share data over a content-addressable cloud storage network. To retrieve data from a collaborator’s Spyglass database, one can make a simple function call (<monospace>fetch_nwb</monospace>) that pulls the data from a node in the Kachery Zone to the local machine. (B) Example of a Figurl interactive figure for visualizing and applying curation labels to spike sorting over the web.</p></caption>
+<graphic xlink:href="577295v4_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s2h">
+<title>Sharing visualizations</title>
+<p>Spyglass enables users to create and share interactive visualizations of final and intermediate analysis results through the Figurl package. These visualizations facilitate understanding complex, multi-modal neuroscience datasets by allowing users to (i) quickly compare different stages of processed data to spot issues with their data and (ii) align multimodal information sources to get a more holistic view of their dataset. Figurl is integrated within Spyglass as dedicated tables attached to specific pipelines such as spike sorting (<xref rid="fig4" ref-type="fig">Figure 4B</xref>) and neural decoding (<xref rid="fig5" ref-type="fig">Figure 5</xref>). Populating these tables generates a URL to web-based visualizations for exploring complex, multi-dimensional time series across multiple views whose time axes can be linked. Sharing them is also easy, as the URL can be accessed from any browser without the need for local software installation or specialized hardware. This allows collaborators anywhere in the world to easily access and explore the data.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5:</label>
+<caption><title>Applying decoding pipelines to multiple data sets from different labs</title>
+<p>(A) Decoding neural position from rat hippocampal CA1 using a clusterless state space model (UCSF dataset). In the top panel, grey lines represent positions the rat has occupied in the spatial environment. Overlayed lines in color are the track segments used to linearize position for decoding. Filled circles represent reward wells. The second panel from the top shows the posterior probability of the latent neural position over time. The magenta line represents the animal’s actual position. The vertical lines on the right represent the linearized track segments with the colors corresponding to the top panel. The third panel from the top shows the distance of the most likely decoded position from the animal’s actual position and sign indicates the direction relative to the animal’s head position. The fourth panel from the top is the animal’s speed. The final panel is the multiunit firing rate. (B) Decoding from rat hippocampal CA1 using existing spike sorted units (NYU dataset). Conventions are the same as in A. Filled circle in the linearization represents the reward zone rather than the reward well. (C) Decoding analysis of the NYU dataset. The top panel shows the power difference of the multiunit firing rate between the medial septal cooling period and the pre-cooling period in the 5-13 Hz range. The power at 8-10 Hz is attenuated during cooling while the power at 5-8 Hz is enhanced, showing a slowing of the theta rhythm during cooling. The bottom panel shows that the power of the distance between decoded and actual position (decode distance) is mostly reduced throughout the 5-13 Hz range. (D) Cooling decreases the decode distance and speed and this effect may only recover partially after cooling. Bars represent 95% confidence intervals.</p></caption>
+<graphic xlink:href="577295v4_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2i">
+<title>Demonstration of generalizability: neural decoding of position in multiple data sets</title>
+<p>A major goal of Spyglass is to facilitate the analysis of data across multiple datasets that may come from different laboratories. To illustrate this, we ingested and analyzed two NWB files containing single-neuron recordings from rat hippocampus, one from our laboratory and another from the Buzsáki laboratory at NYU<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. Specifically, we applied a switching state space model <sup><xref ref-type="bibr" rid="c31">31</xref>,<xref ref-type="bibr" rid="c32">32</xref></sup> to decode the animal’s position from spikes and infer periods of different types of non-local representations (such as replay and theta sequences), during which the decoded position deviates from the animal’s true position. This is a complex analysis that involves integrating multiple data sources, including position and neural spiking activity, and applying an advanced statistical model with many user-defined parameters. The decoding pipeline in Spyglass enables the user to carry out every step of this analysis, including “preprocessing” of the data (e.g. linearize the 2D position of the animal, perform spike sorting, or import units that have already been sorted) and fitting of the model. After running the decoding pipeline, we visualize the results on the browser via Figurl and generate plots to further reproduce the reported results.</p>
+<p>The UCSF dataset contains large scale hippocampal recordings in an animal performing a foraging task in a maze with six reward sites and dynamic reward probabilities (<xref rid="fig5" ref-type="fig">Figure 5A</xref>, top panel). Applying the decoding pipeline to these data yields a probability distribution over space in 2 ms bins that describes our estimate of the “mental” position of the animal. This mental position tracks the animal as it traverses the maze (<xref rid="fig5" ref-type="fig">Figure 5A</xref>, 2<sup>nd</sup> panel from top; see interactive visualization via Figurl) but also shows interesting systematic deviations from actual position. Computing the distance between the peak of the probability distribution and the actual location reveals characteristic patterns of such deviations from the actual position (<xref rid="fig5" ref-type="fig">Figure 5A</xref>, 3<sup>rd</sup> panel from top) in which the decoded position sweeps ahead of the actual position and then back during movement bouts. This pattern recurs at ∼8 Hz, reflecting the well-known “theta sequences” seen in the hippocampus<sup><xref ref-type="bibr" rid="c33">33</xref>,<xref ref-type="bibr" rid="c34">34</xref></sup>.</p>
+<p>We then applied this same pipeline to the NYU dataset, where animals performed a spatial alternation task on a maze with a figure-8 topology (<xref rid="fig5" ref-type="fig">Figure 5B</xref>, top panel). As expected, we could identify theta sequences in these data as well, highlighting the robustness of these phenomena (<xref rid="fig5" ref-type="fig">Figure 5B</xref>, 2<sup>nd</sup> and 3<sup>rd</sup> panels from top, see interactive visualization via Figurl). Moreover, the NYU dataset includes a specific manipulation in which the medial septum, a brain region critical for pacing the theta rhythm, was cooled, reducing the theta frequency from 8-10 Hz to 5-8 Hz. The authors originally carried out several detailed analyses to demonstrate that cooling reduced theta frequency and impaired behavior without changing the overall spatial tuning of single neurons or their tendency to fire sequentially within theta cycles. However, the authors did not apply state-space decoding methods, and did not characterize the effects of cooling on the decoded representation of space in relation to the animal’s actual position. We therefore applied our decoding pipeline to the cooling trials (“cooling on”) and the control trials preceding it (“pre-cooling”), just after it (“cooling off”), and the recovery trials 10-12 minutes after cooling (“post-cooling”).</p>
+<p>The results of these analyses were consistent with the published findings and provided new characterizations that could serve as the foundation for additional discoveries. We first estimated the multiunit firing rate as a proxy for the theta LFP and characterized its power spectrum before and after cooling. As expected, cooling decreased the power above ∼8 Hz and increased the power below ∼8 Hz, consistent with the slowing of theta LFP shown in the original manuscript (<xref rid="fig5" ref-type="fig">Figure 5C</xref>, top panel). We then applied the same analysis described above to the distance between the decoded and the actual position during movement (“decode distance”), expecting cooling to have a similar effect on its power spectrum. Interestingly, here cooling led to a decrease in power at essentially all frequencies (<xref rid="fig5" ref-type="fig">Figure 5C</xref>, bottom panel). Consistent with this result, the decode distance decreased from the pre-cooling to cooling period, with a partial recovery during the post-cooling period (<xref rid="fig5" ref-type="fig">Figure 5D</xref>, top panel). Similarly, the average speed at which the decoded position moved ahead and behind the animal was also reduced during cooling and showed a partial recovery after the cooling period (<xref rid="fig5" ref-type="fig">Figure 5D</xref>, bottom panel). These results indicate that cooling reduces both the extent and the rate at which the decoded position deviates from the actual position. This was unexpected given that cooling had no effect on the average spatial tuning of these cells<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. It also raises an interesting hypothesis: hippocampal representations of distant locations may be exquisitely tuned to the specific frequency of the rhythmic input from medial septum, such that slowing the rhythm down by just 2-3 Hz significantly limits their expression. More broadly, these findings illustrate the power of our framework that enables both replication of results across datasets and the re-analysis of previously collected data.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<sec id="s3a">
+<title>Summary of results</title>
+<p>Science is a social enterprise that relies heavily on collaboration and transparency among researchers<sup><xref ref-type="bibr" rid="c35">35</xref>,<xref ref-type="bibr" rid="c36">36</xref></sup>. Reproducible and shareable data analysis plays a critical role in this context, as it ensures that scientific findings can be independently verified and built upon by others. To facilitate this for the neuroscience community, we built Spyglass, a software framework that combines the NWB format and the relational database structure. Building on many community-developed tools, it provides useful features to design complex analysis pipelines, share raw and processed data, generate web-based visualizations, and analyze data from multiple sources. As a result, it simplifies collaboration within and across labs, making it well-suited as a community framework for neurophysiological and behavioral data analysis.</p>
+</sec>
+<sec id="s3b">
+<title>Comparison to prior work</title>
+<p>Our work builds on many previous approaches that have been proposed for scientific data management and reproducible analysis pipelines. This includes work from individual laboratories that have illustrated how a few elements of an NWB file could be read into a DataJoint database, and publications highlighting datasets available in NWB<sup><xref ref-type="bibr" rid="c37">37</xref></sup>. More broadly, DataJoint is used by many labs with lab-specific pipelines<sup><xref ref-type="bibr" rid="c38">38</xref></sup>, but to our knowledge none of these efforts integrate cross-laboratory data and visualization tools or use NWB as the foundation to facilitate sharing. Our system also contains elements similar to those developed by large collaborative groups like The International Brain Laboratory (IBL) that are designed to organize neurophysiology data for sharing with collaborators and a module to automatically run analyses<sup><xref ref-type="bibr" rid="c12">12</xref></sup>. But the conversion to a standardized format (outside the collaboration or group) and public data sharing are only done following substantial analysis in the IBL system, complicating replication of the full analysis.</p>
+<p>Other approaches do away with the relational database altogether. For example, DataLad uses version control tools such as git and git-annex to manage both code and data as files<sup><xref ref-type="bibr" rid="c39">39</xref></sup>. This enables the creation of a data analysis environment and decentralized data sharing. For building analysis pipelines, it may be combined with other tools for managing the sequential execution of scripts. For example, Snakemake<sup><xref ref-type="bibr" rid="c40">40</xref></sup> (and related projects such as Cobrawap<sup><xref ref-type="bibr" rid="c41">41</xref></sup>) allows the users to gather and define the input, output, and the associated scripts to execute for each analysis step, thereby tracking the dependency between steps. But because these tools do not provide any formal structure for data analysis, they lack the advantages of the relational database that we discussed, such as being able to easily organize or search for the records of previous analysis based on specific parameters, efficient data sharing and access management to multiple users, and built-in data integrity checks based on constraints native to the database (e.g. primary keys).</p>
+<p>By contrast, Spyglass begins with a shared data format that includes the raw data and offers both transparent data management and reproducible analysis pipelines using a formal data structure. One distinguishing feature of Spyglass is the emphasis placed on combinatorial matching of data and method in a reproducible way. For example, Spyglass makes it easy to apply multiple spike sorting algorithms to a given dataset and to compare the results, as this involves simply matching the data with different rows in the parameter tables. Spyglass also makes it straightforward to apply complex analyses like decoding to datasets from multiple labs, facilitating replication and data re-use. The system can be extended by adding new pipelines to the existing database as better tools and algorithms become available. These features enable the re-analysis of data to examine how the results depend on the choice of algorithm. We believe it is critical to provide this kind of future-compatibility to maximize the impact of the years of experimental work that go into each dataset.</p>
+</sec>
+<sec id="s3c">
+<title>Limitations</title>
+<p>Although Spyglass provides many useful features for reproducible data analysis, it has several limitations. For example, because of the central role played by the NWB format in Spyglass, a potential user must first convert their data to NWB, which requires time and effort<sup><xref ref-type="bibr" rid="c42">42</xref></sup>. In addition, users are expected to set up and maintain a relational database, which may require additional training. This includes learning to work with the structure of DataJoint, such as the strict data integrity requirement that makes modification of existing tables difficult. Finally, Spyglass does not yet include pipelines for processing certain types of neural data, such as optical physiology or fiber photometry.</p>
+<p>Fortunately, there are ongoing efforts to address these challenges. These include tools to simplify the raw data conversion into NWB, such as <ext-link ext-link-type="uri" xlink:href="https://neuroconv.readthedocs.io/">NeuroConv</ext-link>, a package to convert neurophysiology data in common formats to NWB automatically, and <ext-link ext-link-type="uri" xlink:href="https://nwb-guide.readthedocs.io/">NWB GUIDE</ext-link>, a desktop app that guides users through the process of converting data to NWB without writing any code. Furthermore, we provide many tutorials on the documentation website so that the user can efficiently learn to use Spyglass. We continue to actively maintain Spyglass and are eager to work with the community to extend it and support data types and analyses beyond what is currently available. These efforts will increase the usability and reach of Spyglass and make its adoption more attractive, particularly to early-stage investigators.</p>
+</sec>
+<sec id="s3d">
+<title>Future applications</title>
+<p>Spyglass and similar tools have the potential to transform scientific data analysis. In addition to facilitating examination or extension of published results, they enable meta-analysis across studies and easy testing of novel methods across multiple datasets. The machine-readable form of data and analysis pipelines also opens doors for machine-driven analysis and hypothesis testing. As these tools develop and become more accessible, we believe that frameworks like Spyglass will likely become essential for neuroscience researchers.</p>
+</sec>
+</sec>
+<sec id="s6">
+<title>Methods and materials</title>
+<sec id="s6a">
+<title>Coding environment</title>
+<p>Spyglass was developed in Python 3.9 and is compatible with version 3.10 as well. See our <underline>dependency list</underline> for a full list of Python packages used.</p>
+</sec>
+<sec id="s6b">
+<title>NWB conversion</title>
+<p>To facilitate conversion of raw data to NWB format, we offer <underline><monospace>trodes-to-NWB</monospace></underline>, a sister package to Spyglass for converting data acquired with the SpikeGadgets hardware to NWB. This comes with a web-based GUI for conveniently generating a YAML file containing the metadata used by <monospace>trodes-to-NWB</monospace>. For converting data not acquired with SpikeGadgets, users can use NWB conversion tools developed by the NWB team, such as <ext-link ext-link-type="uri" xlink:href="https://neuroconv.readthedocs.io/en/stable/">NeuroConv</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://nwb-guide.readthedocs.io/en/stable/">NWB GUIDE</ext-link>.</p>
+</sec>
+<sec id="s6c">
+<title>NWB file conventions</title>
+<p>We adopted a specific set of conventions for our NWB files. Some of these conventions rely on a specific set of Frank lab-specific NWB extensions:</p>
+<list list-type="bullet">
+<list-item><p>Time:
+<list list-type="bullet">
+<list-item><p>Spyglass inherits from the source NWB file either the explicit or implicit timestamps. NWB files from Frank lab have explicit timestamps for each sample in Unix time (seconds since 12:00 am January 1<sup>st</sup>, 1970). This lets users to know exactly when data were collected. Spyglass is also compatible with other approaches, however, including implicit timestamping consisting of the start time and sampling rate.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p>ElectrodeTable and ElectrodeGroup:
+<list list-type="bullet">
+<list-item><p><monospace>ElectrodeGroups</monospace> are stored in a custom NWB extension that also includes the name of the targeted brain region for each group.</p></list-item>
+<list-item><p>The NWB file contains information about the relative locations of each of the electrodes within each physical device used for data collection. This ensures that the relative locations of the electrodes are available for spike sorting and registration to histology.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p>Video files
+<list list-type="bullet">
+<list-item><p>The relative path to the video files collected along with the recordings are stored in the NWB file.</p></list-item>
+</list>
+</p></list-item>
+<list-item><p>Additional files
+<list list-type="bullet">
+<list-item><p>Other files important to recreate the conditions of the experiments can be saved, depending on the format. For example, the code used for implementing the behavioral paradigm or reward contingency can be stored as text objects in the NWB file.</p></list-item>
+</list>
+</p></list-item>
+</list>
+</sec>
+<sec id="s6d">
+<title>NWB file ingestion</title>
+<p>Although the NWB format serves as a community standard for neurophysiology data and has a list of <ext-link ext-link-type="uri" xlink:href="https://www.nwb.org/best-practices/">best practices</ext-link>, it allows some flexibility in the specification of data within NWB files to accommodate user preferences. For example, the <monospace>ElectricalSeries</monospace> object that stores the electrophysiology data may have different names depending on the convention chosen by the investigator, which may complicate programmatic access to the data. To make Spyglass interoperable with NWB files of varying degrees of NWB-compliance, we have created an option to supply or override information that is missing in the NWB file but is nevertheless required by Spyglass via a configuration file that can accompany the NWB file. We provide an example of this approach in a tutorial (<xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/02_Insert_Data/#yaml-inserts">02_Insert_Data</ext-link>).</p>
+</sec>
+<sec id="s6e">
+<title>Permission-handling and cautious delete</title>
+<p>Spyglass is based on a relational database that is accessible to multiple users. In some cases, the type of operations that can be applied to individual data entries (i.e., rows of a table) may need to be restricted to a specified set of users. This is particularly true for operations that are irreversible or time consuming, such as deleting a row from a table storing analysis results. However, there is no inherent mechanism within MySQL or DataJoint that allows permission handling at the level of individual rows of a table. To solve this problem, we have implemented a <monospace>cautious_delete</monospace> function, in which the user’s permission to carry out a delete operation is checked before it is applied. The permission is granted based on team membership within the lab, reflected in the <monospace>LabTeam</monospace> table. Though this is not a formal permission-management system, it can prevent accidental deletions.</p>
+</sec>
+<sec id="s6f">
+<title>Sharing files via Kachery</title>
+<p>One way to share the results of Spyglass analysis pipelines is to make the database publicly available. This gives anyone the permission to access the rows of the tables that make up the pipelines and inspect the metadata and the parameters associated with each step of the analysis. But because Spyglass only saves a path to the NWB files containing analysis results within the tables, external viewers cannot download the data and examine it by default.</p>
+<p>To enable controlled external access to the data, we have created a system to share selected analysis NWB files with a specified group of users via Kachery. We define a set of tables (<monospace>KacheryZone</monospace> and <monospace>AnalysisNWBfileKachery</monospace>) where users can associate analysis NWB files to be shared with a Kachery Zone, making it available to all remote clients who are members of the zone through cloud storage services like Cloudflare R2 bucket or self-hosted servers. Once linked, Spyglass automatically requests, downloads, and manages analysis data for remote users attempting to access shared data through Spyglass tables. This provides a convenient way to provide access to the Spyglass pipelines and associated data files to collaborators.</p>
+</sec>
+<sec id="s6g">
+<title>Customizing pipelines</title>
+<p>To alleviate the challenges associated with database design, we have identified design principles that have been tested extensively by multiple users in the Frank lab. These are described in the text and illustrated with examples in <xref rid="fig2" ref-type="fig">Figures 2</xref> and <xref rid="fig3" ref-type="fig">3</xref>. We recommend users adopt these design elements for building their custom pipelines. We also describe the naming conventions for the tables defined as Python classes and important methods associated with them (e.g. for multiple versions of a pipeline) in our <underline>Developer Notes</underline> available online. Once the pipeline is sufficiently mature and potentially useful to other scientists, we encourage users to submit their pipelines as a pull request to our <underline>GitHub repository</underline>.</p>
+</sec>
+<sec id="s6h">
+<title>Decoding of position from NWB files from multiple laboratories</title>
+<p>The Frank lab data is available on the DANDI archive (<ext-link ext-link-type="uri" xlink:href="https://dandiarchive.org/dandiset/000937/draft">DANDI:000937</ext-link>). The Buzsáki lab data was also obtained from DANDI (<ext-link ext-link-type="uri" xlink:href="https://dandiarchive.org/dandiset/000937/draft">DANDI:000059/0.230907.2101</ext-link>). For decoding the Frank lab data, we applied the clusterless decoding pipeline by detecting the amplitude of threshold-crossing events in the tetrode recordings. For decoding the Buzsáki lab data, we applied a sorted-spikes decoding pipeline. The code for these decoding pipelines, as well as detailed tutorials describing them, are available online (<xref rid="tbl1" ref-type="table">Table 1</xref>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/40_Extracting_Clusterless_Waveform_Features/">40_Extracting_Clusterless_Waveform_Features</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/41_Decoding_Clusterless/">41_Decoding_Clusterless</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://lorenfranklab.github.io/spyglass/latest/notebooks/42_Decoding_SortedSpikes/">42_Decoding_SortedSpikes</ext-link>). Code to generate <xref rid="fig5" ref-type="fig">Figure 5</xref> can be found at: <ext-link ext-link-type="uri" xlink:href="https://github.com/LorenFrankLab/spyglass-paper">https://github.com/LorenFrankLab/spyglass-paper</ext-link>. Briefly, decoding the latent neural position and extracting the distance between the most likely decoded position and the animal’s position used methods described in Denovellis et al. (2021). We used a timestep of 4 ms and a position bin size of 2 cm with a continuous (6 cm variance Gaussian random walk) and fragmented</p>
+<p>(uniform distribution) discrete state. Place intensity receptive fields were estimated using a Gaussian kernel density estimate with a standard deviation of 6 cm for position and 24 mV for amplitude space (amplitude space was used for the clusterless analysis only). We calculated the power of the multiunit firing rate and the decoded distance from the animal by using a multitaper spectrogram during the pre-cooling and cooling periods. The time resolution was 3 seconds and the frequency resolution of 2/3 Hz with a single taper. We excluded immobility periods by using a threshold of 10 cm/s. Power difference was calculated by converting to the Decibel scale and taking the difference of average power under the cooling and pre-cooling condition. The decoded speed of theta sequences was calculated by taking the absolute value of the second-order difference of the decoded distance from the animal (function numpy.gradient) multiplied by the sampling frequency (250 Hz).</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We thank members of the Frank and Gillespie laboratory for bug reports and testing. We also thank Peter Petersen for consultations about analyzing his publicly available data, Daniel Liu for initial discussions about standardization of pipelines, and Abhilasha Joshi for consulting on the DeepLabCut pipeline. Finally, we thank Vanessa Bender for comments on the manuscript. This work was supported by HHMI funds and NIH grants RF1MH130623 and RF1MH133778 to L.M.F. and a Helen Hay Whitney Postdoctoral Fellowship to K.H.L.</p>
+</ack>
+<sec id="additional-info" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="s4">
+<title>Author contributions</title>
+<table-wrap id="utbl1" orientation="portrait" position="float">
+<graphic xlink:href="577295v4_utbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+</sec>
+<ref-list>
+<title>Reference</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lopes</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Bonacchi</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Frazão</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Neto</surname>, <given-names>J.P.</given-names></string-name>, <string-name><surname>Atallah</surname>, <given-names>B.V.</given-names></string-name>, <string-name><surname>Soares</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Moreira</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Matias</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Itskov</surname>, <given-names>P.M.</given-names></string-name>, <string-name><surname>Correia</surname>, <given-names>P.A.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2015</year>). <article-title>Bonsai: an event-based framework for processing and controlling data streams. Front</article-title>. <source>Neuroinformatics</source> <volume>9</volume>. <pub-id pub-id-type="doi">10.3389/fninf.2015.00007</pub-id>.</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nath</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Mathis</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>A.C.</given-names></string-name>, <string-name><surname>Patel</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Bethge</surname>, <given-names>M.</given-names></string-name>, and <string-name><surname>Mathis</surname>, <given-names>M.W</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Using DeepLabCut for 3D markerless pose estimation across species and behaviors</article-title>. <source>Nat Protoc</source> <volume>14</volume>, <fpage>2152</fpage>–<lpage>2176</lpage>. <pub-id pub-id-type="doi">10.1038/s41596-019-0176-0</pub-id>.</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Pachitariu</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Steinmetz</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Kadir</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Carandini</surname>, <given-names>M.</given-names></string-name>, and <string-name><surname>Harris</surname>, <given-names>K</given-names></string-name></person-group>. (<year>2016</year>). <article-title>Kilosort: realtime spike-sorting for extracellular electrophysiology with hundreds of channels</article-title>. <source>bioRxiv</source>, <elocation-id>061481</elocation-id>. <pub-id pub-id-type="doi">10.1101/061481</pub-id>.</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Siegle</surname>, <given-names>J.H.</given-names></string-name>, <string-name><surname>López</surname>, <given-names>A.C.</given-names></string-name>, <string-name><surname>Patel</surname>, <given-names>Y.A.</given-names></string-name>, <string-name><surname>Abramov</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Ohayon</surname>, <given-names>S.</given-names></string-name>, and <string-name><surname>Voigts</surname>, <given-names>J</given-names></string-name></person-group>. (<year>2017</year>). <article-title>Open Ephys: an open-source, plugin-based platform for multichannel electrophysiology</article-title>. <source>J. Neural Eng</source>. <volume>14</volume>, <fpage>045003</fpage>. <pub-id pub-id-type="doi">10.1088/1741-2552/aa5eea</pub-id>.</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yatsenko</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Walker</surname>, <given-names>E.Y.</given-names></string-name>, and <string-name><surname>Tolias</surname>, <given-names>A.S</given-names></string-name></person-group>. (<year>2018</year>). <article-title>DataJoint: A Simpler Relational Data Model</article-title>. <source>ArXiv</source> <elocation-id>180711104</elocation-id>. <pub-id pub-id-type="doi">10.48550/arXiv.1807.11104</pub-id>.</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Buccino</surname>, <given-names>A.P.</given-names></string-name>, <string-name><surname>Hurwitz</surname>, <given-names>C.L.</given-names></string-name>, <string-name><surname>Garcia</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Magland</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Siegle</surname>, <given-names>J.H.</given-names></string-name>, <string-name><surname>Hurwitz</surname>, <given-names>R.</given-names></string-name>, and <string-name><surname>Hennig</surname>, <given-names>M.H.</given-names></string-name></person-group> (<year>2019</year>). <article-title>SpikeInterface, a unified framework for spike sorting</article-title>. <source>bioRxiv</source> <pub-id pub-id-type="doi">10.1101/796599</pub-id>.</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Abe</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Kinsella</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Saxena</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Buchanan</surname>, <given-names>E.K.</given-names></string-name>, <string-name><surname>Couto</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Briggs</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Kitt</surname>, <given-names>S.L.</given-names></string-name>, <string-name><surname>Glassman</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Zhou</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Paninski</surname>, <given-names>L.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2022</year>). <article-title>Neuroscience Cloud Analysis As a Service: An open-source platform for scalable, reproducible data analysis</article-title>. <source>Neuron</source> <volume>110</volume>, <fpage>2771</fpage>–<lpage>2789.e7</lpage>. <pub-id pub-id-type="doi">10.1016/j.neuron.2022.06.018</pub-id>.</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wilkinson</surname>, <given-names>M.D.</given-names></string-name>, <string-name><surname>Dumontier</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Aalbersberg</surname>, <given-names>Ij</given-names></string-name>. <string-name><given-names>J.</given-names>, <surname>Appleton</surname></string-name>, <string-name><given-names>G.</given-names>, <surname>Axton</surname></string-name>, <string-name><given-names>M.</given-names>, <surname>Baak</surname></string-name>, <string-name><given-names>A.</given-names>, <surname>Blomberg</surname></string-name>, <string-name><given-names>N.</given-names>, <surname>Boiten</surname></string-name>, <string-name><given-names>J.-W.</given-names>, <surname>da Silva Santos</surname></string-name>, <string-name><given-names>L.B.</given-names>, <surname>Bourne</surname></string-name>, <string-name><given-names>P.E.</given-names>, <surname>et al</surname></string-name></person-group>. (<year>2016</year>). <article-title>The FAIR Guiding Principles for scientific data management and stewardship</article-title>. <source>Sci. Data</source> <volume>3</volume>, <fpage>160018</fpage>. <pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Goble</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Cohen-Boulakia</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Soiland-Reyes</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Garijo</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Gil</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Crusoe</surname>, <given-names>M.R.</given-names></string-name>, <string-name><surname>Peters</surname>, <given-names>K.</given-names></string-name>, and <string-name><surname>Schober</surname>, <given-names>D</given-names></string-name></person-group>. (<year>2020</year>). <article-title>FAIR Computational Workflows</article-title>. <source>Data Intell</source>. <volume>2</volume>, <fpage>108</fpage>–<lpage>121</lpage>. <pub-id pub-id-type="doi">10.1162/dint_a_00033</pub-id>.</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>De Vries</surname>, <given-names>S.E.</given-names></string-name>, <string-name><surname>Siegle</surname>, <given-names>J.H.</given-names></string-name>, and <string-name><surname>Koch</surname>, <given-names>C</given-names></string-name></person-group>. (<year>2023</year>). <article-title>Sharing neurophysiology data from the Allen Brain Observatory</article-title>. <source>eLife</source> <volume>12</volume>, <elocation-id>e85550</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.85550</pub-id>.</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hider</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Kleissas</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Gion</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Xenes</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Matelsky</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Pryor</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Rodriguez</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Johnson</surname>, <given-names>E.C.</given-names></string-name>, <string-name><surname>Gray-Roncal</surname>, <given-names>W.</given-names></string-name>, and <string-name><surname>Wester</surname>, <given-names>B</given-names></string-name></person-group>. (<year>2022</year>). <article-title>The Brain Observatory Storage Service and Database (BossDB): A Cloud-Native Approach for Petascale Neuroscience Discovery. Front</article-title>. <source>Neuroinformatics</source> <volume>16</volume>, <fpage>828787</fpage>. <pub-id pub-id-type="doi">10.3389/fninf.2022.828787</pub-id>.</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab>The International Brain Laboratory</collab>, <string-name><surname>Acerbi</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Aguillon-Rodriguez</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Ahmadi</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Amjad</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Angelaki</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Arlandis</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Ashwood</surname>, <given-names>Z.C.</given-names></string-name>, <string-name><surname>Banga</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Barrell</surname>, <given-names>H.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2023</year>). <article-title>A modular architecture for organizing, processing and sharing neurophysiology data</article-title>. <source>Nat. Methods</source> <volume>20</volume>, <fpage>403</fpage>–<lpage>407</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-022-01742-6</pub-id>.</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Magland</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Jun</surname>, <given-names>J.J.</given-names></string-name>, <string-name><surname>Lovero</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Morley</surname>, <given-names>A.J.</given-names></string-name>, <string-name><surname>Hurwitz</surname>, <given-names>C.L.</given-names></string-name>, <string-name><surname>Buccino</surname>, <given-names>A.P.</given-names></string-name>, <string-name><surname>Garcia</surname>, <given-names>S.</given-names></string-name>, and <string-name><surname>Barnett</surname>, <given-names>A.H</given-names></string-name></person-group>. (<year>2020</year>). <article-title>SpikeForest, reproducible web-facing ground-truth validation of automated neural spike sorters</article-title>. <source>eLife</source> <volume>9</volume>, <elocation-id>e55167</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.55167</pub-id>.</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Matelsky</surname>, <given-names>J.K.</given-names></string-name>, <string-name><surname>Rodriguez</surname>, <given-names>L.M.</given-names></string-name>, <string-name><surname>Xenes</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Gion</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Hider</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Wester</surname>, <given-names>B.A.</given-names></string-name>, and <string-name><surname>Gray-Roncal</surname>, <given-names>W</given-names></string-name></person-group>. (<year>2021</year>). <article-title>An Integrated Toolkit for Extensible and Reproducible Neuroscience</article-title>. In <conf-name>2021 43rd Annual International Conference of the IEEE Engineering in Medicine &amp; Biology Society (EMBC) (IEEE)</conf-name>, pp. <fpage>2413</fpage>–<lpage>2418</lpage>. <pub-id pub-id-type="doi">10.1109/EMBC46164.2021.9630199</pub-id>.</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sanchez</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Moore</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Johnson</surname>, <given-names>E.C.</given-names></string-name>, <string-name><surname>Wester</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Lichtman</surname>, <given-names>J.W.</given-names></string-name>, and <string-name><surname>Gray-Roncal</surname>, <given-names>W</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Connectomics Annotation Metadata Standardization for Increased Accessibility and Queryability. Front</article-title>. <source>Neuroinformatics</source> <volume>16</volume>, <fpage>828458</fpage>. <pub-id pub-id-type="doi">10.3389/fninf.2022.828458</pub-id>.</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rübel</surname>, <given-names>O.</given-names></string-name>, <string-name><surname>Tritt</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Ly</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Dichter</surname>, <given-names>B.K.</given-names></string-name>, <string-name><surname>Ghosh</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Niu</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Baker</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Soltesz</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Ng</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Svoboda</surname>, <given-names>K.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2022</year>). <article-title>The Neurodata Without Borders ecosystem for neurophysiological data science</article-title>. <source>eLife</source> <volume>11</volume>, <elocation-id>e78362</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.78362</pub-id>.</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Teeters</surname>, <given-names>J.L.</given-names></string-name>, <string-name><surname>Godfrey</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Young</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Dang</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Friedsam</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Wark</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Asari</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Peron</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Peyrache</surname>, <given-names>A.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2015</year>). <article-title>Neurodata Without Borders: Creating a Common Data Format for Neurophysiology</article-title>. <source>Neuron</source> <volume>88</volume>, <fpage>629</fpage>–<lpage>634</lpage>. <pub-id pub-id-type="doi">10.1016/j.neuron.2015.10.025</pub-id>.</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yatsenko</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Reimer</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Ecker</surname>, <given-names>A.S.</given-names></string-name>, <string-name><surname>Walker</surname>, <given-names>E.Y.</given-names></string-name>, <string-name><surname>Sinz</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Berens</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Hoenselaar</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Cotton</surname>, <given-names>R.J.</given-names></string-name>, <string-name><surname>Siapas</surname>, <given-names>A.S.</given-names></string-name>, and <string-name><surname>Tolias</surname>, <given-names>A.S</given-names></string-name></person-group>. (<year>2015</year>). <article-title>DataJoint: managing big scientific data using MATLAB or Python</article-title>. <source>bioRxiv</source> <pub-id pub-id-type="doi">10.1101/031658</pub-id>.</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chu</surname>, <given-names>J.P.</given-names></string-name>, and <string-name><surname>Kemere</surname>, <given-names>C.T</given-names></string-name></person-group>. (<year>2021</year>). <article-title>GhostiPy: An Efficient Signal Processing and Spectral Analysis Toolbox for Large Data. eneuro <italic>8</italic></article-title>, <source>eNeuro</source>.<fpage>0202</fpage>–<lpage>21</lpage>.2021. <pub-id pub-id-type="doi">10.1523/ENEURO.0202-21.2021</pub-id>.</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Viejo</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Levenstein</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Carrasco</surname>, <given-names>S.S.</given-names></string-name>, <string-name><surname>Mehrotra</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Mahallati</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Vite</surname>, <given-names>G.R.</given-names></string-name>, <string-name><surname>Denny</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Sjulson</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Battaglia</surname>, <given-names>F.P.</given-names></string-name>, and <string-name><surname>Peyrache</surname>, <given-names>A</given-names></string-name></person-group>. (<year>2023</year>). <article-title>Pynapple: a toolbox for data analysis in neuroscience</article-title>. <source>eLife</source>, <pub-id pub-id-type="doi">10.7554/eLife.85786.2</pub-id>.</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="other"><person-group person-group-type="author"><collab>BRAIN Initiative</collab></person-group> (<year>2019</year>). <article-title>Notice of Data Sharing Policy for the BRAIN Initiative</article-title>.</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Rübel</surname>, <given-names>O.</given-names></string-name>, <string-name><surname>Tritt</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Dichter</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Braun</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Cain</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Clack</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Davidson</surname>, <given-names>T.J.</given-names></string-name>, <string-name><surname>Dougherty</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Fillion-Robin</surname>, <given-names>J.-C.</given-names></string-name>, <string-name><surname>Graddis</surname>, <given-names>N.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2019</year>). <article-title>NWB:N 2.0: An Accessible Data Standard for Neurophysiology</article-title> <source>bioRxiv</source> <pub-id pub-id-type="doi">10.1101/523035</pub-id>.</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab>BRAIN Initiative Cell Census Network (BICCN), BRAIN Initiative Cell Census Network (BICCN)</collab> Corresponding authors, <string-name><surname>Callaway</surname>, <given-names>E.M.</given-names></string-name>, <string-name><surname>Dong</surname>, <given-names>H.-W.</given-names></string-name>, <string-name><surname>Ecker</surname>, <given-names>J.R.</given-names></string-name>, <string-name><surname>Hawrylycz</surname>, <given-names>M.J.</given-names></string-name>, <string-name><surname>Huang</surname>, <given-names>Z.J.</given-names></string-name>, <string-name><surname>Lein</surname>, <given-names>E.S.</given-names></string-name>, <string-name><surname>Ngai</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Osten</surname>, <given-names>P.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2021</year>). <article-title>A multimodal cell census and atlas of the mammalian primary motor cortex</article-title>. <source>Nature</source> <volume>598</volume>, <fpage>86</fpage>–<lpage>102</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-021-03950-0</pub-id>.</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hawrylycz</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Martone</surname>, <given-names>M.E.</given-names></string-name>, <string-name><surname>Ascoli</surname>, <given-names>G.A.</given-names></string-name>, <string-name><surname>Bjaalie</surname>, <given-names>J.G.</given-names></string-name>, <string-name><surname>Dong</surname>, <given-names>H.-W.</given-names></string-name>, <string-name><surname>Ghosh</surname>, <given-names>S.S.</given-names></string-name>, <string-name><surname>Gillis</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Hertzano</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Haynor</surname>, <given-names>D.R.</given-names></string-name>, <string-name><surname>Hof</surname>, <given-names>P.R.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2023</year>). <article-title>A guide to the BRAIN Initiative Cell Census Network data ecosystem</article-title>. <source>PLOS Biol</source>. <volume>21</volume>, <fpage>e3002133</fpage>. <pub-id pub-id-type="doi">10.1371/journal.pbio.3002133</pub-id>.</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Park</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Guan</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Gjesteby</surname>, <given-names>L.A.</given-names></string-name>, <string-name><surname>Pollack</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Kamentsky</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Evans</surname>, <given-names>N.B.</given-names></string-name>, <string-name><surname>Stirman</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Gu</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Zhao</surname>, <given-names>C.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2024</year>). <article-title>Integrated platform for multiscale molecular imaging and phenotyping of the human brain</article-title>. <source>Science</source> <volume>384</volume>, <fpage>eadh9979</fpage>. <pub-id pub-id-type="doi">10.1126/science.adh9979</pub-id>.</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yatsenko</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Walker</surname>, <given-names>E.Y.</given-names></string-name>, and <string-name><surname>Tolias</surname>, <given-names>A.S</given-names></string-name></person-group>. (<year>2018</year>). <article-title>DataJoint: A Simpler Relational Data Model</article-title>. <source>ArXiv</source> <elocation-id>180711104</elocation-id>.</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yatsenko</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Reimer</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Ecker</surname>, <given-names>A.S.</given-names></string-name>, <string-name><surname>Walker</surname>, <given-names>E.Y.</given-names></string-name>, <string-name><surname>Sinz</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Berens</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Hoenselaar</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Cotton</surname>, <given-names>R.J.</given-names></string-name>, <string-name><surname>Siapas</surname>, <given-names>A.S.</given-names></string-name>, and <string-name><surname>Tolias</surname>, <given-names>A.S</given-names></string-name></person-group>. (<year>2015</year>). <article-title>DataJoint: managing big scientific data using MATLAB or Python</article-title>. <source>BioRxiv</source>, 031658.</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Weinreb</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Pearl</surname>, <given-names>J.E.</given-names></string-name>, <string-name><surname>Lin</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Osman</surname>, <given-names>M.A.M.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Annapragada</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Conlin</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Hoffmann</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Makowska</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Gillis</surname>, <given-names>W.F.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2024</year>). <article-title>Keypoint-MoSeq: parsing behavior by linking point tracking to pose dynamics</article-title>. <source>Nat. Methods</source> <volume>21</volume>, <fpage>1329</fpage>–<lpage>1339</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-024-02318-2</pub-id>.</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Petersen</surname>, <given-names>P.C.</given-names></string-name>, and <string-name><surname>Buzsáki</surname>, <given-names>G</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Cooling of Medial Septum Reveals Theta Phase Lag Coordination of Hippocampal Cell Assemblies</article-title>. <source>Neuron</source> <volume>107</volume>, <fpage>731</fpage>–<lpage>744.e3</lpage>. <pub-id pub-id-type="doi">10.1016/j.neuron.2020.05.023</pub-id>.</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Denovellis</surname>, <given-names>E.L.</given-names></string-name>, <string-name><surname>Gillespie</surname>, <given-names>A.K.</given-names></string-name>, <string-name><surname>Coulter</surname>, <given-names>M.E.</given-names></string-name>, <string-name><surname>Sosa</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Chung</surname>, <given-names>J.E.</given-names></string-name>, <string-name><surname>Eden</surname>, <given-names>U.T.</given-names></string-name>, and <string-name><surname>Frank</surname>, <given-names>L.M</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Hippocampal replay of experience at real-world speeds</article-title>. <source>eLife</source> <volume>10</volume>. <pub-id pub-id-type="doi">10.7554/eLife.64505</pub-id>.</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Denovellis</surname>, <given-names>E.L.</given-names></string-name>, <string-name><surname>Frank</surname>, <given-names>L.M.</given-names></string-name>, and <string-name><surname>Eden</surname>, <given-names>U.T</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Characterizing hippocampal replay using hybrid point process state space models</article-title>. In <conf-name>2019 53rd Asilomar Conference on Signals, Systems, and Computers (IEEE)</conf-name>, pp. <fpage>245</fpage>–<lpage>249</lpage>. <pub-id pub-id-type="doi">10.1109/IEEECONF44664.2019.9048688</pub-id>.</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Skaggs</surname>, <given-names>W.E.</given-names></string-name>, and <string-name><surname>McNaughton</surname>, <given-names>B.L</given-names></string-name></person-group>. (<year>1996</year>). <article-title>Theta phase precession in hippocampal neuronal populations and the compression of temporal sequences</article-title>. <source>Hippocampus</source> <volume>6</volume>, <fpage>149</fpage>– <lpage>172</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1098-1063(1996)6:2&lt;149::AID-HIPO6&gt;3.0.CO;2-K</pub-id>.</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Foster</surname>, <given-names>D.J.</given-names></string-name>, and <string-name><surname>Wilson</surname>, <given-names>M.A</given-names></string-name></person-group>. (<year>2007</year>). <article-title>Hippocampal theta sequences</article-title>. <source>Hippocampus</source> <volume>17</volume>, <fpage>1093</fpage>–<lpage>1099</lpage>. <pub-id pub-id-type="doi">10.1002/hipo.20345</pub-id>.</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><collab>Committee on Responsible Science, Committee on Science, Engineering, Medicine, and Public Policy, Policy and Global Affairs, and National Academies of Sciences, Engineering, and Medicine</collab></person-group> (<year>2017</year>). <source>Fostering Integrity in Research</source> (<publisher-name>National Academies Press</publisher-name>) <pub-id pub-id-type="doi">10.17226/21896</pub-id>.</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab>OECD</collab></person-group> (<year>2015</year>). <article-title>Making Open Science a Reality</article-title> <source>OECD Science, Technology and Industry Policy Papers</source> <pub-id pub-id-type="doi">10.1787/5jrs2f963zs1-en</pub-id>.</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chandravadia</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Liang</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Schjetnan</surname>, <given-names>A.G.P.</given-names></string-name>, <string-name><surname>Carlson</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Faraut</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Chung</surname>, <given-names>J.M.</given-names></string-name>, <string-name><surname>Reed</surname>, <given-names>C.M.</given-names></string-name>, <string-name><surname>Dichter</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Maoz</surname>, <given-names>U.</given-names></string-name>, <string-name><surname>Kalia</surname>, <given-names>S.K.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2020</year>). <article-title>A NWB-based dataset and processing pipeline of human single-neuron activity during a declarative memory task</article-title>. <source>Sci. Data</source> <volume>7</volume>, <fpage>78</fpage>. <pub-id pub-id-type="doi">10.1038/s41597-020-0415-9</pub-id>.</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Yatsenko</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Nguyen</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Shen</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Gunalan</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Turner</surname>, <given-names>C.A.</given-names></string-name>, <string-name><surname>Guzman</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Sasaki</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Sitonic</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Reimer</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Walker</surname>, <given-names>E.Y.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2021</year>). <article-title>DataJoint Elements: Data Workflows for Neurophysiology</article-title>, <source>bioRxiv</source> <pub-id pub-id-type="doi">10.1101/2021.03.30.437358</pub-id>.</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Halchenko</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Meyer</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Poldrack</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Solanky</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Wagner</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Gors</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>MacFarlane</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Pustina</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Sochat</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Ghosh</surname>, <given-names>S.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2021</year>). <article-title>DataLad: distributed system for joint management of code, data, and their relationship</article-title>. <source>J. Open Source Softw</source>. <volume>6</volume>, <fpage>3262</fpage>. <pub-id pub-id-type="doi">10.21105/joss.03262</pub-id>.</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mölder</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Jablonski</surname>, <given-names>K.P.</given-names></string-name>, <string-name><surname>Letcher</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Hall</surname>, <given-names>M.B.</given-names></string-name>, <string-name><surname>Tomkins-Tinch</surname>, <given-names>C.H.</given-names></string-name>, <string-name><surname>Sochat</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Forster</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Lee</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Twardziok</surname>, <given-names>S.O.</given-names></string-name>, <string-name><surname>Kanitz</surname>, <given-names>A.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2021</year>). <article-title>Sustainable data analysis with Snakemake</article-title>. <source>F1000Research</source> <volume>10</volume>, <fpage>33</fpage>. <pub-id pub-id-type="doi">10.12688/f1000research.29032.2</pub-id>.</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gutzen</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>De Bonis</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>De Luca</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Pastorelli</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Capone</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Allegra Mascaro</surname>, <given-names>A.L.</given-names></string-name>, <string-name><surname>Resta</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Manasanch</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Pavone</surname>, <given-names>F.S.</given-names></string-name>, <string-name><surname>Sanchez-Vives</surname>, <given-names>M.V.</given-names></string-name>, <etal>et al.</etal></person-group> (<year>2024</year>). <article-title>A modular and adaptable analysis pipeline to compare slow cerebral rhythms across heterogeneous datasets</article-title>. <source>Cell Rep. Methods</source> <volume>4</volume>, <fpage>100681</fpage>. <pub-id pub-id-type="doi">10.1016/j.crmeth.2023.100681</pub-id>.</mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Pierré</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Pham</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Pearl</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Datta</surname>, <given-names>S.R.</given-names></string-name>, <string-name><surname>Ritt</surname>, <given-names>J.T.</given-names></string-name>, and <string-name><surname>Fleischmann</surname>, <given-names>A</given-names></string-name></person-group>. (<year>2024</year>). <article-title>A perspective on neuroscience data standardization with Neurodata Without Borders</article-title>. <source>arXiv</source>, <pub-id pub-id-type="doi">10.48550/arXiv.2310.04317</pub-id>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108089.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Peyrache</surname>
+<given-names>Adrien</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>McGill University</institution>
+</institution-wrap>
+<city>Montreal</city>
+<country>Canada</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study presents a framework for a shareable data analysis pipeline aimed at improving reproducibility in neuroscience. The evidence for robustness and inter-laboratory operability is <bold>convincing</bold>. However, aspects such as accessibility for new users, flexibility for custom analyses, and plans for long-term maintenance remain <bold>incomplete</bold>. Overall, this work will be of interest to neuroscientists engaged in the analysis of large-scale neuronal recordings.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108089.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary</p>
+<p>The manuscript by K.H. Lee et al. presents Spyglass, a new open-source framework for building reproducible pipelines in systems neuroscience. The framework integrates the NWB (Neurodata Without Borders) data standard with the DataJoint relational database system to organize and manage analysis workflows. It enables the construction of complete pipelines, from raw data acquisition to final figures. The authors demonstrate their capabilities through examples, including spike sorting, LFP filtering, and sharp-wave ripple (SWR) detection. Additionally, the framework supports interactive visualizations via integration with Figurl, a platform for sharing neuroscience figures online.</p>
+<p>Strengths:</p>
+<p>Reproducibility in data analysis remains a significant challenge within the neuroscience community, posing a barrier to scientific progress. While many journals now require authors to share their data and code upon publication, this alone does not ensure that the code will execute properly or reproduce the original results. Recognizing this gap, the authors aim to address the community's need for a robust tool to build reproducible pipelines in systems neuroscience.</p>
+<p>Weaknesses:</p>
+<p>The issues identified here may serve as a foundation for future development efforts.</p>
+<p>(1) User-friendliness:</p>
+<p>The primary concern is usability. The manuscript does not clearly define the intended user base within a modern systems neuroscience lab. Improving user experience and lowering the barrier to entry would significantly enhance the framework's potential for broad adoption. The authors provide an online example notebook and a local setup notebook. However, the local setup process is overly complex, with many restrictive steps that could discourage new users. A more streamlined and clearly documented onboarding process is essential. Additionally, the lack of Windows support represents a practical limitation, particularly if the goal is widespread adoption across diverse research environments.</p>
+<p>(2) Dependency management and long-term sustainability:</p>
+<p>The framework depends on numerous external libraries and tools for data processing. This raises concerns about long-term maintainability, especially given the short lifespan of many academic software projects and the instability often associated with Python's backward compatibility. It would be helpful for the authors to clarify how flexible and modular the pipeline is, and whether it can remain functional if upstream dependencies become deprecated or change substantially.</p>
+<p>(3) Extensibility for custom pipelines:</p>
+<p>A further limitation is the insufficient documentation regarding the creation of custom pipelines. It is unclear how a user could adapt Spyglass to implement their own analysis workflows, especially if these differ from the provided examples (e.g., spike sorting, LFP analysis that are very specific to the hippocampal field). A clearer explanation or example of how to extend the framework for unrelated or novel analyses would greatly improve its utility and encourage community contributions.</p>
+<p>(4) Flexibility vs. Standardization:</p>
+<p>The authors may benefit from more explicitly defining the intended role of the framework: is Spyglass designed as a flexible, general-purpose tool for developing custom data analysis pipelines, or is its primary goal to provide a standardized framework for freezing and preserving pipelines post-publication to ensure reproducibility? While both goals are valuable, attempting to fully support both may introduce unnecessary complexity and result in a tool that is not well-suited for either purpose. The manuscript briefly touches on this tradeoff in the introduction, and the latter-pipeline preservation-may be the more natural fit for the package. If so, this intended use should be clearly communicated in the documentation to help users understand its scope and strengths.</p>
+<p>Impact:</p>
+<p>This work represents a significant milestone in advancing reproducible data analysis pipelines in neuroscience. Beyond reproducibility, the integration of cloud-based execution and shareable, interactive figures has the potential to transform how scientific collaboration and data dissemination are conducted. The authors are at the forefront of this shift, contributing valuable tools that push the field toward more transparent and accessible research practices.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108089.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This valuable paper presents Spyglass, a comprehensive software framework designed to address the critical challenges of reproducibility and data sharing in neuroscience. The authors have developed a robust ecosystem built on community standards such as NWB and DataJoint, and demonstrate its utility by applying it to datasets from two independent labs, successfully validating the framework's ability to reproduce and extend published findings. While the framework offers a powerful blueprint for modern, reproducible research, its immediate broad impact may be tempered by the significant upfront investment required for adoption and its current focus on electrophysiological data. Nevertheless, Spyglass stands as an important and practical contribution, providing a well-documented and thoughtfully designed path toward more transparent and collaborative science.</p>
+<p>Strengths:</p>
+<p>(1) Principled solution to a foundational challenge:</p>
+<p>The work offers a concrete and comprehensive framework for reproducibility in neuroscience, moving beyond abstract principles to provide an implemented, end-to-end ecosystem.</p>
+<p>(2) Pragmatic and robust architectural design:</p>
+<p>Features such as the &quot;cyclic iteration&quot; motif for spike-sorting curation and the &quot;merge&quot; motif for pipeline consolidation demonstrate deep, practical experience with neurophysiological analysis and address real-world challenges.</p>
+<p>(3) Cross-laboratory validation:</p>
+<p>The successful replication and extension of published hippocampal decoding findings across independent datasets strongly support the framework's utility and underscore its potential for enabling reproducible science.</p>
+<p>(4) Accessibility through documentation and demos:</p>
+<p>Extensive tutorials and the availability of a public demo environment lower some of the barriers to adoption.</p>
+<p>Weaknesses:</p>
+<p>(1) High barrier to adoption:</p>
+<p>The requirement to convert all data into NWB, maintain a relational database, and train users in structured workflows is a significant hurdle, particularly for smaller labs.</p>
+<p>(2) Limited tool integration:</p>
+<p>The current pipelines, while useful, still resemble proof-of-principle demonstrations. Closer integration with established analysis libraries such as Pynapple and others could broaden the toolkit and reduce duplication of effort.</p>
+<p>(3) Experimental metadata support:</p>
+<p>While NWB provides a solid foundation for storing neurophysiology data streams, it still lacks broad and standardized support for experimental metadata, including descriptions of conditions, subject details, and procedures, as well as links across datasets. This limitation constrains one of Spyglass's key promises: enabling reproducible, cross-laboratory science. The authors should clarify how Spyglass plans to address or mitigate this gap - for example, by adopting or contributing to metadata extensions, providing templates for experimental conditions, or integrating with complementary systems that manage metadata across datasets.</p>
+<p>(4) Cross-laboratory interoperability:</p>
+<p>While demonstrated across two datasets, the manuscript does not fully address how Spyglass will handle the diversity of metadata standards, acquisition systems, and lab-specific practices that remain major obstacles to reproducibility.</p>
+<p>(5) Visualization limitations:</p>
+<p>Beyond the export system and Figurl, NWB offers relatively few options for interactive data exploration. The ability to explore data flexibly and discover new phenomena remains limited, which constrains one of the potential strengths of standardized pipelines.</p>
+<p>Spyglass is well-positioned to become a community framework for reproducible neuroscience workflows, with the potential to set new standards for transparency and data sharing. With expanded modality coverage, tighter integration of existing community tools, stronger solutions for cross-lab interoperability, and richer visualization capabilities, it could have a transformative impact on the field.</p>
+</body>
+</sub-article>
+</article>
