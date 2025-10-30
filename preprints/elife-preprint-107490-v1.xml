@@ -1,0 +1,767 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">107490</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.107490</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.107490.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Genetics and Genomics</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>BreakLoops: A New Feature for the Multi-Gene, Multi-Cancer Family History-Based Model, Fam3Pro</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Kubista</surname>
+<given-names>Nicolas</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+<xref ref-type="fn" rid="FN1">†</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hernandez-Cancela</surname>
+<given-names>Ryan</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+<xref ref-type="fn" rid="FN1">†</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ke</surname>
+<given-names>Jianfeng</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Berquet</surname>
+<given-names>Romain</given-names>
+</name>
+<xref ref-type="aff" rid="A3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lee</surname>
+<given-names>Gavin</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Parmigiani</surname>
+<given-names>Giovanni</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Braun</surname>
+<given-names>Danielle</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A2">2</xref>
+<email xlink:href="mailto:dbraun@mail.harvard.edu">dbraun@mail.harvard.edu</email>
+</contrib>
+<aff id="A1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03vek6s52</institution-id><institution>Department of Biostatistics, Harvard T.H. Chan School of Public Health</institution></institution-wrap>, <city>Cambridge</city>, <country country="US">United States</country></aff>
+<aff id="A2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02jzgtq86</institution-id><institution>Department of Data Science, Dana Farber Cancer Institute</institution></institution-wrap>, <city>Boston</city>, <country country="US">United States</country></aff>
+<aff id="A3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02s376052</institution-id><institution>École Polytechnique Fédérale de Lausanne (EPFL)</institution></institution-wrap>, <city>Lausanne</city>, <country country="CH">Switzerland</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Narla</surname>
+<given-names>Goutham</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-4098-4203</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00jmfr291</institution-id><institution>University of Michigan</institution>
+</institution-wrap>
+<city>Ann Arbor</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Franco</surname>
+<given-names>Eduardo L</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01pxwe438</institution-id><institution>McGill University</institution>
+</institution-wrap>
+<city>Montreal</city>
+<country country="CA">Canada</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="FN1"><label>†</label><p>These authors contributed equally to this work.</p></fn>
+</author-notes>
+<pub-date pub-type="epub">
+<day>02</day>
+<month>05</month>
+<year>2025</year>
+</pub-date>
+<pub-date date-type="original-publication" iso-8601-date="2025-10-17">
+<day>17</day>
+<month>10</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP107490</elocation-id>
+<history><date date-type="sent-for-review" iso-8601-date="2025-06-03">
+<day>03</day>
+<month>06</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-05-02">
+<day>02</day>
+<month>05</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.48550/arXiv.2505.01466"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Kubista et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Kubista et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-107490-v1.pdf"/>
+<abstract>
+<title>Abstract</title>
+<p>Previously, we presented PanelPRO, now known as Fam3PRO, an open-source R package for multi-gene, multi-cancer risk modeling with pedigree data. The initial release could not handle pedigrees that contained cyclic structures called loops, which occur when relatives mate. Here, we present a graph-based function called breakloops that can detect and break loops in any pedigree. The core algorithm identifies the optimal set of loop breakers when individuals in a loop have exactly one parental mating, and extends to handle cases where individuals have multiple parental matings. The algorithm transforms complex pedigrees by strategically creating clones of key individuals to disrupt cycles while minimizing computational complexity. Our extensive testing demonstrates that this new feature can handle a wide variety of pedigree structures. The breakloops function is available in Fam3Pro version 2.0.0. This advancement enables Fam3Pro to assess cancer risk in a wider range of family structures, enhancing its applicability in clinical settings.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<sec id="s1" sec-type="intro">
+<label>1.</label><title>Introduction</title>
+<p>Fam3Pro (previously known as PanelPRO) is an R package for multi-syndrome, multigene risk modeling for individuals with a family history of cancer [<xref ref-type="bibr" rid="c8">Lee et al., 2021</xref>]. The Fam3Pro package is used to estimate the probabilities of carrying germline pathogenic variants, as well as the future risk of developing associated cancers, utilizing family history information from a pedigree data frame. Fam3Pro predicts carrier probabilities leveraging the “peeling and paring” algorithm, which is based on the “peeling” algorithm originally introduced by Elston and Stewart [<xref ref-type="bibr" rid="c3">Elston and Stewart, 1971</xref>].</p>
+<p>A key input to the Fam3Pro function is the pedigree data. Some pedigrees may contain loops or cyclic paths that occur when relatives mate, known as consanguinity [<xref ref-type="bibr" rid="c7">Lange and Elston, 1975</xref>]. For example, a mating between two siblings would create a pedigree loop. For example, in <xref ref-type="fig" rid="fig1">Figure 1A</xref>) we show a pedigree with two loops. In this case, a loop, or a path that starts and ends at the same individual can be traced if we begin at ID 3, follow the connecting line to ID 4, travel up towards both parents (ID 1 and 2), and descend down the leftmost line back to ID 3. Notice that the only person who is visited twice on this path is ID 3, the person we started with, and the path forms a visible circle in the pedigree chart creating a loop. The pedigree contains a second loop that can be traced by starting at ID 7, traversing to ID 8, then following the connection to ID 4, moving upward to the parents (ID 1 and 2), descending to ID 3, continuing to ID 6, and finally returning to ID 7. This second loop occurs due to a mating between half-siblings, as ID 7 and ID 8 share one common parent (ID 4). Intuitively, pedigree loops can be identified by searching for these circular structures.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>A pedigree example with two loops and two different loop breaking approaches (panels D and E) .</title>
+<p>Individual 4 mates with their sibling 3, and individuals 7 and 8, who are half-siblings, also mate. (A) The initial pedigree. (B) The pedigree represented as an undirected graph. (C) The trimmed graph after removing all the leaves. (D) The original graph with a clone of ID 3 and a clone of ID 8. (E) The original graph with two clones of ID 4.</p></caption>
+<graphic xlink:href="2505.01466v1_fig1.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>The “peeling and paring” algorithm mentioned above was not designed to handle pedigree loops because the conditional independence assumption of genotypes breaks down in cyclical structures. These loops create exponentially growing inheritance path combinations, as each cycle introduces interdependent genotype possibilities that must be jointly resolved. This combinatorial explosion renders exact calculations computationally intractable [<xref ref-type="bibr" rid="c4">Fernando et al., 1993</xref>]. One remedy involves “breaking” pedigree loops by creating clones of individuals [<xref ref-type="bibr" rid="c6">Lange, 2002</xref>]. Cloning involves creating a copy of an individual with genetic and phenotypic information identical to the original individual, and we call the original individual a loop breaker. Clones replace loop breakers in their parental roles. By disconnecting these loop breakers from their downstream relatives, the pedigree loops are broken, allowing the algorithm to proceed error-free.</p>
+<p>Assuming each loop breaker is only cloned once, the complexity of computing the carrier probability after loop-breaking increases |<italic>G</italic>| = |<italic>G</italic><sub>1</sub> × … × |<italic>G<sub>t</sub></italic>| fold, where t is the number of loop breakers and |<italic>G<sub>i</sub></italic>| is the total number of possible genotypes of the <italic>i</italic>-th loop breaker. Here, a genotype represents a binary vector where each index represents a germline pathogenic variant (e.g., BRCA1), and each binary entry indicates whether an individual carries said pathogenic variant (yes/no). Many algorithms try to minimize this increase in complexity by finding an optimal set of loop breakers: that is, the set which has the minimal number of |<italic>G</italic>| = ∏<sub><italic>i</italic></sub> |<italic>G<sub>i</sub></italic>|, or equivalently, log |<italic>G</italic>| = ∑<sub><italic>i</italic></sub> log |<italic>G<sub>i</sub></italic>|. When every individual involved in a loop has exactly one mating where they are a parent, the problem of finding the set with minimal |<italic>G</italic>| can be transformed into the classical Maximum Spanning Tree (MST) problem using graph theory [<xref ref-type="bibr" rid="c5">Kruskal, 1956</xref>, <xref ref-type="bibr" rid="c9">Prim, 1957</xref>]. Thus, an optimal solution can be found by applying well-known algorithms like Prim’s or Kruskal’s algorithm. If at least one person involved in a loop has two or more matings where they are a parent, no algorithm is guaranteed to be optimal, but the greedy algorithm discussed by Becker and Geiger [<xref ref-type="bibr" rid="c1">Becker et al., 1998</xref>] can find a close-to-optimal solution when only a few loops are present.</p>
+<p>In this article, we introduce a new feature for Fam3Pro to handle pedigrees with loops called breakloops. The core of the new feature is a new graph-based algorithm called breakloops that can toggle between Prim’s algorithm and the greedy algorithm depending on the situation. We conducted extensive testing to ensure breakloops can break a wide variety of loops. Furthermore, we verified that the feature does not significantly affect the runtime of Fam3Pro.</p>
+</sec>
+<sec id="s2" sec-type="methods">
+<label>2.</label><title>Methods</title>
+<sec id="s2-1">
+<label>2.1.</label><title>Input Pedigrees and Undirected Graphs</title>
+<p>In the context of this work, a pedigree is a diagram showing the relationships between family members (the proband and their relatives) as well as their cancer status. Pedigree information is stored in data frames, and the pedigree structure is defined by three columns: <italic>ID</italic>, <italic>MotherID</italic>, and <italic>FatherID</italic>. <xref ref-type="fig" rid="fig1">Figure 1A</xref> provides an example of a pedigree. In this example, there are two loops in the pedigree: one loop is created by <italic>ID</italic> 3 mating with his sister <italic>ID</italic> 4, resulting in offspring <italic>ID</italic> 6 and 7; the other loop is formed by <italic>ID</italic> 7 mating with her half-brother <italic>ID</italic> 8, leading to offspring <italic>ID</italic> 9. This example represents an extraordinary case chosen for illustration purposes to demonstrate our approach in a complex family structure with multiple interconnected loops. While such consanguineous matings creating multiple loops within a single pedigree are uncommon in clinical practice, this example effectively showcases how our method systematically handles even the most intricate pedigree structures with multiple interrelated loops.</p>
+<p>To utilize existing graph methodologies to break these loops, we must transform the pedigree into an undirected connected graph. A graph G is a data structure comprising a set of vertices <italic>V</italic> and a set of edges <italic>E</italic>. Each edge connects two vertices, and an edge <italic>e<sub>a,b</sub></italic> can be represented as (<italic>υ<sub>a</sub></italic>, <italic>υ<sub>b</sub></italic>), where <italic>υ<sub>a</sub></italic> and <italic>υ<sub>b</sub></italic> are connected vertices. A graph <italic>G</italic> is deemed <italic>undirected</italic> if each edge lacks a directional component, and <italic>connected</italic> if, <italic>∀<underline>u</underline>, υ ∈ V</italic>, there exists a path between any <italic>u</italic> and υ in the graph. A path of length <italic>n</italic> from vertex <italic>υ</italic><sub>0</sub> to vertex <italic>υ</italic><sub>n</sub> in <italic>G</italic> is a sequence of <italic>n</italic> distinct edges: 〈<italic>e</italic><sub>1</sub>, <italic>e</italic><sub>2</sub>, . . ., <italic>e</italic><sub>n</sub>〉 such that <italic>e<sub>i</sub></italic> = (<italic>υ<sub>i–1</sub></italic>, <italic>υ<sub>i</sub></italic>) when ≤ <italic>i</italic> ≤ n. Details on how to construct an undirected and connected graph G corresponding to a pedigree are given in Definition 1.</p>
+<p><bold>Definition 1</bold>. A pedigree <italic>P</italic> can be represented as an undirected and connected graph <italic>G</italic> = (<italic>V, E</italic>).</p>
+<p>First, a set of vertices, <italic>V</italic><sub>1</sub>, which represents the set of different individuals in <italic>P</italic>, is constructed. Hence, every individual <italic>i ∈ P</italic> is associated with a corresponding vertex <italic>υ<sub>i</sub></italic> ∈ <italic>V</italic><sub>1</sub>. For a pedigree P consisting of n individuals, <italic>V</italic><sub>1</sub> contains <italic>n</italic> vertices. Subsequently, a second set of vertices, <italic>V</italic><sub>2</sub> , which represents the set of different matings in <italic>P</italic>, is created. For each pair of individuals <italic>i</italic> and <italic>j</italic> who are known to have mated and had offspring (i.e. they are a mating pair), we create a vertex <italic>m<sub>i,j</sub></italic>. Thus, <italic>V</italic><sub>2</sub> = ∪<italic>m<sub>i,j</sub></italic> ∀<italic>i, j</italic> ∈ <italic>P</italic> such that <italic>i</italic> and <italic>j</italic> mated and have offspring in the pedigree. We assign mates their own vertices because edges can only connect two vertices, and we cannot show that an individual is linked to their partner and their child using the same edge. Lastly, the set of edges <italic>E</italic> is created. For each mating <italic>m<sub>i, j</sub></italic> in <italic>V</italic><sub>2</sub>, we have an edge between <italic>υ<sub>i</sub></italic> and <italic>m<sub>i, j</sub></italic> and an edge between <italic>υ<sub>j</sub></italic> and <italic>m<sub>i, j</sub></italic>. Additionally, for the <italic>k</italic>-th child of the mating pair <italic>i</italic> and <italic>j</italic> (<italic>c<sub>i, j, k</sub></italic>), we have an edge between the child and <italic>m<sub>i, j</sub></italic>. Hence, individuals <italic>i</italic> and <italic>j</italic> are connected to mating <italic>m<sub>i, j</sub></italic> as parents, and each child <italic>c<sub>i, j, k</sub></italic> is connected to <italic>m<sub>i, j</sub></italic> as offspring. For brevity, we shall use <italic>m<sub>i</sub></italic> to represent each mating instead of <italic>m<sub>i, j</sub></italic>, and when we mention “graph”, we mean “undirected, connected graph”.</p>
+<p>Furthermore, an important property of <italic>G</italic> is that each cycle in <italic>G</italic> represents a loop in the original pedigree. For reference, a cycle is a path where only the first and last vertices are the same. Proposition 1 elaborates on this relationship.</p>
+<p><bold>Proposition 1</bold>. <italic>P</italic> has a loop ⇔ <italic>G</italic> has a cycle, where <italic>G</italic> is the graph associated with <italic>P</italic>.</p>
+<p><italic>Proof.</italic> ⇒ Assume that <italic>P</italic> is a pedigree with a loop. By definition, we can find a first path, <italic>p</italic><sub>1</sub>, in <italic>P</italic> from individual <italic>i</italic> to individual <italic>j</italic> and a second path, <italic>p</italic><sub>2</sub>, from individual <italic>j</italic> to individual <italic>i</italic>, such that <italic>p</italic><sub>1</sub> and <italic>p</italic><sub>2</sub> have distinct nodes except for the endpoints. Now, if we consider the corresponding graph <italic>G</italic>, <italic>p</italic><sub>1</sub> will yield a corresponding path <inline-formula id="ID1">
+<alternatives>
+<mml:math display="inline" id="I1"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>1</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq1.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula>, and <inline-formula id="ID2">
+<alternatives>
+<mml:math display="inline" id="I2"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>2</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq2.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula> will yield a path <inline-formula id="ID3">
+<alternatives>
+<mml:math display="inline" id="I3"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>2</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq3.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula>. By construction, we know that both paths <inline-formula id="ID4">
+<alternatives>
+<mml:math display="inline" id="I4"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>1</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq4.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula> and <inline-formula id="ID5">
+<alternatives>
+<mml:math display="inline" id="I5"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>2</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq5.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula> have distinct edges associated with distinct vertices except for the first and last vertices.</p>
+<p>If we consider the path <italic>p</italic> = <italic>〈</italic><italic>e<sub>0, i</sub></italic>, . . ., <italic>e<sub>ik, n</sub></italic>, <italic>e<sub>n, jk</sub></italic>, <italic>e</italic><sub><italic>j</italic>, 0</sub>〉, which is the union of paths <inline-formula id="ID6">
+<alternatives>
+<mml:math display="inline" id="I6"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>1</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq6.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula> and <inline-formula id="ID7">
+<alternatives>
+<mml:math display="inline" id="I7"><mml:msub><mml:msup><mml:mi>p</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mn>2</mml:mn></mml:msub></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq7.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula>, we have a set of distinct edges where the first and last vertices are identical. By definition, <italic>p</italic> is a cycle, so <italic>G</italic> is a cyclic graph.</p>
+<p>⇐ Conversely, assume <italic>G</italic> is a cyclic graph. By definition, <italic>G</italic> contains a cycle, which corresponds to a loop in the original pedigree <italic>P</italic>. Therefore, if <italic>G</italic> has a cycle, <italic>P</italic> must have a loop.</p>
+<p>The corresponding graph for the pedigree in <xref ref-type="fig" rid="fig1">Fig. 1A</xref> is given in <xref ref-type="fig" rid="fig1">Fig. 1B</xref>. There are two cycles in <xref ref-type="fig" rid="fig1">Fig. 1B</xref>, 〈<italic>m</italic><sub>1</sub> − <italic>e</italic><sub>4</sub> − <italic>v</italic><sub>4</sub> − <italic>e</italic><sub>6</sub> − <italic>m</italic><sub>2</sub> − <italic>e</italic><sub>5</sub> − <italic>v</italic><sub>3</sub> − <italic>e</italic><sub>3</sub> − <italic>m</italic><sub>1</sub>〉, and 〈<italic>υ</italic><sub>4</sub> − <italic>e</italic><sub>7</sub> − <italic>m</italic><sub>3</sub> − <italic>e</italic><sub>11</sub> − <italic>υ</italic><sub>8</sub> − <italic>e</italic><sub>13</sub> − <italic>m</italic><sub>4</sub> − <italic>e</italic><sub>12</sub> − <italic>υ</italic><sub>7</sub> − <italic>e</italic><sub>10</sub> − <italic>m</italic><sub>2</sub> − <italic>e</italic><sub>6</sub> − <italic>υ</italic><sub>4</sub>〉, each of which corresponds to a loop in the pedigree in <xref ref-type="fig" rid="fig1">Fig. 1A</xref>.</p>
+<p>To better visualize these cycles, we can remove extraneous vertices and edges to produce a trimmed graph. This entails recursively removing or “trimming” leaves, which are vertices connected to only one edge. The remaining vertices represent the individuals (and matings) involved in the loops. <xref ref-type="fig" rid="fig1">Fig. 1C</xref> shows the graph after trimming the leaves from <xref ref-type="fig" rid="fig1">Fig. 1B</xref>.</p>
+</sec>
+<sec id="s2-2">
+<label>2.2.</label><title>Detecting Loops</title>
+<p>In the previous implementation of the Fam3Pro package (v 1.0.0) without the breakloops function, pedigree loop detection is managed by the checkMating function. This function traverses the pedigree to ensure that no individual is involved in a mating that would create a loop. However, the checkMating function has limitations in identifying complex loops and may fail to detect intricate relationships that form such loops. For example, in the case where a proband’s granddaughter marries a proband’s nephew, the checkMating function may overlook this loop, potentially resulting in an infinite loop error during the computation.</p>
+<p>To address these limitations, we propose a more robust and comprehensive method for loop detection based on graph theory. We begin by considering a graph as a <italic>tree</italic> if it is both connected and acyclic. We define an individual as a <italic>founder</italic> if neither of their parents is included in the pedigree. We define an individual as an <italic>offspring</italic> if both of their parents are known in the pedigree. Let <italic>n<sub>m</sub></italic> and <italic>n</italic><sub>0</sub> denote the number of different matings and offspring in the pedigree, respectively. Each mating contributes two edges to the associated graph <italic>G</italic> since both parents are connected to that mating vertex. Each offspring contributes one edge to <italic>G</italic> since each child is connected to a mating vertex. This implies that the number of edges in the graph associated with a pedigree is equal to twice the number of matings plus the number of offspring in the pedigree, i.e.,
+<disp-formula id="FD1">
+<alternatives>
+<mml:math id="M1" display="block"><mml:mrow><mml:mo>|</mml:mo><mml:mi>E</mml:mi><mml:mo>|</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>2</mml:mn><mml:mo>×</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math>
+<graphic xlink:href="2505.01466v1_eqn1.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+<label>(1)</label>
+</disp-formula>
+</p>
+<p>Let <italic>n<sub>i</sub></italic> denote the number of individuals in the pedigree. The number of vertices in the graph G is simply the number of individuals plus the number of matings in the pedigree, i.e.,
+<disp-formula id="FD2">
+<alternatives>
+<mml:math id="M2" display="block"><mml:mrow><mml:mo>|</mml:mo><mml:mi>E</mml:mi><mml:mo>|</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math>
+<graphic xlink:href="2505.01466v1_eqn2.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+<label>(2)</label>
+</disp-formula>
+</p>
+<p><xref ref-type="bibr" rid="c2">Bondy et al. [1976]</xref> established a fundamental property of trees in graph theory, which has significant implications for detecting cycles in graphs and loops in pedigrees:</p>
+<p><bold>Theorem 1 (Bondy and Murty)</bold>. If <italic>G</italic> = (<italic>V, E</italic>) is a tree, then |<italic>E</italic>| = |<italic>V</italic>| − 1.</p>
+<p>This theorem provides a simple yet powerful criterion for identifying cycles in graphs. Specifically, a graph <italic>G</italic> is a tree if and only if it contains no cycles, as it must satisfy the condition |<italic>E</italic>| = |<italic>V</italic>| − 1. Since the graph associated with a pedigree <italic>G</italic> is always connected, the presence of cycles can be determined by comparing the number of edges to the number of vertices.</p>
+<p><xref ref-type="bibr" rid="c2">Bondy et al. [1976]</xref> also proved a more general result for connected graphs:</p>
+<p><bold>Corollary 1 (Bondy and Murty)</bold>. If <italic>G</italic> is a connected graph, then |<italic>E</italic>| <italic>≥</italic> |<italic>V</italic>| − 1.</p>
+<p>This corollary establishes a lower bound on the number of edges in any connected graph. Equality in this relation characterizes trees, while strict inequality implies the presence of at least one cycle.</p>
+<p>By substituting Equations <xref ref-type="disp-formula" rid="FD1">1</xref> and <xref ref-type="disp-formula" rid="FD2">2</xref> into Theorem 2.2 and Corollary 2.2, we can derive a simple formula to detect loops in a pedigree: if <italic>n<sub>m</sub></italic> + <italic>n</italic><sub>0</sub> = <italic>n<sub>i</sub></italic> − 1, then the pedigree contains no loops; however, if <italic>n<sub>m</sub></italic> + <italic>n</italic><sub>0</sub> &gt; <italic>n<sub>i</sub></italic> − 1, then the pedigree contains at least one loop. Thus, constructing the associated graph <italic>G</italic> is unnecessary to detect cycles; these counts from the original pedigree suffice.</p>
+<p>The pseudo-code for the loop-detection algorithm, Checkloops, is shown in Algorithm 8.</p>
+<boxed-text id="box1">
+<label>Algorithm 1</label>
+<caption><title>Checkloops: Check if there are loops in the pedigree</title></caption>
+<p><bold>Require</bold>: A pedigree <italic>P</italic></p>
+<p><bold>Ensure</bold>: Return 1 if there is at least one loop; 0 if no loop</p>
+<p>  1: <italic>n<sub>m</sub></italic> ← number of different matings</p>
+<p>  2: <italic>n</italic><sub>0</sub> ← number of offspring</p>
+<p>  3: <italic>n<sub>i</sub></italic> ← number of individuals in the pedigree</p>
+<p>  4: <bold>if</bold> <italic>n<sub>m</sub></italic> + <italic>n</italic><sub>0</sub> &gt; <italic>n<sub>i</sub></italic> − 1 <bold>then</bold></p>
+<p>  5:      <bold>return</bold> 1                    ᐅ There is at least one loop</p>
+<p>  6: <bold>else</bold></p>
+<p>  7:      <bold>return</bold> 0                      ᐅ No loops</p>
+<p>  8: <bold>end if</bold></p>
+</boxed-text>
+</sec>
+<sec id="s2-3">
+<label>2.3.</label><title>Selecting Loop Breakers</title>
+<p>One can arbitrarily break a loop in the pedigree by randomly selecting individuals in the trimmed graph as loop breakers, severing their ties to downstream relatives, and filling the gaps with their corresponding clones. For example, a possible set of loop breakers for <xref ref-type="fig" rid="fig1">Fig. 1C</xref> is <italic>ID 3</italic> and <italic>ID 8</italic>. The modified pedigree after adding clones of <italic>ID 3</italic> and <italic>ID 8</italic> (<inline-formula id="ID8">
+<alternatives>
+<mml:math display="inline" id="I8"><mml:msubsup><mml:mi>υ</mml:mi><mml:mn>3</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq8.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula>, <inline-formula id="ID9">
+<alternatives>
+<mml:math display="inline" id="I9"><mml:msubsup><mml:mi>υ</mml:mi><mml:mn>8</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:math>
+<inline-graphic xlink:href="2505.01466v1_ieq9.tif" mime-subtype="tif" mimetype="image"/></alternatives>
+</inline-formula>) is given in <xref ref-type="fig" rid="fig1">Fig. 1D</xref>. However, a more efficient way to break the loops is to select <italic>ID 4</italic> as the only loop breaker and add two clones of <italic>ID 4</italic> to the pedigree, as shown in <xref ref-type="fig" rid="fig1">Fig. 1E</xref>.</p>
+<p>When every individual in the trimmed graph (i.e., everyone involved in at least one loop) is connected to exactly one mating in the trimmed graph where they are a parent, we refer to this as a “no-multiple-matings” case. Since each person is also connected to a mating where they are an offspring, everyone is connected to exactly two matings. In other words, we can say that everyone has a degree equal to two in the trimmed graph, where “degree” represents the number of edges connected to an individual. A pedigree example without multiple matings in the loops, and its graph representation, are given in <xref ref-type="fig" rid="fig2">Fig. 2A</xref> and <xref ref-type="fig" rid="fig2">Fig. 2B</xref>, respectively. Note that even though <italic>ID 6</italic> has two matings, his mating with <italic>ID 7</italic> (<italic>m</italic><sub>4</sub>) is not inside the loop. As the leaves are recursively trimmed from the graph, <italic>ID 10, ID 7, m<sub>4</sub></italic>, and <italic>ID 6</italic> are eventually removed. The trimmed graph of <xref ref-type="fig" rid="fig2">Fig. 2B</xref> is shown in <xref ref-type="fig" rid="fig2">Fig. 2C</xref>.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>A pedigree example without individuals having multiple matings in the loop.</title>
+<p>(A) The initial pedigree. (B) The undirected graph representation. (C) The trimmed graph after recursively removing all the leaves. (D) The sub-graph of the trimmed graph. (E) The MST of the sub-graph when given an example set of weights, which indicates that individual 8 is the ideal loop breaker in this example</p></caption>
+<graphic xlink:href="2505.01466v1_fig2.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>We can now construct a sub-graph <italic>G</italic><sup>′</sup> based on the trimmed graph. The vertices in <italic>G</italic><sup>′</sup> correspond only to the mating vertices of the trimmed graph of <italic>G</italic>. Every path of the form <italic>m<sub>k</sub> − v<sub>i</sub> − m<sub>j</sub></italic> is replaced with an edge <italic>e<sub>i</sub></italic> which directly connects the mating vertices <italic>m<sub>k</sub></italic> and <italic>m<sub>j</sub></italic>. The original edges that connected <italic>m<sub>k</sub></italic> and <italic>υ<sub>i</sub></italic> and <italic>m<sub>j</sub></italic> and <italic>υ<sub>i</sub></italic> are deleted. The individual vertex <italic>υ<sub>i</sub></italic> is also removed. An example of the sub-graph <italic>G</italic><sup>′</sup> based on the trimmed graph in <xref ref-type="fig" rid="fig2">Fig. 2C</xref> is given in <xref ref-type="fig" rid="fig2">Fig. 2D</xref>. For each edge <italic>e<sub>i</sub></italic> connecting mating nodes <italic>m<sub>k</sub></italic> and <italic>m<sub>j</sub></italic>, we set a weight to this edge <italic>f</italic>(<italic>e<sub>i</sub></italic>) = log(|<italic>G<sub>i</sub></italic>|), where |<italic>G<sub>i</sub></italic>| is the total number of possible genotypes of individual <italic>i</italic>. Essentially, each edge now represents a person.</p>
+<p>The problem of finding the optimal set of loop breakers in the original graph is equivalent to removing a set of edges from <italic>G</italic><sup>′</sup> whose sum of weights is minimal, such that the remaining graph is a tree. This is a well-known problem in graph theory called the MST problem. Prim’s algorithm is a widely used algorithm to solve this problem [<xref ref-type="bibr" rid="c9">Prim, 1957</xref>]. After applying Prim’s algorithm to find the MST of <italic>G</italic><sup>′</sup>, the edges of <italic>G</italic><sup>′</sup> (individuals) that are not part of the MST form the optimal set of loop breakers. <xref ref-type="fig" rid="fig2">Fig. 2E</xref> shows the result of finding the MST on <xref ref-type="fig" rid="fig2">Fig. 2D</xref> given an example set of weights, which implies that individual 8 is selected as the loop breaker in this example.</p>
+<p>If at least one person in the trimmed graph is connected to two or more matings (in the trimmed graph) where they are a parent, we refer to this as a “multiple matings” case. Typically, these individuals are also connected to one mating where they are an offspring, but this is not always the case. Regardless, everyone involved in multiple-matings loops will always have trimmed degrees (i.e., degrees in the trimmed graph) greater than or equal to two. Additionally, if someone has a trimmed degree greater than two, the loops they are involved in are guaranteed to be multiple matings loops.</p>
+<p>In these instances, the transformation from the trimmed graph to the sub-graph is not guaranteed. A vertex <italic>υ<sub>i</sub></italic> with a trimmed degree greater than two cannot be represented by a single edge because an edge can only connect two mating vertices, and this person is connected to three or more. Therefore, we often cannot take advantage of Prim’s algorithm to find an optimal set of loop breakers.</p>
+<p>Instead, we implemented the simple greedy algorithm discussed by <xref ref-type="bibr" rid="c1">Becker et al. [1998]</xref> for all multiple-mating cases, which finds close-to-optimal sets of loop breakers in pedigrees with a few loops. Rather than working with a subgraph, this algorithm looks at individuals in the trimmed graph and selects the first one (based on ID) with minimal cost as a loop breaker. Then it begins to break the matings in which this individual participates (as a parent) until no loops remain in the trimmed graph or the loop breaker’s trimmed degree is equal to one. If the pedigree still contains loops and individuals with multiple matings involved in those loops, we repeat the process to select another loop breaker.</p>
+<p>To minimize computational complexity |<italic>G</italic>| = ∏<sub>i</sub> |<italic>G<sub>i</sub></italic>|, or equivalently, log |<italic>G</italic>| = ∑<sub><italic>i</italic></sub> log |<italic>G<sub>i</sub></italic>|, where |<italic>G<sub>i</sub></italic>| is the total number of possible genotypes, the set of loop breakers is selected based on two criteria. We choose individuals that have a smaller total number of possible genotypes and/or a higher degree in the trimmed graph. The second criterion is proposed because an individual’s trimmed degree serves as an estimate of the number of loops they participate in, and we can break l loops at one time by adding l clones of the same individual that participates in all loops. The cost function is defined as <italic>f(υ<sub>i</sub>)</italic> = log(|<italic>G<sub>i</sub></italic>|)/<italic>d<sub>i</sub></italic>, where <italic>d<sub>i</sub></italic> is the trimmed degree of individual <italic>i</italic>. The cost function incorporates germline testing data when available. For individuals who have undergone testing for specific genetic variants, their set of possible genotypes |<italic>G<sub>i</sub></italic>| is reduced compared to untested individuals. This reduction in |<italic>G<sub>i</sub></italic>| directly lowers their cost in the selection algorithm, making tested individuals with definitive results more favorable candidates for loop breaking.</p>
+<p>After the greedy algorithm has been called at least once, if loops remain but the remaining individuals do not have multiple matings, we follow the steps in the no-multiple-matings situation to break the remaining loops. Thus, the breakloops algorithm can apply either the greedy or Prim’s algorithm based on the situation, so we call it a hybrid algorithm. The pseudocode for this hybrid algorithm is shown in <xref ref-type="boxed-text" rid="box1">Algorithm 2</xref>.</p>
+<p>It is possible for there to be more than one potential loop breaker with the minimal cost in the multiple matings case, or more than one edge with the minimal weight when we apply Prim’s algorithm. In the first case, the first individual encountered with the lowest weight is identified as the loop breaker; in the second, since Prim’s algorithm identifies loop breakers by not selecting them, the last individual with the lowest weight is the chosen loop breaker. For both algorithms, order is based arbitrarily on individual ID numbers.</p>
+<boxed-text id="box2">
+<label>Algorithm 2</label>
+<caption><title>breakloops: Break loops by adding clones of loop breakers</title></caption>
+<p><bold>Require</bold>: A pedigree <italic>P</italic></p>
+<p><bold>Ensure</bold>: Return the initial pedigree if there is no loop, or a modified pedigree with clones of loop breakers if loops exist</p>
+<p>1: <bold>if</bold> <italic>P</italic> contains no loops <bold>then</bold></p>
+<p>2:     <bold>return</bold>      <italic>P</italic> ᐅ Return the initial pedigree if there are no loops</p>
+<p>3: <bold>else</bold></p>
+<p>4:     <bold>while</bold> loops exist in <italic>P</italic> <bold>do</bold></p>
+<p>5:       Identify a loop breaker in <italic>P</italic></p>
+<p>6:       Add a clone of the loop breaker to <italic>P</italic></p>
+<p>7:       Modify <italic>P</italic> by connecting the clone appropriately to break the loop</p>
+<p>8:     <bold>end while</bold></p>
+<p>9:     <bold>return</bold> the modified pedigree <italic>P</italic> breakers     ᐅ Return the modified pedigree with loop</p>
+<p>10: <bold>end if</bold></p>
+</boxed-text>
+</sec>
+<sec id="s2-4">
+<label>2.4.</label><title>Fam3Pro Implementation</title>
+<p>The Fam3Pro package now includes a function to handle pedigrees containing loops through a new Boolean parameter called <italic>breakloop</italic> in the master function. This parameter defaults to FALSE, in which case the software halts with an error message when loops are detected. When set to TRUE, the software invokes the <bold>breakloops</bold> algorithm to resolve the loops by creating clones, allowing analysis to proceed.</p>
+<p>We developed a comprehensive wrapper function named <bold>breakloops</bold> that coordinates the entire loop-breaking process. This wrapper function requires five essential data columns from the user’s pedigree input: “ID,” “FatherID,” and “MotherID” to determine family structure; “Sex” to properly assign genders when fixing missing parents; and “isProband” to identify individuals of primary interest. Additionally, the function incorporates any available germline testing data to calculate possible genotypes for individuals. In the absence of testing data, the algorithm assigns uniform genotype possibilities to all individuals.</p>
+<p>The <bold>breakloops</bold> workflow begins with a preparatory phase that addresses common challenges in pedigree data. <xref ref-type="fig" rid="fig3">Figure 3</xref> illustrates this process. First, the function addresses incomplete parental information using the <bold>fixParents</bold> function from the kinship2 package, which creates placeholder parents with no cancer or genetic testing history for individuals with only one reported parent <xref ref-type="bibr" rid="c10">Sinnwell et al. [2014]</xref>. This ensures that the two-parent requirement for each non-founder is satisfied.</p>
+<p>Since the <bold>breakloops</bold> algorithm operates on connected family units, the function first isolates pedigrees into disjoint subfamilies (if present) and removes individuals unconnected to any proband. This step was originally performed later in the Fam3Pro workflow but was moved earlier to optimize computational efficiency.</p>
+<p>After completing these preparatory steps, the wrapper function applies the core <bold>breakloops</bold> algorithm (<xref ref-type="boxed-text" rid="box2">Algorithm 2</xref>) to each remaining family unit. The algorithm identifies loop breakers, creates appropriate clones, and modifies relationships to eliminate all loops (see <xref ref-type="fig" rid="fig3">Figure 3</xref>). The final output is a modified pedigree with no loops and no disconnected individuals, which can then be processed by Fam3Pro’s carrier probability and risk estimation functions without encountering computational difficulties from cyclic inheritance patterns.</p>
+</sec>
+</sec>
+<sec id="s3" sec-type="results">
+<label>3.</label><title>Results</title>
+<p>To validate the performance and reliability of the <bold>breakloops</bold> function we employed a two-phase evaluation strategy that encompassed both simulated and real-world clinical data.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Flowchart of the full implementation of breakloops in Fam3Pro.</title></caption>
+<graphic xlink:href="2505.01466v1_fig3.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>We first conducted comprehensive testing of the <bold>breakloops</bold> function across 17 distinct scenarios to validate its effectiveness in resolving pedigree loops. Our testing methodology involved constructing test pedigrees with predefined loops, creating corresponding expected output pedigrees, applying the <bold>breakloops</bold> function, and verifying results through direct comparison. The details on the configurations for the tested pedigrees can be found in the Supplementary Material. The <bold>breakloops</bold> function successfully resolved all loop configurations without exception, demonstrating its robust capability to handle the full spectrum of anticipated pedigree structures.</p>
+<p>To validate the function in a clinical context, we applied the updated version of Fam3Pro to a real cohort of 4255 families from Massachusetts General Hospital (MGH) with clinical genetic counseling records. Within this cohort, we identified 12 families with pedigree loops (0.28%), which aligns with the expected low prevalence of consanguineous relationships in clinical settings.</p>
+<p>The identified pedigrees exhibited diverse characteristics, with family sizes ranging from 21 to 47 individuals (mean 31.83). Most families contained a single loop structure, with only one family presenting multiple loops (2 loops). This distribution pattern suggests that while rare, loop structures in clinical pedigrees typically manifest as single, isolated consanguineous relationships rather than complex, interconnected family structures with multiple loops.</p>
+<p><xref ref-type="table" rid="tbl1">Table 1</xref> summarizes the characteristics of these families, including family size and number of loops. The <bold>breakloops</bold> function successfully resolved all pedigree loops in these real- world examples, demonstrating its practical applicability in clinical genetic counseling settings. The algorithm maintained excellent computational efficiency across all test cases, requiring on average only 0.069 seconds to process each real family with loops (0.08% of Fam3Pro’s total average processing time).</p>
+<table-wrap id="tbl1" position="float" orientation="portrait">
+<label>Table 1.</label>
+<caption><title>Runtime of breakloops in Fam3Pro for 12 Families with Loops.</title></caption>
+<alternatives>
+<graphic xlink:href="2505.01466v1_tbl1.tif" mime-subtype="tif" mimetype="image"/>
+<table frame="box" rules="all">
+<thead>
+<tr>
+<th align="center" valign="top">Family</th>
+<th align="center" valign="top">Size</th>
+<th align="center" valign="top">#Loops</th>
+<th align="center" valign="top">Fam3Pro (s)</th>
+<th align="center" valign="top">breakloops (s)</th>
+<th align="center" valign="top">%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">24</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">43.01</td>
+<td align="center" valign="top">0.053</td>
+<td align="center" valign="top">0.12</td>
+</tr>
+<tr>
+<td align="center" valign="top">2</td>
+<td align="center" valign="top">33</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">101.95</td>
+<td align="center" valign="top">0.063</td>
+<td align="center" valign="top">0.06</td>
+</tr>
+<tr>
+<td align="center" valign="top">3</td>
+<td align="center" valign="top">28</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">85.69</td>
+<td align="center" valign="top">0.060</td>
+<td align="center" valign="top">0.07</td>
+</tr>
+<tr>
+<td align="center" valign="top">4</td>
+<td align="center" valign="top">21</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">37.43</td>
+<td align="center" valign="top">0.050</td>
+<td align="center" valign="top">0.13</td>
+</tr>
+<tr>
+<td align="center" valign="top">5</td>
+<td align="center" valign="top">41</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">124.96</td>
+<td align="center" valign="top">0.069</td>
+<td align="center" valign="top">0.06</td>
+</tr>
+<tr>
+<td align="center" valign="top">6</td>
+<td align="center" valign="top">47</td>
+<td align="center" valign="top">2</td>
+<td align="center" valign="top">167.53</td>
+<td align="center" valign="top">0.084</td>
+<td align="center" valign="top">0.05</td>
+</tr>
+<tr>
+<td align="center" valign="top">7</td>
+<td align="center" valign="top">40</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">107.34</td>
+<td align="center" valign="top">0.073</td>
+<td align="center" valign="top">0.07</td>
+</tr>
+<tr>
+<td align="center" valign="top">8</td>
+<td align="center" valign="top">22</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">54.74</td>
+<td align="center" valign="top">0.053</td>
+<td align="center" valign="top">0.10</td>
+</tr>
+<tr>
+<td align="center" valign="top">9</td>
+<td align="center" valign="top">33</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">73.96</td>
+<td align="center" valign="top">0.062</td>
+<td align="center" valign="top">0.08</td>
+</tr>
+<tr>
+<td align="center" valign="top">10</td>
+<td align="center" valign="top">30</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">76.41</td>
+<td align="center" valign="top">0.061</td>
+<td align="center" valign="top">0.08</td>
+</tr>
+<tr>
+<td align="center" valign="top">11</td>
+<td align="center" valign="top">31</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">74.31</td>
+<td align="center" valign="top">0.100</td>
+<td align="center" valign="top">0.13</td>
+</tr>
+<tr>
+<td align="center" valign="top">12</td>
+<td align="center" valign="top">32</td>
+<td align="center" valign="top">1</td>
+<td align="center" valign="top">40.54</td>
+<td align="center" valign="top">0.101</td>
+<td align="center" valign="top">0.25</td>
+</tr>
+<tr>
+<td align="center" valign="top"><bold>Average</bold></td>
+<td align="center" valign="top"><bold>31.83</bold></td>
+<td align="center" valign="top"><bold>1.08</bold></td>
+<td align="center" valign="top"><bold>82.32</bold></td>
+<td align="center" valign="top"><bold>0.069</bold></td>
+<td align="center" valign="top"><bold>0.08</bold></td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+</sec>
+<sec id="s4" sec-type="discussion">
+<label>4.</label><title>Discussion</title>
+<p>In this paper, we present a new feature for Fam3Pro to handle pedigree loops called breakloops. This algorithm addresses a significant limitation in previous versions of Fam3Pro by enabling analysis of family structures with consanguineous relationships. The hybrid approach we implemented is optimal for pedigrees without individuals with multiple matings in the loops and close-to-optimal otherwise. To ensure compatibility with Fam3Pro’s underlying architecture, the algorithm includes preprocessing steps to fix missing parents for non-founders, partition pedigrees into separate family units, and remove individuals disconnected from probands.</p>
+<p>Our <bold>breakloops</bold> algorithm builds upon the foundation established by Becker and Geiger’s LoopBreaker algorithm <xref ref-type="bibr" rid="c1">Becker et al. [1998]</xref>. Similar to their approach, we route pedigrees to different sub-algorithms based on the presence or absence of multiple matings, employing the same greedy algorithm for multiple matings scenarios. For loops without multiple matings, however, we diverge in implementation details. While <xref ref-type="bibr" rid="c1">Becker et al. [1998]</xref> apply Kruskal’s algorithm directly to the trimmed graph, we utilize Prim’s algorithm on a derived subgraph. A key practical advantage of our implementation is that it automatically identifies optimal loop breakers without requiring user input, whereas LoopBreaker requires users to manually specify valid loop breakers.</p>
+<p>The validation approach included testing on simulated families as well as using real-world clinical data. The <bold>breakloops</bold> function successfully resolved all loop configurations, demonstrating its robustness and applicability to actual clinical scenarios.</p>
+<p>Although the algorithm effectively resolves a wide variety of pedigree loops, certain edge cases may not achieve optimal resolution, particularly in scenarios involving founders in loops and multiple-matings situations. Future enhancements could focus on refining the decision criteria to enable optimal breaking for these cases and ensuring clones maintain identical properties to their source individuals throughout the analysis workflow.</p>
+<p>In conclusion, the addition of <bold>breakloops</bold> significantly extends Fam3Pro’s capabilities, enabling risk assessment for a broader range of family structures. This enhancement allows genetic counselors and clinicians to provide more inclusive services to patients whose family histories include consanguineous relationships. By addressing both the theoretical challenges of loop detection and the practical needs of clinical genetic counseling, this feature represents an important advancement in hereditary cancer risk assessment software. The <bold>breakloops</bold> feature is available in Fam3Pro version 2.0.0, making these capabilities accessible to the clinical and research communities.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ann Becker</surname>, <given-names>Dan Geiger</given-names></string-name>, and <string-name><given-names>Alejandro A</given-names> <surname>Schaffer</surname></string-name></person-group>. <article-title>Automatic selection of loop breakers for genetic linkage analysis</article-title>. <source>Human heredity,</source> <volume>48</volume>(<issue>1</issue>):<fpage>49</fpage>–<lpage>60</lpage>, <year>1998</year>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>John Adrian Bondy</surname>, <given-names>U. S. R. Murty</given-names></string-name>, <etal>et al.</etal></person-group> <source>Graph theory with applications</source>, volume <volume>290</volume>. <publisher-name>Macmillan London</publisher-name>, <year>1976</year>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Robert C</given-names> <surname>Elston</surname></string-name> and <string-name><given-names>John</given-names> <surname>Stewart</surname></string-name></person-group>. <article-title>A general model for the genetic analysis of pedigree data</article-title>. <source>Human heredity,</source> <volume>21</volume>(<issue>6</issue>):<fpage>523</fpage>–<lpage>542</lpage>, <year>1971</year>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Rohan L</given-names> <surname>Fernando</surname></string-name>, <string-name><given-names>Charles</given-names> <surname>Stricker</surname></string-name>, and <string-name><given-names>Richard C</given-names> <surname>Elston</surname></string-name></person-group>. <article-title>An efficient algorithm to compute the posterior genotypic distribution for every member of a pedigree without loops</article-title>. <source>Theoretical and Applied Genetics,</source> <volume>87</volume>(<issue>1-2</issue>):<fpage>89</fpage>–<lpage>93</lpage>, <year>1993</year>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Joseph B</given-names> <surname>Kruskal</surname></string-name></person-group>. <article-title>On the shortest spanning subtree of a graph and the traveling salesman problem</article-title>. <source>Proceedings of the American Mathematical society</source>, <volume>7</volume>(<issue>1</issue>):<fpage>48</fpage>–<lpage>50</lpage>, <year>1956</year>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Kenneth</given-names> <surname>Lange</surname></string-name></person-group>. <source>Mathematical and Statistical Methods for Genetic Analysis</source>. <publisher-name>SpringerVerlag</publisher-name>, <publisher-loc>New York</publisher-loc>, <edition>2nd edition</edition>, <year>2002</year>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kenneth</given-names> <surname>Lange</surname></string-name> and <string-name><given-names>Robert C</given-names> <surname>Elston</surname></string-name></person-group>. <article-title>Extensions to pedigree analysis</article-title>. <source>Human heredity</source>, <volume>25</volume>(<issue>2</issue>):<fpage>95</fpage>–<lpage>105</lpage>, <year>1975</year>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Gavin</given-names> <surname>Lee</surname></string-name>, <string-name><given-names>Jane W</given-names> <surname>Liang</surname></string-name>, <string-name><given-names>Qing</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Theodore</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Christine</given-names> <surname>Choirat</surname></string-name>, <string-name><given-names>Giovanni</given-names> <surname>Parmigiani</surname></string-name>, and <string-name><given-names>Danielle</given-names> <surname>Braun</surname></string-name></person-group>. <article-title>Multi-syndrome, multi-gene risk modeling for individuals with a family history of cancer with the novel r package panelpro</article-title>. <source>eLife</source>, <volume>10</volume>: <elocation-id>e68699</elocation-id>, <year>2021</year>. <pub-id pub-id-type="doi">10.7554/eLife.68699</pub-id></mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Robert Clay</given-names> <surname>Prim</surname></string-name></person-group>. <article-title>Shortest connection networks and some generalizations</article-title>. <source>The Bell System Technical Journal</source>, <volume>36</volume>(<issue>6</issue>):<fpage>1389</fpage>–<lpage>1401</lpage>, <year>1957</year>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Jason P.</given-names> <surname>Sinnwell</surname></string-name>, <string-name><given-names>Terry M.</given-names> <surname>Therneau</surname></string-name>, and <string-name><given-names>Daniel J.</given-names> <surname>Schaid</surname></string-name></person-group>. <article-title>The kinship2 r package for pedigree data</article-title>. <source>Human Heredity</source>, <volume>78</volume>(<issue>2</issue>):<fpage>91</fpage>–<lpage>93</lpage>, <year>2014</year>. doi: <pub-id pub-id-type="doi">10.1159/000363105</pub-id>.</mixed-citation></ref>
+</ref-list>
+<app-group>
+<app id="s5">
+<label>A.</label><title>Supplementary Material: Comprehensive Testing of the Breakloops Function</title>
+<p>To validate the breakloops functionality across diverse scenarios, we conducted systematic testing using 17 distinct test cases encompassing various loop configurations. The breakloops function successfully identified and resolved all loops across all test scenarios. This supplement describes our testing methodology and the specific scenarios examined.</p>
+<p>For each test case, we employed the following protocol:
+<list list-type="bullet">
+<list-item><p>We constructed a test pedigree containing one or more predefined loops.</p></list-item>
+<list-item><p>We created a corresponding “clones” pedigree representing the expected output after proper loop resolution.</p></list-item>
+<list-item><p>We applied the <bold>breakloops</bold> function to the test pedigree.</p></list-item>
+<list-item><p>We verified correctness by comparing the function’s output to the expected pedigree using the <monospace>identical()</monospace> function.</p></list-item>
+</list>
+</p>
+<p>The test cases covered various loop sizes (3 to 7 individuals), the presence or absence of individuals with multiple matings, scenarios with multiple simultaneous loops, and edge cases such as missing parental information. For example, test cases T1-T7 include loops without multiple matings (“No-MM”), while T8-T14 feature loops where at least one individual has multiple matings (“MM”). Test cases T15 and T16 combine both types within a single pedigree. T17 tests the function’s robustness when handling incomplete parental data. <xref ref-type="table" rid="tbl2">Table A1</xref> provides a detailed summary of all test scenarios.</p>
+<table-wrap id="tbl2" position="float" orientation="portrait">
+<label>Table A1.</label>
+<caption><title>Summary of Testing Scenarios.</title></caption>
+<alternatives>
+<graphic xlink:href="2505.01466v1_tbl2.tif" mime-subtype="tif" mimetype="image"/>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<th align="left" valign="top">ID</th>
+<th align="center" valign="top">Scenario</th>
+<th align="center" valign="top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top">T1</td>
+<td align="center" valign="top">Small Loop</td>
+<td align="center" valign="top">Loop consisting of 3 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T2</td>
+<td align="center" valign="top">Medium Loop</td>
+<td align="center" valign="top">Loop consisting of 4 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T3</td>
+<td align="center" valign="top">Large Loop</td>
+<td align="center" valign="top">Loop consisting of 5 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T4</td>
+<td align="center" valign="top">XL Loop</td>
+<td align="center" valign="top">Loop consisting of 7 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T5</td>
+<td align="center" valign="top">Multiple Loops</td>
+<td align="center" valign="top">Scenario with 3 different loops</td>
+</tr>
+<tr>
+<td align="left" valign="top">T6</td>
+<td align="center" valign="top">Same Weights</td>
+<td align="center" valign="top">All individuals have same weight</td>
+</tr>
+<tr>
+<td align="left" valign="top">T7</td>
+<td align="center" valign="top">Proband Ideal</td>
+<td align="center" valign="top">Proband is ideal loop breaker</td>
+</tr>
+<tr>
+<td align="left" valign="top">T8</td>
+<td align="center" valign="top">Small Loop (MM)</td>
+<td align="center" valign="top">Loop with multiple matings case, 3 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T9</td>
+<td align="center" valign="top">Medium Loop (MM)</td>
+<td align="center" valign="top">Loop with multiple matings case, 4 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T10</td>
+<td align="center" valign="top">Large Loop (MM)</td>
+<td align="center" valign="top">Loop with multiple matings case, 5 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T11</td>
+<td align="center" valign="top">XL Loop (MM)</td>
+<td align="center" valign="top">Loop with multiple matings case, 7 individuals</td>
+</tr>
+<tr>
+<td align="left" valign="top">T12</td>
+<td align="center" valign="top">Multiple Loops (MM)</td>
+<td align="center" valign="top">3 different loops, some with multiple matings</td>
+</tr>
+<tr>
+<td align="left" valign="top">T13</td>
+<td align="center" valign="top">Same Weights (MM)</td>
+<td align="center" valign="top">Equal weights, multiple matings included</td>
+</tr>
+<tr>
+<td align="left" valign="top">T14</td>
+<td align="center" valign="top">Proband Ideal (MM)</td>
+<td align="center" valign="top">Proband is ideal breaker, includes multiple matings</td>
+</tr>
+<tr>
+<td align="left" valign="top">T15</td>
+<td align="center" valign="top">Mixed Loops 1</td>
+<td align="center" valign="top">One MM loop and two No-MM loops</td>
+</tr>
+<tr>
+<td align="left" valign="top">T16</td>
+<td align="center" valign="top">Mixed Loops 2</td>
+<td align="center" valign="top">Two MM loops and one No-MM loop</td>
+</tr>
+<tr>
+<td align="left" valign="top">T17</td>
+<td align="center" valign="top">Missing Parent</td>
+<td align="center" valign="top">One or more parents missing</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>In conclusion, our comprehensive testing demonstrates that the <bold>breakloops</bold> function robustly handles a wide spectrum of pedigree configurations and edge cases. The successful resolution of all test scenarios confirms that the algorithm can effectively identify optimal loop breakers, create appropriate clones, and reconstruct pedigrees without loops while preserving the essential genetic relationships.</p>
+</app>
+</app-group>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107490.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Narla</surname>
+<given-names>Goutham</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-4098-4203</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00jmfr291</institution-id><institution>University of Michigan</institution>
+</institution-wrap>
+<city>Ann Arbor</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Compelling</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This manuscript provides an improved version of an <bold>important</bold> cancer risk estimation tool and refines and expands upon resources that are currently available to the cancer genetics community. The new program is validated in a set of clinical pedigrees demonstrating its practical accuracy and relevance to the field. Collectively, the data are <bold>compelling</bold> and support the major conclusions of this manuscript.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107490.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Although consanguinity is a rare clinical occurrence, it results in essentially a failure state for pedigree analysis algorithms by introducing loops that prevent accurate risk estimation. Therefore, Kubista et al. developed the graph-based &quot;breakloops&quot; function to allow their PanelPRO risk estimator (PMID 34406119) to successfully process consanguineous pedigrees.</p>
+<p>Strengths:</p>
+<p>This function allows them to first identify a loop in a pedigree, then decide which of two separate algorithms to best apply, Prim's or greedy, to optimize the introduction of clones to break these loops. As this function is automatic, it represents an improvement over previous similar algorithms, and also allows for the optimal algorithm to be chosen. The inclusion of pseudocode in the manuscripts provides a succinct summary of the logic behind the above: it greatly enhances the understanding of the function for those not necessarily computationally inclined.</p>
+<p>After simulating a variety of consanguineous possibilities, the authors leveraged clinical pedigree data to validate their function. Integration of clinical pedigrees was extremely helpful in demonstrating the real-life applicability of this update. The successful inclusion of these clinical data justifies the claims they make regarding the ability to assess cancer risk in a wider range of family structures.</p>
+<p>Weaknesses:</p>
+<p>As consanguinity is inextricably linked with autosomal recessive disease, the discussion on the clinical implications of this new function is lacking.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107490.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper introduces a new function within the Fam3Pro package that addresses the problem of breaking loops in family structures. When a loop is present, standard genotype peeling algorithms fail, as they cannot update genotypes correctly. The solution is to break these loops, but until now, this could not be done automatically and optimally.</p>
+<p>The manuscript provides useful background on constructing graphs and trees from family data, detecting loops, and determining how to break them optimally for the case of no loops with multiple matings. For this situation, the algorithm switches between Prim's algorithm and a simple greedy approach and provides a solution. However, here, an optimal solution is not guaranteed.</p>
+<p>The theoretical foundations-such as the representation of families as graphs or trees and the identification of loops-are clearly explained and well-illustrated with example pedigrees. The practical utility of the new function is demonstrated by applying it to a dataset containing families with loops.</p>
+<p>This work has the potential for considerable impact, especially for medical researchers and individuals from families with loops. These families could previously not be analysed automatically and optimally. The new function changes that, enabling risk assessments and genetic calculations that were previously infeasible.</p>
+<p>Strengths:</p>
+<p>(1) The theoretical explanation of graphs, trees, and loop detection is clear and well-structured.</p>
+<p>(2) The idea of switching between algorithms is original and appears effective.</p>
+<p>(3) The function is well implemented, with minimal additional computational cost.</p>
+<p>Weaknesses:</p>
+<p>(1) In cases with multiple matings, the notion of a &quot;close-to-optimal&quot; solution is not clearly defined. It would be helpful to explain what this means-whether it refers to empirical performance, theoretical bounds, or something else.</p>
+<p>(2) In the example pedigree discussed, multiple options exist for breaking loops, but it is unclear which is optimal.</p>
+<p>(3) No example is provided where the optimal solution is demonstrably not reached.</p>
+<p>(4) It is also unclear whether the software provides a warning when the solution might not be optimal.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107490.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Kubista</surname>
+<given-names>Nicolas</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Hernandez-Cancela</surname>
+<given-names>Ryan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ke</surname>
+<given-names>Jianfeng</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Berquet</surname>
+<given-names>Romain</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lee</surname>
+<given-names>Gavin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Parmigiani</surname>
+<given-names>Giovanni</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Braun</surname>
+<given-names>Danielle</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p><bold>Response to Reviewer #1:</bold></p>
+<p>We plan to extend the discussion section to discuss the clinical implications of this new function. We will note the algorithm's applicability to broader genetic counseling contexts beyond cancer risk assessment.</p>
+<p><bold>Response to Reviewer #2:</bold></p>
+<p>We will clarify the four points raised:</p>
+<p>(1) &quot;Close-to-optimal&quot; definition: We will explain that in multiple-mating cases, finding the global optimum is NP-hard (equivalent to the Weighted Feedback Vertex Set problem). We will clarify that our greedy algorithm provides practically efficient solutions suitable for clinical use, though without theoretical optimality guarantees.</p>
+<p>(2) Example clarity: We will improve Figure 1's caption to explain the cost calculations and note that with equal weights, both shown solutions are equivalent.</p>
+<p>(3) Non-optimal examples: We will describe scenarios where the greedy algorithm may not achieve the global optimum, particularly in multiple-mating cases with heterogeneous weights.</p>
+<p>(4) Warning message: The current version not provide a warning when the solution might be non-optimal. This may be added in the future to the function.</p>
+<p>We appreciate your feedback and suggestions to help improve the manuscript.</p>
+</body>
+</sub-article>
+</article>
