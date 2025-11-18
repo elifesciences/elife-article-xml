@@ -1,0 +1,954 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">108880</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.108880</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.108880.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Evolutionary Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Inference of germinal center evolutionary dynamics via simulation-based deep learning</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Ralph</surname>
+<given-names>Duncan K</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<email xlink:href="mailto:dralph@fredhutch.org">dralph@fredhutch.org</email>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bakis</surname>
+<given-names>Athanasios G</given-names>
+</name>
+<xref ref-type="aff" rid="A2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Galloway</surname>
+<given-names>Jared</given-names>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Vora</surname>
+<given-names>Ashni A</given-names>
+</name>
+<xref ref-type="aff" rid="A4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Araki</surname>
+<given-names>Tatsuya</given-names>
+</name>
+<xref ref-type="aff" rid="A4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Victora</surname>
+<given-names>Gabriel D</given-names>
+</name>
+<xref ref-type="aff" rid="A4">4</xref>
+<xref ref-type="aff" rid="A8">8</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Song</surname>
+<given-names>Yun S</given-names>
+</name>
+<xref ref-type="aff" rid="A5">5</xref>
+<xref ref-type="aff" rid="A6">6</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>DeWitt</surname>
+<given-names>William S</given-names>
+</name>
+<xref ref-type="aff" rid="A3">3</xref>
+<xref ref-type="aff" rid="A1">1</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Matsen</surname>
+<given-names>Frederick A</given-names>
+<suffix>IV</suffix>
+</name>
+<xref ref-type="aff" rid="A1">1</xref>
+<xref ref-type="aff" rid="A3">3</xref>
+<xref ref-type="aff" rid="A7">7</xref>
+<xref ref-type="aff" rid="A8">8</xref>
+<email xlink:href="mailto:dralph@fredhutch.org">matsen@fredhutch.org</email>
+</contrib>
+<aff id="A1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/007ps6h72</institution-id><institution>Fred Hutchinson Cancer Research Center</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="A2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/04gyf1771</institution-id><institution>Department of Statistics, University of California, Irvine</institution></institution-wrap>, <city>Irvine</city>, <country country="US">United States</country></aff>
+<aff id="A3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00cvxb145</institution-id><institution>Department of Genome Sciences, University of Washington</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="A4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0420db125</institution-id><institution>Laboratory of Lymphocyte Dynamics, The Rockefeller University</institution></institution-wrap>, <city>New York</city>, <country country="US">United States</country></aff>
+<aff id="A5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/01an7q238</institution-id><institution>Department of Statistics, University of California, Berkeley</institution></institution-wrap>, <city>Berkeley</city>, <country country="US">United States</country></aff>
+<aff id="A6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/01an7q238</institution-id><institution>Computer Science Division, University of California, Berkeley</institution></institution-wrap>, <city>Berkeley</city>, <country country="US">United States</country></aff>
+<aff id="A7"><label>7</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00cvxb145</institution-id><institution>Department of Statistics, University of Washington</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+<aff id="A8"><label>8</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id><institution>Howard Hughes Medical Institute</institution></institution-wrap>, <city>Seattle</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Mora</surname>
+<given-names>Thierry</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-5456-9361</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05a0dhs15</institution-id><institution>École Normale Supérieure - PSL</institution>
+</institution-wrap>
+<city>Paris</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Walczak</surname>
+<given-names>Aleksandra M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>CNRS</institution>
+</institution-wrap>
+<city>Paris</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+</contrib-group>
+<pub-date pub-type="epub">
+<day>13</day>
+<month>08</month>
+<year>2025</year>
+</pub-date>
+<pub-date date-type="original-publication" iso-8601-date="2025-11-03">
+<day>03</day>
+<month>11</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP108880</elocation-id>
+<history><date date-type="sent-for-review" iso-8601-date="2025-08-29">
+<day>29</day>
+<month>08</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-08-13">
+<day>13</day>
+<month>08</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.48550/arXiv.2508.09871"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Ralph et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Ralph et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-108880-v1.pdf"/>
+<abstract>
+<p>B cells and the antibodies they produce are vital to health and survival, motivating research on the details of the mutational and evolutionary processes in the germinal centers (GCs) from which mature B cells arise. It is known that B cells with higher affinity for their cognate antigen (Ag) will, on average, tend to have more offspring. However the exact form of this relationship between affinity and fecundity, which we call the “affinity-fitness response function”, is not known. Here we use deep learning and simulation-based inference to learn this function from a unique experiment that replays a particular combination of GC conditions many times. All code is freely available at <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/gcdyn">https://github.com/matsengrp/gcdyn</ext-link>, while datasets and inference results can be found at <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.5281/zenodo.15022130">https://doi.org/10.5281/zenodo.15022130</ext-link>.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<sec id="s1" sec-type="intro">
+<title>Introduction</title>
+<p>The germinal center (GC) is the site of affinity maturation of B cell receptors (BCRs), and as such is of central importance to the functioning of the adaptive immune system. Naive B cells, after encountering their cognate antigen, migrate to GCs, where they alternate cycles of proliferation and mutation (in the GC’s dark zone) and affinity-based selection (in the light zone) (<xref ref-type="bibr" rid="c11">Cyster and Allen, 2019</xref>; <xref ref-type="bibr" rid="c42">Victora and Nussenzweig, 2022</xref>). Over time scales of several weeks (and many generations) this results in an increase in the average affinity of the population of B cells (<xref ref-type="bibr" rid="c7">Berek and Milstein, 1987</xref>; <xref ref-type="bibr" rid="c2">Allen et al., 1988</xref>). Understanding these processes that occur in the GC is thus of great importance both to achieving a fundamental grasp of the immune system, and to advancing goals such as making a vaccine for difficult-to-neutralize viruses (<xref ref-type="bibr" rid="c9">Burton et al., 2012</xref>).</p>
+<p>The GC is a Darwinian evolutionary system designed to improve affinity, and as such one might ask: what relationship between affinity and fitness does it use? In order for the GC reaction to improve affinity, this relationship must be increasing. That is, on average, B cells with higher affinity BCRs will reproduce more than those with low affinity BCRs, leading to an overall improvement in affinity. However, the details of the relationship between affinity and fitness are unknown. This is in part because the fitness of a B cell is an emergent property of an intact, functioning germinal center and thus cannot be measured using an in vitro assay.</p>
+<p>There have been a variety of suggestions for the form of the affinity-fitness relationship (<xref ref-type="bibr" rid="c5">Batista and Neuberger, 1998</xref>; <xref ref-type="bibr" rid="c17">Kuraoka et al., 2016</xref>; <xref ref-type="bibr" rid="c29">Murugan et al., 2018</xref>). Resolving these possibilities in practice, however, requires care, even in the ideal situation of single-cell sequencing of individual germinal centers (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>; <xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>). One cannot simply examine by hand trees built from observed sequences and gain insight. Indeed, processes such as the “push of the past” and the “pull of the present” (<xref ref-type="bibr" rid="c30">Nee et al., 1994</xref>; <xref ref-type="bibr" rid="c8">Budd and Mann, 2018</xref>) can mislead interpretation of germinal center sequence data. Instead, an approach is needed that can model extinct lineages that do not appear in the reconstructed tree (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>).</p>
+<p>We will approach the affinity-fitness relationship via a birth-death model in which the birth rate is a function of affinity; we call this function the “affinity-fitness response function.” We assume a family of such functions, determined by some set of parameters, such that a choice of parameters gives a specific response function. We will use data from the “replay” experiment (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>) to fit this function. This experiment used mice whose GCs are seeded entirely by B cells with a single, fixed naive antibody. They were immunized with this naive antibody’s cognate antigen, and the subsequent GC reactions were observed in two ways: by extracting and sequencing individual GCs near a single timepoint, and by pooling multiple GCs at each of a wide range of timepoints for single-cell sequencing. In addition, a deep mutational scan (DMS) on the naive antibody’s sequence was performed for binding to the immunogen. This DMS enables us to make predictions about the affinity of an arbitrary sequence. These affinities can then be input into the affinity-fitness response function; one can compare the observed phylogenetic trees to predictions made by the corresponding birth-death process to learn about the parameters of the response function.</p>
+<p>Ideally one would be able to fit the parameters of the affinity-fitness response function via maximum likelihood or Bayesian inference. However, this is difficult. In general, calculating likelihoods for birth-death models is a challenge, requiring solutions of ordinary differential equations (ODEs) that take the probability of unsampled lineages into account. <xref ref-type="bibr" rid="c3">Bakis et al. (2025)</xref> have employed this approach, using the multitype birth-death (MTBD) model of (<xref ref-type="bibr" rid="c18">Kühnert et al., 2016</xref>; <xref ref-type="bibr" rid="c4">Barido-Sottani et al., 2020</xref>) but adapting it to the case of many trees evaluated in parallel. The types in the MTBD are discretized bins of affinity, and mutation moves lineages between bins.</p>
+<p>This approach has the substantial advantage of being rigorously tractable using numerical integration of ODEs and Markov chain Monte Carlo (MCMC); however, the inferential model is misspecified in two ways. First, it requires Markov evolution of the types in the MTBD model. In our case, and described in more detail below, the type is determined by the sequence, and so the type evolution is determined by sequence evolution. Because the relationship between sequence and affinity type is non-trivial, and the sequence-based mutation process is complex, the evolution of the types is not Markovian. Second, the MTBD model cannot accommodate population size constraints. Models with such constraints in fact generally have intractable likelihoods because the evolution of each cell depends on the entire population of cells. Real germinal centers are subject to such population constraints, reaching them around 10 days, well before our sampling for these experiments at 15 or 20 days (<xref ref-type="bibr" rid="c37">Schwickert et al., 2007</xref>; <xref ref-type="bibr" rid="c26">Mesin et al., 2020</xref>).</p>
+<p>Likelihood-free inference is an alternative approach to fitting complex statistical models. Classical likelihood-free inference uses Approximate Bayesian Computation with summary statistics (<xref ref-type="bibr" rid="c6">Beaumont et al., 2002</xref>). More recently, techniques using deep neural networks have emerged, especially in population genetics (<xref ref-type="bibr" rid="c38">Sheehan and Song, 2016</xref>; <xref ref-type="bibr" rid="c36">Schrider and Kern, 2018</xref>). Recent work has extended this to the inference of phylogenetic model parameters (<xref ref-type="bibr" rid="c43">Voznica et al., 2022</xref>; <xref ref-type="bibr" rid="c19">Lajaaiti et al., 2023</xref>; <xref ref-type="bibr" rid="c22">Landis and Thompson, 2025</xref>) including state-dependent diversification models (<xref ref-type="bibr" rid="c21">Lambert et al., 2023</xref>; <xref ref-type="bibr" rid="c41">Thompson et al., 2024</xref>). Can we use these recent methods to learn the parameters of the affinity-fitness function in the germinal center?</p>
+<p>In this paper, we learn the relationship between affinity and fitness via simulation-based inference using cell-based forward simulation, neural network inference, and summary statistics matching (<xref ref-type="fig" rid="fig1">Figure 1</xref>). We begin from the compact bijective ladderized vector (CBLV) tree encoding of <xref ref-type="bibr" rid="c43">Voznica et al. (2022)</xref>, adding affinities for each node from ancestral sequence reconstruction and the sequence-affinity mapping. Our forward model contains too many parameters to be inferred using neural networks alone, sowe complement the neural network inference with summary statistic matching for some parameters. There are two quantities in our model that can be described as fitnesses or birth rates: an intrinsic rate (the response function above), which is fixed for a given parameter set and which describes a cell’s birth rate in the absence of capacity constraints; and the effective (net) rate, which incorporates these constraints while subtracting the death rate, and varies with time and GC properties. We infer response functions on 119 trees from (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>), finding them to be generally similar across GCs, and roughly tripling from affinity 0 (naive) to 1, and then tripling again from 1 to 2. This means that a cell that mutated to affinity 1 in the early stages of the GC would replicate roughly three times as fast as the cells around it. The effective, or net, birth rate lies within much narrower bounds once the GC nears carrying capacity, between roughly −0.2 and 1 for most GCs.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1</label>
+<caption>
+<title>Overview of the workflow for this paper.</title>
+<p>After specifying a birth-death model with sigmoid affinity-fitness response function, we simulate many trees and their sequences at each node, with parameters roughly consistent with our real data samples. The simulation is cell-based and implements a carrying-capacity population size limit. The results of the simulation are then encoded and used to train a neural network that infers the sigmoid response parameters on real data. In addition to encoded trees, the network also takes as input the assumed values of several non-sigmoid parameters (carrying capacity, initial population size, and death rate). Inference on real data is performed many times, with many different combinations of non-sigmoid parameter values, and additional “data mimic” simulation is generated using each of the resulting inferred parameter value combinations. The summary statistics of each data mimic sample are compared to real data, with the best match selected as the “central data mimic” sample with final parameter values for both sigmoid (inferred with the neural network) and non-sigmoid (inferred by matching summary statistics) parameters. <xref ref-type="fig" rid="fig8">Figure 1—figure supplement 1</xref>. Simulation response function example with sampled affinity values. <xref ref-type="fig" rid="fig9">Figure 1—figure supplement 2</xref>. Diagram of curve difference loss function calculation. <xref ref-type="fig" rid="fig10">Figure 1—figure supplement 3</xref>. Example of approximate sigmoid parameter degeneracy.</p>
+</caption>
+<graphic xlink:href="2508.09871v1_fig1.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s2" sec-type="methods">
+<title>Methods</title>
+<sec id="s2-1">
+<title>Overview of the replay experiment and data</title>
+<p>In order to quantify the mechanics of GC selection we use data from an experimental mouse system that we nickname the “replay” experiment (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>) in which all naive B cells seeding GCs are identical, carrying the same pre-rearranged IG genes. Thus, the starting sequences for affinity maturation in these GCs have identical affinity and specificity for their cognate antigen. This antigen is chicken IgY, which has been characterized previously (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>; <xref ref-type="bibr" rid="c16">Jacobsen et al., 2018</xref>). The naive sequence chosen (called “clone 2.1”) was the naive version of a dominant sequence in a GC with a very large clonal burst 10 days after immunization (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>), so we expect that it is a good starting point for affinity maturation. The engineered mice carry the unmutated versions of the Igh and Igk genes rearranged by clone 2.1 in their respective loci. They were immunized with chicken IgY, and the resulting GC reactions were observed in two ways, resulting in two separate data sets. For the first, which we refer to as the “extracted GC data”, 119 individual GCs were extracted and sequenced from 12 such mice at either 15 days (52 GCs) or 20 days (67 GCs) after immunization. In the second, called “bulk data”, multiple GCs from the whole lymph nodes of several mice were pooled together at each of seven time points (from 5 to 70 days after immunization), and then analyzed with droplet-based sequencing. In this paper, we only use the extracted GC data; however we also compare our results to those derived from the bulk data.</p>
+<p>We infer trees with IQ-TREE (<xref ref-type="bibr" rid="c27">Minh et al., 2020</xref>) version 1.6.12 using all observed BCR sequences from each GC with the known naive sequence as outgroup, and ancestral sequence reconstruction by empirical Bayes. We use the branch lengths from IQ-TREE directly, without attempting to infer calendar times for the internal nodes.</p>
+<p>These BCR trees are annotated with antibody affinities at all nodes as follows. First, we perform ancestral sequence reconstruction for every node of the phylogenetic tree. Because these trees have relatively few mutations, this can be done with low error. We first take affinity values for each single-mutation variant from a DMS experiment (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>) that used methods similar to <xref ref-type="bibr" rid="c1">Adams et al. (2016)</xref>. For sequences with more than one mutation, we simply add the effect of each individual mutation (i.e. we assume no epistasis), which was shown to be a reasonable approximation in <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref>.</p>
+<p>The 119 trees have between 26 and 95 leaves, with a mean (median) of 74 (78) leaves. Observed sequences have between 0 and 19 nucleotide mutations, with a mean (median) of 6.3 (6.0) nucleotide mutations. Affinity (defined below) is 0 for the initial unmutated sequence, and ranges from −37 to 3 in observed sequences, with a mean (median) of −0.3 (0.3).</p>
+</sec>
+<sec id="s2-2">
+<title>Model</title>
+<p>In order to simulate sequences and trees that we will then use to train the neural network, we employ a birth-death model with a population size constraint. Our model is designed to mimic the replay experiment, with a parameterized affinity-fitness response function mapping each cell’s affinity to its fitness. We provide more detail below and in <xref ref-type="table" rid="tbl1">Table 1</xref>, but to summarize, we make the following assumptions about the birth-death-mutation process driving the germinal center:
+<list list-type="bullet">
+<list-item><p>The GC is seeded with an initial population size and has a fixed upper limit (carrying capacity) on the GC population size.</p></list-item>
+<list-item><p>Birth events happen with a per-cell rate given by the response function, which is then logistically modulated as the population nears carrying capacity.</p></list-item>
+<list-item><p>Death events happen at one of two constant rates, one for cells with functional sequences, the other for nonfunctional ones (e.g. with stop codons).</p></list-item>
+<list-item><p>Mutation events happen on the edges of the developing phylogenetic tree according to a process that depends only on the mutability of the evolving sequence using a context-sensitive model (<xref ref-type="bibr" rid="c10">Cui et al., 2016</xref>).</p></list-item>
+<list-item><p>The process is stopped after a fixed period of time, and a sample of a given size is taken uniformly.</p></list-item>
+<list-item><p>If the number of living cells falls to zero, or if there are fewer than 10 living cells at sampling time, the tree is discarded and the simulation is retried.</p></list-item>
+</list>
+</p>
+<table-wrap id="tbl1" position="float" orientation="portrait">
+<label>Table 1</label>
+<caption><title>Simulation parameter values for training sample (left column, in which each GC has different parameters), and the central data mimic sample (right column, in which all GCs have the same, data-inferred parameters).</title>
+<p>Square brackets indicate a range, from which values are chosen either as detailed below (for sigmoid parameters) or uniformly at random.</p></caption>
+<alternatives>
+<graphic xlink:href="2508.09871v1_tbl1.tif" mime-subtype="tif" mimetype="image"/>
+<table frame="box" rules="cols">
+<thead>
+<tr>
+<th align="left" valign="top"/>
+<th align="left" valign="top">training</th>
+<th align="left" valign="top">central data mimic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top">birth response function</td>
+<td align="left" valign="top">sigmoid</td>
+<td align="left" valign="top">sigmoid</td>
+</tr>
+<tr>
+<td align="left" valign="top"><monospace>xscale</monospace> (<italic>x<sub>c</sub></italic>)</td>
+<td align="left" valign="top">[0.01,2]</td>
+<td align="left" valign="top">1.6</td>
+</tr>
+<tr>
+<td align="left" valign="top"><monospace>xshift</monospace> (<italic>x<sub>h</sub></italic>)</td>
+<td align="left" valign="top">[−0.5, 3]</td>
+<td align="left" valign="top">2.0</td>
+</tr>
+<tr>
+<td align="left" valign="top"><monospace>yscale</monospace> (<italic>y<sub>c</sub></italic>)</td>
+<td align="left" valign="top">[0.5, 35]</td>
+<td align="left" valign="top">18.2</td>
+</tr>
+<tr>
+<td align="left" valign="top"><monospace>yshift</monospace> (<italic>y<sub>h</sub>)</italic></td>
+<td align="left" valign="top">[0, 0.6]</td>
+<td align="left" valign="top">0.4</td>
+</tr>
+<tr>
+<td align="left" valign="top">carrying capacity</td>
+<td align="left" valign="top">[500, 2000]</td>
+<td align="left" valign="top">500</td>
+</tr>
+<tr>
+<td align="left" valign="top">capacity method</td>
+<td align="left" valign="top">birth</td>
+<td align="left" valign="top">birth</td>
+</tr>
+<tr>
+<td align="left" valign="top">time to sampling</td>
+<td align="left" valign="top">[10, 35]</td>
+<td align="left" valign="top">20</td>
+</tr>
+<tr>
+<td align="left" valign="top"># seqs/GC</td>
+<td align="left" valign="top">[50,130]</td>
+<td align="left" valign="top">[60, 95]</td>
+</tr>
+<tr>
+<td align="left" valign="top">#GCs</td>
+<td align="left" valign="top">50,000</td>
+<td align="left" valign="top">120</td>
+</tr>
+<tr>
+<td align="left" valign="top">naive birth rate</td>
+<td align="left" valign="top">[0.1,15]</td>
+<td align="left" valign="top">1.2</td>
+</tr>
+<tr>
+<td align="left" valign="top">death rate (functional)</td>
+<td align="left" valign="top">[0.05, 0.5]</td>
+<td align="left" valign="top">0.2</td>
+</tr>
+<tr>
+<td align="left" valign="top">death rate (stops)</td>
+<td align="left" valign="top">10</td>
+<td align="left" valign="top">10</td>
+</tr>
+<tr>
+<td align="left" valign="top">initial population</td>
+<td align="left" valign="top">[8-128]</td>
+<td align="left" valign="top">128</td>
+</tr>
+<tr>
+<td align="left" valign="top">mutability multiplier</td>
+<td align="left" valign="top">0.68</td>
+<td align="left" valign="top">0.5</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>The simulation is initialized with a single root node with the naive sequence from the replay experiment. This initial node then immediately undergoes repeated binary expansion with neither mutation nor time passage until we have the desired number of initial naive sequences.</p>
+<p>Each subsequent step in the simulation process consists of choosing one of the three possible events as follows. We loop over all event types and all nodes, calculating a waiting time for each such node-event type combination. These waiting times are calculated from an event type-specific response function, which relates each node’s affinity to the likelihood, or rate, of that event type. For instance the birth response function mentioned above relates the node’s affinity to the rate at which it divides (i.e. at which birth occurs). The waiting time for each node-event type combination is sampled from the inverted response function (which, as an event rate, has an inverse of time). For mutation events, the waiting time distributions are calculated using the SHM model mutabilities summed over each node’s sequence. The event type-node combination with the smallest waiting time is then selected to occur, and the corresponding cell is removed from the population. Ifa birth event is selected, two identical children are added to the population. For a death event, no cells are added. Fora mutation, the location of the substitution and the new base are chosen according to probabilities from 5-mer sequence contexts in the node’s sequence using the model of <xref ref-type="bibr" rid="c10">Cui et al. (2016)</xref>; a single new cell is created to replace the old.</p>
+<p>Inspired by <xref ref-type="bibr" rid="c12">Dessalles et al. (2018)</xref>, we enforce the germinal center’s carrying capacity by logistically modulating the birth rate such that the process is critical (average birth and death rates over living cells are equal) when the population is at carrying capacity. We modulate each cell’s birth rate by applying a multiplicative factor <italic>m</italic>:
+<disp-formula id="FD1">
+<alternatives>
+<mml:math id="M1" display="block"><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:msub><mml:mo>∑</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle></mml:mrow><mml:mrow><mml:mstyle displaystyle="true"><mml:msub><mml:mo>∑</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:mrow><mml:msub><mml:mi>λ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle></mml:mrow></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>/</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:msup></mml:math>
+<graphic xlink:href="2508.09871v1_eqn1.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(1)</label>
+</disp-formula>
+</p>
+<p>which, for carrying capacity <italic>N</italic><sub>0</sub>, sums death rates <italic>μ<sub>i</sub></italic>, and birth rates <italic>λ<sub>i</sub></italic> over the <italic>N</italic> living cells. For initially small populations, the exponent is near zero and no modulation occurs. As the population increases, however, the exponent goes to one. Thus, as evolution increases affinities and, consequently, birth rates (in the denominator), <italic>m</italic> becomes small, decreasing each <italic>μ<sub>i</sub></italic>. Thus initial exponential growth (a supercritical process) gradually slows as it approaches criticality at the specified capacity. If the population fluctuates above carrying capacity, the exponent <italic>N</italic>/<italic>N</italic><sub>0</sub> &gt; 1 causes <italic>m</italic> to decrease rapidly, which in turn decreases the birth rates in its denominator. We have also experimented with two other methods of carrying capacity enforcement, but which were not used for any results in this paper. They are nevertheless important to mention, since we do not know which method best reflects real GC dynamics, and here simply assume birth modulation. One method modulates death, rather than birth, using:
+<disp-formula id="FD2">
+<alternatives>
+<mml:math id="M2" display="block"><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mstyle displaystyle="true"><mml:msub><mml:mo>∑</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:mrow><mml:msub><mml:mi>λ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle></mml:mrow><mml:mrow><mml:mstyle displaystyle="true"><mml:msub><mml:mo>∑</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle></mml:mrow></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>/</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:msup><mml:mo>.</mml:mo></mml:math>
+<graphic xlink:href="2508.09871v1_eqn2.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(2)</label>
+</disp-formula>
+</p>
+<p>While the other, called “hard”, immediately kills a random individual whenever a birth event causes the population to exceed the carrying capacity.</p>
+<p>A variety of birth response functions (relating a node’s affinity to its birth rate) are implemented, but all simulations in this paper use a sigmoid on affinity <italic>x</italic> (<xref ref-type="fig" rid="fig8">Figure 1 — figure Supplement 1</xref>):
+<disp-formula id="FD3">
+<alternatives>
+<mml:math id="M3" display="block"><mml:mi>λ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>y</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>−</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:msup></mml:mrow></mml:mfrac><mml:mo>+</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:math>
+<graphic xlink:href="2508.09871v1_eqn3.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(3)</label>
+</disp-formula>
+</p>
+<p>with affinity defined relative to the naive dissociation constant (<inline-formula id="ID1">
+<alternatives>
+<mml:math display="inline" id="I1"><mml:mrow><mml:msubsup><mml:mi>K</mml:mi><mml:mi>D</mml:mi><mml:mi>N</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq1.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> ≃ 40<italic>nM</italic> = 4<italic>x</italic> 10<sup>−8</sup><italic>M</italic> (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>)):
+<disp-formula id="FD4">
+<alternatives>
+<mml:math id="M4" display="block"><mml:mi>λ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>y</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>−</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:msup></mml:mrow></mml:mfrac><mml:mo>+</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:math>
+<graphic xlink:href="2508.09871v1_eqn4.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(4)</label>
+</disp-formula>
+</p>
+<p>such that, for example, an affinity of +2 (−2) means a <italic>K<sub>D</sub></italic> 0.01 (100) times the naive value. Recall that lower <italic>K<sub>D</sub></italic> means stronger binding, so larger <italic>x</italic> corresponds to stronger binding. In the real data, we observe affinities from approximately −37 to 3. The sigmoid’s upper asymptote (<italic>y<sub>h</sub></italic>+<italic>y<sub>c</sub></italic>) represents a hypothesized fitness ceiling above which further affinity increases do not improve fitness. Its lower asymptote ( <italic>y<sub>h</sub></italic>) gives the fitness of very low-affinity nodes (due, for instance, to tonic signaling), which represent cells with either nonfunctional or severely compromised receptors. The <italic>x</italic> position of the transition between these asymptotes is given by <italic>x<sub>h</sub></italic>, while <italic>x<sub>c</sub></italic> determines the transition’s steepness. We use the following more descriptive names when plotting: <monospace>xshift</monospace> means <italic>x<sub>h</sub></italic>, <monospace>xscale</monospace> means <italic>x<sub>c</sub></italic>, <monospace>yscale</monospace> means <italic>y<sub>c</sub></italic>, and <monospace>yshift</monospace> means <italic>y<sub>h</sub></italic>, but keep the more compact names for the rest of this section.</p>
+<p>To construct our training sample, we thus want to sample <italic>x<sub>c</sub></italic>, <italic>x<sub>h</sub> y<sub>c</sub></italic>, and <italic>y<sub>h</sub></italic> values from throughout biologically plausible ranges. One cannot, however, choose the value of each parameter independently without yielding unrealistic initial birth rates. Besides poorly describing real GCs, such rates would result in many failed simulations. Along with bounds on each of these parameters, we thus also incorporate bounds on the naive (zero-affinity) birth rate, namely
+<disp-formula id="FD5">
+<alternatives>
+<mml:math id="M5" display="block"><mml:msub><mml:mi>λ</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mfrac><mml:mrow><mml:msub><mml:mi>y</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:mrow></mml:msup></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:math>
+<graphic xlink:href="2508.09871v1_eqn5.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(5)</label>
+</disp-formula>
+</p>
+<p>with lower and upper bounds <inline-formula id="ID2">
+<alternatives>
+<mml:math display="inline" id="I2"><mml:mrow><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>l</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq2.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> and <inline-formula id="ID3">
+<alternatives>
+<mml:math display="inline" id="I3"><mml:mrow><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>u</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq3.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>. Note that here we have neglected <italic>y<sub>h</sub></italic>, and choose <italic>y<sub>h</sub></italic> within its own bounds, independently of the other parameters. This amounts to the approximation that tonic signaling is small compared to the fitness signal from high affinity (<italic>y<sub>h</sub> &lt;&lt; y<sub>c</sub></italic>). We then choose each remaining parameter in an arbitrary, but consistent, order with the following procedure. We first choose a value for <italic>x<sub>c</sub></italic> from within its bounds [<inline-formula id="ID4">
+<alternatives>
+<mml:math display="inline" id="I4"><mml:mrow><mml:msubsup><mml:mi>x</mml:mi><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq4.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>, <inline-formula id="ID5">
+<alternatives>
+<mml:math display="inline" id="I5"><mml:mrow><mml:msubsup><mml:mi>x</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq5.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>] (<xref ref-type="table" rid="tbl1">Table 1</xref>), and substitute that value into the <italic>λ</italic><sub>0</sub> constraints. This gives us an additional constraint on the next parameter, <italic>x<sub>h</sub></italic>, which also has its own bounds <inline-formula id="ID6">
+<alternatives>
+<mml:math display="inline" id="I6"><mml:mrow><mml:msubsup><mml:mi>x</mml:mi><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq6.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> and <inline-formula id="ID7">
+<alternatives>
+<mml:math display="inline" id="I7"><mml:mrow><mml:msubsup><mml:mi>x</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq7.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>:
+<disp-formula id="FD6">
+<alternatives>
+<mml:math id="M6" display="block"><mml:mfrac><mml:mrow><mml:mi>log</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>y</mml:mi><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:msubsup></mml:mrow><mml:mrow><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>u</mml:mi></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mo>&lt;</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub><mml:mo>&lt;</mml:mo><mml:mfrac><mml:mrow><mml:mi>log</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>y</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi></mml:msubsup></mml:mrow><mml:mrow><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>l</mml:mi></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:math>
+<graphic xlink:href="2508.09871v1_eqn6.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(6)</label>
+</disp-formula>
+</p>
+<p>Analogous additional constraints are then also incorporated when subsequently choosing the last parameter <italic>y<sub>c</sub></italic>, with its own bounds <inline-formula id="ID8">
+<alternatives>
+<mml:math display="inline" id="I8"><mml:mrow><mml:msubsup><mml:mi>y</mml:mi><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq8.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> and <inline-formula id="ID9">
+<alternatives>
+<mml:math display="inline" id="I9"><mml:mrow><mml:msubsup><mml:mi>y</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi></mml:msubsup></mml:mrow></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq9.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>:
+<disp-formula id="FD7">
+<alternatives>
+<mml:math id="M7" display="block"><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>l</mml:mi></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:mrow></mml:msup></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>&lt;</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>&lt;</mml:mo><mml:msubsup><mml:mi>λ</mml:mi><mml:mn>0</mml:mn><mml:mi>u</mml:mi></mml:msubsup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>h</mml:mi></mml:msub></mml:mrow></mml:msup></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
+<graphic xlink:href="2508.09871v1_eqn7.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(7)</label>
+</disp-formula>
+</p>
+</sec>
+<sec id="s2-3">
+<title>Tree encoding</title>
+<p>We encode each tree with an approach similar to <xref ref-type="bibr" rid="c21">Lambert et al. (2023)</xref> and <xref ref-type="bibr" rid="c41">Thompson et al. (2024)</xref>, enriching the basic CBLV encoding from <xref ref-type="bibr" rid="c43">Voznica et al. (2022)</xref> with information on the state of the evolving entity. In contrast to <xref ref-type="bibr" rid="c21">Lambert et al. (2023)</xref> and <xref ref-type="bibr" rid="c41">Thompson et al. (2024)</xref>, however, who labeled only tips with discrete types, we label all nodes with a continuous variable. The variable we are interested in is affinity, which we incorporate into the encoded matrix as two additional rows. Since the original matrix’s two rows represent leaf and internal node heights (<xref ref-type="bibr" rid="c43">Voznica et al., 2022</xref>, Fig. 2), each entry in our additional two rows represents the corresponding node’s affinity value (<xref ref-type="fig" rid="fig1">Figure 1</xref>).</p>
+
+<p>This tree encoding scheme requires establishing a defined ordering of the nodes such that for each tree, each node has a unique location in the resulting matrix. In the original method (<xref ref-type="bibr" rid="c43">Voznica et al., 2022</xref>), however, this correspondence (and thus the encoding) is only unique if all nodes have unique times. For generality, we would like to allow the use of ultrametric trees, with all cells sampled at the same time. This has the potential to confuse the neural network, since it destroys the one-to-one correspondence between trees and encodings. We thus add several tiebreakers to the “ladderization” scheme that establishes the order in which we iterate over nodes. After first sorting nodes by their time, we then also sort any ties by the time of their immediate ancestral node, and then further sort any remaining ties by their affinity. This could, in principle, still result in ties. In practice, however, we have set our code to raise exceptions if ties are encountered, and this has not yet occurred.</p>
+<p>For both real and simulated data, we infer trees with IQ-TREE (<xref ref-type="bibr" rid="c27">Minh et al., 2020</xref>) (see details above). By taking only sampled sequences and passing them through the same inference method, this treats data and simulation as similarly as possible, which facilitates accurate neural network training and summary statistic comparison. An alternative would beto compare time trees inferred on data, for instance with BEAST (<xref ref-type="bibr" rid="c39">Suchard et al., 2018</xref>), to simulation truth trees. Although this is commonly done (<xref ref-type="bibr" rid="c43">Voznica et al., 2022</xref>) we reasoned that inference would be more accurate with simulation and data samples on the same footing. Furthermore, our implementation of initial population size creates large numbers of unmutated ancestral sequences near the root of the simulation truth tree, which would have no observable counterpart in data.</p>
+<p>As in <xref ref-type="bibr" rid="c43">Voznica et al. (2022)</xref>, we also scale trees to mean unit depth before encoding in order to facilitate comparison across trees of different depths.</p>
+</sec>
+<sec id="s2-4">
+<title>Neural network architecture, implementation, and training</title>
+<p>Our network is detailed in <xref ref-type="table" rid="tbl2">Table 2</xref>, but in brief, after input of encoded trees we begin with several convolutional layers interspersed with pooling layers. There follows a series of dense layers with decreasing complexity until we arrive at the final number of outputs. These dense layers take as input, in addition to the output of previous layers, fixed values for several “non-sigmoid parameters” (details below). The input matrices are padded with zeros to a constant, uniform size, despite deriving from trees with different numbers of nodes (in the current study, they are usually padded to 200 columns). We use the exponential linear unit (ELU) activation function for all layers. Our main “sigmoid” network predicts the four sigmoid parameters. However, as a cross check we also train a model that predicts the response function value in discrete bins of affinity, which we call the “per-bin” model. The per-bin model introduces some amount of model independence, how ever because it is still trained on sigmoid simulation, it has only a limited ability to infer shapes that differ significantly from a sigmoid.</p>
+<table-wrap id="tbl2" position="float" orientation="portrait">
+<label>Table 2</label>
+<caption><title>Neural network architecture.</title></caption>
+<alternatives>
+<graphic xlink:href="2508.09871v1_tbl2.tif" mime-subtype="tif" mimetype="image"/>
+<table frame="box" rules="cols">
+<thead>
+<tr>
+<th align="left" valign="bottom">order</th>
+<th align="left" valign="bottom">type</th>
+<th align="left" valign="bottom">filters</th>
+<th align="left" valign="bottom">kernel size</th>
+<th align="left" valign="bottom">pool size</th>
+<th align="left" valign="bottom">stride length</th>
+<th align="left" valign="bottom">N units</th>
+<th align="left" valign="bottom">N params</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="top">1</td>
+<td align="left" valign="top">1D convolutional</td>
+<td align="left" valign="top">25</td>
+<td align="left" valign="top">4</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">426</td>
+</tr>
+<tr>
+<td align="center" valign="top">2</td>
+<td align="left" valign="top">1D convolutional</td>
+<td align="left" valign="top">25</td>
+<td align="left" valign="top">4</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">2,525</td>
+</tr>
+<tr>
+<td align="center" valign="top">3</td>
+<td align="left" valign="top">max pooling</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">2</td>
+<td align="left" valign="top">2</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+</tr>
+<tr>
+<td align="center" valign="top">4</td>
+<td align="left" valign="top">1D convolutional</td>
+<td align="left" valign="top">40</td>
+<td align="left" valign="top">4</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">4,040</td>
+</tr>
+<tr>
+<td align="center" valign="top">5</td>
+<td align="left" valign="top">global avg. pooling</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+</tr>
+<tr>
+<td align="center" valign="top">6</td>
+<td align="left" valign="top">dense</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">48</td>
+<td align="left" valign="top">1,968</td>
+</tr>
+<tr>
+<td align="center" valign="top">7</td>
+<td align="left" valign="top">dense</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">32</td>
+<td align="left" valign="top">1,568</td>
+</tr>
+<tr>
+<td align="center" valign="top">8</td>
+<td align="left" valign="top">dense</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">16</td>
+<td align="left" valign="top">528</td>
+</tr>
+<tr>
+<td align="center" valign="top">9</td>
+<td align="left" valign="top">dense</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">8</td>
+<td align="left" valign="top">136</td>
+</tr>
+<tr>
+<td align="center" valign="top">10</td>
+<td align="left" valign="top">dense</td>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top"/>
+<td align="left" valign="top">3</td>
+<td align="left" valign="top">27</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>As detailed below, in making our training samples we endeavor to cover the entire space of plausible parameter values, which includes choosing bounds on each of the three sigmoid parameters (<xref ref-type="table" rid="tbl1">Table 1</xref>). We find that leaving the inferred parameters entirely unconstrained tends to confuse the neural network, so we impose a “clip function” with bounds on each parameter during network training. We find that for decent performance, these clipping bounds must be somewhat wider than the simulation bounds; but, heuristically, not overly wide (<xref ref-type="table" rid="tbl3">Table 3</xref>).</p>
+<table-wrap id="tbl3" position="float" orientation="portrait">
+<label>Table 3</label>
+<caption><title>Clip function bounds for neural network training.</title></caption>
+<alternatives>
+<graphic xlink:href="2508.09871v1_tbl3.tif" mime-subtype="tif" mimetype="image"/>
+<table frame="box" rules="cols">
+<thead>
+<tr>
+<th align="center" valign="top">parameter</th>
+<th align="center" valign="top">min value</th>
+<th align="center" valign="top">max value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="top"><monospace>xscale</monospace> (<italic>x<sub>c</sub></italic>)</td>
+<td align="center" valign="top">0.001</td>
+<td align="center" valign="top">3.5</td>
+</tr>
+<tr>
+<td align="center" valign="top"><monospace>xshift</monospace> (<italic>x<sub>h</sub></italic>)</td>
+<td align="center" valign="top">-1.5</td>
+<td align="center" valign="top">5</td>
+</tr>
+<tr>
+<td align="center" valign="top"><monospace>yscale</monospace> (<italic>y<sub>c</sub></italic>)</td>
+<td align="center" valign="top">0.1</td>
+<td align="center" valign="top">65</td>
+</tr>
+<tr>
+<td align="center" valign="top"><monospace>yshift</monospace> (<italic>y<sub>h</sub></italic>)</td>
+<td align="center" valign="top">0</td>
+<td align="center" valign="top">10</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>We scale all input variables (branch lengths, affinities, and non-sigmoid parameters) individually to mean 0 and variance 1 over all trees. This scaling is then reversed after prediction. We experimented with similarly scaling output parameters, but this did not improve performance.</p>
+<p>We use an Adam optimizer with a learning rate of 0.01, an exponential moving average (EMA) momentum of 0.99, and a batch size of 32, values which were arrived at by performing hyperparameter optimization to minimize loss values. We do not use dropout regularization, since in our tests it resulted in worse performance than using a validation sample to measure overfitting. When training, we use 20% of each sample for testing, and also reserve 10% of the remaining 80% as a validation sample. We train for 35 epochs, which for both sigmoid and per-bin networks was the point at which validation sample performance began to decrease. While during development we trained on a large variety of simulation samples of different sizes and parameter ranges, the results presented in this paper center on a sample of 50,000 trees with the ranges specified in <xref ref-type="table" rid="tbl1">Table 1</xref>. We also used samples as large as 100,000 trees, and with substantially more complex networks, but neither change resulted in significant performance improvements. Also note that these optimization and testing steps were performed only on simulation; we ran data inference only once our methods were essentially finalized.</p>
+<p>All code for this paper can be found at <ext-link ext-link-type="uri" xlink:href="https://github.com/matsengrp/gcdyn">https://github.com/matsengrp/gcdyn</ext-link>, and all inputs and outputs, along with instructions for running, can be found at <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.5281/zenodo.15022130">https://doi.org/10.5281/zenodo.15022130</ext-link>.</p>
+</sec>
+<sec id="s2-5">
+<title>Curve difference loss function</title>
+<p>For a loss function we use a scaled version of the <italic>L</italic><sup>1</sup> distance between the true and inferred functions (<xref ref-type="fig" rid="fig9">Figure 1—figure Supplement 2</xref>). This loss, which we refer to as a “curve difference”, is calculated by dividing the area between the curves by the area under the true curve within domain (affinity bounds) [−2.5, 3]. The per-bin model uses the same loss function, but with a coarser discretization (one value for each bin).</p>
+<p>An alternate approach would have been to use mean squared error on the inferred parameters, namely the squared difference between inferred and true values over all predictions. In our case, however, this is a poor choice because we care about the sigmoid’s shape, but not about the underlying sigmoid parameter values, which have little individual biological meaning. The curve loss and the mean squared loss on inferred parameters can be quite different: significant simultaneous changes to two parameters can counteract each other, resulting in very similar curve shapes (<xref ref-type="fig" rid="fig10">figure Supplement 3</xref>).</p>
+</sec>
+<sec id="s2-6">
+<title>Non-sigmoid parameter inference with summary statistics</title>
+<p>In addition to the four sigmoid parameters, which we infer directly, there are other parameters in <xref ref-type="table" rid="tbl1">Table 1</xref> about which we have incomplete information. For some of these, such as the carrying capacity method and the choice of sigmoid for the response function, we simply make a choice and live with the assumption. For most, however, we choose values based on experiment, whether the replay experiment or values from the literature. These values carry significant uncertainty, however, partly from inherent experimental uncertainty, but also because they may represent different biological quantities to those in simulation. For instance, an experimental measurement of the number of B cells in a germinal center might appear to correspond closely to simulation carrying capacity. However if germinal centers are not well mixed, such that competition occurs only among nearby cells, the “effective” carrying capacity that each cell experiences could be much smaller.</p>
+<p>Fortunately, in addition to the neural network inference of sigmoid parameters, we have another source of information that we can use to infer non-sigmoid parameters: summary statistic distributions. Since these distributions are in truth affected by all simulation parameters, the best solution would likely be to infer all uncertain parameters with the neural network. This, however, would require passing much more information into a vastly more complicated network (the current tree encoding, for instance, has no information on sequence abundance) that would have to be trained on simulations covering additional dimensions. We thus deemed this approach infeasible for the current paper.</p>
+<p>We instead adopt a two-step procedure, inspired by the concept of conditional generation. Recall that our network takes non-sigmoid parameters as input, i.e. it infers sigmoid values contingent on a set of non-sigmoid values. We thus first infer sigmoid parameters on data for many different values of the non-sigmoid parameters. We then take each resulting set of (inferred) sigmoid and (supplied) non-sigmoid values, generate a new simulation sample with each, and compare their summary statistics to data. The sample whose summary statistics most closely match data is interpreted as having the best inferred values for both sigmoid and non-sigmoid parameters. While it would probably be optimal to include all non-sigmoid parameters in this two-step procedure, the combinatorics of scanning over many different variables are prohibitive. We thus only use three non-sigmoid parameters: carrying capacity, initial population, and death rate. These were chosen because their values likely include substantial uncertainty (see above), and because they exert significant control over summary statistic distributions.</p>
+</sec>
+<sec id="s2-7">
+<title>Central (medoid) curve prediction</title>
+<p>While our network predicts each sigmoid parameter individually, it is generally only useful to view the resulting curve as a whole. This is because many different sets of sigmoid parameter values can give quite similar shapes, since a change in one parameter can to some extent be compensated by modifying others (<xref ref-type="fig" rid="fig10">Figure 1—figure Supplement 3</xref>). Because in practice we learn the shape of the sigmoid only within some uncertainty, we must thus compare predictions using curves, rather than individual parameters. However, because we assume that all GCs have the same response function, we want to choose a central, representative curve encompassing all four predicted parameters at once. We do this by calculating the medoid curve among predictions, with distance our curve difference loss function. We thus calculate, for the predicted curve for each GC, the sum of squared differences to all other predicted curves in the affinity bounds [−2.5, 3]. This domain was chosen because below −2.5 most curves are very similar, while above 3 they diverge dramatically in a region in which we have very few measured affinity values. We then choose the curve with the smallest such sum as the medoid curve.</p>
+</sec>
+</sec>
+<sec id="s3" sec-type="results">
+<title>Results</title>
+<sec id="s3-1">
+<title>Deep learning effectively infers parameters on simulation</title>
+<p>After building and training our neural network, we evaluate its performance on training and testing samples. We show values of the curve difference loss function on the training sample (split into training, validation, and test subsets) for both sigmoid and per-bin models (top rows of <xref ref-type="fig" rid="fig2">Figure 2</xref> and <xref ref-type="fig" rid="fig3">Figure 3</xref>). This shows that for both models, the mean area difference on a single GC between true and inferred curves is around 70% of the full plot area. We find that the sigmoid and per-bin models have similar overall performance. While this is noisy, these inferences are only for a single GC’s worth of data, whereas for inference on real data we have 119 GCs with the same parameters. Below we show a validation more concordant with the type of analysis done on real data.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2</label>
+<caption><title>Training and testing results for the sigmoid model on simulation.</title>
+<p>We show curve difference loss distributions on several subsets of the training sample (where each GC has different parameter values): training and validation (left) and testing (right). For computational efficiency when plotting, the curve difference distributions display only the first 1000 values. See <xref ref-type="fig" rid="fig3">Figure 3</xref> for per-bin model.</p></caption>
+<graphic xlink:href="2508.09871v1_fig2.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3</label>
+<caption><title>Training and testing results for the per-bin model on simulation.</title>
+<p>See <xref ref-type="fig" rid="fig2">Figure 2</xref> for details.</p></caption>
+<graphic xlink:href="2508.09871v1_fig3.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s3-2">
+<title>Inference on real datae</title>
+<p>We then applied our neural network to real data. We show the inferred sigmoid response curves on the full sample for both the sigmoid and per-bin models (<xref ref-type="fig" rid="fig4">Figure 4</xref>), as well as several representative individual curve predictions (<xref ref-type="fig" rid="fig11">Figure 4—figure Supplement 1</xref> and <xref ref-type="fig" rid="fig12">Figure 4—figure Supplement 2</xref>). The medoid inferred curve in orange is calculated by finding the curve that minimizes the difference to all other curves (see Methods).</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4</label>
+<caption>
+<title>Inferred response functions on real data</title>
+<p>for sigmoid (left) and per-bin (right) models, corresponding to the non-sigmoid parameter values yielding simulation with the best-matching summary statistics. The medoid curve is shown in orange with 68% and 95% confidence intervals in blue, with observed affinity values in grey. <xref ref-type="fig" rid="fig11">Figure 4—figure supplement 1</xref>. <bold>Example inferred sigmoid curves on data</bold> for four representative GCs. <xref ref-type="fig" rid="fig11">Figure 4—figure supplement 2</xref>. <bold>Example inferred per-bin response functions on data</bold> for four representative GCs.</p>
+</caption>
+<graphic xlink:href="2508.09871v1_fig4.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>As described above (see Methods), we run data inference many times, for many different values of three non-sigmoid parameters (carrying capacity, initial population, and death rate). This requires no retraining so is fast. This was implemented as a three-dimensional scan over four carrying capacity values (500, 750, 1000, 2000), three initial population values (8, 32, 128), and four death rates (0.05, 0.1, 0.2, 0.4). In <xref ref-type="fig" rid="fig4">Figure 4</xref>, we display only the inference corresponding to the values yielding simulation with the best summary statistics distributions: carrying capacity 500, initial population 128, and death rate 0.2. These summary statistics are shown in <xref ref-type="fig" rid="fig5">Figure 5</xref> and <xref ref-type="fig" rid="fig13">Figure 5— figure Supplement 1</xref>. Discrepancies here are discussed in the Discussion.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5</label>
+<caption>
+<title>Summary statistics on data vs simulation</title>
+<p>for the central data mimic simulation sample that most closely mimics inferred data parameters. Simulation truth (dashed green) is unobservable and shown only for completeness; the important comparison is between purple and green solid lines, where both data and simulation have been run through IQ-TREE. <xref ref-type="fig" rid="fig13">Figure 5—figure supplement 1</xref>. Additional summary statistics distributions for the same central data mimic sample as the main figure. <xref ref-type="fig" rid="fig14">Figure 5—figure supplement 2</xref>. Summary statistic distributions for the simulation sample used for training.</p>
+</caption>
+<graphic xlink:href="2508.09871v1_fig5.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>We then used simulation to explore expected performance on a sample that mimics our specific data. Specifically, we analyzed results on the central data mimic simulation, which uses the best-matching summary statistics from the non-sigmoid parameter scan (<xref ref-type="fig" rid="fig6">Figure 6</xref>). In contrast to the training sample, where each GC has different parameter values drawn from wide ranges, this sample consists of 120 GCs with identical parameters (except for N sampled sequences, see right column of Table 1). We found that the simulation and inference match each other well.</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6</label>
+<caption><title>Inferred sigmoid curves for the central data mimic data-like simulation sample.</title>
+<p>The medoid curve is shown in orange, and true curve in green. This sample consists of 120 GCs all simulated with the same sigmoid parameters (from the central data prediction) and non-sigmoid parameters (from the best-matched summary statistics).</p></caption>
+<graphic xlink:href="2508.09871v1_fig6.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+</sec>
+<sec id="s3-3">
+<title>Simulation mimics GC dynamics</title>
+<p>It is important to establish how well our simulation mimics real BCR sequencing data. Since for the purposes of this paper we are interested in replay-style experiments, we seek to mimic these particular samples. In order to match data, we must use inferred values for both sigmoid and nonsigmoid parameters, using the procedure described above (<xref ref-type="fig" rid="fig5">Figure 5</xref>). The training sample, on the other hand, matches much less well because it is designed to span all plausible unknown parameter values to ensure that the neural network encounters any parameter combination that it is likely to see in data (<xref ref-type="fig" rid="fig14">Figure 5—figure Supplement 2</xref>). Note also that in practice our workflow involved testing inference on many data-like simulation samples with non-data-inferred parameters, before performing data inference.</p>
+</sec>
+<sec id="s3-4">
+<title>Effective birth rates</title>
+<p>The birth rate described by the response function is an absolute quantity, <italic>λ</italic>, that determines the rate of cell division in the absence of carrying capacity constraints and cell death. However this is not the actual birth rate that is inverted to get a waiting time at each moment in the simulation. The simulation instead scales this rate by <italic>m</italic> (<xref ref-type="disp-formual" rid="FD1">Eq 1</xref>) to maintain an upper limit to the population. It can thus be useful to calculate an effective birth rate <italic>mλ<sub>i</sub> − μ<sub>i</sub></italic> describing the net fitness advantage of a cell <italic>i</italic> ata given moment in time. Here we have applied the carrying capacity modulation factor <italic>m</italic> (<xref ref-type="disp-formual" rid="FD1">Eq 1</xref>) and subtracted the cell-specific death rate <italic>μ<sub>i</sub></italic>. We now call the original <italic>λ</italic> the “intrinsic” birth rate to distinguish it from this effective rate. We show this effective birth rate on several GCs from the central data mimic simulation sample (<xref ref-type="fig" rid="fig7">Figure 7</xref>).</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7</label>
+<caption><title>Effective birth rates (left column) calculated for three randomly-selected GCs from the central data mimic simulation sample.</title>
+<p>The effective birth rate for cell <italic>i</italic> is defined as <italic>mλ<sub>i</sub></italic> − <italic>μ<sub>i</sub></italic> for the carrying capacity modulating factor <italic>m</italic>, intrinsic birth rate <italic>λ<sub>i</sub></italic>, and death rate <italic>μ<sub>i</sub></italic>. It is shown at several different time values for all living cells, except that for plotting clarity, cells closer to each other than 0.1 in affinity are not shown. Note that we extend time here to 50 days in order to aid comparison to the bulk data used by the traveling wave model (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>, Fig. S6D), which assumes a steady state. (Our extracted GC data is sampled at 15 and 20 days.) Vertical dashed lines (left and middle columns) mark the point at which the slope has dropped to 1/2 its maximum value (if absent, the slope never falls below this threshold). We also show the intrinsic birth rate <italic>λ</italic> (middle column, solid red curve), and include histograms of sampled affinities at the final time point. The right column shows time traces of the number of living cells (i.e. nodes, in blue) and the mean affinity of all living cells (red).</p></caption>
+<graphic xlink:href="2508.09871v1_fig7.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<p>Overall, the effective rate has a much smaller scale, generally staying between −0.2 and 1 for most GCs, compared to 0 to more than 15 for the intrinsic rate. Note, however, that at small populations the effective rate would have the same range as the intrinsic rate, if we could plot it at the larger (unobserved) affinity values at which we can plot the intrinsic rate (see Discussion). The effective rate is also time-dependent, with <italic>m</italic> compressing its range as time goes on, which also contrasts with the fixed intrinsic rate. These changes continue well after the simulation has achieved maximum population size (blue line in right column, <xref ref-type="fig" rid="fig7">Figure 7</xref>). Biologically speaking, this means that there is less reward for gaining affinity later in the simulation than in the beginning. This feature is shared with the traveling wave model (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>, Fig. S6D).</p>
+</sec>
+</sec>
+<sec id="s4" sec-type="discussion">
+<title>Discussion</title>
+<p>The germinal center reaction is a complex evolutionary process during which B cell populations improve their affinity. Little is known, however, about the specific form of the underlying relationship between affinity and fitness. Because a B cell’s fitness depends on the context of other cells with which it interacts, this relationship cannot be measured directly in a lab. Its form must instead be inferred based on observations of intact, evolving germinal centers.</p>
+<p>We model this biology using a birth-death-mutation process with carrying capacity constraint. While birth-death models are common, the necessity ofa capacity constraint makes likelihood evaluation intractable using existing methods (although recent theoretical work may provide a foundation for solving this in a “mean-field” sense as described in <xref ref-type="bibr" rid="c13">DeWitt et al., 2024</xref>). We thus pursued a likelihood-free approach, training a deep neural network on simulation designed to mimic the replay experiment. This likelihood-free approach also allows us to use a model of mutation on sequences that need not be Markov on affinity “types.”</p>
+<p>We used this neural network to infer the affinity-fitness response function. Because the model includes several parameters that are not well-constrained by experiment, but whose prediction with the neural network would be infeasibly complicated, we adopted a two-step inference procedure. We first infer the sigmoid shape at many different potential non-sigmoid parameter values, then “fit” the non-sigmoid parameters using summary statistics. In testing on simulation, the network showed the ability to reliably infer the sigmoid’s shape on samples similar to the extracted GC data. When applied to that data, it inferred a consistent shape across trees that was in line with expectations from simulation, while also giving summary statistics well-matched to the data. This shape indicates that intrinsic fitness (defined as the rate of binary cell division without capacity constraint) roughly triples from affinity 0 (naive) to 1, and then triples again from 1 to 2. We did not observe any significant decrease in the response function slope (what we would call a ceiling on fitness) within the time range (20 days) of the GC extraction experiment, although we did see a decrease at affinities around 3.5, reached by day 50 in the data mimic simulation (<xref ref-type="fig" rid="fig7">Figure 7</xref>). This latter result should be treated with caution, however: this ceiling derives from an affinity region (see <xref ref-type="fig" rid="fig4">Figure 4</xref>) without observed affinities, and is thus essentially entirely reflective of our assumed sigmoid shape, rather than any direct information from data. We also note that the extracted GC data has very low levels of mutation compared to typical BCR repertoires, so a ceiling may manifest only at higher affinity values than we observe.</p>
+<sec id="s4-1">
+<title>Prior work</title>
+<sec id="s4-1-1">
+<title>Measurements relevant to the affinity-fitness relationship</title>
+<p>A variety of prior biological measurements help guide our expectations for the shape of the response function. The function’s slope, for instance, controls the speed of evolution in the GC, with a steeper slope creating stronger clonal bursts and faster selective sweeps. We are not, however, aware of any work numerically quantifying the shape of this important curve other than our recent manuscript (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>). The existence and potential location ofa ceiling on fitness, on the other hand, has been the subject of much work. Note that this is often referred to as an “affinity ceiling”, however because the proposed asymptote is flat on the vertical fitness (rather than horizontal affinity) axis, we instead refer to it as a “fitness ceiling”.</p>
+<p>One study (<xref ref-type="bibr" rid="c5">Batista and Neuberger, 1998</xref>) measured how the B cell response to antigen varies with affinity, finding that association constant <italic>K<sub>a</sub></italic> = 1/<italic>K<sub>D</sub></italic> values above 10<sup>10</sup><italic>M</italic><sup>−1</sup> did not lead to increased B cell triggering. This value is roughly equal to one derived previously (<xref ref-type="bibr" rid="c15">Foote and Eisen, 1995</xref>) starting from two assumptions: that diffusion places a fundamental upper limit to <italic>k</italic><sub><monospace>on</monospace></sub> (where <italic>K<sub>D</sub></italic> = <italic>k</italic><sub><monospace>off</monospace></sub>/<italic>k</italic><sub><monospace>on</monospace></sub>), and that dissociation half lives are less than one hour. Using our naive <italic>K<sub>D</sub></italic> of 4<italic>x</italic> 10<sup>−8</sup><italic>M</italic> (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>), the ceiling <italic>K<sub>a</sub></italic> value of 10<sup>10</sup><italic>M</italic><sup>−1</sup> corresponds to an affinity in our plots of <inline-formula id="ID10">
+<alternatives>
+<mml:math display="inline" id="I10"><mml:mo>−</mml:mo><mml:msub><mml:mi>log</mml:mi><mml:mrow><mml:mn>10</mml:mn></mml:mrow></mml:msub><mml:mstyle scriptlevel="+1"><mml:mfrac><mml:mrow><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>4</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mstyle><mml:mo>=</mml:mo><mml:mn>2.6</mml:mn></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq10.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula>, a value at which we observe few enough values in data (<xref ref-type="fig" rid="fig4">Figure 4</xref>) that our inferred response function there is essentially meaningless. Also note that the additive, DMS-based affinity measurements that we use are only validated between about −1 and 2 (<xref ref-type="bibr" rid="c14">DeWitt et al., 2025</xref>, <xref ref-type="fig" rid="fig2">Fig. 2</xref>).</p>
+<p>A minimum, “threshold” <italic>K<sub>a</sub></italic> value of 10<sup>6</sup><italic>M</italic><sup>−1</sup>, below which B cells do not respond, has also been reported (<xref ref-type="bibr" rid="c5">Batista and Neuberger, 1998</xref>). While we do not attempt to model such a threshold in our simulation, this value would correspond to an affinity of <inline-formula id="ID11">
+<alternatives>
+<mml:math display="inline" id="I11"><mml:mo>−</mml:mo><mml:msub><mml:mi>log</mml:mi><mml:mrow><mml:mn>10</mml:mn></mml:mrow></mml:msub><mml:mstyle scriptlevel="+1"><mml:mfrac><mml:mrow><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>6</mml:mn></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>4</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mstyle><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:mn>1.4</mml:mn></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq11.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> in our plots, which is a region in which we observe the expected flat response function, although note that we also observe very few cells here (<xref ref-type="fig" rid="fig4">Figure 4</xref>).</p>
+</sec>
+<sec id="s4-1-2">
+<title>Inference of the affinity-fitness relationship</title>
+<p>We have undertaken two other, independent efforts to infer the specific relationship between affinity and fitness, and it is instructive to compare their results. The approach in <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref> was to apply a traveling wave fitness approach (<xref ref-type="bibr" rid="c31">Neher, 2013</xref>; <xref ref-type="bibr" rid="c32">Nourmohammad et al., 2013</xref>) to the replay bulk data. This models the distribution of cell fitnesses <italic>p</italic>(<italic>x, t</italic>) as a traveling wave, rather than, as we do here, treating the evolution of individual cells and their BCR sequences. It is based on the differential equation:
+<disp-formula id="FD8">
+<alternatives>
+<mml:math id="M8" display="block"><mml:mfrac><mml:mo>∂</mml:mo><mml:mrow><mml:mo>∂</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:mfrac><mml:mi>p</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:munder><mml:munder><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mover accent="true"><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>t</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="true">¯</mml:mo></mml:mover></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo></mml:mrow><mml:mo stretchy="true">︸</mml:mo></mml:munder><mml:mrow><mml:mtext>Malthusian growth</mml:mtext></mml:mrow></mml:munder><mml:munder><mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:mrow><mml:msubsup><mml:mo>∫</mml:mo><mml:mrow><mml:mo>−</mml:mo><mml:mi>∞</mml:mi></mml:mrow><mml:mi>∞</mml:mi></mml:msubsup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>y</mml:mi><mml:mo>,</mml:mo><mml:mi>x</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>y</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mi>q</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>d</mml:mi><mml:mtext> </mml:mtext><mml:mi>y</mml:mi></mml:mrow></mml:mrow></mml:mstyle><mml:mo>,</mml:mo></mml:mrow><mml:mo stretchy="true">︸</mml:mo></mml:munder><mml:mrow><mml:mtext>net mutation state x</mml:mtext></mml:mrow></mml:munder></mml:math>
+<graphic xlink:href="2508.09871v1_eqn8.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+<label>(8)</label>
+</disp-formula>
+</p>
+<p>which relates the time dependence of <italic>p</italic>(<italic>x, t</italic>) to two quantities: the fitness landscape <italic>f</italic> (<italic>x</italic>), and the mutational flux <italic>q</italic>(<italic>x, y</italic>) between affinity states <italic>x</italic> and <italic>y</italic>, with <inline-formula id="ID12">
+<alternatives>
+<mml:math display="inline" id="I12"><mml:mover accent="true"><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>t</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="true">¯</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq12.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> the mean fitness of the population at time <italic>t</italic> . This fitness landscape <italic>f</italic>(<italic>x</italic>) is an arbitrary function that is fit as part of the inference procedure. The coefficient <italic>f</italic>(<italic>x</italic>) − <inline-formula id="ID13">
+<alternatives>
+<mml:math display="inline" id="I13"><mml:mover accent="true"><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>t</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="true">¯</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq13.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> thus describes the net rate of population increase at time <italic>t</italic> for a cell with affinity <italic>x</italic>, and can be thought of as an effective birth rate and compared to our <italic>mλ − μ</italic> (<xref ref-type="fig" rid="fig7">Figure 7</xref>). We observe that our calculated <italic>mλ − μ</italic> values are of similar magnitude and shape to the <italic>f</italic> reported in <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref>, although they are not identical.</p>
+<p>This, however, is to be expected: although the models have similar intent, they have very different structures and assumptions and thus the outputs cannot be compared directly. For instance <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref> assumes a steady state with large (continuous) populations, whereas much of the dynamics of our model show effects of stochasticity from single cells or mutations. As time progresses in <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref> and mean population affinity increases, <italic>f</italic>(<italic>x</italic>) − <inline-formula id="ID14">
+<alternatives>
+<mml:math display="inline" id="I14"><mml:mover accent="true"><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>t</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="true">¯</mml:mo></mml:mover></mml:math>
+<inline-graphic xlink:href="2508.09871v1_ieq14.tif" mime-subtype="tif" mimetype="image"/>
+</alternatives>
+</inline-formula> shifts downwards without changing shape. In our model, on the other hand, the effective birth rate flattens and shifts rightwards with time as it is modulated by <italic>m</italic> and the mean population affinity increases (<xref ref-type="fig" rid="fig7">Figure 7</xref>). While both of these effects reflect the nature of selection in a dynamic population, their differences underline the fundamentally different viewpoints of the two models. Note also that, in order to facilitate comparison to <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref>, the plots in <xref ref-type="fig" rid="fig7">Figure 7</xref> extend to very small and very large affinity values (−4 to +4) about which we have essentially zero information from the extracted GC data (which extends from roughly −1 to +2). The effective birth rates in these outlying regions are thus almost entirely reflective of the prior assumptions of the models, rather than of information from the data. Finally, we note that the input for the traveling wave model in <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref> is count data from multiple time points, whereas data for our model are phylogenetic trees from a single time point.</p>
+<p>Both the intrinsic and effective birth rates are useful quantities, with each being appropriate for different tasks. The intrinsic rate is an unchanging, fundamental feature of the GC system; but given a cell in a particular GC, it cannot tell us how many offspring to expect. The effective rate, on the other hand, tells us the expected number of offspring for each cell, but with the tradeoff that it has no fixed form: it depends, through <italic>m</italic> (<xref ref-type="disp-formual" rid="FD1">Eq 1</xref>), on the sum over cells of both birth and death rates, as well as on the number of cells alive at that time. Also note that because it depends on the particular population of cells alive at a given time, it is not defined along the entire <italic>x</italic> axis, but only at <italic>x</italic> values at which living cells reside (calculating its value at an affinity that no cells have would presuppose adding a cell at that affinity, which would modify the calculation for all other cells).</p>
+<p>We have also worked to infer the response function using likelihoods under a birth-death model (<xref ref-type="bibr" rid="c3">Bakis et al., 2025</xref>). This requires solutions of ordinary differential equations (ODEs) that account for unsampled lineages in birth-death models. Because these models require independent evolution of lineages, they are also not able to incorporate the effects of carrying capacity and competition between cells. We can nevertheless compare our effective birth rate to that inferred in <xref ref-type="bibr" rid="c3">Bakis et al. (2025)</xref>. The main difference is the much earlier ceiling in <xref ref-type="bibr" rid="c3">Bakis et al. (2025)</xref>, plateauing entirely by around <italic>x</italic> = 0.5. This can be understood, however, as a consequence of the lack of population size constraint: without a carrying capacity, the model can only avoid unbounded population growth with an early, and low, fitness ceiling.</p>
+<p>Recent work has developed birth-death processes with mean-field interactions (<xref ref-type="bibr" rid="c13">DeWitt et al., 2024</xref>) that could be used for inference under models with population size constraint. Although the theoretical promise for such models is clear, inference has not yet been implemented. In future work it would be interesting to compare these methods with those presented in this manuscript.</p>
+</sec>
+</sec>
+<sec id="s4-2">
+<title>Limitations</title>
+<p>Our work is subject to a number of limitations, most importantly related to our model and simulation. As noted above, several aspects of our model’s organization may not accurately reflect real GC dynamics. Furthermore, even for aspects that are accurately modeled, chosen parameter values may either not reflect true biological values, or may represent subtly different “effective” parameters and thus also need modification. Our simulation also does not include recent results showing that the mutation rate may be depressed after a strong light zone signal (<xref ref-type="bibr" rid="c33">Pae et al., 2025a</xref>), or that lower affinity cells may be subject to higher SHM rates (<xref ref-type="bibr" rid="c23">Li et al., 2025</xref>).</p>
+<p>Other possible misspecifications involve dark zone-light zone cycling and cell sampling. Our simulation implements a single-generation proliferative phase with mutation (dark zone) always followed by a single, separate selection phase (light zone). However, this may not accurately represent real GC dynamics; for instance this cannot simulate multiple proliferative phases between each selection phase (“clonal bursts”) (<xref ref-type="bibr" rid="c40">Tas et al., 2016</xref>; <xref ref-type="bibr" rid="c34">Pae et al., 2025b</xref>). It is also known that some selection occurs in the dark zone (<xref ref-type="bibr" rid="c25">Mayer et al., 2017</xref>), at least against nonfunctional cells, and our two-category death rate may not be sufficient to model this. We also sample uniform randomly from all live cells at the final time point, but it is possible that in real GCs cell sampling is based on more biased processes, for instance if higher affinity cells, or cells in a particular zone, are more likely to be sampled.</p>
+<p>We also assume a single, constant death rate for functional cells. While we infer this rate with our summary statistic matching step, if the real rate depends on cell properties (other than simply being functional), the results will be incorrect. Because birth and death rates are interrelated mechanistically through phenomena such as tonic signaling (<xref ref-type="bibr" rid="c24">Long et al., 2022</xref>) and BCR expressiondependent birth rates (<xref ref-type="bibr" rid="c20">Lam et al., 1997</xref>), it is also unclear how much sensitivity we have to infer them independently. We note in passing that identifiability of birth and death rates from phylogenies is inherently difficult (<xref ref-type="bibr" rid="c28">Morlon et al., 2022</xref>).</p>
+<p>It is also possible that our choice of a sigmoid for the response function is not sufficiently flexible. This form cannot, for instance, accommodate either a decrease in fitness with affinity, or a discontinuous change in slope. It also requires symmetry around its midpoint. Because both the sigmoid and per-bin models were trained on sigmoid simulation, they can only infer sigmoid-like response functions.</p>
+<p>Our summary statistic distributions are not always well-matched to data. The worst discrepancies are inaccurate structure (extra peaks) in the simulation affinity distributions, and deficits in the tails of both simulation abundance plots. The extra affinity peaks could be from inaccuracies in the sequence-affinity mapping, which assumes zero epistasis. Enlarging the abundance tail is easily accomplished by increasing burstiness with a steeper response function, or by decreasing diversity via either smaller initial population or smaller carrying capacity. These changes also, of course, affect other distributions, with for instance a steeper response function increasing the speed of evolution and shifting the affinity distribution rightwards (while a smaller population does the opposite). While we can thus move the worst discrepancies from one distribution to another, our inability to match all distributions simultaneously is probably due either to one of the above model misspecifications, orto a sigmoid inference problem leading to incorrect response function.</p>
+<p>Our neural network could also be improved. While the CBLV encoding incorporates a number of improvements over previous schemes, the process of encoding trees for digestion by neural networks is still a very new problem, and current methods are likely not particularly close to optimal. Recent work, for instance, has improved on the CBLV scheme by incorporating the generational context of each node in a way that makes it easier for the network to understand (<xref ref-type="bibr" rid="c35">Perez and Gascuel, 2024</xref>). This work also introduces a network architecture that is specifically designed around the new encoding. In the future, we plan to explore the use of this new method.</p>
+<p>The replay experiment also represents a very special case among typical BCR repertoires. While the basic dynamics at play are likely to be representative of those in wild repertoires, it is important to keep in mind that these results only reflect mutation stemming from the exposure of a single naive antibody to a single experimental antigen. Some aspects of behavior in the low-SHMregime at shorter times of the extracted GC data are also potentially different to those at the higher SHM levels and longer times found in typical repertoires. Additionally, repeating the replay experiment using a less-optimized antigen with lower starting affinity would enable us to better map out dynamics during the early stages of affinity maturation when, for example, specificity may have some plasticity (<xref ref-type="bibr" rid="c44">Zuo et al., 2025</xref>).</p>
+</sec>
+<sec id="s4-3">
+<title>Conclusion and outlook</title>
+<p>In closing, simulation-based methods have enabled inference on this otherwise-intractable, messy biological problem. However, they were not a panacea. Simulation-based inference is difficult when many parameters determine a model’s behavior, since the product of many dimensions cannot be tested exhaustively. The optimality surface was also found to be quite rugged: it was easy to find combinations of parameters that lead to pathologies. Previous successful studies using simulation-based inference on trees have had fewer parameters and a less complex objective (<xref ref-type="bibr" rid="c43">Voznica et al., 2022</xref>; <xref ref-type="bibr" rid="c41">Thompson et al., 2024</xref>). Neverthless, we were able to infer parameters of a complex and dynamic process that is hidden inside the germinal center.</p>
+<p>Looking forward, even if by a miracle inference under an arbitrary forward-time model was available, interesting biological questions would remain. For instance, what mechanism limits the population size of the germinal center? In this paper we chose birth-limited population size control, and the validity of our results depends on this assumption. In comparison with the traveling wave model of <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref>, which has separate assumptions, we could see that the inferred dynamics differ. Finding a convincing answer to this question will require additional experiments and likely additional modeling.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec id="s6">
+<fig id="fig8" position="float" fig-type="figure">
+<label>Figure 1—figure supplement 1</label>
+<caption><title>Example of simulation response function (red, left axis) and resulting node affinity values (histogram, right axis).</title>
+<p>The response function describes the relationship between affinity and fitness, while the node values show the actual affinity values of nodes in the resulting simulation for both internal (blue) and leaf (orange) nodes. Note that the count is not sampling the response function, so we do not expect the histogram and the function to match.</p></caption>
+<graphic xlink:href="2508.09871v1_fig8.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig9" position="float" fig-type="figure">
+<label>Figure 1—figure supplement 2</label>
+<caption><title>Curve difference loss function calculation.</title>
+<p>We divide the “difference” area (red bars) between the true (green) and inferred (red) curves by the area (light red) under the true curve within the bounds [−2.5, 3].</p></caption>
+<graphic xlink:href="2508.09871v1_fig9.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig10" position="float" fig-type="figure">
+<label>Figure 1—figure supplement 3</label>
+<caption><title>Example of approximate sigmoid parameter degeneracy.</title>
+<p>A potential pair of true (green) and inferred (blue) sigmoid curves, with true (inferred) parameter values. In the range shown, the inferred curve has compensated for a too-small <monospace>xscale</monospace> (transition steepness) by increasing <monospace>xshift</monospace> (shifting to the right) and <monospace>yscale</monospace> (upper asymptote). This results in a curve difference loss value of only 9%, which is much smaller our expected inference accuracy.</p></caption>
+<graphic xlink:href="2508.09871v1_fig10.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig11" position="float" fig-type="figure">
+<label>Figure 4—figure supplement 1</label>
+<caption><title>Example inferred sigmoid curves on data</title>
+<p>for four representative GCs.</p></caption>
+<graphic xlink:href="2508.09871v1_fig11.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig12" position="float" fig-type="figure">
+<label>Figure 4—figure supplement 2</label>
+<caption><title>Example inferred per-bin response functions on data</title>
+<p>for four representative GCs.</p></caption>
+<graphic xlink:href="2508.09871v1_fig12.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig13" position="float" fig-type="figure">
+<label>Figure 5—figure supplement 1</label>
+<caption><title>Additional summary statistics distributions for the same central data mimic sample as the main figure.</title></caption>
+<graphic xlink:href="2508.09871v1_fig13.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+<fig id="fig14" position="float" fig-type="figure">
+<label>Figure 5—figure supplement 2</label>
+<caption><title>Summary statistic distributions for the simulation sample used for training.</title>
+<p>In order to allow easy comparison of abundance distributions, these plots include only 120 of the simulated trees. This sample is designed to have a wide range of parameters, encompassing all plausible true data values, and is thus not designed to closely match data summary statistics.</p></caption>
+<graphic xlink:href="2508.09871v1_fig14.tif" mime-subtype="tif" mimetype="image"/>
+</fig>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>We would like to thank all the authors of <xref ref-type="bibr" rid="c14">DeWitt et al. (2025)</xref>, as well as the members of the Matsen lab for helpful discussion.</p>
+</ack>
+<sec id="additional-info" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="s5">
+<title>Funding Information</title>
+<p>This work supported by NIH grants R01-AI146028 (PI Matsen), U01 AI150747 (PI Rustom Antia), R56-HG013117 (PI Song), and R01-HG013117 (PI Song). Frederick Matsen is an investigator of the Howard Hughes Medical Institute. Scientific Computing Infrastructure at Fred Hutch funded by ORIP grant S10OD028685.</p>
+</sec>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Adams</surname> <given-names>RM</given-names></string-name>, <string-name><surname>Mora</surname> <given-names>T</given-names></string-name>, <string-name><surname>Walczak</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Kinney</surname> <given-names>JB</given-names></string-name></person-group>. <article-title>Measuring the sequence-affinity landscape of antibodies with massively parallel titration curves</article-title>. <source>eLife</source>. <year>2016</year> <month>Dec</month>; <elocation-id>5</elocation-id>. doi: <pub-id pub-id-type="doi">10.7554/eLife.23156</pub-id>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Allen</surname> <given-names>D</given-names></string-name>, <string-name><surname>Simon</surname> <given-names>T</given-names></string-name>, <string-name><surname>Sablitzky</surname> <given-names>F</given-names></string-name>, <string-name><surname>Rajewsky</surname> <given-names>K</given-names></string-name>, <string-name><surname>Cumano</surname> <given-names>A</given-names></string-name></person-group>. <article-title>Antibody engineering for the analysis of affinity maturation of an anti-hapten response</article-title>. <source>Emboj</source>. <year>1988</year> <month>Jul</month>; <volume>7</volume>(<issue>7</issue>):<fpage>1995</fpage>–<lpage>2001</lpage>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Bakis</surname> <given-names>AG</given-names></string-name>, <string-name><surname>Vora</surname> <given-names>A</given-names></string-name>, <string-name><surname>Araki</surname> <given-names>T</given-names></string-name>, <string-name><surname>Jia</surname> <given-names>TI</given-names></string-name>, <string-name><surname>Galloway</surname> <given-names>J</given-names></string-name>, <string-name><surname>Jennings-Shaffer</surname> <given-names>C</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>G</given-names></string-name>, <string-name><surname>Song</surname> <given-names>YS</given-names></string-name>, <string-name><surname>DeWitt</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Matsen</surname> <suffix>IV</suffix> <given-names>FA</given-names></string-name>, <string-name><surname>Minin</surname> <given-names>VM</given-names></string-name></person-group>. <article-title>Bayesian inference of antibody evolutionary dynamics using multitype branching processes</article-title>. <source>arXiv</source>. <year>2025</year>; .</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Barido-Sottani</surname> <given-names>J</given-names></string-name>, <string-name><surname>Vaughan</surname> <given-names>TG</given-names></string-name>, <string-name><surname>Stadler</surname> <given-names>T</given-names></string-name></person-group>. <article-title>A Multitype Birth-Death Model for Bayesian Inference of LineageSpecific Birth and Death Rates</article-title>. <source>Syst Biol</source>. <year>2020</year> <month>Sep</month>; <volume>69</volume>(<issue>5</issue>):<fpage>973</fpage>–<lpage>986</lpage>. doi: <pub-id pub-id-type="doi">10.1093/sysbio/syaa016</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Batista</surname> <given-names>FD</given-names></string-name>, <string-name><surname>Neuberger</surname> <given-names>MS</given-names></string-name></person-group>. <article-title>Affinity dependence of the B cell response to antigen: a threshold, a ceiling, and the importance of off-rate</article-title>. <source>Immunity</source>. <year>1998</year><month>Jun</month>; <volume>8</volume>(<issue>6</issue>):<fpage>751</fpage>–<lpage>759</lpage>. doi: <pub-id pub-id-type="doi">10.1016/s1074-7613(00)80580-4</pub-id>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Beaumont</surname> <given-names>MA</given-names></string-name>, <string-name><surname>Zhang</surname> <given-names>W</given-names></string-name>, <string-name><surname>Balding</surname> <given-names>DJ</given-names></string-name></person-group>. <article-title>Approximate Bayesian Computation in Population Genetics</article-title>. <source>Genetics</source>. <year>2002</year> <month>Dec</month>; <volume>162</volume>(<issue>4</issue>):<fpage>2025</fpage>–<lpage>2035</lpage>. <pub-id pub-id-type="doi">10.1093/genetics/162.4.2025</pub-id>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Berek</surname> <given-names>C</given-names></string-name>, <string-name><surname>Milstein</surname> <given-names>C</given-names></string-name></person-group>. <article-title>Mutation drift and repertoire shift in the maturation of the immune response</article-title>. <source>Immunol Rev</source>. <year>1987</year> <month>Apr</month>; <volume>96</volume>(<issue>1</issue>):<fpage>23</fpage>–<lpage>41</lpage>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Budd</surname> <given-names>GE</given-names></string-name>, <string-name><surname>Mann</surname> <given-names>RP</given-names></string-name></person-group>. <article-title>History is written by the victors: The effect of the push of the past on the fossil record: PERSPECTIVE</article-title>. <source>Evolution</source>. <year>2018</year> <month>Nov</month>; <volume>72</volume>(<issue>11</issue>):<fpage>2276</fpage>–<lpage>2291</lpage>. doi: <pub-id pub-id-type="doi">10.1111/evo.13593</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Burton</surname> <given-names>DR</given-names></string-name>, <string-name><surname>Ahmed</surname> <given-names>R</given-names></string-name>, <string-name><surname>Barouch</surname> <given-names>DH</given-names></string-name>, <string-name><surname>Butera</surname> <given-names>ST</given-names></string-name>, <string-name><surname>Crotty</surname> <given-names>S</given-names></string-name>, <string-name><surname>Godzik</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kaufmann</surname> <given-names>DE</given-names></string-name>, <string-name><surname>McElrath</surname> <given-names>MJ</given-names></string-name>, <string-name><surname>Nussenzweig</surname> <given-names>MC</given-names></string-name>, <string-name><surname>Pulendran</surname> <given-names>B</given-names></string-name>, <string-name><surname>Scanlan</surname> <given-names>CN</given-names></string-name>, <string-name><surname>Schief</surname> <given-names>WR</given-names></string-name>, <string-name><surname>Silvestri</surname> <given-names>G</given-names></string-name>, <string-name><surname>Streeck</surname> <given-names>H</given-names></string-name>, <string-name><surname>Walker</surname> <given-names>BD</given-names></string-name>, <string-name><surname>Walker</surname> <given-names>LM</given-names></string-name>, <string-name><surname>Ward</surname> <given-names>AB</given-names></string-name>, <string-name><surname>Wilson</surname> <given-names>IA</given-names></string-name>, <string-name><surname>Wyatt</surname> <given-names>R</given-names></string-name></person-group>. <article-title>A blueprint for HIV vaccine discovery</article-title>. <source>Cell Host Microbe</source>. <year>2012</year> <month>Oct</month>; <volume>12</volume>(<issue>4</issue>):<fpage>396</fpage>–<lpage>407</lpage>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cui</surname> <given-names>A</given-names></string-name>, <string-name><surname>Di Niro</surname> <given-names>R</given-names></string-name>, <string-name><surname>Vander Heiden</surname> <given-names>JA</given-names></string-name>, <string-name><surname>Briggs</surname> <given-names>AW</given-names></string-name>, <string-name><surname>Adams</surname> <given-names>K</given-names></string-name>, <string-name><surname>Gilbert</surname> <given-names>T</given-names></string-name>, <string-name><surname>O’Connor</surname> <given-names>KC</given-names></string-name>, <string-name><surname>Vigneault</surname> <given-names>F</given-names></string-name>, <string-name><surname>Shlomchik</surname> <given-names>MJ</given-names></string-name>, <string-name><surname>Kleinstein</surname> <given-names>SH</given-names></string-name></person-group>. <article-title>A Model of Somatic Hypermutation Targeting in Mice Based on High-Throughput Ig Sequencing Data</article-title>. <source>J Immunol</source>. <year>2016</year> <month>Nov</month>; <volume>197</volume>(<issue>9</issue>):<fpage>3566</fpage>–<lpage>3574</lpage>. doi: <pub-id pub-id-type="doi">10.4049/jim-munol.1502263</pub-id>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cyster</surname> <given-names>JG</given-names></string-name>, <string-name><surname>Allen</surname> <given-names>CDC</given-names></string-name></person-group>. <article-title>B Cell Responses: Cell Interaction Dynamics and Decisions</article-title>. <source>Cell</source>. <year>2019</year> <month>Apr</month>; <volume>177</volume>(<issue>3</issue>):<fpage>524</fpage>–<lpage>540</lpage>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dessalles</surname> <given-names>R</given-names></string-name>, <string-name><surname>D’Orsogna</surname> <given-names>M</given-names></string-name>, <string-name><surname>Chou</surname> <given-names>T</given-names></string-name></person-group>. <article-title>Exact steady-state distributions of multispecies birth-death-immigration processes: Effects of mutations and carrying capacity on diversity</article-title>. <source>J Stat Phys</source>. <year>2018</year> <month>Oct</month>; <volume>173</volume>(<issue>1</issue>):<fpage>182</fpage>–<lpage>221</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s10955-018-2128-4</pub-id>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>DeWitt</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Evans</surname> <given-names>SN</given-names></string-name>, <string-name><surname>Hiesmayr</surname> <given-names>E</given-names></string-name>, <string-name><surname>Hummel</surname> <given-names>S</given-names></string-name></person-group>. <article-title>Mean-field interacting multi-type birth-death processes with a view to applications in phylodynamics</article-title>. <source>Theor Popul Biol</source>. <year>2024</year> <month>Oct</month>; <volume>159</volume>:<fpage>1</fpage>–<lpage>12</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.tpb.2024.07.002</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>DeWitt</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Vora</surname> <given-names>AA</given-names></string-name>, <string-name><surname>Araki</surname> <given-names>T</given-names></string-name>, <string-name><surname>Galloway</surname> <given-names>JG</given-names></string-name>, <string-name><surname>Alkutkar</surname> <given-names>T</given-names></string-name>, <string-name><surname>Bortolatto</surname> <given-names>J</given-names></string-name>, <string-name><surname>Castro</surname> <given-names>TBR</given-names></string-name>, <string-name><surname>Dumm</surname> <given-names>W</given-names></string-name>, <string-name><surname>Jennings-Shaffer</surname> <given-names>C</given-names></string-name>, <string-name><surname>Jia</surname> <given-names>T</given-names></string-name>, <string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Ozorowski</surname> <given-names>G</given-names></string-name>, <string-name><surname>Pae</surname> <given-names>J</given-names></string-name>, <string-name><surname>Ralph</surname> <given-names>DK</given-names></string-name>, <string-name><surname>Bloom</surname> <given-names>JD</given-names></string-name>, <string-name><surname>Nourmohammad</surname> <given-names>A</given-names></string-name>, <string-name><surname>Song</surname> <given-names>YS</given-names></string-name>, <string-name><surname>Ward</surname> <given-names>AB</given-names></string-name>, <string-name><surname>Starr</surname> <given-names>TN</given-names></string-name>, <string-name><surname>Matsen</surname> <given-names>FA</given-names> <suffix>IV</suffix></string-name>, <etal>et al.</etal></person-group> <article-title>Replaying germinal center evolution on a quantified affinity landscape</article-title>. <source>bioRxiv</source>. <year>2025</year>. <pub-id pub-id-type="doi">10.1101/2025.06.02.656870</pub-id>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Foote</surname> <given-names>J</given-names></string-name>, <string-name><surname>Eisen</surname> <given-names>HN</given-names></string-name></person-group>. <article-title>Kinetic and affinity limits on antibodies produced during immune responses</article-title>. <source>Proc Natl Acad Sci U S A</source>. <year>1995</year> <month>Feb</month>; <volume>92</volume>(<issue>5</issue>):<fpage>1254</fpage>–<lpage>1256</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jacobsen</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Markoulaki</surname> <given-names>S</given-names></string-name>, <string-name><surname>Schiepers</surname> <given-names>A</given-names></string-name>, <string-name><surname>Cavazzoni</surname> <given-names>CB</given-names></string-name>, <string-name><surname>Bousbaine</surname> <given-names>D</given-names></string-name>, <string-name><surname>Jaenisch</surname> <given-names>R</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>GD</given-names></string-name></person-group>. <article-title>One-step generation of monoclonal B cell receptor mice capable of isotype switching and somatic hypermutation</article-title>. <source>J Exp Med</source>. <year>2018</year> <month>Oct</month>; <volume>215</volume>(<issue>10</issue>):<fpage>2686</fpage>–<lpage>2695</lpage>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kuraoka</surname> <given-names>M</given-names></string-name>, <string-name><surname>Schmidt</surname> <given-names>AG</given-names></string-name>, <string-name><surname>Nojima</surname> <given-names>T</given-names></string-name>, <string-name><surname>Feng</surname> <given-names>F</given-names></string-name>, <string-name><surname>Watanabe</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kitamura</surname> <given-names>D</given-names></string-name>, <string-name><surname>Harrison</surname> <given-names>SC</given-names></string-name>, <string-name><surname>Kepler</surname> <given-names>TB</given-names></string-name>, <string-name><surname>Kelsoe</surname> <given-names>G</given-names></string-name></person-group>. <article-title>Complex Antigens Drive Permissive Clonal Selection in Germinal Centers</article-title>. <source>Immunity</source>. <year>2016</year> <month>Mar</month> doi: <pub-id pub-id-type="doi">10.1016/j.immuni.2016.02.010</pub-id>.</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kühnert</surname> <given-names>D</given-names></string-name>, <string-name><surname>Stadler</surname> <given-names>T</given-names></string-name>, <string-name><surname>Vaughan</surname> <given-names>TG</given-names></string-name>, <string-name><surname>Drummond</surname> <given-names>AJ</given-names></string-name></person-group>. <article-title>Phylodynamics with Migration: A Computational Framework to Quantify Population Structure from Genomic Data</article-title>. <source>Mol Biol Evol</source>. <year>2016</year> <month>Aug</month>; <volume>33</volume>(<issue>8</issue>):<fpage>2102</fpage>–<lpage>2116</lpage>. <pub-id pub-id-type="doi">10.1093/molbev/msw064</pub-id>, doi: <pub-id pub-id-type="doi">10.1093/molbev/msw064</pub-id>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Lajaaiti</surname> <given-names>I</given-names></string-name>, <string-name><surname>Lambert</surname> <given-names>S</given-names></string-name>, <string-name><surname>Voznica</surname> <given-names>J</given-names></string-name>, <string-name><surname>Morlon</surname> <given-names>H</given-names></string-name>, <string-name><surname>Hartig</surname> <given-names>F</given-names></string-name></person-group>. <article-title>A Comparison of Deep Learning Architectures for Inferring Parameters of Diversification Models from Extant Phylogenies</article-title>. <source>bioRxiv</source>. <year>2023</year>. <pub-id pub-id-type="doi">10.1101/2023.03.03.530992</pub-id>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lam</surname> <given-names>KP</given-names></string-name>, <string-name><surname>Kühn</surname> <given-names>R</given-names></string-name>, <string-name><surname>Rajewsky</surname> <given-names>K</given-names></string-name></person-group>. <article-title>In vivo ablation of surface immunoglobulin on mature B cells by inducible gene targeting results in rapid cell death</article-title>. <source>Cell</source>. <year>1997</year> <month>Sep</month>; <volume>90</volume>(<issue>6</issue>):<fpage>1073</fpage>–<lpage>1083</lpage>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lambert</surname> <given-names>S</given-names></string-name>, <string-name><surname>Voznica</surname> <given-names>J</given-names></string-name>, <string-name><surname>Morlon</surname> <given-names>H</given-names></string-name></person-group>. <article-title>Deep Learning from Phylogenies for Diversification Analyses</article-title>. <source>Syst Biol</source>. <year>2023</year> <month>Aug</month>, doi: <pub-id pub-id-type="doi">10.1093/sysbio/syad044</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Landis</surname> <given-names>MJ</given-names></string-name>, <string-name><surname>Thompson</surname> <given-names>A</given-names></string-name></person-group>. <article-title>phyddle: software for exploring phylogenetic models with deep learning</article-title>. <source>Systematic Biology</source>. <year>2025</year>; <elocation-id>syaf036</elocation-id>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname> <given-names>R</given-names></string-name>, <string-name><surname>Bao</surname> <given-names>K</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Ma</surname> <given-names>X</given-names></string-name>, <string-name><surname>Hua</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Zhu</surname> <given-names>P</given-names></string-name>, <string-name><surname>Hou</surname> <given-names>B</given-names></string-name></person-group>. <article-title>Competition propels, rather than limits, the success of low-affinity B cells in the germinal center response</article-title>. <source>Cell Rep</source>. <year>2025</year> <month>Feb</month>; <volume>44</volume>(<issue>2</issue>):<fpage>115334</fpage>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Long</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Phillips</surname> <given-names>B</given-names></string-name>, <string-name><surname>Radtke</surname> <given-names>D</given-names></string-name>, <string-name><surname>Meyer-Hermann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Bannard</surname> <given-names>O</given-names></string-name></person-group>. <article-title>Competition for refueling rather than cyclic reentry initiation evident in germinal centers</article-title>. <source>Sci Immunol</source>. <year>2022</year> <month>Mar</month>; <volume>7</volume>(<issue>69</issue>):<elocation-id>eabm0775</elocation-id>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mayer</surname> <given-names>CT</given-names></string-name>, <string-name><surname>Gazumyan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kara</surname> <given-names>EE</given-names></string-name>, <string-name><surname>Gitlin</surname> <given-names>AD</given-names></string-name>, <string-name><surname>Golijanin</surname> <given-names>J</given-names></string-name>, <string-name><surname>Viant</surname> <given-names>C</given-names></string-name>, <string-name><surname>Pai</surname> <given-names>J</given-names></string-name>, <string-name><surname>Oliveira</surname> <given-names>TY</given-names></string-name>, <string-name><surname>Wang</surname> <given-names>Q</given-names></string-name>, <string-name><surname>Escolano</surname> <given-names>A</given-names></string-name>, <string-name><surname>Medina-Ramirez</surname> <given-names>M</given-names></string-name>, <string-name><surname>Sanders</surname> <given-names>RW</given-names></string-name>, <string-name><surname>Nussenzweig</surname> <given-names>MC</given-names></string-name></person-group>. <article-title>The microanatomic segregation of selection by apoptosis in the germinal center</article-title>. <source>Science</source>. <year>2017</year> <month>Oct</month>; <volume>358</volume>(<issue>6360</issue>):<elocation-id>eaao2602</elocation-id>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Schiepers</surname> <given-names>A</given-names></string-name>, <string-name><surname>Ersching</surname> <given-names>J</given-names></string-name>, <string-name><surname>Barbulescu</surname> <given-names>A</given-names></string-name>, <string-name><surname>Cavazzoni</surname> <given-names>CB</given-names></string-name>, <string-name><surname>Angelini</surname> <given-names>A</given-names></string-name>, <string-name><surname>Okada</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kurosaki</surname> <given-names>T</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>GD</given-names></string-name></person-group>. <article-title>Restricted Clonality and Limited Germinal Center Reentry Characterize Memory B Cell Reactivation by Boosting</article-title>. <source>Cell</source>. <year>2020</year><month>Jan</month>; <volume>180</volume>(<issue>1</issue>):<elocation-id>92–106.e11</elocation-id>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Minh</surname> <given-names>BQ</given-names></string-name>, <string-name><surname>Schmidt</surname> <given-names>HA</given-names></string-name>, <string-name><surname>Chernomor</surname> <given-names>O</given-names></string-name>, <string-name><surname>Schrempf</surname> <given-names>D</given-names></string-name>, <string-name><surname>Woodhams</surname> <given-names>MD</given-names></string-name>, <string-name><surname>von Haeseler</surname> <given-names>A</given-names></string-name>, <string-name><surname>Lanfear</surname> <given-names>R</given-names></string-name></person-group>. <article-title>IQ-TREE 2: New models and efficient methods for phylogenetic inference in the genomic era</article-title>. <source>Mol Biol Evol</source>. <year>2020</year> <month>May</month>; <volume>37</volume>(<issue>5</issue>):<fpage>1530</fpage>–<lpage>1534</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Morlon</surname> <given-names>H</given-names></string-name>, <string-name><surname>Robin</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hartig</surname> <given-names>F</given-names></string-name></person-group>. <article-title>Studying speciation and extinction dynamics from phylogenies: addressing identifiability issues</article-title>. <source>Trends Ecol Evol</source>. <year>2022</year> <month>Jun</month>; <volume>37</volume>(<issue>6</issue>):<fpage>497</fpage>–<lpage>506</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.tree.2022.02.004</pub-id>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Murugan</surname> <given-names>R</given-names></string-name>, <string-name><surname>Buchauer</surname> <given-names>L</given-names></string-name>, <string-name><surname>Triller</surname> <given-names>G</given-names></string-name>, <string-name><surname>Kreschel</surname> <given-names>C</given-names></string-name>, <string-name><surname>Costa</surname> <given-names>G</given-names></string-name>, <string-name><surname>Pidelaserra Marti</surname> <given-names>G</given-names></string-name>, <string-name><surname>Imkeller</surname> <given-names>K</given-names></string-name>, <string-name><surname>Busse</surname> <given-names>CE</given-names></string-name>, <string-name><surname>Chakravarty</surname> <given-names>S</given-names></string-name>, <string-name><surname>Sim</surname> <given-names>BKL</given-names></string-name>, <string-name><surname>Hoffman</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Levashina</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Kremsner</surname> <given-names>PG</given-names></string-name>, <string-name><surname>Mordmüller</surname> <given-names>B</given-names></string-name>, <string-name><surname>Höfer</surname> <given-names>T</given-names></string-name>, <string-name><surname>Wardemann</surname> <given-names>H</given-names></string-name></person-group>. <article-title>Clonal selection drives protective memory B cell responses in controlled human malaria infection</article-title>. <source>Sci Immunol</source>. <year>2018</year> <month>Feb</month>; <volume>3</volume>(<issue>20</issue>). doi: <pub-id pub-id-type="doi">10.1126/sciimmunol.aap8029</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nee</surname> <given-names>S</given-names></string-name>, <string-name><surname>Holmes</surname> <given-names>EC</given-names></string-name>, <string-name><surname>May</surname> <given-names>RM</given-names></string-name>, <string-name><surname>Harvey</surname> <given-names>PH</given-names></string-name></person-group>. <article-title>Extinction rates can be estimated from molecular phylogenies</article-title>. <source>Philos Trans R Soc Lond B Biol Sci</source>. <year>1994</year> <month>Apr</month>; <volume>344</volume>(<issue>1307</issue>):<fpage>77</fpage>–<lpage>82</lpage>. doi: <pub-id pub-id-type="doi">10.1098/rstb.1994.0054</pub-id>.</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Neher</surname> <given-names>RA</given-names></string-name></person-group>. <article-title>Genetic Draft, Selective Interference, and Population Genetics of Rapid Adaptation</article-title>. <source>Annu Rev Ecol Evol Syst</source>. <year>2013</year>; <volume>44</volume>(<issue>1</issue>):<fpage>195</fpage>–<lpage>215</lpage>. doi: <pub-id pub-id-type="doi">10.1146/annurev-ecolsys-110512-135920</pub-id>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nourmohammad</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schiffels</surname> <given-names>S</given-names></string-name>, <string-name><surname>Lässig</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Evolution of molecular phenotypes under stabilizing selection</article-title>. <source>J Stat Mech</source>. <year>2013</year> <month>Jan</month>; <volume>2013</volume>(<issue>01</issue>):<fpage>P01012</fpage>. doi: <pub-id pub-id-type="doi">10.1088/1742-5468/2013/01/P01012</pub-id>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pae</surname> <given-names>J</given-names></string-name>, <string-name><surname>Schwan</surname> <given-names>N</given-names></string-name>, <string-name><surname>Ottino-Loffler</surname> <given-names>B</given-names></string-name>, <string-name><surname>DeWitt</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Garg</surname> <given-names>A</given-names></string-name>, <string-name><surname>Bortolatto</surname> <given-names>J</given-names></string-name>, <string-name><surname>Vora</surname> <given-names>AA</given-names></string-name>, <string-name><surname>Shen</surname> <given-names>JJ</given-names></string-name>, <string-name><surname>Hobbs</surname> <given-names>A</given-names></string-name>, <string-name><surname>Castro</surname> <given-names>TBR</given-names></string-name>, <string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Matsen</surname> <given-names>FA</given-names></string-name>, <string-name><surname>Meyer-Hermann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>GD</given-names></string-name></person-group>. <article-title>Transient silencing of hypermutation preserves B cell affinity during clonal bursting</article-title>. <source>Nature</source>. <year>2025</year> <month>Mar</month>; p. <fpage>1</fpage>–<lpage>9</lpage>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pae</surname> <given-names>J</given-names></string-name>, <string-name><surname>Schwan</surname> <given-names>N</given-names></string-name>, <string-name><surname>Ottino-Loffler</surname> <given-names>B</given-names></string-name>, <string-name><surname>DeWitt</surname> <given-names>WS</given-names></string-name>, <string-name><surname>Garg</surname> <given-names>A</given-names></string-name>, <string-name><surname>Bortolatto</surname> <given-names>J</given-names></string-name>, <string-name><surname>Vora</surname> <given-names>AA</given-names></string-name>, <string-name><surname>Shen</surname> <given-names>JJ</given-names></string-name>, <string-name><surname>Hobbs</surname> <given-names>A</given-names></string-name>, <string-name><surname>Castro</surname> <given-names>TBR</given-names></string-name>, <string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Matsen</surname> <given-names>FA</given-names></string-name>, <string-name><surname>Meyer-Hermann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>GD</given-names></string-name></person-group>. <article-title>Transient silencing of hypermutation preserves B cell affinity during clonal bursting</article-title>. <source>Nature</source>. <year>2025</year> <month>Mar</month>; p. <fpage>1</fpage>–<lpage>9</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41586-025-08687-8</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Perez</surname> <given-names>MF</given-names></string-name>, <string-name><surname>Gascuel</surname> <given-names>O</given-names></string-name></person-group>. <article-title>PhyloCNN: Improving tree representation and neural network architecture for deep learning from trees in phylodynamics and diversification studies</article-title>. <source>bioRxiv</source>. <year>2024</year> <pub-id pub-id-type="doi">10.1101/2024.12.13.628187</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schrider</surname> <given-names>DR</given-names></string-name>, <string-name><surname>Kern</surname> <given-names>AD</given-names></string-name></person-group>. <article-title>Supervised Machine Learning for Population Genetics: A New Paradigm</article-title>. <source>Trends Genet</source>. <year>2018</year> <month>Apr</month>; <volume>34</volume>(<issue>4</issue>):<fpage>301</fpage>–<lpage>312</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.tig.2017.12.005</pub-id>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Schwickert</surname> <given-names>TA</given-names></string-name>, <string-name><surname>Lindquist</surname> <given-names>RL</given-names></string-name>, <string-name><surname>Shakhar</surname> <given-names>G</given-names></string-name>, <string-name><surname>Livshits</surname> <given-names>G</given-names></string-name>, <string-name><surname>Skokos</surname> <given-names>D</given-names></string-name>, <string-name><surname>Kosco-Vilbois</surname> <given-names>MH</given-names></string-name>, <string-name><surname>Dustin</surname> <given-names>ML</given-names></string-name>, <string-name><surname>Nussenzweig</surname> <given-names>MC</given-names></string-name></person-group>. <article-title>In vivo imaging of germinal centres reveals a dynamic open structure</article-title>. <source>Nature</source>. <year>2007</year> <month>Mar</month>; <volume>446</volume>(<issue>7131</issue>):<fpage>83</fpage>–<lpage>87</lpage>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sheehan</surname> <given-names>S</given-names></string-name>, <string-name><surname>Song</surname> <given-names>YS</given-names></string-name></person-group>. <article-title>Deep Learning for Population Genetic Inference</article-title>. <source>PLoS Comput Biol</source>. <year>2016</year> <month>Mar</month>; <volume>12</volume>(<issue>3</issue>):<elocation-id>e1004845</elocation-id>. doi: <pub-id pub-id-type="doi">10.1371/journal.pcbi.1004845</pub-id>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Suchard</surname> <given-names>MA</given-names></string-name>, <string-name><surname>Lemey</surname> <given-names>P</given-names></string-name>, <string-name><surname>Baele</surname> <given-names>G</given-names></string-name>, <string-name><surname>Ayres</surname> <given-names>DL</given-names></string-name>, <string-name><surname>Drummond</surname> <given-names>AJ</given-names></string-name>, <string-name><surname>Rambaut</surname> <given-names>A</given-names></string-name></person-group>. <article-title>Bayesian phylogenetic and phylodynamic data integration using BEAST 1.10</article-title>. <source>Virus Evol</source>. <year>2018</year> <month>Jan</month>; <volume>4</volume>(<issue>1</issue>):<fpage>vey016</fpage>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tas</surname> <given-names>JMJ</given-names></string-name>, <string-name><surname>Mesin</surname> <given-names>L</given-names></string-name>, <string-name><surname>Pasqual</surname> <given-names>G</given-names></string-name>, <string-name><surname>Targ</surname> <given-names>S</given-names></string-name>, <string-name><surname>Jacobsen</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Mano</surname> <given-names>YM</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>CS</given-names></string-name>, <string-name><surname>Weill</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Reynaud</surname> <given-names>CA</given-names></string-name>, <string-name><surname>Browne</surname> <given-names>EP</given-names></string-name>, <string-name><surname>Meyer-Hermann</surname> <given-names>M</given-names></string-name>, <string-name><surname>Victora</surname> <given-names>GD</given-names></string-name></person-group>. <article-title>Visualizing antibody affinity maturation in germinal centers</article-title>. <source>Science</source>. <year>2016</year> <month>Mar</month>; <volume>351</volume>(<issue>6277</issue>):<fpage>1048</fpage>–<lpage>1054</lpage>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Thompson</surname> <given-names>A</given-names></string-name>, <string-name><surname>Liebeskind</surname> <given-names>B</given-names></string-name>, <string-name><surname>Scully</surname> <given-names>EJ</given-names></string-name>, <string-name><surname>Landis</surname> <given-names>M</given-names></string-name></person-group>. <article-title>Deep learning and likelihood approaches for viral phylogeography converge on the same answers whether the inference model is right or wrong</article-title>. <source>Syst Biol</source>. <year>2024</year> <month>Jan</month>; doi: <pub-id pub-id-type="doi">10.1093/sysbio/syad074</pub-id>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Victora</surname> <given-names>GD</given-names></string-name>, <string-name><surname>Nussenzweig</surname> <given-names>MC</given-names></string-name></person-group>. <article-title>Germinal centers</article-title>. <source>Annu Rev Immunol</source>. <year>2022</year> <month>Apr</month>; <volume>40</volume>(<issue>1</issue>):<fpage>413</fpage>–<lpage>442</lpage>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Voznica</surname> <given-names>J</given-names></string-name>, <string-name><surname>Zhukova</surname> <given-names>A</given-names></string-name>, <string-name><surname>Boskova</surname> <given-names>V</given-names></string-name>, <string-name><surname>Saulnier</surname> <given-names>E</given-names></string-name>, <string-name><surname>Lemoine</surname> <given-names>F</given-names></string-name>, <string-name><surname>Moslonka-Lefebvre</surname> <given-names>M</given-names></string-name>, <string-name><surname>Gascuel</surname> <given-names>O</given-names></string-name></person-group>. <article-title>Deep learning from phylogenies to uncover the epidemiological dynamics of outbreaks</article-title>. <source>Nat Commun</source>. <year>2022</year> <month>Jul</month>; <volume>13</volume>(<issue>1</issue>):<fpage>3896</fpage>. doi: <pub-id pub-id-type="doi">10.1038/s41467-022-31511-0</pub-id>.</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Zuo</surname> <given-names>T</given-names></string-name>, <string-name><surname>Gautam</surname> <given-names>A</given-names></string-name>, <string-name><surname>Saghaei</surname> <given-names>S</given-names></string-name>, <string-name><surname>Khobragade</surname> <given-names>SN</given-names></string-name>, <string-name><surname>Ahmed</surname> <given-names>R</given-names></string-name>, <string-name><surname>Mahdavinia</surname> <given-names>A</given-names></string-name>, <string-name><surname>Zarghami</surname> <given-names>M</given-names></string-name>, <string-name><surname>Pacheco</surname> <given-names>GA</given-names></string-name>, <string-name><surname>Green</surname> <given-names>K</given-names></string-name>, <string-name><surname>Travers</surname> <given-names>M</given-names></string-name>, <string-name><surname>Garcia</surname> <given-names>N</given-names></string-name>, <string-name><surname>Allahyari</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Rao</surname> <given-names>V</given-names></string-name>, <string-name><surname>Kumar</surname> <given-names>S</given-names></string-name>, <string-name><surname>Novak</surname> <given-names>R</given-names></string-name>, <string-name><surname>Hwang</surname> <given-names>JK</given-names></string-name>, <string-name><surname>Wesemann</surname> <given-names>DR</given-names></string-name></person-group>. <article-title>Somatic hypermutation unlocks antibody specificities beyond the primary repertoire</article-title>. <source>Immunity</source>. <year>2025</year> <month>May</month>; .</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108880.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Mora</surname>
+<given-names>Thierry</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-5456-9361</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05a0dhs15</institution-id><institution>École Normale Supérieure - PSL</institution>
+</institution-wrap>
+<city>Paris</city>
+<country>France</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This paper presents a computational method to infer from data a key feature of affinity maturation: the relationship between the affinity of B-cell receptors and their fitness. The approach, which is based on a simple population dynamics model but inferred using AI-powered Simulation-Based Inference, is novel and <bold>valuable</bold>. It exploits recently published data on replay experiments of affinity maturation. While the method is well-argued and the validation <bold>solid</bold>, the potential impact of the study is hindered by its complex presentation, which makes it hard to assess its claims reliably.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108880.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper aims to characterize the relationship between affinity and fitness in the process of affinity maturation. To this end, the authors develop a model of germinal center reaction and a tailored statistical approach, building on recent advances in simulation-based inference. The potential impact of this work is hindered by the poor organization of the manuscript. In crucial sections, the writing style and notations are unclear and difficult to follow.</p>
+<p>Strengths:</p>
+<p>The model provides a framework for linking affinity measurements and sequence evolution and does so while accounting for the stochasticity inherent to the germinal center reaction. The model's sophistication comes at the cost of numerous parameters and leads to intractable likelihood, which are the primary challenges addressed by the authors. The approach to inference is innovative and relies on training a neural network on extensive simulations of trajectories from the model.</p>
+<p>Weaknesses:</p>
+<p>The text is challenging to follow. The descriptions of the model and the inference procedure are fragmented and repetitive. In the introduction and the methods section, the same information is often provided multiple times, at different levels of detail. This organization sometimes requires the reader to move back and forth between subsections (there are multiple non-specific references to &quot;above&quot; and &quot;below&quot; in the text).</p>
+<p>The choice of some parameter values in simulations appears arbitrary and would benefit from more extensive justification. It remains unclear how the &quot;significant uncertainty&quot; associated with these parameters affects the results of inference. In addition, the performance of the inference scheme on simulated data is difficult to evaluate, as the reported distributions of loss function values are not very informative.</p>
+<p>Finally, the discussion of the similarities and differences with an alternative approach to this inference problem, presented in Dewitt et al. (2025), is incomplete.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108880.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper presents a new approach for explicitly transforming B-cell receptor affinity into evolutionary fitness in the germinal center. It demonstrates the feasibility of using likelihood-free inference to study this problem and demonstrates how effective birth rates appear to vary with affinity in real-world data.</p>
+<p>Strengths:</p>
+<p>(1) The authors leverage the unique data they have generated for a separate project to provide novel insights into a fundamental question.</p>
+<p>(2) The paper is clearly written, with accessible methods and a straightforward discussion of the limits of this model.</p>
+<p>(3) Code and data are publicly available and well-documented.</p>
+<p>Weaknesses (minor):</p>
+<p>(1) Lines 444-446: I think that &quot;affinity ceiling&quot; and &quot;fitness ceiling&quot; should be considered independent concepts. The former, as the authors ably explain, is a physical limitation. This wouldn't necessarily correspond to a fitness ceiling, though, as Figure 7 shows. Conversely, the model developed here would allow for a fitness ceiling even if the physical limit doesn't exist.</p>
+<p>(2) Lines 566-569: I would like to see this caveat fleshed out more and perhaps mentioned earlier in the paper. While relative affinity is far more important, it is not at all clear to me that absolute affinity can be totally ignored in modeling GC behavior.</p>
+<p>(3) One other limitation that is worth mentioning, though beyond the scope of the current work to fully address: the evolution of the repertoire is also strongly shaped by competition from circulating antibodies. (Eg: <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3600904/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3600904/</ext-link>, <ext-link ext-link-type="uri" xlink:href="http://www.sciencedirect.com/science/article/pii/S1931312820303978">http://www.sciencedirect.com/science/article/pii/S1931312820303978</ext-link>). This is irrelevant for the replay experiment modeled here, but still an important factor in general repertoires.</p>
+</body>
+</sub-article>
+</article>
