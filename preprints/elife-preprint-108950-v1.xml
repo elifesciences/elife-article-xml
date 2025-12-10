@@ -1,0 +1,604 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">108950</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.108950</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.108950.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.3</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>TSvelo: Comprehensive RNA velocity by modeling the cascade of gene regulation, transcription and splicing</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Jiachen</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Zhe</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Shen</surname>
+<given-names>Hong-Bin</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Yuan</surname>
+<given-names>Ye</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>yyuan@ipe.ac.cn</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/034t30j35</institution-id><institution>State Key Laboratory of Biopharmaceutical Preparation and Delivery, Institute of Process Engineering, Chinese Academy of Sciences</institution></institution-wrap>, <city>Beijing</city>, <country country="CN">China</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0220qvk04</institution-id><institution>Institute of Image Processing and Pattern Recognition, Shanghai Jiao Tong University, and Key Laboratory of System Control and Information Processing, Ministry of Education of China</institution></institution-wrap>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Yang</surname>
+<given-names>Yongliang</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/03ns6aq57</institution-id><institution>Shanghai University of Medicine and Health Sciences</institution>
+</institution-wrap>
+<city>Shanghai</city>
+<country country="CN">China</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Walczak</surname>
+<given-names>Aleksandra M</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution>CNRS</institution>
+</institution-wrap>
+<city>Paris</city>
+<country country="FR">France</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-11-25">
+<day>25</day>
+<month>11</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP108950</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-09-03">
+<day>03</day>
+<month>09</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-08-19">
+<day>19</day>
+<month>08</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2024.12.24.630058"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Li et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Li et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-108950-v1.pdf"/>
+<abstract>
+<p>RNA velocity approaches fit gene dynamics and infer cell fate by modeling the splicing process using single-cell RNA sequencing (scRNA-seq) data. However, due to short time scale of splicing, high noise and large complexity of data, existing RNA velocity methods often fail to precisely capture the complex velocity dynamics for individual gene and single cell, which makes its downstream analysis less reliable and less robust. We propose <bold>TSvelo</bold>, a comprehensive RNA <bold>velo</bold>city mathematics framework that can model the cascade of gene regulation, <bold>T</bold>ranscription and <bold>S</bold>plicing using highly interpretable neural Ordinary Differential Equations (ODEs). TSvelo can precisely capture the transcription-unspliced-spliced 3D dynamics of all genes simultaneously, infer unified latent time shared by genes within single cell, detect key gene regulatory relations and be applied to multi-lineage datasets. Experiments on six scRNA-seq datasets, including two multi-lineage datasets, demonstrate TSvelo’s superiority.</p>
+</abstract>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Figures are updated for better visulization. Typos are corrected.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Single-cell RNA sequencing (scRNA-seq) enables the detailed exploration of gene expression at the individual cell level. To move beyond static snapshots and capture the dynamic behavior of cells over time, several trajectory inference (TI) methods have been developed, such as PAGA<sup><xref ref-type="bibr" rid="c1">1</xref></sup>, Monocle<sup><xref ref-type="bibr" rid="c2">2</xref></sup>, Slingshot<sup><xref ref-type="bibr" rid="c3">3</xref></sup> and Palantir<sup><xref ref-type="bibr" rid="c4">4</xref></sup>. These methods typically estimate pseudotime using diffusion processes and require prior annotation of initial cells. In contrast, RNA velocity<sup><xref ref-type="bibr" rid="c5">5</xref></sup> offers a more interpretable approach by modeling the time derivative of gene expression, linking unspliced (immature) and spliced (mature) mRNA levels through Ordinary Differential Equations (ODEs).</p>
+<p>Several RNA velocity methods have been proposed to capture splicing dynamics. The first approach, Velocyto<sup><xref ref-type="bibr" rid="c5">5</xref></sup>, uses least squares solutions to estimate parameters under the assumption of steady-state kinetics. ScVelo<sup><xref ref-type="bibr" rid="c6">6</xref></sup> improves upon this by employing an Expectation-Maximization (EM) approach for better fitting splicing kinetics. UniTVelo<sup><xref ref-type="bibr" rid="c7">7</xref></sup> propose a top-down idea that directly models the spliced RNA levels with a time-dependent function. More recently, generative models such as VeloVI<sup><xref ref-type="bibr" rid="c8">8</xref></sup>, veloVAE<sup><xref ref-type="bibr" rid="c9">9</xref></sup> and Pyrovelocity<sup><xref ref-type="bibr" rid="c10">10</xref></sup> have been introduced, utilizing Bayesian frameworks to estimate RNA velocity. To handle multi-lineage datasets, methods like CellDancer<sup><xref ref-type="bibr" rid="c11">11</xref></sup>, DeepVelo<sup><xref ref-type="bibr" rid="c12">12</xref></sup> and LatentVelo<sup><xref ref-type="bibr" rid="c13">13</xref></sup> extend RNA velocity by modeling local dynamics with neural networks, rather than assuming a globally constant transcriptional rate. Apart from using unspliced/spliced data, Dynamo<sup><xref ref-type="bibr" rid="c14">14</xref></sup> enhances RNA velocity further by incorporating labeled RNA-seq data. The advent of single-cell multi-omics<sup><xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c16">16</xref></sup> technologies has allowed RNA velocity analysis to extend to protein abundance (e.g., protaccel<sup><xref ref-type="bibr" rid="c17">17</xref></sup>) and single-cell ATAC-seq datasets (e.g., MultiVelo<sup><xref ref-type="bibr" rid="c18">18</xref></sup>). Additionally, methods like DeepCycle<sup><xref ref-type="bibr" rid="c19">19</xref></sup> and VeloCycle<sup><xref ref-type="bibr" rid="c20">20</xref></sup> have been developed to focus on cell cycle processes, with specialized modules for capturing periodic signals. STT<sup><xref ref-type="bibr" rid="c21">21</xref></sup> and SIRV<sup><xref ref-type="bibr" rid="c22">22</xref></sup> proposed the idea on extending RNA velocity analysis to spatial transcriptomics.</p>
+<p>Although RNA velocity theory has significantly advanced the inference of single-cell trajectories, pseudotime, and gene regulation<sup><xref ref-type="bibr" rid="c23">23</xref></sup>, several challenges persist for current RNA velocity models. Firstly, RNA velocity models primarily infer cell fate based on phase portrait fitting of unspliced and spliced dynamics for each gene. However, they often fail to capture the correct phase portrait for most genes, due to the sparsity and noise in unspliced and spliced mRNA abundance for individual genes, the short time scale of the splicing process, and the mixing of cells from different types on the phase portrait<sup><xref ref-type="bibr" rid="c24">24</xref>-<xref ref-type="bibr" rid="c26">26</xref></sup>. Secondly, The majority of existing RNA velocity models treat each gene independently and fail to incorporate the underlying regulatory interactions<sup><xref ref-type="bibr" rid="c27">27</xref></sup>. Although some approaches (e.g. TFvelo<sup><xref ref-type="bibr" rid="c26">26</xref></sup>, PHOENIX<sup><xref ref-type="bibr" rid="c28">28</xref></sup> and scKINETICS<sup><xref ref-type="bibr" rid="c29">29</xref></sup>) have constructed ODE models to capture gene dynamics by integrating regulation information, these methods overlook the splicing signal so that they cannot jointly model the transcription and splicing dynamics into one unified form. Thirdly, classical RNA velocity approaches, such as scVelo, use interpretable parameters in constructing dynamic model for single gene. By contrast, to model flexible transcriptional rates or integrate multiple genes, several recent methods employ latent space embeddings or neural network-based encoders<sup><xref ref-type="bibr" rid="c11">11</xref></sup>. It makes the model parameters less interpretable in detailed gene level, which is crucial for understanding the underlying biological mechanisms. Fourthly, multi-lineage tasks remain a significant challenge for current RNA velocity models due to the complexity in large scale scRNA-Seq datasets.</p>
+<p>To address the challenges outlined above, we propose TSvelo, a method that intergrates gene regulation, transcription and splicing of all genes into a single ODE model, whose parameters are highly interpretable. TSvelo directly learns the global latent time without the need to separately learn gene-specific latent times. By leveraging both unspliced and spliced scRNA-seq data, along with gene regulatory knowledge from TF-target databases, TSvelo iteratively optimizes the parameters in the ODE model and the unified latent time using Expectation-Maximization (EM) algorithm. Experiments on six scRNA-seq datasets, including two multi-lineage datasets, demonstrate that TSvelo outperforms existing methods in modeling gene dynamics, inferring cell fates, and is also effective in analyzing multi-lineage datasets.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Estimate RNA velocity with TSVelo</title>
+<p>We present TSvelo, a method for estimating RNA velocity of multiple target genes simultaneously using both of transcriptional regulation and splicing information. Initially, the unspliced and spliced RNA abundances are preprocessed for velocity gene selection and pseudotime initialization (<xref rid="fig1" ref-type="fig">Fig. 1a</xref>). See Methods for details about preprocessing. Next to model the velocity gene ‘s expression dynamics, we suppose <italic>u</italic><sub><italic>g</italic></sub> and <italic>s</italic><sub><italic>g</italic></sub> are the abundance of unspliced and spliced RNA, and <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>),<italic>β</italic><sub><italic>g</italic></sub>, <italic>γ</italic><sub><italic>g</italic></sub> are the transcription rate, splicing rate and degradation rate, respectively. The dynamics is modeled as:
+<disp-formula id="eqn1">
+<graphic xlink:href="630058v3_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn2">
+<graphic xlink:href="630058v3_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula></p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>The framework of TSvelo</title>
+<p>(<bold>a</bold>) The preprocessing strategy in TSvelo, including velocity genes selection and initial state detection. (<bold>b</bold>) The Neural ODE model and its optimization in TSvelo, where the parameters and latent time is optimized iteratively. (<bold>c-e</bold>) The downstream application tasks of TSvelo, including precise transcription-unspliced-spliced 3D phase portrait fitting (c), cell fate prediction using predicted RNA velocity (d) and gene expression pattern analysis for multi-lineage dataset (e).</p></caption>
+<graphic xlink:href="630058v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Furthermore, we assume that the gene and cell-specific transcriptional rate <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>) is influence by the expression of Transcriptional Factors (TFs).</p>
+<p>Considering the wide usage and interpretability of linear models for gene-relations in previous studies<sup><xref ref-type="bibr" rid="c26">26</xref>,<xref ref-type="bibr" rid="c30">30</xref>-<xref ref-type="bibr" rid="c33">33</xref></sup>, we model <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>) as
+<disp-formula id="eqn3">
+<graphic xlink:href="630058v3_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<italic>TFs</italic>(<italic>g</italic>) refers to the TFs that could regulated the target gene <italic>g</italic>, which are selected according to the ChEA and ENCODE TF-target database. In order to include more TFs in the model, we also reserve those TFs that are not selected as velocity genes, and directly model the dynamics between transcription and spliced RNA without using the unspliced abundance. Finally, we combine the dynamic models on all selected genes into the Ordinary Differentia Equation (ODE) matrix form (<xref rid="fig1" ref-type="fig">Fig. 1b</xref>), which enables directly inferring a unified latent time for each cell using its all genes. See Methods for details.</p>
+<p>TSvelo employs an EM framework to iteratively optimize both latent time and the parameters in ODE. The global pseudotime is assigned to each cell through grid search. Due to the difficulty in calculating analytical solutions of or, TSvelo adopted a Neural ODE for estimating those parameters of transcription rate, splicing rate and degradation rate. Next, TSvelo can accurately model the gene dynamics of both transcription, unsplicing and splicing processes (<xref rid="fig1" ref-type="fig">Fig. 1c</xref>), predict cell states using both pseudotime and velocity stream analysis (<xref rid="fig1" ref-type="fig">Fig. 1d</xref>), and is also applicable to multi-lineage tasks for analyzing expression patterns across different lineages in large complex scRNA-Seq datasets (<xref rid="fig1" ref-type="fig">Fig. 1e</xref>).</p>
+</sec>
+<sec id="s2b">
+<title>TSvelo can accurately model 3D gene dynamics and predict cell fate on pancreas dataset</title>
+<p>To validate the TSvelo model, we applied it to the pancreas scRNA-seq dataset<sup><xref ref-type="bibr" rid="c5">5</xref></sup>, which is widely used in RNA velocity studies to model cell differentiation from ductal to endocrine cells. Using the predicted RNA velocity, TSvelo can generate velocity stream plot using the functions provided in scVelo as well. Both the final pseudotime (<xref rid="fig2" ref-type="fig">Fig. 2a</xref>) and the velocity stream plot (<xref rid="fig2" ref-type="fig">Fig. 2b</xref>) effectively capture the cell differentiation process. We quantitively compare TSvelo and baseline approaches, including scVelo <sup><xref ref-type="bibr" rid="c6">6</xref></sup>, dynamo<sup><xref ref-type="bibr" rid="c14">14</xref></sup>, UniTVelo<sup><xref ref-type="bibr" rid="c7">7</xref></sup>, cellDancer<sup><xref ref-type="bibr" rid="c11">11</xref></sup> and TFvelo<sup><xref ref-type="bibr" rid="c26">26</xref></sup>. TSvelo achieves the highest median velocity consistency (<xref rid="fig2" ref-type="fig">Fig. 2c</xref>), which demonstrates that the high-dimensional velocity vectors learned by TSvelo are mostly coherent within neighbor cells. TSvelo also achieves the highest median in-cluster coherence and cross-boundary correctness, which validates that TSvelo best fit the differentiation process within these cell types according to the ground truth annotation (<xref ref-type="supplementary-material" rid="supp1">Fig. S2</xref>).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Results on pancreas dataset.</title>
+<p>(<bold>a</bold>) The pseudotime learned with TSvelo. (<bold>b</bold>) The Stream-plot for visualization the RNA velocity inferred by TSvelo. (<bold>c</bold>) The quantitative comparison between TSvelo and multiple baseline approaches. The down, central and up hinges correspond to the first quartile, median value and third quartile, respectively. The whiskers extend to 1.5× the interquartile range of the distribution from the hinge. 3,696 samples are included in the boxplot for each method. (<bold>d</bold>) The dynamics fitting on MAML3, ANXA4 and GSTZ1. For each gene, four plots are displayed in a 2×2 layout: the u-t, s-t, u-s, and alpha-u plots. (<bold>e</bold>) The unspliced-spliced phase portrait fitting on MAML3, ANXA4 and GSTZ1 obtained by four baseline RNA velocity approaches, including scVelo, Dynamo, UniTVelo and cellDancer. (<bold>f</bold>) The dynamics fitting in transcription-unspliced-spliced 3D phase portrait for MAML3, ANXA4 and GSTZ1.</p></caption>
+<graphic xlink:href="630058v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Next, we show the dynamics for individual genes and demonstrate how the TSvelo model aids gene dynamics analysis by incorporating both transcriptional and splicing information. Using MAML3, ANXA4 and GSTZ1 as examples, <xref rid="fig2" ref-type="fig">Fig. 2d</xref> present the results of the TSvelo model on these genes, and <xref rid="fig2" ref-type="fig">Fig. 2e</xref> present the results of baseline approaches. Many previous approaches assume that the unspliced-spliced phase portrait exhibits an almond-shaped distribution<sup><xref ref-type="bibr" rid="c34">34</xref></sup>which may not actually hold in the data. For MAML3, while the unspliced-spliced distribution predominantly follows the almond-shaped pattern, some cells, specifically Alpha cells (blue) and Beta cells (light blue), overlap with Ngn3 high EP cells (yellow), indicating that these cell types cannot be distinctly separated using only the unspliced-spliced 2D phase portrait. Nevertheless, TSvelo can infer transcription representation from the expression of multiple transcription factors, which enables the model to distinguish these cell types (<xref rid="fig2" ref-type="fig">Fig. 2d</xref> and <xref rid="fig2" ref-type="fig">Fig. 2f</xref>). For ANXA4, the expression pattern exhibits an initial decrease followed by an increase (in red), a dynamic that is not easily captured in the unspliced-spliced phase portrait by previous approaches. By comparison, TSvelo can still accurately predicts the abundance of unspliced spliced RNA. The visualization of dynamics fitting on more genes are provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S3</xref>.</p>
+</sec>
+<sec id="s2c">
+<title>TSvelo can better predict RNA velocity on gastrulation erythroid dataset</title>
+<p>We applied TSvelo to the gastrulation erythroid dataset, which is derived from the transcriptional profile of mouse embryos <sup><xref ref-type="bibr" rid="c35">35</xref></sup> and has been used in previous RNA velocity studies. This dataset primarily describes the differentiation process from blood progenitors to erythroid cells. First, using Gene Ontology (GO) term enrichment analysis (<xref rid="fig3" ref-type="fig">Fig. 3a</xref>), we find that the velocity genes selected through TSvelo’s preprocessing strategies are mostly enriched in heme biosynthetic process (GO:0006783) and porphyrin-containing compound biosynthetic process (GO:0006779), both of which are related to the erythropoiesis process.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Results on gastrulation erythroid dataset.</title>
+<p>(<bold>a</bold>) The GO terms which are mostly enriched in the selected velocity genes of TSvelo. (<bold>b</bold>) The pseudotime learned with TSvelo. (<bold>c</bold>) The Stream-plot for visualization the RNA velocity inferred by TSvelo. (<bold>d-f</bold>) The quantitative comparison between TSvelo and multiple baseline approaches in terms of velocity consistency (d), in-cluster coherence (e), and cross boundary direction correctness (f). The down, central and up hinges correspond to the first quartile, median value and third quartile, respectively. The whiskers extend to 1.5× the interquartile range of the distribution from the hinge. 9,815 samples are included in the boxplot for each method. (<bold>g</bold>) The dynamics fitting on HSP90AB1 obtained by TSvelo. Four plots are displayed in a 2×2 layout: the u-t, s-t, u-s, and alpha-u plots, where u, a and alpha mean the abundance of unspliced mRNA, the abundance of spliced mRNA, and the learned transcriptional representation, respectively. (<bold>i</bold>) The phase portrait fitting on HSP90AB1 obtained by baseline approaches. (<bold>i</bold>) The dynamics fitting on RPS26 obtained by TSvelo. (<bold>j</bold>) The TFs with the highest ranked weights as identified by TSvelo. (<bold>k</bold>) Weights for KLF1’s targets, with the highest absolute weight. (<bold>l</bold>) Temporal dynamics of KLF1 and its target genes with the highest weights along pseudotime, which includes HBA-X, ALAS2 and GYPA.</p></caption>
+<graphic xlink:href="630058v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>After applying TSvelo, both the inferred pseudotime (<xref rid="fig3" ref-type="fig">Fig. 3b</xref>) and the velocity stream plot (<xref rid="fig3" ref-type="fig">Fig. 3c</xref>) accurately reflect the cell differentiation process. We also compare TSvelo with previous approaches. The results, shown in <xref rid="fig3" ref-type="fig">Fig. 3d-f</xref>, demonstrate that TSvelo achieves the highest velocity consistency, the highest in-cluster coherence, and the highest cross-boundary correctness, showing that the high-dimensional dynamics predicted by TSvelo best capture the underlying biological processes.</p>
+<p>We next analyze TSvelo modeling at the gene level in <xref rid="fig3" ref-type="fig">Fig. 3g-i</xref>. For genes exhibiting higher noise or more complex patterns, TSvelo demonstrates its robustness in dynamic fitting by integrating both transcriptional and splicing signals. For the gene HSP90AB1, TSvelo accurately captures the dynamics (<xref rid="fig3" ref-type="fig">Fig. 3g</xref>), whose pattern can not be well modeled by previous approaches (<xref rid="fig3" ref-type="fig">Fig. 3h</xref>). For genes such as RPS26<sup><xref ref-type="bibr" rid="c36">36</xref></sup>, which have critical roles in the development in blood progenitors to erythroid, the unspliced-spliced data is so noisy that cells of different types overlap in phase portrait. TSvelo can still accurately captures the gene dynamics and reveals differences in transcription rates (Alpha) across cell types (<xref rid="fig3" ref-type="fig">Fig. 3i</xref>). In contrast, methods that rely solely on unspliced-spliced data from individual genes, such as scVelo, fail to accurately fit these dynamics and can not identify them as velocity genes, which further validates TSvelo’s performance in complex scenarios. The visualization of dynamics fitting on more genes are provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S5</xref>.</p>
+<p>From the TF-target weight matrices learned by TSvelo, we can extract key regulatory relationships. First, we calculate the mean absolute weight of each TF across its interactions with target genes. The TFs with the highest mean absolute weights are ranked and presented in <xref rid="fig3" ref-type="fig">Fig. 3j</xref>. Notably, KLF1, a critical TF in blood progenitors<sup><xref ref-type="bibr" rid="c37">37</xref></sup>, is assigned the highest weight. We then examine the target genes of KLF1, highlighting those with the highest weights (<xref rid="fig3" ref-type="fig">Fig. 3k</xref>), among which HBA-X<sup><xref ref-type="bibr" rid="c38">38</xref></sup>, ALAS2<sup><xref ref-type="bibr" rid="c39">39</xref></sup>, and GYPA<sup><xref ref-type="bibr" rid="c40">40</xref></sup> have been previously identified as key genes in erythroid differentiation and are known to be regulated by KLF1. A time-delay pattern is also observed between KLF1 and its target genes (<xref rid="fig3" ref-type="fig">Fig. 3l</xref>), indicating that KLF1 expression increases first, followed by a corresponding upregulation of its target genes.</p>
+</sec>
+<sec id="s2d">
+<title>TSvelo can accurately fit cell fate and gene dynamics on mouse brain data</title>
+<p>We apply TSvelo to a 10x multi-omics dataset from the embryonic mouse brain, which includes both Assay for Transposase-Accessible Chromatin with sequencing (ATAC-Seq) <sup><xref ref-type="bibr" rid="c41">41</xref></sup> and scRNA-seq data. This dataset was previously used in the Multivelo study, which introduced an RNA velocity model designed for multi-omics datasets to capture the dynamics between chromatin accessibility and unspliced mRNA<sup><xref ref-type="bibr" rid="c19">19</xref></sup>. In this dataset, Radial Glia (RG) cells located in the outer subventricular zone give rise to neurons, astrocytes, and oligodendrocytes. During cortical development, neurons migrate in an inside-out manner, with younger cells moving toward the upper layers of the cortex, while older cells settle in the deeper layers. Additionally, RG cells are capable of producing intermediate progenitor cells (IPCs), which serve as neural stem cells and generate a variety of mature excitatory neurons within the cortical layers.</p>
+<p>Multivelo is chosen as the baseline on this study since it connects the regulation signal and RNA velocity in ATAC-unspliced-spliced space., and TSvelo uses the same data processed be Multivelo for a fair comparison. As shown in <xref rid="fig4" ref-type="fig">Fig. 4a</xref> and <xref rid="fig4" ref-type="fig">Fig. 4b</xref>, the velocity stream obtained by TSvelo is smoother than Multivelo and can correctly reflect the differentiation from RG (in red) to IPCs (in brown). The pseudotime inferred by TSvelo is also coherent with the whole cell development process (<xref rid="fig4" ref-type="fig">Fig. 4c</xref>).</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>Results on mouse brain dataset.</title>
+<p>(<bold>a</bold>) The velocity stream inferred by Multivelo. (<bold>b</bold>) The Stream-plot for visualization the RNA velocity inferred by TSvelo. (<bold>c</bold>) The pseudotime learned with TSvelo. (<bold>d-f</bold>) The dynamics fitting on gene MEIS2 (d), BASP1 (e) and MSI2 (f) by both Multivelo and TSvelo. In each panel, the leftmost plot shows the phase portrait fitting of Multivelo, and the next two columns show TSvelo’s results. The rightmost plot shows the learned transcriptional rate (in green), unspliced abundance (in blue), and spliced abundance (in red) along the pseudotime. Since the transcriptional rate is calculated for each individual cell, we apply a Generalized Additive Model (GAM) to transcriptional representation across cells along the pseudotime and present GAM-fitting results to better visualize its trends in these plots.</p></caption>
+<graphic xlink:href="630058v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We next further analyze the details in the phase portrait fitting. On MEIS2 (<xref rid="fig4" ref-type="fig">Fig. 4d</xref>), both Multivelo and TSvelo successfully models its dynamics, which follows a clear pattern on the unspliced-spliced phase portrait. However, due to the high noise and sparsity inherent in ATAC-seq data, Multivelo encounters difficulty on genes that show significant overlap between different cell types in the unspliced–spliced phase portrait. For example, in the case of BASP1 (<xref rid="fig4" ref-type="fig">Fig. 4e</xref>), Multivelo incorrectly models their expression patterns as monotonically increasing, failing to capture the true dynamics, which involve initial upregulation followed by downregulation. In contrast, TSvelo successfully captures the correct gene dynamics and identifies the delay from transcription to the unspliced mRNA and also the delay from unspliced to spliced mRNA (The rightmost plots in <xref rid="fig4" ref-type="fig">Fig. 4e</xref>). MSI2, which has been reported to be highly expressed in neural stem/progenitor cells<sup><xref ref-type="bibr" rid="c42">42</xref></sup>, is accurately modeled by TSvelo, exhibiting a decreasing expression pattern during the differentiation process. By comparison, Multivelo fails to capture the correct trend at the initial stage (<xref rid="fig4" ref-type="fig">Fig. 4f</xref>). We also show the learned transcriptional rate <italic>α</italic> as well as the predicted dynamics of unspliced and spliced RNA along pseudotime <italic>t</italic>, which clearly illustrate the time delays between transcription to unspliced and unspliced to spliced RNAs. The visualization of dynamics fitting on more genes are provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S6</xref>. Given that transcriptional regulation involves the binding of TF and chromatin accessibility as measured by ATAC, TSvelo shows that it is possible to model transcriptional signals using only scRNA-Seq data.</p>
+</sec>
+<sec id="s2e">
+<title>TSvelo can accurately infer cell fate and model lineage-specific gene dynamics for multi-lineage task</title>
+<p>Given that multi-lineage differentiation is a common phenomenon in larger and larger scRNA-seq datasets, developing the RNA velocity model that can handle such complexity is essential. Because TSvelo demonstrates robust performance across various tasks, its applicability can be extended to more complex situations, such as scRNA-seq datasets where cells differentiate into multiple fates. We apply TSvelo to a multi-lineage dentate gyrus scRNA-seq dataset, which captures the differentiation process from neural blast cells to various cell types<sup><xref ref-type="bibr" rid="c43">43</xref></sup>. During preprocessing, the velocity genes selected by TSvelo are enriched in GO terms related to neural development, such as axonogenesis (GO:0007409), axon guidance (GO:0007411) and axon development (GO:0061564) (<xref rid="fig5" ref-type="fig">Fig. 5a</xref>), which aligns with the biological processes described by the dataset.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5.</label>
+<caption><title>Results on the multi-lineage dentate gyrus dataset.</title>
+<p>(<bold>a</bold>) The GO terms enriched in the selected velocity genes of TSvelo. (<bold>b</bold>) The pseudotime learned with TSvelo. (<bold>c</bold>) The Stream-plot for visualization the RNA velocity inferred by TSvelo. Three lineages are detected, which are Granule lineage, CA lineage and glial lineage. (<bold>d</bold>) The velocity stream inferred by scVelo. (<bold>e</bold>) The velocity stream inferred by cellDancer. (<bold>f-h</bold>) The dynamics modeling of TSvelo on three axonogenesis-related genes, ANK3 (f), MAP1B (g) and SLC1A2 (h). In the leftmost plot of each panel, the lines represent the predicted spliced abundance across all lineages, with the color indicating the cell types most associated with each pseudotime point along the corresponding lineage. Additionally, expression data for each lineage are shown as translucent points. The remaining plots in each panel display the dynamics of the learned transcriptional rate (in green), unspliced abundance (in blue), and spliced abundance (in red) along pseudotime for each lineage. The transcriptional representation in these plots is also processed using GAM fitting.</p></caption>
+<graphic xlink:href="630058v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>TSvelo could correctly identify three lineages from this data. Details about the lineage segmentation are provided in Methods and <xref ref-type="supplementary-material" rid="supp1">Fig. S7</xref>. After applying the TSvelo model to each lineage and combine the results, the inferred pseudotime and velocity stream plots (<xref rid="fig5" ref-type="fig">Fig. 5b</xref> and <xref rid="fig5" ref-type="fig">Fig. 5c</xref>) align with the ground truth differentiation trajectory well, which begins with neural blast cells. We also compare TSvelo to baseline methods, including scVelo and cellDancer. Notably, cellDancer is designed to handle such multi-lineage data by modeling cell-and gene-specific transcriptional rates, splicing rates, and degradation rates using neural networks. As shown in <xref rid="fig5" ref-type="fig">Fig. 5d</xref> and <xref rid="fig5" ref-type="fig">Fig. 5e</xref>, scVelo struggles with this multi-lineage dataset, and cellDancer fails to correctly capture the trajectory of immature granule cells (colored in purple).</p>
+<p>Next, we analyze gene expression patterns across different lineages. TSvelo provides inferred dynamics along each lineage, revealing that the expression of ANK3 in the granule and Cornu Ammonis (CA) lineages follows an increasing and then decreasing pattern. In contrast, the expression of ANK3 in the glial lineage decreases to zero (<xref rid="fig5" ref-type="fig">Fig. 5f</xref>). The similar pattern is also observed for other genes, such as MAP1B (<xref rid="fig5" ref-type="fig">Fig. 5g</xref>). Both ANK3<sup><xref ref-type="bibr" rid="c44">44</xref></sup> and MAP1B<sup><xref ref-type="bibr" rid="c45">45</xref></sup> are associated with GO terms axonogenesis and axon guidance. This observation is consistent with the fact that the granule and Cornu Ammonis<sup><xref ref-type="bibr" rid="c46">46</xref></sup> predominantly consist of neurons, where axons are a critical component. In contrast, glial cells, such as astrocytes, typically lack axons, providing a potential explanation for these expression patterns. SLC1A2 exhibits a distinct expression pattern, showing a significant increase in the glial lineage and a decrease in the granule and CA lineages. This pattern aligns with the observation that astrocytes are the primary cell type expressing SLC1A2<sup><xref ref-type="bibr" rid="c47">47</xref></sup>. Details about dynamics fitting for genes on each lineage are provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S8</xref>.</p>
+</sec>
+<sec id="s2f">
+<title>TSvelo can accurately infer cell fate and model lineage-specific gene dynamics on Larry dataset</title>
+<p>The Lineage and RNA Recovery (LARRY) method utilizes barcoded hematopoietic cells to trace both cell lineage and gene expression over time. LARRY has been successfully employed to track the in vitro differentiation of human blood cells, accurately capturing lineage trajectories and cell fates<sup><xref ref-type="bibr" rid="c48">48</xref></sup>.</p>
+<p>On this LARRY dataset which encompass a total of 49,302 cells on multiple lineages, TSvelo effectively detects the initial Leiden clusters based on the unspliced-to-spliced delay (<xref rid="fig6" ref-type="fig">Fig. 6a</xref> and <xref rid="fig6" ref-type="fig">Fig. 6b</xref>) and separate its lineages. Furthermore, <xref rid="fig6" ref-type="fig">Fig. 6c</xref> and <xref rid="fig6" ref-type="fig">Fig. 6d</xref> show that the pseudotime and velocity stream inferred by TSvelo can accurately capture the differentiation process, progressing from undifferentiated cells to distinct cell fates. The velocity genes selected by TSvelo are significantly enriched in processes related to neutrophil biology, such as neutrophil degranulation (GO:0043312), neutrophil activation in immune response (GO:0002283), and neutrophil-mediated immunity (GO:0002446).</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6.</label>
+<caption><title>Results on the LARRY dataset.</title>
+<p>(<bold>a</bold>) The Leiden clustering on LARRY. (<bold>b</bold>) The initial Leiden cluster detection in preprocessing. (<bold>c</bold>) The pseudotime learned with TSvelo. (<bold>d</bold>) The Stream-plot for visualization the RNA velocity inferred by TSvelo. (<bold>e</bold>) The GO terms enriched in the selected velocity genes of TSvelo. (<bold>f</bold>) The dynamics modeling of TSvelo on four genes related to neutrophil development, which are PYGL, MS4A3, CLEC12A and LTA4H. The lines represent the predicted spliced abundance across all lineages, with the color indicating the cell types most strongly associated with each pseudotime point along the corresponding lineage. (<bold>g</bold>) The dynamics modeling of PYGL, MS4A3, CLEC12A and LTA4H on the neutrophil lineage.</p></caption>
+<graphic xlink:href="630058v3_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>We further analyzed the expression patterns of genes associated with neutrophil degranulation, focusing specifically on the neutrophil lineage. Using four representative genes as examples (<xref rid="fig6" ref-type="fig">Figs. 6f, g</xref>), TSvelo can help observe the significant variation in the expression patterns across these genes. PYGL, which has been widely reported as a key gene in neutrophil<sup><xref ref-type="bibr" rid="c49">49</xref></sup>, is almost exclusively expressed in neutrophil cells and exhibits an increasing expression pattern during neutrophil differentiation. In contrast, MS4A3 was examined across all lineages, and using TSvelo, we observed that its expression initially increases and then decreases in both the neutrophil and monocyte lineages. This pattern is consistent with prior studies identifying MS4A3 as a gene specifically expressed by granulocyte-monocyte progenitors<sup><xref ref-type="bibr" rid="c42">42</xref></sup>. Similarly, CLEC12A, another gene associated with neutrophil degranulation, shows a comparable expression trajectory during neutrophil differentiation. Previous research has indicated that CLEC12A expression is highest in granulocyte-macrophage progenitors<sup><xref ref-type="bibr" rid="c50">50</xref></sup>. LTA4H exhibits a pattern similar to that of CLEC12A, suggesting it may play a significant role in the early stages of neutrophil differentiation. These findings further confirm the utility of TSvelo for gene-level analysis in multi-lineage differentiation datasets.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>RNA velocity, utilizing unspliced/spliced data, has become a widely adopted concept for predicting cell fate and modeling gene dynamics. While several RNA velocity models have been proposed, most of they are based on phase portrait fitting in the unspliced-spliced space. However, due to the limited information and high noise inherent in the splicing data of individual genes, the short time delays between unspliced and spliced abundance, and the challenges posed by large-scale datasets with complex processes, most genes cannot be accurately modeled by previous RNA velocity methods. This limitation reduces the reliability and robustness of downstream analyses.</p>
+<p>Gene expression is a complex biological process within cells, involving multiple regulatory mechanisms from DNA to the matured RNA. In this process, transcription and splicing are two crucial steps to determine the final gene expression. Due to the mathematical complexity, previous methods cannot jointly model gene regulation, transcription and splicing. TSvelo comprehensively models the cascade of the whole process using an interpretable ODE framework, allowing for learning dynamics of all velocity genes simultaneously. TSvelo could accurately model gene dynamics, predict cell fate, detect the key regulatory relations, and handle multi-lineage datasets. Results on six scRNA-seq datasets demonstrate that TSvelo is a valuable approach for RNA velocity modeling (results on pons dataset are provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S1</xref>).</p>
+<p>Looking ahead, TSvelo could be further improved by more accurately modeling the splicing and degradation process. Currently, TSvelo assumes a constant gene-specific splicing and degradation rates. Since splicing factors also play significant roles in regulating other genes during the splicing process<sup><xref ref-type="bibr" rid="c51">51</xref></sup>, and there are still complex mechanisms of mRNA degradation<sup><xref ref-type="bibr" rid="c52">52</xref></sup>, further exploration could enhance velocity’s modelling and bring new biological insights in future.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Preprocessing for scRNA-seq data</title>
+<p>The unspliced and spliced RNA abundances are preprocessed with multiple steps, which includes highly variable genes (HVGs) selection, normalization, log transformation, k-nearest neighbor (KNN) smoothing, and clustering. Following the data preprocessing procedures outlined in scVelo<sup><xref ref-type="bibr" rid="c6">6</xref></sup>, we first select the top 2,000 highly variable genes (HVGs) and normalize their expression profiles by dividing by the total counts in each cell. A nearest-neighbor graph (with 30 neighbors by default) was constructed based on Euclidean distances in principal component analysis space (with 30 principal components by default) on log-transformed gene expression data. Subsequently, we compute the first- and second-order moments (mean and uncentered variance) for each cell across its nearest neighbors. These steps are performed by using <monospace>scvelo.pp.filter_and_normalize()</monospace> and <monospace>scvelo.pp.moments()</monospace>.</p>
+</sec>
+<sec id="s4b">
+<title>Acquiring Prior Knowledge of Gene Regulatory Relations</title>
+<p>To construct a prior gene network for the selected HVGs, we utilize TF-target annotations from the ENCODE<sup><xref ref-type="bibr" rid="c53">53</xref></sup> and ChEA<sup><xref ref-type="bibr" rid="c54">54</xref></sup> databases. If a regulatory interaction between a transcription factor (TF) and its target gene is identified in either of these two databases, the TF is included in the set of regulators for modeling the dynamic behavior of the target gene.</p>
+</sec>
+<sec id="s4c">
+<title>Velocity genes selection</title>
+<p>Previous studies<sup><xref ref-type="bibr" rid="c6">6</xref></sup> have demonstrated that only a subset of genes, termed “velocity genes,” can be accurately fitted in the unspliced-spliced phase portrait by RNA velocity models. Inspired by the notion that velocity genes provide high-quality data for dynamic modeling in the phase portrait, we propose to select velocity genes during the preprocessing step. The velocity genes are selected based on the premise that they exhibit clear dynamics in the unspliced-spliced phase portrait, which is necessary for precise modeling splicing dynamics. The selection is based on the similarity between cell-cell neighborhood relationships in UMAP space and those observed in gene-specific unspliced-spliced phase portraits. In detail, we first compute the cell-cell neighborhood graph, <italic>Graph</italic>, using <monospace>scvelo.pp.neighbors()</monospace> on all highly variable genes (HVGs). Next, we construct an anndata object <italic>adata</italic><sub><italic>g</italic></sub> for each gene, which contains only the unspliced and spliced expression data of that gene. We then apply <monospace>scvelo.pp.neighbors()</monospace> to each <italic>adata</italic><sub><italic>g</italic></sub> to calculate the gene-specific neighborhood graph, denoted as <italic>Graph</italic><sub><italic>g</italic></sub>. Subsequently, we compute the similarity between <italic>Graph</italic> and each <italic>Graph</italic><sub><italic>g</italic></sub>. The top 100 genes with the highest similarity are selected as velocity genes. These genes are characterized by phase portraits that exhibit a structure similar to that of the UMAP space, thereby enhancing the separation of cells from different types. As a result, the splicing dynamics of these velocity genes are more likely to be captured by RNA velocity models.</p>
+</sec>
+<sec id="s4d">
+<title>Lineages segmentation and pseudotime initialization</title>
+<p>Based on the normalized gene expression data, we perform Leiden clustering using <monospace>scanpy.tl.leiden()</monospace> with a low resolution (default resolution = 0.1). These Leiden clusters are utilized to identify lineages and determine the differentiation direction for each lineage. Subsequently, we apply PAGA (<monospace>scanpy.tl.paga()</monospace>) to assess the connectivity between Leiden groups.</p>
+<p>By setting one Leiden group as the initial state, we infer pseudotime using diffusion pseudotime (DPT) with <monospace>scanpy.tl.dpt()</monospace>. To detect lineages, we start from the selected initial Leiden cluster and filter the PAGA graph by applying a threshold (default = 0.02). Edges with weights below this threshold are removed, leaving only the shortest path from the initial state to each group. The remaining paths are considered as the detected lineages.</p>
+<p>Given a lineage, TSvelo could detect the orientation of differentiation along it, which is based on the fact that unspliced RNA precedes spliced RNA in the expression pattern<sup><xref ref-type="bibr" rid="c55">55</xref></sup>. For each gene, TSvelo computes the Spearman correlation between unspliced and spliced abundance across different moving steps along the DPT. The time number of moving steps along unspliced to spliced expression, which maximizes the Spearman correlation, is considered the U-to-S delay. <xref rid="fig1" ref-type="fig">Fig. 1a</xref> illustrates how U-to-S delay can be used to validate the accuracy of pseudotime, with EML5 serving as an example. Then the U-to-S delay for that lineage is calculated as the mean U-to-S delay for all genes on it. And the average U-to-S delay across all lineages provides the overall U-to-S delay for the initial Leiden cluster. Finally, the initial Leiden cluster with the highest U-to-S delay is considered the correct initiation. The DPT under this condition is used to initialize pseudotime for TSvelo. If multiple lineages are detected, TSvelo will model each lineage independently and subsequently merge them in the final step. A detailed explanation with example illustrating how lineages are segmented is provided in <xref ref-type="supplementary-material" rid="supp1">Fig. S7</xref>.</p>
+</sec>
+<sec id="s4e">
+<title>The ODE model in TSvelo</title>
+<p>Suppose <italic>u</italic><sub><italic>g</italic></sub> and <italic>s</italic><sub><italic>g</italic></sub> are the abundance of unspliced and spliced RNA, and <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>), <italic>β</italic><sub><italic>g</italic></sub>, <italic>γ</italic><sub><italic>g</italic></sub> are the transcription rate, splicing rate and degradation rate, respectively. The dynamics of a velocity gene <italic>g</italic> is modeled as:
+<disp-formula id="eqn4">
+<graphic xlink:href="630058v3_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn5">
+<graphic xlink:href="630058v3_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+We assume that the gene and cell-specific transcriptional rate <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>) is influence by the expression of Transcriptional Factors (TFs), while <italic>β</italic><sub><italic>g</italic></sub> and <italic>γ</italic><sub><italic>g</italic></sub> are gene-specific constant parameters. Considering the wide usage of linear models for gene-relations in previous studies<sup><xref ref-type="bibr" rid="c26">26</xref>,<xref ref-type="bibr" rid="c30">30</xref>-<xref ref-type="bibr" rid="c33">33</xref></sup>, we model <italic>α</italic><sub><italic>g</italic></sub>(<italic>t</italic>) as
+<disp-formula id="eqn6">
+<graphic xlink:href="630058v3_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+In order to include more TFs in the modeling, we reserve those TFs that are not selected as velocity genes. These TFs are excluded from the velocity genes selection because their unspliced-spliced expression does not provide sufficient information, primarily due to high noise in the unspliced RNA. Consequently, we incorporate these TFs, whose spliced abundance is denoted as <italic>s</italic><sup><italic>′</italic></sup>, into the TSvelo by directly modeling the process between transcriptional signal to mature RNA,
+<disp-formula id="eqn7">
+<graphic xlink:href="630058v3_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+As a result, we can get the ODE model with parameters matrix <italic>A</italic>:
+<disp-formula id="eqn8">
+<graphic xlink:href="630058v3_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<inline-formula id="inline-eqn-1"><inline-graphic xlink:href="630058v3_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the number of velocity genes and <italic>K</italic> is the number of additional TFs which are not selected as velocity genes. <italic>B</italic> ∈<italic>R</italic><sup>GxG</sup> and are the diagonal matrices consist of splicing rates [<italic>β</italic><sub>1</sub>, <italic>β</italic><sub>2</sub> …, <italic>β</italic><sub><italic>G</italic></sub>]and degradation rates [<italic>γ</italic><sub>1</sub>, <italic>γ</italic><sub>2</sub> …, <italic>γ</italic><sub><italic>G</italic></sub>] for velocity genes, respectively. Γ <sup>′</sup> ∈<italic>R</italic> <sup><italic>K</italic> ×<italic>K</italic></sup> is the diagonal matrices consist of degradation rates [<italic>γ</italic><sub><italic>G</italic>+1</sub>, <italic>γ</italic><sub><italic>G</italic>+2</sub>, …, <italic>γ</italic><sub><italic>G</italic>+<italic>K</italic></sub> for these additional TFs. <italic>W</italic> ∈<italic>R</italic> <sup><italic>G</italic> ×<italic>G</italic></sup> and <italic>W</italic> <sup>′</sup> ∈<italic>R</italic> <sup><italic>K</italic> ×<italic>K</italic></sup> denote the matrices representing the TF-target relationships for the TFs selected as velocity genes and those not selected as velocity genes, respectively. Using these gene-gene weight matrices, TSvelo can model the gene- and cell-specific transcriptional rate <italic>α</italic><sub><italic>g</italic></sub>. The whole parameters matrix <italic>A</italic> ∈<italic>R</italic> <sup>(2<italic>G</italic>+<italic>K</italic>) × (2<italic>G</italic>+<italic>K</italic>)</sup></p>
+</sec>
+<sec id="s4f">
+<title>Optimizing global time and Neural ODE in EM framework</title>
+<p>In TSvelo, the dynamics described in <xref ref-type="disp-formula" rid="eqn7">Eq. 7</xref> are implemented using a neural ordinary differential equation (ODE) model. Given an initial state and the parameters in matrix <italic>A</italic>, the neural ODE model can compute the values of U and S at any time step. This approach eliminates the need for an analytical solution for unspliced and spliced expression, enhancing the flexibility of TSvelo. By default, the number of time steps in the ODE is set to 1,000. The ReLU activation function is applied to the parameters <italic>α</italic><sub><italic>g</italic></sub>, <italic>β</italic><sub><italic>g</italic></sub> and <italic>γ</italic><sub><italic>g</italic></sub>, in order to prevent them from taking negative values. Notably, TSvelo does not incorporate deep neural networks or encoders. Since TSvelo models all genes simultaneously, we normalize the unspliced and spliced abundances of each gene by its standard deviation before inputting the data into the Neural ODE model to ensure that the influence of each gene is balanced.</p>
+<p>TSvelo optimize the pseudotime and parameters matrix in ODE iteratively using an Expectation-Maximization (EM) approach. The maximum number of iterations is set to 30 by default, with an early stopping criterion applied. Given the parameters in ODE system, we can compute the predicted values of unspliced (for velocity genes) and spliced (for velocity genes and additional TFs) at all time steps, denoted as <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="630058v3_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="630058v3_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, where <italic>t</italic><sub><italic>step</italic></sub> ∈ {0,1,2 …,999}. Given the time steps assignment <italic>t</italic><sub><italic>c</italic></sub> for each cell <italic>c</italic>, we can get the expected values for velocity genes at all cells as <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="630058v3_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="630058v3_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula>. The loss function used in EM algorithm is the mean squared error between the expected value with the observed data.
+<disp-formula id="eqn9">
+<graphic xlink:href="630058v3_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The EM algorithm will iteratively update the time assignment and parameters in neural ODE by minimizing the above loss function.</p>
+<p>In the E-step, TSvelo updates the time step assigned to each cell using grid search with time steps range <italic>t</italic><sub><italic>step</italic></sub> ∈ {0,1,2 …,999}, which is achieved by finding the minimum di stance between the observed unspliced-spliced expression and the model prediction (<inline-formula id="inline-eqn-6"><inline-graphic xlink:href="630058v3_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="630058v3_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula>) at all time steps.
+<disp-formula id="eqn10">
+<graphic xlink:href="630058v3_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+In the M-step, the parameter matrix <italic>A</italic> is updated using gradient descent within the neural ODE model to minimize the loss function. Here we use the prior gene regulation knowledge to constraint the weight matrix <italic>W</italic> and <italic>W</italic> <sup>′</sup> in <italic>A</italic>. Only If gene <italic>i</italic> is annotated as a TF for gene <italic>j</italic> in the ENCODE or ChEA databases, the corresponding <italic>w</italic><sub><italic>ij</italic></sub> could be learnable. Otherwise <italic>w</italic><sub><italic>ij</italic></sub> is fixed at zero. The usage of prior knowledge could keep the matrix sparse and avoid overfitting. The neural ODE module is implemented using the torchdiffeq package and trained with the Adam optimizer, a learning rate of 0.05, and a maximum of 500 epochs, incorporating an early stopping criterion to prevent overfitting.
+<disp-formula id="eqn11">
+<graphic xlink:href="630058v3_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+By performing the EM optimization, TSvelo could fit the high-dimensional unspliced-spliced data across multiple genes well, and learn the global pseudotime for each cell. After the training procedure, the RNA velocity could be calculated using those parameters in matrix <italic>A</italic>, which could be further used for cell fate prediction.</p>
+</sec>
+<sec id="s4g">
+<title>Metrics for evaluating</title>
+<list list-type="order">
+<list-item><p>Velocity consistency. We used the <monospace>scvelo.velocity_confidence()</monospace> function from scVelo to evaluate velocity consistency, interpreting the results as a measure of how consistent velocities are within neighboring cells.</p></list-item>
+<list-item><p>Cross-boundary direction correctness. Cross-boundary direction correctness assesses the accuracy of transitions from a source cluster to a target cluster by examining the boundary cells, and requires ground truth annotations. We directly run the function <monospace>unitvelo.evaluate()</monospace> provided in UniTVelo<sup><xref ref-type="bibr" rid="c7">7</xref></sup> to obtain the Cross-boundary direction correctness.</p></list-item>
+<list-item><p>Within-cluster velocity coherence. Within-cluster velocity coherence measures the coherence of velocities within a single cluster using a cosine similarity score between cell velocities. We applied the function <monospace>unitvelo.evaluate()</monospace> provided by UniTVelo<sup><xref ref-type="bibr" rid="c7">7</xref></sup> to directly compute the within-cluster velocity coherence.</p></list-item>
+</list>
+</sec>
+<sec id="s4h">
+<title>GO term enrichment analysis</title>
+<p>Gene Ontology (GO) terms enrichment analysis is a widely used method for identifying biological processes, molecular functions, or cellular components that are overrepresented in a given set of genes compared to a background set. Here we use the biological processes enrichment analysis in GO terms database to explore the associated biological roles of those selected velocity genes. To perform the GO term enrichment analysis, we utilized the “<monospace>gseapy.enrichr()</monospace>” function in Python with using Fisher’s exact test by default.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec id="s5" sec-type="data-availability">
+<title>Data availability statement</title>
+<p>The pancreatic endocrinogenesis dataset<sup><xref ref-type="bibr" rid="c56">56</xref></sup> comprises the single-cell RNA-seq (10X) data of pancreatic epithelial and Ngn3-Venus fusion cells sampled from mouse embryonic day 15.5, which could be loaded using scVelo’s package <monospace>scvelo.datasets.pancreas()</monospace>. The gastrulation erythroid dataset, which is selected from the transcriptional profiles of mouse embryos<sup><xref ref-type="bibr" rid="c35">35</xref></sup>, which could be loaded using scVelo’s package <monospace>scvelo.datasets.pancreas()</monospace>. 10x embryonic mouse brain dataset is provided at the 10x website at <ext-link ext-link-type="uri" xlink:href="https://www.10xgenomics.com/resources/datasets/fresh-embryonic-e-18-mouse-brain-5-k-1-standard-1-0-0">https://www.10xgenomics.com/resources/datasets/fresh-embryonic-e-18-mouse-brain-5-k-1-standard-1-0-0</ext-link>. The data preprocessed by Multivelo is utilized in this study, (<ext-link ext-link-type="uri" xlink:href="https://multivelo.readthedocs.io/en/latest/MultiVelo_Fig2.html">https://multivelo.readthedocs.io/en/latest/MultiVelo_Fig2.html</ext-link>). The dentate gyrus neurogenesis data is available at <ext-link ext-link-type="uri" xlink:href="http://pklab.med.harvard.edu/velocyto/DentateGyrus/DentateGyrus.loom">http://pklab.med.harvard.edu/velocyto/DentateGyrus/DentateGyrus.loom</ext-link> The LARRY dataset has been shared by pyrovelocity, which could be accessed at <ext-link ext-link-type="uri" xlink:href="https://figshare.com/articles/dataset/larry_invitro_adata_sub_raw_h5ad/20780344">https://figshare.com/articles/dataset/larry_invitro_adata_sub_raw_h5ad/20780344</ext-link>. The raw data of Hindbrain (pons) of adolescent mice is from <ext-link ext-link-type="uri" xlink:href="https://pklab.med.harvard.edu/ruslan/velocity/oligos/">https://pklab.med.harvard.edu/ruslan/velocity/oligos/</ext-link>. The ENCODE TF-target database<sup><xref ref-type="bibr" rid="c53">53</xref></sup> website: <ext-link ext-link-type="uri" xlink:href="https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets">https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets</ext-link>. The ChEA TF-target database<sup><xref ref-type="bibr" rid="c54">54</xref></sup> website: <ext-link ext-link-type="uri" xlink:href="https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets">https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets</ext-link>.</p>
+<sec id="s5a">
+<title>Code Availability Statement</title>
+<p>TSvelo is implemented in Python. The source code can be downloaded from the GitHub repository, <ext-link ext-link-type="uri" xlink:href="https://github.com/lijc0804/TSvelo">https://github.com/lijc0804/TSvelo</ext-link>.</p>
+</sec>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>This work was supported by National Natural Science Foundation of China (No. 62103262 to Y.Y.), and the National Key R&amp;D Program of China (2023YFF1204500 to Y.Y.).</p>
+</ack>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Supplementary file 1.</label>
+<caption>
+<title>Supplementary figures.</title>
+</caption>
+<media mimetype="application" mime-subtype="pdf" xlink:href="supp1.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>Reference</title>
+<ref id="c1"><label>1</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wolf</surname>, <given-names>F. A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>PAGA: graph abstraction reconciles clustering with trajectory inference through a topology preserving map of single cells</article-title>. <source>Genome biology</source> <volume>20</volume>, <fpage>1</fpage>–<lpage>9</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c2"><label>2</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Qiu</surname>, <given-names>X.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Reversed graph embedding resolves complex single-cell trajectories</article-title>. <source>Nature methods</source> <volume>14</volume>, <fpage>979</fpage>–<lpage>982</lpage> (<year>2017</year>).</mixed-citation></ref>
+<ref id="c3"><label>3</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Street</surname>, <given-names>K.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Slingshot: cell lineage and pseudotime inference for single-cell transcriptomics</article-title>. <source>BMC genomics</source> <volume>19</volume>, <fpage>1</fpage>–<lpage>16</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c4"><label>4</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Setty</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Characterization of cell fate probabilities in single-cell data with Palantir</article-title>. <source>Nature biotechnology</source> <volume>37</volume>, <fpage>451</fpage>–<lpage>460</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c5"><label>5</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>La Manno</surname>, <given-names>G.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>RNA velocity of single cells</article-title>. <source>Nature</source> <volume>560</volume>, <fpage>494</fpage>–<lpage>498</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c6"><label>6</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bergen</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Lange</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Peidli</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Wolf</surname>, <given-names>F. A.</given-names></string-name> &amp; <string-name><surname>Theis</surname>, <given-names>F. J.</given-names></string-name></person-group> <article-title>Generalizing RNA velocity to transient cell states through dynamical modeling</article-title>. <source>Nature biotechnology</source> <volume>38</volume>, <fpage>1408</fpage>–<lpage>1414</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c7"><label>7</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gao</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Qiao</surname>, <given-names>C.</given-names></string-name> &amp; <string-name><surname>Huang</surname>, <given-names>Y.</given-names></string-name></person-group> <article-title>UniTVelo: temporally unified RNA velocity reinforces single-cell trajectory inference</article-title>. <source>Nature Communications</source> <volume>13</volume>, <fpage>6586</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c8"><label>8</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gayoso</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Deep generative modeling of transcriptional dynamics for RNA velocity analysis in single cells</article-title>. <source>Nature methods</source> <volume>21</volume>, <fpage>50</fpage>–<lpage>59</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c9"><label>9</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Gu</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Blaauw</surname>, <given-names>D. T.</given-names></string-name> &amp; <string-name><surname>Welch</surname>, <given-names>J.</given-names></string-name></person-group> <year>2022</year> <article-title>Variational Mixtures of ODEs for Inferring Cellular Gene Expression Dynamics</article-title> In <conf-name>Proceedings of the 39th International Conference on Machine Learning, PMLR</conf-name>. <volume>162</volume> <fpage>7887</fpage>–<lpage>7901</lpage>.</mixed-citation></ref>
+<ref id="c10"><label>10</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Qin</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Bingham</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>La Manno</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Langenau</surname>, <given-names>D. M.</given-names></string-name> &amp; <string-name><surname>Pinello</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>Pyro-Velocity: Probabilistic RNA Velocity inference from single-cell data</article-title>. <source>bioRxiv</source> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c11"><label>11</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>S.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>A relay velocity model infers cell-dependent RNA velocity</article-title>. <source>Nature biotechnology</source>, <fpage>1</fpage>–<lpage>10</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c12"><label>12</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cui</surname>, <given-names>H.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>DeepVelo: deep learning extends RNA velocity to multi-lineage systems with cell-specific kinetics</article-title>. <source>Genome Biology</source> <volume>25</volume>, <fpage>27</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c13"><label>13</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Farrell</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Mani</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Goyal</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Inferring single-cell transcriptomic dynamics with structured latent gene expression dynamics</article-title>. <source>Cell Reports Methods</source> <volume>3</volume> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c14"><label>14</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Qiu</surname>, <given-names>X.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Mapping transcriptomic vector fields of single cells</article-title>. <source>Cell</source> <volume>185</volume>, <fpage>690</fpage>-<lpage>711.e645</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c15"><label>15</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ma</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>McDermaid</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Xu</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Chang</surname>, <given-names>Y.</given-names></string-name> &amp; <string-name><surname>Ma</surname>, <given-names>Q.</given-names></string-name></person-group> <article-title>Integrative methods and practical challenges for single-cell multi-omics</article-title>. <source>Trends in biotechnology</source> <volume>38</volume>, <fpage>1007</fpage>–<lpage>1022</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c16"><label>16</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Subramanian</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Verma</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Kumar</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Jere</surname>, <given-names>A.</given-names></string-name> &amp; <string-name><surname>Anamika</surname>, <given-names>K.</given-names></string-name></person-group> <article-title>Multi-omics data integration, interpretation, and its application</article-title>. <source>Bioinformatics and biology insights</source> <volume>14</volume>, <fpage>1177932219899051</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c17"><label>17</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gorin</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Svensson</surname>, <given-names>V.</given-names></string-name> &amp; <string-name><surname>Pachter</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>Protein velocity and acceleration from single-cell multiomics experiments</article-title>. <source>Genome biology</source> <volume>21</volume>, <fpage>1</fpage>–<lpage>6</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c18"><label>18</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Virgilio</surname>, <given-names>M. C.</given-names></string-name>, <string-name><surname>Collins</surname>, <given-names>K. L.</given-names></string-name> &amp; <string-name><surname>Welch</surname>, <given-names>J. D.</given-names></string-name></person-group> <article-title>Multi-omic single-cell velocity models epigenome–transcriptome interactions and improves cell fate prediction</article-title>. <source>Nature Biotechnology</source> <volume>41</volume>, <fpage>387</fpage>–<lpage>398</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c19"><label>19</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Riba</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Cell cycle gene regulation dynamics revealed by RNA velocity and deep-learning</article-title>. <source>Nature communications</source> <volume>13</volume>, <fpage>1</fpage>–<lpage>13</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c20"><label>20</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lederer</surname>, <given-names>A. R.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Statistical inference with a manifold-constrained RNA velocity model uncovers cell cycle speed modulations</article-title>. <source>Nature Methods</source> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c21"><label>21</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhou</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Bocci</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>Nie</surname>, <given-names>Q.</given-names></string-name></person-group> <article-title>Spatial transition tensor of single cells</article-title>. <source>Nature Methods</source> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c22"><label>22</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Abdelaal</surname>, <given-names>T.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>SIRV: Spatial inference of RNA velocity at the single-cell resolution</article-title>. <source>NAR genomics and bioinformatics</source> <volume>6</volume>, <fpage>lqae100</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c23"><label>23</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Pisco</surname>, <given-names>A. O.</given-names></string-name>, <string-name><surname>Braun</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Linnarsson</surname>, <given-names>S.</given-names></string-name> &amp; <string-name><surname>Zou</surname>, <given-names>J.</given-names></string-name></person-group> <article-title>Dynamical Systems Model of RNA Velocity Improves Inference of Single-cell Trajectory, Pseudo-time and Gene Regulation</article-title>. <source>Journal of Molecular Biology</source>, <fpage>167606</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c24"><label>24</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Gorin</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Fang</surname>, <given-names>M.</given-names></string-name>, <string-name><surname>Chari</surname>, <given-names>T.</given-names></string-name> &amp; <string-name><surname>Pachter</surname>, <given-names>L.</given-names></string-name></person-group> <article-title>RNA velocity unraveled</article-title>. <source>PLOS Computational Biology</source> <volume>18</volume>, <fpage>e1010492</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c25"><label>25</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Soneson</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Srivastava</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Patro</surname>, <given-names>R.</given-names></string-name> &amp; <string-name><surname>Stadler</surname>, <given-names>M. B.</given-names></string-name></person-group> <article-title>Preprocessing choices affect RNA velocity results for droplet scRNA-seq data</article-title>. <source>PLoS computational biology</source> <volume>17</volume>, <fpage>e1008585</fpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c26"><label>26</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Pan</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Yuan</surname>, <given-names>Y.</given-names></string-name> &amp; <string-name><surname>Shen</surname>, <given-names>H.-B.</given-names></string-name></person-group> <article-title>TFvelo: gene regulation inspired RNA velocity estimation</article-title>. <source>Nature Communications</source> <volume>15</volume>, <fpage>1387</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c27"><label>27</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bergen</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Soldatov</surname>, <given-names>R. A.</given-names></string-name>, <string-name><surname>Kharchenko</surname>, <given-names>P. V.</given-names></string-name> &amp; <string-name><surname>Theis</surname>, <given-names>F. J.</given-names></string-name></person-group> <article-title>RNA velocity—current challenges and future perspectives</article-title>. <source>Molecular systems biology</source> <volume>17</volume>, <fpage>e10282</fpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c28"><label>28</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hossain</surname>, <given-names>I.</given-names></string-name>, <string-name><surname>Fanfani</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Fischer</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Quackenbush</surname>, <given-names>J.</given-names></string-name> &amp; <string-name><surname>Burkholz</surname>, <given-names>R.</given-names></string-name></person-group> <article-title>Biologically informed NeuralODEs for genome-wide regulatory dynamics</article-title>. <source>Genome Biology</source> <volume>25</volume>, <fpage>127</fpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c29"><label>29</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Burdziak</surname>, <given-names>C.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>scKINETICS: inference of regulatory velocity with single-cell transcriptomics data</article-title>. <source>Bioinformatics</source> <volume>39</volume>, <fpage>i394</fpage>–<lpage>i403</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c30"><label>30</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tran</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Yang</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Yang</surname>, <given-names>J. Y.</given-names></string-name> &amp; <string-name><surname>Ormerod</surname>, <given-names>J. T.</given-names></string-name></person-group> <article-title>scREMOTE: Using multimodal single cell data to predict regulatory gene relationships and to build a computational cell reprogramming model</article-title>. <source>NAR genomics and bioinformatics</source> <volume>4</volume>, <fpage>lqac023</fpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c31"><label>31</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Song</surname>, <given-names>Q.</given-names></string-name>, <string-name><surname>Ruffalo</surname>, <given-names>M.</given-names></string-name> &amp; <string-name><surname>Bar-Joseph</surname>, <given-names>Z.</given-names></string-name></person-group> <article-title>Using single cell atlas data to reconstruct regulatory networks</article-title>. <source>Nucleic Acids Research</source> <volume>51</volume>, <fpage>e38</fpage>–<lpage>e38</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c32"><label>32</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>Y.-Y.</given-names></string-name>, <string-name><surname>Slotine</surname>, <given-names>J.-J.</given-names></string-name> &amp; <string-name><surname>Barabási</surname>, <given-names>A.-L.</given-names></string-name></person-group> <article-title>Controllability of complex networks</article-title>. <source>Nature</source> <volume>473</volume>, <fpage>167</fpage>–<lpage>173</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c33"><label>33</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname>, <given-names>L.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Dictys: dynamic gene regulatory network dissects developmental continuum with single-cell multiomics</article-title>. <source>Nature Methods</source> <volume>20</volume>, <fpage>1368</fpage>–<lpage>1378</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c34"><label>34</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Weiler</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Van den Berge</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Street</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Tiberi</surname>, <given-names>S.</given-names></string-name></person-group> In <source>Single Cell Transcriptomics: Methods and Protocols</source> <fpage>269</fpage>–<lpage>292</lpage> (<publisher-name>Springer</publisher-name>, <year>2022</year>).</mixed-citation></ref>
+<ref id="c35"><label>35</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pijuan-Sala</surname>, <given-names>B.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>A single-cell molecular map of mouse gastrulation and early organogenesis</article-title>. <source>Nature</source> <volume>566</volume>, <fpage>490</fpage>–<lpage>495</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c36"><label>36</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>Y.</given-names></string-name> &amp; <string-name><surname>Karlsson</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Perspectives of current understanding and therapeutics of Diamond-Blackfan anemia</article-title>. <source>Leukemia</source> <volume>38</volume>, <fpage>1</fpage>–<lpage>9</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c37"><label>37</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mukherjee</surname>, <given-names>K.</given-names></string-name> &amp; <string-name><surname>Bieker</surname>, <given-names>J. J.</given-names></string-name></person-group> <article-title>EKLF/Klf1 regulates erythroid transcription by its pioneering activity and selective control of RNA Pol II pause-release</article-title>. <source>Cell reports</source> <volume>41</volume> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c38"><label>38</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Perseu</surname>, <given-names>L.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>KLF1 gene mutations cause borderline HbA2</article-title>. <source>Blood, The Journal of the American Society of Hematology</source> <volume>118</volume>, <fpage>4454</fpage>–<lpage>4458</lpage> (<year>2011</year>).</mixed-citation></ref>
+<ref id="c39"><label>39</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Singleton</surname>, <given-names>B. K.</given-names></string-name>, <string-name><surname>Burton</surname>, <given-names>N. M.</given-names></string-name>, <string-name><surname>Green</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Brady</surname>, <given-names>R. L.</given-names></string-name> &amp; <string-name><surname>Anstee</surname>, <given-names>D. J.</given-names></string-name></person-group> <article-title>Mutations in EKLF/KLF1 form the molecular basis of the rare blood group In (Lu) phenotype</article-title>. <source>Blood, The Journal of the American Society of Hematology</source> <volume>112</volume>, <fpage>2081</fpage>–<lpage>2088</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c40"><label>40</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kuvardina</surname>, <given-names>O. N.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>RUNX1 represses the erythroid gene expression program during megakaryocytic differentiation</article-title>. <source>Blood, The Journal of the American Society of Hematology</source> <volume>125</volume>, <fpage>3570</fpage>–<lpage>3579</lpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c41"><label>41</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Buenrostro</surname>, <given-names>J. D.</given-names></string-name>, <string-name><surname>Giresi</surname>, <given-names>P. G.</given-names></string-name>, <string-name><surname>Zaba</surname>, <given-names>L. C.</given-names></string-name>, <string-name><surname>Chang</surname>, <given-names>H. Y.</given-names></string-name> &amp; <string-name><surname>Greenleaf</surname>, <given-names>W. J.</given-names></string-name></person-group> <article-title>Transposition of native chromatin for fast and sensitive epigenomic profiling of open chromatin, DNA-binding proteins and nucleosome position</article-title>. <source>Nature methods</source> <volume>10</volume>, <fpage>1213</fpage>–<lpage>1218</lpage> (<year>2013</year>).</mixed-citation></ref>
+<ref id="c42"><label>42</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>Z.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Fate mapping via Ms4a3-expression history traces monocyte-derived cells</article-title>. <source>Cell</source> <volume>178</volume>, <fpage>1509</fpage>-<lpage>1525.e1519</lpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c43"><label>43</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hochgerner</surname>, <given-names>H.</given-names></string-name>, <string-name><surname>Zeisel</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Lönnerberg</surname>, <given-names>P.</given-names></string-name> &amp; <string-name><surname>Linnarsson</surname>, <given-names>S.</given-names></string-name></person-group> <article-title>Conserved properties of dentate gyrus neurogenesis across postnatal development revealed by single-cell RNA sequencing</article-title>. <source>Nature neuroscience</source> <volume>21</volume>, <fpage>290</fpage>–<lpage>299</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c44"><label>44</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Leussis</surname>, <given-names>M. P.</given-names></string-name>, <string-name><surname>Madison</surname>, <given-names>J. M.</given-names></string-name> &amp; <string-name><surname>Petryshen</surname>, <given-names>T. L.</given-names></string-name></person-group> <article-title>Ankyrin 3: genetic association with bipolar disorder and relevance to disease pathophysiology</article-title>. <source>Biology of mood &amp; anxiety disorders</source> <volume>2</volume>, <fpage>1</fpage>–<lpage>13</lpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c45"><label>45</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Meixner</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>MAP1B is required for axon guidance and is involved in the development of the central and peripheral nervous system</article-title>. <source>The Journal of cell biology</source> <volume>151</volume>, <fpage>1169</fpage>–<lpage>1178</lpage> (<year>2000</year>).</mixed-citation></ref>
+<ref id="c46"><label>46</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Douglas</surname>, <given-names>R. J.</given-names></string-name></person-group> <article-title>The hippocampus and behavior</article-title>. <source>Psychological bulletin</source> <volume>67</volume>, <fpage>416</fpage> (<year>1967</year>).</mixed-citation></ref>
+<ref id="c47"><label>47</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sun</surname>, <given-names>Y.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Promotion of astrocyte-neuron glutamate-glutamine shuttle by SCFA contributes to the alleviation of Alzheimer’s disease</article-title>. <source>Redox Biology</source> <volume>62</volume>, <fpage>102690</fpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c48"><label>48</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Weinreb</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Rodriguez-Fraticelli</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Camargo</surname>, <given-names>F. D.</given-names></string-name> &amp; <string-name><surname>Klein</surname>, <given-names>A. M.</given-names></string-name></person-group> <article-title>Lineage tracing on transcriptional landscapes links state to fate during differentiation</article-title>. <source>Science</source> <volume>367</volume>, <fpage>eaaw3381</fpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c49"><label>49</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Borella</surname>, <given-names>R.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Metabolic reprograming shapes neutrophil functions in severe COVID-19</article-title>. <source>European Journal of Immunology</source> <volume>52</volume>, <fpage>484</fpage>–<lpage>502</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c50"><label>50</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bill</surname>, <given-names>M.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Mapping the CLEC 12A expression on myeloid progenitors in normal bone marrow; implications for understanding CLEC 12A-related cancer stem cell biology</article-title>. <source>Journal of Cellular and Molecular Medicine</source> <volume>22</volume>, <fpage>2311</fpage>–<lpage>2318</lpage> (<year>2018</year>).</mixed-citation></ref>
+<ref id="c51"><label>51</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rogalska</surname>, <given-names>M. E.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Transcriptome-wide splicing network reveals specialized regulatory functions of the core spliceosome</article-title>. <source>Science</source> <volume>386</volume>, <fpage>551</fpage>–<lpage>560</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c52"><label>52</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Shyu</surname>, <given-names>A. B.</given-names></string-name>, <string-name><surname>Wilkinson</surname>, <given-names>M. F.</given-names></string-name> &amp; <string-name><surname>Van Hoof</surname>, <given-names>A.</given-names></string-name></person-group> <article-title>Messenger RNA regulation: to translate or to degrade</article-title>. <source>The EMBO journal</source> <volume>27</volume>, <fpage>471</fpage>–<lpage>481</lpage> (<year>2008</year>).</mixed-citation></ref>
+<ref id="c53"><label>53</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Feingold</surname>, <given-names>E.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>The ENCODE (ENCyclopedia of DNA elements) project</article-title>. <source>Science</source> <volume>306</volume>, <fpage>636</fpage>–<lpage>640</lpage> (<year>2004</year>).</mixed-citation></ref>
+<ref id="c54"><label>54</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lachmann</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>ChEA: transcription factor regulation inferred from integrating genome-wide ChIP-X experiments</article-title>. <source>Bioinformatics</source> <volume>26</volume>, <fpage>2438</fpage>–<lpage>2444</lpage> (<year>2010</year>).</mixed-citation></ref>
+<ref id="c55"><label>55</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ge</surname>, <given-names>M.</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>TIVelo: RNA velocity estimation leveraging cluster-level trajectory inference</article-title>. <source>Nat Commun</source> <volume>16</volume>, <elocation-id>6258</elocation-id> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c56"><label>56</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Bastidas-Ponce</surname>, <given-names>A.</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Comprehensive single cell mRNA profiling reveals a detailed roadmap for pancreatic endocrinogenesis</article-title>. <source>Development</source> <volume>146</volume>, <fpage>dev173849</fpage> (<year>2019</year>).</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108950.1.sa4</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Yang</surname>
+<given-names>Yongliang</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/03ns6aq57</institution-id><institution>Shanghai University of Medicine and Health Sciences</institution>
+</institution-wrap>
+<city>Shanghai</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study presents a <bold>valuable</bold> tool named TSvelo, a computational framework for RNA velocity inference that models transcriptional regulation and gene-specific splicing. The evidence supporting the claims of the authors is <bold>solid</bold>, although elaboration of the computational benchmark and datasets would have strengthened the study. The work will be of interest to computational scientists working in the field of RNA biology.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108950.1.sa3</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In the paper, the authors propose a new RNA velocity method, TSvelo, which predicts the transcription rate linearly based on the expression of RNA levels of transcription factors. This framework is an extension of its recent work TFvelo by including unspliced reads and designing a coherent neuralODE framework. Improved performance was demonstrated in six diverse datasets.</p>
+<p>Strengths:</p>
+<p>Overall, this method introduces innovative solutions to link cell differentiation and gene regulation, with a balance between model complexity (neuralODE) and interpretability (raw gene space).</p>
+<p>Weaknesses:</p>
+<p>While it seems to provide convincing results, there are multiple technical concerns for the authors to clarify and double-check.</p>
+<p>(1) The authors should clarify and discuss the TF-target map: here, the TF-target genes map is predefined by the TF binding's ChIP-seq data. This annotation is largely incomplete and mostly compiled from a set of bulk tissues. Therefore, for a certain population, the TF-target relation may change. This requires clarification and discussion, possibly exploring how to address this in the model. In addition, a regulon database could be added, e.g., DoRothEA?</p>
+<p>(2) The authors should clarify how example genes are selected. This is particularly unclear in Figure 2d.</p>
+<p>(3) The authors should clarify confidence in the statement in lines 179-180, that ANXA4 should initially decrease. This is particularly concerning, as TSvelo didn't capture the cell cycle transitions well during the initial part.</p>
+<p>(4) A support reference should be added for the statement in line 260 that &quot;neuron migrations are inside-out manner&quot;. There is no reference supporting this, and this statement is critical for the model assessment.</p>
+<p>(5) The comparison to scMultiomics data is particularly interesting, as MultiVelo uses ATAC data to predict the transcription rate. It would be very insightful to add a direct comparison of the estimated transcription rate between using ATAC and directly using TFs' RNA expressions.</p>
+<p>(6) In Figure 6g, it should be clarified how the lineage was determined. Did the authors use the LARRY barcodes, predicted cell fate, or any other methods? Here, the best way is probably using the LARRY barcodes for individual clones.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108950.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Li et al. propose TSvelo, a computational framework for RNA velocity inference that models transcriptional regulation and gene-specific splicing using a neural ODE approach. The method is intended to improve trajectory reconstruction and capture dynamic gene expression changes in scRNA-seq data. However, the manuscript in its current form falls short in several critical areas, including rigorous validation, quantitative benchmarking, clarity of definitions, proper use of prior knowledge, and interpretive caution. Many of the authors' claims are not fully supported by the evidence.</p>
+<p>Major comments:</p>
+<p>(1) Modeling comments</p>
+<p>(a) Lines 512-513: How does the U-to-S delay validate the accuracy of pseudotime? Using only a single gene as an example is not sufficient for &quot;validation.&quot;</p>
+<p>(b) Lines 512-518: The authors propose a strategy for selecting the initial state, but do not benchmark how accurate this selection procedure is, nor do they provide sufficient rationale. While some genes may indeed exhibit U-to-S delay during lineage differentiation, why does the highest U-to-S delay score indicate the correct initiation states? Please provide mathematical justification and demonstrate accuracy beyond using a single gene example. Maybe a simulation with ground truth could help here, too.</p>
+<p>(c) Equation (8): The formulation looks to be incorrect. If $$W \in \mathbb{R}^{G\times G}$$ and $$W' - \Gamma' \in \mathbb{R}^{K\times K}$$, how can they be aligned within the same row? Please clarify.</p>
+<p>(d) The use of prior knowledge graphs from ENCODE or ChEA to constrain regulation raises concerns. Much of the regulatory information in these databases comes from cell lines. How can such cell-line-based regulation be reliably applied to primary tissues, as is done throughout the manuscript? Additional experiments are needed to test the robustness of TSvelo with respect to prior knowledge.</p>
+<p>(e) Lines 579-580: How is the grid search performed? More methodological details are required. If an existing method was used, please provide a citation.</p>
+<p>(2) Application on pancreatic endocrine datasets</p>
+<p>(a) Lines 140-141: What is the definition of the final pseudotime-fitted time t or velocity pseudotime?</p>
+<p>(b) Lines 143-144: The use of the velocity consistency metric to benchmark methods in multi-lineage datasets is incorrect. In multi-lineage differentiation systems, cells (e.g., those in fate priming stages) may inherently show inconsistency in their velocity. Thus, it is difficult to distinguish inconsistency caused by estimation error from that arising from biological signals. Velocity consistency metrics are only appropriate in systems with unidirectional trajectories (e.g., cell cycling). The abnormally high consistency values here raise concerns about whether the estimated velocities meaningfully capture lineage differences.</p>
+<p>(c) The improvement of TSvelo over other methods in terms of cross-boundary direction correctness looks marginal; a statistical test would help to assess its significance.</p>
+<p>(d) Lines 177-178: Based on the figure, TSvelo does not appear to clearly distinguish cell types. A quantitative metric, such as Adjusted Rand Index (ARI), should be provided.</p>
+<p>(e) Lines 179-183: The claim that traditional methods cannot capture dynamics in the unspliced-spliced phase portrait is vague. What specific aspect is not captured-the fitted values or something else? Evidence is lacking. Please provide a detailed explanation and quantitative metrics to support this claim.</p>
+<p>(3) Application to gastrulation erythroid datasets</p>
+<p>(a) Lines 191-194: The observation that velocity genes are enriched for erythropoiesis-related pathways is trivial, since the analysis is restricted to highly variable genes (HVGs) from an erythropoiesis dataset. This enrichment is expected and therefore not informative.</p>
+<p>(b) Lines 227-228: It remains unclear how TSvelo &quot;accurately captures the dynamics.&quot; What is the definition of dynamics in this context? Figure 3g shows unspliced/spliced vs. fitted time plots and phase portraits, but without a quantitative definition or measure, the claim of superiority cannot be supported. Visualization of a single gene is insufficient; a systematic and quantitative analysis is needed.</p>
+<p>(4) Application to the mouse brain and other datasets</p>
+<p>(a) Lines 280-281: The authors cannot claim that velocity streams are smoother in TSvelo than in Multivelo based solely on 2D visualization. Similarly, claiming that one model predicts the correct differentiation trajectory from a 2D projection is over-interpretation, as has been discussed in prior literature see PMID: 37885016.</p>
+<p>(b) Lines 304-306: Beyond transcriptional signal estimation, how is regulation inferred solely from scRNA-seq data validated, especially compared with scATAC-seq data? Are there cases where transcriptome-based regulatory inference is supported by epigenomic evidence, thereby demonstrating TSvelo's GRN inference accuracy?</p>
+<p>(c) The claim that TSvelo can model multi-lineage datasets hinges on its use of PAGA for lineage segmentation, followed by independent modeling of dynamics within each subset. However, the procedure for merging results across subsets remains unclear.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108950.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Despite the abundance of RNA velocity tools, there are still major limitations, and there is strong skepticism about the results these methods lead to. In this paper, the authors try to address some limitations of current RNA velocity approaches by proposing a unified framework to jointly infer transcriptional and splicing dynamics. The method is then benchmarked on 6 real datasets against the most popular RNA velocity tools.</p>
+<p>While the approach has the potential to be of interest for the field, and may present improvements compared to existing approaches, there are some major limitations that should be addressed, particularly concerning the benchmark (see major comment 1).</p>
+<p>Major comments:</p>
+<p>(1) My main criticism concerns the benchmarking: real data lack a ground truth, and are absolutely not ideal for comparing methods, because one can only speculate what results appear to be more plausible.</p>
+<p>
+A solid and extensive simulation study, which covers various scenarios and possibly distinct data-generating models, is needed for comparing approaches. The authors should check, for example, the simulation studies in the BayVel approach (Section 4, BayVel: A Bayesian Framework for RNA Velocity Estimation in Single-Cell Transcriptomics). Clearly, all methods should be included in the simulation.</p>
+<p>(2) Related to the above: since a ground truth is missing, the real data analyses need to be interpreted with caution. I recommend avoiding strong statements, such as &quot;successfully captures the correct gene dynamics&quot;, or &quot;accurately infer&quot;, in favour of milder statements supported by the data, such as &quot;... aligns with the biological processes described&quot; (as in page 12), or &quot;results are compatible with current biological knowledge&quot;, etc...</p>
+<p>(3) Many methods perform RNA velocity analyses. While there is a brief description, I think it'd be useful to have a schematic summary (e.g., via a Table) of the main conceptual, mathematical, and computational characteristics of each approach.</p>
+<p>(4) Related to the above: I struggled to identify the main conceptual novelty of TSvelo, compared to existing approaches. I recommend explaining this aspect more extensively.</p>
+<p>(5) A computational benchmark is missing; I'd appreciate seeing the runtime and memory cost of all methods in a couple of datasets.</p>
+<p>(6) I think BayVel (mentioned above) should be added to the list of competing methods (both in the text and in the benchmarks). The package can be found here: <ext-link ext-link-type="uri" xlink:href="https://github.com/elenasabbioni/BayVel_pkgJulia">https://github.com/elenasabbioni/BayVel_pkgJulia</ext-link> .</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.108950.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Jiachen</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Zhe</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Shen</surname>
+<given-names>Hong-Bin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Yuan</surname>
+<given-names>Ye</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #1</bold></p>
+</disp-quote>
+<p>We appreciate the reviewer’s positive assessment of TSvelo and their helpful technical comments. In the revised manuscript, we will:</p>
+<p>(1) Provide a clearer discussion of TF–target annotations, their limitations, and potential integration of additional databases.</p>
+<p>(2) Clarify the rationale for example-gene selection (e.g., in Fig. 2d).</p>
+<p>(3) Re-evaluate and temper the interpretation regarding ANXA4 and early-stage cell-cycle transitions.</p>
+<p>(4) Add appropriate references supporting neuronal inside-out migration.</p>
+<p>(5) Include additional analysis comparing TF-based transcription rate estimation with ATAC-based estimates from MultiVelo.</p>
+<p>(6) Clarify how lineages were determined in Fig. 6g and incorporate barcode-based validation where applicable.</p>
+<p>(7) Correct all typographical errors noted.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2</bold></p>
+</disp-quote>
+<p>We appreciate the reviewer’s careful examination of modeling, benchmarking, and interpretation. To address these concerns, we will:</p>
+<p>(1) Expand the methodological justification for initial-state selection, add simulations with ground truth, and evaluate U-to-S delay more broadly across genes.</p>
+<p>(2) Clarify matrix formulations and ensure consistency in notation (e.g., Eq. 8).</p>
+<p>(3) Assess robustness to prior-knowledge graphs and evaluate alternatives beyond ENCODE/ChEA.</p>
+<p>(4) Add methodological details on parameter search.</p>
+<p>(5) Improve benchmarking on pancreatic endocrine datasets by including clear definitions of velocity pseudotime, ARI for cell-type separation, quantitative evaluation of phase-portrait fits, and appropriate interpretation of consistency metrics for multi-lineage systems.</p>
+<p>(6) Reframe claims about “accurate” or “correct” predictions where evidence is qualitative and strengthen quantitative support where possible.</p>
+<p>(8) Clarify lineage segmentation and merging when applying PAGA-guided multi-lineage modeling.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3</bold></p>
+</disp-quote>
+<p>We thank the reviewer for highlighting the need for more rigorous benchmarking and conceptual clarity. In response, we will:</p>
+<p>(1) Conduct an expanded simulation study incorporating different data-generating models.</p>
+<p>(2) Revise all strong claims to more cautious, evidence-based language.</p>
+<p>(3) Add a concise table summarizing conceptual and computational differences among RNA-velocity frameworks.</p>
+<p>(4) More clearly articulate the conceptual novelty of TSvelo relative to existing approaches.</p>
+<p>(5) Include runtime and memory benchmarks across representative datasets.</p>
+<p>(6) Explore additional methods in conceptual comparisons and benchmarking analyses.We appreciate the reviewers’ thoughtful input and agree that the suggested analyses and clarifications will significantly improve the rigor and clarity of the manuscript. We will incorporate all recommended revisions in the resubmission and provide a full, detailed, point-by-point response at that time.</p>
+</body>
+</sub-article>
+</article>
