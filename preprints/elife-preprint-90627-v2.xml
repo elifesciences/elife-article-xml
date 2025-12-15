@@ -93,7 +93,7 @@
 <role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>Boston University</institution>
+<institution-id institution-id-type="ror">https://ror.org/05qwgg493</institution-id><institution>Boston University</institution>
 </institution-wrap>
 <city>Boston</city>
 <country>United States of America</country>
@@ -107,7 +107,7 @@
 <role>Senior Editor</role>
 <aff>
 <institution-wrap>
-<institution>Boston University</institution>
+<institution-id institution-id-type="ror">https://ror.org/05qwgg493</institution-id><institution>Boston University</institution>
 </institution-wrap>
 <city>Boston</city>
 <country>United States of America</country>
@@ -120,11 +120,6 @@
 <author-notes>
 <corresp id="CR1"><label>*</label>Corresponding author: <email xlink:href="mailto:f.grunewald@rug.nl">f.grunewald@rug.nl</email> <email xlink:href="mailto:s.j.marrink@rug.nl">s.j.marrink@rug.nl</email></corresp>
 </author-notes>
-<pub-date pub-type="epub">
-<day>09</day>
-<month>04</month>
-<year>2024</year>
-</pub-date>
 <pub-date date-type="original-publication" iso-8601-date="2023-08-25">
 <day>25</day>
 <month>08</month>
@@ -205,14 +200,14 @@
 <label>Figure 1</label>
 <caption><title>Fundamental stages in topology generation from atomistic structures.</title>
 <p><italic>First, the provided input is parsed (step 1). Second, for every parsed residue its atoms are identified and, if needed, atom names are corrected and missing atoms are added (step 2). Third, mappings are taken from the library and a resolution transformation to the required output resolution is performed (step 3). Fourth, intra-residue interactions are added from blocks taken from the library, and inter-residue interactions are added from links taken from the library (step 4). Fifth, optionally, post-processing is performed to add</italic> e.g. <italic>an elastic network (step 5). Finally, the produced topology is written to output files (step 6)</italic>.</p></caption>
-<graphic xlink:href="2212.01191v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Nodes can have attributes that describe additional information such as a residue name or charge. However, only the atom name, residue name, and residue number are required as attributes. In addition, the edges of the <italic><bold>Molecule</bold></italic> follow the connectivity as defined by bonds, angles, or other bonded interactions. For example, two protein chains connected by a disulfide bridge would be considered a single <italic><bold>Molecule</bold></italic>. In contrast, a cofactor, which is only interacting via non-bonded interactions, would be a separate <italic><bold>Molecule</bold></italic>. Operations on <italic><bold>Molecules</bold></italic> usually add or remove bonded interactions or change node attributes. For convenience, <italic><bold>Processors</bold></italic> can also operate on a collection of molecules, which are defined by the <italic><bold>System</bold></italic> class (see <xref ref-type="fig" rid="fig2">Figure 2</xref>). A list of all available processors is given in the documentation.</p>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2</label>
 <caption><title>Organization of the vermouth library.</title>
 <p><italic>The vermouth library defines 5 types of data structures (blue) to store molecular information and force field information. For convenience, it also defines two collection classes (orange) composed of several data-structure instances. Data structures are initiated or get input from parsers, which read 6 types of data files (see <xref ref-type="table" rid="tbl1">Table S1</xref> for more details on file types). The central data structure(s) are <bold>Molecule</bold></italic> and <italic><bold>System.</bold></italic> These <italic>are changed, updated, or transformed by so-called <bold>Processor</bold> classes, which take force field data as input. Parsers, data structures, and <bold>Processors</bold> only depend on three libraries as shown. At the moment vermouth also exposes four types of writers (not shown here) to go along with the parsers (see <xref ref-type="table" rid="tbl2">Table S2</xref>).</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p><italic><bold>Processors</bold></italic> operate on <italic><bold>Molecules</bold></italic>. However, often additional data is required to perform the pipeline as defined by the <italic><bold>Processor</bold></italic>. The additional data can be provided in the form of one of the four other main data structures (<italic><bold>Blocks, Links, Modifications, Mappings</bold></italic>) or arguments of the processors that can be set in a script or via the command line interface. These four other data structures contain all molecular level information required to fully define and/or modify a topology for any type of MD code (e.g., atom types, bonded interactions, and positions) as well as enable transformations between topologies. For example, a <italic><bold>Mapping</bold></italic> consists of two molecular fragments at different resolutions and a correspondence between their particles. In contrast, <italic><bold>Blocks, Links, and Modifications</bold></italic> are graphs, which describe these molecular fragments, the links between those, and possible changes to fragments respectively. They are all subclasses of a <italic><bold>Molecule</bold></italic> and an extension of the graph class from the networkx library<sup><xref ref-type="bibr" rid="c49">49</xref></sup> (see <xref ref-type="fig" rid="fig2">Figure 2</xref>).</p>
 <p>As shown in <xref ref-type="fig" rid="fig2">Figure 2</xref>, to make the data structures that are force field specific (<italic><bold>Blocks, Links, Modifications</bold></italic>) easier to use, <italic>vermouth</italic> offers a second collection class called a <italic><bold>ForceField</bold></italic>. Every molecule must have a <italic><bold>ForceField</bold></italic> associated with it. Additional information on the data structures is given in the documentation.</p>
@@ -227,7 +222,7 @@
 <label>Figure 3</label>
 <caption><title>Illustration of atom recognition, mapping, and linking in topology generation.</title>
 <p><italic>a) To identify all atoms in the input molecule (black and orange) every residue in the molecule is overlaid with its canonical reference (blue and green). Atoms are recognized when they overlap with atoms in the reference (green). Atoms not present in the molecule are also identified (blue) and will be added later. Finally, atoms in the molecule not described by the canonical references are also labeled (orange) so that they may be identified later. b) Identifying the terminal atoms that are not part of the canonical residues. The modification templates are depicted in blue and the atoms they match in orange. The cysteine does not participate since it does not carry any unexpected atoms, and is depicted in grey for clarity. c) Mappings (blue, red, and green) describe a molecular fragment at two different resolutions and a correspondence between their particles. The correspondence is depicted approximately here. The mappings are applied to the molecule (black). d) Example of applying a Link. The link depicted (dark blue) adds an angle potential over CG backbone beads.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>After completing the repair stage everything is in place to perform the mapping to coarsegrained resolution. The mapping descriptions are read from the mapping input files in the library and tie together residue definitions at the all-atom and CG level and the correspondence between them (<xref ref-type="fig" rid="fig3">Figure 3c</xref>). Mapping to CG level in <italic>martinize2</italic> is done with a multistep subgraph isomorphism procedure, which is general enough to cover edge cases such as when mappings span multiple atomistic residues. A detailed description is provided in the Supporting Information. The mapping provides a <italic><bold>System</bold></italic> of <italic><bold>Molecules</bold></italic> at the CG level. These molecules already define all bonded interactions within the residues as well as the coordinates of the CG system. To generate the interactions that link the residues, a simple graph matching with library link definitions is done in the create-topology stage (<xref ref-type="fig" rid="fig3">Figure 3d</xref>). Finally, after that, we end up with the full CG topology, which is ready for post-processing steps. Post-processing summarizes all biases and modifications that have to be done on the CG molecule and its CG coordinates. For example, an elastic network is needed to keep the tertiary structure of the protein and is applied in the post-processing stage. Finally, <italic>martinize2</italic> writes out the CG coordinates and the CG topology file that are production-ready.</p>
 </sec>
@@ -240,14 +235,14 @@
 <label>Figure 4</label>
 <caption><title>Workflows for identifying protonation states or PTMs exemplified on protonated histidine.</title>
 <p><italic>In route a) the residue name of the protonated histidine extracted from the atomistic coordinates matches the residue name in the library and matches the fragment. Hence the protonation state is correctly picked up. In route b) the residue name matches that of neutral Histidine in the library. A mismatch of the fragments is recognized and the extra hydrogen is labelled. Subsequently by matching the extra hydrogen to a modification of the histidine block the protonated Histidine is recognized as neutral Histidine plus protonation modification and the correct parameters for protonated Histidine are generated.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The same procedure used for setting protonation states also applies to identifying any other common PTM. Using this procedure, lipidation, phosphorylation, amination or acetylation can be taken into account automatically. To demonstrate that <italic>martinize2</italic> can handle PTMs, we have implemented dummy parameters for testing of Tyrosine phosphorylations in the M2 force field and generated a Martini topology for the EGFR kinase as an example (PDB 2GS2). Residue TYR845 (see <xref ref-type="fig" rid="fig5">Figure 5</xref>), which is located in the activation loop of the EGFR kinase, is phosphorylated when the kinase is activated.<sup><xref ref-type="bibr" rid="c56">56</xref></sup> <italic>Martinize2</italic> was able to convert the structure in one go to M2 resolution. We note that at the time of writing the M3 force field is lacking parameters for these PTMs and they are therefore not implemented in <italic>martinize2</italic> yet. In this case, a warning is issued by the program.</p>
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5</label>
 <caption><title>Example of automated identification of PTMs.</title>
 <p><italic>CG Martini model of phosphorylated Tyrosine found in the EGFR kinase activation loop. The mapped structure of the phosphorylated residue is shown as beads overlying the atomistic structure.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2-4">
@@ -259,7 +254,7 @@
 <label>Figure 6</label>
 <caption><title>Fine-tuning options for the elastic network.</title>
 <p><italic>a) Elastic networks and backbone bonds within the human insulin dimer when generated with the molecule or all-option. The dimer consists of two chains colored in red and orange, which are connected by two disulfide bridges shown in purple. EN bonds are generated between the two chains and within the chains. b) Elastic network and backbone bonds within the insulin dimer when generated with the chain option. In this case, no elastic bonds are generated between the two chains. They are only connected by the disulfide bridge and non-bonded interactions. c) Elastic network within the Ftsz protein, when generated for both the intrinsically disordered tail domains (orange) and structural domain (red) d) Elastic network within the Ftsz protein when the EN is only generated within the structural domain by defining the EN unit as going from resid 12 to 320.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Furthermore, <italic>martinize2</italic> allows the definition of regions of residue IDs where an EN should be generated. This feature gives maximum flexibility and allows to bias structural regions of proteins whereas an EN in intrinsically disordered regions (IDRs) can be avoided. For example, <xref ref-type="fig" rid="fig6">Figure 6c</xref> and <xref ref-type="fig" rid="fig6">Figure 6d</xref> show the FtsZ protein of E-coli as predicted by alpha-fold.<sup><xref ref-type="bibr" rid="c61">61</xref>,<xref ref-type="bibr" rid="c62">62</xref></sup> FtsZ possesses a structural unit and two disordered tail domains. With the region option, <italic>martinize2</italic> allows the generation of an EN only for the structural domain. Within the old <italic>martinize</italic> superfluous bonds needed to be removed manually.</p>
 <p>Finally, we note that <italic>martinize2</italic> is now implemented in the Martini Database (MAD) GUI, which offers a further utility to remove certain elastic bonds selectively.<sup><xref ref-type="bibr" rid="c63">63</xref></sup> We note that this option is only available for protein molecules at the moment.</p>
@@ -272,7 +267,7 @@
 <label>Figure 7</label>
 <caption><title>Ligands, cofactors, and polymers transformed to CG Martini level.</title>
 <p><italic>a) Flavin Reductase with two FMNs and one NDP cofactor bound in the reference all-atom state and mapped to Martini CG as indicated by the spheres. The inset shows a zoom onto FMN; b) Lysozyme with benzene ligand bound in the reference all-atom structure and mapped to Martini CG resolution; c) Crown ether with Martini beads shown on top of the all-atom structure; d) Branched polyethylene at all-atom resolution (left) and Martini resolution (right) with the linear chain part shown in gray and the branches in yellow.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>To fully leverage this new feature, ligand data files are required to be present. Thus, we implemented mappings and parameters from a previously published small molecule database for the Martini 3 force field.<sup><xref ref-type="bibr" rid="c65">65</xref></sup> The set comprises 43 small molecules, which are often part of drugs or drug precursors. All small molecules have corresponding parameters in the CHARMM ligand database, which allows users to directly convert atomistic CHARMM simulations to Martini. Mapping directly from crystal structures as present for example in the PDB or other force fields is also possible. In these cases, the residue names may have to be adjusted to be the same as in the CHARMM naming convention.</p>
 <p>In addition to creating topologies for linear biopolymers, <italic>martinize2</italic> is now also able to handle topologically more complex molecules. For example, crown ether (<xref ref-type="fig" rid="fig7">Figure 7c</xref>) consists of six polyethylene glycol (PEG) repeat units and is cyclic. To test whether <italic>martinize2</italic> can handle cyclic molecules of multiple repeat units it was converted to Martini2 resolution applying the latest PEG parameters.<sup><xref ref-type="bibr" rid="c66">66</xref></sup> The second example is branched polyethylene (PE), where we chose a sequence that begins with two linear units followed by three branched ones and two linear units after. Also, this molecule is converted to Martini2 resolution<sup><xref ref-type="bibr" rid="c67">67</xref></sup> by <italic>martinize2</italic> (<xref ref-type="fig" rid="fig7">Figure 7d</xref>).</p>
@@ -285,7 +280,7 @@
 <label>Figure 8</label>
 <caption><title>Summary of the successes and failures of the high-throughput pipeline.</title>
 <p><italic>We ran the pipeline on the 87084 structures from the template library used by the I-TASSER</italic><sup><xref ref-type="bibr" rid="c68">68</xref></sup> <italic>protein prediction software of which 73% could be converted with martinize2. The other 26.4% failed mostly due to missing coordinates, and unrecognized residues. For 100% of the converted structures, a GROMACS run input file (i.e. tpr-file) could be generated, and on all but 13 of the converted structures, an energy minimization could be performed.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Of the 87084 structures in the dataset, 63680 (73%) could be processed through the whole workflow without error. The main cause of failure (25% of the structures) was missing coordinates in the input structures. When all the atoms that compose a bead are missing from the input, <italic>martinize2</italic> can generate a topology but it cannot generate coordinates for the bead. Note that if only some atoms are missing, then <italic>vermouth</italic> does estimate the position of the bead. 876 structures (1%) had missing coordinates in the backbone that prevented the use of DSSP<sup><xref ref-type="bibr" rid="c69">69</xref>,<xref ref-type="bibr" rid="c70">70</xref></sup>. Finally, 802 input structures (1%) had at least one residue that was inconsistent with the library. Upon further inspection, most of these structures contain malformed glycine residues with an unexpected Cp atom. <italic>Martinize2</italic> detected these inconsistencies and emitted a warning for each of them; warnings can be explicitly and selectively ignored, if they are not no output is written to avoid subsequent workflow steps working with corrupted files.</p>
 <p>All the 63680 input structures that were successfully processed by <italic>martinize</italic>2 could be processed by the GROMACS pre-processor (<italic>grompp</italic>). However, 13 structures failed the energy minimization. A visual inspection of some of these failing inputs shows the input atomistic structures can be problematic. Erroneous interatomic distances (steric clashes or extended bonds) lead to high energies in the CG systems, which causes a failure in the energy minimization routine. Likely these starting structures are also not numerically stable in a subsequent simulation.</p>
@@ -294,7 +289,7 @@
 <label>Figure 9</label>
 <caption><title>Two examples of problematic atomistic protein structures flagged by martinize2.</title>
 <p><italic>a) the cysteine residue with too small O-O and O-C distances leads to superfluous bonds being recognized. b) the incorrect interatomic distances in the histidine ring led to missing bonds (transparent), an erroneous O-N bond connecting the histidine to a neighboring asparagine. Additionally, a nitrogen atom is switched for an oxygen atom in asparagine.</italic></p></caption>
-<graphic xlink:href="2212.01191v3_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig9.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -460,7 +455,7 @@
 <label>Table S1.</label>
 <caption><title>Data Parsers object returned as well as format definition and extension</title></caption>
 <alternatives>
-<graphic xlink:href="2212.01191v3_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -511,8 +506,8 @@
 <label>Table S2.</label>
 <caption><title>Data Writers and the object returned as well as format definition and extension</title></caption>
 <alternatives>
-<graphic xlink:href="2212.01191v3_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="2212.01191v3_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_tbl2.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="2212.01191v3_tbl3.tif" mime-subtype="tiff" mimetype="image"/>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -558,8 +553,8 @@
 <label>Table S3.</label>
 <caption><title>Limited overview of selected competing tools capable of generating MD topologies. “Force Field” lists the force fields for which this tool can generate topologies without changing the source code. “Type of system” describes the type of system this tool can generate topologies for. “External data files” means whether the force field parameters used are included in separate data files, making it possible to easily change them. “Notes” lists additional remarks and comments, “builds coordinates” means it is capable of constructing coordinates for complete systems, rather than only for e.g. missing sidechains.</title></caption>
 <alternatives>
-<graphic xlink:href="2212.01191v3_tbl4.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="2212.01191v3_tbl5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_tbl4.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="2212.01191v3_tbl5.tif" mime-subtype="tiff" mimetype="image"/>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -716,7 +711,7 @@
 <label>Figure S1</label>
 <caption><title>Example of finding all LCISs between graphs X and Y.</title>
 <p>Greyed out nodes are not used (they are excluded from the comparison by the shrinking step), but are depicted for clarity. Since nodes A<sub>1</sub> and A<sub>2</sub> in Y are symmetry equivalent not all subgraphs are taken into account. Those that are excluded due to symmetry reasons are depicted in the box Symmetry pruned. Iteration 1: we try to find a subgraph isomorphism between X and Y. None is found. Iteration 2: Y is shrunk to produce the graphs depicted. We try to find subgraph isomorphisms between these and X. None are found. Iteration 3: all graphs from iteration 2 are shrunk further. Since a subgraph isomorphism can be found between at least one of these ({A<sub>1</sub>, A<sub>2</sub>, B}) and X, the algorithm terminates afterwards. To highlight how often the algorithm discovers that {A<sub>1</sub>, B} is subgraph isomorphic to X, it is shown in bold.</p></caption>
-<graphic xlink:href="2212.01191v3_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2212.01191v3_fig10.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s9-4-2">
@@ -759,7 +754,7 @@
 <role specific-use="editor">Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>Boston University</institution>
+<institution-id institution-id-type="ror">https://ror.org/05qwgg493</institution-id><institution>Boston University</institution>
 </institution-wrap>
 <city>Boston</city>
 <country>United States of America</country>
