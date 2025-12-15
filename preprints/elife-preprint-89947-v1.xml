@@ -93,11 +93,6 @@
 </aff>
 </contrib>
 </contrib-group>
-<pub-date pub-type="epub">
-<day>31</day>
-<month>03</month>
-<year>2023</year>
-</pub-date>
 <pub-date date-type="original-publication" iso-8601-date="2023-08-23">
 <day>23</day>
 <month>08</month>
@@ -148,7 +143,7 @@
 <fig id="fig1" position="float" fig-type="figure">
 <label>FIG. 1:</label>
 <caption><p>Example of overall workflow for patient management through clinical data imputation and downstream classification</p></caption>
-<graphic xlink:href="2303.17893v1_fig1.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig1.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>An inherent feature of standard Random Forest and determinantal sampling algorithms is randomness that produces data imputations that vary from one run of the algorithm to the next. This is often undesirable, since the downstream classification performance can also be affected. This motivated us to develop a deterministic version of determinantal sampling within the Random Forests of the imputation methods to provide robust and reliable imputation methods. Determinantal sampling, based on determinant point processes (DPP) [<xref ref-type="bibr" rid="c5">5</xref>, <xref ref-type="bibr" rid="c14">14</xref>], favors samples that are diverse and thus reduces the variance of the training of each decision tree, which in turn provides more accurate models. In essence, determinantal sampling picks subsets of data according to a distribution that gives more weight to subsets of data that contain diverse datapoints. More precisely, each subset of datapoints is picked according to the volume encapsulated by these datapoints. The determinantal distribution increases the attention given to uncommon or out-of-the-ordinary data points rather than biasing the learning process towards the more commonly found data, which can improve the overall prediction accuracy in particular for unbalanced datasets as is often the case for clinical data [<xref ref-type="bibr" rid="c6">6</xref>]. Determinantal sampling for regression and classification tasks with full data has been proposed previously for linear regressors [<xref ref-type="bibr" rid="c18">18</xref>] and for Random Forest training for a financial data classification use case where it outperformed the standard Random Forest model [<xref ref-type="bibr" rid="c26">26</xref>].</p>
 <p>Through deterministic determinantal sampling we address two challenges in data imputation: first, we provide improved data imputation methods that can increase the performance of the downstream classifier; and second, we remove the variance of the common stochastic and multiple imputation methods, thus ensuring reproducibility, easier integration in machine learning workflows, and compliance with healthcare regulations. While these improvements are of particular relevance for clinical data, our algorithms can also be advantageous for other imputation tasks where improving downstream classification and removing variance is of importance.</p>
@@ -157,7 +152,7 @@
 <label>FIG. 2:</label>
 <caption><p>Imputation and downstream classification procedure to benchmark the imputation method’s performance.</p>
 <p>First, the imputer is trained on the whole observed dataset X as shown in step (a). In step (b), the imputed data is split into 3 consecutive folds (holdout sets H1, H2 and H3) then a classifier is trained on each combination of 2 holdout sets (development sets D1, D2 and D3) and the AUC is calculated for each holdout set.</p></caption>
-<graphic xlink:href="2303.17893v1_fig2.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig2.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <sec id="s1" sec-type="results">
 <title>Results</title>
@@ -169,7 +164,7 @@
 <label>TABLE I:</label>
 <caption><p>AUC results for the SYNTH and MIMIC-III datasets, with MCAR and MNAR missingness, three holdout sets, and six different imputation methods. Values are expressed as mean ± SD (standard deviation) of 10 values for each experiment. DPP-MICE and detDPP-MICE are bold when outperforming MICE and the underlined one is the best of the three. DPP-MissForest and detDPP-MissForest are bold when outperforming MissForest and the underlined one is the best of the three.</p></caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl1.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl1.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -309,7 +304,7 @@
 <p>AUC results on the different holdout sets after imputation using MICE, DPP-MICE and detDPP-MICE.In the case of MICE and DPP-MICE, the boxplots correspond to 10 AUC values for 10 iterations of the same imputation and classification algorithms, depicting the lower and upper quartiles as well as the median of these 10 values. The AUC values are the same for every iteration of the detDPP-MICE algorithm.</p>
 </caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl2.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl2.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="void" rules="all">
 <thead>
 <tr>
@@ -321,13 +316,13 @@
 <tbody>
 <tr>
 <td align="center" valign="top">SYNTH</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig1.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig2.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig1.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig2.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 <tr>
 <td align="center" valign="top">MIMIC</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig3.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig4.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig3.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig4.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 </tbody>
 </table>
@@ -339,7 +334,7 @@
 <p>AUC results on the different holdout sets after imputation using MissForest, DPP-MissForest and detDPP-MissForest. In the case of MissForest and DPP-MissForest, the boxplots correspond to 10 AUC values for 10 iterations of the same imputation and classification algorithm, depicting the lower and upper quartiles as well as the median of these 10 values. The AUC values are always the same for every iteration of the detDPP-MissForest algorithm.</p>
 </caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl3.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl3.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="void" rules="all">
 <thead>
 <tr>
@@ -351,13 +346,13 @@
 <tbody>
 <tr>
 <td align="center" valign="top">SYNTH</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig5.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig6.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig5.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig6.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 <tr>
 <td align="center" valign="top">MIMIC</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig7.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig8.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig7.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig8.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 </tbody>
 </table>
@@ -386,7 +381,7 @@
 <fig id="fig3" position="float" fig-type="figure">
 <label>FIG. 3:</label>
 <caption><p>IBM Hanoi 27-qubit quantum processor</p></caption>
-<graphic xlink:href="2303.17893v1_fig3.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig3.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <table-wrap id="tbl4" orientation="portrait" position="float">
 <label>TABLE IV:</label>
@@ -394,7 +389,7 @@
 <p>Data matrix sizes used by the quantum DPP circuits to train each tree. The number of rows corresponds to the number of data points and is equal to the number of qubits of every circuit.</p>
 </caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl4.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl4.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="void" rules="all">
 <thead>
 <tr>
@@ -438,7 +433,7 @@
 <p>Hardware results using the IBM quantum processor, depicting AUC results of the downstream classifier task after imputing missing values using DPP-MissForest. In the case of MissForest and the quantum hardware DPP-MissForest implementations, the boxplots correspond to 10 AUC values for 10 iterations of the same imputation and classification algorithm, depicting the lower and upper quartiles as well as the median of these 10 values. The AUC values are the same for every iteration of the quantum DPP-MissForest algorithm using the simulator.</p>
 </caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl5.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl5.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="void" rules="all">
 <thead>
 <tr>
@@ -456,27 +451,27 @@
 </tr>
 <tr>
 <td align="center" valign="top">MCAR SYNTH</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig9.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig10.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig11.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig9.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig10.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig11.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 <tr>
 <td align="center" valign="top">MCAR MIMIC</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig12.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig13.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig14.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig12.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig13.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig14.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 <tr>
 <td align="center" valign="top">MNAR SYNTH</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig15.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig16.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig17.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig15.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig16.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig17.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 <tr>
 <td align="center" valign="top">MNAR MIMIC</td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig18.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig19.jpg" mimetype="image" mime-subtype="jpeg"/></td>
-<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig20.jpg" mimetype="image" mime-subtype="jpeg"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig18.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig19.jpg" mime-subtype="jpeg" mimetype="image"/></td>
+<td align="center" valign="top"><inline-graphic xlink:href="2303.17893v1_ig20.jpg" mime-subtype="jpeg" mimetype="image"/></td>
 </tr>
 </tbody>
 </table>
@@ -488,7 +483,7 @@
 <p>Numerical quantum hardware results showing the AUC results of the downstream classifier task on reduced datasets. Values are represented according to Mean±SD (standard deviation) format given 10 values for each experiment.</p>
 </caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl6.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl6.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -613,7 +608,7 @@
 <p>Given a set of items <italic>y</italic> = {<italic>y</italic><sub>1</sub>, …, <italic>y</italic><sub>N</sub>}, a point process 𝓟 is a probability distribution over all subsets of the set <italic>Y</italic>. It is called a Determinantal Point Process (DPP) if, for a subset Y drawn from <italic>Y</italic> according to 𝓟, we have:
 <disp-formula id="FD1">
 <alternatives><mml:math display="block" id="M1"><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>T</mml:mi><mml:mo>⊆</mml:mo><mml:mi>Y</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>K</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>,</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:math>
-<graphic xlink:href="2303.17893v1_eqn1.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2303.17893v1_eqn1.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(1)</label>
 </disp-formula>
 </p>
@@ -621,7 +616,7 @@
 <p>For an <italic>n</italic> × <italic>d</italic> data matrix <italic>A</italic> and <italic>L</italic> = <italic>AA</italic><sup><italic>T</italic></sup>, we define the L-ensemble DPP<sub><italic>L</italic></sub>(<bold>L</bold>) as the distribution where the probability of sampling <italic>T</italic> is:
 <disp-formula id="FD2">
 <alternatives><mml:math display="block" id="M2"><mml:mrow><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mo>{</mml:mo><mml:mi>T</mml:mi><mml:mo>}</mml:mo><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mstyle mathvariant="bold" mathsize="normal"><mml:mi>L</mml:mi></mml:mstyle><mml:mrow><mml:mi>T</mml:mi><mml:mo>,</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>det</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mstyle mathvariant="bold" mathsize="normal"><mml:mi>I</mml:mi></mml:mstyle><mml:mo>+</mml:mo><mml:mstyle mathvariant="bold" mathsize="normal"><mml:mi>L</mml:mi></mml:mstyle><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mfrac><mml:mo>∝</mml:mo><mml:mi>V</mml:mi><mml:mi>o</mml:mi><mml:msup><mml:mi>l</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mrow><mml:mo>{</mml:mo> <mml:mrow><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mi>i</mml:mi><mml:mo>∈</mml:mo><mml:mi>T</mml:mi></mml:mrow> <mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:math>
-<graphic xlink:href="2303.17893v1_eqn2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2303.17893v1_eqn2.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(2)</label>
 </disp-formula>
 </p>
@@ -632,7 +627,7 @@
 <p>Different algorithms have been proposed in the literature to sample from <italic>k</italic> — DPPs, namely [<xref ref-type="bibr" rid="c13">13</xref>] where sampling <italic>d</italic> rows from an <italic>N</italic> × <italic>d</italic> matrix takes <italic>0</italic>(<italic>Nd</italic><sup>2</sup>) time. There have been improvements over this initial proposal as in [<xref ref-type="bibr" rid="c19">19</xref>] where there is a preprocessing cost of <italic>0</italic>(<italic>Nd</italic><sup>2</sup>) and each DPP sample requires <italic>0</italic>(<italic>d</italic><sup>3</sup>) arithmetic operations.</p>
 <p><italic>Deterministic k-DPPs</italic>. Stochastic DPP sampling may be efficient in practice, however deterministic algorithms are important for different use cases since they are more interpretable, are less prone to errors and have no failure probability, which is especially relevant for clinical data [<xref ref-type="bibr" rid="c7">7</xref>].</p>
 <p>We use a deterministic version of DPP sampling as proposed in [<xref ref-type="bibr" rid="c10">10</xref>] (see Algorithm 1) which is a greedy maximum volume approach. For each deterministic <italic>k —</italic> DPP sample, elements with the highest probability are added iteratively.</p>
-<fig position="float" fig-type="figure" id="box1"><label>Algorithm 1</label><caption><title>Deterministic k-DPP algorithm</title></caption><graphic xlink:href="2303.17893v1_algo1.tif" mimetype="image" mime-subtype="tiff"/></fig>
+<fig position="float" fig-type="figure" id="box1"><label>Algorithm 1</label><caption><title>Deterministic k-DPP algorithm</title></caption><graphic xlink:href="2303.17893v1_algo1.tif" mime-subtype="tiff" mimetype="image"/></fig>
 
 </sec>
 <sec id="s3b">
@@ -643,14 +638,14 @@
 <fig id="fig4" position="float" fig-type="figure">
 <label>FIG. 4:</label>
 <caption><p>The sampling and training procedure for the DPP-Random Forest algorithm: the dataset is divided into batches of similar size, the DPP sampling algorithm is then applied to every batch in parallel, the subsequent samples are then combined to form larger datasets used to train the decision trees</p></caption>
-<graphic xlink:href="2303.17893v1_fig4.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig4.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>Determinantal sampling for regression and classification tasks with full data has been proposed previously for Linear Regressors [<xref ref-type="bibr" rid="c18">18</xref>] and for Random Forest training for a financial data classification use case where it outperformed the standard Random Forest model [<xref ref-type="bibr" rid="c26">26</xref>].</p>
 <p>We can also use the deterministic version of DPP sampling for the Random Forest algorithm. This requires removing the sample used at each step (which is the one with the highest probability according to the determinantal distribution) in order to create a smaller dataset from which to sample for the next decision tree (see <xref ref-type="fig" rid="fig5">Figure 5</xref>). We call this new model detDPP-Random Forest.</p>
 <fig id="fig5" position="float" fig-type="figure">
 <label>FIG. 5:</label>
 <caption><p>Deterministic DPP sampling procedure for training decision trees. At each step, a decision tree is trained usingthe sample that corresponds to the highest determinantal probability, and which is then removed from the original batch before continuing to the next decision tree.</p></caption>
-<graphic xlink:href="2303.17893v1_fig5.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig5.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>Let us note that the distributions of the in-bag DPP samples, which are biased towards diversity, and the out-of-bag (OOB) samples, which reflect the original dataset’s distribution, may be different. This could lead to an inaccuratecalculation of the OOB error that can be in fact overestimated [<xref ref-type="bibr" rid="c9">9</xref>]. In the DPP-Random Forest case, the batches are stratified and according to the output variable that follows the same distribution as the original dataset. Thus, sampling from different batches could bridge the gap between the in-bag and the out-of-bag distributions. We leave these considerations for future work.</p>
 </sec>
@@ -661,14 +656,14 @@
 <p>First, we introduce an important component of the quantum DPP circuit which is the Clifford loader. Given an input state x ∈ R<sup>n</sup>, it performs the following operation:
 <disp-formula id="FD3">
 <alternatives><mml:math display="block" id="M3"><mml:mrow><mml:mi mathvariant="script">C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mrow><mml:msup><mml:mstyle mathsize="140%" displaystyle="true"><mml:mo>∑</mml:mo></mml:mstyle><mml:mtext>​</mml:mtext></mml:msup></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>n</mml:mi></mml:munderover><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msup><mml:mi>Z</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mi>X</mml:mi><mml:msup><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math>
-<graphic xlink:href="2303.17893v1_eqn3.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2303.17893v1_eqn3.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <p>, in other words it encodes the vector x as a sum of the mutually anti-commuting operators generating the Clifford algebra.</p>
 <p>For implementing this operation with an efficient quantum circuit, we use standard one- and two-qubit gates, such as the X, Z, CZ gates as well as a parameterized two-qubit gate called the Reconfigurable Beam Splitter gate (RBS), which do the following operations:
 <disp-formula id="FD4">
 <alternatives><mml:math display="block" id="M4"><mml:mrow><mml:mi>R</mml:mi><mml:mi>B</mml:mi><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>θ</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mn>1</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mrow><mml:mi>cos</mml:mi><mml:mi>θ</mml:mi></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mi>sin</mml:mi><mml:mi>θ</mml:mi></mml:mrow></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mrow><mml:mo>−</mml:mo><mml:mi>sin</mml:mi><mml:mi>θ</mml:mi></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mi>cos</mml:mi><mml:mi>θ</mml:mi></mml:mrow></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>1</mml:mn></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
-<graphic xlink:href="2303.17893v1_eqn4.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2303.17893v1_eqn4.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(3)</label>
 </disp-formula>
 </p>
@@ -676,14 +671,14 @@
 <fig id="fig6" position="float" fig-type="figure">
 <label>FIG. 6:</label>
 <caption><p>Types of data loaders. Each line corresponds to a qubit. Each vertical line connecting two qubits corresponds to an RBS gate. We also use X, Z, C - Z gates. The depth of the first two loaders is linear and the last one is logarithmic on the number of qubits.</p></caption>
-<graphic xlink:href="2303.17893v1_fig6.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig6.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <table-wrap id="tbl7" orientation="portrait" position="float">
 <label>TABLE VII:</label>
 <caption>
 <p>Summary of the characteristics of the different quantum DPP circuits. NN = Nearest Neighbor connectivity</p></caption>
 <alternatives>
-<graphic xlink:href="2303.17893v1_tbl7.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_tbl7.jpg" mime-subtype="jpeg" mimetype="image"/>
 <table frame="void" rules="all">
 <thead>
 <tr>
@@ -720,16 +715,16 @@
 <p>Given an orthogonal matrix <italic>A</italic> = (<italic>a</italic><sup>1</sup>,…, <italic>a</italic>), we can apply the qDPP circuit shown in <xref ref-type="fig" rid="fig7">Fig. 7</xref>, which is just a sequential application of <italic>d</italic> Clifford loaders, one for each column of the matrix, to the |0<sup>n</sup>) state, and that leads to the following result:
 <disp-formula id="FD5">
 <alternatives><mml:math display="block" id="M5"><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mi mathvariant="script">A</mml:mi><mml:mo>〉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi mathvariant="script">C</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msup><mml:mi>a</mml:mi><mml:mi>d</mml:mi></mml:msup></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>⋯</mml:mo><mml:mi mathvariant="script">C</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msup><mml:mi>a</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi mathvariant="script">C</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msup><mml:mi>a</mml:mi><mml:mn>1</mml:mn></mml:msup></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:msup><mml:mn>0</mml:mn><mml:mi>n</mml:mi></mml:msup></mml:mrow></mml:mrow></mml:mrow><mml:mo>〉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:munder><mml:mrow><mml:msup><mml:mstyle mathsize="140%" displaystyle="true"><mml:mo>∑</mml:mo></mml:mstyle><mml:mtext>​</mml:mtext></mml:msup></mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mi>S</mml:mi><mml:mo>|</mml:mo><mml:mo>=</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:munder><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>A</mml:mi><mml:mi>S</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:msub><mml:mi>e</mml:mi><mml:mi>S</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
-<graphic xlink:href="2303.17893v1_eqn5.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2303.17893v1_eqn5.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </disp-formula>
 </p>
 <fig id="fig7" position="float" fig-type="figure">
 <label>FIG. 7:</label>
 <caption><p>Quantum Determinant Sampling circuit for an orthogonal matrix <italic>A</italic> = (<italic>a</italic><sup>1</sup>,…, <italic>a</italic><sup><italic>d</italic></sup>). It uses the Clifford loader which is a unitary quantum operator: <inline-formula id="ID2">
 <alternatives><mml:math display="inline" id="I2"><mml:mrow><mml:mi mathvariant="script">C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mstyle displaystyle="true"><mml:msubsup><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>n</mml:mi></mml:msubsup><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msup><mml:mi>Z</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mi>X</mml:mi><mml:msup><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msup><mml:mo>,</mml:mo><mml:mtext>  for  </mml:mtext><mml:mi>x</mml:mi><mml:mo>∈</mml:mo><mml:msup><mml:mi>ℝ</mml:mi><mml:mi>n</mml:mi></mml:msup></mml:mrow></mml:mstyle></mml:mrow></mml:math>
-<inline-graphic xlink:href="2303.17893v1_ieq2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2303.17893v1_ieq2.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula></p></caption>
-<graphic xlink:href="2303.17893v1_fig7.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2303.17893v1_fig7.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>Directly measuring at the end of the circuit provides a sample from the correct determinantal distribution.</p>
 <p>Quantum versions of the imputation methods It is easy to define now a quantum version of the DPP-MICE and DPP-MissForest algorithms, where we use the quantum circuit described above to sample from the corresponding DPP. We can also define a variant of the deterministic algorithms, though here we need to pay attention to the fact that the quantum circuit enables to sample from the determinantal distribution but does not efficiently give us a classical description of the entire distribution. Hence one can instead sample many times from the quantum circuit and output the most frequent element. This provides a sample with less variance but it only becomes deterministic in the limit of infinite measurements.</p>
