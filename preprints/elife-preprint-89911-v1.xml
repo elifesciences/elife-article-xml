@@ -73,7 +73,7 @@
 <role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of Pennsylvania</institution>
+<institution-id institution-id-type="ror">https://ror.org/00b30xv10</institution-id><institution>University of Pennsylvania</institution>
 </institution-wrap>
 <city>Philadelphia</city>
 <country>United States of America</country>
@@ -87,18 +87,13 @@
 <role>Senior Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of Oxford</institution>
+<institution-id institution-id-type="ror">https://ror.org/052gg0110</institution-id><institution>University of Oxford</institution>
 </institution-wrap>
 <city>Oxford</city>
 <country>United Kingdom</country>
 </aff>
 </contrib>
 </contrib-group>
-<pub-date pub-type="epub">
-<day>28</day>
-<month>05</month>
-<year>2023</year>
-</pub-date>
 <pub-date date-type="original-publication" iso-8601-date="2023-08-23">
 <day>23</day>
 <month>08</month>
@@ -160,12 +155,12 @@
 <fig id="fig1" position="float" fig-type="figure">
 <label>Figure 1:</label>
 <caption><p>Schematic of the overall framework. Given a task (e.g., an analogy to solve), inputs (denoted as {<italic>A, B, C, D</italic>}) are represented by grid codes, consisting of units (“grid cells”) representing different combinations of frequencies and phases. Grid embeddings (<italic><bold>x<sub>A</sub></bold>, <bold>x<sub>B</sub></bold>, <bold>x<sub>C</sub></bold>, <bold>x<sub>D</sub></bold></italic>) are multiplied elementwise by a set of learned attention weights <italic><bold>w</bold></italic>, then passed to a inference module <italic><bold>R</bold></italic>. The attention weights <italic><bold>w</bold></italic> are optimized using <italic>L<sub>DPP</sub></italic>, which encourages attention to grid embeddings that maximize the volume of the representational space. The inference module outputs a score for each candidate analogy (consisting of <italic>A, B, C</italic> and a candidate answer choice <italic>D</italic>). The scores for all answer choices are passed through a softmax to generate an answer <italic>ŷ</italic>, which is compared against the target <italic>y</italic> to generate the task loss <italic>L<sub>task</sub></italic>.</p></caption>
-<graphic xlink:href="2305.18417v1_fig1.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig1.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2:</label>
 <caption><p>Generation of test analogies from training analogies (region marked in blue) by: a) translating both dimension values of <italic>A, B, C, D</italic> by the same amount; and b) scaling both dimension values of <italic>A, B, C, D</italic> by the same amount. Since both dimension values are transformed by the same amount, each input gets transformed along the diagonal.</p></caption>
-<graphic xlink:href="2305.18417v1_fig2.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig2.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 
@@ -200,28 +195,28 @@
 <p>To derive grid codes for stimuli, we follow the analytic approach described by <xref ref-type="bibr" rid="c6">Bicanski &amp; Burgess (2019)</xref> <sup><xref ref-type="fn" rid="fn2">2</xref></sup>. Specifically, the grid code (<italic><bold>x</bold></italic>) for a particular stimulus location <italic>A</italic> is given by:
 <disp-formula id="FD1">
 <alternatives><mml:math display="block" id="M1"><mml:msub><mml:mi>x</mml:mi><mml:mi>A</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>x</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>z</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<graphic xlink:href="2305.18417v1_eqn1.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn1.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(1)</label>
 </disp-formula>
 where,
 <disp-formula id="FD2">
 <alternatives><mml:math display="block" id="M2"><mml:msub><mml:mi>z</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>*</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mi>A</mml:mi><mml:mo>+</mml:mo><mml:msub><mml:mi>A</mml:mi><mml:mrow><mml:mi>o</mml:mi><mml:mi>f</mml:mi><mml:mi>f</mml:mi><mml:mi>s</mml:mi><mml:mi>e</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<graphic xlink:href="2305.18417v1_eqn2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn2.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(2)</label>
 </disp-formula>
 <disp-formula id="FD3">
 <alternatives><mml:math display="block" id="M3"><mml:msub><mml:mi>b</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mn>0</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mn>0</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mi>π</mml:mi><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mi>π</mml:mi><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>s</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<graphic xlink:href="2305.18417v1_eqn3.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn3.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(3)</label>
 </disp-formula>
 The spatial frequencies of grids (<italic>F</italic>) begin at a value of 0.0028 * 2<italic>π</italic>. <xref ref-type="bibr" rid="c46">Wei et al. (2015)</xref> have shown that, to minimize the number of variables needed to represent an integer domain of size <italic>S</italic>, the firing rate widths and frequencies should scale geometrically in a range (<inline-formula id="ID1">
 <alternatives>
 <mml:math display="inline" id="I1"><mml:msqrt><mml:mn>2</mml:mn></mml:msqrt><mml:mo>,</mml:mo><mml:msqrt><mml:mi>e</mml:mi></mml:msqrt></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq1.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq1.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>), closely matching empirically observed scaling in entorhinal cortex (<xref ref-type="bibr" rid="c43">Stensola et al., 2012</xref>). We choose a scaling factor of <inline-formula id="ID2">
 <alternatives>
 <mml:math display="inline" id="I2"><mml:msqrt><mml:mn>2</mml:mn></mml:msqrt></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq2.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq2.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> to efficiently tile the space. One consequence of this efficiency is that the total number of discrete frequencies in entorhinal cortex is expected to be small. Empirically, it has been estimated to be between 8–12 (<xref ref-type="bibr" rid="c34">Moser et al., 2015</xref>) <sup><xref ref-type="fn" rid="fn3">3</xref></sup>. Here, we choose <italic>N<sub>f</sub></italic> = 9 (dimension of <italic>F</italic>) as the number of frequencies. <italic>A</italic> refers to a particular location in a two dimensional space, and 100 offsets (<italic>A<sub>offset</sub></italic>) are used for each frequency to evenly cover a space of 1000 × 1000 locations using 900 grid cells. These offsets represent different phases within each frequency and since there are 100 of them, <italic>N<sub>p</sub></italic> = 100. Each point from the set of 2D points for the stimuli in a task (described in <xref ref-type="sec" rid="s2a">Section 2.1</xref>), was represented using the firing rate of 900 grid cells which constituted the grid embedding for that point to form the inputs to our model.</p>
 </sec>
 <sec id="s2b2">
@@ -232,7 +227,7 @@ The spatial frequencies of grids (<italic>F</italic>) begin at a value of 0.0028
 <p>Formally, we treat obtaining <italic>L<sub>DPP</sub></italic> as an approximation of a determinantal point process (DPP). A DPP P defines a probability measure on all subsets of a set of items χ = {1, 2,…<italic>N</italic>}. For every <italic><bold>x</bold></italic> ⊆ χ, <italic>P</italic>(<italic><bold>x</bold></italic>) ∝ det(<italic><bold>V<sub>x</sub></bold></italic>). Here <italic><bold>V</bold></italic> is a positive semidefinite covariance matrix and <italic><bold>V<sub>x</sub></bold></italic> = [<italic>V<sub>ij</sub></italic>]<sub><italic>i,j</italic> ∈ <italic>x</italic></sub> denotes the matrix <italic><bold>V</bold></italic> restricted to the entries indexed by elements of <italic><bold>x</bold></italic>. The maximum a posteriori (MAP) problem <italic>argmax<sub><bold>x</bold></sub></italic> det(<italic><bold>V<sub>x</sub></bold></italic>) is NP-hard (<xref ref-type="bibr" rid="c25">Ko et al., 1995</xref>). However <italic>f</italic>(<italic><bold>x</bold></italic>) = log(det(<italic><bold>V<sub>x</sub></bold></italic>)) satisfies the property of a submodular function, and various algorithms exist for approximately maximizing them. One common way is to approximate this discrete optimization problem by replacing the discrete variables with continuous variables and extend the objective function to the continuous domain. <xref ref-type="bibr" rid="c15">Gillenwater et al. (2012)</xref> proposed a continuous extension that is efficiently computable and differentiable:
 <disp-formula id="FD4">
 <alternatives><mml:math display="block" id="M4"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>log</mml:mi><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mi>x</mml:mi></mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∈</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∉</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>exp</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mi>w</mml:mi><mml:mo>∈</mml:mo><mml:msup><mml:mrow><mml:mrow><mml:mo>[</mml:mo> <mml:mrow><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn></mml:mrow> <mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mi>N</mml:mi></mml:msup></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle><mml:mo>.</mml:mo></mml:math>
-<graphic xlink:href="2305.18417v1_eqn4.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn4.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(4)</label>
 </disp-formula>
 </p>
@@ -242,43 +237,43 @@ The spatial frequencies of grids (<italic>F</italic>) begin at a value of 0.0028
 <p><italic>For a positive semidefinite matrix <bold>V</bold> and <bold>w</bold></italic> ∈ [0, 1]<sup><italic>N</italic></sup>:
 <disp-formula id="FD5">
 <alternatives><mml:math display="block" id="M5"><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∑</mml:mo><mml:mi>x</mml:mi></mml:munder><mml:mrow><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∈</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mstyle><mml:mstyle displaystyle="true"><mml:munder><mml:mo>∏</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>∉</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtext>diag</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>V</mml:mi><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:mrow></mml:mstyle></mml:math>
-<graphic xlink:href="2305.18417v1_eqn5.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn5.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(5)</label>
 </disp-formula>
 We propose an attention mechanism that uses <italic>L<sub>DPP</sub></italic> to attend to subsets of grid embeddings for further processing. <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> describes the training procedure with DPP-A which consists of two steps, using <italic>L<sub>DPP</sub></italic> as the first step. This step maximizes the objective function:
 <disp-formula id="FD6">
 <alternatives><mml:math display="block" id="M6"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow></mml:munderover><mml:mrow><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mtext>diag</mml:mtext><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
-<graphic xlink:href="2305.18417v1_eqn6.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<graphic xlink:href="2305.18417v1_eqn6.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 <label>(6)</label>
 </disp-formula>
 using stochastic gradient ascent for <inline-formula id="ID3">
 <alternatives>
 <mml:math display="inline" id="I3"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq3.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq3.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> epochs, which is equivalent to minimizing <italic>L<sub>DPP</sub></italic>, as <inline-formula id="ID4">
 <alternatives>
 <mml:math display="inline" id="I4"><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq4.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq4.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. It involves attending to grid embeddings that exhibit the greatest within frequency variance but are least redundant (that is, that are least also pairwise uncorrelated) over the training data. This is achieved by maximizing the determinant of the covariance matrix over the within frequency grid embeddings of the training data, which is obtained by applying log on both sides of the Theorem 2.1, and in our case <italic><bold>x</bold></italic> refers to grid cells within a particular frequency. Here <italic><bold>w</bold></italic> are the attention weights corresponding to each grid cell, and <italic>N<sub>f</sub></italic> is the number of distinct frequencies. The matrix <italic><bold>V</bold></italic> captured a measure of the covariance of the grid embeddings over the training region. We used the <italic>synth</italic>_<italic>kernel</italic> function <sup><xref ref-type="fn" rid="fn4">4</xref></sup> to construct <italic><bold>V</bold></italic>, where in our case <italic><bold>m</bold></italic> are the variances of the grid cell representations <italic><bold>S</bold></italic> computed over the training region <italic>M</italic>, <italic>N</italic> is the number of grid cells and <italic>w<sub>m</sub>, b</italic> are hyperparameters with values of 1 and 0.1 respectively. The dimensionality of <italic><bold>V</bold></italic> was <italic>N<sub>f</sub>N<sub>p</sub></italic> × <italic>N<sub>f</sub>N<sub>p</sub></italic>(900 × 900). <italic><bold>W<sub>f</sub></bold></italic> were the attention weights of the grid cells belonging to the <italic>f</italic>th frequency, so <italic><bold>w<sub>f</sub></bold></italic> = <italic><bold>w</bold></italic>[<italic>fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub></italic>], where <italic>N<sub>p</sub></italic> was the number of phases for each frequency. <italic><bold>V<sub>f</sub></bold></italic> = <italic><bold>V</bold></italic>[<italic>fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub>, fN<sub>p</sub></italic> : (<italic>f</italic> + 1)<italic>N<sub>p</sub></italic>] was the restriction of <italic><bold>V</bold></italic> to the grid embeddings for <italic>f</italic>th frequency, so it captured the covariance of the grid embeddings belonging to the <italic>f</italic>th frequency. <xref ref-type="disp-formula" rid="FD6">Equation 6</xref> which involved summation of the logarithm of the determinant of the weighted covariance matrix of grid cells within each frequency, over <italic>N<sub>f</sub></italic> frequencies was used to compute the negative of <italic>L<sub>DPP</sub></italic>. Maximizing <inline-formula id="ID5">
 <alternatives>
 <mml:math display="inline" id="I5"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq5.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq5.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> gave the approximate maximum within frequency log determinant for each frequency <italic>f</italic> ∈ [1, <italic>N<sub>f</sub></italic>], which we denote for the <italic>f</italic>th frequency as <inline-formula id="ID6">
 <alternatives>
 <mml:math display="inline" id="I6"><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq6.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq6.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. In the second step of the training procedure, we used the <inline-formula id="ID7">
 <alternatives>
 <mml:math display="inline" id="I7"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq7.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq7.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> grid cell frequency, where <inline-formula id="ID8">
 <alternatives>
 <mml:math display="inline" id="I8"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi>arg</mml:mi><mml:msub><mml:mi>max</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>[</mml:mo> <mml:mrow><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow> <mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:msub><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq8.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq8.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. In other words, we used the grid embeddings for grid cells belonging to the frequency which had the maximum within-frequency log determinant at the end of the first step, which we find are best at capturing the relational structure across the training and testing data, thereby promoting out-of-distribution generalization. In this step, we trained the inference module minimizing <italic>L<sub>task</sub></italic> over <inline-formula id="ID9">
 <alternatives>
 <mml:math display="inline" id="I9"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq9.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq9.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> epochs.</p>
 </sec>
 </sec>
@@ -289,7 +284,7 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="box1">
 <label>Algorithm 1</label>
 <caption><title>Training with DPP-A</title></caption>
-<graphic xlink:href="2305.18417v1_algo1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="2305.18417v1_algo1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 
 <p>The network that used an LSTM in the inference module had a single layer of 512 hidden units. The hidden and cell state of the LSTM was reinitialized at the start of each sequence for each candidate completion. The network that used a transformer in the inference module had 6 layers, each of which had 8 heads and a dimensionaltiy of 512. We projected the data into 128 dimensions to be more easily divisible by the number of heads, followed by layer normalization (<xref ref-type="bibr" rid="c2">Ba et al., 2016</xref>). We added a learnable positional encoding to the projected input sequence of attended grid code embeddings, concatenated a learned CLS (short for “classification”) token (analogous to the CLS token in <xref ref-type="bibr" rid="c10">Devlin et al. (2018)</xref>), followed by a transformer encoder. We took the transformed value of the CLS token, and passed it to a linear layer with 1 output unit to generate a score for each candidate completion. This procedure was repeated for each candidate completion.</p>
@@ -312,15 +307,15 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <p>For each task, the sequence of stimuli for a given problem was encoded as grid codes (see <xref ref-type="sec" rid="s2b1">Section 2.2.1</xref>), that were then modulated by DPP-A (see <xref ref-type="sec" rid="s2b2">Section 2.2.2</xref>), and passed to the inference module <italic><bold>R</bold></italic> (see <xref ref-type="sec" rid="s2b3">Section 2.2.3</xref>). We trained 3 networks using each type of inference module. For networks using an LSTM in the inference module, we trained each network for number of epochs for optimizing DPP attention <inline-formula id="ID19">
 <alternatives>
 <mml:math display="inline" id="I19"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>50</mml:mn></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq19.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq19.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>, number of epochs for optimizing task loss <inline-formula id="ID20">
 <alternatives>
 <mml:math display="inline" id="I20"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>50</mml:mn></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq20.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq20.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>, on analogy problems, and for <inline-formula id="ID21">
 <alternatives>
 <mml:math display="inline" id="I21"><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>500</mml:mn><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq21.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq21.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>, on arithmetic problems with a batch size of 256, using the ADAM optimizer (<xref ref-type="bibr" rid="c24">Kingma &amp; Ba, 2014</xref>), and a learning rate of 1<italic>e</italic><sup>-3</sup>. For networks using a transformer in the inference module, we trained with a batch size of 128 on analogy with a learning rate of 5<italic>e</italic><sup>-4</sup>, and on arithmetic problems with a learning rate of 5<italic>e</italic><sup>-5</sup>. More details can be found in <xref ref-type="sec" rid="s7a">Appendix 7.1</xref>.</p>
 </sec>
 <sec id="s4b">
@@ -340,14 +335,14 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3:</label>
 <caption><p>Results on analogy on each region for translation and scaling using LSTM in the inference module.</p></caption>
-<graphic xlink:href="2305.18417v1_fig3.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig3.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>For the case of translation, using all the grid codes with no DPP-A (shown in purple) led to the worst OOD generalization performance, overfitting on the training set. Locked dropout (denoted by green) and L1 regularization (denoted by red) reduced overfitting and demonstrated better OOD generalization performance than no DPP-A but still performed considerably worse than DPP-A. For the case of scaling, locked dropout and L1 regularization performed slightly better than TCN, achieving marginally higher test accuracy, but DPP-A still substantially outperformed all other models, with a nearly 70% improvement in average test accuracy.</p>
 <p>To test the generality of grid embedding and DPP-A across network architectures, we also tested a transformer (<xref ref-type="bibr" rid="c44">Vaswani et al., 2017</xref>) in place of the LSTM in the inference module. Previous work has suggested that transformers are particularly useful for extracting structure in sequential data and has been used for OOD generalization (<xref ref-type="bibr" rid="c38">Saxton et al., 2019</xref>). <xref ref-type="fig" rid="fig4">Figure 4</xref> shows the results for the analogy task using a transformer in the inference module. With no explicit attention (no DPP-A) over the grid codes (show in orange), the transformer did poorly on the analogies on the test regions. This suggests that simply using a more sophisticated architecture with standard forms of attention is not sufficient to enable OOD generalization based on grid codes. With DPP-A (shown in blue), the OOD generalization performance of the transformer is nearly perfect for both translation and scaling. These results also demonstrate that grid code embedding coupled with DPP-A can be exploited for OOD generalization effectively by different architectures.</p>
 <fig id="fig4" position="float" fig-type="figure">
 <label>Figure 4:</label>
 <caption><p>Results on analogy on each region for translation and scaling using transformer in the inference module.</p></caption>
-<graphic xlink:href="2305.18417v1_fig4.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig4.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s5b">
@@ -357,13 +352,13 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5:</label>
 <caption><p>Results on arithmetic on each region using LSTM in the inference module.</p></caption>
-<graphic xlink:href="2305.18417v1_fig5.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig5.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p><xref ref-type="fig" rid="fig5">Figure 5</xref> shows the results for arithmetic problems using an LSTM in the inference module. The left panel shows results for addition problems, and the right panel shows results for multiplication problems. DPP-A achieves higher accuracy for addition than multiplication on the test regions. However, in both cases DPP-A significantly outperforms the other models, achieving nearly perfect OOD generalization for addition, and 65% accuracy for multiplication, compared with under 20% accuracy for all the other models. We found that grid embeddings obtained after the first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> aren’t able to fully preserve the relational structure for multiplication problems on the test regions (more details in <xref ref-type="sec" rid="s7b">Appendix 7.2</xref>), but still it affords superior capacity for OOD generalization than any of the other models. Thus, while it does not match the generalizability of a genuine algorithmic (i.e., symbolic) arithmetic function, it may be sufficient for some tasks (e.g., approximate multiplication ability in young children (<xref ref-type="bibr" rid="c37">Qu et al., 2021</xref>)).</p>
 <fig id="fig6" position="float" fig-type="figure">
 <label>Figure 6:</label>
 <caption><p>Results on arithmetic on each region using transformer in the inference module.</p></caption>
-<graphic xlink:href="2305.18417v1_fig6.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig6.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p><xref ref-type="fig" rid="fig6">Figure 6</xref> shows the results for arithmetic problems using a transformer in the inference module. With no DPP-A over the grid codes the transformer did poorly on addition and multiplication on the test regions, achieving around 20–30% accuracy. With DPP-A, the OOD generalization performance of transformer show a pattern similar to that for analogy: it is nearly perfect for addition and, though not as good on multiplication, nevertheless show approximately 40% better performance than the transformer multiplication.</p>
 </sec>
@@ -373,19 +368,19 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <p>To determine the individual importance of the grid code embeddings and the DPP-A attention objective, we carried out several ablation studies. First, to evaluate the importance of grid code embeddings, we analyzed the effect of DPP-A with non-grid code embeddings, using either one-hot or smoothed one-hot embeddings with standard deviations of 1, 10, and 100, each passed through a learned feedforward encoder, which consisted of two fully connected layers with 1024 units per layer, and ReLU nonlinearities. The final embedding was generated with a fully connected layer with 1024 units and sigmoid nonlinearity. Since these embeddings don’t have a frequency component, the training procedure with DPP-A consisted of only one step: minimizing the loss function <inline-formula id="ID22">
 <alternatives>
 <mml:math display="inline" id="I22"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq22.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq22.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. We tried different values of <italic>λ</italic> (0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000). For each type of embedding (one-hots and smoothed one-hots with each value of <italic>λ</italic>), we trained 3 networks and report for the model that achieved best performance on the validation set. Note that, given the much higher dimensionality and therefore memory demands of embeddings based on one-hots and smoothed one-hots, we had to limit the evaluation to a subset of the total space, resulting in evaluation on only two test regions (i.e., <italic>K</italic> ∈ [1, 3]).</p>
 <p><xref ref-type="fig" rid="fig7">Figure 7</xref> shows the results for the analogy task using an LSTM in the inference module. The average accuracy on the test regions for translation and scaling using smoothed one-hots passed through an encoder (shown in green) is nearly 30% better than simple one-hot embeddings passed through an encoder (shown in orange), but both still achieve significantly lower test accuracy than grid code embeddings which support perfect OOD generalization.</p>
 <p>With respect to the importance of the DPP-A, we note that the simulations reported earlier show that replacing the DPP-A mechanism with either other forms of regularization (dropout and L1 regularization; see <xref ref-type="sec" rid="s4b">Section 4.2</xref>) or a transformer (<xref ref-type="sec" rid="s5a">Section 5.1</xref> for analogy and <xref ref-type="sec" rid="s5b">Section 5.2</xref> for arithmetic tasks) failed to achieve the same level of OOD generalization as the network that used DPP-A. The results using a transformer are particularly instructive, as that incorporates a powerful mechanism for learned attention, but, even when provided with grid code embeddings, failed to produce results comparable to DPP-A, suggesting that the latter provides a simple but powerful form of attention objective, at least when used in conjunction with grid code embeddings.</p>
 <fig id="fig7" position="float" fig-type="figure">
 <label>Figure 7:</label>
 <caption><p>Results on analogy on each region using DPP-A, an LSTM in the inference module, and different embeddings (grid codes, one-hots, and smoothed one-hots passed through a learned encoder) for translation (left) and scaling (right). Each point is mean accuracy over three networks, and bars show standard error of the mean.</p></caption>
-<graphic xlink:href="2305.18417v1_fig7.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig7.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig8" position="float" fig-type="figure">
 <label>Figure 8:</label>
 <caption><p>Results on analogy on each region using different embeddings (grid codes, and one-hots or smoothed one-hots with and without an encoder) and an LSTM in the inference module, but without DPP-A, TCN, L1 Regularization, or Dropout for translation (left) and scaling (right).</p></caption>
-<graphic xlink:href="2305.18417v1_fig8.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig8.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>Finally, for completeness, we also carried out a set of simulations that examined the performance of networks with various embeddings (grid codes, and one-hots or smoothed one-hots with or without a learned feedforward encoder), but no attention or regularization (i.e., neither DPP-A, transformer, nor TCN, L1 Regularization, or Dropout). <xref ref-type="fig" rid="fig8">Figure 8</xref> shows the results for the different embeddings. For translation (left), the average accuracy over the test regions using grid codes (shown in blue) is nearly 25% more compared to other embeddings, which all yield performance near chance (~ 15%). For scaling (right), although other embeddings achieve higher performance than chance (except smoothed one-hots), they still achieve lower test accuracy than grid codes.</p>
 </sec>
@@ -465,7 +460,7 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <p>In an effort to understand why DPP-A achieved around 65% average test accuracy on multiplication compared to nearly perfect accuracy for addition and analogy task, we analyzed the distribution of the grid embeddings for the grid cells belonging to the frequency which had the maximum within-frequency determinant at the end of the first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>. More specifically for <italic>A</italic>, <italic>B</italic> and the correct answer <italic>C</italic>, we analyzed the distribution of each grid cell for the training and the nine test regions. Note that since the total number of grid cells was 900 and there were nine frequencies, the dimension of the grid embeddings corresponding to <inline-formula id="ID23">
 <alternatives>
 <mml:math display="inline" id="I23"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq23.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq23.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> grid cell frequency was 100. To quantify the similarity between training and the test distributions, we computed cosine distance (1 - cosine similarity), and averaged it over the 100 dimensions and nine test regions. We found that the average cosine distance is 5x greater for multiplication than addition problem (0.0002 for addition: 0.001 for multiplication). In this respect, grid coding does not perfectly preserve relational structure of the multiplication problem, which we would expect to limit DPP-A’s OOD generalization ability in that task-domain.</p>
 </sec>
 <sec id="s7c">
@@ -476,9 +471,9 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <caption><p>Results on analogy on each region using LSTM in the inference module for choosing top <italic>K</italic> frequencies with <inline-formula id="ID24">
 <alternatives>
 <mml:math display="inline" id="I24"><mml:msub><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>f</mml:mi></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq24.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq24.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig9.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig9.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s7d">
@@ -487,7 +482,7 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig10" position="float" fig-type="figure">
 <label>Figure 10:</label>
 <caption><p>Results on analogy on each region for translation and scaling using transformer in the inference module.</p></caption>
-<graphic xlink:href="2305.18417v1_fig10.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig10.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s7e">
@@ -496,17 +491,17 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig11" position="float" fig-type="figure">
 <label>Figure 11:</label>
 <caption><p>Results on arithmetic with different embeddings (with DPP-A) using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig11.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig11.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig12" position="float" fig-type="figure">
 <label>Figure 12:</label>
 <caption><p>Results on arithmetic with different embeddings (without DPP-A, TCN, L1 Regularization, or Dropout) using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig12.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig12.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig13" position="float" fig-type="figure">
 <label>Figure 13:</label>
 <caption><p>Results on arithmetic for increasing number of grid cell frequencies <italic>N<sub>f</sub></italic> on each region using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig13.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig13.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s7f">
@@ -515,29 +510,29 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <p>We also tried formulating the analogy and arithmetic tasks as regression instead of classification via a scoring mechanism. For DPP-A, the inference module was trained to generate the grid embeddings for grid cells belonging to the <inline-formula id="ID25">
 <alternatives>
 <mml:math display="inline" id="I25"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq25.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq25.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> frequency, which had the maximum within-frequency determinant at the end of first step in <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref> for the correct completion, given as input the <inline-formula id="ID26">
 <alternatives>
 <mml:math display="inline" id="I26"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq26.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq26.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> frequency grid embeddings for <italic>A, B, C</italic> for the analogy task and <italic>A, B</italic> for the arithmetic task. A linear layer with 100 units and sigmoid activation was used to generate the output of the inference module and was trained to minimize the mean squared error with the <inline-formula id="ID27">
 <alternatives>
 <mml:math display="inline" id="I27"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq27.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq27.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> frequency grid embeddings of the correct completion. We compared DPP-A with a version that didn’t use the attentional objective (no DPP-A), where the inference module was trained to generate the grid embeddings for all the frequencies, but was evaluated on only the <inline-formula id="ID28">
 <alternatives>
 <mml:math display="inline" id="I28"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq28.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq28.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> frequency grid embeddings for fair comparison with the DPP-A version. <xref ref-type="fig" rid="fig14">Figure 14</xref> shows the results for the analogy task using an LSTM in the inference module. For both the translation (left) and scaling (right) regimes, DPP-A achieves nearly zero mean squared error on all the test regions, considerably outperforming the no DPP-A which achieves much higher error. <xref ref-type="fig" rid="fig15">Figure 15</xref> shows the results for arithmetic problems using an LSTM in the inference module. For addition problems, shown on the left, DPP-A achieves nearly zero mean squared error on the test regions. For multiplication problems, shown on the right, DPP-A achieves lower mean squared error on the test regions, 0.11, compared to no DPP-A which achieves around 0.17.</p>
 <fig id="fig14" position="float" fig-type="figure">
 <label>Figure 14:</label>
 <caption><p>Results for regression on analogy using LSTM in the inference module. Results show mean squared error on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig14.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig14.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig15" position="float" fig-type="figure">
 <label>Figure 15:</label>
 <caption><p>Results for regression on arithmetic on each region using LSTM in the inference module. Results show mean squared error on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig15.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig15.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s7g">
@@ -546,12 +541,12 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig16" position="float" fig-type="figure">
 <label>Figure 16:</label>
 <caption><p>Results on analogy for L1 regularization for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig16.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig16.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig17" position="float" fig-type="figure">
 <label>Figure 17:</label>
 <caption><p>Results on arithmetic for L1 regularization for various <italic>λ</italic>s using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig17.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig17.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s7h">
@@ -560,37 +555,37 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <fig id="fig18" position="float" fig-type="figure">
 <label>Figure 18:</label>
 <caption><p>Results on analogy for one step DPP-A over the complete grid codes for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig18.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig18.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig19" position="float" fig-type="figure">
 <label>Figure 19:</label>
 <caption><p>Results on analogy for one step DPP-A within frequencies for various <italic>λ</italic>s for translation and scaling using LSTM in the inference module. Results show mean accuracy on each region averaged over 3 trained networks along with errorbar (standard error of the mean).</p></caption>
-<graphic xlink:href="2305.18417v1_fig19.jpg" mimetype="image" mime-subtype="jpeg"/>
+<graphic xlink:href="2305.18417v1_fig19.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>The proposed DPP-A method (<xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>) consists of two steps with <italic>L<sub>DPP</sub></italic> in the first step and <italic>L<sub>task</sub></italic> in the second step. We considered two ablation experiments which consists of a single step. In one case we maximized the objective function, <inline-formula id="ID29">
 <alternatives>
 <mml:math display="inline" id="I29"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>a</mml:mi><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>w</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>V</mml:mi><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq29.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq29.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>, over the complete grid codes (instead of summing <inline-formula id="ID30">
 <alternatives>
 <mml:math display="inline" id="I30"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq30.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq30.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> corresponding to grid codes from each frequency independently as done in the first step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>), using stochastic gradient ascent, along with minimizing <italic>L<sub>task</sub></italic>, which would use all the attended grid codes (instead of using <inline-formula id="ID31">
 <alternatives>
 <mml:math display="inline" id="I31"><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi>D</mml:mi><mml:mi>P</mml:mi><mml:mi>P</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq31.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq31.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula> frequency grid codes as done in the second step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>). So total loss, <inline-formula id="ID32">
 <alternatives>
 <mml:math display="inline" id="I32"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq32.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq32.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. We refer to this ablation experiment as one step DPP-A over the complete grid codes. The results on analogy for this ablation experiment is shown in <xref ref-type="fig" rid="fig18">Figure 18</xref>. We see that the accuracy on test analogies for translation for various <italic>λ</italic>s are around 30–60%, and for scaling around 2040%, which is much lower than the nearly perfect accuracy achieved by the proposed DPP-A method. In the other case we maximized the objective function <inline-formula id="ID33">
 <alternatives>
 <mml:math display="inline" id="I33"><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>N</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mstyle displaystyle="true"><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow></mml:munderover><mml:mrow><mml:mi>log</mml:mi><mml:mi>det</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>a</mml:mi><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq33.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq33.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>, using stochastic gradient ascent, which is same as <italic>L<sub>DPP</sub></italic> in the first step of <xref ref-type="boxed-text" rid="box1">Algorithm 1</xref>, along with minimizing <italic>L<sub>task</sub></italic>, which would use all the attended grid codes. So total loss, <inline-formula id="ID34">
 <alternatives>
 <mml:math display="inline" id="I34"><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mi>λ</mml:mi><mml:mo>*</mml:mo><mml:mover accent="true"><mml:mi>F</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>V</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:math>
-<inline-graphic xlink:href="2305.18417v1_ieq34.jpg" mimetype="image" mime-subtype="jpeg"/></alternatives>
+<inline-graphic xlink:href="2305.18417v1_ieq34.jpg" mime-subtype="jpeg" mimetype="image"/></alternatives>
 </inline-formula>. We refer to this ablation experiment as one step DPP-A within frequencies. As shown in <xref ref-type="fig" rid="fig19">Figure 19</xref>, the accuracy on test analogies for both translation and scaling for various <italic>λ</italic>s are in a similar range to one step DPP-A over the complete grid codes, and is much lower than the nearly perfect accuracy achieved by the proposed DPP-A method.</p>
 </sec>
 </app>
@@ -617,7 +612,7 @@ using stochastic gradient ascent for <inline-formula id="ID3">
 <role specific-use="editor">Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of Pennsylvania</institution>
+<institution-id institution-id-type="ror">https://ror.org/00b30xv10</institution-id><institution>University of Pennsylvania</institution>
 </institution-wrap>
 <city>Philadelphia</city>
 <country>United States of America</country>
