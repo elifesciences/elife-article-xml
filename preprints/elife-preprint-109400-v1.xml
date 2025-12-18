@@ -1,0 +1,638 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">109400</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.109400</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.109400.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>High-Fidelity Neural Speech Reconstruction through an Efficient Acoustic-Linguistic Dual-Pathway Framework</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Jiawei</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Guo</surname>
+<given-names>Chunxu</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Chao</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2480-4700</contrib-id>
+<name>
+<surname>Chang</surname>
+<given-names>Edward F</given-names>
+</name>
+<xref ref-type="aff" rid="a5">5</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3277-0600</contrib-id>
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+<xref ref-type="aff" rid="a6">6</xref>
+<xref ref-type="aff" rid="a7">7</xref>
+<email>liyn2@shanghaitech.edu.cn</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/030bhh786</institution-id><institution>School of Biomedical Engineering, ShanghaiTech University</institution></institution-wrap>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/030bhh786</institution-id><institution>State Key Laboratory of Advanced Medical Materials and Devices, ShanghaiTech University</institution></institution-wrap>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03cve4549</institution-id><institution>Department of Electronic Engineering, Tsinghua University</institution></institution-wrap>, <city>Beijing</city>, <country country="CN">China</country></aff>
+<aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03wkvpx79</institution-id><institution>Shanghai Artificial Intelligence Laboratory</institution></institution-wrap>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+<aff id="a5"><label>5</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>Department of Neurological Surgery, University of California, San Francisco</institution></institution-wrap>, <city>San Francisco</city>, <country country="US">United States</country></aff>
+<aff id="a6"><label>6</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/057tkkm33</institution-id><institution>Shanghai Clinical Research and Trial Center</institution></institution-wrap>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+<aff id="a7"><label>7</label><institution>Lingang Laboratory</institution>, <city>Shanghai</city>, <country country="CN">China</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Ding</surname>
+<given-names>Nai</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-3428-2723</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00a2xv884</institution-id><institution>Zhejiang University</institution>
+</institution-wrap>
+<city>Hangzhou</city>
+<country country="CN">China</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Bi</surname>
+<given-names>Yanchao</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/02v51f717</institution-id><institution>Peking University</institution>
+</institution-wrap>
+<city>Beijing</city>
+<country country="CN">China</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-12-16">
+<day>16</day>
+<month>12</month>
+<year>2025</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP109400</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-10-06">
+<day>06</day>
+<month>10</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-09-25">
+<day>25</day>
+<month>09</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.09.24.678428"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Li et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Li et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-109400-v1.pdf"/>
+<abstract>
+<p>Reconstructing speech from neural recordings is crucial for understanding speech coding and developing brain-computer interfaces (BCIs). However, existing methods trade off acoustic richness (pitch, prosody) for linguistic intelligibility (words, phonemes). To overcome this limitation, we propose a dual-path framework to concurrently decode acoustic and linguistic representations. The acoustic pathway uses a long-short term memory (LSTM) decoder and a high-fidelity generative adversarial network (HiFi-GAN) to reconstruct spectrotemporal features. The linguistic pathway employs a transformer adaptor and text-to-speech (TTS) generator for word tokens. These two pathways merge via voice cloning to combine both acoustic and linguistic validity. Using only 20 minutes of electrocorticography (ECoG) data per subject, our approach achieves highly intelligible synthesized speech (mean opinion score = 4.0/5.0, word error rate = 18.9%). Our dual-path framework reconstructs natural and intelligible speech from ECoG, resolving the acoustic-linguistic trade-off.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100001809</institution-id>
+<institution>MOST | National Natural Science Foundation of China (NSFC)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>32371154</award-id>
+<principal-award-recipient>
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-2">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100003399</institution-id>
+<institution>Science and Technology Commission of Shanghai Municipality (STCSM)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>24QA2705500</award-id>
+<principal-award-recipient>
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-3">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100003399</institution-id>
+<institution>Science and Technology Commission of Shanghai Municipality (STCSM)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>22PJ1410500</award-id>
+<principal-award-recipient>
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-4">
+<funding-source>
+<institution-wrap>
+<institution>Lingang Laboratory</institution>
+</institution-wrap>
+</funding-source>
+<award-id>LG-GG-202402-06</award-id>
+<principal-award-recipient>
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Understanding how the human brain encodes and decodes spoken language is a central challenge in cognitive neuroscience (<xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c5">5</xref>), with profound implications for brain-computer interfaces (BCIs) (<xref ref-type="bibr" rid="c6">6</xref>–<xref ref-type="bibr" rid="c9">9</xref>). Reconstructing perceived speech directly from neural activity provides a powerful approach to studying the hierarchical organization of language processing in the auditory cortex and to developing assistive technologies for individuals with impaired communication abilities (<xref ref-type="bibr" rid="c10">10</xref>–<xref ref-type="bibr" rid="c15">15</xref>). This neural decoding paradigm not only helps reveal the representational structure of linguistic features across the cortex but also enables the synthesis of intelligible speech directly from brain signals (<xref ref-type="bibr" rid="c16">16</xref>–<xref ref-type="bibr" rid="c18">18</xref>).</p>
+<p>Recent advances in deep learning have accelerated progress in neural speech reconstruction by enabling end-to-end mappings from neural recordings to acoustic waveforms (<xref ref-type="bibr" rid="c6">6</xref>, <xref ref-type="bibr" rid="c7">7</xref>, <xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c19">19</xref>). However, these models typically require large-scale paired datasets—hours or even days of simultaneous neural and speech recordings per subject—to learn the complex nonlinear transformations involved. This data scarcity remains a major bottleneck, especially in clinical or intracranial recording settings where data acquisition is constrained by practical and ethical limitations.</p>
+<p>To address this challenge, recent work has leveraged pre-trained self-supervised learning (SSL) models, such as Wav2Vec2.0 and HuBERT, which learn rich acoustic and phonetic representations from large-scale unlabeled speech corpora (<xref ref-type="bibr" rid="c20">20</xref>, <xref ref-type="bibr" rid="c21">21</xref>). These models have been shown to exhibit strong correspondence with neural activity in the auditory cortex, supporting near-linear mappings between latent model representations and cortical responses (<xref ref-type="bibr" rid="c22">22</xref>–<xref ref-type="bibr" rid="c24">24</xref>). Similarly, large language models trained purely on text, such as GPT (<xref ref-type="bibr" rid="c25">25</xref>), also capture high-level semantic representations that correlate with activity in language-responsive cortical regions (<xref ref-type="bibr" rid="c26">26</xref>–<xref ref-type="bibr" rid="c28">28</xref>). Together, these findings suggest that the latent spaces of speech and language models provide a natural bridge between brain activity and interpretable representations of speech, enabling more data-efficient neural decoding.</p>
+<p>Current approaches to speech decoding from brain activity can be broadly categorized into two paradigms. The first, neural-to-acoustic decoding, maps brain signals to low-level spectral or waveform features such as formants, pitch, or spectrograms (<xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c11">11</xref>, <xref ref-type="bibr" rid="c15">15</xref>, <xref ref-type="bibr" rid="c29">29</xref>). This approach captures fine acoustic detail, including speaker identity, prosody, and timbre, and benefits from pre-trained speech synthesizers for waveform generation (<xref ref-type="bibr" rid="c17">17</xref>–<xref ref-type="bibr" rid="c19">19</xref>, <xref ref-type="bibr" rid="c30">30</xref>, <xref ref-type="bibr" rid="c31">31</xref>). However, due to the high dimensionality and dynamic nature of speech, this regression problem is inherently difficult and often yields low intelligibility when training data is limited. The second, neural-to-text decoding, treats speech reconstruction as a temporal classification task—mapping neural signals to a sequence of discrete linguistic units such as phonemes, characters, or words (<xref ref-type="bibr" rid="c12">12</xref>, <xref ref-type="bibr" rid="c14">14</xref>, <xref ref-type="bibr" rid="c32">32</xref>–<xref ref-type="bibr" rid="c34">34</xref>). This strategy achieves strong performance with relatively small datasets and aligns well with natural language processing (NLP) pipelines (<xref ref-type="bibr" rid="c35">35</xref>–<xref ref-type="bibr" rid="c38">38</xref>), but sacrifices naturalness and expressiveness and lacks paralinguistic features crucial for human communication.</p>
+<p>Here, we propose a unified and efficient dual-pathway decoding framework that integrates the complementary strengths of both paradigms. Our method maps intracranial electrocorticography (ECoG) signals into the latent spaces of pre-trained speech and language models via two lightweight neural adaptors: an acoustic pathway, which captures low-level spectral features for naturalistic speech synthesis, and a linguistic pathway, which extracts high-level linguistic tokens for semantic intelligibility. These pathways are fused using a fine-tuned text-to-speech (TTS) generator with voice cloning, producing re-synthesized speech that retains both the acoustic spectrotemporal details, such as the speaker’s timbre and prosody, and the message linguistic content. The adaptors rely on near-linear mappings and require only 20 minutes of neural data per participant for training, while the generative modules are pre-trained on large unlabeled corpora and require no neural supervision.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Overview of the proposed speech re-synthesis method</title>
+<p>Our proposed framework for reconstructing speech from intracranial neural recordings is designed around two complementary decoding pathways: an acoustic pathway focused on preserving low-level spectral and prosodic detail, and a linguistic pathway focused on decoding high-level textual and semantic content. These two streams are ultimately fused to synthesize speech that is both natural-sounding and intelligible, capturing the full richness of spokexn language. <xref rid="fig1" ref-type="fig">Fig. 1</xref> provides a schematic overview of this dual-pathway architecture.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Fig. 1.</label>
+<caption><title>The neural data acquisition and acoustic-linguistic dual-pathway framework for neural-driven natural speech re-synthesis.</title>
+<p>(<bold>A</bold>) The neural data acquisition. We collected ECoG data from 9 monolingual native English participants as they each listened to English sentences from the TIMIT corpus, resulting in 20 minutes of neural recording data per participant. Furthermore, for each participant, 70%, 20%, and 10% of the recorded neural activities are respectively allocated to the training, validation, and test sets randomly. (<bold>B</bold>) The acoustic-linguistic dual-pathway framework. The acoustic pathway consists of two stages: Stage 1: A HiFi-GAN generator is pre-trained to synthesize natural speech from features extracted by the frozen Wav2Vec2.0 encoder, using a multi-receptive field fusion module and adversarial training with discriminators. This stage uses the LibriSpeech corpus to enhance speech representation learning. Stage 2: A lightweight LSTM adaptor maps neural activity to speech representations, enabling the frozen HiFi-GAN generator to re-synthesize high acoustic fidelity speech from neural data. The linguistic pathway involves a Transformer adaptor refining neural features to align with word tokens, which are fed into the frozen Parler-TTS model to generate high linguistic intelligibility speech. The voice cloning stage uses CosyVoice 2.0 (fine-tuned on TIMIT) to clone the speaker’s voice, ensuring the ultimate re-synthesized speech waveform matches the original stimuli in clarity and voice characteristics.</p></caption>
+<graphic xlink:href="678428v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The acoustic pathway aims to synthesize speech with high acoustic naturalness, including prosody, speaker identity, and timbre, through a two-stage training process. In stage 1, we pre-train a high-fidelity generative adversarial network (HiFi-GAN) generator using a large corpus of natural speech data, without requiring paired neural recordings. This stage involves a speech autoencoder architecture consisting of a frozen Wav2Vec2.0 encoder (<xref ref-type="bibr" rid="c20">20</xref>), which transforms ECoG signals into latent representations known to correlate with brain activity (<xref ref-type="bibr" rid="c22">22</xref>, <xref ref-type="bibr" rid="c23">23</xref>), and a trainable HiFi-GAN decoder, which synthesizes natural-sounding speech waveforms from these representations (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>). HiFi-GAN (<xref ref-type="bibr" rid="c39">39</xref>), a generative adversarial network, was pre-trained to reconstruct high-fidelity speech using features extracted by the Wav2Vec2.0 encoder. This stage defines a rich, brain-aligned acoustic feature space (<xref ref-type="bibr" rid="c24">24</xref>) that does not require paired neural data. In stage 2, in order to decode speech from the brain, we next trained a lightweight acoustic adaptor that maps ECoG recordings onto the pre-defined latent space of the speech generator. This adaptor, a three-layer bidirectional long-short term memory (LSTM) model (~9.4M parameters), was trained using only 20 minutes of neural recordings per participant while listening to natural speech. The HiFi-GAN waveform decoder remained frozen, allowing the adaptor to be trained efficiently and independently. This acoustic pathway enables high-fidelity speech reconstruction directly from neural signals, capturing fine-grained auditory detail while remaining data-efficient.</p>
+<p>While the acoustic pathway ensures naturalness, it lacks explicit linguistic structure. The goal of the linguistic pathway is to decode discrete word-level representations from brain activity, facilitating the reconstruction of speech that is not only fluent but also semantically and syntactically accurate. To extract high-level linguistic information, we trained a Transformer-based linguistic adaptor (~10.1M parameters) to align ECoG signals with word token representations derived from transcribed speech. This adaptor comprises a three-layer encoder and decoder and is trained in a supervised manner using the same 20-minute neural dataset. The adaptor output is fed into Parler-TTS (<xref ref-type="bibr" rid="c40">40</xref>), a state-of-the-art TTS model (~880M parameters), which synthesizes fluent speech from word token sequences. This pathway captures syntactic structure and lexical identity that are not explicitly represented in the acoustic stream.</p>
+<p>To generate speech that combines the strengths of both pathways, retaining the acoustic richness from the first and the intelligibility from the second, we fused the outputs in a final synthesis stage. The resulting waveforms were passed through CosyVoice 2.0 (<xref ref-type="bibr" rid="c41">41</xref>), a high-quality speech synthesis model with robust voice cloning and denoising capabilities.</p>
+<p>CosyVoice 2.0 was fine-tuned on the training set of TIMIT to improve articulation clarity, speaker-specific characteristics, and prosodic expressiveness. The final output preserves both low-level acoustic fidelity (e.g., pitch, prosody, and timbre) and high-level linguistic content (e.g., accurate word sequences), resolving the traditional trade-off in brain-to-speech decoding. Across the entire framework, unsupervised pretraining and supervised neural adaptation are used synergistically to achieve efficient, high-quality speech reconstruction.</p>
+</sec>
+<sec id="s2b">
+<title>The acoustic and linguistic performance of the reconstructed speech</title>
+<p>We collected intracranial neural recordings from nine participants (4 male and 5 females; age range: 31-55) undergoing clinical neurosurgical evaluation for epilepsy. Each participant was implanted with high-density ECoG electrode arrays placed over the superior temporal gyrus and surrounding auditory speech cortex, based on clinical needs. During the experiment, participants passively listened to a set of 599 naturalistic English sentences spoken by multiple speakers. Neural signals were recorded at high temporal resolution while preserving the spatial specificity necessary to capture cortical responses to speech. This yielded approximately 20 minutes of labelled neural data for each participant. We then evaluated the quality of the re-synthesized sentences for each participant in the test set. Both subjective and objective evaluation metrics were adopted to give a comprehensive quantification of the effectiveness of this dual-path strategy in reconstructing intelligible and naturalistic speech from limited neural data. This included mean opinion score (MOS), mel-spectrogram correlation, word error rate (WER), and phoneme error rate (PER).</p>
+<p>First, we evaluated the lower-level acoustic quality of the reconstructed speech. The average mel-spectrogram R2 (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>) for the neural-driven re-synthesized speech across participants was 0.824 ± 0.029 (mean ± s.e., the best performance across participants achieving 0.844 ± 0.028, Fig. S3B). For comparison, we also computed these metrics on surrogate speech with additive noise (<xref ref-type="bibr" rid="c42">42</xref>) (measured in dB). The quality of the reconstructed speech was comparable to the R2 of −5dB and 0dB additive noise (−5dB: mel-spectrogram R2 = 0.864 ± 0.019, p = 0.161, two-sided t-test; 0dB: mel-spectrogram R2 = 0.771 ± 0.014, p = 0.064, two-sided t-test). The average MOS (<xref rid="fig2" ref-type="fig">Fig. 2c</xref>) for the neural-driven re-synthesized speech across participants was 3.956 ± 0.173, with the best performance across participants reaching 4.200 ± 0.119 (Fig. S3C).</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Fig. 2.</label>
+<caption><title>Examples of neural-driven speech reconstruction performance.</title>
+<p>(<bold>A</bold>) Ground truth and decoded speech comparisons. Waveforms (time vs. amplitude) and mel-spectrograms (time vs. frequency range 0-8 kHz) are shown for both the original (top) and reconstructed (bottom) speech samples, demonstrating preserved spectral-temporal patterns in the neural-decoded output. Decoding demonstration of phonemes and words is attached to the speech. (<bold>B</bold>) Mel-spectrogram correlation analysis. The KDE curve shows the distribution of aligned correlation coefficients between the original and reconstructed mel-spectrograms across all test samples, while the bar chart represents the percentage of trials in the test set (mean = 0.824 ± 0.028). Higher values reflect better acoustic feature preservation in the time-frequency domain. Purple dashed lines (light to dark) show average R<sup>2</sup> after adding −10 dB, −5 dB, and 0 dB additive noise to the original speech. (<bold>C</bold>) Human subject evaluations. The KDE curve displays the distribution of human evaluation results, while the bar chart represents the percentage of trials in the test set (mean = 3.956 ± 0.175). Higher values reflect better intelligibility. Purple dashed lines (light to dark) show the average MOS after adding −20 dB, −10 dB, and 0 dB additive noise to the original speech. (<bold>D-E</bold>) Word Error Rate (WER) and Phoneme Error Rate (PER) assessment.</p></caption>
+<graphic xlink:href="678428v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Second, we further evaluated the linguistic content and intelligibility of the re-synthesized speech using word error rate (WER) and phoneme error rate (PER) metrics (<xref rid="fig2" ref-type="fig">Fig. 2D, E</xref>). The neural-driven re-synthesized speech achieved an average WER of 18.9 ± 3.3% across participants, with the best performance reaching 12.1 ± 2.1% (Fig. S3D). The WER result is comparable to adding −5dB noise on the original input speech stimuli (14.0 ± 2.1%, p = 0.332, two-sided t-test). Similarly, the average PER was 12.0 ± 2.5%, with the best performance reaching 8.3 ± 1.5% (Fig. S3E), comparable to adding −5dB noise on the original input speech stimuli (6.0 ± 1.5%, p = 0.068, two-sided t-test). evaluation. The KDE curve displays distribution, while the bar chart represents the percentage of trials in the test set (mean WER = 0.189 ± 0.033, mean PER = 0.120 ± 0.025). Lower values indicate better word-level reconstruction accuracy. Purple dashed lines (light to dark) show average WER after adding −10 dB, −5 dB, and 0 dB additive noise to the original speech.</p>
+</sec>
+<sec id="s2c">
+<title>The acoustic pathway reconstructs high-fidelity lower-level acoustic information</title>
+<p>The acoustic pathway, implemented through a bi-directional LSTM neural adaptor architecture (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>), specializes in reconstructing fundamental acoustic properties of speech. This module directly processes neural recordings to generate precise time-frequency representations, focusing on preserving speaker-specific spectral characteristics like formant structures, harmonic patterns, and spectral envelope details. Quantitative evaluation confirms its core competency: achieving a mel-spectrogram R<sup>2</sup> of 0.793 ± 0.016 (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>) demonstrates remarkable fidelity in reconstructing acoustic microstructure. This performance level is statistically indistinguishable from original speech degraded by 0dB additive noise (0.771 ± 0.014, p = 0.242, one-sided t-test).</p>
+<p>However, exclusive reliance on acoustic reconstruction reveals fundamental limitations. Despite excellent spectral fidelity, the pathway produces critically impaired linguistic intelligibility. At the word level, intelligibility remains unacceptably low (WER = 74.6 ± 5.5%, <xref rid="fig2" ref-type="fig">Fig. 2D</xref>), while MOS and phoneme-level precision fares only marginally better (MOS = 2.878 ± 0.205, <xref rid="fig2" ref-type="fig">Fig. 2C</xref>; PER = 28.1 ± 2.2%, <xref rid="fig2" ref-type="fig">Fig. 2E</xref>). These deficiencies manifest perceptually as distorted articulation, inconsistent prosody, and compromised phonetic distinctiveness - collectively rendering the output functionally unintelligible for practical communication. This performance gap underscores a fundamental constraint: accurate acoustic feature reconstruction alone is insufficient for generating comprehensible speech, necessitating complementary linguistic processing.</p>
+</sec>
+<sec id="s2d">
+<title>The linguistic pathway reconstructs high-intelligibility, higher-level linguistic information</title>
+<p>The linguistic pathway, instantiated through a pre-trained TTS generator (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>), excels in reconstructing abstract linguistic representations. This module operates at the phonological and lexical levels, converting discrete word tokens into continuous speech signals while preserving prosodic contours, syllable boundaries, and phonetic sequences. It achieves a mean opinion score of 4.822 ± 0.086 (<xref rid="fig3" ref-type="fig">Fig. 3C</xref>) - significantly surpassing even the original human speech (4.234 ± 0.097, p = 6.674×10<sup>−33</sup>). Complementing this perceptual quality, objective intelligibility metrics confirm outstanding performance: WER reaches 17.7 ± 3.2%, with PER at 11.0 ± 2.3%. These results validate the pathway’s capacity for reconstructing high-level linguistic structures from symbolic representations.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Fig. 3.</label>
+<caption><title>Performance comparison among re-synthesized speech and MLP-regression, acoustic and linguistic baselines.</title>
+<p>(<bold>A</bold>) Speech waveform and mel-spectrogram observations. Depicted are waveforms (time vs. amplitude) and mel-spectrograms (time vs. frequency ranging 0-8 kHz) for illustrative speech samples (Ground truth, MLP regression and acoustic-linguistic pathway intermediate outputs as baseline 1-3, and our ultimate re-synthesized natural speech). (<bold>B</bold>) Objective evaluation using mel-spectrogram R<sup>2</sup>. Violin plots show the aggregated distribution of R<sup>2</sup> scores (0-1 scale) assessing spectral fidelity. The white dot represents the median, the box spans the interquartile range, and whiskers extend to ±1.5×IQR. Three dashed lines (light to dark) show average R<sup>2</sup> after adding −10 dB, −5 dB, and 0 dB additive noise to the original speech. (<bold>C</bold>) Subjective quality evaluation using mean opinion score (MOS). Violin plots show aggregated MOS distribution (1-5 scale). Three dashed lines (light to dark) indicate average MOS after adding −20 dB, −10 dB, and 0 dB additive noise. GT: Ground truth. (<bold>D</bold>) Intelligibility assessment using word error rate (WER). Violin plots show aggregated WER distribution (0-1 scale). Three purple dashed lines (light to dark) show the average WERs after adding −10 dB, −5 dB, and 0 dB additive noise. (<bold>E</bold>) Phoneme error rate (PER) assessment. Format and noise conditions identical to panel <bold>D</bold>. Statistical significance markers: *:p&lt;0.01, *:*p&lt;0.001, n.s.: not significant.</p></caption>
+<graphic xlink:href="678428v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Nevertheless, this linguistic feature caption comes at an acoustic cost. The pathway exhibits significant limitations in spectral fidelity, achieving only 0.627 ± 0.026 (<xref rid="fig3" ref-type="fig">Fig. 3B</xref>) mel-spectrogram R<sup>2</sup> - substantially below the 0dB noise reference (0.771 ± 0.014, p = 2.919×10<sup>−8</sup>). This deficiency stems from fundamental architectural constraints: lacking explicit acoustic feature modelling, the system fails to preserve critical speaker-specific attributes like vocal tract resonances, glottal source characteristics, and individual articulatory patterns. Consequently, while linguistically intelligible, the output lacks authentic speaker identity and natural timbral qualities essential for realistic speech reconstruction.</p>
+</sec>
+<sec id="s2e">
+<title>The fine-tuned voice cloner further enhances the fidelity and intelligibility of re-synthesized speech</title>
+<p>Voice cloning is used to bridge the gap between acoustic fidelity and linguistic intelligibility in speech reconstruction. This approach strategically combines the strengths of complementary pathways: the acoustic pathway preserves speaker-specific spectral characteristics while the linguistic pathway maintains lexical and phonetic precision. By integrating these components through neural voice cloning, we achieve balanced reconstruction that overcomes the limitations inherent in isolated systems.</p>
+<p>The integration paradigm resolves this fundamental dichotomy through strategic combination. Where the acoustic pathway preserves spectral patterns (R<sup>2</sup> = 0.793 ± 0.016) but suffers unintelligibility (WER = 74.6 ± 5.5%), and the linguistic pathway delivers lexical precision but lacks acoustic fidelity, their fusion creates a complementary system. This synergistic architecture maintains the linguistic pathway’s exceptional intelligibility while incorporating the acoustic pathway’s spectrotemporal reconstruction. The resultant output achieves what neither can accomplish independently: linguistically precise speech with an authentic acoustic signature, effectively decoupling and optimizing both reconstruction dimensions within a unified framework.</p>
+<p>To validate this integrated approach, we established three baseline models for comprehensive benchmarking. Baseline 1 (MLP-regression) directly maps neural recordings to mel-spectrograms without specialized processing. Baseline 2 represents the output of our acoustic pathway implementation, optimized for spectral feature reconstruction. Baseline 3 corresponds to the linguistic pathway output, generated by the TTS system without speaker-specific timbre adaptation.</p>
+<p>The integration breakthrough occurs when combining this acoustic foundation with linguistic pathway components. The full pipeline achieves transformative improvements: WER decreases by 75% (18.9 ± 3.3% vs 74.6 ± 5.5%, p = 4.249×10<sup>−88</sup>, one-sided t-test, <xref rid="fig2" ref-type="fig">Fig. 2D</xref>), while PER drops by 58% (12.0 ± 2.5% vs 28.1 ± 2.2%, p = 2.592×10<sup>−44</sup>, one-sided t-test, <xref rid="fig2" ref-type="fig">Fig. 2E</xref>). Crucially, this intelligibility enhancement occurs without compromising acoustic fidelity: Mel spectrum R<sup>2</sup> = 0.824±0.029 vs 0.793 ± 0.016 (acoustic pathway, p = 4.486×10<sup>−3</sup>, one-sided t-test).</p>
+<p>To further elucidate the phoneme recognition performance, we conducted an in-depth analysis of the errors present in the transcribed phoneme sequences derived from both original and re-synthesized speech. Specifically, we focused on the re-synthesized speech, where individual characters were subjected to insertion, deletion, or substitution operations to align them with the ground truth. This process not only quantified the errors but also provided insights into the relationships between different phonemes.</p>
+<p>The confusion matrices (<xref rid="fig4" ref-type="fig">Fig. 4 A-D</xref>) illustrate the distribution of these errors. The diagonal elements represent the correct matches, indicating the accuracy for each phoneme, while off-diagonal non-zero elements denote substitution errors. Empty rows signify insertion errors (extraneous phonemes), and empty columns indicate deletion errors (missing phonemes). These visual representations highlight the specific challenges faced by our proposed model and the baseline models in accurately recognizing certain phonemes.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Fig. 4.</label>
+<caption><title>Phoneme recognition performance: confusion matrices and accuracy comparison</title>
+<p>(<bold>A</bold>) Confusion matrix between transcribed phoneme sequences using our proposed model (horizontal axis) and ground truth (vertical axis). Diagonal values represent recognition accuracy for each phoneme (correct matches), while off-diagonal non-zero elements indicate substitution errors. Empty rows denote insertion errors (extraneous phonemes), empty columns indicate deletion errors (missing phonemes). All non-zero elements are highlighted for visual clarity. (<bold>B-D</bold>) Phoneme confusion matrix using baseline 1-3 for phoneme transcription. (<bold>E</bold>) Phoneme class clarity across methods. The violin plots show the proportion of correctly identified phonemes for each symbol. Asterisks (*) indicate phonemes where our proposed framework significantly outperforms baselines.</p></caption>
+<graphic xlink:href="678428v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In addition to the confusion matrices, we categorized the phonemes into vowels and consonants to assess the phoneme class clarity. We defined “phoneme class clarity” (PCC) as the proportion of errors where a phoneme was misclassified within the same class versus being misclassified into a different class. For instance, a vowel being mistaken for another vowel would be considered a within-class error, whereas a vowel being mistaken for a consonant would be classified as a between-class error.</p>
+<p>Our analysis revealed that the re-synthesized speech achieved a phoneme class clarity of 2.462 ± 0.201 (<xref rid="fig4" ref-type="fig">Fig. 4E</xref>), significantly outperforms chance level (1.360, calculated under the assumption that substituted phonemes are randomly distributed among all other phonemes, p = 3.424×10<sup>−6</sup>, one-sided t-test), MLP regression and acoustic pathway output (MLP regression: PCC = 1.694 ± 0.134, p = 1.312×10<sup>−3</sup>, one-sided t-test; acoustic pathway output: PCC = 1.735 ± 0.140, p = 2.367×10<sup>−3</sup>; linguistic pathway output: PCC = 2.446 ± 0.203, p = 0.477, one-sided t-test), indicating that most errors occurred within the same phoneme class. This result suggests that the model has a relatively good understanding of the phonetic structure, as it tends to confuse similar sounds rather than completely unrelated ones. Notably, this metric did not show significant differences compared to the baselines, suggesting that all models exhibit similar tendencies in terms of phoneme class confusion.</p>
+<p>These comprehensive results confirm that our voice cloning framework successfully integrates the complementary strengths of acoustic and linguistic processing pathways. It achieves this integration without compromising either dimension: while significantly enhancing acoustic fidelity beyond what the linguistic pathway alone can achieve, it simultaneously maintains near-optimal linguistic intelligibility that the isolated acoustic pathway cannot provide. This balanced performance profile demonstrates the efficacy of our approach in producing high-quality, intelligible speaker-specific speech reconstruction.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this study, we present a dual-path framework that synergistically decodes both acoustic and linguistic speech representations from ECoG signals, followed by a fine-tuned zero-shot text-to-speech network to re-synthesize natural speech with unprecedented fidelity and intelligibility. Crucially, by integrating large pre-trained generative models into our acoustic reconstruction pipeline and applying voice cloning technology, our approach preserves acoustic richness while significantly enhancing linguistic intelligibility beyond conventional methods. Using merely 20 minutes of ECoG recordings, our model achieved superior performance with a WER of 18.9% ± 3.3% and PER of 12.0% ± 2.5% (<xref rid="fig2" ref-type="fig">Fig. 2D, E</xref>). This integrated architecture, combining pre-trained acoustic (Wav2Vec2.0 and HiFi-GAN) and linguistic (Parler-TTS) models through lightweight neural adaptors, enables efficient mapping of ECoG signals to dual latent spaces. Such methodology substantially reduces the need for extensive neural training data while achieving breakthrough word clarity under severe data constraints. The results demonstrate the feasibility of transferring the knowledge embedded in speech-data pre-trained artificial intelligence (AI) models into neural signal decoding, paving the way for more advanced brain-computer interfaces and neuroprosthetics.</p>
+<p>Our framework establishes a framework for speech decoding by outperforming prior acoustic-only or linguistic-only approaches through integrated pretraining-powered acoustic and linguistic decoding. This dual-path methodology proves particularly effective where traditional methods fail, as it simultaneously resolves the acoustic-linguistic trade-off that has long constrained reconstruction quality. While end-to-end re-synthesis remains intuitively appealing, prior work confirms that direct methods achieve only modest performance given neural data scarcity(<xref ref-type="bibr" rid="c15">15</xref>). To overcome this, we propose a hybrid encoder-decoder architecture utilizing: (1) pre-trained spectral synthesizers (Wav2Vec2.0 and HiFi-GAN) for acoustic fidelity, and (2) transformer-based token decoders (Parler-TTS) for linguistic precision. Participant-specific projection modules further ensure cross-subject transferability with minimal per-user calibration. Collectively, these advances surmount core limitations of direct decoding, enabling unprecedented speech quality within extreme data constraints.</p>
+<p>A pivotal advancement lies in establishing robust, clinically relevant intelligibility metrics, notably achieving 18.9% WER and 12.0% PER through standardized evaluation, directly addressing the core challenge of word recognition in speech decoding. Our dual-path framework enables comprehensive sentence-level assessment through objective benchmarks (phonetic precision via PER and lexical accuracy via WER evaluated by Whisper ASR), acoustic fidelity validation (high mel-spectrogram correlation: 0.824 ± 0.029, <xref rid="fig2" ref-type="fig">Fig. 2B</xref>) and human perceptual testing (near-’excellent’ MOS ratings: 3.956 ± 0.173, <xref rid="fig2" ref-type="fig">Fig. 2C</xref>). Critically, this tripartite evaluation spanning acoustic (spectral/time-domain), linguistic (phoneme/word), and perceptual dimensions revealed superior reconstruction quality, while objective metrics confirmed spectral coherence rivalling clean speech inputs.</p>
+<p>Our findings demonstrate that neural representations exhibit dual alignment, which is not only with acoustic features from deep speech models (Wav2Vec2.0), but critically with linguistic features from language models (Parler-TTS), establishing a bidirectional bridge between cortical activity and hierarchical speech representations. This convergence mirrors the complementary processing streams observed in the human speech cortex (<xref ref-type="bibr" rid="c23">23</xref>, <xref ref-type="bibr" rid="c27">27</xref>) where self-supervised models capture both spectrotemporal patterns and semantic structures. Such unified alignment marks a paradigm shift in brain-AI integration: The discovery of near-linear mappings between neural and multimodal AI spaces unlocks transformative applications in speech synthesis and cognitive interfaces. Furthermore, our results confirm that foundation models serve as scalable ‘cognitive mirrors’ (<xref ref-type="bibr" rid="c43">43</xref>). With the advent of more sophisticated generative models, we anticipate enhanced neural decoding capabilities, including the potential to improve signal quality (in terms of SNR) and refine the generative model itself. Additionally, this framework extends beyond speech to other modalities, such as vision, suggesting that similar principles may apply to the generation of visual content from neural signals.</p>
+<p>This work advances speech decoding and potentially speech BCIs by enabling real-time speech reconstruction with minimal neural data, improving scalability and practicality through pre-trained AI models, and suggesting potential for broader applications in perception, memory, and emotion. By adapting neural activity to a common latent space of the pre-trained speech autoencoder, our framework significantly reduces the quantity of neural data required for effective speech decoding, thereby addressing a major limitation in current BCI technologies. This reduction in data needs paves the way for more accessible and scalable BCI solutions, particularly for individuals with speech impairments who stand to benefit from immediate and intelligible speech reconstruction. Furthermore, the applicability of our model extends beyond speech, hinting at the possibility of decoding other cognitive functions once the corresponding neural correlates are identified. This opens up exciting avenues for expanding BCI functionality into areas such as perception, memory, and emotional expression, thereby enhancing the overall quality of life for users of neuroprosthetic devices.</p>
+<p>There are several limitations in our study. The quality of the re-synthesized speech heavily relies on the performance of the generative model, indicating that future work should focus on refining and enhancing these models. Currently, our study utilized English speech sentences as input stimuli, and the performance of the system in other languages remains to be evaluated. Regarding signal modality and experimental methods, the clinical setting restricts us to collecting data during brief periods of awake neurosurgeries, which limits the amount of usable neural activity recordings. Overcoming this time constraint could facilitate the acquisition of larger datasets, thereby contributing to the re-synthesis of higher-quality natural speech. Additionally, exploring non-invasive methods represents another frontier; with the accumulation of more data and the development of more powerful generative models, it may become feasible to achieve effective non-invasive neural decoding for speech re-synthesis.</p>
+<p>In summary, our dual-path framework achieves high speech reconstruction quality by strategically integrating language models for lexical precision and voice cloning for vocal identity preservation—yielding a 37.4% improvement in MOS scores over conventional methods. This approach enables high-fidelity, sentence-level speech synthesis directly from cortical recordings while maintaining speaker-specific vocal characteristics. Despite current constraints in generative model dependency and intraoperative data collection, our work establishes a new foundation for neural decoding development. Future efforts should prioritize: (1) refining few-shot adaptation techniques, (2) developing non-invasive implementations, and (3) expanding to dynamic dialogue contexts. The convergence of neurophysiological data with multimodal foundation models promises transformative advances—not only revolutionizing speech BCIs but potentially extending to cognitive prosthetics for memory augmentation and emotional communication. Ultimately, this paradigm will deepen our understanding of neural speech processing while creating clinically viable communication solutions for those with severe speech impairments.</p>
+</sec>
+<sec id="s4">
+<title>Materials and Methods</title>
+<sec id="s4a">
+<title>Participants</title>
+<p>The study comprised 9 monolingual right-handed participants, each with electrodes placed on the left hemisphere cortex to clinically monitor seizure activities. Electrode placement followed specific clinical requirements (see Fig. S1 for grid placement in each placement). Participants were thoroughly informed about the experiment, as outlined in the consent document approved by the Institutional Review Board (IRB) of the University of California, San Francisco. They volunteered for participation, ensuring that their involvement did not influence their clinical care. Additionally, verbal consent was obtained from participants at the beginning of each experimental session.</p>
+</sec>
+<sec id="s4b">
+<title>Data acquisition and neural signal processing</title>
+<p>All participants utilized high-density ECoG grids of uniform specifications and type. During the experimental tasks, neural signals captured by the ECoG grids were acquired using a multi-channel amplifier optically linked to the digital signal processor. Data recording was performed through Tucker-Davis Technology (TDT) OpenEx software. The local field potential at each electrode contact was amplified and sampled at 3052 Hz. Subsequent to data collection, the experiment employed the Hilbert transform to compute the analytic amplitudes of eight Gaussian filters (with center frequencies ranging from 70 to 150 Hz), and the signal was down-sampled to 50 Hz. These tasks were segmented into record blocks lasting approximately 5 minutes each. The neural signals were z-score normalized for each recording block.</p>
+</sec>
+<sec id="s4c">
+<title>Experimental Stimuli</title>
+<p>The acoustic stimuli employed in this study comprised natural and continuous English speech. The English speech stimuli were sourced from the TIMIT corpus (<xref ref-type="bibr" rid="c44">44</xref>), consisting of 499 sentences read by 286 male and 116 female speakers. A silence interval of 0.4 seconds was maintained between sentences. The task was organized into five blocks, each with a duration of approximately 5 minutes.</p>
+</sec>
+<sec id="s4d">
+<title>Electrode localization</title>
+<p>In cases involving chronic monitoring, the electrode placement procedure involved pre-implantation MRI and post-implantation CT scans. In awake cases, temporary high-density electrode grids were utilized to capture cortical local potentials, with their positions recorded using the Medtronic neuronavigation system. The recorded positions were then aligned to pre-surgery MRI data, with intraoperative photographs serving as additional references. Localization of the remaining electrodes was achieved through interpolation and extrapolation techniques.</p>
+</sec>
+<sec id="s4e">
+<title>Speech-responsive electrode selection</title>
+<p>The selection of speech-responsive electrodes played a crucial role in the re-synthesis of high-quality natural speech and in avoiding overfitting. Onsets were identified as the initiation of speech and are preceded by more than 400 ms of silence. A paired sample t-test was conducted to investigate whether the average post-onset response (400 ms to 600 ms) exhibited a significant increase compared to the average pre-onset response (−200 ms to 0 ms, p &lt; 0.01, one-sided, Bonferroni corrected).</p>
+</sec>
+<sec id="s4f">
+<title>Architecture and training of the speech Autoencoder</title>
+<p>The speech Autoencoder served as a pivotal component, taking natural speech as input and reproducing the input itself. Within this model, the intermediate encoding layers were construed as the feature extraction layers. The architecture comprises an encoder, namely Wav2Vec2.0, and a decoder, which is the HiFi-GAN generator.</p>
+<p>The Wav2Vec2.0 encoder was comprised of 7 1D convolutional layers that down-sample 16kHz natural speech to 50Hz, thereby extracting 768-dimensional local features. Additionally, it integrated 12 transformer-encoder blocks to extract contextual feature representations from unlabeled speech data.</p>
+<p>On the other hand, the HiFi-GAN generator incorporated 7 transposed convolutional layers for up-sampling, along with multi-receptive field (MRF) fusion modules. Each MRF module aggregated the output features from multiple ResBlocks. The discriminator within the HiFi-GAN encompassed both multi-scale and multi-period discriminators. Notably, the up-sample rates and kernel sizes of each ResBlock in the MRFs were meticulously configured. The up-sample rates of each ResBlock in the MRFs were set as 2, 2, 2, 2, 2, 2, 5 respectively. The up-sample kernel sizes of each ResBlock in the MRFs were set as 2, 2, 3, 3, 3, 3, 10. The periods of the multi-period discriminator were set as 2, 3, 5, 7, 11.</p>
+<p>The HiFi-GAN generator <italic>G</italic> and discriminators <italic>D</italic><sub><italic>k</italic></sub> were trained simultaneously and adversarially. The loss function consisted of three parts: adversarial loss <italic>L</italic><sub><italic>Adv</italic></sub> to train the HiFi-GAN, mel-spectrogram loss <italic>L</italic><sub><italic>Mel</italic></sub> to improve the training efficiency of the generator and feature matching loss <italic>L</italic><sub><italic>FM</italic></sub> to measure the similarity between original speech and re-synthesized speech from learned features:
+<disp-formula id="ueqn1">
+<graphic xlink:href="678428v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The regularization coefficients <italic>λ</italic><sub><italic>FM</italic></sub> and <italic>λ</italic><sub><italic>Mel</italic></sub> were set as 2 and 50 respectively in the implementation. In detail, the three terms of <italic>L</italic><sub><italic>G</italic></sub> were:
+<disp-formula id="ueqn2">
+<graphic xlink:href="678428v1_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Where <italic>φ</italic> represented the mel-spectrogram operator, <italic>T</italic> was the number of layers in the discriminator, <italic>D</italic><sup><italic>i</italic></sup> and <italic>N</italic><sub><italic>i</italic></sub> were the features and the number of features in the <italic>i</italic>th layer of the discriminator, <italic>x</italic> and <italic>x</italic><sub><italic>SAE</italic></sub> represented the original speech and the reconstructed speech using the pre-trained speech Autoencoder:
+<disp-formula id="ueqn3">
+<graphic xlink:href="678428v1_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The parameters in Wav2Vec2.0 were frozen within this training phase. The parameters in HiFi-GAN were optimized using the Adam optimizer with a fixed learning rate of 10<sup>−5</sup>, <italic>β</italic><sub>1</sub> = 0.9, <italic>β</italic><sub>2</sub> = 0.999. We trained this Autoencoder in LibriSpeech, a 960-hour English speech corpus with a sampling rate of 16kHz. We spent 12 days in parallel training on 6 Nvidia GeForce RTX3090 GPUs. The maximum training epoch was 2000. The optimization did not stop until the validation loss no longer decreased.</p>
+</sec>
+<sec id="s4g">
+<title>Acoustic feature adaptor training and ablation test</title>
+<p>The acoustic feature adaptor was trained to acquire the acoustically fidelity re-synthesized natural speech. The acoustic speech re-synthesizer received <italic>z</italic>-scored high gamma ECoG snippets with dimensions <italic>N</italic> × <italic>T</italic>, where <italic>N</italic> was the number of selected speech-responsive electrodes, and <italic>T</italic> was the ECoG recordings (50 Hz) down-sampled to the same sample rate as the speech features extracted from pre-trained Wav2Vec2.0.</p>
+<p>A three-layer bidirectional LSTM adaptor <italic>f</italic> (see <xref rid="fig1" ref-type="fig">Fig. 1B</xref>) aligned recorded ECoG signals to speech features. The output of the adaptor was 768 × <italic>T</italic>, as the input of the HiFi-GAN generator pre-trained in phase 1. The ultimate output of the HiFi-GAN was a speech waveform with a length of 1 × (320<italic>T</italic> + 80) in a 16K sample rate.</p>
+<p>We froze all the parameters of the pre-trained speech Autoencoder while training the adaptor. The loss function used in this phase consisted of two parts: the mel-spectrogram loss <italic>L</italic><sub><italic>Mel</italic></sub> and the Laplacian loss <italic>L</italic><sub><italic>Lap</italic></sub>:
+<disp-formula id="ueqn4">
+<graphic xlink:href="678428v1_ueqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the regularization coefficient <italic>λ</italic> was set as 0.1 using the ablation test.</p>
+<p><italic>L</italic><sub><italic>Mel</italic></sub> was used to enhance the acoustic fidelity and intelligibility of the ultimate re-synthesized speech from recorded neural activity:
+<disp-formula id="ueqn5">
+<graphic xlink:href="678428v1_ueqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>x</italic> and <italic>x</italic><sub><italic>a</italic></sub> respectively represented the original and acoustic fidelity speech, and <italic>Φ</italic> represented the mel-spectrogram operator.</p>
+<p>In order to improve the phonetic intelligibility, a Laplace operator as a convolution kernel was applied to the mel-spectrogram, which was a simplified representation of the convolution on the spectrogram, while convolution on the spectrogram was proven to be effective on speech denoising and enhancement(<xref ref-type="bibr" rid="c45">45</xref>):
+<disp-formula id="ueqn6">
+<graphic xlink:href="678428v1_ueqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The parameters in the HiFi-GAN generator were frozen within this training phase. The parameters in the adaptor were trained in Stochastic Gradient Descent (SGD) optimizer with a fixed learning rate of 3 × 10<sup>−3</sup> and a momentum of 0.5. A 10% dropout layer was added in this stage to avoid overfitting. The optimization did not stop until the validation loss no longer decreased.</p>
+<p>For each participant, we trained a personalized feature adaptor. Each individual feature adapter underwent training for 500 epochs on one NVidia GeForce RTX3090 GPU, which required 12 hours to complete. The dataset was divided into training, validation, and test sets, comprising 70%, 20%, and 10% of the total trials, respectively.</p>
+</sec>
+<sec id="s4h">
+<title>Linguistic feature adaptor training and ablation test</title>
+<p>The linguistic feature adaptor was designed to decode word token sequences from ECoG recordings. The model received z-scored high gamma ECoG snippets with dimensions (<italic>N</italic> × <italic>T</italic>), where <italic>N</italic> was the number of selected speech-responsive electrodes, and <italic>T</italic> was the ECoG recordings (50 Hz) down-sampled to the same sample rate as the acoustic feature training stage.</p>
+<p>An attention-based Seq2Seq Transformer architecture (see <xref rid="fig1" ref-type="fig">Fig. 1B</xref>) was employed to adapt ECoG signals to linguistic features. The linguistic adaptor consisted of 3 encoder layers and 3 decoder layers, with a hidden dimension of 256 and 8 attention heads. The input ECoG signals were first projected into a latent space using a linear layer, followed by positional encoding to capture temporal dependencies. The decoder generated word token sequences autoregressively, starting with a start-of-sequence (SOS) token. The output dimension matched the linguistic feature space (1024-dimensional).</p>
+<p>The loss function combined the token-level KL-divergence and sequence length prediction loss with L2 regularization:
+<disp-formula id="ueqn7">
+<graphic xlink:href="678428v1_ueqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>L</italic><sub><italic>token</italic></sub> measured the KL-divergence between predicted and target token distributions:
+<disp-formula id="ueqn8">
+<graphic xlink:href="678428v1_ueqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+and <italic>L</italic><sub><italic>length</italic></sub> was a Huber loss between predicted and actual sequence lengths:
+<disp-formula id="ueqn9">
+<graphic xlink:href="678428v1_ueqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The regularization coefficient <italic>λ</italic><sub>1</sub> was set to 1 based on ablation tests, and L2 regularization (weight decay = 0.01) was applied to mitigate overfitting. The model was trained using the Adam optimizer with a fixed learning rate of 10<sup>−4</sup> for 500 epochs. The dataset was split into training (70%), validation (20%), and test (10%) sets, consistent with the acoustic feature adaptor. For each participant, a personalized linguistic adaptor was trained on one NVidia GeForce RTX3090 GPU, requiring approximately 6 hours to complete.</p>
+</sec>
+<sec id="s4i">
+<title>Automatic phoneme recognition of re-synthesized speech sentences</title>
+<p>In order to quantitatively evaluate the synthesized speech is to recognize the phonemes, we fine-tuned a phoneme recognizer using Wav2Vec2.0, a logistic regression phoneme classifier, and a phoneme decoder. Wav2Vec2.0 was used for feature extraction, the classifier outputs a probability vector from Wav2Vec2.0 features, and the phoneme decoder decoded a phoneme sequence from the probability vectors to finally get the phoneme sequence.</p>
+<p>The models are trained and evaluated on the training set and test set of TIMIT, and tested on the re-synthesized ECoG recordings. These parameters were trained using the AdamW optimizer with a fixed learning rate of 10<sup>−4</sup>, <italic>β</italic><sub>1</sub> = 0.9, <italic>β</italic><sub>2</sub> = 0.999, and <italic>ε</italic> = 10<sup>−8</sup> in the CTC loss function. The optimization did not stop until the validation loss no longer decreased.</p>
+</sec>
+<sec id="s4j">
+<title>Phoneme error rate (PER) and word error rate (WER)</title>
+<p>We implemented a two-stage transcription pipeline to evaluate linguistic intelligibility. First, word sequences were transcribed using OpenAI’s Whisper model(<xref ref-type="bibr" rid="c46">46</xref>) (base version) with default parameters, which provided both word-level alignments and confidence scores. The reference and decoded word sequences were then aligned using edit distance to compute WER. The error rates were calculated by applying the same edit distance algorithm to the forced aligned phoneme sequences. This combined approach ensured consistent phoneme representations between natural and synthesized speech during comparison:
+<disp-formula id="ueqn10">
+<graphic xlink:href="678428v1_ueqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Where Edit(<italic>original, transcribed</italic>) denotes the edit distance between original and transcribed phoneme sequences; <italic>N</italic> is the number of phonemes in the sentence.</p>
+</sec>
+<sec id="s4k">
+<title>Alignment of the ultimate re-synthesized speech to calculate the mel-spectrogram R<sup>2</sup></title>
+<p>To quantitatively evaluate the acoustic fidelity of the re-synthesized speech using mel-spectrogram R<sup>2</sup>, we performed temporal alignment between the reconstructed and ground truth mel-spectrograms. First, word-level timestamps were extracted from the transcribed speech using OpenAI’s Whisper model, which provided precise boundaries for voiced segments. The mel-spectrogram of the re-synthesized speech was then segmented into these intervals, excluding silent or non-speech regions. Each voiced segment was resampled to match the temporal resolution of the corresponding ground truth spectrogram using linear interpolation, ensuring frame-by-frame comparability. The squared Pearson correlation coefficient (R<sup>2</sup>) was computed over the aligned spectrograms, measuring the proportion of variance in the ground truth spectrogram explained by the reconstructed features. This approach accounted for natural variations in speech rate while rigorously quantifying spectral fidelity, with higher R<sup>2</sup> values (closer to 1) indicating superior preservation of time-frequency structures critical for speech intelligibility and naturalness.</p>
+</sec>
+<sec id="s4l">
+<title>Voice cloning for the ultimate re-synthesized natural speech</title>
+<p>To achieve personalized speech output, we implemented a voice cloning pipeline that preserves the subject’s unique vocal features (Fig. S2). The system takes two key inputs: (1) a clean voice sample from the denoised linguistic speech reference, and (2) the corresponding word sequence transcribed by Whisper. This approach serves dual purposes - Whisper first transcribes the original speech to provide accurate text prompts, then later evaluates the intelligibility of the ultimate re-synthesized speech by transcribing it again for word error rate calculation.</p>
+<p>The cloning process begins with extracting vocal fingerprints from the short reference sample, capturing distinctive timbral qualities like pitch contour and formant structure. These vocal features are then mapped to the target word sequences, generating synthetic speech that maintains the subject’s natural voice patterns while clearly articulating the desired content.</p>
+<p>We specifically employed the “3-second rapid cloning” mode to optimize for both efficiency and voice quality. This ultra-fast processing allows for quick adaptation to individual speakers while still producing highly natural-sounding results. The synthesized output was rigorously evaluated through both objective metrics (Whisper-based transcription accuracy) and subjective listening tests to ensure faithful reproduction of the original voice features.</p>
+</sec>
+<sec id="s4m">
+<title>Fine-tuning CosyVoice2.0 on TIMIT corpus</title>
+<p>To enhance the fidelity and intelligibility of re-synthesized speech while utilizing the generative capacity of large speech models for artifact mitigation, CosyVoice2.0 was fine-tuned on the sentences from the TIMIT corpus used in the training set of neural-driven dual-pathway model training. The architecture comprises two core components: (i) a “Flow” module converting tokens to acoustic features via Text Embedding, Speaker Embedding (linear layer), Encoder, and causal conditional CFM Decoder; and (ii) a “Hift” vocoder synthesizing waveforms from Flow outputs using an F0 extractor, Up-sampler, and 9 residual blocks. Selective parameter optimization was applied to: (i) the first and final layers of the 12-layer Flow decoder, and (ii) the Speaker Embedding linear layer. The model mapped speech autoencoder outputs and punctuation-free plain text to ground-truth waveforms, optimized with a compound loss consists of STFT-based KL-divergence and MFCC loss:
+<disp-formula id="ueqn11">
+<graphic xlink:href="678428v1_ueqn11.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+These models were trained using AdamW optimizer with a fixed learning rate of 10-5, and set <italic>β</italic><sub>1</sub> = 0.9, <italic>β</italic><sub>2</sub> = 0.999, and <italic>ε</italic> = 10<sup>−8</sup>.</p>
+</sec>
+</sec>
+</body>
+<back>
+<sec id="additional-info" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="das" sec-type="data-availability">
+<title>Data availability</title>
+<p>The raw datasets supporting the current study have not been deposited in a public repository because it contains personally identifiable patient information, but are available in an anonymized form from the authors upon reasonable requests. All original code to replicate the main findings of this study can be found at <ext-link ext-link-type="uri" xlink:href="https://github.com/CCTN-BCI/Neural2Speech2">https://github.com/CCTN-BCI/Neural2Speech2</ext-link>. Any additional information required to reanalyze the data reported in this paper is available from the lead contact upon request.</p>
+</sec>
+<sec id="s5">
+<title>Funding</title>
+<p>Dr. Yuanning Li receives funding from National Natural Science Foundation of China (32371154), Shanghai Rising-Star Program (24QA2705500), Shanghai Pujiang Program (22PJ1410500), Lingang Laboratory (LG-GG-202402-06), and HPC Platform of ShanghaiTech University.</p>
+</sec>
+<sec id="s6">
+<title>Author contributions</title>
+<p>Conceptualization: Y.L.;</p>
+<p>Methodology: J.L., C.G., C.Z. and Y.L.;</p>
+<p>Software: J.L. C.G., and Y.L.;</p>
+<p>Formal analysis: J.L. and Y.L.;</p>
+<p>Resources: E.F.C. and Y.L.;</p>
+<p>Writing—original draft: J.L. and Y.L.;</p>
+<p>Writing—review and editing: J.L., C.G., C.Z., E.F.C., and Y.L.;</p>
+<p>Supervision: Y.L.;</p>
+<p>Project administration: Y.L.</p>
+</sec>
+</sec>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Supplementary Information</label>
+<media xlink:href="supplements/678428_file02.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>G.</given-names> <surname>Hickok</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Poeppel</surname></string-name></person-group>, <article-title>Opinion - The cortical organization of speech processing</article-title>. <source>Nat Rev Neurosci</source> <volume>8</volume>, <fpage>393</fpage>–<lpage>402</lpage> (<year>2007</year>).</mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>I.</given-names> <surname>Bhaya-Grossman</surname></string-name>, <string-name><given-names>E. F.</given-names> <surname>Chang</surname></string-name></person-group>, <article-title>Speech computations of the human superior temporal gyrus</article-title>. <source>Annual review of psychology</source> <volume>73</volume>, <fpage>79</fpage>–<lpage>102</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A. G.</given-names> <surname>Huth</surname></string-name>, <string-name><given-names>W. A.</given-names> <surname>de Heer</surname></string-name>, <string-name><given-names>T. L.</given-names> <surname>Griffiths</surname></string-name>, <string-name><given-names>F. E.</given-names> <surname>Theunissen</surname></string-name>, <string-name><given-names>J. L.</given-names> <surname>Gallant</surname></string-name></person-group>, <article-title>Natural speech reveals the semantic maps that tile human cerebral cortex</article-title>. <source>Nature</source> <volume>532</volume>, <fpage>453</fpage>-+ (<year>2016</year>).</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>L. S.</given-names> <surname>Hamilton</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Oganian</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hall</surname></string-name>, <string-name><given-names>E. F.</given-names> <surname>Chang</surname></string-name></person-group>, <article-title>Parallel and distributed encoding of speech across human auditory cortex</article-title>. <source>Cell</source> <volume>184</volume>, <fpage>4626</fpage>-+ (<year>2021</year>).</mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>N.</given-names> <surname>Mesgarani</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Cheung</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Johnson</surname></string-name>, <string-name><given-names>E. F.</given-names> <surname>Chang</surname></string-name></person-group>, <article-title>Phonetic Feature Encoding in Human Superior Temporal Gyrus</article-title>. <source>Science</source> <volume>343</volume>, <fpage>1006</fpage>–<lpage>1010</lpage> (<year>2014</year>).</mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A. B.</given-names> <surname>Silva</surname></string-name>, <string-name><given-names>K. T.</given-names> <surname>Littlejohn</surname></string-name>, <string-name><given-names>J. R.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>D. A.</given-names> <surname>Moses</surname></string-name>, <string-name><given-names>E. F.</given-names> <surname>Chang</surname></string-name></person-group>, <article-title>The speech neuroprosthesis</article-title>. <source>Nat Rev Neurosci</source> <volume>25</volume>, <fpage>473</fpage>–<lpage>492</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S. D.</given-names> <surname>Stavisky</surname></string-name></person-group>, <article-title>Restoring Speech Using Brain–Computer Interfaces</article-title>. <source>Annual Review of Biomedical Engineering</source> <volume>27</volume>, (<year>2025</year>).</mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Y.</given-names> <surname>Qiu</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Zhao</surname></string-name></person-group>, <article-title>A Review of Brain–Computer Interface-Based Language Decoding: From Signal Interpretation to Intelligent Communication</article-title>. <source>Applied Sciences</source> <volume>15</volume>, <fpage>392</fpage> (<year>2025</year>).</mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S.</given-names> <surname>Conti</surname></string-name></person-group>, <article-title>An electrocorticography-based speech decoder for neural speech prostheses</article-title>. <source>Nature Reviews Electrical Engineering</source> <volume>1</volume>, <fpage>284</fpage>–<lpage>284</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>H.</given-names> <surname>Akbari</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Khalighinejad</surname></string-name>, <string-name><given-names>J. L.</given-names> <surname>Herrero</surname></string-name>, <string-name><given-names>A. D.</given-names> <surname>Mehta</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Mesgarani</surname></string-name></person-group>, <article-title>Towards reconstructing intelligible speech from the human auditory cortex</article-title>. <source>Scientific reports</source> <volume>9</volume>, <fpage>874</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>F. H.</given-names> <surname>Guenther</surname></string-name> <etal>et al.</etal></person-group>, <article-title>A wireless brain-machine interface for real-time speech synthesis</article-title>. <source>PloS one</source> <volume>4</volume>, <fpage>e8218</fpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>C.</given-names> <surname>Herff</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Brain-to-text: decoding spoken phrases from phone representations in the brain</article-title>. <source>Frontiers in neuroscience</source> <volume>8</volume>, <fpage>141498</fpage> (<year>2015</year>).</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>L.</given-names> <surname>Bellier</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Music can be reconstructed from human auditory cortex activity using nonlinear decoding models</article-title>. <source>Plos Biology</source> <volume>21</volume>, (<year>2023</year>).</mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>F. R.</given-names> <surname>Willett</surname></string-name> <etal>et al.</etal></person-group>, <article-title>A high-performance speech neuroprosthesis</article-title>. <source>Nature</source> <volume>620</volume>, (<year>2023</year>).</mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>B. N.</given-names> <surname>Pasley</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Reconstructing speech from human auditory cortex</article-title>. <source>PLoS biology</source> <volume>10</volume>, <fpage>e1001251</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>S. L.</given-names> <surname>Metzger</surname></string-name> <etal>et al.</etal></person-group>, <article-title>A high-performance neuroprosthesis for speech decoding and avatar control</article-title>. <source>Nature</source> <volume>620</volume>, <fpage>1037</fpage>–<lpage>1046</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Wairagkar</surname></string-name> <etal>et al.</etal></person-group>, <article-title>An instantaneous voice-synthesis neuroprosthesis</article-title>. <source>Nature</source> <volume>644</volume>, <fpage>145</fpage>–<lpage>152</lpage>, (<year>2025</year>).</mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>G. K.</given-names> <surname>Anumanchipalli</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Chartier</surname></string-name>, <string-name><given-names>E. F.</given-names> <surname>Chang</surname></string-name></person-group>, <article-title>Speech synthesis from neural decoding of spoken sentences</article-title>. <source>Nature</source> <volume>568</volume>, <fpage>493</fpage>-+ (<year>2019</year>).</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>X. P.</given-names> <surname>Chen</surname></string-name> <etal>et al.</etal></person-group>, <article-title>A neural speech decoding framework leveraging deep learning and speech synthesis</article-title>. <source>Nat Mach Intell</source> <volume>6</volume>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Baevski</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mohamed</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Auli</surname></string-name></person-group>, <article-title>wav2vec 2.0: A framework for self-supervised learning of speech representations</article-title>. <source>Advances in neural information processing systems</source> <volume>33</volume>, <fpage>12449</fpage>–<lpage>12460</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>W.-N.</given-names> <surname>Hsu</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Hubert: Self-supervised speech representation learning by masked prediction of hidden units</article-title>. <source>IEEE/ACM Transactions on Audio, Speech, and Language Processing</source> <volume>29</volume>, <fpage>3451</fpage>–<lpage>3460</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Millet</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Toward a realistic model of speech processing in the brain with self-supervised learning</article-title>. <source>Advances in Neural Information Processing Systems</source> <volume>35</volume>, <fpage>33428</fpage>–<lpage>33443</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Y.</given-names> <surname>Li</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Dissecting neural computations in the human auditory pathway using deep neural networks for speech</article-title>. <source>Nature Neuroscience</source> <volume>26</volume>, <fpage>2213</fpage>–<lpage>2225</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>P. L.</given-names> <surname>Chen</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Do Self-Supervised Speech and Language Models Extract Similar Representations as Human Brain?</article-title> <source>Int Conf Acoust Spee</source>, <fpage>2225</fpage>–<lpage>2229</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Radford</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Language models are unsupervised multitask learners</article-title>. <source>OpenAI blog</source> <volume>1</volume>, <fpage>9</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Goldstein</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Shared computational principles for language processing in humans and deep language models</article-title>. <source>Nature neuroscience</source> <volume>25</volume>, <fpage>369</fpage>–<lpage>380</lpage> (<year>2022</year>).</mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>M.</given-names> <surname>Schrimpf</surname></string-name> <etal>et al.</etal></person-group>, <article-title>The neural architecture of language: Integrative modeling converges on predictive processing</article-title>. <source>Proceedings of the National Academy of Sciences</source> <volume>118</volume>, <fpage>e2105646118</fpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>G.</given-names> <surname>Tuckute</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Kanwisher</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Fedorenko</surname></string-name></person-group>, <article-title>Language in brains, minds, and machines</article-title>. <source>Annual Review of Neuroscience</source> <volume>47</volume>, <fpage>277</fpage>–<lpage>301</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>V. Y.</given-names> <surname>He</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Enhancing SEEG-based Speech Decoding via Convolutional Encoder-Decoder and Scale-Recursive Reconstructor</article-title>. <source>IEEE Sensors Journal</source>  <volume>25</volume>, (<year>2025</year>).</mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J. W.</given-names> <surname>Li</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Neural2speech: A Transfer Learning Framework for Neural-Driven Speech Reconstruction</article-title>. <source>Int Conf Acoust Spee</source>, <fpage>2200</fpage>–<lpage>2204</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>C.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Du</surname></string-name>, <string-name><given-names>X.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>H.</given-names> <surname>He</surname></string-name></person-group>, <article-title>Reverse the auditory processing pathway: Coarse-to-fine audio reconstruction from fMRI</article-title>. <source>arXiv</source>:<pub-id pub-id-type="doi">10.48550/arXiv.2405.18726</pub-id>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>Z.</given-names> <surname>Guo</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Filtering Resistant Large Language Model Watermarking via Style Injection</article-title>, <conf-name>ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</conf-name>, <year>2025</year>), pp. <fpage>1</fpage>–<lpage>5</lpage>.</mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Chen</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Transformer-based neural speech decoding from surface and depth electrode signals</article-title>. <source>Journal of Neural Engineering</source> <volume>22</volume>, <fpage>016017</fpage> (<year>2025</year>).</mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Défossez</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Caucheteux</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Rapin</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Kabeli</surname></string-name>, <string-name><given-names>J. R.</given-names> <surname>King</surname></string-name></person-group>, <article-title>Decoding speech perception from non-invasive brain recordings</article-title>. <source>Nat Mach Intell</source> <volume>5</volume>, <fpage>1097</fpage>-+ (<year>2023</year>).</mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Y.</given-names> <surname>Duan</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Chau</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Y.-K.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>C.-t.</given-names> <surname>Lin</surname></string-name></person-group>, <article-title>Dewave: Discrete encoding of eeg waves for eeg to text translation</article-title>. <source>Advances in Neural Information Processing Systems</source> <volume>36</volume>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Tang</surname></string-name>, <string-name><given-names>A.</given-names> <surname>LeBel</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Jain</surname></string-name>, <string-name><given-names>A. G.</given-names> <surname>Huth</surname></string-name></person-group>, <article-title>Semantic reconstruction of continuous language from non-invasive brain recordings</article-title>. <source>Nature Neuroscience</source> <volume>26</volume>, <fpage>858</fpage>–<lpage>866</lpage> (<year>2023</year>).</mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>C.</given-names> <surname>Feng</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Acoustic inspired brain-to-sentence decoder for logosyllabic language</article-title>. <source>Cyborg and Bionic Systems</source> <volume>6</volume>, <fpage>0257</fpage> (<year>2025</year>).</mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>D. H.</given-names> <surname>Zhang</surname></string-name> <etal>et al.</etal></person-group>, <article-title>A brain-to-text framework for decoding natural tonal sentences</article-title>. <source>Cell Rep</source> <volume>43</volume>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J.</given-names> <surname>Kong</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bae</surname></string-name></person-group>, <article-title>Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis</article-title>. <source>Advances in neural information processing systems</source> <volume>33</volume>, <fpage>17022</fpage>–<lpage>17033</lpage> (<year>2020</year>).</mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>D.</given-names> <surname>Lyth</surname></string-name>, <string-name><given-names>S.</given-names> <surname>King</surname></string-name></person-group>, <article-title>Natural language guidance of high-fidelity text-to-speech with synthetic annotations</article-title>. <source>arXiv</source>:<pub-id pub-id-type="doi">10.48550/arXiv.2402.01912</pub-id>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Z.</given-names> <surname>Du</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Cosyvoice 2: Scalable streaming speech synthesis with large language models</article-title>. <source>arXiv</source>:<pub-id pub-id-type="doi">10.48550/arXiv.2412.10117</pub-id>, (<year>2024</year>).</mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name><given-names>B.</given-names> <surname>Xu</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lu</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Wang</surname></string-name></person-group>, <source>Proceedings of the IEEE/CVF conference on Computer Vision and Pattern Recognition</source>. (<year>2020</year>), pp. <fpage>14433</fpage>–<lpage>14442</lpage>.</mixed-citation></ref>
+<ref id="c43"><label>43.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Y. N.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>H. Z.</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Gu</surname></string-name></person-group>, <article-title>Enhancing neural encoding models for naturalistic perception with a multi-level integration of deep neural networks and cortical networks</article-title>. <source>Sci Bull</source> <volume>69</volume>, <fpage>1738</fpage>–<lpage>1747</lpage> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>J. S.</given-names> <surname>Garofolo</surname></string-name>, <string-name><given-names>L. F.</given-names> <surname>Lamel</surname></string-name>, <string-name><given-names>W. M.</given-names> <surname>Fisher</surname></string-name>, <string-name><given-names>J. G.</given-names> <surname>Fiscus</surname></string-name>, <string-name><given-names>D. S.</given-names> <surname>Pallett</surname></string-name></person-group>, <article-title>DARPA TIMIT acoustic-phonetic continous speech corpus CD-ROM. NIST speech disc 1-1.1</article-title>. <source>NASA STI/Recon technical report n</source> <volume>93</volume>, <fpage>27403</fpage> (<year>1993</year>).</mixed-citation></ref>
+<ref id="c45"><label>45.</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>X. H.</given-names> <surname>Hu</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Speech Enhancement using Convolution Neural Network-based Spectrogram Denoising</article-title>. <conf-name>Proceedings of 2021 7th International Conference on Condition Monitoring of Machinery in Non-Stationary Operations (Cmmno)</conf-name>, <fpage>310</fpage>–<lpage>318</lpage> (<year>2021</year>).</mixed-citation></ref>
+<ref id="c46"><label>46.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>A.</given-names> <surname>Radford</surname></string-name> <etal>et al.</etal></person-group>, <article-title>Robust Speech Recognition via Large-Scale Weak Supervision</article-title>. <source>Pr Mach Learn Res</source> <volume>202</volume>, (<year>2023</year>).</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109400.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ding</surname>
+<given-names>Nai</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-3428-2723</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00a2xv884</institution-id><institution>Zhejiang University</institution>
+</institution-wrap>
+<city>Hangzhou</city>
+<country>China</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study presents a <bold>valuable</bold> advance in reconstructing naturalistic speech from intracranial ECoG data using a dual-pathway model. The evidence supporting the claims of the authors is <bold>solid</bold>, although the rationale for employing a smaller language model rather than a large language model (LLM) should be further clarified. This work will be of interest to cognitive neuroscientists and computer scientists/engineers working on speech reconstruction from neural data.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109400.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper introduces a dual-pathway model for reconstructing naturalistic speech from intracranial ECoG data. It integrates an acoustic pathway (LSTM + HiFi-GAN for spectral detail) and a linguistic pathway (Transformer + Parler-TTS for linguistic content). Output from the two components is later merged via CosyVoice2.0 voice cloning. Using only 20 minutes of ECoG data per participant, the model achieves high acoustic fidelity and linguistic intelligibility.</p>
+<p>Strengths:</p>
+<p>(1) The proposed dual-pathway framework effectively integrates the strengths of neural-to-acoustic and neural-to-text decoding and aligns well with established neurobiological models of dual-stream processing in speech and language.</p>
+<p>(2) The integrated approach achieves robust speech reconstruction using only 20 minutes of ECoG data per subject, demonstrating the efficiency of the proposed method.</p>
+<p>(3) The use of multiple evaluation metrics (MOS, mel-spectrogram R², WER, PER) spanning acoustic, linguistic (phoneme and word), and perceptual dimensions, together with comparisons against noise-degraded baselines, adds strong quantitative rigor to the study.</p>
+<p>Weaknesses:</p>
+<p>(1) It is unclear how much the acoustic pathway contributes to the final reconstruction results, based on Figures 3B-E and 4E. Including results from Baseline 2 + CosyVoice and Baseline 3 + CosyVoice could help clarify this contribution.</p>
+<p>(2) As noted in the limitations, the reconstruction results heavily rely on pre-trained generative models. However, no comparison is provided with state-of-the-art multimodal LLMs such as Qwen3-Omni, which can process auditory and textual information simultaneously. The rationale for using separate models (Wav2Vec for speech and TTS for text) instead of a single unified generative framework should be clearly justified. In addition, the adaptor employs an LSTM architecture for speech but a Transformer for text, which may introduce confounds in the performance comparison. Is there any theoretical or empirical motivation for adopting recurrent networks for auditory processing and Transformer-based models for textual processing?</p>
+<p>(3) The model is trained on approximately 20 minutes of data per participant, which raises concerns about potential overfitting. It would be helpful if the authors could analyze whether test sentences with higher or lower reconstruction performance include words that were also present in the training set.</p>
+<p>(4) The phoneme confusion matrix in Figure 4A does not appear to align with human phoneme confusion patterns. For instance, /s/ and /z/ differ only in voicing, yet the model does not seem to confuse these phonemes. Does this imply that the model and the human brain operate differently at the mechanistic level?</p>
+<p>(5) In general, is the motivation for adopting the dual-pathway model to better align with the organization of the human brain, or to achieve improved engineering performance? If the goal is primarily engineering-oriented, the authors should compare their approach with a pretrained multimodal LLM rather than relying on the dual-pathway architecture. Conversely, if the design aims to mirror human brain function, additional analysis, such as detailed comparisons of phoneme confusion matrices, should be included to demonstrate that the model exhibits brain-like performance patterns.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109400.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The study by Li et al. proposes a dual-path framework that concurrently decodes acoustic and linguistic representations from ECoG recordings. By integrating advanced pre-trained AI models, the approach preserves both acoustic richness and linguistic intelligibility, and achieves a WER of 18.9% with a short (~20-minute) recording.</p>
+<p>Overall, the study offers an advanced and promising framework for speech decoding. The method appears sound, and the results are clear and convincing. My main concerns are the need for additional control analyses and for more comparisons with existing models.</p>
+<p>Strengths:</p>
+<p>(1) This speech-decoding framework employs several advanced pre-trained DNN models, reaching superior performance (WER of 18.9%) with relatively short (~20-minute) neural recording.</p>
+<p>(2) The dual-pathway design is elegant, and the study clearly demonstrates its necessity: The acoustic pathway enhances spectral fidelity while the linguistic pathway improves linguistic intelligibility.</p>
+<p>Weaknesses:</p>
+<p>The DNNs used were pre-trained on large corpora, including TIMIT, which is also the source of the experimental stimuli. More generally, as DNNs are powerful at generating speech, additional evidence is needed to show that decoding performance is driven by neural signals rather than by the DNNs' generative capacity.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109400.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Jiawei</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Guo</surname>
+<given-names>Chunxu</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Chao</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Chang</surname>
+<given-names>Edward F</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2480-4700</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Yuanning</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3277-0600</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Here we provide a provisional response addressing the public comments and outlining the revisions we are planning to make:</p>
+<p>(1) We will add additional baseline models to delineate the contributions of the acoustic and linguistic pathways.</p>
+<p>(2) We will show additional ablation analysis and other model comparison results, as suggested by the reviewers, to justify the choice of the DNN models.</p>
+<p>(3) We will clarify the use of the TIMIT dataset during pre-training. In fact, the TIMIT speech data (the speech corpora used in the test set) was not included or used when pre-training the acoustic or linguistic pathway. It was only used in fine-tuning the final speech synthesizer (the cosyvoice model). We will present results without this fine-tuning step, which will fully eliminate the usage of the TIMIT data during model training.</p>
+<p>(4) We will further analyze the phoneme confusion matrices and/or other data to evaluate the model behavior.</p>
+<p>(5) We will analyze the test sentences with high and low accuracies. We will also include results with partial training data (e.g. using 25%, 50%, 75% of the training set) to further evaluate the impact of the total amount of training data.</p>
+</body>
+</sub-article>
+</article>
