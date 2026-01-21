@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Cell Biology</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Altair-LSFM: A High-Resolution, Easy-to-Build Light-Sheet Microscope for Sub-Cellular Imaging</article-title>
 </title-group>
 <contrib-group>
@@ -229,7 +230,7 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <table-wrap id="tbl1" orientation="portrait" position="float">
 <label>Table 1.</label>
 <caption><title>LSFM variants and their associated illumination and detection optics.</title><p>The table lists the type of microscope, the illumination and detection optics-including NA where available and immersion type in parentheses-as well as the overall design architecture (e.g., rail carrier, cage system, etc.).</p></caption>
-<graphic xlink:href="647739v3_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s2b">
@@ -240,7 +241,7 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <fig id="fig1" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 1.</label>
 <caption><p>(a) Rendering of the detection arm elements. (b) Zemax Opticstudio layout and beam path of optimized illumination arm, where L1, L2, L3, and L4 are 30-, 80-, 75-, and 250-mm achromatic doublets, respectively, and ILO is the TL20X-MPL illumination objective. (c) The simulated light-sheet beam profile in the xz plane at the focus of the illumination objective. The inset shows an enlarged region of the illumination light-sheet, highlighting light-sheet thickness and uniformity. (d) The cross-sectional profile through the center of the light-sheet beam profile in (c), where the FWHM of the light-sheet was found to be 0.382 µm.</p></caption>
-<graphic xlink:href="647739v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>With the detection path establishing the necessary criteria for resolution, field of view, and optical alignment (e.g., beam height), we next designed the illumination system. In LSFM, the foci of the illumination and detection objectives must precisely overlap without mechanical interference, limiting the choice of compatible objectives. To meet these requirements, we selected a 20x NA 0.6 long-working distance water immersion objective (Thorlabs TL20X-MPL). The spacing between this combination of illumination and detection objectives limits the size of usable coverslips to 5 mm, a constraint that is shared by the original LLSM design. While handling and mounting small coverslips can be challenging, we addressed this by designing a custom-machined coverslip holder to streamline the mounting process. For users wishing to accommodate larger coverslips, the Nikon 25x objective can be substituted with a Zeiss W Plan-Apochromat 20x/1.0, whose slimmer form factor allows the co-focus between the illumination and detection objectives to occur beyond the physical body of the lenses, enabling the use of virtually any coverslip size<sup><xref ref-type="bibr" rid="c26">26</xref></sup>. Guided by these constraints, we selected optical components capable of generating a theoretically diffraction-limited light-sheet using straightforward magnification calculations.</p>
 <p>The complete illumination system was designed for a collimated input beam with a 2 mm diameter, which first passes through an achromatic doublet lens (f = 30 mm) and then a second achromatic doublet (f = 80 mm) that expands and re-collimates it. After expansion, the beam passes through a rectangular aperture before reaching an achromatic cylindrical lens (f = 75 mm). The rectangular aperture is conjugate to the back pupil plane of the cylindrical lens, enabling precise tuning of the light-sheet’s NA, and consequently its thickness and propagation length. This adjustability allows optimization of the light-sheet for specimens of different thicknesses. The cylindrical lens focuses the beam in one direction to form the initial light-sheet, and its focal length was chosen to provide sufficient spacing between optical elements for practical assembly. The shaped beam is then directed onto a resonant galvanometer, which improves illumination uniformity by rapidly pivoting the light-sheet to average out shadowing artifacts arising from scattering and absorption within the sample (conceptual example shown in <xref rid="figs2" ref-type="fig">Supplementary Figure 2</xref>)<sup><xref ref-type="bibr" rid="c27">27</xref>,<xref ref-type="bibr" rid="c28">28</xref></sup>. After reflection from a 45-degree tilted mirror, the beam is relayed through an achromatic doublet (f = 250 mm) before entering the back aperture of the illumination objective, where it is finally focused onto the sample. This optical arrangement ensures a well-defined, dynamically pivoted light-sheet that provides uniform illumination while mitigating shadowing effects.</p>
@@ -257,7 +258,7 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <fig id="fig2" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 2.</label>
 <caption><p>(a) Rendering of the completed illumination arm baseplate, with an inset showing the dowel pin holes compatible with the Polaris mounting line from Thorlabs. (b) Overhead view of the imaging configuration of our system, where our detection objective and illumination objectives are placed orthogonal to each other and the sample is scanned diagonally in the space between them in the axial direction shown by the white dashed line. (c) Rendering of our sample mounting and translation system. Here, a piezo motor is mounted onto an angled adapter to allow precise translation over the diagonal region between the objectives. Our custom 5 mm coverslip sample holder is also featured, where the inset shows an exploded assembly of the holder.</p></caption>
-<graphic xlink:href="647739v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Beyond the illumination path, the full microscope system is visualized in <xref rid="figs5" ref-type="fig">Supplementary Figure 5</xref>. It incorporates a variety of translational and custom mounting elements to facilitate precise sample positioning and stable imaging. A sample chamber was designed and 3D printed to match the working distances and clearances of the chosen illumination and detection objectives, offering two port configurations: one for traditional orthogonal imaging and another linear configuration that allows direct imaging of the light-sheet itself (<xref rid="fig2" ref-type="fig">Figure 2b</xref>, <xref rid="figs6" ref-type="fig">Supplementary Figure 6</xref>). Each port is equipped with two sets of O-rings, creating a liquid-proof seal around the objectives while still permitting smooth translation of the detection objective for focusing. Additionally, the snug fit of the O-rings naturally guide the user toward proper positioning of the illumination and detection objectives, decreasing the likelihood of alignment errors. The sample positioning assembly consists of three motorized translation stages (Applied Scientific Instrumentation), enabling precise positioning of the sample in x, y, and z. To enable rapid Z-stack acquisition, we designed an angled bracket (8 = 29.5 degrees) for mounting a high-speed piezo (PiezoConcept HS1.100), which attaches directly to the sample positioning stages (<xref rid="fig2" ref-type="fig">Figure 2c</xref>). The sample is secured using a custom-designed sample holder for 5 mm glass coverslips, which features a clam-based mechanism-the coverslip is placed within a circular recess and secured in place by a screw-down clamp. Due to the angled sample scanning configuration, our collected image stacks must undergo a deskewing operation. All custom component designs, and deskewing software, are available for download at <ext-link ext-link-type="uri" xlink:href="https://thedeanlab.github.io/altair">https://thedeanlab.github.io/altair</ext-link>.</p>
 </sec>
@@ -272,7 +273,7 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <fig id="fig3" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 3.</label>
 <caption><p>(a) Experimental light-sheet beam profile at the focus. The light-sheet was visualized in a transmission geometry with fluorescence derived from a fluorescein solution. (b) The center cross-section profile of (a), showing both raw data and a fitted curve with a FWHM of ∼0.415 µm. (c–e) Maximum-intensity projections for an isolated 100 nm fluorescent bead. All three orthogonal perspectives are provided to reveal any potential optical aberrations. A slight degree of coma is observable in the XZ view. (f) Gaussian-fitted distribution of the FWHM of beads imaged in a z-stack in each dimension both before (solid) and after (dashed) deconvolution.</p></caption>
-<graphic xlink:href="647739v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>To assess the system’s resolution, we imaged 100 nm fluorescent beads. Our image-processing pipeline involves first deskewing our acquired volumetric image stack using custom Python routines, and then deconvolution via PetaKit5D<sup><xref ref-type="bibr" rid="c31">31</xref></sup> (see Methods). The need for shearing arises when the scan axis does not align with the optical detection axis, as is the case for LLSM and Altair-LSFM when operating in a sample-scanning format, as well as both sample-scanning and laser-scanning OPMs. The point spread function of a single isolated fluorescent bead is shown in <xref rid="fig3" ref-type="fig">Figures 3c-e</xref>. The Gaussian-fitted distribution of FWHM measurements, performed on a population of fluorescent beads across a z-stack, is shown in <xref rid="fig3" ref-type="fig">Figure 3f</xref>. Prior to deconvolution, the average FWHM values measured across the bead population were 328 nm in x, 330 nm in y, and 464 nm in z. After deconvolution with PetaKit5D, these values improved to 235.5 nm in x, 233.5 nm in y, and 350.4 nm in z, achieving our desired resolution goals for sub-cellular imaging.</p>
 </sec>
@@ -283,13 +284,13 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <label>Figure 4.</label>
 <caption><title>Lateral maximum intensity projections of mouse embryonic fibroblasts (MEFs) fluorescently labeled with nuclei (cyan), tubulin (gray), actin (gold), and the Golgi apparatus (magenta).</title>
 <p>(a) Maximum intensity projection of the full z-stack in the xy plane. (b–e) Individual channels corresponding to (a): (b) nuclei, (c) microtubules, (d) actin, and (e) Golgi apparatus. (f) Maximum intensity projection of a second z-stack in the xy plane. (g–j) Individual channels corresponding to (f): (g) nuclei, (h) microtubules, (i) actin, and (j) Golgi apparatus. Nuclei were labeled with DAPI, actin filaments with phalloidin, and both microtubules and the Golgi apparatus were stained using indirect immunofluorescence.</p></caption>
-<graphic xlink:href="647739v3_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig5" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 5.</label>
 <caption><title>Selected time points from a time-lapse sequence of actively migrating retinal pigment epithelial (RPE) cells, showing vimentin (blue) and microtubules (orange).</title>
 <p>The series comprises 50 frames; representative time points are displayed.</p></caption>
-<graphic xlink:href="647739v3_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -347,77 +348,77 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <label>Supplementary Figure 1.</label>
 <caption><title>Comparison of sample- and light-sheet-scanning modes.</title>
 <p>(a) In high-resolution light-sheet microscopy, the specimen must be positioned precisely at the intersection of the illumination and detection objective focal planes. To minimize aberrations in the excitation (blue) and detection (green) light paths, the specimen must be mounted at an angle that prevents marginal rays from interacting with the coverslip. In this configuration, only a narrow cross-section of an adherent cell is illuminated. (b) With a sample-scanning approach, the illumination beam requires a propagation length just sufficient to cover the thickest portion of the specimen—typically the nucleus—at the angle defined by the coverslip. For Altair-LSFM, the sample is mounted at ∼30°, so a 6 µm-thick nucleus requires a beam propagation length of 6 µm / sin 30° ≈ 12 µm, which can be achieved with an illumination NA of ∼0.285, producing a beam thickness of ∼1 µm. The acquired volume is indicated by the dashed outline. (c) In contrast, a light-sheet-scanning configuration—where the light sheet and detection objective are synchronously translated in z—must generate a beam long enough to span the full cell diameter. For an adherent cell ∼30 µm in diameter, the sheet must extend 30 µm / sin 30° ≈ 60 µm, requiring an illumination NA of ∼0.128 and yielding a sheet thickness of ∼2.3 µm. Together, these schematics illustrate how sample scanning enables the use of shorter, thinner light sheets that improve axial resolution while maintaining uniform illumination. The illumination NA required to achieve a given beam propagation length was estimated using the PSFGenerator package<sup><xref ref-type="bibr" rid="c38">38</xref></sup>.</p></caption>
-<graphic xlink:href="647739v3_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs2" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 2.</label>
 <caption><title>Educational illustration depicting the conceptual function of the resonant galvo unit.</title>
 <p>Without pivoting of the light-sheet, objects within a sample can cast shadows due to scattering or refraction. When the resonant galvo is engaged, the illumination sheet rapidly pivots at a frequency of 4 kHz such that the sample is effectively illuminated from multiple directions, and the shadows are correspondingly displaced. As a result, light effectively “reaches around” objects, and the shadows are averaged out over the image acquisition period. This figure is intended as a conceptual aid to help readers visualize the role of the resonant galvo rather than act as a quantitative representation.</p></caption>
-<graphic xlink:href="647739v3_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs3" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 3.</label>
 <caption><p>(a) Depiction of the merit function criteria used in our tolerance analysis, where we observed how the beam profile in the perturbed instances changes in both size and position. (b) Schematic of the Polaris dowel pin mounting configuration when considering machining tolerances, where in a worst-case scenario the angle offset would be 1.454 degrees. (c) Nominal, best case, and worst-case beam profiles in xz for both coarse (+-0.005”, top row) and fine (+-0.002”, bottom row) machining tolerances.</p></caption>
-<graphic xlink:href="647739v3_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs4" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 4.</label>
 <caption><title>Process of affixing a post to the baseplate, where one first places the post onto dowel pins inserted into the corresponding holes and then fixes the post to the baseplate with a screw.</title>
 </caption>
-<graphic xlink:href="647739v3_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs5" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 5.</label>
 <caption><title>CAD rendering of our full system consisting of an illumination path, a detection path, and a dedicated sample positioning assembly.</title>
 </caption>
-<graphic xlink:href="647739v3_figs5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs6" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 6.</label>
 <caption><p>(a) CAD rendering of our custom sample chamber, featuring three possible objective ports, each with two sets of O-rings to ensure a liquid-proof seal. (b) Top-down rendering of the traditional imaging configuration for the system, where the illumination and detection objectives are placed orthogonal to one another. (c) The second transmissive imaging configuration of the system used to image the beam itself, where the illumination objective is place directly in front of the detection objective.</p></caption>
-<graphic xlink:href="647739v3_figs6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs7" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 7.</label>
 <caption><title>General wiring diagram of the system showing all the optoelectrical and optomechanical components used, and an inset showing how these components are wired into the NI DAQ.</title>
 </caption>
-<graphic xlink:href="647739v3_figs7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figs8" position="float" orientation="portrait" fig-type="figure">
 <label>Supplementary Figure 8.</label>
 <caption><title>CAD renderings of our custom heated sample chamber design.</title>
 <p>This updated design utilizes thermocouples and heating pad elements for temperature regulation, enabling live-cell imaging capabilities for Altair-LSFM.</p></caption>
-<graphic xlink:href="647739v3_figs8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_figs8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <table-wrap id="tbls1" orientation="portrait" position="float">
 <label>Supplementary Table 1.</label>
 <caption><title>Detailed equipment list.</title>
 <p>Prices are approximate and subject to change. *Indicates that the part was custom ordered from Thorlabs.</p></caption>
-<graphic xlink:href="647739v3_tbls1.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="647739v3_tbls1a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbls1.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="647739v3_tbls1a.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls2" orientation="portrait" position="float">
 <label>Supplementary Table 2.</label>
 <caption><title>Approximate cost.</title></caption>
-<graphic xlink:href="647739v3_tbls2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbls2.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls3" orientation="portrait" position="float">
 <label>Supplementary Table 3.</label>
 <caption><title>Electrical pinouts used on National Instruments PCIe-6738 data acquisition card.</title>
 <p>All analog and digital connections were made using a National Instruments SCB-68A shielded terminal block.</p></caption>
-<graphic xlink:href="647739v3_tbls3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbls3.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls4" orientation="portrait" position="float">
 <label>Supplementary Table 4.</label>
 <caption><title>Acquisition performance for a 50 µm z-stack acquired at 0.25 µm step size (200 frames; 2048 × 512 pixels per frame).</title>
 <p>The mean inter-frame dead time was 7.25 ms, of which ∼1 ms arose from piezo stepping; the remainder was dominated by camera readout.</p></caption>
-<graphic xlink:href="647739v3_tbls4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbls4.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls5" orientation="portrait" position="float">
 <label>Supplementary Table 5.</label>
 <caption><title>Approximate time considerations based on user experience level.</title>
 <p>A novice is defined as someone entirely new to optical systems, with no prior experience in their operation or alignment. A moderate user has some prior experience operating or using optical systems but limited experience assembling or aligning them. An expert user has substantial experience designing, building, and aligning custom optical systems and is therefore expected to complete setup and validation tasks more efficiently.</p></caption>
-<graphic xlink:href="647739v3_tbls5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="647739v3_tbls5.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s7">
@@ -604,14 +605,14 @@ We improved documentation, figures, and methods. The revision includes a full CA
 </contrib>
 </contrib-group>
 <kwd-group kwd-group-type="evidence-strength">
-<kwd>Solid</kwd>
+<kwd>Compelling</kwd>
 </kwd-group>
 <kwd-group kwd-group-type="claim-importance">
-<kwd>Useful</kwd>
+<kwd>Valuable</kwd>
 </kwd-group>
 </front-stub>
 <body>
-<p>This <bold>useful</bold> study presents Altair-LSFM, a <bold>solid</bold> and well-documented implementation of a light-sheet fluorescence microscope (LSFM) designed for accessibility and cost reduction. While the approach offers strengths such as the use of custom-machined baseplates and detailed assembly instructions, its overall impact is limited by the lack of live-cell imaging capabilities and the absence of a clear, quantitative comparison to existing LSFM platforms. As such, although technically competent, the broader utility and uptake of this system by the community may be limited.</p>
+<p>This <bold>valuable</bold> study presents Altair-LSFM, a well-documented implementation of a light-sheet fluorescence microscope (LSFM) designed for accessibility and reduced cost. The approach provides <bold>compelling</bold> evidence of its strengths, including the use of custom-machined baseplates, detailed assembly instructions, and demonstrated live-cell imaging capabilities. This manuscript will be of interest to microscopists and potentially biologists seeking accessible LSFM tools.</p>
 </body>
 </sub-article>
 <sub-article id="sa1" article-type="referee-report">
@@ -631,13 +632,10 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <p>Summary:</p>
 <p>The article presents the details of the high-resolution light-sheet microscopy system developed by the group. In addition to presenting the technical details of the system, its resolution has been characterized and its functionality demonstrated by visualizing subcellular structures in a biological sample.</p>
 <p>Strengths:</p>
-<p>(1) The article includes extensive supplementary material that complements the information in the main article.</p>
-<p>(2) However, in some sections, the information provided is somewhat superficial.</p>
+<p>The article includes extensive supplementary material that complements the information in the main article.</p>
+<p>Live imaging has been incorporated, as requested, increasing the value of the paper.</p>
 <p>Weaknesses:</p>
-<p>(1) Although a comparison is made with other light-sheet microscopy systems, the presented system does not represent a significant advance over existing systems. It uses high numerical aperture objectives and Gaussian beams, achieving resolution close to theoretical after deconvolution. The main advantage of the presented system is its ease of construction, thanks to the design of a perforated base plate.</p>
-<p>(2) Using similar objectives (Nikon 25x and Thorlabs 20x), the results obtained are similar to those of the LLSM system (using a Gaussian beam without laser modulation). However, the article does not mention the difficulties of mounting the sample in the implemented configuration.</p>
-<p>(3) The authors present a low-cost, open-source system. Although they provide open source code for the software (navigate), the use of proprietary electronics (ASI, NI, etc.) makes the system relatively expensive. Its low cost is not justified.</p>
-<p>(4) The fibroblast images provided are of exceptional quality. However, these are fixed samples. The system lacks the necessary elements for monitoring cells in vivo, such as temperature or pH control.</p>
+<p>None</p>
 </body>
 </sub-article>
 <sub-article id="sa2" article-type="referee-report">
@@ -655,18 +653,15 @@ We improved documentation, figures, and methods. The revision includes a full CA
 </front-stub>
 <body>
 <p>Summary:</p>
-<p>The authors present Altair-LSFM (Light Sheet Fluorescence Microscope), a high-resolution, open-source microscope, that is relatively easy to align and construct and achieves sub-cellular resolution. The authors developed this microscope to fill a perceived need that current open-source systems are primarily designed for large specimens and lack sub-cellular resolution or are difficult to construct and align, and are not stable. While commercial alternatives exist that offer sub-cellular resolution, they are expensive. The authors' manuscript centers around comparisons to the highly successful lattice light-sheet microscope, including the choice of detection and excitation objectives. The authors thus claim that there remains a critical need for high-resolution, economical, and easy-to-implement LSFM systems.</p>
+<p>The authors present Altair-LSFM (Light Sheet Fluorescence Microscope), a high-resolution, open-source light-sheet microscope, that may be relatively easy to align and construct due to a custom-designed mounting plate. The authors developed this microscope to fill a perceived need that current open-source systems are primarily designed for large specimens and lack sub-cellular resolution or achieve high-resolution but are difficult to construct and are unstable. While commercial alternatives exist that offer sub-cellular resolution, they are expensive. The authors manuscript centers around comparisons to the highly successful lattice light-sheet microscope, including the choice of detection and excitation objectives. The authors thus claim that there remains a critical need for a high-resolution, economical and easy to implement LSFM systems and address this need with Altair.</p>
 <p>Strengths:</p>
-<p>The authors succeed in their goals of implementing a relatively low-cost (~ USD 150K) open-source microscope that is easy to align. The ease of alignment rests on using custom-designed baseplates with dowel pins for precise positioning of optics based on computer analysis of opto-mechanical tolerances, as well as the optical path design. They simplify the excitation optics over Lattice light-sheet microscopes by using a Gaussian beam for illumination while maintaining lateral and axial resolutions of 235 and 350 nm across a 260-um field of view after deconvolution. In doing so they rest on foundational principles of optical microscopy that what matters for lateral resolution is the numerical aperture of the detection objective and proper sampling of the image field on to the detection, and the axial resolution depends on the thickness of the light-sheet when it is thinner than the depth of field of the detection objective. This concept has unfortunately not been completely clear to users of high-resolution light-sheet microscopes and is thus a valuable demonstration. The microscope is controlled by an open-source software, Navigate, developed by the authors, and it is thus foreseeable that different versions of this system could be implemented depending on experimental needs while maintaining easy alignment and low cost. They demonstrate system performance successfully by characterizing their sheet, point-spread function, and visualization of sub-cellular structures in mammalian cells, including microtubules, actin filaments, nuclei, and the Golgi apparatus.</p>
+<p>The authors succeed in their goals of implementing a relatively low cost (~ USD 150K) open-source microscope that is easy to align. The ease of alignment rests on using custom-designed baseplates with dowel pins for precise positioning of optics based on computer analysis of opto-mechanical tolerances as well as the optical path design. They simplify the excitation optics over Lattice light-sheet microscopes by using a Gaussian beam for illumination while maintaining lateral and axial resolutions of 235 and 350 nm across a 260-um field of view after deconvolution. In doing so they rest on foundational principles of optical microscopy that what matters for lateral resolution is the numerical aperture of the detection objective and proper sampling of the image field on to the detection, and the axial resolution depends on the thickness of the light-sheet when it is thinner than the depth of field of the detection objective. This concept has unfortunately not been completely clear to users of high-resolution light-sheet microscopes and is thus a valuable demonstration. The microscope is controlled by an open-source software, Navigate, developed by the authors, and it is thus foreseeable that different versions of this system could be implemented depending on experimental needs while maintaining easy alignment and low cost. They demonstrate system performance successfully by characterizing their sheet, point-spread function, and visualization of sub-cellular structures in mammalian cells including microtubules, actin filaments, nuclei, and the Golgi apparatus.</p>
 <p>Weaknesses:</p>
-<p>There is a fixation on comparison to the first-generation lattice light-sheet microscope, which has evolved significantly since then:</p>
-<p>(1) The authors claim that commercial lattice light-sheet microscopes (LLSM) are &quot;complex, expensive, and alignment intensive&quot;, I believe this sentence applies to the open-source version of LLSM, which was made available for wide dissemination. Since then, a commercial solution has been provided by 3i, which is now being used in multiple cores and labs but does require routine alignments. However, Zeiss has also released a commercial turn-key system, which, while expensive, is stable, and the complexity does not interfere with the experience of the user. Though in general, statements on ease of use and stability might be considered anecdotal and may not belong in a scientific article, unreferenced or without data.</p>
-<p>(2) One of the major limitations of the first generation LLSM was the use of a 5 mm coverslip, which was a hinderance for many users. However, the Zeiss system elegantly solves this problem, and so does Oblique Plane Microscopy (OPM), while the Altair-LSFM retains this feature, which may dissuade widespread adoption. This limitation and how it may be overcome in future iterations is not discussed.</p>
-<p>(3) Further, on the point of sample flexibility, all generations of the LLSM, and by the nature of its design, the OPM, can accommodate live-cell imaging with temperature, gas, and humidity control. It is unclear how this would be implemented with the current sample chamber. This limitation would severely limit use cases for cell biologists, for which this microscope is designed. There is no discussion on this limitation or how it may be overcome in future iterations.</p>
-<p>(4) The authors' comparison to LLSM is constrained to the &quot;square&quot; lattice, which, as they point out, is the most used optical lattice (though this also might be considered anecdotal). The LLSM original design, however, goes far beyond the square lattice, including hexagonal lattices, the ability to do structured illumination, and greater flexibility in general in terms of light-sheet tuning for different experimental needs, as well as not being limited to just sample scanning. Thus, the Alstair-LSFM cannot compare to the original LLSM in terms of versatility, even if comparisons to the resolution provided by the square lattice are fair.</p>
-<p>(5) There is no demonstration of the system's live-imaging capabilities or temporal resolution, which is the main advantage of existing light-sheet systems.</p>
-<p>While the microscope is well designed and completely open source, it will require experience with optics, electronics, and microscopy to implement and align properly. Experience with custom machining or soliciting a machine shop is also necessary. Thus, in my opinion, it is unlikely to be implemented by a lab that has zero prior experience with custom optics or can hire someone who does. Altair-LSFM may not be as easily adaptable or implementable as the authors describe or perceive in any lab that is interested, even if they can afford it. The authors indicate they will offer &quot;workshops,&quot; but this does not necessarily remove the barrier to entry or lower it, perhaps as significantly as the authors describe.</p>
-<p>There is a claim that this design is easily adaptable. However, the requirement of custom-machined baseplates and in silico optimization of the optical path basically means that each new instrument is a new design, even if the Navigate software can be used. It is unclear how Altair-LSFM demonstrates a modular design that reduces times from conception to optimization compared to previous implementations.</p>
+<p>There is still a fixation on comparison to the first-generation lattice light-sheet microscope, which has evolved significantly since then:</p>
+<p>(1) One of the major limitations of the first generation LLSM was the use of a 5 mm coverslip, which was a hinderance for many users. However, the Zeiss system elegantly solves this problem and so does Oblique Plane Microscopy (OPM), while the Altair-LSFM retains this feature which may dissuade widespread adoption. This limitation and how it may be overcome in future iterations is now discussed in the manuscript but remains a limitation in the currently implemented design.</p>
+<p>(2) Further, on the point of sample flexibility, all generations of the LLSM, and by the nature of its design the OPM, can accommodate live-cell imaging with temperature, gas, and humidity control. In the revised manuscript the authors now implement temperature control, but ideal live cell imaging conditions that would include gas and humidity control are not implemented. While, as the authors note, other microscopes that lack full environmental control have achieved widespread adoption, in my view this still limits the use cases of this microscope. There is no discussion on how this limitation of environmental control may be overcome in future iterations.</p>
+<p>(3) While the microscope is well designed and completely open source it will require experience with optics, electronics, and microscopy to implement and align properly. Experience with custom machining or soliciting a machine shop is also necessary. Thus, in my opinion it is unlikely to be implemented by a lab that has zero prior experience with custom optics or can hire someone who does. Altair-LSFM may not be as easily adaptable or implementable as the authors describe or perceive in any lab that is interested even if they can afford it. Claims on how easy it may be to align the system for a &quot;Novice&quot; in supplementary table 5, appear to be unsubstantiated and should be removed unless a Novice was indeed able to assemble and validate the system in 2 weeks. It seems that these numbers were just arbitrarily proposed in the current version without any testing. In our experience it's hard to predict how long an alignment will take for a novice.</p>
+<p>(4) There is no quantification on field uniformity and the tunability of the light sheet parameters (FOV, thickness, PSF, uniformity). There is no quantification on how much improvement is offered by the resonant and how its operation may alter the light-sheet power, uniformity and the measured PSF.</p>
 </body>
 </sub-article>
 <sub-article id="sa3" article-type="referee-report">
@@ -685,26 +680,20 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <body>
 <p>Summary:</p>
 <p>This manuscript introduces a high-resolution, open-source light-sheet fluorescence microscope optimized for sub-cellular imaging.</p>
-<p>The system is designed for ease of assembly and use, incorporating a custom-machined baseplate and in silico optimized optical paths to ensure robust alignment and performance. The authors demonstrate lateral and axial resolutions of ~235 nm and ~350 nm after deconvolution, enabling imaging of sub-diffraction structures in mammalian cells.</p>
+<p>The system is designed for ease of assembly and use, incorporating a custom-machined baseplate and in silico optimized optical paths to ensure robust alignment and performance.</p>
 <p>The important feature of the microscope is the clever and elegant adaptation of simple gaussian beams, smart beam shaping, galvo pivoting and high NA objectives to ensure a uniform thin light-sheet of around 400 nm in thickness, over a 266 micron wide Field of view, pushing the axial resolution of the system beyond the regular diffraction limited-based tradeoffs of light-sheet fluorescence microscopy.</p>
-<p>Compelling validation using fluorescent beads and multicolor cellular imaging highlights the system's performance and accessibility. Moreover, a very extensive and comprehensive manual of operation is provided in the form of supplementary materials. This provides a DIY blueprint for researchers who want to implement such a system.</p>
+<p>Compelling validation using fluorescent beads multicolor cellular imaging and dual-color live-cell imaging highlights the system's performance. Moreover, a very extensive and comprehensive manual of operation is provided in the form of supplementary materials. This provides a DIY blueprint for researchers that want to implement such a system, providing also estimate costs and a detailed description of needed expertises.</p>
 <p>Strengths:</p>
-<p>(1) Strong and accessible technical innovation:</p>
-<p>With an elegant combination of beam shaping and optical modelling, the authors provide a high-resolution light-sheet system that overcomes the classical light-sheet tradeoff limit of a thin light-sheet and a small field of view. In addition, the integration of in silico modelling with a custom-machined baseplate is very practical and allows for ease of alignment procedures. Combining these features with the solid and super-extensive guide provided in the supplementary information, this provides a protocol for replicating the microscope in any other lab.</p>
-<p>(2) Impeccable optical performance and ease of mounting of samples:</p>
+<p>- Strong and accessible technical innovation.</p>
+<p>With an elegant combination of beam shaping and optical modelling, the authors provide a high resolution light-sheet system that overcomes the classical light-sheet tradeoff limit of thin light-sheet and small field of view. In addition, the integration of in silico modelling with a custom-machined baseplate is very practical and allows for ease of alignment procedures. Combining these features with the solid and super-extensive guide provided in the supplementary information, this provides a protocol for replicating the microscope in any other lab.</p>
+<p>- Impeccable optical performances and ease of mounting of samples</p>
 <p>The system takes advantage of the same sample-holding method seen already in other implementations, but reduces the optical complexity. At the same time, the authors claim to achieve similar lateral and axial resolution to Lattice-light-sheet microscopy (although without a direct comparison (see below in the &quot;weaknesses&quot; section). The optical characterization of the system is comprehensive and well-detailed. Additionally, the authors validate the system imaging sub-cellular structures in mammalian cells.</p>
-<p>(3) Transparency and comprehensiveness of documentation and resources:</p>
-<p>A very detailed protocol provides detailed documentation about the setup, the optical modeling, and the total cost.</p>
-<p>Weaknesses:</p>
-<p>(1) Limited quantitative comparisons:</p>
-<p>Although some qualitative comparison with previously published systems (diSPIM, lattice light-sheet) is provided throughout the manuscript, some side-by-side comparison would be of great benefit for the manuscript, even in the form of a theoretical simulation. While having a direct imaging comparison would be ideal, it's understandable that this goes beyond the interest of the paper; however, a table referencing image quality parameters (taken from the literature), such as signal-to-noise ratio, light-sheet thickness, and resolutions, would really enhance the features of the setup presented. Moreover, based also on the necessity for optical simplification, an additional comment on the importance/difference of dual objective/single objective light-sheet systems could really benefit the discussion.</p>
-<p>(2) Limitation to a fixed sample:</p>
-<p>In the manuscript, there is no mention of incubation temperature, CO₂ regulation, Humidity control, or possible integration of commercial environmental control systems. This is a major limitation for an imaging technique that owes its popularity to fast, volumetric, live-cell imaging of biological samples.</p>
-<p>(3) System cost and data storage cost:</p>
-<p>While the system presented has the advantage of being open-source, it remains relatively expensive (considering the 150k without laser source and optical table, for example). The manuscript could benefit from a more direct comparison of the performance/cost ratio of existing systems, considering academic settings with budgets that most of the time would not allow for expensive architectures. Moreover, it would also be beneficial to discuss the adaptability of the system, in case a 30k objective could not be feasible. Will this system work with different optics (with the obvious limitations coming with the lower NA objective)? This could be an interesting point of discussion. Adaptability of the system in case of lower budgets or more cost-effective choices, depending on the needs.</p>
-<p>Last, not much is said about the need for data storage. Light-sheet microscopy's bottleneck is the creation of increasingly large datasets, and it could be beneficial to discuss more about the storage needs and the quantity of data generated.</p>
+<p>-Transparency and comprehensiveness of documentation and resources.</p>
+<p>A very detailed protocol provides detailed documentation about the setup, the optical modeling and the total cost.</p>
 <p>Conclusion:</p>
-<p>Altair-LSFM represents a well-engineered and accessible light-sheet system that addresses a longstanding need for high-resolution, reproducible, and affordable sub-cellular light-sheet imaging. While some aspects-comparative benchmarking and validation, limitation for fixed samples-would benefit from further development, the manuscript makes a compelling case for Altair-LSFM as a valuable contribution to the open microscopy scientific community.</p>
+<p>Altair-LSFM represents a well-engineered and accessible light-sheet system that addresses a longstanding need for high-resolution, reproducible, and affordable sub-cellular light-sheet imaging. At this stage, I believe the manuscript makes a compelling case for Altair-LSFM as a valuable contribution to the open microscopy scientific community.</p>
+<p>Comments on revisions:</p>
+<p>I appreciate the details and the care expressed by the authors in answering all my concerns, both the bigger ones (lack of live cell imaging demonstration) and to the smaller ones (about data storage, costs, expertise needed, and so on). The manuscript has been greatly improved, and I have no other comments to make.</p>
 </body>
 </sub-article>
 <sub-article id="sa4" article-type="author-comment">
@@ -748,7 +737,7 @@ We improved documentation, figures, and methods. The revision includes a full CA
 <given-names>Kevin M</given-names>
 </name>
 <role specific-use="author">Author</role>
-<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0839-2320</contrib-id></contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0839-2320</contrib-id></contrib>
 </contrib-group>
 </front-stub>
 <body>
