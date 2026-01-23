@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>CellCover Defines Marker Gene Panels Capturing Developmental Progression in Neocortical Neural Stem Cell Identity</article-title>
 </title-group>
 <contrib-group>
@@ -214,7 +215,7 @@
 <label>Figure 1:</label>
 <caption><title>Benchmarking performance of CellCover and competing methods on the CBMC dataset &amp; Blood Cell Type Mapping.</title>
 <p>A) Balanced accuracy versus the size of the marker panel for all methods, with standard deviation across random seeds shown as shaded areas. CellCover implemented with weights calculated from log normalized or binary data are both shown. B) Proportion of intersection between each method’s global marker panel and the CellCover (log-normalized) reference panel C) Proportion of redundant marker genes selected for multiple cell classes versus panel size for CellCover and DE, also including standard deviation across random seeds. D) Sankey diagram of the mapping from source blood cell types [<xref ref-type="bibr" rid="c24">24</xref>] to target blood cell types [<xref ref-type="bibr" rid="c25">25</xref>]. Original authors’ cell type labels are used: HSC = hematopoietic stem cells, DC = dendritic cells, B = B-cells, T = T-cells, NK = natural killer cells, eryth + RBC = red blood cells, mono= monocytes, ilc = innate lymphoid cells, prof + prolif = proliferating.</p></caption>
-<graphic xlink:href="535943v6_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>In addition to optimal cell class label recovery, it is desirable that marker gene panels do not contain the same genes for different cell classes. Because DE methods choose marker genes one-at-a-time from a ranked list of statistics for each cell class, they often select the same gene for more than one cell class. This is especially if some cell classes are more similar to one another than to other classes, which is a common scenario in many biological contexts. As evidenced by Figure S2, CellCover selects fewer redundant marker genes compared to DE at all covering depths, indicating that its marker panels capture more unique, non-overlapping signals across cell types. <xref rid="fig1" ref-type="fig">Figure 1C</xref> provides another view of this, showing that the proportion of redundant CellCover markers remains stable around 7.5%, while the proportion of redundant DE markers steadily increases with the marker panel size, surpassing 20% in larger panels (see detail in Method Section 5.3.5). This greatly reduced redundancy demonstrates that CellCover generates concise marker panels in which genes provide distinct and complementary information.</p>
 </sec>
@@ -240,7 +241,7 @@
 <label>Figure 2:</label>
 <caption><title>CellCover marker gene panels in the developing mammalian neocortex.</title>
 <p><bold>A</bold>. Dot plot of empirical conditional expression probabilities of CellCover marker panels of each cell age. The marker genes of each cell age are grouped along the horizontal axis and sorted by expression frequency in the cell class of interest. The color of the dots represents the expression probability of markers conditioned on time since a cell’s terminal division, i.e., the proportion of cells within a class expressing the marker gene. For this analysis, cells of each time point were pooled across embryonic ages (E12–15). The panel is obtained using the CellCover with <bold><italic>α</italic></bold> = 0.02 and <bold><italic>d</italic></bold> = 5. RG = radial glia, NB = neuroblast, NR = neuron. <bold>B</bold>. Transfer of marker gene panels from the Telley data [<xref ref-type="bibr" rid="c34">34</xref>] to a second mouse neocortex dataset shows consistent identification of the primary cell types in mouse neurogenesis. Left: UMAP representations of cells from the dorsal forebrain excitatory lineage in the LaManno atlas of mouse brain development [<xref ref-type="bibr" rid="c35">35</xref>], colored by cell labels assigned by the original authors. This is followed by the same UMAPs, now showing the proportion of gene panels derived from the Telley dataset, labeled 1H, 24H and 96H, expressed at non-zero levels in each individual cell. These last three plots illustrate the transfer of marker gene panels derived from the Telley data to the LaManno data. <bold>C</bold>. Box plots of these same proportions broken down by cell-type labels provided by the original authors. <bold>D</bold>. Transfer of marker gene panels from the Telley data in mouse to data in the developing human neocortex from Polioudakis et al. [<xref ref-type="bibr" rid="c39">39</xref>], shows the identification of conserved cell types in neurogenesis across mammalian species. Left: tSNE map of cells from the dorsal forebrain excitatory lineage in the Polioudakis data. This is followed by the same tSNE maps, now showing the transfer of marker gene panels derived from progenitors labeled 1, 24, and 96 hours after terminal cell division in the Telley data. The map is colored by the proportion of each gene panel that is expressed at non-zero levels in each individual cell of the human Polioudakis dataset. Original athor cell labels are used: RG = radial glia, v = ventricular, o = outer, Pg = cycling progenitor, S = in S phase, G2M = in G2M phase, IP = intermediate progenitor, Ex = excitatory neuron, N = new migrating, M = maturing, Dp = deep layer, U = upper layer.<bold>E</bold>. Box plots of these same proportions broken down by cell type labels and microdissection information provided by the original authors. The final two boxes indicate expression in neuronal subtypes segregated by physical location: germinal zone (GZ) or cortical plate (CP) microdissection.</p></caption>
-<graphic xlink:href="535943v6_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>These marker gene panels contain canonical markers of neural progenitors, intermediate progenitors / neuroblasts and neurons, including Sox3, Neurod1, and Mef2c in 1H, 24H, and 96H cells, respectively. The panels also contain many lesser known genes (Gm …), pseudogenes (… -ps), and mitochondrialy encoded genes (mt-…) which are expressed at much lower levels, but together precisely distinguish these neurogenic cell classes. Mitochondrial transcripts, and tRNAs in particular, are often disregarded as uninformative “housekeeping” genes or even indications of low-quality RNA samples. These are dangerous assumptions, especially when exploring neurogenesis where the mitochondrial content of cells changes dramatically as cells transition from stem and progenitor states to post-mitotic neurons. The expression of mt-Tv, for example, is highly specific to 96H cells (<xref rid="fig2" ref-type="fig">Figure 2A</xref>), and while often disregarded as a housekeeping tRNA, it also forms a structural component of the mitochondrial ribosome [<xref ref-type="bibr" rid="c41">41</xref>] and is transcribed in higher abundance as energy demands of nascent neurons increase. This suggests that many genes not often selected by conventional marker gene finding methods (and often intentionally filtered out by biologists) hold significant cell-type-specific information. To assess this possibility and the utility of CellCover marker gene panels in general, we next examine the ability of these panels to interrogate cell-type-specific signals in additional neocortical datasets.</p>
 </sec>
@@ -254,20 +255,20 @@
 <label>Figure 3:</label>
 <caption><title>Expression of 1H, 24H, and 96H CellCover marker gene panels across development in bulk human and microdissected macaque neocortical tissue.</title>
 <p><bold>A</bold>. Transfer of CellCover marker gene panels from the Telley data in mouse [<xref ref-type="bibr" rid="c34">34</xref>] into bulk RNAseq from human fetal cortical tissue [<xref ref-type="bibr" rid="c40">40</xref>]. The panel is obtained using the CellCover with <bold><italic>α</italic></bold> = 0.02 and <bold><italic>d</italic></bold> = 5. The transferred values of gene panels were assessed as the sum of panel gene expression levels in each individual sample divided by the maximum sum observed in the samples. <bold>B</bold>. Transfer of marker gene panels (Table S4d: <bold><italic>α</italic></bold> = 0.02, <bold><italic>d</italic></bold> = 15 nested expanded from <bold><italic>d</italic></bold> = 7) from the Telley data in mouse into microarray data from laser microdissected regions of the developing macaque neocortex [<xref ref-type="bibr" rid="c37">37</xref>]. Nonlinear fits in 1H, 24H, and 96H panels are to VZ, iSVZ, and Ctx data, respectively. X-axis ages are expressed as embryonic (E) days after conception and months (mo) after birth. Transferred marker gene panel levels were calculated as in panel A. VZ = ventricular zone, iSVZ= inner subventricular zone, oSVZ = outer subventricular zone, subP = subplate, CP = cortical plate, Ctx = cortex.</p></caption>
-<graphic xlink:href="535943v6_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Cell states across mammalian neurogenesis are tightly linked to the position in the developing cortex. To explore the precise positional association of signals captured by CellCover panels from the developing mouse cortex, we transferred the markers derived from the Telley data into expression data from hundreds of laser microdissected regions of the developing primate cortex (Bakken et al. [<xref ref-type="bibr" rid="c37">37</xref>]; <xref rid="fig3" ref-type="fig">Figure 3B</xref>). Markers of the 1H mouse neural progenitor cells show the highest expression in the ventricular zone (VZ) of the macaque and decrease over fetal development (<xref rid="fig3" ref-type="fig">Figure 3B</xref> left panel), consistent with the widely held notion that ventricular radial glia are the earliest and most conserved neural progenitor state in the developing mammalian cortex. In contrast, markers of 24H cells in the mouse are most highly expressed in the cells of the inner subventricular zone (iSVZ) of the primate (<xref rid="fig3" ref-type="fig">Figure 3B</xref> center panel), indicating a progression from the ventricular zone state to delaminated intermediate progenitor (IPCs) / basal progenitor (BPs) states, but not reaching the primate-specific outer subventriclar zone (oSVZ) [<xref ref-type="bibr" rid="c30">30</xref>] / outer radial glia (oRG) states [<xref ref-type="bibr" rid="c32">32</xref>]. Genes marking 96H cells are most highly expressed in the postmitotic neurons of the fetal cortex and decrease following birth. Given the greater signal of the 96H gene panel in more mature neurons in <xref rid="fig2" ref-type="fig">Figure 2E</xref>, we conclude that these genes are not related to transient newborn neuron states. Rather, it is likely that the increasing glial content of the postnatal neocortex begins to reduce the relative level of the neuronal signal in this bulk RNA-seq data, despite its high spatial resolution. It is of interest that in the VZ, the 1H signal is high and falling while the 96H signal is low but rising. These opposing dynamic signatures within mammalian neural progenitors appear to indicate that progenitor and neuron states begin to converge over development. Elements of this have been noted elsewhere [<xref ref-type="bibr" rid="c34">34</xref>, <xref ref-type="bibr" rid="c42">42</xref>] and become clearer later in this report as we perform additional transfers of marker gene panels at higher resolution (<xref rid="fig4" ref-type="fig">Figures 4</xref> and <xref rid="fig5" ref-type="fig">5</xref>).</p>
 <fig id="fig4" position="float" fig-type="figure">
 <label>Figure 4:</label>
 <caption><title>Expression of the 12 CellCover gene panels from the Telley data across development in the fetal neocortex of the mouse and human.</title>
 <p><bold>A</bold>. Transfer of Telley gene panels (<bold><italic>α</italic></bold> = 0.02 and <bold><italic>d</italic></bold> = 6) into the radial glia (left panel), neuroblasts (center panel) and neurons (right panel) from the developing mouse brain atlas (La Manno et al. [<xref ref-type="bibr" rid="c35">35</xref>]). In all cases, covering rates of transferred panels from 1H cells are depicted in blue, 24H in green, and 96H in red. Transferred levels were calculated as the proportion of cells of each type expressing more than 3 marker genes in the gene panel. <bold>B</bold>. Transfer of the 12 gene panels (<bold><italic>α</italic></bold> = 0.02 and <bold><italic>d</italic></bold> = 15 nested expanded from <bold><italic>d</italic></bold> = 7) into bulk RNA-seq data from the human fetal cortex [<xref ref-type="bibr" rid="c40">40</xref>]. Transferred values of gene panels were assessed as the sum of gene panel expression levels in each individual sample divided by the maximum sum observed in the samples (as in <xref rid="fig3" ref-type="fig">Figure 3A</xref>).</p></caption>
-<graphic xlink:href="535943v6_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5:</label>
 <caption><title>Expression of the 12 CellCover gene panels from the Telley data across development in the fetal and early postnatal neocortex of the macaque and human.</title>
 <p>The CellCover marker panels are obtained at <bold><italic>α</italic></bold> = 0.02 and <bold><italic>d</italic></bold> = 15 nested expanded from <bold><italic>d</italic></bold> = 7. <bold>A</bold>. Transfer of the 12 CellCover panels into microarray data from microdissected regions of the developing macaque neocortex [<xref ref-type="bibr" rid="c37">37</xref>]. X-axis ages are expressed as embryonic (E) days after conception and months (mo) after birth. Transferred gene panel levels were calculated as in <xref rid="fig3" ref-type="fig">Figure 3</xref>. VZ = ventricular zone, iSVZ= inner subventricular zone, oSVZ = outer subventricular zone, subP = subplate, CP = cortical plate, Ctx = cortex. <bold>B</bold>. Repeated transfer of the 96H gene panels into the microdissected macaque data, using additional labeling of dissections by cortical layer. <bold>C</bold>. Repeated transfer of the 96H gene panels into the human cortex data [<xref ref-type="bibr" rid="c40">40</xref>], showing additional late fetal and early postnatal samples in postnatal development.</p></caption>
-<graphic xlink:href="535943v6_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>While these concise, low covering depth gene panels can effectively map conserved cell-type-specific expression dynamics across mammalian development, the multiplicity of near-optimal solutions to the covering problem (see details in Supplemental section 3) suggests that a broader complementary approach for connecting more genes to cell classes will be useful to define underlying cell type specific mechanisms. Therefore, we proposed the CellCover nested expansion (detailed in Method section 5.2) and demonstrate its utility by expanding the 1H, 24H, and 96H gene panels to include additional marker genes. Specifically, nested expansion involves iteratively rerunning CellCover for a given cell class, using the previously optimal gene panel as a starting point and updating the algorithm with increased covering depth. We demonstrate that these expanded gene panels can be effectively used in gene over-representation analyses to explore cell function more deeply, and capture fundamentally distinct signals from scRNA-seq data than DE methods (see details in Supplemental section 4).</p>
 </sec>
@@ -298,7 +299,7 @@
 <label>Figure 6:</label>
 <caption><title>Expression of gliogenic and oRG marker gene panels across developmental time in human, macaque, and mouse neural progenitor cells.</title>
 <p>CellCover (<bold><italic>α</italic></bold> = 0.02, <bold><italic>d</italic></bold> = 15) was used to define marker gene panels from scRNA-seq of sorted cell types of the developing human telencephalon [<xref ref-type="bibr" rid="c46">46</xref>]. Here, the expression of marker gene panels from gliogenic precursor cells and outer radial glial (oRG) cells is examined in additional scRNA-seq data from progenitor cells of the developing <bold>A</bold>. human [<xref ref-type="bibr" rid="c47">47</xref>], <bold>B</bold>. macaque [<xref ref-type="bibr" rid="c38">38</xref>], and <bold>C</bold>. mouse [<xref ref-type="bibr" rid="c36">36</xref>] neocortex. Each panel depicts the number of progenitor cells (color intensity) expressing differing proportions of oRG (X-axis) and gliogenic precrsor (Y-axis) marker panel genes at one developmental time in each species. Changes in the distribution of progenitor cells expressing different proportions of the marker genes as development progresses can be seen across panels from left to right. Ages are shown in individual panel titles. pcw = post conceptional weeks.</p></caption>
-<graphic xlink:href="535943v6_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="535943v6_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 </sec>
@@ -327,53 +328,53 @@
 <sec id="s4a2">
 <label>5.1.2</label>
 <title>Binarization</title>
-<p>We define a gene <italic>g</italic> to be expressed if and only if <italic>X</italic><sub><italic>g</italic></sub> <italic>&gt;</italic> 0. This operation can be refined by replacing the zero threshold by some low activity number <italic>θ</italic> (or <italic>θ</italic><sub><italic>g</italic></sub>: <italic>X</italic><sub><italic>g</italic></sub> <italic>&gt; θ</italic><sub><italic>g</italic></sub>). Given this binarization rule, we introduce the random variable <italic>U</italic><sub><italic>g</italic></sub> to encode the binary expression level of gene <italic>g</italic>, where <inline-formula><inline-graphic xlink:href="535943v6_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula>.</p>
+<p>We define a gene <italic>g</italic> to be expressed if and only if <italic>X</italic><sub><italic>g</italic></sub> <italic>&gt;</italic> 0. This operation can be refined by replacing the zero threshold by some low activity number <italic>θ</italic> (or <italic>θ</italic><sub><italic>g</italic></sub>: <italic>X</italic><sub><italic>g</italic></sub> <italic>&gt; θ</italic><sub><italic>g</italic></sub>). Given this binarization rule, we introduce the random variable <italic>U</italic><sub><italic>g</italic></sub> to encode the binary expression level of gene <italic>g</italic>, where <inline-formula><inline-graphic xlink:href="535943v6_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula>.</p>
 </sec>
 <sec id="s4a3">
 <label>5.1.3</label>
 <title>First condition</title>
 <p>We now formulate condition (i) as a constraint on the set <italic>M</italic> and introduce two parameters of our method, namely an integer <bold><italic>d</italic></bold> (or “depth”) and a scalar 0 ≤ <bold><italic>α</italic></bold> ≪ 1 to quantify this condition as “the probability that at least <italic>d</italic> genes in <italic>M</italic> are expressed given that the cell type is <italic>k</italic> is larger than 1 − <bold><italic>α</italic></bold>,” or
 <disp-formula id="eqn1">
-<graphic xlink:href="535943v6_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>The left-hand side of the inequality (1) is the rate at which the set <italic>M</italic> covers the class <italic>k</italic>, or covering rate. Obviously, this constraint can be satisfied for some <italic>M</italic> ⊂ <italic>G</italic> if and only if it is satisfied for <italic>M</italic> = <italic>G</italic>, so that <bold><italic>α</italic></bold> needs to be chosen such that
 <disp-formula id="ueqn1">
-<graphic xlink:href="535943v6_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>Note also that, using the notation introduced in the previous section,
 <disp-formula id="ueqn2">
-<graphic xlink:href="535943v6_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
-<p>This condition can also be interpreted in terms of a classification error. Indeed, define Φ<sub><italic>M</italic>,<bold><italic>d</italic></bold></sub> as the binary classifier equal to one if <inline-formula><inline-graphic xlink:href="535943v6_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and to 0 otherwise. Then (1) expresses the fact that this classifier’s sensitivity is at least 1 − <bold><italic>α</italic></bold>.</p>
+<p>This condition can also be interpreted in terms of a classification error. Indeed, define Φ<sub><italic>M</italic>,<bold><italic>d</italic></bold></sub> as the binary classifier equal to one if <inline-formula><inline-graphic xlink:href="535943v6_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and to 0 otherwise. Then (1) expresses the fact that this classifier’s sensitivity is at least 1 − <bold><italic>α</italic></bold>.</p>
 </sec>
 <sec id="s4a4">
 <label>5.1.4</label>
 <title>Second condition</title>
 <p>Having expressed the first condition as a constraint, we now express the second one as a quantity <italic>M</italic> ↦ <italic>F</italic> (<italic>M</italic>) to optimize. Ideally, one would like to minimize the probability that, conditionally to <italic>Y</italic><sub><italic>k</italic></sub> = 0, there exists at least one active gene in <italic>M</italic>, namely
 <disp-formula id="ueqn3">
-<graphic xlink:href="535943v6_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>This quantity, however, is not straightforward to minimize, but its Bonferroni upper bound
 <disp-formula id="ueqn4">
-<graphic xlink:href="535943v6_ueqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-is linear in the binary vector <italic>z</italic> and will be amenable to an ILP formulation. (<italic>F</italic><sub>0</sub>(<italic>M</italic>) is also equal to the expectation of <inline-formula><inline-graphic xlink:href="535943v6_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> given <italic>Y</italic> ≠ <italic>k</italic>.)</p>
+is linear in the binary vector <italic>z</italic> and will be amenable to an ILP formulation. (<italic>F</italic><sub>0</sub>(<italic>M</italic>) is also equal to the expectation of <inline-formula><inline-graphic xlink:href="535943v6_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> given <italic>Y</italic> ≠ <italic>k</italic>.)</p>
 <p>Note that, obviously
 <disp-formula id="ueqn5">
-<graphic xlink:href="535943v6_ueqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 so that 1 − <italic>F</italic><sub>0</sub>(<italic>M</italic>) controls the sensibility of the previous classifier Φ<sub><italic>M,r</italic></sub>.</p>
 <p>If the variables <italic>U</italic><sub><italic>g</italic></sub> are independent (conditionally to <italic>Y</italic>), then
 <disp-formula id="ueqn6">
-<graphic xlink:href="535943v6_ueqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 which suggests using
 <disp-formula id="ueqn7">
-<graphic xlink:href="535943v6_ueqn7.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn7.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 as an alternative objective.</p>
 </sec>
@@ -382,43 +383,43 @@ as an alternative objective.</p>
 <title>Margin weights</title>
 <p>More generally, we will consider objective functions <italic>F</italic> taking the form
 <disp-formula id="ueqn8">
-<graphic xlink:href="535943v6_ueqn8.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn8.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 for some choice of weights (<italic>w</italic><sub><italic>g</italic></sub>, <italic>g</italic> ∈ <italic>G</italic>). The function <italic>F</italic><sub>0</sub> above uses <italic>w</italic><sub><italic>g</italic></sub> = <italic>P</italic> (<italic>U</italic><sub><italic>g</italic></sub> = 1 | <italic>Y</italic> ≠ <italic>k</italic>), and <italic>F</italic><sub>1</sub> uses <italic>w</italic><sub><italic>g</italic></sub> = − log(1 − <italic>P</italic> (<italic>U</italic><sub><italic>g</italic></sub> = 1 | <italic>Y</italic> ≠ <italic>k</italic>)), but other choices are possible. We will in particular work with weights reflecting the ability of the variable <italic>U</italic><sub><italic>g</italic></sub> to identify class <italic>k</italic>, such as
 <disp-formula id="eqn2">
-<graphic xlink:href="535943v6_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>Or
 <disp-formula id="eqn3">
-<graphic xlink:href="535943v6_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>K</italic> is the total number of classes. Small values of <italic>w</italic><sub><italic>g</italic></sub> reflect a large sensibility of the variable <italic>U</italic><sub><italic>g</italic></sub>, when differentiating type <italic>k</italic> from any other type. In our algorithm, we implement Equation (2) as the default while offering users the flexibility to choose their desired weight schemes. Going further, it is natural to eliminate genes for which one of the ratios above is larger than 1, which is achieved by enforcing <italic>z</italic><sub><italic>g</italic></sub> = 0 if <italic>w</italic><sub><italic>g</italic></sub> <italic>&gt;</italic> 1 (or, equivalently, replacing <italic>w</italic><sub><italic>g</italic></sub> by +∞ when <italic>w</italic><sub><italic>g</italic></sub> <italic>&gt;</italic> 1). This choice has, in addition, the merit of reducing the number of free variables <italic>z</italic><sub><italic>g</italic></sub> and accelerating the optimization process. Note that these margin weights ensure that <italic>F</italic> (<italic>M</italic>) ≥ <italic>F</italic><sub>0</sub>(<italic>M</italic>) and therefore also control sensibility.</p>
 </sec>
 <sec id="s4a6">
 <label>5.1.6</label>
 <title>Marker set estimation algorithm</title>
-<p>We can now conclude our discussion with a description of our algorithm. Assume we observe the raw count single-cell gene expression data of <italic>N</italic> cells <inline-formula><inline-graphic xlink:href="535943v6_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and their cell types <italic>y</italic><sup>(<italic>c</italic>)</sup> for <italic>c</italic> = 1, …, <italic>N</italic>. We binarize <inline-formula><inline-graphic xlink:href="535943v6_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> to obtain the binary expression levels <inline-formula><inline-graphic xlink:href="535943v6_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula> for <italic>c</italic> = 1, …, <italic>N</italic> as the input for our algorithm. Let <italic>S</italic><sub><italic>k</italic></sub> be the set of cells with type <italic>k</italic> for <italic>k</italic> = 1, 2, …, <italic>K</italic>. Given the hyperparameters <bold>d</bold> and <bold><italic>α</italic></bold>, the following algorithm returns a covering marker panel for cell type <italic>k</italic>, with covering depth <bold><italic>d</italic></bold> and covering rate 1 − <bold><italic>α</italic></bold>:</p>
+<p>We can now conclude our discussion with a description of our algorithm. Assume we observe the raw count single-cell gene expression data of <italic>N</italic> cells <inline-formula><inline-graphic xlink:href="535943v6_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and their cell types <italic>y</italic><sup>(<italic>c</italic>)</sup> for <italic>c</italic> = 1, …, <italic>N</italic>. We binarize <inline-formula><inline-graphic xlink:href="535943v6_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula> to obtain the binary expression levels <inline-formula><inline-graphic xlink:href="535943v6_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula> for <italic>c</italic> = 1, …, <italic>N</italic> as the input for our algorithm. Let <italic>S</italic><sub><italic>k</italic></sub> be the set of cells with type <italic>k</italic> for <italic>k</italic> = 1, 2, …, <italic>K</italic>. Given the hyperparameters <bold>d</bold> and <bold><italic>α</italic></bold>, the following algorithm returns a covering marker panel for cell type <italic>k</italic>, with covering depth <bold><italic>d</italic></bold> and covering rate 1 − <bold><italic>α</italic></bold>:</p>
 <list list-type="order">
 <list-item><p>Estimate probability that gene <italic>g</italic> is expressed under cell type <italic>l</italic> with
 <disp-formula id="eqn4">
-<graphic xlink:href="535943v6_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 for <italic>g</italic> ∈ <italic>G</italic> and <italic>k</italic> = 1, …, <italic>K</italic> based on training data.</p></list-item>
 <list-item><p>Compute weights <italic>w</italic><sub><italic>g</italic></sub>, <italic>k, g</italic> ∈ <italic>G</italic> as the ratio between the average probability of expression of <italic>g</italic> when cell type is not <italic>k</italic> and the probability of gene <italic>g</italic> expressed under cell type <italic>k</italic> (or use user-supplied weights).
 <disp-formula id="eqn5">
-<graphic xlink:href="535943v6_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>A small value of <italic>w</italic><sub><italic>g,k</italic></sub> indicates that gene <italic>g</italic> is discriminative of cell type <italic>k</italic>.</p></list-item>
 <list-item><p>To form the candidate gene set <italic>G</italic><sub><italic>k</italic></sub>, filter out the genes that are either not discriminative or too lowly expressed, letting <italic>G</italic><sub><italic>k</italic></sub> = {<italic>g</italic> : <italic>w</italic><sub><italic>g,k</italic></sub> ≤ 1} ∩ {<italic>g</italic> : <italic>m</italic><sub><italic>g,k</italic></sub> ≥ 0.1}.</p></list-item>
-<list-item><p>Use an integer programming software [<xref ref-type="bibr" rid="c48">48</xref>] to minimize, with respect to binary variables <italic>z</italic><sub><italic>g</italic></sub>, <italic>g</italic> ∈ <italic>G</italic><sub><italic>k</italic></sub> and <italic>s</italic><sup>(<italic>c</italic>)</sup>, <italic>c</italic> ∈ <italic>S</italic><sub><italic>k</italic></sub>, the function <inline-formula><inline-graphic xlink:href="535943v6_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula> subject to the constraints
+<list-item><p>Use an integer programming software [<xref ref-type="bibr" rid="c48">48</xref>] to minimize, with respect to binary variables <italic>z</italic><sub><italic>g</italic></sub>, <italic>g</italic> ∈ <italic>G</italic><sub><italic>k</italic></sub> and <italic>s</italic><sup>(<italic>c</italic>)</sup>, <italic>c</italic> ∈ <italic>S</italic><sub><italic>k</italic></sub>, the function <inline-formula><inline-graphic xlink:href="535943v6_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula> subject to the constraints
 <disp-formula id="ueqn9">
-<graphic xlink:href="535943v6_ueqn9.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn9.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 and
 <disp-formula id="ueqn10">
-<graphic xlink:href="535943v6_ueqn10.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn10.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where</p>
 <list list-type="bullet">
@@ -432,13 +433,13 @@ where</p>
 <sec id="s4b">
 <label>5.2</label>
 <title>Nested marker set expansion</title>
-<p>Step (4) can be modified to estimate a covering as a superset of a previous one (obtained e.g., with a smaller depth): Assume that <inline-formula><inline-graphic xlink:href="535943v6_inline8.gif" mimetype="image" mime-subtype="gif"/></inline-formula> are given, e.g., from a previous run of our algorithm, defining an initial marker panel. In order to extend this panel to a covering at depth <bold><italic>d</italic></bold>, one only needs to replace step (4) by the following: (4’) Use an integer programming software to minimize, with respect to binary variables <italic>z</italic><sub><italic>g</italic></sub>, <italic>g</italic> ∈ <italic>G</italic><sub><italic>k</italic></sub> and <italic>s</italic><sup>(<italic>c</italic>)</sup>, <italic>c</italic> ∈ <italic>S</italic><sub><italic>k</italic></sub>, the function <inline-formula><inline-graphic xlink:href="535943v6_inline9.gif" mimetype="image" mime-subtype="gif"/></inline-formula> subject to the constraints
+<p>Step (4) can be modified to estimate a covering as a superset of a previous one (obtained e.g., with a smaller depth): Assume that <inline-formula><inline-graphic xlink:href="535943v6_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula> are given, e.g., from a previous run of our algorithm, defining an initial marker panel. In order to extend this panel to a covering at depth <bold><italic>d</italic></bold>, one only needs to replace step (4) by the following: (4’) Use an integer programming software to minimize, with respect to binary variables <italic>z</italic><sub><italic>g</italic></sub>, <italic>g</italic> ∈ <italic>G</italic><sub><italic>k</italic></sub> and <italic>s</italic><sup>(<italic>c</italic>)</sup>, <italic>c</italic> ∈ <italic>S</italic><sub><italic>k</italic></sub>, the function <inline-formula><inline-graphic xlink:href="535943v6_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> subject to the constraints
 <disp-formula id="ueqn11">
-<graphic xlink:href="535943v6_ueqn11.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn11.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 and
 <disp-formula id="ueqn12">
-<graphic xlink:href="535943v6_ueqn12.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn12.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <sec id="s4b1">
@@ -466,9 +467,9 @@ and
 <title>Gene Weight Computation Based on Binary and Log-normalized Expression Profile</title>
 <p>In the benchmark analysis, CellCover employs two weighting schemes for gene selection. The first uses the default weight defined on the binarized gene expression data (<xref ref-type="disp-formula" rid="eqn4">Equation 4</xref> in Methods Section 5.1.6), while the second modifies this approach by using log-normalized gene counts in place of binary expressions:
 <disp-formula id="eqn6">
-<graphic xlink:href="535943v6_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <inline-formula><inline-graphic xlink:href="535943v6_inline10.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the log-normalized expression of gene <italic>g</italic> in cell <italic>c</italic>. In both cases, the covering constraints are consistently defined using the binarized data. These two weighting schemes were implemented to ensure fair comparisons with other methods, as RankCorr, scGeneFit, PhenotypeCover, and DE all use log-normalized count data as input by default. Throughout the paper, unless otherwise specified, we use binary data for both weight calculation and covering constraints in CellCover.</p>
+where <inline-formula><inline-graphic xlink:href="535943v6_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula> is the log-normalized expression of gene <italic>g</italic> in cell <italic>c</italic>. In both cases, the covering constraints are consistently defined using the binarized data. These two weighting schemes were implemented to ensure fair comparisons with other methods, as RankCorr, scGeneFit, PhenotypeCover, and DE all use log-normalized count data as input by default. Throughout the paper, unless otherwise specified, we use binary data for both weight calculation and covering constraints in CellCover.</p>
 </sec>
 <sec id="s4c4">
 <label>5.3.4</label>
@@ -478,14 +479,14 @@ where <inline-formula><inline-graphic xlink:href="535943v6_inline10.gif" mimetyp
 <sec id="s4c5">
 <label>5.3.5</label>
 <title>Within Marker Panel Redundancy</title>
-<p>We further assess the redundancy of marker genes within the global marker panel identified by each method <italic>x</italic> ∈ {CellCover-LogNorm, DE}. For each cell type <italic>k</italic> ∈ 1, …, <italic>K</italic>, we obtain a local marker panel <inline-formula><inline-graphic xlink:href="535943v6_inline11.gif" mimetype="image" mime-subtype="gif"/></inline-formula> of same size. We then define the global marker panel <italic>M</italic><sup><italic>x</italic></sup> as the union of all cell-type-specific marker panels
+<p>We further assess the redundancy of marker genes within the global marker panel identified by each method <italic>x</italic> ∈ {CellCover-LogNorm, DE}. For each cell type <italic>k</italic> ∈ 1, …, <italic>K</italic>, we obtain a local marker panel <inline-formula><inline-graphic xlink:href="535943v6_inline11.gif" mime-subtype="gif" mimetype="image"/></inline-formula> of same size. We then define the global marker panel <italic>M</italic><sup><italic>x</italic></sup> as the union of all cell-type-specific marker panels
 <disp-formula id="ueqn13">
-<graphic xlink:href="535943v6_ueqn13.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn13.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>Next, let <italic>R</italic><sup><italic>x</italic></sup> ∈ <italic>M</italic><sup><italic>x</italic></sup> be the set of genes appearing in at least two different local marker panels. The proportion of redundant genes in <italic>M</italic><sup><italic>x</italic></sup> is thus
 <disp-formula id="ueqn14">
-<graphic xlink:href="535943v6_ueqn14.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="535943v6_ueqn14.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 <p>This measure reflects how frequently the same gene is identified as a marker for multiple cell types by a given method.</p>
@@ -621,6 +622,116 @@ where <inline-formula><inline-graphic xlink:href="535943v6_inline10.gif" mimetyp
 <p>• The observation that outer radial glia (oRG) markers are expressed in neural progenitors before the emergence of gliogenic progenitors in primates and humans is compelling. This could be further supported by examining the temporal and spatial expression patterns of early oRG-specific markers versus gliogenic progenitor markers in recent human spatial transcriptomic datasets - such as the one published by Xuyu et al. (PMID: 40369074) or Wang et al. (PMID: 39779846).</p>
 <p>Summary:</p>
 <p>Overall, this work provides a conceptually innovative and practically useful method for cell type classification that will be valuable to the single-cell and developmental biology communities. Its impact will likely grow as more researchers seek scalable, interpretable, and biologically informed gene panels for multimodal assays, diagnostics, and perturbation studies.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107531.1.sa2</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ji</surname>
+<given-names>Lanlan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>An</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sonthalia</surname>
+<given-names>Shreyash</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Seo</surname>
+<given-names>Seungmae</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2175-6440</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Naiman</surname>
+<given-names>Daniel Q</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Younes</surname>
+<given-names>Laurent</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Colantuoni</surname>
+<given-names>Carlo</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6818-6380</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Geman</surname>
+<given-names>Donald</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p>A more in-depth explanation of marker panel applications is needed. Specifically, how should users interpret gene panels where individual genes show only moderate or low expression levels, but the combination provides high specificity? Providing a concrete example, along with guidelines for interpreting such combinatorial signatures, would enhance the practical utility of the method.</p>
+</disp-quote>
+<p>We appreciate the need to explain and demonstrate how to use the novel combinatorial gene marker sets that CellCover generates. To be clear, individual genes expressed at low levels and in small numbers of cells, in general, have high specificity (the ability to mark cells of a particular type without erroneously marking other cells as this type) and are often used in combinations by CellCover to achieve a panel of genes with high sensitivity (the ability to mark all cells of a particular type). Low or sparsely expressed genes of this type may represent poorly measured genes (i.e. zero inflation known to occur in single-cell data, where genes are measured as zero in cells which actually express the gene) or may represent genes which are truly expressed only in a subset of the annotated class. Because CellCover can borrow strength across genes, it can harness the true information in either class of genes, even if affected by zero inflation. Further investigation of structure within the cell class (and across other cell classes) using the CellCover gene marker panel, as well as other genes, is necessary to clarify this issue in any particular analysis. In the manuscript, we evaluate the expression of individual genes within and across classes in this manner to understand deeper structure in Figures 1A, S6 and S8.</p>
+<p>To demonstrate how CellCover selects individual genes with high specificity and low sensitivity, but which are complementary to one another, in order to achieve high collective sensitivity, here we consider a hypothetical dataset of many cells where we focus on one cell class that contains 100 cells composed of four subtypes.</p>
+<p>- Subtype A: cells 1–20</p>
+<p>- Subtype B: cells 21–30</p>
+<p>- Subtype C: cells 31–50</p>
+<p>- Subtype D: cells 51–100</p>
+<p>To illustrate how CellCover evaluates marker gene panels, in this example, the genes under instigation have very different weights (i.e. the ratio of a gene’s expression in the cell class of interest versus its expression in other cells). Suppose we have two candidate marker panels:</p>
+<p>Panel 1 (coarse markers).</p>
+<p>- Gene <italic>A</italic>: covers cells 1–30 (weight = 0.4)</p>
+<p>- Gene <italic>B</italic>: covers cells 30–60 (weight = 0.3)</p>
+<p>- Gene <italic>C</italic>: covers cells 60–100 (weight = 0.2)</p>
+<p>Each gene in this panel covers a relatively large portion of the population (<italic>&gt;</italic> 30%), but their weights are comparatively high, indicating limited specificity to the focal cell type. Although the panel {<italic>A,B,C</italic>} attains full coverage, its markers are coarse and nonspecific.</p>
+<p>Panel 2 (fine-grained, combinatorial markers).</p>
+<p>- Gene <italic>A</italic>’: covers cells 1–20 (weight = 0.05)</p>
+<p>- Gene <italic>B</italic>’: covers cells 20–30 (weight = 0.10)</p>
+<p>- Gene <italic>C</italic>’: covers cells 30–50 (weight = 0.05)</p>
+<p>- Gene <italic>D</italic>’: covers cells 50–100 (weight = 0.10)</p>
+<p>Each marker is expressed in a smaller fraction of the population (individually low sensitivity), but the weights are substantially lower, reflecting strong subtype specificity. Importantly, these genes are complementary: their union covers all 100 cells (high combinatorial sensitivity), even though no single gene spans more than 20–50% of the cells.</p>
+<p>Under a strict covering requirement (e.g., <italic>α</italic> = 0, requiring 100% coverage, i.e. perfect sensitiity), both panels satisfy the constraint. However, CellCover selects the second panel because its total weight (specificity) is smaller. This preference reflects the design of the objective function: the method favors markers that are highly cell-type-specific, even if they individually cover only a subset of the population, as long as their complements yield full coverage. As a result, CellCover can reveal refined subtype structure within what appears to be a single cell population.</p>
+<p>Interpretation guidelines. We explicitly note that CellCover marker panels should be interpreted as combinatorial signatures:</p>
+<p>- Individual genes may show localized, subtype-restricted expression.</p>
+<p>- The union of their expression defines the target cell type.</p>
+<p>- Low-weight genes are more specific; CellCover therefore prioritizes them whenever they provide complementary coverage.</p>
+<p>- The resulting panel may highlight latent heterogeneity or subpopulations within the cell type that express different subsets of the markers.</p>
+<p>In addition to these technical guidelines for interpreting gene panels, throughout the manuscript we use the transfer of CellCover marker gene panels to related datasets to assess the biological function of the gene sets. We propose this as a general tool in the examination of gene lists and have implemented methods to visualize the expression of any gene list (including gene lists uploaded by users) using the Projection Tool within NeMO Anlaytics.</p>
+<disp-quote content-type="editor-comment">
+<p>Further quantification of CellCover’s sensitivity in detecting rare cell subtypes or states would strengthen the evaluation of its performance. Additionally, it would be helpful to assess how CellCover performs under noisy conditions, such as low cell numbers or read depths, which are common challenges in scRNA-seq datasets.</p>
+</disp-quote>
+<p>While CellCover is a method to define marker gene panels for cell classes that are already defined in a dataset, its performance on rare cell classes, small numbers of cells and low read depths is still a relevant issue. The analyses in the paper can speak to some of these concerns: The Telley dataset, which we use throughout the manuscript, used FlashTag labeling of cells prior to sequencing in order to ascertain the time since terminal division for each cell. This unique metadata linked to each cell’s expression data enabled many of the analyses we performed in the paper, but also limited the number of cells that were sequenced. For this reason, the number of cells in this dataset (total cells = 2756) is much lower than that seen in the vast majority of other single-cell sequencing studies, including those we use for the transfer of marker gene sets defined by CellCover in the Telley data. As a result, the cell classes for which we define marker gene panels in the paper contain relatively small numbers of cells. This is especially true in the 12-class analysis in Figures 4 and 5 where CellCover successfully defines gene panels for all 12 classes which transfer well to other datasets. Total cells per class range from 134 to 301. Figure S6 shows that the discriminative power of the 12 gene panels varied widely, with the most highly discriminative panel being from the E12.1H condition with only 189 cells).</p>
+<p>In addition, we note that the behavior of CellCover on rare (or any) cell classes can be characterized deterministically under mild condition. For a fixed cell class and a required covering rate of 1, a depth-k covering gene panel exists if and only if every cell in the class expresses at least k genes. Under this condition, CellCover is guaranteed to find a covering panel of depth-k. Importantly, this guarantee does not impose any restriction on the panel size. Consequently, the compactness of the resulting panel reflects intrinsic properties of the data rather than algorithmic limitations: a small panel indicates that a subset of genes is robustly and consistently expressed across most cells in the class, even if the class itself is rare, whereas a large panel suggests highly heterogeneous expression patterns, where different genes are expressed in different cells. In this sense, the feasibility and structure of a covering panel are determined by the biological and technical characteristics of the dataset (e.g., read depth, expression sparsity, and the specificty of gene expression in the defined cell classes), rather than by the performance of CellCover itself.</p>
+<disp-quote content-type="editor-comment">
+<p>It is intriguing and novel that CellCover analysis of the dataset from Telley et al. suggests cell-type-specific expression of ribosomal, mitochondrial, or tRNA genes. These findings would be significantly strengthened by additional validation. For example, the reported radial glia-specific expression of Rps18-ps3 and Rps10-ps1, as well as the postmitotic neuron-specific expression of mt-Tv and mt-Nd4l, should be corroborated using independent scRNA-seq or spatial transcriptomic datasets of the developing neocortex. Alternatively, these expression patterns could be directly examined through immunostaining or single-molecule FISH analysis.</p>
+</disp-quote>
+<p>The main problem with such analysis is that most studies have omitted the expression of these genes (especially mitochondrial genes that are primarily viewed as QC metrics) from their datasets. We encourage researchers to retain the expression of these transcripts in their data so that their biological functions can be explored. Where available, the expression of these genes can be visualized in NeMO Analytics in the mouse where the enrichment of Rps18-ps3 expression in radial glia can be seen in the Di Bella 2021 dataset and in the human where the expression of mt-Tv can be seen in neurons in the Polioudakis 2019, Darmanis 2015, Camp 2015, and Liu 2016 datasets.</p>
+<p>Taking a broader perspective, a growing body of foundational work in developmental neurobiology supports the observation that mitochondrial state and metabolic programs undergo systematic changes during neuronal differentiation, consistent with our CellCover findings. For example, Khacho 2016 demonstrated that mitochondrial dynamics are essential regulators of neuronal fate commitment and that the maturation of the mitochondrial network is essential for the transition from the progenitor metabolic state to the neuronal state. Iwata 2020 further highlight cell type specific mitochondrial dynamics by showing that daughter cells with highly fragmented mitochondria tend to become neurons.</p>
+<disp-quote content-type="editor-comment">
+<p>The observation that outer radial glia (oRG) markers are expressed in neural progenitors before the emergence of gliogenic progenitors in primates and humans is compelling. This could be further supported by examining the temporal and spatial expression patterns of early oRG-specific markers versus gliogenic progenitor markers in recent human spatial transcriptomic datasets - such as the one published by Xuyu et al. (PMID: 40369074) or Wang et al. (PMID: 39779846).</p>
+</disp-quote>
+<p>We have added the scRNA-seq data from Wang et al., as well as data from the Nano et al. 2025 meta-atlas to the NeMO Analytics data collection. oRG markers from Liu et al 2023 can now be visualized across the Wang, Nano and many more human in vivo datasets. In the Nano data, these oRG markers can be seen increasing in expression in the human neocortex from GW7-12, leading into peak neurogenesis and prior to gliogenesis. Although with lower age resolution, the peaking of oRG markers in the 2nd trimester (dring peak neurogenesis) and their precipitous drop in the 3rd trimester (during peak gliogenesis) can also be seen in the Wang data. At NeMO Analytics individual marker genes of oRGs can also visualized in these datasets.</p>
 </body>
 </sub-article>
 </article>
