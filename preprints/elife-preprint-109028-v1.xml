@@ -578,4 +578,147 @@ While the validation data set was well chosen and of high quality, it remains a 
 <p>Some of the figures have text that is too small. In particular, Figure 2 has text that is way too small. It seemed to me that the pseudo code could stand alone, and the screenshot of the equations did not need to be repeated in a figure, especially if their size becomes so small that we can't even read them.</p>
 </body>
 </sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109028.1.sa3</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Sheng</surname>
+<given-names>Kaiwen</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Shanghang</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Shenjian</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>He</surname>
+<given-names>Yutao</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Beau</surname>
+<given-names>Maxime</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Qu</surname>
+<given-names>Peng</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Liu</surname>
+<given-names>Xiaofei</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Youhui</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ma</surname>
+<given-names>Lei</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6024-3854</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Du</surname>
+<given-names>Kai</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>General Response</p>
+<p>We thank the reviewers for their positive assessment of our work and for acknowledging the timeliness of the problem and the novelty of using domain adaptation to address model mismatch. We appreciate the constructive feedback regarding validation and clarity. In the revised manuscript, we will address these points as follows:</p>
+<p>(1) Systematic Validation: We will design and perform systematic <italic>in silico</italic> experiments to evaluate the method beyond the single <italic>in vivo</italic> dataset , including robustness tests regarding recording length and network synchrony.</p>
+<p>(2) Recurrent Networks &amp; Failure Analysis: We will test our method on synthetic datasets generated from highly recurrent networks and analyze exactly when the method breaks as a function of mismatch magnitude.</p>
+<p>(3) Method Comparisons: We will report the Matthews Correlation Coefficient (MCC) for the approach by English et al. (2017) and expand our comparison and discussion of GLM-based methods.</p>
+<p>(4) Clarifications: We will rigorously define the dataset details (labeling, recording methodology), mathematical notation, and machine learning terminology ('data', 'labels').</p>
+<p>(5) Discussion of Limitations: We will explicitly discuss the challenges and limitations inherent in generalizing to more recurrently connected regions.</p>
+<p>Below are our more detailed responses:</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public review):</bold></p>
+<p>Weaknesses:</p>
+<p>(1) The validation of the approach is incomplete: due to its very limited size, the single ground-truth dataset considered does not provide a sufficient basis to draw a strong conclusion. While the authors correctly note that this is the only dataset of its kind, the value of this validation is limited compared to what could be done by carefully designing in silico experiments.</p>
+</disp-quote>
+<p>We thank the reviewer for acknowledging the scarcity of suitable <italic>in vivo</italic> ground-truth datasets and the limitations this poses. We agree that additional validation is necessary to draw strong conclusions. In the revised manuscript, we will systematically design and perform in silico experiments for evaluations beyond the single <italic>in vivo</italic> dataset.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Surprisingly, the authors fail to compare their method to the approach originally proposed for the data they validate on (English et al., 2017).</p>
+</disp-quote>
+<p>We agree that this is an essential comparison. We will report the Matthews Correlation Coefficient (MCC) result of the approach by English et al. (2017) on the spontaneous period of the recording.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) The authors make a commendable effort to study the method's robustness by pushing the limits of the dataset. However, the logic of the robustness analysis is often unclear, and once again, the limited size of the dataset poses major limitations to the authors.</p>
+</disp-quote>
+<p>We appreciate the reviewer recognizing our initial efforts to evaluate robustness. In our original draft, we tested recording length, network model choices, and analyzed failure cases. However, we agree that the limited real data restricts the scope of these tests. To address this, we will perform more systematic robustness tests on the newly generated synthetic datasets in the revised version, allowing us to evaluate performance under a wider range of conditions.</p>
+<disp-quote content-type="editor-comment">
+<p>(4) The lack of details concerning both the approach and the validation makes it challenging for the reader to establish the technical soundness of the study.</p>
+</disp-quote>
+<p>We will revise the manuscript thoroughly to better present the methodology of our framework and the validation pipelines. We will ensure that the figures and text clearly articulate the technical details required to assess the soundness of the study.</p>
+<disp-quote content-type="editor-comment">
+<p>Although in the current form this study does not provide enough basis to judge the impact of DeepDAM in the broader neuroscience community, it nevertheless puts forward a valuable and novel idea: using domain adaptation to mitigate the problem of model mismatch. This approach might be leveraged in future studies and methods to infer connectivity.</p>
+</disp-quote>
+<p>We thank the reviewer again for acknowledging the novelty and importance of our work.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public review):</bold></p>
+<p>While the validation data set was well chosen and of high quality, it remains a single dataset and also remains a non-recurrent network. The authors acknowledge this in the discussion, but I wanted to chime in to say that for the method to be more than convincing, it would need to have been tested on more datasets. It should be acknowledged that the problem becomes more complicated in a recurrent excitatory network, and thus the method may not work as well in the cortex or in CA3.</p>
+</disp-quote>
+<p>We will carefully revise our text to specifically discuss this limitation and the challenges inherent in generalizing to more recurrently connected regions. Furthermore, to empirically address this concern, we will test our method extensively on synthetic datasets generated from highly recurrent networks to quantify performance in these regimes.</p>
+<disp-quote content-type="editor-comment">
+<p>While the data is shown to work in this particular dataset (plus the two others at the end), I was left wondering when the method breaks. And it should break if the models are sufficiently mismatched. Such a question can be addressed using synthetic-synthetic models. This was an important intuition that I was missing, and an important check on the general nature of the method that I was missing.</p>
+</disp-quote>
+<p>We thank the reviewer for this insight regarding the general nature of the method. While we previously analyzed failure cases regarding strong covariation and low spike counts, we agree that a systematic analysis of mismatch magnitude is missing. Building on our planned experiments with synthetic data, we will analyze and discuss exactly when the method breaks as a function of the mismatch magnitude between datasets.</p>
+<disp-quote content-type="editor-comment">
+<p>While the choice of state-of-the-art is good in my opinion, I was looking for comments on the methods prior to that. For instance, methods such based on GLMs have been used by the Pillow, Paninski, and Truccolo groups. I could not find a decent discussion of these methods in the main text and thought that both their acknowledgement and rationale for dismissing were missing.</p>
+</disp-quote>
+<p>As the reviewer noted, we extensively compared our method with a GLM-based method (GLMCC) and CoNNECT, whose superiority over other GLM-based methods, such as extend GLM method (Ren et al., 2020, J Neurophysiol), have already been demonstrated in their papers (Endo et al., Sci Rep, 2021). However, we acknowledge that the discussion of the broader GLM literature was insufficient. To make the comparison more thorough, we will conduct comparisons with additional GLM-based methods and include a detailed discussion of these approaches.</p>
+<p>Endo, D., Kobayashi, R., Bartolo, R., Averbeck, B. B., Sugase-Miyamoto, Y., Hayashi, K., ... &amp; Shinomoto, S. (2021). A convolutional neural network for estimating synaptic connectivity from spike trains. Scientific Reports, 11(1), 12087.</p>
+<p>Ren, N., Ito, S., Hafizi, H., Beggs, J. M., &amp; Stevenson, I. H. (2020). Model-based detection of putative synaptic connections from spike recordings with latency and type constraints. Journal of Neurophysiology, 124(6), 1588-1604.</p>
+<disp-quote content-type="editor-comment">
+<p>While most of the text was very clear, I thought that page 11 was odd and missing much in terms of introductions. Foremost is the introduction of the dataset, which is never really done. Page 11 refers to 'this dataset', while the previous sentence was saying that having such a dataset would be important and is challenging. The dataset needs to be properly described: what's the method for labeling, what's the brain area, what were the spike recording methodologies, what is meant by two labeling methodologies, what do we know about the idiosyncrasies of the particular network the recording came from (like CA1 is non-recurrent, so which connections)? I was surprised to see 'English et al.' cited in text only on page 13 since their data has been hailed from the beginning.</p>
+<p>Further elements that needed definition are the Nsyn and i, which were not defined in the cortex of Equation 2-3: I was not sure if it referred to different samples or different variants of the synthetic model. I also would have preferred having the function f defined earlier, as it is defined for Equation 3, but appears in Equation 2.</p>
+<p>When the loss functions are described, it would be important to define 'data' and 'labels' here. This machine learning jargon has a concrete interpretation in this context, and making this concrete would be very important for the readership.</p>
+</disp-quote>
+<p>We thank the reviewer for these constructive comments on the writing. We will clarify the introduction of the dataset (labeling method, brain area, recording methodology) and ensure all mathematical terms (such as Nsyn, i, and function f) and machine learning terminology (definitions of 'data' and 'labels' in this context) are rigorously defined upon first use in the revised manuscript.</p>
+<disp-quote content-type="editor-comment">
+<p>While I appreciated that there was a section on robustness, I did not find that the features studied were the most important. In this context, I was surprised that the other datasets were relegated to supplementary, as these appeared more relevant.</p>
+</disp-quote>
+<p>Robustness is an important aspect of our framework to demonstrate its applicability to real experimental scenarios. We specifically analyzed how synchrony between neurons, the number of recorded spikes and the choice of the network influence the performance of our method. We also agree that these aspects are limited by the one dataset we evaluated on. Therefore, we will test the robustness of our method more systematically on synthetic datasets.</p>
+<p>With more extensive analysis on synthetic datasets, we believe that the results on inferring biophysical properties of single neuron and microcircuit models remain in the supplement, such that the main figures focus purely on synaptic connectivity inference.</p>
+<disp-quote content-type="editor-comment">
+<p>Some of the figures have text that is too small. In particular, Figure 2 has text that is way too small. It seemed to me that the pseudo code could stand alone, and the screenshot of the equations did not need to be repeated in a figure, especially if their size becomes so small that we can't even read them.</p>
+</disp-quote>
+<p>We will remove the pseudo-code and equations from Figure 2 to improve readability. The pseudo-code will be presented as a distinct box in the main text.</p>
+</body>
+</sub-article>
 </article>
