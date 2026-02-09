@@ -1,0 +1,555 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">109602</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.109602</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.109602.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Leveraging Disease Association Degree for High-Accuracy MicroRNA Target Prediction</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-7630-9772</contrib-id>
+<name>
+<surname>Chen</surname>
+<given-names>Baiming</given-names>
+</name>
+<xref ref-type="aff" rid="aff1"/><email>baimingchen@link.cuhk.edu.cn</email>
+</contrib>
+<aff id="aff1"><institution-wrap><institution-id institution-id-type="ror">https://ror.org/02d5ks197</institution-id><institution>School of Medicine, The Chinese University of Hongkong</institution></institution-wrap>, <city>Shenzhen</city>, <country country="CN">China</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Park</surname>
+<given-names>Jihwan</given-names>
+</name>
+<role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/024kbgz78</institution-id><institution>Gwangju Institute of Science and Technology</institution>
+</institution-wrap>
+<city>Gwangju</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04h9pn542</institution-id><institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2026-02-09">
+<day>09</day>
+<month>02</month>
+<year>2026</year>
+</pub-date>
+<volume>15</volume>
+<elocation-id>RP109602</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-11-03">
+<day>03</day>
+<month>11</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-11-11">
+<day>11</day>
+<month>11</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.11.06.686936"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2026, Chen</copyright-statement>
+<copyright-year>2026</copyright-year>
+<copyright-holder>Chen</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-109602-v1.pdf"/>
+<abstract>
+<p>MicroRNAs (miRNAs) regulate gene expression by binding to mRNAs, inhibiting translation, or promoting mRNA degradation. Accurate identification of functional miRNA-target interactions (MTIs), typically validated by methods like western blot or reporter assay, remains challenging due to the scarcity of experimental data compared to the vast number of sequence-based predictions. This study pioneers a novel approach focusing solely on the disease association degree between miRNAs and their target genes. We propose that this single feature is sufficient for distinguishing experimentally validated functional MTIs from sequence-based predicted MTIs in a binary classification task. To quantify miRNA-gene disease association, we fine-tuned Sentence-BERT to generate disease description embeddings and compute their semantic similarity. Remarkably, using only disease association features, miRTarDS achieved an F1 score of 0.88 on the task of distinguishing functional from predicted MTIs in the external validation set. The approach also exhibits generalizability across different gene-disease association databases. This study demonstrates disease association as a powerful, independent dimension for prioritizing high-confidence functional MTIs.</p>
+</abstract>
+<kwd-group kwd-group-type="author">
+<title>Keywords</title>
+<kwd>microRNA</kwd>
+<kwd>Language Model</kwd>
+<kwd>Deep Learning</kwd>
+</kwd-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+
+</front>
+<body>
+<sec id="s1">
+<label>1</label>
+<title>Introduction</title>
+<p>In 1993, miRNA (Lin-4) was first discovered and found to be critical for the timing of embryonic development in C. elegans [<xref ref-type="bibr" rid="c1">Lee et al., 1993</xref>]. Since then, a large number of miRNAs have been discovered with the development of high-throughput bioinformatics technologies [<xref ref-type="bibr" rid="c2">Van Kouwenhove et al., 2011</xref>]. miRNAs are classified as small non-coding RNAs (ncRNAs), and play a crucial role in the regulation of various physiological processes, such as cell growth, development, differentiation, and apoptosis [<xref ref-type="bibr" rid="c3">Cheng et al., 2005</xref>], as well as pathological processes [<xref ref-type="bibr" rid="c4">Hill and Tran, 2021</xref>]. Furthermore, miRNAs are promising biomarker candidates for various diseases [<xref ref-type="bibr" rid="c5">Pritchard et al., 2012</xref>]. Therefore, the identification of microRNA Target Interactions (MTIs) holds biological significance. Recently, the agoTRIBE has enabled single-cell resolution profiling of MTIs, overcoming the limitations of bulk sequencing, allowing scientists to gain deeper insights into miRNA functions across different cell types and states [<xref ref-type="bibr" rid="c6">Sekar et al., 2024</xref>].</p>
+<p>There are many existing MTI prediction databases. miRWalk identifies consecutive complementary subsequences between miRNAs and genes to construct a database for MTIs prediction in different species [<xref ref-type="bibr" rid="c7">Sticht et al., 2018</xref>]. miRDB considers miRNA overexpression and CLIP-seq data, utilizing a support vector machine (SVM) for MTI prediction [<xref ref-type="bibr" rid="c8">Chen and Wang, 2020</xref>]. TargetScan predicts MTIs based on seed match and conservativeness analysis in different mammalians [<xref ref-type="bibr" rid="c9">Agarwal et al., 2015</xref>]. StarBase explores miRNA-mRNA and miRNA-lncRNA interaction networks based on CLIP-Seq data [<xref ref-type="bibr" rid="c10">Li et al., 2014</xref>]. The RNA22 is designed for the identification of miRNA binding sites and their corresponding miRNA and mRNA complexes [<xref ref-type="bibr" rid="c11">Miranda et al., 2006</xref>].</p>
+<p>Several well-established MTI prediction tools exist, such as the classic tool miRanda [<xref ref-type="bibr" rid="c12">Enright et al., 2003</xref>] and PITA [<xref ref-type="bibr" rid="c13">Kertesz et al., 2007</xref>]. miRanda predicts MTIs by assessing sequence complementarity between miRNA and mRNA as well as the free energy of the resulting duplex structure. PITA predicts miRNA targets by considering both the binding free energy and the accessibility of the target site within the mRNA secondary structure. Recent advances have also introduced meachine learning method for prediction. miRAW employs stacked autoencoders to learn features directly from binary-encoded miRNA-mRNA sequences and relies on site accessibility filtering [<xref ref-type="bibr" rid="c14">Pla et al., 2018</xref>]. TargetNet innovates through alignment-enhanced encoding of extended seed regions and a ResNet architecture with 1D convolutions, enabling explicit modeling of binding patterns and quantitative distinction of high-functional targets [<xref ref-type="bibr" rid="c15">Min et al., 2022</xref>].</p>
+<p>Although existing tools effectively leverage sequence features, they may overlook the functional information beyond sequence features. The previous research indicates that the dysregulation of miRNA and target genes often jointly drive specific disease phenotypes [<xref ref-type="bibr" rid="c16">Kloosterman and Plasterk, 2006</xref>]. For example, Rassenti et al. found that loss of miR-15/16 promotes overexpression of BCL2 and ROR1, each of them contributes to leukemia pathogenesis [<xref ref-type="bibr" rid="c17">Rassenti et al., 2017</xref>]. Since miRNAs and their target genes co-participate in disease pathways, MTIs’ disease association may be a potential feature for classifying functional and non-functional MTIs.</p>
+<p>In recent years, miRNA-disease association (MDA) prediction [<xref ref-type="bibr" rid="c18">Huang et al., 2022</xref>] and disease gene prediction have advanced rapidly [<xref ref-type="bibr" rid="c19">Ata et al., 2021</xref>]. A notable example occurred in 2020, Graph Auto-Encoder for predicting miRNA-Disease Associations [<xref ref-type="bibr" rid="c20">Li et al., 2021</xref>] identified miR-122 as a top oesophageal cancer candidate. The following year, miR-122 was experimentally confirmed to inhibit KIF22, suppressing cancer cell progression [<xref ref-type="bibr" rid="c21">Wang et al., 2021</xref>]. Additionally, research on the association between miRNAs, genes, and related diseases has accumulated significantly. Consequently, the volume of data in databases that compile miRNA-disease associations and gene-disease associations from literature has become increasingly extensive. Examples include HMDD [<xref ref-type="bibr" rid="c22">Cui et al., 2024</xref>] and DisGeNE [<xref ref-type="bibr" rid="c23">Hu et al., 2025</xref>], which specifically curate miRNA-disease associations and gene-disease associations, respectively.</p>
+<p>To quantify the disease association patterns between miRNAs and their target genes, we applied Sentence-BERT (SBERT) to compute semantic similarity between miRNA- and gene-associated diseases (<xref rid="fig1" ref-type="fig">Figure 1</xref>). SBERT improves the pre-trained BERT model by incorporating Siamese and triplet network structures [<xref ref-type="bibr" rid="c24">Reimers and Gurevych, 2019</xref>]. BERT, a bidirectional transformer model, captures the semantic meaning of each word based on its preceding and following context. Traditional BERT requires sentence pairs to be concatenated and processed together, making tasks like sentence similarity calculations computationally expensive. SBERT, by contrast, generates independent sentence embeddings that can be precomputed, allowing for sentence comparisons through simple similarity calculations such as cosine similarity. This approach significantly enhances inference speed. SBERT outperforms both BERT [<xref ref-type="bibr" rid="c25">Devlin et al., 2018</xref>] and RoBERTa [<xref ref-type="bibr" rid="c26">Liu et al., 2019</xref>] in terms of speed while maintaining comparable accuracy.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1:</label>
+    <caption><title>This figure illustrates the workflow of our research.</title>
+        <p>Compared to the existing sequence-based prediction method (left), our method (right) proposes a novel method that directly utilizes the disease string as input. Here <italic>d</italic> and <italic>D</italic> denote sets of miRNA-associated and gene-associated disease descriptors, with <italic>d</italic><sub><italic>n</italic></sub> ∈ <italic>d</italic> and <italic>D</italic><sub><italic>m</italic></sub> ∈ <italic>D</italic> being individual descriptors. Embedding vectors are computed as <italic>u</italic><sub><italic>n</italic></sub> = <italic>f</italic><sub>SBERT</sub>(<italic>d</italic><sub><italic>n</italic></sub>) and <italic>v</italic><sub><italic>m</italic></sub> = <italic>f</italic><sub>SBERT</sub>(<italic>D</italic><sub><italic>m</italic></sub>).</p></caption>
+<graphic xlink:href="686936v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+    <p>Our central hypothesis is that functional MTIs exhibit distinct disease association patterns compared to sequence-based predictions. Therefore we applied a machine learning method that used the disease association between miRNA and gene as a feature, achieving an F1 score of 0.88 in a binary classification task. The experimental results confirm that functional MTI exhibits different disease association patterns from predicted MTIs (<xref ref-type="fig" rid="fig1a">Supplementary Figure 1</xref>).</p>
+<p>In summary, this study proposed and validated a novel method for quantifying miRNA-gene disease association using language model, demonstrating the utility of knowledge feature for enhanced MTI classification.</p>
+</sec>
+<sec id="s2">
+<label>2</label>
+<title>Materials and methods</title>
+<sec id="s2a">
+<label>2.1</label>
+<title>Data Collection and Preprocessing</title>
+<p>To generate a fine-tuning dataset for the SBERT model, we downloaded the MeSH (Medical Subject Headings) descriptors from the National Library of Medicine (<ext-link ext-link-type="uri" xlink:href="https://meshb.nlm.nih.gov/">https://meshb.nlm.nih.gov/</ext-link>). The MeSH descriptors are standardized terms utilized for indexing and retrieving biomedical and health-related information, forming a hierarchical vocabulary tree (<xref rid="fig3" ref-type="fig">Figure 3</xref>). To test the SBERT model performance, we obtained the BIOSSES dataset (<xref rid="fig2" ref-type="fig">Figure 2</xref>), which consists of biomedical statements with manually annotated text similarity scores provided by experts [<xref ref-type="bibr" rid="c27">Soğancioğlu et al., 2017</xref>]. It can be used to evaluate the biomedical text similarity calculation model.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2:</label>
+    <caption><title>Example of BIOSSES dataset.</title>
+        <p>BIOSSES dataset is a benchmark dataset specifically designed for evaluating semantic similarity calculation model in biomedical texts. The dataset consists of 100 sentence pairs extracted from biomedical literature, with each pair’s average semantic similarity score independently annotated by five experts.</p></caption>
+<graphic xlink:href="686936v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3:</label>
+    <caption><title>Disease descriptor ‘Cardiovascular Infections’ and ‘Out-of-Hospital Cardiac Arrest’ hierarchical structure in MeSH tree.</title>
+    </caption>
+<graphic xlink:href="686936v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+    <p>The successful application of machine learning classification techniques hinges on the availability of a sufficiently diverse and representative dataset, which is critical for ensuring that the trained model generalizes effectively to unseen data. To this end, we integrated data from multiple source databases. To obtain human functional MTIs and predicted MTIs, we collected miRTarBase [<xref ref-type="bibr" rid="c28">Cui et al., 2025</xref>], TarBase [<xref ref-type="bibr" rid="c29">Skoufos et al., 2024</xref>], TargetScan [<xref ref-type="bibr" rid="c9">Agarwal et al. 2015</xref>], miRDB [<xref ref-type="bibr" rid="c8">Chen and Wang, 2020</xref>], and miRWalk [<xref ref-type="bibr" rid="c7">Sticht et al., 2018</xref>] (<xref rid="tbl1" ref-type="table">Table 1</xref>). miRTarBase and TarBase provide experimentally validated MTIs, TargetScan, miRDB and miRWalk provide predicted MTIs. For acquiring information on miRNA-associated and gene-associated diseases, we employed HMDD [<xref ref-type="bibr" rid="c22">Cui et al., 2024</xref>], DisGeNET [<xref ref-type="bibr" rid="c23">Hu et al., 2025</xref>] and KEGG [<xref ref-type="bibr" rid="c30">Kanehisa and Goto, 2000</xref>] databases. In the HMDD database, miRNA identifiers are provided without the ‘-3p’ or ‘-5p’ suffixes. Therefore, to maintain consistency across sources, we use pre-miRNA to replace mature miRNA. For instance, since hsa-miR-124-3p and TP53 are documented as a functional MTI in miRTarBase, the pair hsa-mir-124 and TP53 was classified as a functional MTI in our integrated dataset.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1:</label>
+<caption><title>Summary of MTIs and Source Databases Employed in the Study</title></caption>
+<graphic xlink:href="686936v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>Our objective is to classify functional MTIs from predicted MTIs by leveraging disease association as a feature. Therefore, to construct a robust binary classification framework, we curated both positive and negative datasets based on the presence of experimental evidence. The positive set includes only high-confidence functional MTIs, while the negative set consists of computationally predicted MTIs that lack experimental support.</p>
+<sec id="s2a1">
+<label>2.1.1</label>
+<title>Positive Dataset</title>
+<p>The positive dataset comprises functional MTIs that have been experimentally validated through either reporter assays or western blot analyses. Reporter assays test the binding of a miRNA to the 3’UTR region of its target mRNA, while western blot confirms the resulting reduction in the expression level of the target protein. Both methods provide direct evidence of a specific interaction between a miRNA and its target gene.</p>
+</sec>
+<sec id="s2a2">
+<label>2.1.2</label>
+<title>Negative Dataset</title>
+<p>Although experimental techniques such as reporter assays and western blots are reliable for validating MTIs, they are resource-intensive, time-consuming, and unable to comprehensively screen all possible miRNA–mRNA pairs. Consequently, computational prediction serves as an essential tool for generating hypothetical MTIs on a large scale. These prediction tools analyze miRNA and mRNA sequences by incorporating factors such as seed sequence matching, target site accessibility, and binding free energy, etc., to score potential MTIs. The negative dataset consists of such predicted MTIs, which represent putative interactions that lack experimental confirmation.</p>
+</sec>
+<sec id="s2a3">
+<label>2.1.3</label>
+<title>Training, Testing, and External Validation Splitting</title>
+<p>To ensure a robust evaluation of model performance, we constructed a balanced dataset by combining all experimentally validated MTIs (positive set) with an equal number of randomly selected predicted MTIs (negative set), using a random seed of 42 for reproducibility. The combined MTIs were then split into an external validation set (10% of the total) and a remaining set (90%). The remaining set was further partitioned using 10-fold cross-validation for model training and internal evaluation. This stratified splitting strategy helps mitigate potential biases and enhances the generalizability of our results.</p>
+</sec>
+</sec>
+<sec id="s2b">
+<label>2.2</label>
+<title>Fine-tuning Sentence-Bert Model</title>
+<sec id="s2b1">
+<label>2.2.1</label>
+<title>Selection of Pretrained Model</title>
+<p>The ideal sentence-bert model we seek must fulfill two primary criteria: exceptional performance in semantic similarity calculation tasks and rapid execution speed to facilitate large-scale data processing. Moreover, scalability for handling lengthy biomedical semantic strings is favorable. Based on the SBERT website (<ext-link ext-link-type="uri" xlink:href="https://www.sbert.net/">https://www.sbert.net/</ext-link>), we selected the ‘multi-qa-MiniLM-L6-cos-v1’ model for further investigation. This model excels in execution speed, and robust semantic similarity calculations, and supports extended input sequences.</p>
+</sec>
+<sec id="s2b2">
+<label>2.2.2</label>
+<title>Synthetic Data for Fine-Tuning SBERT Model</title>
+    <p>The absence of SBERT models specialized for disease semantic similarity measurement, coupled with the scarcity of expert-annotated disease pairs, necessitates the creation of synthetic training data. Inspired by <xref ref-type="bibr" rid="c31">Wang et al. [2010]</xref>, we generated disease similarity pairs using MeSH category C (diseases descriptors) to create a dataset containing pairs of diseases and their disease association degree, which calculated with the Lowest Common Ancestor (LCA) method. The distribution of disease association degree in the dataset we created closely mirrors the disease semantic similarity distribution produced by the ‘multi-qa-MiniLM-L6-cos-v1’ model without fine-tuning. Both types of distributions follow a log-normal distribution pattern. The data generation method is as follows:</p>
+<list list-type="bullet">
+<list-item><p><bold>Tree Number Representation:</bold> For a MeSH descriptor, let <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="686936v1_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="686936v1_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote the hierarchical components of their tree numbers, where <italic>L</italic><sub>1</sub> and <italic>L</italic><sub>2</sub> are the depths of the two descriptors, respectively.</p></list-item>
+<list-item><p>Determine the depth of disease descriptors:
+<disp-formula id="eqn1">
+<graphic xlink:href="686936v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn2">
+<graphic xlink:href="686936v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<bold>Note:</bold> |<italic>T</italic><sub>2</sub>| stands for the number of hierarchical levels.</p></list-item>
+<list-item><p>Determine the depth of the lowest common ancestor (LCA):
+<disp-formula id="eqn3">
+<graphic xlink:href="686936v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<bold>Note:</bold> <italic>L</italic><sub>LCA</sub> = 0 if no common ancestor exists.</p></list-item>
+<list-item><p>Calculate the total path depth:
+<disp-formula id="eqn4">
+<graphic xlink:href="686936v1_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p></list-item>
+<list-item><p>Calculate the raw disease similarity:
+<disp-formula id="eqn5">
+<graphic xlink:href="686936v1_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Calculate the adjusted disease similarity (decay factor <italic>δ</italic> = 0.8):
+<disp-formula id="eqn6">
+<graphic xlink:href="686936v1_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p></list-item>
+<list-item><p><bold>Example Calculation:</bold> Consider Cardiovascular Infections (<italic>T</italic><sub>1</sub> = (C14, 260)) and Out-of-Hospital Cardiac Arrest (<italic>T</italic><sub>2</sub> = (C14, 280, 383, 610)) from the MeSH tree (<xref rid="fig3" ref-type="fig">Figure 3</xref>):
+<disp-formula id="ueqn1">
+<graphic xlink:href="686936v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p></list-item>
+</list>
+<p>According to the calculated result, the weighted disease similarity between Cardiovascular Infections (C14.260) and Out-of-Hospital Cardiac Arrest (C14.280.383.610) is 0.1450. This similarity metric was further adjusted to better align with the distribution of the output generated by the ‘multi-qa-MiniLM-L6-cos-v1’ model, resulting in a dataset named ‘MeSHDS’. We utilized this dataset to fine-tune the SBERT model.</p>
+</sec>
+<sec id="s2b3">
+<label>2.2.3</label>
+<title>Fine-Tuning Pretrained SBERT Model with MeSHDS</title>
+<p>To enable the pre-trained SBERT model to effectively learn disease hierarchical relationships within the MeSH tree structure while preserving its intrinsic semantic understanding capabilities and mitigating catastrophic forgetting [<xref ref-type="bibr" rid="c32">Sun et al., 2019</xref>], we employed a carefully designed progressive fine-tuning strategy. This strategy utilizes a sequence of very small and monotonically decreasing learning rates, initialized at 5 × 10<sup>−6</sup> and stepped down to 3 × 10<sup>−6</sup>, then 1 × 10<sup>−6</sup>.</p>
+<p>Across all fine-tuning experiments, we maintained strict consistency in core hyperparameters and training configurations except for the specific learning rate schedule (i.e., the number of epochs allocated to each learning rate phase). This controlled approach isolates the effect of the learning rate progression. Hardware constraints permitting, we maximized the batch size per device to enhance gradient estimation stability during training. Optimization was performed using AdamW [<xref ref-type="bibr" rid="c33">Loshchilov and Hutter, 2017</xref>], known for its effective weight decay handling which aids in regularization. The optimization objective was the MSE loss between predicted and ground-truth disease similarity scores from MeSHDS.</p>
+<p>For the <italic>k</italic>-th disease pair <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="686936v1_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula>:
+<disp-formula id="ueqn2">
+<graphic xlink:href="686936v1_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="686936v1_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote standardized disease terms from MeSH vocabulary (e.g., “Liver Neoplasms”, “Carcinoma, Hepatocellular”) in pair <italic>k</italic>. <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="686936v1_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote their SBERT embeddings. <italic>y</italic><sub><italic>k</italic></sub> ∈ [0, 1] is the ground-truth similarity. <italic>B</italic> represents training batch, and |<italic>B</italic>| represents the batch size.</p>
+<p>The following learning rate schedules were evaluated:</p>
+<p>LR 1: 5 × 10<sup>−6</sup> for 1 epoch.</p>
+<p>LR 2: 5 × 10<sup>−6</sup> for 2 epochs.</p>
+<p>LR 3: 5 × 10<sup>−6</sup> for 2 epochs → 3 × 10<sup>−6</sup> for 1 epoch.</p>
+<p>LR 4: 5 × 10<sup>−6</sup> for 2 epochs → 3 × 10<sup>−6</sup> for 2 epochs.</p>
+<p>LR 5: 5 × 10<sup>−6</sup> for 2 epochs → 3 × 10<sup>−6</sup> for 3 epochs.</p>
+<p>LR 6: 5 × 10<sup>−6</sup> for 2 epochs → 3 × 10<sup>−6</sup> for 3 epochs → 1 × 10<sup>−6</sup> for 1 epoch.</p>
+<p>LR 7: 5 × 10<sup>−6</sup> for 2 epochs → 3 × 10<sup>−6</sup> for 3 epochs → 1 × 10<sup>−6</sup> for 2 epochs.</p>
+</sec>
+</sec>
+<sec id="s2c">
+<label>2.3</label>
+<title>Measurement of MTI Disease Association</title>
+<p>To assess the phenotypic relatedness between miRNAs and genes based on their associated diseases, we quantified the semantic similarity between the sets of diseases linked to miRNAs and to genes. Using Sentence-BERT (SBERT), we generated embeddings for standardized disease descriptions and computed a pairwise cosine similarity matrix between all diseases in the miRNA-associated disease list and all diseases in the gene-associated disease list. The distribution of values within this similarity matrix was then analyzed to derive features characterizing the overall semantic relatedness between the disease profiles of the miRNA and gene.</p>
+<sec id="s2c1">
+<title>Semantic String Embedding</title>
+<p>For a miRNA-associated disease descriptor set <italic>d</italic> = {<italic>d</italic><sub>1</sub>, <italic>d</italic><sub>2</sub>, …, <italic>d</italic><sub><italic>n</italic></sub>} and gene-associated disease descriptor set <italic>D</italic> = {<italic>D</italic><sub>1</sub>, <italic>D</italic><sub>2</sub>, …, <italic>D</italic><sub><italic>m</italic></sub>}, we computed their embedding matrices:
+<disp-formula id="eqn7">
+<graphic xlink:href="686936v1_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn8">
+<graphic xlink:href="686936v1_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>u</italic><sub><italic>n</italic></sub>, <italic>v</italic><sub><italic>m</italic></sub> ∈ <italic>R</italic><sup><italic>d</italic></sup> are <italic>d</italic>-dimensional embedding vectors produced by SBERT, and <italic>d</italic> = 384 in our implementation.</p>
+</sec>
+<sec id="s2c2">
+<title>Similarity Matrix Calculation</title>
+<p>The cosine similarity matrix between miRNA-associated disease and gene-associated disease <italic>S</italic> ∈ <italic>R</italic><sup><italic>n</italic>×<italic>m</italic></sup> is computed by:
+<disp-formula id="eqn9">
+<graphic xlink:href="686936v1_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the cosine similarity between two embeddings can be calculated by dot-product since ∥<italic>u</italic><sub><italic>n</italic></sub>∥ = ∥<italic>V</italic><sub><italic>m</italic></sub>∥ = 1:
+<disp-formula id="eqn10">
+<graphic xlink:href="686936v1_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+<sec id="s2c3">
+<title>Feature Construction</title>
+<p>The similarity matrix <italic>S</italic> is transformed into a normalized 5-dimensional feature vector <italic>p</italic><sub>sim</sub> representing the empirical distribution of similarity scores:
+<disp-formula id="eqn11">
+<graphic xlink:href="686936v1_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where
+<disp-formula id="ueqn3">
+<graphic xlink:href="686936v1_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the total number of elements in the matrix. <italic>p</italic><sub>sim</sub> forms a probability distribution with <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="686936v1_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula>.</p>
+</sec>
+</sec>
+<sec id="s2d">
+<label>2.4</label>
+<title>Identifying Optimal Fine-tuned Models and Superior Classification Method</title>
+<p>Functional MTIs and predicted MTIs were classified based on the disease association, with the classifier’s performance evaluated using the F1 score. The F1 score, calculated as the harmonic mean of precision and recall, was affected by different fine-tuned models and the choice of classification methods in this study. To ensure optimal performance, we conducted extensive tuning to identify the most suitable model and classification approach. We employed 7 machine learning algorithms, including Decision Tree, Gradient Boosting, Logistic Regression, Neural Network, Random Forest, Support Vector Machine (SVM), XGBoost to evaluate their performance through 10-fold cross-validation on the training set and further validating them on an external validation set.</p>
+</sec>
+</sec>
+<sec id="s3">
+<label>3</label>
+<title>Result</title>
+<sec id="s3a">
+<label>3.1</label>
+<title>Disease Similarity Calculation Performance of Fine-Tuned SBERT Model</title>
+<p>The “MeSHDS” dataset comprises 2,249,975 disease pairs along with their corresponding similarities (<xref rid="fig4" ref-type="fig">Figure 4</xref>), a substantial volume of data that ensures the high quality of fine-tuning. To test the performance of the fine-tuned SBERT model, we calculated Pearson’s correlation coefficient between the model output scores and scores from BIOSSES and MeSHDS (<xref rid="fig5" ref-type="fig">Figure 5</xref>). The results demonstrated that the model retained its original capacity for biomedical semantic similarity computation while successfully learning new knowledge through fine-tuning.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4:</label>
+    <caption><title>Example of MeSHDS dataset.</title>
+        <p>Disease 1 and Disease 2 are derived from the MeSH Tree, and their disease association is computed using the LCA method described in <xref ref-type="sec" rid="s2b2">section 2.2.2</xref></p></caption>
+<graphic xlink:href="686936v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5:</label>
+    <caption><title>Model performance benchmark.</title>
+        <p>The x-axis represents the correlation coefficient between the model-generated similarity scores and the BIOSSES dataset similarity scores, measuring the model’s ability to handle semantic similarity in the biomedical domain. The y-axis represents the correlation coefficient between the model-generated similarity scores and the MeSHDS dataset similarity scores, evaluating the fine-tuning effectiveness.</p></caption>
+<graphic xlink:href="686936v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s3b">
+<label>3.2</label>
+<title>Fine-Tuned Model and Classification Method Selection</title>
+<p>The F1 score was employed as the primary selection criterion to identify the optimal SBERT model and machine learning method for classifying functional MTIs and predicted MTIs. The pre-trained model fine-tuned using MeSHDS for two rounds, with a learning rate of ‘5e-6’, followed by an additional two rounds of fine-tuning at a learning rate of ‘3e-6’ demonstrated remarkable performance improvement, achieving an 5% increase compared to the pre-trained model. The utilization of Neural Network classification led to optimal overall performance, as evidenced by an external F1 Score of 0.88 (<xref rid="tbl2" ref-type="table">Table 2</xref>). After comparison, we selected the ‘LR 4’ (LR_5e_6-2_3e_6-2) model and employed the Neural Network for further investigation.</p>
+<table-wrap id="tbl2" orientation="portrait" position="float">
+<label>Table 2:</label>
+<caption><title>F1 Scores for Different SBERT Models and Machine Learning Classifiers</title></caption>
+<graphic xlink:href="686936v1_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s3c">
+<label>3.3</label>
+<title>Comparison with Other miRNA Target Predictors</title>
+<p>To contextualized the performance of our knowledge-driven approach, miRTarDS, we compared it against several widely recognized and established sequence-based miRNA target prediction algorithms: miRanda [<xref ref-type="bibr" rid="c11">Miranda et al., 2006</xref>], TargetScan [<xref ref-type="bibr" rid="c9">Agarwal et al., 2015</xref>], PITA [<xref ref-type="bibr" rid="c13">Kertesz et al., 2007</xref>], miRDB [<xref ref-type="bibr" rid="c8">Chen and Wang, 2020</xref>], miRAW [<xref ref-type="bibr" rid="c14">Pla et al., 2018</xref>], and TargetNet [<xref ref-type="bibr" rid="c15">Min et al., 2022</xref>]. These methods represent significant contributions to the field of miRNA target prediction. Performance metrics for the sequence-based predictors were excerpted from the comprehensive evaluation conducted by <xref rid="c14" ref-type="bibr">Pla et al. [2018]</xref> and <xref rid="c15" ref-type="bibr">Min et al. [2022]</xref>, where the optimal reported result for each algorithm was displayed. We also compared the performance of our method with that of the MISIM algorithm [<xref ref-type="bibr" rid="c31">Wang et al., 2010</xref>] in calculating disease associations.</p>
+<p>The miRTarDS dataset tests the model’s ability to classify functional MTIs and computational predicted MTIs. miRAW tests the model’s ability to classify functional MTIs and non-functional MTIs. In miRAW, positive examples are built from experimentally validated miRNA–mRNA interactions (Diana TarBase / miRTarBase). Negative examples were drawn from experimentally verified non-target miRNA–mRNA pairs by scanning the 3’UTR with a 30-nt sliding window and keeping only regions that could form a stable duplex according to RNACoFold. It is important to note a potential sampling discrepancy in miRAW: while the dataset is approximately balanced at the sequence-site level, a significant imbalance exists at the level of miRNA–gene pairs, where positive samples substantially outnumber negative ones. This imbalance may introduce a slight bias when evaluating the performance of disease-association methods on this dataset. However, due to current limitations in data availability, there is a general lack of systematic experimental documentation for non-functional MTIs, making this issue difficult to resolve currently.</p>
+<p>As shown in <xref rid="tbl3" ref-type="table">Table 3</xref>, miRTarDS demonstrated strong performance on both the miRAW dataset and miRTarBase dataset. These results underscore the efficacy of leveraging biological knowledge for the miRNA target interaction (MTI) prediction task.</p>
+<table-wrap id="tbl3" orientation="portrait" position="float">
+<label>Table 3:</label>
+<caption><title>Performance Comparison of miRNA Target Prediction Methods</title></caption>
+<graphic xlink:href="686936v1_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+</sec>
+<sec id="s4">
+<label>4</label>
+<title>Discussion</title>
+<p>The present study introduces a method to refine sequence-based predicted miRNA-target interactions (MTIs) by incorporating the semantic similarity between diseases associated with miRNAs and diseases associated with target genes. This approach ultimately supports the development of a novel database for predicting MTIs with functional similarity and identifying detailed associated diseases.</p>
+    <p>Our analysis of disease similarity distributions (<xref ref-type="fig" rid="fig1a">Supplementary Figure 1</xref>) revealed statistically significant differences between functional MTIs (validated by western blot or reporter assay from miRTarBase) and predicted MTIs (de novo predictions from miRWalk and miRDB). Specifically, functional MTIs exhibited a lower frequency (p=4.10e-47, independent samples t-test) in the low-similarity range (0-0.2) and a higher frequency (p=6.22e-71) in the moderate-similarity range (0.2-0.4) compared to predicted MTIs. This demonstrates that functional MTIs are associated with significantly higher miRNA-gene disease similarity scores than purely predicted MTIs, confirming our hypothesis that disease association patterns differ between these MTI types.</p>
+<p>Interestingly, based on our correlation analysis, we observed a positive association between the number of disease associations for both miRNAs and genes and the prediction accuracy of our model. Specifically, we found a correlation coefficient of 0.271 between miRNA-disease association counts (above the first quartile threshold) and prediction correctness (TF), while the correlation was slightly stronger (0.312) for gene-disease association counts. For miRNA-disease associations, prediction accuracy increased substantially from 77.3% in the lowest quartile (1.00-70.00 associations) to approximately 94-97% across the remaining three quartiles. Similarly, for gene-disease associations, we observed a progressive improvement in prediction accuracy from 74.4% in the lowest quartile (1.0-68.8 entries) to 98.2% in the highest quartile (382.0-2724.0 entries). These findings indicate that the availability of extensive disease association data for both miRNAs and genes contributes to more accurate predictions. They also highlight a limitation of our study: the relatively lower prediction accuracy for MTIs involving miRNAs or genes with limited disease association data.</p>
+<p>We also integrated both disease association features and sequence-based features to classify functional MTIs and predicted MTIs. The sequence feature was represented by scores obtained from miRDB. As shown in <xref rid="tbl4" ref-type="table">Table 4</xref>, the model utilizing both feature types demonstrated a slight improvement in performance compared to using the disease association feature and sequence feature alone. The comparison results prove that the disease association degree is a very important dimension.</p>
+<table-wrap id="tbl4" orientation="portrait" position="float">
+<label>Table 4:</label>
+<caption><title>Performance Comparison of Using Different Feature</title></caption>
+<graphic xlink:href="686936v1_tbl4.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>We further investigated potential biases arising from the use of different disease association databases. Gene–disease associations for TP53, PTEN, KRAS, MYC, TNF, IL6, IL10, and CRP were manually curated from the KEGG database. These genes were selected to generate disease association features for 338 MTIs using both DisGeNET and KEGG. Pearson’s correlation coefficients between the feature sets derived from the two databases were computed for each MTI. The average correlation coefficient was approximately 0.97, and the classifier performances were highly consistent. These results indicate that the proposed method is robust and generalizable across different databases. Nevertheless, since KEGG contains fewer gene–disease associations and does not allow complete database downloads, DisGeNET remains the more practical choice for large-scale analyses.</p>
+</sec>
+<sec id="s5">
+<label>5</label>
+<title>Future Work</title>
+<p>The NLP-based approach for calculating disease semantic similarity, which was fine-tuned on our generated dataset, exhibited strong performance, confirming its utility in biomedical contexts. This method offers a scalable strategy for estimating functional association or disease association across diverse biomolecules, thereby supporting the exploration of potential interactions. In addition to enabling interaction prediction based on physical and chemical properties, this approach introduces a novel perspective through the quantification of disease association degrees, thus enhancing the overall analytical framework. For instance, it could be leveraged existing protein-disease association databases such as the Proteome-Phenome Atlas [<xref ref-type="bibr" rid="c34">Deng et al., 2025</xref>] and DisGeNET [<xref ref-type="bibr" rid="c23">Hu et al., 2025</xref>]—to analyze protein-protein interactions (PPIs).</p>
+<p>Moving forward, we plan to apply our model to all collected MTIs and establish a publicly accessible online database. This resource will provide high-accuracy predictions of functional MTIs, along with detailed associations between MTIs and related diseases as identified by our method, to support further research within the scientific community.</p>
+</sec>
+</body>
+<back>
+<sec id="s6" sec-type="supplementary">
+<title>Supplementary Figures</title>
+<fig id="fig1a" position="float" fig-type="figure">
+<label>Figure 1:</label>
+    <caption><title>This figure presents the average frequency distribution of similarity values between miRNA-associated diseases and gene-associated diseases for both experimentally validated MTIs and predicted MTIs.</title>
+        <p>Experimentally validated MTIs are confirmed using western blot or reporter assay, while predicted MTIs are derived from computational predictions based on sequence data. The x-axis represents the intervals of similarity values, and the y-axis indicates the average frequency of these similarity values within each interval. Specifically, functional MTIs exhibited a lower frequency (p=4.10e-47, independent samples t-test) in the low-similarity range (0-0.2) and a higher frequency (p=6.22e-71) in the moderate-similarity range (0.2-0.4) compared to predicted MTIs. The figure directly demonstrates that diseases associated with miRNAs and genes in experimentally validated MTIs show greater association compared to those in predicted MTIs.</p></caption>
+<graphic xlink:href="686936v1_fig1a.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="das" sec-type="data-availability">
+<title>Data availability</title>
+<p>The current manuscript is a computational study, so no data have been generated for this manuscript. Modelling code is uploaded as Source code 1-4.</p>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>The authors declare that there are no conflicts of interest. The methodology described above is the subject of a pending patent application.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Rosalind C</given-names> <surname>Lee</surname></string-name>, <string-name><given-names>Rhonda L</given-names> <surname>Feinbaum</surname></string-name>, and <string-name><given-names>Victor</given-names> <surname>Ambros</surname></string-name></person-group>. <article-title>The c. elegans heterochronic gene lin-4 encodes small rnas with antisense complementarity to lin-14</article-title>. <source>cell</source>, <volume>75</volume>(<issue>5</issue>):<fpage>843</fpage>–<lpage>854</lpage>, <year>1993</year>.</mixed-citation></ref>
+<ref id="c2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Marieke</given-names> <surname>Van Kouwenhove</surname></string-name>, <string-name><given-names>Martijn</given-names> <surname>Kedde</surname></string-name>, and <string-name><given-names>Reuven</given-names> <surname>Agami</surname></string-name></person-group>. <article-title>Microrna regulation by rna-binding proteins and its implications for cancer</article-title>. <source>Nature Reviews Cancer</source>, <volume>11</volume>(<issue>9</issue>):<fpage>644</fpage>–<lpage>656</lpage>, <year>2011</year>.</mixed-citation></ref>
+<ref id="c3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Angie M</given-names> <surname>Cheng</surname></string-name>, <string-name><given-names>Mike W</given-names> <surname>Byrom</surname></string-name>, <string-name><given-names>Jeffrey</given-names> <surname>Shelton</surname></string-name>, and <string-name><given-names>Lance P</given-names> <surname>Ford</surname></string-name></person-group>. <article-title>Antisense inhibition of human mirnas and indications for an involvement of mirna in cell growth and apoptosis</article-title>. <source>Nucleic acids research</source>, <volume>33</volume>(<issue>4</issue>):<fpage>1290</fpage>–<lpage>1297</lpage>, <year>2005</year>.</mixed-citation></ref>
+<ref id="c4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Meredith</given-names> <surname>Hill</surname></string-name> and <string-name><given-names>Nham</given-names> <surname>Tran</surname></string-name></person-group>. <article-title>mirna interplay: mechanisms and consequences in cancer</article-title>. <source>Disease models &amp; mechanisms</source>, <volume>14</volume>(<issue>4</issue>):<fpage>dmm047662</fpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Colin C</given-names> <surname>Pritchard</surname></string-name>, <string-name><given-names>Heather H</given-names> <surname>Cheng</surname></string-name>, and <string-name><given-names>Muneesh</given-names> <surname>Tewari</surname></string-name></person-group>. <article-title>Microrna profiling: approaches and considerations</article-title>. <source>Nature Reviews Genetics</source>, <volume>13</volume>(<issue>5</issue>):<fpage>358</fpage>–<lpage>369</lpage>, <year>2012</year>.</mixed-citation></ref>
+<ref id="c6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Vaishnovi</given-names> <surname>Sekar</surname></string-name>, <string-name><given-names>Emilio</given-names> <surname>Mármol-Sánchez</surname></string-name>, <string-name><given-names>Panagiotis</given-names> <surname>Kalogeropoulos</surname></string-name>, <string-name><given-names>Laura</given-names> <surname>Stanicek</surname></string-name>, <string-name><given-names>Eduardo A</given-names> <surname>Sagredo</surname></string-name>, <string-name><given-names>Albin</given-names> <surname>Widmark</surname></string-name>, <string-name><given-names>Evangelos</given-names> <surname>Doukoumopoulos</surname></string-name>, <string-name><given-names>Franziska</given-names> <surname>Bonath</surname></string-name>, <string-name><given-names>Inna</given-names> <surname>Biryukova</surname></string-name>, and <string-name><given-names>Marc R</given-names> <surname>Friedländer</surname></string-name></person-group>. <article-title>Detection of transcriptome-wide microrna–target interactions in single cells with agotribe</article-title>. <source>Nature Biotechnology</source>, <volume>42</volume>(<issue>8</issue>): <fpage>1296</fpage>–<lpage>1302</lpage>, <year>2024</year>.</mixed-citation></ref>
+<ref id="c7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Carsten</given-names> <surname>Sticht</surname></string-name>, <string-name><given-names>Carolina De La</given-names> <surname>Torre</surname></string-name>, <string-name><given-names>Alisha</given-names> <surname>Parveen</surname></string-name>, and <string-name><given-names>Norbert</given-names> <surname>Gretz</surname></string-name></person-group>. <article-title>mirwalk: an online resource for prediction of microrna binding sites</article-title>. <source>PloS one</source>, <volume>13</volume>(<issue>10</issue>):<fpage>e0206239</fpage>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Yuhao</given-names> <surname>Chen</surname></string-name> and <string-name><given-names>Xiaowei</given-names> <surname>Wang</surname></string-name></person-group>. <article-title>mirdb: an online database for prediction of functional microrna targets</article-title>. <source>Nucleic acids research</source>, <volume>48</volume>(<issue>D1</issue>):<fpage>D127</fpage>–<lpage>D131</lpage>, <year>2020</year>.</mixed-citation></ref>
+<ref id="c9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Vikram</given-names> <surname>Agarwal</surname></string-name>, <string-name><given-names>George W</given-names> <surname>Bell</surname></string-name>, <string-name><given-names>Jin-Wu</given-names> <surname>Nam</surname></string-name>, and <string-name><given-names>David P</given-names> <surname>Bartel</surname></string-name></person-group>. <article-title>Predicting effective microrna target sites in mammalian mrnas</article-title>. <source>eLife</source>, <volume>4</volume>:<elocation-id>e05005</elocation-id>, <year>2015</year>. <pub-id pub-id-type="doi">10.7554/eLife.05005</pub-id></mixed-citation></ref>
+<ref id="c10"><label>[10]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Jun-Hao</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Shun</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Hui</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>Liang-Hu</given-names> <surname>Qu</surname></string-name>, and <string-name><given-names>Jian-Hua</given-names> <surname>Yang</surname></string-name></person-group>. <article-title>starbase v2. 0: decoding mirna-cerna, mirna-ncrna and protein–rna interaction networks from large-scale clip-seq data</article-title>. <source>Nucleic acids research</source>, <volume>42</volume>(<issue>D1</issue>):<fpage>D92</fpage>–<lpage>D97</lpage>, <year>2014</year>.</mixed-citation></ref>
+<ref id="c11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Kevin C</given-names> <surname>Miranda</surname></string-name>, <string-name><given-names>Tien</given-names> <surname>Huynh</surname></string-name>, <string-name><given-names>Yvonne</given-names> <surname>Tay</surname></string-name>, <string-name><given-names>Yen-Sin</given-names> <surname>Ang</surname></string-name>, <string-name><given-names>Wai-Leong</given-names> <surname>Tam</surname></string-name>, <string-name><given-names>Andrew M</given-names> <surname>Thomson</surname></string-name>, <string-name><given-names>Bing</given-names> <surname>Lim</surname></string-name>, and <string-name><given-names>Isidore</given-names> <surname>Rigoutsos</surname></string-name></person-group>. <article-title>A pattern-based method for the identification of microrna binding sites and their corresponding heteroduplexes</article-title>. <source>Cell</source>, <volume>126</volume>(<issue>6</issue>):<fpage>1203</fpage>–<lpage>1217</lpage>, <year>2006</year>.</mixed-citation></ref>
+<ref id="c12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Anton</given-names> <surname>Enright</surname></string-name>, <string-name><given-names>Bino</given-names> <surname>John</surname></string-name>, <string-name><given-names>Ulrike</given-names> <surname>Gaul</surname></string-name>, <string-name><given-names>Thomas</given-names> <surname>Tuschl</surname></string-name>, <string-name><given-names>Chris</given-names> <surname>Sander</surname></string-name>, and <string-name><given-names>Debora</given-names> <surname>Marks</surname></string-name></person-group>. <article-title>Microrna targets in drosophila</article-title>. <source>Genome biology</source>, <volume>4</volume>:<fpage>1</fpage>–<lpage>27</lpage>, <year>2003</year>.</mixed-citation></ref>
+<ref id="c13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Michael</given-names> <surname>Kertesz</surname></string-name>, <string-name><given-names>Nicola</given-names> <surname>Iovino</surname></string-name>, <string-name><given-names>Ulrich</given-names> <surname>Unnerstall</surname></string-name>, <string-name><given-names>Ulrike</given-names> <surname>Gaul</surname></string-name>, and <string-name><given-names>Eran</given-names> <surname>Segal</surname></string-name></person-group>. <article-title>The role of site accessibility in microrna target recognition</article-title>. <source>Nature genetics</source>, <volume>39</volume>(<issue>10</issue>):<fpage>1278</fpage>–<lpage>1284</lpage>, <year>2007</year>.</mixed-citation></ref>
+<ref id="c14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Albert</given-names> <surname>Pla</surname></string-name>, <string-name><given-names>Xiangfu</given-names> <surname>Zhong</surname></string-name>, and <string-name><given-names>Simon</given-names> <surname>Rayner</surname></string-name></person-group>. <article-title>miraw: A deep learning-based approach to predict microrna targets by analyzing whole microrna transcripts</article-title>. <source>PLoS computational biology</source>, <volume>14</volume>(<issue>7</issue>):<fpage>e1006185</fpage>, <year>2018</year>.</mixed-citation></ref>
+<ref id="c15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Seonwoo</given-names> <surname>Min</surname></string-name>, <string-name><given-names>Byunghan</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Sungroh</given-names> <surname>Yoon</surname></string-name></person-group>. <article-title>Targetnet: functional microrna target prediction with deep neural networks</article-title>. <source>Bioinformatics</source>, <volume>38</volume>(<issue>3</issue>):<fpage>671</fpage>–<lpage>677</lpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Wigard P</given-names> <surname>Kloosterman</surname></string-name> and <string-name><given-names>Ronald HA</given-names> <surname>Plasterk</surname></string-name></person-group>. <article-title>The diverse functions of micrornas in animal development and disease</article-title>. <source>Developmental cell</source>, <volume>11</volume>(<issue>4</issue>):<fpage>441</fpage>–<lpage>450</lpage>, <year>2006</year>.</mixed-citation></ref>
+<ref id="c17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Laura Z</given-names> <surname>Rassenti</surname></string-name>, <string-name><given-names>Veronica</given-names> <surname>Balatti</surname></string-name>, <string-name><given-names>Emanuela M</given-names> <surname>Ghia</surname></string-name>, <string-name><given-names>Alexey</given-names> <surname>Palamarchuk</surname></string-name>, <string-name><given-names>Luisa</given-names> <surname>Tomasello</surname></string-name>, <string-name><given-names>Paolo</given-names> <surname>Fadda</surname></string-name>, <string-name><given-names>Yuri</given-names> <surname>Pekarsky</surname></string-name>, <string-name><given-names>George F</given-names> <surname>Widhopf</surname></string-name>, <string-name><given-names>Thomas J</given-names> <surname>Kipps</surname></string-name>, and <string-name><given-names>Carlo M</given-names> <surname>Croce</surname></string-name></person-group>. <article-title>Microrna dysregulation to identify therapeutic target combinations for chronic lymphocytic leukemia</article-title>. <source>Proceedings of the National Academy of Sciences</source>, <volume>114</volume>(<issue>40</issue>): <fpage>10731</fpage>–<lpage>10736</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c18"><label>[18]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Li</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Li</given-names> <surname>Zhang</surname></string-name>, and <string-name><given-names>Xing</given-names> <surname>Chen</surname></string-name></person-group>. <article-title>Updated review of advances in micrornas and complex diseases: taxonomy, trends and challenges of computational models</article-title>. <source>Briefings in bioinformatics</source>, <volume>23</volume>(<issue>5</issue>):<fpage>bbac358</fpage>, <year>2022</year>.</mixed-citation></ref>
+<ref id="c19"><label>[19]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Sezin Kircali</given-names> <surname>Ata</surname></string-name>, <string-name><given-names>Min</given-names> <surname>Wu</surname></string-name>, <string-name><surname>Yuan Fang</surname>, <given-names>L. Ou-Yang</given-names></string-name>, <string-name><given-names>Chee Keong</given-names> <surname>Kwoh</surname></string-name>, and <string-name><given-names>Xiao-Li</given-names> <surname>Li</surname></string-name></person-group>. <article-title>Recent advances in network-based methods for disease gene prediction</article-title>. <source>Briefings in bioinformatics</source>, <volume>22</volume>(<issue>4</issue>):<fpage>bbaa303</fpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c20"><label>[20]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Zhengwei</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Jiashu</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Ru</given-names> <surname>Nie</surname></string-name>, <string-name><given-names>Zhu-Hong</given-names> <surname>You</surname></string-name>, and <string-name><given-names>Wenzheng</given-names> <surname>Bao</surname></string-name></person-group>. <article-title>A graph auto-encoder model for mirna-disease associations prediction</article-title>. <source>Briefings in bioinformatics</source>, <volume>22</volume>(<issue>4</issue>):<fpage>bbaa240</fpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c21"><label>[21]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Jian</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Peng-Yi</given-names> <surname>Yu</surname></string-name>, <string-name><given-names>Jing-Ping</given-names> <surname>Yu</surname></string-name>, <string-name><given-names>Ju-Dong</given-names> <surname>Luo</surname></string-name>, <string-name><given-names>Zhi-Qiang</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>Fei</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>Ze</given-names> <surname>Kong</surname></string-name>, and <string-name><given-names>Jian-Lin</given-names> <surname>Wang</surname></string-name></person-group>. <article-title>Kif22 promotes progress of esophageal squamous cell carcinoma cells and is negatively regulated by mir-122</article-title>. <source>American Journal of Translational Research</source>, <volume>13</volume>(<issue>5</issue>):<fpage>4152</fpage>, <year>2021</year>.</mixed-citation></ref>
+<ref id="c22"><label>[22]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Chunmei</given-names> <surname>Cui</surname></string-name>, <string-name><given-names>Bitao</given-names> <surname>Zhong</surname></string-name>, <string-name><given-names>Rui</given-names> <surname>Fan</surname></string-name>, and <string-name><given-names>Qinghua</given-names> <surname>Cui</surname></string-name></person-group>. <article-title>Hmdd v4. 0: a database for experimentally supported human microrna-disease associations</article-title>. <source>Nucleic Acids Research</source>, <volume>52</volume>(<issue>D1</issue>):<fpage>D1327</fpage>–<lpage>D1332</lpage>, <year>2024</year>.</mixed-citation></ref>
+<ref id="c23"><label>[23]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Yaxuan</given-names> <surname>Hu</surname></string-name>, <string-name><given-names>Xingli</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>Yao</given-names> <surname>Yun</surname></string-name>, <string-name><given-names>Liang</given-names> <surname>Lu</surname></string-name>, <string-name><given-names>Xiaotai</given-names> <surname>Huang</surname></string-name>, and <string-name><given-names>Songwei</given-names> <surname>Jia</surname></string-name></person-group>. <article-title>Disgenet: a disease-centric interaction database among diseases and various associated genes</article-title>. <source>Database</source>, <volume>2025</volume>:<fpage>baae122</fpage>, <year>2025</year>.</mixed-citation></ref>
+<ref id="c24"><label>[24]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Nils</given-names> <surname>Reimers</surname></string-name> and <string-name><given-names>Iryna</given-names> <surname>Gurevych</surname></string-name></person-group>. <article-title>Sentence-bert: Sentence embeddings using siamese bert-networks</article-title>. <source>arXiv</source> <pub-id pub-id-type="arxiv">1908.10084</pub-id>, <year>2019</year>.</mixed-citation></ref>
+    <ref id="c25"><label>[25]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Jacob</given-names> <surname>Devlin</surname></string-name>, <string-name><given-names>Ming-Wei</given-names> <surname>Chang</surname></string-name>, <string-name><given-names>Kenton</given-names> <surname>Lee</surname></string-name>, and <string-name><given-names>Kristina</given-names> <surname>Toutanova</surname></string-name></person-group>. <article-title>Bert: Pre-training of deep bidirectional transformers for language understanding</article-title>. <source>arXiv</source> <pub-id pub-id-type="arxiv">1810.04805</pub-id>, <year>2018</year>.</mixed-citation></ref>
+    <ref id="c26"><label>[26]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Yinhan</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Myle</given-names> <surname>Ott</surname></string-name>, <string-name><given-names>Naman</given-names> <surname>Goyal</surname></string-name>, <string-name><given-names>Jingfei</given-names> <surname>Du</surname></string-name>, <string-name><given-names>Mandar</given-names> <surname>Joshi</surname></string-name>, <string-name><given-names>Danqi</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>Omer</given-names> <surname>Levy</surname></string-name>, <string-name><given-names>Mike</given-names> <surname>Lewis</surname></string-name>, <string-name><given-names>Luke</given-names> <surname>Zettlemoyer</surname></string-name>, and <string-name><given-names>Veselin</given-names> <surname>Stoyanov</surname></string-name></person-group>. <article-title>Roberta: A robustly optimized bert pretraining approach</article-title>. <source>arXiv</source> <pub-id pub-id-type="arxiv">1907.11692</pub-id>, <year>2019</year>.</mixed-citation></ref>
+<ref id="c27"><label>[27]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Gizem</given-names> <surname>Soğancioğlu</surname></string-name>, <string-name><given-names>Hakime</given-names> <surname>Öztürk</surname></string-name>, and <string-name><given-names>Arzucan</given-names> <surname>Özgür</surname></string-name></person-group>. <article-title>Biosses: a semantic sentence similarity estimation system for the biomedical domain</article-title>. <source>Bioinformatics</source>, <volume>33</volume>(<issue>14</issue>):<fpage>i49</fpage>–<lpage>i58</lpage>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c28"><label>[28]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Shidong</given-names> <surname>Cui</surname></string-name>, <string-name><given-names>Sicong</given-names> <surname>Yu</surname></string-name>, <string-name><given-names>Hsi-Yuan</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Yang-Chi-Dung</given-names> <surname>Lin</surname></string-name>, <string-name><given-names>Yixian</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Bojian</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Jihan</given-names> <surname>Xiao</surname></string-name>, <string-name><given-names>Huali</given-names> <surname>Zuo</surname></string-name>, <string-name><given-names>Jiayi</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Zhuoran</given-names> <surname>Li</surname></string-name>, <etal>et al.</etal></person-group> <article-title>mirtarbase 2025: updates to the collection of experimentally validated microrna–target interactions</article-title>. <source>Nucleic acids research</source>, <volume>53</volume>(<issue>D1</issue>):<fpage>D147</fpage>–<lpage>D156</lpage>, <year>2025</year>.</mixed-citation></ref>
+<ref id="c29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Giorgos</given-names> <surname>Skoufos</surname></string-name>, <string-name><given-names>Panos</given-names> <surname>Kakoulidis</surname></string-name>, <string-name><given-names>Spyros</given-names> <surname>Tastsoglou</surname></string-name>, <string-name><given-names>Elissavet</given-names> <surname>Zacharopoulou</surname></string-name>, <string-name><given-names>Vasiliki</given-names> <surname>Kotsira</surname></string-name>, <string-name><given-names>Marios</given-names> <surname>Miliotis</surname></string-name>, <string-name><given-names>Galatea</given-names> <surname>Mavromati</surname></string-name>, <string-name><given-names>Dimitris</given-names> <surname>Grigoriadis</surname></string-name>, <string-name><given-names>Maria</given-names> <surname>Zioga</surname></string-name>, <string-name><given-names>Angeliki</given-names> <surname>Velli</surname></string-name>, <etal>et al.</etal></person-group> <article-title>Tarbase-v9. 0 extends experimentally supported mirna–gene interactions to cell-types and virally encoded mirnas</article-title>. <source>Nucleic Acids Research</source>, <volume>52</volume>(<issue>D1</issue>): <fpage>D304</fpage>–<lpage>D310</lpage>, <year>2024</year>.</mixed-citation></ref>
+<ref id="c30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Minoru</given-names> <surname>Kanehisa</surname></string-name> and <string-name><given-names>Susumu</given-names> <surname>Goto</surname></string-name></person-group>. <article-title>Kegg: kyoto encyclopedia of genes and genomes</article-title>. <source>Nucleic acids research</source>, <volume>28</volume>(<issue>1</issue>): <fpage>27</fpage>–<lpage>30</lpage>, <year>2000</year>.</mixed-citation></ref>
+<ref id="c31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Dong</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Juan</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Ming</given-names> <surname>Lu</surname></string-name>, <string-name><given-names>Fei</given-names> <surname>Song</surname></string-name>, and <string-name><given-names>Qinghua</given-names> <surname>Cui</surname></string-name></person-group>. <article-title>Inferring the human microrna functional similarity and functional network based on microrna-associated diseases</article-title>. <source>Bioinformatics</source>, <volume>26</volume>(<issue>13</issue>):<fpage>1644</fpage>–<lpage>1650</lpage>, <year>2010</year>.</mixed-citation></ref>
+<ref id="c32"><label>[32]</label><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><given-names>Chi</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>Xipeng</given-names> <surname>Qiu</surname></string-name>, <string-name><given-names>Yige</given-names> <surname>Xu</surname></string-name>, and <string-name><given-names>Xuanjing</given-names> <surname>Huang</surname></string-name></person-group>. <article-title>How to fine-tune bert for text classification?</article-title> In <conf-name>China national conference on Chinese computational linguistics</conf-name>, pages <fpage>194</fpage>–<lpage>206</lpage>. <publisher-name>Springer</publisher-name>, <year>2019</year>.</mixed-citation></ref>
+    <ref id="c33"><label>[33]</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><given-names>Ilya</given-names> <surname>Loshchilov</surname></string-name> and <string-name><given-names>Frank</given-names> <surname>Hutter</surname></string-name></person-group>. <article-title>Decoupled weight decay regularization</article-title>. <source>arXiv</source> <pub-id pub-id-type="arxiv">1711.05101</pub-id>, <year>2017</year>.</mixed-citation></ref>
+<ref id="c34"><label>[34]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><given-names>Yue-Ting</given-names> <surname>Deng</surname></string-name>, <string-name><given-names>Jia</given-names> <surname>You</surname></string-name>, <string-name><given-names>Yu</given-names> <surname>He</surname></string-name>, <string-name><given-names>Yi</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Hai-Yun</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Xin-Rui</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>Ji-Yun</given-names> <surname>Cheng</surname></string-name>, <string-name><given-names>Yu</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>Zi-Wen</given-names> <surname>Long</surname></string-name>, <string-name><given-names>Yi-Lin</given-names> <surname>Chen</surname></string-name>, <etal>et al.</etal></person-group> <article-title>Atlas of the plasma proteome in health and disease in 53,026 adults</article-title>. <source>Cell</source>, <volume>188</volume>(<issue>1</issue>):<fpage>253</fpage>–<lpage>271</lpage>, <year>2025</year>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109602.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Park</surname>
+<given-names>Jihwan</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/024kbgz78</institution-id><institution>Gwangju Institute of Science and Technology</institution>
+</institution-wrap>
+<city>Gwangju</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study introduces miRTarDS, a novel computational framework that predicts microRNA-target interactions based on a publicly available pretrained Sentence-BERT language model and downstream classification analysis. The strength of the evidence is <bold>incomplete</bold>, as the evaluation framework relies on unreliable ground-truth and false sets. Furthermore, the analysis fails to compare miRTarDS against existing state-of-the-art biomedical language models.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109602.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The author presents a new method for microRNA target prediction based on (1) a publicly available pretrained Sentence-BERT language model that the author fine-tunes using MeSH information and (2) downstream classification analysis for microRNA target prediction. In particular, the author's approach, named &quot;miRTarDS&quot;, attempts to solve the microRNA target prediction problem by utilizing disease information (i.e., semantic similarity scores) from their language model. The author then compares the prediction performance with other sequence- and disease-based methods and attempts to show that miRTarDS is superior or at least comparable to existing methods. The author's general approach to this microRNA target prediction problem seems promising, but fails to demonstrate concrete computational evidence that miRTarDS outperforms other existing methods. The author's claim that disease information-based language models are sufficient is unfounded. The manuscript requires substantial rewriting and reorganization for readers with a strong background in biomedical research.</p>
+<p>A major issue related to the author's claim of computational advance of miRTarDS: The author does not introduce existing biomedical-specific language models, and does not compare them against miRTarDS's fine-tuned model. The performance of miRTarDS is largely dependent on the semantic embedding of disease terms. The author shows in Figure 5 that MeSH-based fine-tuning leads to a substantial improvement in MeSH-based correlation compared to the publicly available pretrained SBERT model &quot;multi-qa-MiniLM-L6-cos-v1&quot; without sacrificing a large amount of BIOSSES-based correlation. However, the author does not compare the performance of MeSH- and BIOSSES-based correlation with existing language models such as ChatGPT, BioBERT, PubMedBERT, and more. Also, the substantial improvement in MeSH-based correlation is a mere indication that the MeSH-based fine-tuning strategy was reasonable and not that it's superior to the publicly available pretrained SBERT model &quot;multi-qa-MiniLM-L6-cos-v1&quot;.</p>
+<p>Another major issue is in the author's claim that disease-information from miRTarDS's language model is &quot;sufficient&quot; for accurate microRNA target prediction. Available microRNA targets with experimental evidence are largely biased for those with disease implications that have been reported in the biomedical literature. It's possible that their language model is biased by existing literature that has also been used to build microRNA target databases. Therefore, it is important that the author provides strong evidence that excludes the possibility of data leakage circularity. Similar concerns are prevalent across the manuscript, and so I highly recommend that the author reassess the evaluation frameworks and account for inflated performance, biased conclusions, and self-confirming results.</p>
+<p>Last but not least, the manuscript requires a deeper and careful description and computational encoding of microRNA biology. I'd advise the author to include an expert in microRNA biology to improve the quality of this manuscript. For example, the author uses the pre-miRNA notation and replaces the mature miRNA notation to maintain computational encoding consistency across databases. However, the mature microRNA notation &quot;the '-3p' or '-5p' is critical as the 3p and 5p mature microRNAs have different seed sequences and thus different mRNA targets. The 3p mature microRNA would most likely not target an mRNA targeted by the 5p mature microRNA.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109602.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This study introduces a novel knowledge-driven approach, miRTarDS, which enables microRNA-Target Interaction (MTI) prediction by leveraging the disease association degree between a miRNA and its target gene. The core hypothesis is that this single feature is sufficient to distinguish experimentally validated functional MTIs from computationally predicted MTIs in a binary classification setting. To quantify the disease association, the authors fine-tuned a Sentence-BERT (SBERT) model to generate embeddings of disease descriptions and compute their semantic similarity. Using only this disease association feature, miRTarDS achieved an F1 score of 0.88 on the test set.</p>
+<p>Strengths:</p>
+<p>The primary strength is the innovative use of the disease association degree as an independent feature for MTI classification. In addition, this study successfully adapts and fine-tunes the Sentence-BERT (SBERT) model to quantify the semantic similarity between biomedical texts (disease descriptions). This approach establishes a critical pathway for integrating powerful language models and the vast growth in clinical/disease data into biochemical discovery, like MTI prediction.</p>
+<p>Weaknesses:</p>
+<p>The main weakness lies in its definition of the ground-truth dataset, which serves as a foundation for methodological evaluation. The study defines the Negative Set as computationally predicted MTIs that lack experimental evidence. However, the absence of experimental validation does not equate to non-functionality. Similarly, the miRAW sets are classified by whether the target and miRNA could form a stable duplex structure according to RNA structure prediction. This definition is biologically irrelevant, as duplex stability does not fully encapsulate the complex in vivo binding of miRNAs within the AGO protein complex.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109602.1.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Chen</surname>
+<given-names>Baiming</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-7630-9772</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public review):</bold></p>
+<p>The author presents a new method for microRNA target prediction based on (1) a publicly available pretrained Sentence-BERT language model that the author fine-tunes using MeSH information and (2) downstream classification analysis for microRNA target prediction. In particular, the author's approach, named &quot;miRTarDS&quot;, attempts to solve the microRNA target prediction problem by utilizing disease information (i.e., semantic similarity scores) from their language model. The author then compares the prediction performance with other sequence- and disease-based methods and attempts to show that miRTarDS is superior or at least comparable to existing methods. The author's general approach to this microRNA target prediction problem seems promising, but fails to demonstrate concrete computational evidence that miRTarDS outperforms other existing methods. The author's claim that disease information-based language models are sufficient is unfounded. The manuscript requires substantial rewriting and reorganization for readers with a strong background in biomedical research.</p>
+</disp-quote>
+<p>We appreciate the reviewer’s careful examination of modeling, benchmarking, and interpretation, and we are particularly encouraged that they found the proposed method promising. We will make corresponding revisions to the manuscript based on the reviewer’s comments.</p>
+<disp-quote content-type="editor-comment">
+<p>A major issue related to the author's claim of computational advance of miRTarDS: The author does not introduce existing biomedical-specific language models, and does not compare them against miRTarDS's fine-tuned model. The performance of miRTarDS is largely dependent on the semantic embedding of disease terms. The author shows in Figure 5 that MeSH-based fine-tuning leads to a substantial improvement in MeSH-based correlation compared to the publicly available pretrained SBERT model &quot;multi-qa-MiniLM-L6-cos-v1&quot; without sacrificing a large amount of BIOSSES-based correlation. However, the author does not compare the performance of MeSH- and BIOSSES-based correlation with existing language models such as ChatGPT, BioBERT, PubMedBERT, and more. Also, the substantial improvement in MeSH-based correlation is a mere indication that the MeSH-based fine-tuning strategy was reasonable and not that it's superior to the publicly available pretrained SBERT model &quot;multi-qa-MiniLM-L6-cos-v1&quot;.</p>
+</disp-quote>
+<p>We thank the reviewer for the constructive suggestions regarding the benchmarking of language models. We acknowledge that the performance of miRTarDS largely depends on the semantic embeddings of disease terms. So, in the revisions, I will: 1) conduct a literature review to introduce existing biomedical-specific language models, and 2) perform a horizontal comparison between our fine-tuned model and these existing models, to more comprehensively evaluate the model’s capabilities.</p>
+<disp-quote content-type="editor-comment">
+<p>Another major issue is in the author's claim that disease-information from miRTarDS's language model is &quot;sufficient&quot; for accurate microRNA target prediction. Available microRNA targets with experimental evidence are largely biased for those with disease implications that have been reported in the biomedical literature. It's possible that their language model is biased by existing literature that has also been used to build microRNA target databases. Therefore, it is important that the author provides strong evidence that excludes the possibility of data leakage circularity. Similar concerns are prevalent across the manuscript, and so I highly recommend that the author reassess the evaluation frameworks and account for inflated performance, biased conclusions, and self-confirming results.</p>
+</disp-quote>
+<p>We thank the reviewer for the comment. We recognize that existing experimentally validated microRNA targets may be biased toward those reported in biomedical literature as disease‑related. To mitigate this bias, we attempted to extract predicted microRNA targets that share a very similar number of miRNA- and gene‑ disease entries as the experimentally validated microRNA targets using the K‑Nearest Neighbors (KNN) method. Then applied Positive‑Unlabeled (PU) Learning to classify the two groups. PU‑Learning is designed to address scenarios where only a subset of the training data is explicitly labeled as positive, while the remaining data are unlabeled—with the unlabeled set containing both potential positives and true negatives—which is highly suitable for the application context of this manuscript [1]. Preliminary results show that after applying the new data extraction and classification approach, model performance drops to around F1=0.73 (the MISIM method also shows a decline, with F1 around 0.58; detailed code is available on GitHub). The specific reasons for this require further investigation.</p>
+<disp-quote content-type="editor-comment">
+<p>Last but not least, the manuscript requires a deeper and careful description and computational encoding of microRNA biology. I'd advise the author to include an expert in microRNA biology to improve the quality of this manuscript. For example, the author uses the pre-miRNA notation and replaces the mature miRNA notation to maintain computational encoding consistency across databases. However, the mature microRNA notation &quot;the '-3p' or '-5p' is critical as the 3p and 5p mature microRNAs have different seed sequences and thus different mRNA targets. The 3p mature microRNA would most likely not target an mRNA targeted by the 5p mature microRNA.</p>
+</disp-quote>
+<p>We thank the reviewer for the critique and suggestion. We fully agree with the reviewer that the distinction between the 3p and 5p mature strands is critical for determining mRNA targeting, as they possess distinct seed sequences. In our study, we relied on the miRNA–disease associations provided by the HMDD database, which annotates interactions at the pre-miRNA level: “… the enriched functions of each mature miRNA are aggregated to the corresponding miRNA precursor.” [2] Furthermore, existing literature suggests that the pre-miRNA level can be appropriate and informative for disease association analyses: “Compared with the mature miRNA method, the pre-miRNA method is more useful for studying disease association.” [3] We also find that, in some cases, both strands cooperate to regulate the same or complementary pathways [4]. We acknowledge the reviewer’s point as an important consideration for future revision. We plan to consult or collaborate with biologists to enhance the quality of the manuscript in biology.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public review):</bold></p>
+<p>This study introduces a novel knowledge-driven approach, miRTarDS, which enables microRNA-Target Interaction (MTI) prediction by leveraging the disease association degree between a miRNA and its target gene. The core hypothesis is that this single feature is sufficient to distinguish experimentally validated functional MTIs from computationally predicted MTIs in a binary classification setting. To quantify the disease association, the authors fine-tuned a Sentence-BERT (SBERT) model to generate embeddings of disease descriptions and compute their semantic similarity. Using only this disease association feature, miRTarDS achieved an F1 score of 0.88 on the test set.</p>
+</disp-quote>
+<p>We thank the reviewers for their positive feedback, especially for their recognition of the novelty of this manuscript.</p>
+<disp-quote content-type="editor-comment">
+<p>Strengths:</p>
+<p>The primary strength is the innovative use of the disease association degree as an independent feature for MTI classification. In addition, this study successfully adapts and fine-tunes the Sentence-BERT (SBERT) model to quantify the semantic similarity between biomedical texts (disease descriptions). This approach establishes a critical pathway for integrating powerful language models and the vast growth in clinical/disease data into biochemical discovery, like MTI prediction.</p>
+</disp-quote>
+<p>We would like to thank the reviewer again for their positive feedback. We appreciate their recognition of the novelty of our work, as well as their acknowledgment that the proposed method paves the way for integrating language models with clinical/disease data into biochemical discovery.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>The main weakness lies in its definition of the ground-truth dataset, which serves as a foundation for methodological evaluation. The study defines the Negative Set as computationally predicted MTIs that lack experimental evidence. However, the absence of experimental validation does not equate to non-functionality. Similarly, the miRAW sets are classified by whether the target and miRNA could form a stable duplex structure according to RNA structure prediction. This definition is biologically irrelevant, as duplex stability does not fully encapsulate the complex in vivo binding of miRNAs within the AGO protein complex.</p>
+</disp-quote>
+<p>We thank the reviewers for their constructive feedback. We have realized that treating predicted MTI as a negative class may pose some issues. Therefore, we have decided to adopt Positive Unlabeled (PU) Learning in subsequent updates. This classification method can be applied to datasets such as ours, which contain only positive classes and lack negative ones [1]. We used the miRAW dataset to enable a horizontal comparison of our method with traditional sequence-based prediction approaches. We acknowledge that miRAW may overlook some biological insights, and we plan to optimize the construction of test datasets in the future. Some preliminary explorations have already been conducted, and the relevant code is available on GitHub.</p>
+<p>Furthermore, we will make the following revisions: 1) We will clearly specify the version of miRBase and incorporate more miRNA-related databases. 2) Conduct a further literature review on miRNA biological mechanisms to enhance the quality of the manuscript in biology. 3) Perform a more comprehensive evaluation of the model’s performance. 4) Attempt to identify some representative MTIs that have been overlooked by existing prediction tools but can be predicted by our proposed method.</p>
+<p>References</p>
+<p>(1) Li, F., Dong, S., Leier, A., Han, M., Guo, X., Xu, J., ... &amp; Song, J. (2022). Positive-unlabeled learning in bioinformatics and computational biology: a brief review. Briefings in Bioinformatics, 23(1), bbab461.</p>
+<p>(2) Huang, Z., Shi, J., Gao, Y., Cui, C., Zhang, S., Li, J., ... &amp; Cui, Q. (2019). HMDD v3. 0: a database for experimentally supported human microRNA–disease associations. Nucleic acids research, 47(D1), D1013-D1017.</p>
+<p>(3) Wang, H., &amp; Ho, C. (2023). The human pre-miRNA distance distribution for exploring disease association. International Journal of Molecular Sciences, 24(2), 1009.</p>
+<p>(4) Mitra, R., Adams, C. M., Jiang, W., Greenawalt, E., &amp; Eischen, C. M. (2020). Pan-cancer analysis reveals cooperativity of both strands of microRNA that regulate tumorigenesis and patient survival. Nature Communications, 11(1), 968.</p>
+</body>
+</sub-article>
+</article>
