@@ -25,7 +25,8 @@
 <subj-group subj-group-type="heading">
 <subject>Computational and Systems Biology</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Cell type-specific network analysis in Diversity Outbred mice identifies genes potentially responsible for human bone mineral density GWAS associations</article-title>
 </title-group>
 <contrib-group>
@@ -76,7 +77,7 @@
 <role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of California, San Francisco</institution>
+<institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>University of California, San Francisco</institution>
 </institution-wrap>
 <city>San Francisco</city>
 <country country="US">United States</country>
@@ -90,7 +91,7 @@
 <role>Senior Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of California, San Francisco</institution>
+<institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>University of California, San Francisco</institution>
 </institution-wrap>
 <city>San Francisco</city>
 <country country="US">United States</country>
@@ -225,7 +226,7 @@
 <label>Figure 1.</label>
 <caption><title>Analysis of single cell RNA-seq (scRNA-seq) data for BMSC-OBs derived from 80 Diversity Outbred (DO)</title>
 <p><bold>(A)</bold> Uniform Manifold Approximation and Projection (UMAP) of 139,392 single cells (BMSC-OBs). Cell numbers and corresponding percentages for the fifteen (15) annotated cell clusters are listed in parenthesis to the right of the annotated cluster name. <bold>(B)</bold> Dot plot<sup><xref ref-type="bibr" rid="c65">65</xref></sup> portraying representative and highly expressed genes for all annotated cell clusters. Dot color indicates the scaled gene expression while the size of the dot corresponds to the percentage of cells of a given cluster that express a given gene. <bold>(C)</bold> The raw proportional abundances of seven (7) mesenchymal cell clusters and one (1) cluster (Hem) representing the remain cells (i.e., mainly hematopoietic immune cells) across all 80 DO mice. <bold>(D)</bold> UMAP plots for mesenchymal lineage cell clusters for DO mouse 50 and DO mouse 233. <bold>(E)</bold> CELLECT (CELL-type Expression-specific integration for Complex Traits) cell type prioritization results displaying the Bonferroni adjusted P-values for the cell clusters. The OB1, Ocy, and MALP cell clusters (red) were significantly enriched (P<sub>adj</sub> &lt; 0.05, red dashed line) for BMD heritability (P<sub>adj</sub> = 0.018, 0.010, 0.006, respectively).</p></caption>
-<graphic xlink:href="594981v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Based on our prior BMSC-OB scRNA-seq study<sup><xref ref-type="bibr" rid="c15">15</xref></sup>, we expected to identify a large proportion of mesenchymal cells and a smaller fraction of non-mesenchymal cell types. Consistent with this hypothesis, clusters associated with mesenchymal lineages accounted for 74.1% of all cells (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>). These included mesenchymal progenitor cells (MPCs), late mesenchymal progenitors (LMPs), osteoblast progenitors (OBPs), two mature osteoblast populations (OB1 and OB2), osteocyte-like cells (Ocy), and marrow adipogenic lineage progenitors (MALPs). The non-mesenchymal cell types observed included macrophages, monocytes, granulocytes, T-cells, B-cells, endothelial cells, and osteoclast-like cells (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>). With regards to the mesenchymal cell types, the only differences in cell clusters relative to our previous report<sup><xref ref-type="bibr" rid="c15">15</xref></sup> were the presence of MPCs and two mature osteoblast clusters. Upon comparing the two distinct osteoblast clusters, OB1 and OB2 (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>), both clusters had ubiquitous expression of genes associated with mature osteoblasts (e.g., <italic>Col1a1</italic>, <italic>Bglap, Sparc</italic>, and <italic>Ibsp</italic>) (Supplementary Table S1) while many of the “canonical” osteoblast markers were more highly expressed in OB1 compared to OB2 (Supplementary Table S2). Interestingly, MPCs did not have transcriptomic profiles similar to other mesenchymal progenitor cells previously identified by our group or others<sup><xref ref-type="bibr" rid="c15">15</xref>,<xref ref-type="bibr" rid="c19">19</xref></sup>. All other mesenchymal cell types demonstrated specific expression of canonical marker genes (<xref rid="fig1" ref-type="fig">Fig. 1A, B</xref>).</p>
 <p>We next assessed the variability in cell type frequencies across DO mice by quantifying the proportions of each annotated mesenchymal cell type. All other clusters, which mainly consisted of immune cells of hematopoietic origin, were aggregated into one group (Hem) for each mouse. We observed high variability in the raw proportional abundances of cell types derived from each mouse (<xref rid="fig1" ref-type="fig">Fig. 1C</xref>, Supplementary Table S3). For example, the proportions of osteoblasts (OB1 and OB2) varied significantly among individual DO mice (<xref rid="fig1" ref-type="fig">Fig. 1D</xref>). All mice used in the current experiment had been extensively phenotyped for a wide range of bone traits (microCT, histomorphometry, biomechanical bone properties, etc.) as part of a previous genetic analysis of bone strength<sup><xref ref-type="bibr" rid="c14">14</xref></sup>. We correlated cell type frequencies with bone traits, however, none of the cell type proportions were strongly correlated with any bone trait (Supplementary Table S4, S5).</p>
@@ -242,7 +243,7 @@
 <label>Figure 2.</label>
 <caption><title>Overview of the network analysis pipeline</title>
 <p><italic>Step 1:</italic> For all seven (7) of the mesenchymal lineage cell clusters (MPC, LMP, OBP, OB1, OB2, Ocy, MALP), cell type-specific co-expression modules were generated using iterative Weighted Gene Co-expression Network Analysis (iterativeWGCNA). <italic>Step 2:</italic> Bayesian networks were learned to generate directed networks and model causal interactions between co-expressed genes. <italic>Step 3:</italic> Differentiation Driver Genes (DDGs) were identified by extracting subnetworks (i.e., large 3-step neighborhood) for each gene in each cell type-specific Bayesian network and highlighting those subnetworks that were enriched (P<sub>adj</sub> &lt; 0.05) for trajectory-specific tradeSeq genes for the cell type boundary. <italic>Step 4:</italic> DDGs (and associated networks) were prioritized if the DDG was identified previously as an expression/splicing quantitative trait loci (eQTL/sQTL) that colocalized with BMD GWAS associations. Created with <ext-link ext-link-type="uri" xlink:href="https://BioRender.com/6ucd64e">Biorender.com</ext-link>.</p></caption>
-<graphic xlink:href="594981v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2d">
@@ -252,7 +253,7 @@
 <label>Figure 3.</label>
 <caption><title>Pseudotime Trajectory Inference analysis and establishment of cell type boundaries for tradeSeq analysis</title>
 <p><bold>(A)</bold> Three (3) trajectories (two adipogenic, one adipogenic) were inferred from the mesenchymal cell clusters of the BMSC-OB scRNA-seq data using Slingshot. All trajectories originate from the MPC and end in either osteogenic (Ocy, OB2) or adipogenic (MALP) cell fates. <bold>(B)</bold> For each of the trajectories, cell type boundaries were generated using pseudotime values along the trajectories, which encompass the majority of cells of a cell type mapping to their respective trajectory. <bold>(C)</bold> Normalized gene expression of select genes associated with each cluster are represented in feature plots (<italic>top</italic>) and each gene plotted as a function of pseudotime (<italic>bottom</italic>) for all pseudotime trajectories (color corresponds to cell type annotation observed throughout). Vertical lines (red) represent the cell type (pseudotime) boundaries established for each cell type (label). The cell type boundary for OB1 and OB2 are represented as one red line/label for visualization purposes.</p></caption>
-<graphic xlink:href="594981v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>To identify genes likely impacting BMSC-OB differentiation, we used tradeSeq to identify genes that exhibit dynamic changes in expression along pseudotime<sup><xref ref-type="bibr" rid="c27">27</xref></sup>. Prior to performing the tradeSeq analysis, we parsed the pseudotime trajectories into regions that encompass cells associated with each cell type along their respective trajectories (<xref rid="fig3" ref-type="fig">Fig. 3B</xref>). We defined multiple cell type boundaries (nine in total) using pseudotime values, which represent points along a trajectory. The tradeSeq analysis was performed for each boundary (Supplementary Table S9). For example, trajectories bifurcate in the LMP cell cluster (<xref rid="fig3" ref-type="fig">Fig. 3A</xref>); therefore, cells belonging to the LMP cluster can map to adipogenic and/or osteogenic trajectories depending on their placement along pseudotime. Between a cell type boundary, cells spanning a specific cluster (e.g., LMP) and mapping to a specific trajectory (e.g., osteogenic trajectory) are used as input to analyze gene expression between the start and end points of the cell type boundary (e.g., LMP_to_OBP). We analyzed gene expression within the established cell type boundaries for all trajectories and identified genes that exhibit the most significant differences in expression between the start and end points of the cell type boundaries. The total number of significant trajectory-specific tradeSeq genes (P<sub>adj</sub> &lt; 0.05) ranged from 87 to 1,697 across the 9 cell type boundaries (Supplementary Table S9, S10-12). The expression of representative marker genes for all cell types as a function of pseudotime were consistent with boundaries defined for each cell type (<xref rid="fig3" ref-type="fig">Fig. 3C</xref>).</p>
 <p>To provide further support that tradeSeq-identified genes are involved in differentiation, we performed a cell type-specific expression quantitative trait locus (eQTL) analysis for each mesenchymal cell type from the 80 DO mice. We identified 563 genes (eGenes) regulated by a significant <italic>cis</italic>-eQTL in specific cell types of the BMSC-OB scRNA-seq data (Supplementary Table S14). In total, 73 eGenes were also tradeSeq-identified genes in one or more cell type boundaries along their respective trajectories (Supplementary Table S9).</p>
@@ -261,7 +262,7 @@
 <label>Figure 4.</label>
 <caption><title>TradeSeq-identified genes associated with BMSC-OB differentiation exhibit eQTL effects.</title>
 <p><bold>(A)</bold> <italic>Pkm</italic> was identified as a significant global tradeSeq-identified gene (P<sub>adj</sub> = 8.35 x 10<sup>-8</sup>) for LMP cells along an osteogenic trajectory (LMP_to_OBP) (<italic>left</italic>). <italic>S100a1</italic> was identified as a significant global tradeSeq-identified gene (P<sub>adj</sub> = 0.023) for OBP cells along osteogenic trajectory 1 (OBP_to_OB1) (<italic>right</italic>). <bold>(B)</bold> Plots indicating the cell type-specific expression quantitative trait loci (eQTL) signal for both <italic>Pkm</italic> and <italic>S100a1</italic>. A negative eQTL effect on <italic>Pkm</italic> expression was observed in LMPs for Diversity Outbred (DO) mice with a PWK haplotype background at the <italic>Pkm</italic> locus (<italic>left</italic>). A positive eQTL effect on the expression of <italic>S100a1</italic> was observed in OBPs for DO mice with a 129 haplotype background at the <italic>S100a1</italic> locus, while a negative effect was observed for NZO mice (<italic>right</italic>). <bold>(C)</bold> The expression of <italic>Pkm</italic> and <italic>S100a1</italic> based on DO mouse (expression values transformed via variance stabilizing transformation (VST), as described in Methods). Genotype abbreviations correspond to DO haplotype background (legend) at the respective gene locus. Mice with at least one PWK allele (genotype abbreviation G) tend to have decreased expression of <italic>Pkm</italic> (<italic>left</italic>). Mice with at least one 129 allele (genotype abbreviation C) tend to have increased expression of <italic>S100a1</italic>, while NZO mice (genotype abbreviation E) have decreased expression (<italic>right</italic>). <bold>(D)</bold> PWK mice had a significant reduction in mature osteoblasts (OB1) and osteocyte-like cells (Ocy) proportions relative to other mice (P = 0.030 and P = 0.026, respectively; t-test), while LMP proportions were unaffected. Asterisks represent any of the other haplotype backgrounds. 129 mice showed a significant decrease in LMP proportion and increase in OB1 proportion (P = 0.008 and P = 0.016, respectively; t-test), but OBP proportions were unaffected. No significant effects on cell type proportions were observed in NZO mice (Supplementary Fig. 2).</p></caption>
-<graphic xlink:href="594981v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Similarly, S100 calcium binding protein A1 (<italic>S100a1</italic>) was an OBP to OB1 transition tradeSeq gene (P<sub>adj</sub> = 0.023; <xref rid="fig4" ref-type="fig">Fig. 4A</xref>, Supplementary Table S13) and an eGene in the OBP cell cluster (LOD = 10.12; <xref rid="fig4" ref-type="fig">Fig. 4B</xref>, Supplementary Table S14). Mice inheriting at least one 129 allele at this locus (N = 30) had higher <italic>S100a1</italic> expression, while the opposite was observed for mice inheriting NZO alleles (N = 14) (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>). Additionally, mice inheriting at least one 129 allele showed a significant decrease in LMP proportion and increase in OB1 proportion (P = 0.008 and P = 0.016, respectively) (<xref rid="fig4" ref-type="fig">Fig. 4D</xref>, Supplementary Table S15), while no significant differences were observed in cell type proportions among mice inheriting NZO alleles at this locus (Supplementary Fig. 2, Supplementary Table S15). These data support the role of tradeSeq-identified genes in the differentiation of mesenchymal cell types.</p>
 </sec>
@@ -272,8 +273,8 @@
 <table-wrap id="tbl1" orientation="portrait" position="float">
 <label>Table 1:</label>
 <caption><title>Prioritized Differentiation Driver Genes (DDGs) that have BMD GWAS associations that colocalize with splicing/expression QTL (eQTL/sQTL) identified in a Genotype-Tissue Expression project (GTEx) tissue.</title><p>The tissue with the most significant colocalization (RCP and/or H4PP) is listed for each DGG (26 total, 21 distinct), as determined from Al-Barghouthi <italic>et al.</italic> (2022) and Abood <italic>et al.</italic> (2023) for eQTL and sQTL, respectively<sup><xref ref-type="bibr" rid="c7">7</xref>,<xref ref-type="bibr" rid="c16">16</xref></sup>. RCP = Regional Colocalization Probability (GWAS and eQTL colocalization). H4PP = H4 Posterior Probability (GWAS and sQTL colocalization).</p></caption>
-<graphic xlink:href="594981v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="594981v2_tbl1a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="594981v2_tbl1a.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s2f">
@@ -283,7 +284,7 @@
 <label>Figure 5.</label>
 <caption><title><italic>Fgfrl1</italic> and <italic>Tpx2</italic> are prioritized DDGs and putative drivers of mesenchymal differentiation.</title>
 <p><bold>(A)</bold> <italic>Fgfrl1</italic> was identified as a Differentiation Driver Gene (DDG) of a network for LMPs differentiating along an adipogenic trajectory. The network is enriched (P<sub>adj</sub> = 7.5 x 10<sup>-3</sup>) for trajectory-specific tradeSeq-identified genes for the LMP_to_MALP cell type boundary (<italic>Hnmt, St5, Igfbp4, Cyp1b1, Pdzrn4, Mark1</italic>). <italic>Fgfrl1</italic> was previous identified as a gene that has BMD GWAS associations that colocalize with an eQTL in the cultured fibroblast GTEx tissue. <bold>(B)</bold> An increase in the expression of tradeSeq-identified genes coincides with the LMP_to_MALP cell type boundary in which they were identified as significant. <bold>(C)</bold> <italic>Tpx2</italic> was identified as a DDG of a network for LMPs differentiating along an osteogenic trajectory. The network is enriched (P<sub>adj</sub> = 5.7 x 10<sup>-7</sup>) for tradeSeq-identified genes for the LMP_to_OBP cell type boundary (<italic>Tpx2, Top2a, Kif4, Iqgap3, Prc1, Kif11, Ect2, Sgo2a, Ube2c</italic>). <italic>Tpx2</italic> is both a tradeSeq gene and previously identified as a gene that has BMD GWAS associations that colocalize with an eQTL in the Testis GTEx tissue. <bold>(D)</bold> An increase in the expression of tradeSeq-identified genes coincides with the LMP_to_OBP cell type boundary in which they were identified as significant. <bold>(F)</bold> Box plot displaying whole-body bone mineral density (BMD) measurements (excluding skull) from the International Mouse Knockout Consortium (IMPC) for <italic>Tpx2</italic> mutant mice, which exhibited a significant increase in BMD (Genotype P-value = 1.03 x 10<sup>-3</sup>) in both male and female mice (N = 8 (M) and 8 (F) mutants; N = 2574 (M) and 2633 (F) controls)</p></caption>
-<graphic xlink:href="594981v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="594981v2_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The other network we identified, the <italic>Tpx2</italic> network, was identified for LMPs along an osteogenic trajectory (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>). <italic>Tpx2</italic> (TPX2, microtubule-associated) is a DDG with significant human BMD GWAS associations that also colocalized with eQTL identified in the Testis GTEx tissue (RCP = 0.2031, <xref rid="tbl1" ref-type="table">Table 1</xref>). The network was enriched for tradeSeq-identified genes (N = 9 genes, P<sub>adj</sub> = 5.7 x 10<sup>-7</sup>) for LMPs differentiating along the osteogenic trajectory (<xref rid="fig5" ref-type="fig">Fig. 5C</xref>). Furthermore, the expression of the tradeSeq-identified genes for the <italic>Tpx2</italic> network were consistent with the cell type boundaries established for LMPs differentiating along the osteogenic trajectory toward the OBP (osteoblast progenitor) cell state (<xref rid="fig5" ref-type="fig">Fig. 5D</xref>; Supplementary Table S10). The expression of these genes increase as LMPs differentiate into OBPs and subsequently decrease upon reaching an OBP cell state. Additionally, <italic>Tpx2</italic> exhibited a significant alteration of BMD in both male and female mutant mice (Genotype P-value = 1.03 x 10<sup>-3</sup>) from IMPC (<xref rid="fig5" ref-type="fig">Fig. 5E</xref>). In regards to the constituents of the <italic>Tpx2</italic> network, additional genes have been tested by the IMPC and result in a significant impact on BMD, such as <italic>Ube2c</italic>, <italic>Top2a</italic>, and <italic>Papss1</italic>. Many other genes in the <italic>Tpx2</italic> network can be associated with cellular division and proliferation, including four of the genes of the kinesin family (<italic>Kif</italic>) motor protein genes<sup><xref ref-type="bibr" rid="c36">36</xref></sup>: <italic>Kif4, Kif11, Kif15, Kif23</italic>.</p>
 </sec>
@@ -457,7 +458,7 @@
 <role specific-use="editor">Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>University of California, San Francisco</institution>
+<institution-id institution-id-type="ror">https://ror.org/043mz5j54</institution-id><institution>University of California, San Francisco</institution>
 </institution-wrap>
 <city>San Francisco</city>
 <country>United States of America</country>
@@ -466,14 +467,13 @@
 </contrib-group>
 <kwd-group kwd-group-type="evidence-strength">
 <kwd>Compelling</kwd>
-<kwd>Solid</kwd>
 </kwd-group>
 <kwd-group kwd-group-type="claim-importance">
-<kwd>Useful</kwd>
+<kwd>Important</kwd>
 </kwd-group>
 </front-stub>
 <body>
-<p>This is a well-done study that provides <bold>compelling</bold> data from a diverse set of approaches from single cell transcriptome data and network analysis from genetically diverse mouse cells to identify novel driver genes underlying human GWAS associations. The authors present <bold>solid</bold> evidence that network analysis of scRNA-seq data from genetically diverse mouse bone-marrow derived stromal cells can be informative for identifying human BMD GWAS driver genes. Their approach should be broadly <bold>useful</bold> and applicable to other GWAS studies.</p>
+<p>This is an <bold>important</bold> study that provides <bold>compelling</bold> data from a diverse set of approaches from single cell transcriptome data and network analysis from genetically diverse mouse cells to identify novel driver genes underlying human GWAS associations. The authors present evidence that network analysis of scRNA-seq data from genetically diverse mouse bone-marrow derived stromal cells can be informative for identifying human BMD GWAS driver genes. Their approach should be broadly used and applicable to other GWAS studies.</p>
 </body>
 </sub-article>
 <sub-article id="sa1" article-type="referee-report">
