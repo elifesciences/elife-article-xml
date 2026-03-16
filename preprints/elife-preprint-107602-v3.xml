@@ -25,7 +25,8 @@
 <subj-group subj-group-type="heading">
 <subject>Ecology</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>New idtracker.ai: rethinking multi-animal tracking as a representation learning problem to increase accuracy and reduce tracking times</article-title>
 </title-group>
 <contrib-group>
@@ -64,7 +65,7 @@
 <surname>Berman</surname>
 <given-names>Gordon J</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0003-3588-7820</contrib-id><role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-3588-7820</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/03czfpz43</institution-id><institution>Emory University</institution>
@@ -78,7 +79,7 @@
 <surname>Cardona</surname>
 <given-names>Albert</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0003-4941-6536</contrib-id><role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-4941-6536</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/013meh722</institution-id><institution>University of Cambridge</institution>
@@ -209,7 +210,7 @@
 <title>Performance for a benchmark of 33 videos of flies, zebrafish and mice.</title>
 <p><bold>a.</bold> Median IDF1 score computed using all images of animals in the videos excluding animal crossings. The videos are ordered by decreasing IDF1 score of the original idtracker.ai results for ease of visualization. <bold>b.</bold> Median tracking times are shown for the scale of hours and, in the inset, for the scale of days. The videos are ordered by increasing tracking times in the original idtracker.ai results for ease of visualization. <xref ref-type="table" rid="tbls1">Supplementary Table 1</xref>, <xref ref-type="table" rid="tbls2">Supplementary Table 2</xref>, <xref ref-type="table" rid="tbls3">Supplementary Table 3</xref> give more complete statistics (median, mean and 20-80 percentiles) for the original idtracker.ai (version 4 of the software), optimized v4 (version 5) and new idtracker.ai (version 6), respectively. The names of the videos in a. and b. start with a letter for the species (<italic>𝑧</italic>,<italic>𝑑</italic>,<italic>𝑚</italic>), followed by the number of animals in the video, and possibly an extra number to distinguish the video if there are several of the same species and animal group size. Lines between points are for visualization purposes only. <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1</xref>. Performance for the benchmark with full trajectories with animal crossings <xref ref-type="fig" rid="fig1s2">Figure 1—figure supplement 2</xref>. Boxplot representation of the benchmark results <xref ref-type="fig" rid="fig1s3">Figure 1—figure supplement 3</xref>. Robustness to blurring and light conditions <xref ref-type="fig" rid="fig1s4">Figure 1—figure supplement 4</xref>. Memory usage across the different softwares</p>
 </caption>
-<graphic xlink:href="657023v3_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>These accuracies correspond to all animal images in the video excluding images where animals cross paths. We isolate this metric because the core identification algorithm, which is the primary novelty presented in this article, works on these single-animal images to track identities despite the thousands of crossings typically existing in each video. Following this identification, idtracker.ai applies a deterministic post-processing pipeline. This pipeline includes the correction of misidentifications by enforcing the same identity to all individual images between two animal crossings and by detecting impossible abrupt changes in location. It also includes computing animal positions during crossings using the predicted identities from immediately before and after the crossing. This post-processing pipeline remains unchanged from the original idTracker publication <xref ref-type="bibr" rid="c40">Pérez-Escudero et al. (2014)</xref>, where its details are fully described. We also report the accuracy as IDF1 scores for the complete video including crossings (<xref rid="fig1s1" ref-type="fig">Figure 1—figure Supplement 1</xref>) as this is the final accuracy the user experiences. The data used for figures <xref rid="fig1s1" ref-type="fig">Figure 1 and Figure 1—figure Supplement 1</xref> can be found in <xref ref-type="table" rid="tbls1">Supplementary Table 1</xref>, and further details regarding the benchmark are available in <xref ref-type="app" rid="app1">Appendix 1</xref>.</p>
 <p><xref rid="fig1" ref-type="fig">Figure 1b</xref> (blue line) shows the median times that the original idtracker.ai takes to track each of the videos in the benchmark. Some of the videos take a few minutes to track, others a few hours, and six videos take more than three days, one nearly two weeks.</p>
@@ -228,7 +229,7 @@
     <?fig-class half?><fig id="fig2" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 2.</label>
 <caption><title>Tracking by identification using deep contrastive learning.</title><p><bold>a</bold> Schematic representation of a video with five fish. <bold>b</bold> A ResNet18 network with 8 outputs generates a representation of each animal image as a point in an 8-dimensional space (here shown in 2D for visualization). Each pair of images corresponds to two points in this space, separated by a Euclidean distance. The ResNet18 network is trained to minimize this distance for positive pairs and maximize it for negative pairs. <bold>c</bold> 2D t-SNE visualizations of the learned 8-dimensional representation space. Each dot represents an image of an animal from the video. As training progresses, clusters corresponding to individual animals become clearer. Here we plot this process for the example video <italic>zebrafish_60_1</italic> after training for 0, 2,000, 4,000 and 15,000 batches (each batch contains 400 positive and 400 negative pairs of images, that is, 1,600 images per batch). The t-SNE plot at 15,000 training batches is also shown color-coded by human-validated ground-truth identities. The pink rectangle at 2,000 batches of training highlights clear clusters and the orange square fuzzy clusters. <bold>d</bold> The Silhouette score measures cluster coherence and increases during training, as illustrated for a video with 60 zebrafish. <bold>e</bold> A Silhouette score of 0.91 corresponds to a human-validated error rate of less than 1% per image.</p></caption>
-<graphic xlink:href="657023v3_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Representation learning becomes feasible in this context because we can obtain both positive and negative image pairs without using identity labels. Positive pairs are images of the same individual obtained from within the same individual fragment (<xref rid="fig2" ref-type="fig">Figure 2a</xref>, green boxes). Negative pairs are images of different individuals taken from different individual fragments that coexist in time for one or more frames (<xref rid="fig2" ref-type="fig">Figure 2a</xref>, red boxes). We can then use the positive and negative pairs of images for contrastive learning, a self-supervised learning framework designed to learn a representation space in which positive examples are close together, and negative examples are far apart <xref ref-type="bibr" rid="c48">Schroff et al. (2015)</xref>; <xref ref-type="bibr" rid="c14">Dong and Shen (2018)</xref>; <xref ref-type="bibr" rid="c28">KAYA and BİLGE (2019)</xref>; <xref ref-type="bibr" rid="c8">Chen et al. (2020a</xref>,<xref ref-type="bibr" rid="c9">b</xref>); <xref ref-type="bibr" rid="c15">Guo et al. (2020)</xref>; <xref ref-type="bibr" rid="c56">Wang et al. (2020)</xref>; <xref ref-type="bibr" rid="c58">Yang et al. (2020)</xref>. This formulation is supported by the success of deep metric and contrastive learning methods (see <xref ref-type="app" rid="app3">Appendix 3</xref> for comparison with previous work).</p>
 <p>We first evaluated which neural networks are suitable for contrastive learning with animal images. In addition to our previous CNN from idtracker.ai, we tested 31 networks from 10 different families of state-of-the-art convolutional neural networks and transformer architectures, selected for their compatibility with consumer-grade GPUs and ability to handle small input images (20 × 20 to 100 × 100 pixels) typical in collective animal behavior videos. Among these architectures, ResNet18 (v1) <xref ref-type="bibr" rid="c22">He et al. (2016a)</xref> without pretrained weights was the fastest to obtain low errors (see <xref ref-type="app" rid="app3">Appendix 3</xref>).</p>
@@ -251,7 +252,7 @@
 <title>Tracking with strong occlusions.</title>
 <p>Accuracies when we mask a region of a video defined by an angle <italic>𝜃</italic> and the tracking system has no access to the information behind the mask. Light and dark gray region correspond to the angles for which no global fragments exist in the video. Dark gray regions correspond to angles for which the video has a fragment connectivity lower than 0.5, with the fragment connectivity defined as the average number of other fragments each fragment coexists with, divided by <italic>𝑁</italic>− 1, with <italic>𝑁</italic> the total number of animals; see <xref ref-type="fig" rid="fig3s1">Figure 3—figure Supplement 1</xref>, for an analysis justifying this value of 0.5. The original idtracker.ai (v4) and its optimized version (v5) cannot work in the gray regions, and new idtracker.ai is expected to deteriorate only in the dark gray region. <xref ref-type="fig" rid="fig3s1">Figure 3—figure supplement 1</xref>. Fragment connectivity analysis</p>
 </caption>
-<graphic xlink:href="657023v3_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s5">
@@ -302,23 +303,23 @@
 <table-wrap id="tbls1" orientation="portrait" position="float">
 <label>Supplementary Table 1.</label>
 <caption><title>Performance of original idtracker.ai (v4) in the benchmark.</title></caption>
-<graphic xlink:href="657023v3_tbls1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_tbls1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls2" orientation="portrait" position="float">
 <label>Supplementary Table 2.</label>
     <caption><title>Performance of optimized v4 (v5) in the benchmark.</title></caption>
-<graphic xlink:href="657023v3_tbls2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_tbls2.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls3" orientation="portrait" position="float">
 <label>Supplementary Table 3.</label>
     <caption><title>Performance of new idtracker.ai (v6) in the benchmark.</title></caption>
-<graphic xlink:href="657023v3_tbls3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_tbls3.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <table-wrap id="tbls4" orientation="portrait" position="float">
 <label>Supplementary Table 4.</label>
     <caption><title>Performance of TRex in the benchmark.</title>
     </caption>
-<graphic xlink:href="657023v3_tbls4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_tbls4.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec sec-type="supplementary" id="supplementary29">
@@ -326,29 +327,29 @@
 <label>Figure 1—figure supplement 1.</label>
     <caption><title>Performance for the benchmark with full trajectories with animal crossings.</title>
         <p><bold>a.</bold> Median IDF1 score computed using all images of animals in the videos including animal crossings. <bold>b.</bold> Median tracking times. <xref ref-type="table" rid="tbls1">Supplementary Table 1</xref>, <xref ref-type="table" rid="tbls2">Supplementary Table 2</xref>, <xref ref-type="table" rid="tbls3">Supplementary Table 3</xref> and <xref ref-type="table" rid="tbls4">Supplementary Table 4</xref> give more complete statistics (median, mean and 20-80 percentiles) for the original idtracker.ai (version 4 of the software), optimized v4 (version 5), new idtracker.ai (version 6) and TRex, respectively. Lines between points are for visualization purposes only.</p></caption>
-<graphic xlink:href="657023v3_fig1s1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1s1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <?fig-class half?><fig id="fig1s2" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 1—figure supplement 2.</label>
 <caption><title>Boxplot representation of the benchmark results.</title><p>IDF1 scores without (<bold>a</bold>) and with crossings (<bold>b</bold>) and tracking times (<bold>c</bold>) for the three versions of idtracker.ai and TRex.</p></caption>
-<graphic xlink:href="657023v3_fig1s2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1s2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <?fig-class half?><fig id="fig1s3" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 1—figure supplement 3.</label>
     <caption><title>Robustness to blurring and light conditions.</title><p><bold>First column:</bold> Unmodified video <italic>zebrafish_60_1</italic>. <bold>Second column:</bold> <italic>zebrafish_60_1</italic> with a gaussian blurring of 1 pixel plus a resolution reduction to 40% of the original plus MJPG video compression. Versions 5 of idtracker.ai fails to track this videos with a 82% IDF1 score. <bold>Third column:</bold> Videos of 60 zebrafish with manipulated light conditions (same test as in idtracker.ai <xref ref-type="bibr" rid="c44">Romero-Ferrero et al. (2019)</xref>). <bold>First row:</bold> Uniform light conditions across the arena (<italic>zebrafish_60_1</italic>). <bold>Second row:</bold> Similar setup but with lights off in the bottom and right side of the arena.</p></caption>
-<graphic xlink:href="657023v3_fig1s3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1s3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <?fig-class half?><fig id="fig1s4" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 1—figure supplement 4.</label>
 <caption><title>Memory usage across the different softwares.</title>
     <p>The solid line is a logarithmic fit to the (RAM) memory peak as a function of the number of blobs in a video. The Python tool <italic>psutil.virtual_memory().used</italic> was used to measure the memory usage 5 times per second during the tracking. The presented value is the maximum measured value minus the baseline measured before the tracking start. Disclaimer: Both softwares include automatic optimizations that adjust based on machine resources, so results may vary on systems with less available memory. These results were measured on computers with the specifications in <bold><italic>Methods</italic></bold>.</p></caption>
-<graphic xlink:href="657023v3_fig1s4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1s4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <?fig-class half?><fig id="fig3s1" position="float" orientation="portrait" fig-type="figure">
 <label>Figure 3—figure supplement 1.</label>
 <caption><title>Fragment connectivity analysis.</title>
     <p>The relation between fragment connectivity and the corresponding IDF1 score for every video and angle <italic>𝜃</italic> of the new id-tracker.ai in <xref ref-type="fig" rid="fig3">Figure 3</xref>. Fragment connectivity is calculated as the average number of other fragments each fragment coexists with, divided by <italic>𝑁</italic> − 1, with <italic>𝑁</italic> the total number of animals. Values below 0.5 are associated with low IDF1 score, and idtracker.ai alerts the user in such cases.</p></caption>
-<graphic xlink:href="657023v3_fig3s1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3s1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="das" sec-type="data-availability">
@@ -437,7 +438,7 @@
 <p>We used the idtracker.ai Validator tool (see <xref ref-type="app" rid="app4">Appendix 4</xref>) to manually generate ground-truth trajectories. The input to the Validator were outputs from idtracker.ai v5, and the Validator facilitates that the user manually corrects the mistakes. The obtained ground-truth includes the position and identity of each animal in every frame, along with their classification as either individual or crossing.</p>
 <p>Tracking accuracy is quantified using the standard Identification F1 Score (IDF1), defined in <xref ref-type="bibr" rid="c42">Ristani et al. (2016)</xref> as:
 <disp-formula id="eqn1">
-<graphic xlink:href="657023v3_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 Here, TP (true positive) refers to predicted positions that match their ground-truth points within a distance <italic>𝑇</italic>. FP (false positive) are predicted positions with no corresponding ground-truth match within a distance <italic>𝑇</italic>, and FN (false negative) are ground-truth positions with no matching prediction within a distance <italic>𝑇</italic>.</p>
 <p>An identity switch in a single frame results in two false positives and two false negatives, as both predicted and ground-truth identities become unmatched. False negatives also occur when the software either fails to detect an animal or loses track of its identity in a given frame.</p>
@@ -452,13 +453,13 @@ Here, TP (true positive) refers to predicted positions that match their ground-t
 <fig id="fig1A1" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 1—figure 1.</label>
 <caption><title>Protocol 2 failure rate.</title><p>Probability for the different tracking systems of not tracking the video with protocol 2 in idtracker.ai (v4 and v5) and in TRex the probability that it fails without generating trajectories.</p></caption>
-<graphic xlink:href="657023v3_fig1A1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig1A1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>For the variable parameters, choosing one value or another within the valid interval can give different tracking results. For some values, previous versions of idtracker.ai (v4 and v5) can stochastically fail at tracking with the default protocol 2 and resort to what we call protocol 3 (<xref ref-type="fig" rid="fig1A1">Appendix 1—Figure 1</xref>), a method that can take days to process more complex videos. Similarly, TRex can crash without outputting any trajectory in certain videos, leading to missing IDF1 score outputs (<xref ref-type="fig" rid="fig1A1">Appendix 1—Figure 1</xref>).</p>
 <p>For this reason, simulating a user that, for a given video, runs the tracking software a single time can result in extremely slow tracking for previous versions of idtracker.ai and a failed tracking for TRex. This would give an advantage to the new version v6 of idtracker.ai since it does not have the slow protocol 3 and never crashed in our tests. We thus simulated a more realistic user that, out of up to 5 attempts, uses the first run in which there is no use of the slow protocol 3 in idtracker.ai v4 and v5 (or protocol 3 is used if it consumes the 5 runs) and in TRex the first run in which the software does not crash. The tracking times are then the sum of tracking times of the attempts used.</p>
 <p>To simulate our user many times, we first prepared the dataset of tracking runs by repeating the tracking for each video and software until reaching 5 successful runs or a maximum of 35 attempts. For the original version of idtracker.ai, this was limited to 3 successful runs or 7 attempts due to significantly longer tracking times. Each new run uses new random values for the variable parameters sampled from a precomputed interval we consider an expert user can chose from. In successful runs, both IDF1 score and tracking time are recorded. In failed runs, when idtracker.ai switches to protocol 3 or TRex crashes, only the time until failure is recorded.</p>
 <p>We then simulated our user up to 10,000 times per software and video by sampling tracking runs from our dataset of tracking runs to obtain robust estimates of the tracking times and accuracies. <xref rid="fig1" ref-type="fig"><italic>Figure 1</italic></xref> and <xref rid="fig1s1" ref-type="fig"><italic>Figure 1—figure Supplement 1</italic></xref> report the median accuracies, without and with crossings, respectively, and tracking times. <xref ref-type="table" rid="tbls1">Supplementary Table 1</xref>, <xref ref-type="table" rid="tbls2">Supplementary Table 2</xref>, <xref ref-type="table" rid="tbls3">Supplementary Table 3</xref>, and <xref ref-type="table" rid="tbls4">Supplementary Table 4</xref> present the median, mean, and the 20 and 80 percentiles in v4, v5, v6 and TRex respectively.</p>
-<p>To ensure a fair comparison, TGrabs (a video pre-processing tool needed by TRex) is included when running TRex, graphical interfaces are always disabled at runtime to maximize</p>
+<p>To ensure a fair comparison, TGrabs (a video pre-processing tool needed by TRex) is included when running TRex, graphical interfaces are always disabled at runtime to maximize performance, output_interpolate_positions is enabled in TRex and posture estimation was not deactivated nor used in TRex.</p>
 </sec>
 </app>
 <app id="app2">
@@ -516,21 +517,21 @@ Here, TP (true positive) refers to predicted positions that match their ground-t
 <fig id="fig3A1" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 1.</label>
 <caption><title>Models comparison.</title><p>Error in image identification as a function of training time for different deep learning models randomly initialized in 6 test videos. For each network we report the multiply-accumulate operations (MAC) in giga operations (G) (for a batch of 1600 images of size 40×40×1) and the number of parameters in the units of million parameters (M). Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Within each family, we tested different network sizes and dropout values and plotted the learning curves of the best candidates (<xref ref-type="fig" rid="fig3A1">Appendix 3—Figure 1</xref>). The earlier idtracker.ai CNN performed adequately on simpler videos (e.g., <italic>zebrafish_20</italic>) but struggled in more challenging ones (e.g., <italic>zebrafish_100_2</italic>). Vision transformers (ViT <xref ref-type="bibr" rid="c15">Dosovitskiy et al. (2020)</xref>, Swin <xref ref-type="bibr" rid="c29">Liu et al. (2021)</xref>) converged much more slowly, and in some cases could not be trained due to excessive VRAM requirements. Note that image size typically ranges between 20×20 and 100×100 pixels, and each batch consists of 400 positive and 400 negative image pairs (1,600 images per batch).</p>
 <p>We also tested more advanced CNN architectures such as SqueezeNet <xref ref-type="bibr" rid="c27">Iandola et al. (2016)</xref>, MobileNet <xref ref-type="bibr" rid="c25">Howard et al. (2017)</xref>, MnasNet <xref ref-type="bibr" rid="c52">Tan et al. (2018)</xref>, ShuffleNet <xref ref-type="bibr" rid="c60">Zhang et al. (2017)</xref>, DenseNet <xref ref-type="bibr" rid="c26">Huang et al. (2016)</xref>, and AlexNet <xref ref-type="bibr" rid="c31">Krizhevsky (2014)</xref>. None achieved the same error levels within comparable training times as our baseline CNN. In contrast, ResNet <xref ref-type="bibr" rid="c22">He et al. (2016a)</xref> consistently outperformed all other models, offering the best balance between training speed and accuracy across videos.</p>
 <fig id="fig3A2" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 2.</label>
 <caption><title>ResNet models comparison.</title><p>Error in image identification as a function of training time for different deep learning models randomly initialized (except <italic>Pre-trained ResNet18</italic>) in 6 test videos. For each network we report the multiply-accumulate operations (MAC) in giga operations (G) (for a batch of 1600 images of size 40×40×1) and the number of parameters in the units of million parameters (M). Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Within the ResNet family (<xref ref-type="fig" rid="fig3A2">Appendix 3—Figure 2</xref>), the smallest ResNet18 proved optimal: the largest variants (ResNet101, ResNet152) demanded excessive VRAM and the intermediate sizes (ResNet34 and ResNet50) showed slower convergence. Both v1 and v2 versions <xref ref-type="bibr" rid="c22">He et al. (2016b)</xref> performed equivalently. Pre-training on ImageNet conferred no benefit, likely due to the domain mismatch between natural images and video-specific animal crops.</p>
 <p>Embedding dimension was another key hyperparameter. Here, too, there is a trade-off between achieving a robust representation of subtle differences between animals and maintaining a compact network size and efficient training speed. Empirically, an embedding dimension of 8 provided a good trade-off with other values performing similarly (<xref ref-type="fig" rid="fig3A3">Appendix 3—Figure 3</xref>).</p>
 <fig id="fig3A3" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 3.</label>
 <caption><title>Embedding dimensions comparison.</title><p>Error in image identification as a function of training time for different embedding dimensions in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The final <italic>contrastive learning</italic> network (<xref rid="fig2" ref-type="fig"><italic>Figure 2b</italic></xref>) is a ResNet18 (v1) with a single-channel input for grayscale images and an 8-unit fully connected output layer with no bias and using the identity as activation function. Networks are randomly initialized unless the user indicates to copy the weights from a previous tracking session (see <xref ref-type="app" rid="app4">Appendix 4</xref> for a usage example). Training is performed with the Adam optimizer <xref ref-type="bibr" rid="c30">Kingma and Ba (2017)</xref> at a learning rate of 0.001.</p>
 </sec>
@@ -538,7 +539,7 @@ Here, TP (true positive) refers to predicted positions that match their ground-t
 <title>Loss function</title>
 <p>The contrastive loss function operates on pairs of data points, aiming to minimize the distance between positive pairs and maximize the distance for negative pairs. Being <italic>𝐹<sub>𝑖</sub></italic> a fragment with arbitrary identifier <italic>𝑖</italic> and <italic>𝐼<sub>𝑖𝑘</sub></italic> and image in the fragment <italic>𝐹<sub>𝑖</sub></italic> with arbitrary identifier <italic>𝑘</italic>, the contrastive loss G for a pair of images (<italic>𝐼<sub>𝑖𝑘</sub>, 𝐼<sub>𝑗𝑙</sub></italic>) is defined as:
 <disp-formula id="eqn2">
-<graphic xlink:href="657023v3_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>𝐷<sub>𝑖𝑘, 𝑗𝑙</sub></italic> is the Euclidean distance between the embedding of <italic>𝐼<sub>𝑖𝑘</sub></italic> and <italic>𝐼<sub>𝑗𝑙</sub></italic>, <italic>𝐷</italic><sub>neg</sub> is the minimum allowed distance in a negative pair of images (images coming from coexisting fragments), and <italic>𝐷</italic><sub>pos</sub> is the maximum allowed distance in a positive pair of images (images from the same fragment). It is important to emphasize that the network processes one image at a time, obtaining a single independent point in the representational space for each image. The Euclidean distance between the embeddings for the corresponding pairs of images is computed only afterwards.</p>
 <p><italic>𝐷</italic><sub>neg</sub> and <italic>𝐷</italic><sub>pos</sub> serve as thresholds to regulate distances in the embedding space. <italic>𝐷</italic><sub>neg</sub> prevents images from negative pairs from being pushed indefinitely far apart, while <italic>𝐷</italic><sub>pos</sub> prevents the collapse of images from positive pairs into a single point.</p>
@@ -547,7 +548,7 @@ where <italic>𝐷<sub>𝑖𝑘, 𝑗𝑙</sub></italic> is the Euclidean distan
 <fig id="fig3A4" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 4.</label>
 <caption><title><italic>𝐷</italic><sub>neg</sub> over <italic>𝐷</italic><sub>pos</sub> comparison.</title><p>Error in image identification as a function of training time for different ratios of <italic>𝐷</italic><sub>neg</sub>∕<italic>𝐷</italic><sub>pos</sub> in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s14">
@@ -560,33 +561,33 @@ where <italic>𝐷<sub>𝑖𝑘, 𝑗𝑙</sub></italic> is the Euclidean distan
 <fig id="fig3A5" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 5.</label>
 <caption><title>Batch size comparison.</title><p>Error in image identification as a function of training time for different batch sizes of pairs of images in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The hierarchical sampling allows us to address the question of how to select pairs of fragments to optimize the training speed of the network. Since we sample pairs of fragments rather than directly sampling pairs of images, we need to skew the probability of a pair of fragments being sampled to reflect the number of images they contain. More concretely, let <italic>𝑓<sub>𝑖</sub></italic> be the number of images in fragment <italic>𝐹<sub>𝑖</sub></italic>. For negative relations we define <italic>𝑓<sub>𝑖,𝑗</sub></italic> = <italic>𝑓<sub>𝑖</sub></italic> + <italic>𝑓<sub>𝑗</sub></italic> and set the probability of sampling the pair <italic>𝐹<sub>𝑖</sub>, 𝐹<sub>𝑗</sub></italic>, by their size as:
 <disp-formula id="eqn3">
-<graphic xlink:href="657023v3_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 For positive pairs, the probability of sampling a given fragment <italic>𝑓<sub>𝑖</sub></italic> is:
 <disp-formula id="eqn4">
-<graphic xlink:href="657023v3_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 By examining the evolution of the clusters during training (<xref rid="fig2" ref-type="fig"><italic>Figure 2c</italic></xref>) it is clear that the learning process is not uniform, as some of the identities become separated sooner than others. <xref rid="fig2" ref-type="fig"><italic>Figure 2c</italic></xref> top row second and third columns give us a nice illustration of this phenomenon. The images embedded in the pink rectangle of the representational space already satisfy the loss function, meaning that the negative pairwise relationships are already embedded further away than <italic>𝐷</italic><sub>neg</sub>, and images that form positive pairwise relationships are already embedded closer than <italic>𝐷</italic><sub>pos</sub>. Consequently, the loss function for these pairs is effectively zero, and passing them through the network will not alter the weights, merely prolonging the training process. In contrast, the separation of clusters in the orange square is incomplete, indicating that image pairs in this region still contribute to the loss function. These pairs are more pertinent, as they contain information that the network has yet to learn. To bias the sampling of image pairs towards those that still contribute to the loss function, each pair of fragments is assigned a loss score. When a pair of images is sampled for training, if the loss for that pair is not zero, the loss score for the corresponding pair of fragments is incremented by one. This score then undergoes an exponential decay of 2% per batch. More specifically, let <italic>𝑙<sub>𝑠</sub></italic>(<italic>𝑖, 𝑗</italic>) be the loss score of the pair of fragments <italic>𝐹<sub>𝑖</sub></italic> and <italic>𝐹<sub>𝑗</sub></italic>, and G(<italic>𝐼<sub>𝑖𝑙</sub>, 𝐼<sub>𝑖𝑘</sub></italic>) the loss of the images <italic>𝐼<sub>𝑖𝑙</sub></italic> and <italic>𝐼<sub>𝑖𝑘</sub></italic>. If the pair <italic>𝐼<sub>𝑖𝑙</sub></italic> and <italic>𝐼<sub>𝑖𝑘</sub></italic> is sampled the loss score is updated by
 <disp-formula id="eqn5">
-<graphic xlink:href="657023v3_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The exponential decay is always applied independently to every pair of fragments, regardless of whether the pairs of images were sampled from those fragments in the previous batch of images or not. The loss score is converted into a probability distribution over all pairs of fragments by
 <disp-formula id="eqn6">
-<graphic xlink:href="657023v3_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The final probability of sampling pairs of fragments is given by
 <disp-formula id="eqn7">
-<graphic xlink:href="657023v3_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn7.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 This balance between these two probabilities can be seen as an exploitation versus exploration paradigm. <italic>𝑃<sub>𝑠</sub></italic>(<italic>𝐹<sub>𝑖</sub>, 𝐹<sub>𝑗</sub></italic>) enforces constant exploration, while <italic>𝑃<sub>𝑙</sub></italic> (<italic>𝐹<sub>𝑖</sub>, 𝐹<sub>𝑗</sub></italic>) exploits the current state of learning by dynamically updating the sampling probability. This ensures that pairs of fragments containing unlearned knowledge are sampled more frequently, while maintaining a baseline of exploration based on fragment size. We tried several values for <italic>𝛼</italic>and found that a value of <italic>𝛼</italic> around 0.5 produced the best decrease of the time required to train the network (<xref ref-type="fig" rid="fig3A6">Appendix 3—Figure 6</xref>).</p>
 <fig id="fig3A6" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 3—figure 6.</label>
 <caption><title>Exploration and exploitation comparison.</title><p>Error in image identification as a function of training time for different exploration/exploitation weights <italic>𝛼</italic> in 6 test videos. Every 100 training batches, we perform k-means clustering on a randomly selected set of 20,000 images, assigning identities based on clusters. We then compute the Silhouette score and ground-truth error on the same set. The reported error corresponds to the model with the best Silhouette score observed up to that point.</p></caption>
-<graphic xlink:href="657023v3_fig3A6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig3A6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s15">
@@ -594,7 +595,7 @@ This balance between these two probabilities can be seen as an exploitation vers
 <p>After training the network using contrastive loss, we pass all images through the network to generate their corresponding embeddings in the learned representational space. These embeddings are then grouped using mini-batch K-means clustering <xref ref-type="bibr" rid="c49">Sculley (2010)</xref>. Each cluster ideally represents images of the same identity, as the training process has encouraged the network to place similar images close together and dissimilar ones farther apart in the embedding space. Next, we perform single-image classification, assigning each image a label based on the cluster to which its embedding belongs. Afterwards, the assignment method follows two conditions. If more than half of the images in the video can not be identified (because their predicted identities are not coherent with the video structure) and there exist global fragments, the accumulation protocol from the original idtracker.ai is run, see <bold><italic>Fallback accumulation protocol</italic></bold>. Otherwise, we move straight to residual identification, see <bold><italic>Residual Identification</italic></bold>.</p>
 <p>In order to identify fragments, we not only need an identity prediction for each image but also a probability distribution over all the identities. Let <italic>𝑑<sub>𝑗</sub></italic> (<italic>𝐼<sub>𝑖𝑘</sub></italic>) be the distance of image <italic>𝐼<sub>𝑖𝑘</sub></italic> to the center of cluster <italic>𝑗</italic>. We define the probability of image <italic>𝐼<sub>𝑖𝑘</sub></italic> belonging to identity <italic>𝑗</italic> by
 <disp-formula id="eqn8">
-<graphic xlink:href="657023v3_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn8.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <xref rid="eqn8" ref-type="disp-formula">Equation (8)</xref> is used to emphasize differences in distances between points and clusters, creating a more peaked probability distribution that clearly distinguishes closer clusters from farther ones. The exponent of 7 smooths the probability distribution and reduces the influence of distant clusters, making the assignment more discriminative. In higher-dimensional spaces like the 8-dimensional space in the paper, distances are more spread out, and using a high power helps to counteract this dispersion, resulting in more confident cluster assignments.</p>
 <p>If we are in a scenario where no global fragments exist, K-means is initialized with Greedy k-means++ <xref ref-type="bibr" rid="c18">Grunau et al. (2022)</xref>. Otherwise, we use the average embedding of the fragment images in one of the global fragments as initial cluster centers. This approach speeds up and stabilizes convergence, allowing us to better compare clusters as training progresses.</p>
@@ -616,15 +617,15 @@ This balance between these two probabilities can be seen as an exploitation vers
 <title>Stopping criteria</title>
 <p>Stopping network training using the loss function directly can be highly variable, as different video conditions, the number of individuals and the sampling method significantly influence this value. To circumvent this, we use the Silhouette score (SS) <xref ref-type="bibr" rid="c46">Rousseeuw (1987)</xref> of the clusters of the embedded images. Let <italic>𝑑</italic>(<italic>𝐼, 𝐽</italic>) be the Euclidean distance between the embeddings of image <italic>𝐼</italic> and <italic>𝐽</italic>, for each image <italic>𝐼</italic>, in cluster <italic>𝐶<sub>𝑎</sub></italic> we compute the mean intra-cluster distance
 <disp-formula id="eqn9">
-<graphic xlink:href="657023v3_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn9.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 and the mean nearest-cluster distance
 <disp-formula id="eqn10">
-<graphic xlink:href="657023v3_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn10.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The SS is given by
 <disp-formula id="eqn11">
-<graphic xlink:href="657023v3_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="657023v3_eqn11.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 To determine when to stop training, every <italic>𝑚</italic> batches we compute the SS by clustering the embeddings of a random sample of the images in the video, generating also a checkpoint of the model. <italic>𝑚</italic> was set to be the maximum between 100 and number of animals in a video times 5. We stop training if: 1) there have been 30 consecutive SS evaluations without any improvement (patience of 30), or 2) there have been 2 consecutive SS evaluations without any improvement but the SS already achieved a value of 0.91. After stopping the training, the checkpoint model with the highest SS is chosen. A threshold of 0.91 was validated empirically (<xref rid="fig2" ref-type="fig"><italic>Figure 2d</italic></xref> and <xref rid="fig2" ref-type="fig"><italic>Figure 2e</italic></xref>). The number of images used for the computation of the SS is 1000 times the number of animals.</p>
 </sec>
@@ -647,7 +648,7 @@ To determine when to stop training, every <italic>𝑚</italic> batches we compu
 <fig id="fig4A1" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 4—figure 1.</label>
 <caption><title>Segmentation GUI.</title><p>Enables users to set the basic parameters required for running idtracker.ai.</p></caption>
-<graphic xlink:href="657023v3_fig4A1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig4A1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>After tracking, the software outputs <italic>𝑥</italic> and <italic>𝑦</italic> coordinates for each identified animal in every video frame. These trajectories are saved in multiple formats (CSV, HDF5, Numpy) and include metadata such as:</p>
 <list list-type="bullet">
@@ -661,13 +662,13 @@ To determine when to stop training, every <italic>𝑚</italic> batches we compu
 <fig id="fig4A2" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 4—figure 2.</label>
 <caption><title>Validator GUI.</title><p>Enables users to inspect tracking results, correct errors, and access additional tools.</p></caption>
-<graphic xlink:href="657023v3_fig4A2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig4A2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>To share the tracking results, the command idtrackerai_video launches a graphical app (<xref ref-type="fig" rid="fig4A3">Appendix 4—Figure 3</xref>) to generate videos with animal trajectories and optional labels overlaid on the original footage (see documentation at <ext-link ext-link-type="uri" xlink:href="https://idtracker.ai/latest/user_guide/">https://idtracker.ai/latest/user_guide/</ext-link> video_generators.html). It can also produce individual videos for each animal, showing only its cropped region over time. These individual videos can be used as input for pose estimation tools such as DeepLabCut <xref ref-type="bibr" rid="c32">Lauer et al. (2022)</xref>, SLEAP <xref ref-type="bibr" rid="c39">Pereira et al. (2022)</xref>, MARS <xref ref-type="bibr" rid="c50">Segalin et al. (2021)</xref>, ADPT <xref ref-type="bibr" rid="c53">Tang et al. (2025)</xref>, and Lightning Pose <xref ref-type="bibr" rid="c5">Biderman et al. (2024)</xref>.</p>
 <fig id="fig4A3" position="float" orientation="portrait" fig-type="figure">
 <label>Appendix 4—figure 3.</label>
 <caption><title>Video Generator GUI.</title><p>Allows users to define parameters for general and individual video generation.</p></caption>
-<graphic xlink:href="657023v3_fig4A3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig4A3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>When experiments involve the same animals across multiple sessions, users can match identities between these sessions using idmatcher.ai (originally introduced in <xref ref-type="bibr" rid="c45">Romero-Ferrero et al. (2023)</xref> and now integrated into the idtracker.ai ecosystem; see documentation at <ext-link ext-link-type="uri" xlink:href="https://idtracker.ai/latest/user_guide/idmatcherai.html">https://idtracker.ai/latest/user_guide/idmatcherai.html</ext-link> and <xref ref-type="app" rid="app5">Appendix 5</xref>). This tool ensures consistent identity labeling across independent recordings, supporting multi-session studies.</p>
 <p>The resulting trajectories can be loaded and analyzed in any programming language. For this purpose, we developed the Python package <italic>trajectorytools</italic>. It offers utilities for the analysis of 2D trajectory data, basic movements metrics and spatial relationships between the animals, at <ext-link ext-link-type="uri" xlink:href="https://idtracker.ai/latest/user_guide/data_analysis.html#trajectorytools">https://idtracker.ai/latest/user_guide/data_analysis.html#trajectorytools</ext-link>. In the same URL we also provide a set of Jupyter Notebooks to facilitate its usage providing analysis examples.</p>
@@ -676,7 +677,7 @@ To determine when to stop training, every <italic>𝑚</italic> batches we compu
 <label>Appendix 4—figure 4.</label>
     <caption><title>SocialNet output example showing learned attraction-repulsion and alignment areas for social interactions around the focal animal.</title>
     </caption>
-<graphic xlink:href="657023v3_fig4A4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig4A4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     </sec>
 </app>
@@ -692,7 +693,7 @@ To determine when to stop training, every <italic>𝑚</italic> batches we compu
 <label>Appendix 5—figure 1.</label>
     <caption><title>Confusion matrix between the two parts of <italic>drosophila_80</italic> in v6 of idmatcher.ai.</title>
     <p>It contains predictions both from the network trained in the first part with images from the second one and the other way around. In this example, the image-level accuracy is 82.9%, enough for a 100% accurate identity matching.</p></caption>
-<graphic xlink:href="657023v3_fig5A1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="657023v3_fig5A1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     </sec>
 </app>
@@ -765,21 +766,21 @@ To determine when to stop training, every <italic>𝑚</italic> batches we compu
 <given-names>Jordi</given-names>
 </name>
 <role specific-use="author">Author</role>
-<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0006-6353-4079</contrib-id></contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0006-6353-4079</contrib-id></contrib>
 <contrib contrib-type="author">
 <name>
 <surname>Costa</surname>
 <given-names>Tiago</given-names>
 </name>
 <role specific-use="author">Author</role>
-<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8538-1345</contrib-id></contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-8538-1345</contrib-id></contrib>
 <contrib contrib-type="author">
 <name>
 <surname>de Polavieja</surname>
 <given-names>Gonzalo G</given-names>
 </name>
 <role specific-use="author">Author</role>
-<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5359-3426</contrib-id></contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5359-3426</contrib-id></contrib>
 </contrib-group>
 </front-stub>
 <body>
