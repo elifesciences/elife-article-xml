@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Designing optimal perturbation inputs for system identification in neuroscience</article-title>
 </title-group>
 <contrib-group>
@@ -69,7 +70,7 @@
 <surname>Latham</surname>
 <given-names>Peter</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-8713-9328</contrib-id><role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0001-8713-9328</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/02jx3x895</institution-id><institution>University College London</institution>
@@ -83,7 +84,7 @@
 <surname>Poirazi</surname>
 <given-names>Panayiota</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-6152-595X</contrib-id><role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0001-6152-595X</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/01gzszr18</institution-id><institution>FORTH Institute of Molecular Biology and Biotechnology</institution>
@@ -200,14 +201,14 @@
 <label>Fig. 1:</label>
     <caption><title>Passive and perturbation states and the resulting neural dynamics models.</title>
         <p>(a) Passive state of the neural network and the corresponding ground-truth model. (b) Recorded neural activities without perturbation. (c) Estimated model obtained without perturbation. (d) Perturbation state of the neural network and corresponding ground-truth model. (e) Recorded neural activity with perturbation. (f) Estimated model obtained with perturbation.</p></caption>
-<graphic xlink:href="641008v4_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>A fundamental problem with passive observation is that it fails to reveal hidden dynamics, which leads to an invalid estimate of the corresponding parts of the model. This limitation stems from the attenuation of latent dynamical modes, such as transient or damped components. When neural activity is modeled as a linear dynamical system, as shown in <xref rid="fig1" ref-type="fig">Fig. 1a</xref>, the true connectivity matrix governs the generation of time-series signals (<xref rid="fig1" ref-type="fig">Fig. 1b</xref>). Passive observation records these spontaneous neural activities within an arbitrarily predefined temporal window and attempts to estimate the connectivity matrix using parameter estimation techniques. However, the resulting matrix <bold><italic>A</italic></bold><sub>passive</sub> deviates significantly from the true model (<xref rid="fig1" ref-type="fig">Fig. 1c</xref>), because some modes quickly decay and vanish from the observable data (see also <xref rid="fig2" ref-type="fig">Fig. 2</xref> for an intuitive explanation). Consequently, relying solely on passive recordings leads to misinterpretations of the neural system—such as overlooking fast transient dynamics or underestimating connectivity strength—which, in turn, may result in inaccurate conclusions in both basic neuroscience and clinical contexts.</p>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Fig. 2:</label>
     <caption><title>Visualization of continuous-time system dynamics by perturbations.</title>
         <p>(a) System matrix <bold><italic>A</italic></bold> representing the dynamics and its eigenvalues. (b) Temporal changes in the state variables of the passive state without perturbation. (c) Time-varying trajectories of each PCA component. The color gradient indicates temporal progression. (d) Estimated connectivity matrix in the passive condition. (e) Error matrix for the passive-state estimation. (f-i) Temporal changes and estimation results in response to an impulse input. (j-m) Temporal changes and estimation results in response to a sinusoidal input.</p></caption>
-<graphic xlink:href="641008v4_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>To overcome these limitations, the application of perturbations has emerged as a powerful approach for improving the estimation of connectivity in neuroscience [<xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c31">31</xref>–<xref ref-type="bibr" rid="c33">33</xref>]. Its effectiveness lies in its ability to actively manipulate the neural system, rather than merely observing it, and to thereby uncover dynamic and causal interactions that are otherwise hidden [<xref ref-type="bibr" rid="c32">32</xref>]. Recent studies using stimulation techniques such as optogenetics [<xref ref-type="bibr" rid="c34">34</xref>, <xref ref-type="bibr" rid="c35">35</xref>] and transcranial magnetic stimulation (TMS) [<xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c36">36</xref>, <xref ref-type="bibr" rid="c37">37</xref>] have demonstrated that these interventions can significantly improve the detection of causal relationships within the neural system. Such approaches have been applied to the study of cognitive processes and states of consciousness [<xref ref-type="bibr" rid="c29">29</xref>, <xref ref-type="bibr" rid="c31">31</xref>]. These studies underscore the value of perturbation inputs in driving state transitions in the neural system, thereby enabling more accurate and reliable connectivity estimation.</p>
 <p>However, the parameters of perturbation protocols, such as the location, intensity, and shape of stimulation, have often been determined based on anatomical and physiological insights and on empirically established techniques [<xref ref-type="bibr" rid="c29">29</xref>,<xref ref-type="bibr" rid="c38">38</xref>–<xref ref-type="bibr" rid="c41">41</xref>]. While these approaches have provided practical utility, they may not optimally exploit the underlying neural dynamics or maximize the informativeness of the perturbation. To overcome these limitations and enhance the reliability of connectivity inference, there is a pressing need to design data-driven and theoretically grounded perturbations.</p>
@@ -221,19 +222,19 @@
 <title>System Identification with External Perturbation</title>
 <p>This section reviews a well-established framework for system identification of linear dynamical systems with external perturbations. Researchers have modeled brain dynamics as a discrete-time linear dynamics with external inputs and stochastic system noise [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c43">43</xref>, <xref ref-type="bibr" rid="c50">50</xref>–<xref ref-type="bibr" rid="c52">52</xref>]. We assume that the brain state evolves according to the following linear dynamics:
 <disp-formula id="eqn1">
-<graphic xlink:href="641008v4_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <bold><italic>x</italic></bold>(<italic>t</italic>) ∈ ℝ<sup><italic>n</italic></sup> denotes the neural state vector at time <italic>t</italic>, such as the activity of neurons, populations, or brain regions, and <italic>n</italic> represents its dimension. The connectivity matrix <bold><italic>A</italic></bold> ∈ ℝ<sup><italic>n</italic>×<italic>n</italic></sup> characterizes intrinsic interactions reflecting functional connectivity. The input matrix <bold><italic>B</italic></bold> ∈ ℝ<sup><italic>n</italic>×<italic>m</italic></sup> specifies how external inputs <bold><italic>u</italic></bold>(<italic>t</italic>) ∈ ℝ<sup><italic>m</italic></sup>—including sensory stimuli or interventions such as TMS—affect the system, where <italic>m</italic> represents the number of perturbation channels. The input <bold><italic>u</italic></bold>(<italic>t</italic>) is freely designed and known to the experimenter. Finally, <bold><italic>ξ</italic></bold>(<italic>t</italic>) ∈ ℝ<sup><italic>n</italic></sup> represents stochastic fluctuations (e.g., synaptic noise or unobserved inputs), modeled as Gaussian noise with mean <bold>0</bold> and covariance <bold>Σ</bold><sub><bold>Ξ</bold></sub> ∈ ℝ<sup><italic>n</italic>×<italic>n</italic></sup>. We remark that neural activities measured at the macroscopic level, such as functional magnetic resonance imaging (fMRI) or intracranial electroencephalography (iEEG) have been experimentally and theoretically validated to follow approximately linear dynamical systems in Refs. [<xref ref-type="bibr" rid="c53">53</xref>, <xref ref-type="bibr" rid="c54">54</xref>].</p>
 <p>Here, we assume the input matrix <bold><italic>B</italic></bold> is known, and we are only estimating the connectivity matrix <bold><italic>A</italic></bold> from the time series data of <bold><italic>x</italic></bold> and <bold><italic>u</italic></bold>. We construct the data matrices as
 <disp-formula id="eqn2">
-<graphic xlink:href="641008v4_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>T</italic> represents the length of the time series data. Using these matrices, the parameter matrix <bold><italic>A</italic></bold> can be estimated by minimizing the reconstruction error in the sense of ordinary least squares (OLS):
 <disp-formula id="eqn3">
-<graphic xlink:href="641008v4_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn4">
-<graphic xlink:href="641008v4_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where ∥ · ∥<sub><italic>F</italic></sub> represents the Frobenius norm and the symbol <sup>†</sup> denotes the pseudoinverse of a matrix.</p>
 </sec>
@@ -241,16 +242,16 @@ where ∥ · ∥<sub><italic>F</italic></sub> represents the Frobenius norm and 
 <title>System Identification without External Perturbation</title>
 <p>To compare the quality of system identification with and without perturbations, we also consider the passive case without external input. This corresponds to setting <bold><italic>u</italic></bold>(<italic>t</italic>) = <bold>0</bold> in the formulation in the perturbed case, yielding the following dynamics:
 <disp-formula id="eqn5">
-<graphic xlink:href="641008v4_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 Here, <bold><italic>A</italic></bold> and <bold><italic>ξ</italic></bold>(<italic>t</italic>) are identical to those defined in <xref ref-type="disp-formula" rid="eqn1">Eq. 1</xref>. Because this system evolves differently from the perturbed case, we denote its state trajectory as <bold><italic>x</italic></bold><sub>passive</sub>(<italic>t</italic>) to explicitly distinguish it from the dynamics under perturbation.</p>
 <p>Similarly, the parameter matrix <bold><italic>A</italic></bold> in the passive condition can be estimated by applying the ordinary least squares (OLS) method:
 <disp-formula id="eqn6">
-<graphic xlink:href="641008v4_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where
 <disp-formula id="eqn7">
-<graphic xlink:href="641008v4_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn7.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The subscript “passive” is used again to explicitly distinguish variables associated with the unperturbed dynamics from those obtained under external perturbations.</p>
 </sec>
@@ -268,12 +269,12 @@ The subscript “passive” is used again to explicitly distinguish variables as
 <title>Intuitive Perturbation Design Informed by Covariance Eigenvalues</title>
 <p>In this section, we show how perturbations reduce the estimation error of the system matrix <bold><italic>A</italic></bold> by exciting the state dynamics, thereby providing a theoretical basis for designing effective perturbation inputs. When the data length <italic>T</italic> is sufficiently large (<italic>T</italic> → ∞), the estimation error of <bold><italic>A</italic></bold> asymptotically converges to the following expression [<xref ref-type="bibr" rid="c59">59</xref>, <xref ref-type="bibr" rid="c60">60</xref>]:
 <disp-formula id="eqn8">
-<graphic xlink:href="641008v4_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn8.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="641008v4_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> with <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="641008v4_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> represents the covariance matrix of the state vector <bold><italic>x</italic></bold>, and tr denotes the trace of a matrix. The detailed derivation of this equation is provided in the Supplementary Material A.1. This equation indicates that the estimation error of <bold><italic>A</italic></bold> can be reduced either by increasing the measurement duration <italic>T</italic> or by minimizing the trace of the inverse covariance matrix <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="641008v4_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, which depends on the perturbation input <bold><italic>u</italic></bold>(<italic>t</italic>). Intuitively, this relationship resembles a signal-to-noise ratio, where increasing the covariance of the state dynamics relative to the noise covariance leads to improved estimation accuracy.</p>
+where <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="641008v4_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> with <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="641008v4_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> represents the covariance matrix of the state vector <bold><italic>x</italic></bold>, and tr denotes the trace of a matrix. The detailed derivation of this equation is provided in the Supplementary Material A.1. This equation indicates that the estimation error of <bold><italic>A</italic></bold> can be reduced either by increasing the measurement duration <italic>T</italic> or by minimizing the trace of the inverse covariance matrix <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="641008v4_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, which depends on the perturbation input <bold><italic>u</italic></bold>(<italic>t</italic>). Intuitively, this relationship resembles a signal-to-noise ratio, where increasing the covariance of the state dynamics relative to the noise covariance leads to improved estimation accuracy.</p>
 <p>The asymptotic expression in <xref ref-type="disp-formula" rid="eqn8">Eq. 8</xref> reveals that the estimation error of <bold><italic>A</italic></bold> depends inversely on the eigenvalues of the covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> . Expressing this relationship explicitly in terms of the eigenvalues yields
 <disp-formula id="eqn9">
-<graphic xlink:href="641008v4_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn9.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>µ</italic><sub><italic>i</italic></sub> denotes the <italic>i</italic>-th eigenvalue of <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> . This relationship indicates that small eigenvalues dominate the estimation error through their inverse contributions. Therefore, the perturbation input should be designed not only to increase the overall variance of the state <bold><italic>x</italic></bold>, but to enlarge the eigenvalues of <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> more uniformly across all directions of the state space. In other words, exciting all dynamical modes of the system–rather than amplifying a limited subset–is essential for improving estimation accuracy.</p>
 <p>This theoretical insight can be illustrated intuitively in <xref rid="fig3" ref-type="fig">Fig. 3</xref>. The figure visualizes ellipsoids constructed from the eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> and their reciprocals 1<italic>/µ</italic><sub><italic>i</italic></sub> of the covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> . The covariance matrices <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> are calculated from the time series of the state vector <bold><italic>x</italic></bold> obtained under passive and perturbation conditions (<xref rid="fig3" ref-type="fig">Fig. 3a</xref>). The length of each axis of the ellipsoid corresponds to the variance of the state along that direction, which is associated with the eigenvalue <italic>µ</italic><sub><italic>i</italic></sub>. Its reciprocal counterpart 1<italic>/µ</italic><sub><italic>i</italic></sub> represents the contribution to the estimation error (<xref rid="fig3" ref-type="fig">Fig. 3b</xref>). As shown in <xref rid="fig3" ref-type="fig">Fig. 3c</xref>, when the neural dynamics is dominated by a single eigenvalue <italic>µ</italic><sub>1</sub>, the other eigenvalues <italic>µ</italic><sub>2</sub> and <italic>µ</italic><sub>3</sub> remain small, resulting in an elongated reciprocal ellipsoid (<xref rid="fig3" ref-type="fig">Fig. 3d</xref>) and a large estimation error. When perturbation inputs that excite the directions associated with <italic>µ</italic><sub>2</sub> and <italic>µ</italic><sub>3</sub> are applied, the ellipsoid expands and becomes closer to a sphere (<xref rid="fig3" ref-type="fig">Fig. 3e</xref>). As a result, the estimation error decreases in all directions, as illustrated in <xref rid="fig3" ref-type="fig">Fig. 3f</xref>. This uniform enlargement of the eigenvalues provides a clear guideline: perturbations should be designed so that the variance becomes large in all directions, rather than being confined to specific modes.</p>
@@ -281,37 +282,37 @@ where <italic>µ</italic><sub><italic>i</italic></sub> denotes the <italic>i</it
 <label>Fig. 3:</label>
     <caption><title>Effect of perturbation on the eigenvalues of the state covariance matrix.</title>
         <p>Ellipsoidal plots show the eigenvalues and reciprocal eigenvalues of the covariance matrix of the state trajectories <bold><italic>X</italic></bold>, comparing passive dynamics and the case with perturbation. (a) Examples of a passive signal, a perturbation input, and a perturbed signal. (b) Analytical relationship linking the eigenvalues of the state covariance matrix to system identification error. (c) Passive: The covariance matrix is dominated by a single eigenvalue direction. (d) Passive (reciprocal): A single dominant eigenvalue produces a widely spread reciprocal-space ellipsoid (e) Perturbation: Additional dynamical modes are excited, increasing the smaller eigenvalues. (f) Perturbation (reciprocal): Perturbations yield a more uniform reciprocal-space ellipsoid, reducing estimation error.</p></caption>
-<graphic xlink:href="641008v4_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3c">
 <title>Theoretical Formulation of Sinusoidal Inputs for an Overall Increase in Eigenvalues</title>
 <p>Based on the guideline presented in the previous section, we derive analytical expressions to investigate which frequency of perturbation input will efficiently excite the dynamical modes of a system. In neuroscience, such a perturbation is analogous to tACS. Since neural dynamics possess modal frequencies, there should exist perturbation input frequencies that resonate with these modes. Such resonance leads to an amplification of <bold><italic>x</italic></bold>(<italic>t</italic>), which generally results in larger eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> of the covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub>, reflecting increased variability along the corresponding modes. To clarify this relationship, we derive an analytical expression for <bold><italic>x</italic></bold>(<italic>t</italic>) to investigate how the input frequency affects its amplitude. The solution <bold><italic>x</italic></bold>(<italic>t</italic>) to the model in Eq.1 can be obtained by iterating the state transition matrix. Specifically,
 <disp-formula id="eqn10">
-<graphic xlink:href="641008v4_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn10.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-We assume a cosine input <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="641008v4_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, where <italic>ω</italic><sub><italic>l</italic></sub> are the angular frequencies. By substituting this into the second term, we can obtain the following equation by performing diagonalization of <bold><italic>A</italic></bold> and expressing the eigenvalues in polar form.
+We assume a cosine input <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="641008v4_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, where <italic>ω</italic><sub><italic>l</italic></sub> are the angular frequencies. By substituting this into the second term, we can obtain the following equation by performing diagonalization of <bold><italic>A</italic></bold> and expressing the eigenvalues in polar form.
 <disp-formula id="eqn11">
-<graphic xlink:href="641008v4_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn11.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn12">
-<graphic xlink:href="641008v4_eqn12.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn12.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn13">
-<graphic xlink:href="641008v4_eqn13.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn13.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where each eigenvalue of <bold><italic>A</italic></bold> is written in polar form as <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="641008v4_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, with <italic>r</italic><sub><italic>d</italic></sub> = |<italic>λ</italic><sub><italic>d</italic></sub>| denoting the magnitude and <italic>θ</italic><sub><italic>d</italic></sub> = arg(<italic>λ</italic><sub><italic>d</italic></sub>) denoting the argument. <bold><italic>x</italic></bold><sub>passive</sub> represents the state <bold><italic>x</italic></bold> that would be realized if no perturbation were applied, i.e., the state that would evolve according to <xref ref-type="disp-formula" rid="eqn5">Eq. 5</xref>. The vector <bold><italic>v</italic></bold><sub><italic>d</italic></sub> denotes the right eigenvector of <bold><italic>A</italic></bold> associated with <italic>λ</italic><sub><italic>d</italic></sub>, and <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="641008v4_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denotes the corresponding left eigenvector. The detailed derivation is provided in the Supplementary Material A.2.1.</p>
+where each eigenvalue of <bold><italic>A</italic></bold> is written in polar form as <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="641008v4_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, with <italic>r</italic><sub><italic>d</italic></sub> = |<italic>λ</italic><sub><italic>d</italic></sub>| denoting the magnitude and <italic>θ</italic><sub><italic>d</italic></sub> = arg(<italic>λ</italic><sub><italic>d</italic></sub>) denoting the argument. <bold><italic>x</italic></bold><sub>passive</sub> represents the state <bold><italic>x</italic></bold> that would be realized if no perturbation were applied, i.e., the state that would evolve according to <xref ref-type="disp-formula" rid="eqn5">Eq. 5</xref>. The vector <bold><italic>v</italic></bold><sub><italic>d</italic></sub> denotes the right eigenvector of <bold><italic>A</italic></bold> associated with <italic>λ</italic><sub><italic>d</italic></sub>, and <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="641008v4_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denotes the corresponding left eigenvector. The detailed derivation is provided in the Supplementary Material A.2.1.</p>
 <p>We focus on <bold><italic>x</italic></bold><sub>diff</sub>(<italic>t</italic>) simply because it is the component directly driven by the control input. When the input frequencies <italic>ω</italic><sub><italic>l</italic></sub> coincide with the mode’s angular component <italic>θ</italic><sub><italic>d</italic></sub>, a resonance-like amplification occurs in <bold><italic>x</italic></bold><sub>diff</sub>(<italic>t</italic>)—that is, the amplitude of <bold><italic>x</italic></bold>(<italic>t</italic>) increases markedly. Increasing the magnitude of <bold><italic>x</italic></bold>(<italic>t</italic>) through resonance naturally leads to an increase in the overall variance in <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> . This enhancement directly contributes to increasing all eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> of the covariance matrix rather than leaving some unexcited. Therefore, the analysis of <xref ref-type="disp-formula" rid="eqn13">Eq. 13</xref> provides the necessary guidelines to target and amplify specific dynamical modes, suggesting that oscillatory inputs, such as tACS, should be designed with frequencies that correspond to the true dynamical mode frequencies.</p>
 </sec>
 <sec id="s3d">
 <title>Theoretical Formulation of Impulse and Step Inputs</title>
 <p>The eigenvalues of the covariance matrix can also be increased by manipulating the intensity of the perturbation input. In neuroscience, external perturbations such as TMS and tDCS can be modeled as impulse-like or step-like inputs to neural systems. The covariance matrices of <bold><italic>x</italic></bold>(<italic>t</italic>) for impulse inputs can be written as:
 <disp-formula id="eqn14">
-<graphic xlink:href="641008v4_eqn14.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn14.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 For step input, the state vector is described by
 <disp-formula id="eqn15">
-<graphic xlink:href="641008v4_eqn15.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn15.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>α</italic> and <italic>β</italic> are intensity of the impulse and step inputs. The detailed derivation is provided in the Supplementary Material A.2.2. From these equations, it is clear that the contribution of the perturbation to the state covariance increases proportionally to the squares of the input strengths, <italic>α</italic><sup>2</sup> and <italic>β</italic><sup>2</sup>. However, estimation accuracy is not determined by input intensity alone. Eqs.14 and 15 show that the resulting dynamics <bold><italic>x</italic></bold><sub>diff</sub>(<italic>t</italic>) are critically dependent on the term <bold><italic>Bu</italic></bold><sub>0</sub>. This term represents how the input vector <bold><italic>u</italic></bold><sub>0</sub> (which defines the spatial pattern of the stimulation, i.e., which nodes are targeted) interacts with the system’s input matrix <bold><italic>B</italic></bold>. Therefore, while increasing intensity (<italic>α, β</italic>) within experimental constraints is beneficial, the spatial pattern <bold><italic>u</italic></bold><sub>0</sub> is the key design parameter that determines which dynamical modes are excited. An improperly chosen <bold><italic>u</italic></bold><sub>0</sub> may excite only the modes already dominant in the passive state, failing to enlarge the smaller eigenvalues that are critical for system identification. The problem of how to design the optimal spatial pattern <bold><italic>u</italic></bold><sub>0</sub> to most effectively excite the weakly observable dynamics will be addressed in a later section.</p>
 </sec>
@@ -323,28 +324,28 @@ where <italic>α</italic> and <italic>β</italic> are intensity of the impulse a
 <label>Fig. 4:</label>
     <caption><title>Error in the system matrix and eigenvalue-scaled ellipsoids.</title>
         <p>(a) State transition matrix <bold><italic>A</italic></bold> and its eigenvalues <italic>λ</italic><sub><italic>i</italic></sub>. (b) System frequency responses, showing the sum of eigenvalues (left), the sum of inverse eigenvalues (middle), and the system matrix error (right). (c) Eigenvalue ellipsoids under passive, 5 Hz, 10 Hz, and 15 Hz conditions. (d) Reciprocal-eigenvalue ellipsoids under passive, 5 Hz, 10 Hz, and 15 Hz conditions.</p></caption>
-<graphic xlink:href="641008v4_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>When the system exhibits multiple modes, the input frequencies should be designed to reflect all these modes. We demonstrate this using the system matrix shown in <xref rid="fig5" ref-type="fig">Fig. 5a</xref>, along with simulated time series and the corresponding matrix estimation. Because the system matrix contains two distinct pairs of eigenvalues (10 Hz and 20 Hz), we constructed the evaluation input <bold><italic>u</italic></bold> as a combination of two frequencies. The sum of eigenvalue reciprocals is minimized only when the input contained both 10 Hz and 20 Hz components; inputs with a single frequency yield larger values (<xref rid="fig5" ref-type="fig">Fig. 5b</xref>). To further evaluate the effect of input design, we compared the two-frequency input with a flat-spectrum input (<xref rid="fig5" ref-type="fig">Fig. 5c</xref>). When the total input energy was normalized, the two-frequency input achieves better identification performance than the flat-spectrum input, which is commonly employed in control and system identification studies. This result highlights the importance of tailoring the input spectrum to the system’s intrinsic dynamics rather than relying on uniform excitation. The superior performance of the two-frequency combination can be understood through the eigenvalue-scaled ellipsoids in <xref rid="fig5" ref-type="fig">Figs. 5d–g</xref>. <xref rid="fig5" ref-type="fig">Figure 5d</xref> illustrates ellipsoids determined by the three dominant eigenvalues. The ellipsoid volume is expanded by three types of sinusoidal inputs (10 Hz, 20 Hz, and the combined input). However, the third axis (blue line) is not extended under single-frequency inputs, as shown in <xref rid="fig5" ref-type="fig">Fig. 5e</xref>, leading to larger estimation errors. Small eigenvalues disproportionately increase the sum of reciprocal eigenvalues, as seen in</p>
 <fig id="fig5" position="float" fig-type="figure">
 <label>Fig. 5:</label>
     <caption><title>Simulation of a multi-mode system and eigenvalue-scaled ellipsoids.</title>
         <p>(a) System matrix <bold><italic>A</italic></bold> and its eigenvalues; the system exhibits two damped oscillatory modes at 10 Hz and 20 Hz. (b) Theoretical estimation error, defined as ∑(1<italic>/µ</italic><sub><italic>i</italic></sub>) for two-frequency input combinations; cooler colors indicate smaller estimation errors. (c) Comparison of the reciprocal eigenvalue sum for flat-spectrum versus composite-frequency inputs. (d) Eigenvalue-scaled ellipsoids (<italic>µ</italic>-scaled) under four input conditions (columns): Passive, 10 Hz, 20 Hz, and 10 Hz + 20 Hz; ellipsoid axes align with the eigenvectors. (e) Relative-scale view of (d). (f) Eigenvalue-scaled ellipsoids (inverse-scaled, 1<italic>/µ</italic><sub><italic>i</italic></sub>) for the same four conditions. (g) Relative-scale view of (f).</p></caption>
-<graphic xlink:href="641008v4_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p><xref rid="fig5" ref-type="fig">Figs. 5f</xref> and <xref ref-type="fig" rid="fig5">5g</xref>. In these cases, the reciprocal eigenvalue-scaled ellipsoids are enlarged along the third axis (blue line) when only a single-frequency input is applied. By contrast, the combined input uniformly increases all eigenvalues, including the third, thereby successfully minimizing the reciprocal eigenvalue-scaled ellipsoid volume. These findings indicate that sinusoidal inputs should be designed to match multiple system modes rather than single modes. It should be noted that the true system modes cannot generally be known a priori. They must be identified through iterative experiments and refinement of the estimated system matrix. This practical procedure for optimal perturbation design is described in a later section (see Practical Designing Procedure for Optimal Perturbation Inputs).</p>
 </sec>
 <sec id="s3f">
 <title>Demonstration of Location Tuning</title>
-<p>This section illustrates how our theoretical framework enables location-specific tuning of perturbation inputs within neural networks. Placing the perturbation input on a node that has high-weight connections with other nodes effectively minimizes tr <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="641008v4_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, and leads to an improvement in system identification, in accordance with <xref ref-type="disp-formula" rid="eqn8">Eq. 8</xref>.</p>
+<p>This section illustrates how our theoretical framework enables location-specific tuning of perturbation inputs within neural networks. Placing the perturbation input on a node that has high-weight connections with other nodes effectively minimizes tr <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="641008v4_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and leads to an improvement in system identification, in accordance with <xref ref-type="disp-formula" rid="eqn8">Eq. 8</xref>.</p>
 <p>To examine this relationship in practice, we constructed an 8-node network as shown in <xref rid="fig6" ref-type="fig">Figs. 6a</xref> and <xref ref-type="fig" rid="fig6">6b</xref>. … The network consists of eight nodes (<italic>N</italic> = 8), structured into three modes (Nodes 1-6) and two additional nodes (Nodes 7-8). Nodes 7 and 8 have only outgoing edges. This structural distinction between Nodes 7 and 8 plays a critical role in the overall connectivity and dynamics of the network. As shown in <xref rid="fig6" ref-type="fig">Fig. 6c</xref>, Node 8 has a high weighted out-degree [<xref ref-type="bibr" rid="c61">61</xref>], followed by Node 7. To clearly differentiate the modes, the real parts of the eigenvalues for each mode were set to -1, -6, and -11, respectively. The frequencies were set to 15, 25, and 35 Hz. As shown in <xref rid="fig6" ref-type="fig">Fig. 6d</xref>, absolute eigenvalues are differentiated. The eigenvectors shown in <xref rid="fig6" ref-type="fig">Fig. 6e</xref> indicate that eigenvectors 1 through 6 correspond to the directions of each mode, while eigenvectors 7 and 8 are associated with directions related to those nodes that do not have modes but hold interactions with other nodes. The simulation was conducted with a single node receiving an impulse-shaped perturbation input.</p>
 <fig id="fig6" position="float" fig-type="figure">
 <label>Fig. 6:</label>
     <caption><title>Perturbation input locations and model estimation errors.</title>
         <p>(a) The network was constructed with an 8 × 8 adjacency matrix <bold><italic>A</italic></bold> and designed to have three distinct dynamical modes. Nodes 7 and 8 have outgoing edges only, with node 8 having a higher number of connections. (b) Graph representation of the network structure. (c) Weighted out-degree for each node. (d) Absolute eigenvalues of matrix <bold><italic>A</italic></bold>. (e) Eigenvectors of matrix <bold><italic>A</italic></bold>. (f) Trace of the inverse covariance matrix of <bold><italic>X</italic></bold> when impulse input was applied to each node. (g) Estimation errors of the adjacency matrix <bold><italic>A</italic></bold> when the impulse input was applied individually to each node.</p></caption>
-<graphic xlink:href="641008v4_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
-<p>The results, shown in <xref rid="fig6" ref-type="fig">Figs. 6f-g</xref>, demonstrate a clear relationship between the input location and estimation accuracy. Both the trace of the inverse covariance matrix tr <inline-formula id="inline-eqn-8"><inline-graphic xlink:href="641008v4_inline8.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and the estimation error of <bold><italic>A</italic></bold> are minimized when the impulse input is applied to Node 8.This finding directly corresponds to the network’s structural properties, specifically the weighted out-degree (<xref rid="fig6" ref-type="fig">Fig. 6c</xref>). Node 8 possesses the highest weighted out-degree, followed by Node 7, which is the second-best stimulation target.The theoretical explanation is straightforward: nodes with higher out-degrees function as “hub nodes” or “broadcasters”. A perturbation applied to such a hub propagates more effectively and widely throughout the entire network. This broad excitation increases the variance of the state <bold><italic>x</italic></bold> in multiple directions, leading to a more uniform enlargement of the eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> of the state covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> (as discussed in Section). By preventing any <italic>µ</italic><sub><italic>i</italic></sub> from remaining small, the total estimation error, which depends on (1<italic>/µ</italic><sub><italic>i</italic></sub>), is effectively minimized.</p>
+<p>The results, shown in <xref rid="fig6" ref-type="fig">Figs. 6f-g</xref>, demonstrate a clear relationship between the input location and estimation accuracy. Both the trace of the inverse covariance matrix tr <inline-formula id="inline-eqn-8"><inline-graphic xlink:href="641008v4_inline8.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and the estimation error of <bold><italic>A</italic></bold> are minimized when the impulse input is applied to Node 8.This finding directly corresponds to the network’s structural properties, specifically the weighted out-degree (<xref rid="fig6" ref-type="fig">Fig. 6c</xref>). Node 8 possesses the highest weighted out-degree, followed by Node 7, which is the second-best stimulation target.The theoretical explanation is straightforward: nodes with higher out-degrees function as “hub nodes” or “broadcasters”. A perturbation applied to such a hub propagates more effectively and widely throughout the entire network. This broad excitation increases the variance of the state <bold><italic>x</italic></bold> in multiple directions, leading to a more uniform enlargement of the eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> of the state covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> (as discussed in Section). By preventing any <italic>µ</italic><sub><italic>i</italic></sub> from remaining small, the total estimation error, which depends on (1<italic>/µ</italic><sub><italic>i</italic></sub>), is effectively minimized.</p>
 <p>This finding is further supported by analyzing the system’s dynamical modes (<bold><italic>A</italic></bold>’s eigenvectors and eigenvalues). <xref rid="fig6" ref-type="fig">Fig. 6d</xref> shows that the system possesses modes with small absolute eigenvalues. These modes are the most critical for system identification, as their small eigenvalues mean they decay rapidly and become unobservable in the passive state, thus dominating the estimation error. <xref rid="fig6" ref-type="fig">Fig. 6e</xref> (Eigenvectors) reveals the spatial structure of these modes. Crucially, the eigenvectors corresponding to these rapidly decaying modes (e.g., evec 7, evec 8) have their largest components concentrated at Nodes 7 and 8. This provides a precise dynamic explanation for our results: applying an input to Node 8 is optimal because it most efficiently targets and re-excites the system’s weakest and most unobservable dynamical modes. This alignment between the input location and the structure of the critical modes ensures that all dynamics are sufficiently excited, minimizing the estimation error.</p>
 <p>This simulation demonstrates that, given a tentative connectivity matrix, an effective perturbation input (such as TMS or tDCS) can be designed by targeting the node with the highest weighted out-degree. This structural heuristic succeeds because it effectively identifies the nodes that can most efficiently excite the system’s weakest and most unobservable dynamical modes—those that decay rapidly in the passive state. This alignment between the static network structure and the dynamic modes ensures that all aspects of the system’s dynamics are sufficiently excited, minimizing the estimation error.</p>
 </sec>
@@ -356,7 +357,7 @@ where <italic>α</italic> and <italic>β</italic> are intensity of the impulse a
 <label>Fig. 7:</label>
     <caption><title>Neural state classification enhanced by perturbation-aided model estimation.</title>
         <p>(a) Ground-truth dynamics models for five distinct latent states, each with unique eigenvalue distributions and network structures of matrix <bold><italic>A</italic></bold>. (b) Simulated neural activity under five task conditions inducing distinct states, shown separately for the passive (top) and perturbed (bottom) regimes. (c) Estimated model matrices <bold><italic>A</italic></bold> visualized using MDS. (d) Confusion matrices showing classification accuracy. (e) ROC curves further confirm the improved classification performance achieved with perturbation. (f) MDS plots for passive condition with increasing time window length, showing clustering and classification accuracy as the time window length <italic>T</italic> increases from 5 to 10,000.</p></caption>
-<graphic xlink:href="641008v4_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The simulation demonstrates that classification performance under perturbation is superior to that under the passive condition, both in visual inspection and in quantitative evaluation. As revealed by multidimensional scaling (MDS) analysis, state clusters in the passive condition exhibit substantial overlap, whereas perturbation leads to clear separation among the states (<xref rid="fig7" ref-type="fig">Fig. 7c</xref>). Classification with linear discriminant analysis (LDA) and 10-fold cross-validation shows the average accuracy is substantially higher in the perturbation condition (98.20%) compared to the passive condition (67.40%), as shown in <xref rid="fig7" ref-type="fig">Fig. 7d</xref>. ROC curve analysis further confirms that perturbation substantially improves discriminability across all states (<xref rid="fig7" ref-type="fig">Fig. 7e</xref>). These results can be explained by <xref ref-type="disp-formula" rid="eqn8">Eq. 8</xref>; the perturbation inputs undoubtedly increases the eigenvalues of the covariance matrix, including even the smallest ones, which in turn leads to a decrease in the estimation error of <bold><italic>A</italic></bold>.</p>
 <p>To obtain estimates under the passive condition that are comparable to those derived under perturbation, it is necessary to experimentally observe extensive time-series data. <xref rid="fig7" ref-type="fig">Figure 7f</xref> illustrates the MDS representation and classification accuracy for different time-series lengths. The leftmost MDS plot (<italic>T</italic> = 5) is the same as the passive condition plot shown in <xref rid="fig7" ref-type="fig">Fig. 7c</xref>), indicating that the estimation performance in the passive condition is inferior to that in the perturbation condition. This low accuracy can be improved by using a longer time window (<italic>T</italic> = 100, 1000, 10000). At <italic>T</italic> = 10000, the classification accuracy exceeds the perturbation condition. However, this longer window corresponds to a 2000-fold increase in the required time window. In practical experiments, such long windows are unrealistic because neural states change rapidly over time.</p>
@@ -369,14 +370,14 @@ where <italic>α</italic> and <italic>β</italic> are intensity of the impulse a
 <label>Fig. 8:</label>
     <caption><title>Effects of system identification on network control theory.</title>
         <p>(a) State transitions using models identified from the passive and perturbed conditions. (b) Controllability Gramians with two models. (c) Control costs compputed from the estimated controllability Gramians.</p></caption>
-<graphic xlink:href="641008v4_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>We designed a network as shown in <xref rid="fig9" ref-type="fig">Fig. 9a</xref> to clearly show the differences in system identification between passive and perturbations states. The network consists of two disconnected groups. Nodes 1 and 2, as well as nodes 3, 4, and 5, are each connected separately, with no connections between these groups, as shown in matrix <bold><italic>A</italic></bold>. We assumed a known input matrix <bold><italic>B</italic></bold> in which nodes 3 and 4 cannot be directly controlled. In this scenario, the optimal control strategy to manipulate nodes 3 and 4 is to apply inputs to node 5. However, if the system identification is inaccurate, there is the possibility that control will be attempted through nodes 1 and 2, which are disconnected from nodes 3 and 4. These matrices were estimated from the time series signals generated by simulation. We generated passive and perturbation states to estimate the parameter matrices. The perturbation condition uses an impulse input with sufficient intensity (<italic>α</italic> = 10<sup>20</sup>). By using the estimated system model, we determined optimal control inputs, then evaluated the state transitions and associated costs. The controlled transition test was run with <italic>T</italic> = 1. The control objective was to set nodes 3 and 4 to 25 while keeping all other nodes at 0 without any movement.</p>
 <fig id="fig9" position="float" fig-type="figure">
 <label>Fig. 9:</label>
     <caption><title>Optimal control difference between passive and perturbation-based models.</title>
         <p>(a) True matrix <bold><italic>A</italic></bold> and its network structure. Nodes 1, 2, and 5 are controllable nodes. Nodes 3 and 4 are targets controlled by the determined control input. When the connectivity matrix is misestimated, the structure has edges between nodes 1 and 2, and nodes 3 and 4. (b) Matrix estimation failure under passive condition and controlled state transitions. The control objectives are plotted as white circles. (c) Successful matrix estimations and controlled state transitions with sufficiently strong impulse inputs (<italic>α</italic> = 10<sup>20</sup>). (d) Errors in the estimated matrices <bold><italic>A</italic></bold> and <bold><italic>W</italic></bold> and the control cost (average controllability)</p></caption>
-<graphic xlink:href="641008v4_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig9.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The simulation results show that perturbation-based estimation enables the precise control of neural states. If the estimation of <bold><italic>A</italic></bold> is inaccurate, the state transitions under optimal control cannot be executed correctly (<xref rid="fig9" ref-type="fig">Fig. 9b</xref>). Nodes 3 and 4 fail to reach the target, and unnecessary activations occur in nodes 1 and 2. Furthermore, unnecessary control inputs appear in nodes 1 and 2. On the other hand, when the model is correctly estimated using a high-strength impulse, the resulting control inputs enable accurate state transitions (<xref rid="fig9" ref-type="fig">Fig. 9c</xref>). In this case, the strength of the impulse is correctly concentrated on node 5. As the error in matrix <bold><italic>A</italic></bold> increases, the estimation errors of the controllability</p>
 <p>Gramian <bold><italic>W</italic></bold> lead to inaccuracies in estimating the control cost (<xref rid="fig9" ref-type="fig">Fig. 9d</xref>). Here, we adopt average controllability as an example measure of control cost [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c46">46</xref>]. The key point here is that, since the controllability Gramian involves multiple products of <bold><italic>A</italic></bold> (<xref ref-type="disp-formula" rid="eqn22">Eq. 22</xref>), even small errors of <bold><italic>A</italic></bold> can result in significant discrepancies. Therefore, when estimating optimal control input for neural transitions or control costs, it is more appropriate to identify those model parameters with at least arbitrary perturbations, and ideally with designed perturbations.</p>
@@ -389,7 +390,7 @@ where <italic>α</italic> and <italic>β</italic> are intensity of the impulse a
 <label>Fig. 10:</label>
     <caption><title>Simulation results for a 32 channel neural activity model.</title>
         <p>(a) True matrix <bold><italic>A</italic></bold> and its network structure, which was designed to include both oscillatory and attenuating components. (b) Comparison of Estimation errors. The purple line indicates the iterative design process initialized from the passive-state estimate (Iteration 1). The teal line shows the iterative design starting from a flat-spectrum input (Iteration 1). Both processes converge towards the theoretically optimal error (dashed line) as the design is refined (design-1, design-2). (c) Schematic of the iterative procedure. An initial estimated system matrix (<bold><italic>A</italic></bold><sub>passive</sub>) is used to design the first perturbation input (<bold><italic>u</italic></bold><sub>design1</sub>), which yields a better estimate (<bold><italic>A</italic></bold><sub>design1</sub>), and the cycle repeats.</p></caption>
-<graphic xlink:href="641008v4_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="641008v4_fig10.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <list list-type="order">
 <list-item><p>Record spontaneous activity as the passive state and estimate <bold><italic>A</italic></bold><sub>passive</sub>.</p></list-item>
@@ -419,15 +420,15 @@ where <italic>α</italic> and <italic>β</italic> are intensity of the impulse a
 <title>Eigenvector Alignment for eigenvalue-scaled ellipsoids</title>
 <p>To examine the relationship between the eigenvalues <italic>µ</italic><sub><italic>i</italic></sub> of the state covariance matrix <bold>Σ</bold><sub><bold><italic>X</italic></bold></sub> and the input frequencies, we plotted an eigenvalue-scaled ellipsoid, thereby providing an intuitive representation of optimal input design. However, the eigenvectors of <bold><italic>X</italic></bold> are not fixed; they may vary depending on the applied input, which complicates direct comparison across conditions. To enable consistent comparison of eigenvalues across input conditions, we reordered eigenvalues according to the similarity of their associated eigenvectors to those obtained in the passive condition, which served as the reference basis. For each reference eigenvector <bold><italic>t</italic></bold><sub><italic>i</italic></sub>, we identified the most similar eigenvector <bold><italic>u</italic></bold><sub><italic>j</italic></sub> from the input condition by maximizing the absolute inner product
 <disp-formula id="eqn16">
-<graphic xlink:href="641008v4_eqn16.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn16.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-The eigenvalue <inline-formula id="inline-eqn-9"><inline-graphic xlink:href="641008v4_inline9.gif" mimetype="image" mime-subtype="gif"/></inline-formula> corresponding to <inline-formula id="inline-eqn-10"><inline-graphic xlink:href="641008v4_inline10.gif" mimetype="image" mime-subtype="gif"/></inline-formula> was then assigned to the (i)-th position of the reordered list. Each <bold><italic>u</italic></bold><sub><italic>j</italic></sub> was used only once, ensuring a one-to-one correspondence between reference and input eigenvectors. This alignment resolves the permutation and sign ambiguities inherent in eigendecomposition, and allows eigenvalues to be compared across conditions along a common axis.</p>
+The eigenvalue <inline-formula id="inline-eqn-9"><inline-graphic xlink:href="641008v4_inline9.gif" mime-subtype="gif" mimetype="image"/></inline-formula> corresponding to <inline-formula id="inline-eqn-10"><inline-graphic xlink:href="641008v4_inline10.gif" mime-subtype="gif" mimetype="image"/></inline-formula> was then assigned to the (i)-th position of the reordered list. Each <bold><italic>u</italic></bold><sub><italic>j</italic></sub> was used only once, ensuring a one-to-one correspondence between reference and input eigenvectors. This alignment resolves the permutation and sign ambiguities inherent in eigendecomposition, and allows eigenvalues to be compared across conditions along a common axis.</p>
 </sec>
 <sec id="s5c">
 <title>Weighted out-degree</title>
 <p>To quantify which node influences other nodes, metrics designed for weighted networks were used [<xref ref-type="bibr" rid="c10">10</xref>, <xref ref-type="bibr" rid="c78">78</xref>, <xref ref-type="bibr" rid="c79">79</xref>]. The weighted out-degree [<xref ref-type="bibr" rid="c61">61</xref>] of node <italic>i</italic>, excluding self-loops, is given by:
 <disp-formula id="eqn17">
-<graphic xlink:href="641008v4_eqn17.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn17.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where the element <italic>a</italic><sub><italic>ij</italic></sub> represents the weight of the directed edge from node <italic>i</italic> to node <italic>j</italic>. The summation explicitly excludes self-loops (<italic>j</italic> ≠ <italic>i</italic>). This metric represents the total weighted influence or outgoing connections from node <italic>i</italic> to all other nodes in the network. It accounts for the sum of the weights of all directed edges originating from node <italic>i</italic>, excluding any self-loops.</p>
 </sec>
@@ -436,23 +437,23 @@ where the element <italic>a</italic><sub><italic>ij</italic></sub> represents th
 <p>Accurately estimating dynamical models under perturbation not only facilitates precise inference of the neural dynamics but also contributes to the accurate estimation of control inputs for neural state transitions. Recently, the control theory which utilizes the controllability Gramian and control costs is applied for neuroscience, and provides insights into the efficiency and feasibility of inducing specific neural state transitions [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c49">49</xref>] with some limitations [<xref ref-type="bibr" rid="c80">80</xref>, <xref ref-type="bibr" rid="c81">81</xref>]. For clarify, we refer to the input for system identification as the <italic>perturbation input</italic> and the input for state control in the optimal control theory as the <italic>control input</italic>.</p>
 <p>The optimal control input is derived under the condition of assuming the linear system is controllable. We consider the sequence of control inputs that minimizes the following cost function (input energy minimization) while driving the state from the initial state <bold><italic>x</italic></bold><sub>0</sub> to the terminal state <bold><italic>x</italic></bold><sub><italic>T</italic></sub> :
 <disp-formula id="eqn18">
-<graphic xlink:href="641008v4_eqn18.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn18.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 under
 <disp-formula id="eqn19">
-<graphic xlink:href="641008v4_eqn19.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn19.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 Here, the initial and terminal state conditions represent constraints on the optimization problem. This problem is expressed as follows:
 <disp-formula id="eqn20">
-<graphic xlink:href="641008v4_eqn20.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn20.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The constrained optimization problem can be solved using Lagrange multipliers. The optimal control input is given by
 <disp-formula id="eqn21">
-<graphic xlink:href="641008v4_eqn21.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn21.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <bold><italic>W</italic></bold> is the controllability Gramian, defined as:
 <disp-formula id="eqn22">
-<graphic xlink:href="641008v4_eqn22.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn22.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 The controllability Gramian plays a pivotal role in determining the optimal control and control input cost. It has been used to identify the functional roles of individual brain regions [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c47">47</xref>].</p>
 </sec>
@@ -460,7 +461,7 @@ The controllability Gramian plays a pivotal role in determining the optimal cont
 <title>Average Controllability for Control Cost</title>
 <p>While the optimal control problem (<xref ref-type="disp-formula" rid="eqn20">Eq. 20</xref>) calculates the specific input energy for a given state transition, a more general, state-independent metric is often used to characterize the system’s overall controllability. This metric, average controllability, is a state-independent metric used to quantify the system’s overall ease of control [<xref ref-type="bibr" rid="c42">42</xref>, <xref ref-type="bibr" rid="c46">46</xref>]. It is defined as the trace of the controllability Gramian:
 <disp-formula id="eqn23">
-<graphic xlink:href="641008v4_eqn23.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="641008v4_eqn23.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 A larger trace indicates that the system is, on average, more controllable (i.e., can be moved to various states with less input energy). This metric is therefore used as a measure of control efficiency.</p>
 </sec>
@@ -625,6 +626,59 @@ A larger trace indicates that the system is, on average, more controllable (i.e.
 <p>The derivation of the main error term misses some important steps, which complicates peer review at this stage. In particular, factorisation of the covariance into noise and the inverse of the observation covariance matrix needs a more thorough justification. The cited sources do not contain the derivation for a noise term with full covariance, which is essential for deriving this error term.</p>
 <p>The practical recommendation at the end of the paper also requires clearer guidance on how the design perturbations are constructed, and how many times and for how long the system is stimulated in each iteration of the experiment.</p>
 <p>Finally, there is no analysis of model mis-specification. In particular, the true dynamics are unlikely to be linear; the noise is unlikely to be either Gaussian or uncorrelated across time; and the B matrix is unlikely to be known perfectly. We're not suggesting that the authors consider a more complex model, but it's important to know how sensitive their method is to model mismatch. If nothing can be done analytically, then simulations would at least provide some kind of guide.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110030.1.sa2</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ogino</surname>
+<given-names>Mikito</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1089-4469</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sekizawa</surname>
+<given-names>Daiki</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0004-0196-2612</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Kitazono</surname>
+<given-names>Jun</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6701-3947</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Oizumi</surname>
+<given-names>Masafumi</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8802-2607</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>We thank the editors and reviewers for their careful reading of our manuscript and for their insightful comments. We appreciate the opportunity to clarify several aspects of the derivations and experimental design, and we will revise the manuscript accordingly. Below we provide responses to the major weaknesses raised by the reviewers.</p>
+<disp-quote content-type="editor-comment">
+<p>The derivation of the main error term misses some important steps, which complicates peer review at this stage. In particular, factorisation of the covariance into noise and the inverse of the observation covariance matrix needs a more thorough justification. The cited sources do not contain the derivation for a noise term with full covariance, which is essential for deriving this error term.</p>
+</disp-quote>
+<p>Thank you for pointing this out. We agree that the derivation of the main error term should be presented more explicitly to facilitate peer review. In the revised manuscript, we will explicitly cite the relevant equation numbers from the references to make each step of the argument easier to follow. We will also revise the text to more clearly discuss the assumption on the noise covariance matrix.</p>
+<disp-quote content-type="editor-comment">
+<p>The pratical recommendation at the end of the paper also requires clearer guidance on how the design perturbations are constructed, and how many times and for how long the system is stimulated in each iteration of the experiment.</p>
+</disp-quote>
+<p>Thank you for this helpful suggestion. We agree that the practical implementation of the experimental design should be explained more clearly. In the revised manuscript, we will provide a more explicit description of how the input perturbations are constructed in each iteration. To more clearly explain how many times and for how long the system is stimulated, we will clarify the stopping criterion used in the iterative procedure and the time length of the external inputs. As shown in Eq. (8), the estimation error scales approximately as 1/T, so longer measurements improve accuracy. For clearer guidance, we will add additional explanations on the relation between the stimulation time and estimation accuracy, as well as on the role of iterative input design.</p>
+<disp-quote content-type="editor-comment">
+<p>Finally, there is no analysis of model mis-specification. In particular, the true dynamics are unlikely to be linear; the noise is unlikely to be either Gaussian or uncorrelated across time; and the B matrix is unlikely to be known perfectly. We're not suggesting that the authors consider a more complex model, but it's important to know how sensitive their method is to model mismatch. If nothing can be done analytically, then simulations would at least provide some kind of guide.</p>
+</disp-quote>
+<p>We thank the reviewer for raising this important point. We agree that it is important to understand how sensitive the proposed method is to model mismatch. While our current theoretical analysis assumes linear dynamics with Gaussian noise for analytical tractability, real systems may deviate from these assumptions in several ways, including nonlinear dynamics, temporally correlated noise, or imperfect knowledge of the input matrix B. To address this concern, we will add simulation experiments to examine the robustness of our method under several types of model misspecification. These simulations will provide practical guidance on how deviations from the assumed model affect estimation performance. We will include these results and discuss their implications in the revised manuscript.</p>
 </body>
 </sub-article>
 </article>
