@@ -1,0 +1,890 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">94723</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.94723</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.94723.3</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.4</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>High frequency spike inference with particle Gibbs sampling</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-7497-5271</contrib-id>
+<name>
+<surname>Diana</surname>
+<given-names>Giovanni</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>g.diana.mail@gmail.com</email>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sermet</surname>
+<given-names>B Semihcan</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Broussard</surname>
+<given-names>Gerard J</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Samuel S.-H</given-names>
+</name>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-6417-4566</contrib-id>
+<name>
+<surname>DiGregorio</surname>
+<given-names>David A</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>david.digregorio@cuanschutz.edu</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0495fxg12</institution-id><institution>Institut Pasteur, University of Paris, CNRS UMR 3571, Synapse and Circuit Dynamics Laboratory</institution></institution-wrap>, <city>Paris</city>, <country country="FR">France</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0107w4315</institution-id><institution>Department of Physiology and Biophysics, University of Colorado School of Medicine</institution></institution-wrap>, <city>Aurora</city>, <country country="US">United States</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00hx57361</institution-id><institution>Princeton Neuroscience Institute</institution></institution-wrap>, <city>Princeton</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Giocomo</surname>
+<given-names>Lisa M</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0003-0416-2528</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution>Stanford School of Medicine</institution>
+</institution-wrap>
+<city>Stanford</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Poirazi</surname>
+<given-names>Panayiota</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-6152-595X</contrib-id><role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01gzszr18</institution-id><institution>FORTH Institute of Molecular Biology and Biotechnology</institution>
+</institution-wrap>
+<city>Heraklion</city>
+<country country="GR">Greece</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2024-03-27">
+<day>27</day>
+<month>03</month>
+<year>2024</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2026-03-20">
+<day>20</day>
+<month>03</month>
+<year>2026</year>
+</pub-date>
+<volume>13</volume>
+<elocation-id>RP94723</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2024-01-12">
+<day>12</day>
+<month>01</month>
+<year>2024</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2023-11-24">
+<day>24</day>
+<month>11</month>
+<year>2023</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2022.04.05.487201"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2024-03-27">
+<day>27</day>
+<month>03</month>
+<year>2024</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.94723.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.94723.1.sa2">eLife assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.94723.1.sa1">Reviewer #1 (Public Review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.94723.1.sa0">Reviewer #2 (Public Review):</self-uri>
+</event>
+<event>
+<event-desc>Reviewed preprint v2</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2025-07-28">
+<day>28</day>
+<month>07</month>
+<year>2025</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.94723.2"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.94723.2.sa3">eLife Assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.94723.2.sa2">Reviewer #1 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.94723.2.sa1">Reviewer #2 (Public review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.94723.2.sa0">Author response:</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2024, Diana et al</copyright-statement>
+<copyright-year>2024</copyright-year>
+<copyright-holder>Diana et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-94723-v3.pdf"/>
+<abstract>
+<p>Calcium-sensitive fluorescent indicators enable monitoring of spiking activity in large neuronal populations in animal models. Despite the plethora of algorithms developed over the past decades, accurate spike-time inference methods for spike rates exceeding 20 Hz are lacking. More importantly, little attention has been devoted to the quantification of statistical uncertainties in spike time estimation, which is essential for assigning confidence levels to inferred spike patterns. To address these challenges, we introduce (1) a statistical model that accounts for bursting neuronal activity and baseline fluorescence modulation and (2) apply a Monte Carlo strategy (particle Gibbs with ancestor sampling) to estimate the joint posterior distribution of spike times and model parameters. Our method is competitive with state-of-the-art supervised and unsupervised algorithms, as evaluated on the CASCADE benchmark datasets. Analysis of fluorescence transients recorded with the ultrafast genetically encoded calcium indicator GCaMP8f demonstrates that our method can resolve interspike intervals as short as 5 ms. Overall, our study describes a Bayesian inference method for detecting neuronal spiking patterns and quantifying their uncertainty. The use of particle Gibbs samplers enables unbiased estimates of spike times and all model parameters, and provides a flexible statistical framework for testing more specific models of calcium indicators.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00k4n6c32</institution-id>
+<institution>EC | Horizon 2020 Framework Programme (H2020)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>896051</award-id>
+<principal-award-recipient>
+<name>
+<surname>Diana</surname>
+<given-names>Giovanni</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>Improved text clarity and fixed error bars in Figure 9</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<label>1</label>
+<title>Introduction</title>
+<p>Fluorescence indicators of calcium activity allow us to monitor the dynamics of neuronal populations both <italic>in vivo</italic> and <italic>in vitro</italic>. In the last decade, there has been a proliferation of new methods to identify single spikes from fluorescence time series using template matching (<xref ref-type="bibr" rid="c7">Dyer et al., 2013</xref>; <xref ref-type="bibr" rid="c13">Grewe et al., 2010</xref>; <xref ref-type="bibr" rid="c21">Kerr et al., 2005</xref>; <xref ref-type="bibr" rid="c34">Quan et al., 2010</xref>), linear deconvolution (<xref ref-type="bibr" rid="c15">Holekamp et al., 2008</xref>; <xref ref-type="bibr" rid="c48">Tubiana et al., 2020</xref>; <xref ref-type="bibr" rid="c51">Wei et al., 2020</xref>; <xref ref-type="bibr" rid="c52">Yaksi and Friedrich, 2006</xref>), finite rate of innovation (<xref ref-type="bibr" rid="c28">Oñativia and Dragotti, 2015</xref>; <xref ref-type="bibr" rid="c29">Oñativia et al., 2013</xref>), independent component analysis (<xref ref-type="bibr" rid="c27">Mukamel et al., 2009</xref>), non model-based signal processing (<xref ref-type="bibr" rid="c39">Sebastian et al., 2019</xref>), supervised learning (<xref ref-type="bibr" rid="c14">Hoang et al., 2020</xref>; <xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>; <xref ref-type="bibr" rid="c38">Sasaki et al., 2008</xref>; <xref ref-type="bibr" rid="c40">Sebastian et al., 2021</xref>; <xref ref-type="bibr" rid="c44">Theis et al., 2016</xref>), constrained non-negative matrix factorization (<xref ref-type="bibr" rid="c31">Pnevmatikakis et al., 2014</xref>, <xref ref-type="bibr" rid="c33">2016</xref>; <xref ref-type="bibr" rid="c54">Zhou et al., 2018</xref>), active set methods (<xref ref-type="bibr" rid="c9">Friedrich and Paninski, 2016</xref>; <xref ref-type="bibr" rid="c10">Friedrich et al., 2017</xref>), convex and non-convex optimization methods (<xref ref-type="bibr" rid="c18">Jewell and Witten, 2018</xref>; <xref ref-type="bibr" rid="c19">Jewell et al., 2020</xref>; <xref ref-type="bibr" rid="c24">Malik et al., 2011</xref>; <xref ref-type="bibr" rid="c36">Ranganathan and Koester, 2010</xref>; <xref ref-type="bibr" rid="c43">Stern et al., 2020</xref>), and interior point method (<xref ref-type="bibr" rid="c49">Vogelstein et al., 2010</xref>).</p>
+<p>Model-based approaches aim to describe the mechanistic link between spikes and fluorescence. This is typically achieved by introducing a set of time-dependent “state” variables such as calcium level and baseline modulation, and their temporal dynamics. The temporal evolution of the state variables usually depends on additional parameters that remain constant over time and define the dynamics. Depending on the model, state variables may not be fully observable, in which case, we must infer them from the data. In statistics, this class of models is referred to as state-space models, and they are used in time series analysis to describe the probabilistic dependence between data and unobserved variables. Previous works have used tractable state-space models to derive maximum-a-posteriori estimates of spike times (<xref ref-type="bibr" rid="c5">Deneux et al., 2016</xref>; <xref ref-type="bibr" rid="c8">Fletcher and Rangan, 2014</xref>; <xref ref-type="bibr" rid="c20">Kazemipour et al., 2017</xref>; <xref rid="c46" ref-type="bibr">Tsunoda et al., 2010</xref>b).</p>
+<p>The vast majority of spike inference methods provide single estimates of spike times by minimizing a cost function defined by the underlying model and constraints. This optimization approach does not provide information about the statistical uncertainty associated with single-point estimates. To address this issue, previous studies proposed Bayesian inference methods (<xref ref-type="bibr" rid="c12">Greenberg et al., 2018</xref>; <xref ref-type="bibr" rid="c16">Huys and Paninski, 2009</xref>; <xref ref-type="bibr" rid="c17">Im et al., 2019</xref>; <xref ref-type="bibr" rid="c25">Mishchencko et al., 2011</xref>; <xref ref-type="bibr" rid="c26">Mishchenko and Paninski, 2011</xref>; <xref ref-type="bibr" rid="c32">Pnevmatikakis et al., 2013</xref>; <xref ref-type="bibr" rid="c35">Rahmati et al., 2016</xref>; <xref ref-type="bibr" rid="c41">Shibue and Komaki, 2020</xref>; <xref ref-type="bibr" rid="c42">Speiser et al., 2017</xref>; <xref ref-type="bibr" rid="c45">Theis et al., 2013</xref>; <xref rid="c47" ref-type="bibr">Tsunoda et al., 2010</xref>a; <xref ref-type="bibr" rid="c50">Vogelstein et al., 2009</xref>), which give access to the full probability distribution of the unknowns given the data.</p>
+<p>However, the state-space models used in these approaches do not take into account the possibility of burst firing and slow changes in the fluorescence baseline, which is known to be an important issue for the analysis of <italic>in-vivo</italic> recordings. Moreover, current Bayesian methods do not treat time-independent model parameters (e.g. rate constants) and dynamic variables equally. Instead, they require additional optimization procedures to calibrate model parameters, typically relying on ad-hoc tuning or grid search. This separation can lead to biased inference and poorly calibrated uncertainty estimates, particularly when parameters such as calcium decay time or spike amplitude are inaccurately specified. In contrast, our approach jointly infers both spike times and model parameters within a unified Bayesian framework, enabling uncertainty-aware estimation and avoiding separate, error-prone calibration steps.</p>
+<p>Inference on non-linear and non-Gaussian state-space models is analytically intractable, requiring the application of Monte Carlo methods to obtain unbiased approximations of the posterior distributions. Because the number of unknowns in these models is of the order of the number of time steps in the fluorescence time series, the analysis of longer datasets requires efficient strategies to sample from high-dimensional spaces. A major breakthrough in analyzing state-space models has been the introduction of sequential Monte Carlo methods (<xref ref-type="bibr" rid="c4">Chopin and Papaspiliopoulos, 2020</xref>). These algorithms can sample efficiently from the latent space by approximating the target posterior distribution sequentially by combining importance sampling and resampling techniques. In particular, the particle Gibbs algorithm can be used to obtain unbiased estimates of the joint distribution of time-independent model parameters and dynamical variables. Still, it has never been applied in the context of spike inference.</p>
+<p>In this work, we employ the particle Gibbs (PG) sampler on a bursting autoregressive (BAR) model of time-series calcium-dependent fluorescence recordings to provide not only point estimates of spike times but also to quantify the statistical uncertainty of each estimate. This is important for downstream analyses such as comparing activity across neurons or conditions. Our generative model accounts for periods of high firing rates between periods of baseline (lower) firing rates. By quantifying the performance of our method (PGBAR) on the CASCADE benchmark dataset (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>), we showed that our approach is competitive with existing techniques. Finally, we tested PGBAR on <italic>in vitro</italic> recordings of cerebellar granule cells using the ultrafast GCaMP8f calcium indicator, demonstrating that our method reliably detects spikes even at high firing rates (∼ 200<italic>Hz</italic>).</p>
+</sec>
+<sec id="s2">
+<label>2</label>
+<title>Results</title>
+<sec id="s2a">
+<label>2.1</label>
+<title>The model</title>
+<p>To infer spike times and their uncertainty from noisy fluorescence traces, we first build a probabilistic generative model that captures the main dynamics underlying the fluorescence signal. We model the normalized fluorescence <italic>F</italic><sub>1:<italic>T</italic></sub> as the sum of a calcium-dependent fluorescence level <italic>c</italic><sub><italic>t</italic></sub> (hereinafter referred to as calcium level for brevity), a time-varying baseline <italic>b</italic><sub><italic>t</italic></sub> and Gaussian noise <italic>η</italic><sub><italic>t</italic></sub>
+<disp-formula id="eqn1">
+<graphic xlink:href="487201v4_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the fluorescence noise <italic>η</italic><sub><italic>t</italic></sub> is normally distributed with zero mean and variance <italic>σ</italic><sup>2</sup>. During <italic>in vivo</italic> neural recordings, animal sensory stimulation and behavior can vary. Neural activity can reflect this non-stationarity and alter firing rates over the recording period. To account for varying firing rates, our model makes the simplifying assumption that firing rates are bimodal, modeled as a hidden two-state process that separates periods of high and low firing rates. Therefore, we introduce firing states <italic>q</italic><sub><italic>t</italic></sub> = 0, 1, associated with low and high firing rates, <italic>r</italic><sub>0</sub> and <italic>r</italic><sub>1</sub>, respectively. We allow for stochastic transitions between these two states with rates <italic>w</italic><sub>0→1</sub> and <italic>w</italic><sub>1→0</sub>. The probability of switching from <italic>q</italic> to <italic>q′</italic> within a sampling period Δ is given by the transition matrix
+<disp-formula id="eqn2">
+<graphic xlink:href="487201v4_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>The number of spikes at time <italic>t, s</italic><sub><italic>t</italic></sub>, is modeled by a Poisson distribution with rate <italic>r</italic><sub>1</sub> when <italic>q</italic><sub><italic>t</italic></sub> = 1 otherwise with baseline firing rate <italic>r</italic><sub>0</sub> when <italic>q</italic><sub><italic>t</italic></sub> = 0. The dynamics of the calcium level in response to a spike train is modeled as a second-order autoregressive process
+<disp-formula id="eqn3">
+<graphic xlink:href="487201v4_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>c</italic><sub>0</sub> is the initial calcium level and <italic>A</italic> controls the calcium increase upon single action potential. Note that in <xref ref-type="disp-formula" rid="eqn3">Eq. (3)</xref> the calcium level at time <italic>t</italic> depends on the previous calcium levels up to <italic>c</italic><sub><italic>t</italic>−2</sub>. The dynamics of <italic>c</italic><sub><italic>t</italic></sub> in response to a single spike (kernel response) is characterized by a finite rise time (time to peak response) and exponential decay (see Section Response kernel for a derivation).</p>
+<p>We can recast our model as a first-order Markov process, where the state at time <italic>t</italic> only depends on the state at time <italic>t</italic> −1. This can be done by introducing a calcium vector and a spike count vector (see S2.2.3 in Ref. <xref ref-type="bibr" rid="c33">Pnevmatikakis et al. (2016)</xref>)
+<disp-formula id="eqn4">
+<graphic xlink:href="487201v4_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where in particular the calcium vector at time <italic>t</italic> is constructed by combining the calcium values at the current and previous time. With this definition, the calcium vector <italic>C</italic><sub><italic>t</italic></sub> satisfies the first-order Markov dynamics
+<disp-formula id="eqn5">
+<graphic xlink:href="487201v4_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Generative model of fluorescence time-series.</title>
+<p><bold>(A)</bold> Graphical representation of the generative model described in the main text. White circles denote unknown variables, grey circles denote measurements, and bare variables are fixed prior hyperparameters. Plates denote groups of variables. <bold>(B)</bold> List of parameters and corresponding priors.</p></caption>
+<graphic xlink:href="487201v4_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</p>
+<p>In this model, calcium dynamics are a deterministic process given the spike sequence <italic>s</italic><sub>1:<italic>T</italic></sub> .</p>
+<p>We reparameterize the autoregressive model in terms of phenomenological parameters: peak response (<italic>A</italic><sup>(<italic>max</italic>)</sup>), rise time (time to peak response <italic>τ</italic><sub><italic>r</italic></sub>) and decay time (<italic>τ</italic><sub><italic>d</italic></sub>) of unitary fluorescence response. Thanks to previous characterization of GCaMP probes (<xref ref-type="bibr" rid="c3">Chen et al., 2013</xref>), we can more easily design prior distributions for such phenomenological parameters rather than the autoregressive model parameters <italic>γ</italic>’s, <italic>A</italic> and <italic>γ</italic><sub>1,2</sub>. <italic>A</italic><sup>(<italic>max</italic>)</sup>, <italic>τ</italic><sub><italic>r</italic></sub> and <italic>τ</italic><sub><italic>d</italic></sub>, referred to as kernel parameters in the upcoming sections, can be derived from <italic>γ</italic><sub>1,2</sub> and <italic>A</italic> as (see Section Reparameterization for a derivation)
+<disp-formula id="eqn6">
+<graphic xlink:href="487201v4_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn7">
+<graphic xlink:href="487201v4_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn8">
+<graphic xlink:href="487201v4_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>Finally, the fluorescence baseline <italic>B</italic><sub><italic>t</italic></sub> is described by a Gaussian random walk with a normally distributed initial condition
+<disp-formula id="eqn9">
+<graphic xlink:href="487201v4_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where Δ is the sampling period of the time series.</p>
+<p>In the language of state-space models, the latent state of our model is the combination of the bursting state <italic>q</italic><sub><italic>t</italic></sub>, the spike count <italic>s</italic><sub><italic>t</italic></sub>, the calcium vector <italic>C</italic><sub><italic>t</italic></sub> and the baseline <italic>b</italic><sub><italic>t</italic></sub>, whereas the fluorescence <italic>F</italic><sub><italic>t</italic></sub>, defined in <xref ref-type="disp-formula" rid="eqn1">Eq. (1)</xref> is our observation. The time-independent parameters of our model are the firing rate constants <italic>r</italic><sub>0,1</sub>, the transition rates of the 2-state bursting process <italic>W</italic><sub>0→1</sub>, <italic>W</italic><sub>1→0</sub>, the kernel parameters of the calcium indicators (peak amplitude, rise and decay constants), the initial calcium level <italic>c</italic><sub>0</sub> and the fluorescence noise <italic>σ</italic>. To simplify the notation, we will denote the latent space as <italic>X</italic> = {<italic>q</italic><sub><italic>t</italic></sub>, <italic>s</italic><sub><italic>t</italic></sub>, <italic>C</italic><sub><italic>t</italic></sub>, <italic>b</italic><sub><italic>t</italic></sub>} and the combination of time-independent parameters as <italic>θ</italic>.</p>
+</sec>
+<sec id="s2b">
+<label>2.2</label>
+<title>State-space model formulation</title>
+<p>The joint probability of the latent state trajectory <italic>X</italic><sub>1:<italic>T</italic></sub> and the fluorescence observations <italic>F</italic><sub>1:<italic>T</italic></sub> conditional to the time-independent parameters <italic>θ</italic> can be expressed as
+<disp-formula id="eqn10">
+<graphic xlink:href="487201v4_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="487201v4_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the transition probability of the latent state, <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="487201v4_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the probability of the observed fluorescence conditional on the latent state at time <italic>t</italic> and <italic>µ</italic><sup><italic>θ</italic></sup>(<italic>X</italic><sub>1</sub>) is the probability distribution of the initial latent state. The latent state transition probability can be expressed in terms of the calcium level, firing state and baseline transitions and the Poisson probability of spike counts, namely
+<disp-formula id="eqn11">
+<graphic xlink:href="487201v4_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>By assuming the fluorescence noise to be normally distributed, we have
+<disp-formula id="eqn12">
+<graphic xlink:href="487201v4_eqn12.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>To infer latent states and time-independent parameters from fluorescence observations, we need to compute the posterior probability
+<disp-formula id="eqn13">
+<graphic xlink:href="487201v4_eqn13.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>P</italic>(<italic>θ</italic>) denotes the prior probability on model parameters and <italic>P</italic>(<italic>F</italic><sub>1:<italic>T</italic></sub>) is the normalization factor of the posterior distribution, also known as marginal likelihood. This distribution encodes all the information about the statistics of the latent state trajectory and the model parameters. We can use it to compute point estimates but also to quantify uncertainties. The posterior distribution for general state-space models is not analytically tractable. However, we can use Monte Carlo methods to generate random samples from the posterior distribution and use them to obtain unbiased approximations of any posterior average.</p>
+</sec>
+<sec id="s2c">
+<label>2.3</label>
+<title>Sequential Monte Carlo</title>
+<p>The model described in the previous section is analytically intractable; therefore, we employed Monte Carlo methods to sample from the posterior distribution in <xref ref-type="disp-formula" rid="eqn13">Eq. (13)</xref> of spike times and model parameters, allowing us to make probabilistic inferences rather than relying on point estimates alone. There are two critical issues when applying these methods to state-space models. First, the high-dimensionality of the posterior distribution and, second, the joint inference of state variables and constant parameters. In the general setting of a state-space model, we need to estimate state variables at each time point. Consequently, the support of the target posterior distribution is a high-dimensional space. The high dimensionality of state-space models poses a challenge when applying standard sampling methods, such as Markov Chain Monte Carlo, because their performance degrades rapidly with increasing dimensionality. Sequential Monte Carlo (SMC) methods address this issue by providing efficient sampling strategies from the latent space. The typical approach is to construct a sequential approximation to the posterior distribution, in which observations are accounted for iteratively. SMCs solve the problem of estimating dynamical variables at fixed model parameters (filtering).</p>
+<p>The second issue, related to the joint estimation of parameters and dynamic variables, was addressed by <xref ref-type="bibr" rid="c1">Andrieu et al. (2010)</xref> with the introduction of the particle Gibbs algorithm. This algorithm alternates the sampling of model parameters and state variables as in the Gibbs sampler, with the difference that state variables are sampled from an SMC-based transition kernel that leaves the filtering distribution <italic>P</italic>(<italic>X</italic><sub>1:<italic>T</italic></sub> |<italic>F</italic><sub>1:<italic>T</italic></sub>, <italic>θ</italic>) invariant. In this work, we employ a version of the particle Gibbs algorithm developed by <xref ref-type="bibr" rid="c22">Lindsten et al. (2014)</xref>, named particle Gibbs with ancestor sampling (PGAS), with better mixing properties (see Algorithm 2 and the Methods section).</p>
+<p>To carry out inference of time-independent and dynamical variables for our model, we employed Algorithm 1, which alternates the two steps mentioned above: (1) run the PGAS transition kernel to sample a new trajectory of the state variables, and (2) sample model parameters from their full conditional distributions when analytically available, otherwise from a Metropolis-Hastings kernel.</p>
+<statement id="alg1">
+<label>Algorithm 1</label>
+<p>Gibbs sampler</p>
+<p><fig id="alg1a" position="float" fig-type="figure">
+<graphic xlink:href="487201v4_alg1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig></p>
+</statement>
+</sec>
+<sec id="s2d">
+<label>2.4</label>
+<title>Validation and performance of PGBAR on simulated time-series fluorescence data</title>
+<p>To test the performance of our inference method, we generated latent state variables and fluorescence time series from our model, and compared the spikes inferred using our sampling algorithm against the ground truth simulations. In <xref rid="fig2" ref-type="fig">Fig. 2A</xref>, we show a fluorescence time series simulated from our model. The firing pattern exhibits periods of increased firing rate interspersed with quiet time windows. By using this trace as input to Algorithm 1, we can generate a latent state trajectory <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="487201v4_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and a set of model parameters at each iteration. In <xref rid="fig2" ref-type="fig">Fig. 2B</xref> we show 1000 samples of spike counts obtained by fitting the normalized fluorescence in <xref rid="fig2" ref-type="fig">Fig. 2A</xref>. The average spike counts over the random samples at each time frame (<xref rid="fig2" ref-type="fig">Fig. 2C</xref>) can be interpreted as the instantaneous firing rate multiplied by the sampling period. To illustrate the accuracy of our method, we calculated the spike counts within 1s time intervals for each random sample, providing the posterior distribution of the number of spikes in each time bin. As shown in <xref rid="fig2" ref-type="fig">Fig. 2D</xref>, the ground truth spike counts are well within the range of the posterior. Our method allows us to infer not only spike times but also the time windows of high and low firing states (<italic>q</italic><sub><italic>t</italic></sub> = 0, 1 in the model) of the neuron. In particular, the probability of a burst-firing state (<italic>q</italic> = 1) can be obtained by averaging the firing state across the Monte Carlo samples. As shown in <xref rid="fig2" ref-type="fig">Fig. 2E</xref>, this probability is close to one during the ground truth bursting periods and zero otherwise, with some degree of uncertainty at the onset and offset of the bursting period. <xref rid="fig2" ref-type="fig">Fig. 2F</xref> compares the ground truth baseline and the sample average.</p>
+<fig id="fig2" position="float" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Validation of the spike inference approach with simulated data.</title>
+<p><bold>(A)</bold> Example trajectory simulated from the model (solid, black) with ground truth spike times shown underneath (grey vertical lines). <bold>(B)</bold> Raster plot representing spike times for a thousand Monte Carlo samples. <bold>(C)</bold> Average spike counts over the Monte Carlo samples at each time frame. <bold>(D)</bold> Comparison between ground truth counts over 1s bins (black dots, from the example trace in <bold>A</bold>) and the corresponding posterior distributions (red boxes). <bold>(E-F)</bold> Comparison of ground truth firing state and baseline (solid, black) to estimated ones (blue). Shading indicates one standard deviation from posterior averages. <bold>(G)</bold> Posterior distributions of peak response upon a single spike, decay time, rise time, and noise level compared with the true value (vertical lines in green).</p></caption>
+<graphic xlink:href="487201v4_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>One of the key advantages of our sampling algorithm is the joint estimation of latent states and time-independent model parameters, such as spike amplitude, decay time, noise level, and baseline variance. This contrasts with most existing spike inference algorithms, which rely on fixed or externally calibrated parameters. Such fixed-parameter methods are vulnerable to systematic errors when parameter values are uncertain or poorly estimated. By jointly sampling from the posterior over all variables and parameters, our method propagates uncertainty correctly and mitigates biases arising from manual tuning or poor initialization.</p>
+<p><xref rid="fig2" ref-type="fig">Figure 2G</xref> illustrates the posterior distributions associated with the fluorescence probe’s peak amplitude, noise level, decay, and rise time. The ground truth parameters used to simulate the time series traces are always close to the peak of the corresponding posterior distributions, showing that our model is identifiable.</p>
+<p>To quantify the importance of having two firing states on the accuracy of the inference, we compared The performance of our method against a variant with only one global Poisson firing rate. We simulated fluorescence traces at different signal-to-noise (SNR) levels (1.1, 2, and 10), defined as the ratio between peak response <italic>A</italic><sup>(<italic>max</italic>)</sup> and the fluorescence noise parameter <italic>σ</italic>, and the burst firing frequency parameter, <italic>r</italic><sub>1</sub> (5Hz, 10Hz, 20Hz, 50Hz). Then, we used our algorithm and its non-bursting variant to infer spikes from the fluorescence trace. To quantify the inference performance, we calculated the correlation between the ground truth and the estimated spikes (downsampled at 7.5 Hz for consistency with other analyses in this work), the average absolute error and the bias (average error) per time point (see Methods). The top panel of <xref rid="fig3" ref-type="fig">Figure 3A</xref> shows two example traces with stimulation times generated by a 5 and 50Hz Poisson distribution of spike times. For the 5Hz firing trace, the bursting model did not improve the inference accuracy compared to the variant with a single firing rate (<xref rid="fig3" ref-type="fig">Fig. 3A</xref>, middle and bottom). The two analyses produced comparable correlations, errors, and biases (<xref rid="fig3" ref-type="fig">Fig. 3C-E</xref>). In contrast, the single firing rate model induced a systematic underestimate of the number of spikes for the 50 Hz trace, the original model captures the ground truth spikes reliably.</p>
+<fig id="fig3" position="float" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Dependency of inference performance on noise and firing frequency and the bias of non-bursting models.</title>
+<p><bold>(A)</bold> Example fluorescence time series simulated at 5Hz and 50Hz bursting frequencies (top). The analysis of these traces using the model’s bursting and non-bursting variants highlights the substantial bias introduced by the non-bursting variant at high frequency (bottom). <bold>(B-D)</bold> Quantification of correlation with true spikes, average error, and bias at different levels of SNR and frequency. As firing frequency increases, the correlation with ground-truth spikes generally increases. This is an effect of calculating correlations at fixed temporal resolution. The average error was computed as the sum of absolute deviations from the true spike counts divided by the number of time steps.</p></caption>
+<graphic xlink:href="487201v4_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The lower performance of the non-bursting version of the model is due to the bias induced by forcing a single firing rate across the time series. While for all conditions of noise and frequency, inference using the bursting model gives unbiased spike counts (<xref rid="fig3" ref-type="fig">Fig. 3E</xref>), in the case of the non-bursting model, the single Poisson firing rate leads necessarily to an underestimation of the spike count during bursting time windows and an overestimation during low activity windows. At increasing noise levels and firing frequency, the performance difference between bursting and non-bursting versions of our algorithm become more pronounced (<xref rid="fig3" ref-type="fig">Fig. 3D</xref>), with a clear advantage of our original bursting model in increasing correlation with ground truth and reducing error.</p>
+</sec>
+<sec id="s2e">
+<label>2.5</label>
+<title>Validation of PGBAR on the CASCADE benchmark data and comparison to previous methods</title>
+<p>To test our method on experimental data, we analyzed neuronal recordings from the CASCADE benchmark dataset (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>), thereby quantifying our algorithm’s performance across different calcium indicators. Bayesian priors for all PGBAR parameters were adapted to each experiment based on the published characterization of the different calcium indicators used (<xref ref-type="bibr" rid="c3">Chen et al., 2013</xref>). We compared our method to CASCADE (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>), MLSpike (<xref ref-type="bibr" rid="c5">Deneux et al., 2016</xref>), Peeling (<xref ref-type="bibr" rid="c23">Lütcke et al., 2013</xref>), CaImAn (<xref ref-type="bibr" rid="c11">Giovannucci et al., 2019</xref>), Suite2p (<xref ref-type="bibr" rid="c30">Pachitariu et al., 2017</xref>), and JewellWitten (<xref ref-type="bibr" rid="c19">Jewell et al., 2020</xref>) by using their previously benchmarked performance on the same datasets obtained from extensive parameter optimization (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>) (<xref rid="fig4" ref-type="fig">Fig. 4C</xref>). As a metric for inference performance, we used the Pearson’s correlation coefficient between ground truth spikes and predicted spikes after filtering with a Gaussian kernel with 200 ms bandwidth. This metric allowed us to directly compare PGBAR with previous analyses <xref ref-type="bibr" rid="c37">Rupprecht et al. (2021)</xref>. The correlation obtained with PGBAR averaged across cells and datasets is 0.75. As for the other methods, we observed a large variability of performance across recordings, however we did not find a particular condition where our method performed systematically better or worse across indicators (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>) and standardized noise level (<xref rid="fig4" ref-type="fig">Fig. 4B</xref>), which is a noise index introduced by <xref ref-type="bibr" rid="c37">Rupprecht et al. (2021)</xref> to account for different sampling frequencies (ratio between the standard deviation of the normalized fluorescence and the square root of the sampling frequency). In particular, we did not observe a statistically significant difference in the mean correlation coefficient across standardized noise levels from 0.5 to 3.5 (<xref rid="fig4" ref-type="fig">Fig. 4B</xref>). However, lower noise levels seem to be associated with a larger range of correlation.</p>
+<fig id="fig4" position="float" fig-type="figure">
+<label>Figure 4.</label>
+<caption><title>Comparison of PGBAR with existing methods using analysis of CASCADE benchmark data.</title>
+<p><bold>(A)</bold> Correlation between estimated and ground truth firing rates filtered with a 200ms bandwidth Gaussian kernel (CASCADE dataset). The color code represents the different calcium indicators used in each dataset.<bold>(B)</bold> Correlation with ground truth spikes as a function of the standardized noise level (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>). <bold>(C)</bold> Comparison with existing methods. Correlation averaged across datasets and neurons.</p></caption>
+<graphic xlink:href="487201v4_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The performance of PGBAR across the CASCADE database was comparable to that of previous methodologies. Among model-based approaches, our method slightly underperformed MLSpike (PGBAR median within 6% of ML-Spike; Mann-Whitney test, p-value = 0.0043), likely due to its description of the nonlinear properties of the calcium indicator. The best performance is achieved by the supervised CASCADE method; however, it is a supervised method (i.e., requires training on ground truth data) and does not provide posterior distributions for spike times and model parameters.</p>
+<p>The previous analysis provides an overview of PGBAR’s overall performance compared with prior methods. To illustrate the advantages of PGBAR in estimating statistical uncertainties, we now take a closer look at a representative recording in the CASCADE dataset (<xref rid="fig5" ref-type="fig">Fig. 5A</xref>, CASCADE dataset 9 (<xref ref-type="bibr" rid="c3">Chen et al., 2013</xref>)), a GCaMP6f fluorescence time series from a pyramidal neuron in the mouse visual cortex. The comparison between ground truth spikes and those inferred using PGBAR in <xref rid="fig5" ref-type="fig">Fig. 5A</xref> shows differences outside the 1st-3rd interquartile range in 30% of the 1s time intervals. This discrepancy between the posterior distributions and the ground truth can be attributed to the autoregressive model’s limited capacity to capture the full biophysical properties of GCaMP6. Despite such discrepancy, the estimated bursting pattern shown in <xref rid="fig5" ref-type="fig">Fig. 5A</xref> (lower panel) captures faithfully the overall periods of increased neuronal activity. The posterior distributions of model parameters are shown in <xref rid="fig5" ref-type="fig">Fig. 5B</xref>. Some distributions (burst firing rate and the rise time) shift significantly from their corresponding priors. The mismatch between the prior and the posterior also highlights the model’s shortcomings. In this case, the posterior distribution of the burst firing rate appears to be shifted to larger values. This result could be attributed to the use of Gaussian noise in the model. Indeed, non-Gaussian fluorescence fluctuations might be misinterpreted by the sampler as true spikes, thereby increasing the burst firing rate. This example illustrates that prior distributions can partially compensate for this bias by penalizing unrealistic parameter configurations.</p>
+<fig id="fig5" position="float" fig-type="figure">
+<label>Figure 5.</label>
+<caption><title>Analysis of GCaMP6f recordings from the CASCADE dataset.</title>
+<p><bold>(A)</bold> example Δ<italic>F/F</italic> from the CASCADE dataset (#DS09, GCaMP6f, mouse visual cortex) with ground truth spikes shown underneath fluorescence (top), comparison of spike counts within 1s time intervals (middle), and burst probability (bottom). Shading denotes uncertainty within one standard deviation. <bold>(B)</bold> Comparison between posterior distributions of the model parameters (histograms) and priors (continuous densities): maximal calcium response to single spikes (<italic>A</italic><sub><italic>max</italic></sub>), initial calcium level (<italic>c</italic><sub>0</sub>), decay and rise time, noise level (<italic>σ</italic><sup>2</sup>), bursting (<italic>r</italic><sub>1</sub>) and baseline (<italic>r</italic><sub>0</sub>) firing rates, transition rates between firing states (<italic>w</italic><sub>0→1</sub>, <italic>w</italic><sub>1→0</sub>).</p></caption>
+<graphic xlink:href="487201v4_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s2f">
+<label>2.6</label>
+<title>Validation and performance of PGBAR on simulations of short-interval stimuli</title>
+<p>We tested the accuracy of PGBAR in resolving pairs of stimuli with inter-spike intervals (ISI) below 10ms by performing model simulations of different signal-to-noise levels. <xref rid="fig6" ref-type="fig">Figure 6A</xref> shows two simulated fluorescence traces with two spikes 10ms apart at low (1.4) and high (3.4) SNR levels. When applied to these simulated data, PGBAR accurately detected two spikes with over 95% confidence across all SNR values. Next, we examine the temporal accuracy of ISI estimation.</p>
+<fig id="fig6" position="float" fig-type="figure">
+<label>Figure 6.</label>
+<caption><title>Sensitivity of spike detection to sampling frequency and SNR level.</title>
+<p><bold>(A)</bold> Examples of simulated fluorescence traces with two spikes separated by 10 ms (vertical lines) at low SNR (1.4, bottom) and high SNR (3.4, top). Shaded bands display denoised fits (calcium fluorescence plus baseline) within one standard deviation. (<bold>B</bold>) Posterior distributions of the inter-spike interval (ISI). Increasing SNR (from bottom to top) and sampling frequency (left to right) has the effect of reducing the ISI posterior variance, bringing the maximum a posteriori estimate (MAP) closer to the ground truth. <bold>(C)</bold> Posterior probability of the ISI to be within an interval of 3 ms centered around the ground truth ISI as a function of SNR and ground truth ISI with sampling frequency of 1, 2 and 3 kHz. <bold>(D)</bold> Trial-to-trial variability of ISI posterior distributions. We analyzed 12 simulated fluorescence traces with a sampling frequency of 3 kHz and two spikes separated by 5 ms. Density plots have been smoothed with a 1 ms bandwidth. For all simulations, we used <italic>τ</italic><sub><italic>r</italic></sub> = 3.7 ms and <italic>τ</italic><sub><italic>d</italic></sub> = 40 ms.</p></caption>
+<graphic xlink:href="487201v4_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Increasing SNR or sampling frequency has the effect of narrowing the ISI posterior distribution around the ground truth value (<xref rid="fig6" ref-type="fig">Fig. 6B</xref>). When examining multiple stimulus intervals, SNRs, and sampling frequencies, we show that high sampling frequencies enable more reliable extraction of spike intervals. The posterior probability of the ISI falls within 3 ms of the ground truth ISI at a sampling frequency of 1 kHz and within 6 ms for 3 kHz (averaging over 30 trials, see <xref rid="fig6" ref-type="fig">Fig. 6C</xref>). When this probability is above 0.5, the ground truth value is equal to the mode of the posterior ISI distribution (using 3 ms bin size), therefore we can use this probability as a metric to quantify the temporal accuracy of our inference. For ground truth values above 3 ms, the contours of constant probability (iso-probability) show that increasing the temporal separation between stimuli does not affect the inference accuracy. On the contrary, increasing the sampling frequency shifts the iso-probability contours toward lower SNR, indicating that higher sampling rates require lower SNR to achieve the same accuracy. <xref rid="fig6" ref-type="fig">Figure 6D</xref> shows the posterior ISI distributions obtained from ten independent simulations with ground truth ISI of 5 ms at different SNR levels. At low SNR, the posterior distributions have larger variance, whereas at higher SNR, they shrink around the ground-truth value. This analysis illustrates the expected variability in spike inference across multiple trials of the same neuron. Based on this analysis, we expect PGBAR to provide accurate estimates of interspike intervals down to 5 ms.</p>
+</sec>
+<sec id="s2g">
+<label>2.7</label>
+<title>PGBAR spike inference from fluorescence transients recorded using the fast calcium indicator GCaMP8f</title>
+<p>We tested our approach on the fast calcium indicator GCaMP8f by performing high-speed (≈ 2.8 kHz) two-photon linescan calcium imaging of cerebellar granule cells <italic>in vitro</italic>. GCaMP8f was expressed in the Crus I region of the cerebellum using adeno-associated virus (AAV) injection (<xref ref-type="fig" rid="fig7">Fig.7A</xref>). Compared with GCaMP6f, GCaMP8f exhibits a rise time nearly an order of magnitude faster, which we expected to translate into substantially improved temporal accuracy in spike time detection. Fluorescence signals were recorded from both granule cell somata and synaptic boutons along the parallel fibers, while ground truth spikes were evoked via extracellular stimulation of granule cell axons in the molecular layer (<xref rid="fig7" ref-type="fig">Fig. 7B</xref>).</p>
+<fig id="fig7" position="float" fig-type="figure">
+<label>Figure 7.</label>
+<caption><title>High-speed 2-photon linescan calcium imaging.</title>
+<p><bold>(A)</bold> GCaMP8f virus injection in the cerebellar vermis. <bold>(B)</bold> Induction of action potentials to cerebellar granule cells by direct stimulation of the parallel fibers. <bold>(C)</bold> Single pulse stimulation to extract kinetic model parameters of GCaMP8f indicator. <bold>(D-E)</bold> High-speed (3 kHz) 2-photon linescan calcium imaging of granule cell somata. <bold>(D)</bold> Representative fluorescence time series from a single trial and <bold>(E)</bold> heatmap showing fluorescence transients evoked using the same Poisson train across trials. Single-trial fluorescence (D) and denoised fit (calcium level plus baseline). <bold>(F)</bold> Spike detection for each trial. <bold>(G)</bold> 100 ms time window highlighting the first four stimulation-induced action potentials. Normalized fluorescence and denoised fit (top), average spike count (bottom). Orange vertical lines denote stimulation time points. <bold>(H)</bold> Comparison of the posterior distributions of the interval between the first two detected spikes across experimental trials. The solid vertical line at 5.3 ms denotes the time interval between the first two stimulations. <bold>(I)</bold> Comparison of the posterior modes of the inter-spike interval across trials between real data and simulations.</p></caption>
+<graphic xlink:href="487201v4_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>For each recorded soma and bouton, we applied two types of stimuli. Single time point stimulation and a fixed stimulation pattern generated from a 20 Hz Poisson process with 29 stimulation time points. First, we used the single-stimulation trials to design prior distributions of amplitudes, rise and decay constants (<xref rid="fig7" ref-type="fig">Fig. 7C</xref>). Next, we used PGBAR to analyze each Poisson stimulation trial in <xref rid="fig7" ref-type="fig">Figure 7E</xref>. By generating thousands of posterior samples of spike time patterns, we obtained the spike probability for all time frames and trials (<xref rid="fig7" ref-type="fig">Fig. 7F</xref>). The Pearson’s pairwise correlation between spike probabilities (Gaussian filtered with 20 ms bandwidth) across trials is always larger than 0.95, which demonstrates that PGBAR provides robust predictions across trials and can reliably detect single-trial action potential-evoked GCaMP8f fluorescence transients.</p>
+<p>To illustrate the temporal accuracy of PGBAR we focused on a part of the stimulus train with a short 5 ms interval between two spikes (<xref rid="fig7" ref-type="fig">Fig. 7G</xref>). Despite the relatively low SNR (<italic>A</italic><sup>(<italic>max</italic>)</sup><italic>/σ</italic> ≈2.4), 100% of the posterior samples contained two spikes in the considered time interval. The ground truth ISI is well within the posterior distribution of each trial, with posterior modes symmetrically distributed around it (<xref rid="fig7" ref-type="fig">Fig. 7H</xref>). To better understand the variability of the posterior modes, we simulated 10 fluorescence traces with two spikes separated by 5 ms and sampling frequency matching our recordings. By analysing these simulations with PGBAR we obtained a distribution of ISI posterior modes that is statistically compatible with the real data (<xref rid="fig7" ref-type="fig">Fig. 7I</xref>, Mann-Whitney test p-value = 0.97), which provides further evidence that our results are statistically unbiased and that PGBAR can be used to infer spike times for intervals down to 5 ms.</p>
+<p>The distribution of the posterior modes of the total number of spikes across experiments and trials is centered around the ground truth value for both somas and boutons with a relative error of 15% (<xref rid="fig8" ref-type="fig">Fig. 8A</xref>). To quantify the precision of spike-time detection, we used a single-trial definition of temporal accuracy as the offset between ground truth spikes and nearest detections averaged across stimulation time points. This temporal accuracy is 0.43 ms (± 0.10 ms, SEM) and 1.39 ms (±0.11 ms, SEM) in boutons and somas respectively, highlighting a significant delay of 0.95 ms (±0.15 ms SEM, Mann-Whitney test p-value = 4.8 × 10<sup>−7</sup>) from the average time of detection in boutons (<xref rid="fig8" ref-type="fig">Fig. 8B</xref>). This result is compatible with the proximity of synaptic boutons to the electrical stimulation along the parallel fiber. We analyzed both signals from somata and synaptic boutons because <italic>in vivo</italic> two-photon imaging can be performed from both parts of the cell. Here, we showed that our method performs reliably on both, demonstrating its robustness across recording sites.</p>
+<fig id="fig8" position="float" fig-type="figure">
+<label>Figure 8.</label>
+<caption><title>Temporal resolution analysis across soma and synaptic boutons along the parallel fiber.</title>
+<p><bold>(A)</bold> Average spike count estimated from 6 somata and 4 boutons (5 trials each). The dashed line denotes the number of stimulation time points (29). <bold>(B)</bold> Time from stimulus time predicted spike averaged across all 29 stimulations per trial. The comparison between somas and boutons shows that somatic transients are delayed by 1 ms. <bold>(C)</bold> Correlation between predicted spikes and stimulation events across time scales.</p></caption>
+<graphic xlink:href="487201v4_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>As an alternative estimate of temporal accuracy, we have calculated the Pearson’s correlation between detected spike times and stimulation times over different time-scales. We binned detected spike times and the Poisson stimulation train using bin sizes ranging from 2 ms to 50 ms and calculated their correlation. If we use the CASCADE dataset average correlation (0.75) as the reference, this analysis shows that the correlation exceeds 0.75 for bin sizes up to 10 ms, confirming that our method provides accurate inference of short intervals.</p>
+<p>Next, we compared the temporal accuracy of PGBAR, CASCADE and MLspike predictions (<xref rid="fig9" ref-type="fig">Figure 9A</xref>). The temporal shifts of the estimated spike time from ground truth across MLspike, Cascade, and PGBAR have different distributions, with 10<sup>th</sup>-to-90<sup>th</sup> percentile ranges of 14 ms, 8 ms, and 3 ms, respectively. In addition, the false detection rate, defined as the difference between detected and ground truth number of spikes divided by the ground truth, is significantly lower in PGBAR, compared to MLspike and CASCADE (Mann-Whitney test p-value ¡ 10<sup>−</sup>3) which show a much broader distribution across trials (<xref rid="fig9" ref-type="fig">Figure 9B</xref>). These results demonstrate that PGBAR estimates are more reliable than MLspike and CASCADE across trials, with a narrower, unbiased distribution of both temporal shift from the nearest ground truth spike and the false-positive rate. Next, we compared the correlation with ground truth across different time scales for the three methods (<xref rid="fig9" ref-type="fig">Fig. 9C</xref>). In our cerebellar dataset, PGBAR outperforms the other methods across the full range of bin sizes, particularly at short time scales, further highlighting the advantage of our method for high firing rates.</p>
+<fig id="fig9" position="float" fig-type="figure">
+<label>Figure 9.</label>
+<caption><title>Comparison of temporal accuracy across methods.</title>
+<p>(A) Estimate of temporal accuracy (absolute time difference between ground truth spikes and nearest detections averaged across detections) for all cerebellar recordings and across inference methods (CASCADE, MLSpike, and PGBAR). (B) False detection rate defined as the number of excess spikes divided by the number of ground truth spikes. (C) Pearson’s correlation across temporal scales by method. (A,B) Error bars denote the 10th-to-90th percentile range.</p></caption>
+<graphic xlink:href="487201v4_fig9.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To quantify how the hyperparameters of the priors affect PGBAR predictions, we conducted a biparametric sensitivity analysis, comparing it with MLspike. For PGBAR, we considered the hyperparameters of the Bayesian priors governing the peak response to a single spike and the baseline variance, which determines the extent to which fluorescence can be attributed to baseline modulation. For MLspike, we considered the transient amplitude and the decay time constant. For both methods, we varied the parameters between -50% and +50% of their optimal values. We estimated the correlation between predictions and ground truth as well as the number of spikes (<xref rid="fig10" ref-type="fig">Fig. 10A</xref>). Both distributions of Pearson’s correlation and spike number arising from different choices of parameters (model parameters for MLspike and prior hyperparameters for PGBAR) are much narrower in the case of PGBAR. To quantify this difference, we calculated the coefficient of variation across all parameter configurations for each trial (<xref rid="fig10" ref-type="fig">Fig. 10B</xref>), which was significantly lower in PGBAR than in MLspike. Our analysis shows that PGBAR predictions are much less sensitive to inaccurate prior hyperparameter choices than MLspike is to its model parameters.</p>
+<fig id="fig10" position="float" fig-type="figure">
+<label>Figure 10.</label>
+<caption><title>Parameter sensitivity in PGBAR and MLspike.</title>
+<p>(A) Pearson’s correlation and predicted spike count for PGBAR and MLspike across experiments and trials with varying PGBAR prior hyperparameters and MLspike model parameters in the range between -50% and +50% from the optimal value. (B) Coefficient of variation over parameter sets for both Pearson’s correlation and spike number associated to each prediction and comparison between PGBAR and MLspike.</p></caption>
+<graphic xlink:href="487201v4_fig10.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+</sec>
+<sec id="s3">
+<label>3</label>
+<title>Discussion</title>
+<p>Calcium-sensitive fluorescent indicators are essential tools for monitoring neuronal population activity in model organisms. However, extracting underlying firing patterns from fluorescence time series is challenging due to low signal-to-noise ratio, incomplete knowledge of indicator dynamics, complex firing statistics, and unknown fluorescence modulation. Despite the proliferation of methodologies developed to address this issue, limited attention has been paid to estimating the statistical uncertainties associated with spike inference. The vast majority of spike-detection algorithms are based on optimization techniques and provide only point estimates of the detected spikes. Quantifying statistical uncertainties is essential for comparing firing patterns across neurons (<xref ref-type="bibr" rid="c6">Diana et al., 2019</xref>) and establishing causal relationships. The work of <xref ref-type="bibr" rid="c32">Pnevmatikakis et al. (2013)</xref> and <xref ref-type="bibr" rid="c50">Vogelstein et al. (2009)</xref> addressed this issue by using Monte Carlo methods to approximate the full posterior distributions of spiking patterns. Building upon their work, here we improve the generative model used to infer spiking patterns from fluorescence time series and describe efficient Monte Carlo strategies to infer spike times and their statistical uncertainties.</p>
+<sec id="s3a">
+<title>Bursting dynamics and baseline modulation</title>
+<p>Neural activity patterns are not always well described by a simple Poisson spiking process. The PGBAR is the first Monte Carlo method (<xref ref-type="bibr" rid="c12">Greenberg et al., 2018</xref>; <xref ref-type="bibr" rid="c32">Pnevmatikakis et al., 2013</xref>; <xref ref-type="bibr" rid="c50">Vogelstein et al., 2009</xref>) to perform statistical inference using a non-homogeneous Poisson firing-and-baseline-modulation model. PGBAR uses a two-state process to enable transitions between low and high firing rates. This feature is used to mimic alternation between periods of low baseline firing and bursting activity transients, during which the firing rate increases significantly. We have shown that neglecting bursting activity in the model used for inference can lead to biased results, particularly at low SNR and high firing rates. By explicitly modeling bursting dynamics, PGBAR produced unbiased results across all noise and frequency levels when tested on simulated data (<xref rid="fig3" ref-type="fig">Figure 3</xref>).</p>
+<p>Although the model used in <xref ref-type="bibr" rid="c32">Pnevmatikakis et al. (2013)</xref> did not account for fluorescence baseline modulation, the authors acknowledged that baseline fluctuations in <italic>in vivo</italic> recordings would be essential to consider. PGBAR employs a Gaussian random walk, as in MLSpike (<xref ref-type="bibr" rid="c5">Deneux et al., 2016</xref>), to model slow changes in baseline fluorescence across the recording. While this is a simple Markov model of fluorescence baseline, it introduces additional noise. To avoid this effect, alternative baseline models, such as the integrated random walk, can be employed.</p>
+</sec>
+<sec id="s3b">
+<title>Joint estimation of time-independent parameters and dynamic variables</title>
+<p>We employed for the first time state-of-the-art particle Gibbs algorithms to infer spikes from noisy fluorescence. This is a key novelty compared with previous SMC-based methods (<xref ref-type="bibr" rid="c12">Greenberg et al., 2018</xref>; <xref ref-type="bibr" rid="c50">Vogelstein et al., 2009</xref>), enabling joint estimation of time-independent parameters and dynamic variables. Estimating time-independent model parameters is a well-known challenge in spike detection algorithms, typically requiring ad hoc calibration procedures, grid search, or manual settings. Because spike inference is sensitive to parameters such as the calcium response amplitude, rise and decay kinetics, and noise level, errors in these parameters can substantially affect the accuracy of spike time estimates. By jointly sampling model parameters and latent variables, PGBAR eliminates the need for separate calibration and ensures that parameter uncertainty is propagated to spike time estimates in a principled manner. As illustrated in <xref rid="fig10" ref-type="fig">Figure 10</xref>, this yields more robust inference than existing methods such as MLSpike, which are more sensitive to parameter variation. In addition, PGBAR enables the users to calibrate the inference of action potentials by setting prior mean and variance of phenomenological parameters (e.g., rise and decay constants, firing rates, bursting frequencies).</p>
+</sec>
+<sec id="s3c">
+<title>Comparison with benchmark datasets</title>
+<p>The proliferation of spike inference methodologies led to the development of community-based initiatives (<xref ref-type="bibr" rid="c2">Berens et al., 2018</xref>; <xref ref-type="bibr" rid="c44">Theis et al., 2016</xref>) to rank the performance of available methods. We applied our approach to the CASCADE dataset (<xref ref-type="bibr" rid="c37">Rupprecht et al., 2021</xref>), which provides a curated repository of neuronal recordings from mice and zebrafish using various calcium indicators. The performance of PGBAR, measured by the correlation coefficient with ground truth spikes, falls within one quartile of the correlation distributions of existing unsupervised approaches. In addition, it provides information about the statistical uncertainty associated with spike detection that is not currently possible with state-of-the-art techniques. While retraining supervised methods such as CASCADE on high-frequency or GCaMP8f ground truth datasets could further improve their performance, limitations in dataset availability and generalization across acquisition regimes motivate complementary, training-free approaches such as PGBAR.</p>
+</sec>
+<sec id="s3d">
+<title>PGBAR detection of short high-frequency bursts using an ultrafast calcium indicator</title>
+<p>PGBAR employs a second-order autoregressive process to link spiking activity to fluorescence. This simple model accounts for the basic qualitative aspects of calcium transients, and it is well-suited for linear indicators. For this reason, we have tested the performance of PGBAR on the ultrafast GCaMP8f (<xref ref-type="bibr" rid="c53">Zhang et al., 2023</xref>), which exhibits improved linearity compared with previous calcium probes. We showed that combining PGBAR with GCaMP8f enables detection of 5 ms inter-spike intervals with an accuracy of 2.5 ms in single trials, thereby providing a statistical tool for estimating high-frequency neural activity patterns.</p>
+</sec>
+<sec id="s3e">
+<title>PGBAR limitations and future perspectives</title>
+<p>Although full Bayesian inference is computationally expensive, SMC algorithms are highly parallelizable. Posterior distributions are represented by particles that are simultaneously propagated through time. In particular, GPU parallelization of SMC methods is an active field of research in computational statistics. Future advances in this direction could significantly enhance these methods and provide tools for online processing of fluorescence time series.</p>
+<p>Many commonly used indicators exhibit a nonlinear fluorescence response to increases in intracellular calcium (<xref ref-type="bibr" rid="c3">Chen et al., 2013</xref>). The autoregressive model used in this study does not account for that nonlinearity. This work provides a statistical framework that can be generalized to more specific biophysical models of calcium indicators to account for non-linear effects. In addition, these models depend on rate constants that are difficult to measure directly. The inability to constrain model parameters is a challenge for spike inference, as different parameter combinations can equally well account for the observed fluorescence by adjusting the inferred spike pattern. For this reason, when model parameters are not identifiable, the spike inference problem from fluorescence time series is ill-defined. Our Bayesian framework offers a systematic approach to address this issue by exploiting current and future data on the kinetics of calcium indicators through informative priors. Thanks to our joint sampling of model parameters and spike patterns, our Monte Carlo method can constrain parameter inference to biophysically relevant ranges.</p>
+</sec>
+</sec>
+<sec id="s4">
+<label>4</label>
+<title>Materials and Methods</title>
+<sec id="s4a">
+<label>4.1</label>
+<title>Particle Gibbs with ancestor sampling</title>
+<p>The PGAS step used in Algorithm 1 to sample latent state trajectories was introduced in <xref ref-type="bibr" rid="c22">Lindsten et al. (2014)</xref> to improve the performance of the original particle Gibbs sampler (<xref ref-type="bibr" rid="c1">Andrieu et al., 2010</xref>). We refer to their original works for details on the method’s convergence and mixing properties. The PGAS step is an SMC algorithm that generates a new latent-state trajectory from a reference trajectory and the model parameters. We initialize the algorithm with a set of <italic>N</italic> latent states (particles) at time <italic>t</italic> = 1,
+<disp-formula id="eqn14">
+<graphic xlink:href="487201v4_eqn14.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the first <italic>N</italic> − 1 are sampled from a proposal distribution equal to the probability of the initial state <italic>µ</italic><sup><italic>θ</italic></sup>(<italic>X</italic><sub>1</sub>)
+<disp-formula id="eqn15">
+<graphic xlink:href="487201v4_eqn15.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where bursting and baseline firing states <italic>q</italic><sub>1</sub> = 0, 1 have equal probability and the calcium vector is constrained by the initial condition of <xref ref-type="disp-formula" rid="eqn5">Eq. (5)</xref>, Ĉ<sub>1</sub> ≡ (<italic>c</italic><sub>0</sub> + <italic>AS</italic><sub>1</sub>, 0) and the model parameter <italic>c</italic><sub>0</sub>. The last particle is constrained by the reference trajectory <italic>X′</italic>. To conclude the initialization stage, we assign importance weights <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="487201v4_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> to all particles
+<disp-formula id="eqn16">
+<graphic xlink:href="487201v4_eqn16.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>Next, for <italic>t</italic> &gt; 1, we evolve the particle system through time by assigning ancestor particles <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="487201v4_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, propagate these to time <italic>t</italic> to get a new set of particles <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="487201v4_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and assigning weights <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="487201v4_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula>. For the first <italic>N</italic> − 1 particles, the ancestors are obtained by multinomial resampling from the particle system at time <italic>t</italic> − 1 with probability proportional to the importance weights <inline-formula id="inline-eqn-8"><inline-graphic xlink:href="487201v4_inline8.gif" mimetype="image" mime-subtype="gif"/></inline-formula> . The ancestor <italic>J</italic> of the last particle is drawn from the distribution
+<disp-formula id="eqn17">
+<graphic xlink:href="487201v4_eqn17.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+exploiting the fact that we know its state at time <italic>t</italic>.</p>
+<p>In order to evolve the particle system through time, we need to set a proposal distribution <italic>ρ</italic><sub><italic>t</italic></sub>(<italic>X</italic><sub><italic>t</italic></sub> |<italic>X</italic><sub><italic>t</italic>−1</sub>) to sample new latent states. This proposal is then incorporated into the reweighting stage. Although the choice of the proposal distribution is arbitrary, it can be shown that the conditional distribution <italic>P</italic>(<italic>X</italic><sub><italic>t</italic></sub> |<italic>X</italic><sub><italic>t</italic>−1</sub>, <italic>F</italic><sub><italic>t</italic></sub>) reduces the variance of the importance weights. We can express this optimal proposal as
+<disp-formula id="eqn18">
+<graphic xlink:href="487201v4_eqn18.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>Z</italic><sup><italic>θ</italic></sup>(<italic>X</italic><sub><italic>t</italic>−1</sub>, <italic>F</italic><sub><italic>t</italic></sub>) is the normalization factor as a function of the latent state at time <italic>t</italic> 1 and current fluorescence <italic>F</italic><sub><italic>t</italic></sub>. We can now use the expressions of <inline-formula id="inline-eqn-9"><inline-graphic xlink:href="487201v4_inline9.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-10"><inline-graphic xlink:href="487201v4_inline10.gif" mimetype="image" mime-subtype="gif"/></inline-formula> in Eqs. (11,12) for our model to compute the optimal proposal distribution. To do so we decompose <italic>P</italic>(<italic>X</italic><sub><italic>t</italic></sub>|<italic>X</italic><sub><italic>t</italic>−1</sub>, <italic>F</italic><sub><italic>t</italic></sub>) as the product
+<disp-formula id="eqn19">
+<graphic xlink:href="487201v4_eqn19.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where we used the fact that <italic>C</italic><sub><italic>t</italic></sub> is deterministic and only depends on <italic>C</italic><sub><italic>t</italic>−1</sub> and the spike count at time <italic>t</italic>. The idea is to use this chain decomposition to sample first the firing state <italic>q</italic><sub><italic>t</italic></sub> and the spike count <italic>s</italic><sub><italic>t</italic></sub>, then calculate <italic>C</italic><sub><italic>t</italic></sub> from its deterministic evolution, and finally sample the baseline <italic>b</italic><sub><italic>t</italic></sub> from its distribution conditional on the other variables. The first term <italic>P</italic>(<italic>q</italic><sub><italic>t</italic></sub>, <italic>s</italic><sub><italic>t</italic></sub>|<italic>X</italic><sub><italic>t</italic>−1</sub>) can be obtained by integrating the product <inline-formula id="inline-eqn-11"><inline-graphic xlink:href="487201v4_inline11.gif" mimetype="image" mime-subtype="gif"/></inline-formula> over <italic>b</italic><sub><italic>t</italic></sub> and <italic>C</italic><sub><italic>t</italic></sub> and then normalizing the result. The integration over <italic>b</italic><sub><italic>t</italic></sub> and <italic>C</italic><sub><italic>t</italic></sub> leads to
+<disp-formula id="eqn20">
+<graphic xlink:href="487201v4_eqn20.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where we introduced the function <inline-formula id="inline-eqn-12"><inline-graphic xlink:href="487201v4_inline12.gif" mimetype="image" mime-subtype="gif"/></inline-formula> as the integral
+<disp-formula id="eqn21">
+<graphic xlink:href="487201v4_eqn21.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>The normalization factor <italic>Z</italic><sup><italic>θ</italic></sup>(<italic>X</italic><sub><italic>t</italic>−1</sub>, <italic>F</italic><sub><italic>t</italic></sub>) is obtained by taking the sum of <xref ref-type="disp-formula" rid="eqn20">Eq. (20)</xref> over firing state and spike count:
+<disp-formula id="eqn22">
+<graphic xlink:href="487201v4_eqn22.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>To draw a combination of <italic>q</italic><sub><italic>t</italic></sub> and <italic>s</italic><sub><italic>t</italic></sub> from this distribution, we applied a cutoff to the number of spikes per time step <italic>S</italic><sup>(<italic>max</italic>)</sup> = 20. We constructed a probability matrix of size 2 × <italic>S</italic><sup>(<italic>max</italic>)</sup> for all combinations of firing state and spike count.</p>
+<p>To obtain the full conditional distribution of <italic>b</italic><sub><italic>t</italic></sub> we consider again the product <inline-formula id="inline-eqn-13"><inline-graphic xlink:href="487201v4_inline13.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and by keeping only terms in <italic>b</italic><sub><italic>t</italic></sub> and normalizing we obtained a Gaussian distribution with mean <italic>µ</italic><sub><italic>prop</italic></sub> and variance <italic>σ</italic><sub><italic>prop</italic></sub> given by
+<disp-formula id="eqn23">
+<graphic xlink:href="487201v4_eqn23.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn24">
+<graphic xlink:href="487201v4_eqn24.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>The final step is to reweight all particles using the importance weight
+<disp-formula id="eqn25">
+<graphic xlink:href="487201v4_eqn25.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>However, due to the form of the optimal proposal in <xref ref-type="disp-formula" rid="eqn18">Eq. (18)</xref>, the importance weights reduce to the normalization factor calculated in <xref ref-type="disp-formula" rid="eqn22">Eq. (22)</xref>
+<disp-formula id="eqn26">
+<graphic xlink:href="487201v4_eqn26.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<statement id="alg2">
+<label>Algorithm 2</label>
+<p>PGAS kernel</p>
+<p><fig id="alg2a" position="float" fig-type="figure">
+<graphic xlink:href="487201v4_alg2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig></p>
+</statement>
+</sec>
+<sec id="s4b">
+<label>4.2</label>
+<title>Prior distributions</title>
+<p>As discussed in the text, we use a reparameterization of the autoregressive model in terms of the maximal amplitude <italic>A</italic><sup>(<italic>max</italic>)</sup>, rise and decay times <italic>τ</italic><sub><italic>r</italic></sub> and <italic>τ</italic><sub><italic>d</italic></sub>, for which it is easier to design realistic prior distributions based on previous empirical estimates of the kinetics of calcium indicators. We have used truncated normal priors for the maximal amplitude, the initial condition of the autoregressive model <italic>c</italic><sub>0</sub>, the rise and decay time. To calculate the full conditional distributions on bursting/baseline firing rates <italic>r</italic><sub>0,1</sub> and the transition matrix parameters <italic>w</italic><sub><italic>q</italic>→<italic>q</italic></sub><italic>′</italic> we have used a gamma distribution, whereas for the noise level <italic>σ</italic><sup>2</sup> an inverse gamma distribution.</p>
+</sec>
+<sec id="s4c">
+<label>4.3</label>
+<title>Sampling rules for time-independent parameters</title>
+<p>In Algorithm 1, after a new latent state trajectory is sampled from the PGAS kernel, we draw time-independent model parameters from the conditional distribution <italic>P</italic>(<italic>θ</italic><sub><italic>i</italic></sub> |<italic>X</italic><sub>1:<italic>T</italic></sub>, <italic>F</italic><sub>1:<italic>T</italic></sub>). We use a mixed approach where the parameters <italic>r</italic><sub>0,1</sub>, <italic>w</italic><sub><italic>q</italic>→<italic>q</italic></sub><italic>′</italic> and <italic>σ</italic><sup>2</sup> are sampled from their full conditional distribution, which can be obtained analytically by using gamma priors. In contrast, kernel parameters, <italic>A</italic><sup>(<italic>max</italic>)</sup> and <italic>τ</italic><sub><italic>r,d</italic></sub>, are sampled using the Metropolis-Hastings acceptance rule. The full conditional distribution of a given parameter can be obtained from the joint probability of model parameters, latent state, and fluorescence trajectories
+<disp-formula id="eqn27">
+<graphic xlink:href="487201v4_eqn27.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <italic>P</italic>(<italic>θ</italic>) is the prior distribution. We will now calculate the full conditionals for firing rates <italic>r</italic><sub><italic>q</italic></sub>, transition parameters <italic>w</italic><sub><italic>q</italic>→<italic>q</italic></sub><italic>′</italic>, and noise variance <italic>σ</italic><sup>2</sup> . For simplicity, we will use the same symbols for shape, <italic>α</italic>, and rate, <italic>β</italic>, for all prior distributions, although they differ numerically from each other. By combining the expressions in Eqs.(10), (11) and (12) with the gamma prior gamma(<italic>α, β</italic>) and by keeping only terms proportional to <italic>r</italic><sub>0,1</sub> we obtain
+<disp-formula id="eqn28">
+<graphic xlink:href="487201v4_eqn28.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+therefore the full conditional is a gamma distribution with updated parameters
+<disp-formula id="eqn29">
+<graphic xlink:href="487201v4_eqn29.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn30">
+<graphic xlink:href="487201v4_eqn30.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>By applying the same method to the transition rates <italic>w</italic><sub><italic>q</italic>→<italic>q</italic></sub><italic>′</italic> we have
+<disp-formula id="eqn31">
+<graphic xlink:href="487201v4_eqn31.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the approximation holds when the transition rate between firing states is much slower than the sampling frequency (<italic>w</italic><sub><italic>q</italic>→<italic>q</italic></sub><italic>′</italic> ≪ Δ<sup>−1</sup>). Therefore, the full conditional is again a gamma distribution with parameters
+<disp-formula id="eqn32">
+<graphic xlink:href="487201v4_eqn32.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn33">
+<graphic xlink:href="487201v4_eqn33.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>For the noise variance parameter, we used an inverse gamma prior, and by applying the same method, we can compute the full conditional as
+<disp-formula id="eqn34">
+<graphic xlink:href="487201v4_eqn34.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+therefore the updated shape and rate of the inverse gamma are
+<disp-formula id="eqn35">
+<graphic xlink:href="487201v4_eqn35.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn36">
+<graphic xlink:href="487201v4_eqn36.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+<sec id="s4d">
+<label>4.4</label>
+<title>Response kernel</title>
+<p>The response to a single spike can be obtained by writing <xref ref-type="disp-formula" rid="eqn3">Eq. (3)</xref> in the form of a first-order Markov process in terms of the new variables <italic>C</italic><sub><italic>t</italic></sub> ≡ [<italic>c</italic><sub><italic>t</italic></sub>, <italic>c</italic><sub><italic>t</italic>−1</sub>] and <italic>S</italic><sub><italic>t</italic></sub> ≡ [<italic>s</italic><sub><italic>t</italic></sub>, 0] so that
+<disp-formula id="eqn37">
+<graphic xlink:href="487201v4_eqn37.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+with the initial condition <italic>C</italic><sub>1</sub> = [<italic>c</italic><sub>0</sub> + <italic>AS</italic><sub>1</sub>, 0]. We can now write the solution at time <italic>t</italic> as
+<disp-formula id="eqn38">
+<graphic xlink:href="487201v4_eqn38.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>If <italic>s</italic><sub><italic>t</italic></sub> = <italic>δ</italic><sub><italic>t</italic>,1</sub> and <italic>c</italic><sub>0</sub> = 0 then <xref ref-type="disp-formula" rid="eqn38">Eq. (38)</xref> simplifies to
+<disp-formula id="eqn39">
+<graphic xlink:href="487201v4_eqn39.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>By introducing eigenvectors and eigenvalues of <italic>M</italic>
+<disp-formula id="eqn40">
+<graphic xlink:href="487201v4_eqn40.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+we can express <xref ref-type="disp-formula" rid="eqn39">Eq. (39)</xref> as
+<disp-formula id="eqn41">
+<graphic xlink:href="487201v4_eqn41.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+therefore we have
+<disp-formula id="eqn42">
+<graphic xlink:href="487201v4_eqn42.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>By setting the time derivative of <italic>c</italic><sub><italic>t</italic></sub> to zero, we obtain the time to reach the maximal response <italic>τ</italic><sub><italic>r</italic></sub> as
+<disp-formula id="eqn43">
+<graphic xlink:href="487201v4_eqn43.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+whereas if we take the long time limit of <xref ref-type="disp-formula" rid="eqn39">Eq. (39)</xref> we obtain
+<disp-formula id="eqn44">
+<graphic xlink:href="487201v4_eqn44.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+<sec id="s4e">
+<label>4.5</label>
+<title>Reparameterization</title>
+<p>To parameterize the autoregressive model in terms of kinetic parameters, we need to find the inverse map <italic>τ</italic><sub><italic>r,d</italic></sub> → <italic>γ</italic><sub>1,2</sub> to obtain the original autoregressive parameters given rise and decay times. By combining the expressions of <italic>τ</italic><sub><italic>r</italic></sub> and <italic>τ</italic><sub><italic>d</italic></sub> in terms of <italic>g</italic><sub>±</sub> we have
+<disp-formula id="eqn45">
+<graphic xlink:href="487201v4_eqn45.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+which shows that the ratio <italic>g</italic><sub>−</sub><italic>/g</italic><sub>+</sub> can be expressed as
+<disp-formula id="eqn46">
+<graphic xlink:href="487201v4_eqn46.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where the inverse function <italic>f</italic> <sup>−1</sup>(<italic>x</italic>) can be determined by numerical interpolation in the range [0,1]. To obtain the original autoregressive parameteres <italic>γ</italic><sub>1,2</sub> we first obtain <italic>g</italic><sub>±</sub> as
+<disp-formula id="eqn47">
+<graphic xlink:href="487201v4_eqn47.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn48">
+<graphic xlink:href="487201v4_eqn48.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+and then
+<disp-formula id="eqn49">
+<graphic xlink:href="487201v4_eqn49.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<disp-formula id="eqn50">
+<graphic xlink:href="487201v4_eqn50.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+<sec id="s4f">
+<label>4.6</label>
+<title>Runtime benchmark</title>
+<p>We conducted a thorough runtime benchmarking analysis to evaluate the performance of PGBAR across varying numbers of particles in the PGAS kernel and time-series lengths. Specifically, we measured the execution time of a single iteration of Algorithm 1 to draw a sample of time-dependent variables and the model parameters. The runtime was averaged over 100 posterior samples. We performed this test by varying the number of particles from 50 to 1000, using time series lengths ranging from 200 to 1000 time steps (<xref rid="fig11" ref-type="fig">Fig. 11</xref>). The time to draw a single iteration of PGBAR ranges from a minimum of 40 ms, to process a time series of 200 time steps with 50 PGAS particles, up to 2.3 s to process 1000 time steps with 1000 particles. Our analysis demonstrates that the runtime scales linearly both in the number of PGAS particles and the time series length. All tests were executed on a Dell XPS 15 laptop with CPU 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz and 32Gb of RAM.</p>
+<fig id="fig11" position="float" fig-type="figure">
+<label>Figure 11.</label>
+<caption><title>Runtime benchmarking.</title>
+<p>Execution time of a single iteration of Algorithm 1 sampling both model parameters and time-dependent variables. The performance was estimated by averaging over 100 iterations. All tests were conducted on a Dell XPS 15 laptop with a 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz and 32Gb of RAM.</p></caption>
+<graphic xlink:href="487201v4_fig11.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s4g">
+<label>4.7</label>
+<title>Experimental methods</title>
+<sec id="s4g1">
+<title>GCaMP8f virus injection in the Crus I lobule of the cerebellum</title>
+<p>Virus injection was targeted to Crus I (6.00 mm posterior to the Bregma, 3.00 mm lateral to the midline; vertical depth of 0.50 mm from pial surface) under deep isofluorane anesthesia. 100 nl of adeno-associated virus encoding GCaMP8f (AAV-DJ-CAG-FLEx-jGCaMP8f, Janelia Research Campus) was injected with Nanoject III (Drummond Scientific) using thin glass pipette (diameter 30 <italic>µ</italic>m). Injection was made when the C57BL/6J-Gabra6tm2(cre)Wwis mice were 7 weeks old. After injections, the mice were returned to their home cage for 6 weeks to allow time for expression.</p>
+</sec>
+<sec id="s4g2">
+<title>Slice Preparation</title>
+<p>Acute coronal slices (200 <italic>µ</italic>m) of the Crus I lobule of the cerebellum was prepared from adult C57BL/6J-Gabra6tm2(cre)Wwis mice, aged 97 and 102 days. Following transcardial perfusion with an ice-cold solution containing (in mM): 2.5 KCl, 0.5 CaCl2, 4 MgCl2, 1.25 NaH2PO4, 24 NaHCO3, 25 glucose, 230 sucrose, and 0.5 ascorbic acid, the brains were removed and placed in the same solution. The solution was bubbled with 95% O2 and 5% CO2. Slices were cut from the dissected lateral cerebellum using a vibratome (Leica VT1200S), and incubated at room temperature for 30 minutes in a solution containing (in mM): 85 NaCl, 2.5 KCl, 0.5 CaCl2, 4 MgCl2, 1.25 NaH2PO4, 24 NaHCO3, 25 glucose, 75 sucrose and 0.5 ascorbic acid. Slices were then transferred to an external recording solution containing (in mM): 125 NaCl, 2.5 KCl, 1.5 CaCl2, 1.5 MgCl2, 1.25 NaH2PO4, 24 NaHCO3, 25 glucose and 0.5 ascorbic acid, and maintained at room temperature for up to 6 hr.</p>
+</sec>
+<sec id="s4g3">
+<title>Cellular Imaging</title>
+<p>The brain slices containing GCaMP8f-expressing cells were identified with a 4x objective lens (Olympus UplanFI 4x, 0.13 NA) using very brief illumination with 470 nm light to excite GCaMP8f fluorescence. GCs were identified using infrared Dodt-gradient contrast and a QlClick digital CCD camera (QImaging, Surrey, BC, Canada) mounted on an Ultima multiphoton microscopy system (Bruker Nano Surfaces Division, Middleton, WI, USA) that was mounted on an Olympus BX61W1 microscope, equipped with a water-immersion objective (Olympus 60x, 1.1 NA). Two-photon excitation was performed with a Ti-sapphire laser (Spectraphysics). To visualize GCs expressing GcaMP8f, two-photon excitation was performed at 920 nm. Infrared Dodt-gradient contrast was used to position the stimulation pipette in the molecular layer, targeting PF to activate GC bodies directly. Linescan imaging of GC bodies was performed by scanning the entire cell membrane in freehand linescan mode (Prairie View). Total laser illumination per sweep lasted 2000 ms. Fluorescence was detected using both proximal epifluorescence and substage photomultiplier tube gallium arsenide phosphide (H7422PA-40 SEL, Hamamatsu).</p>
+</sec>
+</sec>
+</sec>
+
+</body>
+<back>
+<sec id="das" sec-type="data-availability">
+<title>Data availability</title>
+<p>Linescan imaging data and the source code of PGBAR are available through the GitHub repository <ext-link ext-link-type="uri" xlink:href="https://github.com/giovannidiana/pgbar">https://github.com/giovannidiana/pgbar</ext-link>. High-frequency linescan recordings of cerebellar granule cells have been deposited at <ext-link ext-link-type="uri" xlink:href="https://osf.io/t3wm6">https://osf.io/t3wm6</ext-link></p>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 896051. This work was also supported by a Pasteur-Roux-Cantarini fellowship of the Institut Pasteur. We would like to thank Peter Rupprecht for his help with the analysis of the CASCADE dataset and for thorough discussions. We also thank Nicolas Chopin for suggesting the use of backward steps methods in particle Gibbs, Andrea Giovannucci, Marco Banterle, Diana Passaro and Fredrik Lindsten for helpful discussions.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Andrieu</surname> <given-names>C</given-names></string-name>, <string-name><surname>Doucet</surname> <given-names>A</given-names></string-name>, <string-name><surname>Holenstein</surname> <given-names>R.</given-names></string-name></person-group> <article-title>Particle markov chain monte carlo methods</article-title>. <source>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</source>. <year>2010</year>; <volume>72</volume>(<issue>3</issue>):<fpage>269</fpage>–<lpage>342</lpage>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Berens</surname> <given-names>P</given-names></string-name>, <string-name><surname>Freeman</surname> <given-names>J</given-names></string-name>, <string-name><surname>Deneux</surname> <given-names>T</given-names></string-name>, <string-name><surname>Chenkov</surname> <given-names>N</given-names></string-name>, <string-name><surname>McColgan</surname> <given-names>T</given-names></string-name>, <string-name><surname>Speiser</surname> <given-names>A</given-names></string-name>, <string-name><surname>Macke</surname> <given-names>JH</given-names></string-name>, <string-name><surname>Turaga</surname> <given-names>SC</given-names></string-name>, <string-name><surname>Mineault</surname> <given-names>P</given-names></string-name>, <string-name><surname>Rupprecht</surname> <given-names>P</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Community-based benchmarking improves spike rate inference from two-photon calcium imaging data</article-title>. <source>PLoS computational biology</source>. <year>2018</year>; <volume>14</volume>(<issue>5</issue>):<fpage>e1006157</fpage>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chen</surname> <given-names>TW</given-names></string-name>, <string-name><surname>Wardill</surname> <given-names>TJ</given-names></string-name>, <string-name><surname>Sun</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Pulver</surname> <given-names>SR</given-names></string-name>, <string-name><surname>Renninger</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Baohan</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schreiter</surname> <given-names>ER</given-names></string-name>, <string-name><surname>Kerr</surname> <given-names>RA</given-names></string-name>, <string-name><surname>Orger</surname> <given-names>MB</given-names></string-name>, <string-name><surname>Jayaraman</surname> <given-names>V</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Ultrasensitive fluorescent proteins for imaging neuronal activity</article-title>. <source>Nature</source>. <year>2013</year>; <volume>499</volume>(<issue>7458</issue>):<fpage>295</fpage>–<lpage>300</lpage>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Chopin</surname> <given-names>N</given-names></string-name>, <string-name><surname>Papaspiliopoulos</surname> <given-names>O.</given-names></string-name></person-group> <source>An Introduction to Sequential Monte Carlo</source>. <publisher-name>Springer-Verlag</publisher-name>; <year>2020</year>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Deneux</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kaszas</surname> <given-names>A</given-names></string-name>, <string-name><surname>Szalay</surname> <given-names>G</given-names></string-name>, <string-name><surname>Katona</surname> <given-names>G</given-names></string-name>, <string-name><surname>Lakner</surname> <given-names>T</given-names></string-name>, <string-name><surname>Grinvald</surname> <given-names>A</given-names></string-name>, <string-name><surname>Rózsa</surname> <given-names>B</given-names></string-name>, <string-name><surname>Vanzetta</surname> <given-names>I.</given-names></string-name></person-group> <article-title>Accurate spike estimation from noisy calcium signals for ultrafast three-dimensional imaging of large neuronal populations in vivo</article-title>. <source>Nature communications</source>. <year>2016</year>; <volume>7</volume>(<issue>1</issue>):<fpage>1</fpage>–<lpage>17</lpage>.</mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Diana</surname> <given-names>G</given-names></string-name>, <string-name><surname>Sainsbury</surname> <given-names>TT</given-names></string-name>, <string-name><surname>Meyer</surname> <given-names>MP</given-names></string-name></person-group>. <article-title>Bayesian inference of neuronal assemblies</article-title>. <source>PLoS computational biology</source>. <year>2019</year>; <volume>15</volume>(<issue>10</issue>):<fpage>e1007481</fpage>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Dyer</surname> <given-names>EL</given-names></string-name>, <string-name><surname>Studer</surname> <given-names>C</given-names></string-name>, <string-name><surname>Robinson</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Baraniuk</surname> <given-names>RG</given-names></string-name></person-group>. <article-title>A robust and efficient method to recover neural events from noisy and corrupted data</article-title>. <conf-name>2013 6th International IEEE/EMBS Conference on Neural Engineering (NER) IEEE</conf-name>; <year>2013</year>. p. <fpage>593</fpage>–<lpage>596</lpage>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Fletcher</surname> <given-names>AK</given-names></string-name>, <string-name><surname>Rangan</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Scalable inference for neuronal connectivity from calcium imaging</article-title>. <source>arXiv</source>. <year>2014</year>; .</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Friedrich</surname> <given-names>J</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Fast active set methods for online spike inference from calcium imaging</article-title>. <source>Advances In Neural Information Processing Systems</source>. <year>2016</year>; <volume>29</volume>:<fpage>1984</fpage>–<lpage>1992</lpage>.</mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Friedrich</surname> <given-names>J</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>P</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Fast online deconvolution of calcium imaging data</article-title>. <source>PLoS computational biology</source>. <year>2017</year>; <volume>13</volume>(<issue>3</issue>):<fpage>e1005423</fpage>.</mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Giovannucci</surname> <given-names>A</given-names></string-name>, <string-name><surname>Friedrich</surname> <given-names>J</given-names></string-name>, <string-name><surname>Gunn</surname> <given-names>P</given-names></string-name>, <string-name><surname>Kalfon</surname> <given-names>J</given-names></string-name>, <string-name><surname>Brown</surname> <given-names>BL</given-names></string-name>, <string-name><surname>Koay</surname> <given-names>SA</given-names></string-name>, <string-name><surname>Taxidis</surname> <given-names>J</given-names></string-name>, <string-name><surname>Najafi</surname> <given-names>F</given-names></string-name>, <string-name><surname>Gauthier</surname> <given-names>JL</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>P</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>CaImAn an open source tool for scalable calcium imaging data analysis</article-title>. <source>eLife</source>. <year>2019</year>; <volume>8</volume>:<elocation-id>e38173</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.38173</pub-id></mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Greenberg</surname> <given-names>DS</given-names></string-name>, <string-name><surname>Wallace</surname> <given-names>DJ</given-names></string-name>, <string-name><surname>Voit</surname> <given-names>KM</given-names></string-name>, <string-name><surname>Wuertenberger</surname> <given-names>S</given-names></string-name>, <string-name><surname>Czubayko</surname> <given-names>U</given-names></string-name>, <string-name><surname>Monsees</surname> <given-names>A</given-names></string-name>, <string-name><surname>Handa</surname> <given-names>T</given-names></string-name>, <string-name><surname>Vogelstein</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Seifert</surname> <given-names>R</given-names></string-name>, <string-name><surname>Groemping</surname> <given-names>Y</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Accurate action potential inference from a calcium sensor protein through biophysical modeling</article-title>. <source>BioRxiv</source>. <year>2018</year>; p. <fpage>479055</fpage>.</mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Grewe</surname> <given-names>BF</given-names></string-name>, <string-name><surname>Langer</surname> <given-names>D</given-names></string-name>, <string-name><surname>Kasper</surname> <given-names>H</given-names></string-name>, <string-name><surname>Kampa</surname> <given-names>BM</given-names></string-name>, <string-name><surname>Helmchen</surname> <given-names>F.</given-names></string-name></person-group> <article-title>High-speed in vivo calcium imaging reveals neuronal network activity with near-millisecond precision</article-title>. <source>Nature methods</source>. <year>2010</year>; <volume>7</volume>(<issue>5</issue>):<fpage>399</fpage>–<lpage>405</lpage>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoang</surname> <given-names>H</given-names></string-name>, <string-name><given-names>Sato</given-names> <surname>Ma</surname></string-name>, <string-name><surname>Shinomoto</surname> <given-names>S</given-names></string-name>, <string-name><surname>Tsutsumi</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hashizume</surname> <given-names>M</given-names></string-name>, <string-name><surname>Ishikawa</surname> <given-names>T</given-names></string-name>, <string-name><surname>Kano</surname> <given-names>M</given-names></string-name>, <string-name><surname>Ikegaya</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Kitamura</surname> <given-names>K</given-names></string-name>, <string-name><surname>Kawato</surname> <given-names>M</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Improved hyperacuity estimation of spike timing from calcium imaging</article-title>. <source>Scientific reports</source>. <year>2020</year>; <volume>10</volume>(<issue>1</issue>):<fpage>1</fpage>–<lpage>16</lpage>.</mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Holekamp</surname> <given-names>TF</given-names></string-name>, <string-name><surname>Turaga</surname> <given-names>D</given-names></string-name>, <string-name><surname>Holy</surname> <given-names>TE</given-names></string-name></person-group>. <article-title>Fast three-dimensional fluorescence imaging of activity in neural populations by objective-coupled planar illumination microscopy</article-title>. <source>Neuron</source>. <year>2008</year>; <volume>57</volume>(<issue>5</issue>):<fpage>661</fpage>–<lpage>672</lpage>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Huys</surname> <given-names>QJ</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Smoothing of, and parameter estimation from, noisy biophysical recordings</article-title>. <source>PLoS computational biology</source>. <year>2009</year>; <volume>5</volume>(<issue>5</issue>):<fpage>e1000379</fpage>.</mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Im</surname> <given-names>DJ</given-names></string-name>, <string-name><surname>Prakhya</surname> <given-names>S</given-names></string-name>, <string-name><surname>Yan</surname> <given-names>J</given-names></string-name>, <string-name><surname>Turaga</surname> <given-names>S</given-names></string-name>, <string-name><surname>Branson</surname> <given-names>K.</given-names></string-name></person-group> <article-title>Importance Weighted Adversarial Variational Autoencoders for Spike Inference from calcium Imaging Data</article-title>. <source>arXiv</source>. <year>2019</year>; .</mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jewell</surname> <given-names>S</given-names></string-name>, <string-name><surname>Witten</surname> <given-names>D.</given-names></string-name></person-group> <article-title>Exact spike train inference via ℓ<sub>0</sub> optimization</article-title>. <source>The annals of applied statistics</source>. <year>2018</year>; <volume>12</volume>(<issue>4</issue>):<fpage>2457</fpage>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jewell</surname> <given-names>SW</given-names></string-name>, <string-name><surname>Hocking</surname> <given-names>TD</given-names></string-name>, <string-name><surname>Fearnhead</surname> <given-names>P</given-names></string-name>, <string-name><surname>Witten</surname> <given-names>DM</given-names></string-name></person-group>. <article-title>Fast nonconvex deconvolution of calcium imaging data</article-title>. <source>Biostatistics</source>. <year>2020</year>; <volume>21</volume>(<issue>4</issue>):<fpage>709</fpage>–<lpage>726</lpage>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kazemipour</surname> <given-names>A</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>J</given-names></string-name>, <string-name><surname>Solarana</surname> <given-names>K</given-names></string-name>, <string-name><surname>Nagode</surname> <given-names>DA</given-names></string-name>, <string-name><surname>Kanold</surname> <given-names>PO</given-names></string-name>, <string-name><surname>Wu</surname> <given-names>M</given-names></string-name>, <string-name><surname>Babadi</surname> <given-names>B.</given-names></string-name></person-group> <article-title>Fast and stable signal deconvolution via compressible state-space models</article-title>. <source>IEEE Transactions on Biomedical Engineering</source>. <year>2017</year>; <volume>65</volume>(<issue>1</issue>):<fpage>74</fpage>–<lpage>86</lpage>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kerr</surname> <given-names>JN</given-names></string-name>, <string-name><surname>Greenberg</surname> <given-names>D</given-names></string-name>, <string-name><surname>Helmchen</surname> <given-names>F.</given-names></string-name></person-group> <article-title>Imaging input and output of neocortical networks in vivo</article-title>. <source>Proceedings of the National Academy of Sciences</source>. <year>2005</year>; <volume>102</volume>(<issue>39</issue>):<fpage>14063</fpage>–<lpage>14068</lpage>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lindsten</surname> <given-names>F</given-names></string-name>, <string-name><surname>Jordan</surname> <given-names>MI</given-names></string-name>, <string-name><surname>Schon</surname> <given-names>TB</given-names></string-name></person-group>. <article-title>Particle Gibbs with ancestor sampling</article-title>. <source>Journal of Machine Learning Research</source>. <year>2014</year>; <volume>15</volume>:<fpage>2145</fpage>–<lpage>2184</lpage>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lütcke</surname> <given-names>H</given-names></string-name>, <string-name><surname>Gerhard</surname> <given-names>F</given-names></string-name>, <string-name><surname>Zenke</surname> <given-names>F</given-names></string-name>, <string-name><surname>Gerstner</surname> <given-names>W</given-names></string-name>, <string-name><surname>Helmchen</surname> <given-names>F.</given-names></string-name></person-group> <article-title>Inference of neuronal network spike dynamics and topology from calcium imaging data</article-title>. <source>Frontiers in neural circuits</source>. <year>2013</year>; <volume>7</volume>:<fpage>201</fpage>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Malik</surname> <given-names>WQ</given-names></string-name>, <string-name><surname>Schummers</surname> <given-names>J</given-names></string-name>, <string-name><surname>Sur</surname> <given-names>M</given-names></string-name>, <string-name><surname>Brown</surname> <given-names>EN</given-names></string-name></person-group>. <article-title>Denoising two-photon calcium imaging data</article-title>. <source>PloS one</source>. <year>2011</year>; <volume>6</volume>(<issue>6</issue>):<fpage>e20490</fpage>.</mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mishchencko</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Vogelstein</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>A Bayesian approach for inferring neuronal connectivity from calcium fluorescent imaging data</article-title>. <source>The Annals of Applied Statistics</source>. <year>2011</year>; <volume>5</volume> p. <fpage>1229</fpage>–<lpage>1261</lpage>.</mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mishchenko</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Efficient methods for sampling spike trains in networks of coupled neurons</article-title>. <source>The Annals of Applied Statistics</source>. <year>2011</year>; <volume>5</volume> p. <fpage>1893</fpage>–<lpage>1919</lpage>.</mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mukamel</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Nimmerjahn</surname> <given-names>A</given-names></string-name>, <string-name><surname>Schnitzer</surname> <given-names>MJ</given-names></string-name></person-group>. <article-title>Automated analysis of cellular signals from large-scale calcium imaging data</article-title>. <source>Neuron</source>. <year>2009</year>; <volume>63</volume>(<issue>6</issue>):<fpage>747</fpage>–<lpage>760</lpage>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Oñativia</surname> <given-names>J</given-names></string-name>, <string-name><surname>Dragotti</surname> <given-names>PL</given-names></string-name></person-group>. <article-title>Sparse sampling: theory, methods and an application in neuroscience</article-title>. <source>Biological cybernetics</source>. <year>2015</year>; <volume>109</volume>(<issue>1</issue>):<fpage>125</fpage>–<lpage>139</lpage>.</mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Oñativia</surname> <given-names>J</given-names></string-name>, <string-name><surname>Schultz</surname> <given-names>SR</given-names></string-name>, <string-name><surname>Dragotti</surname> <given-names>PL</given-names></string-name></person-group>. <article-title>A finite rate of innovation algorithm for fast and accurate spike detection from two-photon calcium imaging</article-title>. <source>Journal of neural engineering</source>. <year>2013</year>; <volume>10</volume>(<issue>4</issue>):<fpage>046017</fpage>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Pachitariu</surname> <given-names>M</given-names></string-name>, <string-name><surname>Stringer</surname> <given-names>C</given-names></string-name>, <string-name><surname>Dipoppa</surname> <given-names>M</given-names></string-name>, <string-name><surname>Schröder</surname> <given-names>S</given-names></string-name>, <string-name><surname>Rossi</surname> <given-names>LF</given-names></string-name>, <string-name><surname>Dalgleish</surname> <given-names>H</given-names></string-name>, <string-name><surname>Carandini</surname> <given-names>M</given-names></string-name>, <string-name><surname>Harris</surname> <given-names>KD</given-names></string-name></person-group>. <article-title>Suite2p: beyond 10,000 neurons with standard two-photon microscopy</article-title>. <source>BioRxiv</source>. <year>2017</year>; .</mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Pnevmatikakis</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Gao</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Soudry</surname> <given-names>D</given-names></string-name>, <string-name><surname>Pfau</surname> <given-names>D</given-names></string-name>, <string-name><surname>Lacefield</surname> <given-names>C</given-names></string-name>, <string-name><surname>Poskanzer</surname> <given-names>K</given-names></string-name>, <string-name><surname>Bruno</surname> <given-names>R</given-names></string-name>, <string-name><surname>Yuste</surname> <given-names>R</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>A structured matrix factorization framework for large scale calcium imaging data analysis</article-title>. <source>arXiv</source>. <year>2014</year>; .</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Pnevmatikakis</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Merel</surname> <given-names>J</given-names></string-name>, <string-name><surname>Pakman</surname> <given-names>A</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Bayesian spike inference from calcium imaging data</article-title>. <conf-name>2013 Asilomar Conference on Signals, Systems and Computers IEEE</conf-name>; <year>2013</year>. p. <fpage>349</fpage>–<lpage>353</lpage>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pnevmatikakis</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Soudry</surname> <given-names>D</given-names></string-name>, <string-name><surname>Gao</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Machado</surname> <given-names>TA</given-names></string-name>, <string-name><surname>Merel</surname> <given-names>J</given-names></string-name>, <string-name><surname>Pfau</surname> <given-names>D</given-names></string-name>, <string-name><surname>Reardon</surname> <given-names>T</given-names></string-name>, <string-name><surname>Mu</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Lacefield</surname> <given-names>C</given-names></string-name>, <string-name><surname>Yang</surname> <given-names>W</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Simultaneous denoising, deconvolution, and demixing of calcium imaging data</article-title>. <source>Neuron</source>. <year>2016</year>; <volume>89</volume>(<issue>2</issue>):<fpage>285</fpage>–<lpage>299</lpage>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Quan</surname> <given-names>T</given-names></string-name>, <string-name><surname>Liu</surname> <given-names>X</given-names></string-name>, <string-name><surname>Lv</surname> <given-names>X</given-names></string-name>, <string-name><surname>Chen</surname> <given-names>WR</given-names></string-name>, <string-name><surname>Zeng</surname> <given-names>S.</given-names></string-name></person-group> <article-title>Method to reconstruct neuronal action potential train from two-photon calcium imaging</article-title>. <source>Journal of biomedical optics</source>. <year>2010</year>; <volume>15</volume>(<issue>6</issue>):<fpage>066002</fpage>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rahmati</surname> <given-names>V</given-names></string-name>, <string-name><surname>Kirmse</surname> <given-names>K</given-names></string-name>, <string-name><surname>Marković</surname> <given-names>D</given-names></string-name>, <string-name><surname>Holthoff</surname> <given-names>K</given-names></string-name>, <string-name><surname>Kiebel</surname> <given-names>SJ</given-names></string-name></person-group>. <article-title>Inferring neuronal dynamics from calcium imaging data using biophysical models and Bayesian inference</article-title>. <source>PLoS computational biology</source>. <year>2016</year>; <volume>12</volume>(<issue>2</issue>):<fpage>e1004736</fpage>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ranganathan</surname> <given-names>GN</given-names></string-name>, <string-name><surname>Koester</surname> <given-names>HJ</given-names></string-name></person-group>. <article-title>Optical recording of neuronal spiking activity from unbiased populations of neurons with high spike detection efficiency and high temporal precision</article-title>. <source>Journal of neurophysiology</source>. <year>2010</year>; <volume>104</volume>(<issue>3</issue>):<fpage>1812</fpage>–<lpage>1824</lpage>.</mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rupprecht</surname> <given-names>P</given-names></string-name>, <string-name><surname>Carta</surname> <given-names>S</given-names></string-name>, <string-name><surname>Hoffmann</surname> <given-names>A</given-names></string-name>, <string-name><surname>Echizen</surname> <given-names>M</given-names></string-name>, <string-name><surname>Blot</surname> <given-names>A</given-names></string-name>, <string-name><surname>Kwan</surname> <given-names>AC</given-names></string-name>, <string-name><surname>Dan</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Hofer</surname> <given-names>SB</given-names></string-name>, <string-name><surname>Kitamura</surname> <given-names>K</given-names></string-name>, <string-name><surname>Helmchen</surname> <given-names>F</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>A database and deep learning toolbox for noise-optimized, generalized spike inference from calcium imaging</article-title>. <source>Nature Neuroscience</source>. <year>2021</year>; <volume>24</volume>(<issue>9</issue>):<fpage>1324</fpage>–<lpage>1337</lpage>.</mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sasaki</surname> <given-names>T</given-names></string-name>, <string-name><surname>Takahashi</surname> <given-names>N</given-names></string-name>, <string-name><surname>Matsuki</surname> <given-names>N</given-names></string-name>, <string-name><surname>Ikegaya</surname> <given-names>Y.</given-names></string-name></person-group> <article-title>Fast and accurate detection of action potentials from somatic calcium fluctuations</article-title>. <source>Journal of neurophysiology</source>. <year>2008</year>; <volume>100</volume>(<issue>3</issue>):<fpage>1668</fpage>–<lpage>1676</lpage>.</mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sebastian</surname> <given-names>J</given-names></string-name>, <string-name><surname>Kumar</surname> <given-names>MG</given-names></string-name>, <string-name><surname>Viraraghavan</surname> <given-names>VS</given-names></string-name>, <string-name><surname>Sur</surname> <given-names>M</given-names></string-name>, <string-name><surname>Murthy</surname> <given-names>HA</given-names></string-name></person-group>. <article-title>Spike Estimation From Fluorescence Signals Using High-Resolution Property of Group Delay</article-title>. <source>IEEE Transactions on Signal Processing</source>. <year>2019</year>; <volume>67</volume>(<issue>11</issue>):<fpage>2923</fpage>–<lpage>2936</lpage>.</mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sebastian</surname> <given-names>J</given-names></string-name>, <string-name><surname>Sur</surname> <given-names>M</given-names></string-name>, <string-name><surname>Murthy</surname> <given-names>HA</given-names></string-name>, <string-name><surname>Magimai-Doss</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Signal-to-signal neural networks for improved spike estimation from calcium imaging data</article-title>. <source>PLoS Computational Biology</source>. <year>2021</year>; <volume>17</volume>(<issue>3</issue>):<fpage>e1007921</fpage>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Shibue</surname> <given-names>R</given-names></string-name>, <string-name><surname>Komaki</surname> <given-names>F.</given-names></string-name></person-group> <article-title>Deconvolution of calcium imaging data using marked point processes</article-title>. <source>PLoS computational biology</source>. <year>2020</year>; <volume>16</volume>(<issue>3</issue>):<fpage>e1007650</fpage>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Speiser</surname> <given-names>A</given-names></string-name>, <string-name><surname>Yan</surname> <given-names>J</given-names></string-name>, <string-name><surname>Archer</surname> <given-names>E</given-names></string-name>, <string-name><surname>Buesing</surname> <given-names>L</given-names></string-name>, <string-name><surname>Turaga</surname> <given-names>SC</given-names></string-name>, <string-name><surname>Macke</surname> <given-names>JH</given-names></string-name></person-group>. <article-title>Fast amortized inference of neural activity from calcium imaging data with variational autoencoders</article-title>. <source>arXiv</source>. <year>2017</year>.</mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Stern</surname> <given-names>M</given-names></string-name>, <string-name><surname>Shea-Brown</surname> <given-names>E</given-names></string-name>, <string-name><surname>Witten</surname> <given-names>D.</given-names></string-name></person-group> <article-title>Inferring the spiking rate of a population of neurons from wide-field calcium imaging</article-title>. <source>bioRxiv</source>. <year>2020</year>; .</mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Theis</surname> <given-names>L</given-names></string-name>, <string-name><surname>Berens</surname> <given-names>P</given-names></string-name>, <string-name><surname>Froudarakis</surname> <given-names>E</given-names></string-name>, <string-name><surname>Reimer</surname> <given-names>J</given-names></string-name>, <string-name><surname>Rosón</surname> <given-names>MR</given-names></string-name>, <string-name><surname>Baden</surname> <given-names>T</given-names></string-name>, <string-name><surname>Euler</surname> <given-names>T</given-names></string-name>, <string-name><surname>Tolias</surname> <given-names>AS</given-names></string-name>, <string-name><surname>Bethge</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Benchmarking spike rate inference in population calcium imaging</article-title>. <source>Neuron</source>. <year>2016</year>; <volume>90</volume>(<issue>3</issue>):<fpage>471</fpage>–<lpage>482</lpage>.</mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Theis</surname> <given-names>L</given-names></string-name>, <string-name><surname>Chagas</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Arnstein</surname> <given-names>D</given-names></string-name>, <string-name><surname>Schwarz</surname> <given-names>C</given-names></string-name>, <string-name><surname>Bethge</surname> <given-names>M.</given-names></string-name></person-group> <article-title>Beyond GLMs: a generative mixture modeling approach to neural system identification</article-title>. <source>PLoS computational biology</source>. <year>2013</year>; <volume>9</volume>(<issue>11</issue>):<fpage>e1003356</fpage>.</mixed-citation></ref>
+<ref id="c46"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tsunoda</surname> <given-names>T</given-names></string-name>, <string-name><surname>Oda</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Omori</surname> <given-names>T</given-names></string-name>, <string-name><surname>Okada</surname> <given-names>M</given-names></string-name>, <string-name><surname>Inoue</surname> <given-names>M</given-names></string-name>, <string-name><surname>Miyakawa</surname> <given-names>H</given-names></string-name>, <string-name><surname>Aonishi</surname> <given-names>T.</given-names></string-name></person-group> <article-title>Statistical Calibration Method for Physiological Ca2+ Fluorescence Signals</article-title>. <source>Australian Journal of Intelligent Information Processing Systems</source>. <year>2010</year>; <volume>11</volume>(<issue>1</issue>).</mixed-citation></ref>
+<ref id="c47"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tsunoda</surname> <given-names>T</given-names></string-name>, <string-name><surname>Omori</surname> <given-names>T</given-names></string-name>, <string-name><surname>Miyakawa</surname> <given-names>H</given-names></string-name>, <string-name><surname>Okada</surname> <given-names>M</given-names></string-name>, <string-name><surname>Aonishi</surname> <given-names>T.</given-names></string-name></person-group> <article-title>Estimation of intracellular calcium ion concentration by nonlinear state space modeling and expectation-maximization algorithm for parameter estimation</article-title>. <source>Journal of the Physical Society of Japan</source>. <year>2010</year>; <volume>79</volume>(<issue>12</issue>):<fpage>124801</fpage>.</mixed-citation></ref>
+<ref id="c48"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tubiana</surname> <given-names>J</given-names></string-name>, <string-name><surname>Wolf</surname> <given-names>S</given-names></string-name>, <string-name><surname>Panier</surname> <given-names>T</given-names></string-name>, <string-name><surname>Debregeas</surname> <given-names>G.</given-names></string-name></person-group> <article-title>Blind deconvolution for spike inference from fluorescence recordings</article-title>. <source>Journal of Neuroscience Methods</source>. <year>2020</year>; <volume>342</volume>:<fpage>108763</fpage>.</mixed-citation></ref>
+<ref id="c49"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vogelstein</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Packer</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Machado</surname> <given-names>TA</given-names></string-name>, <string-name><surname>Sippy</surname> <given-names>T</given-names></string-name>, <string-name><surname>Babadi</surname> <given-names>B</given-names></string-name>, <string-name><surname>Yuste</surname> <given-names>R</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Fast nonnegative deconvolution for spike train inference from population calcium imaging</article-title>. <source>Journal of neurophysiology</source>. <year>2010</year>; <volume>104</volume>(<issue>6</issue>):<fpage>3691</fpage>–<lpage>3704</lpage>.</mixed-citation></ref>
+<ref id="c50"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vogelstein</surname> <given-names>JT</given-names></string-name>, <string-name><surname>Watson</surname> <given-names>BO</given-names></string-name>, <string-name><surname>Packer</surname> <given-names>AM</given-names></string-name>, <string-name><surname>Yuste</surname> <given-names>R</given-names></string-name>, <string-name><surname>Jedynak</surname> <given-names>B</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>Spike inference from calcium imaging using sequential Monte Carlo methods</article-title>. <source>Biophysical journal</source>. <year>2009</year>; <volume>97</volume>(<issue>2</issue>):<fpage>636</fpage>–<lpage>655</lpage>.</mixed-citation></ref>
+<ref id="c51"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Wei</surname> <given-names>XX</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>D</given-names></string-name>, <string-name><surname>Grosmark</surname> <given-names>A</given-names></string-name>, <string-name><surname>Ajabi</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Sparks</surname> <given-names>F</given-names></string-name>, <string-name><surname>Zhou</surname> <given-names>P</given-names></string-name>, <string-name><surname>Brandon</surname> <given-names>M</given-names></string-name>, <string-name><surname>Losonczy</surname> <given-names>A</given-names></string-name>, <string-name><surname>Paninski</surname> <given-names>L.</given-names></string-name></person-group> <article-title>A zero-inflated gamma model for deconvolved calcium imaging traces</article-title>. <source>arXiv</source>. <year>2020</year>; .</mixed-citation></ref>
+<ref id="c52"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yaksi</surname> <given-names>E</given-names></string-name>, <string-name><surname>Friedrich</surname> <given-names>RW</given-names></string-name></person-group>. <article-title>Reconstruction of firing rate changes across neuronal populations by temporally deconvolved Ca 2+ imaging</article-title>. <source>Nature methods</source>. <year>2006</year>; <volume>3</volume>(<issue>5</issue>):<fpage>377</fpage>–<lpage>383</lpage>.</mixed-citation></ref>
+<ref id="c53"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhang</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Rózsa</surname> <given-names>M</given-names></string-name>, <string-name><surname>Liang</surname> <given-names>Y</given-names></string-name>, <string-name><surname>Bushey</surname> <given-names>D</given-names></string-name>, <string-name><surname>Wei</surname> <given-names>Z</given-names></string-name>, <string-name><surname>Zheng</surname> <given-names>J</given-names></string-name>, <string-name><surname>Reep</surname> <given-names>D</given-names></string-name>, <string-name><surname>Broussard</surname> <given-names>GJ</given-names></string-name>, <string-name><surname>Tsang</surname> <given-names>A</given-names></string-name>, <string-name><surname>Tsegaye</surname> <given-names>G</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Fast and sensitive GCaMP calcium indicators for imaging neural populations</article-title>. <source>Nature</source>. <year>2023</year>; <volume>615</volume>(<issue>7954</issue>):<fpage>884</fpage>–<lpage>891</lpage>.</mixed-citation></ref>
+<ref id="c54"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhou</surname> <given-names>P</given-names></string-name>, <string-name><surname>Resendez</surname> <given-names>SL</given-names></string-name>, <string-name><surname>Rodriguez-Romaguera</surname> <given-names>J</given-names></string-name>, <string-name><surname>Jimenez</surname> <given-names>JC</given-names></string-name>, <string-name><surname>Neufeld</surname> <given-names>SQ</given-names></string-name>, <string-name><surname>Giovannucci</surname> <given-names>A</given-names></string-name>, <string-name><surname>Friedrich</surname> <given-names>J</given-names></string-name>, <string-name><surname>Pnevmatikakis</surname> <given-names>EA</given-names></string-name>, <string-name><surname>Stuber</surname> <given-names>GD</given-names></string-name>, <string-name><surname>Hen</surname> <given-names>R</given-names></string-name>, <etal>et al.</etal></person-group> <article-title>Efficient and accurate extraction of in vivo calcium signals from microendoscopic video data</article-title>. <source>eLife</source>. <year>2018</year>; <volume>7</volume>:<elocation-id>e28728</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.28728</pub-id></mixed-citation></ref>
+<ref id="dataref1"><mixed-citation publication-type="data" specific-use="generated"><person-group person-group-type="author"><string-name><surname>Giovanni Diana</surname></string-name>, <string-name><surname>B.Semihcan Sermet</surname></string-name>, <string-name><surname>Gerard J.Broussard</surname></string-name>, <string-name><surname>Samuel S.-H.Wang</surname></string-name>, <string-name><surname>David A.DiGregorio</surname></string-name></person-group> (<year iso-8601-date="2026">2026</year>) <article-title>High frequency recordings from cerebellar granule cells</article-title>. <source>osf.io/t3wm6</source>. <pub-id pub-id-type="accession" xlink:href="https://osf.io/t3wm6">t3wm6</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94723.3.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Giocomo</surname>
+<given-names>Lisa M</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-0416-2528</contrib-id>
+<aff>
+<institution-wrap>
+<institution>Stanford School of Medicine</institution>
+</institution-wrap>
+<city>Stanford</city>
+<country>United States of America</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This study presents a <bold>valuable</bold> contribution by introducing a model-based, Bayesian method for inferring action potentials from calcium imaging data that directly quantifies uncertainty in spike timing through posterior distributions. Using a Monte Carlo particle Gibbs sampling approach, the method achieves temporal resolution and accuracy comparable to existing techniques while offering the key added benefit of principled uncertainty estimates. The underlying methodology and characterization are <bold>convincing</bold>, and the work will be of particular interest to theoretically oriented neuroscientists seeking rigorous new tools for data-driven parameter inference.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94723.3.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this study, Diana et al. present a Monte Carlo-based method to perform spike inference from calcium imaging data. A particular strength of their approach is that they can estimate not only averages but also uncertainties of the modeled process. The authors focus on the quantification of spike time uncertainties in simulated data and in data recorded with high sampling rate in cebellar slices with GCaMP8f, and they demonstrate the high temporal precision that can be achieved with their method to estimate spike timing.</p>
+<p>Strengths:</p>
+<p>- The author provide a solid ground work for sequential Monte Carlo-based spike inference, which extends previous work of Pnevmatikakis et al., Greenberg et al. and others.</p>
+<p>- The integration of two states (silence vs. burst firing) seems to improve the performance of the model.</p>
+<p>- The acquisition of a GCaMP8f dataset in cerebellum is useful and helps make the point that high spike time inference precision is possible under certain conditions.</p>
+<p>Weaknesses:</p>
+<p>- Although the algorithm is compared (in the revised manuscript) to other models to infer individual spikes (e.g., MLSpike), these comparisons could be more comprehensive. Future work that benchmarks this and other algorithms under varying conditions (e.g., noise levels, temporal resolution, calcium indicators) would help assess and confirm robustness and useability of this algorithm.</p>
+<p>- The mathematical complexity underlying the method may pose challenges for experimentalist who may want to use the methods for their analyses. While this is not a weakness of the approach itself, this highlights the need for further validation and benchmarking in future work, to build user confidence.</p>
+<p>Comments on revisions:</p>
+<p>Thank you for addressing the final comments, and congrats on this study!</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94723.3.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>Methods to infer action potentials from fluorescence-based measurements of intracellular calcium dynamics are important for optical measurements of activity across large populations of neurons. The variety of existing methods can be separated into two broad classes: a) model-independent approaches that are trained on ground truth datasets (e.g., deep networks), and b) approaches based on a model of the processes that link action potentials to calcium signals. Models usually contains parameters describing biophysical variables, such as rate constants of the calcium dynamics and features of the calcium indicator. The method presented here, PGBAR, is model-based and uses a Bayesian approach. A novelty of PGBAR is that static parameters and state variables are jointly estimated using particle Gibbs sampling, a sequential Monte Carlo technique that can efficiently sample the latent embedding space.</p>
+<p>Strengths:</p>
+<p>A main strength of PGBAR is that it provides probability distributions rather than point estimates of spike times. This is different from most other methods and may be an important feature in cases when estimates of uncertainty are desired. Another important feature of PGBAR is that it estimates not only the state variable representing spiking activity, but also other variables such as baseline fluctuations and stationary model variables, in a joint process. PGBAR can therefore provide more information than various other methods. The information in the github repository is well-organized. The authors demonstrate convincingly that PGBAR can resolve inter-spike intervals in the range of 5 ms using fluorescence data obtained with a very fast genetically encoded calcium indicator at very high sampling rates (line scans at &gt;= 1 kHz).</p>
+<p>Weaknesses:</p>
+<p>The accuracy of spike train reconstructions is not higher than that of other model-based approaches, and lower than the accuracy of a model-independent approach based on a deep network in a regime of commonly used acquisition rates.</p>
+<p>Comments on revisions:</p>
+<p>I have no further comments on the manuscript.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.94723.3.sa0</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Diana</surname>
+<given-names>Giovanni</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-7497-5271</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sermet</surname>
+<given-names>B Semihcan</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Broussard</surname>
+<given-names>Gerard J</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Samuel S.-H</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>DiGregorio</surname>
+<given-names>David A</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-6417-4566</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the previous reviews</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public review):</bold></p>
+<p>Summary:</p>
+<p>In this study, Diana et al. present a Monte Carlo-based method to perform spike inference from calcium imaging data. A particular strength of their approach is that they can estimate not only averages but also uncertainties of the modeled process. The authors focus on the quantification of spike time uncertainties in simulated data and in data recorded with high sampling rate in cebellar slices with GCaMP8f, and they demonstrate the high temporal precision that can be achieved with their method to estimate spike timing.</p>
+<p>Strengths:</p>
+<p>- The author provide a solid ground work for sequential Monte Carlo-based spike inference, which extends previous work of Pnevmatikakis et al., Greenberg et al. and others.</p>
+<p>- The integration of two states (silence vs. burst firing) seems to improve the performance of the model.</p>
+<p>- The acquisition of a GCaMP8f dataset in cerebellum is useful and helps make the point that high spike time inference precision is possible under certain conditions.</p>
+<p>Weaknesses:</p>
+<p>- Although the algorithm is compared (in the revised manuscript) to other models to infer individual spikes (e.g., MLSpike), these comparisons could be more comprehensive. Future work that benchmarks this and other algorithms under varying conditions (e.g., noise levels, temporal resolution, calcium indicators) would help assess and confirm robustness and useability of this algorithm.</p>
+</disp-quote>
+<p>The metrics used for comparison follow the field's benchmarking conventions (see the CASCADE paper, Rupprecht et al. 2021). Indeed, improved standardized methods would be ideal to develop, which is beyond the scope of this manuscript.</p>
+<disp-quote content-type="editor-comment">
+<p>- The mathematical complexity underlying the method may pose challenges for experimentalist who may want to use the methods for their analyses. While this is not a weakness of the approach itself, this highlights the need for further validation and benchmarking in future work, to build user confidence.</p>
+</disp-quote>
+<p>We acknowledge the challenges of understanding the mathematics underlying our method, but such a study is necessary to ensure its accuracy and reliability. Indeed, we will strive to improve the technique's user-friendliness in future instantiations.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public review):</bold></p>
+<p>Summary:</p>
+<p>Methods to infer action potentials from fluorescence-based measurements of intracellular calcium dynamics are important for optical measurements of activity across large populations of neurons. The variety of existing methods can be separated into two broad classes: a) model-independent approaches that are trained on ground truth datasets (e.g., deep networks), and b) approaches based on a model of the processes that link action potentials to calcium signals. Models usually contains parameters describing biophysical variables, such as rate constants of the calcium dynamics and features of the calcium indicator. The method presented here, PGBAR, is model-based and uses a Bayesian approach. A novelty of PGBAR is that static parameters and state variables are jointly estimated using particle Gibbs sampling, a sequential Monte Carlo technique that can efficiently sample the latent embedding space.</p>
+<p>Strengths:</p>
+<p>A main strength of PGBAR is that it provides probability distributions rather than point estimates of spike times. This is different from most other methods and may be an important feature in cases when estimates of uncertainty are desired. Another important feature of PGBAR is that it estimates not only the state variable representing spiking activity, but also other variables such as baseline fluctuations and stationary model variables, in a joint process. PGBAR can therefore provide more information than various other methods. The information in the github repository is well-organized.</p>
+<p>Weaknesses:</p>
+<p>On the other hand, the accuracy of spike train reconstructions is not higher than that of other model-based approaches, and clearly lower than the accuracy of a model-independent approach based on a deep network. The authors demonstrate convincingly that PGBAR can resolve inter-spike intervals in the range of 5 ms using fluorescence data obtained with a very fast genetically encoded calcium indicator at very high sampling rates (line scans at &gt;= 1 kHz).</p>
+</disp-quote>
+<p>In the revision, Figure 9 shows that temporal accuracy is very similar between PGBAR and the supervised method, CASCADE, and that PGBAR has a lower false positive rate. These results support the effectiveness of unsupervised Monte Carlo sampling, even with a simple autoregressive model.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Recommendations for the authors:</bold></p>
+<p><bold>Reviewer #1 (Recommendations for the authors):</bold></p>
+<p>I'd like to thank the authors for their revisions. Their comments have addressed all my concerns, and I thank them for the clarifications. I have no further comments, except a few minor notes that the authors may consider or not:</p>
+<p>- The paragraph starting in line 367 is newly written and not yet as clear and mature as other parts of the manuscript. It is at several sentences roughly clear what it is about, but the precision of the wording is lacking. For example &quot;distributions of the average time from ground-truth&quot; seems a bit unclear, maybe &quot;distributions of the average time of estimate spikes from ground-truth spikes&quot; instead. Similarly, &quot;the false detection rate, defined as the difference between detected and ground-truth spikes ...&quot; could be rephrased using the difference between &quot;numbers of spikes&quot; instead of the difference between &quot;spikes&quot;. But all of this is minor.</p>
+<p>- In the new Figure 9A, the error bars for the MLSpike method seem to be absent. In the same figure legend, it should be &quot;excess&quot; instead of &quot;excess&quot;.</p>
+</disp-quote>
+<p>We thank the reviewer for the feedback. We revised the wording of the new paragraph in response to the reviewer’s suggestions, restored the missing error bar in Figure 9, and corrected the figure legend.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Recommendations for the authors):</bold></p>
+<p>Comparison to CASCADE: as far as I know there are no CASCADE models that have been trained on ground truth data in the regime of very fast (line scan) sampling, which is rarely used. A fair comparison of spike time estimates between PGBAR and CASCADE should take this into account. This can be done by training a new CASCADE model using the dataset of this paper. Given that performance of PGBAR and CASCADE is very similar already now (except for the false positive rate), a CASCADE model optimized for high sampling rate may be expected to catch up with (or even exceed) the performance of PGBAR. At a minimum, this possibility should be discussed.</p>
+</disp-quote>
+<p>While this may be true, retraining a CASCADE model on high-frequency ground-truth data is beyond the scope of this manuscript. Indeed, a retrained CASCADE model optimized for line-scan or GCaMP8f data could improve performance and potentially match or exceed PGBAR, particularly in reducing false positives.</p>
+<p>Our aim, however, is not to benchmark supervised methods under their optimal retraining conditions, but to provide an unsupervised alternative that does not rely on labeled training data. In practice, retraining supervised models is constrained by the availability of suitable ground-truth datasets and by the uncertainty in how the method generalizes to acquisition regimes that differ substantially from the training set.</p>
+<p>We have therefore added a sentence in the Discussion (at the end of the subsection Comparison with benchmark datasets):</p>
+<p>[...] “While retraining supervised methods such as CASCADE on high-frequency or GCaMP8f ground-truth datasets could further improve its performance, limitations in dataset availability and generalization across acquisition regimes motivate complementary, training-free approaches such as PGBAR.”</p>
+<p>As stated in the manuscript, future extensions, such as using nonlinear biophysical models as the generative model for Monte Carlo–based inference, may further improve spike estimation accuracy.</p>
+</body>
+</sub-article>
+</article>
