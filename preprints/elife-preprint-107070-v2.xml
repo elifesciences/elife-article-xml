@@ -1,0 +1,773 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">107070</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.107070</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.107070.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Chromosomes and Gene Expression</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Computational and Systems Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Evidence of off-target probe binding affecting 10x Genomics Xenium gene panels compromise accuracy of spatial transcriptomic profiling</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0000-9137-1293</contrib-id>
+<name>
+<surname>Hallinan</surname>
+<given-names>Caleb</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-4360-5428</contrib-id>
+<name>
+<surname>Ji</surname>
+<given-names>Hyun Joo</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-7339-465X</contrib-id>
+<name>
+<surname>Tsou</surname>
+<given-names>Edmund</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8859-7432</contrib-id>
+<name>
+<surname>Salzberg</surname>
+<given-names>Steven L</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<xref ref-type="aff" rid="a4">4</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0212-5451</contrib-id>
+<name>
+<surname>Fan</surname>
+<given-names>Jean</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<email>jeanfan@jhu.edu</email>
+</contrib>
+    <aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00za53h95</institution-id><institution>Center for Computational Biology, Whiting School of Engineering, Johns Hopkins University</institution></institution-wrap>, <city>Baltimore</city>, <country country="US">United States</country></aff>
+    <aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00za53h95</institution-id><institution>Department of Biomedical Engineering, Johns Hopkins University</institution></institution-wrap>, <city>Baltimore</city>, <country country="US">United States</country></aff>
+    <aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00za53h95</institution-id><institution>Department of Computer Science, Johns Hopkins University</institution></institution-wrap>, <city>Baltimore</city>, <country country="US">United States</country></aff>
+    <aff id="a4"><label>4</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/00za53h95</institution-id><institution>Department of Biostatistics, Johns Hopkins University</institution></institution-wrap>, <city>Baltimore</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Choi</surname>
+<given-names>Jungmin</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-8614-0973</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/047dqcg40</institution-id><institution>Korea University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Hauf</surname>
+<given-names>Silke</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-5938-721X</contrib-id><role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/02smfhw86</institution-id><institution>Virginia Tech</institution>
+</institution-wrap>
+<city>Blacksburg</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-08-26">
+<day>26</day>
+<month>08</month>
+<year>2025</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2026-04-02">
+<day>02</day>
+<month>04</month>
+<year>2026</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP107070</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-04-30">
+<day>30</day>
+<month>04</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-04-03">
+<day>03</day>
+<month>04</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.03.31.646342"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2025-08-26">
+<day>26</day>
+<month>08</month>
+<year>2025</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.107070.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.107070.1.sa4">eLife Assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.107070.1.sa3">Reviewer #1 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.107070.1.sa2">Reviewer #2 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.107070.1.sa1">Reviewer #3 (Public review):</self-uri>
+<self-uri content-type="author-comment" xlink:href="https://doi.org/10.7554/eLife.107070.1.sa0">Author response:</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Hallinan et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Hallinan et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-107070-v2.pdf"/>
+<abstract>
+<p>The accuracy of spatial gene expression profiles generated by probe-based <italic>in situ</italic> spatially-resolved transcriptomic technologies depends on the specificity with which probes bind to their intended target gene. Off-target binding, defined as a probe binding to something other than the target gene, can distort a gene’s true expression profile, making probe specificity essential for reliable transcriptomics. Here, we investigated off-target binding affecting the 10x Genomics Xenium technology. We developed a software tool, Off-target Probe Tracker (OPT), to identify putative off-target binding via alignment of probe sequences and assessing whether mapped loci corresponded to the intended target gene across multiple reference annotations. Applying OPT to a Xenium human breast gene panel, we identified at least 14 out of the 313 genes in the panel potentially impacted by off-target binding to protein-coding genes. To substantiate our predictions, we leveraged a Xenium breast cancer dataset generated using this gene panel and compared results to orthogonal spatial and single-cell transcriptomic profiles from Visium CytAssist and 3ʹ single-cell RNA-seq derived from the same tumor block. Our findings indicate that for some genes, the expression patterns detected by Xenium demonstrably reflect the aggregate expression of the target and predicted off-target genes based on Visium and single-cell RNA-seq rather than the target gene alone. We further applied OPT to identify potential off-target binding in custom gene panels and integrate tissue-specific RNA-seq data to assess effects. Overall, this work enhances the biological interpretability of spatial transcriptomics data and improves reproducibility in spatial transcriptomics research.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04q48ey07</institution-id>
+<institution>HHS | NIH | National Institute of General Medical Sciences (NIGMS)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>R35-GM142889</award-id>
+<principal-award-recipient>
+<name>
+<surname>Fan</surname>
+<given-names>Jean</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-2">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04q48ey07</institution-id>
+<institution>HHS | NIH | National Institute of General Medical Sciences (NIGMS)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>R35-GM130151</award-id>
+<principal-award-recipient>
+<name>
+<surname>Salzberg</surname>
+<given-names>Steven L</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-3">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/01cwqze88</institution-id>
+<institution>HHS | National Institutes of Health (NIH)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>OT2-OD033760</award-id>
+<principal-award-recipient>
+<name>
+<surname>Fan</surname>
+<given-names>Jean</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-4">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/021nxhr62</institution-id>
+<institution>National Science Foundation (NSF)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>2047611</award-id>
+<principal-award-recipient>
+<name>
+<surname>Fan</surname>
+<given-names>Jean</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>We have now revised the manuscript in response to reviewer feedback, prioritizing the key weaknesses identified. Specifically, we now provide quantifications of the agreement of gene expression patterns across technologies. We further apply OPT to new custom Xenium probe panels from the HuBMAP consortium and integrate tissue-specific RNA-seq data to assess effects. We further apply OPT to all commercially-available Xenium probe panels. For the sake of reader clarity, we have presented our responses to reviewer comments by theme rather than point-by-point to minimize repetition. Additional point-by-point responses to specific private reviewer comments beyond these themes are also addressed in the uploaded public response to reviewers.
+During the revision process, new information was also shared with us by the 10x Genomics team regarding the Xenium probe sequences evaluated in our original paper. Briefly, the Xenium probe sequences we evaluated represented an earlier iteration of the probes used to generate the data in Janesick et al. Further, we were made aware that the probe sequences used in Janesick et al. represented an earlier iteration of the commercially available Xenium v1 Human Breast Gene Expression Panel. We now elaborate further in a new Supplementary Note. We have therefore updated the paper throughout to reflect this new understanding, though we emphasize that our conclusions do not change. Rather, this newfound understanding provides stronger evidence of off-target probe binding with imperfect sequence matching, which we support with new supplementary figures.
+Beyond addressing feedback from reviewers, our private conversations with 10x Genomics have highlighted to us the importance of educating the community regarding the distinct functional roles of paralogs as well as the changing nature of genome annotations and have therefore sought to highlight these points further in our revised manuscript.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Recent advances in high-throughput spatially-resolved transcriptomic profiling technologies have enabled the investigation of gene expression with high spatial resolution within tissues. One such commercially available spatial transcriptomics platform is Xenium from 10x Genomics, a publicly traded company with a market capitalization exceeding $2 billion as of November 2025 (Yahoo <xref ref-type="bibr" rid="c30">Finance 2025</xref>). Xenium achieves spatial gene expression profiling at single-cell resolution for targeted genes using a probe-based <italic>in situ</italic> detection approach. 10x Genomics currently offers targeted gene panels with pre-designed probe sets. As of December 2024, over 16,000 Xenium consumable reactions have been sold, with each tissue slide profiled costing approximately $5,000, underscoring the platform’s widespread use and high commercial value (<xref ref-type="bibr" rid="c2">10x Genomics 2025b</xref>; 2025a).</p>
+<p>Briefly, Xenium uses padlock probes that include sequences complementary to the RNA of target genes. Once a padlock probe binds to its target, it is ligated and subsequently amplified via rolling circle amplification (RCA). Fluorescently labeled decoder probes then hybridize to the amplified RCA product, enabling the simultaneous detection and decoding of the optical signature, or codeword, specific to each gene in the panel through successive rounds of fluorescence imaging. When combined with cell-segmentation, this approach allows for spatially-resolved single-cell quantification of gene expression.</p>
+<p>The accuracy of these gene expression measurements thus relies on the specificity of the probes to bind to their intended target gene. We define off-target binding as when a probe binds to something other than the RNA sequence intended to correspond to the target gene (<xref rid="fig1" ref-type="fig">Figure 1</xref>). We note once ligation and RCA occur, the resulting fluorescent signal cannot be distinguished between on-target and off-target binding. As such, off-target binding can distort the quantification of the intended target gene’s expression, as the observed expression would represent a combination of the target as well as off-target expression.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>Schematic of potential off-target binding in 10x Genomics Xenium.</title>
+<p>In this illustration, the arms of the padlock probes were designed to bind an RNA sequence intended to correspond to a target gene (green). However, these probes exhibit off-target binding and bind to an RNA sequence in a different off-target gene (red). The probe is circularized and subsequently amplified via rolling circle amplification (RCA). Hybridization of fluorescent probes to the RCA product enables the generation a fluorescent signal that is used to quantify RNA expression within cells.</p></caption>
+<graphic xlink:href="646342v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To predict for such potential off-target binding, we developed Off-target Probe Tracker (OPT), a software tool that aligns probe sequences to an annotated transcriptome with the option to allow for mismatches that may still permit probe binding. Using OPT, we identify putative off-target probe binding to protein-coding genes affecting at least 14 out of 313 genes in a 10x Genomics Xenium human breast gene panel, compromising the accuracy of their spatial transcriptomic profiles. We substantiate our predictions using data from orthogonal spatial and single-cell gene expression profiling technologies. We further apply OPT to identify potential off-target binding in custom gene panels and integrate tissue-specific RNA-seq data from The Human BioMolecular Atlas Program (HuBMAP) to assess whether such off-target binding could meaningfully affect assayed expression patterns in specific tissues. By facilitating a more rigorous evaluation of probe sequence specificity, tools like OPT can aid in future probe design decisions to help ensure that probes are optimized to minimize off-target binding based on current transcriptome annotations.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>OPT predicts potential off-target probe binding</title>
+<p>To identify potential off-target binding impacting the 10x Genomics Xenium technology, we require the probe sequences for a specific gene panel of interest, generally represented in a FASTA file. To this end, we first focus on a human breast gene panel used in the Janesick et al. publication, courtesy of 10x Genomics (Methods; <xref ref-type="supplementary-material" rid="supp1">Supplementary Table 1</xref>). This file includes 2,582 probe sequences that are 40bp in length and designed to target 313 genes, including 33 genes targeted by custom probes, with an average of 8 probe sequences per gene (ranging from 2 to 21 probe sequences per gene). We note this panel represents an earlier iteration of and is highly similar to the commercially available pre-designed Xenium v1 Human Breast Gene Expression Panel (Supplementary Note).</p>
+<p>To enable the prediction of potential off-target binding, we developed a software tool called OPT (Methods) that uses nucmer (<xref ref-type="bibr" rid="c16">Marçais et al. 2018</xref>) to align probe sequences to various reference transcriptomes, which comprise curated collections of transcript isoforms for all genes in a species. OPT features adjustable parameters for binding strictness (e.g., number of mismatches) and generates a summary file that details all targeted genes along with their potential off-targets based on the sequence alignments. 10x Genomics designed its probe sequences using the GENCODE “basic” annotation (<xref ref-type="bibr" rid="c20">Mudge et al. 2025</xref>), so initially we also used the latest GENCODE “basic” annotation (v47) to predict off-target binding for these probes.</p>
+<p>We first sought to predict if a probe has off-target binding based on perfect sequence homology (i.e., if it aligns with 100% identity) with any annotated transcripts other than those that belong to the intended target gene. Of the 2,582 probe sequences in this gene panel, using GENCODE v47, OPT identified 121 probe sequences across 37 genes as having off-target binding based on perfect sequence homology (<xref rid="tbl1" ref-type="table">Table 1</xref>). Among the 37 genes with predicted off-target binding, the number of affected probe sequences per gene ranged from 1 to 8. Overall, these off-target probes matched 71 other genes, including 20 protein-coding genes, 31 pseudogenes, 10 long non-coding RNA, 9 transcripts labeled as nonsense-mediated decay, and one microRNA gene.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>OPT output of genes with predicted off-target binding based on perfect sequence homology using GENCODE v47.</title><p>This table shows the 37 genes whose probes in the 10x Genomics Xenium v1 Human Breast Gene Expression Panel exhibit predicted off-target probe binding, where each off-target alignment involves a perfect 40bp match to the probe sequence. Although OPT predicted off-target binding of <italic>CCPG1</italic> probe sequences to the <italic>DNAAF1-CCPG1</italic> gene, we manually excluded it from our list because <italic>DNAAF1-CCPG1</italic> is a read-through gene containing portions of both <italic>DNAAF1</italic> and <italic>CCPG1</italic>. The final column shows the gene types, in order, of each of the off-target genes shown in column 3. Abbreviations: PC = protein-coding; PG = pseudogene; NMD = nonsense-mediated decay; lncRNA = long non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+<sec id="s2b">
+<title>Off-target binding predictions vary across different annotations</title>
+<p>OPT relies on alignments to an annotated transcriptome, which ideally reflects all genes and gene variants stably transcribed in a given species. However, genome annotation is still an active area of research (<xref ref-type="bibr" rid="c27">Varabyou et al. 2023</xref>), with discrepancies across annotations in gene counts, isoforms, and many other features. We therefore further used OPT to predict for off-target binding and affected genes using two additional human genome annotation sets, RefSeq (v110), (<xref ref-type="bibr" rid="c21">O’Leary et al. 2016</xref>) and CHESS (v3.1.3) (<xref ref-type="bibr" rid="c27">Varabyou et al. 2023</xref>), and compared to our previous results from GENCODE (v47) (<xref ref-type="bibr" rid="c20">Mudge et al. 2025</xref>) (Methods).</p>
+<p>When considering only perfect sequence homology, while we previously found 37 affected genes using GENCODE, we found 14 when using RefSeq and 23 when using CHESS (<xref ref-type="table" rid="tbls2">Supplementary Table 2</xref>, <xref ref-type="table" rid="tbls3">3</xref>). Given that RefSeq and CHESS have more transcripts than GENCODE, these discrepancies in off-target binding predictions was not simply an artifact of the difference in transcript set sizes.</p>
+    <p>While the human annotation databases mostly agree on the number of protein-coding genes in the genome, they remain widely divergent on pseudogenes and lncRNA genes. Therefore, we focused on how the results change when we restrict our analysis to only protein-coding genes. By excluding pseudogenes (which are presumably not expressed), lncRNAs, and other non-protein-coding RNAs when using OPT, the number of affected genes fell to 11 for GENCODE, 10 for RefSeq and 9 for CHESS (<xref ref-type="table" rid="tbls4">Supplementary Table 4</xref>). Again, these discrepancies reflect annotation differences. For example, the probe sequence (ENSG00000196154|S100A4|ab4e3dc), which was designed to target <italic>S100A4</italic> based on GENCODE annotations, also aligns to <italic>S100A5</italic> in RefSeq (<xref ref-type="fig" rid="figs1">Supplementary Figure 1</xref>). We reason that if a probe sequence aligns off-target to a protein-coding gene based on any of these annotations, it could result in off-target binding. We therefore focused further analysis on the union of genes with predicted off-target binding to protein-coding genes across the 3 annotations, resulting in 14 genes: <italic>ADH1B</italic>, <italic>AKR1C1</italic>, <italic>APOBEC3A</italic>, <italic>APOBEC3B</italic>, <italic>AQP1</italic>, <italic>C1QA</italic>, <italic>CD79B</italic>, <italic>CD8B</italic>, <italic>CEACAM6</italic>, <italic>POLR2J3</italic>, <italic>S100A4</italic>, <italic>TOMM7</italic>, <italic>TPD52</italic>, and <italic>TPSAB1</italic> (<xref ref-type="fig" rid="figs2">Supplementary Figure 2</xref>; <xref ref-type="table" rid="tbls5">Supplementary Table 5</xref>).</p>
+</sec>
+<sec id="s2c">
+<title>Comparison with Visium CytAssist reveals spatial gene expression patterns consistent with off-target binding</title>
+<p>To investigate the potential effects of our predicted off-target binding for this Xenium human breast gene panel in experimental settings, we compared spatial gene expression patterns detected in two previously published spatial transcriptomics datasets from serial sections of the same breast cancer tissue: one section assayed with Xenium using this gene panel, and another assayed using Visium CytAssist, an orthogonal spatial transcriptomics platform (<xref ref-type="bibr" rid="c11">Janesick et al. 2023</xref>). Briefly, Visium CytAssist is a sequencing-based spatial transcriptomics technology in which RNA is hybridized to spatially barcoded capture spots on a slide, enabling spatial transcriptomic mapping after sequencing. However, while Xenium offers single-cell resolution gene expression quantification, Visium quantifies gene expression within 55μm spots. To enable direct comparison, we first structurally aligned the Xenium and Visium tissue sections using STalign (<xref ref-type="bibr" rid="c4">Clifton et al. 2023</xref>), restricting our analysis to overlapping regions since different parts of the tissue were profiled (<xref ref-type="fig" rid="figs3">Supplementary Figure 3A</xref>). To improve visual comparability, we aggregated the Xenium gene expression data at the aligned locations to match the Visium spatial resolution and visualized using resolution-matched tiles (<xref ref-type="fig" rid="figs3">Supplementary Figure 3B</xref>; Methods).</p>
+    <p>Among the 14 genes exhibiting off-target binding to protein-coding genes, 4 were present in the Visium dataset that had at least one corresponding off-target gene also detected in the dataset. For genes with no predicted off-target binding based on perfect sequence homology such as <italic>MS4A1</italic>, we observed a visually similar spatial pattern between the two technologies (<xref rid="fig2" ref-type="fig">Figure 2A</xref>), suggesting that spatially aligned groups of cells across the two technologies express this gene at comparable relative magnitudes. This can be quantitively assessed by comparing the pseudo-log gene expression values from both Visium and Xenium at matched spatial locations and computing the RMSE and Pearson correlation in a manner similar to STcompare (<xref ref-type="bibr" rid="c5">Clifton et al. 2025</xref>). For <italic>MS4A1</italic>, the RMSE is relatively low at 3.746, and the Pearson correlation of 0.382 indicates a moderate degree of concordance between the two technologies. However, for genes with predicted off-target binding based on perfect sequence homology such as <italic>APOBEC3B</italic>, we observed a visually dissimilar spatial pattern between the two technologies (<xref rid="fig2" ref-type="fig">Figure 2B</xref>). Consistent with this, the RMSE is relatively high at 5.452, and the Pearson correlation is <italic>nan</italic> because <italic>APOBEC3B</italic> is not expressed in the Visium dataset. Importantly, its predicted off-target genes, <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>, in Visium shows a visually more similar spatial pattern to the Xenium <italic>APOBEC3B</italic>. To better visualize the effect of off-target binding within the Xenium data, we aggregated the expression of each gene along with its predicted off-targets found in the Visium dataset and visually compared across spatial locations. Notably, the spatial pattern of the aggregated expression of <italic>APOBEC3B</italic>, <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic> in Visium is visually more similar to the spatial pattern of <italic>APOBEC3B</italic> in Xenium. Quantitatively, comparing this aggregated expression results in a decrease in RMSE to 4.465 and a non-<italic>nan</italic> Pearson correlation of 0.160, consistent with the prediction that Xenium <italic>APOBEC3B</italic> probes exhibit off-target binding to <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>. We further visually confirmed using the Integrative Genomics Viewer (IGV) where two probe sequences intending to bind to <italic>APOBEC3B</italic> were found to perfectly align to sequences in both <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>, consistent across all annotations evaluated (<xref ref-type="fig" rid="figs4">Supplementary Figure 4</xref>).</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2.</label>
+<caption><title>Comparison of spatial gene expression patterns between Xenium and Visium.</title>
+    <p><bold>(A)</bold> Spatial gene expression of <italic>MS4A1</italic> overlaid on the corresponding histological images for Xenium and Visium, accompanied by a density plot comparing Xenium vs. Visium <italic>MS4A1</italic> expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(B)</bold> Gene expression patterns for <italic>APOBEC3B</italic>: Xenium expression, Visium expression, the aggregated Visium expression combining <italic>APOBEC3B</italic> and its predicted off-target gene’s expression <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>, and Visium expression of <italic>APOBEC3B</italic>’s predicted off-targets <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>. Two density plots are shown: one comparing Xenium vs. Visium for <italic>APOBEC3B</italic> alone, and one comparing Xenium vs. the aggregated Visium expression of <italic>APOBEC3B</italic> with all off-targets. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(C)</bold> Scatterplot of log-transformed total expression counts (with a pseudocount) for 307 genes comparing Visium and Xenium data. The dotted line indicates the identity line (X = Y), and points (genes) are colored by probe information.</p></caption>
+<graphic xlink:href="646342v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Overall, when comparing the total gene expression between the two technologies, we observed a generally strong positive correlation, consistent with the previously published work (<xref ref-type="bibr" rid="c11">Janesick et al. 2023</xref>). We do not observe an obvious trend between gene expression magnitude and the presence of predicted off-target probes (<xref rid="fig2" ref-type="fig">Figure 2C</xref>), suggesting that off-target binding prediction alone does not explain the observed higher expression magnitude in Xenium compared to Visium, which may still be attributed to variation in detection efficiency, sequencing depth, and other factors.</p>
+</sec>
+<sec id="s2d">
+<title>Comparison with scRNA-seq reveals single-cell gene expression patterns consistent with off-target binding</title>
+<p>To further investigate the potential effects of our predicted off-target binding for this Xenium human breast gene panel, we compared the detected single-cell gene expression patterns in the same previously published work using Chromium Next GEM Single Cell 3’ (<xref ref-type="bibr" rid="c11">Janesick et al. 2023</xref>). Briefly, single-cell RNA sequencing (scRNA-seq) with 3ʹ end capture is a technique used to profile gene expression at the single-cell level by profiling the 3ʹ ends of mRNA transcripts with sequencing followed by alignment to a genome or transcriptome for quantification. While this approach provides single-cell resolution gene expression quantification, it lacks spatial information. To enable a single-cell comparison with Xenium, we use Harmony (<xref ref-type="bibr" rid="c12">Korsunsky et al. 2019</xref>) to remove batch effects and project cells into a shared UMAP embedding (<xref ref-type="fig" rid="figs5">Supplementary Figure 5A-B</xref>). We also performed Leiden clustering on the harmonized principal components to quantitively compare cluster expression (<xref ref-type="fig" rid="figs5">Supplementary Figure 5C</xref>; Methods).</p>
+<p>Among the 14 genes exhibiting off-target binding to protein-coding genes, 10 were present in the scRNA-seq dataset that had at least one corresponding off-target gene also detected in the dataset. Again, for genes with no predicted off-target binding based on perfect sequence homology such as <italic>MS4A1</italic>, we observed a visually similar gene expression pattern in the harmonized UMAP across both technologies (<xref rid="fig3" ref-type="fig">Figure 3A</xref>), suggesting that transcriptionally similar clusters of cells or cell-types across the two technologies express this gene at comparable relative magnitudes. We further quantitatively assessed the data by comparing the pseudo-log gene expression values obtained from the clusters within the clustered harmonized UMAP and computed the RMSE and Pearson correlation. For <italic>MS4A1</italic>, the RMSE is relatively low at 0.479, and the Pearson correlation of 0.991 indicates a strong degree of concordance between the two technologies. Likewise, again, for genes with predicted off-target binding based on perfect sequence homology such as <italic>APOBEC3B</italic>, we observed a visually dissimilar gene expression pattern on the harmonized UMAP (<xref rid="fig3" ref-type="fig">Figure 3B</xref>). Consistent with this, the RMSE is relatively high at 0.829, and the Pearson correlation is <italic>nan</italic> because <italic>APOBEC3B</italic> is not expressed in the scRNA-seq dataset. Again, its predicted off-target genes, <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>, in scRNA-seq showed a visually more similar expression pattern in the harmonized UMAP embedding to the Xenium <italic>APOBEC3B</italic>. To better illustrate the impact of the off-target probes, we again aggregated the expression of a gene and its predicted off-target genes present in the scRNA-seq data and visually compared across the harmonized UMAP embedding. The aggregated expression of <italic>APOBEC3B</italic>, <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic> in the scRNA-seq data shows a visually more similar gene expression pattern in the harmonized UMAP embedding to <italic>APOBEC3B</italic> in the Xenium data (<xref rid="fig3" ref-type="fig">Figure 3B</xref>). Quantitatively, comparing this aggregated expression results in a decrease in RMSE to 0.596 and a non-nan in Pearson correlation to 0.417, consistent with the prediction that Xenium <italic>APOBEC3B</italic> probes exhibit off-target binding with these paralogs.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3.</label>
+<caption><title>Comparison of single-cell gene expression patterns between Xenium and scRNA-seq.</title>
+<p><bold>(A)</bold> Harmonized UMAP visualization of <italic>MS4A1</italic> expression for Xenium and scRNA-seq data, accompanied by a scatterplot comparing Xenium vs. scRNA-seq <italic>MS4A1</italic> cluster expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(B)</bold> Comparison of <italic>APOBEC3B</italic> expression patterns on harmonized UMAP: Xenium expression, scRNA-seq expression, an aggregated scRNA-seq profile combining <italic>APOBEC3B</italic> and its predicted off-target gene’s expression <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>, and scRNA-seq expression of <italic>APOBEC3B</italic>’s predicted off-targets <italic>APOBEC3D</italic> and <italic>APOBEC3F</italic>. Two scatterplots are shown: one comparing Xenium vs. scRNA-seq for <italic>APOBEC3B</italic> cluster expression alone, and one comparing Xenium vs. the aggregated scRNA-seq cluster expression of <italic>APOBEC3B</italic> and it’s predicted off-targets. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(C)</bold> Scatterplot of log-transformed total expression counts (with a pseudocount) for 313 genes between Visium and scRNA-seq data. The dotted line indicates the identity line (X = Y), and points (genes) are colored by probe information.</p></caption>
+<graphic xlink:href="646342v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>Overall, when comparing total gene expression between the two technologies, we again observed a generally strong positive correlation (<xref rid="fig3" ref-type="fig">Figure 3C</xref>), similar to the Visium comparison results and consistent with the previously published work (<xref ref-type="bibr" rid="c11">Janesick et al. 2023</xref>).</p>
+</sec>
+<sec id="s2e">
+<title>OPT results when allowing mismatches at the terminal ends of the probe sequences identifies additional off-target candidates</title>
+<p>Thus far, we have focused on predicting off-target binding based on perfect sequence homology. However, we reason that imperfect sequence matching could still result in off-target binding. Specifically, for Xenium v1, which underlies the Xenium human breast gene panel, padlock probes with two 20 base pair (bp) arms bind complementary mRNA regions, forming a 40bp probe sequence. A ligase then circularizes the padlock probe, favoring specific 2-bp junctions. Importantly, if there is a sequence mismatch, particularly outside the ligation site towards the terminal ends of the probe sequence, hybridization may still occur and result in off-target binding, albeit with reduced hybridization efficiency (<xref ref-type="fig" rid="figs6">Supplementary Figure 6A</xref>). We therefore added an option in OPT to allow imperfect alignments at the ends of the probe sequences, specifying the sequence length at either ends, where mismatches, insertions, deletions, or clipping can occur (Methods).</p>
+<p>Allowing for 10bp mismatches on either end of the 40bp probe sequence (i.e., requiring a 20bp match covering the middle of the probe sequence including the ligation site) revealed 16 additional genes with potential off-target binding when using GENCODE v47 (<xref ref-type="table" rid="tbls6">Supplementary Table 6</xref>). Additionally, 9 of the 37 genes previously predicted to be affected by off-target binding based on perfect sequence homology were now predicted to have additional off-target genes (<xref ref-type="table" rid="tbls7">Supplementary Table 7</xref>). Among these additional genes were <italic>TUBB2B</italic> and <italic>ACTG2</italic>, both of which showed visually dissimilar spatial patterns between Xenium and Visium, accompanied by comparably high RMSE and low Pearson correlation (<xref ref-type="fig" rid="figs7">Supplementary Figure 7A-B</xref>). In contrast, the spatial pattern of the aggregate of <italic>TUBB2B</italic> and <italic>ACTG2</italic> with their predicted off-target protein-coding genes (<italic>TUBB2A</italic> and <italic>ACTB</italic>/<italic>ACTA1</italic>/<italic>POTEM</italic> respectively) in Visium more closely resembled the spatial pattern of <italic>TUBB2B</italic> and <italic>ACTG2</italic> observed in Xenium, accompanied by a corresponding decrease in RMSE for both genes and increase in Pearson correlation for <italic>TUBB2B</italic>. Likewise, a similar trend is observed in the scRNA-seq comparison (<xref ref-type="fig" rid="figs8">Supplementary Figure 8A-B</xref>). Ultimately, these findings suggest that off-target binding, even with imperfect sequence matching, can contribute to the expression patterns observed in Xenium.</p>
+</sec>
+<sec id="s2f">
+<title>RNA-seq reference atlases suggest off-target binding can variably impact results in Xenium custom probe panels</title>
+<p>Our analyses to this point focused on the Xenium human breast gene panel from Janesick et al., a predecessor to and thus similar to the commercially available pre-designed Xenium v1 Human Breast Gene Expression Panel (Supplementary Note). We next sought to determine whether such off-target binding could affect custom Xenium gene panels, in which gene selection is specified by the user rather than provided as pre-designed panels by 10x Genomics. To investigate this, we leveraged two custom Xenium gene panels used by the Human BioMolecular Atlas Program (HuBMAP) (<xref ref-type="bibr" rid="c10">Jain et al. 2023</xref>): one designed for the placenta and another designed for the kidney, lung, and heart (i.e. multi-organ). Applying OPT to the associated FASTA files using the GENCODE v47 annotation and allowing for 10bp mismatches on either end of the 40bp probes, we found that 49 genes out of the 300 targeted genes in the placenta panel (<xref ref-type="table" rid="tbls8">Supplementary Table 8</xref>) and 24 genes out of the 300 targeted genes in the multi-organ (kidney, lung, heart) panel had predicted off-target binding (<xref ref-type="table" rid="tbls9">Supplementary Table 9</xref>). Of these, 30 of the 49 placenta panel genes and 11 of the 24 multi-organ panel genes had predicted off-targets that were protein-coding genes.</p>
+<p>To assess the potential effects of our predicted off-target binding for these custom Xenium gene panels in experimental settings, we examined the expression of the corresponding predicted off-target genes in matched scRNA-seq or bulk RNA-seq data from the HuBMAP consortium for each of the relevant tissue types. For the placenta custom panel, 34 of the 49 genes with predicted off-target genes were detected with non-zero expression magnitudes in the placenta bulk RNA-seq dataset (<xref ref-type="fig" rid="figs9">Supplementary Figure 9</xref>). For the multi-organ panel, of the 21 genes with predicted off-target genes, 13 were detected with non-zero expression magnitudes in the heart, 12 in the kidney, and 13 in the lung (<xref ref-type="fig" rid="figs10">Supplementary Figure 10</xref>). Together, these results suggest that off-target binding can impact custom Xenium gene panels by distorting observed Xenium gene expression measurements in a tissue-dependent manner, particularly where the off-target gene is expressed at a higher magnitude compared to the target gene within the tissue of interest.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>Our study presents evidence of off-target probe binding that may distort gene expression profiles affecting the 10x Genomics Xenium spatial transcriptomics technology. We identified at least 14 out of the 313 genes in a Xenium human breast gene panel, which is highly similar to the commercially-available pre-designed Xenium v1 Human Breast Gene Expression Panel (Supplementary Note), that may be affected by off-target probe binding based on sequence similarity, supported by spatial and single-cell comparative analyses using Xenium with serial section datasets from Visium CytAssist and 3’ single-cell RNA-seq respectively. We further identified potential off-target probe binding affecting custom Xenium gene panels. To assist in the interpretation of existing probe-based gene expression data as well as future probe design, we provide OPT as a software tool for predicting potential off-target probe binding. For future reference, we have run OPT on all publicly available 10x Genomics pre-designed Xenium gene panels and supply them as a ZIP file (<xref ref-type="supplementary-material" rid="supp2">Supplementary Table 10</xref>).</p>
+<p>Although we have predicted off-target binding based on sequence alignment, its effect on gene expression quantification may still vary. One reason is that the off-target protein-coding or non-protein-coding gene may not be expressed (<xref ref-type="fig" rid="figs11">Supplementary Figure 11</xref>). For example, in the Xenium human breast gene panel, although <italic>ADH1B</italic> probes have predicted off-target binding to <italic>ADH1A</italic> and <italic>ADH1C</italic> based on perfect sequence homology, the sparse expression of <italic>ADH1A</italic> and <italic>ADH1C</italic> in both the Visium and scRNA-seq breast cancer data led to only a minor difference in the aggregated expression and quantitative results (<xref ref-type="fig" rid="figs12">Supplementary Figure 12</xref>). Our analysis of HuBMAP custom probe panels demonstrated how to evaluate for the potential impact of predicted off-targets by integrating tissue-specific single-cell or bulk RNA-seq data from reference atlases (<xref ref-type="fig" rid="figs9">Supplementary Figures 9</xref>, <xref ref-type="fig" rid="figs10">10</xref>). Overall, we anticipate evaluating whether predicted off-target genes are expressed in a tissue-specific manner will be useful for gauging whether predicted off-target binding is likely to meaningfully affect observed gene expression and interpretation when applied to a tissue of interest.</p>
+<p>Other sources of non-specific signal may also arise, including probe self-hybridization or probe-probe interactions (<xref ref-type="fig" rid="figs6">Supplementary Fig 6B</xref>). In general, probe binding specificity is influenced by numerous factors, with many methods previously developed to aid in the design of probe sequences while taking these factors into consideration (<xref ref-type="bibr" rid="c28">Wang and Seed 2003</xref>; <xref ref-type="bibr" rid="c24">Rouillard et al. 2003</xref>; <xref ref-type="bibr" rid="c29">Wernersson and Nielsen 2005</xref>; <xref ref-type="bibr" rid="c3">Chou 2010</xref>; <xref ref-type="bibr" rid="c14">Li et al. 2011</xref>; <xref ref-type="bibr" rid="c9">Hu et al. 2020</xref>; <xref ref-type="bibr" rid="c8">Hershberg et al. 2021</xref>; <xref ref-type="bibr" rid="c6">Fornace et al. 2022</xref>; <xref ref-type="bibr" rid="c25">Stenberg et al. 2005</xref>; <xref ref-type="bibr" rid="c13">Kuemmerle et al. 2024</xref>). For example, in the Xenium human breast gene panel, <italic>HDC</italic>, a custom gene not included in the pre-designed Xenium v1 Human Breast Gene Expression Panel, did not have any off-targets predicted by OPT. Yet in Xenium, <italic>HDC</italic> exhibited a distinct spatial pattern and high global expression level, whereas in both Visium and scRNA-seq, <italic>HDC</italic> showed a minimal spatial pattern and sparse expression level respectively (<xref ref-type="fig" rid="figs13">Supplementary Figure 13</xref>). This illustrates how discrepancies across platforms can signal potential off-target activity not captured by alignment-based predictions alone and highlights the general importance of experimental validation with orthogonal technologies since sequence alignment-based tools such as OPT may not flag all potential discrepancies.</p>
+<p>We note that most off-target binding impacts paralogs, homologous genes that have diverged following gene duplication events. Paralogs often belong to large gene families whose members can share high sequence similarity, increasing the risk of off-target probe activity. Unlike orthologs with conserved functions across species, paralogs are additional copies that can acquire function-altering mutations (<xref ref-type="bibr" rid="c23">Platt et al. 2000</xref>; <xref ref-type="bibr" rid="c22">Pevny et al. 1991</xref>; <xref ref-type="bibr" rid="c26">Tsai et al. 1994</xref>). Pooling expression signals across paralogs can therefore prevent researchers from capturing their distinct functional roles.</p>
+<p>We also found that 10 of the 2,582 Xenium human breast gene panel probe sequences did not align to any reference transcripts in the GENCODE v47 annotation. Upon manually aligning these probes to the GRCh38 genome, we determined that each unmapped sequence corresponded either to regions immediately upstream or downstream of annotated transcripts, or to intronic sequences that would not typically be present in mature RNA. Interestingly, when we aligned several of these probes, such as (ENSG00000125878|TCF15|5d3cbc2) and (ENSG00000169083|AR|a0c6719), to an earlier annotation (GENCODE v28), they instead mapped to exonic regions (<xref ref-type="fig" rid="figs14">Supplementary Figure 14</xref>). This suggests that these intronic or intergenic probe sequences were likely designed using older GENCODE versions in which those regions were annotated as exons. This finding illustrates the importance of disclosing the specific annotation version to promote reproducibility, as well as the ongoing variability of human gene annotation. Likewise, as evidenced by our analysis across GENCODE, RefSeq, and CHESS, we emphasize the variation across these reference annotations and therefore recommend using multiple annotations when designing probe sequences and evaluating them for off-target effects to ensure a more comprehensive assessment.</p>
+<p>Given these challenges, we advise probes with predicted off-target binding to protein-coding genes based on high sequence homology be avoided in future experiments. Likewise, we encourage the use of tools like OPT to aid in future probe design decisions and help ensure that probes are optimized to minimize off-target binding based on the most current transcriptome annotations. When probes with predicted off-targets cannot be avoided, we encourage the integration of tissue-specific RNA-seq data from HuBMAP and other reference atlases to evaluate for its potential impact. Further, such integration of tissue-specific RNA-seq data from reference atlases into the probe design process itself may offer a data-driven opportunity to minimize the impact of potential off-target binding by enforcing stricter probe-design constraints only where potential off-target genes are highly expressed in the tissue of interest. For datasets that have already been generated using probes with predicted off-target binding, we generally recommend taking into consideration these predictions to avoid drawing misleading conclusions. For example, we recommend expression measurements for genes with predicted off-target binding be omitted from training foundation models to avoid error propagation. Alternatively, when performing integrative analyses that compare or align gene expression with measurements across technologies, it may be necessary to incorporate off-target binding predictions. For instance, integration could be performed between the observed Xenium gene expression and the aggregated expression of the target and predicted off-target genes for the orthogonal technology. Finally, existing literature that base conclusions on genes with predicted off-target binding should be interpreted with caution.</p>
+<p>We emphasize that these findings were missed in the previous Janesick et al. publication from 10x Genomics (<xref ref-type="bibr" rid="c11">Janesick et al. 2023</xref>). Consistent with previously published observations, we observed a highly correlated total gene expression magnitude between Xenium and Visium as well as scRNA-seq. However, a notable exception is <italic>APOBEC3B</italic>, which is not expressed according to both Visium and scRNA-seq but highly expressed according to Xenium (<xref rid="fig2" ref-type="fig">Figure 2B</xref>; <xref rid="fig3" ref-type="fig">Figure 3B</xref>) – a discrepancy that Janesick et al. omitted. We emphasize that positive significant average gene expression correlation is a necessary but not sufficient metric for consistency across technologies and that individual data points should be scrutinized. Likewise, validation with orthogonal technologies could have helped identify discrepancies suggestive of off-target effects. We note Janesick et al. used immunofluorescence to validate two genes, <italic>ERBB2</italic> and <italic>MS4A1</italic>, which by our analysis were predicted to exhibit no off-target binding. Although Xenium incorporates blank and negative control probes that are intended to help quantify the rate of non-specific and potential off-target binding, our findings suggest that relying solely on such probes for error detection may be insufficient. Implementing probe redundancy, where the same gene is targeted using different codewords, could provide an additional internal control to enable the detection of off-target binding.</p>
+<p>Although we focus here on the 10x Genomics Xenium technology, we do not exclude the possibility that off-target binding may similarly affect other probe-based gene detection approaches from other commercial vendors. Any technology that relies on hybridization-based detection is inherently susceptible to off-target probe binding when sequence similarity exists. Further, hybridization-based detection often inherently involves a trade-off between sensitivity and specificity. Given these inherent technological limitations, we therefore emphasize the importance of transparency through sharing probe sequences. However, many companies do not release the probe sequences used in their assays, limiting the consumer’s ability to fully interpret their results as well as the community’s ability to effectively characterize and benchmark performance variation across platforms. Therefore, we strongly recommend that companies publish probe sequences for pre-designed panels and likewise that researchers using these technologies should obtain and publish probe sequences used in their studies to support transparent and reproducible science.</p>
+<p>This is not the first instance in which a commercially available platform has encountered challenges in probe design (<xref ref-type="bibr" rid="c18">McCartney et al. 2016</xref>; <xref ref-type="bibr" rid="c7">Harbig 2005</xref>; <xref ref-type="bibr" rid="c19">Mecham et al. 2004</xref>; <xref ref-type="bibr" rid="c15">Liu et al. 2014</xref>). These findings underscore the critical role of academic researchers towards ensuring the robustness of industry-led product development by providing oversight, free of financial conflicts of interest through independent federal funding. This complementarity between industry and academia fosters a more rigorous, transparent, and reliable scientific process, ultimately to the benefit of consumers and the public. By shedding light on putative off-target probe binding as well as by providing a tool to enable such off-target binding predictions, this work will help enhance the quality of spatial transcriptomics data and improve the overall reproducibility in spatial transcriptomics research.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Off-target Probe Tracker Tool (OPT)</title>
+<p>OPT (<underline>O</underline>ff-target <underline>P</underline>robe <underline>T</underline>racker) is a Python program that runs nucmer (<xref ref-type="bibr" rid="c17">Marçais and Kingsford 2011</xref>) for alignment and then processes the results to predict probe binding based on sequence homology. OPT is available as an open-source Python toolkit at <ext-link ext-link-type="uri" xlink:href="https://github.com/JEFworks-Lab/off-target-probe-tracker">https://github.com/JEFworks-Lab/off-target-probe-tracker</ext-link>. When a user provides a query probe sequence file, a target transcript sequence file, and the annotation used to extract these transcripts, OPT outputs which gene each probe is likely to bind to. Nucmer is a fast nucleotide sequence aligner that uses maximal exact matches as anchors which it then joins together to find longer alignments. By default, OPT saves nucmer results in SAM format and finds perfect sequence matches between a query probe and a target transcript, requiring that alignments consist of only matches and cover the entirety of the query. OPT consists of four modules: (1) <monospace>flip</monospace> for reverse complementing probe sequences aligned to the opposite strand of their target genes; (2) <monospace>track</monospace> for aligning probe sequences and processing alignment results; (3) <monospace>stat</monospace> for compiling summary statistics on the number of off-target binding probes and affected genes; and (4) <monospace>all</monospace> for running the <monospace>flip, track,</monospace> and <monospace>stat</monospace> modules at once.</p>
+<p>In the case that a probe’s target gene has synonyms, we consider alignments to genes annotated with one of its synonym to still be on-target. For example, if a probe that targets <italic>NARS</italic> shows alignments to a gene called <italic>NARS1</italic>, we don’t consider it to be off-target binding. We gathered relevant gene synonym relationships using the GeneCards and HGNC online database.</p>
+<p>OPT also provides a “pad” mode in which imperfect alignments are allowed at either end of the query (i.e., probe sequence). The -pl parameter sets the pad length at either end of the query and OPT allows for any number of mismatches in these padded regions. For example, if the pad length is 10 and the probe sequence length is 40bp, then the middle 20bp are the only part of the probe sequence required to match. As long as the critical region is intact, OPT reports an off-target binding site based on this alignment. By default, -pl is set to 0, and the pad mode is activated by providing a non-zero integer to -pl.</p>
+</sec>
+<sec id="s4b">
+<title>Obtaining probe sequences for the Xenium v1 Human Breast Gene Expression Panel</title>
+<p>To identify potential off-target binding impacting the 10x Genomics Xenium v1 Human Breast Gene Expression Panel, we obtained the FASTA file of probe sequences from the Janesick et al. publication courtesy of 10x Genomics and available as <xref ref-type="supplementary-material" rid="supp1">Supplementary Table 1</xref> for preservation. Notably, this panel slightly deviates from the commercially available Xenium v1 Human Breast Gene Expression Panel (Supplementary Note).</p>
+<p>The target gene names and IDs were extracted from the probe IDs of the following format:</p>
+<p><monospace>&gt; gene_id|gene_name|accession</monospace></p>
+<p>We expected the provided FASTA file to contain probe sequences to be the reverse complemented sequence of their intended target genes and hence align to the reverse strand of their target isoforms. However, when we aligned the breast panel probe sequences to the GENCODE basic (v47) reference transcripts using nucmer, we found that 2,563 / 2,582 of probe sequences aligned on the reverse strand of their target transcripts (i.e., isoforms of their target genes). For consistency, we enforced that all probe sequences be oriented in the same direction and align to the forward strand of their target genes and transcripts. As such, we reverse-complemented these 2,563 probe sequences. We also added this functionality as an OPT module called “flip” in which probe sequences aligned to the reverse strand of their targets are reverse complemented. We expect probe sequences to align to the forward strand of transcripts (i.e., both oriented in the same direction) during the downstream probe sequence binding prediction step.</p>
+</sec>
+<sec id="s4c">
+<title>Visium Comparison</title>
+<p>The Visium CytAssist dataset, collected from a breast cancer tissue block utilized in Janesick et al., was downloaded from the 10x Genomics website (<ext-link ext-link-type="uri" xlink:href="https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast">https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast</ext-link>). This dataset originally contained 4,992 spots with x-y coordinates and included 18,085 genes per spot. Of the 313 unique genes in the Xenium dataset, 307 were shared with the Visium dataset; the other six genes (<italic>AKR1C1</italic>, <italic>ANGPT2</italic>, <italic>BTNL9</italic>, <italic>CD8B</italic>, <italic>POLR2J3</italic>, and <italic>TPSAB1</italic>) were excluded from the analysis because they were absent from the Visium dataset.</p>
+<p>To compare spatial gene expression patterns from Visium and Xenium technologies, we first mapped all the data to the same coordinate space. We used STalign (v1.0.1), a computational tool that utilizes affine transformations along with diffeomorphic metric mapping to align target and source datasets (<xref ref-type="bibr" rid="c4">Clifton et al. 2023</xref>). The initial alignment involved only affine transformations and eight manually determined landmarks to align the Visium histology image (source) to the Xenium histology image (target). This transformation brought the Visium image into the coordinate space of the higher-resolution Xenium image. We then applied this learned transformation to the Visium spots, ensuring that they were correctly positioned relative to both histology images. Next, we used STalign to map the Xenium transcripts (source) onto their corresponding Xenium histology image (target) using both affine and diffeomorphic metric mapping. The transcripts were rasterized at 30μm resolution, with an initial affine transformation guided by four manually defined landmarks. Diffeomorphic metric mapping was then performed with the following parameters: a = 2500, epV = 1, niter = 2000, sigmaA = 0.11, sigmaB = 0.10, sigmaM = 0.15, sigmaP = 50, muA = [1, 1, 1], muB = [0, 0, 0], with all other settings left at their defaults. We extracted the overlapping regions between the two datasets (<xref ref-type="fig" rid="figs3">Supplementary Figure 3A</xref>), which reduced the total spots in the Visium dataset to 3,958. Finally, we aggregated the Xenium gene expression data to ∼55μm x 55μm patches that correspond to the spatial locations of the Visium spots, resulting in matched-resolution spatial gene expression for both technologies (<xref ref-type="fig" rid="figs3">Supplementary Figure 3B</xref>). The Visium spatial gene expression data is displayed as patches rather than spots to enhance visual saliency and ensure consistency with the Xenium spatial gene expression plots.</p>
+<p>After obtaining matched-resolution spatial gene expression matrices, we quantified agreement between the Visium and Xenium data. For each gene shared between the two platforms, we constructed expression vectors across the aligned spatial spots, where each element corresponded to the log-normalized gene expression at its matched location in the tissue section. We then compared the Visium and Xenium vectors for each gene using two metrics: root-mean-square error (RMSE), computed relative to the line y = x, and Pearson correlation (<italic>r</italic>). To assess whether discrepancies in Xenium measurements could be attributed to predicted off-target genes, we compared the Xenium data of a target gene to the aggregated Visium expression of the target genes with its predicted off-targets. We summed the raw Visium counts of all off-target genes associated with each Xenium gene with predicted off-targets, re-normalized the aggregated counts using CPM followed by log(x + 1), and again calculated the RMSE and Pearson correlation. This approach enabled us to evaluate whether Xenium expression patterns aligned more closely with the intended target gene alone or with the combined expression of its predicted off-target genes.</p>
+</sec>
+<sec id="s4d">
+<title>Single-cell RNA-seq Comparison</title>
+<p>The Chromium Next GEM 3’ scRNA-seq dataset, collected from a breast cancer tissue block utilized in Janesick et al., was downloaded from the 10x Genomics website (<ext-link ext-link-type="uri" xlink:href="https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast">https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast</ext-link>). This dataset contained 12,388 cells with 36,601 genes per cell. All 313 unique genes present in the Xenium dataset are also in the scRNA-seq dataset, hence both datasets were subsetted to these genes for the analysis.</p>
+<p>Both scRNA-seq and Xenium provide single-cell resolution data. To integrate these datasets, we first removed cells lacking detectable gene expression. We then normalized the combined gene expression data using counts per million (CPM) and applied a log transformation with a pseudocount of 1. Principal component analysis (PCA) is then applied to the normalized data, and batch effects are corrected using Harmony (v1.2.3) on the top 30 principal components (PCs) using default parameters except for theta, which was set to 8, to promote further mixing with clusters across technologies. Finally, Uniform Manifold Approximation and Projection (UMAP) is performed on the harmonized PCs, generating a shared 2D embedding across the two technologies, and the data is further facetted by technology for visualization (<xref ref-type="fig" rid="figs5">Supplementary Figure 5</xref>).</p>
+<p>After generating a shared embedding, we quantified differences in gene expression patterns between scRNA-seq and Xenium. We first computed Leiden clusters on the harmonized principal components (resolution = 1.0) to identify transcriptionally similar groups of cells shared across both technologies. For each Leiden cluster, we calculated the mean expression of every gene present in both datasets. Clusters containing fewer than ten cells from either modality were excluded to ensure robust gene-level estimates. To compare expression patterns between scRNA-seq and Xenium for a given gene, we constructed vectors of cluster-level mean expression from both technologies and evaluated their similarity using two metrics: root-mean-square error (RMSE), computed relative to the line y = x, and Pearson correlation (<italic>r</italic>). To investigate whether predicted off-target genes may contribute to the observed target-gene expression in Xenium, we compared the Xenium target gene to the aggregated scRNA-seq expression of itself and its predicted off-targets. We summed the raw counts of a gene and all of its predicted off-targets in the scRNA-seq dataset, re-normalized the aggregated counts using CPM followed by log(x + 1), and again calculated the RMSE and Pearson correlation. This allowed us to test whether the Xenium gene expression more closely reflected the intended gene alone or the combined expression of the intended gene and its predicted off-targets.</p>
+</sec>
+<sec id="s4e">
+<title>Obtaining custom probe panels from HuBMAP</title>
+<p>To evaluate potential off-target binding in the HuBMAP placenta and multi-tissue (heart, kidney, and lung) custom probe panels, we first downloaded the corresponding BED files from the HuBMAP portal (<ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/28fe8e4ac8a4193f82fdd9f4d4eb0bb2">https://portal.hubmapconsortium.org/browse/dataset/28fe8e4ac8a4193f82fdd9f4d4eb0bb2</ext-link>; <ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/6f597ca43db80f2499443f5c5bfac97c">https://portal.hubmapconsortium.org/browse/dataset/6f597ca43db80f2499443f5c5bfac97c</ext-link>). Using pyfaidx and pandas in Python, we extracted each probe’s target gene name, gene identifier, and genomic coordinates from the BED files, and then generated FASTA files by retrieving the corresponding sequences from the reference genome (GRCh38). These FASTA files were then used as input to OPT to predict potential off-target binding.</p>
+</sec>
+<sec id="s4f">
+<title>HuBMAP custom probe-panel evaluation</title>
+<p>To assess whether predicted off-target genes were likely to confound Xenium results in the HuBMAP custom probe panels, we evaluated the expression of the predicted off-target genes in matched HuBMAP RNA-seq datasets corresponding to the tissues for which each panel was designed. Four RNA-seq datasets were downloaded from the HuBMAP portal: a bulk RNA-seq dataset for the placenta (<ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/cad68e5e910ca90bda79cc0d6aa586d1">https://portal.hubmapconsortium.org/browse/dataset/cad68e5e910ca90bda79cc0d6aa586d1</ext-link>) and scRNA-seq datasets for the heart (<ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/e62b7f592efe97894de86cfabbfddde8">https://portal.hubmapconsortium.org/browse/dataset/e62b7f592efe97894de86cfabbfddde8</ext-link>), kidney (<ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/43f83f08bedac2bc4d58767362dfebe2">https://portal.hubmapconsortium.org/browse/dataset/43f83f08bedac2bc4d58767362dfebe2</ext-link>), and lung (<ext-link ext-link-type="uri" xlink:href="https://portal.hubmapconsortium.org/browse/dataset/6c2b7f1b8bc7e4fb6a1cadf29b09b83a">https://portal.hubmapconsortium.org/browse/dataset/6c2b7f1b8bc7e4fb6a1cadf29b09b83a</ext-link>).</p>
+<p>For each tissue, raw count matrices were normalized to counts per million (CPM) and averaged across all cells to obtain a bulk-like mean expression profile. Log1p-transformed mean CPM values were used for all downstream comparisons. OPT was run on the two HuBMAP custom probe panels with all RNA species included and a pad length of 10. Since OPT reports transcript-level identifiers, we removed transcript-specific suffixes from Ensembl IDs to align them with gene symbols present in the RNA-seq datasets. For every target gene in the custom panels, we then compiled its predicted off-target genes based on OPT results and evaluated whether these off-targets were expressed in the matched tissue’s RNA-seq profile. To visualize these results, we generated heatmaps in which rows correspond to intended target genes and columns represent their predicted off-targets ordered by decreasing expression. This enabled direct comparison of the magnitude and tissue specificity of potential off-target expression across the HuBMAP datasets.</p>
+</sec>
+<sec id="s4g">
+<title>Cross-annotation analysis</title>
+<p>To compare OPT’s results with different reference annotations, we used the most recent releases of GENCODE basic (v47), GENCODE comprehensive (v47), RefSeq (v110), and CHESS (v3.1.3) annotation of the GRCh38 genome. Note that GENCODE “basic” is the more reliable version of the annotation and is much closer to RefSeq and CHESS. GENCODE “comprehensive” includes hundreds of thousands of low-quality annotations, which we included in some of our analyses for completeness. Note also that GRCh38 has many non-reference sequences called “alternative scaffolds”; we removed these for our analysis. We then used gffread to extract transcripts as defined in these annotations by running:</p>
+<p><monospace>$ gffread -w transcripts.fa -g grch38.p12/14.fa annotation.gff</monospace></p>
+<p>The GRCh38.p14 assembly was used during transcript sequence extraction for all reference annotations, except for CHESS which specifies that the annotation maps genes and transcripts onto the GRCh38.p12 assembly. For RefSeq, we renamed the VD(J) segment features as transcript features to ensure consistency, and we also removed transcript sequences with the gene_biotype “pseudogene.” RefSeq has a separate biotype called “transcribed_pseudogene,” but doesn’t annotate transcripts for these features. We considered transcripts annotated for a small subset of just pseudogenes an error in the annotation.</p>
+</sec>
+</sec>
+
+</body>
+<back>
+<sec id="s6" sec-type="supplementary">
+<title>Supplementary Figures</title>
+<fig id="figs1" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 1.</label>
+    <caption><title>Screenshot from the Integrated Genome Viewer (IGV) showing the 40bp probe sequence (ID: ENSG00000196154|S100A4|ab4e3dc) that matches both <italic>S100A5</italic> and <italic>S100A4</italic>.</title>
+        <p>Shown are 6 isoforms from the CHESS v3.1 annotation, 4 from GENCODE basic v47, and 3 from RefSeq v110 for <italic>S100A4</italic>, as well as 2 RefSeq isoforms for the neighboring <italic>S100A5</italic>. The probe sequence aligns to the overlapping region between <italic>S100A5</italic> and <italic>S100A4</italic> gene loci. Matching probe shown in a zoomed-in view below. The forward- and reverse-strand sequences of the probe are shown, and the highlighted area indicates approximately where the probe falls within the gene.</p></caption>
+<graphic xlink:href="646342v2_figs1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs2" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 2.</label>
+    <caption><title>UpSet plot illustrating the overlap of protein-coding genes across three genome annotations: GENCODE basic, RefSeq, and CHESS.</title>
+    </caption>
+<graphic xlink:href="646342v2_figs2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs3" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 3.</label>
+<caption><p><bold>(A)</bold> Overlap regions between Visium (orange outline) and Xenium (blue outline) data, shown on the Xenium histological image and the Visium histological image, respectively. <bold>(B)</bold> Log transformed aggregated total gene counts for spots (∼55<italic>μ</italic>m x 55<italic>μ</italic>m) in both Xenium and Visium datasets, overlaid on their corresponding histological image.</p></caption>
+<graphic xlink:href="646342v2_figs3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs4" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 4.</label>
+<caption><p>Screenshots from the Integrated Genome Viewer (IGV) showing alignments of <bold>(A)</bold> four 40bp probes targeting <italic>APOBEC3B</italic> (ENSG00000179750|APOBEC3B|17d76bb, ENSG00000179750|APOBEC3B|e03f8ab, ENSG00000179750|APOBEC3B|5991db9, and ENSG00000179750|APOBEC3B|59c9349). <bold>(B)</bold> All four probes align to their intended target gene <italic>APOBEC3B</italic> while two of the four probes align to each off-target gene: <bold>(C)</bold> <italic>APOBEC3D</italic> and <bold>(D)</bold> <italic>APOBEC3F</italic>. The forward- and reverse-strand sequences of the probe are shown, and the highlighted areas indicate approximately where the probe falls within the gene. Panels <bold>(B-D)</bold> share a common legend.</p></caption>
+<graphic xlink:href="646342v2_figs4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs5" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 5.</label>
+<caption><p>UMAP visualization of integrated scRNA-seq and Xenium datasets: <bold>(A)</bold> before harmony batch correction and <bold>(B)</bold> after harmony batch correction. <bold>(C)</bold> Leiden clustering results on the harmonized UMAP.</p></caption>
+<graphic xlink:href="646342v2_figs5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs6" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 6.</label>
+<caption><p><bold>(A)</bold> Schematic illustrating that hybridization may still occur even when there is a sequence mismatch at the non-ligated ends of the probe sequence. <bold>(B)</bold> Schematic depicting how probes could bind to each other instead of to their intended target.</p></caption>
+<graphic xlink:href="646342v2_figs6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs7" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 7.</label>
+<caption><p><bold>(A)</bold> Gene expression patterns for <italic>ACTG2</italic>: Xenium expression, Visium expression, the aggregated Visium expression combining <italic>ACTG2</italic> and its predicted off-target gene’s expression ACTA1, ACTB, and <italic>POTEM</italic>, and Visium expression of <italic>ACTG2</italic>’s predicted off-targets ACTA1, ACTB, and <italic>POTEM</italic>. Two density plots are shown: one comparing Xenium vs. Visium for <italic>ACTG2</italic> alone, and one comparing Xenium vs. the aggregated Visium expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(B)</bold> Gene expression patterns for <italic>TUBB2B</italic>: Xenium expression, Visium expression, the aggregated Visium expression combining <italic>TUBB2B</italic> and its predicted off-target gene’s expression <italic>TUBB2B</italic> and <italic>TUBB2A</italic>, and Visium expression of <italic>TUBB2B</italic>’s predicted off-target <italic>TUBB2A</italic>. Two density plots are shown: one comparing Xenium vs. Visium for <italic>TUBB2B</italic> alone, and one comparing Xenium vs. the aggregated Visium expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit.</p></caption>
+<graphic xlink:href="646342v2_figs7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs8" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 8.</label>
+<caption><p><bold>(A)</bold> Comparison of <italic>ACTG2</italic> expression patterns on harmonized UMAP: Xenium expression, scRNA-seq expression, an aggregated scRNA-seq profile combining <italic>ACTG2</italic> and its predicted off-target gene’s expression <italic>ACTB</italic>, <italic>POTEM</italic>, <italic>POTEE</italic>, <italic>POTEF</italic>, <italic>POTEI</italic>, <italic>POTEJ</italic>, and <italic>ACTA1</italic>, and scRNA-seq expression of <italic>ACTG2</italic>’s potential off-targets. Two scatterplots are shown: one comparing Xenium vs. scRNA-seq for <italic>ACTG2</italic> cluster expression alone, and one comparing Xenium vs. the aggregated scRNA-seq cluster expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(B)</bold> Comparison of <italic>TUBB2B</italic> expression patterns on harmonized UMAP: Xenium expression, scRNA-seq expression, an aggregated scRNA-seq profile combining <italic>TUBB2B</italic> and its predicted off-target gene’s expression <italic>TUBB2A</italic>, and scRNA-seq expression of <italic>TUBB2B</italic>’s potential off-target <italic>TUBB2A</italic>. Two scatterplots are shown: one comparing Xenium vs. scRNA-seq for <italic>TUBB2B</italic> cluster expression alone, and one comparing Xenium vs. the aggregated scRNA-seq cluster expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit.</p></caption>
+<graphic xlink:href="646342v2_figs8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs9" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 9.</label>
+    <caption><title>Heatmap visualization of target genes and their predicted off-target genes of the HuBMAP placenta custom probe panel using a corresponding placenta bulk RNA-seq dataset.</title>
+        <p>Gene expression values are counts-per-million (CPM) normalized, with a pseudocount added prior to log transformation. The first column shows the expression of each target gene in the placenta bulk RNA-seq dataset, while the remaining columns display the expression of the corresponding predicted off-target genes.</p></caption>
+<graphic xlink:href="646342v2_figs9.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs10" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 10.</label>
+    <caption><title>Heatmap visualizations of target genes and their predicted off-target genes of the HuBMAP multi custom probe panel using a corresponding <bold>(A)</bold> kidney, <bold>(B)</bold> lung, and <bold>(C)</bold> heart scRNA-seq datasets.</title>
+        <p>Gene expression values are counts-per-million (CPM) normalized, with a pseudocount added prior to log transformation. The first column shows the expression of each target gene in their respective scRNA-seq dataset, while the remaining columns display the expression of the corresponding predicted off-target genes.</p></caption>
+<graphic xlink:href="646342v2_figs10.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs11" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 11.</label>
+    <caption><title>Heatmap visualizations of target genes and their predicted off-target genes for the Janesick et al. probes using <bold>(A)</bold> pseudo-bulked scRNA-seq and <bold>(B)</bold> Visium data.</title>
+    <p>Gene expression values are counts-per-million (CPM) normalized, with a pseudocount added prior to log transformation. The first column shows the expression of each target gene in their respective scRNA-seq dataset, while the remaining columns display the expression of the corresponding predicted off-target genes.</p></caption>
+<graphic xlink:href="646342v2_figs11.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs12" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 12.</label>
+<caption><p><bold>(A)</bold> Gene expression patterns for <italic>ADH1B</italic>: Xenium expression, Visium expression, the aggregated Visium expression combining <italic>ADH1B</italic> and its predicted off-target gene’s expression <italic>ADH1A</italic> and <italic>ADH1C</italic>, and Visium expression of <italic>ADH1B</italic>’s predicted off-targets <italic>ADH1A</italic> and <italic>ADH1C</italic>. Two density plots are shown: one comparing Xenium vs. Visium for <italic>ADH1B</italic> alone, and one comparing Xenium vs. the aggregated Visium expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit. <bold>(B)</bold> Comparison of <italic>ADH1B</italic> expression patterns on harmonized UMAP: Xenium expression, scRNA-seq expression, an aggregated scRNA-seq profile combining <italic>ADH1B</italic> and its predicted off-target gene’s expression <italic>ADH1A</italic> and <italic>ADH1C</italic>, and scRNA-seq expression of <italic>ADH1B</italic>’s potential off-targets <italic>ADH1A</italic> and <italic>ADH1C</italic>. Two scatterplots are shown: one comparing Xenium vs. scRNA-seq for <italic>ADH1B</italic> cluster expression alone, and one comparing Xenium vs. the aggregated scRNA-seq cluster expression. The dotted line indicates the identity line (X = Y), and the solid line represents the line of best fit.</p></caption>
+<graphic xlink:href="646342v2_figs12.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs13" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 13.</label>
+<caption><p><bold>(A)</bold> Spatial gene expression of <italic>HDC</italic> overlaid on the corresponding histological images for Xenium and Visium. <bold>(B)</bold> Harmonized UMAP visualization of <italic>HDC</italic> expression for Xenium and scRNA-seq data.</p></caption>
+<graphic xlink:href="646342v2_figs13.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="figs14" position="float" orientation="portrait" fig-type="figure">
+<label>Supplementary Figure 14.</label>
+    <caption><title>Screenshots from the Integrated Genome Viewer (IGV) illustrating annotation-dependent differences in probe alignment.</title>
+        <p><bold>(A)</bold> A 40bp probe (ID: ENSG00000125878|TCF15|5d3cbc2) aligns to an exonic region in GENCODE v28 but to an upstream region in GENCODE v47. <bold>(B)</bold> A 40bp probe (ID: ENSG00000169083|AR|a0c6719) aligns to an exonic region in GENCODE v28 but to an intronic region in GENCODE v47. Matching probe shown in a zoomed-in view below. The forward- and reverse-strand sequences of the probe are shown, and the highlighted areas indicate approximately where the probe falls within the gene. Panels <bold>(A-B)</bold> share a common legend.</p></caption>
+<graphic xlink:href="646342v2_figs14.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+    <sec id="s7" sec-type="supplementary">
+<title>Supplementary Tables</title>
+<table-wrap id="tbls2" orientation="portrait" position="float">
+<label>Supplementary Table 2.</label>
+    <caption><title>OPT output of genes with predicted off-target binding based on perfect sequence homology in RefSeq.</title>
+        <p>This table shows the 14 genes whose probes in the 10x Genomics Xenium v1 Human Breast Gene Expression Panel that exhibit predicted off-target probe binding, where each off-target alignment involves a perfect 40bp match to the probe sequence. The final column shows the gene types, in order, of each of the off-target genes shown in column 3. Off-target alignments between <italic>CCPG1</italic> probes and <italic>DNAAF1-CCPG1</italic> were excluded. Abbreviations: PC = protein-coding; PG = pseudogene; precursor_RNA = precursor RNA; misc_RNA = miscellaneous RNA; ncRNA = non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbls2.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls3" orientation="portrait" position="float">
+<label>Supplementary Table 3.</label>
+    <caption><title>OPT output of genes with predicted off-target binding based on perfect sequence homology in CHESS.</title>
+        <p>This table shows the 23 genes whose probes in the 10x Genomics Xenium v1 Human Breast Gene Expression Panel that exhibit predicted off-target probe binding, where each off-target alignment involves a perfect 40bp match to the probe sequence. The final column shows the gene types, in order, of each of the off-target genes shown in column 3. Off-target alignments between <italic>CCPG1</italic> probes and <italic>DNAAF1-CCPG1</italic> were excluded. Abbreviations: PC = protein-coding; PG = pseudogene; miRNA = microRNA.</p></caption>
+<graphic xlink:href="646342v2_tbls3.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls4" orientation="portrait" position="float">
+<label>Supplementary Table 4.</label>
+    <caption><title>The number of off-target probes and affected genes (from the set of 313 genes in the Xenium panel) found when looking for perfect matches between probe sequences and transcripts in four different reference annotations: GENCODE basic, GENCODE comprehensive, RefSeq, and CHESS.</title>
+        <p>Off-target alignments between <italic>CCPG1</italic> probes and <italic>DNAAF1-CCPG1</italic> were excluded.</p></caption>
+<graphic xlink:href="646342v2_tbls4.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls5" orientation="portrait" position="float">
+<label>Supplementary Table 5.</label>
+    <caption><title>Union set of protein-coding genes that OPT predicts to be affected by off-target binding, across three different reference annotations: GENCODE basic, RefSeq, and CHESS.</title>
+    </caption>
+<graphic xlink:href="646342v2_tbls5.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls6" orientation="portrait" position="float">
+<label>Supplementary Table 6.</label>
+    <caption><title>16 additional genes that were identified to exhibit potential off-target probe binding when allowing for a 10bp error margin on either side of the binding site when using GENCODE v47.</title>
+        <p>Abbreviations: PC = protein-coding; PG = pseudogene; lncRNA = long non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbls6.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls7" orientation="portrait" position="float">
+<label>Supplementary Table 7.</label>
+    <caption><title>9 genes that were previously predicted to be affected by off-target binding based on perfect matching now show additional predicted off-target interactions when a 10bp error margin is allowed on either side of the binding site when using GENCODE v47.</title>
+        <p>This effect is observed either through the accumulation of new probes with predicted off-target binding or via the identification of additional predicted off-target genes per probe. Abbreviations: PC = protein-coding; PG = pseudogene; lncRNA = long non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbls7.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls8" orientation="portrait" position="float">
+<label>Supplementary Table 8.</label>
+    <caption><title>OPT output for 49 genes with predicted off-target binding in the HuBMAP placenta custom probe panel, generated using GENCODE v47 and allowing a 10bp mismatch on either end of each probe.</title>
+        <p>The final column lists the gene types, in order, corresponding to the off-target genes shown in column 3. Abbreviations: PC = protein-coding; PG = pseudogene; precursor_RNA = precursor RNA; misc_RNA = miscellaneous RNA; ncRNA = non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbls8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="646342v2_tbls8a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="646342v2_tbls8b.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<table-wrap id="tbls9" orientation="portrait" position="float">
+<label>Supplementary Table 9.</label>
+    <caption><title>OPT output for 24 genes with predicted off-target binding in the HuBMAP multi custom probe panel, generated using GENCODE v47 and allowing a 10bp mismatch on either end of each probe.</title>
+        <p>The final column lists the gene types, in order, corresponding to the off-target genes shown in column 3. Abbreviations: PC = protein-coding; PG = pseudogene; precursor_RNA = precursor RNA; misc_RNA = miscellaneous RNA; ncRNA = non-coding RNA.</p></caption>
+<graphic xlink:href="646342v2_tbls9.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+
+</sec>
+    <sec id="s8">
+        <title>Supplementary Note</title>
+        <sec id="s8a">
+        <title>Differences between 3 Xenium breast gene panels and the impact on interpretation of results</title>
+        <p>In the previous iteration of this manuscript, we used the publicly available Xenium v1 Human Breast Gene Expression Panel probe sequences from the 10x Genomics website (prior to April 10, 2025) and assumed it was used to generate the Xenium breast cancer data from Janesick et al. based on the paper’s methodological descriptions. 10x Genomics has since noted on their public website as well as through private communications that this publicly available file erroneously included extra probe sequences that are not used. Further, the Xenium breast cancer data presented in Janesick et al. uses a human breast gene panel with probe sequences that represent an earlier iteration of the commercially available Xenium v1 Human Breast Gene Expression Panel. In particular, compared to the commercially available panel, the Janesick et al. panel has 24 genes with one or more probes modified in the final panel, along with the probe sequences targeting the 33 custom genes added by Janesick et al. This impacts our interpretation of observed results to provide stronger evidence of putative imperfect sequence homology based off-target probe binding.</p>
+        <p>For clarity, we refer to the three probesets as:</p>
+        <list list-type="simple">
+            <list-item><p>- Probeset A: the previously analyzed publicly available Xenium v1 Human Breast Gene Expression Panel probe sequences (prior to April 10, 2025)</p></list-item>
+            <list-item><p>- Probeset B: the Xenium probe sequences used in the Janesick et al. panel</p></list-item>
+            <list-item><p>- Probeset C: the currently commercial pre-designed Xenium v1 Human Breast Gene Expression Panel (after April 10, 2025)</p></list-item>
+        </list>
+        <p>To provide a specific example, in the previous iteration of this manuscript, OPT identified a probe sequence targeting <italic>TUBB2B</italic> that exhibited perfect sequence homology with <italic>TUBB2A</italic>:</p>
+        <p><monospace>&gt;ENSG00000137285|TUBB2B|1dec8c0</monospace></p>
+        <p><monospace><named-content content-type="sequence">GTTCATGATGCGGTCTGGGTACTCTTCCCGGATCTTGCTG</named-content></monospace></p>
+        <p>Analysis with orthogonal spatial and single-cell transcriptome profiling technologies suggested the <italic>TUBB2B</italic> gene expression pattern observed in the Xenium breast cancer data from Janesick et al. represented an aggregation of both <italic>TUBB2B</italic> and <italic>TUBB2A</italic> consistent with off-target binding. Given our assumption at the time that the Xenium breast cancer data had been generated using Probeset A, we therefore believed this perfect homology probe was responsible for the observed off-target signal.</p>
+        <p>However, we now understand that the Xenium breast cancer data from Janesick et al. were generated using Probeset B. Probeset B no longer contains this specific probe for <italic>TUBB2B</italic> with perfect sequence homology with <italic>TUBB2A</italic>. However, the observed <italic>TUBB2B</italic> gene expression pattern still represents an aggregation of both <italic>TUBB2B</italic> and <italic>TUBB2A</italic> based on analysis with orthogonal spatial and single-cell transcriptome profiling technologies. Although Probeset B no longer contains this specific probe for <italic>TUBB2B</italic> with perfect sequence homology with <italic>TUBB2A</italic>, it contains one probe with imperfect sequence homology with <italic>TUBB2A</italic> (=30X1=6X3):</p>
+        <p><monospace>&gt;ENSG00000137285|TUBB2B|ed52e1c</monospace></p>
+        <p><monospace><named-content content-type="sequence">TTGTCAATGCAGTAGGTTTCATCTGTGTTTTCCACCAGCT</named-content></monospace></p>
+        <p>The observed comparative gene expression patterns therefore provide newfound strong support for putative imperfect sequence homology off-target binding.</p>
+        <p>While we do not have Xenium breast cancer data generated using Probeset C, this <italic>TUBB2B</italic> probe is also present in Probeset C:</p>
+        <p><monospace>&gt;TUBB2B (ENSG00000137285) | 3 | 5</monospace></p>
+        <p><monospace><named-content content-type="sequence">TTGTCAATGCAGTAGGTTTCATCTGTGTTTTCCACCAGCT</named-content></monospace></p>
+        <p>This suggests that off-target effects may still impact commercially available pre-designed panels such as Probeset C (<xref ref-type="supplementary-material" rid="supp2">Supplementary Table 10</xref>).</p>
+    </sec>
+    </sec>
+<ack>
+<title>Acknowledgements</title>
+<p>We thank Reza Kalhor for his input on the project and feedback on the manuscript. We thank Ian Fiddes for sharing the Xenium gene panel from the Janesick et al. publication and explaining its relation to the commercially available pre-designed Xenium v1 Human Breast Gene Expression Panel. We thank Sergii Domanskyi, Scott Lindsay-Hewett, and Chenchen Zhu for sharing the HuBMAP custom gene panels. Research reported in this publication was supported by the National Institute of General Medical Sciences of the National Institutes of Health under Awards R35-GM142889 and R35-GM130151, the HuBMAP Integration, Visualization, and Engagement (HIVE) Initiative under Award Number OT2-OD033760, and the National Science Foundation under Grant No. 2047611.</p>
+</ack>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Supplementary Table 1</label>
+    <caption><title>Fasta file of probe sequences from 10x Genomics corresponding to the 10x Genomics Xenium v1 Human Breast Gene Expression Panel used in Janesick et al.</title></caption>
+<media xlink:href="supplements/646342_file02.zip"/>
+</supplementary-material>
+<supplementary-material id="supp2">
+<label>Supplementary Table 10</label>
+    <caption><title>OPT results for all publicly available 10x Genomics probe sets.</title>
+        <p>Results include all possible RNA species and using a pad length (-pl) of 10.</p></caption>
+<media xlink:href="supplements/646342_file03.zip"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><mixed-citation publication-type="web"><person-group person-group-type="author"><collab>10x Genomics</collab></person-group>. <year>2025a</year>. “<source>10x Genomics Product Catalog</source>.” March 19. <ext-link ext-link-type="uri" xlink:href="https://www.10xgenomics.com/store/product-catalog?query=xenium">www.10xgenomics.com/store/product-catalog?query=xenium</ext-link>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="web"><person-group person-group-type="author"><collab>10x Genomics</collab></person-group>. <year>2025b</year>. “<article-title>TXG_Q4-and-Full-Year-2024-Earnings-Press-Release</article-title>.” <source>10x Genomics Reports Fourth Quarter and Full Year 2024 Financial Results and Provides Outlook for 2025</source>, March 19. <ext-link ext-link-type="uri" xlink:href="https://s28.q4cdn.com/592666581/files/doc_financials/2024/q4/TXG_Q4-and-Full-Year-2024-Earnings-Press-Release.pdf">https://s28.q4cdn.com/592666581/files/doc_financials/2024/q4/TXG_Q4-and-Full-Year-2024-Earnings-Press-Release.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chou</surname>, <given-names>Hui-Hsien</given-names></string-name></person-group>. <year>2010</year>. “<article-title>Shared Probe Design and Existing Microarray Reanalysis Using PICKY</article-title>.” <source>BMC Bioinformatics</source> <volume>11</volume> (<issue>1</issue>): <fpage>196</fpage>. <pub-id pub-id-type="doi">10.1186/1471-2105-11-196</pub-id>. <pub-id pub-id-type="pmid">20406469</pub-id></mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Clifton</surname>, <given-names>Kalen</given-names></string-name>, <string-name><given-names>Manjari</given-names> <surname>Anant</surname></string-name>, <string-name><given-names>Gohta</given-names> <surname>Aihara</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>STalign: Alignment of Spatial Transcriptomics Data Using Diffeomorphic Metric Mapping</article-title>.” <source>Nature Communications</source> <volume>14</volume> (<issue>1</issue>): <fpage>8123</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-023-43915-7</pub-id>. <pub-id pub-id-type="pmid">38065970</pub-id></mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Clifton</surname>, <given-names>Kalen</given-names></string-name>, <string-name><given-names>Vivien</given-names> <surname>Jiang</surname></string-name>, <string-name><given-names>Rafael dos Santos</given-names> <surname>Peixoto</surname></string-name>, <etal>et al.</etal></person-group> <year>2025</year>. “<article-title>STcompare: Comparative Spatial Transcriptomics Data Analysis of Structurally Matched Tissues to Characterize Differentially Spatially Patterned Genes</article-title>, <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2025.11.21.689847</pub-id>.</mixed-citation></ref>
+    <ref id="c6"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Fornace</surname>, <given-names>Mark E.</given-names></string-name>, <string-name><given-names>Jining</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>Cody T.</given-names> <surname>Newman</surname></string-name>, <string-name><given-names>Nicholas J.</given-names> <surname>Porubsky</surname></string-name>, <string-name><given-names>Marshall B.</given-names> <surname>Pierce</surname></string-name>, and <string-name><given-names>Niles A.</given-names> <surname>Pierce</surname></string-name></person-group>. <year>2022</year>. <article-title>NUPACK: Analysis and Design of Nucleic Acid Structures, Devices, and Systems</article-title>, <source>ChemRxiv</source>. <pub-id pub-id-type="doi">10.26434/chemrxiv-2022-xv98l</pub-id>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Harbig</surname>, <given-names>J</given-names></string-name></person-group>. <year>2005</year>. “<article-title>A Sequence-Based Identification of the Genes Detected by Probesets on the Affymetrix U133 plus 2.0 Array</article-title>.” <source>Nucleic Acids Research</source> <volume>33</volume> (<issue>3</issue>): <fpage>e31</fpage>–<lpage>e31</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gni027</pub-id>. <pub-id pub-id-type="pmid">15722477</pub-id></mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hershberg</surname>, <given-names>Elliot A.</given-names></string-name>, <string-name><given-names>Conor K.</given-names> <surname>Camplisson</surname></string-name>, <string-name><given-names>Jennie L.</given-names> <surname>Close</surname></string-name>, <etal>et al.</etal></person-group> <year>2021</year>. “<article-title>Author Correction: PaintSHOP Enables the Interactive Design of Transcriptome- and Genome-Scale Oligonucleotide FISH Experiments</article-title>.” <source>Nature Methods</source> <volume>18</volume> (<issue>10</issue>): <fpage>1265</fpage>–<lpage>1265</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-021-01273-6</pub-id>. <pub-id pub-id-type="pmid">34480162</pub-id></mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hu</surname>, <given-names>Mengwei</given-names></string-name>, <string-name><given-names>Bing</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>Yubao</given-names> <surname>Cheng</surname></string-name>, <etal>et al.</etal></person-group> <year>2020</year>. “<article-title>ProbeDealer Is a Convenient Tool for Designing Probes for Highly Multiplexed Fluorescence in Situ Hybridization</article-title>.” <source>Scientific Reports</source> <volume>10</volume> (<issue>1</issue>): <fpage>22031</fpage>. <pub-id pub-id-type="doi">10.1038/s41598-020-76439-x</pub-id>. <pub-id pub-id-type="pmid">33328483</pub-id></mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Jain</surname>, <given-names>Sanjay</given-names></string-name>, <string-name><given-names>Liming</given-names> <surname>Pei</surname></string-name>, <string-name><given-names>Jeffrey M.</given-names> <surname>Spraggins</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>Advances and Prospects for the Human BioMolecular Atlas Program (HuBMAP)</article-title>.” <source>Nature Cell Biology</source> <volume>25</volume> (<issue>8</issue>): <fpage>1089</fpage>–<lpage>100</lpage>. <pub-id pub-id-type="doi">10.1038/s41556-023-01194-w</pub-id>. <pub-id pub-id-type="pmid">37468756</pub-id></mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Janesick</surname>, <given-names>Amanda</given-names></string-name>, <string-name><given-names>Robert</given-names> <surname>Shelansky</surname></string-name>, <string-name><given-names>Andrew D.</given-names> <surname>Gottscho</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>High Resolution Mapping of the Tumor Microenvironment Using Integrated Single-Cell, Spatial and in Situ Analysis</article-title>.” <source>Nature Communications</source> <volume>14</volume> (<issue>1</issue>): <fpage>8353</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-023-43458-x</pub-id>. <pub-id pub-id-type="pmid">38114474</pub-id></mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Korsunsky</surname>, <given-names>Ilya</given-names></string-name>, <string-name><given-names>Nghia</given-names> <surname>Millard</surname></string-name>, <string-name><given-names>Jean</given-names> <surname>Fan</surname></string-name>, <etal>et al.</etal></person-group> <year>2019</year>. “<article-title>Fast, Sensitive and Accurate Integration of Single-Cell Data with Harmony</article-title>.” <source>Nature Methods</source> <volume>16</volume> (<issue>12</issue>): <fpage>1289</fpage>–<lpage>96</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-019-0619-0</pub-id>. <pub-id pub-id-type="pmid">31740819</pub-id></mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kuemmerle</surname>, <given-names>Louis B.</given-names></string-name>, <string-name><given-names>Malte D.</given-names> <surname>Luecken</surname></string-name>, <string-name><given-names>Alexandra B.</given-names> <surname>Firsova</surname></string-name>, <etal>et al.</etal></person-group> <year>2024</year>. “<article-title>Probe Set Selection for Targeted Spatial Transcriptomics</article-title>.” <source>Nature Methods</source> <volume>21</volume> (<issue>12</issue>): <fpage>2260</fpage>–<lpage>70</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-024-02496-z</pub-id>. <pub-id pub-id-type="pmid">39558096</pub-id></mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>Qiyuan</given-names></string-name>, <string-name><given-names>Nicolai J</given-names> <surname>Birkbak</surname></string-name>, <string-name><given-names>Balazs</given-names> <surname>Gyorffy</surname></string-name>, <string-name><given-names>Zoltan</given-names> <surname>Szallasi</surname></string-name>, and <string-name><given-names>Aron C</given-names> <surname>Eklund</surname></string-name></person-group>. <year>2011</year>. “<article-title>Jetset: Selecting the Optimal Microarray Probe Set to Represent a Gene</article-title>.” <source>BMC Bioinformatics</source> <volume>12</volume> (<issue>1</issue>): <fpage>474</fpage>. <pub-id pub-id-type="doi">10.1186/1471-2105-12-474</pub-id>. <pub-id pub-id-type="pmid">22172014</pub-id></mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Liu</surname>, <given-names>Hongfang</given-names></string-name>, <string-name><given-names>Ionut</given-names> <surname>Bebu</surname></string-name>, and <string-name><given-names>Xin</given-names> <surname>Li</surname></string-name></person-group>. <year>2014</year>. “<article-title>Microarray Probes and Probe Sets</article-title>.” <source>Front Biosci</source> <volume>2</volume> (<issue>1</issue>): <fpage>325</fpage>–<lpage>38</lpage>. <pub-id pub-id-type="doi">10.2741/e93</pub-id>. <pub-id pub-id-type="pmid">20036881</pub-id></mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Marçais</surname>, <given-names>Guillaume</given-names></string-name>, <string-name><given-names>Arthur L.</given-names> <surname>Delcher</surname></string-name>, <string-name><given-names>Adam M.</given-names> <surname>Phillippy</surname></string-name>, <string-name><given-names>Rachel</given-names> <surname>Coston</surname></string-name>, <string-name><given-names>Steven L.</given-names> <surname>Salzberg</surname></string-name>, and <string-name><given-names>Aleksey</given-names> <surname>Zimin</surname></string-name></person-group>. <year>2018</year>. “<article-title>MUMmer4: A Fast and Versatile Genome Alignment System</article-title>.” <source>PLOS Computational Biology</source> <volume>14</volume> (<issue>1</issue>): <fpage>e1005944</fpage>. <pub-id pub-id-type="doi">10.1371/journal.pcbi.1005944</pub-id>. <pub-id pub-id-type="pmid">29373581</pub-id></mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Marçais</surname>, <given-names>Guillaume</given-names></string-name>, and <string-name><given-names>Carl</given-names> <surname>Kingsford</surname></string-name></person-group>. <year>2011</year>. “<article-title>A Fast, Lock-Free Approach for Efficient Parallel Counting of Occurrences of <italic>k</italic> -Mers</article-title>.” <source>Bioinformatics</source> <volume>27</volume> (<issue>6</issue>): <fpage>764</fpage>–<lpage>70</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btr011</pub-id>. <pub-id pub-id-type="pmid">21217122</pub-id></mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>McCartney</surname>, <given-names>Daniel L.</given-names></string-name>, <string-name><given-names>Rosie M.</given-names> <surname>Walker</surname></string-name>, <string-name><given-names>Stewart W.</given-names> <surname>Morris</surname></string-name>, <string-name><given-names>Andrew M.</given-names> <surname>McIntosh</surname></string-name>, <string-name><given-names>David J.</given-names> <surname>Porteous</surname></string-name>, and <string-name><given-names>Kathryn L.</given-names> <surname>Evans</surname></string-name></person-group>. <year>2016</year>. “<article-title>Identification of Polymorphic and Off-Target Probe Binding Sites on the Illumina Infinium MethylationEPIC BeadChip</article-title>.” <source>Genomics Data</source> <volume>9</volume> (<issue>September</issue>): <fpage>22</fpage>–<lpage>24</lpage>. <pub-id pub-id-type="doi">10.1016/j.gdata.2016.05.012</pub-id>. <pub-id pub-id-type="pmid">27330998</pub-id></mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mecham</surname>, <given-names>Brigham H.</given-names></string-name>, <string-name><given-names>Daniel Z.</given-names> <surname>Wetmore</surname></string-name>, <string-name><given-names>Zoltan</given-names> <surname>Szallasi</surname></string-name>, <string-name><given-names>Yoel</given-names> <surname>Sadovsky</surname></string-name>, <string-name><given-names>Isaac</given-names> <surname>Kohane</surname></string-name>, and <string-name><given-names>Thomas J.</given-names> <surname>Mariani</surname></string-name></person-group>. <year>2004</year>. “<article-title>Increased Measurement Accuracy for Sequence-Verified Microarray Probes</article-title>.” <source>Physiological Genomics</source> <volume>18</volume> (<issue>3</issue>): <fpage>308</fpage>–<lpage>15</lpage>. <pub-id pub-id-type="doi">10.1152/physiolgenomics.00066.2004</pub-id>. <pub-id pub-id-type="pmid">15161964</pub-id></mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mudge</surname>, <given-names>Jonathan M</given-names></string-name>, <string-name><given-names>Sílvia</given-names> <surname>Carbonell-Sala</surname></string-name>, <string-name><given-names>Mark</given-names> <surname>Diekhans</surname></string-name>, <etal>et al.</etal></person-group> <year>2025</year>. “<article-title>GENCODE 2025: Reference Gene Annotation for Human and Mouse</article-title>.” <source>Nucleic Acids Research</source> <volume>53</volume> (<issue>D1</issue>): <fpage>D966</fpage>–<lpage>75</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkae1078</pub-id>. <pub-id pub-id-type="pmid">39565199</pub-id></mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>O’Leary</surname>, <given-names>Nuala A.</given-names></string-name>, <string-name><given-names>Mathew W.</given-names> <surname>Wright</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Rodney Brister</surname></string-name>, <etal>et al.</etal></person-group> <year>2016</year>. “<article-title>Reference Sequence (RefSeq) Database at NCBI: Current Status, Taxonomic Expansion, and Functional Annotation</article-title>.” <source>Nucleic Acids Research</source> <volume>44</volume> (<issue>D1</issue>): <fpage>D733</fpage>–<lpage>45</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkv1189</pub-id>. <pub-id pub-id-type="pmid">26553804</pub-id></mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Pevny</surname>, <given-names>Larysa</given-names></string-name>, <string-name><given-names>M.</given-names> <surname>Celeste Simon</surname></string-name>, <string-name><given-names>Elizabeth</given-names> <surname>Robertson</surname></string-name>, <etal>et al.</etal></person-group> <year>1991</year>. “<article-title>Erythroid Differentiation in Chimaeric Mice Blocked by a Targeted Mutation in the Gene for Transcription Factor GATA-1</article-title>.” <source>Nature</source> <volume>349</volume> (<issue>6306</issue>): <fpage>257</fpage>–<lpage>60</lpage>. <pub-id pub-id-type="doi">10.1038/349257a0</pub-id>. <pub-id pub-id-type="pmid">1987478</pub-id></mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Platt</surname>, <given-names>Adam</given-names></string-name>, <string-name><given-names>Helen C.</given-names> <surname>Ross</surname></string-name>, <string-name><given-names>Steven</given-names> <surname>Hankin</surname></string-name>, and <string-name><given-names>Richard J.</given-names> <surname>Reece</surname></string-name></person-group>. <year>2000</year>. “<article-title>The Insertion of Two Amino Acids into a Transcriptional Inducer Converts It into a Galactokinase</article-title>.” <source>Proceedings of the National Academy of Sciences</source> <volume>97</volume> (<issue>7</issue>): <fpage>3154</fpage>–<lpage>59</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.97.7.3154</pub-id>. <pub-id pub-id-type="pmid">10737789</pub-id></mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rouillard</surname>, <given-names>J.-M.</given-names></string-name>, <string-name><given-names>Micahel</given-names> <surname>Zuker</surname></string-name>, and <string-name><given-names>Erdogan</given-names> <surname>Gulari</surname></string-name></person-group>. <year>2003</year>. “<article-title>OligoArray 2.0: Design of Oligonucleotide Probes for DNA Microarrays Using a Thermodynamic Approach</article-title>.” <source>Nucleic Acids Research</source> <volume>31</volume> (<issue>12</issue>): <fpage>3057</fpage>–<lpage>62</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkg426</pub-id>. <pub-id pub-id-type="pmid">12799432</pub-id></mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Stenberg</surname>, <given-names>Johan</given-names></string-name>, <string-name><given-names>Mats</given-names> <surname>Nilsson</surname></string-name>, and <string-name><given-names>Ulf</given-names> <surname>Landegren</surname></string-name></person-group>. <year>2005</year>. “<article-title>ProbeMaker: An Extensible Framework for Design of Sets of Oligonucleotide Probes</article-title>.” <source>BMC Bioinformatics</source> <volume>6</volume> (<issue>1</issue>): <fpage>229</fpage>. <pub-id pub-id-type="doi">10.1186/1471-2105-6-229</pub-id>. <pub-id pub-id-type="pmid">16171527</pub-id></mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tsai</surname>, <given-names>Fong-Ying</given-names></string-name>, <string-name><given-names>Gordon</given-names> <surname>Keller</surname></string-name>, <string-name><given-names>Frank C.</given-names> <surname>Kuo</surname></string-name>, <etal>et al.</etal></person-group> <year>1994</year>. “<article-title>An Early Haematopoietic Defect in Mice Lacking the Transcription Factor GATA-2</article-title>.” <source>Nature</source> <volume>371</volume> (<issue>6494</issue>): <fpage>221</fpage>–<lpage>26</lpage>. <pub-id pub-id-type="doi">10.1038/371221a0</pub-id>. <pub-id pub-id-type="pmid">8078582</pub-id></mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Varabyou</surname>, <given-names>Ales</given-names></string-name>, <string-name><given-names>Markus J.</given-names> <surname>Sommer</surname></string-name>, <string-name><given-names>Beril</given-names> <surname>Erdogdu</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>CHESS 3: An Improved, Comprehensive Catalog of Human Genes and Transcripts Based on Large-Scale Expression Data, Phylogenetic Analysis, and Protein Structure</article-title>.” <source>Genome Biology</source> <volume>24</volume> (<issue>1</issue>): <fpage>249</fpage>. <pub-id pub-id-type="doi">10.1186/s13059-023-03088-4</pub-id>. <pub-id pub-id-type="pmid">37904256</pub-id></mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname>, <given-names>Xiaowei</given-names></string-name>, and <string-name><given-names>Brian</given-names> <surname>Seed</surname></string-name></person-group>. <year>2003</year>. “<article-title>Selection of Oligonucleotide Probes for Protein Coding Sequences</article-title>.” <source>Bioinformatics</source> <volume>19</volume> (<issue>7</issue>): <fpage>796</fpage>–<lpage>802</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btg086</pub-id>. <pub-id pub-id-type="pmid">12724288</pub-id></mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wernersson</surname>, <given-names>R.</given-names></string-name>, and <string-name><given-names>H. B.</given-names> <surname>Nielsen</surname></string-name></person-group>. <year>2005</year>. “<article-title>OligoWiz 2.0--Integrating Sequence Feature Annotation into the Design of Microarray Probes</article-title>.” <source>Nucleic Acids Research</source> <volume>33</volume> (<issue>Web Server</issue>): <fpage>W611</fpage>–<lpage>15</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gki399</pub-id>. <pub-id pub-id-type="pmid">15980547</pub-id></mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><given-names>Yahoo</given-names> <surname>Finance</surname></string-name></person-group>. <year>2025</year>. “<source>10x Genomics, Inc</source>. (TXG).” <publisher-name>10x Genomics, Inc</publisher-name>. (TXG), November 20. <ext-link ext-link-type="uri" xlink:href="https://finance.yahoo.com/quote/TXG/">https://finance.yahoo.com/quote/TXG/</ext-link>.</mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107070.2.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Choi</surname>
+<given-names>Jungmin</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-8614-0973</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/047dqcg40</institution-id><institution>Korea University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This <bold>valuable</bold> study identifies and characterizes probe binding errors in a widely used commercial platform for spatial transcriptomics, discovering that at least 21 out of 280 genes in a human breast cancer panel are not accurately detected. The authors provide <bold>convincing</bold> evidence for their findings through validation against multiple independent sequencing technologies and reference datasets, and they introduce a computational tool to help predict potential off-target probe binding. Given the broad adoption of this platform in biomedical research, this work provides an essential quality control resource that will improve data interpretation across numerous studies.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107070.2.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>This paper describes an analysis of a commercially available panel for a spatial transcriptomic approach and introduces a computational tool to predict potential off-target binding sites for the type of probe used in the aforementioned panel. The performance of the prediction tool was validated by examining a dataset that profiled the same cancer tissue with multiple modalities. Finally, a detailed analysis of the potential pitfalls in a published study communicated by the company that commercialized the spatial transcriptomic platform in question is provided, along with best practice guidelines for future studies to follow.</p>
+<p>Strengths:</p>
+<p>- The manuscript is clearly written and easy to follow.</p>
+<p>
+- The authors provide clean, organized, and well-documented code in the associated GitHub repository.</p>
+<p>Comments on revision:</p>
+<p>My impressions from the first round of review haven't really changed. I don't think the software tool is well developed, and failing to incorporate thermodynamics or consider the impact of alignment settings is a major weakness.</p>
+<p>I do think the topical area is relevant. The inclusion of the Xenium /Hubmap data modestly strengthens the manuscript relative to the original submission.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107070.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors present a new computational method (OPT) for predicting off-target probe binding in the commercial 10X Xenium spatial transcriptomics platform. They identified 28 genes in the 10x xenium human breast cancer gene panel (280 genes) that are not accurately detected at the single-molecule level. They validated the predicted off-target binding using reference data from single-cell RNA-seq and 3'-sequencing-based Visium RNA-seq. This work provides a practical resource and will serve as a valuable reference for future data interpretation.</p>
+<p>Strengths:</p>
+<p>(1) Provides a toolbox for the community to identify off-target probes.</p>
+<p>(2) Validates the predictions using single-cell RNA-seq and sequencing-based Visium RNA-seq datasets.</p>
+<p>Comments on revision:</p>
+<p>The authors state that OPT is a new software tool and have posted example code on GitHub. However, the Jupyter notebook does not display any figures or workflows that would allow the process to be replicated. Please provide documentation and code that can reproduce the results/figures presented in the paper.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.107070.2.sa0</article-id>
+<title-group>
+<article-title>Author Response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Hallinan</surname>
+<given-names>Caleb</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0000-9137-1293</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ji</surname>
+<given-names>Hyun Joo</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-4360-5428</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Tsou</surname>
+<given-names>Edmund</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-7339-465X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Salzberg</surname>
+<given-names>Steven L</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8859-7432</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Fan</surname>
+<given-names>Jean</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0212-5451</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the original reviews</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+</disp-quote>
+<p>We thank the editors and the reviewers for their constructive feedback in helping us strengthen this manuscript.</p>
+<p>During the revision process, new information was shared with us by the 10x Genomics team regarding the Xenium probe sequences evaluated in our original paper. Briefly, the Xenium probe sequences we evaluated represented an earlier iteration of the probes used to generate the data in Janesick et al. Further, we were made aware that the probe sequences used in Janesick et al. represented an earlier iteration of the commercially available Xenium v1 Human Breast Gene Expression Panel. We now elaborate further in a new Supplementary Note. We have therefore updated the paper throughout to reflect this new understanding, though we emphasize that our conclusions do not change. Rather, this newfound understanding provides stronger evidence of off-target probe binding with imperfect sequence matching, which we support with new supplementary figures.</p>
+<disp-quote content-type="editor-comment">
+<p>(1) Limited evaluation of tissues and gene panels</p>
+<p>“The results were only tested with one tissue (human breast). However, this is not a major weakness, as one can easily extrapolate that this should be the case for any other tissue.”</p>
+<p>“Does not apply the OPT method to the most widely used Xenium gene panels (e.g., pan-Human, pan-Mouse panels with ~5,000 genes each).”</p>
+<p>“The authors claim that OPT is a generalizable method for identifying off-target probes. To support this claim, they should provide similar predictions for the Xenium Pan-Human or Pan-Mouse gene panels, which are more widely used than the breast cancer panel.”</p>
+<p>“While I understand that conducting new experimental studies is likely beyond the authors' intended scope of the manuscript, the narrow reliance on Janesick et al. for all of the validation makes it difficult to assess the broad usability of OPT. In the absence of designing and then validating novel padlock probe designs with OPT, are there other publicly available datasets that authors could perform secondary analysis on using OPT?”</p>
+</disp-quote>
+<p>Our primary focus on breast cancer was driven by data availability rather than tissue specificity. For this probe panel, matched Xenium, Visium, and scRNA-seq datasets are publicly available, enabling direct cross-platform comparisons of gene expression and allowing us to evaluate the impact of off-target probe binding in Xenium.</p>
+<p>OPT is tissue-agnostic and can be applied to any probe panel regardless of tissue type. To demonstrate this generalizability, we have now applied OPT on all publicly available 10x Genomics probe sets beyond the breast panel, including the Xenium pan-Human and pan-Mouse gene panels. The complete results of these analyses have been generated and are provided as a compressed zip file accompanying the revised manuscript.</p>
+<p>Beyond pre-designed panels, in this revision, we have now also applied OPT to custom Xenium gene panels from the Human BioMolecular Atlas Program (HUBMAP) and further demonstrate integration of HUBMAP RNA-seq data to evaluate the impact of potential predicted off-targets in a new section “Bulk RNA-seq reference atlases suggest off-target binding can variably impact results in Xenium custom probe panels.”</p>
+<p>Overall, in these newly evaluated panels, we identify many cases of off-target probe binding with non-negligible expression of off-target genes in the target tissue, underscoring that our findings are not specific to human breast tissue. Therefore, in the revision, we have broadened the title to “Evidence of off-target probe binding affecting 10x Genomics Xenium Gene Panels compromise accuracy of spatial transcriptomic profiling”</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Limited quantifications</p>
+<p>“Lacks clarity on how the confidence level of off-target predictions is calculated.”</p>
+<p>“How can the confidence level of these off-target predictions be quantitatively assessed? Please provide benchmarks or validation metrics if available.”</p>
+</disp-quote>
+<p>We thank the reviewer for raising this important point. To strengthen our claim that predicted off-targets can contribute to observed Xenium expression patterns, we incorporated a quantitative assessment in addition to the qualitative comparisons presented previously. Specifically, we leveraged Visium and scRNA-seq data to compare spot- and cluster-level expression of target genes alone versus expression aggregated with their predicted off-target genes. Across all examples shown, inclusion of predicted off-targets consistently resulted in stronger agreement with the Xenium results, as reflected by decreased RMSE and increased Pearson correlation relative to using the target gene alone.</p>
+<p>We emphasize, however, that OPT does not assign a formal confidence score to off-target predictions based on sequencing data alone. Importantly, identification of a potential off-target by OPT does not imply that it will necessarily affect Xenium results. As we’ve noted, if the off-target gene is not expressed, then it will not affect the observed gene expression magnitudes of the target gene. To help users assess whether predicted off-target genes will affect observed gene expression magnitudes of the target gene for a tissue of interest, we now provide a complementary analysis, including heat-map visualizations comparing the expression of target genes and their predicted off-targets in matched bulk RNA-seq or scRNA-seq datasets from the same tissue (Supplementary Figures 9, 10, 11). We hope this evaluation pipeline will clarify to researchers they can evaluate whether predicted off-targets will appreciably affect results in their tissue of interest.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Under-developed and non-essential software</p>
+<p>“The manuscript section on the software tool feels underdeveloped.”</p>
+<p>“Once the 10X Genomics corrects their gene panels according to this finding, the tool (OPT) will not be useful for most people. Still, it can be used by those who want to design de novo probes from scratch.”</p>
+<p>“Since the authors claim that OPT is intended for community use, the paper should provide a clear, step-by-step user guide, such as Jupyter tutorial, ideally as supplementary material.”</p>
+</disp-quote>
+<p>We agree with the reviewers that the description of the software tool itself is relatively concise. This is intentional, as the primary goal of this manuscript is not to introduce a standalone software framework, but rather to use the tool as a means to characterize and quantify off-target probe binding and its potential downstream impact on spatial gene expression analyses. Accordingly, our emphasis is placed on the biological and analytical insights enabled by this approach, rather than on extensive software tool details. To support potential users, we have now included additional software documented with an example Python notebook demonstrating how it can be applied to any probe panels in the GitHub repository: <ext-link ext-link-type="uri" xlink:href="https://github.com/JEFworks-Lab/off-target-probe-tracker/blob/main/example.ipynb">https://github.com/JEFworks-Lab/off-target-probe-tracker/blob/main/example.ipynb</ext-link></p>
+<p>Likewise, the primary goal of this manuscript is not to suggest that a specific vendor’s probe panels are flawed, but rather to demonstrate that off-target probe binding is a general and underappreciated phenomenon that can occur in some probe-based spatial transcriptomics platforms to meaningfully impact downstream analyses and biological interpretation.</p>
+<p>OPT was developed as a framework to identify potential off-target probe interactions based on sequence homology. In practice, OPT can serve as a post hoc tool that allows researchers to assess whether predicted off-target interactions may exist in a given panel and to account for these possibilities when interpreting spatial expression patterns, even when panels have been developed by the many probe designing methods now highlighted in the revised manuscript. Given the complexity of probe design and hybridization behavior, we believe that explicitly identifying and reporting potential off-targets remains valuable for downstream data interpretation, cross platform comparisons, and reproducibility. Thus, OPT is intended to complement existing probe design strategies and vendor efforts, rather than replace them, by providing researchers with additional context to interpret their data more accurately.</p>
+<p>In our revision, we have therefore elaborated on this in the discussion, reiterated here for convenience: “Although we focus here on the 10x Genomics Xenium technology, we do not exclude the possibility that off-target binding may similarly affect other probe-based gene detection approaches from other commercial vendors. Any technology that relies on hybridization-based detection is inherently susceptible to off-target probe binding when sequence similarity exists. Further, hybridization-based detection often inherently involves a trade-off between sensitivity and specificity. Given these inherent technological limitations, we therefore emphasize the importance of transparency through sharing probe sequences. However, many companies do not release the probe sequences used in their assays, limiting the consumer’s ability to fully interpret their results as well as the community’s ability to effectively characterize and benchmark performance variation across platforms. Therefore, we strongly recommend that companies publish probe sequences for pre-designed panels and likewise that researchers using these technologies should obtain and publish probe sequences used in their studies to support transparent and reproducible science. “</p>
+<p><bold>Recommendations for the authors:</bold></p>
+<disp-quote content-type="editor-comment">
+<p>“The paper only describes evidence of the off-target effect based on perfect sequence homology, although the tool (OPT) provides an option to find additional &quot;potential&quot; off-targets that allow mismatches. It would be very nice if the authors could additionally provide at least one example of off-target binding with at least one mismatch.”</p>
+</disp-quote>
+<p>We thank the reviewer for the opportunity to clarify this point. In addition to analyses based on perfect sequence homology, we examined predicted off-target binding when allowing mismatches at the terminal ends of probe sequences. This analysis is presented in the Results section titled “OPT results when allowing mismatches at the terminal ends of the probe sequences identifies additional off-target candidates.”</p>
+<p>In this revision, we now allowed a 10bp padding on either end of the 40bp probe sequence, permitting imperfect sequence matching at the terminal regions. Under these conditions, OPT identified additional off-target candidates, including <italic>TUBB2B</italic> and <italic>ACTG2</italic>, which we highlight as representative examples (Supplementary 7,8). We further demonstrate how these predicted off-target interactions impact gene expression concordance by comparing Xenium measurements with both Visium and scRNA-seq data, showing measurable changes in cross-platform agreement. Together, these results illustrate that allowing mismatches reveals biologically relevant off-target effects beyond those captured by perfect sequence homology alone.</p>
+<disp-quote content-type="editor-comment">
+<p>“Clarifications and updates for Figure 2A-B</p>
+<p>Xenium offers a resolution of up to 200 nanometers with continuous readout, without pixel gaps. However, the figures shown in Figure 2A-B appear pixelated - why is this the case? Could the authors clarify this discrepancy and, if possible, provide the raw feature intensity data for Xenium in the supplementary materials?</p>
+<p>Additionally, there appear to be no visible gaps in the Visium graphs. Could the authors update the figure panels to represent the true spot locations for Visium, to more accurately reflect the underlying data structure?”</p>
+</disp-quote>
+<p>We thank the reviewer for the opportunity to clarify these points. The goal of Figure 2A-B is to facilitate a direct visual comparison of gene expression patterns between the Visium and Xenium platforms. To enable this comparison, we aggregated the single-cell Xenium data into spatial patches matching the effective resolution of Visium spots (55x55µm). Similarly, Visium spots were rendered as patches to produce a more continuous visual representation. As a result of this aggregation and visualization choice, the Xenium expression plots appear pixelated despite Xenium’s native subcellular resolution (up to ~200 nm with continuous readout). We have clarified this processing and visualization step in the Methods to avoid confusion.</p>
+<p>With respect to the Visium expression plots, the lack of gaps is also a consequence of rendering each spot as a filled patch rather than plotting traditional Visium spots. This was done intentionally to maintain visual consistency with the aggregated Xenium data and to emphasize spatial concordance rather than the underlying sampling geometry. We have now explicitly stated this design choice to improve clarity.</p>
+<disp-quote content-type="editor-comment">
+<p>“I found the format of the manuscript to be at times confusing and perhaps a bit of an odd fit for a general interest journal. A significant portion of the manuscript is spent critiquing a specific publication, &quot;High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis&quot; published by Janesick et al. (of 10x Genomics, Inc.) in Nature Communications in 2023. This content would seem more appropriate as a Comment submitted to Nature Communications, potentially to be accompanied by a response from the authors of Janesick et al. at 10x.”</p>
+</disp-quote>
+<p>I would like to address this important point as the corresponding author who takes primary responsibility for the unconventional decision to submit this manuscript to eLife as opposed to as a commentary suggested by the reviewer.</p>
+<p>Consistent with the reviewer, I did initially consider submitting this as a Matters Arising to Nature Communications. However, after consultation with other senior colleagues and co-authors, I decided to forgo this route on the basis that the information provided in a Matters Arising must be kept confidential. I was concerned that this would lead to long, drawn-out private exchanges. As we note in the manuscript, the Xenium platform's widespread use and high cost imposed a certain urgency that I believed warranted open and rapid dissemination.</p>
+<p>Therefore, we submitted to eLife with the hope that eLife’s unique continuous post-publication public peer review process will enable the rapid dissemination of these important financially-sensitive insights while permitting constructive criticisms from both industry and academic expert reviewers to be openly considered by all readers.</p>
+</body>
+</sub-article>
+</article>
