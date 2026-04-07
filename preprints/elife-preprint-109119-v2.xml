@@ -1,0 +1,819 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">109119</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.109119</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.109119.2</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.2</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Structural Biology and Molecular Biophysics</subject>
+</subj-group>
+<subj-group subj-group-type="heading">
+<subject>Cell Biology</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Unbend: Correction of local beam-induced sample motion in cryo-EM images using a 3D spline model</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5808-2649</contrib-id>
+<name>
+<surname>Kong</surname>
+<given-names>Lingli</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>lingli.kong1@umassmed.edu</email>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-2344-5163</contrib-id>
+<name>
+<surname>Zottig</surname>
+<given-names>Ximena</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9911-706X</contrib-id>
+<name>
+<surname>Elferich</surname>
+<given-names>Johannes</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1506-909X</contrib-id>
+<name>
+<surname>Grigorieff</surname>
+<given-names>Nikolaus</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<email>niko@grigorieff.org</email>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0464eyp60</institution-id><institution>RNA Therapeutics Institute, University of Massachusetts Chan Medical School</institution></institution-wrap>, <city>Worcester</city>, <country country="US">United States</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0464eyp60</institution-id><institution>Howard Hughes Medical Institute, University of Massachusetts Chan Medical School</institution></institution-wrap>, <city>Worcester</city>, <country country="US">United States</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Scheres</surname>
+<given-names>Sjors HW</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-0462-6540</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00tw3jy02</institution-id><institution>MRC Laboratory of Molecular Biology</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country country="GB">United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Maduke</surname>
+<given-names>Merritt</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-7787-306X</contrib-id><role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00f54p054</institution-id><institution>Stanford University</institution>
+</institution-wrap>
+<city>Stanford</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2025-10-31">
+<day>31</day>
+<month>10</month>
+<year>2025</year>
+</pub-date>
+<pub-date date-type="update" iso-8601-date="2026-04-07">
+<day>07</day>
+<month>04</month>
+<year>2026</year>
+</pub-date>
+<volume>14</volume>
+<elocation-id>RP109119</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2025-09-05">
+<day>05</day>
+<month>09</month>
+<year>2025</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-09-06">
+<day>06</day>
+<month>09</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.09.05.674398"/>
+</event>
+<event>
+<event-desc>Reviewed preprint v1</event-desc>
+<date date-type="reviewed-preprint" iso-8601-date="2025-10-31">
+<day>31</day>
+<month>10</month>
+<year>2025</year>
+</date>
+<self-uri content-type="reviewed-preprint" xlink:href="https://doi.org/10.7554/eLife.109119.1"/>
+<self-uri content-type="editor-report" xlink:href="https://doi.org/10.7554/eLife.109119.1.sa3">eLife Assessment</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.109119.1.sa2">Reviewer #1 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.109119.1.sa1">Reviewer #2 (Public review):</self-uri>
+<self-uri content-type="referee-report" xlink:href="https://doi.org/10.7554/eLife.109119.1.sa0">Reviewer #3 (Public review):</self-uri>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2025, Kong et al</copyright-statement>
+<copyright-year>2025</copyright-year>
+<copyright-holder>Kong et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-109119-v2.pdf"/>
+<abstract><p>The exposure of frozen biological samples to the high-energy electron beam in a cryo-electron microscope commonly leads to beam-induced sample motion and distortions. Previously, we described <italic>Unblur</italic>, which is part of our <italic>cis</italic>TEM software to correct for beam-induced motion based on the alignment of full frames in a movie collected during the beam exposure (Grant et al., 2015). However, <italic>Unblur</italic> cannot accommodate motion due to more localized sample bending and distortions. Here, we present <italic>Unbend</italic>, extending <italic>Unblur</italic> by incorporating local motion correction using a three-dimensional cubic spline model. The 3D spline model is constructed using cubic B-splines along the exposure time axis, and bicubic B-splines within movie frames. <italic>Unbend</italic> is integrated into our <italic>cis</italic>TEM software with a new local motion visualization panel within the <italic>cis</italic>TEM graphical user interface. We processed movie frames from various <italic>in-situ</italic> sample types, including whole cells, lamellae, and cell lysates, to analyze motion behavior across different specimen types. To quantify the improvement in high-resolution signal, we utilized the 2D template matching method, which operates independently of the motion correction process, to search large ribosomal subunits from the motion-corrected micrographs. Overall, the signal-to-noise ratio of detected particles improved by 3–8% across different samples compared with full-frame aligned micrographs, while the number of detected target particles increased by up to ∼300%. The total and Von Mises equivalent strain shows a deformation scale of less than 1% in most of the samples, confirming that our model induces minimal additional distortion. Furthermore, we processed micrograph montages to study motion patterns across an entire sample, revealing considerable variance in distortion scale within the same sample, suggesting a complex underlying mechanism.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/02qenvm24</institution-id>
+<institution>Chan Zuckerberg Initiative (CZI)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>2021-234617 (5022)</award-id>
+<principal-award-recipient>
+<name>
+<surname>Kong</surname>
+<given-names>Lingli</given-names>
+</name>
+<name>
+<surname>Grigorieff</surname>
+<given-names>Nikolaus</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-3">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/006w34k90</institution-id>
+<institution>Howard Hughes Medical Institute (HHMI)</institution>
+</institution-wrap>
+</funding-source>
+<principal-award-recipient>
+<name>
+<surname>Zottig</surname>
+<given-names>Ximena</given-names>
+</name>
+<name>
+<surname>Grigorieff</surname>
+<given-names>Nikolaus</given-names>
+</name>
+<name>
+<surname>Elferich</surname>
+<given-names>Johannes</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>This version of the manuscript has been revised according to the referees' comments.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Cryo-electron microscopy (cryo-EM) enables structural biologists to observe diverse biomolecules in their native environment. The molecules are preserved in amorphous ice, and in the most favorable cases, their 3D structure can be reconstructed at near-atomic resolution. An important factor determining the attainable resolution are high-quality micrographs, containing high-resolution signal of the molecules. This high-resolution signal is attenuated by radiation damage and sample motion during the exposure (beam-induced motion, BIM). To minimize this attenuation, images are commonly recorded as a series of movie frames, each containing a fraction of the total electron exposure (<xref ref-type="bibr" rid="c4">Brilot et al., 2012</xref>; Campbell et al., 2013; <xref ref-type="bibr" rid="c15">Li et al., 2013</xref>). The frames are then filtered according to the radiation damage suffered by the sample, and averaged into a single micrograph. We have previously developed the program <italic>Unblur</italic>, which is part of <italic>cis</italic>TEM (<xref ref-type="bibr" rid="c11">Grant et al., 2018</xref>), to perform alignment of full movie frames and exposure filtering (<xref ref-type="bibr" rid="c10">Grant &amp; Grigorieff, 2015</xref>). However, as discussed in the following, full-frame alignment cannot correct for local distortions and bending of the sample under the electron beam.</p>
+<p>While full-frame alignment is often sufficient to achieve 3D reconstructions at near-atomic resolution, more complicated patterns of sample deformation have been observed that cannot be corrected in this manner. A simple model describes the deformation as a drum-like motion (<xref ref-type="bibr" rid="c4">Brilot et al., 2012</xref>; <xref ref-type="bibr" rid="c32">Zheng et al., 2017</xref>; <xref ref-type="bibr" rid="c20">Naydenova et al., 2020</xref>), which leads to differential sample motion across the field of view. The primary driver of this motion and deformation is thought to be strain that develops in the sample during rapid freezing (<xref ref-type="bibr" rid="c20">Naydenova et al., 2020</xref>; <xref ref-type="bibr" rid="c6">D’Imprima &amp; Kühlbrandt, 2021</xref>).</p>
+<p>Different algorithms have been developed to correct micrographs and tomograms for more complicated motion patterns (<xref ref-type="bibr" rid="c15">Li et al., 2013</xref>; <xref ref-type="bibr" rid="c27">Scheres, 2014</xref>; <xref ref-type="bibr" rid="c1">Abrishami et al., 2015</xref>; <xref ref-type="bibr" rid="c10">Grant &amp; Grigorieff, 2015</xref>; <xref ref-type="bibr" rid="c25">Rubinstein &amp; Brubaker, 2015</xref>; <xref ref-type="bibr" rid="c32">Zheng et al., 2017</xref>; <xref ref-type="bibr" rid="c33">Zivanov et al., 2019</xref>; <xref ref-type="bibr" rid="c31">Tegunov &amp; Cramer, 2019</xref>; <xref ref-type="bibr" rid="c29">Střelák et al., 2020</xref>). The widely used software <italic>MotionCor2</italic> employs polynomial equations to fit drum-like motion (<xref ref-type="bibr" rid="c32">Zheng et al., 2017</xref>). <italic>Warp</italic> (<xref ref-type="bibr" rid="c31">Tegunov &amp; Cramer, 2019</xref>) and <italic>CryoSPARC</italic> (<xref ref-type="bibr" rid="c23">Punjani et al., 2017</xref>) use a spline-based model, which provides more flexibility in representing different types of distortion. More complicated distortion models may increase the resolution of 3D reconstructions of particles extracted from the corrected micrographs or tomograms. However, 3D reconstruction requires multiple image processing steps, and often involves additional manual decisions, making it difficult to directly measure the impact of local distortion correction. Thus, it has not been quantified how great the improvements by local distortion correction are, nor how different types of samples, often exhibiting different degrees of distortion, benefit from it. To fill this gap, we set out to develop a tool to model and visualize local motion, and to quantify the improvements in the micrographs upon distortion correction.</p>
+<p>In this paper, we introduce new movie alignment software, <italic>Unbend</italic>, along with a comprehensive description of a new distortion correction model based on 3D cubic splines that is designed to apply pixel-wise correction of local motion. <italic>Unbend</italic> features two alignment steps: a full-frame alignment similar to <italic>Unblur</italic> (<xref ref-type="bibr" rid="c10">Grant &amp; Grigorieff, 2015</xref>), which is part of <italic>cis</italic>TEM (<xref ref-type="bibr" rid="c11">Grant et al., 2018</xref>), and patch-based alignment to generate reference points to initialize the 3D spline model. The spline model is then refined by optimizing a summed patch-wise cross-correlation loss function. The shift amount for each pixel is computed using the refined model and applied to the micrograph to generate a corrected micrograph with improved high-resolution signal. We also wrote <italic>shift_field_generation</italic>, a program that reads the refined spline parameters generated by <italic>Unbend</italic> to plot pixel-wise shift fields for each movie frame.</p>
+<p>We demonstrate the model’s effectiveness using a variety of cellular sample types, including whole cells (both bacterial and mammalian), lamellae (yeast and mammalian cells), and cell lysates, highlighting how local motion varies across specimens. By tracking the displacement of each patch from the first to the last frame, we measured the amount of motion in these different samples. Using the pixel-wise shift fields of the last frame with respect to the first frame, we quantified the amount of deformation and calculate the total equivalent strain (overall magnitude of volumetric and deviatoric deformation, <xref ref-type="bibr" rid="c18">Malvern, 1969</xref>; <xref ref-type="bibr" rid="c3">Belytschko et al., 2000</xref>) and the Von Mises equivalent strain (magnitude of deviatoric deformation, <xref ref-type="bibr" rid="c12">Hill, 1950</xref>). By integrating these metrics with 2D template matching (2DTM) (<xref ref-type="bibr" rid="c24">Rickgauer et al., 2017</xref>), we directly quantified the effects of local motion in the micrograph and assessed the improvement in the 2DTM signal-to-noise ratio (SNR) following distortion correction. Our results show that <italic>Unbend</italic> improves the 2DTM SNR by 3–8% and increases the number of detected targets by up to 300% in a dataset, depending on the type of sample being imaged.</p>
+</sec>
+<sec id="s2">
+<title>Distortion Modeling, Correction, and Verification</title>
+<p>The alignment and local motion-correction pipeline proposed in this work consists of four stages. (1) We estimate full-frame (global) shifts for each movie frame. (2) We partition the globally aligned frames into patches and align each patch stack across frames to obtain per-patch shift trajectories. (3) We fit these patch-wise shifts with the 3D spline deformation model introduced here. (4) We refine the spline parameters by optimizing a cross-correlation-based objective, and use the resulting deformation field to warp and sum frames to produce the final motion-corrected micrograph (<xref rid="fig2" ref-type="fig">Figure 2</xref><bold>—figure supplement 1</bold>). Detailed descriptions of each stage and the spline model are provided below.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1</label>
+<caption><title>Uniform cubic spline curve.</title> <p><bold>(a)</bold> Diagram showing the core components of a cubic B-spline curve, such as knots, control points, and the uniform knot positions 𝑡<sub><italic>i</italic></sub>. <bold>(b)</bold> Diagram showing the free-end boundary condition for a cubic B-spline.</p></caption>
+<graphic xlink:href="674398v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2</label>
+<caption><title>3D spline model knot grid construction and shift field generation.</title> <p>(<bold>a</bold>) Diagram showing the position of knots along the exposure accumulation direction and the shift amount along x for each movie frame. (<bold>b</bold>) A 3D diagram showing the cubic B-spline along the exposure accumulation direction, with red arrows representing the shifts where the knots are located (black dots on the gray line), and the cyan curve showing the spline curve for interpolating the shifts for each frame. (<bold>c, d</bold>) Shift field along x and y showing the shift amount of each pixel obtained from the bicubic B-splines on a 30 × 30 pixels frame (for demonstration only). (<bold>e</bold>) Schematic image grid before (gray grids) and after (cyan grid) applying the shift fields in (<bold>c, d</bold>). The red arrows represent the shift of patches. Black dots represent knot positions.</p></caption>
+<graphic xlink:href="674398v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2a">
+<title>Full-frame alignment</title>
+<p>During the acquisition of cryo-EM data, various types of sample motion can occur, including beam-induced motion and mechanical movement of the sample due to stage instabilities. Correcting for this motion is an important step in obtaining high-resolution 3D reconstructions of the imaged molecules. In this work, we address more complicated patterns of sample motion by separately performing full-frame alignment and local distortion correction due to sample deformation.</p>
+<p>For full-frame alignment, we closely follow our previous version of <italic>Unblur</italic> (<xref ref-type="bibr" rid="c10">Grant &amp; Grigorieff, 2015</xref>) using alignment in three iterations with increasing resolution. The shift for each frame is initially determined using the cross-correlation map between the current frame and the sum of all other frames. Given the low electron exposure per frame, single-frame alignment can be susceptible to noise and misalignment. A large B-factor, which can be adjusted by the user, is applied during this step to suppress high-resolution noise. Sample drift due to mechanical instabilities of the cryo stage is expected to be slowly varying in speed and mostly along a fixed direction. This allows the full-frame shifts to be smoothed using a Savitzky-Golay (SG) filter, which effectively models sample drift while preserving molecular features in the image, and without introducing potential image distortions. The full-frame alignment and trajectory smoothing are sufficient in many cases to achieve 3D reconstruction at near-atomic resolution (<xref ref-type="bibr" rid="c10">Grant &amp; Grigorieff, 2015</xref>; <xref ref-type="bibr" rid="c21">Oldham et al., 2016</xref>; <xref ref-type="bibr" rid="c30">Subramaniam et al., 2018</xref>).</p>
+<p>In some cases, the shifts determined for individual frames deviates significantly from the smoothed trajectory. This could be due to noise but may also reflect properties of the sample or stage, and hence these outliers could represent real physical motion of the sample. Therefore, solely relying on the smoothed curves means that the shifts derived from cross-correlation are not directly applied in the correction, even if they represent real physical motion. To allow potential discontinuities in the motion trajectories in our new approach, this smoothing function is optional and is deactivated by default in <italic>Unbend</italic>. Instead of using the SG-filtered shifts, we compare the raw shifts to the smoothed curve and identify those shifts that deviate by more than 1.5 times the interquartile range (IQR) from the curve. These outlier shifts are further aligned using a B-factor twice that of the initial alignment (the default B-factor for the initial alignment is 1500 Å<sup>2</sup>). If shifts remain significantly different after this adjustment, we accept them as the true shifts; otherwise, we apply the new shift values. This strategy helps us detect and correct potential misalignments caused by weak signal in individual frames while preserving the information contained in the raw shifts about real sample motion that does not fit a smooth trajectory.</p>
+</sec>
+<sec id="s2b">
+<title>Patch alignment</title>
+<p>To correct for local sample distortion, patch-based methods are widely utilized. By aligning small patches across the entire micrograph, these methods can accurately capture local motion. Increasing the number of patches and reducing the patch size can provide more accurate local information but also limits the amount of signal per patch, leading to noisier alignments.</p>
+<p>Users can set the patch size and patch numbers based on their preference. In our default settings, to balance these factors, we set a patch size of 1024 × 1024 pixels when the output pixel size is &lt; 0.5 Å, and 512 × 512 pixels when the output pixel size is between 0.5 and 2.0 Å. For output pixel sizes &gt; 2.0 Å, the 512 × 512 pixel patch size is scaled by a factor equal to the output pixel size and rounded up to the nearest multiple of 16 to maintain computational efficiency.</p>
+<p>The default number of patches along the x and y dimensions, denoted as <italic>NP<sub>x</sub></italic> and <italic>NP<sub>y</sub></italic>, are determined by rounding up the values of image dimensions divided by patch size. This configuration minimizes overlap between neighboring patches, enabling more accurate capture of local motion. Users may specify fewer patches along each dimension, resulting in larger patches that capture more signal to ensure a complete coverage of the micrograph without gaps. Conversely, increasing the number of patches does not reduce their size; instead, it increases the percentage of overlap between adjacent patches, preserving the default patch size to ensure that each patch retains sufficient signal for robust alignment.</p>
+<p>Assuming that full-frame alignment has effectively removed the average motion in each frame, the residual motion detected by patch alignment is primarily attributed to beam-induced sample distortion. We therefore approximate the shifts determined for a given patch across movie frames (a patch stack) as a smooth trajectory. For each patch stack, the alignment is firstly estimated by calculating the cross-correlation between an individual frame and the average of all other frames, after which the shift trajectory is smoothed using a SG filter.</p>
+<p>To identify patches with unreasonable shift sets {(<italic>x<sub>pi,fi</sub>, y<sub>pi,fi</sub></italic>)| <italic>fi</italic> ∈ {1,2, . . , <italic>NF</italic>}}, where <italic>NF</italic> is the total number of frames, <italic>pi</italic> denotes the patch stack, and <italic>x<sub>pi,fi</sub></italic> and <italic>y<sub>pi,fi</sub></italic> represent the shift amounts along the <italic>x</italic> and <italic>y</italic> axes for frame <italic>fi</italic> in patch stack <italic>pi</italic>, we calculate the standard deviation of the shift differences between neighboring frames:
+<?math-size 1?><disp-formula id="eqn1">
+<graphic xlink:href="674398v2_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where
+<?math-size 1.5?><disp-formula id="eqn2">
+<graphic xlink:href="674398v2_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Outliers in the set {𝜎<sub><italic>fi</italic></sub>(<italic>pi</italic>)| <italic>pi</italic> ∈ {1,2, … , 𝑁𝑃}}, with <italic>NP</italic> = <italic>NP<sub>x</sub></italic> × <italic>NP<sub>y</sub></italic> as the total number of patches, are detected using the 1.5 × IQR upper bound criterion. Outlier shifts are then replaced with the shift sets from their nearest-neighbor patches. This procedure effectively detects potential misalignments caused by low signal in individual patches and provides a robust initialization for the subsequent modeling of sample distortion.</p>
+</sec>
+<sec id="s2c">
+<title>Sample distortion modeling and correction</title>
+<p>Patch-wise shifts, {(<italic>x<sub>pi,fi</sub>, y<sub>pi,fi</sub></italic>) | <italic>pi</italic> ∈ {1,2, … , <italic>NP</italic>}, <italic>fi</italic> ∈ {1,2, . . , <italic>NF</italic>}}, represent motion at the patch centers. To generate a distortion-corrected micrograph, these center shifts must be interpolated to obtain the shifts of every pixel in each movie frame. This requires an interpolation model, for which we employ spline functions to describe the pixel-wise shift distribution across the frames.</p>
+<sec id="s2c1">
+<title>Spline model construction</title>
+<p>In this study, the spline model is constructed using uniform bicubic B-splines to describe shifts in the image plane (x and y axes), and uniform cubic B-splines to constrain shifts across frames (z axis/electron exposure accumulating direction). B-spline curves and surfaces comprise sequences of low-degree polynomial segments, which help avoid high-degree global polynomials and preserve numerical stability. For both cubic and bicubic B-splines, the model guarantees <italic>C<sup>2</sup></italic> continuity, i.e., it is twice continuously differentiable. This property allows for smooth transitions between polynomial segments while preserving local control, since changes in a control point only affect its neighboring region. As a result, the model provides sufficient flexibility to capture a wide range of motion trajectories.</p>
+<p>Each segment of the spline curve 𝑆<sub>𝑐</sub>(𝑡) is a linear combination of basic B-spline functions 𝐵<sub>𝑖,𝑑</sub>(𝑡), weighted by neighboring control points 𝑄<sub>𝑖</sub> (<xref ref-type="bibr" rid="c9">Farin, 2001</xref>):
+<?math-size 1?><disp-formula id="eqn3">
+<graphic xlink:href="674398v2_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+For degree 𝑑, the blending functions 𝐵<sup>𝑑</sup>(𝑡) are defined recursively by the Cox-de Boor algorithm:
+<?math-size 2?><disp-formula id="eqn4">
+<graphic xlink:href="674398v2_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<?math-size 1.5?><disp-formula id="eqn5">
+<graphic xlink:href="674398v2_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+<p>where 𝑡 ∈ [0,1] is a normalized parameter along the spline curve. For cubic B-splines, 𝑑 = 3. A cubic B-spline segment can also be written in matrix formulation for better computational efficiency:
+<?math-size 4?><disp-formula id="eqn6">
+<graphic xlink:href="674398v2_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Likewise, a bicubic B-spline surface 𝑆<sub>𝑠</sub>(𝑢<sub>𝑖</sub>, 𝑣<sub>𝑗</sub>) follows an analogous matrix formulation:
+<?math-size 4?><disp-formula id="eqn7">
+<graphic xlink:href="674398v2_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where 𝑀 is the same 4 × 4 blending-function matrix, and <italic>Q<sub>grid</sub></italic> is the 4 × 4 arrangement of control points {𝑄<sub>𝑖+𝑘,𝑗+𝑙</sub>}. The indices <italic>i</italic>, <italic>j</italic> specify the segment positions along the <italic>y</italic> and <italic>x</italic> axes, while 𝑢, 𝑣 ∈ [0,1] are the normalized parameters along those axes.</p>
+</sec>
+<sec id="s2c2">
+<title>Control points and knots</title>
+<p>Each cubic B-spline curve segment is defined by four control points, with each control point influencing up to four adjacent segments, whereas each bicubic B-spline surface requires sixteen control points. As shown in <xref rid="fig1" ref-type="fig">Figure 1a</xref>, control points are not located directly on the curve. The endpoints of curve segments and the four corners of the surface segments are referred to as “knots”. Adjusting the control points alters the curve’s shape, while the knots of a uniform spline are evenly distributed. To determine a B-spline curve/surface, we only need to know the knot parameters. The relationship between control points and knots for a curve or surface segment can be expressed as (<xref ref-type="bibr" rid="c2">Agrapart &amp; Batailly, 2020</xref>):
+<?math-size 1.5?><disp-formula id="eqn8">
+<graphic xlink:href="674398v2_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+<p>where Φ is the passing matrix determined by the Cox-de Boor algorithm and the chosen boundary conditions. In this work, we adopt free-end boundary conditions, allowing the spline to extend linearly beyond the boundary points (<xref rid="fig1" ref-type="fig">Figure 1b</xref>). This prevents artificial curvature at the edges, maintaining the natural flow of the surface without imposing strict derivative constraints. For a cubic spline, the free-end boundary condition is implemented as follows:
+<?math-size 1?><disp-formula id="eqn9">
+<graphic xlink:href="674398v2_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+and for bicubic splines, the same condition applies along the edges. At the corners, the boundary condition is:
+<?math-size 1?><disp-formula id="eqn10">
+<graphic xlink:href="674398v2_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where 𝑚 and 𝑛 are the number of knots along <italic>x</italic> and <italic>y</italic> axes, respectively.</p>
+</sec>
+<sec id="s2c3">
+<title>Knot grid configuration</title>
+<p>Our model assigns <italic>NK<sub>x</sub></italic> , <italic>NK<sub>y</sub></italic>, and <italic>NK<sub>z</sub></italic> as the number of knots along the 𝑥, 𝑦, and 𝑧 axes, respectively. By default, <italic>NK<sub>x</sub></italic> and <italic>NK<sub>y</sub></italic> are set to two-thirds of the patch number in each dimension, with a minimum of four knots, and evenly distributed along <italic>x</italic> and 𝑦. Along the 𝑧 axis, knots are spaced at every 4𝑒<sup>−</sup>/Å<sup>2</sup> of exposure, forming a three-dimensional grid together with the knots along <italic>x</italic> and 𝑦. Since shifts occur in both <italic>x</italic> and 𝑦, we maintain two sets of knot parameters, 𝐾<sub>𝑥</sub> and 𝐾<sub>𝑦</sub>. Given these knots, we can interpolate a dense field of shifts for every pixel in each movie frame, thereby correcting local distortion in each frame.</p>
+<p><xref rid="fig2" ref-type="fig">Figure 2</xref> illustrates the knot grid and the construction of the 3D spline model. In <xref rid="fig2" ref-type="fig">Figure 2a</xref>, the spline curve for shifts along the <italic>x</italic> direction is shown along the exposure accumulation direction. In this case, for a movie with 40 frames and a total exposure of 16𝑒<sup>−</sup>/Å<sup>2</sup>, a knot is assigned every 10 frames. Once the shift amounts at the knots are determined, the cubic spline model, as described above, is used to compute the shift along <italic>x</italic> for each movie frame. By combining these shifts with the shifts along the 𝑦-direction, we can obtain the full spline curve thread as shown in <xref rid="fig2" ref-type="fig">Figure 2b</xref>. For a model with <italic>NK<sub>x</sub></italic>, <italic>NK<sub>y</sub></italic> knots along <italic>x</italic> and 𝑦, we will generate <italic>NK<sub>x</sub></italic> × <italic>NK<sub>y</sub></italic> of such 3D splines. Thus, for each movie frame, we will have a 2D grid of knots for generating the bicubic spline surface, represented by the black points in <xref rid="fig2" ref-type="fig">Figure 2e</xref>. <xref rid="fig2" ref-type="fig">Figure 2c,d</xref> show the shift fields along <italic>x</italic> and 𝑦, respectively, for a single movie frame derived using the bicubic splines. <xref rid="fig2" ref-type="fig">Figure 2e</xref> displays the image before (gray grid) and after (cyan grid) warping, based on the shift fields shown in <xref rid="fig2" ref-type="fig">Figure 2c,d</xref>. For better visualization, we amplified the distortion in these figures.</p>
+</sec>
+<sec id="s2c4">
+<title>Parameter refinement</title>
+<p>The initial refinement of knot values relies on a least-squares error minimization approach. Given the parameters 𝐾<sub>𝑥</sub> and 𝐾<sub>𝑦</sub> for the 𝑥- and 𝑦-axis, respectively, the spline model can initialize the per-patch shifts for each frame (𝑥<sub>𝑠𝑝𝑙<italic>i</italic>𝑛𝑒</sub>(<italic>pi</italic>, 𝑓<italic>i</italic>; 𝐾<sub>𝑥</sub>), 𝑦<sub>𝑠𝑝𝑙<italic>i</italic>𝑛𝑒</sub>(<italic>pi</italic>, 𝑓<italic>i</italic>; 𝐾<sub>𝑦</sub>)). We estimate 𝐾<sub>𝑥</sub> and 𝐾<sub>𝑦</sub> by minimizing the following least-square loss function:
+<?math-size 1.5?><disp-formula id="eqn11">
+<graphic xlink:href="674398v2_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Minimizing <italic>L</italic><sub>1</sub>aligns the spline model with the observed per-patch shifts, and yields the patch stack alignment result {<italic>x<sub>pi,fi</sub>, y<sub>pi,fi</sub></italic> | <italic>pi</italic> ∈ {1,2, … , <italic>NP</italic>}, <italic>fi</italic> ∈ {1,2, . . , 𝑁𝐹}}. Because this initial fit relies solely on local per-patch information, a second round of refinement is done to incorporate global information. To this end, we define the following loss function:
+<?math-size 2?><disp-formula id="eqn12">
+<graphic xlink:href="674398v2_eqn12.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where 𝐶𝐶 denotes the cross-correlation function between a single frame in a patch stack <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="674398v2_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and the “leave-one-out” average of the remaining frames in the same patch
+<?math-size 2.5?><disp-formula id="eqn13">
+<graphic xlink:href="674398v2_eqn13.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Since patches with stronger signal yield larger cross-correlation values, they contribute more heavily to 𝐿<sub>2</sub>, thereby reducing the impact of noisier patches. The optimization algorithm L-BFGS, provided by the <italic>dlib</italic> package (King, 2009), is used to update parameters 𝐾<sub>𝑥</sub> and 𝐾<sub>𝑦</sub>, producing a refined spline model that better captures the observed local movement. With these optimized parameters, pixel-wise shifts are computed, and bilinear interpolation is applied to calculate the densities at each output pixel, thereby generating the final motion-corrected movie frames. Averaging these frames produces the final corrected micrograph. As shown in <xref rid="fig2" ref-type="fig">Figure 2e</xref>, after applying the model-based shifts, areas near the edges may extend beyond or fall short of the original micrograph’s pixel grid. In such cases, we pad the under-extended area with the average density of the edge and trim the over-extended area to fit within the boundaries of the micrograph.</p>
+</sec>
+</sec>
+<sec id="s2d">
+<title>2DTM provides a one-step verification for motion correction</title>
+<p>2D template matching (2DTM) was originally developed to identify biomolecules in images of crowded cellular environments with high precision in both location and orientation. The true-positive detection is based on the 2DTM SNR at each target site (<xref ref-type="bibr" rid="c24">Rickgauer et al., 2017</xref>; <xref ref-type="bibr" rid="c28">Sigworth, 2004</xref>). More specifically, at each image location 𝑝, we compute cross-correlation values 𝐶𝐶(𝑝, 𝑡) between the micrograph and the template over all sampled orientations 𝑡. We then convert these values to z-scores per location 𝑧(𝑝, 𝑡), using the mean and standard deviation of {𝐶𝐶(𝑝, 𝑡)}<sub>𝑡</sub> across orientations:
+<?math-size 2?><disp-formula id="eqn14">
+<graphic xlink:href="674398v2_eqn14.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where 𝜇<sub>𝑝</sub> and 𝜎<sub>𝑝</sub> are the mean and standard deviation of the cross-correlation values across orientations at location 𝑝. The 2DTM SNR is then defined as the maximum z-score:
+<?math-size 1?><disp-formula id="eqn15">
+<graphic xlink:href="674398v2_eqn15.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+A detection is called when SNR(𝑝) exceeds a threshold 𝑧<sub>th</sub>, which is determined based on the complementary error function <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="674398v2_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, where the expected false positice rate 𝑟 is calculated by assuming there is one false positive detection (1-FP criterion).</p>
+<p>Because the 2DTM SNR is computed by correlating template projections with the micrograph, it provides an unbiased measure of how effective the molecular signal is preserved in the distortion-corrected micrograph. In the present study, we will use both the number of detectable particles and their 2DTM SNR as metrics for evaluating the performance of our distortion correction method.</p>
+<p>We applied our model to a range of <italic>in-situ</italic> samples commonly studied in structural biology, including whole cells (bacteria and the edges of mammalian cells), lamellae (yeast and mammalian cells), and cellular lysate. Ribosomes, which can be detected with high accuracy by 2DTM using <italic>cis</italic>TEM (<xref ref-type="bibr" rid="c11">Grant et al., 2018</xref>), were chosen as the primary targets in the following experiments. Furthermore, we also tested the performance of our new algorithm on DeCo-LACE micrograph montages (<xref ref-type="bibr" rid="c8">Elferich et al., 2022</xref>).</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Results</title>
+<sec id="s3a">
+<title>High resolution information recovery</title>
+<p>Using the new graphical user interface (GUI) for motion correction in <italic>cis</italic>TEM, users can readily visualize local motion by enabling the trajectory option. <xref rid="fig3" ref-type="fig">Figure 3</xref> illustrates an example micrograph acquired from <italic>Mycoplasma pneumoniae</italic> whole-cell samples. In this case, a vortex-shaped motion is observed in the region where two cells are closely adjacent to each other. This type of spatially varying, non-rigid deformation would not be well captured by simple, low-order global models, while the use of a continuous 3D spline representation in this work can interpolate smoothly across both space and time. The patch trajectories (shown in red) are magnified by a factor of 30 for clarity. <xref rid="fig3" ref-type="fig">Figure 3b</xref>, c provide zoomed-in views of the boxed area and the corresponding power spectra generated from the micrograph after local distortion-corrected alignment versus full-frame alignment, respectively. For movies exhibiting the highest estimated motion in each sample type in this work, the recovery of Thon rings at higher spatial frequencies is more apparent (see Figure 4-figure supplements). <xref rid="fig3" ref-type="fig">Figure 3d</xref>, e show the detected particles (white projections) using 2DTM in the micrograph processed with and without local distortion correction, respectively. The larger number of detected 2DTM targets demonstrates that the blurring caused by the local distortion has been significantly reduced by our <italic>Unbend</italic> program. This can also be seen in the power spectra calculated from the micrograph, exhibiting more pronounced Thon rings at higher resolution after local distortion correction (<xref rid="fig3" ref-type="fig">Figure 3b</xref>, c).</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3</label>
+<caption><title>A micrograph of whole-cell Mycoplasma pneumoniae.</title> <p><bold>(a)</bold> Motion trajectory panel in the <italic>cis</italic>TEM GUI. <bold>(b)</bold> The cropped area shown in (a) without local distortion correction, experiencing blurring due to the local distortion (upper) and the power spectrum (lower). <bold>(c)</bold> The cropped area (upper) and the power spectrum of the local distortion-corrected micrograph (lower). <bold>(d)</bold> Detected particles (white) using 2DTM on the full-frame aligned micrograph. <bold>(e)</bold> Detected particles (white) using 2DTM on the local-distortion corrected micrograph.</p></caption>
+<graphic xlink:href="674398v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4</label>
+<caption><title>Patch shift in different types of samples.</title> <p><bold>(a)</bold> Box plots of the standard deviation of patch motions calculated for micrographs of different types of samples. <bold>(b)</bold> The mean patch shifts for each micrograph, colored by sample type.</p></caption>
+<graphic xlink:href="674398v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s3b">
+<title>Local motion across different samples</title>
+<p>We benchmarked our motion-correction model using three types of <italic>in-situ</italic> specimens: whole cells, lamellae, and cell lysates. For whole cells, we used a frozen-hydrated <italic>Mycoplasma pneumoniae</italic> dataset (<xref ref-type="bibr" rid="c22">O’Reilly et al., 2020</xref>) previously employed for the development of 2DTM with <italic>cis</italic>TEM (<xref ref-type="bibr" rid="c16">Lucas et al., 2021</xref>). To enable comparison across different sample types and geometries, mammalian cells were also included, specifically, immortalized <italic>Cercopithecus aethiops</italic> (African green monkey) BS-C-1 kidney epithelial cells (see Materials and Methods). Lamella datasets originated from two eukaryotic organisms: <italic>Saccharomyces cerevisiae</italic> and immortalized <italic>Mus musculus</italic> ER-HoxB8 cells, both previously analyzed by 2DTM (<xref ref-type="bibr" rid="c17">Lucas et al., 2022</xref>; <xref ref-type="bibr" rid="c8">Elferich et al., 2022</xref>). The cell lysate sample was derived from BS-C-1 cells, as described in Materials and Methods.</p>
+<p>To quantify the local movement, we measure the displacement of each patch’s last frame relative to its first frame in a micrograph {𝑠𝑕<sub><italic>pi</italic></sub> | <italic>pi</italic> ∈ {1,2, … , <italic>NP</italic>}}, where
+<disp-formula id="eqn16">
+<graphic xlink:href="674398v2_eqn16.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+Since the full-frame alignment is assumed to remove the global average motion, the patch motions/shifts (𝑠𝑕<sub><italic>pi</italic></sub>) primarily represent the BIM that reflect the sample’s deformation, measuring how much the patch centers are displaced from their initial positions. To characterize the extent of local motion, we compute the maximum, mean, and standard deviation of these shifts for each micrograph. We find that cell lysate exhibits the least local motion, whereas the <italic>Mycoplasma pneumoniae</italic> samples demonstrate substantially larger local motions, with maximum displacements of over 55 Å. <italic>Mus musculus</italic> cell lamella and BS-C-1 cell edge samples also show considerable local motion (up to 20 Å). As indicated by the standard deviation data in <xref rid="fig4" ref-type="fig">Figure 4</xref>, samples with large average patch motion also exhibit greater variability in local motion across a micrograph. Such pronounced local motion will significantly attenuate high-resolution information in the micrograph, making its correction essential for high-resolution cryo-EM experiments.</p>
+<p>To assess whether local motion correlates with specimen thickness, we estimated the sample thickness using CTFFIND5 (<xref ref-type="bibr" rid="c7">Elferich et al., 2024</xref>) and plotted the mean shift against sample thickness for each micrograph (<xref rid="fig4" ref-type="fig">Figure 4b</xref>). For consistency, all micrographs were binned to 1.5 Å/pixel during alignment and outliers shown in <xref rid="fig4" ref-type="fig">Figure 4a</xref> are excluded for better pattern visualization. BS-C-1 cell edge samples span a broad thickness range (50–400 nm) and their mean displacements likewise cover the full range of observed shifts. <italic>Mycoplasma pneumoniae</italic> are generally thicker (150–400 nm) and their mean displacements also distribute in the upper range (2.5–6 Å). In contrast, cell-lysate specimens are thinner (50–150 nm) and exhibit the least local motion, and even at the upper end (100–150 nm) of this range exhibit mean shifts below 1 Å. However, lamellae of similar thickness show mean displacements from &lt; 1 Å to &gt; 6 Å. These results indicate no direct dependence of local motion on sample thickness; rather, motion magnitude is highly related to the sample type and preparation method.</p>
+</sec>
+<sec id="s3c">
+<title>Pixel-wise deformation quantification using equivalent strain</title>
+<p>To quantify pixel-wise shifts within each movie frame, we developed shift_field_generation, a program that reconstructs the per-pixel displacement field of any given frame by interpolating the spline parameters exported by <italic>Unbend</italic> during movie alignment. Using the first frame as a reference, we compute the displacement of the final frame and derive two complementary strain measures: Von Mises equivalent strain, which measures distortional (shape-changing) effects; and total equivalent strain, which captures both volumetric (area-changing) and distortional components (see Materials and Methods). Both measures range from 0 to infinite, with 0 designating no deformation, and provide scalar quantities that condense a multi-dimensional strain (or stress) state to equivalent single-dimensional values.</p>
+<p><xref rid="fig5" ref-type="fig">Figure 5</xref> presents strain maps (per pixel) for the example micrograph shown in <xref rid="fig3" ref-type="fig">Figure 3</xref>. The Von Mises (Green-Lagrange strain) map (<xref rid="fig5" ref-type="fig">Figure 5a</xref>) highlights a localized shear-dominated “vortex” region where strain exceeds 1%, indicating significant non-isotropic deformation, which is consistent with the rotation motion shown by the patch trajectories in <xref rid="fig3" ref-type="fig">Figure 3a</xref>. The total equivalent strain map (<xref rid="fig5" ref-type="fig">Figure 5b</xref>) shows that the total equivalent stain of this area is above 1.4%, with the rest of the field remaining below 1.2% deformation.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5</label>
+<caption><title>Magnitude of deformation correction of the micrograph shown in <xref rid="fig3" ref-type="fig">Figure 3a</xref>.</title> <p><bold>(a)</bold> Von Mises equivalent strain and <bold>(b)</bold> total equivalent strain.</p></caption>
+<graphic xlink:href="674398v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>The result in <xref rid="fig5" ref-type="fig">Figure 5</xref> is based on the alignment using a grid of 12 × 8 patches, which can track the local strain patterns with fine granularity. Reducing the number of patches can smooth small-scale fluctuations and reduce apparent peak strain values but may under-sample genuine local distortions. This trade-off between patch resolution and deformation magnitude suggests that the optimal patch density may depend on sample type and exposure rate. <italic>Unbend</italic> allows users to tailor the number of patches to their specimen and exposure-fractionation scheme, optimizing alignment fidelity and desired amount of deformation correction.</p>
+</sec>
+<sec id="s3d">
+<title>Quantitative measurement of corrected motion using 2DTM</title>
+<p>To assess improvements in preserving high-resolution signal in the motion-corrected micrographs, we searched for large ribosomal subunits (LSUs) using 2DTM, as described in the Materials and Methods section. Stronger high-resolution signal leads to both an increased number of detected targets (<xref rid="fig6" ref-type="fig">Figure 6a</xref>) and higher 2DTM SNR values (<xref rid="fig6" ref-type="fig">Figure 6b</xref>). We also compared the SNRs of the same detections present in both micrographs processed with full-frame alignment and those processed with local distortion correction. The SNR differences are shown in <xref rid="fig6" ref-type="fig">Figure 6c</xref>, sorted for better visualization.</p>
+<fig id="fig6" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 6</label>
+<caption><title>Evaluation of local motion correction using <italic>Unbend</italic> across different sample types.</title> <p><bold>(a)</bold> Box plots displaying the distribution of the number of 2DTM detections per micrograph. <bold>(b)</bold> Histograms of the 2DTM SNR of detected 2DTM targets. <italic>Unbend</italic> improves the overall distribution of SNR values for all sample types. <bold>(c)</bold> 2DTM SNR difference between <italic>Unbend</italic> and <italic>Unblur</italic>. Across all sample 788 types, <italic>Unbend</italic> led to improvements in either the number of detected targets or 2DTM SNR values, or both.</p></caption>
+<graphic xlink:href="674398v2_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>In whole-cell <italic>Mycoplasma pneumoniae</italic> samples, distortion correction resulted in a 4.2-fold increase in LSU detection (95.5 vs. 22.9 detections per image), and the mean 2DTM SNR improved by ∼3.1% (8.96 ± 0.02 vs. 8.69 ± 0.01). The low values of standard error of the mean (SEM) (0.02 and 0.01) indicate a consistent 2DTM SNR improvement. In BS-C-1 whole-cell samples, the number of LSU detections increased from 55.9 to 69.1(∼23.6% improvement), and the 2DTM SNR improved from 9.88 ± 0.02 to 10.42 ± 0.02 (∼5.5% improvement). For targets detected in both full-frame and local-distortion corrected micrographs, approximately 80% showed higher 2DTM SNR values after local distortion correction (<xref rid="fig6" ref-type="fig">Figure 6c</xref>). Of the 20% of detected targets that displayed lower 2DTM SNR values after local distortion correction, some showed a reduction of up to a factor of 2. This reduction can be attributed to the motion correction process, which optimizes an overall loss function 𝐿<sub>2</sub>(𝐾<sub>𝑥</sub>, 𝐾<sub>𝑦</sub>) and models motion using continuous functions to avoid patch alignments dominated by noise. This suggests that there are local areas that happen to be well aligned using full-frame alignment, and that end up with an overall worse alignment when additional degrees of freedom are added during local alignment. Nevertheless, local distortion correction resulted in a 317% increase in LSU detections in <italic>Mycoplasma pneumoniae</italic> and a 24% increase for BS-C-1, with an overall 2DTM SNR improvement by 3–5%.</p>
+<p>For lamellae prepared from <italic>Saccharomyces cerevisiae</italic> and ER-HoxB8 cells, the mean number of LSU detections per micrograph increased from 350 to 401 (∼15% increase) in yeast samples and from 8.5 to 10.0 (∼17% increase) in mammalian samples. The mean 2DTM SNR for yeast sample improved from 10.18 ± 0.01 to 10.62 ± 0.01 (∼4% increase), and for mammalian samples, it increased from 10.4 ± 0.1 to 11.2 ± 0.1 (∼8% increase). As noted earlier, motion in ER-HoxB8 lamellae varies from less than 1 Å to 6 Å, contributing to a relatively larger SEM value (0.1).</p>
+<p>Lysates generated from BS-C-1 cells showed no substantial increase in the number of LSU detections, but a 3% improvement in the 2DTM SNR was observed (from 13.84 ± 0.04 to 14.25 ± 0.04). As shown in <xref rid="fig4" ref-type="fig">Figure 4</xref>, cell lysates exhibit minimal local motion (mean shift amount 0.7 Å, Figure 4-figure supplement 7), and full-frame alignment is sufficient to correct for most BIM in these samples. However, small amounts of local motion may remain and this may explain the improved 2DTM SNR in 70% of the detected targets (<xref rid="fig6" ref-type="fig">Figure 6c</xref>).</p>
+</sec>
+<sec id="s3e">
+<title>DeCo-LACE montages</title>
+<p>To better understand the beam-induced deformations, we analyzed a dataset of micrographs collected from lamellae of <italic>Candida albicans</italic> cells. In this dataset, lamellae of individual cells were imaged as montages (DeCo-LACE, <xref ref-type="bibr" rid="c8">Elferich et al., 2022</xref>). We performed motion correction of the individual exposures within these montages using either full-frame alignment or <italic>Unbend</italic>, and found that in 47 out of 82 montages, the number of detected targets increased by more than 10% (<xref rid="fig7" ref-type="fig">Figure 7a</xref>). This indicates that patch-based motion correction recovered signal that would otherwise have been lost to image blurring due to local deformations. In some montages, the number of detected targets was substantially higher in every exposure (<xref rid="fig7" ref-type="fig">Figure 7c</xref>), suggesting that these regions of the imaged lamella were generally prone to local deformations and the observed increase in the number of detected targets was not due to a few, heavily distorted, exposures.</p>
+<fig id="fig7" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 7</label>
+<caption><title>Impact of patch-based motion correction on detection of 60S subunits in focused ion beam-milled lamellae analyzed in a large dataset.</title> <p><bold>(a)</bold> Histogram showing the percentage of increase of 60S detection in montages processed using <italic>Unbend</italic>, compared to <italic>Unblur</italic>. <bold>(b)</bold> Scatterplot of the number of detected 60S per exposure in a representative montage that did not show a substantial increase of detection after processing with <italic>Unbend</italic>, compared to <italic>Unblur</italic>. <bold>(c)</bold> Similar to panel <bold>(b)</bold>, but for a representative montage with a more substantial increase of detected targets after processing with <italic>Unbend</italic>, compared to <italic>Unblur</italic>.</p></caption>
+<graphic xlink:href="674398v2_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>For the remaining 35 montages that showed less than a 10% increase in target detection, the number of detections remained approximately unchanged between full-frame and local-distortion correction (<xref rid="fig7" ref-type="fig">Figure 7b</xref>). While we cannot rule out that areas in these lamellae experienced local deformations that were not corrected by our algorithm, the overall similarity in the number of detections per exposure and in the 2DTM SNR of 60S targets compared to the full dataset suggests that these areas likely did not suffer from significant BIM. In fact, the mean 2DTM SNR in areas with less than a 10% increase in detections was 11.1, whereas the mean 2DTM SNR in areas with more than a 50% increase was 10.7. This suggests that patch-based motion correction recovers most, but not all signal lost to local deformation.</p>
+<p>In summary, our data suggest that local deformation in lamellae is not uniform: for reasons that remain unclear, some lamellae remain rigid while others display local deformation. Together with the finding that, despite patch-based motion correction, the average 2DTM SNR is still higher in areas without deformation, we propose that future work aimed at uncovering the physical basis of this variability could lead to improvements in <italic>in-situ</italic> cryo-EM datasets.</p>
+</sec>
+<sec id="s3f">
+<title>Comparison with published local motion correction methods using 2DTM</title>
+<p>Several other movie-alignment pipelines implement local motion correction using different deformation models. Widely used approaches include (i) quadratic (low-order polynomial) motion models, as implemented in <italic>MotionCor2</italic>/<italic>MotionCor3</italic> (<xref ref-type="bibr" rid="c32">Zheng et al., 2017</xref>), and (ii) spline-based models that allow more flexible deformation fields, as implemented in <italic>Warp</italic> (<xref ref-type="bibr" rid="c31">Tegunov &amp; Cramer, 2019</xref>) and <italic>CryoSPARC</italic> (<xref ref-type="bibr" rid="c23">Punjani et al., 2017</xref>).</p>
+<p>In this section, we performed movie alignment using five methods (<italic>Unbend</italic>, <italic>MotionCor2</italic>, <italic>MotionCor3</italic>, <italic>Warp</italic>, and <italic>CryoSPARC</italic>) and then ran 2DTM on the resulting motion-corrected micrographs. Because several packages only support down sampling by integer factors and all movies were recorded at super-resolution, the aligned outputs were either not binned or binned by a factor of two. To standardize sampling across methods and samples for downstream analysis, we then Fourier-binned the corrected micrographs to a final pixel size of 1.5 Å/pixel.</p>
+<p>For <italic>Unbend</italic>, all alignment parameters were kept at their default values. For the other packages, we matched the nominal model flexibility to <italic>Unbend</italic>’s model by using the same number of patches along x and y in <italic>MotionCor2</italic> and <italic>MotionCor3</italic>, and the same number of spline knots in <italic>Warp</italic> and <italic>CryoSPARC</italic>. All remaining parameters were left at their respective defaults to minimize method-specific tuning and reduce potential bias.</p>
+<p><xref rid="fig8" ref-type="fig">Figure 8a</xref> summarizes the number of 2DTM detections per micrograph for each motion-correction method. For particles detected by both <italic>Unbend</italic> and an alternative method, we computed the SNR difference as Δ𝑆𝑁𝑅 = 𝑆𝑁𝑅<sub>𝑈𝑛𝑏𝑒𝑛𝑑</sub> − 𝑆𝑁𝑅<sub>𝑜𝑡𝑕𝑒𝑟</sub>. The sorted Δ𝑆𝑁𝑅 distributions are shown in <xref rid="fig8" ref-type="fig">Figure 8b</xref>.</p>
+<fig id="fig8" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 8</label>
+<caption><title>Comparison of local motion-correction methods.</title> <p><bold>(a)</bold> Box plots showing the distribution of the number of 2DTM detections per micrograph for each motion correction method. <bold>(b)</bold> Distribution of 2DTM SNR differences between <italic>Unbend</italic> and the other tested methods for particles detected in common (Δ𝑆𝑁𝑅 = 𝑆𝑁𝑅<sub>𝑈𝑛𝑏𝑒𝑛𝑑</sub> − 𝑆𝑁𝑅<sub>𝑜𝑡𝑕𝑒𝑟</sub>). Vertical lines mark the zero-crossing in the sorted Δ𝑆𝑁𝑅 distribution for each method. Percentages in the legend indicate the fraction of commonly detected particles with higher SNR in <italic>Unbend</italic>-processed micrographs.</p></caption>
+<graphic xlink:href="674398v2_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>For the <italic>M. pneumoniae</italic> sample, which exhibits the largest local motion (<xref rid="fig4" ref-type="fig">Figure 4a</xref>), <italic>Unbend</italic> produced the highest detection rate, with a mean of 79.7 detections per micrograph, followed by <italic>MotionCor2</italic> (70.6). In contrast, <italic>CryoSPARC</italic> produced 50.4 detections per micrograph, 36.8% fewer than <italic>Unbend</italic>. Consistent with this, among particles detected by both <italic>Unbend</italic> and <italic>Warp</italic>, over 60% had higher SNR in the <italic>Unbend</italic>-corrected micrographs.</p>
+<p>For the cell-edge sample, where the mean patch shift spans from &lt;1 Å to &gt;5 Å (<xref rid="fig4" ref-type="fig">Figure 4b</xref>), the mean detection counts between different methods are more similar than in the bacterial sample. However, the SNR comparison (<xref rid="fig8" ref-type="fig">Figure 8b</xref>) shows a clear advantage for <italic>Unbend</italic>: more than 70% of commonly detected particles have higher SNR in <italic>Unbend</italic>-processed micrographs than in micrographs processed by the other methods, indicating improved recovery of local signal.</p>
+<p>For the yeast lamella sample, performance is more consistent between methods. Considering the SNR of commonly detected particles, <italic>CryoSPARC</italic> performs slightly better than <italic>Unbend</italic> (only ∼44% of common particles show higher SNR in <italic>Unbend</italic>), <italic>MotionCor2</italic> performs similarly to <italic>Unbend</italic>, and <italic>Warp</italic> performs the slightly worse (with our choice of run parameters). For the mammalian lamella sample, the methods yield similar detection counts (<xref rid="fig8" ref-type="fig">Figure 8a</xref>). However, the SNR comparisons favor <italic>Unbend</italic>: detections from <italic>Unbend</italic>-processed micrographs show higher 2DTM SNR than all other methods. In particular, <italic>Unbend</italic> yields higher SNR for ∼80% of the particles common with the spline-based methods (<italic>Warp</italic> and <italic>CryoSPARC</italic>). For the cell-lysate sample, overlap in detections is high across methods, but 60–70% of commonly detected particles still show higher SNR in the <italic>Unbend</italic>-corrected micrographs.</p>
+<p>Overall, <italic>Unbend</italic> provides the best and most consistent performance across datasets in our benchmark. <italic>MotionCor2</italic> and <italic>MotionCor3</italic> perform consistently and robustly across samples, whereas <italic>Warp</italic> and <italic>CryoSPARC</italic> show stronger dataset dependence. We aimed to minimize user bias by matching model flexibility and otherwise using default parameters; nevertheless, method-specific parameter optimization could affect absolute performance. A comprehensive, method-specific parameter benchmarking study is beyond the scope of this work.</p>
+</sec>
+<sec id="s3g">
+<title>Unbend runtimes</title>
+<p>We benchmarked the runtimes of <italic>Unbend</italic> using the movie datasets analyzed in this study. Each job was executed with 4 CPU threads on Intel Xeon Gold 5520+ processors. <xref rid="tbl1" ref-type="table">Table 1</xref> summarizes the runtimes together with key parameters of the input movies and the corresponding output micrographs. The runtimes range from ∼1.5 mins to ∼12.5 mins per movie, depending primarily on the input image size and the number of frames. <italic>Unbend</italic> is currently CPU-based and therefore slower than the GPU-accelerated implementations. The most time-consuming step is the pixel-wise interpolation, which is performed on unbinned frames. This explains why larger input dimensions and higher frame numbers result in longer runtimes. A GPU-accelerated version of Unbend, as well as additional code-level optimizations to reduce runtime will be available in a future release.</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1.</label>
+<caption><title>Unbend runtimes on movies analyzed in <xref rid="fig6" ref-type="fig">Figure 6</xref>.</title></caption>
+<graphic xlink:href="674398v2_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+</sec>
+</sec>
+<sec id="s4">
+<title>Discussion</title>
+<p>In this work, we introduce <italic>Unbend</italic>, a cryo-EM movie alignment program that can perform local motion correction using a 3D cubic spline model. The program begins with full-frame alignment, followed by tracking of local motion via patch-based alignment. Our 3D cubic spline model is then fit to the patch motion and optimized by a summed patch-wise cross-correlation loss function, yielding refined model parameters. With this optimized model, pixel-wise shifts are calculated for each movie frame to generate the motion-corrected micrograph.</p>
+<p><italic>Unbend</italic> is integrated into our <italic>cis</italic>TEM software, featuring a new GUI with real-time distortion visualization. Combined with our new program shift_field_generation, pixel-wise shift fields can be generated for calculating total and Von Mises equivalent strain. These metrics quantify the extent of deformation and can serve as a reference for adapting the number and overlap of patches to avoid introducing excessive errors in the deformation model.</p>
+<sec id="s4a">
+<title>Model performance</title>
+<p>We validated <italic>Unbend</italic> across diverse <italic>in-situ</italic> samples, including whole cells, lamellae, and cell lysates, and used 2DTM to quantify the improvement in high-resolution signal in the motion-corrected micrographs. Across all sample types tested, <italic>Unbend</italic> boosted 2DTM SNR by 3 –8% and the number of detected targets by up to 300%, with the largest gains observed in specimens exhibiting large local motion (whole cells and lamellae). While cell lysate showed minimal local motions, a 3% improvement in 2DTM SNR was still observed.</p>
+<p>Equivalent-strain analysis confirmed that, apart from some samples of the <italic>M. pneumoniae</italic> dataset, correction-induced deformations remain below 1.0%, suggesting that the model improves alignment without introducing excessive errors. The strain fields showing the maximum patch shift amounts in micrographs of different samples in <xref rid="fig4" ref-type="fig">Figure 4</xref> are presented in Figure 4—figure supplement 1–5 and summarized in Figure 4—figure supplement 6. For the <italic>M. pneumoniae</italic> sample in Figure 4—figure supplement 1, strain analysis revealed maximum Von Mises and total equivalent values exceeding 2.2% and 3.5%, respectively, consistent with plastic deformation. Comparison of the corresponding power spectra (Figure 4—figure supplement 1a,b) showed that the micrographs corrected with <italic>Unbend</italic> displayed stronger Thon rings at high spatial frequencies, confirming that the observed plastic deformation was, at least partially, accommodated.</p>
+<p>Together, these results demonstrate that local motion correction is essential for obtaining fully motion-corrected micrographs, especially when imaging whole cells and lamellae.</p>
+</sec>
+<sec id="s4b">
+<title>Implications and limitations</title>
+<p>Our results indicate that specimen type and preparation method strongly influence local sample motion. Whole cells often exhibit large thickness gradients that can potentially create areas of differential motion under the electron beam, while in lamellae, which are generally thinner and more homogeneous, some stress may still be present due to the milling process and residual sample inhomogeneity. The local distortion correction model is particularly beneficial in this context, as it can compensate for these localized motion artifacts, leading to more accurate particle detection and improved 2DTM SNR. Cell lysates typically show less localized motion, and full-frame alignment is sufficient for detecting most targets using 2DTM, although some residual local distortion remains detectable and correctable.</p>
+<p>Lamellae montages collected using DeCo-LACE (<xref ref-type="bibr" rid="c8">Elferich et al., 2022</xref>) further revealed substantial spatial heterogeneity in the amount of local motion, indicated by the range of 2DTM detection gains from under 10% to over 50% within a single sample. We found that montages with less motion better preserve high-resolution signal, suggesting that further improvements in the motion correction model, perhaps based on a more detailed physical mechanism, may yield additional benefits. For single particle samples, which are generally thin and homogeneous, local motion is less pronounced, and full-frame alignment should be sufficient in most cases.</p>
+<p>Therefore, they were not tested in this work.</p>
+</sec>
+</sec>
+<sec id="s5">
+<title>Materials and methods</title>
+<table-wrap id="utbl1" orientation="portrait" position="float">
+<label>Key resources table</label>
+<graphic xlink:href="674398v2_utbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<sec id="s5b">
+<title>Cell culture, cell lysate and grid preparation</title>
+<p>Adherent BS-C-1 cells were cultured as previously described by (<xref ref-type="bibr" rid="c26">Salgado et al., 2018</xref>). Briefly, cells were maintained at 37°C in a humidified atmosphere with 5% CO₂ and grown in Dulbecco’s Modified Eagle Medium (DMEM; Invitrogen) supplemented with 10% fetal bovine serum (FBS), 1X GlutaMAX (Thermo Fisher Scientific), and 1% penicillin-streptomycin (100 U/mL penicillin and 100 µg/mL streptomycin; Thermo Fisher Scientific). For grid seeding, cells were washed twice with pre-warmed PBS and detached using trypsin-EDTA (Gibco). Cells were counted, diluted to 1 × 10<sup>5</sup> cell/ml and seeded onto fibronectin-coated (5 µg/mL in PBS) EM grids.</p>
+<p>Double-side glow-discharged, 200-mesh gold grids with a silicon oxide support film containing 2 µm holes and 2 µm spacing (Quantifoil) were used. Prior to use, grids were cleaned by three washes with ethyl acetate and exposed to UV light under a laminar flow hood for 45 minutes. Grids were placed into 35 mm glass-bottom tissue culture dishes (MatTek) for cell growth. Cells were allowed to adhere and spread for 24–48 hours before vitrification. Each grid was inspected under an inverted light microscope to confirm appropriate cell density and carbon film integrity. We aimed for approximately one cell per mesh; grids with excessive cell clumping were excluded.</p>
+<p>Immediately before plunge freezing, grids were washed twice with warm PBS and transferred into Minimum Essential Medium Eagle Alpha (MEMα; Sigma) supplemented with 25 mM of HEPES buffer. Grids were then rapidly moved from the incubator to a Leica GP2 cryo-plunger, excess liquid was blotted from the back side for 8 seconds, and grids were plunge-frozen into liquid ethane cooled to –184 °C.</p>
+<p>Cell extracts were prepared from BSC-1 cells using digitonin-based semi-permeabilization. Briefly, cells were seeded in a 75 cm² flask and cultured to confluence. After washing twice with pre-warmed PBS, the cells were detached with Trypsin-EDTA (Gibco) and collected by centrifugation at 300 × g for 4 minutes. The cell pellet was resuspended in 100 μL of semi-permeabilization buffer (25 mM HEPES, 110 mM potassium acetate, 15 mM magnesium acetate, 1 mM DTT, 0.015% digitonin, protease inhibitor cocktail (1 tablet/ 10 ml; Roche), 40 U/mL RNase In (Promega), 1 mM EGTA) and 4 °C for 5 minutes. Following centrifugation at 1,000 × g for 5 minutes, the supernatant was collected for use in grid preparation without further modification. RNA concentration was quantified prior to grid preparation as a quality control measure, with no dilution of the extract performed. Glow-discharged Quantifoil 200-mesh gold grids with a silicon oxide support film containing 2 µm holes and 2 µm spacing were used. Plunge freezing conditions used were identical to those described for whole cells.</p>
+</sec>
+<sec id="s5c">
+<title>Cryo-EM data acquisition</title>
+<p>Cryo-EM data were collected using a Titan Krios transmission electron microscope (Thermo Fisher Scientific) operated at 300 keV, equipped with a K3 direct electron detector and an energy filter (Gatan) set to a 20 eV slit width.</p>
+<p>For cell edge data collection, medium magnification montages were used to select vitrified cell areas that were transparent enough for cryo-EM. Images were acquired at a nominal magnification of 64,000× corresponding to a calibrated pixel size of 1.33 Å. A defocus range of –1.0 to –1.5 µm was targeted using SerialEM’s autofocus function (<xref ref-type="bibr" rid="c19">Mastronarde, 2005</xref>) on a sacrificial area. Movies were recorded at an exposure rate of 1.02 𝑒<sup>−</sup>/Å per frame to a total accumulated exposure of 30.6 𝑒<sup>−</sup>/Å.</p>
+<p>For the cell lysate, we used a nominal magnification of 105,000× corresponding to a calibrated pixel size of 0.83 Å. We employed beam tilt to acquire multiple movies (5 per hole across nine holes) at each stage position. Zero-loss peak (ZLP) refinement was performed every 90 minutes at a unique location to avoid dark areas. Movies containing 30 frames, with an exposure of 1.0 𝑒<sup>−</sup>/Å per frame, were recorded, resulting in a total exposure of 30 𝑒<sup>−</sup>/Å.</p>
+</sec>
+<sec id="s5d">
+<title>2D template generation and 2D template matching</title>
+<p>For 2DTM, 3D templates were generated from trimmed atomic models containing only the large ribosomal subunit (50S or 60S), using the simulate program (<xref ref-type="bibr" rid="c13">Himes &amp; Grigorieff, 2021</xref>). Specifically, models derived from PDB entries 5LZV (for mammalian samples: BS-C-1 and ER-HoxB8), 6Q8Y (for <italic>Saccharomyces cerevisiae</italic>), and 3J9W (<italic>for Mycoplasma pneumoniae</italic>) were used. The defocus of the micrographs was determined using CTFFIND5.</p>
+<p>2DTM was performed using the match_template program (<xref ref-type="bibr" rid="c16">Lucas et al., 2021</xref>) as implemented in <italic>cis</italic>TEM. The search was conducted with an in-plane angular step of 1.5° and an out-of-plane step of 2.5°. For whole-cell and lamella samples, and additional defocus search was conducted within ±120 nm of the estimated defocus, using 20 nm increments.</p>
+<p>Template-matched coordinates, Euler angles, and defocus values were extracted using the MT module within the <italic>cis</italic>TEM GUI and exported as .star files. These files were subsequently analyzed to quantify the number of detected targets and the 2DTM SNR using custom Python package (<ext-link ext-link-type="uri" xlink:href="https://github.com/LingliKong/2DTMSNR_MoCo_Bench">https://github.com/LingliKong/2DTMSNR_MoCo_Bench</ext-link>). The sample thickness was determined using CTFFIND5.</p>
+</sec>
+<sec id="s5e">
+<title>Von Mises equivalent strain and total equivalent strain</title>
+<p>The Von Mises equivalent strain derives from the Von Mises criterion, widely used in engineering and mechanics to predict yielding or failure of materials subjected to complex (multiaxial) stresses or strains. The Von Mises equivalent strain effectively measures how far a material is distorted from its original shape. In our case, with the shift field {𝑢<sub>𝑥</sub>, 𝑢<sub>𝑦</sub>}, we can obtain the deformation gradient <bold><italic>F</italic></bold>:
+<?math-size 4?><disp-formula id="eqn17">
+<graphic xlink:href="674398v2_eqn17.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The Green-Lagrange strain tensor <bold><italic>E</italic></bold> filters out the rigid-body rotations measures the true finite strains, and can be calculated by:
+<?math-size 2.5?><disp-formula id="eqn18">
+<graphic xlink:href="674398v2_eqn18.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The total equivalent strain combines the magnitude of all deformation modes (axial + shear) and is expressed as:
+<?math-size 1.5?><disp-formula id="eqn19">
+<graphic xlink:href="674398v2_eqn19.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+The Von Mises equivalent strain removes the volume change and only keep the shape change:
+<?math-size 2.5?><disp-formula id="eqn20">
+<graphic xlink:href="674398v2_eqn20.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+where <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="674398v2_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> is the deviatoric strain:
+<?math-size 1.5?><disp-formula id="eqn21">
+<graphic xlink:href="674398v2_eqn21.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+𝛿<sub><italic>ij</italic></sub> is the Kronecker delta, and 𝑡𝑟 𝑬 is the volumetric part/trace, which represent the pure “dilation” or “compression” component that changes the area but not shape:
+<?math-size 1?><disp-formula id="eqn22">
+<graphic xlink:href="674398v2_eqn22.gif" mimetype="image" mime-subtype="gif"/>
+</disp-formula>
+</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The authors thank members of the Grigorieff lab for helpful discussions. We are also grateful for the use of and support from the cryo-EM facility at UMass Chan Medical School. L.K. and N.G. acknowledge funding from the Chan Zuckerberg Initiative, grant #2021-234617 (5022).</p>
+</ack>
+<sec id="s6" sec-type="data-availability">
+<title>Data availability</title>
+<p>Movies of samples not published previously have been deposited on EMPIAR: movies of ER-HOXB8 cells (EMPIAR-12944); movies of BS-C-1 cell edges (EMPIAR-12943); movies of BS-C-1 cell lysate (EMPIAR-12942). The source code for <italic>Unbend</italic> is part of <italic>cis</italic>TEM and available at <ext-link ext-link-type="uri" xlink:href="https://github.com/timothygrant80/cisTEM/tree/unbend">https://github.com/timothygrant80/cisTEM/tree/unbend</ext-link>; binaries for most Linux distributions can be downloaded at <ext-link ext-link-type="uri" xlink:href="https://cistem.org/downloads">https://cistem.org/downloads</ext-link>. The 2DTM detection and SNR comparison script is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/LingliKong/2DTMSNR_MoCo_Bench">https://github.com/LingliKong/2DTMSNR_MoCo_Bench</ext-link>.</p>
+</sec>
+<sec id="additional-info" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="s7">
+<title>Author contributions</title>
+<p>Conceptualization: L.K., J.E. and N.G.; Data curation: L.K., X.Z. and J.E.; Formal analysis: L.K., X.Z. and J.E.; Funding acquisition: N.G.; Investigation: L.K., X.Z. and J.E.; Methodology: L.K., J.E., and N.G.; Project administration: L.K. and N.G.; Resources: L.K., X.Z., J.E., and N.G.; Software: L.K., J.E. and N.G.; Supervision: N.G.; Validation: L.K., X.Z., J.E. and N.G.; Visualization: L.K., X.Z., J.E. and N.G.; Writing – original draft: L.K., X.Z., J.E. and N.G.; Writing - review &amp; editing: L.K., X.Z., J.E. and N.G.</p>
+</sec>
+</sec>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Figure supplements.</label>
+<caption><p><bold>Figure 2—figure supplement 1</bold> Unbend movie alignment and local motion correction algorithm. <bold>Figure 4—figure supplement 1</bold> <italic>Mycoplasma pneumoniae</italic> sample. (a) Screen shot of the <italic>cis</italic>TEM GUI displaying the motion-corrected micrograph and patch trajectories. (b) Micrograph based on full-frame alignment. (c) Von Mises equivalent strain field. (d) Total equivalent strain field. <bold>Figure 4—figure supplement 2</bold> BS-C-1 cell edge sample. (a) Screen shot of the <italic>cis</italic>TEM GUI displaying the motion-corrected micrograph and patch trajectories. (b) Micrograph based on full frame alignment. (c) Von Mises equivalent strain field. (d) Total equivalent strain field. <bold>Figure 4—figure supplement 3</bold> <italic>Mus musculus</italic> ER-Hoxb8 cell lamella sample. (a) Screen shot of the <italic>cis</italic>TEM GUI displaying the motion-corrected micrograph and patch trajectories. (b) Micrograph based on full-frame alignment. (c) Von Mises equivalent strain field. (d) Total equivalent strain field. <bold>Figure 4—figure supplement 4</bold> <italic>Saccharomyces cerevisiae</italic> lamella sample. (a) Screen shot of the <italic>cis</italic>TEM GUI displaying the motion-corrected micrograph and patch trajectories. (b) Micrograph based on full-frame alignment. (c) Von Mises equivalent strain field. (d) Total equivalent strain field. <bold>Figure 4—figure supplement 5</bold> BS-C-1 cell lysate sample. (a) Screen shot of the <italic>cis</italic>TEM GUI displaying the motion-corrected micrograph and patch trajectories. (b) Micrograph based on full frame alignment. (c) Von Mises equivalent strain field. (d) Total equivalent strain field. <bold>Figure 4—figure supplement 6</bold> Motion and equivalent strain summary table for micrographs shown in <bold>Figure 4—figure supplements 1–5</bold>. <bold>Figure 4—figure supplement 7</bold> Summary statistics of per-micrograph mean patch shifts by sample type. <bold>Figure 8—figure supplement 1</bold> Statistics table for detected particles from micrographs processed by different software.</p></caption>
+<media xlink:href="supplements/674398_file10.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Abrishami</surname>, <given-names>V.</given-names></string-name>, <string-name><surname>Vargas</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Li</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Cheng</surname>, <given-names>Y.</given-names></string-name>, <string-name><surname>Marabini</surname>, <given-names>R.</given-names></string-name>, <string-name><surname>Sorzano</surname>, <given-names>C. Ó. S.</given-names></string-name>, &amp; <string-name><surname>Carazo</surname>, <given-names>J. M</given-names></string-name></person-group>. (<year>2015</year>). <article-title>Alignment of direct detection device micrographs using a robust Optical Flow approach</article-title>. <source>Journal of Structural Biology</source>, <volume>189</volume>(<issue>3</issue>), <fpage>163</fpage>–<lpage>176</lpage>. <pub-id pub-id-type="doi">10.1016/j.jsb.2015.02.001</pub-id> <pub-id pub-id-type="pmid">25681631</pub-id></mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Agrapart</surname>, <given-names>Q.</given-names></string-name>, &amp; <string-name><surname>Batailly</surname>, <given-names>A</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Cubic and bicubic spline interpolation in Python</article-title>. <source>HAL Open Science</source>. </mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Belytschko</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Liu</surname>, <given-names>W. K.</given-names></string-name>, <string-name><surname>Moran</surname>, <given-names>B.</given-names></string-name>, &amp; <string-name><surname>Elkhodary</surname>, <given-names>K</given-names></string-name></person-group>. (<year>2000</year>). <source>Nonlinear Finite Elements for Continua and Structures</source>. <publisher-name>Wiley</publisher-name>.</mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Brilot</surname>, <given-names>A. F.</given-names></string-name>, <string-name><surname>Chen</surname>, <given-names>J. Z.</given-names></string-name>, <string-name><surname>Cheng</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Pan</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Harrison</surname>, <given-names>S. C.</given-names></string-name>, <string-name><surname>Potter</surname>, <given-names>C. S.</given-names></string-name>, <string-name><surname>Carragher</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Henderson</surname>, <given-names>R.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2012</year>). <article-title>Beam-induced motion of vitrified specimen on holey carbon film</article-title>. <source>Journal of Structural Biology</source>, <volume>177</volume>(<issue>3</issue>), <fpage>630</fpage>–<lpage>637</lpage>. <pub-id pub-id-type="doi">10.1016/j.jsb.2012.02.003</pub-id> <pub-id pub-id-type="pmid">22366277</pub-id></mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Campbell</surname>, <given-names>M. G.</given-names></string-name>, <string-name><surname>Cheng</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Brilot</surname>, <given-names>A. F.</given-names></string-name>, <string-name><surname>Moeller</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Lyumkis</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Veesler</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Pan</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Harrison</surname>, <given-names>S. C.</given-names></string-name>, <string-name><surname>Potter</surname>, <given-names>C. S.</given-names></string-name>, <string-name><surname>Carragher</surname>, <given-names>B.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2012</year>). <article-title>Movies of ice-embedded particles enhance resolution in electron cryo-microscopy</article-title>. <source>Structure</source>, <volume>20</volume>(<issue>11</issue>), <fpage>1823</fpage>–<lpage>1828</lpage>. <pub-id pub-id-type="doi">10.1016/j.str.2012.08.026</pub-id> <pub-id pub-id-type="pmid">23022349</pub-id></mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>D’Imprima</surname>, <given-names>E.</given-names></string-name>, &amp; <string-name><surname>Kühlbrandt</surname>, <given-names>W</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Current limitations to high-resolution structure determination by single-particle cryoEM</article-title>. <source>Quarterly Reviews of Biophysics</source>, <volume>54</volume>, <fpage>e4</fpage>. <pub-id pub-id-type="doi">10.1017/S0033583521000020</pub-id> <pub-id pub-id-type="pmid">33704040</pub-id></mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Elferich</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Kong</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Zottig</surname>, <given-names>X.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2024</year>). <article-title>CTFFIND5 provides improved insight into quality, tilt, and thickness of TEM samples</article-title>. <source>eLife</source>, <volume>13</volume>, <elocation-id>RP97227</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.97227</pub-id> <pub-id pub-id-type="pmid">39704651</pub-id></mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Elferich</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Schiroli</surname>, <given-names>G.</given-names></string-name>, <string-name><surname>Scadden</surname>, <given-names>D. T.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2022</year>). <article-title>Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for label-free detection of molecules across entire cell sections</article-title>. <source>eLife</source>, <volume>11</volume>, <elocation-id>e80980</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.80980</pub-id> <pub-id pub-id-type="pmid">36382886</pub-id></mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Farin</surname>, <given-names>G. E</given-names></string-name></person-group>. (<year>2001</year>). <source>Curves and surfaces for CAGD: A practical guide</source> (<edition>5th ed</edition>). <publisher-name>Morgan Kaufmann</publisher-name>.</mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Grant</surname>, <given-names>T.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2015</year>). <article-title>Measuring the optimal exposure for single particle cryo-EM using a 2.6 Å reconstruction of rotavirus VP6</article-title>. <source>eLife</source>, <volume>4</volume>, <elocation-id>e06980</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.06980</pub-id> <pub-id pub-id-type="pmid">26023829</pub-id></mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Grant</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Rohou</surname>, <given-names>A.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2018</year>). <article-title>cisTEM, user-friendly software for single-particle image processing</article-title>. <source>eLife</source>, <volume>7</volume>, <elocation-id>e35383</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.35383</pub-id> <pub-id pub-id-type="pmid">29513216</pub-id></mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Hill</surname>, <given-names>R</given-names></string-name></person-group>. (<year>1950</year>). <source>Mathematical Theory of Plasticity</source>. <publisher-name>Oxford University Press</publisher-name>.</mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Himes</surname>, <given-names>B.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Cryo-TEM simulations of amorphous radiation-sensitive samples using multislice wave propagation</article-title>. <source>IUCrJ</source>, <volume>8</volume>(<issue>6</issue>), <fpage>943</fpage>–<lpage>953</lpage>. <pub-id pub-id-type="doi">10.1107/S2052252521008538</pub-id> <pub-id pub-id-type="pmid">34804546</pub-id></mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>King</surname>, <given-names>D. E.</given-names></string-name></person-group>. <article-title>Dlib-ml: A Machine Learning Toolkit</article-title>. <source>Journal of Machine Learning Research</source> <volume>10</volume>, <fpage>1755</fpage>–<lpage>1758</lpage>. <year>2009</year></mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>X.</given-names></string-name>, <string-name><surname>Mooney</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Zheng</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Booth</surname>, <given-names>C. R.</given-names></string-name>, <string-name><surname>Braunfeld</surname>, <given-names>M. B.</given-names></string-name>, <string-name><surname>Gubbens</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Agard</surname>, <given-names>D. A.</given-names></string-name>, &amp; <string-name><surname>Cheng</surname>, <given-names>Y</given-names></string-name></person-group>. (<year>2013</year>). <article-title>Electron counting and beam-induced motion correction enable near-atomic-resolution single-particle cryo-EM</article-title>. <source>Nature Methods</source>, <volume>10</volume>(<issue>6</issue>), <fpage>584</fpage>–<lpage>590</lpage>. <pub-id pub-id-type="doi">10.1038/nmeth.2472</pub-id> <pub-id pub-id-type="pmid">23644547</pub-id></mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lucas</surname>, <given-names>B. A.</given-names></string-name>, <string-name><surname>Himes</surname>, <given-names>B. A.</given-names></string-name>, <string-name><surname>Xue</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Grant</surname>, <given-names>T.</given-names></string-name>, <string-name><surname>Mahamid</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2021</year>). <article-title>Locating macromolecular assemblies in cells by 2D template matching with cisTEM</article-title>. <source>eLife</source>, <volume>10</volume>, <elocation-id>e68946</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.68946</pub-id> <pub-id pub-id-type="pmid">34114559</pub-id></mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Lucas</surname>, <given-names>B. A.</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Loerch</surname>, <given-names>S.</given-names></string-name>, &amp; <string-name><surname>Grigorieff</surname>, <given-names>N</given-names></string-name></person-group>. (<year>2022</year>). <article-title>In situ single particle classification reveals distinct 60S maturation intermediates in cells</article-title>. <source>eLife</source>, <volume>11</volume>, <elocation-id>e79272</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.79272</pub-id> <pub-id pub-id-type="pmid">36005291</pub-id></mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="book"><person-group person-group-type="author"><string-name><surname>Malvern</surname>, <given-names>L. E</given-names></string-name></person-group>. (<year>1969</year>). <source>Introduction to the Mechanics of a Continuous Medium</source>. <publisher-name>Prentice-Hall</publisher-name>.</mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mastronarde</surname>, <given-names>D. N</given-names></string-name></person-group>. (<year>2005</year>). <article-title>Automated electron microscope tomography using robust prediction of specimen movements</article-title>. <source>Journal of Structural Biology</source>, <volume>152</volume>(<issue>1</issue>), <fpage>36</fpage>–<lpage>51</lpage>. <pub-id pub-id-type="doi">10.1016/j.jsb.2005.07.007</pub-id> <pub-id pub-id-type="pmid">16182563</pub-id></mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Naydenova</surname>, <given-names>K.</given-names></string-name>, <string-name><surname>Jia</surname>, <given-names>P.</given-names></string-name>, &amp; <string-name><surname>Russo</surname>, <given-names>C. J</given-names></string-name></person-group>. (<year>2020</year>). <article-title>Cryo-EM with sub–1 Å specimen movement</article-title>. <source>Science</source>, <volume>370</volume>(<issue>6513</issue>), <fpage>223</fpage>–<lpage>226</lpage>. <pub-id pub-id-type="doi">10.1126/science.abb7927</pub-id> <pub-id pub-id-type="pmid">33033219</pub-id></mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Oldham</surname>, <given-names>M. L.</given-names></string-name>, <string-name><surname>Grigorieff</surname>, <given-names>N.</given-names></string-name>, &amp; <string-name><surname>Chen</surname>, <given-names>J</given-names></string-name></person-group>. (<year>2016</year>). <article-title>Structure of the transporter associated with antigen processing trapped by herpes simplex virus</article-title>. <source>eLife</source>, <volume>5</volume>, <elocation-id>e21829</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.21829</pub-id> <pub-id pub-id-type="pmid">27935481</pub-id></mixed-citation></ref>
+<ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>O’Reilly</surname>, <given-names>F.</given-names></string-name>, <string-name><surname>Xue</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Graziadei</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Sinn</surname>, <given-names>L.</given-names></string-name>, <string-name><surname>Lenz</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Tegunov</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Blötz</surname>, <given-names>C.</given-names></string-name>, <string-name><surname>Singh</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Hagen</surname>, <given-names>W.</given-names></string-name>, <string-name><surname>Cramer</surname>, <given-names>P.</given-names></string-name>, <string-name><surname>Stülke</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Mahamid</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Rappsilber</surname>, <given-names>J</given-names></string-name></person-group>. (<year>2020</year>). <article-title>In-cell architecture of an actively transcribing-translating expressome</article-title>. <source>Science</source>, <volume>369</volume>(<issue>6503</issue>), <fpage>554</fpage>–<lpage>557</lpage>. <pub-id pub-id-type="doi">10.1126/science.abb3758</pub-id> <pub-id pub-id-type="pmid">32732422</pub-id></mixed-citation></ref>
+<ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Punjani</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Rubinstein</surname>, <given-names>J. L.</given-names></string-name>, <string-name><surname>Fleet</surname>, <given-names>D. J.</given-names></string-name>, &amp; <string-name><surname>Brubaker</surname>, <given-names>M. A</given-names></string-name></person-group>. (<year>2017</year>). <article-title>cryoSPARC: Algorithms for rapid unsupervised cryo-EM structure determination</article-title>. <source>Nature Methods</source>, <volume>14</volume>(<issue>3</issue>), <fpage>290</fpage>–<lpage>296</lpage>. <pub-id pub-id-type="doi">10.1038/nmeth.4169</pub-id> <pub-id pub-id-type="pmid">28165473</pub-id></mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rickgauer</surname>, <given-names>J. P.</given-names></string-name>, <string-name><surname>Grigorieff</surname>, <given-names>N.</given-names></string-name>, &amp; <string-name><surname>Denk</surname>, <given-names>W</given-names></string-name></person-group>. (<year>2017</year>). <article-title>Single-protein detection in crowded molecular environments in cryo-EM images</article-title>. <source>eLife</source>, <volume>6</volume>, <elocation-id>e25648</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.25648</pub-id> <pub-id pub-id-type="pmid">28467302</pub-id></mixed-citation></ref>
+<ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rubinstein</surname>, <given-names>J. L.</given-names></string-name>, &amp; <string-name><surname>Brubaker</surname>, <given-names>M. A</given-names></string-name></person-group>. (<year>2015</year>). <article-title>Alignment of cryo-EM movies of individual particles by optimization of image translations</article-title>. <source>Journal of Structural Biology</source>, <volume>192</volume>(<issue>2</issue>), <fpage>188</fpage>–<lpage>195</lpage>. <pub-id pub-id-type="doi">10.1016/j.jsb.2015.08.007</pub-id> <pub-id pub-id-type="pmid">26296328</pub-id></mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Salgado</surname>, <given-names>E. N.</given-names></string-name>, <string-name><surname>Garcia Rodriguez</surname>, <given-names>B.</given-names></string-name>, <string-name><surname>Narayanaswamy</surname>, <given-names>N.</given-names></string-name>, <string-name><surname>Krishnan</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Harrison</surname>, <given-names>S. C</given-names></string-name></person-group>. (<year>2018</year>). <article-title>Visualization of Calcium Ion Loss from Rotavirus during Cell Entry</article-title>. <source>Journal of Virology</source>, <volume>92</volume>(<issue>24</issue>), <fpage>e01327</fpage>–<lpage>18</lpage>. <pub-id pub-id-type="doi">10.1128/JVI.01327-18</pub-id> <pub-id pub-id-type="pmid">30258012</pub-id></mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Scheres</surname>, <given-names>S. H</given-names></string-name></person-group>. (<year>2014</year>). <article-title>Beam-induced motion correction for sub-megadalton cryo-EM particles</article-title>. <source>eLife</source>, <volume>3</volume>, <elocation-id>e03665</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.03665</pub-id> <pub-id pub-id-type="pmid">25122622</pub-id></mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sigworth</surname>, <given-names>F</given-names></string-name></person-group>. (<year>2004</year>). <article-title>Classical detection theory and the cryo-EM particle selection problem</article-title>. <source>Journal of Structural Biology</source>, <volume>145</volume>(<issue>1–2</issue>), <fpage>111</fpage>–<lpage>122</lpage>. <pub-id pub-id-type="doi">10.1016/j.jsb.2003.10.025</pub-id> <pub-id pub-id-type="pmid">15065679</pub-id></mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Střelák</surname>, <given-names>D.</given-names></string-name>, <string-name><surname>Filipovič</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Jiménez-Moreno</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Carazo</surname>, <given-names>J.</given-names></string-name>, &amp; <string-name><surname>Sánchez Sorzano</surname>, <given-names>C</given-names></string-name></person-group>. (<year>2020</year>). <article-title>FlexAlign: An Accurate and Fast Algorithm for Movie Alignment in Cryo-Electron Microscopy</article-title>. <source>Electronics</source>, <volume>9</volume>(<issue>6</issue>), <fpage>1040</fpage>. <pub-id pub-id-type="doi">10.3390/electronics9061040</pub-id></mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="data"><person-group person-group-type="author"><string-name><surname>Subramaniam</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Bartesaghi</surname>, <given-names>A.</given-names></string-name>, <string-name><surname>Banerjee</surname>, <given-names>S.</given-names></string-name>, <string-name><surname>Zhu</surname>, <given-names>X.</given-names></string-name>, &amp; <string-name><surname>Milne</surname>, <given-names>J. L. S</given-names></string-name></person-group>. (<year>2018</year>). <article-title>Atomic resolution cryo-EM structure of beta-galactosidase</article-title> <source>Worldwide Protein Data Bank</source>. <pub-id pub-id-type="doi">10.2210/pdb6cvm/pdb</pub-id></mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tegunov</surname>, <given-names>D.</given-names></string-name>, &amp; <string-name><surname>Cramer</surname>, <given-names>P</given-names></string-name></person-group>. (<year>2019</year>). <article-title>Real-time cryo-electron microscopy data preprocessing with Warp</article-title>. <source>Nature Methods</source>, <volume>16</volume>(<issue>11</issue>), <fpage>1146</fpage>–<lpage>1152</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-019-0580-y</pub-id> <pub-id pub-id-type="pmid">31591575</pub-id></mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zheng</surname>, <given-names>S. Q.</given-names></string-name>, <string-name><surname>Palovcak</surname>, <given-names>E.</given-names></string-name>, <string-name><surname>Armache</surname>, <given-names>J.-P.</given-names></string-name>, <string-name><surname>Verba</surname>, <given-names>K. A.</given-names></string-name>, <string-name><surname>Cheng</surname>, <given-names>Y.</given-names></string-name>, &amp; <string-name><surname>Agard</surname>, <given-names>D. A.</given-names></string-name></person-group> (<year>2017</year>). <article-title>MotionCor2: Anisotropic correction of beam-induced motion for improved cryo-electron microscopy</article-title> <source>Nature Methods</source> <volume>14</volume>(<issue>4</issue>), <fpage>331</fpage>–<lpage>332</lpage>. <pub-id pub-id-type="doi">10.1038/nmeth.4193</pub-id> <pub-id pub-id-type="pmid">28250466</pub-id></mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zivanov</surname>, <given-names>J.</given-names></string-name>, <string-name><surname>Nakane</surname>, <given-names>T.</given-names></string-name>, &amp; <string-name><surname>Scheres</surname>, <given-names>S. H. W</given-names></string-name></person-group>. (<year>2019</year>). <article-title>A Bayesian approach to beam-induced motion correction in cryo-EM single-particle analysis</article-title>. <source>IUCrJ</source>, <volume>6</volume>(<issue>1</issue>), <fpage>5</fpage>–<lpage>17</lpage>. <pub-id pub-id-type="doi">10.1107/S205225251801463X</pub-id> <pub-id pub-id-type="pmid">30713699</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109119.2.sa4</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Scheres</surname>
+<given-names>Sjors HW</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-0462-6540</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/00tw3jy02</institution-id><institution>MRC Laboratory of Molecular Biology</institution>
+</institution-wrap>
+<city>Cambridge</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Convincing</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Important</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This paper describes Unbend - a new method for measuring and correcting motions in cryo-EM images, with a particular emphasis on more challenging in situ samples such as lamellae and whole cells. The method, which fits a B-spline model using cross-correlation-based local patch alignment of micrograph frames, represents an <bold>important</bold> tool for the cryo-EM community. The authors elegantly use 2D template matching to provide <bold>convincing</bold> evidence that Unbend outperforms the previously reported method of Unblur by the same authors. Comparison to alternative programs for motion correction shows smaller gains, but with interesting differences between data sets.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109119.2.sa3</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Kong et al.'s work describes a new approach that does exactly what the title states, &quot;Correction of local beam-induced sample motion in cryo-EM images using a 3D spline model.&quot; It is, therefore, a more elaborate approach than current methods in the field for the &quot;movie alignment&quot; stage. Additionally, the work uses 2DTM (2D Template Matching)-related measurements to quantify the improvement of the new method compared to other methods in the field. I find both parts very compelling (the new method and the testing approach)</p>
+<p>On a &quot;focused&quot; view, the strengths of the work rest on presenting a better approach for motion correction and on measuring their performance very well at the 2D level in a compelling manner</p>
+<p>On a more &quot;general&quot; view, the authors introduce the important notion that even one of the most worked-out steps in the processing workflow can still be done better in a measurable way, and that this could lead to better results beyond the 2DTM metrics used for testing, reflecting in better results along the processing pipeline (although the manuscript does not explore further this notion)</p>
+<p>On the &quot;usability&quot; side, the method is still CPU-based and is slower than standards in the field. This may pose significant limitations in practical work, although the authors are aware of this issue and are working on it.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109119.2.sa2</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>The authors present a new method, Unbend, for measuring motion in cryo-EM images, with a particular emphasis on more challenging in situ samples such as lamella and whole cells (that can be more prone to overall motion and/or variability in motion across a field of view). Building on their previous approach of full-frame alignment (Unblur), they now perform full-frame alignment followed by patch alignment, and then use these outputs to generate a 3D model of the motion. This model allows them to estimate a continuous, per-pixel shift field for each movie frame that aims to better describe complex motions and so ultimately generate improved motion-corrected micrographs. Performance of Unbend is evaluated using the 2D template matching (2DTM) method developed previously by the lab, and results are compared to using full-frame correction alone and to the leading local motion correction methods. Several different in situ samples are used for evaluation covering a broad range that will be of interest to the rapidly growing in situ cryo-EM community.</p>
+<p>Strengths:</p>
+<p>The method appears an elegant way of describing complex motions in cryo-EM samples and the authors present sound data that Unbend generally improves SNR of aligned micrographs as well as increases detection of particles matching the 60S ribosome template when compared to using full-frame correction alone and since review to the leading local motion correction methods. The authors also give interesting insights into how different areas of a lamella behave with respect to motion by using Unbend on a montage dataset collected previously by the group. There is growing interest in imaging larger areas of in situ samples at high resolution and these insights contribute valuable knowledge. Additionally, the availability of data collected in this study through the EMPIAR repository will be much appreciated by the field.</p>
+<p>Weaknesses:</p>
+<p>A major weakness was comparing this method to full-frame approaches only but this has since been addressed by the authors during review and Unbend is compared to MotionCor2, 3, CryoSPARC and Warp. The improvements here are smaller, generally it seems to perform on par with the above methods, but there are significant gains for certain samples (e.g. the M. pneumoniae sample). A comment from this reviewer about using an adaptive approach to decide if/when to proceed to the full Unbend pipeline, over full-frame alone, has been addressed by the authors.</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109119.2.sa1</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary</p>
+<p>Kong and coauthors describe and implement a method to correct local deformations due to beam induced motion in cryo-EM movie frames. This is done by fitting a 3D spline model to a stack of micrograph frames using cross-correlation-based local patch alignment to describe the deformations across the micrograph in each frame, and then computing the value of the deformed micrograph at each pixel by interpolating the undeformed micrograph at the displacement positions given by the spline model. A graphical interface in cisTEM allows the user to visualise the deformations in the sample, and the method is proved to be successful by showing improvements in 2D template matching (2DTM) results on the corrected micrographs using five in situ samples.</p>
+<p>Impact</p>
+<p>This method has great potential to further streamline the cryo-EM single particle analysis pipeline by shortening the required processing time as a result of obtaining higher quality particles early in the pipeline, and is applicable to both old and new datasets, therefore being relevant to all cryo-EM users.</p>
+<p>Strengths</p>
+<p>(1) The key idea of the paper is that local beam induced motion affects frames continuously in space (in the image plane) as well as in time (along the frame stack), so one can obtain improvements in the image quality by correcting such deformations in a continuous way (deformations vary continuously from pixel to pixel and from frame to frame) rather than based on local discrete patches only. 3D splines are used to model the deformations: they are initialised using local patch alignments and further refined using cross-correlation between individual patch frames and the average of the other frames in the same patch stack.</p>
+<p>(2) Another strength of the paper is using 2DTM to show that correcting such deformations continuously using the proposed method does indeed lead to improvements, as evidenced by the number of particles found and the quality of the detections (measured using 2DTM SNR). This is shown using five in situ datasets, where local motion is quantified using statistics based on the estimated motions of ribosomes. The same analysis is performed using other deformation correction tools, with Unbend showing superior performance in terms of particle detected or 2DTM SNR of the detections.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109119.2.sa0</article-id>
+<title-group>
+<article-title>Author Response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Kong</surname>
+<given-names>Lingli</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5808-2649</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zottig</surname>
+<given-names>Ximena</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-2344-5163</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Elferich</surname>
+<given-names>Johannes</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9911-706X</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Grigorieff</surname>
+<given-names>Nikolaus</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1506-909X</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>The following is the authors’ response to the original reviews.</p>
+<p>We thank the reviewers for their constructive comments. A central concern raised is the comparison of performance with existing motion-correction methods. In response, we performed motion correction using several widely used approaches and compared results using the number of particles detected by 2DTM and their associated SNR. To minimize potential bias, we selected parameters to give each method a comparable level of model flexibility so that the results are as directly comparable as possible. Overall, Unbend performs the best. We note that extensive, method-specific parameter optimization could further affect absolute performance, and a comprehensive benchmarking study is therefore beyond the scope of this work</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public review):</bold></p>
+<p>Kong et al.'s work describes a new approach that does exactly what the title states: &quot;Correction of local beam-induced sample motion in cryo-EM images using a 3D spline model.&quot; I find the method appropriate, logical, and well-explained. Additionally, the work suggests using 2DTM-related measurements to quantify the improvement of the new method compared to the old one in cisTEM, Unblur. I find this part engaging; it is straightforward, accurate, and, of course, the group has a strong command of 2DTM, presenting a thorough study.</p>
+<p>However, everything in the paper (except some correct general references) refers to comparisons with the full-frame approach, Unblur. Still, we have known for more than a decade that local correction approaches perform better than global ones, so I do not find anything truly novel in their proposal of using local methods (the method itself- Unbend- is new, but many others have been described previously). In fact, the use of 2DTM is perhaps a more interesting novelty of the work, and here, a more systematic study comparing different methods with these proposed well-defined metrics would be very valuable. As currently presented, there is no doubt that it is better than an older, well-established approach, and the way to measure &quot;better&quot; is very interesting, but there is no indication of how the situation stands regarding newer methods.</p>
+<p>Regarding practical aspects, it seems that the current implementation of the method is significantly slower than other patch-based approaches. If its results are shown to exceed those of existing local methods, then exploring the use of Unbend, possibly optimizing its code first, could be a valuable task. However, without more recent comparisons, the impact of Unbend remains unclear.</p>
+</disp-quote>
+<p>We thank the reviewer for this important point. We agree that comparing against modern local motion-correction approaches is a valuable task. To address this, we added a new benchmarking section (pp. 17–18, lines 444–492, Fig. 8, Fig. 8—figure supplement 1) that compares Unbend against widely used patch-based local correction methods, including MotionCor2, MotionCor3, Warp, and CryoSPARC. Using the same 2DTM-based metrics described in the manuscript (detections per micrograph and SNR distributions for commonly detected particles), we find that Unbend provides the most stable performance across the tested datasets and, in most cases, yields higher detection counts and higher SNR than the alternative methods.</p>
+<p>Regarding runtime, the current implementation is CPU-based and is therefore slower than some optimized GPU-accelerated packages. We now clarify this limitation in the manuscript (line 498–499). Our primary goal in this study is to improve motion-correction accuracy and quantify its impact using 2DTM-based measures. Importantly, higher-quality motion-corrected micrographs can reduce downstream processing cost (e.g., by increasing particle detection efficiency and reducing ambiguous candidates), so modest additional compute times at the motion-correction stage can be offset later in the workflow. We also note that GPU acceleration and additional code-level optimizations are planned for future releases (line 501-503); however, they are not required to evaluate the methodological contribution and the benchmarking results presented here.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public review):</bold></p>
+<p>Summary:</p>
+<p>The authors present a new method, Unbend, for measuring motion in cryo-EM images, with a particular emphasis on more challenging in situ samples such as lamella and whole cells (that can be more prone to overall motion and/or variability in motion across a field of view). Building on their previous approach of full-frame alignment (Unblur), they now perform full-frame alignment followed by patch alignment, and then use these outputs to generate a 3D cubic spline model of the motion. This model allows them to estimate a continuous, per-pixel shift field for each movie frame that aims to better describe complex motions and so ultimately generate improved motion-corrected micrographs. Performance of Unbend is evaluated using the 2D template matching (2DTM) method developed previously by the lab, and results are compared to using full-frame correction alone. Several different in situ samples are used for evaluation, covering a broad range that will be of interest to the rapidly growing in situ cryo-EM community.</p>
+<p>Strengths:</p>
+<p>The method appears to be an elegant way of describing complex motions in cryo-EM samples, and the authors present convincing data that Unbend generally improves SNR of aligned micrographs as well as increases detection of particles matching the 60S ribosome template when compared to using full-frame correction alone. The authors also give interesting insights into how different areas of a lamella behave with respect to motion by using Unbend on a montage dataset collected previously by the group. There is growing interest in imaging larger areas of in situ samples at high resolution, and these insights contribute valuable knowledge. Additionally, the availability of data collected in this study through the EMPIAR repository will be much appreciated by the field.</p>
+</disp-quote>
+<p>Thank you for this positive assessment.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>While the improvements with Unbend vs. Unblur appear clear, it is less obvious whether Unbend provides substantial gains over patch motion correction alone (the current norm in the field). It might be helpful for readers if this comparison were investigated for the in situ datasets. Additionally, the authors are open that in cases where full motion correction already does a good job, the extra degrees of freedom in Unbend can perhaps overfit the motions, making the corrections ultimately worse. I wonder if an adaptive approach could be explored, for example, using the readout from full-frame or patch correction to decide whether a movie should proceed to the full Unbend pipeline, or whether correction should stop at the patch estimation stage.</p>
+</disp-quote>
+<p>We thank the reviewer for suggesting an adaptive criterion to decide whether to proceed patch alignment or not. We agree that such an approach could be valuable for efficiency and for avoiding unnecessary model flexibility. However, our results indicate that a simple criterion based on the magnitude of estimated local patch motion is unlikely to be sufficient. For example, in the BS-C-1 cell lysate dataset, (see line 412-417 on page 16), we observe minimal local motion (Figure 4b) with mean patch shifts of only 0.7Å and full-frame alignment already yields comparable detection counts, yet local correction still produces a measurable SNR gain (13.84 ± 0.04 to 14.25 ± 0.04, 3%) and improves SNR for ~70% of the commonly detected targets (Figure 6c). This suggests that residual local distortion can remain even when overall local motion appears small. Establishing a robust, dataset-agnostic stopping rule would therefore require a dedicated, systematic benchmarking study across many samples and acquisition conditions.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 (Public review):</bold></p>
+<p>Summary</p>
+<p>Kong and coauthors describe and implement a method to correct local deformations due to beam-induced motion in cryo-EM movie frames. This is done by fitting a 3D spline model to a stack of micrograph frames using cross-correlation-based local patch alignment to describe the deformations across the micrograph in each frame, and then computing the value of the deformed micrograph at each pixel by interpolating the undeformed micrograph at the displacement positions given by the spline model. A graphical interface in cisTEM allows the user to visualise the deformations in the sample, and the method has been proven to be successful by showing improvements in 2D template matching (2DTM) results on the corrected micrographs using five in situ samples.</p>
+<p>Impact</p>
+<p>This method has great potential to further streamline the cryo-EM single particle analysis pipeline by shortening the required processing time as a result of obtaining higher quality particles early in the pipeline, and is applicable to both old and new datasets, therefore being relevant to all cryo-EM users.</p>
+<p>Strengths</p>
+<p>(1) One key idea of the paper is that local beam induced motion affects frames continuously in space (in the image plane) as well as in time (along the frame stack), so one can obtain improvements in the image quality by correcting such deformations in a continuous way (deformations vary continuously from pixel to pixel and from frame to frame) rather than based on local discrete patches only. 3D splines are used to model the deformations: they are initialised using local patch alignments and further refined using cross-correlation between individual patch frames and the average of the other frames in the same patch stack.</p>
+<p>(2) Another strength of the paper is using 2DTM to show that correcting such deformations continuously using the proposed method does indeed lead to improvements. This is shown using five in situ datasets, where local motion is quantified using statistics based on the estimated motions of ribosomes.</p>
+</disp-quote>
+<p>Thank you for this positive assessment.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses</p>
+<p>(1) While very interesting, it is not clear how the proposed method using 3D splines for estimating local deformations compares with other existing methods that also aim to correct local beam-induced motion by approximating the deformations throughout the frames using other types of approximation, such as polynomials, as done, for example MotionCor2.</p>
+</disp-quote>
+<p>We thank the reviewer for this suggestion. We agree that positioning Unbend relative to existing local motion-correction methods is important. In the revised manuscript, we added a dedicated benchmarking section comparing Unbend with widely used local correction approaches, including MotionCor2, MotionCor3, Warp, and CryoSPARC, using the same 2DTM-based metrics (Fig. 8, Fig. 8—figure supplement 1). This section is included on pp. 17–18, lines 444–492. To make the comparison as fair as possible, we matched nominal model flexibility across methods and otherwise used default parameters to reduce method-specific tuning. This expanded comparison provides a direct baseline against current patch-/spline-based approaches and shows that Unbend performs consistently across the <italic>in situ</italic> datasets evaluated here, with improvements in detection counts and/or SNR in multiple cases.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) The use of 2DTM is appropriate, and the results of the analysis are enlightening, but one shortcoming is that some relevant technical details are missing. For example, the 2DTM SNR is not defined in the article, and it is not clear how the authors ensured that no false positives were included in the particles counted before and after deformation correction. The Jupyter notebooks where this analysis was performed have not been made publicly available.</p>
+</disp-quote>
+<p>We agree that these technical details improve clarity and reproducibility. We have therefore made three changes.</p>
+<p>(1) Definition of 2DTM SNR. We added an explicit definition of the 2DTM SNR in Section “2DTM provides a one-step verification for motion correction”, pp. 11, lines 277–287). Briefly, at each image location we compute cross-correlation values over the searched orientation space and define the 2DTM SNR as the maximum per location z-score across orientations.</p>
+<p>(2) False-positive control / detection threshold. We clarified how detection thresholds were set to control false positives (pp. 11, lines 285–287). Specifically, we used the standard 2DTM statistical framework in which the threshold  is chosen using the one-false-positive (1-FP) criterion (or equivalently, a specified expected false-positive rate). We applied the same thresholding procedure consistently across all motion-corrected micrographs. This ensures that particle counts before/after correction reflect changes in signal recovery.</p>
+<p>(3) Reproducibility of the analysis. We have made the script used for the benchmarking and figure generation publicly available (pp. 24 line 622-623), and we provide a link in the Data Availability statement (pp. 25 line 650). The repository includes sample .star files and a python package that computes detections per micrograph, commonly detected particles, and SNR comparisons.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) It is also not clear how the proposed deformation correction method is affected by CTF defocus in the different samples (are the defocus values used in the different datasets similar or significantly different?) or if there is any effect at all.</p>
+</disp-quote>
+<p>We thank the reviewer for raising this point. In the revised manuscript, we now report the defocus ranges used for each dataset (Table 1) and clarify that all motion-correction comparisons were performed within each dataset using the same CTF estimation and 2DTM settings (pp. 23 line 615-618). Across the five datasets, four were collected at similar defocus ranges (1.0 µm to 1.5µm), whereas one dataset includes near-focus (0.4 µm) micrographs (Table 1). Because Unbend operates on frame alignment/warping rather than CTF modeling, we do not expect a defocus specific effect beyond indirect influences through image SNR and reliability of cross-correlation-based alignment.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Recommendations for the authors:</bold></p>
+<p><bold>Reviewer #1 (Recommendations for the authors):</bold></p>
+<p>The obvious recommendation would be to use their 2DTM approach for a comparison of their new method with other currently used ones</p>
+</disp-quote>
+<p>We agree and added a new comparison section (pp. 17–18, lines 444–492). Addressed above in Response to Reviewer #1 Public Review.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Recommendations for the authors):</bold></p>
+<p>(1) Line 29, typo. 3 ~ 8% &gt; 3 - 8%.</p>
+</disp-quote>
+<p>Corrected.</p>
+<disp-quote content-type="editor-comment">
+<p>(2) Lines 220 and 226. Should this be e-/Angstrom squared for the exposure?</p>
+</disp-quote>
+<p>Corrected to e<sup>-</sup>/Å<sup>2</sup> (Now pp. 9 lines 230, 236).</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Figure 2 c-d. These are good for instinctively seeing the movement, but I found the legend confusing, as a 10 x 10 pixel array is mentioned, yet the schematics show a higher sampling (30 x 30 pixels? in c-e).</p>
+</disp-quote>
+<p>Thank you for pointing this out. The “10×10” annotation refers to the physical scale, whereas the grid represents pixel sampling. We removed the “10×10” label and now show only the pixel grid to avoid confusion. The caption has been updated to state that the grid corresponds to a 30×30 pixel sampling. (Fig. 2c, d; pp. 31, line 766)</p>
+<disp-quote content-type="editor-comment">
+<p>(4) Figure 4. It would be good if the n of movies analyzed was given in the figure legend.</p>
+</disp-quote>
+<p>Thank you for noticing this. We report the number of movies per dataset in the corresponding summary table (Table 1).</p>
+<disp-quote content-type="editor-comment">
+<p>(5) Figure 5. X/Y axes labels missing (assume pixels). Also, suggest changing the strain scale to % to match the main text description of this figure.</p>
+</disp-quote>
+<p>We added X/Y axis labels, changed the strain scale to % (Figure 5), and specified that the strains are per pixel on pp. 14 line 367. Correspondingly, the X/Y labels and strain scale in strain plots in Figure 4—figure supplementary 1 to 5 are also changed.</p>
+<disp-quote content-type="editor-comment">
+<p>(6) Unify labelling of Figure 4 and 6 (i.e., Bacteria vs. M. pneumoniae, etc.).</p>
+</disp-quote>
+<p>Corrected. Sample labels are now consistent across figures. (Figures 4 and 6)</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 (Recommendations for the authors):</bold></p>
+<p>Some recommendations related to the points mentioned in the 'Weaknesses' section in the public review:</p>
+<p>(1) If feasible, it would be useful to see a comparison with other existing methods that estimate local deformations (e.g., MotionCor2), at least on some of the datasets. For example, does the proposed method lead to better 2DTM SNR in the detected particles compared to other methods, or higher detection numbers? Alternatively, if such a comparison would require too much additional work and the authors have good reasons to believe that the results are evident, it would be helpful to include a discussion about why the proposed method is expected to perform better, both in terms of the general approach and specific implementation details.</p>
+</disp-quote>
+<p>We agree that this comparison is important. (pp. 17–18, lines 444–492). Addressed above in Response to Reviewer #3 Public Review (1).</p>
+<disp-quote content-type="editor-comment">
+<p>(2) It would be useful to define the 2DTM SNR in the main text of the paper, as well as to address the point about false positives in the picked particles.</p>
+</disp-quote>
+<p>We added an explicit definition of 2DTM SNR and clarified the detection thresholding/false-positive control used in our analysis (pp. 11, lines 277–287). Addressed above in Response to Reviewer #3 Public Review (2.1 and 2.2).</p>
+<disp-quote content-type="editor-comment">
+<p>(3) Regarding the results shown in Figures 4 and 6: do the authors have any insight about how the CTF defocus affects the deformation estimation and correction across the different sample types?</p>
+</disp-quote>
+<p>We now report the defocus ranges used for each dataset (Table 1). We have addressed this problem in Response to Reviewer #3 Public Review (3).</p>
+<disp-quote content-type="editor-comment">
+<p>(4) Will the Jupyter notebooks used for the 2DTM analysis be made publicly available?</p>
+</disp-quote>
+<p>Yes. We have deposited a python script used for the 2DTM benchmarking and figure generation in a public repository and added the link in Data Availability statement. (pp. 23 line 622, pp. 25 line 650). Addressed above in Response to Reviewer #3 Public Review (2.3).</p>
+<disp-quote content-type="editor-comment">
+<p>(5) I would also appreciate a few words about the implementation details of the 3D spline model (e.g., what libraries have been used, if any, or if the authors have implemented their own code for this).</p>
+</disp-quote>
+<p>The 3D spline model and warping code were implemented by us (no external spline library was used) and the relevant implementation details are described in the “Sample distortion modeling and correction” section (pp. 7–10, lines 174–246). For optimization, we used the L-BFGS implementation provided by the dlib library, which is now explicitly cited (pp. 10, line 264).</p>
+<disp-quote content-type="editor-comment">
+<p>Some comments regarding the presentation of the work:</p>
+<p>(1) I found the mathematical background on splines on pages 7-9 a little distracting from the main ideas of the paper, and I believe it could be moved to the methods section. A short description of this in the main text of the paper would suffice, and it would be useful to state clearly when this is background material and when it is the authors' contribution.</p>
+</disp-quote>
+<p>We appreciate the suggestion. Because Unbend includes an in-house spline implementation (no external spline library) and it is the central part of this work, we retained the spline description to support reproducibility. (pp. 7–10, lines 174–246).</p>
+<disp-quote content-type="editor-comment">
+<p>(2) More generally, I found the whole method very interesting, but understanding exactly what all the steps involved were was a bit cumbersome, as they are spread across different sections of the main text. I think it would be useful to have a dedicated section giving the exact steps taken in the algorithm, possibly pointing to the relevant section in the text for more details about each step. This could be, for example, in the form of an 'Algorithm' box or a flowchart.</p>
+</disp-quote>
+<p>We added an Algorithm box as Figure 2 supplement summarizing the end-to-end workflow and pointing to the relevant sections for details (Figure 2—figure supplement 1 Algorithm, pp. 4, line 96–103, pp. 32 line 799). This is intended to make the sequence of steps easier to follow.</p>
+<disp-quote content-type="editor-comment">
+<p>(3) In Figure 3, panels (b) and (c), the difference between the two micrographs, before and after correction, is not very noticeable, particularly the Thon rings in the spectra. I don't know if this is due to the image quality in the paper or if a better example could be shown. For example, the differences are clear in some of the supplementary figures.</p>
+</disp-quote>
+<p>Thank you for the suggestion. We revised the figure by adding annotations to show the recovered Thon rings. This figure shows a vertex motion and is intended not only to show improvement but also to illustrate complex, spatially varying deformation patterns that motivate the 3D spline model (pp. 12, lines 304–308). The supplementary figures display those with highest motions in each sample type, thus the Thon rings for the motion corrected micrograph in higher frequency space look more obvious. We also refer readers to the supplementary examples where the differences are more pronounced (pp. 12, lines 310–312).</p>
+</body>
+</sub-article>
+</article>
