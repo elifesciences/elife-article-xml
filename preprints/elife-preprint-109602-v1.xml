@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Computational and Systems Biology</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Leveraging Disease Association Degree for High-Accuracy MicroRNA Target Prediction</article-title>
 </title-group>
 <contrib-group>
@@ -42,7 +43,7 @@
 <surname>Park</surname>
 <given-names>Jihwan</given-names>
 </name>
-<role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-5728-912X</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/024kbgz78</institution-id><institution>Gwangju Institute of Science and Technology</institution>
@@ -56,7 +57,7 @@
 <surname>Choi</surname>
 <given-names>Murim</given-names>
 </name>
-<role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-9195-1455</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/04h9pn542</institution-id><institution>Seoul National University</institution>
@@ -137,7 +138,7 @@
 <label>Figure 1:</label>
     <caption><title>This figure illustrates the workflow of our research.</title>
         <p>Compared to the existing sequence-based prediction method (left), our method (right) proposes a novel method that directly utilizes the disease string as input. Here <italic>d</italic> and <italic>D</italic> denote sets of miRNA-associated and gene-associated disease descriptors, with <italic>d</italic><sub><italic>n</italic></sub> ∈ <italic>d</italic> and <italic>D</italic><sub><italic>m</italic></sub> ∈ <italic>D</italic> being individual descriptors. Embedding vectors are computed as <italic>u</italic><sub><italic>n</italic></sub> = <italic>f</italic><sub>SBERT</sub>(<italic>d</italic><sub><italic>n</italic></sub>) and <italic>v</italic><sub><italic>m</italic></sub> = <italic>f</italic><sub>SBERT</sub>(<italic>D</italic><sub><italic>m</italic></sub>).</p></caption>
-<graphic xlink:href="686936v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <p>Our central hypothesis is that functional MTIs exhibit distinct disease association patterns compared to sequence-based predictions. Therefore we applied a machine learning method that used the disease association between miRNA and gene as a feature, achieving an F1 score of 0.88 in a binary classification task. The experimental results confirm that functional MTI exhibits different disease association patterns from predicted MTIs (<xref ref-type="fig" rid="fig1a">Supplementary Figure 1</xref>).</p>
 <p>In summary, this study proposed and validated a novel method for quantifying miRNA-gene disease association using language model, demonstrating the utility of knowledge feature for enhanced MTI classification.</p>
@@ -153,19 +154,19 @@
 <label>Figure 2:</label>
     <caption><title>Example of BIOSSES dataset.</title>
         <p>BIOSSES dataset is a benchmark dataset specifically designed for evaluating semantic similarity calculation model in biomedical texts. The dataset consists of 100 sentence pairs extracted from biomedical literature, with each pair’s average semantic similarity score independently annotated by five experts.</p></caption>
-<graphic xlink:href="686936v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3:</label>
     <caption><title>Disease descriptor ‘Cardiovascular Infections’ and ‘Out-of-Hospital Cardiac Arrest’ hierarchical structure in MeSH tree.</title>
     </caption>
-<graphic xlink:href="686936v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
     <p>The successful application of machine learning classification techniques hinges on the availability of a sufficiently diverse and representative dataset, which is critical for ensuring that the trained model generalizes effectively to unseen data. To this end, we integrated data from multiple source databases. To obtain human functional MTIs and predicted MTIs, we collected miRTarBase [<xref ref-type="bibr" rid="c28">Cui et al., 2025</xref>], TarBase [<xref ref-type="bibr" rid="c29">Skoufos et al., 2024</xref>], TargetScan [<xref ref-type="bibr" rid="c9">Agarwal et al. 2015</xref>], miRDB [<xref ref-type="bibr" rid="c8">Chen and Wang, 2020</xref>], and miRWalk [<xref ref-type="bibr" rid="c7">Sticht et al., 2018</xref>] (<xref rid="tbl1" ref-type="table">Table 1</xref>). miRTarBase and TarBase provide experimentally validated MTIs, TargetScan, miRDB and miRWalk provide predicted MTIs. For acquiring information on miRNA-associated and gene-associated diseases, we employed HMDD [<xref ref-type="bibr" rid="c22">Cui et al., 2024</xref>], DisGeNET [<xref ref-type="bibr" rid="c23">Hu et al., 2025</xref>] and KEGG [<xref ref-type="bibr" rid="c30">Kanehisa and Goto, 2000</xref>] databases. In the HMDD database, miRNA identifiers are provided without the ‘-3p’ or ‘-5p’ suffixes. Therefore, to maintain consistency across sources, we use pre-miRNA to replace mature miRNA. For instance, since hsa-miR-124-3p and TP53 are documented as a functional MTI in miRTarBase, the pair hsa-mir-124 and TP53 was classified as a functional MTI in our integrated dataset.</p>
 <table-wrap id="tbl1" orientation="portrait" position="float">
 <label>Table 1:</label>
 <caption><title>Summary of MTIs and Source Databases Employed in the Study</title></caption>
-<graphic xlink:href="686936v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <p>Our objective is to classify functional MTIs from predicted MTIs by leveraging disease association as a feature. Therefore, to construct a robust binary classification framework, we curated both positive and negative datasets based on the presence of experimental evidence. The positive set includes only high-confidence functional MTIs, while the negative set consists of computationally predicted MTIs that lack experimental support.</p>
 <sec id="s2a1">
@@ -197,37 +198,37 @@
 <title>Synthetic Data for Fine-Tuning SBERT Model</title>
     <p>The absence of SBERT models specialized for disease semantic similarity measurement, coupled with the scarcity of expert-annotated disease pairs, necessitates the creation of synthetic training data. Inspired by <xref ref-type="bibr" rid="c31">Wang et al. [2010]</xref>, we generated disease similarity pairs using MeSH category C (diseases descriptors) to create a dataset containing pairs of diseases and their disease association degree, which calculated with the Lowest Common Ancestor (LCA) method. The distribution of disease association degree in the dataset we created closely mirrors the disease semantic similarity distribution produced by the ‘multi-qa-MiniLM-L6-cos-v1’ model without fine-tuning. Both types of distributions follow a log-normal distribution pattern. The data generation method is as follows:</p>
 <list list-type="bullet">
-<list-item><p><bold>Tree Number Representation:</bold> For a MeSH descriptor, let <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="686936v1_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="686936v1_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote the hierarchical components of their tree numbers, where <italic>L</italic><sub>1</sub> and <italic>L</italic><sub>2</sub> are the depths of the two descriptors, respectively.</p></list-item>
+<list-item><p><bold>Tree Number Representation:</bold> For a MeSH descriptor, let <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="686936v1_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="686936v1_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote the hierarchical components of their tree numbers, where <italic>L</italic><sub>1</sub> and <italic>L</italic><sub>2</sub> are the depths of the two descriptors, respectively.</p></list-item>
 <list-item><p>Determine the depth of disease descriptors:
 <disp-formula id="eqn1">
-<graphic xlink:href="686936v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn2">
-<graphic xlink:href="686936v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <bold>Note:</bold> |<italic>T</italic><sub>2</sub>| stands for the number of hierarchical levels.</p></list-item>
 <list-item><p>Determine the depth of the lowest common ancestor (LCA):
 <disp-formula id="eqn3">
-<graphic xlink:href="686936v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <bold>Note:</bold> <italic>L</italic><sub>LCA</sub> = 0 if no common ancestor exists.</p></list-item>
 <list-item><p>Calculate the total path depth:
 <disp-formula id="eqn4">
-<graphic xlink:href="686936v1_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p></list-item>
 <list-item><p>Calculate the raw disease similarity:
 <disp-formula id="eqn5">
-<graphic xlink:href="686936v1_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 Calculate the adjusted disease similarity (decay factor <italic>δ</italic> = 0.8):
 <disp-formula id="eqn6">
-<graphic xlink:href="686936v1_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p></list-item>
 <list-item><p><bold>Example Calculation:</bold> Consider Cardiovascular Infections (<italic>T</italic><sub>1</sub> = (C14, 260)) and Out-of-Hospital Cardiac Arrest (<italic>T</italic><sub>2</sub> = (C14, 280, 383, 610)) from the MeSH tree (<xref rid="fig3" ref-type="fig">Figure 3</xref>):
 <disp-formula id="ueqn1">
-<graphic xlink:href="686936v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p></list-item>
 </list>
@@ -238,11 +239,11 @@ Calculate the adjusted disease similarity (decay factor <italic>δ</italic> = 0.
 <title>Fine-Tuning Pretrained SBERT Model with MeSHDS</title>
 <p>To enable the pre-trained SBERT model to effectively learn disease hierarchical relationships within the MeSH tree structure while preserving its intrinsic semantic understanding capabilities and mitigating catastrophic forgetting [<xref ref-type="bibr" rid="c32">Sun et al., 2019</xref>], we employed a carefully designed progressive fine-tuning strategy. This strategy utilizes a sequence of very small and monotonically decreasing learning rates, initialized at 5 × 10<sup>−6</sup> and stepped down to 3 × 10<sup>−6</sup>, then 1 × 10<sup>−6</sup>.</p>
 <p>Across all fine-tuning experiments, we maintained strict consistency in core hyperparameters and training configurations except for the specific learning rate schedule (i.e., the number of epochs allocated to each learning rate phase). This controlled approach isolates the effect of the learning rate progression. Hardware constraints permitting, we maximized the batch size per device to enhance gradient estimation stability during training. Optimization was performed using AdamW [<xref ref-type="bibr" rid="c33">Loshchilov and Hutter, 2017</xref>], known for its effective weight decay handling which aids in regularization. The optimization objective was the MSE loss between predicted and ground-truth disease similarity scores from MeSHDS.</p>
-<p>For the <italic>k</italic>-th disease pair <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="686936v1_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula>:
+<p>For the <italic>k</italic>-th disease pair <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="686936v1_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula>:
 <disp-formula id="ueqn2">
-<graphic xlink:href="686936v1_ueqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_ueqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-where <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="686936v1_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote standardized disease terms from MeSH vocabulary (e.g., “Liver Neoplasms”, “Carcinoma, Hepatocellular”) in pair <italic>k</italic>. <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="686936v1_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> denote their SBERT embeddings. <italic>y</italic><sub><italic>k</italic></sub> ∈ [0, 1] is the ground-truth similarity. <italic>B</italic> represents training batch, and |<italic>B</italic>| represents the batch size.</p>
+where <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="686936v1_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote standardized disease terms from MeSH vocabulary (e.g., “Liver Neoplasms”, “Carcinoma, Hepatocellular”) in pair <italic>k</italic>. <inline-formula id="inline-eqn-5"><inline-graphic xlink:href="686936v1_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula> denote their SBERT embeddings. <italic>y</italic><sub><italic>k</italic></sub> ∈ [0, 1] is the ground-truth similarity. <italic>B</italic> represents training batch, and |<italic>B</italic>| represents the batch size.</p>
 <p>The following learning rate schedules were evaluated:</p>
 <p>LR 1: 5 × 10<sup>−6</sup> for 1 epoch.</p>
 <p>LR 2: 5 × 10<sup>−6</sup> for 2 epochs.</p>
@@ -261,10 +262,10 @@ where <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="686936v1_inl
 <title>Semantic String Embedding</title>
 <p>For a miRNA-associated disease descriptor set <italic>d</italic> = {<italic>d</italic><sub>1</sub>, <italic>d</italic><sub>2</sub>, …, <italic>d</italic><sub><italic>n</italic></sub>} and gene-associated disease descriptor set <italic>D</italic> = {<italic>D</italic><sub>1</sub>, <italic>D</italic><sub>2</sub>, …, <italic>D</italic><sub><italic>m</italic></sub>}, we computed their embedding matrices:
 <disp-formula id="eqn7">
-<graphic xlink:href="686936v1_eqn7.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn7.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn8">
-<graphic xlink:href="686936v1_eqn8.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn8.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>u</italic><sub><italic>n</italic></sub>, <italic>v</italic><sub><italic>m</italic></sub> ∈ <italic>R</italic><sup><italic>d</italic></sup> are <italic>d</italic>-dimensional embedding vectors produced by SBERT, and <italic>d</italic> = 384 in our implementation.</p>
 </sec>
@@ -272,11 +273,11 @@ where <italic>u</italic><sub><italic>n</italic></sub>, <italic>v</italic><sub><i
 <title>Similarity Matrix Calculation</title>
 <p>The cosine similarity matrix between miRNA-associated disease and gene-associated disease <italic>S</italic> ∈ <italic>R</italic><sup><italic>n</italic>×<italic>m</italic></sup> is computed by:
 <disp-formula id="eqn9">
-<graphic xlink:href="686936v1_eqn9.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn9.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where the cosine similarity between two embeddings can be calculated by dot-product since ∥<italic>u</italic><sub><italic>n</italic></sub>∥ = ∥<italic>V</italic><sub><italic>m</italic></sub>∥ = 1:
 <disp-formula id="eqn10">
-<graphic xlink:href="686936v1_eqn10.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn10.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 </sec>
@@ -284,13 +285,13 @@ where the cosine similarity between two embeddings can be calculated by dot-prod
 <title>Feature Construction</title>
 <p>The similarity matrix <italic>S</italic> is transformed into a normalized 5-dimensional feature vector <italic>p</italic><sub>sim</sub> representing the empirical distribution of similarity scores:
 <disp-formula id="eqn11">
-<graphic xlink:href="686936v1_eqn11.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_eqn11.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where
 <disp-formula id="ueqn3">
-<graphic xlink:href="686936v1_ueqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="686936v1_ueqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
-and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the total number of elements in the matrix. <italic>p</italic><sub>sim</sub> forms a probability distribution with <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="686936v1_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula>.</p>
+and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the total number of elements in the matrix. <italic>p</italic><sub>sim</sub> forms a probability distribution with <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="686936v1_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula>.</p>
 </sec>
 </sec>
 <sec id="s2d">
@@ -310,13 +311,13 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <label>Figure 4:</label>
     <caption><title>Example of MeSHDS dataset.</title>
         <p>Disease 1 and Disease 2 are derived from the MeSH Tree, and their disease association is computed using the LCA method described in <xref ref-type="sec" rid="s2b2">section 2.2.2</xref></p></caption>
-<graphic xlink:href="686936v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5:</label>
     <caption><title>Model performance benchmark.</title>
         <p>The x-axis represents the correlation coefficient between the model-generated similarity scores and the BIOSSES dataset similarity scores, measuring the model’s ability to handle semantic similarity in the biomedical domain. The y-axis represents the correlation coefficient between the model-generated similarity scores and the MeSHDS dataset similarity scores, evaluating the fine-tuning effectiveness.</p></caption>
-<graphic xlink:href="686936v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s3b">
@@ -326,7 +327,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <table-wrap id="tbl2" orientation="portrait" position="float">
 <label>Table 2:</label>
 <caption><title>F1 Scores for Different SBERT Models and Machine Learning Classifiers</title></caption>
-<graphic xlink:href="686936v1_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_tbl2.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s3c">
@@ -338,7 +339,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <table-wrap id="tbl3" orientation="portrait" position="float">
 <label>Table 3:</label>
 <caption><title>Performance Comparison of miRNA Target Prediction Methods</title></caption>
-<graphic xlink:href="686936v1_tbl3.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_tbl3.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 </sec>
@@ -352,7 +353,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <table-wrap id="tbl4" orientation="portrait" position="float">
 <label>Table 4:</label>
 <caption><title>Performance Comparison of Using Different Feature</title></caption>
-<graphic xlink:href="686936v1_tbl4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_tbl4.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <p>We further investigated potential biases arising from the use of different disease association databases. Gene–disease associations for TP53, PTEN, KRAS, MYC, TNF, IL6, IL10, and CRP were manually curated from the KEGG database. These genes were selected to generate disease association features for 338 MTIs using both DisGeNET and KEGG. Pearson’s correlation coefficients between the feature sets derived from the two databases were computed for each MTI. The average correlation coefficient was approximately 0.97, and the classifier performances were highly consistent. These results indicate that the proposed method is robust and generalizable across different databases. Nevertheless, since KEGG contains fewer gene–disease associations and does not allow complete database downloads, DisGeNET remains the more practical choice for large-scale analyses.</p>
 </sec>
@@ -370,7 +371,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <label>Figure 1:</label>
     <caption><title>This figure presents the average frequency distribution of similarity values between miRNA-associated diseases and gene-associated diseases for both experimentally validated MTIs and predicted MTIs.</title>
         <p>Experimentally validated MTIs are confirmed using western blot or reporter assay, while predicted MTIs are derived from computational predictions based on sequence data. The x-axis represents the intervals of similarity values, and the y-axis indicates the average frequency of these similarity values within each interval. Specifically, functional MTIs exhibited a lower frequency (p=4.10e-47, independent samples t-test) in the low-similarity range (0-0.2) and a higher frequency (p=6.22e-71) in the moderate-similarity range (0.2-0.4) compared to predicted MTIs. The figure directly demonstrates that diseases associated with miRNAs and genes in experimentally validated MTIs show greater association compared to those in predicted MTIs.</p></caption>
-<graphic xlink:href="686936v1_fig1a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="686936v1_fig1a.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="das" sec-type="data-availability">
@@ -432,6 +433,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <given-names>Jihwan</given-names>
 </name>
 <role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-5728-912X</contrib-id>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/024kbgz78</institution-id><institution>Gwangju Institute of Science and Technology</institution>
@@ -507,12 +509,12 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <given-names>Baiming</given-names>
 </name>
 <role specific-use="author">Author</role>
-<contrib-id contrib-id-type="orcid">https://orcid.org/0009-0008-7630-9772</contrib-id></contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0009-0008-7630-9772</contrib-id></contrib>
 </contrib-group>
 </front-stub>
 <body>
+<p>We would like to express our sincere gratitude to the editors and the two reviewers for providing their constructive and valuable comments that will greatly guide us in improving the manuscript. We will revise the manuscript according to their critiques and suggestions. The existing code for this study, along with preliminary code developed in response to the review comments, has been made publicly available at <ext-link ext-link-type="uri" xlink:href="https://github.com/cbaiming/miRTarDS">https://github.com/cbaiming/miRTarDS</ext-link>. We now provide detailed responses to each reviewer below.</p>
 <disp-quote content-type="editor-comment">
-<p><bold>Public Reviews:</bold></p>
 <p><bold>Reviewer #1 (Public review):</bold></p>
 <p>The author presents a new method for microRNA target prediction based on (1) a publicly available pretrained Sentence-BERT language model that the author fine-tunes using MeSH information and (2) downstream classification analysis for microRNA target prediction. In particular, the author's approach, named &quot;miRTarDS&quot;, attempts to solve the microRNA target prediction problem by utilizing disease information (i.e., semantic similarity scores) from their language model. The author then compares the prediction performance with other sequence- and disease-based methods and attempts to show that miRTarDS is superior or at least comparable to existing methods. The author's general approach to this microRNA target prediction problem seems promising, but fails to demonstrate concrete computational evidence that miRTarDS outperforms other existing methods. The author's claim that disease information-based language models are sufficient is unfounded. The manuscript requires substantial rewriting and reorganization for readers with a strong background in biomedical research.</p>
 </disp-quote>
@@ -549,7 +551,7 @@ and |<italic>S</italic>| = <italic>m</italic> × <italic>n</italic> denotes the 
 <p>(1) Li, F., Dong, S., Leier, A., Han, M., Guo, X., Xu, J., ... &amp; Song, J. (2022). Positive-unlabeled learning in bioinformatics and computational biology: a brief review. Briefings in Bioinformatics, 23(1), bbab461.</p>
 <p>(2) Huang, Z., Shi, J., Gao, Y., Cui, C., Zhang, S., Li, J., ... &amp; Cui, Q. (2019). HMDD v3. 0: a database for experimentally supported human microRNA–disease associations. Nucleic acids research, 47(D1), D1013-D1017.</p>
 <p>(3) Wang, H., &amp; Ho, C. (2023). The human pre-miRNA distance distribution for exploring disease association. International Journal of Molecular Sciences, 24(2), 1009.</p>
-<p>(4) Mitra, R., Adams, C. M., Jiang, W., Greenawalt, E., &amp; Eischen, C. M. (2020). Pan-cancer analysis reveals cooperativity of both strands of microRNA that regulate tumorigenesis and patient survival. Nature Communications, 11(1), 968.</p>
+<p>(4) Mitra, R., Adams, C. M., Jiang, W., Greenawalt, E., &amp; Eischen, C. M. (2020). Pan-cancer analysis reveals cooperativity of both strands of microRNA that regulate tumorigenesis and patient survival. Nature Communications, 11(1), 968.</p>
 </body>
 </sub-article>
 </article>
