@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Efficient and reproducible pipelines for spike sorting large-scale electrophysiology data</article-title>
 </title-group>
 <contrib-group>
@@ -76,10 +77,10 @@
 <surname>Giocomo</surname>
 <given-names>Lisa M</given-names>
 </name>
-<role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-0416-2528</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
-<institution>Stanford School of Medicine</institution>
+<institution>Howard Hughes Medical Institute, Stanford University School of Medicine</institution>
 </institution-wrap>
 <city>Stanford</city>
 <country country="US">United States</country>
@@ -90,7 +91,7 @@
 <surname>Poirazi</surname>
 <given-names>Panayiota</given-names>
 </name>
-<role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0001-6152-595X</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/01gzszr18</institution-id><institution>FORTH Institute of Molecular Biology and Biotechnology</institution>
@@ -167,7 +168,7 @@
 <label>Figure 1:</label>
 <caption><title>Challenges of scaling electrophysiological recordings.</title>
 <p><bold>a</bold>, Multi-shank Neuropixels probe overlaid on a mouse brain, with zoomed-in region showing the spatial footprint of a typical spike waveform (from <xref rid="c56" ref-type="bibr">Steinmetz &amp; Ye 2022</xref>). Waveforms from individual electrodes and spatiotemporal footprint (sampled by a hypothetical Neuropixels 2.0 probe) are shown on the right. The approximate scale of the spike (50 µm x 2 ms) necessitates dense sampling in both space and time. Scaling up the number of recorded neurons requires increasing the number of electrodes that are in close physical proximity to neurons. <bold>b</bold>, Times required to run preprocessing, spike sorting, and automated curation on two-hour recordings with different probe configurations. Assuming no parallelization across machines, a recording with six Neuropixels 1.0 probes (384 channels each) would take more than two days to process. A recording with six Neuropixels 2.0 Quad Base probes (1,536 channels each), which recently became commercially available, would take over one week. Parallelization is essential to complete processing in under 24 hours after data collection.</p></caption>
-<graphic xlink:href="687966v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Because spike sorting is computationally intensive, benchmarking sorter performance is even more demanding, as it requires running multiple algorithms on the same underlying data. Many spike sorting algorithms have been optimized for large-scale electrophysiology data (<xref ref-type="bibr" rid="c49">Pachitariu et al. 2024</xref>; <xref ref-type="bibr" rid="c64">Yger et al. 2018</xref>; <xref ref-type="bibr" rid="c13">Chung et al. 2017</xref>; <xref ref-type="bibr" rid="c4">Boussard et al. 2023</xref>; <xref ref-type="bibr" rid="c45">Meyer et al. 2024</xref>), yet systematic comparisons of their suitability across brain regions, species, and electrode types remain scarce (<xref ref-type="bibr" rid="c11">Carlson &amp; Carin 2019</xref>). Given the enormous investment in electrode technology, each step in the spike sorting process should be benchmarked to ensure we can extract the maximum value from our data.</p>
 <p>To address the scaling challenge, we developed a core spike sorting pipeline designed for distribution across many workstations, either locally or in the cloud. This pipeline improves the efficiency of spike sorting individual experiments, reducing the estimated processing time for a hypothetical experiment with six Neuropixels “Quad Base” probes (1,536 channels each) from over a week to just ten hours, a speedup of more than 20-fold. To enable more rigorous evaluation of spike sorter accuracy, we developed a benchmarking pipeline that runs variations of the core pipeline on real data with injected ground-truth spikes. Together, these pipelines are prepared to handle the coming onslaught of data from current and future electrophysiology device.</p>
@@ -200,7 +201,7 @@
 <label>Figure 2:</label>
 <caption><title>Spike sorting pipeline overview.</title>
 <p>Raw electrophysiology data from multiple probes (top) is ingested by the Job Dispatch step, which coordinates parallelization of downstream processing. All steps are run in parallel until Result Collection. Pipeline outputs (including <monospace>Figurl</monospace> interactive visualizations, metrics stored in JSON format, PNG-formatted images, and a Neurodata Without Borders file) are shown at the bottom. Each step includes an estimate of run time (per hour of recording) and required computing resources (CPU, GPU, and RAM). The pipeline is encapsulated in a <monospace>Nextflow</monospace> workflow (green background), and individual steps are implemented in <monospace>SpikeInterface</monospace> (action potential logo). Interlocking brick icons indicate processing algorithms that can be easily substituted. For the spike sorting step, run time is calculated for <monospace>Kilosort4</monospace>. See <xref rid="tbl1" ref-type="table">Table 1</xref> for detailed run times and cost estimates.</p></caption>
-<graphic xlink:href="687966v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <sec id="s2b1">
 <label>1.</label>
@@ -212,7 +213,7 @@
 <title>Resources, run time, and cost for all steps in the spike sorting pipeline.</title>
 <p>Values are based on a one-hour recording with six Neuropixels probes. Values for non-parallel steps (Job Dispatch, NWB Packaging, Result Collection) are normalized by the number of probes. For steps that run in parallel, run times and estimated cost are reported as the mean ± standard deviation for probes in the same session. *Run Time per hour of recording with one 384-channel probe. **Cost per hour of recording with one 384-channel probe. Costs are estimated using the prices of the reported instance from <ext-link ext-link-type="uri" xlink:href="https://aws.amazon.com/ec2/pricing/on-demand/">https://aws.amazon.com/ec2/pricing/on-demand/</ext-link> as of April 30, 2025.</p>
 </caption>
-<graphic xlink:href="687966v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 </sec>
 <sec id="s2b2">
@@ -267,8 +268,8 @@
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3:</label>
 <caption><title>Outputs of the visualization and quality control step.</title>
-<p><bold>a</bold>, Screenshot of interactive visualization of raw and preprocessed data (view on web). <bold>b</bold>, Screenshot of <monospace>SortingView</monospace> GUI, used for inspecting and curating spike sorting outputs (view on web). <bold>c-d-e</bold>, Examples of static quality control plots generated by the pipeline: power spectral density (<bold>c</bold>), drift (<bold>d</bold>) and unit yield (<bold>e</bold>).</p></caption>
-<graphic xlink:href="687966v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+<p><bold>a</bold>, Screenshot of interactive visualization of raw and preprocessed data (<ext-link ext-link-type="uri" xlink:href="https://figurl.org/f?v=npm://@fi-sci/figurl-sortingview@12/dist&amp;d=sha1://c5abf1f73d3cfbb44bbabc1d957d60f8d86e0b03&amp;label=ExampleRawVisualization&amp;zone=aind">view on web</ext-link>). <bold>b</bold>, Screenshot of <monospace>SortingView</monospace> GUI, used for inspecting and curating spike sorting outputs (<ext-link ext-link-type="uri" xlink:href="https://figurl.org/f?v=npm://@fi-sci/figurl-sortingview@12/dist&amp;d=sha1://4b46bbd9aecc3dd2e0c1f0b61496515f7259899b&amp;label=ExampleSpikeSorting&amp;zone=aind">view on web</ext-link>). <bold>c-d-e</bold>, Examples of static quality control plots generated by the pipeline: power spectral density (<bold>c</bold>), drift (<bold>d</bold>) and unit yield (<bold>e</bold>).</p></caption>
+<graphic xlink:href="687966v1_fig3.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>In addition to these shareable web-based visualization, the pipeline implements a quality control step that produces a series of static plots and metrics designed to asses the raw and processed data.</p>
 <list list-type="bullet">
@@ -303,7 +304,7 @@
 <label>Figure 4:</label>
 <caption><title>Spike sorting pipeline usage at the Allen Institute for Neural Dynamics.</title>
 <p><bold>a</bold>, Sessions processed by the pipeline each week between February 2024 and August 2025. Color indicates the spike sorter used for each pipeline run. <bold>b</bold>, Cumulative sessions processed by the pipeline, split by spike sorter. <bold>c</bold>, Cumulative probes processed by the pipeline (many sessions include data from multiple probes). <bold>d</bold>, Cumulative units detected by the pipeline, with the subset of neural units indicated in yellow and units passing default quality metric thresholds in green. Units are considered neural if the <monospace>UnitRefine</monospace> classifier does not label them as “noise”.</p></caption>
-<graphic xlink:href="687966v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig4.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="s2b10">
@@ -314,18 +315,18 @@
 <label>Table 2:</label>
 <caption><title>Benchmarking pipeline run times.</title>
 <p>The number of jobs and effective run time in hours for the two benchmarking applications (<monospace>Kilosort2.5</monospace> vs <monospace>Kilosort4</monospace>, Lossless vs Lossy) on data from two types of Neuropixels probes (NP1, NP2). The “distributed” execution refers to our <monospace>Nextflow</monospace> implementation, while the “serial” execution has all jobs running sequentially on an individual workstation. The run time for serial execution is extrapolated from the distributed run times, and was not actually measured.</p></caption>
-<graphic xlink:href="687966v1_tbl2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_tbl2.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <p>As input to the pipeline, we used recordings from commercially available single-shank Neuropixels 1.0 (<xref ref-type="bibr" rid="c32">Jun et al. 2017</xref>) and four-shank Neuropixels 2.0 (<xref ref-type="bibr" rid="c55">Steinmetz et al. 2021</xref>) probes. These probes not only differ in their site geometry, but also in their signal bandwidth and bit depth. Neuropixels 1.0 probes have a built-in 300 Hz high-pass filter, and use 10-bit analog-to-digital Converters (ADCs), while Neuropixels 2.0 probes acquire wideband signals with 12-bit ADCs. We processed each shank separately, for a total of × 6 sessions 6 probes = 36 Neuropixels 1.0 recordings and 15 insertions × 4 shanks = 60 Neuropixels 2.0 recordings. For each recording, we randomly injected 10 hybrid units across 5 instances, generating a grand total of 1,800 ground truth units for Neuropixels 1.0 and 3,000 for Neuropixels 2.0.</p>
 <p>For all results, we perform spike train comparisons and compute performance metrics as defined in (<xref ref-type="bibr" rid="c5">Buccino et al. 2020</xref>). In brief, we match sorted spike trains to ground-truth ones based on their agreement (fraction of matched spikes within 0.2 ms). For each matched pair, we count the number of true positives (#TP: ground-truth spikes found by the sorter), false negatives (#FN: ground-truth spikes not found by the sorter), and false positives (#FP: sorted spikes not found in the ground truth). We then evaluated each matched pair based on the following metrics:
 <disp-formula id="eqn1">
-<graphic xlink:href="687966v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="687966v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn2">
-<graphic xlink:href="687966v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="687966v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 <disp-formula id="eqn3">
-<graphic xlink:href="687966v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="687966v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 </p>
 </sec>
@@ -336,7 +337,7 @@
 <label>Figure 5:</label>
 <caption><title>Benchmarking pipeline overview.</title>
 <p>The Job Dispatch step accepts <italic>N</italic> sessions as input, each of which may contain data from multiple probes. Next, the Hybrid Generation step injects <italic>T</italic> ground truth spike templates for each session and probe (default = 10), with <italic>IT</italic> randomized iterations (default = 5). Hybrid data are then processed in parallel through <italic>M</italic> Spike Sorting Cases, each of which sorts data using a different set of algorithms or parameters. The sorting results are then collected and compared by the Hybrid Evaluation step, which outputs figures and metrics for analyzing the performance of each case.</p></caption>
-<graphic xlink:href="687966v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig5.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <list list-type="order">
 <list-item><p>Job Dispatch. The first step of the benchmarking pipeline is the same as that of the spike sorting pipeline: data ingestion and parallelization. The same input data formats are supported, but the benchmarking pipeline is capable of processing multiple sessions at a time to facilitate rapid evaluation across many input datasets in parallel.</p></list-item>
@@ -361,14 +362,14 @@
 <label>Figure 6:</label>
 <caption><title>Example hybrid evaluation.</title>
 <p><bold>a</bold>, 100 ms snippet of traces, showing ground-truth hybrid spikes and respective waveforms in <italic>blue</italic> if found by both sorters, <italic>red</italic> if found by <monospace>Kilosort2.5</monospace> only, and <italic>purple</italic> if found by <monospace>Kilosort4</monospace> only. <bold>b</bold>, Spike rasters of all hybrid spikes in the recording with same color scheme as panel a. Gray spikes are those from the original recording. <bold>c</bold>, Fraction of false positive spikes found by either sorter (a.u. = arbitrary units). <bold>d</bold>, Fraction of false negative spikes. False positive and false negative spikes are calculated using 10 s time bins.</p></caption>
-<graphic xlink:href="687966v1_fig6.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig6.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Across all recordings with both probe types, <monospace>Kilosort4</monospace> is able to find hybrid units with significantly greater accuracy (NP1: <italic>P</italic> &lt; 1×10<sup>−10</sup>, effect size = 0.276; NP2: <italic>P</italic> &lt; 1×10<sup>−10</sup>, effect size = 0.408), precision (NP1: <italic>P</italic> &lt; 1 × 10<sup>−7</sup>, effect size = 0.272; NP2: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.232), and recall n(NP1: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.319; NP2: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.415) (<xref rid="fig7" ref-type="fig">Figure 7a</xref>). These differences are most pronounced for units with signal-to-noise ratios below 10, which are generally more difficult to detect (<xref rid="figS1" ref-type="fig">Figure S1</xref>). When comparing individual ground truth units, <monospace>Kilosort4</monospace> tends to have higher accuracy and recall, at the expense of a slight degradation of precision (<xref rid="fig7" ref-type="fig">Figure 7b</xref>). This suggests that <monospace>Kilosort4</monospace> recovers more complete spike trains, but also finds more false positive spikes in the process. This can also be seen when looking at the distributions of the refractory period contamination (<xref ref-type="bibr" rid="c37">Llobet et al. 2022</xref>) for ground truth units detected by each sorter: <monospace>Kilosort4</monospace> has slightly higher values than <monospace>Kilosort2.5</monospace> (<italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.013)(<xref rid="fig7" ref-type="fig">Figure 7c</xref>). When looking at presence ratio, <monospace>Kilosort4</monospace> finds significantly more units which are active throughout the entire recording (<italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.193) (<xref rid="fig7" ref-type="fig">Figure 7d</xref>). This could be due to a more effective merging strategy implemented in <monospace>Kilosort4</monospace> (<xref ref-type="bibr" rid="c49">Pachitariu et al. 2024</xref>). Overall, these results demonstrate a clear superiority of <monospace>Kilosort4</monospace> in terms of spike sorting performance, although it does take <monospace>Kilosort4</monospace> almost twice as long to run as <monospace>Kilosort2.5</monospace> (<xref rid="figS2" ref-type="fig">Figure S2</xref>).</p>
 <fig id="fig7" position="float" fig-type="figure">
 <label>Figure 7:</label>
 <caption><title>Benchmarking spike sorting algorithms.</title>
 <p><bold>a</bold>, Accuracy, precision, and recall for all ground truth units for <monospace>Kilosort2.5</monospace> (red) and <monospace>Kilosort4</monospace> (purple) for Neuropixels 1.0 (top panels) and 2.0 (bottom panels) probes. <bold>b</bold>, Scatter plots for accuracy, precision, and recall for ground-truth units matched by both <monospace>Kilosort2.5</monospace> (x axis) and <monospace>Kilosort4</monospace> (y axis) for Neuropixels 1.0 (top panels) and 2.0 (bottom panels) probes. <bold>c</bold>, Distributions of refractory period contamination for all units found by both sorters. <bold>d</bold>, Histograms of presence ratio values for all units found by both sorters. In panels c and d, data from both probes are combined and include all units that were matched to a ground-truth hybrid unit (accuracy≥0.2 - <monospace>Kilosort2.5</monospace>: 3,046 matches; <monospace>Kilosort4</monospace>: 3,652 matches).</p></caption>
-<graphic xlink:href="687966v1_fig7.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig7.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p><xref rid="tbl2" ref-type="table">Table 2</xref> displays the total number of jobs for this benchmark application and compares the estimated run times for a single workstation and our distributed <monospace>Nextflow</monospace> implementation. The Neuropixels 1.0 benchmark ran 398 jobs, with a distributed effective run time of around 14 hours. For the</p>
 <p>Neuropixels 2.0 benchmark, the number of jobs increased to 662 (as individual shanks are processed separately) and the run time was of 12 hours. Running the same benchmarks on single workstations would have taken 870 hours (~ 36 days) for Neuropixels 1.0 and 846 hours (~35 days) for Neuropixels 2.0, highlighting the need for distributed pipelines for efficient evaluations.</p>
@@ -389,7 +390,7 @@
 <label>Figure 8:</label>
 <caption><title>Lossy compression benchmarks</title>
 <p><bold>a</bold>, Accuracy, precision, and recall for all ground truth units for lossless, and lossy (dark green) <monospace>WavPack</monospace> compression (lighter greens as BPS decreases, i.e., compression ratio increases) for Neuropixels 1.0 (top panels) and 2.0 (bottom panels) probes. The dashed red line shows the curves for <monospace>Kilosort2.5</monospace> for reference. <bold>b</bold>, Median accuracy, precision, and recall as a function of compression ratio, for both probe types (top row: Neuropixels 1.0; bottom row: Neuropixels 2.0). <bold>c</bold>, Scatter plots for accuracy, precision, and recall for ground-truth units matched by both the lossless (x axis) and BPS=3 (y axis), for both probe types. <bold>d</bold>, Distributions of refractory period contamination for all units found at each compression ratio. <bold>e</bold>, Histograms of presence ratio values for all units found at each compression ratio. In panels d and e, data from both probes are combined and include all units that were matched with accuracy ≥0.2 to a ground-truth hybrid unit (Lossless: 3,612 matches; BPS=3: 3,513 matches; BPS=2.5: 3,475 matches; BPS=2.25: 3,405 matches).</p></caption>
-<graphic xlink:href="687966v1_fig8.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_fig8.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>The results for Neuropixels 2.0 show slightly more degradation of spike sorting accuracy with respect to the lossless compression results (lossless vs. BPS=3: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.08; lossless vs. BPS=2.5: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.1; lossless vs. BPS=2.25: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.13), precision (lossless vs. BPS=3: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.06; lossless vs. BPS=2.5: <italic>P</italic> &lt; 1 × 10<sup>−5</sup>, effect size = 0.08; lossless vs. BPS=2.25: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.11), and recall (lossless vs. BPS=3: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.08; lossless vs. BPS=2.5: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.1; lossless vs. BPS=2.25: <italic>P</italic> &lt; 1 × 10<sup>−10</sup>, effect size = 0.13) (<xref rid="fig8" ref-type="fig">Figure 8a</xref> - bottom). For reference, <xref rid="fig8" ref-type="fig">Figure 8a</xref> also displays the <monospace>Kilosort2.5</monospace> performance curves in dashed red lines. This demonstrates that running <monospace>Kilosort4</monospace> on data with the highest level of lossy compression (BPS=2.25) still outperforms its predecessor on lossless data (he hybrid data for <monospace>Kilosort2.5</monospace> were generated with a different random seed, but with the exact same parameters). For all well-detected units across both probe types, there were minimal differences in the refractory period contamination (<xref rid="fig8" ref-type="fig">Figure 8d</xref>, <italic>P</italic> = 0.044) and presence ratio (<xref rid="fig8" ref-type="fig">Figure 8e</xref>, <italic>P</italic> = 0.65). This indicates that, even for the highest compression settings, the overall quality of the detected units remains the same.</p>
 <p>This benchmarking application had an effective run time of 18 hours for Neuropixels 1.0 and 16 hours for Neuropixels 2.0 (<xref rid="tbl2" ref-type="table">Table 2</xref>). Without distributed computing, the same evaluations would have taken 1590 hours (over 66 days) for Neuropixels 1.0 and 1684 hours (over 70 days) for Neuropixels 2.0.</p>
@@ -433,7 +434,7 @@
 <p>(<monospace>aind</monospace> is an internal format used at AIND which includes an <monospace>Open Ephys</monospace> folder with clipped binary files, <monospace>Zarr</monospace>-compressed traces, and metadata files.)</p>
 <p>For the <monospace>spikeinterface</monospace> input, the <monospace>spikeinterface_info</monospace> field provides further information on how to read the data and attach the required probe information. For example, here is a sample <monospace>spikeinterface_info</monospace> for a dataset recorded by a data acquisition system from Intan Technologies:</p>
 <fig id="ufig1" position="float" fig-type="figure">
-<graphic xlink:href="687966v1_ufig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_ufig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>As a subset of stream may not contain neural data, the <monospace>keep/skip_stream_substrings</monospace> fields enable users to filter which streams to process with the full spike sorting pipeline (in the example above, streams with names containing the string “EVENTS” would be ignored). The <monospace>probe_paths</monospace> field allows users to specify paths to JSON files represented in <monospace>ProbeInterface</monospace> format to attach probe information to each recording (<xref ref-type="bibr" rid="c20">Garcia et al. 2022</xref>).</p>
 <p>The input data folder can contain multiple <italic>blocks</italic> and <italic>segments</italic>, as defined in the <monospace>Neo</monospace> data model (<ext-link ext-link-type="uri" xlink:href="https://neo.readthedocs.io/en/stable/">https://neo.readthedocs.io/en/stable/</ext-link>, <xref ref-type="bibr" rid="c19">Garcia et al. 2014</xref>). These concepts are inherited in <monospace>SpikeInterface</monospace>. A block typically refers to data from a single session or experiment (i.e., from one subject on one day). A segment represents data recorded contiguously within a block. For example, an <monospace>Open Ephys</monospace> input folder could contain multiple “experiments” (blocks) each with multiple “recordings” (segments) (a new recording is started whenever the experimenter pauses and then resumes the acquisition. A new experiment is made when the experimenter stops and restarts acquisition) or an <monospace>NWB</monospace> file could contain several electrical series in its acquisition field. If the input data contains multiple blocks, each block will always be processed separately. For blocks with multiple segments, the user can choose whether to concatenate them (one JSON file is produced for the concatenated segments) or keep them separate (one JSON file is produced for each segment). The <monospace>split_segments</monospace> parameter controls this behavior.</p>
@@ -444,7 +445,7 @@
 <sec id="s6a2">
 <title>Preprocessing</title>
 <p>The preprocessing step is the first step that runs in parallel. A separate preprocessing instance is spawned for each JSON file produced by the job dispatch step. First, the preprocessing step reloads the <monospace>Recording</monospace> object from the JSON file. The recording then undergoes four transformations: phase shift, filtering, denoising, and motion estimation/correction.</p>
-<p>The <monospace>phase_shift</monospace> (<ext-link ext-link-type="uri" xlink:href="https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.phase_shift">https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.phase_shift</ext-link>) function was originally developed by the International Brain Laboratory (IBL) (<xref ref-type="bibr" rid="c27">International Brain Laboratory 2024</xref>). The correction for these channel-wise “delays” is performed in the frequency domain, where a time delay corresponds to a phase shift rotation. The signal is therefore first FFT-transformed, then the delay is applied by rotating the phase of the signal in the frequency domain by <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="687966v1_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> where <italic>t</italic><sub><italic>c</italic></sub> is the inter sample shift for channel <italic>c</italic>, which represents the relative delay within the sampling period (between 0 and 1). Finally the FFT transform is inverted to return to the time domain. For Neuropixels data, the <italic>inter sample shift</italic> property is loaded automatically from the probe metadata. For other probe types, this property must be explicitly specified.</p>
+<p>The <monospace>phase_shift</monospace> (<ext-link ext-link-type="uri" xlink:href="https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.phase_shift">https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.phase_shift</ext-link>) function was originally developed by the International Brain Laboratory (IBL) (<xref ref-type="bibr" rid="c27">International Brain Laboratory 2024</xref>). The correction for these channel-wise “delays” is performed in the frequency domain, where a time delay corresponds to a phase shift rotation. The signal is therefore first FFT-transformed, then the delay is applied by rotating the phase of the signal in the frequency domain by <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="687966v1_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> where <italic>t</italic><sub><italic>c</italic></sub> is the inter sample shift for channel <italic>c</italic>, which represents the relative delay within the sampling period (between 0 and 1). Finally the FFT transform is inverted to return to the time domain. For Neuropixels data, the <italic>inter sample shift</italic> property is loaded automatically from the probe metadata. For other probe types, this property must be explicitly specified.</p>
 <p>For the filtering step, a 5th order Butterworth <monospace>highpass_filter</monospace> with cutoff frequency at 300 Hz is applied by default. Users can optionally select <monospace>bandpass_filter</monospace> with cutoffs at 300 Hz and 6 kHz. The filter type, cutoff frequencies, and filter orders can be modified by the user. Internally, the <monospace>SpikeInterface</monospace> functions use the <monospace>scipy.filtfilt</monospace> function that applies a forward and a backward pass to maintain zero phase.</p>
 <p>The denoising step performs channel masking followed by global denoising. The <monospace>detect_bad_ channels</monospace> (<ext-link ext-link-type="uri" xlink:href="https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.detect_bad_channels">https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.detect_bad_channels</ext-link>) function is run using the <monospace>coherence+psd</monospace> method, which is ported from IBL (<xref ref-type="bibr" rid="c27">International Brain Laboratory 2024</xref>). “Dead” channels are detected based on a low similarity with surrounding neighbor channels. “Noise” channels are those whose power between 80% and 100% of the Nyquist frequency is above a certain threshold (default = 0.02 µV<sup>2</sup> / Hz) and have a high coherence (&gt;1) with nearby channels (normal channels have coherence around 0, see <xref ref-type="bibr" rid="c27">International Brain Laboratory 2024</xref>). “Out” channels are channels at the top of the probe with low similarity to other non-neighboring channels, and are assumed to be outside the brain. The final channel labels are obtained as a majority vote on labels from 100 300-ms chunks randomly sampled throughout the recording. All three types of channels (<italic>dead, noise, out</italic>) are removed from the recording by default. Optionally, the user can choose to keep <italic>out</italic> channels (<monospace>remove_out_channels</monospace> parameter) or to keep <italic>dead</italic>/<italic>noise</italic> channels (<monospace>remove_out_channels</monospace> parameter). If more than 50% of channels are removed from a given stream, further processing (including spike sorting) is skipped. Downstream processing is also skipped if the recording duration is too small (by default &lt; 120 seconds). Both the fraction of remaining channels required to skip further processing and the minimum recording duration can be adjusted by the user. After removing channels, a global denoising step is performed via Common Median Reference (CMR) or highpass spatial filtering, also referred to as destriping (<xref ref-type="bibr" rid="c27">International Brain Laboratory 2024</xref>).</p>
 <p>Finally, motion is estimated and optionally corrected for. The motion correction step uses the <monospace>compute_motion</monospace> (<ext-link ext-link-type="uri" xlink:href="https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.compute_motion">https://spikeinterface.readthedocs.io/en/stable/api.html#spikeinterface.preprocessing.compute_motion</ext-link>) function, which can estimate the motion from the recording using several presets. By default, the <monospace>dredge_fast</monospace> preset is used, which uses the <monospace>grid_convolution</monospace> method to speed up spike depth estimation and <monospace>DREDge</monospace> for motion estimation (<xref ref-type="bibr" rid="c61">Windolf et al. 2025</xref>). The <monospace>grid_convolution</monospace> method for spike localization, introduced by (<xref ref-type="bibr" rid="c49">Pachitariu et al. 2024</xref>), uses an exhaustive catalog of artificial templates at known positions to estimate the position of a given spike as the weighted average of the spike waveform projected onto the templates in this catalog. For more details on spike localization and motion correction methods in general, we refer the reader to (<xref ref-type="bibr" rid="c21">Garcia et al. 2024</xref>). By default, motion is only estimated and not “applied” to the traces. This is done to let the spike sorter perform its own motion correction. However, the user can opt to also apply motion correction (setting <monospace>preprocessing.motion</monospace> parameter to <monospace>apply</monospace>) or to skip this step entirely (setting <monospace>preprocessing.motion</monospace> parameter to <monospace>skip</monospace>). When motion is applied, the traces are interpolated in space using <italic>kriging</italic> interpolation depending on the motion signals (<xref ref-type="bibr" rid="c21">Garcia et al. 2024</xref>).</p>
@@ -474,7 +475,7 @@
 <list-item><p><monospace>isi_histograms</monospace>: Computes inter-spike-interval histograms for each unit using a bin size of 5 ms and a window of 100 ms.</p></list-item>
 <list-item><p><monospace>unit_locations</monospace>: Uses the unit templates to estimate the x, y, and z location with respect to the probe. This is done using the monopolar triangulation method, which models the peak-to-peak amplitudes of the templates on each channel as being generated by a current monopole:
 <disp-formula id="ueqn1">
-<graphic xlink:href="687966v1_ueqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="687966v1_ueqn1.gif" mime-subtype="gif" mimetype="image"/>
 </disp-formula>
 where <italic>ptp</italic><sub><italic>c</italic></sub> is the peak-to-peak amplitude of channel <italic>c</italic>; <italic>x</italic><sub><italic>c</italic></sub>, <italic>y</italic><sub><italic>c</italic></sub>, and <italic>z</italic><sub><italic>c</italic></sub> are the x, y, and z position of channel <italic>c, x</italic><sub><italic>i</italic></sub>, <italic>y</italic><sub><italic>i</italic></sub>, and <italic>z</italic><sub><italic>i</italic></sub> are the x, y, and z position of the unit <italic>i</italic>; and <italic>k</italic> is a term that includes the magnitude of the current and propagation properties of the tissue (see <xref ref-type="bibr" rid="c6">Buccino et al. 2018</xref> and <xref ref-type="bibr" rid="c21">Garcia et al. 2024</xref> for more details). The method finds the <italic>k, x</italic><sub><italic>i</italic></sub>, <italic>y</italic><sub><italic>i</italic></sub>, and <italic>z</italic><sub><italic>i</italic></sub> that minimize the error between the observed and reconstructed <italic>ptp</italic><sub><italic>c</italic></sub> on the sparse channels.</p></list-item>
 <list-item><p><monospace>spike_amplitudes</monospace>: Retrieves the voltage value for each spike, sampling the traces at the extremum channel for each unit.</p></list-item>
@@ -656,7 +657,7 @@ where <italic>ptp</italic><sub><italic>c</italic></sub> is the peak-to-peak ampl
 <sec id="s8">
 <title>Author contribution matrix</title>
 <fig id="ufig2" position="float" fig-type="figure">
-<graphic xlink:href="687966v1_ufig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_ufig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </sec>
 <sec id="das" sec-type="data-availability">
@@ -673,6 +674,10 @@ where <italic>ptp</italic><sub><italic>c</italic></sub> is the peak-to-peak ampl
 <title>Acknowledgements</title>
 <p>We thank Heberto Mayorquin, Pierre Yger, Samuel Garcia, and Ben Dichter for the contributions to the development of the hybrid recording generation framework in <monospace>SpikeInterface</monospace>. We thank Zhiwen Ye, Nick Steinmetz, and the International Brain Laboratory for collecting and packaging the single unit templates. We thank Dan Birman and Carter Peene for their contributions to the AIND quality control portal. We thank Corbett Bennett, Hannah Cabasco, Jackie Kuyat, Vayle LaFehr, Ethan McBride, Ben Hardcastle, Sam Gale, Shawn Olsen, and Xinxin Yin for providing the raw data used to generate hybrid recordings. We thank members of the Allen Institute for Neural Dynamics for using the sorting pipeline to process their datasets and providing feedback on pipeline outputs and visualizations. We thank Bala Desinghu, Max Shad, Janet Wallace, and Bernardo Sabatini at the Kempner Institute at Harvard University for testing the sorting pipeline and providing statistics on their internal usage.</p>
 </ack>
+<sec id="nt1">
+<title>Note</title>
+<p>This reviewed preprint has been updated to add missing hyperlinks to Figure 3's legend.</p>
+</sec>
 <ref-list>
 <title>References</title>
 <ref id="c1"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Abbott</surname>, <given-names>L.</given-names></string-name>, &amp; <string-name><given-names>K.</given-names> <surname>Svoboda</surname></string-name></person-group>. <year>2020</year>. “<article-title>Brain-wide interactions between neural circuits</article-title>.” <source>Current Opinion in Neurobiology</source> <volume>65</volume>: <fpage>iii</fpage>–<lpage>v</lpage>.</mixed-citation></ref>
@@ -758,21 +763,21 @@ where <italic>ptp</italic><sub><italic>c</italic></sub> is the peak-to-peak ampl
 <p>AIND Data Schema is written as a semantically versioned Python library. AIND Data Schema utilizes Pydantic (<ext-link ext-link-type="uri" xlink:href="https://docs.pydantic.dev/latest/">https://docs.pydantic.dev/latest/</ext-link>), a common data validation library that integrates well with large variety of tools in the Python ecosystem. Pydantic is able to render AIND Data Schema to JSONSchema (<ext-link ext-link-type="uri" xlink:href="https://json-schema.org/">https://json-schema.org/</ext-link>) to support data validation outside of Python. Basic controlled vocabularies (list of organizations, instrument manufacturers, etc) are stored in a separate library called <monospace>aind-data-schema-models</monospace> (<ext-link ext-link-type="uri" xlink:href="https://github.com/AllenNeuralDynamics/aind-data-schema-models">https://github.com/AllenNeuralDynamics/aind-data-schema-models</ext-link>).</p>
 <p>For reference, a subject described in AIND Data Schema 2.0 looks like this:</p>
 <fig id="ufig3" position="float" fig-type="figure">
-<graphic xlink:href="687966v1_ufig3.tif" mimetype="image" mime-subtype="tiff"/>
-<graphic xlink:href="687966v1_ufig3a.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_ufig3.tif" mime-subtype="tiff" mimetype="image"/>
+<graphic xlink:href="687966v1_ufig3a.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>This produces <monospace>subject.json</monospace> in the script’s current working directory. Should there be validation errors (missing required information, improperly formatted data), AIND Data Schema will report these automatically.</p>
 <fig id="figS1" position="float" fig-type="figure">
 <label>Figure S1:</label>
 <caption><title>Spike sorter performance as a function of unit signal-to-noise ratio.</title>
 <p><bold>a</bold>, Accuracy, precision, and recall for every hybrid units added to the Neuropixels 1.0. Lines indicate the average value at each signal-to-noise level. <bold>b</bold>, Same as a, but for Neuropixels 2.0 datasets.</p></caption>
-<graphic xlink:href="687966v1_figS1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_figS1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <fig id="figS2" position="float" fig-type="figure">
 <label>Figure S2:</label>
 <caption><title>Kilosort run times.</title>
 <p><bold>a</bold>, Run times of <monospace>Kilosort2.5</monospace> (red) and <monospace>Kilosort4</monospace> (purple) on Neuropixels 1.0 datasets. Run times are relative to real-time (xRT). b, Same as a, but for Neuropixels 2.0 datasets. Note that for Neuropixels 1.0, spike sorting was run on the full 384-channel recording, while it was split by shank (96 channels each) for Neuropixels 2.0, which is why the latter probe has faster execution times.</p></caption>
-<graphic xlink:href="687966v1_figS2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="687966v1_figS2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 </app>
 </app-group>
@@ -790,9 +795,10 @@ where <italic>ptp</italic><sub><italic>c</italic></sub> is the peak-to-peak ampl
 <given-names>Lisa M</given-names>
 </name>
 <role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-0416-2528</contrib-id>
 <aff>
 <institution-wrap>
-<institution>Stanford School of Medicine</institution>
+<institution>Howard Hughes Medical Institute, Stanford University School of Medicine</institution>
 </institution-wrap>
 <city>Stanford</city>
 <country>United States of America</country>
