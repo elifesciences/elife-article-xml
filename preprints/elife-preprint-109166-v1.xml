@@ -1246,4 +1246,48 @@ b) Using Equation (7) instead of Equation (11) to construct the weight matrices,
 <p>(2) Ambiguity in &quot;first of its kind&quot; assertions. </p>
 </body>
 </sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.109166.1.sa4</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Boccato</surname>
+<given-names>Tommaso</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Ferrante</surname>
+<given-names>Matteo</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Toschi</surname>
+<given-names>Nicola</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Response to Reviewer #1</p>
+<p>Our work builds upon the foundations of what we term the “CM family”, specifically the Connectome Model (CM) introduced by Kovács et al.. This was a deliberate choice, as our objectives substantially overlap with those of works in this family. Moreover, we wished to avoid reinventing the wheel—starting instead from a solid body of work with validations we found convincing (thereby inheriting this solidity) and, importantly, addressing the same research community using a “familiar” conceptual language. We therefore wish to clarify how our contributions indeed constitute new conceptual insights into the genomic specification of neural circuitry.</p>
+<p>The function implemented by a neural circuit clearly depends on how information propagates between its nodes and connections; the contribution of synapses—their number and properties—cannot be neglected when understanding, manipulating, or designing such function. To the best of our understanding, in Kovács et al., the primary objects of interest are binary connectomes (presence or absence of synapses) or weighted connectomes where “in the occasion of multiple [genetic] rules contributing to the same link”, “the weight of each link correspond[s] to the number of rules involved”. In Barabási et al., a “relaxed” version of the CM directly provides weights for an artificial neural network without explicitly specifying how each weight might result from the combination of a specific number of synapses and their respective properties. The random variable formalism and the introduction of conductances that we propose precisely add this further—yet important—element of complexity and representational detail: synaptic multiplicity. This extends existing models with the hope of laying the groundwork for what could, in the distant future, become a technology capable of producing neural circuits genetically programmed to implement a defined function.</p>
+<p>Regarding the proposed validation, we acknowledge its limitations, but we clarify that at the time this work was conducted, to the best of our knowledge, no public datasets existed to perform validation as the reviewer envisions. We therefore did the best that was materially feasible: we assumed the biological correctness of the model (also based on the validations accompanying the models upon which ours was built) and verified, through simulation, that it could be used to obtain genetic variables of interest capable of producing neural agents able to solve a pre-specified task—even with the additional constraint of genetic rules derived from experimental data.</p>
+<p>Response to Reviewer #2</p>
+<p>We address the points raised by Reviewer #2 in the following paragraphs.</p>
+<p>Regarding point (1), we agree with the reviewer that considering single-gene expression features is a simplification, especially in the case of chemical synapses. However, as with the CM, our model can also be extended to account for combinatorial rules. One possibility is to add columns to the X matrix, as many as there are gene expression patterns of interest. For each new column, a function would be defined to compute the expression feature from the expression features of the genes involved in the pattern, and this function would be used to populate the values of the new columns. The O matrix would likewise be updated with the corresponding new probabilities. While such extension is possible, it is important to note that this gives rise to the problem of combinatorial explosion of genetic rules, with the consequent construction of matrices whose dimensionality becomes difficult to handle. Moreover, the biological plausibility of the model would then shift toward how these functions are defined, along with the interpretation of the values contained in the X matrix. Depending on the use case of our model, one possible solution to the combinatorial explosion problem could be to consider only expression patterns valid for synapse formation by extracting this information from available experimental data, thereby restricting the number of rules. We acknowledge that this problem remains open and will require more precise formulations and future work.</p>
+<p>Regarding point (2), Equation (11) can be derived from the assumption that the various synapses between two neurons behave as resistors in parallel. Accepting this, the equivalent conductance Guv, as denoted in the paper, can be expressed as the sum of all conductances between neurons u and v. Moving to the random variable formalism and having defined 𝒢 as the random variable representing the “signed conductance of a synapse randomly selected from the ones that connect neurons u and v”, the equivalent conductance (as a random variable) becomes ℬ·𝒢. Recall that ℬ is the random variable representing the number of synaptic connections between two neurons of interest. At this point, under the further assumption that the random variables ℬ and 𝒢 are independent, the expectation of the equivalent conductance can be calculated as the product of the expected values of ℬ and 𝒢. Equation (11) follows immediately from this. We acknowledge that these assumptions may not correspond to biological reality, but we consider them a reasonable starting point for addressing the problem.</p>
+<p>Finally, we explain the reasons why the baselines suggested by the reviewer are not included in the work. We did not train classical MLPs because the main objective of the work was not to develop new bio-inspired architectures aimed at generically improving the performance of neural networks in RL, and we deemed it an additional source of confusion to propose a comparison that would suggest this direction. The main objective of the work is instead to contribute to the modeling of synaptogenesis and to lay the groundwork for—or advance the state of knowledge of—what will be a future technology that allows us to manipulate it (synaptogenesis). A similar reasoning applies to a potential baseline in which the weight matrix is constructed from Equation (7). Again, the interest is not in verifying that conductances provide a performance advantage, but rather that they are a necessary element for a sufficient level of biological plausibility. Beyond this, the exclusive and direct use of matrix B in the simulation of synaptogenesis introduces a quantization problem as described in the Appendix.</p>
+<p>Response to Reviewer #3</p>
+<p>We believe the concerns raised by the reviewer regarding the weaknesses of the work are legitimate. We wish to emphasize that all claims made in the paper were made in good faith, with the intent to generate enthusiasm for the discipline while avoiding excess or the assertion of anything incorrect or untruthful. Given that the work is inherently interdisciplinary, we recognize that reader expectations depend on their reference community, and we clarify that our primary area of expertise is AI, and that the biological claims were therefore made from this perspective.</p>
+</body>
+</sub-article>
 </article>
