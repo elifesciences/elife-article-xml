@@ -1,0 +1,614 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN"  "JATS-archivearticle1-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">110830</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.110830</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.110830.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.1</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Neuroscience</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Training neural networks from scratch in a videogame leads to brittle brain encoding</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-8161-7699</contrib-id>
+<name>
+<surname>Paugam</surname>
+<given-names>François</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+<email>francois.paugam@umontreal.ca</email>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-4391-3075</contrib-id>
+<name>
+<surname>Pinsard</surname>
+<given-names>Basile</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>St-Laurent</surname>
+<given-names>Marie</given-names>
+</name>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Lajoie</surname>
+<given-names>Guillaume</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Bellec</surname>
+<given-names>Lune</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+</contrib>
+<aff id="a1"><label>1</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/0161xgx34</institution-id><institution>Université de Montréal</institution></institution-wrap>, <city>Montréal</city>, <country country="CA">Canada</country></aff>
+<aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/031z68d90</institution-id><institution>Centre de Recherche de l’Institut Universitaire de Gériatrie de Montréal</institution></institution-wrap>, <city>Montréal</city>, <country country="CA">Canada</country></aff>
+<aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/05c22rx21</institution-id><institution>Mila - Institut Québécois d’Intelligence Artificielle</institution></institution-wrap>, <city>Montréal</city>, <country country="CA">Canada</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Ponte Costa</surname>
+<given-names>Rui</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0003-2595-2027</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/052gg0110</institution-id><institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country country="GB">United Kingdom</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Frank</surname>
+<given-names>Michael J</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-8451-0523</contrib-id><role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05gq02987</institution-id><institution>Brown University</institution>
+</institution-wrap>
+<city>Providence</city>
+<country country="US">United States</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn fn-type="coi-statement"><p>Competing interests: No competing interests declared</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2026-06-23">
+<day>23</day>
+<month>06</month>
+<year>2026</year>
+</pub-date>
+<volume>15</volume>
+<elocation-id>RP110830</elocation-id>
+<history>
+<date date-type="sent-for-review" iso-8601-date="2026-03-14">
+<day>14</day>
+<month>03</month>
+<year>2026</year>
+</date>
+</history>
+<pub-history>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2025-12-02">
+<day>02</day>
+<month>12</month>
+<year>2025</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.11.28.691119"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2026, Paugam et al</copyright-statement>
+<copyright-year>2026</copyright-year>
+<copyright-holder>Paugam et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-110830-v1.pdf"/>
+<abstract><p>Recent brain-encoding studies using videogame tasks suggest that the training objective of an artificial neural network plays a central role in how well the network’s representations align with brain activity. This study investigates the alignment of artificial neural network activations with brain activity elicited by a video game task using models trained from scratch in controlled settings. We specifically compared three model training objectives: reinforcement learning, imitation learning, and a vision task, while accounting for other potential factors which may impact performance such as training data and model architecture. We tested models on brain encoding, i.e. their ability to predict functional magnetic resonance imaging (fMRI) signals acquired while human subjects played different levels of the video game Super Mario Bros. When tested on new playthroughs from the game levels seen at training, the reinforcement learning objective had a small but significant advantage in brain encoding, followed by the imitation learning and vision models. We hypothesized that brain-aligned representations would emerge only in task-competent models, and that the specific brain regions well encoded by a model would depend on the nature of the task it was trained on. While brain encoding did improve during model training, even an untrained model with matching architecture approached the performance of the best models. Contrary to our hypotheses, no model layers or specific training objectives aligned preferentially with specific brain areas. Large performance gaps also persisted in fully trained models across game levels, both those seen during training and entirely novel ones. Overall, even though reinforcement learning presented a small advantage to train brain encoding models for videogame data, all tested brain encoding models exhibited brittle performance with limited generalization both within- and out-of-distribution. Overall, our results suggest that training small artificial models from scratch is not sufficiently reliable, and that incorporating pretrained models such as foundation vision–action models may ultimately be necessary to support robust inferences about brain representations.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100021783</institution-id>
+<institution>Courtois Foundation (FC)</institution>
+</institution-wrap>
+</funding-source>
+<principal-award-recipient>
+<name>
+<surname>Bellec</surname>
+<given-names>Lune</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Brain encoding has become a widely used technique for modeling brain dynamics during naturalistic tasks (<xref ref-type="bibr" rid="c43">Yamins et al. 2014</xref>; <xref ref-type="bibr" rid="c36">Seeliger et al. 2021</xref>). By leveraging computational models trained on rich sensory datasets, this approach provides new opportunities to study complex stimuli and their intricate relationships with neural activity. For instance, activations from models trained to identify objects from pixel-level image data can successfully predict neural responses in subjects exposed to the same images (<xref ref-type="bibr" rid="c34">Schrimpf et al. 2018</xref>). Brain encoding studies have demonstrated functional similarities between artificial neural networks (ANNs) and the human brain across multiple domains, including vision (<xref ref-type="bibr" rid="c42">Yamins and DiCarlo 2016</xref>; <xref ref-type="bibr" rid="c10">Cichy et al. 2016</xref>; <xref ref-type="bibr" rid="c17">Güçlü and Gerven 2015</xref>), auditory processing (<xref ref-type="bibr" rid="c26">Kell et al. 2018</xref>; <xref ref-type="bibr" rid="c15">Freteault et al. 2023</xref>), and language comprehension (<xref ref-type="bibr" rid="c9">Caucheteux and King 2022</xref>; <xref ref-type="bibr" rid="c33">Schrimpf et al. 2020</xref>). However, most models used for brain encoding rely on passive perceptive tasks, such as participants viewing images (<xref ref-type="bibr" rid="c2">Allen et al. 2022</xref>) or reading a text (<xref ref-type="bibr" rid="c40">Toneva and Wehbe 2019</xref>).</p>
+<p>Expanding brain encoding to active tasks involving interaction with virtual or embodied environments marks a crucial step toward modelling complex cognition (<xref ref-type="bibr" rid="c31">Paolo et al. 2024</xref>; <xref ref-type="bibr" rid="c44">Zador et al. 2023</xref>). Video games, in particular, offer a rich framework for studying these dynamics, as they simultaneously engage visual perception, decision-making, and motor output in a highly interactive context (<xref ref-type="bibr" rid="c8">Burelli and Dixen 2024</xref>; <xref ref-type="bibr" rid="c4">Bellec and Boyle 2019</xref>) and can be used inside a magnetic resonance imaging (MRI) scanner (<xref ref-type="bibr" rid="c20">Harel et al. 2023</xref>). The choice of training tasks for ANNs has a significant impact on the representations the models learn. Many different types of training tasks can be applied to the stream of video game data, but it remains unclear which approach yields models that best align with brain activity, either as a whole or for specific brain networks.</p>
+<p>Purely perceptive visual ANNs that do not predict videogame actions are expected to exhibit fewer similarities with brain regions beyond the visual cortex, compared to action models trained to optimize gameplay from the game frames. This hypothesis is supported by findings from Cross and colleagues (<xref ref-type="bibr" rid="c12">Cross et al. 2021</xref>), who compared a basic vision model trained for auto-encoding with a model trained through reinforcement learning (RL) in Atari games (Space Invaders, Enduro, Pong). In contrast, we observed in a previous study that a vision model pretrained on Imagenet for classification outperformed an RL-trained model optimized for gameplay in brain encoding across all brain regions in the game Super Mario Bros (<xref ref-type="bibr" rid="c32">Paugam et al. 2024</xref>). Finally, (<xref ref-type="bibr" rid="c27">Kemtur et al. 2023</xref>) used imitation learning to train models to replicate human players’ actions in the game Shinobi III. They found that models trained on an individual subject’s gameplay data achieved better brain encoding accuracy for that subject compared to models trained on another subject’s gameplay, or pure vision layers of their model which do not account for dynamics of the game. Additionally, they reported a hierarchical functional correspondence between model layers and brain regions, a result in line with previous work with static images stimuli, focused on the ventral visual system (<xref ref-type="bibr" rid="c14">Eickenberg et al. 2017</xref>; <xref ref-type="bibr" rid="c42">Yamins and DiCarlo 2016</xref>).</p>
+<p>The apparent inconsistencies between these studies are difficult to interpret, as each study focused on different types of models and relied on different games, making direct comparisons challenging. The comparison of models based on brain encoding may also reflect other factors than the tasks used to train ANNs. For instance, in (<xref ref-type="bibr" rid="c32">Paugam et al. 2024</xref>) we compared models that varied not only in training objectives but also in the nature and size of their training data. For vision models, the diversity and size of the training data can have a large impact both on image annotation performance and brain encoding accuracy (<xref ref-type="bibr" rid="c11">Conwell et al. 2023</xref>), and a similar result was found specifically for video transformer models trained for videogame data (<xref ref-type="bibr" rid="c1">Ahmadi et al. 2024</xref>). The difference observed between the vision model and the RL model in (<xref ref-type="bibr" rid="c32">Paugam et al. 2024</xref>) may thus reflect that the vision model was trained on a very large and diverse dataset of natural images (ImageNet) while the RL model was trained on a comparatively smaller number of videogame frames all drawn from Super Mario Bros. Another potential confounding factor is evident in both (<xref ref-type="bibr" rid="c12">Cross et al. 2021</xref>) and (<xref ref-type="bibr" rid="c27">Kemtur et al. 2023</xref>), as both studies did not compare equivalent layers for encoding between vision and action models. In vision, the choice of layer in artificial neural networks impacts which brain regions it encodes optimally, regardless of model architecture (<xref ref-type="bibr" rid="c11">Conwell et al. 2023</xref>). So the reported differences between vision and action models may reflect the choice of layers used in the model comparison rather than the task used to train the networks.</p>
+<p>In summary, even though previous studies have explored various training objectives for ANNs in videogame-based brain encoding, their experiments entangled multiple factors, such as model architectures or training datasets, limiting the conclusions that can be drawn on the specific impact of the training objective. With the current work, our main objective was to explore how the choice of training objective impacts an ANN’s ability to perform brain encoding of functional magnetic resonance imaging (fMRI) data, while carefully controlling for the model architecture and the data distributions used to train each model.</p>
+<p>To do so, we compared models with matching convolutional neural network (CNN) architectures trained from scratch with the same input data distribution: frames from the super mario bros game, and only changed the training objectives between models. The different training tasks we used are as follows:
+<list list-type="bullet">
+<list-item><p><bold>Proximal Policy Optimisation (PPO)</bold>: training the model to play the game by maximizing a reward with RL through the PPO algorithm (<xref ref-type="bibr" rid="c35">Schulman et al. 2017</xref>),</p></list-item>
+<list-item><p><bold>Imitation learning:</bold> the model predicts human actions from visual features using gameplay specific to a given individual,</p></list-item>
+<list-item><p><bold>Resnet proxy:</bold> learning to predict latent features from visual features, where latent features were extracted from one layer of a pretrained image classification model called ResNet152v2 (<xref ref-type="bibr" rid="c21">He et al. 2015</xref>), which is known to have good performance for brain encoding (<xref ref-type="bibr" rid="c32">Paugam et al. 2024</xref>). This training task created a proxy of that pretrained model purely trained on our videogame dataset.</p></list-item>
+</list>
+We also included two baselines: an Untrained model with similar architecture, and a <bold>pretrained</bold> vision model (ResNet152v2) trained on Imagenet (<xref ref-type="bibr" rid="c13">Deng et al. 2009</xref>).</p>
+<p>Our first aim was to <bold>identify which training objectives resulted in better brain activity predictions across different regions</bold>. Our hypothesis was that <italic>action models (RL and imitation) would outperform pure vision and baseline models, in particular in sensorimotor and attentional brain networks</italic>.</p>
+<p>Our second aim was to <bold>test for the existence of parallel hierarchies of representations between models and the brain</bold>. <italic>Our hypothesis was that early layers would map to visual brain regions, while late layers would encode better associative and sensorimotor cortices</italic>.</p>
+<p>Our third aim was to <bold>examine whether the performance of ANNs trained to generate actions was associated with their ability to model the brain</bold>. In vision, performance on image annotation tasks correlates strongly with brain alignment, up to a certain level of accuracy (<xref ref-type="bibr" rid="c43">Yamins et al. 2014</xref>; <xref ref-type="bibr" rid="c34">Schrimpf et al. 2018</xref>). We thus hypothesized that <italic>both the ability to play the game and the quality of behavioural imitation would be predictive of the quality of brain encoding</italic>. This relationship should hold whether comparing the same model at different stages of training (and thus with different task performance), as well as when comparing a trained model across different levels (with, again, different task performance).</p>
+<p>Our fourth and last objective was to <bold>evaluate how brain encoding models generalized on out-of-distribution data</bold>. Classical models trained through RL are notoriously brittle, and fail to generalize their behaviour to new game levels (<xref ref-type="bibr" rid="c23">Jiang et al. 2022</xref>; <xref ref-type="bibr" rid="c29">Nichol et al. 2018</xref>). We hypothesized that <italic>the performance of brain encoding with the RL model would be severely decreased when evaluated on new game levels unseen during training, while other networks which capture more abstract and robust features, notably the ResNet152v2 model, would be more robust to such out-of-distribution evaluation</italic>.</p>
+</sec>
+<sec id="s2">
+<title>Methods</title>
+<sec id="s2a">
+<title>Dataset</title>
+<sec id="s2a1">
+<title>Participants</title>
+<p>This study utilizes the <italic>Mario</italic> dataset, publicly available through the Courtois NeuroMod (CNeuroMod) project. As not all participants in the broader project completed every task, we focused on those who completed the <italic>Mario</italic> protocol. This dataset explores behavioral and neural correlates of video game play and includes five participants (sub-01, sub-02, sub-03, sub-05, and sub-06; two females, three males) who played <italic>Super Mario Bros.</italic> (<italic>SMB</italic>; Nintendo, 1985) inside an MRI scanner.</p>
+<p>While not a central focus of this study, prior videogame experience may have influenced the results. Two participants (sub-01 and sub-02) reported regular videogame play and one participant (sub-06) reported no regular videogame practice but played another retro platformer called Shinobi III: Return of the Ninja Master (RotNM; Sega, 1993) that she practiced for 10+hours as part of a prior CNeuroMod experiment (shinobi dataset) (<xref ref-type="bibr" rid="c6">Boyle et al. 2020</xref>).</p>
+</sec>
+<sec id="s2a2">
+<title>MRI acquisitions and processing</title>
+<p>About 15 hours of fMRI data were acquired per participant on a 3T Siemens Prisma Fit scanner (temporal resolution: TR = 1.49 s; spatial resolution: 2 mm isotropic) and preprocessed with <italic>fMRIprep</italic> (Esteban et al., 2019; version v20.2 LTS). After spatial smoothing (FWHM = 5 mm), functional MRI time series were denoised using Nilearn with the following strategy:</p>
+<p>...</p>
+<p>load_confounds(nifti_path, strategy=[“motion”, “high_pass”, “wm_csf”, “global_signal”], motion=“basic”, wm_csf=“basic”, global_signal=“basic”, demean=True)</p>
+<p>...</p>
+<p>Functional MRI data were then projected onto the MIST atlas using the <italic>NiftiLabelsMasker</italic> in Nilearn. We selected the MIST atlas variant with the highest resolution (1097 parcels), covering the grey matter, including the cerebellum, basal ganglia, and thalamus (Urchs et al., 2019).</p>
+</sec>
+<sec id="s2a3">
+<title>Videogame task</title>
+<p>The participants were recorded while they played 22 levels of <italic>SMB,</italic> a side-scrolling platformer developed by Nintendo. The general objective of the game is to progress rightward through each level while avoiding obstacles and enemies. In the initial <italic>discovery</italic> phase, participants played each level in the original game sequence, with unlimited attempts until they completed it once. Once all 22 levels were unlocked, participants entered a <italic>practice</italic> phase, in which levels were presented in a random order. For each level, participants had a single attempt with up to three lives to complete it before a new level was randomly selected.</p>
+</sec>
+<sec id="s2a4">
+<title>Videogame set-up</title>
+<p>All participants used a custom MRI-compatible video game controller, designed by the CNeuroMod team using 3D-printed plastic and fiber optics. The controller connected via USB to the stimulation computer (<xref ref-type="bibr" rid="c20">Harel et al. 2023</xref>). The video game was played on a console emulator using OpenAI’s <italic>gym-retro</italic> library (<xref ref-type="bibr" rid="c29">Nichol et al. 2018</xref>), a Python-based platform supporting emulators for over 10 retro consoles and thousands of games. Built on <italic>gym</italic> (<xref ref-type="bibr" rid="c7">Brockman et al. 2016</xref>), a reinforcement learning library, <italic>gym-retro</italic> integrates console emulators via the Libretro API (<ext-link ext-link-type="uri" xlink:href="https://www.libretro.com/">https://www.libretro.com/</ext-link>). This setup enables both artificial and human agents to play retro games from saved states while providing Python API access to the game’s RAM. <italic>SMB</italic> was played and recorded at 60 Hz. Since the game is fully deterministic, only player inputs (button presses) were recorded, allowing for precise reconstruction of gameplay video streams.</p>
+</sec>
+<sec id="s2a5">
+<title>Train/validation/test splits</title>
+<p>fMRI data, button presses, and frame data from 20 of the 22 levels were divided into training, validation, and test sets. The training, validation, and test sets consisted of 80%, 10%, and 10% of the game runs, respectively, maintaining similar proportions of runs from each of the 20 levels and a balanced distribution of completed/failed runs. The remaining two held-out levels were used as an out-of-distribution set to assess model generalizability.</p>
+</sec>
+</sec>
+<sec id="s2b">
+<title>Model Inputs</title>
+<p>For all models except ResNet, the input is a sequence of 16 consecutive frames (60 Hz), preprocessed using the mapping function introduced by (<xref ref-type="bibr" rid="c28">Mnih et al. 2015</xref>), a widely used method for video game reinforcement learning tasks. This preprocessing converts images to grayscale, downsamples spatial resolution to 84 × 84 pixels, and applies temporal downsampling to four frames while also computing the maximum pixel value between two consecutive frames to avoid flickering. The resulting preprocessed input is a (4 × 84 × 84) tensor.</p>
+<p>The ResNet model takes raw frames as input, with temporal downsampling to 3.75 Hz to match the sampling frequency of the non-overlapping 16-frame window used in the base architecture.</p>
+</sec>
+<sec id="s2c">
+<title>Models</title>
+<p>All models in this study share the same base architecture, except for the pretrained ResNet baseline model. The base architecture consists of four convolutional layers followed by a fully connected layer (see <xref rid="fig1" ref-type="fig">Figure 1</xref>). The total parameter count of this shared base is 619,264. Each model includes an additional fully connected output layer, whose dimensionality depends on the number of outputs required by its training objective.</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Fig 1.</label>
+<caption><title>Overview of the study methods.</title>
+<p>fMRI data from subjects playing Super Mario Bros <bold>(a)</bold> is processed and reduced to time series with a brain parcellation <bold>(b)</bold>. Artificial models are trained with different objectives and tested for their ability to predict brain activity, using different objectives during training <bold>(c)</bold>: reinforcement learning, behavioural cloning and visual supervised learning (ResNet variants). Brain encoding performance <bold>(d)</bold> is evaluated both within-distribution (on the game levels used for training) and out-of-distribution (on game levels not seen during training), highlighting each model’s ability to generalize beyond their training data <bold>(e)</bold>.</p></caption>
+<graphic xlink:href="691119v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<sec id="s2c1">
+<title>PPO model</title>
+<p>The PPO model follows a reinforcement learning procedure using the PPO algorithm (<xref ref-type="bibr" rid="c35">Schulman et al. 2017</xref>). The model’s objective is to maximize rewards while interacting with the game. The reward function incentivizes the agent to complete levels by rewarding rightward movement and score increases while penalizing time spent and losing a life. The output layer maps to a one-hot vector representing 12 possible actions. Training occurs across all 20 selected levels, with each rollout starting from a random position, ensuring exposure to all parts of the training levels. The total parameter count of the PPO model is 625,933.</p>
+</sec>
+<sec id="s2c2">
+<title>Imitation models</title>
+<p>Five Imitation models were trained, one per participant, using a supervised learning approach based on each player’s button presses. These models perform a <italic>behavioral cloning</italic> task, predicting which action the player took. The output layer maps to a binary vector representing which of six buttons were pressed. Each model is trained on video frames and button press data from its corresponding subject’s gameplay. Given a 16-frame sequence input, the model predicts the button presses in the next frame. The total parameter count of the Imitation models is 625,420.</p>
+</sec>
+<sec id="s2c3">
+<title>ResNet model</title>
+<p>The pretrained <italic>ResNet152v2</italic> model (<xref ref-type="bibr" rid="c21">He et al. 2015</xref>) is a convolutional neural network (CNN) with residual connections, trained on the <italic>ImageNet1K</italic> dataset (1.28 million images, 1,000 categories). This model is purely vision-based, trained to recognize object categories in natural images rather than video game frames. Unlike the other models, only a single layer of ResNet (the 145th) was used for brain encoding, as it was chosen to generate targets for the ResNet proxy model. This deeper layer was selected because it contains high-level semantic representations rather than low-level visual features. It is the only model in the comparison that is not sharing the same architecture and training data distribution as the other models. The total parameter count of the ResNet is 60,192,808.</p>
+</sec>
+<sec id="s2c4">
+<title>ResNet proxy model</title>
+<p>The <italic>ResNet proxy model</italic> was designed to replicate the representational space of the ResNet model while being trained on the same data distribution as the other models. It was trained in a supervised manner: for each 16-frame gameplay sequence, the final frame was passed through ResNet, and activations from its 145th layer were recorded. An incremental PCA was fitted on 20% of the training dataset to retain the top 1,000 principal components of these activations. The ResNet proxy model was then trained to predict these principal components. Using a proxy model instead of ResNet152v2 mitigates biases arising from differences in training datasets and architecture, ensuring a fairer comparison of brain encoding performance. The total parameter count of the ResNet proxy model is 1,132,264.</p>
+</sec>
+<sec id="s2c5">
+<title>Untrained model</title>
+<p>The <italic>Untrained model</italic> is a model with randomly initialized weights. It is not intended as an estimate of chance level, as it still processes game images. While applying random transformations to pixel values, it retains information from the images, producing arbitrary but structured representations. This model serves as a baseline to assess whether trained models produce representations more aligned with brain activity than random transformations of the same input.</p>
+</sec>
+</sec>
+<sec id="s2d">
+<title>Brain encoding</title>
+<p>For each model, subject, and layer, brain encoding was performed by extracting the activations from the layer of interest, convolving these activations with a model of the hemodynamic response function (HRF), and fitting a ridge regression to predict brain activity. The regression targets were the preprocessed BOLD time series, projected into parcels defined by the MIST atlas. Ridge regression was trained on each subject’s training set using a grid of alpha values (10<sup>k</sup> with k ranging from -1 to 6). The optimal alpha was selected based on the lowest mean squared error (MSE) on the subject’s validation set. The brain encoding performance, reported in terms of the coefficient of determination (R²), was evaluated on either the test set or the out-of-distribution (held-out levels) set.</p>
+<p>The HRF model used was the SPM canonical HRF as implemented in the nilearn Python library. Brain encoding was performed on all layers of each model, except the first and final layers. The first layer, due to its high dimensionality, was computationally expensive and yielded relatively poor encoding accuracy in preliminary analyses. The final layer was excluded because its dimensionality and function varied across models depending on their respective training objectives.</p>
+</sec>
+<sec id="s2e">
+<title>Task performance metrics</title>
+<sec id="s2e1">
+<title>Brain encoding</title>
+<p>To assess how well each model predicts brain activity, we used the coefficient of determination (R²) between the original and predicted BOLD time series in each parcel of the MIST atlas. R² reflects the proportion of variance in the original signal explained by the predicted signal. A perfect prediction yields an R² score of 1, while a score of 0 indicates that the model does no better than predicting the mean signal. Negative R² values can occur when the prediction is worse than the mean, indicating uncorrelated or misleading variance in the prediction.</p>
+</sec>
+<sec id="s2e2">
+<title>Game performance</title>
+<p>To evaluate gameplay ability, each model was used to play each level 20 times for a maximum of 5000 frames (approximately 1 minute and 23 seconds). If the agent reached a game over before the time limit, it restarted with a new set of three lives. Since all levels are linear with the goal of progressing to the right, the maximum distance reached from the beginning of the level serves as a reliable proxy for task success. Game performance is reported as the average of the maximum distances reached across the 20 runs per level, averaged again across all levels.</p>
+</sec>
+<sec id="s2e3">
+<title>Behavioral imitation</title>
+<p>To measure how closely the models’ actions align with human behavior, we use a behavioral imitation score. This is computed by feeding the models sequences of frames from a subject’s gameplay recording, and comparing the predicted button presses to the actual button presses from the human player. The score is calculated as the average F1 score per button, averaged over buttons. The “up” and “down” buttons are excluded from this metric, as they are rarely used and not required to complete most levels.</p>
+</sec>
+</sec>
+<sec id="s2f">
+<title>Regions of interest</title>
+<p>To characterize the spatial distribution of brain encoding R² scores, we report not only parcel-wise maps but also scores averaged over functionally relevant regions of interest (ROIs).</p>
+<p>Seven ROIs were derived from the Yeo7 network atlas (<xref ref-type="bibr" rid="c39">Thomas Yeo et al. 2011</xref>), corresponding to the following large-scale functional networks: visual, dorsal attention, sensorimotor, ventral attention, default mode, fronto-parietal, and limbic (see Supplementary Material Figure I).</p>
+<p>The remaining five ROIs were defined using two vision localizer tasks completed in the scanner by three of the five participants (sub-01, sub-02, and sub-03). For sub-05 and sub-06, the regions derived from the data of sub-01 were used. The V1, V2, and V3 ROIs were identified using a retinotopy task adapted from <xref ref-type="bibr" rid="c25">Kay et al. (2013)</xref> and implemented in PsychoPy. Voxel-wise population receptive fields were estimated using the <italic>analyzePRF</italic> MATLAB toolbox (<xref ref-type="bibr" rid="c25">Kay et al. 2013</xref>), and subject-specific ROIs were refined using group atlas priors with <italic>Neuropythy</italic> (<ext-link ext-link-type="uri" xlink:href="https://github.com/noahbenson/neuropythy">https://github.com/noahbenson/neuropythy</ext-link>) (<xref ref-type="bibr" rid="c5">Benson and Winawer 2018</xref>).</p>
+<p>The fusiform face area (FFA) and parahippocampal place area (PPA) were identified using a PsychoPy implementation (<ext-link ext-link-type="uri" xlink:href="https://github.com/NBCLab/pyfLoc">https://github.com/NBCLab/pyfLoc</ext-link>) of the fLoc task developed by the Stanford VPN Lab (<xref ref-type="bibr" rid="c37">Stigliani et al. 2015</xref>), with stimuli sourced from the fLoc functional localizer package (<ext-link ext-link-type="uri" xlink:href="https://github.com/VPNL/fLoc">https://github.com/VPNL/fLoc</ext-link>). ROI boundaries were defined from subject-specific contrasts, identifying voxels with preferential responses to specific stimulus categories. These contrasts were constrained within group-derived parcels of category-selective regions based on (<xref ref-type="bibr" rid="c24">Julian et al. 2012</xref>). The V1, V2, V3, FFA, and PPA ROIs for sub-01 are shown in <xref rid="fig3" ref-type="fig">Figure 3</xref>.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2:</label>
+<caption><title>Comparison of the brain encoding R² scores of the different models.</title>
+<p><bold>a</bold> Brain encoding R2 scores, averaged over brain parcels. Each dot corresponds to the value for a layer and a subject (the ResNet being evaluated on just one layer, it presents less sample points). <bold>b</bold> Mean brain encoding R² score per layer for each model. Each plot represents the scores averaged of the whole brain (top left) or different ROIs of the visual cortex. <bold>c</bold> Brain encoding maps per model. The maps represent the brain encoding R² score per parcel, averaged over subjects, for each model’s conv3 layer (except for the ResNet). For each model we see a similar spatial distribution of the R² score. The regions that get the highest R² scores are located in the visual cortex, the dorsal attentional path and in the motor cortex. <bold>d</bold> Brain encoding maps per subject. The maps represent the brain encoding R² score averaged over models, for the conv3 layer (except for the ResNet). The maps of the different subjects show more noticeable differences in R² amplitude than the maps per model, but the overall spatial distributions remain very similar. The regions that get the highest R² scores are located in the visual cortex, the dorsal attentional path and in the motor cortex.</p></caption>
+<graphic xlink:href="691119v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3:</label>
+<caption><title>Training effects on brain encoding and task performance.</title>
+<p><bold>a</bold>: Brain encoding R² for each model and subject across training checkpoints (averaged over brain parcels, evaluated on the test set). <bold>b</bold>: Difference maps showing changes in R² between early training (10–15%) and the final checkpoint, averaged across subjects. <bold>c</bold>: Correlation between brain encoding and game score for the PPO model across checkpoints. Dashed lines show linear fits. <bold>d</bold>: Correlation between brain encoding and imitation score for the Imitation models across checkpoints. Dashed lines show linear fits.</p></caption>
+<graphic xlink:href="691119v1_fig3.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>For each ROI, parcel-wise R² maps were projected back to MNI voxel space, and the ROI masks were applied to compute average R² values per region.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Results</title>
+<sec id="s3a">
+<title>Aim 1: ranking models through brain encoding performance</title>
+<p>Our first aim was to rank models in terms of brain encoding performance, after completing training on within-distribution data. A separate brain encoding model was trained for each layer, across four layers (conv2, conv3, conv4, linear), using 1095 brain parcels as targets.</p>
+<p>The PPO model achieved the highest overall brain encoding R², on average across subjects and model layer, see <xref rid="fig2" ref-type="fig">Figure 2a</xref>. The second-best model was the Imitation model, followed by the ResNet proxy model, and then the Untrained model. This ranking was statistically significant across nearly all layers and subjects (p&lt;0.05, paired WIlcoxon two-sided test, Bonferroni-corrected; see <xref rid="tbl1" ref-type="table">Table 1</xref>). Yet, the differences in brain encoding accuracy across different learning objectives only had a limited magnitude, less than 1 percent of R².</p>
+<table-wrap id="tbl1" orientation="portrait" position="float">
+<label>Table 1:</label>
+<caption><title>Difference of brain encoding R² between models for each subject and layer.</title> <p>The R² scores are averaged across brain parcels and across sequences of 100 TRs. The asterisks denote significance of a two sided Wilcoxon signed-rank test. One, two or three asterisks correspond respectively to a p-value &lt; 0.05, a p-value FDR corrected (Benjamini/Yekutieli) &lt; 0.05 and a p-value Bonferroni corrected &lt; 0.05.</p></caption>
+<graphic xlink:href="691119v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+</table-wrap>
+<p>Interestingly, the brain encoding performance of the ResNet model was not significantly different from that of the Untrained model. The R² scores of the Untrained model were well above chance: a model trained on permuted input data has an R² very close to 0 (&lt;0.001, results not shown). This indicated that even random projections of pixel-level data may be sufficient to encode brain activity in this video game task.</p>
+<p>Overall, brain encoding allowed for a statistically significant ranking of model training objectives, though performance differences among the top models remained small.</p>
+</sec>
+<sec id="s3b">
+<title>Aim 2: probing parallel hierarchies of representations between models and the brain</title>
+<sec id="s3b1">
+<title>The conv3 layer has the highest brain encoding score, for trained models</title>
+<p>We next compared the brain encoding accuracy between layers, for all the models sharing the same architecture. For each type of trained model (PPO, imitation and Resnet proxy), the 3rd convolutional layer of the models was the one producing the highest brain encoding accuracy, on average over subjects and brain parcels. The difference of R² across layers remained small in amplitude - less than .5%. This pattern remains consistent when averaging the R² scores on specific brain regions, notably in the visual cortex (see <xref rid="fig2" ref-type="fig">Figure 2b</xref>). By contrast, for the Untrained model, the accuracy of the conv3 layer was almost the same as conv2, and accuracy dropped sharply for subsequent levels after that.</p>
+<p>Overall, the 3rd convolutional layer emerged as an optimal target for brain encoding and, for the following results, unless mentioned otherwise, the presented R² scores will correspond to this layer.</p>
+</sec>
+<sec id="s3b2">
+<title>All the models (and layers) produced brain encoding maps with similar topography</title>
+<p>Next, we examined whether different models encoded distinct brain regions. Within subjects, brain encoding maps were highly consistent across models, with an average Pearson’s spatial correlation coefficient of 0.97 (range: 0.92–0.99) across model pairs. This was evident in <xref rid="fig2" ref-type="fig">Figure 2c</xref>, which showed strikingly similar brain encoding maps for each model, averaged across subjects.</p>
+<p>Across subjects, brain encoding maps for a given model were also similar but showed greater variability, with an average Pearson’s correlation coefficient of 0.62 (range: 0.50–0.67). This substantial individual variance is illustrated in <xref rid="fig2" ref-type="fig">Figure 2d</xref>, presenting each subject’s brain encoding maps, averaged across models.</p>
+<p>The maps were also very consistent across layers, see Supplementary Material II. The average Pearson’s correlation coefficient between two maps of the same subject and model but different layers was 0.995 (with values ranging from 0.982 to 0.999).</p>
+<p>The regions where the models could explain the highest proportion of the brain activity signal were the visual and the dorsal attentional networks, as defined by the Yeo-Krienen 7 resting-state network parcellation. Moreover, more variance was explained in the primary visual cortex (V1, V2 and V3) than in more specialized areas of the secondary visual cortex (FFA and PPA), see Supplementary Material III.</p>
+<p>Overall, we found that the brain encoding maps were extremely consistent across models, capturing mostly visual and dorsal attentional cortices with substantial inter-subject variance.</p>
+</sec>
+</sec>
+<sec id="s3c">
+<title>Aim 3: Relationship between task performance and brain encoding accuracy</title>
+<p>We next examined whether model performance on the task (game score or imitation) was associated with its ability to encode individual brain activity.</p>
+<sec id="s3c1">
+<title>Robust association between task performance and brain encoding across training stages</title>
+<p>We first tested this relationship across different stages of training, as models gradually improved at the task. Model checkpoints saved at different stages revealed a steady increase in brain encoding accuracy (<xref rid="fig3" ref-type="fig">Figure 3a</xref>), with the exception of the ResNet proxy model, which showed little improvement. Gains were concentrated in the same regions that already showed strong encoding (<xref rid="fig3" ref-type="fig">Figure 3b</xref>).</p>
+<p>We quantified PPO performance as the average distance travelled per level (<xref rid="fig3" ref-type="fig">Figure 3c</xref>). Although distinct from the RL reward signal, this measure similarly reflects the model’s ability to progress through the game. For all subjects, PPO brain encoding accuracy correlated strongly with this performance across training checkpoints. For the Imitation models, brain encoding accuracy tracked closely with their behavioural imitation score, which measures the similarity between model and subject actions on recorded gameplay (<xref rid="fig3" ref-type="fig">Figure 3d</xref>). Strong correlations (Pearson’s r &gt; 0.7) were observed for all subjects except sub-03.</p>
+<p>Together, these analyses show that task performance and brain encoding were linked during training, as brain encoding steadily improved as training progressed for both the PPO and imitation models.</p>
+</sec>
+<sec id="s3c2">
+<title>Level patterns strongly predict brain encoding for fully trained models but not task performance</title>
+<p>We examined next how task performance was associated with brain encoding accuracy, this time for fully trained models across different game levels. We first observed that task performance itself was only weakly associated with brain encoding accuracy across game levels. For the PPO models, correlations were weak or even negative (<xref rid="fig4" ref-type="fig">Figure 4a</xref>). For the Imitation models, correlations were also weak (0.15–0.27) in most subjects, with the exception of sub-02 (<xref rid="fig4" ref-type="fig">Figure 4b</xref>).</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4:</label>
+<caption><title>Cross-level correlations of brain encoding and task performance.</title>
+<p><bold>a</bold>: PPO brain encoding versus game score across levels, shown separately for each subject. <bold>b</bold>: Imitation model brain encoding versus imitation score across levels, by subject. <bold>c</bold>: PPO game score versus imitation model score across levels, by subject. <bold>d</bold>: PPO and imitation model brain encoding across levels, showing near-perfect correlations.</p></caption>
+<graphic xlink:href="691119v1_fig4.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+<p>To further investigate this lack of association, we compared the PPO and Imitation models across levels, separately in terms of performance or brain encoding (<xref rid="fig4" ref-type="fig">Figure 4</xref>), and a striking dichotomy emerged. PPO and Imitation models showed little correspondence in task performance (<xref rid="fig4" ref-type="fig">Figure 4c</xref>), suggesting that each faced different challenges. Yet their brain encoding scores were almost perfectly aligned (r = 0.88–0.99; <xref rid="fig4" ref-type="fig">Figure 4d</xref>). This pattern suggests that brain encoding quality was shaped more by the level itself than by model performance on that level.</p>
+</sec>
+</sec>
+<sec id="s3d">
+<title>Aim 4: Out-of-distribution generalization of task performance and brain encoding</title>
+<p>Our third aim was to assess how brain encoding and task performance generalize to out-of-distribution data. To do this, we measured game/imitation and brain encoding performance on two game levels excluded from training.</p>
+<sec id="s3d1">
+<title>Training PPO models does not translate to out-of-distribution task performance, while the generalization of Imitation models was variable with clear benefits from training</title>
+<p>In terms of game performance, for PPO, neither of the out-of-distribution levels benefited from training: the performance curves were flat across checkpoints, and fell outside of the distribution observed in the within-distribution level (<xref rid="fig5" ref-type="fig">Figure 5a</xref>, first graph). In terms of Imitation models, performance improved with training and fell within the within-distribution performance on one level (see orange curves <xref rid="fig5" ref-type="fig">Figure 5a</xref>), while the performance was lower than within-distribution on the other level and the effect of training was less pronounced (only apparent is sub-02, sub-05 and sub-06, see blue curves <xref rid="fig5" ref-type="fig">Figure 5a</xref>). Our results thus demonstrated that the behaviour of the PPO model is brittle, while the generalization of the Imitation models varied, although some benefits of training were generally observed.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5:</label>
+<caption><title>Out-of-distribution evaluation.</title>
+<p><bold>a</bold> Behavioral scores comparison between the average on within-distribution levels (red) and the scores and each of the OOD levels (orange and blue). For the PPO, the behavioral score is the game performance score. For the Imitation models, the score is the imitation score. <bold>b</bold> Brain encoding maps of the OOD levels, for each model (conv3 layer for all models but ResNet) and averaged over subjects. <bold>c</bold> Visual and dorsal attentional ROIs from the Yeo7 atlas. <bold>d</bold> Brain encoding map for the within-distribution levels, averaged over subjects and models. <bold>e</bold> Evolution of the brain encoding accuracy across training in the visual and dorsal attentional ROIs.</p></caption>
+<graphic xlink:href="691119v1_fig5.tif" mimetype="image" mime-subtype="tiff"/>
+</fig>
+</sec>
+<sec id="s3d2">
+<title>Brain encoding performance was severely degraded out-of-distribution for all models</title>
+<p>Across all models, R² scores dropped substantially on out-of-distribution levels (<xref rid="fig5" ref-type="fig">Figure 5b</xref>). This decline was particularly severe for the ResNet proxy model, which frequently produced negative R² values, indicating a complete failure to generalize. Differences between models became more pronounced in this setting: PPO exhibited the best generalization on average, followed by the Untrained model, then the Imitation models. Regarding spatial distribution of R² scores, the visual and dorsal attention networks showed the highest generalization on average, which were already networks with high within-distribution encoding performance, see <xref rid="fig5" ref-type="fig">Figure 5b</xref>. The lack of generalization in game/imitation performance of the PPO and imitation alone does not explain the out-of-distribution collapse in brain encoding entirely, as similar failures were observed for both the Untrained model and the pretrained ResNet. This shows that the ridge regression layer itself lacked generalization ability, rather than the failure being solely due to the model’s internal representations.</p>
+</sec>
+<sec id="s3d3">
+<title>Effect of training on brain encoding was apparent for PPO and Imitation models</title>
+<p>PPO models evaluated at different training checkpoints showed small improvement in brain encoding performance, after an initial dip in performance (<xref rid="fig5" ref-type="fig">Figure 5c</xref>, left graph). The Imitation models benefitted more uniformly from the earliest phase of training (<xref rid="fig5" ref-type="fig">Figure 5c</xref>, middle graph). Finally, the behaviour of the ResNet proxy showed R2 in the negative range for most of the training for all subjects but sub-05, thus indicating an overall failure to learn generalizable features (<xref rid="fig5" ref-type="fig">Figure 5c</xref>, right graph).</p>
+<p>Overall, we found that our within-distribution findings regarding game/imitation and brain encoding performance did not translate to out-of-distribution levels. This demonstrates that the models we tested are limited in scope and may not provide a valid inference of brain-like processing, as human behavior remains robust and generalizable across levels. In this sense, all tested models appeared misaligned with brain data when evaluated on out-of-distribution tasks.</p>
+</sec>
+</sec>
+</sec>
+<sec id="s4">
+<title>Discussion</title>
+<sec id="s4a">
+<title>Aim 1: A consistent ranking was observed across models, yet only with small absolute differences in brain encoding performance</title>
+<p>As expected we observed that the action models consistently outperformed the vision and untrained baselines. Although some prior works had hypothesized that RL (<xref ref-type="bibr" rid="c12">Cross et al. 2021</xref>) or imitation (<xref ref-type="bibr" rid="c27">Kemtur et al. 2023</xref>) would lead to a better brain encoding, these works had not performed well controlled experiments which would have allowed us to make a specific prediction for our experiments regarding the RL vs imitation. The RL (PPO) objective appeared to have superior performance in brain encoding, consistently across subjects.</p>
+<p>Surprisingly, the absolute differences in the quality of brain encoding between models were rather small. In particular, even the Untrained model was able to encode brain activity with a performance that approached that of our best models. This is not something that is typically observed in brain encoding of complex stimuli, such as natural images or videos. For instance, the 2025 Algonauts competition on video watching implemented a competent baseline of vision-language-audio processing, yet the best models explained up to twice as much variance as the baseline, and this difference was even more dramatic in out-of-distribution experiments (<xref ref-type="bibr" rid="c16">Gifford et al. 2025</xref>). However, in our set up, the diversity of visual stimuli was very limited, as it was constrained by the sprites of the video game. The same sprites were used in the train and test datasets, even though the gameplay may have been different, and this limitation even applied to out-of-distribution experiments to a large degree. This means that high-level abstract events, such as a jump, can be detected by brittle features encoding a specific combination of pixel values, which an Untrained network can represent well. We thus speculate that videogames are particularly prone to brittle brain encoding, at least when the exact same game mechanics are used during training and testing. This overfitting caveat had already been identified in the field of RL where agents are also commonly trained and tested in the same environment (<xref ref-type="bibr" rid="c22">Henderson et al. 2019</xref>).</p>
+</sec>
+<sec id="s4b">
+<title>Aim 2: No hierarchy of brain encoding maps emerged from either the training objective or the target layer</title>
+<p>We had hypothesized a hierarchy in the quality of brain encoding that would be related to the nature of the training objective: ResNet and ResNet proxy models would produce better encoding in the visual cortex, while the PPO and Imitation models would encode better in the sensorimotor cortex, as they were trained to perform actions in the game. This hypothesis was supported by recent results comparing monomodal vs multimodal vision-language-auditory representations during video watching, where models trained with a monomodal objective encoded better the specific brain network matching their training modality, yet multimodal representation encoded better association cortices (d’<xref ref-type="bibr" rid="c3">Ascoli et al. 2025</xref>). We also expected the Untrained model, with no task objective, to markedly underperform compared to trained models in task-relevant regions. Our results did not support our hypothesis. This may seem particularly at odds with the results reported by Cross and colleagues (<xref ref-type="bibr" rid="c12">Cross et al. 2021</xref>) who had reported a hierarchy of representations comparing a vision and action model in classic Atari games. However Cross and colleagues did not compare the same layer activations of their RL agents and vision baseline, using a concatenation of all layers for the RL models and only the last layer of the encoder for the vision model. This difference in activation sampling may explain this discrepancy in results with our study. In our case, we found that the intermediate layer was best for encoding brain activity irrespective of the training objective, and that when using this optimal layer there was no clear hierarchy of representations between training objectives.</p>
+<p>We had also hypothesized a hierarchical correspondence between model depth and cortical areas. Such correspondences have been reported for some visual models (<xref ref-type="bibr" rid="c30">Nonaka et al. 2021</xref>), but recent work has shown that hierarchical structure is not necessary for convolutional neural networks (CNNs) to capture activity across visual regions (<xref ref-type="bibr" rid="c38">St-Yves et al. 2023</xref>). Contrary to our hypothesis, we observed that the third convolutional layer consistently produced the highest brain encoding accuracy. This pattern held across brain regions, including the visual cortex, and did not support a hierarchical mapping between network layer depth and brain regions. This is inconsistent with results reported by (<xref ref-type="bibr" rid="c27">Kemtur et al. 2023</xref>), which may reflect the absence of recurrence in our tested models. Recurrent layers were prominently featured in the architectures of Kemtur and colleagues and drove layer differentiation.</p>
+</sec>
+<sec id="s4c">
+<title>Aim 3: Performance on the training task correlates with brain encoding accuracy, but systematic gaps in brain encoding performance were observed across levels</title>
+<p>For each model individually, we found a correlation between task performance and brain encoding accuracy across training checkpoints, mirroring results from language on both fMRI and EEG data (<xref ref-type="bibr" rid="c9">Caucheteux and King 2022</xref>) and vision on intracranial neural recordings (<xref ref-type="bibr" rid="c43">Yamins et al. 2014</xref>). Still, these improvements were modest in amplitude and did not reflect qualitative differences in the topography of brain encoding maps across training objectives, contrary to our initial hypotheses. By contrast we found a massive gap in brain encoding performance across levels, that correlated highly between models trained with PPO and imitation. Our findings align with recent work by Conwell and colleagues (<xref ref-type="bibr" rid="c11">Conwell et al. 2023</xref>), who found that apparent differences in brain encoding across training tasks often reflect underlying differences in training datasets, particularly their diversity, more than the objective function itself. Wang and colleagues similarly emphasize the role of data diversity in shaping brain-model alignment (<xref ref-type="bibr" rid="c41">Wang et al. 2023</xref>).</p>
+</sec>
+<sec id="s4d">
+<title>Aim 4: Out-of-distribution evaluation reveals brittle generalization of brain encoding</title>
+<p>All models showed a marked decrease in brain encoding accuracy when evaluated on out-of-distribution (OOD) data. Differences between models actually became more pronounced under OOD conditions. PPO, Imitation, and Untrained models outperformed the ResNet-based vision models, with the ResNet proxy—competitive under in-distribution testing—collapsing to near-chance on OOD data. PPO models generalized better than the Untrained baseline, while Imitation models, although weaker overall, outperformed it in task-relevant areas such as V1, V2, and the dorsal attention network. So while all models demonstrated brittle performance, the <italic>extent</italic> of their brittleness revealed critical differences across training objectives.</p>
+</sec>
+<sec id="s4e">
+<title>Limitations and future work</title>
+<p>It should be emphasized that a model’s ability to perform brain encoding does not, by itself, imply functional similarity to the brain. To strengthen the interpretability of brain encoding results, we believe it is essential to evaluate predictive power across a wide range of stimuli and to compare performance across diverse data distributions, a point we previously demonstrated by showing the memory content of the videogame emulator itself could encode brain activity in Mario (Harel, Paugam, et al. 2025), but in a very brittle fashion. In this work, we assessed out-of-distribution (OOD) performance using two left-out game levels and observed that these levels behaved quite differently. The small number and arbitrary selection of these levels make it impossible to determine which specific factors contributed to the observed OOD performance. Future studies using videogame environments could systematically probe a larger and more controlled variety of OOD levels (or sublevels) to identify which task, visual, or structural features most strongly impact generalization performance, and we recently proposed a framework to implement such experiments by segmenting levels into short scenes featuring well identified game patterns (Harel, Bellec, et al. 2025).</p>
+<p>We finally believe that generalist agents will be required in order to achieve robust brain encoding that generalize across many environments. A current trend in AI research is the development of foundation models for vision-action instead of training models from scratch on a particular task, although these models have not yet become as successful and widely available as large language models. Alternatively, task-specific agents trained in the latent space of a vision foundation model (<xref ref-type="bibr" rid="c45">Zhou et al. 2024</xref>) may also show improved robustness compared to training agents from scratch.</p>
+</sec>
+</sec>
+<sec id="s5">
+<title>Conclusion</title>
+<p>We evaluated how the training objective of a videogame model impacts its ability to encode brain activity. To do so, we rigorously controlled for potential differences related to architecture design and training data. Evaluations on 20 levels of the Super Mario Bros videogame revealed significant differences between models, with reinforcement learning performing best, though only with modest gains over imitation learning or even an untrained model. Contrary to our expectations based on prior literature, no model layers or specific training objectives preferentially aligned with specific brain areas. Although brain encoding accuracy steadily improved during training, large gaps persisted across game levels, even for fully trained models. Out-of-distribution experiments also showed brittle brain encoding performance, with poor generalization to new game levels.</p>
+<p>Overall, our results show that small convolutional models are limited in their capacity to robustly encode brain activity, regardless of the training objective. We also found that diverse test data are essential to revealing these gaps in generalization, both within- and out-of-distribution. High-quality brain encoding for videogame tasks will likely require larger models with robust task performance, such as vision-action foundation models.</p>
+</sec>
+
+</body>
+<back>
+<sec id="das" sec-type="data-availability">
+<title>Data availability</title>
+<p>The Neuromod datasets are available through an inter-institutional data transfer agreement. A complete description of the process to access the datasets is available at the following url: <ext-link ext-link-type="uri" xlink:href="https://docs.cneuromod.ca/en/latest/ACCESS.html">https://docs.cneuromod.ca/en/latest/ACCESS.html</ext-link>.</p>
+</sec>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Supplementary Material.</label>
+<media xlink:href="supplements/691119_file02.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>Bibliography</title>
+<ref id="c1"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Ahmadi</surname>, <given-names>Sana</given-names></string-name>, <string-name><given-names>Francois</given-names> <surname>Paugam</surname></string-name>, <string-name><given-names>Tristan</given-names> <surname>Glatard</surname></string-name>, and <string-name><given-names>Pierre Lune</given-names> <surname>Bellec</surname></string-name></person-group>. <year>2024</year>. “<article-title>Training Compute-Optimal Vision Transformers for Brain Encoding</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.2410.19810</pub-id>.</mixed-citation></ref>
+<ref id="c2"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Allen</surname>, <given-names>Emily J.</given-names></string-name>, <string-name><given-names>Ghislain</given-names> <surname>St-Yves</surname></string-name>, <string-name><given-names>Yihan</given-names> <surname>Wu</surname></string-name>, <etal>et al.</etal></person-group> <year>2022</year>. “<article-title>A Massive 7T fMRI Dataset to Bridge Cognitive Neuroscience and Artificial Intelligence</article-title>.” <source>Nature Neuroscience</source> <volume>25</volume> (<issue>1</issue>): <fpage>116</fpage>–<lpage>26</lpage>. <pub-id pub-id-type="doi">10.1038/s41593-021-00962-x</pub-id>. <pub-id pub-id-type="pmid">34916659</pub-id></mixed-citation></ref>
+<ref id="c3"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Ascoli</surname>, <given-names>Stéphane d’</given-names></string-name>, <string-name><given-names>Jérémy</given-names> <surname>Rapin</surname></string-name>, <string-name><given-names>Yohann</given-names> <surname>Benchetrit</surname></string-name>, <string-name><given-names>Hubert</given-names> <surname>Banville</surname></string-name>, and <string-name><given-names>Jean-Rémi</given-names> <surname>King</surname></string-name></person-group>. <year>2025</year>. “<article-title>TRIBE: TRImodal Brain Encoder for Whole-Brain fMRI Response Prediction</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.2507.22229</pub-id>.</mixed-citation></ref>
+<ref id="c4"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Bellec</surname>, <given-names>Pierre</given-names></string-name>, and <string-name><given-names>Julie</given-names> <surname>Boyle</surname></string-name></person-group>. <year>2019</year>. “<article-title>Bridging the Gap between Perception and Action: The Case for Neuroimaging, AI and Video Games</article-title>.” <source>OSF</source>. <pub-id pub-id-type="doi">10.31234/osf.io/3epws</pub-id>.</mixed-citation></ref>
+<ref id="c5"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Benson</surname>, <given-names>Noah C</given-names></string-name>, and <string-name><given-names>Jonathan</given-names> <surname>Winawer</surname></string-name></person-group>. <year>2018</year>. “<article-title>Bayesian Analysis of Retinotopic Maps</article-title>.” <source>eLife</source> <volume>7</volume> (<issue>December</issue>): <elocation-id>e40224</elocation-id>. <pub-id pub-id-type="doi">10.7554/eLife.40224</pub-id>. <pub-id pub-id-type="pmid">30520736</pub-id></mixed-citation></ref>
+<ref id="c6"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Boyle</surname>, <given-names>Julie A.</given-names></string-name>, <string-name><given-names>Basile</given-names> <surname>Pinsard</surname></string-name>, <string-name><given-names>Amal</given-names> <surname>Boukhdhir</surname></string-name>, <etal>et al.</etal></person-group> <year>2020</year>. “<article-title>The courtois project on neuronal modelling - first data release</article-title>.” <conf-name>26th OHBM annual meeting</conf-name>. <ext-link ext-link-type="uri" xlink:href="https://publications.polymtl.ca/50613/">https://publications.polymtl.ca/50613/</ext-link>.</mixed-citation></ref>
+<ref id="c7"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Brockman</surname>, <given-names>Greg</given-names></string-name>, <string-name><given-names>Vicki</given-names> <surname>Cheung</surname></string-name>, <string-name><given-names>Ludwig</given-names> <surname>Pettersson</surname></string-name>, <etal>et al.</etal></person-group> <year>2016</year>. “<article-title>OpenAI Gym</article-title>.” <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.1606.01540</pub-id>.</mixed-citation></ref>
+<ref id="c8"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Burelli</surname>, <given-names>Paolo</given-names></string-name>, and <string-name><given-names>Laurits</given-names> <surname>Dixen</surname></string-name></person-group>. <year>2024</year>. “<article-title>Playing With Neuroscience: Past, Present and Future of Neuroimaging and Games</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.2403.15413</pub-id>.</mixed-citation></ref>
+<ref id="c9"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Caucheteux</surname>, <given-names>Charlotte</given-names></string-name>, and <string-name><given-names>Jean-Rémi</given-names> <surname>King</surname></string-name></person-group>. <year>2022</year>. “<article-title>Brains and Algorithms Partially Converge in Natural Language Processing</article-title>.” <source>Communications Biology</source> <volume>5</volume> (<issue>1</issue>): <fpage>1</fpage>. <pub-id pub-id-type="doi">10.1038/s42003-022-03036-1</pub-id>. <pub-id pub-id-type="pmid">35173264</pub-id></mixed-citation></ref>
+<ref id="c10"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cichy</surname>, <given-names>Radoslaw Martin</given-names></string-name>, <string-name><given-names>Aditya</given-names> <surname>Khosla</surname></string-name>, <string-name><given-names>Dimitrios</given-names> <surname>Pantazis</surname></string-name>, <string-name><given-names>Antonio</given-names> <surname>Torralba</surname></string-name>, and <string-name><given-names>Aude</given-names> <surname>Oliva</surname></string-name></person-group>. <year>2016</year>. “<article-title>Comparison of Deep Neural Networks to Spatio-Temporal Cortical Dynamics of Human Visual Object Recognition Reveals Hierarchical Correspondence</article-title>.” <source>Scientific Reports</source> <volume>6</volume> (June): <fpage>27755</fpage>. <pub-id pub-id-type="doi">10.1038/srep27755</pub-id>. <pub-id pub-id-type="pmid">27282108</pub-id></mixed-citation></ref>
+<ref id="c11"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Conwell</surname>, <given-names>Colin</given-names></string-name>, <string-name><given-names>Jacob S.</given-names> <surname>Prince</surname></string-name>, <string-name><given-names>Kendrick N.</given-names> <surname>Kay</surname></string-name>, <string-name><given-names>George A.</given-names> <surname>Alvarez</surname></string-name>, and <string-name><given-names>Talia</given-names> <surname>Konkle</surname></string-name></person-group>. <year>2023</year>. “<article-title>What Can 1.8 Billion Regressions Tell Us about the Pressures Shaping High-Level Visual Representation in Brains and Machines?</article-title>” <source>bioRxiv</source> <pub-id pub-id-type="doi">10.1101/2022.03.28.485868</pub-id>.</mixed-citation></ref>
+<ref id="c12"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cross</surname>, <given-names>Logan</given-names></string-name>, <string-name><given-names>Jeff</given-names> <surname>Cockburn</surname></string-name>, <string-name><given-names>Yisong</given-names> <surname>Yue</surname></string-name>, and <string-name><given-names>John P.</given-names> <surname>O’Doherty</surname></string-name></person-group>. <year>2021</year>. “<article-title>Using Deep Reinforcement Learning to Reveal How the Brain Encodes Abstract State-Space Representations in High-Dimensional Environments</article-title>.” <source>Neuron</source> <volume>109</volume> (<issue>4</issue>): <fpage>724</fpage>–<lpage>738.e7.</lpage> <pub-id pub-id-type="doi">10.1016/j.neuron.2020.11.021</pub-id>. <pub-id pub-id-type="pmid">33326755</pub-id></mixed-citation></ref>
+<ref id="c13"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Deng</surname>, <given-names>Jia</given-names></string-name>, <string-name><given-names>Wei</given-names> <surname>Dong</surname></string-name>, <string-name><given-names>Richard</given-names> <surname>Socher</surname></string-name>, <string-name><given-names>Li-Jia</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Kai</given-names> <surname>Li</surname></string-name>, and <string-name><given-names>Li</given-names> <surname>Fei-Fei</surname></string-name></person-group>. <year>2009</year>. “<article-title>ImageNet: A Large-Scale Hierarchical Image Database</article-title>.” <conf-name>2009 IEEE Conference on Computer Vision and Pattern Recognition</conf-name>, <fpage>248</fpage>–<lpage>55</lpage>. <pub-id pub-id-type="doi">10.1109/CVPR.2009.5206848</pub-id>.</mixed-citation></ref>
+<ref id="c14"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Eickenberg</surname>, <given-names>Michael</given-names></string-name>, <string-name><given-names>Alexandre</given-names> <surname>Gramfort</surname></string-name>, <string-name><given-names>Gaël</given-names> <surname>Varoquaux</surname></string-name>, and <string-name><given-names>Bertrand</given-names> <surname>Thirion</surname></string-name></person-group>. <year>2017</year>. “<article-title>Seeing It All: Convolutional Network Layers Map the Function of the Human Visual System</article-title>.” <source>NeuroImage</source> <volume>152</volume> (<issue>May</issue>): <fpage>184</fpage>–<lpage>94</lpage>. <pub-id pub-id-type="doi">10.1016/j.neuroimage.2016.10.001</pub-id>. <pub-id pub-id-type="pmid">27777172</pub-id></mixed-citation></ref>
+<ref id="c15"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Freteault</surname>, <given-names>Maelle</given-names></string-name>, <string-name><given-names>Maximilien</given-names> <surname>Le Clei</surname></string-name>, <string-name><given-names>Loic</given-names> <surname>Tetrel</surname></string-name>, <string-name><given-names>Pierre</given-names> <surname>Bellec</surname></string-name>, and <string-name><given-names>Nicolas</given-names> <surname>Farrugia</surname></string-name></person-group>. <year>2023</year>. <article-title>Alignment of Auditory Artificial Networks with Massive Individual fMRI Brain Data Leads to Generalizable Improvements in Brain Encoding and Downstream Tasks</article-title>. <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2023.09.06.556533</pub-id>.</mixed-citation></ref>
+<ref id="c16"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Gifford</surname>, <given-names>Alessandro T.</given-names></string-name>, <string-name><given-names>Domenic</given-names> <surname>Bersch</surname></string-name>, <string-name><given-names>Marie</given-names> <surname>St-Laurent</surname></string-name>, <etal>et al.</etal></person-group> <year>2025</year>. “<article-title>The Algonauts Project 2025 Challenge: How the Human Brain Makes Sense of Multimodal Movies</article-title>.” <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.2501.00504</pub-id></mixed-citation></ref>
+<ref id="c17"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Güçlü</surname>, <given-names>Umut</given-names></string-name>, and <string-name><given-names>Marcel A. J.</given-names> <surname>van Gerven</surname></string-name></person-group>. <year>2015</year>. “<article-title>Deep Neural Networks Reveal a Gradient in the Complexity of Neural Representations across the Ventral Stream.” Articles</article-title>. <source>Journal of Neuroscience</source> <volume>35</volume> (<issue>27</issue>): <fpage>10005</fpage>–<lpage>14</lpage>. <pub-id pub-id-type="doi">10.1523/JNEUROSCI.5023-14.2015</pub-id>. <pub-id pub-id-type="pmid">26157000</pub-id></mixed-citation></ref>
+<ref id="c18"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Harel</surname>, <given-names>Yann</given-names></string-name>, <string-name><given-names>Lune P.</given-names> <surname>Bellec</surname></string-name>, <string-name><given-names>François</given-names> <surname>Paugam</surname></string-name>, <string-name><given-names>Hugo</given-names> <surname>Delhaye</surname></string-name>, and <string-name><given-names>Audrey</given-names> <surname>Durand</surname></string-name></person-group>. <year>2025</year>. “<source>Human-AI Alignment of Learning Trajectories in Video Games: A Continual RL Benchmark Proposal</source>.” Paper presented at Reinforcement Learning and Video Games Workshop @ RLC 2025. July 11. <ext-link ext-link-type="uri" xlink:href="https://openreview.net/forum?id=YAVB439L9X">https://openreview.net/forum?id=YAVB439L9X</ext-link>.</mixed-citation></ref>
+<ref id="c19"><mixed-citation publication-type="web"><person-group person-group-type="author"><string-name><surname>Harel</surname>, <given-names>Yann</given-names></string-name>, <string-name><given-names>François</given-names> <surname>Paugam</surname></string-name>, <string-name><given-names>Marie</given-names> <surname>St-Laurent</surname></string-name>, and <string-name><given-names>Pierre</given-names> <surname>Bellec</surname></string-name></person-group>. <year>2025</year>. “<source>Brittle Brain Encoding: Poor Out-of-Distribution Generalization Shows the Human Brain Is Neither a Nintendo Entertainment System nor a Four-Layer Convolutional Neural Network</source>.” Paper presented at Cognitive Computational Neuroscience, Amsterdam, Netherlands. August 12. <ext-link ext-link-type="uri" xlink:href="https://2025.ccneuro.org/abstract_pdf/Harel_2025_Brittle_Brain_Encoding_Poor_Out-of-Distribution_Generalization.pdf">https://2025.ccneuro.org/abstract_pdf/Harel_2025_Brittle_Brain_Encoding_Poor_Out-of-Distribution_Generalization.pdf</ext-link>.</mixed-citation></ref>
+<ref id="c20"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Harel</surname>, <given-names>Yann</given-names></string-name>, <string-name><given-names>Basile</given-names> <surname>Pinsard</surname></string-name>, <string-name><given-names>Julie</given-names> <surname>Boyle</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>Gamer in the Scanner : Event-Related Analysis of fMRI Activity during Retro Videogame Play Guided by Automated Annotations of Game Content</article-title>.” <source>OSF</source> <pub-id pub-id-type="doi">10.31234/osf.io/uakq9</pub-id>.</mixed-citation></ref>
+<ref id="c21"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>He</surname>, <given-names>Kaiming</given-names></string-name>, <string-name><given-names>Xiangyu</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Shaoqing</given-names> <surname>Ren</surname></string-name>, and <string-name><given-names>Jian</given-names> <surname>Sun</surname></string-name></person-group>. <year>2015</year>. “<article-title>Deep Residual Learning for Image Recognition</article-title>.” <source>arXiv</source><pub-id pub-id-type="doi">10.48550/arXiv.1512.03385</pub-id>.</mixed-citation></ref>
+<ref id="c22"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Henderson</surname>, <given-names>Peter</given-names></string-name>, <string-name><given-names>Riashat</given-names> <surname>Islam</surname></string-name>, <string-name><given-names>Philip</given-names> <surname>Bachman</surname></string-name>, <string-name><given-names>Joelle</given-names> <surname>Pineau</surname></string-name>, <string-name><given-names>Doina</given-names> <surname>Precup</surname></string-name>, and <string-name><given-names>David</given-names> <surname>Meger</surname></string-name></person-group>. <year>2019</year>. “<article-title>Deep Reinforcement Learning That Matters</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.1709.06560</pub-id>.</mixed-citation></ref>
+<ref id="c23"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Jiang</surname>, <given-names>Minqi</given-names></string-name>, <string-name><given-names>Michael</given-names> <surname>Dennis</surname></string-name>, <string-name><given-names>Jack</given-names> <surname>Parker-Holder</surname></string-name>, <string-name><given-names>Jakob</given-names> <surname>Foerster</surname></string-name>, <string-name><given-names>Edward</given-names> <surname>Grefenstette</surname></string-name>, and <string-name><given-names>Tim</given-names> <surname>Rocktäschel</surname></string-name></person-group>. <year>2022</year>. “<article-title>Replay-Guided Adversarial Environment Design</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.2110.02439</pub-id>.</mixed-citation></ref>
+<ref id="c24"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Julian</surname>, <given-names>J. B.</given-names></string-name>, <string-name><given-names>Evelina</given-names> <surname>Fedorenko</surname></string-name>, <string-name><given-names>Jason</given-names> <surname>Webster</surname></string-name>, and <string-name><given-names>Nancy</given-names> <surname>Kanwisher</surname></string-name></person-group>. <year>2012</year>. “<article-title>An Algorithmic Method for Functionally Defining Regions of Interest in the Ventral Visual Pathway</article-title>.” <source>NeuroImage</source> <volume>60</volume> (<issue>4</issue>): <fpage>2357</fpage>–<lpage>64</lpage>. <pub-id pub-id-type="doi">10.1016/j.neuroimage.2012.02.055</pub-id>. <pub-id pub-id-type="pmid">22398396</pub-id></mixed-citation></ref>
+<ref id="c25"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kay</surname>, <given-names>Kendrick N.</given-names></string-name>, <string-name><given-names>Jonathan</given-names> <surname>Winawer</surname></string-name>, <string-name><given-names>Aviv</given-names> <surname>Mezer</surname></string-name>, and <string-name><given-names>Brian A.</given-names> <surname>Wandell</surname></string-name></person-group>. <year>2013</year>. “<article-title>Compressive Spatial Summation in Human Visual Cortex</article-title>.” <source>Journal of Neurophysiology</source> <volume>110</volume> (<issue>2</issue>): <fpage>481</fpage>. <pub-id pub-id-type="doi">10.1152/jn.00105.2013</pub-id>. <pub-id pub-id-type="pmid">23615546</pub-id></mixed-citation></ref>
+<ref id="c26"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kell</surname>, <given-names>Alexander J. E.</given-names></string-name>, <string-name><given-names>Daniel L. K.</given-names> <surname>Yamins</surname></string-name>, <string-name><given-names>Erica N.</given-names> <surname>Shook</surname></string-name>, <string-name><given-names>Sam V.</given-names> <surname>Norman-Haignere</surname></string-name>, and <string-name><given-names>Josh H.</given-names> <surname>McDermott</surname></string-name></person-group>. <year>2018</year>. “<article-title>A Task-Optimized Neural Network Replicates Human Auditory Behavior, Predicts Brain Responses, and Reveals a Cortical Processing Hierarchy</article-title>.” <source>Neuron</source> <volume>98</volume> (<issue>3</issue>): <fpage>630</fpage>–<lpage>644.e16.</lpage> <pub-id pub-id-type="doi">10.1016/j.neuron.2018.03.044</pub-id>. <pub-id pub-id-type="pmid">29681533</pub-id></mixed-citation></ref>
+<ref id="c27"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Kemtur</surname>, <given-names>Anirudha</given-names></string-name>, <string-name><given-names>Francois</given-names> <surname>Paugam</surname></string-name>, <string-name><given-names>Basile</given-names> <surname>Pinsard</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>Behavioral Imitation with Artificial Neural Networks Leads to Personalized Models of Brain Dynamics During Videogame Play</article-title>.” <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2023.10.28.564546</pub-id>.</mixed-citation></ref>
+<ref id="c28"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mnih</surname>, <given-names>Volodymyr</given-names></string-name>, <string-name><given-names>Koray</given-names> <surname>Kavukcuoglu</surname></string-name>, <string-name><given-names>David</given-names> <surname>Silver</surname></string-name>, <etal>et al.</etal></person-group> <year>2015</year>. “<article-title>Human-Level Control through Deep Reinforcement Learning</article-title>.” <source>Nature</source> <volume>518</volume> (<issue>7540</issue>): <fpage>7540</fpage>. <pub-id pub-id-type="doi">10.1038/nature14236</pub-id>. <pub-id pub-id-type="pmid">25719670</pub-id></mixed-citation></ref>
+<ref id="c29"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Nichol</surname>, <given-names>Alex</given-names></string-name>, <string-name><given-names>Vicki</given-names> <surname>Pfau</surname></string-name>, <string-name><given-names>Christopher</given-names> <surname>Hesse</surname></string-name>, <string-name><given-names>Oleg</given-names> <surname>Klimov</surname></string-name>, and <string-name><given-names>John</given-names> <surname>Schulman</surname></string-name></person-group>. <year>2018</year>. “<article-title>Gotta Learn Fast: A New Benchmark for Generalization in RL</article-title>.” <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.1804.03720</pub-id>.</mixed-citation></ref>
+<ref id="c30"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nonaka</surname>, <given-names>Soma</given-names></string-name>, <string-name><given-names>Kei</given-names> <surname>Majima</surname></string-name>, <string-name><given-names>Shuntaro C.</given-names> <surname>Aoki</surname></string-name>, and <string-name><given-names>Yukiyasu</given-names> <surname>Kamitani</surname></string-name></person-group>. <year>2021</year>. “<article-title>Brain Hierarchy Score: Which Deep Neural Networks Are Hierarchically Brain-Like?</article-title>” <source>iScience</source> <volume>24</volume> (<issue>9</issue>): <fpage>103013</fpage>. <pub-id pub-id-type="doi">10.1016/j.isci.2021.103013</pub-id>. <pub-id pub-id-type="pmid">34522856</pub-id></mixed-citation></ref>
+<ref id="c31"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Paolo</surname>, <given-names>Giuseppe</given-names></string-name>, <string-name><given-names>Jonas</given-names> <surname>Gonzalez-Billandon</surname></string-name>, and <string-name><given-names>Balázs</given-names> <surname>Kégl</surname></string-name></person-group>. <year>2024</year>. “<article-title>A Call for Embodied AI</article-title>.” <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.2402.03824</pub-id>.</mixed-citation></ref>
+<ref id="c32"><mixed-citation publication-type="confproc"><person-group person-group-type="author"><string-name><surname>Paugam</surname>, <given-names>François</given-names></string-name>, <string-name><given-names>Guillaume</given-names> <surname>Lajoie</surname></string-name>, and <string-name><given-names>Pierre</given-names> <surname>Bellec</surname></string-name></person-group>. <year>2024</year>. “<article-title>What Is a Good Model for Brain Encoding in a Videogame Task ?</article-title>” <conf-name>Computational Cognitive Neuroscience 2024</conf-name>. <ext-link ext-link-type="uri" xlink:href="https://2024.ccneuro.org/poster/?id=389">https://2024.ccneuro.org/poster/?id=389</ext-link>.</mixed-citation></ref>
+<ref id="c33"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Schrimpf</surname>, <given-names>Martin</given-names></string-name>, <string-name><given-names>Idan</given-names> <surname>Blank</surname></string-name>, <string-name><given-names>Greta</given-names> <surname>Tuckute</surname></string-name>, <etal>et al.</etal></person-group> <year>2020</year>. “<article-title>Artificial Neural Networks Accurately Predict Language Processing in the Brain</article-title>.” <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2020.06.26.174482</pub-id>.</mixed-citation></ref>
+<ref id="c34"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Schrimpf</surname>, <given-names>Martin</given-names></string-name>, <string-name><given-names>Jonas</given-names> <surname>Kubilius</surname></string-name>, <string-name><given-names>Ha</given-names> <surname>Hong</surname></string-name>, <etal>et al.</etal></person-group> <year>2018</year>. “<article-title>Brain-Score: Which Artificial Neural Network for Object Recognition Is Most Brain-Like?</article-title>” <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/407007</pub-id>.</mixed-citation></ref>
+<ref id="c35"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Schulman</surname>, <given-names>John</given-names></string-name>, <string-name><given-names>Filip</given-names> <surname>Wolski</surname></string-name>, <string-name><given-names>Prafulla</given-names> <surname>Dhariwal</surname></string-name>, <string-name><given-names>Alec</given-names> <surname>Radford</surname></string-name>, and <string-name><given-names>Oleg</given-names> <surname>Klimov</surname></string-name></person-group>. <year>2017</year>. “<article-title>Proximal Policy Optimization Algorithms</article-title>.” <source>arXiv</source> <pub-id pub-id-type="doi">10.48550/arXiv.1707.06347</pub-id>.</mixed-citation></ref>
+<ref id="c36"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Seeliger</surname>, <given-names>K.</given-names></string-name>, <string-name><given-names>L.</given-names> <surname>Ambrogioni</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Güçlütürk</surname></string-name>, <string-name><given-names>L. M.</given-names> <surname>van den Bulk</surname></string-name>, <string-name><given-names>U.</given-names> <surname>Güçlü</surname></string-name>, and <string-name><given-names>M. A. J.</given-names> <surname>van Gerven</surname></string-name></person-group>. <year>2021</year>. “<article-title>End-to-End Neural System Identification with Neural Information Flow</article-title>.” <source>PLOS Computational Biology</source> <volume>17</volume> (<issue>2</issue>): <fpage>e1008558</fpage>. <pub-id pub-id-type="doi">10.1371/journal.pcbi.1008558</pub-id>. <pub-id pub-id-type="pmid">33539366</pub-id></mixed-citation></ref>
+<ref id="c37"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Stigliani</surname>, <given-names>Anthony</given-names></string-name>, <string-name><given-names>Kevin S.</given-names> <surname>Weiner</surname></string-name>, and <string-name><given-names>Kalanit</given-names> <surname>Grill-Spector</surname></string-name></person-group>. <year>2015</year>. “<article-title>Temporal Processing Capacity in High-Level Visual Cortex Is Domain Specific</article-title>.” <source>The Journal of Neuroscience: The Official Journal of the Society for Neuroscience</source> <volume>35</volume> (<issue>36</issue>): <fpage>12412</fpage>–<lpage>24</lpage>. <pub-id pub-id-type="doi">10.1523/JNEUROSCI.4822-14.2015</pub-id>. <pub-id pub-id-type="pmid">26354910</pub-id></mixed-citation></ref>
+<ref id="c38"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>St-Yves</surname>, <given-names>Ghislain</given-names></string-name>, <string-name><given-names>Emily J.</given-names> <surname>Allen</surname></string-name>, <string-name><given-names>Yihan</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>Kendrick</given-names> <surname>Kay</surname></string-name>, and <string-name><given-names>Thomas</given-names> <surname>Naselaris</surname></string-name></person-group>. <year>2023</year>. “<article-title>Brain-Optimized Deep Neural Network Models of Human Visual Areas Learn Non-Hierarchical Representations</article-title>.” <source>Nature Communications</source> <volume>14</volume> (<issue>1</issue>): <fpage>1</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-023-38674-4</pub-id>. <pub-id pub-id-type="pmid">37286563</pub-id></mixed-citation></ref>
+<ref id="c39"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Thomas Yeo</surname>, <given-names>B. T.</given-names></string-name>, <string-name><given-names>Fenna M.</given-names> <surname>Krienen</surname></string-name>, <string-name><given-names>Jorge</given-names> <surname>Sepulcre</surname></string-name>, <etal>et al.</etal></person-group> <year>2011</year>. “<article-title>The Organization of the Human Cerebral Cortex Estimated by Intrinsic Functional Connectivity</article-title>.” <source>Journal of Neurophysiology</source> <volume>106</volume> (<issue>3</issue>): <fpage>1125</fpage>–<lpage>65</lpage>. <pub-id pub-id-type="doi">10.1152/jn.00338.2011</pub-id>. <pub-id pub-id-type="pmid">21653723</pub-id></mixed-citation></ref>
+<ref id="c40"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Toneva</surname>, <given-names>Mariya</given-names></string-name>, and <string-name><given-names>Leila</given-names> <surname>Wehbe</surname></string-name></person-group>. <year>2019</year>. “<article-title>Interpreting and Improving Natural-Language Processing (in Machines) with Natural Language-Processing (in the Brain)</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.1905.11833</pub-id>.</mixed-citation></ref>
+<ref id="c41"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Wang</surname>, <given-names>Aria Y.</given-names></string-name>, <string-name><given-names>Kendrick</given-names> <surname>Kay</surname></string-name>, <string-name><given-names>Thomas</given-names> <surname>Naselaris</surname></string-name>, <string-name><given-names>Michael J.</given-names> <surname>Tarr</surname></string-name>, and <string-name><given-names>Leila</given-names> <surname>Wehbe</surname></string-name></person-group>. <year>2023</year>. “<article-title>Natural Language Supervision with a Large and Diverse Dataset Builds Better Models of Human High-Level Visual Cortex.</article-title>” <source>bioRxiv</source>. <pub-id pub-id-type="doi">10.1101/2022.09.27.508760</pub-id>.</mixed-citation></ref>
+<ref id="c42"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yamins</surname>, <given-names>Daniel L. K.</given-names></string-name>, and <string-name><given-names>James J.</given-names> <surname>DiCarlo</surname></string-name></person-group>. <year>2016</year>. “<article-title>Using Goal-Driven Deep Learning Models to Understand Sensory Cortex</article-title>.” <source>Nature Neuroscience</source> <volume>19</volume> (<issue>3</issue>): <fpage>3</fpage>. <pub-id pub-id-type="doi">10.1038/nn.4244</pub-id>. <pub-id pub-id-type="pmid">26906502</pub-id></mixed-citation></ref>
+<ref id="c43"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Yamins</surname>, <given-names>Daniel L. K.</given-names></string-name>, <string-name><given-names>Ha</given-names> <surname>Hong</surname></string-name>, <string-name><given-names>Charles F.</given-names> <surname>Cadieu</surname></string-name>, <string-name><given-names>Ethan A.</given-names> <surname>Solomon</surname></string-name>, <string-name><given-names>Darren</given-names> <surname>Seibert</surname></string-name>, and <string-name><given-names>James J.</given-names> <surname>DiCarlo</surname></string-name></person-group>. <year>2014</year>. “<article-title>Performance-Optimized Hierarchical Models Predict Neural Responses in Higher Visual Cortex</article-title>.” <source>Proceedings of the National Academy of Sciences</source> <volume>111</volume> (<issue>23</issue>): <fpage>8619</fpage>–<lpage>24</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1403112111</pub-id>. <pub-id pub-id-type="pmid">24812127</pub-id></mixed-citation></ref>
+<ref id="c44"><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zador</surname>, <given-names>Anthony</given-names></string-name>, <string-name><given-names>Sean</given-names> <surname>Escola</surname></string-name>, <string-name><given-names>Blake</given-names> <surname>Richards</surname></string-name>, <etal>et al.</etal></person-group> <year>2023</year>. “<article-title>Catalyzing Next-Generation Artificial Intelligence through NeuroAI</article-title>.” <source>Nature Communications</source> <volume>14</volume> (<issue>1</issue>): <fpage>1597</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-023-37180-x</pub-id>. <pub-id pub-id-type="pmid">36949048</pub-id></mixed-citation></ref>
+<ref id="c45"><mixed-citation publication-type="preprint"><person-group person-group-type="author"><string-name><surname>Zhou</surname>, <given-names>Gaoyue</given-names></string-name>, <string-name><given-names>Hengkai</given-names> <surname>Pan</surname></string-name>, <string-name><given-names>Yann</given-names> <surname>LeCun</surname></string-name>, and <string-name><given-names>Lerrel</given-names> <surname>Pinto</surname></string-name></person-group>. <year>2024</year>. “<article-title>DINO-WM: World Models on Pre-Trained Visual Features Enable Zero-Shot Planning</article-title>.” <source>arXiv</source>. <pub-id pub-id-type="doi">10.48550/arXiv.2411.04983</pub-id>.</mixed-citation></ref>
+<ref id="dataref1"><mixed-citation publication-type="data" specific-use="analyzed"><person-group person-group-type="author"><string-name><surname>The CNeuroMod team</surname></string-name></person-group> (<year iso-8601-date="2026">2026</year>) <article-title>The Courtois Project on Neuronal Modelling - Preprocessed data</article-title>. <source>CONP Portal</source>. <pub-id pub-id-type="accession" xlink:href="https://n2t.net/ark:/70798/d7t7g5wmw5ckb2w5jf">d7t7g5wmw5ckb2w5jf</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110830.1.sa3</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Ponte Costa</surname>
+<given-names>Rui</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-2595-2027</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/052gg0110</institution-id><institution>University of Oxford</institution>
+</institution-wrap>
+<city>Oxford</city>
+<country>United Kingdom</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+<kwd>Solid</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>This is a <bold>valuable</bold> paper that compares various deep learning models, trained with different objective functions, on their ability to predict fMRI data collected during naturalistic video gameplay. The data and analysis provide <bold>solid</bold> within-distribution evidence that models trained with PPO and imitation learning outperform untrained models and standard convolutional networks. However, the evidence for brittleness in out-of-distribution encoding remains <bold>incomplete</bold>, as the claim that this stems from the networks' training rather than from alternative causes-like overfitting of ridge regression parameters-is not yet fully supported.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110830.1.sa2</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This study uses an encoding model approach to compare a range of different deep learning models in predicting functional MRI data, collected while participants played the game &quot;Super Mario Bros&quot; inside the scanner. The fMRI data is rich, within-subject data, with around 15 hours of gameplay for each of five participants who took part in the study. A range of models are compared, including deep RL models (PPO), behaviour cloning (imitation learning), supervised visual models (ResNet), and untrained but structurally equivalent models. The main metric of model comparison is brain prediction (i.e., cross-validated R^2, and within-subject generalisation to out-of-distribution gameplay), rather than focussing on which model features are being encoded.</p>
+<p>The core results are:</p>
+<p>(1) The deep RL and imitation learning models show a modest improvement in prediction accuracy relative to the untrained and visual models (around a 1-2% increase in R^2). Notably, this is against a background in which the untrained model - essentially random projections of the gameplay pixels - can explain around 6 or 7% of the variance in fMRI data (Figure 2). So, the improvement in model fit is a small (but significant) one, and a major driver of prediction scores appears to be low-level visual stimulation as opposed to gameplay prediction.</p>
+<p>(2) There is little variation across layers in prediction accuracy in the trained models. In the untrained model, prediction accuracy drops across layers. This suggests that the prediction accuracy in this untrained model results from its (early-layer) representations being closer to what is presented on screen - as the random weights move the untrained model's representation away from sensory features, it becomes less predictive of the brain. In a trained model, meaningful representations are maintained in deeper layers - and interestingly, there is no clear correspondence between layers of the model and layers of the visual pathway.</p>
+<p>(iii) There is a noticeable improvement in brain prediction by both the deep RL and imitation models with model training. In other words, the 1-2% increase in R^2 mentioned in point (i) is a result of the training, rather than any other factor.</p>
+<p>(iv) None of the models, including the untrained model, perform well in generalising to out-of-distribution data held out from the training/evaluation. This leads to the claim that the brain's encoding representations are 'brittle'.</p>
+<p>Strengths:</p>
+<p>(1) A major strength of the dataset is that it contains rich, extended naturalistic gameplay data within individual subjects. This mirrors some of the advantages seen in other naturalistic datasets (e.g., natural scenes dataset, storybook listening, video watching) - but there are very few examples of such data where the subject is controlling or generating the behaviour in the naturalistic task. This allows potentially new questions to be asked about how these representations are learned across time, within individual participants.</p>
+<p>(2) A further strength of the manuscript is the clarity with which the aims and hypotheses are articulated in the introduction, and evaluated/discussed throughout the paper. This provides a clear set of objective criteria against which to evaluate the performance of the resulting models; the paper is also written in a very clear and honest way, in that some of the a priori hypotheses are not supported - this makes for a more transparent report than one written in an a posteriori manner.</p>
+<p>(3) Finally, although the results in comparing different models are perhaps not as impressive as one might have hoped, the authors have been quite careful in making the models comparable in terms of their architecture and number of parameters, etc. This means that any variation in prediction is likely attributable to the different objective functions used to train the models, rather than other features of the model architecture.</p>
+<p>Weaknesses:</p>
+<p>(1) The work is currently framed as &quot;training neural networks from scratch...leads to brittle brain encoding&quot; - but I'm not sure that the results fully support this. First, the brittleness is still present in the untrained network (i.e., random projections of pixels), as shown in Figure 5b. This implies that the brittleness may not be a consequence of the network training, but of overfitting to the encoding (ridge regression) model of the fMRI data (as the authors acknowledge when presenting these results). I would instead encourage the authors to shift the emphasis slightly towards the (modest) improvement in prediction using the RL/imitation objectives, and/or the (similarly modest) improvement in prediction with training, rather than foregrounding the brittleness of the encoding.</p>
+<p>(2) While the analyses of how model prediction improves with training are nice, it is a shame that there is no consideration of how prediction improves (or otherwise) across the training of the participants. Do participants improve across the 15 hours of gameplay - or do they, for instance, become more predictable by the imitation learning model? Is this more true in the naïve participants than those with extensive past experience of Mario? And does this in any way lead to better alignment with model predictions across sessions? These all seemed like natural questions that could benefit from the unique longitudinal nature of this dataset, and it seemed a shame that they were not touched upon at all.</p>
+<p>(3) While there is little variation between the models in terms of predictive performance, it is currently a little unclear whether this is simply due to fitting a set of highly parameterised models to the data, or because the models are themselves fundamentally similar in their representations. One way to address the latter point might be to perform some kind of RSA or CKA (Kornblith et al, arXiv 2019; Williams et al, bioRxiv 2024) across the layer representations within-model, and between-models, to ask how similar (or different) the learned representations are between the different models used for fMRI prediction.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110830.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This paper aims to test whether training models to play video games from visual inputs through reinforcement learning leads to better matches to human visual encoding during gameplay, compared to models with the same architecture and training images but with different training objectives. The authors find a slight advantage for the RL model, but encoding performance and generalization overall are weak and variable.</p>
+<p>Strengths:</p>
+<p>This was a reasonable hypothesis to test, and the model comparisons adequately represent other possibilities for training a model of the given architecture. The ResNet proxy is a particularly interesting way to benefit from a larger model's pre-training while still using the same constrained architecture and training set.</p>
+<p>Weaknesses:</p>
+<p>I always prefer to see learning curves for models on the tasks they were trained on, just to contextualize their performance on the brain encoding results, but they are not shown here.</p>
+<p>The paper misses some of the relevant literature that has performed similar comparisons across learning objectives for visual encoding models, such as <ext-link ext-link-type="uri" xlink:href="https://arxiv.org/abs/2112.02027">https://arxiv.org/abs/2112.02027</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10569538/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10569538/</ext-link></p>
+<p>The authors end up advocating for the idea that large-scale pre-training is needed in order to build good visual encoders for matching human data. In many ways, this was already known (given that brain encoding scores scale with imagenet performance, which requires at least a moderate amount of general-purpose image training to achieve). However, they also note that &quot;the brain encoding performance of the ResNet model was not significantly different from that of the Untrained model.&quot; I would assume that an ImageNet-trained ResNet would be in the direction of the type of large-scale pre-trained model the authors advocate for (even when not trained for action generation), yet their results don't support this direction being the solution. Are their results about Resnet not surpassing an untrained model consistent with prior work, and if not, why not? How do they view this in light of their argument for the use of larger models?</p>
+</body>
+</sub-article>
+<sub-article id="sa3" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110830.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #3 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary</p>
+<p>In this paper, the authors have 5 human subjects learn to play Super Mario Bros while undergoing fMRI for 15 hrs each. They compare a reinforcement learning (RL) model (PPO), an imitation learning (IL) model, and a vision model (ResNet) in their ability to play the game, match human behavior, and, critically, explain human brain activity.</p>
+<p>The key findings can be summarized as follows:</p>
+<p>(1) RL, IL, and vision models explain similar amounts of variance in the BOLD signal (Fig 2a), with a significant but small trend of RL &gt; IL &gt; ResNet (Tab 1).</p>
+<p>(2) Untrained models with the same architecture explain a smaller but very similar amount of variance (Figure 2a, Table 1).</p>
+<p>(3) The brain maps across all models (and layers) are strikingly similar, with the strongest effects in visual, parietal, and motor regions (Figures 2b, 2d; Supplementary Material II).</p>
+<p>(4) Behavioral and neural performance are correlated across model checkpoints (but not levels), such that later checkpoints in training have better behavioral and neural encoding performance (Figures 3 &amp; 4), although the neural effect plateaus pretty quickly.</p>
+<p>(5) Out-of-distribution performance is quite poor, both behaviorally (Figure 5a) and neurally (Figure 5b).</p>
+<p>I believe this work will be of interest to neuroscientists, cognitive scientists, and AI researchers alike. There has been a growing trend in neuroscience to adopt AI models as cognitive models of complex perception and action, while at the same time, AI researchers are increasingly looking at the brain for inspiration. The key finding of this paper -- that these models fail to generalize to out-of-distribution levels -- questions the core assumptions of this whole enterprise.</p>
+<p>Strengths:</p>
+<p>Unlike previous studies applying machine learning to naturalistic game-play, the authors take great care to make sure their models are evaluated on an equal footing, using equivalent or similar architectures/number of parameters and training data.</p>
+<p>While the number of subjects (5) is relatively small, the amount of data per subject (15 hours) is impressive, which is important for fitting the imitation learning &amp; ResNet models and for obtaining reliable encoding performance for each individual subject. The authors employed a train/val/test split and held out sets, the gold standard in the literature.</p>
+<p>Overall, the paper was well-written and easy to follow. The figures clearly illustrate the main findings.</p>
+<p>Weaknesses:</p>
+<p>(1) Missing statistical tests</p>
+<p>I think the main weakness of the paper is that many of the claims are qualitative in nature and lack appropriate statistical tests, for example:</p>
+<p>- &quot;The conv3 layer has the highest brain encoding score&quot;;</p>
+<p>
+- &quot;Robust association between task performance and brain encoding&quot; ;</p>
+<p>
+- &quot;Level patterns strongly predict brain encoding&quot;;</p>
+<p>
+- &quot;Brain encoding performance was severely degraded&quot;;</p>
+<p>
+- &quot;Effect of training on brain encoding was apparent&quot;.</p>
+<p>While these effects are indeed qualitatively visible in the figures, it is unclear which of these differences are significant (with the notable exception of Table 1). I believe the paper would benefit substantially if these effects were quantified and every claim were supported by the appropriate statistical tests. As an example, with the exception of Table 1 and the corresponding paragraph, I could not find any p-values in the results section.</p>
+<p>(2) Missing model performance and human-likeness</p>
+<p>Also absent from the results is an assessment of model performance on the task and similarity to human performance/behavior. From Figures 3 and 4, we can see that the game score of PPO is around 500-1000 - how does that compare to the humans? We can also see that the imitation scores for IL are around 0.4-0.7, but what does that mean? Such results would be crucial to assess if the models have indeed learned to play the games and/or imitate the humans, and therefore, whether they would be good candidates as cognitive models (before even looking at brain activity). At minimum, plotting the human versus model game scores (see e.g. Tomov et al. 2023 Neuron, Figure 2) would be helpful; or, if you'd like to dig deeper, showing that human actions are more valuable or more likely under those models (see e.g. Cross et al. 2022 Neuron, Figure 2). It might also be helpful to look at imitation scores for the RL model and game performance of the imitation model -- I suspect they will both be bad, but they can at least serve as informative baselines for their counterparts.</p>
+<p>(3) Possible undertraining</p>
+<p>Relatedly, one possible explanation for why the Untrained model does so well is that all the models may be effectively undertrained. For example, while there are no training curves in the paper, it seems from the spacing of the checkpoint game scores (x-axis on Figure 3c) that the RL model may not have converged yet (it would be helpful if those were somehow colored by training epoch). Showing training curves would be helpful (i.e., something similar to Figure 3a, except with performance on the y-axis).</p>
+<p>Additionally, it would be great to provide more details regarding the PPO training protocol. How many episodes? How many steps per episode? How many steps for all of the training? Similarly, for the imitation learning model: batch size, number of epochs, optimizer, scheduler, etc.</p>
+<p>(4) Mysterious poor encoding performance of Untrained and ResNet models on the held-out set</p>
+<p>Critically, and related to that, I'm a little confused about the Untrained model results on the held-out set (Figure 5b, top row on the right). Why should those be any different from the test set results with the Untrained model (Figure 2a, right, fourth row from the top)? It makes sense why the other models are worse on the held-out set -- they have never been trained on any frames from those levels. However, the untrained model has not been trained on *any* frames from *any* levels, including the test set and the held-out set.</p>
+<p>The same is true for the ResNet model, which is pre-trained on a completely separate data set and yet similarly shows worse performance on the held-out set compared to the test set.</p>
+<p>This cannot be explained by the ridge regression, which has no parameters or hyperparameters fitted on either the test set or the held-out set.</p>
+<p>The big discrepancy in the untrained model &amp; ResNet results between the test and the held-out set makes think that there is something substantially different about the levels in that held-out set; that they are truly out of distribution compared to the other 20 levels (e.g., maybe they're the last 2 hardest levels and look completely differently? e.g. ResNet proxy in Fig 5c shows worse performance than the mean, which is indicative of an anti-correlation). Alternatively, it may be some issue with the analysis pipeline. The poor generalization results are central to the claims of the paper, so I believe this should be clarified.</p>
+<p>(4) Brittleness conclusion rationale</p>
+<p>I'm not quite on board with the author's rationale that &quot;[poor model performance on the out-of-distribution levels] demonstrates that the models we tested are limited in scope and may not provide a valid inference of brain-like processing, as human behavior remains robust and generalizable across levels&quot;.</p>
+<p>For one, unlike the models, humans were actually trained on those levels, so it would not be surprising if they perform just as well on them as on the other levels (but do they? Again, it would be great to see some behavioral data from the humans and the models).</p>
+<p>Second, as the authors themselves show, task performance and human-likeness do not really correlate with neural encoding across levels (Fig 4a &amp; b, respectively), so even if model performance remained &quot;robust and generalizable&quot; on the held-out levels, that will not necessarily translate to good neural encoding.</p>
+<p>Thirdly, and perhaps most importantly, unless the test set and held-out set were sampled exclusively from the practice phase when the subjects have mastered all the levels (that doesn't seem to be the case, but the authors should clarify), then the humans are continuously learning, which means that their own internal representations of the game are evolving. That's not the case for the models, which I assume are in &quot;inference mode&quot; when their representations are extracted for neural encoding. That is, their weights are frozen. So there's a fundamental mismatch between the mode in which humans are operating (continuously learning and executing) and the mode in which the models are operating (just executing). While this is true for all the levels, it may partially account for the discrepancy in the held-out set specifically.</p>
+</body>
+</sub-article>
+</article>
