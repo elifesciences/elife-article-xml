@@ -896,7 +896,6 @@ The second equation corresponds to a rough approximation for the expected freque
 </contrib-group>
 </front-stub>
 <body>
-<p>[Editors’ note, July 1, 2026: An <bold>Author Response</bold> to the reviews below will be provided in the near future.]</p>
 <p>Summary:</p>
 <p>The authors used a large dataset evaluating gut carriage of Enterobacterales and ESBL organisms from children aged 6-24 months as the basis for a modeling study to investigate what factors are most important for determining the prevalence of ESBL resistance. The modeling incorporated travel, a simple model of carriage duration (short and long), fitness cost of resistance on transmission and clearance, and antibiotic use. They found that antibiotic use is the primary driver of resistance prevalence, with transmissibility of resistant strains also important for setting the prevalence. Travel, while important when prevalence is very low, plays less of a role in maintaining prevalence once it is established (in keeping with other recent work). They estimated the fitness cost of resistance (terming a reduction of 14% on the rate of transmission and an increase of 23% on the rate of clearance as &quot;low&quot;). While the extent of assumptions and simplifications makes me skeptical of the quantitative conclusions, the qualitative ones seem reasonable and reinforce the long-held principles of the field--reducing antibiotic pressure and interrupting transmission--and highlight the importance of understanding the biological factors that shape the duration of carriage and the likelihood of colonization.</p>
 <p>Strengths:</p>
@@ -1049,7 +1048,28 @@ The second equation corresponds to a rough approximation for the expected freque
 </contrib-group>
 </front-stub>
 <body>
-<p><bold>July 1, 2026: An Author Response will be provided to the <ext-link ext-link-type="uri" xlink:href="https://elifesciences.org/reviewed-preprints/111024/reviews">reviews</ext-link> in the near future.</bold></p>
+<p>We thank you for this assessment of our work and the positive assessment of the overall theoretical framework. We can fully answer the concerns, in particular regarding data quality, and will provide detailed answers in the following directions:</p>
+<p>“insufficient description of the data”: We will describe the data as much as possible and will share the data and the analysis code.</p>
+<p>“lack of included equations and code”:  We will share the mathematical equations in the supplementary material, and the full code on an online repository. The reason why our data repository (10.5281/zenodo.18480481) is not yet public is that it cannot be changed after publication. For the review process, we provide a github link to data and code here <ext-link ext-link-type="uri" xlink:href="https://github.com/oliviercotto/eLife_epidR">https://github.com/oliviercotto/eLife_epidR</ext-link>. We will ultimately share the link to the final version of the files on Zenodo.</p>
+<p>“definitions of antibiotic use that are not complete”: We will complete the definition of antibiotic use, which is the use of any antibiotic between 7 days and 3 months before sampling. Children who used any antibiotic 7 days before sampling were not included in the study. The type of antibiotic used is given in supplementary material S1: 93% of the antibiotics prescribed are beta-lactams (amoxicillin, amoxicillin/clavunalate, oral 3rd generation cephalosporins).</p>
+<p>“low sensitivity of assays for carriage”: the carriage study conducted in Sweden is used to get plausible estimates of carriage duration parameters in infants.</p>
+<list list-type="bullet">
+<list-item><p>
+<p>Strain definition is based mainly on randomly amplified polymorphic DNA (RAPD), not colony morphology. Strains with distinct morphology but the same RAPD profile are considered one strain. Conversely, it was checked that strains of the same timepoint with the same morphology most often had the same RAPD profile.</p>
+</p>
+</list-item><list-item><p>
+<p>We did check that these data are not much affected by imperfect sampling: observations of a strain ‘disappearing’ from sampling then ‘reappearing’  at later timepoints are rare (14 out of 273 strains). This is why we did not correct these occurrences in the previous version of the analysis. In the revised version, we will add a description of these occurrences and correct them. This correction did not significantly alter the inferred parameters in our preliminary analyses.</p>
+</p>
+</list-item><list-item><p>
+<p>At a broad level, the fact that <italic>E. coli</italic> clades vary in their carriage duration is very well established across multiple independent datasets; the precise value of carriage duration difference for “persistent” vs. “transient” that we inferred here (a two-fold difference, supplementary material S3) is actually relatively conservative, in the sense that other studies have detected more important differences. We will create a table summarising available evidence on colonization parameters of <italic>E. coli</italic> to show that the insights from the Swedish data are qualitatively robust.</p>
+</p>
+</list-item><list-item><p>
+<p>Yet, we will conduct a range of sensitivity analyses to see how the inferred costs of ESBL resistance vary when varying differences in carriage durations, competition and niche differentiation.</p>
+</p>
+</list-item></list>
+<p>“technical issues with statistical prior selection and parameter identification”: We disagree there is a “technical issue” with prior selection: The fact that resistance is costly, hence that our priors are left-bounded at 0 for the cost parameters, is a prior expectation based on the observation that resistances do not go to fixation. If resistances only conferred an advantage in treatment, but zero cost, then they would quickly evolve to 100% frequency–contrary to what is observed in virtually all epidemiological studies of resistance. That said, we will relax the definition of these priors to test that the data is also compatible with a strong cost on some traits, and no cost or a “negative cost” on other traits.</p>
+<p>Regarding parameter identification and the specific comments on the inference of colonisation parameters: we re-inferred all colonisation parameters with direct inference assuming specific functional forms. This does not alter much the final colonisation parameters that we then use for our main inference. We will also conduct sensitivity analyses to examine how changing some of the colonisation parameters (carriage duration, competition and niche differentiation)  would alter the main inference.</p>
+<p>“application of non-regional ECDC surveillance data to France”: We will clarify our text, as there is a misunderstanding here: we do not use non-regional ECDC surveillance data for inference. We use ECDC data (i) for illustrative purposes, to show that trends in ESBL in France in this surveillance system are very similar to those observed in France in our focal dataset, thus showing the consistency and representativeness of our data. (ii) to give an overview of the weak and inconsistent association of ESBL with age across Europe, thus supporting the relevance of our approach even if our data concerns infants and children. We will make sure this is clarified in the updated version of the manuscript.</p>
 </body>
 </sub-article>
 </article>
