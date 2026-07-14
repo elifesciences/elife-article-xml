@@ -82,13 +82,13 @@
 <surname>Kalan</surname>
 <given-names>Ammie K</given-names>
 </name>
-<role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-1542-7077</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/04s5mat29</institution-id><institution>University of Victoria</institution>
 </institution-wrap>
 <city>Victoria</city>
-<country>Canada</country>
+<country country="CA">Canada</country>
 </aff>
 </contrib>
 <contrib contrib-type="senior_editor">
@@ -96,13 +96,13 @@
 <surname>Perry</surname>
 <given-names>George H</given-names>
 </name>
-<role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-4527-3806</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/04p491231</institution-id><institution>Pennsylvania State University</institution>
 </institution-wrap>
 <city>University Park</city>
-<country>United States of America</country>
+<country country="US">United States</country>
 </aff>
 </contrib>
 </contrib-group>
@@ -173,12 +173,12 @@
 <p>We collected several hundred thousand images of five species of apes: chimpanzee, bonobo, gorilla, orangutan, siamang, and a sixth category, including non-siamang gibbons (<bold><xref ref-type="fig" rid="fig1">Figure 1</xref></bold>). Images were collected from zoos, sanctuaries, and field sites. We also added the ape images from the <italic>OpenMonkeyPose</italic> dataset (16,984 images) to our new dataset, which we call <italic>OpenApePose</italic>. Combined, our final dataset has 71,868 annotated ape images. Our image set contains 11,685 bonobos (<italic>Pan paniscus</italic>), 18,010 chimpanzees (<italic>Pan troglodytes</italic>), 12,905 gorillas (<italic>Gorilla gorilla</italic>), 12,722 orangutans (<italic>Pongo sp.</italic>), and 9274 gibbons (genus <italic>Hylobates</italic> and <italic>Nomascus</italic>) and 7,272 siamangs (<italic>Symphalangus syndactylus</italic>, <bold><xref ref-type="fig" rid="fig2">Figure 2A</xref></bold>).</p>
 <fig id="fig1" position="float" fig-type="figure">
 <label>Figure 1</label>
-    <caption><title>Sampling of annotated images in the <italic>OpenApePose</italic> dataset.</title><p>Thirty-two photographs chosen to illustrate the range of photographs available in our larger set, illustrating the variety in species, pose, and background. Each annotated photograph contains an annotation for sixteen different body landmarks (shown here with connecting lines).</p></caption>
+<caption><title>Sampling of annotated images in the <italic>OpenApePose</italic> dataset.</title><p>Thirty-two photographs chosen to illustrate the range of photographs available in our larger set, illustrating the variety in species, pose, and background. Each annotated photograph contains an annotation for sixteen different body landmarks (shown here with connecting lines).</p></caption>
 <graphic xlink:href="2212.00741v1_fig1.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2</label>
-    <caption><title>Properties of our OpenApePose database.</title><p><bold>A.</bold> Number of annotated images per different species in the OpenApePose dataset. <bold>B.</bold> Illustration of our annotations. All 16 annotated points are indicated and labeled on a gorilla image drawn from the database.</p></caption>
+<caption><title>Properties of our OpenApePose database.</title><p><bold>A.</bold> Number of annotated images per different species in the OpenApePose dataset. <bold>B.</bold> Illustration of our annotations. All 16 annotated points are indicated and labeled on a gorilla image drawn from the database.</p></caption>
 <graphic xlink:href="2212.00741v1_fig2.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>We manually sorted and cropped the images such that each cropped image contains the full body of at least one ape while minimizing repetitive poses to ensure a greater diversity of poses in the full dataset. We ensured that all cropped images have a resolution greater than or equal to 300×300 pixels. Next, we used a commercial annotation service (Hive AI) to manually annotate the 16 landmarks (we used the same system in <xref ref-type="bibr" rid="c65">Yao et al., 2022</xref>; See <bold><xref ref-type="sec" rid="s4">Methods</xref></bold>). The 16 landmarks together comprise a <italic>pose</italic> (<bold><xref ref-type="fig" rid="fig2">Figure 2B</xref></bold>).</p>
@@ -188,9 +188,10 @@
 <sec id="s2b">
 <title>Overview of OpenApePose dataset</title>
 <p>To illustrate the range of poses in the OpenApePose dataset, we visualize the space spanned by its poses using Uniform Manifold Approximation and Projection (UMAP, <xref ref-type="bibr" rid="c46">McInnes et al., 2018</xref>, <bold><xref ref-type="fig" rid="fig3">Figure 3</xref></bold>). To obtain standard and meaningful spatial representations, we use normalized landmark coordinates based on image size—the x-coordinate normalized using image width and the y-coordinate normalized using the image height. We then center each pose to a reference root landmark (the sacrum), such that the normalized coordinate of each landmark is with respect to the sacrum landmark. We then create the UMAP visualizations by performing dimension reduction using the <monospace>UMAP()</monospace> function in the <monospace>umap-learn</monospace> Python package (<xref ref-type="bibr" rid="c46">McInnes et al., 2018</xref>). We use the euclidean distance metric with <monospace>n_neighbors=15</monospace> and <monospace>min_dist=0.001</monospace>, which allowed us a reasonable balance in combining similar poses and separating dissimilar ones.</p>
+<?fig-width 100%?>
 <fig id="fig3" position="float" fig-type="figure">
 <label>Figure 3</label>
-    <caption><title><bold>UMAP visualization of the distribution of poses with the species IDs labeled.</bold></title><p>X- and Y- dimensions indicate positions in a UMAP space. Each dot indicates a single photograph/pose. Dot colors indicate species (see inscribed legend, right). We include, as insets, example poses, with an arrow pointing to their position in the UMAP plot.</p></caption>
+<caption><title><bold>UMAP visualization of the distribution of poses with the species IDs labeled.</bold></title><p>X- and Y- dimensions indicate positions in a UMAP space. Each dot indicates a single photograph/pose. Dot colors indicate species (see inscribed legend, right). We include, as insets, example poses, with an arrow pointing to their position in the UMAP plot.</p></caption>
 <graphic xlink:href="2212.00741v1_fig3.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>We label the six different species in the database to visualize their distribution in the dimensions reduced using UMAP. We observe that the <italic>Hylobatidae</italic> family (gibbons and siamangs) form somewhat separate pose clusters from the <italic>Hominidae</italic> family (bonobos, chimpanzees, gorillas, and orangutans, <bold><xref ref-type="fig" rid="fig3">Figure 3</xref></bold>). These clusters likely reflect the differences in locomotion styles between these families, <italic>Hylobatidae</italic> being true brachiators, whereas <italic>Hominidae</italic> spend more time on moving on the ground. Of the <italic>Hominidae,</italic> the orangutans spend the most time in the trees like the <italic>Hylobatidae,</italic> and this is reflected in the overlap of their poses with the <italic>Hylobatidae</italic>.</p>
@@ -225,7 +226,7 @@
 <p>We include a plot including the performance of each of these models on all different species in the supplementary materials (<bold><xref ref-type="fig" rid="fig6">Figure S1</xref></bold>). We also include in the plot the performance of the OpenMonkeyPose model on the species excluded from the OpenApePose dataset. We observe that the OpenApePose model with a specific species removed still performs better on that species than the OpenMonkeyPose model (<bold><xref ref-type="fig" rid="fig6">Figure S1</xref></bold>). Here, we include a plot with performance of the full OpenApePose model on different species, performance of the models with one species removed at a time on that species, and of the OpenMonkeyPose model without apes on each of the species (<bold><xref ref-type="fig" rid="fig5">Figure 5A-C</xref></bold>). Not surprisingly, we find that all the models excluding a species perform worse than the full model on the same species (<bold><xref ref-type="fig" rid="fig5">Figure 5AB</xref></bold>; PCK@0.2 and AUC for <bold>Bonobos:</bold> 0.871 vs. 0.881 and 0.896 vs. 0.903; <bold>Chimpanzees:</bold> 0.754 vs. 0.882 and 0.836 vs. 0.902; <bold>Gibbons:</bold> 0.763 vs. 0.855 and 0.827 vs. 0.883; <bold>Gorillas:</bold> 0.869 vs. 0.893 and 0.896 vs. 0.908; <bold>Orangutans:</bold> 0.774 vs. 0.859 and 0.839 vs. 0.886; <bold>Siamangs:</bold> 0.797 vs. 0.869 and 0.848 vs. 0.889; p-adjusted &lt; 0.001 for all comparisons). This result suggests that there is indeed some species-specific information in the model that aids in tracking, and raises the possibility that larger sets devoted to a single species may be superior to our more general multi-species dataset. At the same time, this finding highlights a major finding of this project - that, given current models, large tailored species-specific annotated sets are superior to large multi-species sets. In other words, current models have limited capacity of generalizing across species, even within taxonomic families.</p>
 <fig id="fig5" position="float" fig-type="figure">
 <label>Figure 5</label>
-    <caption><title>Keypoint detection performance of HRNet-W48 models tested on each species from the OpenApePose (OAP) test set and trained on (A) the full OAP training set, (B) the OAP training set with the corresponding species excluded, and (C) the full OpenMonkeyPose (OMP) dataset with apes excluded.</title><p><bold>Left</bold> panel includes the probability of correct keypoint (PCK) values at different thresholds ranging from 0-1. <bold>Middle</bold> panel indicates the mean area under the PCK curve for each species. <bold>Right</bold> panel indicates the mean PCK values at a threshold of 0.2 for each species.</p></caption>
+<caption><title>Keypoint detection performance of HRNet-W48 models tested on each species from the OpenApePose (OAP) test set and trained on (A) the full OAP training set, (B) the OAP training set with the corresponding species excluded, and (C) the full OpenMonkeyPose (OMP) dataset with apes excluded.</title><p><bold>Left</bold> panel includes the probability of correct keypoint (PCK) values at different thresholds ranging from 0-1. <bold>Middle</bold> panel indicates the mean area under the PCK curve for each species. <bold>Right</bold> panel indicates the mean PCK values at a threshold of 0.2 for each species.</p></caption>
 <graphic xlink:href="2212.00741v1_fig5.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 <p>Comparing the different species, we find that the species are all very close in performance (<bold><xref ref-type="fig" rid="fig5">Figure 5B</xref></bold>). Among these close values, the dataset missing gorillas was the most accurate - suggesting that gorillas are the least difficult to track, perhaps because their bodies are the least variable (PCK@0.2: 0.869; AUC: 0.896). Conversely, the dataset missing gibbons was the least accurate, suggesting that gibbons are the most difficult to track (PCK@0.2: 0.763; AUC: 0.827). This observation is consistent with our own intuitions at hand-annotating images - gibbons’ habit of brachiation, combined with the variety of poses they exhibit, makes guessing their landmarks particularly tricky for human annotators as well. Overall, however, all ape species were relatively well tracked even when all members of their species were excluded from the dataset.</p>
@@ -366,8 +367,9 @@
 <sec id="d1e3770">
 <title>Supplement</title>
 <table-wrap id="tab1">
-<label>Table S1</label>
-<caption><p>Pairwise t-tests comparing the AUC values for different training and testing set combinations. AUCs were obtained across 100 random samples of 500 images from the test sets. P-values adjusted for multiple comparisons using Bonferroni correction. ** not significant</p></caption>
+<label>Table S1.</label>
+<caption><title>Pairwise t-tests comparing the AUC values for different training and testing set combinations.</title>
+<p>AUCs were obtained across 100 random samples of 500 images from the test sets. P-values adjusted for multiple comparisons using Bonferroni correction. ** not significant</p></caption>
 <alternatives>
 <table frame="hsides" rules="all">
 <thead>
@@ -918,8 +920,9 @@
 </alternatives>
 </table-wrap>
 <table-wrap id="tab2">
-<label>Table S2</label>
-<caption><p>Pairwise t-tests comparing the PCK@0.2 values for different training and testing set combinations. PCK@0.2 values were obtained across 100 random samples of 500 images from the test sets. P-values adjusted for multiple comparisons using Bonferroni correction. ** not significant</p></caption>
+<label>Table S2.</label>
+<caption><title>Pairwise t-tests comparing the PCK@0.2 values for different training and testing set combinations.</title>
+<p>PCK@0.2 values were obtained across 100 random samples of 500 images from the test sets. P-values adjusted for multiple comparisons using Bonferroni correction. ** not significant</p></caption>
 <alternatives>
 <table frame="hsides" rules="all">
 <thead valign="top">
@@ -1470,9 +1473,10 @@
 <graphic xlink:href="2212.00741v1_tbl2e.jpg" mime-subtype="jpeg" mimetype="image"/>
 </alternatives>
 </table-wrap>
+<?fig-width 100%?>
 <fig id="fig6" position="float" fig-type="figure">
 <label>Figure S1</label>
-    <caption><title>The probability of correct keypoint (PCK) values (y-axis) at different thresholds ranging from 0-1 (x-axis) of HRNet-W48 models tested on each species from the OpenApePose (OAP) test set and trained on the OAP training set with the corresponding species excluded.</title><p>Dotted lines indicate the performance on the species excluded from training in the case of OAP and the performance of the OpenMonkeyPose model trained on monkeys on the excluded species.</p></caption>
+<caption><title>The probability of correct keypoint (PCK) values (y-axis) at different thresholds ranging from 0-1 (x-axis) of HRNet-W48 models tested on each species from the OpenApePose (OAP) test set and trained on the OAP training set with the corresponding species excluded.</title><p>Dotted lines indicate the performance on the species excluded from training in the case of OAP and the performance of the OpenMonkeyPose model trained on monkeys on the excluded species.</p></caption>
 <graphic xlink:href="2212.00741v1_fig6.jpg" mime-subtype="jpeg" mimetype="image"/>
 </fig>
 </sec>
@@ -1490,6 +1494,7 @@
 <given-names>Ammie K</given-names>
 </name>
 <role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-1542-7077</contrib-id>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/04s5mat29</institution-id><institution>University of Victoria</institution>
@@ -1505,11 +1510,10 @@
 </kwd-group>
 <kwd-group kwd-group-type="claim-importance">
 <kwd>Important</kwd>
-<kwd>Landmark</kwd>
 </kwd-group>
 </front-stub>
 <body>
-<p>The OpenApePose dataset presented in this manuscript represents an <bold>important</bold> contribution to the field of primate behaviour and computer-vision science with methodological applications that are sure to be applicable for a wide variety of taxa. The analysis supporting the utility of this database is <bold>solid</bold> and <bold>compelling</bold> but would benefit from some additional clarity, particularly with regards to the <bold>landmark</bold> annotations, model parameters and division of the dataset for training, validation and testing.</p>
+<p>The OpenApePose dataset presented in this manuscript represents an <bold>important</bold> contribution to the field of primate behaviour and computer-vision science with methodological applications that are sure to be applicable for a wide variety of taxa. The analysis supporting the utility of this database is <bold>solid</bold> and <bold>compelling</bold> but would benefit from some additional clarity, particularly with regards to the annotation of landmarks, model parameters and division of the dataset for training, validation and testing. </p>
 </body>
 </sub-article>
 <sub-article id="sa1" article-type="referee-report">
@@ -1530,32 +1534,20 @@
 <p>The diversity and size of the dataset make it particularly useful, as it covers a wide range of ape species and poses, making it particularly suitable for training off-the-shelf pose estimation networks or for contributing to the training of a large foundational pose estimation model. In conjunction with new tools focused on extracting behavioral dynamics from pose, this dataset can be especially useful in understanding the basis of ape behaviors using pose.</p>
 <p>Since the dataset provided is the first large, public dataset of its kind exclusively for ape species, more details should be provided on how the data were annotated, as well as summaries of the dataset statistics. In addition, the authors should provide the full list of hyperparameters for each model that was used for evaluation (e.g., mmpose config files, textual descriptions of augmentation/optimization parameters).</p>
 <p>Overall this work is a terrific contribution to the field and is likely to have a significant impact on both computer vision and animal behavior.</p>
-<p>Strengths:</p>
-<p>
-- Open source dataset with excellent annotations on the format, as well as example code provided for working with it.</p>
-<p>
-- Properties of the dataset are mostly well described.</p>
-<p>
-- Comparison to pose estimation models trained on humans vs monkeys, finding that models trained on human data generalized better to apes than the ones trained on monkeys, in accordance with phylogenetic similarity. This provides evidence for an important consideration in the field: how well can we expect pose estimation models to generalize to new species when using data from closely or distantly related ones?</p>
-<p>
-- Sample efficiency experiments reflect an important property of pose estimation systems, which indicates how much data would be necessary to generate similar datasets in other species, as well as how much data may be required for fine-tuning these types of models (also characterized via ablation experiments where some species are left out).</p>
-<p>
+<p>Strengths:
+- Open source dataset with excellent annotations on the format, as well as example code provided for working with it.
+- Properties of the dataset are mostly well described.
+- Comparison to pose estimation models trained on humans vs monkeys, finding that models trained on human data generalized better to apes than the ones trained on monkeys, in accordance with phylogenetic similarity. This provides evidence for an important consideration in the field: how well can we expect pose estimation models to generalize to new species when using data from closely or distantly related ones?
+- Sample efficiency experiments reflect an important property of pose estimation systems, which indicates how much data would be necessary to generate similar datasets in other species, as well as how much data may be required for fine-tuning these types of models (also characterized via ablation experiments where some species are left out).
 - The sample efficiency experiments also reveal important insights about scaling properties of different model architectures, finding that HRNet saturates in performance improvements as a function of dataset size sooner than other architectures like CPMs (even though HRNets still perform better overall).</p>
-<p>Weaknesses:</p>
-<p>
-- More details on training hyperparameters used (preferably full config if trained via mmpose).</p>
-<p>
-- Should include dataset datasheet, as described in Gebru et al 2021 (arXiv:1803.09010).</p>
-<p>
-- Should include crowdsourced annotation datasheet, as described in Diaz et al 2022 (arXiv:2206.08931). Alternatively, the specific instructions that were provided to Hive/annotators would be highly relevant to convey what annotation protocols were employed here.</p>
-<p>
-- Should include model cards, as described in Mitchell et al (arXiv:1810.03993).</p>
-<p>
-- It would be useful to include more information on the source of the data as they are collected from many different sites and from many different individuals, some of which may introduce structural biases such as lighting conditions due to geography and time of year.</p>
-<p>
-- Is there a reason not to use OKS? This incorporates several factors such as landmark visibility, scale, and landmark type-specific annotation variability as in Ronchi &amp; Perona 2017 (arXiv:1707.05388). The latter (variability) could use the human pose values (for landmarks types that are shared), the least variable keypoint class in humans (eyes) as a conservative estimate of accuracy, or leverage a unique aspect of this work (crowdsourced annotations) which affords the ability to estimate these values empirically.</p>
-<p>
-- A reporting of the scales present in the dataset would be useful (e.g., histogram of unnormalized bounding boxes) and would align well with existing pose dataset papers such as MS-COCO (arXiv:1405.0312) which reports the distribution of instance sizes and instance density per image.</p>
+<p>Weaknesses:
+- More details on training hyperparameters used (preferably full config if trained via mmpose).
+- Should include dataset datasheet, as described in Gebru et al 2021 (arXiv:1803.09010).
+- Should include crowdsourced annotation datasheet, as described in Diaz et al 2022 (arXiv:2206.08931). Alternatively, the specific instructions that were provided to Hive/annotators would be highly relevant to convey what annotation protocols were employed here.
+- Should include model cards, as described in Mitchell et al (arXiv:1810.03993).
+- It would be useful to include more information on the source of the data as they are collected from many different sites and from many different individuals, some of which may introduce structural biases such as lighting conditions due to geography and time of year.
+- Is there a reason not to use OKS? This incorporates several factors such as landmark visibility, scale, and landmark type-specific annotation variability as in Ronchi &amp; Perona 2017 (arXiv:1707.05388). The latter (variability) could use the human pose values (for landmarks types that are shared), the least variable keypoint class in humans (eyes) as a conservative estimate of accuracy, or leverage a unique aspect of this work (crowdsourced annotations) which affords the ability to estimate these values empirically.
+- A reporting of the scales present in the dataset would be useful (e.g., histogram of unnormalized bounding boxes) and would align well with existing pose dataset papers such as MS-COCO (arXiv:1405.0312) which reports the distribution of instance sizes and instance density per image. </p>
 </body>
 </sub-article>
 <sub-article id="sa2" article-type="referee-report">
@@ -1574,204 +1566,11 @@
 <body>
 <p>The authors present the OpenApePose database constituting a collection of over 70000 ape images which will be important for many applications within primatology and the behavioural sciences. The authors have also rigorously tested the utility of this database in comparison to available Pose image databases for monkeys and humans to clearly demonstrate its solid potential. However, the variation in the database with regards to individuals, background, source/setting is not clearly articulated and would be beneficial information for those wishing to make use of this resource in the future. At present, there is also a lack of clarity as to how this image database can be extrapolated to aid video data analyses which would be highly beneficial as well.</p>
 <p>I have two major concerns with regard to the manuscript as it currently stands which I think if addressed would aid the clarity and utility of this database for readers.</p>
-<p>1. Human annotators are mentioned as doing the 16 landmarks manually for all images but there is no assessment of inter-observer reliability or the such. I think something to this end is currently missing, along with how many annotators there were. This will be essential for others to know who may want to use this database in the future.</p>
+<p>(1) Human annotators are mentioned as doing the 16 landmarks manually for all images but there is no assessment of inter-observer reliability or the such. I think something to this end is currently missing, along with how many annotators there were. This will be essential for others to know who may want to use this database in the future.</p>
 <p>Relevant to this comment, in your description of the database, a table or such could be included, providing the number of images from each source/setting per species and/or number of individuals. Something to give a brief overview of the variation beyond species. (subspecies would also be of benefit for example).</p>
-<p>2. You mention around line 195 that you used a specific function for splitting up the dataset into training, validation, and test but there is no information given as to whether this was simply random or if an attempt to balance across species, individuals, background/source was made. I would actually think that a balanced approach would be more appropriate/useful here so whether or not this was done, and the reasoning behind that must be justified.</p>
+<p>(2) You mention around line 195 that you used a specific function for splitting up the dataset into training, validation, and test but there is no information given as to whether this was simply random or if an attempt to balance across species, individuals, background/source was made. I would actually think that a balanced approach would be more appropriate/useful here so whether or not this was done, and the reasoning behind that must be justified.</p>
 <p>This is especially relevant given that in one test you report balancing across species (for the sample size subsampling procedure).</p>
 <p>And another perhaps major concern that I think should also be addressed somewhere is the fact that this is an image database tested on images while the abstract and manuscript mention the importance of pose estimation for video datasets, yet the current manuscript does not provide any clear test of video datasets nor engage with the practicalities associated with using this image-based database for applications to video datasets. Somewhere this needs to be added to clarify its practical utility.</p>
-</body>
-</sub-article>
-<sub-article id="sa3" article-type="author-comment">
-<front-stub>
-<article-id pub-id-type="doi">10.7554/eLife.86873.1.sa3</article-id>
-<title-group>
-<article-title>Author Response</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Desai</surname>
-<given-names>Nisarg</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Bala</surname>
-<given-names>Praneet</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Richardson</surname>
-<given-names>Rebecca</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Raper</surname>
-<given-names>Jessica</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Zimmermann</surname>
-<given-names>Jan</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Hayden</surname>
-<given-names>Benjamin</given-names>
-</name>
-<role specific-use="author">Author</role>
-</contrib>
-</contrib-group>
-</front-stub>
-<body>
-<p>The following is the authors’ response to the original reviews.</p>
-<disp-quote content-type="editor-comment">
-<p><bold>Reviewer #1 (Public Review):</bold></p>
-<p>This work provides a new dataset of 71,688 images of different ape species across a variety of environmental and behavioral conditions, along with pose annotations per image. The authors demonstrate the value of their dataset by training pose estimation networks (HRNet-W48) on both their own dataset and other primate datasets (OpenMonkeyPose for monkeys, COCO for humans), ultimately showing that the model trained on their dataset had the best performance (performance measured by PCK and AUC). In addition to their ablation studies where they train pose estimation models with either specific species removed or a certain percentage of the images removed, they provide solid evidence that their large, specialized dataset is uniquely positioned to aid in the task of pose estimation for ape species.</p>
-<p>The diversity and size of the dataset make it particularly useful, as it covers a wide range of ape species and poses, making it particularly suitable for training off-the-shelf pose estimation networks or for contributing to the training of a large foundational pose estimation model. In conjunction with new tools focused on extracting behavioral dynamics from pose, this dataset can be especially useful in understanding the basis of ape behaviors using pose.</p>
-</disp-quote>
-<p>We thank the reviewer for the kind comments.</p>
-<disp-quote content-type="editor-comment">
-<p>Since the dataset provided is the first large, public dataset of its kind exclusively for ape species, more details should be provided on how the data were annotated, as well as summaries of the dataset statistics. In addition, the authors should provide the full list of hyperparameters for each model that was used for evaluation (e.g., mmpose config files, textual descriptions of augmentation/optimization parameters).</p>
-</disp-quote>
-<p>We have added more details on the annotation process and have included the list of instructions sent to the annotators. We have also included mmpose configs with the code provided. The following files include the relevant details:</p>
-<p>File including the list of instructions sent to the annotators:  OpenMonkeyWild Photograph Rubric.pdf</p>
-<p>Mmpose configs:</p>
-<p>i)  TopDownOAPDataset.py</p>
-<p>ii) animal_oap_dataset.py</p>
-<p>iii)    <bold>init</bold>.py</p>
-<p>iv) hrnet_w48_oap_256x192_full.py</p>
-<p>Anaconda environment files:</p>
-<p>i)  OpenApePose.yml</p>
-<p>ii) requirements.txt</p>
-<disp-quote content-type="editor-comment">
-<p>Overall this work is a terrific contribution to the field and is likely to have a significant impact on both computer vision and animal behavior.</p>
-<p>Strengths:</p>
-<list list-type="bullet">
-<list-item><p>Open source dataset with excellent annotations on the format, as well as example code provided for working with it.</p>
-</list-item></list>
-<list list-type="bullet">
-<list-item><p>Properties of the dataset are mostly well described.</p>
-</list-item></list>
-<list list-type="bullet">
-<list-item><p>Comparison to pose estimation models trained on humans vs monkeys, finding that models trained on human data generalized better to apes than the ones trained on monkeys, in accordance with phylogenetic similarity. This provides evidence for an important consideration in the field: how well can we expect pose estimation models to generalize to new species when using data from closely or distantly related ones?  - Sample efficiency experiments reflect an important property of pose estimation systems, which indicates how much data would be necessary to generate similar datasets in other species, as well as how much data may be required for fine-tuning these types of models (also characterized via ablation experiments where some species are left out).</p>
-</list-item></list>
-<list list-type="bullet">
-<list-item><p>The sample efficiency experiments also reveal important insights about scaling properties of different model architectures, finding that HRNet saturates in performance improvements as a function of dataset size sooner than other architectures like CPMs (even though HRNets still perform better overall).</p>
-</list-item></list>
-</disp-quote>
-<p>We thank the reviewer for the kind comments.</p>
-<disp-quote content-type="editor-comment">
-<p>Weaknesses:</p>
-<list list-type="bullet">
-<list-item><p>More details on training hyperparameters used (preferably full config if trained via mmpose).</p>
-</list-item></list>
-</disp-quote>
-<p>We have now included mmpose configs and anaconda environment files that allow researchers to use the dataset with specific versions of mmpose and other packages we trained our models with. The list of files is provided above.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>Should include dataset datasheet, as described in Gebru et al 2021 (arXiv:1803.09010).</p>
-</list-item></list>
-</disp-quote>
-<p>We have included a datasheet for our dataset in the appendix lines 621-764.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>Should include crowdsourced annotation datasheet, as described in Diaz et al 2022
-(arXiv:2206.08931). Alternatively, the specific instructions that were provided to Hive/annotators would be highly relevant to convey what annotation protocols were employed here.</p>
-</list-item></list>
-</disp-quote>
-<p>We have included the list of instructions sent to the Hive annotators in the supplementary materials. File: OpenMonkeyWild Photograph Rubric.pdf</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>Should include model cards, as described in Mitchell et al (arXiv:1810.03993).</p>
-</list-item></list>
-</disp-quote>
-<p>We have included a model card for the included model in the results section line 359. See Author response image 1.</p>
-<disp-formula id="sa3equ1">
-<bold>Author response image 1.</bold>
- 
-<graphic mime-subtype="jpg" xlink:href="elife-86873-sa3-equ1.jpg" mimetype="image"/>
-</disp-formula>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>It would be useful to include more information on the source of the data as they are collected from many different sites and from many different individuals, some of which may introduce structural biases such as lighting conditions due to geography and time of year.</p>
-</list-item></list>
-</disp-quote>
-<p>We agree that the source could introduce structural biases. This is why we included images from so many different sources and captured images at different times from the same source—in hopes that a large variety of background and lighting conditions are represented. However, doing so limits our ability to document each source background and lighting condition separately.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>Is there a reason not to use OKS? This incorporates several factors such as landmark visibility, scale, and landmark type-specific annotation variability as in Ronchi &amp; Perona 2017 (arXiv:1707.05388). The latter (variability) could use the human pose values (for landmarks types that are shared), the least variable keypoint class in humans (eyes) as a conservative estimate of accuracy, or leverage a unique aspect of this work (crowdsourced annotations) which affords the ability to estimate these values empirically.</p>
-</list-item></list>
-</disp-quote>
-<p>The focus of this work is on overall keypoint localization accuracy and hence we wanted a metric that is easy to interpret and implement, in this case we made use of PCK  (Percentage of Correct Keypoints). PCK is a simple and widely used metric that measures the percentage of correctly localized keypoints within a certain distance threshold from their corresponding groundtruth keypoints.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>A reporting of the scales present in the dataset would be useful (e.g., histogram of unnormalized bounding boxes) and would align well with existing pose dataset papers such as MS-COCO (arXiv:1405.0312) which reports the distribution of instance sizes and instance density per image.</p>
-</list-item></list>
-</disp-quote>
-<p>RESPONSE: We have now included a histogram of unnormalized bounding boxes in the manuscript, Author response image 2.</p>
-<fig id="sa3fig1">
-<label>Author response image 2.</label>
-<graphic mime-subtype="jpg" xlink:href="elife-86873-sa3-fig1.jpg" mimetype="image"/>
-</fig>
-<disp-quote content-type="editor-comment">
-<p><bold>Reviewer #2 (Public Review):</bold></p>
-<p>The authors present the OpenApePose database constituting a collection of over 70000 ape images which will be important for many applications within primatology and the behavioural sciences. The authors have also rigorously tested the utility of this database in comparison to available Pose image databases for monkeys and humans to clearly demonstrate its solid potential.</p>
-</disp-quote>
-<p>We thank the reviewer for the kind comments.</p>
-<disp-quote content-type="editor-comment">
-<p>However, the variation in the database with regards to individuals, background, source/setting is not clearly articulated and would be beneficial information for those wishing to make use of this resource in the future. At present, there is also a lack of clarity as to how this image database can be extrapolated to aid video data analyses which would be highly beneficial as well.</p>
-<p>I have two major concerns with regard to the manuscript as it currently stands which I think if addressed would aid the clarity and utility of this database for readers.</p>
-<p>1. Human annotators are mentioned as doing the 16 landmarks manually for all images but there is no assessment of inter-observer reliability or the such. I think something to this end is currently missing, along with how many annotators there were. This will be essential for others to know who may want to use this database in the future.</p>
-</disp-quote>
-<p>We thank the reviewer for pointing this out. Inter-observer reliability is important for ensuring the quality of the annotations. We first used Amazon MTurk to crowd source annotations and found that the inter-observer reliability and the annotation quality was poor. This was the reason for choosing a commercial service such as Hive AI. As the crowd sourcing and quality control are managed by Hive through their internal procedures, we do not have access to data that can allow us to assess inter-observer reliability. However, the annotation quality was assessed by first author ND through manual inspections of the annotations visualized on all of the images the database. Additionally, our ablation experiments with high out of sample performances further vaildate the quality of the annotations.</p>
-<disp-quote content-type="editor-comment">
-<p>Relevant to this comment, in your description of the database, a table or such could be included, providing the number of images from each source/setting per species and/or number of individuals. Something to give a brief overview of the variation beyond species. (subspecies would also be of benefit for example).</p>
-</disp-quote>
-<p>Our goal was to obtain as many images as possible from the most commonly studied ape species. In order to ensure a large enough database, we focused only on the species and combined images from as many sources as possible to reach our goal of ~10,000 images per species. With the wide range of people involved in obtaining the images, we could not ensure that all the photographers had the necessary expertise to differentiate individuals and subspecies of the subjects they were photographing. We could only ensure that the right species was being photographed. Hence, we cannot include more detailed information.</p>
-<disp-quote content-type="editor-comment">
-<p>1. You mention around line 195 that you used a specific function for splitting up the dataset into training, validation, and test but there is no information given as to whether this was simply random or if an attempt to balance across species, individuals, background/source was made. I would actually think that a balanced approach would be more appropriate/useful here so whether or not this was done, and the reasoning behind that must be justified.</p>
-<p>This is especially relevant given that in one test you report balancing across species (for the sample size subsampling procedure).</p>
-</disp-quote>
-<p>We created the training set to reflect the species composition of the whole dataset, but used test sets balanced by species. This was done to give a sense of the performance of a model that could be trained with the entire dataset, that does not have the species fully balanced. We believe that researchers interested in training models using this dataset for behavior tracking applications would use the entire dataset to fully leverage the variation in the dataset. However, for those interested in training models with balanced species, we provide an annotation file with all the images included, which would allow researchers to create their own training and test sets that meet their specific needs. We have added this justification in the manuscript to guide the other users with different needs. Lines 530-534: “We did not balance our training set for the species as we wanted to utilize the full variation in the dataset and assess models trained with the proportion of species as reflected in the dataset. We provide annotations including the entire dataset to allow others to make create their own training/validation/test sets that suit their needs.”</p>
-<disp-quote content-type="editor-comment">
-<p>And another perhaps major concern that I think should also be addressed somewhere is the fact that this is an image database tested on images while the abstract and manuscript mention the importance of pose estimation for video datasets, yet the current manuscript does not provide any clear test of video datasets nor engage with the practicalities associated with using this image-based database for applications to video datasets. Somewhere this needs to be added to clarify its practical utility.</p>
-</disp-quote>
-<p>We thank the reviewer for this important suggestion. Since we can separate a video into its constituent frames, one can indeed use the provided model or other models trained using this dataset for inference on the frames, thus allowing video tracking applications. We now include a short video clip of a chimpanzee with inferences from the provided model visualized in the supplementary materials.</p>
-<disp-quote content-type="editor-comment">
-<p><bold>Reviewer #1 (Recommendations For The Authors):</bold></p>
-<list list-type="bullet">
-<list-item><p>Please provide a more thorough description of the annotation procedure (i.e., the instructions given to crowd workers)! See public review for reference on dataset annotation reporting cards.</p>
-</list-item></list>
-</disp-quote>
-<p>We have included the list of instructions for Hive annotators in the supplementary materials.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>An estimate of the crowd worker accuracy and variability would be super valuable!</p>
-</list-item></list>
-</disp-quote>
-<p>While we agree that this is useful, we do not have access to Hive internal data on crowd worker IDs that could allow us to estimate these metrics. Furthermore, we assessed each image manually to ensure good annotation quality.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>In the methods section it is reported that images were discarded because they were either too blurry, small, or highly occluded. Further quantification could be provided. How many images were discarded per species?</p>
-</list-item></list>
-</disp-quote>
-<p>It’s not really clear to us why this is interesting or important. We used a large number of photographers and annotators, some of whom gave a high ratio of great images; some of whom gave a poor ratio. But it’s not clear what those ratios tell us.</p>
-<disp-quote content-type="editor-comment">
-<list list-type="bullet">
-<list-item><p>Placing the numerical values at the end of the bars would make the graphs more readable in Figures 4 and 5.</p>
-</list-item></list>
-</disp-quote>
-<p>We thank the reviewer for this suggestion. While we agree that this can help, we do not have space to include the number in a font size that would be readable. Smaller font sizes that are likely to fit may not be readable for all readers. We have included the numerical values in the main text in the results section for those interested and hope that the figures provide a qualitative sense of the results to the readers.</p>
 </body>
 </sub-article>
 </article>
