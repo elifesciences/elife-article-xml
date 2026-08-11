@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Neuroscience</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>Toothy: an interactive platform for dentate spike curation</article-title>
 </title-group>
 <contrib-group>
@@ -75,7 +76,7 @@
 <surname>Colgin</surname>
 <given-names>Laura L</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-4853-8913</contrib-id><role>Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-4853-8913</contrib-id><role>Reviewing Editor</role>
 <aff>
 <institution-wrap>
 <institution>University of Texas at Austin</institution>
@@ -89,7 +90,7 @@
 <surname>Colgin</surname>
 <given-names>Laura L</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-4853-8913</contrib-id><role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-4853-8913</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution>University of Texas at Austin</institution>
@@ -110,6 +111,12 @@
 </pub-date>
 <volume>15</volume>
 <elocation-id>RP112308</elocation-id>
+<history><date date-type="sent-for-review" iso-8601-date="2026-06-12">
+<day>12</day>
+<month>06</month>
+<year>2026</year>
+</date>
+</history>
 <pub-history>
 <event>
 <event-desc>Preprint posted</event-desc>
@@ -119,14 +126,6 @@
 <year>2026</year>
 </date>
 <self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.10.03.680300"/>
-</event>
-<event>
-<event-desc>Sent for review</event-desc>
-<date date-type="sent-for-review" iso-8601-date="2026-06-12">
-<day>12</day>
-<month>06</month>
-<year>2026</year>
-</date>
 </event>
 </pub-history>
 <permissions>
@@ -277,7 +276,7 @@
 <title>Toothy analysis pipeline for detecting hippocampal population events from electrophysiological recordings.</title>
 <p><bold>(a)</bold> Schematic of a laminar probe recording local field potentials (LFP) across hippocampal subregions in the mouse brain, including the CA1 pyramidal layer (green) and dentate gyrus (DG) polymorphic layer or hilus (blue). The multi-channel LFP recording can be analyzed with Toothy to detect sharp wave-ripples (SPW-Rs) and dentate spikes (DSs). <bold>(b)</bold> The Toothy pipeline consists of three main steps: (1) Data ingestion: The user loads LFP data, specifies the associated probe configuration, and sets parameters for further processing. Toothy performs automated event detection across all channels in the recording. (2) Channel selection: For each event type (SPW-Rs and DSs), the user selects a representative channel based on the channel’s properties (selected channel marked by triangle and colored trace; green for SPW-R and blue for DS). Toothy provides interactive features for visualizing and comparing event properties across channels. (3) DS classification: For each DS, Toothy computes a current source density (CSD) profile, finds a 2D representation using PCA, then clusters events into DS1 and DS2. Toothy displays the mean waveforms and CSD profiles for each cluster for the user to use to refine the clustering before confirming the labels for DS1 and DS2. <bold>(c)</bold> Toothy output: Toothy returns a table of event times and properties as well as a comprehensive log of the parameters used for event detection and classification parameters. The event times enable peri-event analysis of other simultaneously-recorded variables of interest, including neural activity (e.g., spiking, photometry) and behavior (e.g. pupil size, whisker movement). The parameter log promotes comprehensive reporting of event detection methods, supporting reproducibility.</p>
 </caption>
-<graphic xlink:href="680300v2_fig1.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig1.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <p>Upon running Toothy, the user is greeted with a home screen comprising several buttons, including the main workflow (“Step 1: Load data” and “Step 2: Analyze events”) and convenience menus for functions that can also be achieved within the main workflow (namely setting paths and parameters and creating probe configurations) (<xref rid="fig2" ref-type="fig">Fig. 2</xref>). The main workflow begins with data ingestion, in which the user selects a recording, specifies the associated probe configuration, and sets parameters for further processing. This step is followed by an internal processing stage in which Toothy scales and optionally downsamples the data, then detects events across all channels. Next, the user enters the main analysis phase of the workflow, channel selection, in which the user selects an optimal channel for identifying DSs or SPW-Rs, facilitated through several visualizations. Finally, the workflow concludes with a DS classification step, in which Toothy performs CSD analysis on the LFP for each DS, performs principal component analysis (PCA) on the CSD, then clusters the CSD to label each DS as type 1 or type 2. Toothy produces two key outputs: (1) a table of event times and properties, which can be used for any number of downstream analyses across concurrent modalities such as imaging and behavior, and (2) a log of the parameters used for each step of analysis, which can be used for methods section reporting to promote reproducibility.</p>
 <fig id="fig2" position="float" fig-type="figure">
@@ -286,7 +285,7 @@
 <title>Toothy home screen and convenience windows.</title>
 <p><bold>(a) Home screen:</bold> Central access point for all Toothy modules. <bold>(b) Path setting window:</bold> Accessed from the “Set paths” button on the home screen, the path setting window allows the user to set default paths for folders and files to which Toothy will point at later stages in the workflow. <bold>(c) Parameter setting window:</bold> Accessed from the “Set parameters” button on the home screen, the parameter setting window allows the user to choose between using default parameters for signal processing and event detection (optimized to mouse hippocampal data) or using custom parameter files.</p>
 </caption>
-<graphic xlink:href="680300v2_fig2.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig2.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 </sec>
 <sec id="s2b">
@@ -298,7 +297,7 @@
 <title>Data Ingestion Window.</title>
 <p><bold>(a) Step 1: Select a recording</bold>. Users begin data ingestion by selecting a recording. The user clicks on the folder icon to open a file explorer and select a recording file. Once a file is selected, the box with the file path turns green and the next sections of the window appear, shown in (b), alongside the “Map LFP channels to probe(s)” button. <bold>(b) Metadata from the selected recording</bold>. The properties of the recording (number of channels, number of samples, and sampling rate) and the associated timestamps (start time, end time, duration) are displayed. In this example, a NeuroNexus file with 128 channels sampled at 1000 Hz was loaded. <bold>(c) Step 2: Map the recording to probe file(s)</bold>. A probe file can be loaded or created to map the channels in the file to specific probe(s) and shank(s). Here, a probe configuration corresponding to a NeuroNexus A3x43/42/43-Edge probe. Once all channels have been mapped to a probe, the “Set processing parameters” button is enabled.</p>
 </caption>
-<graphic xlink:href="680300v2_fig3.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig3.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <fig id="fig4" position="float" fig-type="figure">
 <label>Figure 4.</label>
@@ -306,7 +305,7 @@
 <title>Designing a probe object.</title>
 <p><bold>(a)</bold> <underline>The Build</underline> tool generates a probe object from descriptive parameters, including channel count, shank count, electrode configuration, and contact spacing. Channel mappings can be entered as table rows or comma-separated values to set the probe’s wiring configuration, otherwise the physical probe layout is assumed to match the logical data order. <bold>(b)</bold> <underline>The Paste</underline> method generates a probe object from arrays of electrode X and Y coordinates. Electrode shank IDs can be entered as a corresponding array, or they can be assigned to specific X-values through a dedicated interface <bold>(c)</bold> This method supports irregular or asymmetrical layouts that violate the assumptions of the “Build” tool. <bold>(d)</bold>The generated probe object is displayed with interactive labeling of contact indices, device indices, and shank IDs. Probe configurations are saved in JSON format for compatibility with the probeinterface package<sup><xref ref-type="bibr" rid="c27">27</xref></sup>.</p>
 </caption>
-<graphic xlink:href="680300v2_fig4.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig4.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <p>To select a recording, users click the folder icon to open a file explorer and select a file (<xref rid="fig3" ref-type="fig">Fig. 3a</xref>). Toothy supports six file formats, spanning both popular electrophysiology acquisition and storage formats (Neurodata Without Borders, OpenEphys, NeuroNexus, and Neuralynx) and generic array files (NumPy<sup><xref ref-type="bibr" rid="c25">25</xref></sup> and MATLAB arrays). Proprietary electrophysiology formats not directly supported can be converted into Neurodata Without Borders (NWB)<sup><xref ref-type="bibr" rid="c26">26</xref></sup> files using the <ext-link ext-link-type="uri" xlink:href="https://github.com/catalystneuro/neuroconv">NeuroConv</ext-link> Python package or the <ext-link ext-link-type="uri" xlink:href="https://nwb-guide.readthedocs.io/en/stable/">NWB GUIDE</ext-link> desktop app before using Toothy. Toothy uses the SpikeInterface Python package<sup><xref ref-type="bibr" rid="c27">27</xref></sup> to extract LFP data, timestamps, and relevant metadata (sampling rate and voltage units) from each file. For array files without embedded metadata, Toothy prompts the user to manually enter the information. When a recording is successfully loaded, the window expands to display the properties of the recording (number of channels, number of samples, and sampling rate) and timestamps (start time, end time, and duration) (<xref rid="fig3" ref-type="fig">Fig. 3b</xref>). Internally, following this step, all recordings are treated identically, regardless of source format.</p>
 <p>Next, LFP signals must be mapped to the appropriate recording probe(s). The Data Ingestion Window automatically displays the number of signals detected in the raw data, as well as the number assigned to a valid probe channel (<xref rid="fig3" ref-type="fig">Fig. 3c</xref>). Users may press the “Load” button to upload a probe object from a saved configuration file. Alternatively, the “Create” button initiates a Probe Designer GUI where users can easily generate a new probe object. The “View” button launches a pop-up table displaying the probe index assigned to each data row, with blank cells indicating unassigned signals. Assigned probes will appear by name in the main window and can be duplicated or deleted using the associated icons. When each data row (i.e. channel) is successfully assigned to a unique probe channel, these items will appear in green and the “Set processing parameters” button at the bottom of the window becomes enabled. Clicking this button initiates Toothy’s internal data processing step, in which LFP signals are filtered and event detection is performed for all channels using previously established methods<sup><xref ref-type="bibr" rid="c18">18</xref></sup>.</p>
@@ -333,7 +332,7 @@
 <title>Selecting event channels and curating DS and SPW-R datasets</title>
 <p><bold>(a)</bold> The Channel Selection Window displays raw LFP traces from the selected probe and shank, with the color-coded signals representing the current event channels for DSs (red), SPW-Rs (green), and maximal theta amplitude (blue). The red and green vertical lines mark the timepoints of detected DSs and SPW-Rs, respectively, and the CSD surrounding the first DS event (blue patch) is displayed behind the LFP traces. The Events tab in the sidebar contains tools for setting event channels and analyzing DS and SPW-R datasets, while the Recording tab (right) provides general utilities for navigating, cleaning, and documenting the data. <bold>(b)</bold> Example SPW-R LFPs in CA1, expanded from the upper dashed box in panel <bold>a</bold>. <bold>(c)</bold> Example DS LFPs and CSD in the hilus, expanded from the lower dashed box in panel <bold>a</bold>. <bold>(d)</bold> Normalized amplitude across channels for the theta, ripple, and slow and fast gamma frequency bands, with event channels marked by color-coded lines.</p>
 </caption>
-<graphic xlink:href="680300v2_fig5.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig5.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <p>In the next phase, preliminary detection of DSs and SPW-Rs is performed on each channel. For DS detection, positive peaks are identified in the filtered LFP signal using the <monospace><monospace>find_peaks</monospace></monospace> function from Python’s SciPy library<sup><xref ref-type="bibr" rid="c31">31</xref></sup>. Peaks must meet specific criteria: exceeding a user-defined height threshold, having a minimum prominence, and being separated by a minimum time interval to ensure that DSs with multiple peaks are not extracted as discrete events. For the qualifying events, additional waveform properties such as half-width, peak height, and asymmetry are computed using SciPy’s <monospace>peak_widths</monospace> function within an analysis window around each peak. Since filtered signal peaks may not align precisely with raw signal peaks, each DS is indexed by the maximum raw LFP value within a 20 ms window around the filtered signal peak. This analysis is repeated for all channels, and results are compiled into a single table for storage.</p>
 <p>For SPW-R detection, Toothy first calculates the SPW-R envelope by taking the absolute value of the Hilbert transform of the ripple-filtered signal. The instantaneous frequency is then computed by translating the phase from the Hilbert transform across cycles, converting it into frequency values that are clipped to the ripple band (120-180 Hz). SciPy’s <monospace>find_peaks</monospace> function is again used to detect peaks in the SPW-R envelope which meet the user-defined height and inter-peak interval thresholds. A lower envelope threshold is then applied, and the <monospace>peak_widths</monospace> function is used to measure SPW-R widths. Additional criteria are used to filter detected SPW-Rs, including minimum duration and mean instantaneous frequency thresholds. Qualified SPW-Rs are indexed by the largest positive cycle within 40 ms of the filtered peak. As with DSs, SPW-R analysis is performed for all channels, and results are consolidated into a table for storage, along with threshold values for each channel.</p>
@@ -353,7 +352,7 @@
 <title>Event-specific analyses.</title>
 <p><bold>(a)</bold> Interface for comparing DS and SPW-R events. “Single” mode reviews the individual waveforms in a dataset, and “Average” mode compares the mean event waveforms across multiple channels. <bold>(b)</bold> Parameter distributions for SPW-R events, showing the event count, amplitude, and ripple-to-theta ratio across all channels. <bold>(c)</bold> Mean DS waveforms from five example channels distributed across the probe. The overlaid waveforms highlight laminar differences in polarity, latency, and waveform shape across the hippocampal circuit. <bold>(d)</bold> Individual waveforms from two example DSs with the highest and lowest peak amplitude. The peak detection threshold is indicated by the dashed line, and waveforms are annotated to show with their half-width (green) and half-prominence height (red). <bold>(e)</bold> Example SPW-R waveform and ripple envelope (orange) in the filtered LFP. Detection thresholds are displayed for minimum peak height and edge height (dashed lines) and minimum duration (purple shaded region), and the event duration is indicated by the green bar.</p>
 </caption>
-<graphic xlink:href="680300v2_fig6.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig6.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <p>A powerful feature of the Channel Selection Window is the ability to manually curate event datasets, refining the set of automatically detected events by removing artifacts and adding missed events. To add an undetected DS or SPW-R to the dataset, the user must double-click the desired timepoint on the plot while the “Add” option is checked in the corresponding event section. Newly created events are indexed to the LFP peak closest to the clicked point, and they appear as dotted lines for visual differentiation. Users can remove specific DSs or SPW-Rs by dragging the span selector around the desired event markers and pressing the “Backspace” key to temporarily delete the events, or the “Escape” key to permanently erase them. Deleted events can be viewed through a separate toggle button (appearing as dashed lines), and they can be automatically restored by selecting the markers with the span selector and pressing the spacebar. Erased events, however, are permanently removed from the dataset and must be manually re-added by the user. This iterative refinement process generates high-quality, rigorously validated DS and SPW-R datasets for downstream analysis.</p>
 <p>The final step of exporting the data to the recording folder is executed using the “Save” button (<xref rid="fig5" ref-type="fig">Fig. 5</xref>). Event channels are written to an NPY file, while DS and SPW-R datasets are saved as CSV tables. The current probe and shank index is appended to each file name as a unique identifier to avoid confusion in multi-probe and multi-shank recording setups. Successful completion of this step allows access to the DS classification module, the final phase of the Toothy pipeline. While Toothy is primarily geared towards DS curation, users may refer to the previously published consensus statement on methods for further curating SPW-Rs<sup><xref ref-type="bibr" rid="c15">15</xref></sup>.</p>
@@ -367,7 +366,7 @@
 <title>Classification of DS1 and DS2 using CSD estimation and event clustering.</title>
 <p><bold>(a)</bold> Interface for CSD-based classification. The interactive CSD window is used to define the range of channels for analysis, and the sidebar enables configuration of CSD calculation settings and clustering algorithm parameters. The “Calculate” button initiates the CSD estimation and PCA-based clustering, and the results are displayed in three additional visualizations accessible through the inputs above the plot. <bold>(b)</bold> Heatmaps of raw LFPs (top) and raw CSDs (bottom) for each DS event. Right, mean LFPs and CSD surrounding DSs. <bold>(c)</bold> Mean LFP waveforms and filtered CSDs for DS1 and DS2 events. <bold>(d)</bold> Two-dimensional PCA projection of the normalized filtered CSDs. Events are color-coded by cluster label (DS1 or DS2).</p>
 </caption>
-<graphic xlink:href="680300v2_fig7.tif" mimetype="image/tiff"/>
+<graphic xlink:href="680300v2_fig7.tif" mimetype="image" mime-subtype="tiff"/>
 </fig>
 <p>Users may choose the standard CSD method or one of several inverse CSD (iCSD) approaches, which include δ-source, step, and spline methods<sup><xref ref-type="bibr" rid="c24">24</xref></sup>. By default, Toothy uses the standard CSD method with Vaknin’s procedure and third-order Gaussian smoothing (σ=1), but alternative CSD methods will have a negligible impact on the subsequent clustering. Heatmaps are used to display the LFPs and the computed CSDs (<xref rid="fig7" ref-type="fig">Fig. 7b</xref>). Summary plots display the averaged LFPs and CSDs within a 100 ms window surrounding each DS, with the color gradient indicating the signal intensity across channels and events.</p>
 <p>Following CSD estimation, principal components analysis (PCA) is performed on the normalized filtered CSD profiles. Under physiological conditions, the PCA-based analysis should produce two distinct clusters, corresponding to DS1 and DS2 events, as evident on the PCA scatterplot (<xref rid="fig7" ref-type="fig">Fig. 7d</xref>). Points are color-coded by classification as DS1 or DS2, based on the clustering results from K-means or DBSCAN algorithms, available for comparison via toggle buttons on the plot. K-means requires a predefined number of target clusters, while DBSCAN requires parameters for epsilon (the local radius for expanding clusters) and the minimum number of samples per cluster (note DBSCAN can produce a third “undefined” cluster). Toothy automatically labels the clusters by comparing their mean CSDs, designating the cluster with a maximal sink closer to the fissure as DS1 and that with a sink closer to the granule cell layer as DS2. The mean LFP waveforms and associated peri-event CSDs are displayed for DS1 and DS2, along with the number of events in each category (<xref rid="fig7" ref-type="fig">Fig. 7c</xref>). These plots allow users to compare the classification results with expected physiological patterns, and users can switch the label assigned to each cluster if visual inspection determines that this automatic labeling was inaccurate. Following successful classification, the user can press “Save” to add the event types to the DS dataset. This step concludes the Toothy workflow, producing a set of CSV files with event times and types that facilitate any number of downstream analyses.</p>
@@ -381,21 +380,14 @@
 </sec>
 </body>
 <back>
+<sec id="nt1">
+<title>Note</title>
+<p>This reviewed preprint has been updated to correct the supplementary materials.</p>
+</sec>
 <ack>
 <title>Acknowledgements</title>
 <p>K.N.E. is supported by an NSF GRFP award. A.L.S. is supported by NIH NINDS T32 training program (T32NS007473). Dentate spike research in the laboratory of J.S.F. is supported by NIH NINDS (R00NS126725), Esther A. &amp; Joseph Klingenstein Fund, Simons Foundation, CureSHANK, CURE Epilepsy, and the Harvard Brain Science Initiative Bipolar Disorder Seed Grant.</p>
 </ack>
-<sec id="additional-files" sec-type="supplementary-material">
-<title>Additional files</title>
-<supplementary-material id="supp1">
-<label>Supplementary information.</label>
-<media xlink:href="Supplementary_Information-v4.pdf"/>
-</supplementary-material>
-<supplementary-material id="supp2">
-<label>Supplementary sequence data.</label>
-<media xlink:href="Supplementary_sequence_data-v4.pdf"/>
-</supplementary-material>
-</sec>
 <ref-list>
 <title>References</title>
 <ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Buzsáki</surname> <given-names>G</given-names></string-name></person-group> <article-title>Two-stage model of memory trace formation: A role for “noisy” brain states</article-title>. <source>Neuroscience</source>. <year>1989</year>;<volume>31</volume>(<issue>3</issue>):<fpage>551</fpage>–<lpage>570</lpage>. doi:<pub-id pub-id-type="doi">10.1016/0306-4522(89)90423-5</pub-id> <pub-id pub-id-type="pmid">2687720</pub-id></mixed-citation></ref>
@@ -582,66 +574,16 @@
 <given-names>Jordan S</given-names>
 </name>
 <role specific-use="author">Author</role>
-</contrib>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1209-5559</contrib-id></contrib>
 </contrib-group>
 </front-stub>
 <body>
-<p>We are very happy that our work was positively received by the reviewers and editors and we are looking forward sharing our results via eLife.</p>
-<p>In addition, we have added more details on the generation of the brainbow lines, and we have submitted the respective plasmids to Addgene and give the respective IDs. Some additional minor changes were done to make the text more clear.</p>
-<p>We have to confess that we were not completely happy with the term “solid” for the strength of evidence. That assessment seems to be based on the fact that we reached no single cell resolution with our brainbow imaging. Admittedly, this is true and we have openly discussed this technical restriction. However, to our knowledge, within arthropods transgenic single-neuron marking had been restricted to <italic>Drosophila melanogaster</italic>, i.e. the most advanced genetic model system. Our work presents the first generation of respective transgenic lines and the first application of the brainbow system in any arthropod apart from <italic>Drosophila</italic>. Therefore, we tend to consider our methodological approach to go beyond current state of the art. We would also like to point out an additional aspect of our technical approach: We transgenically marked a subset of neural cells expressing a given transcription factor. This allowed us relating projection patterns and the expression of classic neural markers (e.g. neuropeptides) to the expression of a transcription factor (i.e. a molecular subset of neurons). We are not aware of other arthropod studies doing this (apart from flies, of course).</p>
-<p>In summary, we wonder whether the chosen level of strength of evidence might be reconsidered from the perspective of emerging model organisms and in comparison with other recent studies published in eLife, where the well-known classic neural markers were used to determine spider brain morphology.</p>
-<disp-quote content-type="editor-comment">
-<p><bold>Public Reviews:</bold></p>
-<p><bold>Reviewer #1 (Public review):</bold></p>
-<p>Summary:</p>
-<p>Pang et al. investigated the expression pattern of the transcription factor foxQ2II in an adult beetle brain. They find nine distinct clusters, with many neurons expressing Glut/ChaT and dopamine. Some of the dopamine neurons resemble cell types described in Drosophila. Several neurons seem to project to prominent higher brain regions such as the MB and CX, and might even connect to both.</p>
-<p>Strengths:</p>
-<p>The authors use state-of-the-art labeling techniques for the analysis of individual cell types, such as beetle brainbow, to investigate the until now unknown expression of the transcription factor in the adult beetle brain.</p>
-</disp-quote>
-<p>We would add that this work establishes and introduces brainbow for the first time in an arthropod outside <italic>Drosophila melanogaster</italic> and that we are the first (outside flies) to relate the expression of a neural transcription factor with neural projection and neurotransmitter content.</p>
-<disp-quote content-type="editor-comment">
-<p>Rigorous cell reconstruction and image analysis revealed a better understanding of the anatomy of the labeled cells.</p>
-<p>Weaknesses:</p>
-<p>The brainbow labeling seems to include all cells labeled by the enhancer trap line, as well as the ones not expressing foxQ2II. Thus, it is unclear how useful this data is to compare individual cells to other insects.</p>
-</disp-quote>
-<p>We kindly disagree with the first statement: not all cells of the enhancer trap are labelled but a subset. Therefore, we call it “sparse labelling” in our manuscript while admittedly we do not reach “single cell labelling”, which admittedly limits both precision and use.</p>
-<disp-quote content-type="editor-comment">
-<p>The functional relevance of this transcription factor in the adult brain cell is still unknown. It is therefore unclear if the described neurons have any specific function and if they require this transcription factor for normal function.</p>
-</disp-quote>
-<p>Previously, we found that this gene has an important function in neural development during embryogenesis. Actually, we have done extensive RNAi experiments to test for an effect during postembryonic development. We found surprisingly small defects when looking at the projection patterns of several imaging lines. However, we found some changes in behaviour. Given the extensive data presented in the current paper, we decided to publish these functional data (another 12 figures/suppl. figures) separately.</p>
-<p>We also note that the identity/function of neurons is determined by a mix of transcription factors. Disentangling the individual role of each of those transcription factors would indeed be an exciting question and a major endeavour.</p>
-<disp-quote content-type="editor-comment">
-<p>Overall, the neural reconstructions are missing single-neuron details; it is difficult to compare the shown cell types to specific cell types in Drosophila based on the presented data, and this finding remains speculative.</p>
-</disp-quote>
-<p>Indeed, we do not reach single-cell resolution, which is below the standards of fly neurobiology. However, compared with other arthropods we reach a unique level of precision. Specifically, we are able to relate the expression of a transcription factor to neural projection and neurotransmitter content.</p>
-<p>We also think that combining our transgenic line with dopamine expression was sufficient to compare the labelled cells to fly neurons. We feel that most homology assessments of neurons across such large evolutionary distances will remain hypothetical to some degree.</p>
-<disp-quote content-type="editor-comment">
-<p><bold>Reviewer #2 (Public review):</bold></p>
-<p>Summary:</p>
-<p>The authors provide the first thorough profiling of neurons in Tribolium characterized by the expression of the transcription factor foxQ2, which will be useful for developmental neurobiology. They use state-of-the-art methods convincingly to not only identify the neurons, but also to further characterize them anatomically and neurochemically.</p>
-<p>Strengths:</p>
-<p>Thorough and meticulous application of state-of-the-art anatomical methods in a nonstandard laboratory organism.</p>
-</disp-quote>
-<p>Thank you for this encouraging comment.</p>
-<disp-quote content-type="editor-comment">
-<p>Weaknesses:</p>
-<p>No weaknesses were identified by this reviewer.</p>
-<p>Comments:</p>
-<p>I don't really have any major suggestions at all. Loved the work.</p>
-<p>There is only one tiny nitpicking aspect:</p>
-<p>P21: &quot;Biogenic amines are involved in learning and memory and setting arousal threshholds (Davis, 2023), which are functions performed by the mushroom bodies and related to the function of the central complex in goal directed navigation, respectively.&quot;</p>
-<p>MBs mainly process olfactory memory. At least in Drosophila, most other kinds of memories are being supported elsewhere.</p>
-<p><ext-link ext-link-type="uri" xlink:href="https://pubmed.ncbi.nlm.nih.gov/10454381/">https://pubmed.ncbi.nlm.nih.gov/10454381/</ext-link></p>
-<p>such as, e.g., visual pattern learning in the CX</p>
-<p><ext-link ext-link-type="uri" xlink:href="https://pubmed.ncbi.nlm.nih.gov/16452971/">https://pubmed.ncbi.nlm.nih.gov/16452971/</ext-link></p>
-<p>or motor learning in motor neurons</p>
-<p><ext-link ext-link-type="uri" xlink:href="https://pubmed.ncbi.nlm.nih.gov/38779314/">https://pubmed.ncbi.nlm.nih.gov/38779314/</ext-link></p>
-<p>or ventral ganglion, antennal lobes, and median bundle for place learning:</p>
-<p><ext-link ext-link-type="uri" xlink:href="https://pubmed.ncbi.nlm.nih.gov/10706599/">https://pubmed.ncbi.nlm.nih.gov/10706599/</ext-link></p>
-<p>If the authors focus on MBs, this sentence ought to reflect the fact that the function of the MBs is much narrower than the current sentence appears to suggest.</p>
-</disp-quote>
-<p>Thanks for this clarification – we have rephrased:</p>
-<p>&quot;Biogenic amines are involved in learning and memory and setting arousal thresholds (Davis, 2023). This relates to the mushroom bodies’ function in olfactory memory, and the function of the central complex in visual pattern learning and goal-directed navigation, respectively.&quot;</p>
+<p>We thank the editors and reviewers for their thoughtful and constructive assessment of Toothy, and for recognizing it as a potentially valuable resource for standardizing dentate spike (DS) analysis across labs. We are especially glad that the reviewers found the manuscript clear and easy to follow, judged the detection and classification algorithms to be appropriate and well-validated, and appreciated the tool's graphical user interface (GUI) based, pip-installable design for lowering the barrier to entry for DS analysis.</p>
+<p>We also understand the concerns raised. Most importantly, we will resolve the data-ingestion and classification errors that reviewers encountered and release an updated version of Toothy that we have verified end-to-end across input formats and datasets. Alongside this, we will provide downloadable demo dataset(s) spanning multiple file formats, probe types, and recording conditions, so that users can confirm a correct installation and see how these cases differ.</p>
+<p>To make the pipeline more transparent, we will add a section describing what Toothy does between user steps, including the rationale for decisions users cannot change, such as detection from a single representative channel. We will also expand the documentation of parameter choices with supporting citations and alternatives, and surface this guidance within Toothy where feasible, consistent with our aim that the tool not function as a black box.</p>
+<p>We will clarify Toothy's scope and current limitations. Recordings with irregular spatial sampling (e.g., tetrodes) are supported for detection but not for CSD-based DS-type classification, which requires a laminar probe spanning approximately the hippocampal fissure to the hilus; we will state this explicitly and evaluate adding an optional waveform-based classification mode (Santiago et al., 2024) to extend type classification to such recordings. We will also add data-quality checks (including sampling rate and inter-electrode spacing) that warn users when a recording may not support reliable results.</p>
+<p>Finally, we will situate Toothy among existing open-source toolboxes, describing how it differs, extends beyond, and interoperates with them, and we will add a comparison of Toothy's outputs to previously published analyses while being explicit about the limits of such comparisons. We will of course also address the remaining technical clarifications and figure edits raised by the reviewers.</p>
+<p>We are confident that addressing these points will make Toothy clearer and more useful to the hippocampal community.</p>
 </body>
 </sub-article>
 </article>
