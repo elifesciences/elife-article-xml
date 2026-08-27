@@ -1,0 +1,760 @@
+<?xml version="1.0" ?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.4 20241031//EN"  "JATS-archivearticle1-4-mathml3.dtd"><article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.4" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">elife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">112419</article-id>
+<article-id pub-id-type="doi">10.7554/eLife.112419</article-id>
+<article-id pub-id-type="doi" specific-use="version">10.7554/eLife.112419.1</article-id>
+<article-version-alternatives>
+<article-version article-version-type="publication-state">reviewed preprint</article-version>
+<article-version article-version-type="preprint-version">1.5</article-version>
+</article-version-alternatives>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Genetics and Genomics</subject>
+</subj-group>
+</article-categories><title-group>
+<article-title>Systematic cross-study assessment of RNA-Seq experimental workflows for plasma cell-free transcriptome profiling</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Tuñí-Domínguez</surname>
+<given-names>Cristina</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Asole</surname>
+<given-names>Giovanni</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<xref ref-type="aff" rid="a2">2</xref>
+<xref ref-type="aff" rid="a3">3</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Monteagudo-Mesas</surname>
+<given-names>Pablo</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Rusu</surname>
+<given-names>Elena Cristina</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Cabús</surname>
+<given-names>Lluc</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>González</surname>
+<given-names>Lucila</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sánchez</surname>
+<given-names>Laura</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Neto</surname>
+<given-names>Beatriz</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sanders</surname>
+<given-names>Phil</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Weber</surname>
+<given-names>Marc</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-0290-7445</contrib-id>
+<name>
+<surname>Lagarde</surname>
+<given-names>Julien</given-names>
+</name>
+<xref ref-type="aff" rid="a1">1</xref>
+<email>jl@jlagarde.eu</email>
+</contrib>
+    <aff id="a1"><label>1</label><institution>Flomics Biotech, SL</institution>, <city>Barcelona</city>, <country country="ES">Spain</country></aff>
+    <aff id="a2"><label>2</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/03kpps236</institution-id><institution>Centre for Genomic Regulation (CRG), The Barcelona Institute of Science and Technology</institution></institution-wrap>, <city>Barcelona</city>, <country country="ES">Spain</country></aff>
+    <aff id="a3"><label>3</label><institution-wrap><institution-id institution-id-type="ror">https://ror.org/04n0g0b29</institution-id><institution>Universitat Pompeu Fabra (UPF)</institution></institution-wrap>, <city>Barcelona</city>, <country country="ES">Spain</country></aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-9195-1455</contrib-id><role>Reviewing Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04h9pn542</institution-id><institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+<contrib contrib-type="senior_editor">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-9195-1455</contrib-id><role>Senior Editor</role>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04h9pn542</institution-id><institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<author-notes>
+    <fn fn-type="coi-statement"><p>Competing interests: All authors are employees of Flomics Biotech, S.L. with equity in the company. The Flomics dataset included in this study was generated in-house by Flomics Biotech. The work was funded by Flomics Biotech, partially through grants, as detailed in the acknowledgment section.</p></fn>
+</author-notes>
+<pub-date date-type="original-publication" iso-8601-date="2026-08-27">
+<day>27</day>
+<month>08</month>
+<year>2026</year>
+</pub-date>
+<volume>15</volume>
+<elocation-id>RP112419</elocation-id>
+<pub-history>
+<event>
+<event-desc>Sent for review</event-desc>
+<date date-type="sent-for-review" iso-8601-date="2026-07-11">
+<day>11</day>
+<month>07</month>
+<year>2026</year>
+</date>
+</event>
+<event>
+<event-desc>Preprint posted</event-desc>
+<date date-type="preprint" iso-8601-date="2026-07-28">
+<day>28</day>
+<month>07</month>
+<year>2026</year>
+</date>
+<self-uri content-type="preprint" xlink:href="https://doi.org/10.1101/2025.07.10.664092"/>
+</event>
+</pub-history>
+<permissions>
+<copyright-statement>© 2026, Tuñí-Domínguez et al</copyright-statement>
+<copyright-year>2026</copyright-year>
+<copyright-holder>Tuñí-Domínguez et al</copyright-holder>
+<ali:free_to_read/>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<ali:license_ref>https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+<license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="elife-preprint-112419-v1.pdf"/>
+<abstract><p>Plasma cell-free RNA (cfRNA) is a promising source of non-invasive biomarkers, but its clinical translation is hindered by technical challenges and a lack of protocol standardization, which compromises reproducibility and comparability across studies. There is a need for a systematic evaluation of existing cfRNA-Seq workflows to understand the drivers of technical variability. Here, we address this gap by performing a comprehensive cross-study analysis of 2,166 cfRNA-Seq samples from 15 published studies and an in-house generated dataset, applying a uniform bioinformatics pipeline to enable a controlled comparison of experimental workflows. Our analysis reveals that the donor phenotype typically explains a negligible fraction of the transcriptomic variation, whose main determinants are technical – principally protocol choice, genomic DNA contamination levels and library diversity. Remarkably, this technical noise is so profound that variation within plasma cfRNA samples exceeds that found across a wide range of human tissues. Finally, we demonstrate that critical pre-analytical factors are often confounded with patient phenotypes, jeopardizing the validity of biomarker discovery efforts. Our work serves as a comprehensive benchmark of current cfRNA-Seq methodologies and provides evidence-based guidelines to improve experimental design. By highlighting the dominance of controllable technical factors, we offer a path towards more robust and reproducible cfRNA research.</p>
+</abstract>
+<funding-group>
+<award-group id="par-1">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05r0vyz12</institution-id>
+<institution>Ministerio de Ciencia, Innovación y Universidades (MCIU)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>CPP2021-008897</award-id>
+<principal-award-recipient>
+<name>
+<surname>Sánchez</surname>
+<given-names>Laura</given-names>
+</name><name>
+<surname>Asole</surname>
+<given-names>Giovanni</given-names>
+</name><name>
+<surname>González</surname>
+<given-names>Lucila</given-names>
+</name><name>
+<surname>Lagarde</surname>
+<given-names>Julien</given-names>
+</name><name>
+<surname>Rusu</surname>
+<given-names>Elena Cristina</given-names>
+</name><name>
+<surname>Weber</surname>
+<given-names>Marc</given-names>
+</name><name>
+<surname>Cabús</surname>
+<given-names>Lluc</given-names>
+</name><name>
+<surname>Neto</surname>
+<given-names>Beatriz</given-names>
+</name><name>
+<surname>Monteagudo-Mesas</surname>
+<given-names>Pablo</given-names>
+</name><name>
+<surname>Sanders</surname>
+<given-names>Phil</given-names>
+</name><name>
+<surname>Tuñí-Domínguez</surname>
+<given-names>Cristina</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+
+
+
+
+
+
+
+
+
+
+<award-group id="par-12">
+<funding-source>
+<institution-wrap>
+    <institution-id institution-id-type="ror">https://ror.org/01bg62x04</institution-id>
+<institution>Government of Catalonia | Departament de Recerca i Universitats, Generalitat de Catalunya (DURSI)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>2022-DI-00108</award-id>
+<principal-award-recipient>
+<name>
+<surname>Tuñí-Domínguez</surname>
+<given-names>Cristina</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-13">
+<funding-source>
+<institution-wrap>
+    <institution-id institution-id-type="ror">https://ror.org/01bg62x04</institution-id>
+<institution>Government of Catalonia | Departament de Recerca i Universitats, Generalitat de Catalunya (DURSI)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>2024-DI-00013</award-id>
+<principal-award-recipient>
+<name>
+<surname>Asole</surname>
+<given-names>Giovanni</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-14">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05r0vyz12</institution-id>
+<institution>Ministerio de Ciencia, Innovación y Universidades (MCIU)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>PTQ2020-011298</award-id>
+<principal-award-recipient>
+<name>
+<surname>Lagarde</surname>
+<given-names>Julien</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-15">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05r0vyz12</institution-id>
+<institution>Ministerio de Ciencia, Innovación y Universidades (MCIU)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>PTQ2022-012611</award-id>
+<principal-award-recipient>
+<name>
+<surname>Weber</surname>
+<given-names>Marc</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-16">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05r0vyz12</institution-id>
+<institution>Ministerio de Ciencia, Innovación y Universidades (MCIU)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>PTQ2022-012612</award-id>
+<principal-award-recipient>
+<name>
+<surname>Sanders</surname>
+<given-names>Phil</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="par-17">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/05r0vyz12</institution-id>
+<institution>Ministerio de Ciencia, Innovación y Universidades (MCIU)</institution>
+</institution-wrap>
+</funding-source>
+<award-id>PTQ2023-012932</award-id>
+<principal-award-recipient>
+<name>
+<surname>Monteagudo-Mesas</surname>
+<given-names>Pablo</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+</funding-group>
+<custom-meta-group>
+<custom-meta specific-use="meta-only">
+<meta-name>publishing-route</meta-name>
+<meta-value>prc</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+<notes>
+<fn-group content-type="summary-of-updates">
+<title>Summary of Updates:</title>
+<fn fn-type="update"><p>We re-interpreted results on the genomic DNA (gDNA) contamination levels for the Exome-based (EB) protocols. In previous revisions, we wrongly hypothesized that exome capture intrinsically confers protection against gDNA contamination. This is not mechanistically plausible. In this new revision, we attribute the low gDNA levels in EB protocols to DNAse treatment instead of capture chemistry.</p></fn>
+</fn-group>
+</notes>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Plasma cell-free RNA (cfRNA) has recently emerged as a non-invasive analyte of considerable promise, offering a dynamic and systemic view into human physiological and pathological states<sup><xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup>. The circulating cell-free transcriptome, comprising a diverse range of RNA species including messenger RNAs (mRNAs), ribosomal RNAs (rRNAs), long noncoding RNAs (lncRNAs), microRNAs (miRNAs) and transfer RNAs (tRNAs), is released into the bloodstream from various tissues and cell types. Far from being mere cellular debris, this collection of transcription products reflects active biological processes, providing real-time information about cellular function and dysfunction throughout the body. The rich mosaic of cfRNA biotypes holds significant potential for diverse clinical applications, including the early detection of diseases, diagnostic assessment, prognostic stratification, and the monitoring of therapeutic responses across a spectrum of conditions. For example, studies have demonstrated significant disruptions in cfRNA profiles in patients with various cancers<sup><xref ref-type="bibr" rid="c2">2</xref>–<xref ref-type="bibr" rid="c4">4</xref>,<xref ref-type="bibr" rid="c7">7</xref>,<xref ref-type="bibr" rid="c8">8</xref></sup>, and cfRNAs detected in maternal plasma can predict gestational age and risks of preterm birth or preeclampsia<sup><xref ref-type="bibr" rid="c9">9</xref>,<xref ref-type="bibr" rid="c10">10</xref></sup>.</p>
+<p>The diagnostic potential of the plasma cell-free transcriptome extends far beyond the identification and profiling of individual biomarkers. Instead, the whole cfRNA landscape can be conceptualized as a systemic indicator, providing insights into complex biological processes and the overall health status of an individual. Different RNA species perform distinct biological functions, and their respective abundance in circulation can paint a detailed picture of the body’s response to disease. The capacity to comprehensively and accurately profile this diverse array of cfRNA molecules is therefore critical. Transcriptome-wide sequencing (RNA-Seq) is the method of choice for this purpose, as it enables the discovery of novel biomarkers and offers a holistic view of gene expression changes.</p>
+<p>However, despite its immense potential, technical barriers have so far prevented the translation of cfRNA-Seq into the clinic. A primary hurdle is the biochemical instability of RNA in solution, which leads to exceedingly low concentrations of cfRNA in plasma, combined with high levels of molecular fragmentation<sup><xref ref-type="bibr" rid="c11">11</xref></sup>. cfRNA is susceptible to degradation by ubiquitous ribonucleases (RNases) present in blood and surfaces, necessitating meticulous sample handling and processing. Each step of the cfRNA-Seq workflow (from blood extraction to bioinformatics analysis) represents a critical control point where variability, bias and error can be introduced, potentially compromising the integrity and interpretation of the final results<sup><xref ref-type="bibr" rid="c11">11</xref>–<xref ref-type="bibr" rid="c13">13</xref></sup>.</p>
+<p>The expansion of the cfRNA research field has occurred in the relative absence of comprehensive, systematic evaluations that compare the performance of different cfRNA-Seq workflow methodologies and their effects on data quality and biological interpretation. Most studies examining the influence of pre-analytical variables have either been limited to miRNAs, or confined to targeted mRNA analysis using PCR-based methods on a small number of genes<sup><xref ref-type="bibr" rid="c14">14</xref>–<xref ref-type="bibr" rid="c17">17</xref></sup>. This has contributed to a lack of standardization, hindering the reproducibility and comparability of findings across different laboratories. Adding to this challenge, studies often employ varied and non-standard bioinformatics analysis pipelines, which further complicates direct cross-study comparison. Ultimately, this slows the validation of promising cfRNA biomarkers for clinical application, underscoring the urgent need to assess and standardize these workflows.</p>
+<p>Here, we present a comprehensive cross-study analysis of 2,166 cfRNA-Seq samples, comprising data from 15 published studies and an in-house generated dataset (Flomics). To provide a comparative baseline, we also include reference datasets from cell-free DNA-Seq (N=90 samples) and bulk tissue RNA-Seq (N=100 samples). Using this large collection, we systematically assess the impact of experimental workflows on data quality and biological interpretation. By applying a uniform bioinformatics pipeline specifically tailored for long RNA analysis (such as mRNA and lncRNA), we perform a controlled comparison of protocol performance and quantify the primary sources of variation across datasets. Our analysis reveals a profound lack of methodological standardization and demonstrates that technical variables – primarily genomic DNA contamination and library diversity – together with inter-laboratory and inter-protocol batch effects, are the dominant drivers of variation, often masking biological signals. Furthermore, we evaluate the impact of non-human sequence contamination on transcriptomic profiles. Using computational deconvolution, we show that the cellular origin of cfRNA is also shaped by pre-analytical factors. Ultimately, this work provides a detailed benchmark of existing protocols and offers a set of evidence-based recommendations to guide the design of more robust and reproducible cfRNA-Seq studies for biomarker discovery.</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Lack of standardization in pre-analytical and library preparation protocols</title>
+    <p>We curated a diverse collection of cfRNA-Seq data from 15 published studies<sup><xref ref-type="bibr" rid="c2">2</xref>–<xref ref-type="bibr" rid="c4">4</xref>,<xref ref-type="bibr" rid="c7">7</xref>–<xref ref-type="bibr" rid="c9">9</xref>,<xref ref-type="bibr" rid="c18">18</xref>–<xref ref-type="bibr" rid="c26">26</xref></sup>, supplemented by an in-house dataset (Flomics, unpublished) and, for reference, samples from bulk tissue RNA-Seq (ENCODE/EN-TEx<sup><xref ref-type="bibr" rid="c27">27</xref></sup>) and cell-free DNA-Seq (cfDNA, Wei<sup><xref ref-type="bibr" rid="c28">28</xref></sup>) (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>, see Methods). In total, 2,356 Illumina-sequenced samples were selected for analysis (<xref ref-type="supplementary-material" rid="supp1">Supplementary table 1</xref>). For clarity, datasets are named after the first author of the corresponding publication. In some cases, datasets were subdivided to reflect distinct sample batches within a study, based on our manual curation of available metadata (see Methods).</p>
+<fig id="fig1" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 1</label>
+<caption><title>Overview of datasets and processing pipeline.</title>
+<p>Sample batches identified within some studies are depicted separately but grouped together using horizontal brackets below the X axis. “Unspecified”: not reported in the publication. <bold>(A)</bold> Summary of pre-analytical variables across datasets. Datasets were split into distinct batches when those differed by at least one pre-analytical variable. Note that the Toden dataset is annotated per their published Methods, which do not mention DNase treatment. As discussed later in the main text, we speculate that this likely reflects an unintentional omission from the authors, rather than a genuine absence of treatment. <bold>(B)</bold> Overview of datasets under consideration, broken down by donor phenotype. <bold>(C)</bold> Association between various pre-analytical variables and donor phenotype across datasets. Cramér’s V scores are reported for each variable. Variables strongly confounding phenotype approach a score of 1. “Uniform” means that the variable of interest is constant within the dataset. Only datasets studying more than one phenotypic condition were included. For clarity, we also excluded pre-analytical variables that were fully uniform or unspecified across all datasets. Those were: “Blood collection tube”, “RNA extraction kit”, “DNase treatment”, “Library prep kit”, “Library selection” and “cDNA library type”. *One sample with missing information from the Toden dataset was removed to allow the calculation. **17 samples with missing phenotype information from the Ibarra (plasma) dataset were removed. <bold>(D)</bold> Illustration of the nf-core/rnaseq Nextflow pipeline used for the uniform processing of RNA-seq data.</p></caption>
+<graphic xlink:href="664092v5_fig1.tif" mimetype="image/tiff"/>
+</fig>
+<p>Our cross-study analysis revealed a profound lack of standardization in experimental protocols, with significant differences observed both across and within individual studies. Pre-analytical steps such as blood centrifugation showed major disparities. Some studies employed a single centrifugation step while others used two, with wide variability in both speed and duration (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>). Furthermore, these critical parameters were often insufficiently reported, as described previously<sup><xref ref-type="bibr" rid="c29">29</xref></sup>, hindering reproducibility.</p>
+<p>Similar variability was also observed in the library preparation protocols. While most studies utilized established commercial kits, others employed custom methods. The choice of reverse transcription priming was also inconsistent. In contrast to the random priming used by most protocols, the Reggiardo dataset employed an oligo-dT-based strategy<sup><xref ref-type="bibr" rid="c30">30</xref></sup>. This latter approach is generally considered unsuitable for cfRNA, as the high degree of RNA degradation means most fragments lack the polyA tail required by this technique. The majority of datasets consisted of whole-transcriptome libraries, with three studies using exome capture instead. Moreover, a number of studies did not perform DNase treatment to remove contaminating genomic DNA (gDNA). To systematically analyze this heterogeneity, we grouped the studies into the following broad protocol categories (BPC) based on their library selection and construction methods: “cfDNA”, “Custom”, “Exome-based” (EB), “Whole RNA-Seq (oligo-dT-primed)” (WRO), “Whole RNA-Seq (random-primed)” (WRR) (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>).</p>
+</sec>
+<sec id="s2b">
+<title>Confounding pre-analytical factors in cfRNA-Seq studies</title>
+<p>The datasets included in this analysis exhibited considerable variability in scope (<xref rid="fig1" ref-type="fig">Fig. 1B</xref>). While most studies focused on comparisons between healthy and disease states, four included only healthy individuals, and four compared healthy controls to multiple cancer types. The cohorts represented a wide range of conditions, including healthy controls (N=979), various cancers (N=739), and non-cancer diseases (N=572).</p>
+<p>Within datasets that included samples from healthy and disease subjects, we observed that the phenotype was sometimes confounded with pre-analytical variables (<xref rid="fig1" ref-type="fig">Fig. 1C</xref>). In particular, the collection center was partially confounded with the phenotype in the Chen (Crámer’s V score = 0.6) and Toden (score = 0.8) studies, and was completely confounded in the Reggiardo study (score = 1.0), where pancreatic cancer and healthy samples originated from two different providers. This raises the concern that the observed differences in cfRNA-Seq profile could stem from variations in sample processing between providers rather than the disease state itself. Other confounding factors included read length (Block and Roskams-Hieter, score = 0.4) and centrifugation protocol (Ibarra (plasma), score = 1.0), which were partially and fully confounded with the phenotype, respectively. In contrast, the Moufarrej dataset demonstrated appropriate experimental design by evenly distributing control and disease samples across its two collection sites and centrifugation protocols (score=0.0), thereby minimizing the risk of confounding the results. Importantly, assessing the full impact of these variables was hindered by the lack of metadata reporting. For example, information about the collection center was not specified in 8 of the 14 datasets, making it impossible to assess its influence in those cases.</p>
+</sec>
+<sec id="s2c">
+<title>A best-practice, uniform data processing pipeline</title>
+    <p>To ensure a standardized analysis of all datasets, we processed all samples with a single, uniform bioinformatics pipeline, nf-core/rnaseq<sup><xref ref-type="bibr" rid="c31">31</xref></sup> (<xref rid="fig1" ref-type="fig">Fig. 1D</xref>). Implemented in the Nextflow<sup><xref ref-type="bibr" rid="c32">32</xref></sup> language, the pipeline encapsulates best-practice methodologies for NGS analysis of long RNAs, including extensive data quality assessment, mapping of reads with STAR<sup><xref ref-type="bibr" rid="c33">33</xref></sup>, and subsequent gene quantification using Salmon<sup><xref ref-type="bibr" rid="c34">34</xref></sup>. Pipeline run settings were adapted to individual datasets via configuration files according to relevant pre-analytical variables (see Methods and <xref ref-type="supplementary-material" rid="supp2">Supplementary table 2</xref>).</p>
+</sec>
+<sec id="s2d">
+<title>Cell-free RNA libraries are enriched in microbial sequences</title>
+    <p>An initial quality control analysis revealed substantial disparities across all datasets in both sequencing depth (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 1A</xref>) and the proportion of reads mapping to the human genome (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). This variability in mapping efficiency was strongly associated with the BPC employed: cell-free WRR libraries exhibited significantly lower mapping rates compared to those from bulk tissue (ENCODE). In contrast, EB protocols (Chalasani, Ibarra, Toden) yielded high mapping statistics comparable to those of tissue-derived libraries. Notably, a stark divergence was observed even within the same protocol, with the Roskams-Hieter “pilot” and “validation” cohorts showing markedly different median mapping rates of 31% and 87%, respectively, despite an identical processing workflow<sup><xref ref-type="bibr" rid="c3">3</xref></sup>.</p>
+<fig id="fig2" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 2</label>
+<caption><title>Microbial reads in cfRNA-Seq libraries.</title>
+<p><bold>(A)</bold> Fraction of sequencing reads mapping to the human genome across datasets. Each library is represented by a dot. The distribution of the metric within a given dataset is represented by a boxplot. <bold>(B)</bold> Taxonomic profile of dataset batches. Relative abundance values were averaged across samples, grouped into the simplified categories: human (Homo sapiens), fungi (Fungi), other_eukaryotes (Eukaryota except human and Fungi), bacteria (Bacteria), other (Archaea, Viruses, and other unspecific taxa), and unclassified.</p></caption>
+<graphic xlink:href="664092v5_fig2.tif" mimetype="image/tiff"/>
+</fig>
+    <p>We hypothesized that the low mapping efficiency in cfRNA-Seq samples was due to the presence of non-human sequences. To test this, we performed taxonomic classification of raw sequencing data for all samples using the Kraken2 software<sup><xref ref-type="bibr" rid="c35">35</xref></sup>. This analysis revealed that bulk tissue RNA libraries consisted predominantly of human sequences (97 +/- 4.6% mean relative abundance +/- SD), while cell-free WRR-based samples showed a markedly reduced fraction of human reads (77.4 +/- 20.3%). In these libraries, the non-human fraction was primarily composed of microbial (<italic>i.e.</italic>, fungal or bacterial) sequences (50.2 +/- 26.6% mean +/- SD, excluding Kraken2-unclassified reads, <xref rid="fig2" ref-type="fig">Fig. 2B</xref>, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 2</xref>). Hence, we posit that the poor mapping rates in affected samples are largely explained by a high proportion of microbial-derived sequences (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 3</xref>), which fail to align to the human genome due to sequence divergence. EB libraries were largely devoid of microbial reads (2.1 +/- 4.6%), consistent with their use of human-specific capture probesets. Similarly, WRO-based libraries were mainly devoid of microbial reads (2.1 +/- 2.3%, mean microbial fraction +/- SD), consistent with the general lack of compatible polyA tails in bacterial sequences. Custom protocols were instead characterized by an enrichment in sequences unclassified by Kraken2 (median fraction: 83.5%, 60.7% and 53.3%, respectively). This is possibly attributable to the shorter effective fragment length (EFL, which depends on both cDNA fragment size and sequencing fragment length) of these libraries (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 1B</xref>), a factor known to impair the software’s classification accuracy<sup><xref ref-type="bibr" rid="c35">35</xref></sup>.</p>
+    <p>The observed differences in microbial sequence enrichment could stem from several sources: the experimental protocol, laboratory contaminations, or genuine biological differences in the cell-free sequence composition of the donors, as reported elsewhere<sup><xref ref-type="bibr" rid="c2">2</xref>,<xref ref-type="bibr" rid="c24">24</xref>,<xref ref-type="bibr" rid="c36">36</xref></sup>. In the Roskams-Hieter study, the “pilot” cohort exhibited a significantly higher microbial read fraction (52.0%) compared to its “validation” counterpart (6.4%) (Mann-Whitney U test p=2.8e-15). This disparity strongly suggests varying contamination levels during experimental procedures, as both cohorts included non-cancer and cancer phenotypes, making true biological differences in circulating microbial RNA abundance unlikely. Similar observations apply to the Moufarrej study, which shows differences in microbial fractions between the Site 1 (8.6%) and Site 2 (2.4%) batches (p = 2.5e-26), and different collection centers in the Chen study (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 2G</xref>, PKUFH vs. Southwest Hospital p = 3.1e-10, PKUFH vs. SMMU (EHBH) p = 2.4e-02).</p>
+</sec>
+<sec id="s2e">
+<title>Genomic DNA contamination: a major pitfall in cell-free RNA profiling</title>
+<p>Prior studies have highlighted genomic DNA (gDNA) contamination as a significant challenge in cfRNA analysis<sup><xref ref-type="bibr" rid="c12">12</xref></sup>. As gDNA fragments lack distinctive features to differentiate them from most RNA-derived reads, they can skew transcriptome profiles and gene quantification<sup><xref ref-type="bibr" rid="c37">37</xref>,<xref ref-type="bibr" rid="c38">38</xref></sup>. We assessed the gDNA contamination level across all datasets using the fraction of spliced reads (FSR) as a primary proxy (<xref rid="fig3" ref-type="fig">Fig. 3A</xref>). Since only RNA-derived fragments are expected to span splice junctions, FSR is inversely correlated with the level of gDNA contamination. This analysis revealed substantial variation in gDNA contamination across studies. As expected, cfDNA samples from the Wei study consistently exhibited near-zero FSR (0.08 +/- 0.01%, median +/- SD), confirming the metric’s validity. High levels of gDNA contamination were strongly associated with the absence of DNase treatment during library preparation. For instance, several cfRNA-Seq datasets lacking DNase treatment (Block, Giráldez, Sun and Wang, <xref rid="fig1" ref-type="fig">Fig. 1A</xref>) displayed extremely low FSR values (0.80 +/- 2.50%), suggesting these samples consisted almost entirely of gDNA.</p>
+<fig id="fig3" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 3</label>
+<caption><title>gDNA contamination and library diversity in cfRNA-Seq libraries.</title>
+<p><bold>(A)</bold> Fraction of spliced reads. <bold>(B)</bold> Library diversity (NG80). <bold>(C)</bold> Mean RNA biotype representation. <bold>(D)</bold> NP80/NG80 ratio in gDNA-free datasets.</p></caption>
+<graphic xlink:href="664092v5_fig3.tif" mimetype="image/tiff"/>
+</fig>
+<p>Conversely, EB and WRO datasets showed consistently low levels of gDNA, though the underlying mechanism differs between the two categories. For WRO, oligo-dT priming is genuinely RNA-selective: only polyadenylated molecules are reverse-transcribed, excluding gDNA at the priming step. For EB, this is not due to the capture selection of transcribed sequences, since it selects fragments by complementarity to exonic bait sequences, a criterion met equally by cDNA and gDNA fragments that happen to overlap exonic regions. The low gDNA content of the three EB datasets instead reflects DNase digestion applied upstream of capture: Chalasani <italic>et al.</italic> and Ibarra <italic>et al.</italic> both report DNase treatment prior to reverse transcription (<xref rid="fig1" ref-type="fig">Fig. 1A</xref>). Toden <italic>et al.</italic> do not explicitly mention this step, but given the shared lab origin (namely, Molecular Stethoscope Inc.) and near-identical extraction protocol across all three studies, we consider it likely that this study used the same DNAse-based experimental workflow. The low gDNA content of EB samples is therefore attributable to the DNAse treatment step rather than an intrinsic property of the exome capture chemistry.</p>
+<p>In addition to protocol-driven differences, we observed significant batch effects within some studies. The two Reggiardo cohorts displayed markedly different median FSR values (24.7% for BioIVT vs 34.1% for DLS, MWW test p=0.011), possibly due to differences in the quality of RNA libraries that were generated. The Roskams-Hieter “pilot” cohort had a much higher gDNA contamination level than its “validation” counterpart (18.8% vs 32.3%, respectively, MWW test p=5.5e-14). This disparity correlated with our previous observation of a higher microbial read fraction in the same “pilot” batch. We hypothesize that the “pilot” cohort consists mainly of significantly degraded RNA. The loss of endogenous RNA fragments would introduce a compositional bias, artificially inflating the relative abundance of more stable contaminants like human gDNA and microbial sequences.</p>
+    <p>Finally, alternative proxies for gDNA contamination, such as the fraction of exonic reads (FER, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 1C</xref>) and data strandedness (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 1D</xref>), yielded results largely consistent with the FSR analysis. A notable exception was the Decruyenaere dataset, which showed high FER but low FSR. This specific discrepancy may be attributable to an enrichment of genuine, small unspliced transcripts in these libraries, as reported in the following section. Based on these metrics, we classified dataset batches with a median FSR &gt; 10% or FER &gt; 75% as “gDNA-free”. The studies meeting these criteria (at both the dataset and batch level) were Chalasani, Chen, Decruyenaere, Flomics, Ibarra, Moufarrej, Reggiardo, Roskams-Hieter, Tao, Toden, and Zhu.</p>
+</sec>
+<sec id="s2f">
+<title>Impact of protocol on cfRNA library diversity</title>
+<p>Effective biomarker discovery from cfRNA-Seq requires a comprehensive and informative representation of the circulating transcriptome’s landscape. In this context, library diversity (LD) serves as a critical quality metric, providing a faithful proxy to a library’s information content. To quantify and compare LD across studies, we employed the NG80 metric – the number of genes accounting for 80% of a sequencing library’s reads. A higher NG80 value indicates greater LD, reflecting a more even capture of the cfRNA profile without domination by a few highly abundant transcripts.</p>
+    <p>Our analysis revealed marked heterogeneity in LD across datasets (<xref rid="fig3" ref-type="fig">Fig. 3B</xref>). All EB enrichment protocols produced consistently diverse libraries (2,571 +/- 656, median NG80 +/- SD), comparable to those from bulk tissue RNA (ENCODE, 2,375 +/- 1,122). In contrast, gDNA-contaminated datasets (Block, Sun) displayed high NG80 values (11,545 +/- 5,497 and 4,429 +/- 2,766, respectively). This is likely an artifact of uniform genomic sampling from contaminating gDNA, which mimics the high LD observed in pure cfDNA libraries (Wei, 16,680 +/- 423). gDNA-free whole-cfRNA-Seq studies (including both WRO and WRR datasets) consistently displayed lower library diversities (261 +/- 1,023). Across the analyzed datasets, NG80 exhibited a strong relationship with established metrics of diversity and inequality such as Shannon entropy (<italic>R</italic>=0.73, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 4A</xref>) and Gini index (<italic>R</italic>=-1, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 4B</xref>). NG80 offers important advantages over these measures: it is mathematically bounded and provides a more conceptually intuitive representation of transcriptomic complexity.</p>
+<p>We hypothesized that the variability in LD across BPCs may be linked to different protocols enriching for or selecting against specific gene biotypes. To investigate this, we analyzed the composition of each library by aggregating gene-level relative abundances (transcripts per million, TPM, see Methods) into predefined gene categories (<xref rid="fig3" ref-type="fig">Fig. 3C</xref>). This analysis revealed that the library’s biotype profile was fundamentally dictated by the BPC methodology, particularly the underlying capture and reverse transcriptase (RT) priming strategy. As expected, EB datasets yielded libraries composed predominantly of protein-coding genes (mRNA, 91.8 +/- 14.7% median fraction +/- SD), a direct consequence of their targeted probe design. In stark contrast, WRR datasets had a lower fraction of protein-coding fragments (21.0 +/- 17.9%), and were instead comparatively enriched in various noncoding RNAs. Signal recognition particle RNAs (srpRNAs) were particularly prominent in this category, whereas they were detected at negligible levels in capture-based libraries, suggesting their exclusion from the capture probe sets. Across these diverse strategies, ribosomal RNA (rRNA) depletion was consistently effective, with rRNA constituting only a minor fraction of most libraries (2.42 +/- 6.51%).</p>
+<p>The importance of the library construction method was further underscored in the WRO-based samples where libraries rich in protein-coding genes were produced. This likely occurred due to the use of oligo-dT RT priming, which selectively enriches poly-adenylated transcripts. This selectivity explains the depletion of non-polyadenylated genes such as srpRNAs in these libraries. The high srpRNA fraction observed in the ENCODE bulk tissue data (mean: 48.32 +/- 22.99%) is explained by its reliance on random priming, the same method used by the WRR cfRNA protocols.</p>
+<p>To confirm that the lower LD in WRR-based datasets is driven by abundant non-coding RNAs, we calculated the LD of the coding transcriptome, the NP80 metric, defined as the number of genes accounting for 80% of a sequencing library’s <italic>protein-coding</italic> reads. We then computed the ratio of NP80 to the overall LD (NG80) for each sample in gDNA-free datasets (<xref rid="fig3" ref-type="fig">Fig. 3D</xref>). A NP80/NG80 ratio approaching one indicates that LD is primarily driven by protein-coding genes, whereas a higher ratio suggests that abundant non-coding transcripts are reducing the overall NG80 value. As predicted, capture-based datasets exhibited a ratio close to one (1.03 +/- 3.17, median NP80/NG80 +/- SD). WRR datasets, in contrast, displayed a substantially higher ratio (2.68 +/- 40.90), with the most pronounced increases in datasets dominated by non-coding RNAs (Decruyenaere, Flomics, Moufarrej). These results indicate that the reduced LD in whole-transcriptome datasets is a direct consequence of the overwhelming abundance of specific non-coding RNA subclasses, which are otherwise depleted by EB or WRO-based methods.</p>
+</sec>
+<sec id="s2g">
+<title>The cellular origin of cfRNA is mainly hematopoietic and shaped by pre-analytical variables</title>
+    <p>While plasma cfRNA reflects contributions from all blood-irrigated tissues and thus holds great diagnostic potential, its composition can be biased by experimental factors leading to cellular RNA contamination, as reported previously<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c11">11</xref></sup>. To investigate how these experimental variables shape the cellular contributions to the cell-free transcriptome, we performed computational deconvolution on all gDNA-free cfRNA-Seq datasets to predict the relative abundance of contributing cell types. Across all studies, the cfRNA landscape was dominated by only six major cell types (MCTs, see Methods) (platelets, monocytes, erythrocytes, B cells, macrophages and neutrophils), all of them hematopoietic, consistent with previous findings<sup><xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c39">39</xref></sup>. These six MCTs contributed, on average, 69.28% of the cell-free transcriptome (SD: 12.74%, <xref rid="fig4" ref-type="fig">Fig. 4A</xref> and <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 5</xref>), with erythrocytes and platelets being the two most abundant cell types across all samples (56.62 +/- 16.89%, average fraction +/- SD).</p>
+<fig id="fig4" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 4</label>
+<caption><title>Cellular origin of the cell-free transcriptome.</title>
+<p>Only gDNA-free datasets are represented <bold>(A)</bold> Average predicted cell type contribution to cfRNA. <bold>(B)</bold> Clustered heatmap showing a cell type fraction batch effect in the Chen dataset. Only major cell types (MCTs) are represented on the Y axis. Heatmap cells are colored according to the corresponding predicted cell type contribution to the cfRNA library (X axis), in relative abundance. Each library is annotated with its corresponding relevant metadata (“phenotype” and “collection_center”, top rows)</p></caption>
+<graphic xlink:href="664092v5_fig4.tif" mimetype="image/tiff"/>
+</fig>
+    <p>Clustering samples based on relative MCT contribution revealed that inter-sample heterogeneity was primarily driven by pre-analytical variables rather than donor phenotype (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 6</xref>). For instance, distinct sample clusters in the Chen (<xref rid="fig4" ref-type="fig">Fig. 4B</xref>) and Flomics (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 6A</xref>) datasets were strongly associated with specific collection centers. Similarly, differences in centrifugation protocols (double vs single centrifugation) between the two Moufarrej collection sites led to a significant disparity in the contribution of platelet-derived RNA (<xref ref-type="supplementary-material" rid="supp4">Supplementary Fig. 6D</xref>). This finding is consistent with recent studies linking platelet RNA contamination with centrifugation settings in cfRNA-Seq data<sup><xref ref-type="bibr" rid="c1">1</xref></sup>. Furthermore, the two Reggiardo batches exhibited high-erythrocyte signatures consistent with high levels of hemolysis during plasma extraction (<xref rid="fig4" ref-type="fig">Fig. 4A</xref>).</p>
+<p>Notably, the Zhu dataset was the only case where samples clustered clearly by phenotype (healthy vs liver cancer), with the clustering being driven by a large difference in platelet fraction between the two groups (8.9% in healthy vs 55.8% in liver cancer, MWU test p=7.4e-12). While the magnitude of this difference in platelet RNA representation raises the strong possibility of a technical batch effect, we cannot conclusively rule out a genuine biological signal without orthogonal validation.</p>
+</sec>
+<sec id="s2h">
+<title>Determinants of cfRNA profile variation are predominantly technical</title>
+    <p>A primary goal of cfRNA-Seq is the discovery of disease-related gene signatures<sup><xref ref-type="bibr" rid="c1">1</xref>–<xref ref-type="bibr" rid="c6">6</xref></sup>. Therefore, we investigated and quantified the influence of unwanted technical variables on gene expression variation across all 2,356 samples in our study using dimensionality reduction techniques – principal component analysis (PCA) and t-distributed stochastic neighbor embedding (t-SNE). PCA revealed that the first two components (PC) captured 68.35% of the total variation (42.89% for PC1 and 22.46% for PC2, <xref rid="fig5" ref-type="fig">Fig. 5A</xref>). When visualized, samples separated into distinct groups that corresponded to their original studies (<xref rid="fig5" ref-type="fig">Fig. 5A</xref>) and their associated BPC (<xref rid="fig5" ref-type="fig">Figure 5B</xref>), an effect even more evident in t-SNE maps (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 7A</xref>). Of note, datasets from the same laboratory (Chen, Tao, Zhu) clustered together. A targeted sub-analysis restricted to healthy controls (N=979) demonstrated that samples clustered consistently by laboratory and protocol, confirming that technical batch effects remain the dominant source of variation even within a biologically more homogeneous cohort (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig 7B</xref>). Collectively, these results highlight the major influence of experimental protocols on the cfRNA profiles observed.</p>
+<fig id="fig5" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 5</label>
+    <caption><title>Determinants of cell-free RNA gene abundance profiles.</title><p><bold>(A-F)</bold> Scatterplot visualizations of gene abundance-based principal components 1 and 2. Each dot corresponds to a sequencing library. <bold>(A-C)</bold>: All datasets. <bold>(E-F)</bold> gDNA-free datasets only. In this latter representation, note that the left and right clusters roughly correspond to EB and WRR/WRO datasets, respectively (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 7I</xref>). <bold>(A)</bold> Colored by dataset/batch label. <bold>(B)</bold> Colored by BPC (Broad Protocol Category). <bold>(C)</bold> Colored by log(NG80). <bold>(D)</bold> Colored by fraction of spliced reads (FSR). <bold>(E)</bold> Colored by fraction of platelet RNA. <bold>(F)</bold> Colored by fraction of microbial reads. <bold>(G)</bold> Variance Partition Analysis (VPA). For each variable of interest (X axis), a genome-wide violin plot of the distribution of variance explained by this variable across all genes is shown. Variables are sorted in descending order by median variance explained across genes, except the residuals, which are represented on the right by convention.</p></caption>
+<graphic xlink:href="664092v5_fig5.tif" mimetype="image/tiff"/>
+</fig>
+    <p>Consistent with this protocol-driven separation, the primary driver of cell-free transcriptome variation was library diversity (measured by NG80, <xref rid="fig5" ref-type="fig">Fig. 5C</xref>), which was strongly correlated with PC1. The second major driver was the gDNA contamination level (measured by FSR, <xref rid="fig5" ref-type="fig">Fig. 5D</xref>), which was strongly correlated with PC2 and thus has a strong influence on the cfRNA profile. Given that library diversity is itself mainly driven by technical variables such as gDNA contamination levels and the library preparation strategy, these findings confirm the dominance of technical factors. As expected, cfDNA samples were strong outliers in the PCA. Attempts to regress out the dominant influence of gDNA contamination and library diversity through linear modeling failed to restore biological clustering (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 7C</xref>). Even after major technical drivers were corrected for, donor phenotypes remained non-separable, while dataset-specific batch effects persisted as the primary organizational feature of the data.</p>
+    <p>We also assessed other potential confounders such as platelet RNA contamination. Focusing on the gDNA-free datasets, we confirmed that the platelet RNA fraction is a strong contributor to cell-free transcriptome profiles, although its influence was not as large as gDNA contamination or library diversity (<xref rid="fig5" ref-type="fig">Fig 5E</xref>). Within datasets, the gene abundance-based PCA also revealed clusters of samples consistent with the groupings observed in the cell type of origin analysis (<xref ref-type="supplementary-material" rid="supp4">Supplementary figs. 7D-G</xref>).</p>
+    <p>Finally, we evaluated the influence of microbial sequences. Since gDNA contamination levels were found to be confounded with microbial contamination in some datasets, we again decided to include only gDNA-free datasets in this analysis. We observed no detectable influence (<xref rid="fig5" ref-type="fig">Fig. 5F</xref>), suggesting that microbial reads do not cross-map to the human genome to skew human gene abundance profiles. To verify this, we performed a benchmark by re-quantifying all samples after computationally removing every read classified as non-human by Kraken2. We then compared these ‘human-only’ gene abundances against the original ‘unfiltered’ abundances to determine if the presence of foreign reads skewed the results. We found that the correlation between these ‘human-only’ and ‘unfiltered’ gene abundances is both high (median r=0.96 across all samples, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 8A</xref>), and largely independent of the non-human read fraction (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 8B</xref>), confirming that microbial sequences do not skew human gene quantification. However, this stability is lost in samples with an average effective fragment length (EFL, defined in <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 1B</xref>) below 100 bp (median r=0.61), compared to longer fragments (median r=0.96; p &lt; 2.2e-16, Wilcoxon rank sum test, <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 8A</xref>). This instability is likely a technical artifact caused by taxonomic mis-assignment: as noted above, shorter fragment lengths significantly impair Kraken2’s classification accuracy, often leading to high fractions of unclassified or misclassified sequences (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 2</xref>). In these cases, genuine human fragments are mistakenly removed during the filtering process, whereas longer fragments (EFL ≥ 100 bp) provide the necessary specificity to ensure robust and accurate phylogenetic assignments by Kraken2.</p>
+<p>Remarkably, the variation observed even within the gDNA-free cfRNA-Seq datasets was larger than that observed across 29 different tissues sampled from 4 individuals in ENCODE samples (<xref rid="fig5" ref-type="fig">Fig. 5A</xref>). This observation corroborates our hypothesis that the high variability across the datasets studied is mainly due to technical effects.</p>
+<p>To provide a more quantitative assessment of these drivers, we performed a variance partition analysis (VPA)<sup><xref ref-type="bibr" rid="c40">40</xref></sup> across the entire cohort (<xref rid="fig5" ref-type="fig">Fig. 5G</xref>). This analysis confirmed that the Broad Protocol Category (BPC) is the primary determinant of transcriptomic variation, explaining the largest fraction of variance across genes. Significant contributions were also attributed to library diversity (NG80), gDNA contamination levels (FSR) and dataset-specific batch effects, while the donor phenotype accounted for only a negligible fraction of the total variance. Interestingly, we observed that the number of mapped fragments (sequencing depth) retained a substantial influence on variance, indicating that TPM normalization is insufficient to fully eliminate depth-dependent technical noise.</p>
+    <p>Finally, we investigated whether restricting the analysis to high-quality data could restore biological clustering. We performed a principal component analysis restricted exclusively to gDNA-free plasma samples (N=1,586). Even in this filtered subset, technical factors remained the dominant drivers: the first principal component (PC1) accounted for 60.49% of the total variance and primarily separated samples by protocol and laboratory (<xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 7H</xref>). When colored by clinical status, samples of different phenotypes remained largely intermingled within their respective technical clusters, and a targeted sub-analysis focusing only on healthy controls (N=979) confirmed that protocol-driven separation persists regardless of donor health. These results demonstrate that removing contaminated samples is insufficient to overcome the lack of standardization in the cfRNA-Seq field.</p>
+</sec>
+<sec id="s2i">
+<title>Recommendations for cfRNA-Seq studies</title>
+<p>Based on our analysis, we provide the following recommendations to guide experimental design, protocol selection and accurate reporting of results in cfRNA-Seq research. We do not cover topics that have already been extensively evaluated by the exRNAQC consortium<sup><xref ref-type="bibr" rid="c11">11</xref></sup>, such as blood collection tubes,RNA extraction kits, or small RNA profiling.</p>
+<p>Our finding that pre-analytical variables and batch effects are the predominant drivers of variation in cfRNA profiles underscores the critical need for homogeneous sample processing within any given study. When uniform processing is not feasible, experimental design must incorporate randomization of samples across variables of interest to avoid confounding results. To foster maximum interpretability and reproducibility, we strongly advise that all experimental variables be exhaustively reported according to available standards, as proposed previously<sup><xref ref-type="bibr" rid="c11">11</xref>,<xref ref-type="bibr" rid="c29">29</xref></sup>. Because our analysis identified gDNA contamination as a major source of technical noise, comprehensive reporting of its proxies, such as the fraction of spliced reads (FSR), is essential.</p>
+    <p>To help choose the most suitable library preparation protocol, we have compiled our main quality metrics into a comprehensive figure that scores methodologies according to their performance (<xref rid="fig6" ref-type="fig">Fig. 6</xref> and <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 9</xref>). This data provides clear, evidence-based guidance about which approach to use under different scenarios. We recommend exome capture based (EB) workflows for studies focusing on known protein-coding genes, as they consistently produced the most diverse and gDNA-free libraries. As noted above, the low gDNA content of EB libraries in this study reflects the DNase digestion step used upstream in the specific workflow shared by all three EB datasets, rather than the exome capture itself. Researchers adopting an EB workflow should not assume equivalent protection against gDNA, unless a comparable digestion step is included in their protocol. Rigorous DNase treatment, not the choice of enrichment chemistry <italic>per se</italic>, is the determinant of a gDNA-free library. On the other hand, EB protocols are ill-suited to more exploratory analyses such as the investigation of microbial signatures, or biomarker discovery outside well-annotated human genes. For such purposes, whole-transcriptome random-primed (WRR) protocols are more suitable. To correct for typical low library diversity of WRR methods, affinity-based depletion of abundant, presumably uninformative genes such as rRNA and srpRNAs, as employed in other studies<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c41">41</xref></sup>, is required. Given the susceptibility of WRR methods to gDNA contamination, rigorous DNase treatment should be considered essential. Our analysis suggests double DNase treatment as a highly effective approach producing the most consistent high-quality libraries among all non-EB protocols. The <italic>in-silico</italic> removal of unspliced reads, a strategy previously proposed to mitigate gDNA contamination<sup><xref ref-type="bibr" rid="c2">2</xref>,<xref ref-type="bibr" rid="c5">5</xref>,<xref ref-type="bibr" rid="c24">24</xref></sup>, is often impractical. This approach not only leads to a considerable loss of sequence data, but also systematically discards all genuine single-exon genes from downstream analyses.</p>
+<fig id="fig6" position="float" orientation="portrait" fig-type="figure">
+<label>Figure 6</label>
+    <caption><title>Fraction of high-quality libraries in each dataset.</title><p>High-quality libraries are defined as those exhibiting an NG80 of more than 1,000 and an FSR greater than 20% or an FER of more than 75%. A more detailed sample survival analysis is available in <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 9</xref>.</p></caption>
+<graphic xlink:href="664092v5_fig6.tif" mimetype="image/tiff"/>
+</fig>
+<p>Conversely, we hesitate to recommend oligo-dT-based (WRO) methods, as they are ill-suited for the degraded nature of cfRNA, and the single representative dataset in our study may have been affected by cellular RNA contamination. We cannot recommend custom protocols at this time, as they often produced low-quality libraries or required idiosyncratic bioinformatics pipeline settings, which hinders cross-study comparison.</p>
+<p>Finally, while we find that human gene quantification is generally robust against microbial sequence interference regardless of fragment length, we identify an effective sequencing fragment length (EFL) of at least 100 bp as a requirement for cfRNA-Seq studies involving phylogenetic profiling. Because shorter fragments are highly susceptible to taxonomic mis-assignment (where <italic>e.g.</italic> genuine human reads are either unclassified or misclassified as non-human), longer fragments are essential to ensure the correct call of microbial signatures and to avoid the artifactual removal of human signal during taxonomic filtering.</p>
+</sec>
+</sec>
+<sec id="s3">
+<title>Discussion</title>
+<p>In this extensive cross-study analysis of 2,356 sequencing libraries, we sought to identify the primary sources of unwanted transcriptomic variation in cfRNA-Seq datasets to help standardize workflows and guide future cfRNA biomarker discovery efforts. Our analysis reveals that the cell-free transcriptome landscape is overwhelmingly shaped not by biological signals, but by technical pre-analytical variables tied to the chosen experimental workflow. This profound heterogeneity, which we show can create more variation than that observed across 29 distinct human tissues, represents a critical challenge to the reproducibility and clinical application of cfRNA-based diagnostics. While other studies have highlighted the importance of technical factors<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c11">11</xref>,<xref ref-type="bibr" rid="c12">12</xref></sup>, ours is the first to systematically investigate this issue at such a comprehensive scale using a controlled, uniform bioinformatics pipeline, leading to several novel findings. Because this uniform analytical approach is optimized for mRNA and lncRNA quantification, our findings and recommendations apply primarily to the long RNA fraction of the cell-free transcriptome.</p>
+<p>We demonstrate that the low concentration and highly degraded nature of cfRNA makes it particularly susceptible to contamination from both human and microbial gDNA. While both are prevalent, their impact on data interpretation differs dramatically. We show for the first time on a large scale that human gDNA contamination of cfRNA creates strong biases in human gene expression quantification. In contrast, while microbial sequences are common, they likely have a negligible impact on human gene abundance profiles. Nevertheless, this susceptibility to microbial contamination can confound studies that aim to link microbial signatures to specific phenotypes, and thus requires special attention.</p>
+<p>To assess the actual biomarker information content of cfRNA samples, we propose NG80 as a straightforward and intuitive metric for evaluating library diversity. Using this measure, our analysis reveals that cfRNA libraries are prone to being overwhelmed by a few, likely uninformative RNA species. In addition, we confirm the significant influence of platelet RNA contamination on cell-free transcriptome profiles.</p>
+<p>Encouragingly, the strong biases introduced by most technical and pre-analytical variables are largely controllable. Their influence can be minimized both prospectively, through the use of optimal, consistent experimental conditions, and retrospectively, by applying computational data quality filters (<italic>e.g.</italic> by eliminating gDNA-contaminated samples, or ignoring lowly-expressed genes), though to a much lower extent.</p>
+<p>While our current study focuses on these filters to expose raw technical heterogeneity, we found that even regressing out primary technical drivers (NG80 and FSR) was insufficient to recover a cohesive biological signal. This suggests that the technical noise in cfRNA is deeply embedded across multiple levels. Consequently, while the systematic evaluation of more advanced batch-correction methods remains a vital future perspective, these results suggest that experimental standardization is the only reliable path to robust cfRNA biomarker discovery.</p>
+<p>Implementing such standardization in clinical practice, however, remains a primary challenge. Logistical constraints often make it difficult to homogenize procedures between healthy and disease cohorts, which can perpetuate the confounding variables identified in our analysis. By quantifying the impact of these variables, addressing concerning batch effects that can confound results, and providing clear recommendations, this work offers a framework to design more robust, reproducible, and clinically meaningful cfRNA-Seq studies.</p>
+</sec>
+<sec id="s4">
+<title>Methods</title>
+<sec id="s4a">
+<title>Initial processing of external sequencing data</title>
+<p>All raw FASTQ files from publicly available datasets were downloaded from the NCBI Sequence Read Archive (SRA). Access to protected datasets (Decruyenaere) was granted upon request by corresponding authors; the corresponding FASTQ files were downloaded from the European Genome-phenome Archive (EGA).</p>
+<sec id="s4a1">
+<title>Collection and curation of clinical and experimental metadata</title>
+    <p>Metadata was collected from the corresponding published articles, SRA run metadata, the EGA archive metadata, and GEO series matrix files. The collection center information for the Toden dataset was provided by the authors via the GitHub repository associated with the Vorperian <italic>et al.</italic> study<sup><xref ref-type="bibr" rid="c39">39</xref></sup>. Phenotype information could not be inferred for a total of 66 samples from the Chalasani, Ibarra and Toden datasets. Both Giráldez batches (“standard” and “phospho-RNA-Seq”) were classified as custom BPC to simplify the analysis. The metadata table was harmonized by aligning column names and standardizing phenotype descriptions (<xref ref-type="supplementary-material" rid="supp1">Supplementary table 1</xref>).</p>
+</sec>
+<sec id="s4a2">
+<title>Dataset and sample inclusion criteria</title>
+<p>We systematically included cfRNA-Seq datasets published prior to February 2024 that we identified as having publicly accessible raw FASTQ files. The 15 selected studies comprised a total of 2,747 samples after replicate merging, plus 52 internal Flomics samples, bringing the total to 2,799. We excluded those samples not relevant to our analysis for the following reasons:
+<list list-type="simple">
+<list-item><p>- Chen <italic>et al.</italic>: <italic>E. coli</italic> and brain samples (n = 3)</p></list-item>
+<list-item><p>- Block <italic>et al.</italic>: Tissue, and plasma-derived vesicles (n = 12).</p></list-item>
+<list-item><p>- Tao <italic>et al.</italic>: Tissue and PBMC, and non-cfRNA-seq assays (MeDIP-Seq and miRNA-Seq) (n = 277).</p></list-item>
+<list-item><p>- Wei <italic>et al.</italic>: Tissue samples (n = 6).</p></list-item>
+<list-item><p>- Wang <italic>et al</italic>.: Only samples from the technology optimization study were publicly available. We excluded samples processed with the adapter ligation-based method NEBNext Small RNA Library Prep Set (n = 3), samples for which modifications were applied to the protocol, such as removing the ExoI enzyme or changing the concentration of the RT primers, as these conditions were not optimal (n = 24).</p></list-item>
+<list-item><p>- Giraldez <italic>et al.</italic>: Synthetic samples (n = 2), protocol optimization samples (n = 30).</p></list-item>
+<list-item><p>- Sun <italic>et al.</italic>: cfDNA samples (n = 4), protocol optimization samples (n = 11).</p></list-item>
+<list-item><p>- Decruyenaere <italic>et al.</italic>: FFPE samples (n = 69).</p></list-item>
+<list-item><p>- Reggiardo <italic>et al.</italic>: Samples sequenced on the ONT platform (n = 2).</p></list-item>
+<list-item><p>- ENCODE: From the EN-TEx resource, non-human, total RNA-seq paired-ended samples were excluded (n = 1,494).</p></list-item>
+</list>
+</p>
+</sec>
+<sec id="s4a3">
+<title>Replicate merging</title>
+<p>Chalasani and Toden data included technical replicates of the same sample. Those sequencing runs were merged into samples using the information available in SRA and the corresponding paper. Specifically, the “Isolate” column from the provided SRA metadata was used to identify replicates and merge their FASTQs into a single sample-specific FASTQ.</p>
+</sec>
+</sec>
+<sec id="s4b">
+<title>Confounding of experimental variables with phenotype</title>
+<p>We calculated the association between sample phenotypes and technical variables across datasets using Cramér’s V. For each dataset, we computed pairwise Cramér’s V between a simplified phenotype label (healthy, cancer or non-cancer disease) and 11 technical factors (e.g., collection center, centrifugation steps, read length). One sample from the Toden dataset with an unknown collection center was removed to allow computation.</p>
+</sec>
+<sec id="s4c">
+<title>Flomics cfRNA-Seq library preparation</title>
+<p>Eight plasma samples from the Flomics dataset were provided by the Hospital Clínic de Barcelona - IDIBAPS Biobank (HCB-IDIBAPS, B.0000575, Platform ISCIII Biobanks and Biomodels), Spain. 44 samples were provided by the Andalusian Public Health System Biobank (BBSSPA). All samples were processed following standard operating procedures with the appropriate approval of the Ethics and Scientific Committees. In accordance with the international ethical and legal framework, the release of biological samples and associated data from the HCB-IDIBAPS biobank is approved by both the internal and external Scientific Committees, as well as by the Ethics Committee from HCB. The IDIBAPS release was granted approval code A3-C22016. BBSSPA sample release was approved by the <italic>Portal de Ética de la Investigación Biomédica de Andalucía (PEIBA)</italic> with codes 2042-N-22 and SICEIA-2024-002798.</p>
+<p>In both cases, whole blood was collected in EDTA collection tubes and processed to plasma within four hours. Whole blood was centrifuged at 1,500 x g for 10 minutes at room temperature to separate plasma. The plasma layer was transferred to a separate tube and centrifuged at 2,500 x g for 15 minutes at room temperature to minimize platelet content. 1 mL aliquots of the double centrifuged plasma were stored at −80 °C. Prior to cfRNA isolation plasma aliquots were thawed and centrifuged at 400 x g for 2 minutes at 4 °C to remove precipitate. 1.5 pg of External RNA Controls Consortium (ERCC) RNA Spike-In Mix (ThermoFisher) was added to each 1 ml of plasma. cfRNA was isolated from 1 mL of plasma using the Maxwell miRNA Plasma and Serum Isolation kit (Promega). Genomic DNA was removed using bovine DNase I (Promega) and HL-dsDNase (ArcticZymes Technologies). Library preparation was performed using the SMARTer Stranded Total RNA-Seq Kit v3 - Pico Input Mammalian (Takara Bio). Libraries were sequenced on the NextSeq 2000 platform (Illumina) with a read length of 2×150bp.</p>
+</sec>
+<sec id="s4d">
+<title>Primary and secondary bioinformatics analysis</title>
+    <p>All RNA-Seq datasets were processed using the nf-core/rnaseq<sup><xref ref-type="bibr" rid="c31">31</xref></sup> Nextflow<sup><xref ref-type="bibr" rid="c32">32</xref></sup> pipeline (version 3.8.1, <xref rid="fig1" ref-type="fig">Fig. 1D</xref>) from raw data (FASTQ files), using STAR<sup><xref ref-type="bibr" rid="c33">33</xref></sup> as the read mapping software and Salmon<sup><xref ref-type="bibr" rid="c34">34</xref></sup> to quantify annotated genes. All samples were processed using the same custom STAR parameters (“--readFilesCommand zcat --twopassMode None --outSAMprimaryFlag OneBestScore --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 –outFilterType BySJout --alignSJDBoverhangMin 3 --alignSJoverhangMin 8 --peOverlapNbasesMin 40 --peOverlapMMp 0.8 --quantMode TranscriptomeSAM --quantTranscriptomeBan Singleend --outSAMattributes All”). Pipeline parameters were adapted to the cDNA library preparation method used in each dataset where appropriate (<xref ref-type="supplementary-material" rid="supp2">Supplementary table 2</xref>). Nextflow configuration files are available in the project’s GitHub repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-cfRNAmeta">https://github.com/Flomics/fl-cfRNAmeta</ext-link>), under the nextflow/ subdirectory. We used genome assembly version GRCh38 coupled with the GENCODE v39 annotation<sup><xref ref-type="bibr" rid="c42">42</xref></sup>. We incorporated the synthetic SIRV-set 3 spike-in transcripts (including the ERCC mix) to both the reference genome and annotation.</p>
+<p>Mapped fragments were deduplicated using samtools “markDuplicates” or umiTools “UMI-dedup”, depending on the presence of UMIs in the library construction methods. The fraction of spliced reads (FSR) was calculated as the fraction of uniquely mapped, deduplicated reads that span introns (i.e., with an “N” in their CIGAR string). The fraction of exonic reads (FER) was calculated as the fraction of STAR-mapped and deduplicated reads with at least one base of overlap with a GENCODE-annotated exon (excluding synthetic spike-in sequences). The sequencing data strandedness (namely, the fraction of fragments mapping to the correct gene orientation) was calculated using the “inferExperiment” module from the “RSeQC” package<sup><xref ref-type="bibr" rid="c43">43</xref></sup>.</p>
+<p>Kraken2<sup><xref ref-type="bibr" rid="c35">35</xref></sup> (version 2.1.2) was run separately from the nf-core/rnaseq pipeline to infer the taxonomic composition of samples using fl-kraken2, a Nextflow pipeline developed in house (<ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-kraken2">https://github.com/Flomics/fl-kraken2</ext-link>). FASTQs were matched against the pre-computed PlusPF sequence index (version 2023-03-14, downloaded from <ext-link ext-link-type="uri" xlink:href="https://benlangmead.github.io/aws-indexes/k2">https://benlangmead.github.io/aws-indexes/k2</ext-link>, k-mer size: 35). The PlusPF includes the following sequence databases: RefSeq archaea, bacteria, viral, plasmid, human, UniVec_Core, protozoa and fungi. All Kraken2 parameters were set to default. To study the influence of non-human reads on gene abundance profiles, we used fl-KrakenBAM (<ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-KrakenBAM">https://github.com/Flomics/fl-KrakenBAM</ext-link>), a Nextflow pipeline developed in house to extract human reads from BAM files based on Kraken2 classifications. fl-KrakenBAM generates Salmon-compatible transcriptome BAM files devoid of non-human reads according to Kraken2 classification.</p>
+</sec>
+<sec id="s4e">
+<title>Biotype representation</title>
+    <p>Based on Ensembl/GENCODE gene-biotype annotation<sup><xref ref-type="bibr" rid="c42">42</xref></sup>, a custom biotype classification was created to highlight relevant categories in the context of cfRNA. Labels for specific Ensembl biotypes were merged into more general categories: protein-coding transcripts were relabeled as “mRNA”, various pseudogenes subtypes combined under the category “Pseudogene”, related small RNAs such as snRNA and snoRNA were grouped together, whereas other small RNAs types (scaRNA, sRNA, scRNA, vault RNA and MT tRNA) were classified into “Other small RNAs”. Finally, signal recognition particle RNAs (srpRNA, a subtype of misc_RNA consisting in genes RN7SL1, RN7SL2, and RN7SL3), mitochondrial ribosomal RNAs (MT rRNA) and nuclear ribosomal RNA (rRNA) were categorized separately. ERCC spike-ins were excluded from this analysis. A detailed mapping between the Ensembl biotypes and our custom biotype categories is provided in <xref ref-type="supplementary-material" rid="supp3">Supplementary table 3</xref>.</p>
+<p>Gene TPM (transcripts per million) counts were produced by nf-core/rnaseq using Salmon<sup><xref ref-type="bibr" rid="c34">34</xref></sup> (see above). The total aggregated expression per biotype was calculated for each sample by summing the TPM values of all genes belonging to each biotype category. For visualization and comparative analysis, aggregated gene expression values per biotype were converted to percentages, representing the proportion of total TPM per sample attributed to each biotype. Mean values per biotypes across multiple samples in each experimental batch were calculated to facilitate comparisons.</p>
+</sec>
+<sec id="s4f">
+<title>Taxonomic distribution analysis</title>
+<p>The detailed reports generated by Kraken2 for each sample were collected. The NCBI taxon “other sequences”, which contains spike-in and synthetic sequences (vector, plasmid, etc), was excluded from the analysis. For each sample, read counts statistics were aggregated into a simplified list of mutually exclusive categories: human (Homo sapiens), fungi (Fungi), other_eukaryotes (Eukaryota except human and Fungi), bacteria (Bacteria), other (Archaea, Viruses, and unspecific taxa above the domain rank), and unclassified.</p>
+</sec>
+<sec id="s4g">
+<title>Microbial reads cross-mapping analysis</title>
+<p>We used fl-kraken2, an in-house developed Nextflow pipeline for the taxonomic profiling of whole FASTQ files (URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-kraken2">https://github.com/Flomics/fl-kraken2</ext-link>). fl-KrakenBAM (URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-KrakenBAM">https://github.com/Flomics/fl-KrakenBAM</ext-link>) was used to filter non-human reads from transcriptome BAM files. These “human-only” BAM files were subsequently used to re-quantify genes using nf-core/rnaseq using the same parameters as for the “unfiltered” BAM files obtained previously.</p>
+<p>Gene count matrices were log-transformed (log10(raw_count + 1)) after excluding ERCC and SIRV spike-in records. For each biological sample, we calculated the Pearson correlation coefficient (r) between “human-only” and “unfiltered” reads-based quantifications. To statistically quantify the impact of effective fragment length (EFL) on quantification consistency, samples were dichotomized using a 100bp average EFL threshold, and differences in the distribution of r values between groups were evaluated using a Wilcoxon rank sum test. The full analysis script is available in the project’s GitHub repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-cfRNAmeta/blob/dev/src/correlation_analysis.R">https://github.com/Flomics/fl-cfRNAmeta/blob/dev/src/correlation_analysis.R</ext-link>).</p>
+</sec>
+<sec id="s4h">
+<title>RNA library diversity analysis</title>
+<p>The NG80 metric (number of genes accounting for 80% of a sequencing library’s mapped and deduplicated reads) was calculated using the Salmon raw counts matrix as input, as produced by the standard nf-core/rnaseq pipeline. The full script for the calculation of NG80 can be found on the code repository (<ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-cfRNAmeta/blob/dev/src/ng80.R">https://github.com/Flomics/fl-cfRNAmeta/blob/dev/src/ng80.R</ext-link>). NP80 (number of genes accounting for 80% of protein-coding reads) values were calculated using the same procedure, after pre-filtering the raw counts matrix to keep only those genes that are classified as “mRNA”, according to the custom biotype classification mentioned above.</p>
+<p>Additional diversity metrics were computed on the same count matrices as NG80, using R libraries “vegan” version 2.7-2 (Shannon entropy) and “ineq” version 0.2-13 (Gini index) (see also diversity_scatterplots.R wrapper script in the provided github repository).</p>
+</sec>
+<sec id="s4i">
+<title>Cell type of origin deconvolution</title>
+<p>The nu-SVR deconvolution method, as developed by Vorperian <italic>et al.</italic><sup><xref ref-type="bibr" rid="c39">39</xref></sup>, was employed to predict the relative cell type contribution in cfRNA. We used Tabula Sapiens<sup><xref ref-type="bibr" rid="c44">44</xref></sup> 1.0, as provided in the Vorperian <italic>et al.</italic> paper, as the cell type basis matrix for nu-SVR. Only gDNA-free cfRNA-Seq datasets were analyzed. We defined “major cell types” (MCT) on a per-dataset basis as cell types with a relative abundance of at least 10% in at least 10% of the samples. Subsequently, a global list was generated by taking the union of all major cell types identified across the individual datasets. This global MCT list consisted of platelets, monocytes, erythrocytes, B cells, macrophages and neutrophils, and was kept for further analysis.</p>
+</sec>
+<sec id="s4j">
+<title>Dimensionality reduction</title>
+<p>Dimensionality reduction of gene expression data was performed using Principal Component Analysis (PCA) on Salmon-based TPM values. Spike-in control sequences were explicitly excluded from this analysis to prevent additional technical variance from biasing the results. To stabilize variance and reduce the skewness of the data, TPM values were log-transformed (log(TPM +1)) prior to PCA. PCA was implemented using the scikit-learn Python library. The first two principal components were used to embed samples in a two-dimensional space, visually representing sample similarity and coloring them based on different metadata properties or QC metrics.</p>
+    <p>A similar analysis was performed using t-distributed Stochastic Neighbor Embedding (tSNE) with identical data pre-processing. Various perplexity parameters were evaluated (20, 50, 100), and a value of 20 was chosen for <xref ref-type="supplementary-material" rid="supp4">Supplementary fig. 7A</xref>, given that all led to similar results.</p>
+</sec>
+<sec id="s4k">
+<title>Variance partition analysis</title>
+<p>Variance partition analysis was performed using the “variancePartition” R package version 1.40.2 to quantify the contribution of technical and biological variables to gene expression variance across samples. The full analysis script is available in the project’s GitHub repository (src/variance_partition.R).</p>
+<p>Gene expression data was obtained from the pre-computed TPM matrix. Genes with TPM &gt; 1 in fewer than 10% of samples were excluded prior to modelling, retaining 18,985 genes. Expression values were log<sub>2</sub>(TPM + 1) transformed before fitting. The analysis was done on the full cohort of 2,356 samples.</p>
+<p>Candidate variables for the model were all pre-analytical variables reported in <xref rid="fig1" ref-type="fig">Fig 1A</xref>, plus analytical variables identified as relevant: NG80, FER, FSR, platelet contribution, and mapped reads (“Mapped fragments”). Collinearity between these variables was assessed using the “canConPairs” function. Variables with an RMS canonical correlation higher than 0.999 with either BPC or Dataset, as detected by the function, were excluded from the model.</p>
+<p>The remaining variables were modelled as follows: continuous variables (NG80, FER, FSR, platelet contribution, and mapped reads) were included as fixed effects. Categorical variables (Dataset, Phenotype, and BPC) were modelled as random effects. The model was fitted independently for each gene using “fitExtractVarPartModel”, and the results plotted using ggplot’s “geom_violin” function.</p>
+</sec>
+<sec id="s4l">
+<title>Batch effect correction by linear modeling</title>
+<p>Gene expression values were corrected for major sources of unwanted technical variation using a linear-model to adjust for NG80 and FSR. Only plasma cfRNA-Seq datasets were taken into account in this analysis (<italic>i.e.</italic>, excluding “Ibarra buffy coat”, “Ibarra serum” as well as “Wei” (cfDNA) and ENCODE (tissue RNA). Filtered count matrices were normalized by the trimmed mean of M-values method and transformed to log2 counts per million using normalized library sizes. For each gene, a linear model was fitted with limma, modeling log2-TMM expression as a function of disease status, which was retained as the biological variable of interest, and the technical covariates selected for correction. In the final correction model, the main unwanted sources of variation were NG80 and FSR. Sex was also included when variable across samples. Coefficients corresponding to the unwanted covariates were extracted while excluding the intercept and disease-status terms, and the expression component explained by NG80 and FSR was estimated for each gene and sample from the corresponding design matrix. Corrected expression values were then obtained by subtracting this unwanted-variation component from the original log2-TMM expression matrix, yielding expression values that preserve disease-status-associated signal while reducing variation attributable to library diversity and gDNA contamination technical effects. The effectiveness of the correction was evaluated by principal component analysis and by assessing correlations between the leading principal components and technical covariates before and after correction.</p>
+</sec>
+</sec>
+
+</body>
+<back>
+<sec id="s5" sec-type="data-availability">
+<title>Data availability</title>
+<p>Sequencing data for the Flomics dataset were deposited in the European Nucleotide Archive (ENA) under accession PRJEB90290. Only the samples identified as “flomics_2” in the “sample_alias” field were used in this analysis. All external sequencing datasets used in this paper are available from public repositories, as specified in the corresponding original study.</p>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>We thank paper authors we contacted for their cooperation and fruitful discussions. We are indebted to the HCB-IDIBAPS Biobank for scientific advice and sample and data procurement. The project ‘LiquiDx’ (reference CPP2021-008897) is financed by the Spanish Ministry of Science, Innovation and Universities (MCIN/AEI/10.13039/501100011033) and by the European Union “NextGenerationEU/PRTR”. We thank the partners of the LiquiDx project for scientific advice and sample and data procurement: Health and Biomedicine, Leitat Technological Center, Barcelona Science Park, Barcelona 08028, Spain and the Andalusian Public Health System Biobank, Coordinating Node, 18016 Granada, Spain. We are grateful to Sílvia Pérez-Lluch (Centre for Genomic Regulation (CRG), Barcelona) for her scientific advice. CT and GA are supported by the Industrial Doctorates Plan of the Department of Research and Universities of the Government of Catalonia (references 2022-DI-00108 and 2024-DI-00013, respectively). JL, MW, PS and PM are supported by the Torres Quevedo programme (references PAQ20-011298, PAQ2022-012611, PTQ2022-012612 and PTQ2023-012932, respectively), which is financed by the Spanish Ministry of Science, Innovation and Universities (MCIN/AEI/10.13039/501100011033). We acknowledge support of the Spanish Ministry of Science and Innovation through the Centro de Excelencia Severo Ochoa (CEX2020-001049-S, MCIN/AEI/10.13039/501100011033), and the Generalitat de Catalunya through the CERCA programme. We are grateful to the CRG Core Technologies Programme for their support and assistance in this work.</p>
+</ack>
+<sec id="additional-info" sec-type="additional-information">
+<title>Additional information</title>
+<sec id="s6">
+<title>Code availability</title>
+<p>All code produced as part of this analysis is located in GitHub at the following URLs: <ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-cfRNAmeta">https://github.com/Flomics/fl-cfRNAmeta</ext-link> (analysis code), <ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-kraken2">https://github.com/Flomics/fl-kraken2</ext-link> (Kraken2-based taxonomic profiling) and <ext-link ext-link-type="uri" xlink:href="https://github.com/Flomics/fl-KrakenBAM">https://github.com/Flomics/fl-KrakenBAM</ext-link> (extraction of human reads from BAM files based on Kraken2 classification).</p>
+</sec>
+<sec id="s9">
+<title>Author contributions</title>
+<p>Conceptualization: JL</p>
+<p>Data Curation: CT-D, MW, JL</p>
+<p>Formal analysis: CT-D, GA, PM-M, ECR, MW, JL</p>
+<p>Funding acquisition: PM-M, PS, MW, JL</p>
+<p>Investigation: CT-D, GA, PM-M, ECR, LC, LG, LS, BN, PS, MW, JL</p>
+<p>Methodology: JL, MW, PM-M, ECR</p>
+<p>Project administration: JL</p>
+<p>Resources: PS, JL</p>
+<p>Software: CT-D, GA, PM-M, ECR, LC, MW, JL</p>
+<p>Supervision: JL</p>
+<p>Visualization: CT-D, GA, PM-M, ECR, MW, JL</p>
+<p>Writing – original draft: JL</p>
+<p>Writing – review &amp; editing: JL, MW, PS</p>
+</sec>
+</sec>
+<sec id="additional-files" sec-type="supplementary-material">
+<title>Additional files</title>
+<supplementary-material id="supp1">
+<label>Supplementary Table 1</label>
+    <caption><title>Curated sample metadata information.</title></caption>
+<media xlink:href="supplements/664092_file02.gz"/>
+</supplementary-material>
+<supplementary-material id="supp2">
+<label>Supplementary Table 2</label>
+    <caption><title>RNA-Seq pipeline custom parameters, with URL pointers to Nextflow configuration files.</title></caption>
+<media xlink:href="supplements/664092_file03.xlsx"/>
+</supplementary-material>
+<supplementary-material id="supp3">
+<label>Supplementary Table 3</label>
+    <caption><title>Mapping of ENSEMBL/GENCODE biotype terms.</title></caption>
+<media xlink:href="supplements/664092_file04.xlsx"/>
+</supplementary-material>
+<supplementary-material id="supp4">
+<label>Supplementary Figures</label>
+<media xlink:href="supplements/664092_file05.pdf"/>
+</supplementary-material>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Nesselbush</surname>, <given-names>MC</given-names></string-name> <etal>et al.</etal></person-group> <article-title>An ultrasensitive method for detection of cell-free RNA</article-title>. <source>Nature</source> <pub-id pub-id-type="doi">10.1038/s41586-025-08834-1</pub-id> (<year>2025</year>) doi:10.1038/s41586-025-08834-1. <pub-id pub-id-type="pmid">40240612</pub-id></mixed-citation></ref>
+<ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chen</surname>, <given-names>S</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Cancer type classification using plasma cell-free RNAs derived from human and microbes</article-title>. <source>eLife</source> <volume>11</volume>, <elocation-id>e75181</elocation-id> (<year>2022</year>). <pub-id pub-id-type="doi">10.7554/eLife.75181</pub-id> <pub-id pub-id-type="pmid">35816095</pub-id></mixed-citation></ref>
+<ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Roskams-Hieter</surname>, <given-names>B</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Plasma cell-free RNA profiling distinguishes cancers from pre-malignant conditions in solid and hematologic malignancies. <italic>Npj Precis</italic></article-title>. <source>Oncol</source>. <volume>6</volume>, <fpage>1</fpage>–<lpage>11</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1038/s41698-022-00270-y</pub-id> <pub-id pub-id-type="pmid">35468987</pub-id></mixed-citation></ref>
+<ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Zhu</surname>, <given-names>Y</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Integrative analysis of long extracellular RNAs reveals a detection panel of noncoding RNAs for liver cancer</article-title>. <source>Theranostics</source> <volume>11</volume>, <fpage>181</fpage>–<lpage>193</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.7150/thno.48206</pub-id> <pub-id pub-id-type="pmid">33391469</pub-id></mixed-citation></ref>
+<ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Larson</surname>, <given-names>MH</given-names></string-name> <etal>et al.</etal></person-group> <article-title>A comprehensive characterization of the cell-free transcriptome reveals tissue- and subtype-specific biomarkers for cancer detection</article-title>. <source>Nat. Commun</source>. <volume>12</volume>, <fpage>2357</fpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1038/s41467-021-22444-1</pub-id> <pub-id pub-id-type="pmid">33883548</pub-id></mixed-citation></ref>
+<ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Karimzadeh</surname>, <given-names>M</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Deep generative AI models analyzing circulating orphan non-coding RNAs enable detection of early-stage lung cancer</article-title>. <source>Nat. Commun</source>. <volume>15</volume>, <fpage>1</fpage>–<lpage>12</lpage> (<year>2024</year>). <pub-id pub-id-type="doi">10.1038/s41467-024-53851-9</pub-id> <pub-id pub-id-type="pmid">39572521</pub-id></mixed-citation></ref>
+<ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Block</surname>, <given-names>T</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Circulating messenger RNA variants as a potential biomarker for surveillance of hepatocellular carcinoma</article-title>. <source>Front. Oncol</source>. <volume>12</volume>, (<year>2022</year>). <pub-id pub-id-type="doi">10.3389/fonc.2022.963641</pub-id> <pub-id pub-id-type="pmid">36582804</pub-id></mixed-citation></ref>
+<ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Decruyenaere</surname>, <given-names>P</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Exploring the cell-free total RNA transcriptome in diffuse large B-cell lymphoma and primary mediastinal B-cell lymphoma patients as biomarker source in blood plasma liquid biopsies</article-title>. <source>Front. Oncol</source>. <volume>13</volume>, (<year>2023</year>). <pub-id pub-id-type="doi">10.3389/fonc.2023.1221471</pub-id> <pub-id pub-id-type="pmid">37954086</pub-id></mixed-citation></ref>
+<ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ngo</surname>, <given-names>TTM</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Noninvasive blood tests for fetal development predict gestational age and preterm delivery</article-title>. <source>Science</source> <volume>360</volume>, <fpage>1133</fpage>–<lpage>1136</lpage> (<year>2018</year>). <pub-id pub-id-type="doi">10.1126/science.aar3819</pub-id> <pub-id pub-id-type="pmid">29880692</pub-id></mixed-citation></ref>
+<ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Moufarrej</surname>, <given-names>MN</given-names></string-name>, <string-name><surname>Wong</surname>, <given-names>RJ</given-names></string-name>, <string-name><surname>Shaw</surname>, <given-names>GM</given-names></string-name>, <string-name><surname>Stevenson</surname>, <given-names>DK</given-names></string-name> &amp; <string-name><surname>Quake</surname>, <given-names>SR</given-names></string-name></person-group>. <article-title>Investigating Pregnancy and Its Complications Using Circulating Cell-Free RNA in Women’s Blood During Gestation</article-title>. <source>Front. Pediatr</source>. <volume>8</volume>, <issue>605219</issue> (<year>2020</year>). <pub-id pub-id-type="doi">10.3389/fped.2020.605219</pub-id> <pub-id pub-id-type="pmid">33381480</pub-id></mixed-citation></ref>
+<ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab-name>exRNAQC Consortium</collab-name></person-group>. <article-title>Blood collection tube and RNA purification method recommendations for extracellular RNA transcriptome profiling</article-title>. <source>Nat. Commun</source>. <volume>16</volume>, <fpage>4513</fpage> (<year>2025</year>). <pub-id pub-id-type="doi">10.1038/s41467-025-58607-7</pub-id> <pub-id pub-id-type="pmid">40374609</pub-id></mixed-citation></ref>
+<ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Verwilt</surname>, <given-names>J</given-names></string-name> <etal>et al.</etal></person-group> <article-title>When DNA gets in the way: A cautionary note for DNA contamination in extracellular RNA-seq studies</article-title>. <source>Proc. Natl. Acad. Sci</source>. <volume>117</volume>, <fpage>18934</fpage>–<lpage>18936</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1073/pnas.2001675117</pub-id> <pub-id pub-id-type="pmid">32788394</pub-id></mixed-citation></ref>
+<ref id="c13"><label>13.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Cabús</surname>, <given-names>L</given-names></string-name>, <string-name><surname>Lagarde</surname>, <given-names>J</given-names></string-name>, <string-name><surname>Curado</surname>, <given-names>J</given-names></string-name>, <string-name><surname>Lizano</surname>, <given-names>E</given-names></string-name> &amp; <string-name><surname>Pérez-Boza</surname>, <given-names>J</given-names></string-name></person-group>. <article-title>Current challenges and best practices for cell-free long RNA biomarker discovery</article-title>. <source>Biomark Res</source>. <volume>10</volume>, <issue>62</issue> (<year>2022</year>). <pub-id pub-id-type="doi">10.1186/s40364-022-00409-w</pub-id> <pub-id pub-id-type="pmid">35978416</pub-id></mixed-citation></ref>
+<ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Srinivasan</surname>, <given-names>S</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Small RNA Sequencing across Diverse Biofluids Identifies Optimal Methods for exRNA Isolation</article-title>. <source>Cell</source> <volume>177</volume>, <fpage>446</fpage>–<lpage>462.e16</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1016/j.cell.2019.03.024</pub-id> <pub-id pub-id-type="pmid">30951671</pub-id></mixed-citation></ref>
+<ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Kloten</surname>, <given-names>V</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Multicenter Evaluation of Circulating Plasma MicroRNA Extraction Technologies for the Development of Clinically Feasible Reverse Transcription Quantitative PCR and Next-Generation Sequencing Analytical Work Flows</article-title>. <source>Clin. Chem</source>. <volume>65</volume>, <fpage>1132</fpage>–<lpage>1140</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1373/clinchem.2019.303271</pub-id> <pub-id pub-id-type="pmid">31235535</pub-id></mixed-citation></ref>
+<ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>El-Khoury</surname>, <given-names>V</given-names></string-name>, <string-name><surname>Pierson</surname>, <given-names>S</given-names></string-name>, <string-name><surname>Kaoma</surname>, <given-names>T</given-names></string-name>, <string-name><surname>Bernardin</surname>, <given-names>F</given-names></string-name> &amp; <string-name><surname>Berchem</surname>, <given-names>G</given-names></string-name></person-group>. <article-title>Assessing cellular and circulating miRNA recovery: the impact of the RNA isolation method and the quantity of input material</article-title>. <source>Sci. Rep</source>. <volume>6</volume>, <issue>19529</issue> (<year>2016</year>). <pub-id pub-id-type="doi">10.1038/srep19529</pub-id> <pub-id pub-id-type="pmid">26787294</pub-id></mixed-citation></ref>
+<ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tan</surname>, <given-names>GW</given-names></string-name>, <string-name><surname>Khoo</surname>, <given-names>ASB</given-names></string-name> &amp; <string-name><surname>Tan</surname>, <given-names>LP</given-names></string-name></person-group>. <article-title>Evaluation of extraction kits and RT-qPCR systems adapted to high-throughput platform for circulating miRNAs</article-title>. <source>Sci. Rep</source>. <volume>5</volume>, <fpage>9430</fpage> (<year>2015</year>). <pub-id pub-id-type="doi">10.1038/srep09430</pub-id> <pub-id pub-id-type="pmid">25800946</pub-id></mixed-citation></ref>
+<ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Chalasani</surname>, <given-names>N</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Non-invasive Stratification of Non-Alcoholic Fatty Liver Disease by Whole-transcriptome Cell-free mRNA Characterization</article-title>. <source>Am. J. Physiol. Gastrointest. Liver Physiol</source>. <pub-id pub-id-type="doi">10.1152/ajpgi.00397.2020</pub-id> (<year>2021</year>) doi:10.1152/ajpgi.00397.2020. <pub-id pub-id-type="pmid">33501884</pub-id></mixed-citation></ref>
+<ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Giraldez</surname>, <given-names>MD</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Phospho-RNA-seq: a modified small RNA-seq method that reveals circulating mRNA and lncRNA fragments as potential biomarkers in human plasma</article-title>. <source>EMBO J</source>. <volume>38</volume>, <fpage>e101695</fpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.15252/embj.2019101695</pub-id> <pub-id pub-id-type="pmid">31053596</pub-id></mixed-citation></ref>
+<ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ibarra</surname>, <given-names>A</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Non-invasive characterization of human bone marrow stimulation and reconstitution by cell-free messenger RNA sequencing</article-title>. <source>Nat. Commun</source>. <volume>11</volume>, <issue>400</issue> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s41467-019-14253-4</pub-id> <pub-id pub-id-type="pmid">31964864</pub-id></mixed-citation></ref>
+<ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Moufarrej</surname>, <given-names>MN</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Early prediction of preeclampsia in pregnancy with cell-free RNA</article-title>. <source>Nature</source> <volume>602</volume>, <fpage>689</fpage>–<lpage>694</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1038/s41586-022-04410-z</pub-id> <pub-id pub-id-type="pmid">35140405</pub-id></mixed-citation></ref>
+    <ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Reggiardo</surname>, <given-names>RE</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Profiling of repetitive RNA sequences in the blood plasma of patients with cancer</article-title>. <source>Nat Biomed. Eng</source>. <volume>7</volume>, <fpage>1627</fpage>–<lpage>1635</lpage> (<year>2023</year>). <pub-id pub-id-type="doi">10.1038/s41551-023-01081-7</pub-id> <pub-id pub-id-type="pmid">37652985</pub-id></mixed-citation></ref>
+    <ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Sun</surname>, <given-names>Y</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Method for the extraction of circulating nucleic acids based on MOF reveals cell-free RNA signatures in liver cancer</article-title>. <source>Natl Sci Rev</source>. <volume>11</volume>, <elocation-id>nwae022</elocation-id> (<year>2024</year>). <pub-id pub-id-type="doi">10.1093/nsr/nwae022</pub-id> <pub-id pub-id-type="pmid">38348130</pub-id></mixed-citation></ref>
+<ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Tao</surname>, <given-names>Y</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Cell-free multi-omics analysis reveals potential biomarkers in gastrointestinal cancer patients’ blood</article-title>. <source>Cell Rep. Med</source>. <volume>4</volume>, <issue>101281</issue> (<year>2023</year>). <pub-id pub-id-type="doi">10.1016/j.xcrm.2023.101281</pub-id> <pub-id pub-id-type="pmid">37992683</pub-id></mixed-citation></ref>
+    <ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Toden</surname>, <given-names>S</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Noninvasive characterization of Alzheimer’s disease by circulating, cell-free messenger RNA next-generation sequencing</article-title>. <source>Sci. Adv</source>. <volume>6</volume>, <elocation-id>eabb1654</elocation-id> (<year>2020</year>). <pub-id pub-id-type="doi">10.1126/sciadv.abb1654</pub-id> <pub-id pub-id-type="pmid">33298436</pub-id></mixed-citation></ref>
+<ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname>, <given-names>J</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Terminal modifications independent cell-free RNA sequencing enables sensitive early cancer detection and classification</article-title>. <source>Nat. Commun</source>. <volume>15</volume>, <issue>156</issue> (<year>2024</year>). <pub-id pub-id-type="doi">10.1038/s41467-023-44461-y</pub-id> <pub-id pub-id-type="pmid">38168054</pub-id></mixed-citation></ref>
+<ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Rozowsky</surname>, <given-names>J</given-names></string-name> <etal>et al.</etal></person-group> <article-title>The EN-TEx resource of multi-tissue personal epigenomes &amp; variant-impact models</article-title>. <source>Cell</source> <volume>186</volume>, <fpage>1493</fpage>–<lpage>1511.e40</lpage> (<year>2023</year>). <pub-id pub-id-type="doi">10.1016/j.cell.2023.02.018</pub-id> <pub-id pub-id-type="pmid">37001506</pub-id></mixed-citation></ref>
+<ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wei</surname>, <given-names>T</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Genome-wide profiling of circulating tumor DNA depicts landscape of copy number alterations in pancreatic cancer with liver metastasis</article-title>. <source>Mol. Oncol</source>. <volume>14</volume>, <fpage>1966</fpage>–<lpage>1977</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1002/1878-0261.12757</pub-id> <pub-id pub-id-type="pmid">32593194</pub-id></mixed-citation></ref>
+<ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Van Der Schueren</surname>, <given-names>C</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Subpar reporting of pre-analytical variables in RNA-focused blood plasma studies</article-title>. <source>Mol. Oncol</source>. <pub-id pub-id-type="doi">10.1002/1878-0261.13647</pub-id>(<year>2024</year>) doi:10.1002/1878-0261.13647. <pub-id pub-id-type="pmid">38564603</pub-id></mixed-citation></ref>
+<ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ramsköld</surname>, <given-names>D</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Full-length mRNA-Seq from single-cell levels of RNA and individual circulating tumor cells</article-title>. <source>Nat. Biotechnol</source>. <volume>30</volume>, <fpage>777</fpage>–<lpage>782</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1038/nbt.2282</pub-id> <pub-id pub-id-type="pmid">22820318</pub-id></mixed-citation></ref>
+<ref id="c31"><label>31.</label><mixed-citation publication-type="software"><person-group person-group-type="author"><string-name><surname>Patel</surname>, <given-names>H</given-names></string-name>., <etal>et al.</etal></person-group> <article-title>nf-core/rnaseq: nf-core/rnaseq v3.18.0 - Lithium Lynx</article-title>. <source>Zenodo</source> <pub-id pub-id-type="doi">10.5281/zenodo.14537300</pub-id> (<year>2024</year>).</mixed-citation></ref>
+<ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Di Tommaso</surname>, <given-names>P</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Nextflow enables reproducible computational workflows</article-title>. <source>Nat. Biotechnol</source>. <volume>35</volume>, <fpage>316</fpage>–<lpage>319</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1038/nbt.3820</pub-id> <pub-id pub-id-type="pmid">28398311</pub-id></mixed-citation></ref>
+<ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Dobin</surname>, <given-names>A</given-names></string-name> <etal>et al.</etal></person-group> <article-title>STAR: ultrafast universal RNA-seq aligner</article-title>. <source>Bioinforma</source>. <volume>29</volume>, <fpage>15</fpage>–<lpage>21</lpage> (<year>2013</year>). <pub-id pub-id-type="doi">10.1093/bioinformatics/bts635</pub-id> <pub-id pub-id-type="pmid">23104886</pub-id></mixed-citation></ref>
+<ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Patro</surname>, <given-names>R</given-names></string-name>, <string-name><surname>Duggal</surname>, <given-names>G</given-names></string-name>, <string-name><surname>Love</surname>, <given-names>MI</given-names></string-name>, <string-name><surname>Irizarry</surname>, <given-names>RA</given-names></string-name> &amp; <string-name><surname>Kingsford</surname>, <given-names>C</given-names></string-name></person-group>. <article-title>Salmon: fast and bias-aware quantification of transcript expression using dual-phase inference</article-title>. <source>Nat. Methods</source> <volume>14</volume>, <fpage>417</fpage>–<lpage>419</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1038/nmeth.4197</pub-id> <pub-id pub-id-type="pmid">28263959</pub-id></mixed-citation></ref>
+<ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wood</surname>, <given-names>DE</given-names></string-name>, <string-name><surname>Lu</surname>, <given-names>J</given-names></string-name> &amp; <string-name><surname>Langmead</surname>, <given-names>B</given-names></string-name></person-group>. <article-title>Improved metagenomic analysis with Kraken 2</article-title>. <source>Genome Biol</source>. <volume>20</volume>, <issue>257</issue> (<year>2019</year>). <pub-id pub-id-type="doi">10.1186/s13059-019-1891-0</pub-id> <pub-id pub-id-type="pmid">31779668</pub-id></mixed-citation></ref>
+<ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Ju</surname>, <given-names>C.-W</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Modifications of microbiome-derived cell-free RNA in plasma discriminates colorectal cancer samples</article-title>. <source>Nat. Biotechnol</source>. <fpage>1</fpage>–<lpage>7</lpage> (<year>2025</year>) doi:<pub-id pub-id-type="doi">10.1038/s41587-025-02731-8</pub-id>. <pub-id pub-id-type="pmid">40629040</pub-id></mixed-citation></ref>
+<ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Li</surname>, <given-names>X</given-names></string-name>, <string-name><surname>Zhang</surname>, <given-names>P</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>H</given-names></string-name> &amp; <string-name><surname>Yu</surname>, <given-names>Y</given-names></string-name></person-group>. <article-title>Genes expressed at low levels raise false discovery rates in RNA samples contaminated with genomic DNA</article-title>. <source>BMC Genomics</source> <volume>23</volume>, <issue>554</issue> (<year>2022</year>). <pub-id pub-id-type="doi">10.1186/s12864-022-08785-1</pub-id> <pub-id pub-id-type="pmid">35922750</pub-id></mixed-citation></ref>
+<ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Markou</surname>, <given-names>AN</given-names></string-name>, <string-name><surname>Smilkou</surname>, <given-names>S</given-names></string-name>, <string-name><surname>Tsaroucha</surname>, <given-names>E</given-names></string-name> &amp; <string-name><surname>Lianidou</surname>, <given-names>E</given-names></string-name></person-group>. <article-title>The Effect of Genomic DNA Contamination on the Detection of Circulating Long Non-Coding RNAs: The Paradigm of MALAT1</article-title>. <source>Diagnostics</source> <volume>11</volume>, <fpage>1160</fpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.3390/diagnostics11071160</pub-id> <pub-id pub-id-type="pmid">34202021</pub-id></mixed-citation></ref>
+<ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Vorperian</surname>, <given-names>SK</given-names></string-name>, <string-name><surname>Moufarrej</surname>, <given-names>MN</given-names></string-name> &amp; <string-name><surname>Quake</surname>, <given-names>SR</given-names></string-name></person-group>. <article-title>Cell types of origin of the cell-free transcriptome</article-title>. <source>Nat. Biotechnol</source>. <volume>40</volume>, <fpage>855</fpage>–<lpage>861</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1038/s41587-021-01188-9</pub-id> <pub-id pub-id-type="pmid">35132263</pub-id></mixed-citation></ref>
+<ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Hoffman</surname>, <given-names>GE</given-names></string-name> &amp; <string-name><surname>Schadt</surname>, <given-names>EE</given-names></string-name></person-group>. <article-title>variancePartition: interpreting drivers of variation in complex gene expression studies</article-title>. <source>BMC Bioinformatics</source> <volume>17</volume>, <fpage>1</fpage>–<lpage>13</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1186/s12859-016-1323-z</pub-id> <pub-id pub-id-type="pmid">27884101</pub-id></mixed-citation></ref>
+<ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Everaert</surname>, <given-names>C</given-names></string-name> <etal>et al.</etal></person-group> <article-title>Blocking Abundant RNA Transcripts by High-Affinity Oligonucleotides during Transcriptome Library Preparation</article-title>. <source>Biol. Proced. Online</source> <volume>25</volume>, <issue>7</issue> (<year>2023</year>). <pub-id pub-id-type="doi">10.1186/s12575-023-00193-3</pub-id> <pub-id pub-id-type="pmid">36890441</pub-id></mixed-citation></ref>
+<ref id="c42"><label>42.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Mudge</surname>, <given-names>JM</given-names></string-name> <etal>et al.</etal></person-group> <article-title>GENCODE 2025: reference gene annotation for human and mouse</article-title>. <source>Nucleic Acids Res</source>. <volume>53</volume>, <fpage>D966</fpage>–<lpage>D975</lpage> (<year>2025</year>). <pub-id pub-id-type="doi">10.1093/nar/gkae1078</pub-id> <pub-id pub-id-type="pmid">39565199</pub-id></mixed-citation></ref>
+<ref id="c43"><label>43.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name><surname>Wang</surname>, <given-names>L</given-names></string-name>, <string-name><surname>Wang</surname>, <given-names>S</given-names></string-name> &amp; <string-name><surname>Li</surname>, <given-names>W</given-names></string-name></person-group>. <article-title>RSeQC: quality control of RNA-seq experiments</article-title>. <source>Bioinformatics</source> <volume>28</volume>, <fpage>2184</fpage>–<lpage>2185</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1093/bioinformatics/bts356</pub-id> <pub-id pub-id-type="pmid">22743226</pub-id></mixed-citation></ref>
+    <ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><collab-name>Tabula Sapiens Consortium*</collab-name> <etal>et al.</etal></person-group> <article-title>The Tabula Sapiens: A multiple-organ, single-cell transcriptomic atlas of humans</article-title>. <source>Science</source> <volume>376</volume>, <elocation-id>eabl4896</elocation-id> (<year>2022</year>). <pub-id pub-id-type="doi">10.1126/science.abl4896</pub-id> <pub-id pub-id-type="pmid">35549404</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+<sub-article id="sa0" article-type="editor-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.112419.1.sa2</article-id>
+<title-group>
+<article-title>eLife Assessment</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Choi</surname>
+<given-names>Murim</given-names>
+</name>
+<role specific-use="editor">Reviewing Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-9195-1455</contrib-id>
+<aff>
+<institution-wrap>
+<institution-id institution-id-type="ror">https://ror.org/04h9pn542</institution-id><institution>Seoul National University</institution>
+</institution-wrap>
+<city>Seoul</city>
+<country>Republic of Korea</country>
+</aff>
+</contrib>
+</contrib-group>
+<kwd-group kwd-group-type="evidence-strength">
+<kwd>Incomplete</kwd>
+</kwd-group>
+<kwd-group kwd-group-type="claim-importance">
+<kwd>Valuable</kwd>
+</kwd-group>
+</front-stub>
+<body>
+<p>The study addresses a timely problem that is of importance in the cfRNA field, and it provides a potentially <bold>valuable</bold> resource. The use of a common processing pipeline, publicly available code, and variance-partition analyses are notable strengths. However, several central conclusions, particularly those concerning protocol-level effects, the dominance of technical over biological variation, and the proposed universal QC criteria remain more general than the study design and available data can support. Therefore the evidence is currently <bold>incomplete</bold> and needs to be improved through the revision process.</p>
+</body>
+</sub-article>
+<sub-article id="sa1" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.112419.1.sa1</article-id>
+<title-group>
+<article-title>Reviewer #1 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>In this manuscript, Tuñí-Domínguez et al. present a large-scale, cross-study meta-analysis of 2,356 cell-free RNA sequencing (cfRNA-Seq) samples. The authors aimed to systematically evaluate the impact of pre-analytical variables and library preparation protocols on biological interpretation. By harmonizing publicly available and internally generated datasets through a uniform bioinformatics pipeline, the study seeks to establish standard quality control (QC) metrics and provide evidence-based guidelines for protocol selection in cfRNA-Seq biomarker discovery.</p>
+<p>Strengths:</p>
+<p>A major strength of the study is the scale and breadth of the harmonized dataset. The use of a common computational pipeline reduces variation arising from differences in bioinformatic processing and enables more direct comparisons among published datasets. The authors examine multiple complementary dimensions of data quality rather than relying on a single sequencing metric. The inclusion of variance-partition analyses, healthy-control-only analyses, and analyses restricted to samples with low gDNA contamination strengthens the evaluation of technical heterogeneity. The public availability of the analysis code and processing configurations further increases the reproducibility and potential utility of this work. The study convincingly demonstrates that technical and pre-analytical factors are major sources of variation across existing plasma cfRNA-seq datasets.</p>
+<p>Weaknesses:</p>
+<p>Several central conclusions are broader than the current cross-study design can fully support. Protocol category is strongly associated with dataset, laboratory, sample source, and collection procedure, making intrinsic protocol effects difficult to separate from study-specific effects, particularly for categories represented by only one or a few studies. The conclusion that technical variation generally overwhelms biological variation also requires qualification because diverse diseases and cancer types are combined into broad phenotype categories, and many phenotypes are concentrated within individual datasets. The interpretation and additional value of the proposed NG80 and NP80/NG80 metrics require further support, especially given their variable behavior across datasets. Most importantly, the thresholds used in the proposed universal QC framework are not independently validated and are strongly influenced by library-preparation strategy. The current findings therefore support protocol-dependent comparisons and identification of technical trade-offs more strongly than they support a universal definition of library quality.</p>
+<p>Major concerns:</p>
+<p>(1) Protocol effects remain difficult to distinguish from study-specific effects.</p>
+<p>The manuscript interprets Broad Protocol Category as a major determinant of transcriptomic variation. However, protocol, dataset, laboratory, sample source, and collection procedure are strongly interconnected. Although both Dataset and BPC are included in the variance-partition model, several protocol categories are represented by only a limited number of studies.</p>
+<p>This is particularly problematic for WRO, which is represented by a single study. Its apparent characteristics therefore cannot be separated from Reggiardo-specific laboratory, cohort, provider, or sample-processing effects. The authors should clarify the stability of the variance-partition results and, where feasible, provide sensitivity analyses. Alternatively, conclusions based on protocol categories represented by one or very few studies should be explicitly presented as study-specific observations rather than broadly validated protocol properties.</p>
+<p>(2) The interpretation and robustness of the proposed library-diversity metrics require further support.</p>
+<p>The manuscript attributes the high NG80 values in the Block and Sun datasets to gDNA contamination. However, other datasets with similarly low FSR values, including Wang and Giráldez, do not show comparably high NG80 values. This suggests that gDNA contamination alone is insufficient to explain library diversity and that sequencing depth, fragment length, mapping behavior, or library construction may also contribute.</p>
+<p>The NP80/NG80 ratio is conceptually reasonable, but its additional value beyond the RNA-biotype composition shown in Figure 3C is unclear, particularly given the large variability observed in WRR datasets. The authors should further examine the relationships among FSR, NG80, sequencing depth, and protocol characteristics and assess the stability of NP80/NG80. If additional validation is not feasible, the interpretation and generality of these metrics should be moderated.</p>
+<p>(3) The conclusion that technical variation generally overwhelms biological variation requires qualification.</p>
+<p>The manuscript provides convincing evidence that technical heterogeneity is a major source of variation in the combined cross-study dataset. However, the conclusion that donor phenotype contributes only negligible variation may be broader than the analysis supports.</p>
+<p>Phenotypes are reduced to healthy, cancer, and non-cancer disease categories despite substantial biological heterogeneity, and many disease groups are concentrated within particular studies. Consequently, disease-specific biological variation may partly be assigned to the Dataset term. A similar issue affects the cellular-origin analysis, where collection center and phenotype are substantially associated in the Chen dataset, making their individual contributions difficult to distinguish.</p>
+<p>Where sample sizes permit, the authors should examine more specific disease categories or perform within-dataset analyses. Otherwise, the conclusions should be narrowed to state that technical variation dominates the present heterogeneous cross-study aggregation, rather than implying that phenotype-associated cfRNA signals are generally negligible.</p>
+<p>(4) The proposed universal QC framework is insufficiently justified and protocol-dependent.</p>
+<p>Figure 6 defines high-quality libraries using NG80 &gt;1,000 together with FSR &gt;20% or FER &gt;75%. However, the manuscript does not explain how these thresholds were selected or validate them against an independent measure of reproducibility, analytical performance, or biomarker utility.</p>
+<p>These criteria are also strongly affected by library-preparation strategy. FER and FSR favor libraries enriched for exonic or spliced RNA, whereas the NG80 cutoff disadvantages WRR libraries containing abundant noncoding transcripts. This is difficult to reconcile with the recommendation of WRR for exploratory transcriptomic and microbial analyses.</p>
+<p>The authors should justify the threshold selection and assess its sensitivity and protocol dependence. Ideally, the criteria should be validated against an independent performance endpoint. Otherwise, Figure 6 should be reframed as a descriptive comparison, and protocol- or application-specific guidance should replace a universal binary definition of library quality.</p>
+</body>
+</sub-article>
+<sub-article id="sa2" article-type="referee-report">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.112419.1.sa0</article-id>
+<title-group>
+<article-title>Reviewer #2 (Public review):</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<anonymous/>
+<role specific-use="referee">Reviewer</role>
+</contrib>
+</contrib-group>
+</front-stub>
+<body>
+<p>Summary:</p>
+<p>This manuscript systematically evaluates the impact of experimental workflows on plasma cell-free transcriptome sequencing (cfRNA-seq) data. The authors integrate a large number of cfRNA sequencing datasets from multiple publicly available studies and establish a unified bioinformatics framework to systematically assess the effects of experimental workflows, genomic DNA contamination, library diversity, and preanalytical factors on cfRNA transcriptomic profiles.</p>
+<p>Strengths:</p>
+<p>This study addresses the technical heterogeneity that may hinder cfRNA biomarker discovery and clinical translation and is of substantial value.</p>
+<p>Weaknesses:</p>
+<p>The effects of disease phenotype, technical confounding, criteria for library quality, and conclusions regarding DNase treatment require further clarification and validation.</p>
+<p>Major Points:</p>
+<p>(1) The conclusion that donor phenotype explains only a small fraction of transcriptomic variation requires further support from within-study analyses.</p>
+<p>The authors conclude from variance partitioning across all studies that phenotype explains only a small fraction of cfRNA transcriptomic variation. However, the included studies encompass different diseases, while phenotype is simplified into healthy, cancer, and non-cancer disease categories, and the overall transcriptomic variation is strongly influenced by study-specific and experimental workflow batch effects. Therefore, the cross-study pooled analysis may underestimate genuine disease-associated cfRNA differences within individual studies conducted under the same experimental workflow.</p>
+<p>Recommendation: The authors are encouraged to perform within-study phenotype analyses in datasets that include both healthy controls and disease samples and have sufficient sample size, and to quantitatively estimate the proportion of transcriptomic variance explained by phenotype. For example, the Zhu dataset includes healthy controls and liver cancer samples, and the authors have already observed relatively clear phenotype-associated clustering between the two groups. The contribution of healthy-versus-liver-cancer phenotype to transcriptomic variation could therefore be quantified within this dataset. If similar results are obtained across multiple independent cohorts, the findings could then be summarized across studies. The authors should also note that a low contribution of phenotype to global transcriptomic variance does not necessarily imply that disease-associated cfRNA signals lack biological or clinical relevance.</p>
+<p>(2) Comparison of the relative contributions of technical factors and disease phenotype may be affected by confounding.</p>
+<p>Figure 1C shows that phenotype is strongly or even completely confounded with technical variables such as collection center and centrifugation protocol in some cohorts. Nevertheless, the variance partitioning analysis across all samples is used to conclude that technical factors are the primary sources of variation, whereas phenotype contributes little. In the presence of such confounding, technical effects and disease-associated biological effects may not be reliably estimated independently, and this conclusion therefore requires more direct validation.</p>
+<p>Recommendation: The authors are encouraged to perform an independent within-study variance analysis in cohorts in which technical variables and phenotype are relatively balanced. For example, in the Moufarrej cohort, phenotype is essentially unconfounded with collection center/centrifugation protocol (Cramer's V = 0). Phenotype and relevant technical variables could be included simultaneously in a within-cohort model to quantify their respective contributions to cfRNA transcriptomic variation. If technical factors still explain a larger fraction of variance in such relatively unconfounded cohorts, this would provide stronger support for the central conclusion of the manuscript.</p>
+<p>(3) The use of NG80 as a criterion for defining &quot;high-quality libraries&quot; requires further validation.</p>
+<p>The authors use NG80 as a metric of library diversity and further apply NG80 &gt; 1,000 as one criterion for defining high-quality libraries in Figure 6. However, because NG80 is based on gene counts, it may be affected by sequencing depth. In addition, gDNA contamination can artificially increase NG80, whereas genuinely abundant non-coding RNAs in WRR libraries can lower NG80. Therefore, a higher NG80 does not necessarily indicate better overall library quality, and the metric may reflect both technical quality and genuine RNA composition.</p>
+<p>Recommendation: The authors are encouraged to re-evaluate NG80 after downsampling samples to a common number of mapped fragments and to examine the relationship between NG80 and sequencing depth. The rationale for the NG80 &gt; 1,000 threshold should also be further justified, and the impact of alternative NG80 thresholds on high-quality library classification and the main conclusions should be assessed. Unless there is evidence that this threshold reliably predicts library reproducibility or biomarker-related information content, library diversity and overall library quality should be clearly distinguished, and NG80 should not be presented as a universal criterion for high-quality libraries.</p>
+<p>(4) Conclusions regarding DNase treatment should be interpreted more cautiously.</p>
+<p>The Toden study did not explicitly report DNase treatment. The manuscript infers that DNase digestion was performed based on the fact that this study originated from the same laboratory as other studies and used a similar workflow; this inference should not be treated as an established experimental fact. In addition, the authors state that double DNase treatment is the most effective approach among non-EB workflows, but this conclusion is mainly based on cross-study comparisons, in which DNase strategy varies together with laboratory, sample handling, and cohort-specific factors. The current evidence is therefore insufficient to establish that double DNase treatment itself is superior.</p>
+<p>Recommendation: The authors are encouraged to label the DNase status of the Toden study as &quot;not reported&quot; or &quot;inferred&quot;, unless confirmation can be obtained from the original authors. The conclusion that double DNase treatment is the most effective approach should also be tempered, with explicit acknowledgment that it requires direct parallel validation using the same samples under different DNase treatment strategies.</p>
+</body>
+</sub-article>
+</article>
