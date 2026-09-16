@@ -22,7 +22,8 @@
 <article-categories><subj-group subj-group-type="heading">
 <subject>Structural Biology and Molecular Biophysics</subject>
 </subj-group>
-</article-categories><title-group>
+</article-categories>
+<title-group>
 <article-title>ProteinConformers: large-scale and energetically profiled descriptions of protein conformational landscapes</article-title>
 </title-group>
 <contrib-group>
@@ -132,7 +133,7 @@
 <surname>Cui</surname>
 <given-names>Qiang</given-names>
 </name>
-<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-6214-5211</contrib-id><role>Senior Editor</role>
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0001-6214-5211</contrib-id><role>Senior Editor</role>
 <aff>
 <institution-wrap>
 <institution-id institution-id-type="ror">https://ror.org/05qwgg493</institution-id><institution>Boston University</institution>
@@ -153,14 +154,15 @@
 </pub-date>
 <volume>15</volume>
 <elocation-id>RP110874</elocation-id>
-<history>
+<pub-history>
+<event>
+<event-desc>Sent for review</event-desc>
 <date date-type="sent-for-review" iso-8601-date="2026-02-20">
 <day>20</day>
 <month>02</month>
 <year>2026</year>
 </date>
-</history>
-<pub-history>
+</event>
 <event>
 <event-desc>Preprint posted</event-desc>
 <date date-type="preprint" iso-8601-date="2026-02-20">
@@ -298,18 +300,18 @@
 <label>Figure 1.</label>
 <caption><title>Overview and quality assessment of the ProteinConformers and ProteinConformers-lite datasets.</title>
 <p>(A) Schematic conformational energy landscape with representative conformers positioned in distinct minima of T1035, illustrating the breadth of physically realistic states captured by ProteinConformers. (B) Sequence-length distribution of ProteinConformers. (C) Conformer counts per protein, sorted by sequence length; points are colored by the log10 of near-native (TM-score ⩾ 0.5) conformation counts, with representative structures shown as insets. (D) TM-score coverage across proteins from ProteinConformers-lite and sampled ATLAS dataset, binned into 32 equal-width intervals from non-native to near-native. (E) Comparison of φ, ψ, ω dihedral angle and C–N bond length distributions between ProteinConformers-lite and Top2018 dataset, quantified by Jensen–Shannon divergence (JS), Earth Mover’s Distance (EMD), and Pearson correlation coefficient (r), demonstrating consistent local stereochemical quality. (F) Ramachandran outlier rates were averaged within 32 equal-width TM-score bins. The mean outlier rate of Top2018 dataset (13%, green dashed line) and the TM-score threshold of 0.5 separating non-native and near-native states are shown, with a cubic fit (blue curve) summarizing the trend.</p></caption>
-<graphic xlink:href="707011v1_fig1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="707011v1_fig1.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>We constructed ProteinConformers-lite, a curated benchmark subset of the ProteinConformers dataset containing 381,546 MD refined conformers across 87 CASP14 and CASP15 proteins (Fig. S3). These targets were selected because their seed decoys are generally higher quality and the underlying structures more challenging. Unlike previous benchmarks centered on near-native fluctuations around PDB structures, ProteinConformers-lite spans a broader conformational spectrum than the ATLAS dataset, with proteins distributed across non-native to near-native regions (<xref rid="fig1" ref-type="fig">Fig. 1D</xref>) and exhibiting a wider per-protein TM-score range (Fig. S4). Near native states were defined as those with TM-score greater than 0.5, a threshold indicating preservation of global fold integrity <sup><xref ref-type="bibr" rid="c23">23</xref></sup>.</p>
 <p>We evaluated the physical plausibility of ProteinConformers-lite by comparing its geometric properties with the high-quality Top2018 reference dataset. The distributions of dihedral angles and bond lengths in ProteinConformers-lite closely matched those in the Top2018 dataset (<xref rid="fig1" ref-type="fig">Fig. 1E</xref>), demonstrating that the local geometry of our benchmark achieves consistent stereochemical quality. Analysis of Ramachandran outlier rates revealed a consistent decrease as TM-score increased from non-native to near-native values, eventually falling below the average rate observed in the Top2018 dataset (13%). This trend indicates that near-native conformations in ProteinConformers-lite exhibit comparable stereochemical quality with Top2018 dataset (<xref rid="fig1" ref-type="fig">Fig. 1F</xref>).</p>
 <p>A dual-axis benchmark framework was established to assess the diversity of the protein conformational landscape by calculating the coverage rate of the generated conformers to the benchmark dataset (Materials and Methods, Fig. S5), and to quantify residue-pair geometric statistics across distance and orientation features via Conformation Geometry Map (CGM) and its similarity score CGMS<sup>cos</sup> and CGMS<sup>mah</sup> (Materials and Methods, Fig. S6).</p>
-<p>Then we systematically benchmarked five representative models <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="707011v1_inline1.gif" mimetype="image" mime-subtype="gif"/></inline-formula> using our framework and ProteinConformers-lite dataset. Diversity analysis shows that BioEmu achieves the highest coverage under strict 5 kJ/mol thresholds, indicating effective sampling of low-energy regions, whereas distilled variants such as <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="707011v1_inline2.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="707011v1_inline3.gif" mimetype="image" mime-subtype="gif"/></inline-formula> display consistently reduced coverage, reflecting narrower exploration around basins (Table S1). Plausibility of CGMS<sup>cos</sup> emphasizes directional agreement in residue-pair statistics. The results show high similarity on distance features but substantial degradation on orientation features, indicating that current models generally recover distance distributions better than orientation statistics. CGMS<sup>mah</sup> instead evaluates global geometric consistency by measuring Mahalanobis distances in the joint covariance space and converting them into similarity scores using a Gaussian kernel, resulting in more balanced assessment across feature types. BioEmu attains the highest scores on distance components under both metrics, reflecting stronger geometric modeling of inter-residue separations. Under CGMS<sup>mah</sup>, <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="707011v1_inline4.gif" mimetype="image" mime-subtype="gif"/></inline-formula> achieves scores comparable to BioEmu, suggesting similar overall geometric plausibility. In general, models fine-tuned on MD data (<inline-formula id="inline-eqn-5"><inline-graphic xlink:href="707011v1_inline5.gif" mimetype="image" mime-subtype="gif"/></inline-formula> and <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="707011v1_inline6.gif" mimetype="image" mime-subtype="gif"/></inline-formula>) show modest improvements in CGMS<sup>cos</sup> and comparable performance in CGMS<sup>mah</sup> relative to their non–MD-tuned counterparts, indicating that MD refinements provide limited gains in local geometric realism (Table S2).</p>
+<p>Then we systematically benchmarked five representative models <inline-formula id="inline-eqn-1"><inline-graphic xlink:href="707011v1_inline1.gif" mime-subtype="gif" mimetype="image"/></inline-formula> using our framework and ProteinConformers-lite dataset. Diversity analysis shows that BioEmu achieves the highest coverage under strict 5 kJ/mol thresholds, indicating effective sampling of low-energy regions, whereas distilled variants such as <inline-formula id="inline-eqn-2"><inline-graphic xlink:href="707011v1_inline2.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula id="inline-eqn-3"><inline-graphic xlink:href="707011v1_inline3.gif" mime-subtype="gif" mimetype="image"/></inline-formula> display consistently reduced coverage, reflecting narrower exploration around basins (Table S1). Plausibility of CGMS<sup>cos</sup> emphasizes directional agreement in residue-pair statistics. The results show high similarity on distance features but substantial degradation on orientation features, indicating that current models generally recover distance distributions better than orientation statistics. CGMS<sup>mah</sup> instead evaluates global geometric consistency by measuring Mahalanobis distances in the joint covariance space and converting them into similarity scores using a Gaussian kernel, resulting in more balanced assessment across feature types. BioEmu attains the highest scores on distance components under both metrics, reflecting stronger geometric modeling of inter-residue separations. Under CGMS<sup>mah</sup>, <inline-formula id="inline-eqn-4"><inline-graphic xlink:href="707011v1_inline4.gif" mime-subtype="gif" mimetype="image"/></inline-formula> achieves scores comparable to BioEmu, suggesting similar overall geometric plausibility. In general, models fine-tuned on MD data (<inline-formula id="inline-eqn-5"><inline-graphic xlink:href="707011v1_inline5.gif" mime-subtype="gif" mimetype="image"/></inline-formula> and <inline-formula id="inline-eqn-6"><inline-graphic xlink:href="707011v1_inline6.gif" mime-subtype="gif" mimetype="image"/></inline-formula>) show modest improvements in CGMS<sup>cos</sup> and comparable performance in CGMS<sup>mah</sup> relative to their non–MD-tuned counterparts, indicating that MD refinements provide limited gains in local geometric realism (Table S2).</p>
 <p>To enable efficient exploration of ProteinConformers, we developed an interactive web portal integrating query, visualization, and data access functions. The homepage provides a searchable table of all 734 proteins with multi field filters, linking to detailed dashboards for each target (<xref rid="fig2" ref-type="fig">Fig. 2A</xref>). Dashboards offer interactive 3D visualization with real time alignment between native and decoy structures (<xref rid="fig2" ref-type="fig">Fig. 2B</xref>), as well as native distance and rotation maps for global comparison (<xref rid="fig2" ref-type="fig">Fig. 2C</xref>). Each protein includes a fully annotated decoy table with geometric, similarity, energetic, and secondary structure metrics (<xref rid="fig2" ref-type="fig">Fig. 2D</xref>). Users can perform dynamic, in-browser analysis of the conformational landscape by filtering decoys based on structural similarity or energetic thresholds, with all statistical summaries and visualizations updating in real time. Flexible data export is supported through customizable metric selection (<xref rid="fig2" ref-type="fig">Fig. 2E</xref>), and one-click bulk downloads provide complete per-protein datasets with associated metadata (<xref rid="fig2" ref-type="fig">Fig. 2F</xref>). The portal enables rapid, interactive analysis without local computation.</p>
 <fig id="fig2" position="float" fig-type="figure">
 <label>Figure 2.</label>
 <caption><title>Interactive web interface of the ProteinConformers dataset.</title>
 <p>(A) Main overview table displaying all 734 proteins in the dataset, with sortable columns for structural metadata and CASP-related annotations. (B) Dashboard view for a selected target (e.g. T0819), showing an interactive 3D alignment of the native structure (green) with a selected decoy (orange), along with basic protein metadata and secondary structure composition. (C) Visualization of the native structure’s distance map (top) and orientation map (bottom), supporting global structural comparison. (D) Detailed table listing decoy models associated with the selected target, including secondary structure content, similarity scores, and energetic profiles. (E) Interface for selecting and filtering decoys by structural or energetic criteria. Selected decoys can be downloaded as a customized dataset. (F) Download panel summarizing metadata for the selected protein, including file sizes and sequence length, and providing options for downloading either the native structure or the full conformer set.</p></caption>
-<graphic xlink:href="707011v1_fig2.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="707011v1_fig2.tif" mime-subtype="tiff" mimetype="image"/>
 </fig>
 <p>Taken together, ProteinConformers establishes a comprehensive, energetically annotated view of protein conformational landscapes, enabling systematic assessment of structural diversity and physical plausibility across modern multi-conformer generators. By integrating large-scale multi-seed sampling, detailed energetic profiling, and a unified evaluation framework, it provides a rigorous foundation for studying protein dynamics and allosteric mechanisms. Together with an interactive web platform for exploration and data access, ProteinConformers is positioned to support next-generation advances in protein conformation ensembles prediction, biomolecular modeling, and computational drug discovery.</p>
 </sec>
@@ -343,7 +345,7 @@
 <title>Benchmark Dataset</title>
 <p>To highlight the capabilities of the ProteinConformer dataset and to facilitate systematic evaluation of existing protein conformation generative models, we developed a compact benchmarking suite, referred to as ProteinConformers-lite. The conformational landscapes in this dataset were collected from ProteinConformers, including conformers from CASP14 and CASP15. We selected the most recent two CASP seasons because their seed decoys are generally of higher quality and the corresponding targets are overall more challenging.</p>
 <p>The ProteinConformers-lite benchmark dataset comprises 87 proteins with an average sequence length of 305 residues, a median of 255 residues, and a maximum length of 949 residues (Fig. S1). These 87 proteins include 40,387 seed decoys, 381,546 conformers, and 1,907,730 energetic annotations.</p>
-<p>We depolyed <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="707011v1_inline7.gif" mimetype="image" mime-subtype="gif"/></inline-formula>, and BioEmu <sup><xref ref-type="bibr" rid="c24">24</xref></sup> followed their official tutorials. For every software, we generated 3,000 conformations for each protein in ProteinConformers-lite, and assessed the diversity and plausibility of the generation using our metrics.</p>
+<p>We depolyed <inline-formula id="inline-eqn-7"><inline-graphic xlink:href="707011v1_inline7.gif" mime-subtype="gif" mimetype="image"/></inline-formula>, and BioEmu <sup><xref ref-type="bibr" rid="c24">24</xref></sup> followed their official tutorials. For every software, we generated 3,000 conformations for each protein in ProteinConformers-lite, and assessed the diversity and plausibility of the generation using our metrics.</p>
 </sec>
 <sec id="s2f">
 <title>Top2018 dataset comparison</title>
@@ -362,7 +364,7 @@
 <alternatives>
 <mml:math display="block"><mml:mspace width="0.25em"/><mml:mtext>Interaction</mml:mtext><mml:mspace width="0.25em"/><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mi>A</mml:mi><mml:mo>∩</mml:mo><mml:mi>B</mml:mi><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:munder><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:munder><mml:mrow><mml:mn mathvariant="bold">1</mml:mn></mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:msub><mml:mi>A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>.</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:mi>τ</mml:mi><mml:mo>∧</mml:mo><mml:msub><mml:mi>B</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:mi>τ</mml:mi><mml:mo>]</mml:mo></mml:mrow></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \text { Interaction }=|A \cap B|=\sum_{i, j} \mathbf{1}\left[A_{i . j}&lt;\tau \wedge B_{i, j}&lt;\tau\right] \tag{1} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn1.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn1.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 where <italic>i, j</italic> are the indices of the grid of the Boltzmann-weighted estimation of the energy landscape.</p>
@@ -372,7 +374,7 @@ where <italic>i, j</italic> are the indices of the grid of the Boltzmann-weighte
 <alternatives>
 <mml:math display="block"><mml:mspace width="0.25em"/><mml:mtext>Coverage</mml:mtext><mml:mspace width="0.25em"/><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>A</mml:mi><mml:mo>∩</mml:mo><mml:mi>B</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>A</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow></mml:mfrac></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \text { Coverage }=\frac{|A \cap B|}{|A|} \tag{2} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn2.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn2.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 </p>
@@ -382,7 +384,7 @@ where <italic>i, j</italic> are the indices of the grid of the Boltzmann-weighte
 <alternatives>
 <mml:math display="block"><mml:mspace width="0.25em"/><mml:mtext>Jaccard Index</mml:mtext><mml:mspace width="0.25em"/><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>A</mml:mi><mml:mo>∩</mml:mo><mml:mi>B</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>A</mml:mi><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mi>B</mml:mi><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mi>A</mml:mi><mml:mo>∩</mml:mo><mml:mi>B</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow></mml:mfrac></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \text { Jaccard Index }=\frac{|A \cap B|}{|A|+|B|-|A \cap B|} \tag{3} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn3.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn3.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 </p>
@@ -393,11 +395,11 @@ where <italic>i, j</italic> are the indices of the grid of the Boltzmann-weighte
 <p>To evaluate the realism of generated ensembles, we propose the Conformation Geometry Map (CGM) and its derived Conformation Geometry Map Similarity (CGMS).</p>
 <sec id="s2i1">
 <title>CGM Construction</title>
-<p>Given a protein of length <italic>N</italic> and an ensemble of <italic>M</italic> conformations, <inline-formula id="inline-eqn-8"><alternatives><mml:math><mml:mi>C</mml:mi><mml:mo>=</mml:mo><mml:msubsup><mml:mrow><mml:mo>{</mml:mo><mml:msup><mml:mi>C</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>m</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:msup><mml:mo>}</mml:mo></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mrow><mml:mi mathvariant="normal">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:math><tex-math>\begin{document}$C=\left\{C^{(m)}\right\}_{m=1}^{\mathrm{M}}$\end{document}</tex-math><inline-graphic xlink:href="707011v1_inline8.gif" mimetype="image" mime-subtype="gif"/></alternatives></inline-formula>, we compute four inter-residue geometric features <italic>G</italic> ∈ [<italic>D, Ω, Θ, Φ</italic>] for each conformation, following definitions from trRosetta <sup><xref ref-type="bibr" rid="c34">34</xref>,<xref ref-type="bibr" rid="c35">35</xref></sup> and DeepPotential <sup><xref ref-type="bibr" rid="c36">36</xref></sup> (<xref rid="tbl1" ref-type="table">Table 1</xref>).</p>
+<p>Given a protein of length <italic>N</italic> and an ensemble of <italic>M</italic> conformations, <inline-formula id="inline-eqn-8"><alternatives><mml:math><mml:mi>C</mml:mi><mml:mo>=</mml:mo><mml:msubsup><mml:mrow><mml:mo>{</mml:mo><mml:msup><mml:mi>C</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>m</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:msup><mml:mo>}</mml:mo></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mrow><mml:mi mathvariant="normal">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:math><tex-math>\begin{document}$C=\left\{C^{(m)}\right\}_{m=1}^{\mathrm{M}}$\end{document}</tex-math><inline-graphic xlink:href="707011v1_inline8.gif" mime-subtype="gif" mimetype="image"/></alternatives></inline-formula>, we compute four inter-residue geometric features <italic>G</italic> ∈ [<italic>D, Ω, Θ, Φ</italic>] for each conformation, following definitions from trRosetta <sup><xref ref-type="bibr" rid="c34">34</xref>,<xref ref-type="bibr" rid="c35">35</xref></sup> and DeepPotential <sup><xref ref-type="bibr" rid="c36">36</xref></sup> (<xref rid="tbl1" ref-type="table">Table 1</xref>).</p>
 <table-wrap id="tbl1" orientation="portrait" position="anchor">
 <label>Table 1.</label>
 <caption><title>Geometric features used for CGM.</title> <p>For Ω, Θ, and Φ, a pseudo <italic>C<sub>β</sub></italic> is used for glycine.</p></caption>
-<graphic xlink:href="707011v1_tbl1.tif" mimetype="image" mime-subtype="tiff"/>
+<graphic xlink:href="707011v1_tbl1.tif" mime-subtype="tiff" mimetype="image"/>
 </table-wrap>
 <p>For each residue pair (<italic>i, j</italic>), we calculate the mean (<italic>μ</italic>), standard deviation (<italic>σ</italic>), and skewness (<italic>γ</italic>) of each geometric feature across the ensemble. The calculation of angle features considers circularity. The resulting feature tensor is <italic>P</italic><sup><italic>G</italic></sup> ∈ <italic>R</italic><sup>3×<italic>N</italic>×<italic>N</italic></sup>, and the full CGM is the concatenation <italic>P</italic> = [<italic>P</italic><sup><italic>D</italic></sup>, <italic>P</italic><sup><italic>Ω</italic></sup>, <italic>P</italic><sup><italic>Θ</italic></sup>, <italic>P</italic><sup><italic>Φ</italic></sup>] ∈ <italic>R</italic><sup>12×<italic>N</italic>×<italic>N</italic></sup>. The Euclidean distance 20Å is used as the cutoff to filter the residue pair for CGMS.</p>
 </sec>
@@ -410,7 +412,7 @@ where <italic>i, j</italic> are the indices of the grid of the Boltzmann-weighte
 <alternatives>
 <mml:math display="block"><mml:msup><mml:mtext> CGMS </mml:mtext><mml:mrow><mml:mi>cos</mml:mi></mml:mrow></mml:msup><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>C</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow></mml:mfrac><mml:munder><mml:mo>∑</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>∈</mml:mo><mml:mi>C</mml:mi></mml:mrow></mml:munder><mml:mfrac><mml:mrow><mml:msub><mml:mrow><mml:msup><mml:mi>u</mml:mi><mml:mrow><mml:mi>T</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:mrow><mml:mo symmetric="true">‖</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo symmetric="true">‖</mml:mo></mml:mrow><mml:mrow><mml:mo symmetric="true">‖</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo symmetric="true">‖</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \text { CGMS }^{\cos }=\frac{1}{|C|} \sum_{(i, j) \in C} \frac{u^{T}{ }_{i} u_{j}}{\left\|u_{i}\right\|\left\|u_{j}\right\|} \tag{4} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn4.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn4.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 where <italic>C</italic> denotes the set of all valid residue pairs.</p>
@@ -420,7 +422,7 @@ where <italic>C</italic> denotes the set of all valid residue pairs.</p>
 <alternatives>
 <mml:math display="block"><mml:msub><mml:mrow><mml:mi mathvariant="normal">d</mml:mi></mml:mrow><mml:mrow><mml:mi>M</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msqrt><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>T</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi mathvariant="normal">Σ</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo></mml:mrow></mml:msqrt></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \mathrm{d}_{M}\left(u_{i}, u_{j}\right)=\sqrt{\left(u_{i}-u_{j}\right)^{T} \Sigma^{-1}\left(u_{i}-u_{j}\right)} \tag{5} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn5.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn5.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 where <italic>Σ</italic> in (5) is the covariance matrix between two vectors. This distance is then transformed via a Gaussian kernel to compute the similarity:
@@ -429,7 +431,7 @@ where <italic>Σ</italic> in (5) is the covariance matrix between two vectors. T
 <alternatives>
 <mml:math display="block"><mml:msup><mml:mrow><mml:mi>CGMS</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi>mah</mml:mi></mml:mrow></mml:mrow></mml:msup><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>C</mml:mi><mml:mo stretchy="false">|</mml:mo></mml:mrow></mml:mfrac><mml:munder><mml:mo>∑</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>∈</mml:mo><mml:mi>C</mml:mi></mml:mrow></mml:munder><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mo>−</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mrow><mml:mi>M</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
 <tex-math>\begin{document}$$\displaystyle \begin{equation*} \mathrm{CGMS}^{\mathrm{mah}}=\frac{1}{|C|} \sum_{(i, j) \in C} \exp \left(-\frac{1}{2}\left(d_{M}\left(u_{i}, u_{j}\right)^{2}\right)\right. \tag{6} \end{equation*}$$\end{document}</tex-math>
-<graphic xlink:href="707011v1_eqn6.gif" mimetype="image" mime-subtype="gif"/>
+<graphic xlink:href="707011v1_eqn6.gif" mime-subtype="gif" mimetype="image"/>
 </alternatives>
 </disp-formula>
 </p>
@@ -608,6 +610,129 @@ where <italic>Σ</italic> in (5) is the covariance matrix between two vectors. T
 <p>This tool will likely be useful for students who want to learn more about the ensemble properties of proteins. The resource is well organized and it represents a large amount of computing resources.</p>
 <p>Weaknesses:</p>
 <p>It is not entirely clear how the database may be utilized by other groups to advance research. It could be helpful if the authors add a short section that provides example use cases that illustrate how this database can support new strategies for studying protein dynamics.</p>
+</body>
+</sub-article>
+<sub-article id="sa4" article-type="author-comment">
+<front-stub>
+<article-id pub-id-type="doi">10.7554/eLife.110874.1.sa4</article-id>
+<title-group>
+<article-title>Author response:</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Zhou</surname>
+<given-names>Yihang</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-3125-7672</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wei</surname>
+<given-names>Chen</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Sun</surname>
+<given-names>Minghao</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Wang</surname>
+<given-names>Lin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Song</surname>
+<given-names>Jin</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Xu</surname>
+<given-names>Fanding</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Li</surname>
+<given-names>Yang</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2480-1972</contrib-id></contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zheng</surname>
+<given-names>Wei</given-names>
+</name>
+<role specific-use="author">Author</role>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Zhang</surname>
+<given-names>Yang</given-names>
+</name>
+<role specific-use="author">Author</role>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-2739-1916</contrib-id></contrib>
+</contrib-group>
+</front-stub>
+<body>
+<disp-quote content-type="editor-comment">
+<p><bold>eLife Assessment</bold></p>
+<p>This study presents a useful database resource containing protein conformations generated through molecular dynamics simulations, with extensive quality evaluation and benchmarking. While the database is well-constructed and professionally organized, the evidence supporting its claimed representation of protein conformational landscapes is incomplete, as the short simulation times and starting structure bias prevent true Boltzmann sampling of the conformational space.</p>
+</disp-quote>
+<p>We thank the editors for recognizing the usefulness of ProteinConformers and the value of its quality evaluation and benchmarking. We will revise the manuscript to clarify that ProteinConformers provides large-scale, energetically profiled descriptions of protein conformational landscapes, with broad coverage of locally stereochemically valid and energetic compatible structures from non-native to near-native regions, rather than a complete equilibrium sampling of all conformational states. These revisions will better define the scope of the resource while preserving its intended use for benchmarking and data-driven studies of protein conformational variability.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Public Reviews:</bold></p>
+<p><bold>Reviewer #1 (Public review):</bold></p>
+<p>Summary:</p>
+<p>The authors describe a new database that rigorously explores protein conformations.</p>
+<p>Strengths:</p>
+<p>It is extremely well done, using state-of-the-art tools by a group at the top of the field of structural modeling. The evaluation of qualities and the benchmarking of the structures are outstanding, and it is expected that the new database will have a significant impact on the field.</p>
+</disp-quote>
+<p>We thank Reviewer #1 for the positive evaluation of our work and for recognizing the potential impact of the ProteinConformers resource.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>The authors are using MD simulation to generate some of the structure, and therefore should have access to standard MD energies. I am surprised that no evaluation is provided based on these energies that can be extended to free energies.</p>
+</disp-quote>
+<p>We thank the reviewer for this helpful suggestion. We reprocessed the original MD energy files and extracted three MD-derived energy terms, including total energy, system potential energy, and protein-only potential energy. These energy terms have been added to the ProteinConformers resource and the web portal. We will update the manuscript to describe these additional energetic annotations.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #2 (Public review):</bold></p>
+<p>Summary:</p>
+<p>The authors developed a dataset of protein conformations by running molecular dynamics simulations starting from both native and decoy conformations for a large number of proteins. These conformations were put together as a dataset for querying and downloading, along with their energies under different force fields. The authors suggest that such conformations represent the proteins' conformational landscape, so that they will be useful for evaluating methods generating multiple conformations of proteins.</p>
+<p>Strengths:</p>
+<p>The dataset is online and working. It has good documentation for others to use.</p>
+</disp-quote>
+<p>We appreciate Reviewer #2’s positive assessment of the online resource and documentation.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>The biggest weakness is that the collected conformations very likely do not represent the true conformational landscape. To represent the conformational landscape, the structures need to be sampled based on the Boltzmann distribution. However, in this study, conformations are generated by running very short (125ps to 375ps) MD simulations starting from near-native conformations and decoys. Such short simulations will produce small fluctuations around the starting conformations, so the distribution of conformations is largely dominated by the distribution of the initial conformations, which by one means are Boltzmann distributed. A conformation might be physically plausible, but it might have very small weight in the Boltzmann distribution. On the other hand, conformations with large weights might not be in the dataset.</p>
+</disp-quote>
+<p>We thank the reviewer for this important and constructive comment. We agree that the conformations in ProteinConformers should not be interpreted as an equilibrium ensemble sampled according to the Boltzmann distribution. Because the MD simulations used here are short, the resulting snapshots around each seed mainly reflect local relaxation and limited thermal fluctuation from that seed, rather than exhaustive equilibrium sampling. Therefore, the relative population of conformations in our dataset should not be interpreted as a Boltzmann weight, and some thermodynamically important states may be underrepresented or absent.</p>
+<p>Our goal in this work is different from conventional long-timescale MD studies that aim to estimate equilibrium populations from one or a few initial structures. ProteinConformers was designed as a large-scale, multi-seed, MD-refined conformer resource. The broad structural coverage comes primarily from initiating simulations from many diverse seed decoys for each protein, while the short all-atom MD protocol is used to relax structures under a molecular mechanics force field, remove structures that fail to converge, reduce steric clashes and unrealistic local geometries, and generate energetically annotated conformers. We will revise the manuscript to make this distinction clearer and to avoid implying that ProteinConformers provides a rigorous Boltzmann-sampled representation of the underlying thermodynamic landscape.</p>
+<p>We also agree that longer simulations and enhanced sampling methods, such as replica-exchange MD, metadynamics, or umbrella sampling, would be necessary to estimate equilibrium populations and improve sampling of rare but thermodynamically relevant states. We will add this point as a limitation and future direction in the revised manuscript. Thus, ProteinConformers should be viewed as a broad, energetically annotated, MDrefined conformer library for benchmarking, data-driven modeling, and descriptions of protein conformational landscapes, rather than as a complete equilibrium ensemble itself.</p>
+<disp-quote content-type="editor-comment">
+<p><bold>Reviewer #3 (Public review):</bold></p>
+<p>Summary:</p>
+<p>This manuscript describes a web-based tool that allows researchers to compare large numbers of representative (&quot;plausible&quot;) conformations of proteins. It also includes energetic analysis from multiple widely used structure-prediction methods.</p>
+<p>Strengths:</p>
+<p>This tool will likely be useful for students who want to learn more about the ensemble properties of proteins. The resource is well organized and it represents a large amount of computing resources.</p>
+</disp-quote>
+<p>We thank Reviewer #3 for the positive assessment of the ProteinConformers resource and for recognizing its potential value for community education.</p>
+<disp-quote content-type="editor-comment">
+<p>Weaknesses:</p>
+<p>It is not entirely clear how the database may be utilized by other groups to advance research. It could be helpful if the authors add a short section that provides example use cases that illustrate how this database can support new strategies for studying protein dynamics.</p>
+</disp-quote>
+<p>We thank the reviewer for this constructive suggestion. We agree that the manuscript should more explicitly explain how other groups can use ProteinConformers to advance research. In the revised Discussion, we will add a short section describing concrete use cases of the database. In particular, we will emphasize that the benchmark analysis already presented in this manuscript provides a worked example of how ProteinConformers can be used by other groups. ProteinConformers-lite, together with the released evaluation metrics and codes, can serve as a standardized reference set for testing new multi-conformation or protein ensemble generation methods. Other groups can generate conformational ensembles for the same targets, compare their coverage of low-energy regions using the diversity metrics reported in Table S1, and evaluate the agreement of residue-pair geometric statistics using the plausibility metrics reported in Table S2.</p>
+<p>We will also describe additional use cases enabled by the full ProteinConformers resource. The dataset can be used as a training, validation, or pretraining resource for conformation generators, energy-aware ranking models, and model quality assessment methods, because each conformer is paired with structural similarity annotations and multiple energetic scores. The broad coverage from non-native to near-native conformations also enables systematic analysis of how local stereochemical validity, global structural similarity, and energetic evaluations co-vary across diverse conformational perturbations, and may provide useful structural proxies or starting points for modeling flexible or disordered-like protein states, where experimentally resolved structural data are often limited. In addition, the interactive portal allows users to filter protein-specific conformers by structural similarity, energetic annotations, and secondary-structure features, making it possible to construct customized subsets for downstream biomolecular modeling, hypothesis generation, and educational exploration.</p>
 </body>
 </sub-article>
 </article>
